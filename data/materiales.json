@@ -1,10 +1,12 @@
 {
-  "generado": "2026-09-20T12:51:53.163Z",
+  "generado": "2026-09-20T21:34:53.875Z",
   "fuentes": {
     "local": "I:\\ITC",
     "drive": {
-      "raiz": "itc",
-      "estado": "pendiente de sincronizar (npm run sync o sync-drive.ps1)"
+      "raiz": "itc:itc",
+      "estado": "sincronizado",
+      "vinculados": 233,
+      "faltantes": 715
     }
   },
   "capacitaciones": [
@@ -36,9 +38,10 @@
                   "emoji": "🗃️",
                   "size": 2554,
                   "ruta": "@Clases/Clase Trabajo Integrador IA/config.json",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1sp29UVYAPkTjRsLFvIApKrSN1szjaDGD",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1sp29UVYAPkTjRsLFvIApKrSN1szjaDGD"
                 },
                 {
                   "nombre": "consigna_actividad.html",
@@ -46,11 +49,12 @@
                   "emoji": "🌐",
                   "size": 30209,
                   "ruta": "@Clases/Clase Trabajo Integrador IA/consigna_actividad.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=11ZOBiss3u_WnaXzQrIPSpCQXJK3sSku5",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/asistente-administrativo-clase-1-clase-trabajo-integrador-ia-consigna-actividad-html.html",
                   "notas": "(30 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "11ZOBiss3u_WnaXzQrIPSpCQXJK3sSku5"
                 },
                 {
                   "nombre": "LogoITC.svg",
@@ -58,9 +62,10 @@
                   "emoji": "🖼️",
                   "size": 9351,
                   "ruta": "@Clases/Clase Trabajo Integrador IA/LogoITC.svg",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1hpw0bg8P9_YjjnnFKS5JGsurhzu0gFZL",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1hpw0bg8P9_YjjnnFKS5JGsurhzu0gFZL"
                 },
                 {
                   "nombre": "script.js",
@@ -78,9 +83,10 @@
                   "emoji": "📁",
                   "size": 12818,
                   "ruta": "@Clases/Clase Trabajo Integrador IA/styles.css",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1XA8-QofVdzQlWs0PjsZ19N5nbWj7y_lX",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1XA8-QofVdzQlWs0PjsZ19N5nbWj7y_lX"
                 }
               ],
               "tamanoBytes": 55563
@@ -95,9 +101,10 @@
                   "emoji": "📕",
                   "size": 20630235,
                   "ruta": "@Clases/Modulo 8/Clase 22_Cierre del curso.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Iis-16zktmGo8fjEbvISWfQ2cDvmivat",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Iis-16zktmGo8fjEbvISWfQ2cDvmivat"
                 }
               ],
               "tamanoBytes": 20630235
@@ -144,9 +151,10 @@
                   "emoji": "📕",
                   "size": 1782381,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Clase-2-Windows-y-Organizacion-de-Archivos.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1T7lDPzATSRQdQLtVE8LsRcH1qhouxAow",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1T7lDPzATSRQdQLtVE8LsRcH1qhouxAow"
                 },
                 {
                   "nombre": "Clase-2-Windows-y-Organizacion-de-Archivos.ppsx",
@@ -154,9 +162,10 @@
                   "emoji": "📽️",
                   "size": 28539932,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Clase-2-Windows-y-Organizacion-de-Archivos.ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=11Puqd_ESTdxT6ri_McddmsD0TgAn94-f",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "11Puqd_ESTdxT6ri_McddmsD0TgAn94-f"
                 },
                 {
                   "nombre": "Clase-2-Windows-y-Organizacion-de-Archivos.pptx",
@@ -164,9 +173,10 @@
                   "emoji": "📽️",
                   "size": 28539930,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Clase-2-Windows-y-Organizacion-de-Archivos.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Ezngr-e_wOlK5X3Yc1hEWbzWp3dz7REj",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Ezngr-e_wOlK5X3Yc1hEWbzWp3dz7REj"
                 },
                 {
                   "nombre": "Clase2 repaso.ppsx",
@@ -174,9 +184,10 @@
                   "emoji": "📽️",
                   "size": 3084859,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Clase2 repaso.ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1SHuy8BqQU_ulJE4GyrArWXcF076UStwW",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1SHuy8BqQU_ulJE4GyrArWXcF076UStwW"
                 },
                 {
                   "nombre": "Teclado y Mouse/",
@@ -185,11 +196,12 @@
                   "size": 962603,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Teclado y Mouse",
                   "archivos": 2,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1ULkShy3hAwpTe3QeRiRbLUNZmm4NFCiR",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1ULkShy3hAwpTe3QeRiRbLUNZmm4NFCiR"
                 },
                 {
                   "nombre": "Windows 10.pdf",
@@ -197,9 +209,10 @@
                   "emoji": "📕",
                   "size": 658911,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Windows 10.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1SUB4aMhUbB07ZgcdvfTDW9rVGyIHTjTj",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1SUB4aMhUbB07ZgcdvfTDW9rVGyIHTjTj"
                 },
                 {
                   "nombre": "Windows 10.pptx",
@@ -207,9 +220,10 @@
                   "emoji": "📽️",
                   "size": 3497316,
                   "ruta": "@Clases/Modulo 1/Clase 2 Introduccion programas Windows, Teclado y Mouse/Windows 10.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1CuVYOXxrflUt3UFz2sIdA6hfz88huYGP",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1CuVYOXxrflUt3UFz2sIdA6hfz88huYGP"
                 }
               ],
               "tamanoBytes": 67065932
@@ -225,11 +239,12 @@
                   "size": 1034933,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/Actividad",
                   "archivos": 8,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1w8KwyEW4_rshLpWskDCvrVv6g6aqfWGW",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1w8KwyEW4_rshLpWskDCvrVv6g6aqfWGW"
                 },
                 {
                   "nombre": "Atajos de Teclado.pdf",
@@ -237,9 +252,10 @@
                   "emoji": "📕",
                   "size": 417268,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/Atajos de Teclado.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1mnj-UMNDMocyWWTVxm_eftIPJsjxgprk",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1mnj-UMNDMocyWWTVxm_eftIPJsjxgprk"
                 },
                 {
                   "nombre": "Clase 3 -Herramientas  digitales P2  WINDOWS.pdf",
@@ -247,9 +263,10 @@
                   "emoji": "📕",
                   "size": 1205501,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/Clase 3 -Herramientas  digitales P2  WINDOWS.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1LM11G33OallBzS9hNcr9fT442mIMDT4S",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1LM11G33OallBzS9hNcr9fT442mIMDT4S"
                 },
                 {
                   "nombre": "Clase 3 que es un arhivo.docx",
@@ -257,9 +274,10 @@
                   "emoji": "📄",
                   "size": 20810,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/Clase 3 que es un arhivo.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1h6bUk1omWMH_QEq7VfltNfjx5BGi466N",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1h6bUk1omWMH_QEq7VfltNfjx5BGi466N"
                 },
                 {
                   "nombre": "Clase-3-Herramientas-Digitales P1.ppsx",
@@ -267,9 +285,10 @@
                   "emoji": "📽️",
                   "size": 10062907,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/Clase-3-Herramientas-Digitales P1.ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1By6rdhrtr2c2O1TuKs_m-cgR958EgTSl",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1By6rdhrtr2c2O1TuKs_m-cgR958EgTSl"
                 },
                 {
                   "nombre": "Clase-3-Herramientas-Digitales P1.pptx",
@@ -277,9 +296,10 @@
                   "emoji": "📽️",
                   "size": 10062901,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/Clase-3-Herramientas-Digitales P1.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1auXR1yqg6UQNCBo1EvgmuyBl6ewbHaQO",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1auXR1yqg6UQNCBo1EvgmuyBl6ewbHaQO"
                 },
                 {
                   "nombre": "PRACTICA 03.pdf",
@@ -287,9 +307,10 @@
                   "emoji": "📕",
                   "size": 2348731,
                   "ruta": "@Clases/Modulo 1/Clase 3 Atajos de Teclado y Nota que son archivos/PRACTICA 03.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1roXFHmVHdumMZwTXqRkBgvjdXH4vzP-o",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1roXFHmVHdumMZwTXqRkBgvjdXH4vzP-o"
                 }
               ],
               "tamanoBytes": 25153051
@@ -304,9 +325,10 @@
                   "emoji": "📄",
                   "size": 27138,
                   "ruta": "@Clases/Modulo 1/Clase 4 Formtato de Nota administrativa/Actividad.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=18LaZIAlTmRiuo72eR-o2Q-JlgPzDtBEQ",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "18LaZIAlTmRiuo72eR-o2Q-JlgPzDtBEQ"
                 },
                 {
                   "nombre": "Clase 4_ Introducción a Word y Google Docs.pdf",
@@ -324,9 +346,10 @@
                   "emoji": "📕",
                   "size": 1196372,
                   "ruta": "@Clases/Modulo 1/Clase 4 Formtato de Nota administrativa/Clase 4- Programas.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1d0bymjsxxNjYQeIBZCQBM98P72Cp-MHd",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1d0bymjsxxNjYQeIBZCQBM98P72Cp-MHd"
                 },
                 {
                   "nombre": "Clase-4.pdf",
@@ -334,9 +357,10 @@
                   "emoji": "📕",
                   "size": 760769,
                   "ruta": "@Clases/Modulo 1/Clase 4 Formtato de Nota administrativa/Clase-4.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1vpWkBT6KF0BRxAov2JSUDE8k6bASLc8E",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1vpWkBT6KF0BRxAov2JSUDE8k6bASLc8E"
                 },
                 {
                   "nombre": "NOTA administrativa CLASE 4.pdf",
@@ -344,9 +368,10 @@
                   "emoji": "📕",
                   "size": 13859551,
                   "ruta": "@Clases/Modulo 1/Clase 4 Formtato de Nota administrativa/NOTA administrativa CLASE 4.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1o14M2EFcb7lPD5En5BSKAyJ8aVpgO3av",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1o14M2EFcb7lPD5En5BSKAyJ8aVpgO3av"
                 },
                 {
                   "nombre": "Texto de pract.docx",
@@ -354,9 +379,10 @@
                   "emoji": "📄",
                   "size": 13060,
                   "ruta": "@Clases/Modulo 1/Clase 4 Formtato de Nota administrativa/Texto de pract.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1BVuL0An-CcbtDbAQD-0mL5FNC7HmNWNm",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1BVuL0An-CcbtDbAQD-0mL5FNC7HmNWNm"
                 },
                 {
                   "nombre": "Texto de Practica Recuperación.pdf",
@@ -423,9 +449,10 @@
                   "emoji": "📊",
                   "size": 306616,
                   "ruta": "@Clases/Modulo 2/Clase 6 Tabla Imagen y logos/000000-UNILEVER Lista de precios super OCTUBRE 2025 (1).xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1LjWKGUNypsyCIZO3UY5ILse_Zm5_q4Sp",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1LjWKGUNypsyCIZO3UY5ILse_Zm5_q4Sp"
                 },
                 {
                   "nombre": "Clase 6_ Tablas, imágenes y estilos.ppsx",
@@ -519,11 +546,12 @@
                   "emoji": "🌐",
                   "size": 19046,
                   "ruta": "@Clases/Modulo 3/Clase 11 Sheets y SCRIPTS/actividades_apps_script.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1x-r7v9F08gAiKMmKgPuT2V9IfXn4SMcw",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/asistente-administrativo-m3-c2-clase-11-sheets-y-scripts-actividades-apps-script-html.html",
                   "notas": "(19 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1x-r7v9F08gAiKMmKgPuT2V9IfXn4SMcw"
                 },
                 {
                   "nombre": "actividades_completas_v2.html",
@@ -531,11 +559,12 @@
                   "emoji": "🌐",
                   "size": 15609,
                   "ruta": "@Clases/Modulo 3/Clase 11 Sheets y SCRIPTS/actividades_completas_v2.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Q9oEcyZX0QwJ_nmHdhWU8faCdce4V0eS",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/asistente-administrativo-m3-c2-clase-11-sheets-y-scripts-actividades-completas-v2-html.html",
                   "notas": "(15 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Q9oEcyZX0QwJ_nmHdhWU8faCdce4V0eS"
                 },
                 {
                   "nombre": "Apps_Script_enexcel.pdf",
@@ -543,9 +572,10 @@
                   "emoji": "📕",
                   "size": 11180373,
                   "ruta": "@Clases/Modulo 3/Clase 11 Sheets y SCRIPTS/Apps_Script_enexcel.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1y1QrNwV9C1LsCxNLNAFUsIFEh_aSvvdS",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1y1QrNwV9C1LsCxNLNAFUsIFEh_aSvvdS"
                 },
                 {
                   "nombre": "Casos/",
@@ -554,11 +584,12 @@
                   "size": 274156,
                   "ruta": "@Clases/Modulo 3/Clase 11 Sheets y SCRIPTS/Casos",
                   "archivos": 15,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/17a1ZlTZpL05oB8k3qgRHeB68fttO17Oz",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "17a1ZlTZpL05oB8k3qgRHeB68fttO17Oz"
                 },
                 {
                   "nombre": "punto_de_venta_pos_apps_script.html",
@@ -566,11 +597,12 @@
                   "emoji": "🌐",
                   "size": 23243,
                   "ruta": "@Clases/Modulo 3/Clase 11 Sheets y SCRIPTS/punto_de_venta_pos_apps_script.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Azu_9F3fNFbReB6bqGh2P2hkYWOP7dCK",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/asistente-administrativo-m3-c2-clase-11-sheets-y-scripts-punto-de-venta-pos-apps-script-html.html",
                   "notas": "(23 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Azu_9F3fNFbReB6bqGh2P2hkYWOP7dCK"
                 }
               ],
               "tamanoBytes": 11512427
@@ -585,9 +617,10 @@
                   "emoji": "📽️",
                   "size": 5322594,
                   "ruta": "@Clases/Modulo 3/Clase 8 Excel y Sheets/Clase 8 Tablas del  Profe Ariel.ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1C2VBKTA-NLZp0jcguO-A-5fvrXT8D2_u",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1C2VBKTA-NLZp0jcguO-A-5fvrXT8D2_u"
                 },
                 {
                   "nombre": "Clase 8_ Introducción a Excel y Google Sheets.ppsx",
@@ -622,9 +655,10 @@
                   "emoji": "📊",
                   "size": 11381,
                   "ruta": "@Clases/Modulo 3/Clase 9 Formulas/Clases 6_ BASE.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1JBZXK1DcJwcyUKqR-F2txye97DVACpwN",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1JBZXK1DcJwcyUKqR-F2txye97DVACpwN"
                 },
                 {
                   "nombre": "PRACTICA 06.pdf",
@@ -632,9 +666,10 @@
                   "emoji": "📕",
                   "size": 2472321,
                   "ruta": "@Clases/Modulo 3/Clase 9 Formulas/PRACTICA 06.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1CjWpf_25XmZBZjfa0aViT29XGI2l0pgc",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1CjWpf_25XmZBZjfa0aViT29XGI2l0pgc"
                 }
               ],
               "tamanoBytes": 13301331
@@ -654,9 +689,10 @@
                   "emoji": "📕",
                   "size": 4674529,
                   "ruta": "@Clases/Modulo 4/Clase 11 PP y Google Slides/Clase 11_ PowerPoint y Google Slides.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1UJ5uDprB8wLFr7AOTeH2U8t73-32mWl4",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1UJ5uDprB8wLFr7AOTeH2U8t73-32mWl4"
                 }
               ],
               "tamanoBytes": 4674529
@@ -671,9 +707,10 @@
                   "emoji": "📕",
                   "size": 21990194,
                   "ruta": "@Clases/Modulo 4/Clase 12 Presentaciones Ejecutivas/Clase 12_ Plantillas y presentaciones ejecutivas.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1xkYB1e2xjeWd6TkeA0qDQ4yoadM9uSzt",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1xkYB1e2xjeWd6TkeA0qDQ4yoadM9uSzt"
                 }
               ],
               "tamanoBytes": 21990194
@@ -688,9 +725,10 @@
                   "emoji": "📕",
                   "size": 13845942,
                   "ruta": "@Clases/Modulo 4/Clase 13 IA en presentaciones/Clase 13_ IA aplicada a presentaciones.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1w9rg95DDgVqLIyMe5Lk99KROajPLc8Zv",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1w9rg95DDgVqLIyMe5Lk99KROajPLc8Zv"
                 }
               ],
               "tamanoBytes": 13845942
@@ -727,9 +765,10 @@
                   "emoji": "📕",
                   "size": 6117881,
                   "ruta": "@Clases/Modulo 5/Clase 15 Reunion/Clase 15_ Google Calendar y Google Forms.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=17Cg-AJ8VnlEl-o_3PZIY34bRUCahGZAB",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "17Cg-AJ8VnlEl-o_3PZIY34bRUCahGZAB"
                 }
               ],
               "tamanoBytes": 6117881
@@ -744,9 +783,10 @@
                   "emoji": "📕",
                   "size": 15773544,
                   "ruta": "@Clases/Modulo 5/Clase 16 Actividad/Clase 16_ Trabajo colaborativo.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Hj4g1xnXyvSvF79-5fAw4SVxMdKykmiA",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Hj4g1xnXyvSvF79-5fAw4SVxMdKykmiA"
                 }
               ],
               "tamanoBytes": 15773544
@@ -766,9 +806,10 @@
                   "emoji": "📕",
                   "size": 10516233,
                   "ruta": "@Clases/Modulo 6/Clase 17 Correo/Clase 17_ Gmail y Outlook.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1qwhmZhPdgtSCxnx361505TPCNdZODgFj",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1qwhmZhPdgtSCxnx361505TPCNdZODgFj"
                 }
               ],
               "tamanoBytes": 10516233
@@ -783,9 +824,10 @@
                   "emoji": "📕",
                   "size": 25215629,
                   "ruta": "@Clases/Modulo 6/Clase 18 Meet/Clase 18_ Videoconferencias en Google Meet y Zoom.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1AKRK2Y7VWhiMm_BInx8slG5yNPSDnxrF",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1AKRK2Y7VWhiMm_BInx8slG5yNPSDnxrF"
                 }
               ],
               "tamanoBytes": 25215629
@@ -800,9 +842,10 @@
                   "emoji": "📕",
                   "size": 27807224,
                   "ruta": "@Clases/Modulo 6/Clase 19 Whatsaspp Business/Clase 19_ WhatsApp Business como herramienta laboral.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1rvbCF_1SHVSJBuSdSopZoPo2VU68xNyI",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1rvbCF_1SHVSJBuSdSopZoPo2VU68xNyI"
                 }
               ],
               "tamanoBytes": 27807224
@@ -822,9 +865,10 @@
                   "emoji": "📕",
                   "size": 19734074,
                   "ruta": "@Clases/Modulo 7/Clase 20 IA en tareas administrativas/Clase 20_ Uso de IA en tareas administrativas.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1MW42roiNIA5Us_diGxBtvmIICj4LLfkt",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1MW42roiNIA5Us_diGxBtvmIICj4LLfkt"
                 },
                 {
                   "nombre": "Clase Antigravity ejercicios .html",
@@ -832,11 +876,12 @@
                   "emoji": "🌐",
                   "size": 10825,
                   "ruta": "@Clases/Modulo 7/Clase 20 IA en tareas administrativas/Clase Antigravity ejercicios .html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=13qFRk3cJwscfEYk35QKFCArOgWtYVeq2",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/asistente-administrativo-m7-c1-clase-20-ia-en-tareas-administrativas-clase-antigravity-ejercicios-html.html",
                   "notas": "(11 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "13qFRk3cJwscfEYk35QKFCArOgWtYVeq2"
                 },
                 {
                   "nombre": "clase_magistral_interactiva.html/",
@@ -845,11 +890,12 @@
                   "size": 235650,
                   "ruta": "@Clases/Modulo 7/Clase 20 IA en tareas administrativas/clase_magistral_interactiva.html",
                   "archivos": 5,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1dAqbp1qLmUxmRWMZigfEabD4lFB_igdZ",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/asistente-administrativo-m7-c1-clase-20-ia-en-tareas-administrativas-clase-magistral-interactiva-html/index.html",
                   "notas": "(0.2 MB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1dAqbp1qLmUxmRWMZigfEabD4lFB_igdZ"
                 },
                 {
                   "nombre": "Google Antigravity .pdf",
@@ -857,9 +903,10 @@
                   "emoji": "📕",
                   "size": 17504749,
                   "ruta": "@Clases/Modulo 7/Clase 20 IA en tareas administrativas/Google Antigravity .pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1k-4BUGhiI-GBctxgcD1YpmMfU7dS4H1H",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1k-4BUGhiI-GBctxgcD1YpmMfU7dS4H1H"
                 },
                 {
                   "nombre": "Receta App con IA.pdf",
@@ -867,9 +914,10 @@
                   "emoji": "📕",
                   "size": 2756729,
                   "ruta": "@Clases/Modulo 7/Clase 20 IA en tareas administrativas/Receta App con IA.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1CLXT35azsc7rM_rWuLDjZNdgfAq03sis",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1CLXT35azsc7rM_rWuLDjZNdgfAq03sis"
                 }
               ],
               "tamanoBytes": 40242027
@@ -894,9 +942,10 @@
                   "emoji": "📦",
                   "size": 46276,
                   "ruta": "@Clases/Modulo 7/Clase 21 IA a datos/Laboratorio_Asistentes_IA_Final_100_Corregido.zip",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=10Jd5y6DKYAE2gqoVcMS1v9qQfhyc6vME",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "10Jd5y6DKYAE2gqoVcMS1v9qQfhyc6vME"
                 }
               ],
               "tamanoBytes": 28661614
@@ -916,9 +965,10 @@
                   "emoji": "📕",
                   "size": 429269,
                   "ruta": "@Clases/Clase  teclado.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1eps43sQhinDqCXsIjmdnjyjqG7ELccEU",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1eps43sQhinDqCXsIjmdnjyjqG7ELccEU"
                 }
               ],
               "tamanoBytes": 429269
@@ -1052,9 +1102,10 @@
                   "emoji": "📊",
                   "size": 31512,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 10 Funciones de Busqueda, Concatenar e Inmovilizar Paneles/Buscar y Validacion de datos.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=16Ojc7g0Sp_AMObfjGlG3Eh4xGctWDbAn",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "16Ojc7g0Sp_AMObfjGlG3Eh4xGctWDbAn"
                 },
                 {
                   "nombre": "Clase 10 Funcion Buscar.pdf",
@@ -1062,9 +1113,10 @@
                   "emoji": "📕",
                   "size": 5989045,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 10 Funciones de Busqueda, Concatenar e Inmovilizar Paneles/Clase 10 Funcion Buscar.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1dn5LFS_vK2t9jYAPGqfShRGzM9b4xKDi",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1dn5LFS_vK2t9jYAPGqfShRGzM9b4xKDi"
                 },
                 {
                   "nombre": "CLASE 10- BUSCARV BUSCARH.xlsx",
@@ -1072,9 +1124,10 @@
                   "emoji": "📊",
                   "size": 48436,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 10 Funciones de Busqueda, Concatenar e Inmovilizar Paneles/CLASE 10- BUSCARV BUSCARH.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1fkA_9Do5AqBNyzl4xSSEIQlw-RGXWC3N",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1fkA_9Do5AqBNyzl4xSSEIQlw-RGXWC3N"
                 },
                 {
                   "nombre": "Clase_10_BuscaryAutomatizar_ARG.xlsx",
@@ -1082,9 +1135,10 @@
                   "emoji": "📊",
                   "size": 14723,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 10 Funciones de Busqueda, Concatenar e Inmovilizar Paneles/Clase_10_BuscaryAutomatizar_ARG.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1WebFlcwF4wi_bqi8hEl3m2cFiiVhqYYi",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1WebFlcwF4wi_bqi8hEl3m2cFiiVhqYYi"
                 },
                 {
                   "nombre": "Clase_10_BuscaryAutomatizar_Extendido.xlsx",
@@ -1092,9 +1146,10 @@
                   "emoji": "📊",
                   "size": 18496,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 10 Funciones de Busqueda, Concatenar e Inmovilizar Paneles/Clase_10_BuscaryAutomatizar_Extendido.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1G59d_tO52XXUfCAWUSmGvxMmp9gctaum",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1G59d_tO52XXUfCAWUSmGvxMmp9gctaum"
                 }
               ],
               "tamanoBytes": 6102212
@@ -1223,9 +1278,10 @@
                   "emoji": "📕",
                   "size": 8401790,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 2 Formulas y Tablas/Clase 2 .pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1BvwKvp0QgsgAxUy9o26lRVs5b3zBYTEW",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1BvwKvp0QgsgAxUy9o26lRVs5b3zBYTEW"
                 },
                 {
                   "nombre": "clase 2.docx",
@@ -1233,9 +1289,10 @@
                   "emoji": "📄",
                   "size": 214917,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 2 Formulas y Tablas/clase 2.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1I6BLlzqeixT_vwHvfwF9avdt5Kgo605d",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1I6BLlzqeixT_vwHvfwF9avdt5Kgo605d"
                 },
                 {
                   "nombre": "Clase2.xlsx",
@@ -1243,9 +1300,10 @@
                   "emoji": "📊",
                   "size": 7293,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 2 Formulas y Tablas/Clase2.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1e7so3HNEYOorFZex24FeQuYHcqneKe1S",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1e7so3HNEYOorFZex24FeQuYHcqneKe1S"
                 },
                 {
                   "nombre": "Práctica Clase 2 - Administración de PyMEs.pdf",
@@ -1263,9 +1321,10 @@
                   "emoji": "📊",
                   "size": 13356,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 2 Formulas y Tablas/TP tablas (base).xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1sZqcKAsXGHeI0Bq7l-UC_sAfAZWlbt6o",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1sZqcKAsXGHeI0Bq7l-UC_sAfAZWlbt6o"
                 },
                 {
                   "nombre": "TP tablas terminado.xlsx",
@@ -1273,9 +1332,10 @@
                   "emoji": "📊",
                   "size": 23844,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 2 Formulas y Tablas/TP tablas terminado.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1fQDDjUw8GZGJkgo4n_QCTd-AbrCwo_IF",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1fQDDjUw8GZGJkgo4n_QCTd-AbrCwo_IF"
                 },
                 {
                   "nombre": "TP tablas y segmentacion , con vinculos.xlsx",
@@ -1283,9 +1343,10 @@
                   "emoji": "📊",
                   "size": 27754,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 2 Formulas y Tablas/TP tablas y segmentacion , con vinculos.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1bLc_EgmRhHkeT20LJxZntYgPMc6jsM9P",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1bLc_EgmRhHkeT20LJxZntYgPMc6jsM9P"
                 }
               ],
               "tamanoBytes": 9136137
@@ -1370,9 +1431,10 @@
                   "emoji": "📽️",
                   "size": 4235732,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 4 Graficos/Clase 4 - Graficos (Teoria y herramientas).ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1WmIREvKFeU0ZSrIaKcQgM6cMz48GZlv6",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1WmIREvKFeU0ZSrIaKcQgM6cMz48GZlv6"
                 },
                 {
                   "nombre": "Clase 4 Gráficos.pdf",
@@ -1390,9 +1452,10 @@
                   "emoji": "📊",
                   "size": 14501,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 4 Graficos/Clase4.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1AEha6c3qeBpWTM4zWq7AcGoIuEINzoBJ",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1AEha6c3qeBpWTM4zWq7AcGoIuEINzoBJ"
                 },
                 {
                   "nombre": "PRACTICA 04.pdf",
@@ -1400,9 +1463,10 @@
                   "emoji": "📕",
                   "size": 4101440,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 4 Graficos/PRACTICA 04.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1A1_NLNyOJ_DjBR_nZ-yArnfd3bzax30V",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1A1_NLNyOJ_DjBR_nZ-yArnfd3bzax30V"
                 },
                 {
                   "nombre": "Práctica Clase 4 - Visualización de Datos y Gráficos.pdf",
@@ -1427,9 +1491,10 @@
                   "emoji": "📊",
                   "size": 29974,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 5 Dashboard/Clase 5 BASE.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1QsMgjuky5S7uLDoOWtOPsAZaX54AwELf",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1QsMgjuky5S7uLDoOWtOPsAZaX54AwELf"
                 },
                 {
                   "nombre": "Clase 5 Dashboard.pdf",
@@ -1437,9 +1502,10 @@
                   "emoji": "📕",
                   "size": 6606239,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 5 Dashboard/Clase 5 Dashboard.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Jt-5OyZaRGeTzzwK439KhpyYQrZDoP2m",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Jt-5OyZaRGeTzzwK439KhpyYQrZDoP2m"
                 },
                 {
                   "nombre": "Práctica 05 - Dashboards Dinámicos - Excel Profesional.pdf",
@@ -1464,9 +1530,10 @@
                   "emoji": "📕",
                   "size": 6729110,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/Clase 6 Funciones Basicas y Referencias.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1H_kh5tLF8FtVs4YZL9YzqJ1TAY07jNTF",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1H_kh5tLF8FtVs4YZL9YzqJ1TAY07jNTF"
                 },
                 {
                   "nombre": "Clase 6- Funciones Basicas.xlsx",
@@ -1474,9 +1541,10 @@
                   "emoji": "📊",
                   "size": 60242,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/Clase 6- Funciones Basicas.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=162PqOrWTLZ6kBTuQt3kGnsmIrdtbQWE3",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "162PqOrWTLZ6kBTuQt3kGnsmIrdtbQWE3"
                 },
                 {
                   "nombre": "Clases 6_ BASE.xlsx",
@@ -1484,9 +1552,10 @@
                   "emoji": "📊",
                   "size": 11381,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/Clases 6_ BASE.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1niMQuxicdWy_OUiQw853KHBSNgFKW7qc",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1niMQuxicdWy_OUiQw853KHBSNgFKW7qc"
                 },
                 {
                   "nombre": "PRACTICA 06.pdf",
@@ -1494,9 +1563,10 @@
                   "emoji": "📕",
                   "size": 2472321,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/PRACTICA 06.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1qbjlUvYfeLEiwZ6_KlzsJYmwt1W6tWlp",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1qbjlUvYfeLEiwZ6_KlzsJYmwt1W6tWlp"
                 },
                 {
                   "nombre": "Practica_06_Funciones.pdf",
@@ -1504,9 +1574,10 @@
                   "emoji": "📕",
                   "size": 2882497,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/Practica_06_Funciones.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1_x7PHKZ1QrqLOfhNZ8SDQyNdmlMGzWfY",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1_x7PHKZ1QrqLOfhNZ8SDQyNdmlMGzWfY"
                 },
                 {
                   "nombre": "practica- funciones basicas.xlsx",
@@ -1514,9 +1585,10 @@
                   "emoji": "📊",
                   "size": 143877,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/practica- funciones basicas.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1mug9TLKxvnTBPloyK0BeXd3eSZzv6YQl",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1mug9TLKxvnTBPloyK0BeXd3eSZzv6YQl"
                 },
                 {
                   "nombre": "SOLUCION.xlsx",
@@ -1524,9 +1596,10 @@
                   "emoji": "📊",
                   "size": 39465,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 6 Funciones/SOLUCION.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1UEA8bztpZ_gG1qM1_TSS5ToZbVSzUIDV",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1UEA8bztpZ_gG1qM1_TSS5ToZbVSzUIDV"
                 }
               ],
               "tamanoBytes": 12338893
@@ -1541,9 +1614,10 @@
                   "emoji": "📊",
                   "size": 17528,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/CLASE 7- Funciones Condicionales.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1i4VGzvhDHic9Z_Vles5U4A9cwJqAtUFO",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1i4VGzvhDHic9Z_Vles5U4A9cwJqAtUFO"
                 },
                 {
                   "nombre": "Clase 7.pdf",
@@ -1551,9 +1625,10 @@
                   "emoji": "📕",
                   "size": 7632501,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Clase 7.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1GxlfXJg_fFagn4Tvab7i0CVKs2KFjNBT",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1GxlfXJg_fFagn4Tvab7i0CVKs2KFjNBT"
                 },
                 {
                   "nombre": "clase 7.xlsx",
@@ -1561,9 +1636,10 @@
                   "emoji": "📊",
                   "size": 27485,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/clase 7.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1hVs9dSReIA10LTjIKi1v0H5VcJDDhal8",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1hVs9dSReIA10LTjIKi1v0H5VcJDDhal8"
                 },
                 {
                   "nombre": "Clase7 .html",
@@ -1571,11 +1647,12 @@
                   "emoji": "🌐",
                   "size": 23011,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Clase7 .html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1PHOLdD6j-4TllARFt32nO1Jz1sQz0qcB",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/administracion-pymes-m1-c10-clase-7-funciones-y-formatos-condicionales-clase7-html.html",
                   "notas": "(22 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1PHOLdD6j-4TllARFt32nO1Jz1sQz0qcB"
                 },
                 {
                   "nombre": "Practica 7.xlsx",
@@ -1583,9 +1660,10 @@
                   "emoji": "📊",
                   "size": 24967,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Practica 7.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1huGjKQogl8a1gOW9pkYljtDeIdlTLjCO",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1huGjKQogl8a1gOW9pkYljtDeIdlTLjCO"
                 },
                 {
                   "nombre": "Practica_07_Formato_Condicional.pdf",
@@ -1593,9 +1671,10 @@
                   "emoji": "📕",
                   "size": 2875431,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Practica_07_Formato_Condicional.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1bPCO41UX5hW4D4tjaxAE_gTdeSfb1eQr",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1bPCO41UX5hW4D4tjaxAE_gTdeSfb1eQr"
                 }
               ],
               "tamanoBytes": 10600923
@@ -1610,9 +1689,10 @@
                   "emoji": "📊",
                   "size": 21917,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Clase 8 - Funciones de Fechas.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1tRgvpyDLzYASVLs0EcS3gH1-wz35ODk8",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1tRgvpyDLzYASVLs0EcS3gH1-wz35ODk8"
                 },
                 {
                   "nombre": "Clase 8 Funciones Fechas.pdf",
@@ -1620,9 +1700,10 @@
                   "emoji": "📕",
                   "size": 7094158,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Clase 8 Funciones Fechas.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1iVm7ffCHhP_2f77q15ysRKIIXc-NJqXI",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1iVm7ffCHhP_2f77q15ysRKIIXc-NJqXI"
                 },
                 {
                   "nombre": "Clase 8 Practica.xlsx",
@@ -1630,9 +1711,10 @@
                   "emoji": "📊",
                   "size": 14913,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Clase 8 Practica.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=15a0a4exXDIcB6QLUlFg-cmbIVNKCNjqu",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "15a0a4exXDIcB6QLUlFg-cmbIVNKCNjqu"
                 },
                 {
                   "nombre": "Funciones de Fechas.xlsx",
@@ -1640,9 +1722,10 @@
                   "emoji": "📊",
                   "size": 14533,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Funciones de Fechas.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1DiCnU2D8ayyYczwz2MFtoVGK5zRZ-r2m",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1DiCnU2D8ayyYczwz2MFtoVGK5zRZ-r2m"
                 },
                 {
                   "nombre": "Funciones Fecha.pdf",
@@ -1650,9 +1733,10 @@
                   "emoji": "📕",
                   "size": 240636,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Funciones Fecha.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1UUUFIZay_ilsIbBm30o96dJRW1MfbMVD",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1UUUFIZay_ilsIbBm30o96dJRW1MfbMVD"
                 },
                 {
                   "nombre": "Practica FUNCIONES DE FECHA.xlsx",
@@ -1660,9 +1744,10 @@
                   "emoji": "📊",
                   "size": 21318,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Practica FUNCIONES DE FECHA.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1NhgpuRCPQWVlekuCNQAvdKYL9QBhrKwP",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1NhgpuRCPQWVlekuCNQAvdKYL9QBhrKwP"
                 },
                 {
                   "nombre": "Practicas/",
@@ -1671,11 +1756,12 @@
                   "size": 416983,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Practicas",
                   "archivos": 3,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1D20ByPg_I52EFeAEx8qZjE7TmmOZ1A8F",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1D20ByPg_I52EFeAEx8qZjE7TmmOZ1A8F"
                 },
                 {
                   "nombre": "Sifecha, Formato condicional..docx",
@@ -1683,9 +1769,10 @@
                   "emoji": "📄",
                   "size": 99685,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 8 Funciones SiFecha/Sifecha, Formato condicional..docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1c1z-CttDMmxZRnvH7YImxJLkVWhtQ5Fy",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1c1z-CttDMmxZRnvH7YImxJLkVWhtQ5Fy"
                 }
               ],
               "tamanoBytes": 7924143
@@ -1710,9 +1797,10 @@
                   "emoji": "📊",
                   "size": 13644,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 6 - Funcion Si.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1y__i6Z-_3pEB_DkYeBdRn-dBB4RPAvBB",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1y__i6Z-_3pEB_DkYeBdRn-dBB4RPAvBB"
                 },
                 {
                   "nombre": "Clase 7 - Planilla empleados(Ejercicio).xlsx",
@@ -1720,9 +1808,10 @@
                   "emoji": "📊",
                   "size": 14358,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 7 - Planilla empleados(Ejercicio).xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1IlsKo2K6WXVlmjW7yFnNIWc_aCoHQJkm",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1IlsKo2K6WXVlmjW7yFnNIWc_aCoHQJkm"
                 },
                 {
                   "nombre": "Clase 7 - Si Anidado, Concatenar. (2).xlsx",
@@ -1730,9 +1819,10 @@
                   "emoji": "📊",
                   "size": 21154,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 7 - Si Anidado, Concatenar. (2).xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1momLQPBTc66tycYWEPKIRCZyO6xadbjq",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1momLQPBTc66tycYWEPKIRCZyO6xadbjq"
                 },
                 {
                   "nombre": "Clase 9 -Practica Si Anidado, Concatenar.xlsx",
@@ -1740,9 +1830,10 @@
                   "emoji": "📊",
                   "size": 20791,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 9 -Practica Si Anidado, Concatenar.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1IP6CqKZtULbsTL7tw3EMszgVglZkNM5A",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1IP6CqKZtULbsTL7tw3EMszgVglZkNM5A"
                 },
                 {
                   "nombre": "Clase 9 Funcion Si, Anidado y Concatenar.pdf",
@@ -1750,9 +1841,10 @@
                   "emoji": "📕",
                   "size": 6323821,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 9 Funcion Si, Anidado y Concatenar.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1eKlOb7yRqLmVtdIl_YwLJeydf2I-5dYJ",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1eKlOb7yRqLmVtdIl_YwLJeydf2I-5dYJ"
                 },
                 {
                   "nombre": "Clase 9 Funcion SI, logico y Anidado.xlsx",
@@ -1760,9 +1852,10 @@
                   "emoji": "📊",
                   "size": 15761,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 9 Funcion SI, logico y Anidado.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1EtUYTkHbTL2sNZnjucgjEWt-Sum-KAEY",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1EtUYTkHbTL2sNZnjucgjEWt-Sum-KAEY"
                 },
                 {
                   "nombre": "Clase 9 FUNCION Si.xlsx",
@@ -1770,9 +1863,10 @@
                   "emoji": "📊",
                   "size": 32092,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 9 FUNCION Si.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1XxiLGCxYhzFuJFjgBapsbzAxdZSxKGgH",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1XxiLGCxYhzFuJFjgBapsbzAxdZSxKGgH"
                 },
                 {
                   "nombre": "Clase 9 Practicas.xlsx",
@@ -1780,9 +1874,10 @@
                   "emoji": "📊",
                   "size": 15431,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 9 Practicas.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1J8fLnYIR9TX-k6QcuITJMWlTEZwmdTyh",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1J8fLnYIR9TX-k6QcuITJMWlTEZwmdTyh"
                 },
                 {
                   "nombre": "Clase 9- Practica Funcion Si.xlsx",
@@ -1790,9 +1885,10 @@
                   "emoji": "📊",
                   "size": 26010,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Clase 9- Practica Funcion Si.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1FQSqN5j8TwnLPEf8ylsg8DJ2rtEhQr5p",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1FQSqN5j8TwnLPEf8ylsg8DJ2rtEhQr5p"
                 },
                 {
                   "nombre": "Copia de FUNCION SI-final.xlsx",
@@ -1800,9 +1896,10 @@
                   "emoji": "📊",
                   "size": 30293,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Copia de FUNCION SI-final.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1hckWX7aHAZfOV6CLq4Y2wgKNB67ZWdnb",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1hckWX7aHAZfOV6CLq4Y2wgKNB67ZWdnb"
                 },
                 {
                   "nombre": "Funcion Si- practica comp.xlsx",
@@ -1810,9 +1907,10 @@
                   "emoji": "📊",
                   "size": 13623,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/Funcion Si- practica comp.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1IMWNAOcZlkt8-_xvqiwmPvIX8eXjlgkx",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1IMWNAOcZlkt8-_xvqiwmPvIX8eXjlgkx"
                 },
                 {
                   "nombre": "practica comp- si anidado.xlsx",
@@ -1820,9 +1918,10 @@
                   "emoji": "📊",
                   "size": 27923,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 9 Funciones Logicas y Anidadas/practica comp- si anidado.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=18wXjTvVsRe52KLB5wNg9XjCczZE06b0s",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "18wXjTvVsRe52KLB5wNg9XjCczZE06b0s"
                 }
               ],
               "tamanoBytes": 6637089
@@ -1843,11 +1942,12 @@
                   "size": 68942816,
                   "ruta": "@Clases/Modulo 2 Access/ACCESS 2021 DESDE CERO-20260411T205532Z-3-001/ACCESS 2021 DESDE CERO",
                   "archivos": 23,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/162RYgDEeIQq6xQ2h1tV1gDWiLhXvWKjZ",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "(65.7 MB)",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "162RYgDEeIQq6xQ2h1tV1gDWiLhXvWKjZ"
                 }
               ],
               "tamanoBytes": 68942816
@@ -1863,11 +1963,12 @@
                   "size": 69028462,
                   "ruta": "@Clases/Modulo 2 Access/ACCESS 365 - DESDE CERO-20260411T210152Z-3-001/ACCESS 365 - DESDE CERO",
                   "archivos": 28,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1cudIb5sN_ql-SnZ6acRBbTikvcCAzbNw",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "(65.8 MB)",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1cudIb5sN_ql-SnZ6acRBbTikvcCAzbNw"
                 }
               ],
               "tamanoBytes": 69028462
@@ -1882,9 +1983,10 @@
                   "emoji": "📕",
                   "size": 1437885,
                   "ruta": "@Clases/Modulo 2 Access/Clase 1 Introduccion a Access/Clase 1 - Access y Bases de Datos.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1jSmUt_TXBPgJvRpc4N9LdoyU3FHYAM5u",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1jSmUt_TXBPgJvRpc4N9LdoyU3FHYAM5u"
                 },
                 {
                   "nombre": "CLASE 1 ACCESS.pdf",
@@ -1892,9 +1994,10 @@
                   "emoji": "📕",
                   "size": 369090,
                   "ruta": "@Clases/Modulo 2 Access/Clase 1 Introduccion a Access/CLASE 1 ACCESS.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1BYl63bJGAc75We6Prd4ZnyaMUaD37p38",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1BYl63bJGAc75We6Prd4ZnyaMUaD37p38"
                 },
                 {
                   "nombre": "Clase 1.accdb",
@@ -1902,9 +2005,10 @@
                   "emoji": "🗄️",
                   "size": 659456,
                   "ruta": "@Clases/Modulo 2 Access/Clase 1 Introduccion a Access/Clase 1.accdb",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1i1qxcUu6WQ4Fqn0ObVjhroFjHNFfVHe8",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1i1qxcUu6WQ4Fqn0ObVjhroFjHNFfVHe8"
                 },
                 {
                   "nombre": "Data_Migracion_Inmobiliaria.xlsx",
@@ -1912,9 +2016,10 @@
                   "emoji": "📊",
                   "size": 33098,
                   "ruta": "@Clases/Modulo 2 Access/Clase 1 Introduccion a Access/Data_Migracion_Inmobiliaria.xlsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1GIbjY8cZHb2M7Op8L6bLI-KiDV8go_lx",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1GIbjY8cZHb2M7Op8L6bLI-KiDV8go_lx"
                 },
                 {
                   "nombre": "Práctica 1 - Inmobiliaria.pdf",
@@ -1939,9 +2044,10 @@
                   "emoji": "📕",
                   "size": 679380,
                   "ruta": "@Clases/Modulo 2 Access/Clase 2 Tablas y Relaciones/Clase 2 - Tablas y Relaciones 1.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=194k8SEP0lCGWRtfaq-xZJGwQ0eGeMXU_",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "194k8SEP0lCGWRtfaq-xZJGwQ0eGeMXU_"
                 },
                 {
                   "nombre": "Clase 2 Tablas y Relaciones.html",
@@ -1949,11 +2055,12 @@
                   "emoji": "🌐",
                   "size": 15672,
                   "ruta": "@Clases/Modulo 2 Access/Clase 2 Tablas y Relaciones/Clase 2 Tablas y Relaciones.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Ksu0lbvoAq5jgDmWuk70Ukj6okzIFSe1",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/administracion-pymes-m2-c4-clase-2-tablas-y-relaciones-clase-2-tablas-y-relaciones-html.html",
                   "notas": "(15 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Ksu0lbvoAq5jgDmWuk70Ukj6okzIFSe1"
                 },
                 {
                   "nombre": "Clase Relaciones .pdf",
@@ -1961,9 +2068,10 @@
                   "emoji": "📕",
                   "size": 5044836,
                   "ruta": "@Clases/Modulo 2 Access/Clase 2 Tablas y Relaciones/Clase Relaciones .pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1pIOZUF_NUSnafaKFii7fuBk1OEeS0a9k",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1pIOZUF_NUSnafaKFii7fuBk1OEeS0a9k"
                 },
                 {
                   "nombre": "Ejercicios.html",
@@ -1971,11 +2079,12 @@
                   "emoji": "🌐",
                   "size": 11643,
                   "ruta": "@Clases/Modulo 2 Access/Clase 2 Tablas y Relaciones/Ejercicios.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1XefSuFGJH70v4GjvWYu9i94JRav5chBZ",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/administracion-pymes-m2-c4-clase-2-tablas-y-relaciones-ejercicios-html.html",
                   "notas": "(11 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1XefSuFGJH70v4GjvWYu9i94JRav5chBZ"
                 }
               ],
               "tamanoBytes": 5751531
@@ -1990,9 +2099,10 @@
                   "emoji": "🗄️",
                   "size": 6684672,
                   "ruta": "@Clases/Modulo 2 Access/Clase 3 Formularios/BASe.accdb",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1GmudMtZvvY5G4Jjp891WzdXNfXz2fgNp",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1GmudMtZvvY5G4Jjp891WzdXNfXz2fgNp"
                 },
                 {
                   "nombre": "Clase 3 Formularios.pdf",
@@ -2000,9 +2110,10 @@
                   "emoji": "📕",
                   "size": 7315352,
                   "ruta": "@Clases/Modulo 2 Access/Clase 3 Formularios/Clase 3 Formularios.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1i39G4jLkbYolAm3iJn0Y4Fe6SL5TQjyP",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1i39G4jLkbYolAm3iJn0Y4Fe6SL5TQjyP"
                 },
                 {
                   "nombre": "Ejercicios.html",
@@ -2010,11 +2121,12 @@
                   "emoji": "🌐",
                   "size": 10929,
                   "ruta": "@Clases/Modulo 2 Access/Clase 3 Formularios/Ejercicios.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1BoZjlm54Kg4goXjCaE8GjWtfVvS8pttw",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/administracion-pymes-m2-c5-clase-3-formularios-ejercicios-html.html",
                   "notas": "(11 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1BoZjlm54Kg4goXjCaE8GjWtfVvS8pttw"
                 },
                 {
                   "nombre": "empleados3.accdb",
@@ -2022,9 +2134,10 @@
                   "emoji": "🗄️",
                   "size": 4788224,
                   "ruta": "@Clases/Modulo 2 Access/Clase 3 Formularios/empleados3.accdb",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=10AGG4zJN5pqT_9ggmqS6iU8AjFMrRP05",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "10AGG4zJN5pqT_9ggmqS6iU8AjFMrRP05"
                 },
                 {
                   "nombre": "FormulariosAccess.Html",
@@ -2032,11 +2145,12 @@
                   "emoji": "🌐",
                   "size": 9554,
                   "ruta": "@Clases/Modulo 2 Access/Clase 3 Formularios/FormulariosAccess.Html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=139hpMB95ZXHMFEFf9f63Z3VmXTdEYPd9",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/administracion-pymes-m2-c5-clase-3-formularios-formulariosaccess-html.html",
                   "notas": "(9 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "139hpMB95ZXHMFEFf9f63Z3VmXTdEYPd9"
                 }
               ],
               "tamanoBytes": 18808731
@@ -2051,9 +2165,10 @@
                   "emoji": "📕",
                   "size": 1744827,
                   "ruta": "@Clases/Modulo 2 Access/Clase 4 Consultas/Consultas en Access.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1hCS-S3eIq9zlxsWMyprPyM8eXXK9_UkR",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1hCS-S3eIq9zlxsWMyprPyM8eXXK9_UkR"
                 },
                 {
                   "nombre": "Consultas_y_Cálculos_Access.pdf",
@@ -2078,9 +2193,10 @@
                   "emoji": "📕",
                   "size": 703208,
                   "ruta": "@Clases/Modulo 2 Access/Clase 6 Formularios con subformularios/Practico Acces-Subform.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1wVn_P41DR_i94s9--gVLhwPKsYDMpWxN",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1wVn_P41DR_i94s9--gVLhwPKsYDMpWxN"
                 }
               ],
               "tamanoBytes": 703208
@@ -2095,9 +2211,10 @@
                   "emoji": "📕",
                   "size": 7629842,
                   "ruta": "@Clases/Modulo 2 Access/Clase 8 Informes/Informes en Access.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1WUvTdAjaA5aeS-yjMWz37CvqqM-MGkFG",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1WUvTdAjaA5aeS-yjMWz37CvqqM-MGkFG"
                 }
               ],
               "tamanoBytes": 7629842
@@ -4297,9 +4414,10 @@
                   "emoji": "📕",
                   "size": 2473437,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/Clase 2 - Plan de Marketing.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1uLHNha-yBX-5d32kNKrLiJccrY4LUSWa",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1uLHNha-yBX-5d32kNKrLiJccrY4LUSWa"
                 },
                 {
                   "nombre": "Clase 2 1 Estrategia y Prop valor.html",
@@ -4307,11 +4425,12 @@
                   "emoji": "🌐",
                   "size": 25522,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/Clase 2 1 Estrategia y Prop valor.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1lBh-waLvLFxJguzvaXHt68jtg0N9NTeX",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/marketing-digital-m1-c2-clase-2-plan-de-marketing-clase-2-1-estrategia-y-prop-valor-html.html",
                   "notas": "(25 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1lBh-waLvLFxJguzvaXHt68jtg0N9NTeX"
                 },
                 {
                   "nombre": "Clase 2 brandig y marca personal.docx",
@@ -4319,9 +4438,10 @@
                   "emoji": "📄",
                   "size": 19751,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/Clase 2 brandig y marca personal.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1EF3kw139HV4VpRcSIuzaQvAWl1t9nbAA",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1EF3kw139HV4VpRcSIuzaQvAWl1t9nbAA"
                 },
                 {
                   "nombre": "Clase 2 Estrategia, propuesta de Valor ,Branding.docx",
@@ -4329,9 +4449,10 @@
                   "emoji": "📄",
                   "size": 18926,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/Clase 2 Estrategia, propuesta de Valor ,Branding.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=14iVnj0EZOJPAckXU3TKIwHnRptWTsVrh",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "14iVnj0EZOJPAckXU3TKIwHnRptWTsVrh"
                 },
                 {
                   "nombre": "Clase 2 estrategia,branding , propuesta de valor.pdf",
@@ -4339,9 +4460,10 @@
                   "emoji": "📕",
                   "size": 191327978,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/Clase 2 estrategia,branding , propuesta de valor.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1kQ3zE0BhUlAPU4snpCU4tfpbaFC4XNFz",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1kQ3zE0BhUlAPU4snpCU4tfpbaFC4XNFz"
                 },
                 {
                   "nombre": "Clase 2 Miro y Notion.txt",
@@ -4359,9 +4481,10 @@
                   "emoji": "📽️",
                   "size": 5864575,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/Marketing Digital C2.pptm",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1xjpCsllmeS5ADE4w8fI44vdsKaFINAmS",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1xjpCsllmeS5ADE4w8fI44vdsKaFINAmS"
                 },
                 {
                   "nombre": "MRK clase.pptx",
@@ -4369,9 +4492,10 @@
                   "emoji": "📽️",
                   "size": 4378095,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 2 - Plan de Marketing/MRK clase.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1uffaTyw_8ahlaJH2LGiBWIasUZgy5aaB",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1uffaTyw_8ahlaJH2LGiBWIasUZgy5aaB"
                 }
               ],
               "tamanoBytes": 204108704
@@ -4386,9 +4510,10 @@
                   "emoji": "📕",
                   "size": 1000013,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/BRANDING La Marca Digital C4.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=10-109-Min9kXzCUlfpoSTXGphkG_z51Y",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "10-109-Min9kXzCUlfpoSTXGphkG_z51Y"
                 },
                 {
                   "nombre": "BRANDING La Marca Digital C4.pptx",
@@ -4396,9 +4521,10 @@
                   "emoji": "📽️",
                   "size": 16276278,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/BRANDING La Marca Digital C4.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Fms3_2ty7TJFLSwab94Q4tnrLlPeYGjc",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Fms3_2ty7TJFLSwab94Q4tnrLlPeYGjc"
                 },
                 {
                   "nombre": "clase 2 2 Marca Personal y Brandin.html",
@@ -4406,11 +4532,12 @@
                   "emoji": "🌐",
                   "size": 16944,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/clase 2 2 Marca Personal y Brandin.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1E7BPpsJ6yGXkl-xKuMdulvQCJuokG6uG",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/marketing-digital-m1-c3-clase-3-branding-clase-2-2-marca-personal-y-brandin-html.html",
                   "notas": "(17 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1E7BPpsJ6yGXkl-xKuMdulvQCJuokG6uG"
                 },
                 {
                   "nombre": "Clase Branding.html",
@@ -4418,11 +4545,12 @@
                   "emoji": "🌐",
                   "size": 34356,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/Clase Branding.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1lc-WNN39XxmXMKxW0lrW8XdXd6ZMzx6o",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/marketing-digital-m1-c3-clase-3-branding-clase-branding-html.html",
                   "notas": "(34 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1lc-WNN39XxmXMKxW0lrW8XdXd6ZMzx6o"
                 },
                 {
                   "nombre": "El Manual del Emprendedor Digital.pptx",
@@ -4430,9 +4558,10 @@
                   "emoji": "📽️",
                   "size": 8448346,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/El Manual del Emprendedor Digital.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1IGAxdDP_BcS84JqKD2QJjWB1IU7MynQF",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1IGAxdDP_BcS84JqKD2QJjWB1IU7MynQF"
                 },
                 {
                   "nombre": "LOGOS.pdf",
@@ -4440,9 +4569,10 @@
                   "emoji": "📕",
                   "size": 1361358,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/LOGOS.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1_aJSCO_VBsLVywCkD_Y7qyyDtp0SWx3H",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1_aJSCO_VBsLVywCkD_Y7qyyDtp0SWx3H"
                 },
                 {
                   "nombre": "LOGOS.pptx",
@@ -4450,9 +4580,10 @@
                   "emoji": "📽️",
                   "size": 6643837,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/LOGOS.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1ES8NUCec36pWVsZml3yftVYXNiOha3Dr",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1ES8NUCec36pWVsZml3yftVYXNiOha3Dr"
                 },
                 {
                   "nombre": "Plantilla diseño de Narrativas - Desmontando el clima FINAL.pdf",
@@ -4470,11 +4601,12 @@
                   "emoji": "🌐",
                   "size": 9566,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/SMART resumen.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1cpfZnH9U0n_XpxTD70z8R5jpbQCRg9Rm",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/marketing-digital-m1-c3-clase-3-branding-smart-resumen-html.html",
                   "notas": "(9 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1cpfZnH9U0n_XpxTD70z8R5jpbQCRg9Rm"
                 },
                 {
                   "nombre": "SMART.pptx",
@@ -4482,9 +4614,10 @@
                   "emoji": "📽️",
                   "size": 15071147,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/SMART.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1q3n-jWlb2hkWfjs-JJyeTth1lRYTgrs8",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1q3n-jWlb2hkWfjs-JJyeTth1lRYTgrs8"
                 },
                 {
                   "nombre": "TP N°3_ _Manual de identidad_ - Seminario III - Grupo N°1 - Paz Saravia, Scoffield Gnaedinger, Meza Saucedo, Kempe, Sztyk (1).pdf",
@@ -4509,9 +4642,10 @@
                   "emoji": "📕",
                   "size": 2089020,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4  - BUyer Persona y Buyer Journey/Clase 4 -Customer Journey Presentation.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1LcnUgF_lczUcyNoxXMRtR7cz4azG-wIZ",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1LcnUgF_lczUcyNoxXMRtR7cz4azG-wIZ"
                 },
                 {
                   "nombre": "Clase 4 Buyer PErsona y oustomer journey.html",
@@ -4519,11 +4653,12 @@
                   "emoji": "🌐",
                   "size": 12293,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4  - BUyer Persona y Buyer Journey/Clase 4 Buyer PErsona y oustomer journey.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1ambv9Hht0F6lrh7yVi1u_a7GunyguZNP",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/marketing-digital-m1-c4-clase-4-buyer-persona-y-buyer-journey-clase-4-buyer-persona-y-oustomer-journey-html.html",
                   "notas": "(12 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1ambv9Hht0F6lrh7yVi1u_a7GunyguZNP"
                 },
                 {
                   "nombre": "Clase 4 Buyer Persona.docx",
@@ -4531,9 +4666,10 @@
                   "emoji": "📄",
                   "size": 20108,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4  - BUyer Persona y Buyer Journey/Clase 4 Buyer Persona.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1pZtxQ1R8XubyhLFet67QP3x4fLy7TkYV",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1pZtxQ1R8XubyhLFet67QP3x4fLy7TkYV"
                 },
                 {
                   "nombre": "clase 4 buyer persona.txt",
@@ -4551,11 +4687,12 @@
                   "emoji": "🌐",
                   "size": 40201,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4  - BUyer Persona y Buyer Journey/Clase 4 Usuario Persona .html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Pil5mtNNuLvRPwKK7oMrtK1Z_YmbkUXM",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/marketing-digital-m1-c4-clase-4-buyer-persona-y-buyer-journey-clase-4-usuario-persona-html.html",
                   "notas": "(39 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Pil5mtNNuLvRPwKK7oMrtK1Z_YmbkUXM"
                 },
                 {
                   "nombre": "Copia de Clase 3. User persona & benchmarking competencia.pdf",
@@ -4563,9 +4700,10 @@
                   "emoji": "📕",
                   "size": 3754844,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4  - BUyer Persona y Buyer Journey/Copia de Clase 3. User persona & benchmarking competencia.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1M7PThJPDxMco28U4UgTogUxztkhqgaCz",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1M7PThJPDxMco28U4UgTogUxztkhqgaCz"
                 },
                 {
                   "nombre": "Practica Estrategia_Integral_Buyer_Persona.docx",
@@ -4573,9 +4711,10 @@
                   "emoji": "📄",
                   "size": 545085,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4  - BUyer Persona y Buyer Journey/Practica Estrategia_Integral_Buyer_Persona.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Dz7ZwXuPsmupuOms-s7-MaChjpYE9WTW",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Dz7ZwXuPsmupuOms-s7-MaChjpYE9WTW"
                 }
               ],
               "tamanoBytes": 6461642
@@ -5397,9 +5536,10 @@
                   "emoji": "📽️",
                   "size": 120268,
                   "ruta": "@Clases/Modulo 6 - E-commerce y Marketplaces/Clase 20 - Tiendas Online y Plataformas/Clase 20 - Presentacion Tiendas Online y Plataformas.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Ma2LhkwQj85lGAv-4YeQSAY_0JOlpE5k",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Ma2LhkwQj85lGAv-4YeQSAY_0JOlpE5k"
                 },
                 {
                   "nombre": "Clase 20 - Tiendas Online y Plataformas.pdf",
@@ -5407,9 +5547,10 @@
                   "emoji": "📕",
                   "size": 56379,
                   "ruta": "@Clases/Modulo 6 - E-commerce y Marketplaces/Clase 20 - Tiendas Online y Plataformas/Clase 20 - Tiendas Online y Plataformas.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1UgaaeH2-rykr3VjyqLtxVmqxixNcnY1N",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1UgaaeH2-rykr3VjyqLtxVmqxixNcnY1N"
                 }
               ],
               "tamanoBytes": 176647
@@ -5424,9 +5565,10 @@
                   "emoji": "📕",
                   "size": 55729,
                   "ruta": "@Clases/Modulo 6 - E-commerce y Marketplaces/Clase 21 - Creacion de Tienda y Estrategias de Venta/Clase 21 - Creacion de Tienda y Estrategias de Venta.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1cs5F799I_iEHrQYQbW69xjC-xJP8V4_d",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1cs5F799I_iEHrQYQbW69xjC-xJP8V4_d"
                 },
                 {
                   "nombre": "Clase 21 - Presentacion Creacion de Tienda y Estrategias de Venta.pptx",
@@ -5434,9 +5576,10 @@
                   "emoji": "📽️",
                   "size": 96896,
                   "ruta": "@Clases/Modulo 6 - E-commerce y Marketplaces/Clase 21 - Creacion de Tienda y Estrategias de Venta/Clase 21 - Presentacion Creacion de Tienda y Estrategias de Venta.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1fv2gzCBB_zVKfAzZmchSYlAu5SDYOc0l",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1fv2gzCBB_zVKfAzZmchSYlAu5SDYOc0l"
                 }
               ],
               "tamanoBytes": 152625
@@ -5466,9 +5609,10 @@
                   "emoji": "📕",
                   "size": 335123,
                   "ruta": "@Clases/1-Clase Introduccion a Facebook 2025 (1).pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1bpzPUtxb8s0os_LEb_M7FAxKxTUut39R",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1bpzPUtxb8s0os_LEb_M7FAxKxTUut39R"
                 },
                 {
                   "nombre": "1-Clase Introduccion Instagram 2025.pdf",
@@ -5476,9 +5620,10 @@
                   "emoji": "📕",
                   "size": 295634,
                   "ruta": "@Clases/1-Clase Introduccion Instagram 2025.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1S1RLBJ64KcxRLXy6JShnKkxjLrwEgIHz",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1S1RLBJ64KcxRLXy6JShnKkxjLrwEgIHz"
                 },
                 {
                   "nombre": "2-📘 Clase_Perfil Optimizado para Facebook (1).pdf",
@@ -5546,9 +5691,10 @@
                   "emoji": "📕",
                   "size": 3763,
                   "ruta": "@Clases/Clase3_BuyerPersona_CustomerJourney.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=13f3jp0DjibtXc-Hg6TOK_OSG82IiZ4Wf",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "13f3jp0DjibtXc-Hg6TOK_OSG82IiZ4Wf"
                 }
               ],
               "tamanoBytes": 2599215
@@ -5586,11 +5732,12 @@
                   "size": 399842,
                   "ruta": "@Practicas/practica de dym",
                   "archivos": 3,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1E2M5g1Vn3yyRjWFlLFgv4yKzMK_Sa8gx",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1E2M5g1Vn3yyRjWFlLFgv4yKzMK_Sa8gx"
                 }
               ],
               "tamanoBytes": 399842
@@ -5620,9 +5767,10 @@
                   "emoji": "📽️",
                   "size": 3950209,
                   "ruta": "@Clases/Clase 1/Memorias ram.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1x1qCy8rnbA2sDC9MuCf6Qt4i5pFvoaOC",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1x1qCy8rnbA2sDC9MuCf6Qt4i5pFvoaOC"
                 },
                 {
                   "nombre": "Placa Madre.pptx",
@@ -5630,9 +5778,10 @@
                   "emoji": "📽️",
                   "size": 30439056,
                   "ruta": "@Clases/Clase 1/Placa Madre.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1nZEWXVYUftexUCsGHu9-I9kgXt-eXfzV",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1nZEWXVYUftexUCsGHu9-I9kgXt-eXfzV"
                 },
                 {
                   "nombre": "Qué es la PC 2026.ppsx",
@@ -5657,9 +5806,10 @@
                   "emoji": "📕",
                   "size": 2954031,
                   "ruta": "@Clases/Clase 2 Placas/Clase #2 - MotherBoard-.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1WwJ0CpjOV7iM1zDXwxvBkRGC193IjOI4",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1WwJ0CpjOV7iM1zDXwxvBkRGC193IjOI4"
                 },
                 {
                   "nombre": "Placa Madre.pptx",
@@ -5667,9 +5817,10 @@
                   "emoji": "📽️",
                   "size": 51632888,
                   "ruta": "@Clases/Clase 2 Placas/Placa Madre.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1o6jWl2lJ1dkrnjKMytiz_pyrIUAh1UYr",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1o6jWl2lJ1dkrnjKMytiz_pyrIUAh1UYr"
                 }
               ],
               "tamanoBytes": 54586919
@@ -5684,9 +5835,10 @@
                   "emoji": "📕",
                   "size": 2136684,
                   "ruta": "@Clases/Clase 3/Clase 3 - Procesadores.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1i_uwnWvllCoisNEJ4-Mu0Nt-IUFbLKtj",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1i_uwnWvllCoisNEJ4-Mu0Nt-IUFbLKtj"
                 },
                 {
                   "nombre": "Clase 3 - Procesadores.pptx",
@@ -5694,9 +5846,10 @@
                   "emoji": "📽️",
                   "size": 10677319,
                   "ruta": "@Clases/Clase 3/Clase 3 - Procesadores.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1-BhFGXkx6OAsI1YDdQYQoGz3Sy2HUoDR",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1-BhFGXkx6OAsI1YDdQYQoGz3Sy2HUoDR"
                 },
                 {
                   "nombre": "CPU.pptx",
@@ -5704,9 +5857,10 @@
                   "emoji": "📽️",
                   "size": 12206058,
                   "ruta": "@Clases/Clase 3/CPU.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=127blzwoXAqmTWZxtYinVrFKRo8Jcncbx",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "127blzwoXAqmTWZxtYinVrFKRo8Jcncbx"
                 },
                 {
                   "nombre": "Procesadores.pdf",
@@ -5714,9 +5868,10 @@
                   "emoji": "📕",
                   "size": 4605099,
                   "ruta": "@Clases/Clase 3/Procesadores.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=15Q3z_tPxIKrxElgmT-pGH7D8v32Qbxsz",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "15Q3z_tPxIKrxElgmT-pGH7D8v32Qbxsz"
                 }
               ],
               "tamanoBytes": 29625160
@@ -5731,11 +5886,12 @@
                   "emoji": "🌐",
                   "size": 8230,
                   "ruta": "@Clases/REDES/Packet tracer3.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1ElD5lPyYTdJ6U6i6gdRl9fZqBOSQVJew",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-clase-4-redes-packet-tracer3-html.html",
                   "notas": "(8 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1ElD5lPyYTdJ6U6i6gdRl9fZqBOSQVJew"
                 },
                 {
                   "nombre": "REDES - CABLE de red.pdf",
@@ -5743,9 +5899,10 @@
                   "emoji": "📕",
                   "size": 814820,
                   "ruta": "@Clases/REDES/REDES - CABLE de red.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1xWDG83r-MSTlRf_KqnxkV_yr92XoYO5b",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1xWDG83r-MSTlRf_KqnxkV_yr92XoYO5b"
                 },
                 {
                   "nombre": "redes introduccion.ppsx",
@@ -5753,9 +5910,10 @@
                   "emoji": "📽️",
                   "size": 5162570,
                   "ruta": "@Clases/REDES/redes introduccion.ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=16Iuv77RqwSKp9zQQQqMe1gCAfnPPXVwD",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "16Iuv77RqwSKp9zQQQqMe1gCAfnPPXVwD"
                 },
                 {
                   "nombre": "Trabajo practico Redes Informáticas.pdf",
@@ -5780,9 +5938,10 @@
                   "emoji": "📽️",
                   "size": 5086834,
                   "ruta": "@Clases/Software/CHIPSET.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1s1d7USoNjTGgrdLyW7nfPRTQ1y5OY1IW",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1s1d7USoNjTGgrdLyW7nfPRTQ1y5OY1IW"
                 },
                 {
                   "nombre": "ClaseMalware.html",
@@ -5790,11 +5949,12 @@
                   "emoji": "🌐",
                   "size": 45732,
                   "ruta": "@Clases/Software/ClaseMalware.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1r4jfGe6NASEtTa9fKSEZu1ebBLhdPh_L",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-clase-5-software-clasemalware-html.html",
                   "notas": "(45 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1r4jfGe6NASEtTa9fKSEZu1ebBLhdPh_L"
                 },
                 {
                   "nombre": "Compatibilidad.pptx",
@@ -5802,9 +5962,10 @@
                   "emoji": "📽️",
                   "size": 1340547,
                   "ruta": "@Clases/Software/Compatibilidad.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1l3B4dY5sVKffyFehEufZBVi-_FC6FqkO",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1l3B4dY5sVKffyFehEufZBVi-_FC6FqkO"
                 },
                 {
                   "nombre": "Fallas-ext.pdf",
@@ -5812,9 +5973,10 @@
                   "emoji": "📕",
                   "size": 433925,
                   "ruta": "@Clases/Software/Fallas-ext.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1BK3LAVpnvxu64SaOnu6vUcNIMcVxOe01",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1BK3LAVpnvxu64SaOnu6vUcNIMcVxOe01"
                 },
                 {
                   "nombre": "Instalacion SO.pdf",
@@ -5822,9 +5984,10 @@
                   "emoji": "📕",
                   "size": 797169,
                   "ruta": "@Clases/Software/Instalacion SO.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1s9jwc44YNVJ7iEEEZnuJgqqtmgpFYQSE",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1s9jwc44YNVJ7iEEEZnuJgqqtmgpFYQSE"
                 },
                 {
                   "nombre": "Link del Cisco.txt",
@@ -5842,11 +6005,12 @@
                   "emoji": "🌐",
                   "size": 14778,
                   "ruta": "@Clases/Software/multiple_choice_post_instalacion.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1KrksIQg2mP7cnbhV65TYaTJaXQ71TzF5",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-clase-5-software-multiple-choice-post-instalacion-html.html",
                   "notas": "(14 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1KrksIQg2mP7cnbhV65TYaTJaXQ71TzF5"
                 },
                 {
                   "nombre": "post_instalacion_windows_mantenimiento (1).html",
@@ -5854,11 +6018,12 @@
                   "emoji": "🌐",
                   "size": 31317,
                   "ruta": "@Clases/Software/post_instalacion_windows_mantenimiento (1).html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1vKxgMERNJoUGBspn4XLqCtYNk6FxzgO5",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-clase-5-software-post-instalacion-windows-mantenimiento-1-html.html",
                   "notas": "(31 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1vKxgMERNJoUGBspn4XLqCtYNk6FxzgO5"
                 },
                 {
                   "nombre": "Programas Utilitarios.pptx",
@@ -5866,9 +6031,10 @@
                   "emoji": "📽️",
                   "size": 2034995,
                   "ruta": "@Clases/Software/Programas Utilitarios.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1OZXK4yeKyggBJsfdfp0h6hDREn7CU7LN",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1OZXK4yeKyggBJsfdfp0h6hDREn7CU7LN"
                 },
                 {
                   "nombre": "ServerBasicoConfig.html",
@@ -5876,11 +6042,12 @@
                   "emoji": "🌐",
                   "size": 23238,
                   "ruta": "@Clases/Software/ServerBasicoConfig.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=123xGe_HzWzkBKnG2VpgUnCg-DQv2QB9p",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-clase-5-software-serverbasicoconfig-html.html",
                   "notas": "(23 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "123xGe_HzWzkBKnG2VpgUnCg-DQv2QB9p"
                 },
                 {
                   "nombre": "SIStope e instalación.pptx",
@@ -5898,11 +6065,12 @@
                   "emoji": "🌐",
                   "size": 5615,
                   "ruta": "@Clases/Software/terminal_interactiva_comandos_mantenimiento_windows_10 (1).html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1UQ8CaETUdrIrwYcWEKao_vB5rf7paSyk",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-clase-5-software-terminal-interactiva-comandos-mantenimiento-windows-10-1-html.html",
                   "notas": "(5 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1UQ8CaETUdrIrwYcWEKao_vB5rf7paSyk"
                 },
                 {
                   "nombre": "TP Post Instalacion.docx",
@@ -5910,9 +6078,10 @@
                   "emoji": "📄",
                   "size": 14553,
                   "ruta": "@Clases/Software/TP Post Instalacion.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1CKqShm9gPS0qpSirSGT-FRKKY_dn_3Nt",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1CKqShm9gPS0qpSirSGT-FRKKY_dn_3Nt"
                 }
               ],
               "tamanoBytes": 32131458
@@ -5942,9 +6111,10 @@
                   "emoji": "📽️",
                   "size": 3950209,
                   "ruta": "@Clases/Hardware/Clase 1/Memorias ram.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1ltyr2a3Ge7QgKSdS-Kf_hu0PO-QrsYxv",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1ltyr2a3Ge7QgKSdS-Kf_hu0PO-QrsYxv"
                 },
                 {
                   "nombre": "Placa Madre.pptx",
@@ -5952,9 +6122,10 @@
                   "emoji": "📽️",
                   "size": 30439056,
                   "ruta": "@Clases/Hardware/Clase 1/Placa Madre.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Axto49bNGj090dwPkDxcWEYlJul6ApWr",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Axto49bNGj090dwPkDxcWEYlJul6ApWr"
                 },
                 {
                   "nombre": "Qué es la PC 2026.ppsx",
@@ -5979,9 +6150,10 @@
                   "emoji": "📕",
                   "size": 2954031,
                   "ruta": "@Clases/Hardware/Clase 2 Placas/Clase #2 - MotherBoard-.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1NHTV5ez2YPYAGyX49SsvMnpknzeBahK_",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1NHTV5ez2YPYAGyX49SsvMnpknzeBahK_"
                 },
                 {
                   "nombre": "Placa Madre.pdf",
@@ -5989,9 +6161,10 @@
                   "emoji": "📕",
                   "size": 6106060,
                   "ruta": "@Clases/Hardware/Clase 2 Placas/Placa Madre.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Xqnt6Bm6zUWhdarQ35BRaiWTFEZiZCrM",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Xqnt6Bm6zUWhdarQ35BRaiWTFEZiZCrM"
                 },
                 {
                   "nombre": "Placa Madre.pptx",
@@ -5999,9 +6172,10 @@
                   "emoji": "📽️",
                   "size": 51632888,
                   "ruta": "@Clases/Hardware/Clase 2 Placas/Placa Madre.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1TQkdOQO1LG5LOW84spogSueR7AONhfG1",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1TQkdOQO1LG5LOW84spogSueR7AONhfG1"
                 }
               ],
               "tamanoBytes": 60692979
@@ -6016,9 +6190,10 @@
                   "emoji": "📕",
                   "size": 2136684,
                   "ruta": "@Clases/Hardware/Clase 3/Clase 3 - Procesadores.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1wpOmtXxSZSXgiPKHn1nTovoP4Y9mK2bk",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1wpOmtXxSZSXgiPKHn1nTovoP4Y9mK2bk"
                 },
                 {
                   "nombre": "Clase 3 - Procesadores.pptx",
@@ -6026,9 +6201,10 @@
                   "emoji": "📽️",
                   "size": 10677319,
                   "ruta": "@Clases/Hardware/Clase 3/Clase 3 - Procesadores.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1TFgJzUVhvFjiyTHMFqyrxhoeraQENnwe",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1TFgJzUVhvFjiyTHMFqyrxhoeraQENnwe"
                 },
                 {
                   "nombre": "CPU.pptx",
@@ -6036,9 +6212,10 @@
                   "emoji": "📽️",
                   "size": 12206058,
                   "ruta": "@Clases/Hardware/Clase 3/CPU.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1k3UErMtrQLeUPSlhxgDt71LZbbT7ljQ3",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1k3UErMtrQLeUPSlhxgDt71LZbbT7ljQ3"
                 },
                 {
                   "nombre": "Procesadores.pdf",
@@ -6046,9 +6223,10 @@
                   "emoji": "📕",
                   "size": 4605099,
                   "ruta": "@Clases/Hardware/Clase 3/Procesadores.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1hOKNEVo_Q2Zbdqt0wBlCfljj-7fBxd2Q",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1hOKNEVo_Q2Zbdqt0wBlCfljj-7fBxd2Q"
                 }
               ],
               "tamanoBytes": 29625160
@@ -6090,11 +6268,12 @@
                   "emoji": "🌐",
                   "size": 19659,
                   "ruta": "@Clases/TP de DyM (1).html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=15pfJypEIjoQ2sdpXUMOGeFkxLGqPjpcd",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diagnostico-mantenimiento-general-tp-de-dym-1-html.html",
                   "notas": "(19 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "15pfJypEIjoQ2sdpXUMOGeFkxLGqPjpcd"
                 }
               ],
               "tamanoBytes": 40522
@@ -6168,9 +6347,10 @@
                   "emoji": "📕",
                   "size": 1078865,
                   "ruta": "@Clases/Clase 2/Clase 3 - 1 Pines.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1AROfBdg2an-m0T7q3mV9y2fGhvnejQtc",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1AROfBdg2an-m0T7q3mV9y2fGhvnejQtc"
                 },
                 {
                   "nombre": "Clase 3-b - Ley OHM.pdf",
@@ -6178,9 +6358,10 @@
                   "emoji": "📕",
                   "size": 1072168,
                   "ruta": "@Clases/Clase 2/Clase 3-b - Ley OHM.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1ZbYpRa-xFGCIcwjcYzcv3WnWajqSGUKK",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1ZbYpRa-xFGCIcwjcYzcv3WnWajqSGUKK"
                 },
                 {
                   "nombre": "LEDS y Resistencia.pptx",
@@ -6188,9 +6369,10 @@
                   "emoji": "📽️",
                   "size": 1082965,
                   "ruta": "@Clases/Clase 2/LEDS y Resistencia.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1nu9LCGLlygzfibrvB6UYEN9EJJx2mxmu",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1nu9LCGLlygzfibrvB6UYEN9EJJx2mxmu"
                 },
                 {
                   "nombre": "leds.html",
@@ -6198,11 +6380,12 @@
                   "emoji": "🌐",
                   "size": 14470,
                   "ruta": "@Clases/Clase 2/leds.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1OiH0wyMfHV6ccbrSgRzlvJ4caoh-v7Fb",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-2-clase-2-leds-html.html",
                   "notas": "(14 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1OiH0wyMfHV6ccbrSgRzlvJ4caoh-v7Fb"
                 },
                 {
                   "nombre": "paralelo y serie.html",
@@ -6210,11 +6393,12 @@
                   "emoji": "🌐",
                   "size": 35144,
                   "ruta": "@Clases/Clase 2/paralelo y serie.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1fUsF-enewErdfDTwkQ-F0UeWGWQOWyYg",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-2-clase-2-paralelo-y-serie-html.html",
                   "notas": "(34 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1fUsF-enewErdfDTwkQ-F0UeWGWQOWyYg"
                 },
                 {
                   "nombre": "placa de arduino1.html",
@@ -6222,11 +6406,12 @@
                   "emoji": "🌐",
                   "size": 6418,
                   "ruta": "@Clases/Clase 2/placa de arduino1.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1BibA8ti0iWkZZENQxuHaPYOfhxHIxafK",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-2-clase-2-placa-de-arduino1-html.html",
                   "notas": "(6 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1BibA8ti0iWkZZENQxuHaPYOfhxHIxafK"
                 },
                 {
                   "nombre": "Sintaxis de lenguaje.pptx",
@@ -6234,9 +6419,10 @@
                   "emoji": "📽️",
                   "size": 478264,
                   "ruta": "@Clases/Clase 2/Sintaxis de lenguaje.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=18m9RMl4tF-r9imAg1A-HkYELIILF4jcy",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "18m9RMl4tF-r9imAg1A-HkYELIILF4jcy"
                 },
                 {
                   "nombre": "Tabla de resistencia7.html",
@@ -6244,11 +6430,12 @@
                   "emoji": "🌐",
                   "size": 21606,
                   "ruta": "@Clases/Clase 2/Tabla de resistencia7.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1FWVDybXraL0CFE5SXL3jYnU_Ss2D4Lbv",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-2-clase-2-tabla-de-resistencia7-html.html",
                   "notas": "(21 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1FWVDybXraL0CFE5SXL3jYnU_Ss2D4Lbv"
                 }
               ],
               "tamanoBytes": 3789900
@@ -6299,11 +6486,12 @@
                   "size": 303651,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/ARDUIN",
                   "archivos": 5,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1PFNSxUfuklSl0N-H_2Q5YsV1OGQ7DAnh",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1PFNSxUfuklSl0N-H_2Q5YsV1OGQ7DAnh"
                 },
                 {
                   "nombre": "Arduino/",
@@ -6312,11 +6500,12 @@
                   "size": 725785413,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Arduino",
                   "archivos": 38,
-                  "url": "",
+                  "url": "https://drive.google.com/drive/folders/1lrd1JIVlzIUHk5quwtDGECqCxQO52Py2",
                   "embebible": true,
                   "embedUrl": null,
                   "notas": "(692.2 MB)",
-                  "descripcion": "Carpeta con archivos"
+                  "descripcion": "Carpeta con archivos",
+                  "driveId": "1lrd1JIVlzIUHk5quwtDGECqCxQO52Py2"
                 },
                 {
                   "nombre": "Clase 1.pdf",
@@ -6324,9 +6513,10 @@
                   "emoji": "📕",
                   "size": 2187381,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Clase 1.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1CqHVTxvKhrjhoCFeR5oHU5-Q_P87pIP_",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1CqHVTxvKhrjhoCFeR5oHU5-Q_P87pIP_"
                 },
                 {
                   "nombre": "Clase 1.ppsx",
@@ -6334,9 +6524,10 @@
                   "emoji": "📽️",
                   "size": 142542938,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Clase 1.ppsx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1cfTWzTRqmu6V5ApAunqVMKNDEvzYC9ty",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1cfTWzTRqmu6V5ApAunqVMKNDEvzYC9ty"
                 },
                 {
                   "nombre": "Clase 5.pdf",
@@ -6344,9 +6535,10 @@
                   "emoji": "📕",
                   "size": 1054346,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Clase 5.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1m2bwsRwHvx6glfZeSp033VCjeYm4X5WU",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1m2bwsRwHvx6glfZeSp033VCjeYm4X5WU"
                 },
                 {
                   "nombre": "Clase 6.pdf",
@@ -6354,9 +6546,10 @@
                   "emoji": "📕",
                   "size": 510973,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Clase 6.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=11Nm2f4MtyQONCPZYdJIUmHvXqlAgCMLo",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "11Nm2f4MtyQONCPZYdJIUmHvXqlAgCMLo"
                 },
                 {
                   "nombre": "Clase 7.pdf",
@@ -6364,9 +6557,10 @@
                   "emoji": "📕",
                   "size": 455808,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Clase 7.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1LuEMMV8gy2SAuPYsFANRYo4ocWJWIypt",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1LuEMMV8gy2SAuPYsFANRYo4ocWJWIypt"
                 },
                 {
                   "nombre": "Clase 8.pdf",
@@ -6374,9 +6568,10 @@
                   "emoji": "📕",
                   "size": 546047,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Clase 8.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1bgmXnBefJKLFE4iOdSz_-kX49WwKWcYA",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1bgmXnBefJKLFE4iOdSz_-kX49WwKWcYA"
                 },
                 {
                   "nombre": "Ejercicio.docx",
@@ -6384,9 +6579,10 @@
                   "emoji": "📄",
                   "size": 7285,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Ejercicio.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1ndCX2MMe7MDeQN5JyZX5v_820u05ggIn",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1ndCX2MMe7MDeQN5JyZX5v_820u05ggIn"
                 },
                 {
                   "nombre": "Ejercicio2.docx",
@@ -6394,9 +6590,10 @@
                   "emoji": "📄",
                   "size": 7473,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Ejercicio2.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1xL3srxYBWRGOz0VWdcvZIKmxyxiGeCUl",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1xL3srxYBWRGOz0VWdcvZIKmxyxiGeCUl"
                 },
                 {
                   "nombre": "Gemini_Generated_Image_3t1apr3t1apr3t1a.png",
@@ -6404,9 +6601,10 @@
                   "emoji": "🖼️",
                   "size": 3570781,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Gemini_Generated_Image_3t1apr3t1apr3t1a.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Z0z--TiJxj3UcgPk6DPDx3hy_8JIEr4P",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Z0z--TiJxj3UcgPk6DPDx3hy_8JIEr4P"
                 },
                 {
                   "nombre": "Gemini_Generated_Image_wrpbmqwrpbmqwrpb-removebg-preview.png",
@@ -6414,9 +6612,10 @@
                   "emoji": "🖼️",
                   "size": 311094,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Gemini_Generated_Image_wrpbmqwrpbmqwrpb-removebg-preview.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1-uJpKI4K6zp1CXqu6JUIseCVTOzjXQD-",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1-uJpKI4K6zp1CXqu6JUIseCVTOzjXQD-"
                 },
                 {
                   "nombre": "Gemini_Generated_Image_wrpbmqwrpbmqwrpb-removebg-preview.psd",
@@ -6424,9 +6623,10 @@
                   "emoji": "🖼️",
                   "size": 1222865,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Gemini_Generated_Image_wrpbmqwrpbmqwrpb-removebg-preview.psd",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=16fHe6FKjETUOJlu_--4jYxGfm9MPfZ1n",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "16fHe6FKjETUOJlu_--4jYxGfm9MPfZ1n"
                 },
                 {
                   "nombre": "Gemini_Generated_Image_wrpbmqwrpbmqwrpb.png",
@@ -6434,9 +6634,10 @@
                   "emoji": "🖼️",
                   "size": 4020600,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Gemini_Generated_Image_wrpbmqwrpbmqwrpb.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1prHgVW0A9w9yKOQcG4j0r2r_bEAP5DEE",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1prHgVW0A9w9yKOQcG4j0r2r_bEAP5DEE"
                 },
                 {
                   "nombre": "leds con resis.html",
@@ -6444,11 +6645,12 @@
                   "emoji": "🌐",
                   "size": 32458,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/leds con resis.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1gQCxlvqAPlggq7CIoZFTpufjN88MWrX6",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-leds-con-resis-html.html",
                   "notas": "(32 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1gQCxlvqAPlggq7CIoZFTpufjN88MWrX6"
                 },
                 {
                   "nombre": "Operadores_Matematicos_1.pdf",
@@ -6456,9 +6658,10 @@
                   "emoji": "📕",
                   "size": 156149,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Operadores_Matematicos_1.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1yAZuaIk5GTB6EYvNayLbcZjpHBMUkpWZ",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1yAZuaIk5GTB6EYvNayLbcZjpHBMUkpWZ"
                 },
                 {
                   "nombre": "paralelo y serie.html",
@@ -6466,11 +6669,12 @@
                   "emoji": "🌐",
                   "size": 35144,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo y serie.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1K9TC_0UsYuwexLY8ylGBBS0geGqlv0VN",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-paralelo-y-serie-html.html",
                   "notas": "(34 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1K9TC_0UsYuwexLY8ylGBBS0geGqlv0VN"
                 },
                 {
                   "nombre": "paralelo y serie.txt",
@@ -6478,9 +6682,10 @@
                   "emoji": "📝",
                   "size": 35144,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo y serie.txt",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1jj1BAYPrR9v2eoT1TKKrpS74LcfpOOG8",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1jj1BAYPrR9v2eoT1TKKrpS74LcfpOOG8"
                 },
                 {
                   "nombre": "paralelo y serie2.html",
@@ -6488,11 +6693,12 @@
                   "emoji": "🌐",
                   "size": 22870,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo y serie2.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1qq7Epw5qI-IcQ2frst2KUL-fHSP3IuU4",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-paralelo-y-serie2-html.html",
                   "notas": "(22 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1qq7Epw5qI-IcQ2frst2KUL-fHSP3IuU4"
                 },
                 {
                   "nombre": "paralelo y serie3.html",
@@ -6500,11 +6706,12 @@
                   "emoji": "🌐",
                   "size": 30098,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo y serie3.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1oDmYJoxHtNfm4fDR8c1IeYbq2BLgbVL2",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-paralelo-y-serie3-html.html",
                   "notas": "(29 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1oDmYJoxHtNfm4fDR8c1IeYbq2BLgbVL2"
                 },
                 {
                   "nombre": "paralelo y serie3.txt",
@@ -6512,9 +6719,10 @@
                   "emoji": "📝",
                   "size": 31962,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo y serie3.txt",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1c89ZN6LPiuLZaCS8MNCLg4D1EqT8DGz6",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1c89ZN6LPiuLZaCS8MNCLg4D1EqT8DGz6"
                 },
                 {
                   "nombre": "paralelo y serie4.html",
@@ -6522,11 +6730,12 @@
                   "emoji": "🌐",
                   "size": 6938,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo y serie4.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1xIdT7UFj8gP1sIcbC6gasGLTJbYdWaHq",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-paralelo-y-serie4-html.html",
                   "notas": "(7 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1xIdT7UFj8gP1sIcbC6gasGLTJbYdWaHq"
                 },
                 {
                   "nombre": "paralelo_y_serie_3_leds_verde.html",
@@ -6534,11 +6743,12 @@
                   "emoji": "🌐",
                   "size": 9644,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo_y_serie_3_leds_verde.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1V749aRYWYx8WdRFqJzKDEvpsDSYIC0uM",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-paralelo-y-serie-3-leds-verde-html.html",
                   "notas": "(9 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1V749aRYWYx8WdRFqJzKDEvpsDSYIC0uM"
                 },
                 {
                   "nombre": "paralelo_y_serie_4.html",
@@ -6546,11 +6756,12 @@
                   "emoji": "🌐",
                   "size": 19214,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/paralelo_y_serie_4.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1axAeZM073w8YPmMonoiTwKGZT9_1mBCG",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-paralelo-y-serie-4-html.html",
                   "notas": "(19 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1axAeZM073w8YPmMonoiTwKGZT9_1mBCG"
                 },
                 {
                   "nombre": "placa aduino.html",
@@ -6558,11 +6769,12 @@
                   "emoji": "🌐",
                   "size": 8906,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/placa aduino.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Dk9gTzjV5NwhuyuH74hzAubfNeDP2JBw",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-placa-aduino-html.html",
                   "notas": "(9 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Dk9gTzjV5NwhuyuH74hzAubfNeDP2JBw"
                 },
                 {
                   "nombre": "Placa de aruino 1.png",
@@ -6570,9 +6782,10 @@
                   "emoji": "🖼️",
                   "size": 1030502,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Placa de aruino 1.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1uLiugvRDZUc67oO4cJmSrRHzft1WPdaZ",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1uLiugvRDZUc67oO4cJmSrRHzft1WPdaZ"
                 },
                 {
                   "nombre": "Placa_de_aruino_1-removebg-preview.png",
@@ -6580,9 +6793,10 @@
                   "emoji": "🖼️",
                   "size": 408415,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Placa_de_aruino_1-removebg-preview.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1PwEcJio-tzM9rMdQF7k-S7JPLManCoVx",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1PwEcJio-tzM9rMdQF7k-S7JPLManCoVx"
                 },
                 {
                   "nombre": "pulsador1.txt",
@@ -6600,9 +6814,10 @@
                   "emoji": "📄",
                   "size": 19354,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/PULSADORES.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=11e2gAW5prgY2nUM3lv7x-8PGLxwYYFRn",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "11e2gAW5prgY2nUM3lv7x-8PGLxwYYFRn"
                 },
                 {
                   "nombre": "Tabla de resistencia.html",
@@ -6610,11 +6825,12 @@
                   "emoji": "🌐",
                   "size": 5954,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Rhqcp5fQ4pGj_FUuqwYEWc_HL_WVEEfv",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-tabla-de-resistencia-html.html",
                   "notas": "(6 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Rhqcp5fQ4pGj_FUuqwYEWc_HL_WVEEfv"
                 },
                 {
                   "nombre": "Tabla de resistencia2.0.html",
@@ -6622,11 +6838,12 @@
                   "emoji": "🌐",
                   "size": 30572,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia2.0.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Ijv78aoRo0xIE556WO32V6nt5521I4RP",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-tabla-de-resistencia2-0-html.html",
                   "notas": "(30 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1Ijv78aoRo0xIE556WO32V6nt5521I4RP"
                 },
                 {
                   "nombre": "Tabla de resistencia2.0.txt",
@@ -6634,9 +6851,10 @@
                   "emoji": "📝",
                   "size": 30572,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia2.0.txt",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=17Y2ZocYtmNAG-n-43FI0c6vWBk7wZ6Pq",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "17Y2ZocYtmNAG-n-43FI0c6vWBk7wZ6Pq"
                 },
                 {
                   "nombre": "Tabla de resistencia2.html",
@@ -6644,11 +6862,12 @@
                   "emoji": "🌐",
                   "size": 7768,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia2.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=12TPkv-BF9zsdTktHv2HhPAW56WiNrBGp",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-tabla-de-resistencia2-html.html",
                   "notas": "(8 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "12TPkv-BF9zsdTktHv2HhPAW56WiNrBGp"
                 },
                 {
                   "nombre": "Tabla de resistencia2.txt",
@@ -6656,9 +6875,10 @@
                   "emoji": "📝",
                   "size": 5954,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia2.txt",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1FtwqzytzvigrpLsxEeCXq2OgN_l_EnsG",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1FtwqzytzvigrpLsxEeCXq2OgN_l_EnsG"
                 },
                 {
                   "nombre": "Tabla de resistencia3.html",
@@ -6666,11 +6886,12 @@
                   "emoji": "🌐",
                   "size": 11000,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia3.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1L7CYG_qZLkguvGvdxrdw70y2emezZZUX",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-tabla-de-resistencia3-html.html",
                   "notas": "(11 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1L7CYG_qZLkguvGvdxrdw70y2emezZZUX"
                 },
                 {
                   "nombre": "Tabla de resistencia3.txt",
@@ -6678,9 +6899,10 @@
                   "emoji": "📝",
                   "size": 16602,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia3.txt",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1cch4lKiGQXDQg1dhBbPk-AfQ42Od2Hv5",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1cch4lKiGQXDQg1dhBbPk-AfQ42Od2Hv5"
                 },
                 {
                   "nombre": "Tabla de resistencia4.html",
@@ -6688,11 +6910,12 @@
                   "emoji": "🌐",
                   "size": 12538,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia4.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1md7DBqAapsRRivGnAwhoEM5P4Cb0A8wb",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-tabla-de-resistencia4-html.html",
                   "notas": "(12 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1md7DBqAapsRRivGnAwhoEM5P4Cb0A8wb"
                 },
                 {
                   "nombre": "Tabla de resistencia5.html",
@@ -6700,11 +6923,12 @@
                   "emoji": "🌐",
                   "size": 23212,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Tabla de resistencia5.html",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1GN1zodfotEn7bPDOCjV_PvkYP78q4KBk",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-m1-c1-robotica-tabla-de-resistencia5-html.html",
                   "notas": "(23 KB)",
-                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina",
+                  "driveId": "1GN1zodfotEn7bPDOCjV_PvkYP78q4KBk"
                 },
                 {
                   "nombre": "Untitled2.ino",
@@ -6722,9 +6946,10 @@
                   "emoji": "📽️",
                   "size": 2137870,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/Variables.pptx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1a_8M9qQazXyadiqc-un2cc-VHzzaqM6r",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1a_8M9qQazXyadiqc-un2cc-VHzzaqM6r"
                 },
                 {
                   "nombre": "wowki.png",
@@ -6732,9 +6957,10 @@
                   "emoji": "🖼️",
                   "size": 3044,
                   "ruta": "@Clases/ROBOTICA/ROBOTICA/wowki.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1FEAvQF0JFcyuwdiEbPJ547zLHeyGZFhw",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1FEAvQF0JFcyuwdiEbPJ547zLHeyGZFhw"
                 }
               ],
               "tamanoBytes": 886925061
@@ -6754,9 +6980,10 @@
                   "emoji": "📦",
                   "size": 26172243,
                   "ruta": "@Clases/Clases Robo.rar",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1l-qetFgCjiMW2ftb6OPFlqn9wqknl-RW",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1l-qetFgCjiMW2ftb6OPFlqn9wqknl-RW"
                 },
                 {
                   "nombre": "Multimedia1.mp4",
@@ -6764,9 +6991,10 @@
                   "emoji": "🎬",
                   "size": 84842657,
                   "ruta": "@Clases/Multimedia1.mp4",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=11c0bFYldGy2E6DEFojXPp1K5Y5pAbjua",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "11c0bFYldGy2E6DEFojXPp1K5Y5pAbjua"
                 },
                 {
                   "nombre": "Robótica KIT desarrollo.pdf",
@@ -6784,9 +7012,10 @@
                   "emoji": "📦",
                   "size": 836606393,
                   "ruta": "@Clases/ROBOTICA.rar",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1DWomH7mwID8hQp4Mv_wrQ9I-1Svg4RyX",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1DWomH7mwID8hQp4Mv_wrQ9I-1Svg4RyX"
                 }
               ],
               "tamanoBytes": 950704832
@@ -6967,9 +7196,10 @@
                   "emoji": "🖼️",
                   "size": 1478748,
                   "ruta": "Clase 5 Analisis de Vulnerabilidades/analisis de vulnerabilidades.PNG",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1_GAfCHT0ARlh3jqguo-dfM49a-S-HhHw",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1_GAfCHT0ARlh3jqguo-dfM49a-S-HhHw"
                 },
                 {
                   "nombre": "Guía de gestión de vulnerabilidades_VF2.pdf",
@@ -6997,9 +7227,10 @@
                   "emoji": "📄",
                   "size": 26961,
                   "ruta": "Clase 5 Analisis de Vulnerabilidades/Practicas.docx",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1uIB3eSlCR2mX_PWL_PbUcr5GA8PepR2_",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1uIB3eSlCR2mX_PWL_PbUcr5GA8PepR2_"
                 }
               ],
               "tamanoBytes": 2200226
@@ -10983,9 +11214,10 @@
                   "emoji": "🖼️",
                   "size": 1759840,
                   "ruta": "avanzado.PNG",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1Ab2HnkAJA-bVMpoTJbYTAVx-3E5grICk",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1Ab2HnkAJA-bVMpoTJbYTAVx-3E5grICk"
                 },
                 {
                   "nombre": "Certificado_de_Aprobacin - Ciberseguridad.pdf",
@@ -10993,9 +11225,10 @@
                   "emoji": "📕",
                   "size": 413975,
                   "ruta": "Certificado_de_Aprobacin - Ciberseguridad.pdf",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1tjir_WowFZy336Ed1yhS2uqoitLpnGAr",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1tjir_WowFZy336Ed1yhS2uqoitLpnGAr"
                 },
                 {
                   "nombre": "global_blanco.png",
@@ -11003,9 +11236,10 @@
                   "emoji": "🖼️",
                   "size": 22075,
                   "ruta": "global_blanco.png",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=19Dl8P-eeDT8tTVlKR5z-2oqA0uxENAtv",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "19Dl8P-eeDT8tTVlKR5z-2oqA0uxENAtv"
                 },
                 {
                   "nombre": "guia de aprendisaje.PNG",
@@ -11013,9 +11247,10 @@
                   "emoji": "🖼️",
                   "size": 714666,
                   "ruta": "guia de aprendisaje.PNG",
-                  "url": "",
+                  "url": "https://drive.google.com/uc?export=download&id=1eXC7ZR3suahcKoVdzy_A9UCXlwv2DgeO",
                   "embebible": false,
-                  "descripcion": ""
+                  "descripcion": "",
+                  "driveId": "1eXC7ZR3suahcKoVdzy_A9UCXlwv2DgeO"
                 },
                 {
                   "nombre": "Presentación.docx",

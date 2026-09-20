@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Sincroniza los materiales de I:\ITC a Google Drive y enlaza el catalogo.
 
@@ -53,6 +53,23 @@ if ($remotes -notcontains $Remote) {
 $destino = "$Remote`:$Dest"
 
 # 2) Subir cada capacitacion
+# Memoria: la maquina tiene ~3 GB de RAM y `--fast-list` + `-v` + 4 transfers
+# provocaban "out of memory allocating heap arena map". Sin fast-list y con poca
+# concurrencia rclone es mucho mas liviano.
+$errores = @()
+$memopts = @("--transfers", "2", "--checkers", "4", "--retries", "3", "--retries-sleep", "5s")
+
+function Invoke-Rclone {
+  param([string]$Op, [string]$Origen, [string]$DestinoRc, [string]$Etiqueta)
+  try {
+    & rclone $Op $Origen $DestinoRc @excluir @memopts
+    if ($LASTEXITCODE -ne 0) { throw "exit $LASTEXITCODE" }
+  } catch {
+    Write-Host "  [error] '$Etiqueta' fallo: $($_.Exception.Message). Sigo con el resto." -ForegroundColor Red
+    $script:errores += $Etiqueta
+  }
+}
+
 if (-not $SkipSync) {
   $cursos = @(
     "1- Asistente Administrativo Digital con IA",
@@ -80,22 +97,29 @@ if (-not $SkipSync) {
     $origen = Join-Path $Root $c
     if (-not (Test-Path -LiteralPath $origen)) { Write-Host "  [skip] sin carpeta local: $c" -ForegroundColor DarkGray; continue }
     Write-Host "  [sync] $c" -ForegroundColor Green
-    rclone sync $origen "$destino/$c" @excluir --fast-list --transfers 4 -v 2>&1 | Out-Host
+    Invoke-Rclone -Op sync -Origen $origen -DestinoRc "$destino/$c" -Etiqueta $c
   }
 
   Write-Host "  [sync] Herramientas y temarios" -ForegroundColor Green
-  rclone copy "$Root\Generador de Gemini.html"       "$destino/HERRAMIENTAS" @excluir --fast-list 2>&1 | Out-Host
-  rclone copy "$Root\Generador de Prompts para gemini.html" "$destino/HERRAMIENTAS" @excluir --fast-list 2>&1 | Out-Host
-  rclone copy "$Root\Generador de clasesNotebooklm.html"   "$destino/HERRAMIENTAS" @excluir --fast-list 2>&1 | Out-Host
-  rclone copy "$Root\ServidoresConfigAvanzado.html"   "$destino/HERRAMIENTAS" @excluir --fast-list 2>&1 | Out-Host
-  rclone copy "$Root\Todos Los Atajos.pdf"           "$destino/HERRAMIENTAS" @excluir --fast-list 2>&1 | Out-Host
+  $herramientas = @(
+    "Generador de Gemini.html",
+    "Generador de Prompts para gemini.html",
+    "Generador de clasesNotebooklm.html",
+    "ServidoresConfigAvanzado.html",
+    "Todos Los Atajos.pdf"
+  )
+  foreach ($h in $herramientas) {
+    $origen = Join-Path $Root $h
+    if (-not (Test-Path -LiteralPath $origen)) { continue }
+    Invoke-Rclone -Op copy -Origen $origen -DestinoRc "$destino/HERRAMIENTAS" -Etiqueta "HERRAMIENTAS/$h"
+  }
 }
 
 # 3) Regenerar catalogo local
 Write-Host "`n  [catalog] regenerando catálogo..." -ForegroundColor Cyan
 Push-Location $proyecto
 try {
-  npm run --silent catalog | Out-Host
+  npm run --silent catalog
 } finally {
   Pop-Location
 }
@@ -103,7 +127,18 @@ try {
 # 4) Vincular enlaces de Drive
 Write-Host "`n  [link] vinculando archivos del catalogo con Drive..." -ForegroundColor Cyan
 $catalogo = Join-Path $proyecto "data\materiales.json"
-rclone lsjson --recursive "$destino" | node (Join-Path $proyecto "tools\link-catalog.js") --root "$destino" --out $catalogo
+try {
+  rclone lsjson --recursive "$destino" | node (Join-Path $proyecto "tools\link-catalog.js") --root "$destino" --out $catalogo
+  if ($LASTEXITCODE -ne 0) { throw "exit $LASTEXITCODE al vincular" }
+} catch {
+  Write-Host "  [error] no se pudieron vincular los enlaces de Drive: $($_.Exception.Message)" -ForegroundColor Red
+  $script:errores += "vinculacion-de-enlaces"
+}
+
+if ($errores.Count -gt 0) {
+  Write-Host "`n  Se reportaron errores en:" -ForegroundColor Yellow
+  $errores | Sort-Object -Unique | ForEach-Object { Write-Host "    - $_" -ForegroundColor Yellow }
+}
 
 Write-Host "`n  Listo. No olvides compartir '$destino' en Drive como 'cualquiera con el enlace'."
 Write-Host "  Para que el sitio vea los cambios, regenera con: npm run catalog`n" -ForegroundColor Green

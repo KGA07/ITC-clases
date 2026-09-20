@@ -13,6 +13,7 @@ db.json
 coverage/
 *.log
 *.tmp
+*.pid
 
 # Windows / editor
 Thumbs.db
