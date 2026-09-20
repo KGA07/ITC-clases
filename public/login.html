@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITC Aula Virtual - Acceso Docente</title>
+  <meta name="description" content="Materiales didacticos de las capacitaciones de Informatic Training Center (UdeMM)">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0058FF">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/config.js"></script>
+  <script src="/js/common.js"></script>
+</head>
+<body class="login-body">
+  <a href="#loginForm" class="skip-link">Saltar al contenido</a>
+  <div class="login-card" role="main">
+    <div class="brand-logos">
+      <img src="/img/logo-itc.svg" alt="Instituto Tecnico de Capacitacion">
+      <img src="/img/logo-udemm.svg" alt="UdeMM">
+    </div>
+    <p class="brand-subtitle">Aula Virtual - Clases y materiales didacticos</p>
+
+    <form id="loginForm" novalidate>
+      <div class="form-group">
+        <label for="nombre">Usuario</label>
+        <div class="input-wrapper">
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre de usuario" autocomplete="username" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Contrasena</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" name="password" placeholder="Contrasena" autocomplete="current-password" required>
+        </div>
+      </div>
+      <div class="error-box" id="errorBox" role="alert">
+        <span id="errorText"></span>
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn">
+        <span id="loginBtnText">Ingresar</span>
+      </button>
+    </form>
+
+    <p class="login-footer">Acceso restringido al equipo docente.</p>
+    <p class="login-footer"><button type="button" class="icon-btn" id="themeToggle" style="width:auto;padding:6px 12px">🌓 Tema</button></p>
+  </div>
+  <script src="/js/login.js"></script>
+</body>
+</html>

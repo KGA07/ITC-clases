@@ -1,0 +1,26 @@
+{
+  "name": "ITC Aula Virtual",
+  "short_name": "ITC Clases",
+  "description": "Clases y materiales didacticos de las capacitaciones de Informatic Training Center (UdeMM)",
+  "start_url": "/inicio",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0058FF",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/img/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/logo-itc.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

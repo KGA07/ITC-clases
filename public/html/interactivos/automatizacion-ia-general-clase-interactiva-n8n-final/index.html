@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Completa: Agentes de IA y N8N en Educación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="hero-header">
+        <div class="header-badge">
+            <i class="fa-solid fa-robot"></i> Laboratorio de Automatización Educativa
+        </div>
+        <h1>Creación de un Asistente Digital con N8N</h1>
+        <p class="subtitle">Clase teórica y práctica basada en la diplomatura de Ecosistemas de Aprendizaje con IA.</p>
+    </header>
+
+    <!-- TEORÍA -->
+    <div class="card theory-card">
+        <h2><i class="fa-solid fa-book-open"></i> 1. Fundamentos Teóricos</h2>
+        
+        <h3>¿Qué es un Bot y un Agente de IA?</h3>
+        <ul>
+            <li>Un bot es un programa diseñado para realizar tareas de forma automática a través de internet [cite: 1 Asistente Digital N8N lectura 1_bots_educativos.pdf].</li>
+            <li>En educación, los chatbots permiten a los estudiantes resolver preguntas mediante interfaces familiares como Telegram o WhatsApp [cite: 1 Asistente Digital N8N lectura 1_bots_educativos.pdf].</li>
+            <li>Un Modelo de Lenguaje (LLM) puro se limita a responder según sus datos de entrenamiento pasado, pudiendo generar alucinaciones si no conoce un dato [cite: 1 Asistente Digital N8N lectura 1_bots_educativos.pdf].</li>
+            <li>Un Agente de Inteligencia Artificial usa el LLM como cerebro, pero se le equipa con herramientas externas (como Wikipedia, sistemas RAG o buscadores) para consultar información real y actualizada de forma autónoma [cite: 1 Asistente Digital N8N lectura 1_bots_educativos.pdf].</li>
+        </ul>
+
+        <h3>Introducción a N8N y Workflows</h3>
+        <ul>
+            <li>N8N es una herramienta de automatización visual que conecta aplicaciones sin necesidad de programar código complejo [cite: 2 Asistente Digital N8N lectura_obligatoria_.pdf].</li>
+            <li>Un "Workflow" o flujo de trabajo es el proceso completo que queremos automatizar, representado como un diagrama de pasos interconectados [cite: 2 Asistente Digital N8N lectura_obligatoria_.pdf].</li>
+            <li>Los <strong>Disparadores (Triggers)</strong> inician el flujo al detectar un evento, como un mensaje de Telegram o un cronómetro (Schedule Trigger) [cite: 2 Asistente Digital N8N lectura_obligatoria_.pdf, 4 Asistente Digital N8N lectura_obligatoria_resumen_disparadores_acciones_n8n.pdf].</li>
+            <li>Los <strong>Nodos de Acción (Actions)</strong> ejecutan tareas concretas, como enviar correos por Gmail, registrar datos en Google Sheets o consultar la Wikipedia [cite: 2 Asistente Digital N8N lectura_obligatoria_.pdf, 4 Asistente Digital N8N lectura_obligatoria_resumen_disparadores_acciones_n8n.pdf].</li>
+        </ul>
+
+        <h3>Valores Fijos vs. Expresiones Dinámicas</h3>
+        <ul>
+            <li>Los <strong>Valores Fijos (Fixed)</strong> son configuraciones estáticas que no cambian, como el Access Token de un bot de Telegram [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</li>
+            <li>Las <strong>Expresiones Dinámicas (Expression)</strong> son datos variables generados en tiempo de ejecución, como el Chat ID (identificador único del estudiante) que se arrastra desde los resultados de nodos anteriores [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</li>
+        </ul>
+    </div>
+
+    <!-- ACTIVIDAD PRÁCTICA -->
+    <div class="card activity-card" id="actividad-practica">
+        <h2><i class="fa-solid fa-laptop-code"></i> 2. Actividad Práctica Completa</h2>
+        <p class="card-desc">Sigue estos pasos para construir, configurar y exportar tu propio bot educativo integrado con Wikipedia.</p>
+
+        <!-- Paso 1 -->
+        <div class="step-box">
+            <h4>Paso 1: Creación del Bot en Telegram</h4>
+            <p>1. Ingresa a Telegram Web y busca al usuario verificado <strong>BotFather</strong> [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>2. Envía el comando <code>/newbot</code>, asígnale un nombre visible y un nombre de usuario que termine en "bot" (ej. mi_tutor_bot) [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>3. BotFather te entregará un <strong>Access Token</strong> (ej. 123456:ABC-DEF...). Cópialo y guárdalo de forma segura [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <div class="input-group">
+                <label>Pega aquí tu Token de prueba (solo para la actividad):</label>
+                <input type="text" class="text-input" placeholder="Ej. 8652348904:AAFc_u515eIjB8Lv...">
+            </div>
+            <button class="btn-step" onclick="marcarPaso(1, this)"><i class="fa-solid fa-check"></i> Paso 1 Completado</button>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="step-box">
+            <h4>Paso 2: Configurar el Disparador en N8N</h4>
+            <p>1. En tu lienzo de N8N, agrega un nodo <strong>Telegram Trigger</strong> y selecciona la opción "On Message" [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>2. Ve a "Setup Credential", pega tu Token y asegúrate de que el modo de ingreso esté en <strong>Fixed</strong> (Valor Fijo) [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>3. Haz clic en "Test Trigger" y envía un mensaje desde tu Telegram para que N8N reciba los datos en formato JSON [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <button class="btn-step" onclick="marcarPaso(2, this)"><i class="fa-solid fa-check"></i> Paso 2 Completado</button>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="step-box">
+            <h4>Paso 3: Construir el Cerebro (Agente IA)</h4>
+            <p>1. Agrega el nodo <strong>AI Agent</strong>. Este será el cerebro de la automatización [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>2. Conéctale tres sub-nodos fundamentales [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf]:
+                <ul>
+                    <li><strong>Chat Model:</strong> Usa el modelo de OpenAI provisto por N8N.</li>
+                    <li><strong>Simple Memory:</strong> Configura el "Session ID" usando "Define Below" y arrastrando el <code>message.chat.id</code> del trigger para que recuerde las conversaciones de cada usuario individualmente.</li>
+                    <li><strong>Tools:</strong> Conecta la herramienta <strong>Wikipedia</strong> para que el agente pueda buscar información autónoma.</li>
+                </ul>
+            </p>
+            <p>3. En <em>System Message</em>, dale instrucciones claras (ej. "Eres un tutor de historia...") [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <button class="btn-step" onclick="marcarPaso(3, this)"><i class="fa-solid fa-check"></i> Paso 3 Completado</button>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="step-box">
+            <h4>Paso 4: Nodo de Salida y Expresiones Dinámicas</h4>
+            <p>1. Agrega el nodo de acción <strong>Telegram Action</strong> y selecciona "Send Text Message" [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>2. Cambia el campo "Chat ID" a modo <strong>Expression</strong> y arrastra el ID del chat del nodo inicial [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>3. Cambia el campo "Text" a modo <strong>Expression</strong> y arrastra el <em>output</em> generado por el Agente de IA [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <p>4. Presiona "Publish" para activar tu flujo en el servidor [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <button class="btn-step" onclick="marcarPaso(4, this)"><i class="fa-solid fa-check"></i> Paso 4 Completado</button>
+        </div>
+        
+        <!-- Paso 5: Entregable -->
+        <div class="step-box entregable-box">
+            <h4><i class="fa-solid fa-file-export"></i> Entregable Final: Exportación del JSON</h4>
+            <p>Para compartir tu flujo, haz clic en los tres puntos de la esquina superior derecha en N8N y selecciona <strong>Download</strong> para descargar el archivo .json de tu workflow [cite: 3 Asistente Digital N8N lectura_obligatoria_.pdf].</p>
+            <div class="input-group">
+                <label>Sube aquí tu archivo JSON descargado (Simulación de entrega):</label>
+                <input type="file" accept=".json" class="file-input" id="json-file">
+            </div>
+            <div class="input-group">
+                <label>Reflexión Pedagógica:</label>
+                <textarea class="textarea-box" placeholder="¿Cómo ayuda este Agente de IA a no sustituir al docente, según los fundamentos éticos leídos en el Módulo I?"></textarea>
+            </div>
+            <button class="btn-send" onclick="finalizarEntrega()"><i class="fa-solid fa-paper-plane"></i> Finalizar Actividad y Entregar</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

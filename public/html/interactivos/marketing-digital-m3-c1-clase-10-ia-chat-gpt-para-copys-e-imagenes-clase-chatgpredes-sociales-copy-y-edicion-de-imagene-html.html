@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Uso de ChatGPT para redes sociales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-primario: #2C3E50;
+            --color-secundario: #18BC9C;
+            --color-fondo: #ECF0F1;
+            --font-titulos: 'Montserrat', sans-serif;
+            --font-cuerpo: 'Roboto', sans-serif;
+        }
+        body {
+            font-family: var(--font-cuerpo);
+            background-color: var(--color-fondo);
+            color: #34495E;
+            margin: 0;
+            padding-top: 5rem;
+        }
+        .main-container { display: flex; }
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: var(--color-primario);
+            color: white; padding: 1.25rem 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        header h1 { font-family: var(--font-titulos); font-size: 1.5rem; margin: 0; }
+        header p { font-size: 0.9rem; margin: 0; opacity: 0.8; }
+        header img { height: 50px; }
+        nav {
+            width: 280px; background: white; padding: 2rem;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: fixed; left: 0; top: 5rem;
+            height: calc(100% - 5rem); overflow-y: auto;
+            border-right: 1px solid #e2e8f0;
+        }
+        nav a {
+            display: flex; align-items: center; gap: 1rem;
+            color: #2C3E50; text-decoration: none;
+            padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+            border-radius: 9999px; transition: all 0.3s;
+        }
+        nav a:hover, nav a.active { background-color: var(--color-secundario); color: white; transform: translateX(5px); }
+        main { margin-left: 280px; flex-grow: 1; padding: 2rem; }
+        section {
+            background: white; border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 2rem; margin-bottom: 2rem;
+            border-left: 6px solid var(--color-secundario);
+        }
+        section h2 {
+            font-family: var(--font-titulos); font-size: 1.8rem;
+            color: var(--color-primario); margin-top: 0;
+            display: flex; align-items: center; gap: 1rem;
+            padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;
+        }
+        .ejemplo-box {
+            background-color: #f8f9fa; border-radius: 8px;
+            padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #d2d7dc;
+        }
+        .tip {
+            display: flex; align-items: flex-start; gap: 1rem;
+            background-color: #e6fffb; border-left: 5px solid var(--color-secundario);
+            padding: 1rem; margin-top: 1.5rem; border-radius: 8px;
+            font-size: 0.9rem; color: #0c4a45;
+        }
+        .tip .fa-icon { font-size: 1.5rem; color: var(--color-secundario); }
+        footer { text-align: center; padding: 1.5rem; background: var(--color-primario); color: white; font-size: 0.8rem; }
+        @media (max-width: 768px) {
+            .main-container { flex-direction: column; }
+            nav { position: static; width: 100%; height: auto; box-shadow: none; border-right: none; padding-top: 1rem; }
+            main { margin-left: 0; padding: 1rem; }
+            header { padding: 1rem; text-align: center; flex-direction: column; }
+            header img { margin-top: 0.5rem; }
+            nav a { border-radius: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Uso de ChatGPT para redes sociales: copy y edición de imágenes</h1>
+            <p>Conoce cómo las grandes marcas utilizan GPT para el Marketing</p>
+      
+
+    <div class="main-container">
+        <nav>
+            <p class="font-bold text-lg mb-4 text-gray-700">Agenda de la clase:</p>
+            <a href="#intro"><i class="fas fa-info-circle w-6 text-xl"></i> Introducción</a>
+            <a href="#copies"><i class="fas fa-edit w-6 text-xl"></i> Creación de copies</a>
+            <a href="#ideas"><i class="fas fa-lightbulb w-6 text-xl"></i> Generación de ideas</a>
+            <a href="#adaptacion"><i class="fas fa-language w-6 text-xl"></i> Adaptación de lenguaje</a>
+            <a href="#imagenes"><i class="fas fa-image w-6 text-xl"></i> Edición de imágenes</a>
+            <a href="#prompts"><i class="fas fa-robot w-6 text-xl"></i> Uso de prompts</a>
+            <a href="#cierre"><i class="fas fa-check-circle w-6 text-xl"></i> Limitaciones y cierre</a>
+        </nav>
+
+        <main>
+            <!-- Sección 1: Introducción -->
+            <section id="intro">
+                <h2><i class="fas fa-info-circle text-teal-500"></i> Introducción a ChatGPT en redes sociales</h2>
+                <p>ChatGPT es una herramienta de Inteligencia Artificial que te ayuda a generar texto de forma natural. Piensa en él como un asistente muy inteligente que puede ayudarte a escribir ideas, publicaciones y guiones para tus redes sociales, ahorrándote mucho tiempo.</p>
+                <div class="tip">
+                    <span class="fa-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                    <p><strong>Tip para la clase:</strong> Inicia con una demostración muy simple de cómo interactuar con ChatGPT. Muestra la interfaz y la facilidad de uso.</p>
+                </div>
+            </section>
+
+            <!-- Sección 2: Copies -->
+            <section id="copies">
+                <h2><i class="fas fa-edit text-teal-500"></i> Creación de textos y copies para publicaciones</h2>
+                <p>Para crear un texto persuasivo, solo necesitas darle a ChatGPT instrucciones claras. Por ejemplo, dile qué producto o servicio tienes, cuál es el tono que quieres usar (amigable, profesional, divertido) y a quién te diriges.</p>
+                <div class="ejemplo-box">
+                    <p class="font-bold mb-2">Un buen ejemplo de instrucción sería:</p>
+                    <p class="italic text-gray-600">"Escribe un texto breve para Instagram que promocione una nueva promoción de café en nuestra cafetería. Usa emojis y un llamado a la acción para que la gente nos visite."</p>
+                </div>
+                <p>Recuerda que el texto de la IA es un borrador. Siempre debes revisarlo y adaptarlo para que suene con tu voz única y con la personalidad de tu marca.</p>
+                <div class="ejemplo-box bg-blue-100 border-blue-400">
+                    <p class="font-bold mb-2">Prompt destacado</p>
+                    <p>Actúa como un community manager experto. Redacta un post breve para Facebook sobre nuestro taller de cerámica, usando un tono amigable. Incluye el horario y la forma de inscripción.</p>
+                </div>
+            </section>
+
+            <!-- Sección 3: Ideas -->
+            <section id="ideas">
+                <h2><i class="fas fa-lightbulb text-teal-500"></i> Generación de ideas para contenido</h2>
+                <p>Si te quedas sin ideas, ChatGPT puede ser tu motor de creatividad. Pídele que genere temas para tu perfil, actuando como un especialista en tu área.</p>
+                <div class="ejemplo-box">
+                    <p class="font-bold mb-2">Por ejemplo, puedes pedirle:</p>
+                    <p class="italic text-gray-600">"Actúa como un especialista en moda sostenible y dame 5 ideas de publicaciones para Instagram sobre reciclaje textil, tips de estilo y datos curiosos."</p>
+                </div>
+                <div class="tip">
+                    <span class="fa-icon"><i class="fas fa-calendar-alt"></i></span>
+                    <p><strong>Consejo práctico:</strong> Puedes usar esta función para planificar tu calendario de contenidos. Dale a ChatGPT las fechas de campañas importantes y él te sugerirá qué publicar cada día.</p>
+                </div>
+            </section>
+
+            <!-- Sección 4: Adaptación -->
+            <section id="adaptacion">
+                <h2><i class="fas fa-language text-teal-500"></i> Adaptación de lenguaje según plataforma</h2>
+                <p>Cada red social tiene su propio estilo. Lo que funciona en LinkedIn (más formal) no es lo mismo que lo que se usa en Instagram (más visual y con emojis). ChatGPT puede adaptar el mismo mensaje para cada plataforma.</p>
+                <div class="ejemplo-box">
+                    <p class="font-bold mb-2">Puedes darle instrucciones como:</p>
+                    <p class="italic text-gray-600">"Reescribe este texto para LinkedIn con un tono profesional."</p>
+                    <p class="italic text-gray-600">"Convierte este texto en un caption corto para Instagram, usando emojis y hashtags relevantes."</p>
+                </div>
+            </section>
+
+            <!-- Sección 5: Imágenes -->
+            <section id="imagenes">
+                <h2><i class="fas fa-image text-teal-500"></i> Edición de imágenes con comandos de lenguaje natural</h2>
+                <p>Las versiones más avanzadas de ChatGPT (como la que integra DALL-E 3) te permiten editar imágenes con simples descripciones de texto. No necesitas ser un experto en Photoshop; solo tienes que escribir lo que quieres.</p>
+                <div class="ejemplo-box">
+                    <p class="font-bold mb-2">Un comando sencillo puede ser:</p>
+                    <p class="italic text-gray-600">"Elimina el fondo de esta foto de producto y coloca un fondo blanco puro para una publicación de e-commerce."</p>
+                </div>
+                <div class="tip">
+                    <span class="fa-icon"><i class="fas fa-eye"></i></span>
+                    <p><strong>Importante:</strong> Aunque la IA es muy poderosa, siempre revisa el resultado. A veces, los pequeños detalles pueden necesitar un retoque manual.</p>
+                </div>
+            </section>
+
+            <!-- Sección 6: Prompts -->
+            <section id="prompts">
+                <h2><i class="fas fa-robot text-teal-500"></i> Uso de prompts para obtener mejores resultados</h2>
+                <p>Un "prompt" es la instrucción que le das a la IA. La clave para que te dé una buena respuesta es darle la mayor cantidad de detalles posible: qué rol debe tomar (ej. experto en marketing), cuál es tu meta, a quién te diriges, qué tono usar, etc.</p>
+                <div class="ejemplo-box">
+                    <p class="font-bold mb-2">Mejor que un prompt vago:</p>
+                    <p class="italic text-gray-600">"¿Sobre qué publico en Instagram?"</p>
+                    <p class="font-bold mt-4 mb-2">Usa un prompt detallado como este:</p>
+                    <p class="italic text-gray-600">"Actúa como un experto en redes para una panadería. Dame 5 ideas de contenido para Instagram, usando un tono amable, que ayuden a atraer a más clientes locales y a aumentar el número de seguidores."</p>
+                </div>
+                <div class="tip">
+                    <span class="fa-icon"><i class="fas fa-redo-alt"></i></span>
+                    <p><strong>El poder del refinamiento:</strong> Si la primera respuesta no es perfecta, pídele que la modifique. Por ejemplo: "Reescribe el texto anterior en un tono más formal" o "Hazlo más breve y conciso."</p>
+                </div>
+            </section>
+
+            <!-- Sección 7: Cierre -->
+            <section id="cierre">
+                <h2><i class="fas fa-check-circle text-teal-500"></i> Limitaciones y buenas prácticas (resumen)</h2>
+                <p>Aunque ChatGPT es genial, no es perfecto. A veces puede generar respuestas incorrectas o inventar datos. Por eso, siempre debes usarlo como un borrador y verificar la información importante en otras fuentes.</p>
+                <div class="ejemplo-box">
+                    <p class="font-bold mb-2">Recuerda:</p>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Verifica la información:</strong> Nunca confíes ciegamente en lo que te dice la IA.</li>
+                        <li><strong>Adapta tu voz:</strong> El contenido de la IA es el punto de partida. Edítalo para que suene genuino y refleje tu personalidad.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Video único al final -->
+            <section id="video-final">
+                <h2><i class="fas fa-play-circle text-teal-500"></i> Video de referencia</h2>
+                <div class="mt-4">
+                    <iframe class="w-full aspect-video rounded shadow" src="https://www.youtube.com/embed/BjMDYvuLKh8" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="mt-8">
+        <p>&copy; 2025 Reidel Design. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

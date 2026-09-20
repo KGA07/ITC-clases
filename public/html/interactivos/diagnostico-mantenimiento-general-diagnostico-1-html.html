@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz – Diagnóstico y Mantenimiento de PC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0b1120;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.16);
+      --correct: #22c55e;
+      --incorrect: #ef4444;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617 60%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      font-size: 24px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .subtitle {
+      font-size: 16px;
+      margin-top: 6px;
+      color: var(--text);
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .quiz-card {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+      padding: 18px 18px 16px;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pill {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+    }
+
+    .questions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .question {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 12px;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .question-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .question-topic {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .options {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .option {
+      font-size: 13px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.16s ease;
+    }
+
+    .option input {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .question.correct {
+      border-color: rgba(34, 197, 94, 0.8);
+      background: radial-gradient(circle at top left, rgba(22, 163, 74, 0.18), rgba(15, 23, 42, 0.95));
+    }
+
+    .question.incorrect {
+      border-color: rgba(239, 68, 68, 0.9);
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.18), rgba(15, 23, 42, 0.95));
+    }
+
+    .feedback {
+      font-size: 11px;
+      margin-top: 4px;
+      color: var(--muted);
+      display: none;
+    }
+
+    .question.correct .feedback {
+      display: block;
+      color: #bbf7d0;
+    }
+
+    .question.incorrect .feedback {
+      display: block;
+      color: #fecaca;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: linear-gradient(90deg, var(--accent-soft), transparent);
+      color: var(--text);
+      font-size: 13px;
+      padding: 7px 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.3), transparent);
+    }
+
+    .btn-secondary {
+      border-color: var(--border);
+      background: rgba(15, 23, 42, 0.9);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      box-shadow: 0 0 12px rgba(148, 163, 184, 0.35);
+    }
+
+    .result {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .result strong {
+      color: var(--accent);
+    }
+
+    .result-detail {
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 640px) {
+      .quiz-card {
+        padding: 14px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="header">
+      <h1 class="title">Quiz Técnico</h1>
+      <h2 class="subtitle">Diagnóstico y Mantenimiento de PC</h2>
+      <p class="tagline">Placa madre · Microprocesador · RAM · Almacenamiento · Fuente · Windows</p>
+    </header>
+
+    <section class="quiz-card">
+      <div class="info-row">
+        <span class="pill">
+          <span class="pill-dot"></span>
+          Nivel: Inicial / Intermedio
+        </span>
+        <span class="pill">Responde todas las preguntas y luego haz clic en "Corregir".</span>
+      </div>
+
+      <form id="quizForm">
+        <div class="questions">
+
+          <!-- P1 Placa madre -->
+          <article class="question" data-correct="b">
+            <div class="question-header">
+              <span class="question-title">1. ¿Qué función principal cumple la placa madre (motherboard) en una PC?</span>
+              <span class="question-topic">Placa madre</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q1" value="a" />
+                <span>Es el dispositivo que almacena el sistema operativo.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q1" value="b" />
+                <span>Conecta y permite la comunicación entre todos los componentes del PC.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q1" value="c" />
+                <span>Solo se encarga de la energía eléctrica de los componentes.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              La placa madre es la base donde se conectan y se comunican microprocesador, RAM, almacenamiento y otros dispositivos.
+            </p>
+          </article>
+
+          <!-- P2 Placa madre / sockets -->
+          <article class="question" data-correct="c">
+            <div class="question-header">
+              <span class="question-title">2. ¿Qué es el socket de la placa madre?</span>
+              <span class="question-topic">Placa madre</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q2" value="a" />
+                <span>El conector para los discos duros y SSD.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q2" value="b" />
+                <span>El conector donde se enchufa la fuente de alimentación.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q2" value="c" />
+                <span>El zócalo específico donde se instala el microprocesador.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              El socket es el zócalo físico diseñado para un tipo de microprocesador específico (por modelo y generación).
+            </p>
+          </article>
+
+          <!-- P3 Microprocesador -->
+          <article class="question" data-correct="a">
+            <div class="question-header">
+              <span class="question-title">3. ¿Cuál es la mejor descripción del microprocesador (CPU)?</span>
+              <span class="question-topic">Microprocesador</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q3" value="a" />
+                <span>Es el “cerebro” del equipo, ejecuta instrucciones y realiza cálculos.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q3" value="b" />
+                <span>Es el dispositivo que almacena los archivos de forma permanente.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q3" value="c" />
+                <span>Es el encargado de convertir la corriente alterna en continua.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              La CPU interpreta y ejecuta instrucciones de los programas y del sistema operativo.
+            </p>
+          </article>
+
+          <!-- P4 RAM -->
+          <article class="question" data-correct="b">
+            <div class="question-header">
+              <span class="question-title">4. ¿Qué característica principal tiene la memoria RAM?</span>
+              <span class="question-topic">Memoria RAM</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q4" value="a" />
+                <span>Almacena datos de forma permanente aunque se apague el PC.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q4" value="b" />
+                <span>Es una memoria volátil: su contenido se pierde al apagar el equipo.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q4" value="c" />
+                <span>Solo se utiliza para guardar documentos de usuario.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              La memoria RAM almacena datos e instrucciones de uso inmediato. Es rápida pero pierde su contenido al apagar el sistema.
+            </p>
+          </article>
+
+          <!-- P5 RAM / rendimiento -->
+          <article class="question" data-correct="c">
+            <div class="question-header">
+              <span class="question-title">5. ¿Qué efecto suele tener aumentar la cantidad de memoria RAM?</span>
+              <span class="question-topic">Memoria RAM</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q5" value="a" />
+                <span>Hace que el disco duro gire más rápido.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q5" value="b" />
+                <span>Solo mejora la calidad de imagen en el monitor.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q5" value="c" />
+                <span>Permite abrir más programas al mismo tiempo con mayor fluidez.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              Más RAM permite manejar más aplicaciones y datos en memoria sin depender tanto del disco como memoria virtual.
+            </p>
+          </article>
+
+          <!-- P6 Almacenamiento -->
+          <article class="question" data-correct="a">
+            <div class="question-header">
+              <span class="question-title">6. ¿Cuál de las siguientes opciones es una unidad de almacenamiento de estado sólido?</span>
+              <span class="question-topic">Almacenamiento</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q6" value="a" />
+                <span>SSD (Solid State Drive).</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q6" value="b" />
+                <span>HDD de 3,5" mecánico.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q6" value="c" />
+                <span>Unidad lectora de DVD.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              Los SSD no tienen partes móviles, son más rápidos y resistentes a golpes que los discos mecánicos tradicionales.
+            </p>
+          </article>
+
+          <!-- P7 Fuente -->
+          <article class="question" data-correct="b">
+            <div class="question-header">
+              <span class="question-title">7. ¿Qué hace la fuente de alimentación en una computadora?</span>
+              <span class="question-topic">Fuente de alimentación</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q7" value="a" />
+                <span>Almacena los archivos de usuario y del sistema.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q7" value="b" />
+                <span>Convierte la corriente alterna en corriente continua y distribuye energía a los componentes.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q7" value="c" />
+                <span>Controla la velocidad de la red de Internet.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              La fuente convierte la energía de la red eléctrica a tensiones seguras para placa madre, CPU, discos, etc.
+            </p>
+          </article>
+
+          <!-- P8 Fuente / potencia -->
+          <article class="question" data-correct="a">
+            <div class="question-header">
+              <span class="question-title">8. ¿Por qué es importante elegir una fuente de alimentación de buena calidad?</span>
+              <span class="question-topic">Fuente de alimentación</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q8" value="a" />
+                <span>Porque una fuente de mala calidad puede provocar fallas, reinicios y dañar otros componentes.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q8" value="b" />
+                <span>Solo influye en el color de la pantalla.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q8" value="c" />
+                <span>No es importante, todas las fuentes funcionan igual.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              Una fuente inestable puede generar picos de tensión, cortes y, en casos extremos, dañar hardware.
+            </p>
+          </article>
+
+          <!-- P9 Windows -->
+          <article class="question" data-correct="c">
+            <div class="question-header">
+              <span class="question-title">9. ¿Qué es un sistema operativo como Windows?</span>
+              <span class="question-topic">Windows</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q9" value="a" />
+                <span>Un programa opcional solo para jugar.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q9" value="b" />
+                <span>Un componente físico que se conecta a la placa madre.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q9" value="c" />
+                <span>El software que administra el hardware y permite que el usuario use la computadora.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              El sistema operativo gestiona recursos (CPU, memoria, dispositivos) y ofrece la interfaz para trabajar con el PC.
+            </p>
+          </article>
+
+          <!-- P10 Windows / mantenimiento -->
+          <article class="question" data-correct="b">
+            <div class="question-header">
+              <span class="question-title">10. ¿Cuál de estas acciones ayuda al buen funcionamiento de Windows?</span>
+              <span class="question-topic">Windows</span>
+            </div>
+            <ul class="options">
+              <li class="option">
+                <input type="radio" name="q10" value="a" />
+                <span>Instalar programas desde cualquier sitio desconocido.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q10" value="b" />
+                <span>Mantener el sistema actualizado y usar un antivirus confiable.</span>
+              </li>
+              <li class="option">
+                <input type="radio" name="q10" value="c" />
+                <span>Desactivar todas las actualizaciones y nunca reiniciar el equipo.</span>
+              </li>
+            </ul>
+            <p class="feedback">
+              Actualizar Windows y usar antivirus reduce vulnerabilidades y mejora estabilidad y seguridad.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="actions">
+          <div>
+            <button type="button" class="btn" id="submitQuiz">
+              Corregir quiz
+            </button>
+            <button type="button" class="btn btn-secondary" id="resetQuiz">
+              Limpiar respuestas
+            </button>
+          </div>
+          <div class="result" id="resultBox">
+            Respuestas correctas: <strong>0 / 10</strong>
+            <div class="result-detail" id="resultDetail"></div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const submitBtn = document.getElementById('submitQuiz');
+    const resetBtn = document.getElementById('resetQuiz');
+    const resultBox = document.getElementById('resultBox');
+    const resultDetail = document.getElementById('resultDetail');
+    const questions = document.querySelectorAll('.question');
+
+    submitBtn.addEventListener('click', () => {
+      let correctCount = 0;
+      let answered = 0;
+
+      questions.forEach((q, index) => {
+        const correct = q.getAttribute('data-correct');
+        const name = 'q' + (index + 1);
+        const selected = q.querySelector('input[name="' + name + '"]:checked');
+        q.classList.remove('correct', 'incorrect');
+
+        if (selected) {
+          answered++;
+          if (selected.value === correct) {
+            correctCount++;
+            q.classList.add('correct');
+          } else {
+            q.classList.add('incorrect');
+          }
+        }
+      });
+
+      resultBox.querySelector('strong').textContent = correctCount + ' / ' + questions.length;
+
+      if (answered < questions.length) {
+        resultDetail.textContent = 'Todavía faltan preguntas sin responder.';
+      } else {
+        if (correctCount === questions.length) {
+          resultDetail.textContent = '¡Excelente! Respondiste todo correcto.';
+        } else if (correctCount >= questions.length * 0.7) {
+          resultDetail.textContent = 'Muy buen resultado. Revisa las preguntas marcadas en rojo para reforzar.';
+        } else {
+          resultDetail.textContent = 'Conviene repasar conceptos básicos de hardware y Windows, y volver a intentar.';
+        }
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      document.getElementById('quizForm').reset();
+      questions.forEach((q) => {
+        q.classList.remove('correct', 'incorrect');
+      });
+      resultBox.querySelector('strong').textContent = '0 / 10';
+      resultDetail.textContent = '';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Final PI - UdeMM & ITC</title>
+    <style>
+        :root { 
+            --celeste: #74ACDF; 
+            --blanco: #FFFFFF; 
+            --sol: #F6B40E;
+        }
+        
+        /* Fondo Patriota: Bandera Argentina en degradado diagonal */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, var(--celeste) 0%, var(--celeste) 30%, var(--blanco) 30%, var(--blanco) 70%, var(--celeste) 70%, var(--celeste) 100%);
+            background-attachment: fixed;
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+        }
+
+        .container { 
+            background-color: rgba(255, 255, 255, 0.97); 
+            width: 100%; 
+            max-width: 750px; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+            border-top: 10px solid var(--celeste); 
+        }
+
+        .header-logos { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 25px; 
+            border-bottom: 2px solid var(--celeste);
+            padding-bottom: 15px;
+        }
+        
+        .header-logos img { height: 50px; }
+        
+        .sol-de-mayo {
+            width: 50px;
+            height: 50px;
+            fill: var(--sol);
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .progress-bar { height: 12px; background: #e0e0e0; border-radius: 6px; margin-bottom: 20px; overflow: hidden; }
+        .progress { height: 100%; background: var(--sol); width: 0%; transition: width 0.5s ease; }
+        
+        .widget { background: var(--celeste); color: white; padding: 10px; border-radius: 6px; text-align: center; margin-bottom: 20px; font-weight: bold; }
+        .timer { font-weight: bold; color: #d63031; text-align: center; margin-bottom: 10px; font-size: 1.2em; }
+        
+        .section { display: none; animation: fadeIn 0.4s; }
+        .active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        h3 { color: #2c3e50; border-left: 4px solid var(--celeste); padding-left: 10px; }
+        
+        button { background-color: var(--celeste); color: white; border: none; padding: 12px 25px; cursor: pointer; border-radius: 6px; font-weight: bold; margin: 5px 5px 0 0; transition: background 0.3s; }
+        button:hover { background-color: #5a8ebf; }
+        .btn-pdf { background-color: #27ae60; width: 100%; margin-bottom: 10px; }
+        .btn-pdf:hover { background-color: #219653; }
+        .btn-enviar { background-color: #2980b9; width: 100%; font-size: 1.1em; }
+        .btn-enviar:hover { background-color: #1f618d; }
+        .btn-atras { background-color: #7f8c8d; }
+        .btn-atras:hover { background-color: #636e72; }
+
+        textarea, select, input[type="text"] { width: 100%; padding: 12px; margin: 8px 0 15px 0; border: 1px solid #ccd1d9; border-radius: 6px; box-sizing: border-box; font-family: inherit; resize: vertical; }
+        textarea:focus, select:focus, input:focus { outline: none; border-color: var(--celeste); box-shadow: 0 0 5px rgba(116, 172, 223, 0.5); }
+        
+        .tf-container { margin-bottom: 15px; background: #f8f9fa; padding: 10px; border-radius: 6px; border-left: 3px solid #ddd; }
+        .tf-group { display: flex; gap: 10px; margin-top: 8px; }
+        .tf-btn { flex: 1; padding: 10px; border: 2px solid var(--celeste); background: white; cursor: pointer; text-align: center; border-radius: 5px; font-weight: bold; color: var(--celeste); transition: 0.2s; }
+        .tf-btn:hover { background: #eef5fb; }
+        .tf-btn.selected { background: var(--celeste); color: white; }
+
+        /* MAGIA PARA EL PDF: Muestra todo y oculta la interfaz */
+        @media print {
+            body { background: white !important; display: block; padding: 0; }
+            .container { box-shadow: none; border: none; width: 100%; max-width: 100%; padding: 0; }
+            .section { display: block !important; page-break-inside: avoid; margin-bottom: 30px; opacity: 1; transform: none; }
+            button, .timer, .widget, .progress-bar { display: none !important; }
+            textarea { height: auto !important; min-height: 60px; overflow: visible; border: 1px solid #000; }
+            .tf-btn { border: 1px solid #000; color: #000; }
+            .tf-btn.selected { background: #ddd !important; color: #000 !important; font-weight: bold; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="printable">
+    
+    <div class="header-logos">
+        <img src="logo Udemm SVG.svg" alt="UdeMM">
+        <!-- SVG Sol de Mayo (Identidad Nacional) -->
+        <svg class="sol-de-mayo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="20" fill="#F6B40E"/>
+            <path d="M50 0 L55 25 L45 25 Z M50 100 L45 75 L55 75 Z M0 50 L25 45 L25 55 Z M100 50 L75 55 L75 45 Z M15 15 L32 28 L25 35 Z M85 85 L68 72 L75 65 Z M15 85 L25 65 L32 72 Z M85 15 L75 35 L68 28 Z" fill="#F6B40E"/>
+        </svg>
+        <img src="svg ITC.svg" alt="ITC">
+    </div>
+
+    <div id="timer" class="timer">Tiempo restante: 60:00</div>
+    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+    <div class="widget" id="progressWidget">Preguntas respondidas: 0 / 18</div>
+    
+    <!-- CONEXIÓN A FORMSPREE -->
+    <form action="https://formspree.io/f/xzdloaje" method="POST" id="examForm">
+        
+        <!-- SECCIÓN 0 -->
+        <div class="section active" id="s0">
+            <h3>Identificación del Estudiante</h3>
+            <label>Apellido y Nombre:</label>
+            <input type="text" name="Estudiante" placeholder="Ej. González, Juan" required oninput="updateProgress()">
+            <button type="button" onclick="go(1)">Comenzar Evaluación</button>
+        </div>
+
+        <!-- SECCIÓN 1: DESARROLLO -->
+        <div class="section" id="s1">
+            <h3>I. Fundamentos Teóricos</h3>
+            
+            <label>1. ¿Explique la diferencia técnica entre el derecho moral y el derecho patrimonial del autor?</label>
+            <textarea name="q1" required oninput="updateProgress()"></textarea>
+            
+            <label>2. ¿Cómo define la ley el concepto de 'Obra' a efectos de su protección legal?</label>
+            <textarea name="q2" required oninput="updateProgress()"></textarea>
+            
+            <label>3. ¿Qué implica el principio de 'territorialidad' dentro del marco de la propiedad intelectual?</label>
+            <textarea name="q3" required oninput="updateProgress()"></textarea>
+            
+            <label>4. ¿Qué consecuencias legales tiene que una obra pase al 'dominio público'?</label>
+            <textarea name="q4" required oninput="updateProgress()"></textarea>
+            
+            <label>5. ¿Quién es el titular de los derechos en el caso de una obra producida por encargo o bajo relación de dependencia (Art. 4 inc. d)?</label>
+            <textarea name="q5" required oninput="updateProgress()"></textarea>
+            
+            <label>6. ¿Qué condiciones deben cumplirse para que una reproducción se considere 'uso didáctico' según el Art. 10?</label>
+            <textarea name="q6" required oninput="updateProgress()"></textarea>
+            
+            <label>7. Explique la distinción fundamental que hace la ley entre la 'expresión' de una obra y la 'idea' o método subyacente.</label>
+            <textarea name="q7" required oninput="updateProgress()"></textarea>
+            
+            <button type="button" class="btn-atras" onclick="go(0)">Atrás</button>
+            <button type="button" onclick="go(2)">Siguiente Sección</button>
+        </div>
+
+        <!-- SECCIÓN 2: MÚLTIPLE CHOICE -->
+        <div class="section" id="s2">
+            <h3>II. Ley 11.723 - Opción Múltiple</h3>
+            
+            <label>8. ¿Qué tipo de obras protege expresamente el Art. 1 de la Ley 11.723?</label>
+            <select name="q8" required onchange="updateProgress()">
+                <option value="">Seleccione una opción...</option>
+                <option value="Escritos/Software">Escritos, obras musicales, programas de computación, entre otros.</option>
+                <option value="Solo Libros">Únicamente obras literarias impresas.</option>
+                <option value="Ideas">Ideas y procedimientos matemáticos.</option>
+            </select>
+            
+            <label>9. Según el Art. 3, sobre las obras anónimas:</label>
+            <select name="q9" required onchange="updateProgress()">
+                <option value="">Seleccione una opción...</option>
+                <option value="Editor">Corresponderán al editor los derechos y obligaciones del autor.</option>
+                <option value="Estado">Pasan inmediatamente al dominio del Estado Nacional.</option>
+                <option value="No protegidas">No gozan de protección legal alguna.</option>
+            </select>
+            
+            <label>10. ¿Cómo se reprime la defraudación de los derechos de propiedad intelectual (Art. 71)?</label>
+            <select name="q10" required onchange="updateProgress()">
+                <option value="">Seleccione una opción...</option>
+                <option value="Cod Penal">Con la pena establecida por el artículo 172 del Código Penal.</option>
+                <option value="Multa Civil">Exclusivamente con una multa civil.</option>
+                <option value="Llamado atencion">Con un llamado de atención del Registro Nacional.</option>
+            </select>
+            
+            <label>11. ¿Qué medidas preventivas pueden decretar los jueces (Art. 79)?</label>
+            <select name="q11" required onchange="updateProgress()">
+                <option value="">Seleccione una opción...</option>
+                <option value="Embargo">La suspensión de un espectáculo y el embargo de las obras denunciadas.</option>
+                <option value="Carcel Directa">La cárcel directa sin juicio previo.</option>
+                <option value="Ninguna">Ninguna, solo actúan post-infracción.</option>
+            </select>
+            
+            <label>12. ¿Qué derecho tiene el traductor de una obra que no pertenece al dominio privado (Art. 24)?</label>
+            <select name="q12" required onchange="updateProgress()">
+                <option value="">Seleccione una opción...</option>
+                <option value="Propiedad de version">Es dueño exclusivo de su versión, pero no puede oponerse a que otros la traduzcan.</option>
+                <option value="Prohibido">Queda prohibido traducir obras privadas.</option>
+                <option value="Dueño total">Se convierte en el dueño total de la obra original.</option>
+            </select>
+            
+            <button type="button" class="btn-atras" onclick="go(1)">Atrás</button>
+            <button type="button" onclick="go(3)">Siguiente Sección</button>
+        </div>
+
+        <!-- SECCIÓN 3: V/F -->
+        <div class="section" id="s3">
+            <h3>III. Convenio de Berna y Contexto (Verdadero / Falso)</h3>
+            
+            <div class="tf-container">
+                <p>13. Según el Art. 56, el intérprete de una obra está facultado para oponerse a la divulgación de su interpretación si le produce un grave e injusto perjuicio artístico.</p>
+                <div class="tf-group" onclick="selectTF(event, 'q13')"><div class="tf-btn" data-val="Verdadero">Verdadero</div><div class="tf-btn" data-val="Falso">Falso</div></div>
+                <input type="hidden" name="q13" id="q13" required onchange="updateProgress()">
+            </div>
+            
+            <div class="tf-container">
+                <p>14. Según el Art. 28, las noticias de interés general publicadas en su versión original pueden ser utilizadas libremente sin necesidad de expresar la fuente de ellas.</p>
+                <div class="tf-group" onclick="selectTF(event, 'q14')"><div class="tf-btn" data-val="Verdadero">Verdadero</div><div class="tf-btn" data-val="Falso">Falso</div></div>
+                <input type="hidden" name="q14" id="q14" required onchange="updateProgress()">
+            </div>
+            
+            <div class="tf-container">
+                <p>15. El Convenio de Berna exige como requisito fundamental que la obra esté registrada formalmente para poder gozar de protección internacional.</p>
+                <div class="tf-group" onclick="selectTF(event, 'q15')"><div class="tf-btn" data-val="Verdadero">Verdadero</div><div class="tf-btn" data-val="Falso">Falso</div></div>
+                <input type="hidden" name="q15" id="q15" required onchange="updateProgress()">
+            </div>
+            
+            <div class="tf-container">
+                <p>16. El principio de "Trato Nacional" del Convenio de Berna obliga a los países miembros a otorgar a los autores extranjeros los mismos derechos que conceden a sus propios ciudadanos.</p>
+                <div class="tf-group" onclick="selectTF(event, 'q16')"><div class="tf-btn" data-val="Verdadero">Verdadero</div><div class="tf-btn" data-val="Falso">Falso</div></div>
+                <input type="hidden" name="q16" id="q16" required onchange="updateProgress()">
+            </div>
+            
+            <div class="tf-container">
+                <p>17. Caso: Una agencia argentina es copiada por un competidor en Brasil. Gracias al Convenio de Berna, la agencia argentina tiene amparo legal en Brasil aunque no haya registrado la obra allí.</p>
+                <div class="tf-group" onclick="selectTF(event, 'q17')"><div class="tf-btn" data-val="Verdadero">Verdadero</div><div class="tf-btn" data-val="Falso">Falso</div></div>
+                <input type="hidden" name="q17" id="q17" required onchange="updateProgress()">
+            </div>
+            
+            <div class="tf-container">
+                <p>18. A nivel global, la propiedad intelectual funciona únicamente como un freno al desarrollo, ya que impide el crecimiento económico de las industrias creativas.</p>
+                <div class="tf-group" onclick="selectTF(event, 'q18')"><div class="tf-btn" data-val="Verdadero">Verdadero</div><div class="tf-btn" data-val="Falso">Falso</div></div>
+                <input type="hidden" name="q18" id="q18" required onchange="updateProgress()">
+            </div>
+            
+            <button type="button" class="btn-atras" onclick="go(2)">Atrás</button>
+            <button type="button" onclick="go(4)">Finalizar Examen</button>
+        </div>
+
+        <!-- SECCIÓN 4: FINALIZAR Y ENVIAR -->
+        <div class="section" id="s4">
+            <h3>¡Evaluación Completada!</h3>
+            <p>Por favor, descarga una copia de respaldo antes de enviar tus resultados definitivos.</p>
+            <button type="button" class="btn-pdf" onclick="window.print()">1. DESCARGAR PDF (COPIA DE RESPALDO)</button>
+            <button type="submit" class="btn-enviar">2. ENVIAR EVALUACIÓN PARA CALIFICAR</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    let currentSection = 0;
+    
+    // Script mágico para garantizar que los textos se impriman en el PDF
+    document.querySelectorAll('textarea').forEach(el => {
+        el.addEventListener('input', function() { this.innerHTML = this.value; });
+    });
+    
+    function go(nextSectionIndex) {
+        // Validación hacia adelante
+        if (nextSectionIndex > currentSection && currentSection !== 4) {
+            const inputs = document.getElementById('s'+currentSection).querySelectorAll('[required]');
+            let allValid = true;
+            inputs.forEach(input => { if(!input.value) allValid = false; });
+            
+            if(!allValid) { 
+                alert("Por favor, completa todas las respuestas de esta sección para continuar."); 
+                return; 
+            }
+        }
+        
+        // Cambio de sección
+        document.getElementById('s'+currentSection).classList.remove('active');
+        currentSection = nextSectionIndex;
+        document.getElementById('s'+currentSection).classList.add('active');
+        
+        // Actualizar barra de progreso (25% por cada sección)
+        document.getElementById('progress').style.width = (currentSection * 25) + '%';
+        window.scrollTo(0, 0); // Sube la pantalla al cambiar de sección
+    }
+    
+    function selectTF(e, inputId) {
+        if (!e.target.classList.contains('tf-btn')) return;
+        
+        const group = e.currentTarget;
+        group.querySelectorAll('.tf-btn').forEach(btn => btn.classList.remove('selected'));
+        
+        e.target.classList.add('selected');
+        const input = document.getElementById(inputId);
+        input.value = e.target.dataset.val;
+        
+        // Disparar evento para que actualice el widget
+        input.dispatchEvent(new Event('change'));
+    }
+
+    function updateProgress() {
+        const requiredInputs = document.querySelectorAll('[required]');
+        let answered = 0;
+        
+        // El index 0 es el nombre, restamos 1 para que cuente solo las 18 preguntas
+        requiredInputs.forEach(input => {
+            if(input.value && input.name !== "Estudiante") answered++;
+        });
+        
+        document.getElementById('progressWidget').innerText = `Preguntas respondidas: ${answered} / 18`;
+    }
+
+    // Temporizador
+    let time = 3600;
+    let timerInterval = setInterval(() => {
+        time--;
+        let m = Math.floor(time/60); 
+        let s = time%60;
+        document.getElementById('timer').innerText = `Tiempo restante: ${m}:${s < 10 ? '0'+s : s}`;
+        
+        if(time <= 0) { 
+            clearInterval(timerInterval);
+            alert("El tiempo ha finalizado. El examen se enviará automáticamente.");
+            document.getElementById('examForm').submit(); 
+        }
+    }, 1000);
+</script>
+</body>
+</html>

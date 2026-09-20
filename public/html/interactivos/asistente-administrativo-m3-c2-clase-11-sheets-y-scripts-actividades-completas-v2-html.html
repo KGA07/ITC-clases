@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades: Desarrollo de Apps con Sheets desde Cero</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #f4f6f9; color: #333; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        header { border-bottom: 3px solid #0052cc; padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { color: #0747a6; font-size: 32px; margin-bottom: 10px; }
+        .intro-box { background-color: #ebf5ff; border-left: 5px solid #0052cc; padding: 25px; border-radius: 4px; margin-bottom: 30px; }
+        .intro-box h2 { color: #0747a6; margin-bottom: 15px; font-size: 20px; }
+        .intro-box ul { margin-left: 20px; margin-bottom: 15px; }
+        .intro-box li { margin-bottom: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .card { background: #fff; border: 1px solid #e1e4e8; border-radius: 8px; padding: 25px; transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { border-color: #0052cc; box-shadow: 0 8px 16px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        .student-id { background: #0052cc; color: #fff; padding: 5px 12px; border-radius: 4px; font-size: 13px; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
+        .card h3 { color: #172b4d; font-size: 19px; margin-bottom: 15px; min-height: 45px; }
+        .card p { font-size: 14px; color: #4c5e7d; margin-bottom: 15px; }
+        .task-list { background: #f8f9fa; padding: 15px; border-radius: 6px; border: 1px dashed #c1c7d0; margin-bottom: 15px; }
+        .task-list strong { color: #0747a6; display: block; margin-bottom: 5px; }
+        .task-list ul { padding-left: 20px; font-size: 13px; }
+        .file-name { background: #e3fcef; color: #006644; font-weight: bold; padding: 5px 10px; border-radius: 4px; display: inline-block; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Proyecto Final: Sistema en Google Sheets desde Cero</h1>
+        <p><strong>Clase Práctica de Automatización IA</strong> | 15 Casos Profesionales</p>
+    </header>
+
+    <div class="intro-box">
+        <h2>Instrucciones Generales (¡Lean antes de arrancar!)</h2>
+        <p>A diferencia del ejercicio anterior, acá no hay planillas armadas. Cada uno de ustedes recibe un archivo Excel con más de 300 filas de datos reales de un negocio. <strong>Tienen que armar un sistema completo desde cero.</strong></p>
+        <br>
+        <p><strong>Paso a paso que le deben pedir a NotebookLM o su IA de confianza:</strong></p>
+        <ul>
+            <li><strong>Paso 1: Interfaz.</strong> Suban su archivo a Google Drive y ábranlo como Google Sheets. Creen una pestaña nueva llamada <code>Inicio</code>. Pídanle a la IA: <em>"¿Cómo creo botones gráficos en Google Sheets que al tocarlos me lleven a la pestaña de Datos y viceversa usando Apps Script?"</em>. Implementen esa navegación.</li>
+            <li><strong>Paso 2: La Lógica del Negocio.</strong> Cada alumno tiene un problema específico a resolver abajo. Cópienle a la IA las columnas que tiene su archivo y pídanle el script exacto para resolverlo.</li>
+            <li><strong>Paso 3: Botones de Acción.</strong> El script que resuelva el problema tiene que estar asignado a un botón en la pestaña <code>Inicio</code> o dentro de su hoja de datos. El libro tiene que quedar 100% funcional, como si fuera una aplicación para el dueño del negocio.</li>
+        </ul>
+        <p>¡No den vueltas! Usen el prompt madre que vimos en clase, aclárenle a la IA los nombres exactos de sus pestañas y columnas, y testeen el código.</p>
+    </div>
+
+    <div class="grid">
+        <!-- Tarjetas generadas dinámicamente -->
+        <div class="card">
+            <span class="student-id">Alumno 01</span>
+            <h3>Sistema para Repuestos de Motos</h3>
+            <p>El dueño de "Ruta Sur" necesita saber qué repuestos reponer urgente y cuánto vendió.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Revisar la hoja de datos y copiar a una nueva pestaña llamada <code>Bajo Stock</code> todas las filas donde la Cantidad vendida supere 3 unidades en el día.</li>
+                    <li>Calcular el total recaudado y mostrarlo en un cuadro de diálogo (Alert) al tocar el botón.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_01_Repuestos_Motos.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 02</span>
+            <h3>Agencia de Diseño y Community Management</h3>
+            <p>Tenés el registro de todos los clientes y las horas que les dedicaste.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Filtrar todos los proyectos con estado "En Proceso".</li>
+                    <li>Mover esos proyectos a una pestaña nueva llamada <code>Trabajo Actual</code>.</li>
+                    <li>Crear un botón que limpie esa pestaña cuando termines la jornada.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_02_Agencia_Diseno.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 03</span>
+            <h3>Gestión de Rotisería Argentina</h3>
+            <p>El local explota los fines de semana y se pierde el control de los envíos.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Separar automáticamente todos los pedidos que digan "Delivery" en una pestaña exclusiva para los repartidores llamada <code>Para Enviar</code>.</li>
+                    <li>Pintar de rojo la fila si el monto supera los $20.000 (pedido grande).</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_03_Rotiseria.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 04</span>
+            <h3>Control de Pet Shop y Veterinaria</h3>
+            <p>Hay que avisarle a los dueños cuándo le toca la vacuna antirrábica a sus mascotas.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Leer la fecha de "Próxima Vacuna".</li>
+                    <li>Si la fecha es anterior al día de hoy, resaltar toda la fila en amarillo y poner "LLAMAR" en una columna nueva.</li>
+                    <li>Generar un reporte en una hoja <code>Avisos</code> al tocar un botón.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_04_Pet_Shop.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 05</span>
+            <h3>Inventario de Hardware y PC</h3>
+            <p>Los precios de los componentes importados (SSDs, RTX) varían con el dólar.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Leer un valor de dólar ingresado por el usuario en la hoja <code>Inicio</code>.</li>
+                    <li>Multiplicar la columna "Precio_USD" por ese valor y escribir el resultado en Pesos en una columna nueva sin borrar los datos originales.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_05_Hardware_PC.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 06</span>
+            <h3>Local de Indumentaria Deportiva</h3>
+            <p>Necesitan un control rápido de qué camisetas de fútbol se están quedando sin stock.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Crear una función de búsqueda: el usuario escribe un equipo (ej. "River Plate") en la hoja Inicio.</li>
+                    <li>El script busca todas las ventas de ese equipo y las trae a la pantalla principal como un resumen dinámico.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_06_Indumentaria_Deportiva.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 07</span>
+            <h3>Taquilla y Candybar de Cine</h3>
+            <p>El gerente necesita saber cuánta plata entró por entradas vs pochoclos por película.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Sumar la columna Recaudación Tickets y la de Candybar.</li>
+                    <li>Insertar al final de los datos una fila destacada en negro y letras blancas que diga "TOTALES" con la suma final calculada por Apps Script.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_07_Cine_Taquilla.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 08</span>
+            <h3>Cobranzas de Distribuidora Mayorista</h3>
+            <p>Hay supermercados que arrastran mucha deuda de yerba, aceite, etc.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Identificar qué clientes tienen "Deuda_Anterior" mayor a 0.</li>
+                    <li>Copiar esos registros a una pestaña <code>Morosos</code> y calcular automáticamente cuánto deben en total (Deuda + Factura actual).</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_08_Distribuidora.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 09</span>
+            <h3>Actualización de Precios en Ferretería</h3>
+            <p>La inflación hace que actualizar precios a mano de miles de tornillos sea imposible.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Pedir al usuario (mediante un cuadro de texto / prompt de Apps Script) un porcentaje de aumento.</li>
+                    <li>Aplicar ese aumento automáticamente a la columna "Costo_Proveedor" de todos los productos de un rubro específico.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_09_Ferreteria.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 10</span>
+            <h3>Control de Vencimientos en Farmacia</h3>
+            <p>Vender medicamentos vencidos es grave. Hay que sacarlos de góndola a tiempo.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Revisar la Fecha_Vencimiento de las 350 filas.</li>
+                    <li>Si un lote vence en menos de 60 días desde hoy, cambiar el fondo de la celda a naranja y mandar ese lote a una pestaña <code>Por Vencer</code>.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_10_Farmacia.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 11</span>
+            <h3>Control de Accesos en Gimnasio</h3>
+            <p>Pasa mucha gente y no se sabe quién pagó la cuota mensual.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Buscar en la columna "Estado_Pago" a los que dicen "Deuda Mayor".</li>
+                    <li>Ocultar momentáneamente a los que están "Al Día" para que el recepcionista solo vea en la lista a los deudores cuando presiona el botón "Filtro Morosos".</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_11_Gimnasio.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 12</span>
+            <h3>Comisiones en Agencia de Viajes</h3>
+            <p>Venden pasajes a todo el país y necesitan liquidar las comisiones de los vendedores.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Recorrer las 350 ventas y sumar la "Comisión_Agencia" exclusivamente de los pasajes cuyo destino haya sido "Esquina" o "Rio Gallegos".</li>
+                    <li>Mostrar el resultado en una celda específica de la hoja <code>Inicio</code>.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_12_Viajes.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 13</span>
+            <h3>Logística de Corralón de Materiales</h3>
+            <p>Tienen que organizar los camiones para enviar cemento y ladrillos.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Identificar todas las filas donde "Requiere_Flete" diga "SI".</li>
+                    <li>Copiar esa información a la pestaña <code>Hoja de Ruta</code> y ordenarla de mayor a menor según el Costo de Materiales para priorizar entregas grandes.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_13_Corralon.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 14</span>
+            <h3>Stock de Concesionaria de Vehículos</h3>
+            <p>Tienen autos y motos de diferentes años y estados de preparación.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Crear un botón que genere un reporte automático: contar cuántos vehículos están "En Taller" vs "Para Venta".</li>
+                    <li>Escribir ese resumen (ej: "En taller: 45 | Para Venta: 120") en la cabecera de la hoja principal.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_14_Concesionaria.xlsx</span>
+        </div>
+
+        <div class="card">
+            <span class="student-id">Alumno 15</span>
+            <h3>Pedidos de Bazar y Librería Escolar</h3>
+            <p>Se viene el inicio de clases y hay que armar mochilas tácticas y útiles sin quedarse sin stock.</p>
+            <div class="task-list">
+                <strong>El Script debe hacer esto:</strong>
+                <ul>
+                    <li>Comparar el "Stock_Fisico" contra el "Stock_Minimo" fila por fila.</li>
+                    <li>Si el stock físico es menor al mínimo, agregar la palabra "COMPRAR" en la última columna de la tabla para que el dueño sepa qué pedirle al proveedor.</li>
+                </ul>
+            </div>
+            <span class="file-name">Archivo: Caso_15_Libreria.xlsx</span>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

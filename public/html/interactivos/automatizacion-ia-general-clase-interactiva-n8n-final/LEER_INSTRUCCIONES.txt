@@ -1,0 +1,8 @@
+# CLASE INTERACTIVA N8N - ECOSISTEMAS DE APRENDIZAJE
+
+## INSTRUCCIONES
+1. Descomprime esta carpeta en tu computadora.
+2. Abre el archivo `index.html` haciendo doble clic sobre él (se abrirá en tu navegador web predeterminado).
+3. Podrás leer la fundamentación teórica extraída de la lectura obligatoria.
+4. Sigue la actividad práctica paso a paso para construir el workflow en N8N.
+5. Al final, sube tu archivo JSON generado y completa la reflexión.

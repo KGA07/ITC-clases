@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2: Tablas y Relaciones | Diseño Relacional Access</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 50%, #e2e8f0 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 850px;
+            border-top: 8px solid #A4373A;
+        }
+        .logo-header {
+            color: #A4373A;
+            font-size: 2.2em;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .logo-sub {
+            color: #4b5563;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #4b5563;
+            text-align: justify;
+        }
+        .challenge-box {
+            background-color: #fdf2f2;
+            border-left: 5px solid #A4373A;
+            padding: 20px;
+            text-align: left;
+            margin: 25px 0;
+            font-size: 0.95em;
+            border-radius: 0 8px 8px 0;
+        }
+        .challenge-box h3 {
+            margin-top: 0;
+            color: #A4373A;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-download {
+            background-color: #A4373A;
+            color: #ffffff;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(164, 55, 58, 0.3);
+            margin-top: 15px;
+        }
+        .btn-download:hover {
+            background-color: #8B2C2F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(164, 55, 58, 0.4);
+        }
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+            color: #A4373A;
+        }
+        .schema-preview {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-family: monospace;
+            color: #334155;
+            text-align: center;
+            font-size: 1.1em;
+        }
+    </style>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-header">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#A4373A" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 4H2V20H22V4ZM4 6H9V18H4V6ZM20 18H11V16H20V18ZM20 14H11V12H20V14ZM20 10H11V8H20V10Z"/>
+            </svg>
+            Moda & Estilo S.R.L.
+        </div>
+        <div class="logo-sub">Implementación de Modelo Entidad-Relación</div>
+        
+        <p>En esta <strong>Clase 2</strong> nos enfrentamos al verdadero poder de Microsoft Access: <strong>Las Relaciones</strong>. Un sistema sin relaciones es solo una lista de Excel. Hoy conectaremos nuestro catálogo de indumentaria con nuestros fabricantes.</p>
+
+        <div class="schema-preview">
+            [PROVEEDORES] 1 ----- ∞ [PRENDAS]
+        </div>
+
+        <div class="challenge-box">
+            <h3>⚙️ CONSIGNAS DE ARQUITECTURA:</h3>
+            <ol>
+                <li><strong>Descarga e Importa:</strong> Importa las 3 tablas a una nueva base de Access llamada <code>SISTEMA_TIENDA</code>.</li>
+                <li><strong>Claves Principales (PK):</strong> Ve a la Vista Diseño y asegúrate de que <code>Id-PROV</code>, <code>Id-ART</code> e <code>Id-CLI</code> tengan la llavecita dorada de Clave Principal (Autonumeración).</li>
+                <li><strong>Tipos de Datos:</strong> Verifica que en la tabla PRENDAS, el campo <code>Id-Proveedor</code> (que es nuestra Clave Externa) sea de tipo <strong>Número</strong>. Si lo dejas como texto, la relación fallará.</li>
+                <li><strong>El Enlace:</strong> Ve a <em>Herramientas de Base de Datos > Relaciones</em>. Arrastra la tabla Proveedores y la tabla Prendas. Une el <code>Id-PROV</code> con el <code>Id-Proveedor</code>.</li>
+                <li><strong>Prueba de Fuego:</strong> Marca la casilla <strong>"Exigir integridad referencial"</strong>. Si Access te permite crear la relación (1 a Varios), ¡has configurado todo a la perfección!</li>
+            </ol>
+        </div>
+
+        <button class="btn-download" onclick="generarTablas()" id="mainBtn">Generar Tablas del Sistema</button>
+        <div id="status">Estructurando Base de Datos...</div>
+    </div>
+
+    <script>
+        function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
+        
+        function generarTablas() {
+            document.getElementById('mainBtn').style.display = 'none';
+            document.getElementById('status').style.display = 'block';
+
+            setTimeout(() => {
+                var wb = XLSX.utils.book_new();
+
+                // ==========================================
+                // TABLA 1: PROVEEDORES (La tabla Principal '1')
+                // ==========================================
+                var wsProveedoresData = [
+                    ["Id-PROV", "Razon Social", "Contacto", "CUIT", "Mail", "Telefono", "Ciudad", "Provincia"]
+                ];
+                
+                const empresas = ["Tavernitti S.A.", "Textil Sur SRL", "Confecciones Argentinas", "Moda Urbana", "Hilos y Telas Co.", "Estilo Joven", "Indumentaria Norte", "Boutique Mayorista"];
+                const contactos = ["Juan Medina", "Silvia Paz", "Carlos Gómez", "Andrea Ruiz", "Marcos Silva", "Lucía Velez", "Esteban Rey", "Marta López"];
+                const provincias = ["Buenos Aires", "Córdoba", "Santa Fe", "Mendoza"];
+
+                for(let i = 0; i < empresas.length; i++) {
+                    wsProveedoresData.push([
+                        i + 1, // Id-PROV de 1 a 8
+                        empresas[i],
+                        contactos[i],
+                        "30-" + randomInt(50000000, 79999999) + "-9",
+                        "ventas@" + empresas[i].split(" ")[0].toLowerCase() + ".com.ar",
+                        "11-" + randomInt(1000, 9999) + "-" + randomInt(1000, 9999),
+                        "Capital Federal",
+                        provincias[randomInt(0, 3)]
+                    ]);
+                }
+                var wsProveedores = XLSX.utils.aoa_to_sheet(wsProveedoresData);
+                wsProveedores["!cols"] = [{wch:10}, {wch:25}, {wch:20}, {wch:15}, {wch:25}, {wch:15}, {wch:15}, {wch:15}];
+                XLSX.utils.book_append_sheet(wb, wsProveedores, "PROVEEDORES");
+
+                // ==========================================
+                // TABLA 2: PRENDAS (La tabla Relacionada 'Varios')
+                // ==========================================
+                var wsPrendasData = [
+                    ["Id-ART", "Articulos", "Descripcion", "Color", "Talle", "Marca", "Precio", "Stock", "Id-Proveedor"]
+                ];
+
+                const tiposPrenda = ["Remera", "Pantalón Jean", "Campera", "Buzo", "Camisa", "Zapatillas", "Short", "Sweater"];
+                const colores = ["Rojo", "Azul", "Negro", "Blanco", "Gris", "Verde", "Beige"];
+                const talles = ["S", "M", "L", "XL", "XXL"];
+                const marcas = ["Levis", "Nike", "Adidas", "Tavernitti", "Puma", "Zara", "Nacional"];
+
+                // Generamos 150 prendas
+                for(let i = 1; i <= 150; i++) {
+                    let tipo = tiposPrenda[randomInt(0, tiposPrenda.length - 1)];
+                    let color = colores[randomInt(0, colores.length - 1)];
+                    let talle = talles[randomInt(0, talles.length - 1)];
+                    
+                    wsPrendasData.push([
+                        i, // Id-ART
+                        tipo + " " + color, // Articulo
+                        "Prenda de temporada - Alta calidad", // Descripcion
+                        color,
+                        talle,
+                        marcas[randomInt(0, marcas.length - 1)],
+                        randomInt(15000, 120000), // Precio en ARS
+                        randomInt(0, 150), // Stock
+                        randomInt(1, 8) // Id-Proveedor (Foreign Key: vincula con los 8 proveedores)
+                    ]);
+                }
+                var wsPrendas = XLSX.utils.aoa_to_sheet(wsPrendasData);
+                wsPrendas["!cols"] = [{wch:10}, {wch:25}, {wch:35}, {wch:10}, {wch:8}, {wch:15}, {wch:12}, {wch:10}, {wch:15}];
+                XLSX.utils.book_append_sheet(wb, wsPrendas, "PRENDAS");
+
+                // ==========================================
+                // TABLA 3: CLIENTES (Para futuras relaciones)
+                // ==========================================
+                var wsClientesData = [
+                    ["Id-CLI", "Nombre", "Apellido", "DNI", "Email", "Telefono"]
+                ];
+
+                const nombres = ["Santiago", "Valentina", "Mateo", "Camila", "Matías", "Sofía", "Nicolás", "Martina", "Lucas", "Emilia"];
+                const apellidos = ["González", "Rodríguez", "Gómez", "Fernández", "López", "Díaz", "Martínez", "Pérez", "García", "Sánchez"];
+
+                for(let i = 1; i <= 50; i++) {
+                    let nom = nombres[randomInt(0, nombres.length - 1)];
+                    let ape = apellidos[randomInt(0, apellidos.length - 1)];
+                    wsClientesData.push([
+                        i,
+                        nom,
+                        ape,
+                        randomInt(20000000, 45000000).toString(),
+                        nom.toLowerCase() + "." + ape.toLowerCase() + randomInt(10,99) + "@gmail.com",
+                        "11" + randomInt(10000000, 99999999)
+                    ]);
+                }
+                var wsClientes = XLSX.utils.aoa_to_sheet(wsClientesData);
+                wsClientes["!cols"] = [{wch:10}, {wch:15}, {wch:15}, {wch:15}, {wch:30}, {wch:15}];
+                XLSX.utils.book_append_sheet(wb, wsClientes, "CLIENTES");
+
+                // Descargar archivo
+                XLSX.writeFile(wb, "Data_Clase2_Tablas_y_Relaciones.xlsx");
+
+                document.getElementById('status').innerText = "¡Archivo generado! Listo para armar relaciones en Access.";
+                document.getElementById('mainBtn').style.display = 'inline-block';
+                document.getElementById('mainBtn').innerText = "Volver a Descargar";
+            }, 800);
+        }
+    </script>
+</body>
+</html>

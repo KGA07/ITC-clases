@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Práctica: Sistema POS Inteligente con Google Sheets & Apps Script</title>
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-dark: #0f172a;
+            --accent-blue: #2563eb;
+            --accent-blue-light: #eff6ff;
+            --border-color: #e2e8f0;
+            --code-bg: #1e1e24;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-banner {
+            background-color: var(--accent-dark);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-blue);
+        }
+
+        .header-banner h1 {
+            margin: 0;
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-banner p {
+            margin: 10px 0 0 0;
+            font-size: 12pt;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 16pt;
+            color: var(--accent-dark);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 13pt;
+            color: var(--accent-dark);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p, ul, ol {
+            font-size: 11pt;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10.5pt;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .badge {
+            background-color: var(--accent-blue-light);
+            color: var(--accent-blue);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 9pt;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: #f8f8f2;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 10pt;
+            margin: 20px 0;
+            line-height: 1.4;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f1f5f9;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10pt;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .info-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 15px;
+            border-radius: 0 4px 4px 0;
+            margin: 20px 0;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #14532d;
+            font-size: 10.5pt;
+        }
+
+        .alert-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #d97706;
+            padding: 15px;
+            border-radius: 0 4px 4px 0;
+            margin: 20px 0;
+        }
+
+        .alert-box p {
+            margin: 0;
+            color: #78350f;
+            font-size: 10.5pt;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 10pt;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Proyecto Áulico: Sistema POS & Automatización con IA</h1>
+        <p>Guía del Alumno — Diseño de Sistemas de Información, Lógica de Fórmulas y Extensiones Cloud</p>
+    </div>
+
+    <div class="container">
+
+        <!-- INTRODUCCIÓN -->
+        <div class="section-card">
+            <h2>1. Introducción al Proyecto</h2>
+            <p>El objetivo de esta práctica es diseñar e implementar un <strong>Punto de Venta (POS)</strong> completamente funcional utilizando <strong>Google Sheets</strong> como base de datos relacional y frontend de usuario. Posteriormente, extenderemos sus capacidades nativas mediante <strong>Google Apps Script</strong> para procesar transacciones históricas, actualizar inventarios en tiempo real y conectar el sistema con modelos de <strong>Inteligencia Artificial (Generative AI)</strong> para obtener insights predictivos de negocio.</p>
+            <p><strong>Competencias a desarrollar:</strong> Arquitectura de datos estructurados, flujos lógicos comerciales, programación orientada a eventos en JavaScript/Apps Script y consumo de APIs de IA.</p>
+        </div>
+
+        <!-- ARQUITECTURA DE HOJAS -->
+        <div class="section-card">
+            <h2>2. Estructura de la Base de Datos (Las 4 Hojas)</h2>
+            <p>El libro de cálculo debe estar compuesto estrictamente por 4 pestañas. A continuación se detalla la estructura formal y los tipos de datos requeridos para cada una:</p>
+
+            <h3>Hoja 1: <code>Inventario</code></h3>
+            <p>Almacena los datos maestros de los productos y controla las existencias.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Columna</th>
+                        <th>Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Descripción / Regla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>ID_Producto</td>
+                        <td>Alfanumérico</td>
+                        <td>Código único de barra o SKU (Clave Primaria).</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Producto</td>
+                        <td>Texto</td>
+                        <td>Nombre descriptivo del artículo.</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>Categoría</td>
+                        <td>Texto</td>
+                        <td>Clasificación comercial (ej. Electrónica, Alimentos).</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>Precio_Venta</td>
+                        <td>Moneda</td>
+                        <td>Precio final al consumidor.</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>Stock_Actual</td>
+                        <td>Entero</td>
+                        <td>Cantidad física disponible en almacén.</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>Stock_Mínimo</td>
+                        <td>Entero</td>
+                        <td>Umbral crítico para alertas de reposición.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Hoja 2: <code>Clientes</code></h3>
+            <p>Registro de la cartera de clientes para la personalización de la venta.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Columna</th>
+                        <th>Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>ID_Cliente</td>
+                        <td>Alfanumérico</td>
+                        <td>DNI, CUIT o código interno de cliente.</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Nombre_Completo</td>
+                        <td>Texto</td>
+                        <td>Nombre y apellido o razón social.</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>Email</td>
+                        <td>Texto (Email)</td>
+                        <td>Correo electrónico para el envío del ticket digital.</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>Teléfono</td>
+                        <td>Texto</td>
+                        <td>Contacto directo.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Hoja 3: <code>Ventas</code></h3>
+            <p>El libro diario o histórico donde se consolidarán de forma inmutable todas las transacciones procesadas.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Columna</th>
+                        <th>Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Origen / Configuración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>ID_Venta</td>
+                        <td>Texto</td>
+                        <td>Generado automáticamente por el script (UUID).</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Fecha_Hora</td>
+                        <td>Fecha/Hora</td>
+                        <td>Timestamp de la transacción.</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>ID_Cliente</td>
+                        <td>Alfanumérico</td>
+                        <td>Vinculado a la hoja Clientes.</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>ID_Producto</td>
+                        <td>Alfanumérico</td>
+                        <td>Vinculado a la hoja Inventario.</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>Cantidad</td>
+                        <td>Entero</td>
+                        <td>Unidades vendidas.</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>Total_Transaccion</td>
+                        <td>Moneda</td>
+                        <td>Calculado dinámicamente (`Cantidad × Precio`).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- INTERFAZ TICKET Y FÓRMULAS -->
+        <div class="section-card">
+            <h2>3. Interfaz de Cobro (Hoja: <code>Ticket</code>) y Fórmulas Lógicas</h2>
+            <p>Esta hoja actúa como la interfaz gráfica de usuario (UI) para el operador de caja. Debe diseñarse de forma limpia, separando los datos de cabecera de la grilla de productos.</p>
+            
+            <h3>Configuraciones Obligatorias:</h3>
+            <ul>
+                <li><strong>Celda B3 (ID Cliente):</strong> Aplicar <em>Validación de Datos</em> de tipo Lista desplegable basada en el rango <code>Clientes!A2:A</code>.</li>
+                <li><strong>Celda B4 (Nombre Cliente):</strong> Insertar la fórmula de búsqueda automatizada:
+                    <br><code>=SI.ERROR(BUSCARV(B3; Clientes!A2:B; 2; FALSO); "Cliente No Encontrado")</code>
+                </li>
+                <li><strong>Grilla de Artículos (Rango A8:D20):</strong>
+                    <ul>
+                        <li><strong>Columna A (ID_Producto):</strong> Validación de datos de tipo Lista desplegable basada en <code>Inventario!A2:A</code>.</li>
+                        <li><strong>Columna B (Descripción):</strong> Búsqueda automática del nombre del producto:
+                            <br><code>=SI(A8=""; ""; BUSCARV(A8; Inventario!A$2:B$100; 2; FALSO))</code>
+                        </li>
+                        <li><strong>Columna C (Precio Unitario):</strong> Extracción automatizada del precio de venta:
+                            <br><code>=SI(A8=""; 0; BUSCARV(A8; Inventario!A$2:D$100; 4; FALSO))</code>
+                        </li>
+                        <li><strong>Columna D (Cantidad):</strong> Celda de entrada manual para el usuario.</li>
+                        <li><strong>Columna E (Subtotal):</strong> Multiplicación simple condicionada: <code>=SI(A8=""; 0; C8*D8)</code>.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="alert-box">
+                <p><strong>Nota de Diseño:</strong> Asegúrate de fijar las referencias de las matrices de búsqueda con el signo <code>$</code> (ej. <code>Inventario!A$2:D$100</code>) para permitir el arrastre de las fórmulas sin corromper el rango de consulta.</p>
+            </div>
+        </div>
+
+        <!-- AUTOMATIZACIÓN CON APPS SCRIPT -->
+        <div class="section-card">
+            <h2>4. Desarrollo del Backend con Google Apps Script</h2>
+            <p>Los alumnos deberán ingresar al editor de código (<em>Extensiones > Apps Script</em>) y estructurar las funciones de negocio encargadas de persistir la venta y actualizar los inventarios de forma atómica.</p>
+
+            <pre><code>/**
+ * Procesa el cobro de la interfaz Ticket, guarda en Ventas y descuenta el stock.
+ */
+function registrarVenta() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const hojaTicket = ss.getSheetByName("Ticket");
+  const hojaVentas = ss.getSheetByName("Ventas");
+  const hojaInventario = ss.getSheetByName("Inventario");
+  
+  // Obtener datos de cabecera del cliente
+  const idCliente = hojaTicket.getRange("B3").getValue();
+  if (!idCliente) {
+    SpreadsheetApp.getUi().alert("Error: Debe seleccionar un cliente antes de facturar.");
+    return;
+  }
+  
+  // Obtener la grilla de productos ingresados (Filas 8 a 20)
+  const datosTicket = hojaTicket.getRange("A8:E20").getValues();
+  const datetime = new Date();
+  const idVenta = "TX-" + Math.floor(Math.random() * 900000 + 100000);
+  
+  let transaccionesAPersistir = [];
+  let actualizacionesStock = {}; // Mapeo de ID_Producto -> Cantidad a restar
+  
+  // Procesar líneas del ticket
+  for (let i = 0; i < datosTicket.length; i++) {
+    let idProducto = datosTicket[i][0];
+    let cantidad = datosTicket[i][3];
+    let totalLinea = datosTicket[i][4];
+    
+    if (idProducto && cantidad > 0) {
+      // Almacenar temporalmente los datos estructurales de la venta
+      transaccionesAPersistir.push([idVenta, datetime, idCliente, idProducto, cantidad, totalLinea]);
+      actualizacionesStock[idProducto] = cantidad;
+    }
+  }
+  
+  if (transaccionesAPersistir.length === 0) {
+    SpreadsheetApp.getUi().alert("Error: El ticket no contiene artículos válidos o cantidades mayores a cero.");
+    return;
+  }
+  
+  // --- ACTUALIZAR STOCK EN INVENTARIO ---
+  const datosInventario = hojaInventario.getRange("A2:E" + hojaInventario.getLastRow()).getValues();
+  
+  for (let i = 0; i < datosInventario.length; i++) {
+    let idProdInventario = datosInventario[i][0];
+    if (actualizacionesStock[idProdInventario]) {
+      let stockActual = datosInventario[i][4];
+      let cantidadVendida = actualizacionesStock[idProdInventario];
+      
+      if (stockActual < cantidadVendida) {
+        SpreadsheetApp.getUi().alert("Stock insuficiente para el producto código: " + idProdInventario);
+        return; // Aborta la transacción completa para resguardar la consistencia
+      }
+      
+      // Escribir directamente la reducción en la celda correspondiente
+      let filaActual = i + 2; 
+      hojaInventario.getRange(filaActual, 5).setValue(stockActual - cantidadVendida);
+    }
+  }
+  
+  // --- PERSISTIR LOG DE VENTAS ---
+  hojaVentas.getRowsData; // Forzar consistencia
+  hojaVentas.getRange(hojaVentas.getLastRow() + 1, 1, transaccionesAPersistir.length, 6).setValues(transaccionesAPersistir);
+  
+  // --- LIMPIEZA DE LA INTERFAZ TICKET ---
+  hojaTicket.getRange("B3").clearContent(); // Limpiar cliente
+  hojaTicket.getRange("A8:A20").clearContent(); // Limpiar selectores de producto
+  hojaTicket.getRange("D8:D20").clearContent(); // Limpiar cantidades
+  
+  SpreadsheetApp.getUi().alert("Venta registrada con éxito. Código de Operación: " + idVenta);
+}</code></pre>
+        </div>
+
+        <!-- INTEGRACIÓN DE IA -->
+        <div class="section-card">
+            <h2>5. Integración Avanzada: Análisis de Negocio con Inteligencia Artificial</h2>
+            <p>Para elevar el proyecto a un entorno moderno, conectaremos los datos históricos recopilados en la hoja de <code>Ventas</code> e <code>Inventario</code> con un modelo de lenguaje avanzado. La IA evaluará las tendencias de consumo y sugerirá decisiones de reabastecimiento o promociones específicas.</p>
+            
+            <p>Los alumnos implementarán la siguiente función, la cual extrae el estado actual del negocio, estructura un <em>Prompt de Ingeniería</em> de datos y consume un endpoint seguro para desplegar un reporte estratégico:</p>
+
+            <pre><code>/**
+ * Extrae métricas del POS y consume un servicio de Inteligencia Artificial 
+ * para generar recomendaciones automatizadas de stock y marketing.
+ */
+function generarInsightIA() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const inventario = ss.getSheetByName("Inventario").getRange("A2:F10").getValues();
+  const ventas = ss.getSheetByName("Ventas").getRange("A2:F20").getValues();
+  
+  // Construcción del contexto del negocio textualmente para el modelo de IA
+  let contextoNegocio = "Datos Actuales de Inventario (ID, Producto, Categoría, Precio, Stock, Mínimo):\n";
+  inventario.forEach(row => {
+    if(row[0]) contextoNegocio += `- ${row[1]} (${row[2]}): Stock:${row[4]}, Mínimo:${row[5]}\n`;
+  });
+  
+  contextoNegocio += "\nHistórico Reciente de Ventas (ID_Venta, Cliente, ID_Producto, Cantidad, Total):\n";
+  ventas.forEach(row => {
+    if(row[0]) contextoNegocio += `- Factura ${row[0]}, Prod_ID: ${row[3]}, Cant: ${row[4]}, Total: $${row[5]}\n`;
+  });
+
+  const promptText = "Actúa como un Director de Operaciones y experto en Analítica de Datos. " +
+                     "Basándote en los siguientes datos de mi Punto de Venta, genera un reporte ejecutivo resumido (máximo 150 palabras) " +
+                     "identificando: 1) Productos en riesgo crítico de quiebre de stock, 2) El producto más rentable, y 3) Una estrategia de marketing " +
+                     "para mover inventario estancado. Aquí los datos:\n" + contextoNegocio;
+
+  // Configuración del payload para la API de Inteligencia Artificial (Ejemplo genérico estructurado)
+  const apiKey = "TU_API_KEY_AQUÍ"; // Reemplazar por la clave provista en clase
+  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
+  
+  const payload = {
+    "contents": [{
+      "parts": [{
+        "text": promptText
+      }]
+    }]
+  };
+  
+  const opciones = {
+    "method": "POST",
+    "contentType": "application/json",
+    "payload": JSON.stringify(payload),
+    "muteHttpExceptions": true
+  };
+  
+  try {
+    const respuesta = UrlFetchApp.fetch(url, opciones);
+    const json = JSON.parse(respuesta.getContentText());
+    const insightText = json.candidates[0].content.parts[0].text;
+    
+    // Desplegar el reporte analítico en una caja de diálogo interactiva
+    SpreadsheetApp.getUi().alert("📊 Reporte Estratégico de Inteligencia Artificial", insightText, SpreadsheetApp.getUi().ButtonSet.OK);
+  } catch (error) {
+    SpreadsheetApp.getUi().alert("Error de conexión con el motor de IA: " + error.toString());
+  }
+}</code></pre>
+        </div>
+
+        <!-- PASOS PARA LOS ALUMNOS -->
+        <div class="section-card">
+            <h2>6. Guía de Ejecución Paso a Paso (Para el Alumno)</h2>
+            <p>Siga rigurosamente las fases del proyecto para garantizar la correcta integración del software:</p>
+            <ol>
+                <li><strong>Fase 1 (Modelado de Datos):</strong> Cree el libro y configure las 4 pestañas exactamente con los nombres e identificadores de columnas indicados en la Sección 2. Poblar manualmente la hoja <code>Inventario</code> con al menos 5 productos y la hoja <code>Clientes</code> con al menos 3 registros reales.</li>
+                <li><strong>Fase 2 (Desarrollo Frontend en Sheets):</strong> Maquete la pestaña <code>Ticket</code> cuidando la limpieza visual. Aplique las validaciones por lista desplegable y las fórmulas <code>SI.ERROR</code> combinadas con <code>BUSCARV</code>. Valide que al cambiar el ID del producto, cambie la descripción y el precio al instante.</li>
+                <li><strong>Fase 3 (Implementación Lógica):</strong> Abra el panel de Apps Script, reemplace todo el contenido vacío por las funciones de negocio provistas en esta guía. Modifique la variable de seguridad e incorpore la clave API distribuida por el docente.</li>
+                <li><strong>Fase 4 (Diseño de Componentes UX):</strong> En la hoja <code>Ticket</code>, inserte dos dibujos geométricos estilo botón (<em>Insertar > Dibujo</em>). Diseñe uno con el texto "PROCESAR COBRO" y otro con el texto "ANALIZAR CON IA". Asigne los scripts haciendo clic derecho sobre el dibujo, opción de tres puntos, e introduciendo los nombres de función exactos: <code>registrarVenta</code> y <code>generarInsightIA</code> respectivamente.</li>
+                <li><strong>Fase 5 (Prueba de Aceptación):</strong> Simule la compra de 2 unidades de un producto. Presione el botón de cobro. El sistema solicitará autorizaciones de seguridad de la cuenta de Google (otorgar accesos). Compruebe que la línea se borre del ticket, se incorpore al historial de ventas y reste el stock actual en inventario de forma matemática.</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Entorno Corporativo - Material Educativo de Soporte de Cátedra.</p>
+    </div>
+
+</body>
+</html>

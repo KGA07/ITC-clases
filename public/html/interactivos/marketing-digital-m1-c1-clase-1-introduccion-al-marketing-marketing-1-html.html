@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Interactivo de Marketing para Principiantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Stone, Teal) -->
+    <!-- Application Structure Plan: Se ha diseñado una SPA con una estructura de "hub-and-spoke". La página principal ("Inicio") actúa como un hub visual que muestra el "Ecosistema del Marketing", con nodos interactivos que representan las áreas clave. Una barra de navegación lateral persistente permite el acceso directo a secciones temáticas que reagrupan el contenido del informe de forma más lógica para un principiante (Fundamentos, Marketing Mix, Cliente, Estrategias, Medición, Quiz). Esta arquitectura no lineal fomenta la exploración y ayuda a comprender las interconexiones entre conceptos, mejorando la usabilidad frente a una lectura pasiva y lineal del informe original. -->
+    <!-- Visualization & Content Choices: 
+        - Evolución del Marketing: Report Info -> Tabla de evolución histórica. Goal -> Mostrar cambio y aceleración. Viz -> Gráfico de dispersión interactivo (Chart.js) funcionando como línea de tiempo. Interaction -> Clic en un punto para ver detalles de la era. Justification -> Visualiza la compresión del tiempo entre innovaciones, un punto clave del informe.
+        - 4 P's del Marketing: Report Info -> Tabla de las 4 P's. Goal -> Organizar conceptos. Viz -> Diagrama interactivo con 4 cuadrantes (HTML/CSS). Interaction -> Clic en cada 'P' para mostrar su contenido detallado. Justification -> Más atractivo y memorable que una tabla estática.
+        - Factores de Comportamiento: Report Info -> Lista de factores (culturales, sociales, etc.). Goal -> Comparar influencias. Viz -> Gráfico de radar (Chart.js). Interaction -> Hover para ver descripción. Justification -> Muestra visualmente el peso relativo y la interconexión de los factores.
+        - Estrategias Digitales: Report Info -> Lista y descripción de estrategias. Goal -> Organizar y comparar. Viz -> Acordeón interactivo (HTML/JS). Interaction -> Clic para expandir y leer detalles. Justification -> Organiza una gran cantidad de información en un espacio compacto y manejable.
+        - KPIs: Report Info -> Lista de métricas. Goal -> Informar y categorizar. Viz -> Gráfico de dona (Chart.js). Interaction -> Hover sobre un segmento para ver KPIs de ejemplo. Justification -> Ofrece una visión general de dónde se centran los esfuerzos de medición.
+        - Quiz Divertido: Report Info -> Conceptos clave del curso. Goal -> Afirmar el aprendizaje de forma lúdica. Viz -> Preguntas de opción múltiple con feedback inmediato y barra de progreso (HTML/JS). Interaction -> Seleccionar respuesta, verificar, reiniciar, ver progreso. Justification -> Gamificación para reforzar la retención de conceptos y visualización del avance.
+        - Todas las visualizaciones usan Canvas a través de Chart.js, evitando SVG y Mermaid. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+            color: #292524; /* stone-800 */
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            border-left: 3px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            background-color: #e7e5e4; /* stone-200 */
+            color: #0d9488; /* teal-600 */
+            border-left-color: #0d9488; /* teal-600 */
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .tab-button.active {
+            background-color: #0d9488; /* teal-600 */
+            color: white;
+        }
+        .accordion-button {
+            transition: background-color 0.2s;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .quiz-option {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .quiz-option:hover {
+            background-color: #f0fdf4; /* emerald-50 */
+        }
+        .quiz-option.selected {
+            border-color: #0d9488; /* teal-600 */
+            background-color: #f0fdf4; /* emerald-50 */
+        }
+        .quiz-option.correct {
+            background-color: #d1fae5; /* emerald-100 */
+            border-color: #059669; /* emerald-600 */
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2; /* red-100 */
+            border-color: #dc2626; /* red-600 */
+        }
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 9999px; /* Tailwind's rounded-full */
+            height: 1.5rem; /* Tailwind's h-6 */
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #0d9488; /* teal-600 */
+            width: 0%;
+            border-radius: 9999px; /* Tailwind's rounded-full */
+            transition: width 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem; /* Tailwind's text-sm */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="flex h-screen bg-stone-100">
+        <aside class="w-64 bg-white shadow-md flex-shrink-0">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-teal-700">Marketing 101</h1>
+                <p class="text-sm text-stone-500 mt-1">Curso Interactivo</p>
+            </div>
+            <nav class="mt-6">
+                <a href="#inicio" class="nav-link active flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">🏠</span> Inicio
+                </a>
+                <a href="#fundamentos" class="nav-link flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">🏛️</span> Fundamentos
+                </a>
+                <a href="#marketing-mix" class="nav-link flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">📦</span> El Marketing Mix
+                </a>
+                <a href="#cliente" class="nav-link flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">👥</span> Conociendo al Cliente
+                </a>
+                <a href="#estrategias" class="nav-link flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">🚀</span> Estrategias Digitales
+                </a>
+                <a href="#medicion" class="nav-link flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">📊</span> Midiendo el Éxito
+                </a>
+                <a href="#quiz" class="nav-link flex items-center py-3 px-6 text-stone-700">
+                    <span class="mr-3">🧠</span> Quiz Divertido
+                </a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto p-6 md:p-10">
+            <div id="inicio" class="content-section active">
+                <h2 class="text-3xl font-bold text-stone-800">Bienvenido al Ecosistema del Marketing</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">Esta aplicación te guiará a través de los conceptos clave del marketing de una forma visual e interactiva. Comienza explorando el ecosistema a continuación o usa el menú de la izquierda para navegar por los temas. El objetivo es entender cómo cada pieza se conecta para crear una estrategia de marketing exitosa.</p>
+                
+                <div class="mt-8 p-4 bg-white rounded-xl shadow-lg">
+                    <div class="relative w-full h-[60vh] min-h-[500px]" id="ecosystem-container">
+                    </div>
+                </div>
+            </div>
+
+            <div id="fundamentos" class="content-section">
+                <h2 class="text-3xl font-bold text-stone-800">🏛️ Fundamentos del Marketing</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">Todo viaje comienza con el primer paso. En esta sección, exploraremos la esencia del marketing: qué es, cuál es su propósito, cómo ha evolucionado a lo largo del tiempo y qué objetivos busca alcanzar. Estos conceptos son la base sobre la que se construye todo lo demás.</p>
+                
+                <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-teal-700">¿Qué es el Marketing?</h3>
+                        <p class="text-stone-500 mt-1">Diferentes expertos, una misma esencia. Haz clic en las flechas para explorar las definiciones.</p>
+                        <div id="definitions-carousel" class="mt-4 relative h-40"></div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-teal-700">Objetivos Clave</h3>
+                         <p class="text-stone-500 mt-1">El marketing busca lograr metas específicas. Pasa el cursor sobre cada objetivo para ver más.</p>
+                        <div id="objectives-grid" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4"></div>
+                    </div>
+                </div>
+
+                <div class="mt-8 card p-6">
+                    <h3 class="text-xl font-bold text-teal-700">La Evolución del Marketing</h3>
+                    <p class="text-stone-500 mt-1">Desde la revolución industrial hasta la IA. Haz clic en los puntos de la línea de tiempo para descubrir los hitos de cada era.</p>
+                    <div class="chart-container mt-4">
+                        <canvas id="evolutionChart"></canvas>
+                    </div>
+                    <div id="evolution-details" class="mt-4 p-4 bg-stone-100 rounded-lg text-center hidden"></div>
+                </div>
+            </div>
+
+            <div id="marketing-mix" class="content-section">
+                <h2 class="text-3xl font-bold text-stone-800">📦 El Marketing Mix: Las 4 P's</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">El Marketing Mix es el conjunto de herramientas tácticas que la empresa combina para producir la respuesta deseada en el mercado objetivo. Se conocen como las 4 P's: Producto, Precio, Plaza y Promoción. Haz clic en cada una para explorar sus componentes y preguntas clave.</p>
+                
+                <div class="mt-8 lg:flex lg:space-x-8">
+                    <div class="lg:w-1/2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div id="p-producto" class="p-button p-6 border-2 border-teal-500 bg-teal-50 rounded-lg cursor-pointer text-center">
+                                <div class="text-4xl">🛍️</div>
+                                <h4 class="font-bold mt-2 text-teal-800">Producto</h4>
+                            </div>
+                             <div id="p-precio" class="p-button p-6 border-2 border-stone-300 bg-white rounded-lg cursor-pointer text-center">
+                                <div class="text-4xl">💲</div>
+                                <h4 class="font-bold mt-2 text-stone-800">Precio</h4>
+                            </div>
+                             <div id="p-plaza" class="p-button p-6 border-2 border-stone-300 bg-white rounded-lg cursor-pointer text-center">
+                                <div class="text-4xl">🏪</div>
+                                <h4 class="font-bold mt-2 text-stone-800">Plaza</h4>
+                            </div>
+                             <div id="p-promocion" class="p-button p-6 border-2 border-stone-300 bg-white rounded-lg cursor-pointer text-center">
+                                <div class="text-4xl">📢</div>
+                                <h4 class="font-bold mt-2 text-stone-800">Promoción</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="p-details" class="lg:w-1/2 mt-8 lg:mt-0 card p-6">
+                    </div>
+                </div>
+            </div>
+
+            <div id="cliente" class="content-section">
+                <h2 class="text-3xl font-bold text-stone-800">👥 Conociendo al Cliente</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">El cliente es el centro de cualquier estrategia de marketing. En esta sección, aprenderás a investigar el mercado, entender los factores que influyen en el comportamiento del consumidor y cómo segmentar tu audiencia para comunicarte de manera más efectiva.</p>
+
+                <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-teal-700">Proceso de Investigación de Mercados</h3>
+                        <p class="text-stone-500 mt-1">Un camino estructurado para obtener respuestas. Haz clic en cada paso.</p>
+                        <div id="research-process" class="mt-4 space-y-2"></div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-teal-700">Factores del Comportamiento del Consumidor</h3>
+                        <p class="text-stone-500 mt-1">¿Por qué compramos? Pasa el cursor sobre el gráfico para ver las influencias.</p>
+                        <div class="chart-container mt-4 h-80">
+                            <canvas id="behaviorChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 card p-6">
+                    <h3 class="text-xl font-bold text-teal-700">Tipos de Segmentación de Mercado</h3>
+                    <p class="text-stone-500 mt-1">Divide y vencerás. Selecciona un tipo de segmentación para ver su descripción.</p>
+                    <div id="segmentation-tabs" class="mt-4 border-b border-stone-200">
+                        <nav class="flex space-x-2" aria-label="Tabs">
+                        </nav>
+                    </div>
+                    <div id="segmentation-content" class="mt-4"></div>
+                </div>
+            </div>
+
+            <div id="estrategias" class="content-section">
+                <h2 class="text-3xl font-bold text-stone-800">🚀 Estrategias Digitales Esenciales</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">El mundo digital ofrece un arsenal de tácticas para conectar con la audiencia. Aquí exploraremos las estrategias más importantes, desde el marketing de contenidos hasta la publicidad en buscadores. Haz clic en cada estrategia para desplegar su explicación.</p>
+                
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-teal-700">Outbound vs. Inbound</h3>
+                        <p class="text-stone-500 mt-1">Dos filosofías para llegar al cliente.</p>
+                        <div class="mt-4 grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <h4 class="font-semibold">Outbound (Tradicional)</h4>
+                                <p class="text-sm text-stone-500">Interrumpe</p>
+                                <div class="text-3xl mt-2">📢</div>
+                                <p class="text-xs mt-2">TV, Radio, Llamadas</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Inbound (Digital)</h4>
+                                <p class="text-sm text-stone-500">Atrae</p>
+                                <div class="text-3xl mt-2">🧲</div>
+                                <p class="text-xs mt-2">Blogs, SEO, Redes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="strategies-accordion" class="space-y-2">
+                    </div>
+                </div>
+            </div>
+
+            <div id="medicion" class="content-section">
+                <h2 class="text-3xl font-bold text-stone-800">📊 Midiendo el Éxito</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">Lo que no se mide, no se puede mejorar. La analítica es crucial en el marketing moderno. Aprende sobre el papel de los datos, las métricas clave (KPIs) que importan y las herramientas que te ayudarán a evaluar el rendimiento de tus estrategias.</p>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 lg:col-span-2">
+                        <h3 class="text-xl font-bold text-teal-700">KPIs: Indicadores Clave de Rendimiento</h3>
+                        <p class="text-stone-500 mt-1">Pasa el cursor sobre el gráfico para ver ejemplos de KPIs en cada área.</p>
+                        <div class="chart-container mt-4 h-80">
+                            <canvas id="kpiChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-teal-700">Herramientas de Analítica</h3>
+                        <p class="text-stone-500 mt-1">Algunas de las herramientas más populares del sector. Haz clic para saber más.</p>
+                        <div id="tools-grid" class="mt-4 grid grid-cols-2 gap-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz" class="content-section">
+                <h2 class="text-3xl font-bold text-stone-800">🧠 Quiz Divertido: ¡Pon a Prueba tus Conocimientos!</h2>
+                <p class="mt-2 text-stone-600 max-w-3xl">Demuestra lo que has aprendido con este quiz rápido. Selecciona la respuesta correcta para cada pregunta y luego haz clic en "Verificar Respuesta". ¡Mucha suerte!</p>
+
+                <div class="mt-8 card p-6">
+                    <div id="quiz-container">
+                        <div class="mb-4">
+                            <div class="progress-bar-container">
+                                <div id="quiz-progress-bar" class="progress-bar">
+                                    <span id="quiz-progress-text"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="quiz-question" class="text-xl font-bold text-teal-700 mb-4"></h3>
+                        <div id="quiz-options" class="space-y-3"></div>
+                        <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                            <button id="check-answer-btn" class="bg-teal-600 text-white py-2 px-4 rounded-lg hover:bg-teal-700 transition-colors">Verificar Respuesta</button>
+                            <button id="next-question-btn" class="bg-stone-300 text-stone-800 py-2 px-4 rounded-lg hover:bg-stone-400 transition-colors hidden">Siguiente Pregunta</button>
+                            <button id="restart-quiz-btn" class="bg-stone-300 text-stone-800 py-2 px-4 rounded-lg hover:bg-stone-400 transition-colors hidden">Reiniciar Quiz</button>
+                        </div>
+                        <div id="quiz-feedback" class="mt-4 text-lg font-semibold"></div>
+                        <div id="quiz-result" class="mt-4 text-xl font-bold text-center hidden"></div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-12 text-center text-stone-500 text-sm">
+                @Derechos reservado a Reidel Design
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        const data = {
+            definitions: [
+                { author: "Philip Kotler", text: "La ciencia y el arte de explorar, crear y entregar valor para satisfacer las necesidades de un mercado objetivo con fines de lucro." },
+                { author: "AMA (American Marketing Association)", text: "La actividad, conjunto de instituciones y procesos para crear, comunicar, entregar e intercambiar ofertas que tienen valor para los clientes, socios y la sociedad." },
+                { author: "E. Jerome McCarthy", text: "La actividad empresarial que dirige el flujo de bienes y servicios desde el productor hasta el consumidor, para satisfacer a los clientes y lograr los objetivos de la empresa." }
+            ],
+            objectives: [
+                { icon: '🎯', title: 'Captar Clientes', description: 'Atraer a individuos que aún no han comprado los productos o servicios.' },
+                { icon: '💖', title: 'Fidelizar Clientes', description: 'Construir relaciones a largo plazo para fomentar compras repetidas.' },
+                { icon: '🌟', title: 'Crear Marca', description: 'Construir reconocimiento y una reputación positiva (Brand Awareness).' },
+                { icon: '💡', title: 'Diferenciarse', description: 'Hacer que un producto destaque frente a la competencia.' },
+                { icon: '💰', title: 'Generar Ventas', description: 'Convertir prospectos interesados en clientes que realizan una compra.' },
+                { icon: '📈', title: 'Generar Leads', description: 'Captar la información de contacto de prospectos interesados.' }
+            ],
+            evolution: [
+                { era: 'Marketing 1.0', year: 1920, details: 'Enfoque en el producto y la venta masiva, impulsado por la Revolución Industrial. Comunicación unidireccional.' },
+                { era: 'Publicidad Masiva', year: 1950, details: 'La radio y la TV permiten alcanzar a millones. Se consolidan los anuncios creativos y jingles pegadizos.' },
+                { era: 'Marketing 2.0 (Digital)', year: 1995, details: 'Internet cambia el juego. Surgen los sitios web, el email marketing y la analítica web. El foco se pone en el consumidor.' },
+                { era: 'Redes Sociales', year: 2005, details: 'Nace la comunicación bidireccional. Las marcas y los consumidores interactúan directamente en plataformas como Facebook y Twitter.' },
+                { era: 'Automatización', year: 2012, details: 'Herramientas que permiten gestionar campañas de forma eficiente, llevando a una mayor personalización y segmentación.' },
+                { era: 'Inteligencia Artificial', year: 2018, details: 'La IA permite la hiper-personalización a gran escala, chatbots y creación de contenido automatizado.' }
+            ],
+            marketingMix: {
+                producto: { title: 'Producto', icon: '🛍️', content: 'Es lo que la empresa ofrece para satisfacer una necesidad. No es solo el objeto físico, sino también la marca, el empaque y los servicios asociados. <br><br><strong>Preguntas Clave:</strong> ¿Qué necesidad satisface? ¿Qué características únicas tiene? ¿Cómo se diferencia? ' },
+                precio: { title: 'Precio', icon: '💲', content: 'Es el valor monetario que el consumidor paga. Comunica el posicionamiento de la marca y afecta directamente la percepción de calidad y la rentabilidad.<br><br><strong>Preguntas Clave:</strong> ¿Cuál es el valor percibido por el cliente? ¿Qué precios tiene la competencia? ¿Qué estrategia de precios se usará (descuentos, etc.)?' },
+                plaza: { title: 'Plaza (Distribución)', icon: '🏪', content: 'Se refiere a cómo el producto llega al cliente. Incluye los canales de distribución (tiendas físicas, online), la logística y la ubicación.<br><br><strong>Preguntas Clave:</strong> ¿Dónde compra mi público objetivo? ¿Qué canales son los más eficientes para llegar a ellos? ¿Cómo será la experiencia de compra?' },
+                promocion: { title: 'Promoción', icon: '📢', content: 'Son todas las actividades de comunicación para persuadir a la audiencia. Incluye publicidad, relaciones públicas, ventas personales, marketing digital, redes sociales, etc.<br><br><strong>Preguntas Clave:</strong> ¿Qué canales usaré para comunicarme? ¿Cuál es el mensaje principal? ¿Cuándo es el mejor momento para promocionar?' },
+            },
+            researchProcess: [
+                { step: '1. Definir el Problema', description: 'Identificar claramente la pregunta de investigación o el problema a resolver.' },
+                { step: '2. Definir Objetivos', description: 'Establecer qué se quiere lograr con el estudio para guiar la investigación.' },
+                { step: '3. Diseñar la Investigación', description: 'Determinar la metodología (cualitativa, cuantitativa) y las herramientas a usar (encuestas, entrevistas).' },
+                { step: '4. Realizar la Investigación', description: 'Recolectar los datos primarios y/o secundarios según el diseño establecido.' },
+                { step: '5. Analizar los Datos', description: 'Procesar e interpretar la información recopilada para encontrar patrones y conclusiones.' },
+                { step: '6. Preparar el Informe', description: 'Presentar los hallazgos de manera clara y accionable para la toma de decisiones.' }
+            ],
+            segmentation: {
+                geografica: { title: 'Geográfica', content: 'Divide el mercado basándose en diferencias geográficas, como la ubicación física de las personas (país, región, ciudad, clima). Es útil para productos o servicios cuyas necesidades varían según el lugar.' },
+                demografica: { title: 'Demográfica', content: 'Agrupa a los consumidores por variables como edad, género, nivel de ingresos, educación, ocupación o tamaño familiar. Es uno de los métodos más comunes y fáciles de medir.' },
+                psicografica: { title: 'Psicográfica', content: 'Se basa en el estilo de vida, los valores, la personalidad y los intereses de los consumidores. Ayuda a entender las motivaciones más profundas detrás de las decisiones de compra.' },
+                conductual: { title: 'Conductual', content: 'Segmenta a los clientes según su comportamiento: hábitos de compra, frecuencia de uso, lealtad a la marca o beneficios que buscan en un producto. Es muy poderosa para personalizar mensajes.' }
+            },
+            strategies: [
+                { title: 'Marketing de Contenidos', content: 'Crear y distribuir contenido valioso (blogs, videos, guías) para atraer y educar a la audiencia, posicionando la marca como experta y construyendo confianza.' },
+                { title: 'Email Marketing', content: 'Enviar mensajes directos y personalizados a una lista de suscriptores para nutrir la relación, promocionar productos y fomentar la lealtad. Tiene un alto retorno de la inversión (ROI).' },
+                { title: 'Marketing en Redes Sociales (SMM)', content: 'Usar plataformas como Instagram, Facebook o LinkedIn para conectar con la audiencia, construir una comunidad, aumentar el reconocimiento de marca y dirigir tráfico.' },
+                { title: 'SEO (Optimización para Motores de Búsqueda)', content: 'Optimizar un sitio web para que aparezca en las primeras posiciones de los resultados de búsqueda (como Google) de forma orgánica (gratuita), atrayendo tráfico cualificado.' },
+                { title: 'SEM (Marketing en Motores de Búsqueda)', content: 'Comprar anuncios de pago (PPC - Pago Por Clic) en los motores de búsqueda para obtener visibilidad inmediata y atraer tráfico basado en palabras clave específicas.' }
+            ],
+            tools: [
+                { name: 'Google Analytics', description: 'Herramienta esencial para medir el tráfico web, el comportamiento de los usuarios y las conversiones en un sitio.' },
+                { name: 'SEMrush', description: 'Plataforma todo-en-uno para SEO, SEM y marketing de contenidos. Permite analizar a la competencia y encontrar palabras clave.' },
+                { name: 'HubSpot', description: 'Software de Inbound Marketing que integra CRM, email marketing, redes sociales y analítica en un solo lugar.' },
+                { name: 'Hotjar', description: 'Ofrece mapas de calor y grabaciones de sesiones para entender visualmente cómo los usuarios interactúan con tu web.' }
+            ],
+            quizQuestions: [
+                {
+                    question: "¿Según Philip Kotler, el marketing es la ciencia y el arte de explorar, crear y entregar valor para satisfacer las necesidades de un mercado objetivo con fines de...?",
+                    options: ["Diversión", "Lucro", "Caridad", "Investigación"],
+                    answer: "Lucro"
+                },
+                {
+                    question: "¿Cuál de las siguientes NO es una de las 4 P's del Marketing Mix?",
+                    options: ["Producto", "Precio", "Personal", "Promoción"],
+                    answer: "Personal"
+                },
+                {
+                    question: "¿Qué tipo de marketing se enfoca en atraer clientes a través de contenido o experiencias personalizadas, en lugar de interrumpirlos?",
+                    options: ["Outbound Marketing", "Marketing Tradicional", "Inbound Marketing", "Telemarketing"],
+                    answer: "Inbound Marketing"
+                },
+                {
+                    question: "¿Cuál de estos factores NO influye directamente en el comportamiento del consumidor?",
+                    options: ["Factores Culturales", "Factores Sociales", "Factores Astrológicos", "Factores Psicológicos"],
+                    answer: "Factores Astrológicos"
+                },
+                {
+                    question: "¿Qué significa SEO?",
+                    options: ["Servicio de Email Optimizado", "Optimización para Motores de Búsqueda", "Estrategias de Venta Online", "Sistemas de Entrega Online"],
+                    answer: "Optimización para Motores de Búsqueda"
+                },
+                {
+                    question: "¿Qué elemento de las 4 P's se refiere a cómo el producto llega al cliente, incluyendo los canales de distribución?",
+                    options: ["Producto", "Precio", "Plaza", "Promoción"],
+                    answer: "Plaza"
+                },
+                {
+                    question: "¿Cuál es el primer paso en el proceso de investigación de mercados?",
+                    options: ["Analizar Datos", "Definir el Problema", "Realizar la Investigación", "Preparar el Informe"],
+                    answer: "Definir el Problema"
+                },
+                {
+                    question: "¿Qué tipo de campaña de email marketing se envía a nuevos suscriptores para presentarse y dar una primera impresión?",
+                    options: ["Newsletter", "Correo Promocional", "Mail de Bienvenida", "Correo de Carrito Abandonado"],
+                    answer: "Mail de Bienvenida"
+                },
+                {
+                    question: "¿Cuál de los siguientes es un KPI clave para medir el rendimiento de una campaña de PPC (Pago Por Clic)?",
+                    options: ["Número de Visitas", "Tasa de Rebote", "Crecimiento de Seguidores", "Tasa de Clics (CTR)"],
+                    answer: "Tasa de Clics (CTR)"
+                },
+                {
+                    question: "¿Cuál es el propósito esencial del marketing, según el curso?",
+                    options: ["Vender productos a cualquier costo", "Conseguir y mantener clientes", "Crear anuncios llamativos", "Ignorar a la competencia"],
+                    answer: "Conseguir y mantener clientes"
+                },
+                {
+                    question: "¿Qué tipo de segmentación de mercado agrupa a los consumidores por estilo de vida, valores y personalidad?",
+                    options: ["Geográfica", "Demográfica", "Psicográfica", "Conductual"],
+                    answer: "Psicográfica"
+                },
+                {
+                    question: "¿Qué estrategia digital se enfoca en crear y distribuir contenido valioso para atraer y educar a la audiencia?",
+                    options: ["SEM", "Email Marketing", "Marketing de Contenidos", "SMM"],
+                    answer: "Marketing de Contenidos"
+                }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            const navigateTo = (hash) => {
+                const targetId = hash.substring(1);
+                
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.hash === hash);
+                });
+
+                contentSections.forEach(section => {
+                    section.classList.toggle('active', section.id === targetId);
+                });
+            };
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.hash = link.hash;
+                });
+            });
+            
+            window.addEventListener('hashchange', () => {
+                 navigateTo(window.location.hash || '#inicio');
+            });
+
+            navigateTo(window.location.hash || '#inicio');
+
+            initEcosystem();
+            initDefinitions();
+            initObjectives();
+            initEvolutionChart();
+            initMarketingMix();
+            initResearchProcess();
+            initBehaviorChart();
+            initSegmentation();
+            initStrategiesAccordion();
+            initKpiChart();
+            initTools();
+            initQuiz();
+        });
+
+        function initEcosystem() {
+            const container = document.getElementById('ecosystem-container');
+            const nodes = [
+                { id: 'fundamentos', text: '🏛️ Fundamentos', x: '50%', y: '10%', size: '120px' },
+                { id: 'marketing-mix', text: '📦 Marketing Mix', x: '20%', y: '40%', size: '130px' },
+                { id: 'cliente', text: '👥 El Cliente', x: '80%', y: '40%', size: '130px' },
+                { id: 'estrategias', text: '🚀 Estrategias', x: '35%', y: '75%', size: '120px' },
+                { id: 'medicion', text: '📊 Medición', x: '65%', y: '75%', size: '120px' }
+            ];
+
+            nodes.forEach(node => {
+                const el = document.createElement('a');
+                el.href = `#${node.id}`;
+                el.className = 'absolute flex items-center justify-center p-4 rounded-full bg-white shadow-lg text-center font-semibold text-stone-700 hover:shadow-xl hover:bg-teal-50 transition-all duration-300 cursor-pointer';
+                el.style.width = node.size;
+                el.style.height = node.size;
+                el.style.left = `calc(${node.x} - ${parseInt(node.size)/2}px)`;
+                el.style.top = `calc(${node.y} - ${parseInt(node.size)/2}px)`;
+                el.innerHTML = node.text;
+                container.appendChild(el);
+            });
+        }
+
+        function initDefinitions() {
+            const container = document.getElementById('definitions-carousel');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const def = data.definitions[currentIndex];
+                container.innerHTML = `
+                    <div class="p-4 bg-stone-100 rounded-lg h-full flex flex-col justify-center">
+                        <p class="text-stone-600 text-sm">"${def.text}"</p>
+                        <p class="text-right font-bold text-teal-700 mt-2">- ${def.author}</p>
+                    </div>
+                    <button id="prevDef" class="absolute top-1/2 left-0 -translate-y-1/2 bg-white rounded-full p-1 shadow">&lt;</button>
+                    <button id="nextDef" class="absolute top-1/2 right-0 -translate-y-1/2 bg-white rounded-full p-1 shadow">&gt;</button>
+                `;
+                document.getElementById('prevDef').addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + data.definitions.length) % data.definitions.length;
+                    updateCarousel();
+                });
+                document.getElementById('nextDef').addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % data.definitions.length;
+                    updateCarousel();
+                });
+            }
+            updateCarousel();
+        }
+
+        function initObjectives() {
+            const grid = document.getElementById('objectives-grid');
+            data.objectives.forEach(obj => {
+                const div = document.createElement('div');
+                div.className = 'p-2 rounded-lg text-center bg-stone-50 hover:bg-stone-100 cursor-pointer relative group';
+                div.innerHTML = `
+                    <div class="text-3xl">${obj.icon}</div>
+                    <div class="text-xs font-semibold mt-1">${obj.title}</div>
+                    <div class="absolute bottom-full mb-2 w-48 left-1/2 -translate-x-1/2 p-2 text-xs bg-stone-800 text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                        ${obj.description}
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        function initEvolutionChart() {
+            const ctx = document.getElementById('evolutionChart').getContext('2d');
+            const detailsDiv = document.getElementById('evolution-details');
+            
+            const chartData = {
+                datasets: [{
+                    label: 'Hitos del Marketing',
+                    data: data.evolution.map(e => ({ x: e.year, y: 1 })),
+                    backgroundColor: '#0d9488',
+                    pointRadius: 8,
+                    pointHoverRadius: 12,
+                }]
+            };
+
+            const evolutionChart = new Chart(ctx, {
+                type: 'scatter',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onClick: (e, elements) => {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            const item = data.evolution[index];
+                            detailsDiv.innerHTML = `<h4 class="font-bold">${item.era} (ca. ${item.year})</h4><p class="text-sm mt-1">${item.details}</p>`;
+                            detailsDiv.classList.remove('hidden');
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            min: 1910,
+                            max: 2025,
+                            title: { display: true, text: 'Año' }
+                        },
+                        y: { display: false, min: 0, max: 2 }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const index = context.dataIndex;
+                                    return data.evolution[index].era;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function initMarketingMix() {
+            const buttons = document.querySelectorAll('.p-button');
+            const detailsContainer = document.getElementById('p-details');
+
+            function updateDetails(pKey) {
+                const pData = data.marketingMix[pKey];
+                detailsContainer.innerHTML = `
+                    <h3 class="text-2xl font-bold text-teal-700 flex items-center"><span class="text-3xl mr-3">${pData.icon}</span> ${pData.title}</h3>
+                    <p class="mt-4 text-stone-600">${pData.content}</p>
+                `;
+                buttons.forEach(btn => {
+                    btn.classList.remove('bg-teal-50', 'border-teal-500');
+                    btn.classList.add('bg-white', 'border-stone-300');
+                    btn.querySelector('h4').classList.remove('text-teal-800');
+                    btn.querySelector('h4').classList.add('text-stone-800');
+                });
+                const activeBtn = document.getElementById(`p-${pKey}`);
+                activeBtn.classList.add('bg-teal-50', 'border-teal-500');
+                activeBtn.classList.remove('bg-white', 'border-stone-300');
+                activeBtn.querySelector('h4').classList.add('text-teal-800');
+                activeBtn.querySelector('h4').classList.remove('text-stone-800');
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pKey = button.id.split('-')[1];
+                    updateDetails(pKey);
+                });
+            });
+
+            updateDetails('producto');
+        }
+
+        function initResearchProcess() {
+            const container = document.getElementById('research-process');
+            data.researchProcess.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'p-3 bg-stone-100 rounded-lg cursor-pointer hover:bg-stone-200';
+                div.innerHTML = `<h5 class="font-semibold text-stone-700">${item.step}</h5>`;
+                div.addEventListener('click', () => {
+                    const existingDetail = div.querySelector('p');
+                    if (existingDetail) {
+                        existingDetail.remove();
+                    } else {
+                        const detail = document.createElement('p');
+                        detail.className = 'text-sm text-stone-600 mt-1';
+                        detail.textContent = item.description;
+                        div.appendChild(detail);
+                    }
+                });
+                container.appendChild(div);
+            });
+        }
+        
+        function initBehaviorChart() {
+            const ctx = document.getElementById('behaviorChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Culturales', 'Sociales', 'Personales', 'Psicológicos'],
+                    datasets: [{
+                        label: 'Influencia en la Compra',
+                        data: [8, 9, 7, 9],
+                        fill: true,
+                        backgroundColor: 'rgba(13, 148, 136, 0.2)',
+                        borderColor: 'rgb(13, 148, 136)',
+                        pointBackgroundColor: 'rgb(13, 148, 136)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(13, 148, 136)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: { line: { tension: 0.1 } },
+                    scales: { r: { angleLines: { display: true }, suggestedMin: 0, suggestedMax: 10, pointLabels: { font: { size: 14 } } } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+        
+        function initSegmentation() {
+            const tabsContainer = document.querySelector('#segmentation-tabs nav');
+            const contentContainer = document.getElementById('segmentation-content');
+            const segments = Object.keys(data.segmentation);
+
+            segments.forEach(key => {
+                const button = document.createElement('button');
+                button.className = 'tab-button py-2 px-4 font-medium text-sm rounded-t-lg text-stone-500 hover:bg-teal-100';
+                button.textContent = data.segmentation[key].title;
+                button.dataset.target = key;
+                tabsContainer.appendChild(button);
+            });
+
+            function updateContent(key) {
+                contentContainer.innerHTML = `<p>${data.segmentation[key].content}</p>`;
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.target === key);
+                });
+            }
+
+            tabsContainer.addEventListener('click', (e) => {
+                if (e.target.matches('.tab-button')) {
+                    updateContent(e.target.dataset.target);
+                }
+            });
+            
+            updateContent(segments[0]);
+        }
+        
+        function initStrategiesAccordion() {
+            const container = document.getElementById('strategies-accordion');
+            data.strategies.forEach(strategy => {
+                const div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `
+                    <button class="accordion-button w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-stone-50">
+                        <span>${strategy.title}</span>
+                        <span class="transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 pt-0 text-stone-600">${strategy.content}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            container.addEventListener('click', (e) => {
+                const button = e.target.closest('.accordion-button');
+                if (button) {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('span:last-child');
+                    const isOpen = content.style.maxHeight;
+
+                    if (isOpen && isOpen !== '0px') {
+                        content.style.maxHeight = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(45deg)';
+                    }
+                }
+            });
+        }
+
+        function initKpiChart() {
+            const ctx = document.getElementById('kpiChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Tráfico Web', 'Conversión', 'Redes Sociales', 'Email Marketing', 'Satisfacción'],
+                    datasets: [{
+                        label: 'Áreas de Medición',
+                        data: [30, 25, 20, 15, 10],
+                        backgroundColor: ['#14b8a6', '#2dd4bf', '#5eead4', '#99f6e4', '#ccfbf1'],
+                        borderColor: '#f5f5f4',
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right' },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    const kpis = {
+                                        'Tráfico Web': ['Visitas', 'CTR', '% Rebote'],
+                                        'Conversión': ['Tasa de Conversión', 'Coste por Lead (CPL)'],
+                                        'Redes Sociales': ['Engagement Rate', 'Crecimiento de seguidores'],
+                                        'Email Marketing': ['Tasa de Apertura', 'Tasa de Clics'],
+                                        'Satisfacción': ['Net Promoter Score (NPS)']
+                                    };
+                                    return 'Ej: ' + kpis[context.label].join(', ');
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initTools() {
+            const grid = document.getElementById('tools-grid');
+            data.tools.forEach(tool => {
+                const div = document.createElement('div');
+                div.className = 'p-3 rounded-lg text-center bg-stone-100 hover:bg-stone-200 cursor-pointer relative group';
+                div.innerHTML = `
+                    <div class="font-bold text-stone-700">${tool.name}</div>
+                    <div class="absolute bottom-full mb-2 w-48 left-1/2 -translate-x-1/2 p-2 text-xs bg-stone-800 text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                        ${tool.description}
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedOption = null;
+
+        const quizQuestionEl = document.getElementById('quiz-question');
+        const quizOptionsEl = document.getElementById('quiz-options');
+        const checkAnswerBtn = document.getElementById('check-answer-btn');
+        const nextQuestionBtn = document.getElementById('next-question-btn');
+        const restartQuizBtn = document.getElementById('restart-quiz-btn');
+        const quizFeedbackEl = document.getElementById('quiz-feedback');
+        const quizResultEl = document.getElementById('quiz-result');
+        const quizProgressBar = document.getElementById('quiz-progress-bar');
+        const quizProgressText = document.getElementById('quiz-progress-text');
+
+        function updateProgressBar() {
+            const totalQuestions = data.quizQuestions.length;
+            const currentQuestionNumber = currentQuestionIndex + 1;
+            const progressPercentage = (currentQuestionIndex / totalQuestions) * 100;
+
+            quizProgressBar.style.width = `${progressPercentage}%`;
+            if (currentQuestionIndex < totalQuestions) {
+                quizProgressText.textContent = `Pregunta ${currentQuestionNumber} de ${totalQuestions}`;
+            } else {
+                quizProgressText.textContent = 'Quiz Completado';
+            }
+        }
+
+        function loadQuestion() {
+            selectedOption = null;
+            quizFeedbackEl.textContent = '';
+            quizOptionsEl.innerHTML = '';
+            checkAnswerBtn.classList.remove('hidden');
+            nextQuestionBtn.classList.add('hidden');
+            restartQuizBtn.classList.add('hidden');
+            quizResultEl.classList.add('hidden'); // Ensure it's hidden when loading a new question
+            updateProgressBar();
+
+            if (currentQuestionIndex < data.quizQuestions.length) {
+                const questionData = data.quizQuestions[currentQuestionIndex];
+                quizQuestionEl.textContent = questionData.question;
+
+                questionData.options.forEach((option, index) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'quiz-option p-3 border border-stone-200 rounded-lg flex items-center';
+                    optionDiv.innerHTML = `
+                        <input type="radio" id="option${index}" name="quiz-option" value="${option}" class="mr-3">
+                        <label for="option${index}" class="flex-1 cursor-pointer">${option}</label>
+                    `;
+                    optionDiv.addEventListener('click', () => {
+                        document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                        optionDiv.classList.add('selected');
+                        selectedOption = option;
+                    });
+                    quizOptionsEl.appendChild(optionDiv);
+                });
+            } else {
+                displayResult();
+            }
+        }
+
+        function checkAnswer() {
+            if (!selectedOption) {
+                quizFeedbackEl.textContent = '¡Por favor, selecciona una opción!';
+                quizFeedbackEl.style.color = '#dc2626'; /* red-600 */
+                return;
+            }
+
+            const correctAnswer = data.quizQuestions[currentQuestionIndex].answer;
+            const allOptions = quizOptionsEl.querySelectorAll('.quiz-option');
+
+            allOptions.forEach(optionDiv => {
+                const radio = optionDiv.querySelector('input');
+                if (radio.value === correctAnswer) {
+                    optionDiv.classList.add('correct');
+                }
+                if (radio.value === selectedOption && radio.value !== correctAnswer) {
+                    optionDiv.classList.add('incorrect');
+                }
+                radio.disabled = true;
+            });
+
+            if (selectedOption === correctAnswer) {
+                score++;
+                quizFeedbackEl.textContent = '¡Correcto! 🎉';
+                quizFeedbackEl.style.color = '#059669'; /* emerald-600 */
+            } else {
+                quizFeedbackEl.textContent = `¡Incorrecto! 😔 La respuesta correcta era: "${correctAnswer}"`;
+                quizFeedbackEl.style.color = '#dc2626'; /* red-600 */
+            }
+
+            checkAnswerBtn.classList.add('hidden');
+            // FIX: Call displayResult() directly if it's the last question
+            if (currentQuestionIndex === data.quizQuestions.length - 1) {
+                displayResult();
+            } else {
+                nextQuestionBtn.classList.remove('hidden');
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function displayResult() {
+            quizQuestionEl.textContent = '¡Quiz Terminado!';
+            quizOptionsEl.innerHTML = '';
+            quizFeedbackEl.textContent = '';
+            checkAnswerBtn.classList.add('hidden');
+            nextQuestionBtn.classList.add('hidden');
+            restartQuizBtn.classList.remove('hidden');
+            
+            // Ensure quizResultEl is visible and content is set
+            quizResultEl.classList.remove('hidden'); 
+            quizResultEl.style.display = 'block'; // Explicitly set display to block
+
+            const totalQuestions = data.quizQuestions.length;
+            const percentageCorrect = (score / totalQuestions) * 100;
+            let comment = '';
+            let textColor = '';
+
+            if (percentageCorrect === 100) {
+                comment = "¡Impresionante! Eres un gurú del marketing. ¿Seguro que no eres Kotler disfrazado?";
+                textColor = '#059669'; // emerald-600
+            } else if (percentageCorrect >= 75) {
+                comment = "¡Muy bien! Tienes el marketing en la sangre. Casi un experto, pero no te confíes.";
+                textColor = '#059669'; // emerald-600
+            } else if (percentageCorrect >= 50) {
+                comment = "Aprobado, pero hay margen para mejorar. No te preocupes, el marketing es un mar de dudas para muchos.";
+                textColor = '#d97706'; // amber-600
+            } else if (percentageCorrect > 0) {
+                comment = "Bueno, al menos lo intentaste. Parece que el marketing te está esperando con los brazos abiertos... para que estudies más.";
+                textColor = '#dc2626'; // red-600
+            } else {
+                comment = "Cero aciertos. ¿Estás seguro de que no respondiste con los ojos cerrados? ¡A repasar se ha dicho!";
+                textColor = '#dc2626'; // red-600
+            }
+
+            quizResultEl.innerHTML = `Tu puntuación final es: <span style="color: ${textColor};">${score} de ${totalQuestions} correctas.</span><br><br>${comment}`;
+            
+            quizProgressBar.style.width = '100%';
+            quizProgressText.textContent = 'Quiz Completado';
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            loadQuestion();
+        }
+
+        function initQuiz() {
+            checkAnswerBtn.addEventListener('click', checkAnswer);
+            nextQuestionBtn.addEventListener('click', nextQuestion);
+            restartQuizBtn.addEventListener('click', restartQuiz);
+            loadQuestion();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+.env*
+node_modules/
+public/html/interactivos/
+coverage/
+db.json
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini

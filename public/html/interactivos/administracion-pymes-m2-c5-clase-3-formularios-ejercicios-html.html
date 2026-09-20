@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITC - Simulador de Vistas (Access)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05050a;
+            --access-red: #a30021;
+            --access-red-neon: #ff3366;
+            --primary: #00ffcc;
+            --text-main: #e0e0e0;
+            --grid-color: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0; padding: 2rem;
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+        }
+
+        .header { text-align: center; margin-bottom: 2rem; font-family: 'Orbitron', sans-serif; }
+        .header h1 { color: var(--access-red-neon); margin: 0; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 10px rgba(255,51,102,0.5); }
+        .header p { color: #8892b0; font-size: 0.9rem; }
+
+        /* Controles de Vistas */
+        .view-controls {
+            display: flex; gap: 10px; margin-bottom: 20px;
+            background: rgba(10,10,20,0.8); padding: 10px; border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .btn-view {
+            background: transparent; color: #aaa; border: 1px solid #444;
+            padding: 8px 15px; font-family: 'Orbitron'; font-size: 0.8rem;
+            cursor: pointer; transition: 0.3s; border-radius: 4px;
+        }
+
+        .btn-view:hover { border-color: var(--primary); color: var(--primary); }
+        .btn-view.active { background: var(--access-red); color: #fff; border-color: var(--access-red-neon); box-shadow: 0 0 10px var(--access-red-neon); }
+
+        /* Contenedor del Formulario Simulado */
+        .workspace {
+            width: 100%; max-width: 800px; height: 400px;
+            background: #e6e6e6; /* Color clásico de formulario Access */
+            border: 2px solid #333; border-radius: 4px;
+            position: relative; overflow: hidden; transition: 0.3s;
+            display: flex;
+        }
+
+        .form-area { flex: 1; padding: 20px; position: relative; }
+        .property-sheet { width: 0; background: #f0f0f0; border-left: 1px solid #ccc; overflow: hidden; transition: 0.3s; color: #333; font-family: sans-serif; font-size: 0.8rem; }
+
+        /* Encabezado del form interno */
+        .form-header { background: #1a4f8b; color: white; padding: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 1.2rem; margin-bottom: 20px; }
+
+        /* Controles (Inputs) */
+        .control-group { display: flex; margin-bottom: 15px; align-items: center; }
+        .control-label { width: 120px; color: #333; font-family: sans-serif; font-size: 0.9rem; font-weight: bold; }
+        .control-input { 
+            flex: 1; max-width: 300px; padding: 6px; border: 1px solid #999; 
+            font-family: sans-serif; transition: 0.3s; background: #fff;
+        }
+
+        .nav-bar {
+            position: absolute; bottom: 0; left: 0; width: 100%; background: #d4d4d4;
+            padding: 5px; border-top: 1px solid #aaa; display: flex; align-items: center; gap: 10px;
+            color: #000; font-family: sans-serif; font-size: 0.8rem;
+        }
+
+        /* --- ESTILOS DE VISTAS (LÓGICA CSS) --- */
+        
+        /* Vista Formulario (Por defecto) */
+        .v-form .control-input { outline: none; }
+        .v-form .control-input:focus { border-color: #0078d7; box-shadow: 0 0 3px #0078d7; }
+
+        /* Vista Presentación */
+        .v-layout .form-area { background: #f3f3f3; }
+        .v-layout .control-input, .v-layout .control-label { border: 1px dashed #ff8c00; background: rgba(255, 140, 0, 0.1); cursor: move; }
+        .v-layout .control-input { pointer-events: none; } /* No se puede escribir */
+
+        /* Vista Diseño */
+        .v-design .workspace { background: #fff; }
+        .v-design .form-area { 
+            background-image: linear-gradient(#ccc 1px, transparent 1px), linear-gradient(90deg, #ccc 1px, transparent 1px);
+            background-size: 10px 10px; 
+        }
+        .v-design .form-header { background: transparent; color: #000; border: 1px solid #000; }
+        .v-design .control-input { background: transparent; border: 1px solid #000; color: #000; font-family: monospace; font-size: 0.8rem; pointer-events: none;}
+        .v-design .control-label { border: 1px solid #000; padding: 2px; }
+        .v-design .property-sheet { width: 250px; padding: 10px; }
+        .v-design .nav-bar { display: none; }
+
+        .info-panel {
+            margin-top: 20px; width: 100%; max-width: 800px;
+            background: rgba(0, 255, 204, 0.05); border-left: 4px solid var(--primary);
+            padding: 15px; color: #aaa; font-size: 0.9rem;
+        }
+
+        .footer { margin-top: 2rem; text-align: center; color: #555; font-size: 0.7rem; font-family: 'Orbitron'; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>SIMULADOR INTERFAZ (UI)</h1>
+        <p>Experimenta los 3 modos de visualización de un Formulario en Access.</p>
+    </div>
+
+    <div class="view-controls">
+        <button class="btn-view active" onclick="setView('form', this)">1. VISTA FORMULARIO</button>
+        <button class="btn-view" onclick="setView('layout', this)">2. VISTA PRESENTACIÓN</button>
+        <button class="btn-view" onclick="setView('design', this)">3. VISTA DISEÑO</button>
+    </div>
+
+    <div class="workspace v-form" id="simWorkspace">
+        <div class="form-area">
+            <div class="form-header" id="fHeader">Gestión de Clientes</div>
+            
+            <div class="control-group">
+                <div class="control-label">ID_Cliente</div>
+                <input type="text" class="control-input" id="fId" value="1054" readonly style="background:#eee;">
+            </div>
+            <div class="control-group">
+                <div class="control-label">Razón Social</div>
+                <input type="text" class="control-input" id="fNombre" value="Tech Solutions SRL">
+            </div>
+            <div class="control-group">
+                <div class="control-label">Teléfono</div>
+                <input type="text" class="control-input" id="fTel" value="3794-558899">
+            </div>
+
+            <div class="nav-bar">
+                <span>Registro: </span>
+                <button>◀</button> <input type="text" value="1" style="width:30px; text-align:center;"> de 45 <button>▶</button>
+                <button title="Nuevo registro en blanco (Estrella amarilla)" style="color:#d4af37; font-weight:bold;">▶*</button>
+                <span style="margin-left:20px; color:#555;">(Modo Inserción Activo)</span>
+            </div>
+        </div>
+
+        <div class="property-sheet">
+            <h4 style="margin-top:0; background:#ddd; padding:5px;">Hoja de Propiedades</h4>
+            <b>Tipo de selección:</b> Cuadro de texto<br><br>
+            <div style="border-bottom:1px solid #ccc; padding-bottom:5px;">Nombre: txtNombre</div>
+            <div style="border-bottom:1px solid #ccc; padding-bottom:5px; margin-top:5px;">Origen control: Razón Social</div>
+            <div style="border-bottom:1px solid #ccc; padding-bottom:5px; margin-top:5px;">Visible: Sí</div>
+            <div style="border-bottom:1px solid #ccc; padding-bottom:5px; margin-top:5px;">Color de fondo: #FFFFFF</div>
+        </div>
+    </div>
+
+    <div class="info-panel" id="infoPanel">
+        <strong style="color:var(--primary)">ESTADO ACTUAL: VISTA FORMULARIO</strong><br>
+        Esta es la pantalla "Viva". El usuario de la Pyme utiliza esta vista exclusivamente para <b>cargar, modificar o visualizar datos reales</b>. El diseño está bloqueado, protegiendo la estructura del sistema.
+    </div>
+
+    <div class="footer">
+        @gustavokempe
+    </div>
+
+    <script>
+        function setView(mode, btn) {
+            // Reset buttons
+            document.querySelectorAll('.btn-view').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const workspace = document.getElementById('simWorkspace');
+            const info = document.getElementById('infoPanel');
+            
+            // Elements to swap text
+            const fHeader = document.getElementById('fHeader');
+            const fId = document.getElementById('fId');
+            const fNombre = document.getElementById('fNombre');
+            const fTel = document.getElementById('fTel');
+
+            // Reset classes
+            workspace.className = 'workspace';
+
+            if(mode === 'form') {
+                workspace.classList.add('v-form');
+                fHeader.textContent = "Gestión de Clientes";
+                fId.value = "1054";
+                fNombre.value = "Tech Solutions SRL";
+                fTel.value = "3794-558899";
+                info.innerHTML = `<strong style="color:var(--primary)">ESTADO ACTUAL: VISTA FORMULARIO</strong><br>Esta es la pantalla "Viva". El usuario de la Pyme utiliza esta vista exclusivamente para <b>cargar, modificar o visualizar datos reales</b>. El diseño está bloqueado, protegiendo la estructura del sistema.`;
+            } 
+            else if(mode === 'layout') {
+                workspace.classList.add('v-layout');
+                fHeader.textContent = "Gestión de Clientes";
+                fId.value = "1054";
+                fNombre.value = "Tech Solutions SRL";
+                fTel.value = "3794-558899";
+                info.innerHTML = `<strong style="color:#ff8c00">ESTADO ACTUAL: VISTA PRESENTACIÓN</strong><br>Modo híbrido. Puedes ver los <b>datos reales</b>, pero se habilitan los bordes para <b>ajustar el diseño visual</b> (agrandar cuadros, cambiar colores) de forma rápida sin perder de vista cómo quedará la información.`;
+            }
+            else if(mode === 'design') {
+                workspace.classList.add('v-design');
+                fHeader.textContent = "Etiqueta: Encabezado";
+                fId.value = "ID_Cliente";
+                fNombre.value = "Razón Social";
+                fTel.value = "Teléfono";
+                info.innerHTML = `<strong style="color:var(--access-red-neon)">ESTADO ACTUAL: VISTA DISEÑO</strong><br>El "Esqueleto" del sistema. Los datos desaparecen (se muestran los nombres de los campos de la tabla). Aparece la cuadrícula y la <b>Hoja de Propiedades</b> para programación avanzada y controles estructurales.`;
+            }
+        }
+    </script>
+</body>
+</html>

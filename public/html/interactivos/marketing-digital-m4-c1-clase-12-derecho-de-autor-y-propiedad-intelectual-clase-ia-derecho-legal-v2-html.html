@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA y Derecho Digital - GKempe</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { 
+                        brand: '#10b981', /* Verde Esmeralda (Legal/Safe) */
+                        brandLight: '#34d399', 
+                        darkBg: '#020617', /* Slate ultra oscuro */
+                        panel: '#0f172a'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: default;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Glassmorphism y Paneles */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-border {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+            border-color: rgba(16, 185, 129, 0.5);
+        }
+
+        /* Tabs Logic */
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active { color: #10b981; border-bottom: 2px solid #10b981; background: rgba(16, 185, 129, 0.1); }
+
+        /* Quiz Styles */
+        .quiz-option {
+            display: block; width: 100%; text-align: left; padding: 1.2rem; margin-bottom: 0.8rem;
+            border-radius: 0.75rem; border: 1px solid #1e293b; background: rgba(30, 41, 59, 0.5);
+            transition: all 0.2s ease; cursor: pointer; color: #cbd5e1;
+        }
+        .quiz-option:hover:not(.disabled) { border-color: #10b981; background: rgba(16, 185, 129, 0.1); transform: translateX(5px); }
+        .quiz-option.correct { border-color: #10b981; background: rgba(16, 185, 129, 0.2); color: #a7f3d0; box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
+        .quiz-option.incorrect { border-color: #ef4444; background: rgba(239, 68, 68, 0.2); color: #fecaca; }
+        .quiz-option.disabled { pointer-events: none; opacity: 0.7; }
+
+        /* Termómetro Legal */
+        .meter-container { width: 100%; height: 24px; background: #1e293b; border-radius: 12px; overflow: hidden; position: relative; border: 1px solid #334155; }
+        .meter-fill { height: 100%; width: 0%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1), background-color 1s ease; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+        
+        .mitigation-btn {
+            background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #a7f3d0;
+            transition: all 0.3s;
+        }
+        .mitigation-btn:hover:not(:disabled) {
+            background: rgba(16, 185, 129, 0.3); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(16,185,129,0.2);
+        }
+        .mitigation-btn:disabled { opacity: 0.4; cursor: not-allowed; border-color: #334155; color: #64748b; background: transparent; }
+
+        /* Background Images Combinations */
+        .bg-cyber {
+            background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 1)), url('https://images.unsplash.com/photo-1633265486064-086b219458ce?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand selection:text-white bg-cyber min-h-screen">
+
+    <!-- Navegación de Pestañas -->
+    <header class="bg-darkBg/80 backdrop-blur-xl border-b border-gray-800 sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center py-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl animate-pulse-slow">⚖️</span>
+                    <span class="font-extrabold text-xl tracking-tight text-white">GKempe <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-cyan-500">Legal & AI</span></span>
+                </div>
+                
+                <nav class="flex flex-wrap justify-center gap-2 mt-4 lg:mt-0 bg-slate-900/50 p-1.5 rounded-2xl border border-slate-700/50 backdrop-blur-md">
+                    <button onclick="switchTab('clase')" id="btn-clase" class="tab-btn active px-4 md:px-6 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white">
+                        1. Clase: Blindaje
+                    </button>
+                    <button onclick="switchTab('tp')" id="btn-tp" class="tab-btn px-4 md:px-6 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white">
+                        2. Trabajo Práctico
+                    </button>
+                    <button onclick="switchTab('sim')" id="btn-sim" class="tab-btn px-4 md:px-6 py-2.5 rounded-xl text-sm font-bold text-gray-400 hover:text-white flex items-center gap-2">
+                        <span class="text-brand">⚡</span> 3. Simulador Legal
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+
+        <!-- ==========================================
+             PESTAÑA 1: CLASE TEÓRICA & BOTIQUÍN LEGAL
+             ========================================== -->
+        <div id="tab-clase" class="tab-content active space-y-16">
+            
+            <!-- Hero -->
+            <section class="text-center space-y-6 relative">
+                <div class="inline-flex items-center bg-emerald-950/50 text-brand px-5 py-2.5 rounded-full text-xs font-mono border border-emerald-800/50 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                    > STATUS: PROTECCIÓN CULTURAL ACTIVADA
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+                    IA, Derechos de Autor y <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-cyan-400">Ética Cultural</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-light">
+                    El manual de supervivencia para Estrategas Digitales. Aprende a usar la IA sin infringir la Ley 11.723, el Derecho de Imagen y protegiendo el patrimonio.
+                </p>
+            </section>
+
+            <!-- Botiquín Legal (Descargables) -->
+            <section class="glass-panel p-8 md:p-10 rounded-[2rem] glow-border mt-12 bg-gradient-to-br from-slate-900/90 to-slate-800/90 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">🧰 El Botiquín Legal</h2>
+                        <p class="text-gray-400 text-sm">Descarga los documentos esenciales para protegerte a ti y a tus clientes antes de publicar cualquier campaña generada con o sin IA.</p>
+                    </div>
+                    <div class="flex flex-col gap-3 w-full md:w-auto">
+                        <button onclick="descargarConsentimiento()" class="bg-brand/10 hover:bg-brand hover:text-darkBg text-brand border border-brand/50 font-bold py-3 px-6 rounded-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.2)] flex items-center justify-center gap-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Modelo: Cesión de Imagen
+                        </button>
+                        <button onclick="descargarLeyMecenazgo()" class="bg-cyan-500/10 hover:bg-cyan-500 hover:text-darkBg text-cyan-400 border border-cyan-500/50 font-bold py-3 px-6 rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.2)] flex items-center justify-center gap-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Ley 1353-E (Mecenazgo Chaco)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Módulos de Teoría Visuales -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Ley 11.723 -->
+                <div class="glass-panel rounded-[2rem] overflow-hidden group">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80');">
+                        <div class="w-full h-full bg-slate-900/70 group-hover:bg-slate-900/50 transition-all flex items-end p-6">
+                            <h3 class="text-2xl font-bold text-white">01. El Vacío Legal (Ley 11.723)</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-sm text-gray-300 mb-4">La ley exige "creación humana original".</p>
+                        <ul class="space-y-3 text-sm text-gray-400 list-disc list-inside">
+                            <li><strong class="text-brandLight">IA Cruda = Dominio Público.</strong> Tu competencia puede usar tu logo si lo sacaste directo de Midjourney.</li>
+                            <li><strong class="text-white">Blindaje:</strong> "Intervención Humana Significativa". Vectoriza, cura y edita el material final.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Deepfakes -->
+                <div class="glass-panel rounded-[2rem] overflow-hidden group border-t-4 border-t-red-500">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');">
+                        <div class="w-full h-full bg-red-900/60 group-hover:bg-red-900/40 transition-all flex items-end p-6">
+                            <h3 class="text-2xl font-bold text-white">02. Rostros y Deepfakes</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-sm text-gray-300 mb-4">El Derecho a la Imagen es irrenunciable.</p>
+                        <ul class="space-y-3 text-sm text-gray-400 list-disc list-inside">
+                            <li><strong class="text-red-400">Voces Clonadas:</strong> Imitar a un famoso con IA para un Reel comercial es causal de demanda.</li>
+                            <li><strong class="text-white">Modelos Ficticios:</strong> Generar rostros humanos que no existen es legal y ahorra costos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==========================================
+             PESTAÑA 2: TRABAJO PRÁCTICO (QUIZ)
+             ========================================== -->
+        <div id="tab-tp" class="tab-content hidden">
+            
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold">Trabajo Práctico N° 4</h2>
+                <p class="text-brandLight font-mono">Examen de Certificación: Legalidad y Ética en IAs</p>
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 rounded-[2rem] max-w-3xl mx-auto shadow-2xl glow-border">
+                
+                <div id="quiz-container" class="space-y-12">
+                    <!-- Pregunta 1 -->
+                    <div class="question-block" id="q1">
+                        <h4 class="text-lg font-bold mb-5 text-white">1. Generas un logo para una pizzería usando Midjourney. Se lo entregas al cliente. Según la Ley 11.723, ¿quién es el dueño legal de esa imagen?</h4>
+                        <div class="space-y-3">
+                            <button class="quiz-option" onclick="checkQuiz('q1', this, false)">A) Yo, porque fui el "Prompt Engineer" que pensó las palabras.</button>
+                            <button class="quiz-option" onclick="checkQuiz('q1', this, false)">B) El cliente, porque pagó por el servicio de la agencia.</button>
+                            <button class="quiz-option" onclick="checkQuiz('q1', this, true)">C) Nadie. Es Dominio Público por carecer de intervención humana significativa.</button>
+                        </div>
+                        <p class="feedback mt-4 text-sm font-bold hidden"></p>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="question-block" id="q2">
+                        <h4 class="text-lg font-bold mb-5 text-white">2. Clonas la voz de "Bizarrap" con IA para un anuncio local. ¿Qué infracción cometes?</h4>
+                        <div class="space-y-3">
+                            <button class="quiz-option" onclick="checkQuiz('q2', this, true)">A) Violación al Derecho a la Propia Imagen por falta de consentimiento y uso comercial.</button>
+                            <button class="quiz-option" onclick="checkQuiz('q2', this, false)">B) Violación a la Ley de Mecenazgo.</button>
+                            <button class="quiz-option" onclick="checkQuiz('q2', this, false)">C) Ninguna, el Fair Use permite parodias.</button>
+                        </div>
+                        <p class="feedback mt-4 text-sm font-bold hidden"></p>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="question-block" id="q3">
+                        <h4 class="text-lg font-bold mb-5 text-white">3. Quieres presentar un Micro-documental a la Ley de Mecenazgo (1353-E). ¿Cómo usas la IA éticamente?</h4>
+                        <div class="space-y-3">
+                            <button class="quiz-option" onclick="checkQuiz('q3', this, false)">A) Generando todas las voces y cultura local con IA para ahorrar costos.</button>
+                            <button class="quiz-option" onclick="checkQuiz('q3', this, true)">B) Usando IA para bocetar el guion, pero realizando el trabajo de campo humano para preservar el patrimonio.</button>
+                        </div>
+                        <p class="feedback mt-4 text-sm font-bold hidden"></p>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-700 text-center">
+                        <button onclick="calculateScore()" class="bg-brand hover:bg-emerald-400 text-darkBg font-bold py-4 px-10 rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.5)] text-lg">
+                            Generar Certificado
+                        </button>
+                        <div id="final-score" class="mt-8 p-6 glass-panel rounded-xl hidden text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             PESTAÑA 3: SIMULADOR LEGAL (TERMÓMETRO)
+             ========================================== -->
+        <div id="tab-sim" class="tab-content hidden">
+            <div class="text-center space-y-4 mb-10">
+                <div class="inline-flex items-center bg-cyan-950/50 text-cyan-400 px-5 py-2.5 rounded-full text-xs font-mono border border-cyan-800/50 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                    > SISTEMA DE ANÁLISIS DE RIESGOS INICIADO
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold">Simulador de <span class="text-brand">Casos Reales</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Ingresa tu caso como Community Manager. El sistema detectará los riesgos (SADAIC, Derechos de Imagen, Ley 11.723) y te obligará a mitigarlos.</p>
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 rounded-[2rem] max-w-4xl mx-auto shadow-2xl glow-border">
+                
+                <!-- Input de Caso -->
+                <div class="space-y-4 mb-10">
+                    <label class="font-bold text-white text-lg">Describe qué vas a publicar:</label>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="text" id="case-input" class="flex-1 bg-slate-900 border-2 border-slate-700 text-white p-4 rounded-xl focus:outline-none focus:border-brand font-mono text-sm transition-colors" placeholder='Ej: "Voy a usar la canción de Duki de fondo y un clon de voz de Messi para vender empanadas..."'>
+                        <button onclick="analizarCaso()" class="bg-cyan-500 hover:bg-cyan-400 text-darkBg font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] whitespace-nowrap">
+                            Escanear Riesgo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Consola de Análisis (Oculta por defecto) -->
+                <div id="sim-dashboard" class="hidden space-y-10 border-t border-slate-700 pt-10">
+                    
+                    <!-- Termómetro -->
+                    <div>
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-sm font-bold text-gray-300 uppercase tracking-widest">Nivel de Blindaje Legal</span>
+                            <span id="meter-percent" class="font-mono font-bold text-2xl text-red-500">10%</span>
+                        </div>
+                        <div class="meter-container">
+                            <div id="meter-bar" class="meter-fill" style="width: 10%; background-color: #ef4444;"></div>
+                        </div>
+                        <p id="meter-status" class="text-red-400 text-sm font-bold mt-3">🚨 ALTO RIESGO: Infracción a SADAIC y Derechos de Imagen detectada.</p>
+                    </div>
+
+                    <!-- Panel de Mitigación -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-4">Protocolos de Mitigación Requeridos:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button onclick="aplicarMitigacion(this, 30, 'Consentimiento Firmado')" class="mitigation-btn p-4 rounded-xl text-sm font-bold text-left flex items-center justify-between">
+                                <span>1. Firmar cesión de derechos de imagen</span>
+                                <span class="text-xs border border-current px-2 py-1 rounded">+30%</span>
+                            </button>
+                            <button onclick="aplicarMitigacion(this, 30, 'Música Libre de Derechos')" class="mitigation-btn p-4 rounded-xl text-sm font-bold text-left flex items-center justify-between">
+                                <span>2. Cambiar a pista musical libre de regalías</span>
+                                <span class="text-xs border border-current px-2 py-1 rounded">+30%</span>
+                            </button>
+                            <button onclick="aplicarMitigacion(this, 30, 'Vectorización Humana')" class="mitigation-btn p-4 rounded-xl text-sm font-bold text-left flex items-center justify-between">
+                                <span>3. Edición pesada humana sobre gráfica de IA</span>
+                                <span class="text-xs border border-current px-2 py-1 rounded">+30%</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-8 text-center text-xs text-gray-500 font-mono mt-12 border-t border-slate-800 bg-darkBg/80 backdrop-blur-md relative z-10">
+        <p>GKempe UDEMM/ITC ARG © 2026 | Sistemas Legales Activos</p>
+    </footer>
+
+    <script>
+        // Lógica de Pestañas
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            document.getElementById(`btn-${tabId}`).classList.add('active');
+        }
+
+        // Lógica del Quiz
+        let score = 0;
+        let answeredQuestions = { q1: false, q2: false, q3: false };
+
+        function checkQuiz(qId, btnElement, isCorrect) {
+            if(answeredQuestions[qId]) return; 
+            const container = document.getElementById(qId);
+            const options = container.querySelectorAll('.quiz-option');
+            const feedback = container.querySelector('.feedback');
+
+            options.forEach(opt => opt.classList.add('disabled'));
+
+            if(isCorrect) {
+                btnElement.classList.add('correct');
+                feedback.innerHTML = "✅ ¡Correcto! Protocolo legal aplicado.";
+                feedback.className = "feedback mt-4 text-sm font-bold text-emerald-400 block";
+                score++;
+            } else {
+                btnElement.classList.add('incorrect');
+                feedback.innerHTML = "❌ Infracción detectada. Revisa la Ley 11.723.";
+                feedback.className = "feedback mt-4 text-sm font-bold text-red-400 block";
+                options.forEach(opt => {
+                    if(opt.getAttribute('onclick').includes('true')) opt.classList.add('correct');
+                });
+            }
+            answeredQuestions[qId] = true;
+        }
+
+        function calculateScore() {
+            const total = 3;
+            let answeredCount = Object.values(answeredQuestions).filter(Boolean).length;
+            if(answeredCount < total) { alert("Responde todas las preguntas para la certificación."); return; }
+
+            const scoreDiv = document.getElementById('final-score');
+            scoreDiv.style.display = 'block';
+            let percentage = Math.round((score / total) * 100);
+            
+            if(percentage === 100) {
+                scoreDiv.innerHTML = `
+                    <div class="text-6xl mb-4">📜</div>
+                    <h3 class="text-3xl font-extrabold text-brand mb-2">CERTIFICADO APROBADO</h3>
+                    <p class="text-gray-300 font-mono">Calificación: 100% - Rango: Estratega Blindado.</p>
+                    <p class="text-xs text-emerald-500 mt-4">Autorizado para operar campañas con Inteligencia Artificial.</p>
+                `;
+                scoreDiv.classList.add('border', 'border-brand', 'shadow-[0_0_30px_rgba(16,185,129,0.3)]');
+            } else {
+                scoreDiv.innerHTML = `
+                    <div class="text-6xl mb-4">🚨</div>
+                    <h3 class="text-3xl font-extrabold text-red-500 mb-2">CERTIFICADO DENEGADO</h3>
+                    <p class="text-gray-300 font-mono">Calificación: ${percentage}% - Riesgo de Demandas.</p>
+                    <p class="text-xs text-red-400 mt-4">Debes repasar el Módulo de la Ley 11.723 antes de operar.</p>
+                `;
+                scoreDiv.classList.add('border', 'border-red-500', 'shadow-[0_0_30px_rgba(239,68,68,0.3)]');
+            }
+        }
+
+        // ==========================================
+        // LÓGICA DEL SIMULADOR LEGAL (TERMÓMETRO)
+        // ==========================================
+        let currentBlindaje = 10;
+
+        function analizarCaso() {
+            const input = document.getElementById('case-input').value;
+            if(input.length < 5) { alert("Describe un caso real primero."); return; }
+            
+            // Reset state
+            currentBlindaje = 10;
+            updateThermometer();
+            
+            document.getElementById('sim-dashboard').classList.remove('hidden');
+            
+            // Reset buttons
+            document.querySelectorAll('.mitigation-btn').forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('opacity-40', 'cursor-not-allowed', 'border-slate-700', 'text-gray-500');
+                btn.classList.add('border-brand/30', 'text-brandLight');
+                btn.innerHTML = btn.innerHTML.replace('✅ ', '');
+            });
+            
+            // Scroll to dashboard
+            document.getElementById('sim-dashboard').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function aplicarMitigacion(btn, value, name) {
+            btn.disabled = true;
+            btn.innerHTML = `✅ ${name} Aplicada`;
+            btn.classList.add('text-brand', 'border-brand');
+            
+            currentBlindaje += value;
+            if (currentBlindaje > 100) currentBlindaje = 100;
+            
+            updateThermometer();
+        }
+
+        function updateThermometer() {
+            const bar = document.getElementById('meter-bar');
+            const percentText = document.getElementById('meter-percent');
+            const statusText = document.getElementById('meter-status');
+            
+            bar.style.width = `${currentBlindaje}%`;
+            percentText.innerText = `${currentBlindaje}%`;
+            
+            if (currentBlindaje <= 40) {
+                bar.style.backgroundColor = '#ef4444'; // Red
+                percentText.classList.replace('text-yellow-400', 'text-red-500');
+                percentText.classList.replace('text-brand', 'text-red-500');
+                statusText.innerText = "🚨 ALTO RIESGO: Infracciones graves detectadas. Demandas inminentes.";
+                statusText.className = "text-red-400 text-sm font-bold mt-3 animate-pulse";
+            } else if (currentBlindaje <= 99) {
+                bar.style.backgroundColor = '#eab308'; // Yellow
+                percentText.classList.replace('text-red-500', 'text-yellow-400');
+                statusText.innerText = "⚠️ RIESGO MEDIO: Aún hay vacíos legales en tu campaña.";
+                statusText.className = "text-yellow-400 text-sm font-bold mt-3";
+            } else {
+                bar.style.backgroundColor = '#10b981'; // Green
+                percentText.classList.replace('text-yellow-400', 'text-brand');
+                statusText.innerText = "✅ CAMPAÑA BLINDADA: Cumple con Ley 11.723, Mecenazgo y Derechos de Imagen.";
+                statusText.className = "text-brand text-sm font-bold mt-3 shadow-brand";
+            }
+        }
+
+        // ==========================================
+        // DESCARGABLES (BOTIQUÍN LEGAL VIA BLOB JS)
+        // ==========================================
+        function descargarConsentimiento() {
+            const text = `MODELO BÁSICO DE CONSENTIMIENTO DE CESIÓN DE IMAGEN
+
+Por el presente documento, yo ______________________________, con DNI _______________, autorizo de forma expresa a [Nombre de tu Agencia/Empresa] al uso de mi imagen, voz y nombre para la campaña _________________________.
+
+Esta autorización incluye la edición, alteración (no denigratoria), uso en inteligencia artificial como base de referencia, y difusión en redes sociales (Instagram, Facebook, TikTok) y medios digitales, de carácter comercial, sin límite geográfico ni temporal.
+
+En [Ciudad], a los ___ días del mes de _________ de 202__.
+
+______________________
+Firma y Aclaración`;
+            
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "Modelo_Cesion_Imagen_2026.txt";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        function descargarLeyMecenazgo() {
+            const text = `INFORMACIÓN DE REFERENCIA - LEY 1353-E (MECENAZGO CHACO)
+
+Fomento de la Actividad Privada en Actividades Culturales.
+Objetivo: Incentivar la financiación privada de proyectos culturales a cambio de beneficios impositivos.
+
+REQUISITOS ÉTICOS PARA PROYECTOS CON IA:
+1. El proyecto debe demostrar autoría y esfuerzo creativo humano y local.
+2. La IA solo puede utilizarse como herramienta de asistencia (bocetos, corrección), no como reemplazo del artista chaqueño.
+3. Prohibido el extractivismo digital: No se financiarán proyectos que plagien o apropien conocimientos tradicionales indígenas sin el beneficio y consentimiento de la comunidad.
+
+*Este documento es una guía de buenas prácticas derivada de la ley oficial.*`;
+            
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "Guia_Ley_Mecenazgo_Chaco.txt";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

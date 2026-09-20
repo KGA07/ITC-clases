@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: IA en Redes Sociales - GKempe</title>
+    
+    <!-- Configuración de Tailwind para Modo Oscuro -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { 
+                        brand: '#06b6d4', 
+                        brandLight: '#67e8f9', 
+                        darkBg: '#020617', /* Más oscuro para estética Cyber */
+                        panel: '#0f172a'
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: none; 
+            overflow-x: hidden;
+            background-color: #020617; /* Fondo ultra oscuro */
+        }
+
+        .font-mono { font-family: 'Fira Code', monospace; }
+
+        /* Barra de Progreso */
+        #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: #06b6d4; width: 0%; z-index: 9999; }
+
+        /* Cursor IA */
+        @media (min-width: 768px) {
+            .custom-cursor {
+                position: fixed; top: 0; left: 0; width: 20px; height: 20px;
+                background-color: rgba(6, 182, 212, 0.4); border-radius: 50%; pointer-events: none; z-index: 10000;
+                transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background-color 0.2s, border-radius 0.2s;
+                backdrop-filter: blur(2px); border: 1px solid rgba(6, 182, 212, 0.8);
+            }
+            .custom-cursor.hover { width: 50px; height: 50px; background-color: rgba(6, 182, 212, 0.15); border: 2px dashed #06b6d4; animation: spin-slow 4s linear infinite; }
+            @keyframes spin-slow { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+        }
+        @media (max-width: 767px) { body { cursor: auto; } .custom-cursor { display: none; } }
+
+        /* Animaciones On-Scroll */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .glow-hover { transition: all 0.3s ease; }
+        .glow-hover:hover { box-shadow: 0 0 30px rgba(6, 182, 212, 0.3); transform: translateY(-3px); border-color: #06b6d4; }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Chips y Tarjetas */
+        .chip { display: inline-block; padding: 8px 16px; border-radius: 9999px; border: 1px solid #334155; cursor: pointer; transition: all 0.2s ease; font-size: 0.875rem; font-weight: 600; color: #cbd5e1; background: transparent; }
+        .chip:hover { border-color: #06b6d4; background-color: rgba(6, 182, 212, 0.1); }
+        .chip.active { background-color: #06b6d4; color: #020617; border-color: #06b6d4; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4); }
+
+        .card-flip { perspective: 1000px; cursor: pointer; height: 320px; }
+        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+        .card-flip.is-flipped .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 1.5rem; }
+        .card-back { transform: rotateY(180deg); }
+
+        /* Imagenes decorativas absolutas */
+        .bg-blob { position: absolute; border-radius: 50%; filter: blur(100px); z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body class="dark bg-darkBg text-gray-100 antialiased transition-colors duration-300 relative">
+
+    <!-- Elementos Decorativos de Fondo -->
+    <div class="bg-blob w-96 h-96 bg-cyan-900/40 top-0 left-0"></div>
+    <div class="bg-blob w-[500px] h-[500px] bg-indigo-900/30 bottom-0 right-0"></div>
+
+    <div id="progress-bar"></div>
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <header class="bg-darkBg/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40 shadow-sm transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3 hover-target flex-wrap justify-center">
+                <span class="text-3xl">🤖</span>
+                <span class="font-extrabold text-lg md:text-xl tracking-tight text-white">GKempe <span class="text-brand">AI Marketing</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-cyan-500 border border-cyan-900 bg-cyan-950/50 px-3 py-1 rounded-full">v2.0.26 / Online</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 reveal relative">
+            <div class="inline-flex items-center bg-cyan-950/50 text-brand px-5 py-2 rounded-full text-xs font-bold tracking-wide border border-cyan-800 shadow-sm hover:scale-105 transition-transform cursor-default uppercase font-mono">
+                > INITIALIZING_COPILOT_2026
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-white">
+                Inteligencia Artificial <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-indigo-500">en Redes Sociales</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Escala tu producción visual y persuasiva. Domina ChatGPT, Midjourney y Canva Magic Studio sin perder la voz humana de tu marca.
+            </p>
+            
+            <!-- Hero Image -->
+            <div class="mt-12 w-full max-w-4xl mx-auto h-64 md:h-96 rounded-[2rem] overflow-hidden relative border border-gray-800 shadow-2xl hover-target glow-hover">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkBg to-transparent z-10"></div>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="AI Neural Network" class="w-full h-full object-cover opacity-60">
+                <div class="absolute bottom-6 left-6 z-20 text-left">
+                    <p class="text-cyan-400 font-mono text-sm mb-1">01 // VISIÓN ALGORÍTMICA</p>
+                    <p class="text-white font-bold text-2xl">La Era de la Creación Sintética</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 1: El Ecosistema -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch reveal">
+            <div class="glass-panel p-8 rounded-[2rem] shadow-lg hover-target glow-hover relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-10">🌐</div>
+                <h2 class="text-2xl font-bold mb-4 text-white flex items-center gap-3">El Ecosistema de la IA</h2>
+                <p class="text-gray-400 mb-6 text-sm">Existen dos mundos que un Estratega debe dominar:</p>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-brand font-bold">1.</span> 
+                        <div><strong>Texto (LLMs):</strong> ChatGPT, Gemini. Son tus "becarios brillantes pero literales". Calculan probabilidades, no razonan.</div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-brand font-bold">2.</span> 
+                        <div><strong>Visual/Video:</strong> Canva Magic Studio y CapCut IA. Generan, expanden o editan píxeles basándose en descripciones (prompts).</div>
+                    </li>
+                </ul>
+                <div class="mt-6 p-4 bg-red-950/30 border-l-4 border-red-500 rounded-r-lg">
+                    <p class="text-xs font-bold text-red-400">⚠️ PELIGRO: Alucinaciones.</p>
+                    <p class="text-xs text-gray-400 mt-1">La IA prioriza sonar convincente. Siempre haz Fact-checking humano.</p>
+                </div>
+            </div>
+            
+            <div class="relative rounded-[2rem] overflow-hidden border border-gray-800 shadow-xl hover-target glow-hover flex flex-col justify-end p-8">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" alt="Abstract Tech">
+                <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/80 to-transparent"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold mb-4 text-white">El Paradigma del Prompt</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        El "Prompt Engineering" es programación en lenguaje natural. <br><br>Si le das a la IA <strong>basura genérica</strong> ("Escribe un post para vender"), te devolverá <strong>basura genérica</strong>. Para obtener resultados brillantes, necesitas el <strong>Framework CREATE</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             LABORATORIO 1: SIMULADOR DE PROMPTS (CREATE)
+             ============================================== -->
+        <section class="space-y-8 reveal pt-10 border-t border-gray-800">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center justify-center w-12 h-12 bg-brand text-darkBg rounded-xl text-xl font-bold mb-4 shadow-[0_0_20px_rgba(6,182,212,0.5)]">C</div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">Framework CREATE</h2>
+                <p class="text-gray-400 mt-3 text-sm">Construye tu prompt haciendo clic en las variables. Observa cómo se programa la instrucción en la consola.</p>
+            </div>
+
+            <div class="glass-panel rounded-[2rem] p-6 md:p-10 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Panel de Opciones -->
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-400 uppercase tracking-wider mb-3"><span class="text-brand">C</span>ontext (Contexto/Rol)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="chip hover-target" data-category="C" onclick="selectChip('C', this, 'Actúa como un experto en marketing callejero para una marca de ropa urbana.')">Marca Urbana</button>
+                                <button class="chip hover-target" data-category="C" onclick="selectChip('C', this, 'Actúa como el director creativo de una clínica dental de lujo.')">Clínica Dental</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-400 uppercase tracking-wider mb-3"><span class="text-brand">R</span>equest (Petición)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="chip hover-target" data-category="R" onclick="selectChip('R', this, 'Escribe el copy para un carrusel de Instagram de 5 placas.')">Carrusel IG</button>
+                                <button class="chip hover-target" data-category="R" onclick="selectChip('R', this, 'Escribe un guion dinámico para un Reel de 15 segundos.')">Guion Reel 15s</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-400 uppercase tracking-wider mb-3"><span class="text-brand">E</span>xplanation (Objetivo)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="chip hover-target" data-category="E" onclick="selectChip('E', this, 'El objetivo es anunciar nuestro nuevo servicio premium y conseguir que reserven una cita hoy mismo.')">Vender Servicio Premium</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-400 uppercase tracking-wider mb-3"><span class="text-brand">A</span>ction (Neuromarketing)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="chip hover-target" data-category="A" onclick="selectChip('A', this, 'Aplica el Sesgo de Escasez indicando que solo quedan 3 lugares disponibles este mes.')">Sesgo de Escasez</button>
+                                <button class="chip hover-target" data-category="A" onclick="selectChip('A', this, 'Usa el Efecto Anclaje mostrando el alto valor del servicio frente al precio especial de hoy.')">Efecto Anclaje</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-gray-400 uppercase tracking-wider mb-3"><span class="text-brand">T</span>one (Tono) & <span class="text-brand">E</span>xtras</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="chip hover-target" data-category="T" onclick="selectChip('T', this, 'Tono persuasivo, corporativo pero accesible. Extensión máxima de 100 palabras. Incluye 2 emojis.')">Persuasivo y Breve</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consola Output -->
+                    <div class="bg-black/80 rounded-2xl p-6 relative flex flex-col border border-gray-800 shadow-[inset_0_0_20px_rgba(0,0,0,1)]">
+                        <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-3">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            <span class="text-xs text-gray-500 font-mono ml-2">create_engine.sh</span>
+                        </div>
+                        <div class="flex-1 overflow-y-auto">
+                            <p class="text-sm font-mono text-cyan-100 leading-relaxed min-h-[200px]" id="prompt-output">
+                                <span class="text-gray-600 italic animate-pulse">> Esperando selección de variables...</span>
+                            </p>
+                        </div>
+                        <button onclick="copiarPrompt()" class="mt-4 w-full bg-white/5 hover:bg-brand/20 text-brand border border-brand/30 font-bold py-3 px-4 rounded-xl transition-all text-sm hover-target flex justify-center items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            Copiar Prompt Maestro
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             LABORATORIO 2: GENERACIÓN DE IMÁGENES (DALL-E)
+             ============================================== -->
+        <section class="space-y-8 reveal pt-10 border-t border-gray-800">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">🎨 Prompting Visual</h2>
+                <p class="text-gray-400 mt-3 text-sm">La IA visual no entiende "intenciones", entiende elementos físicos. Selecciona las variables para renderizar la imagen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Selectores Visuales -->
+                <div class="md:col-span-5 space-y-6 glass-panel p-8 rounded-[2rem]">
+                    <div class="bg-darkBg/50 p-4 rounded-xl font-mono text-xs text-brand border border-cyan-900 mb-6">
+                        FÓRMULA = [Sujeto] + [Entorno] + [Estilo/Cámara]
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-xs text-gray-400 uppercase font-bold">1. Sujeto</label>
+                        <select id="v-sujeto" class="w-full bg-darkBg border border-gray-700 text-white rounded-lg p-3 outline-none focus:border-brand cursor-pointer hover-target">
+                            <option value="burger">Hamburguesa Gourmet doble carne</option>
+                            <option value="sneaker">Zapatilla deportiva moderna</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs text-gray-400 uppercase font-bold">2. Entorno e Iluminación</label>
+                        <select id="v-entorno" class="w-full bg-darkBg border border-gray-700 text-white rounded-lg p-3 outline-none focus:border-brand cursor-pointer hover-target">
+                            <option value="neon">Fondo oscuro con luces de neón cyberpunk</option>
+                            <option value="nature">Mesa de madera rústica con luz de sol natural</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs text-gray-400 uppercase font-bold">3. Estilo de Renderizado</label>
+                        <select id="v-estilo" class="w-full bg-darkBg border border-gray-700 text-white rounded-lg p-3 outline-none focus:border-brand cursor-pointer hover-target">
+                            <option value="photo">Fotografía hiperrealista 8k DSLR</option>
+                        </select>
+                    </div>
+                    <button onclick="renderImage()" class="w-full bg-brand hover:bg-cyan-400 text-darkBg font-bold py-3 rounded-xl transition-all glow-hover hover-target mt-4">
+                        Renderizar Imagen
+                    </button>
+                </div>
+
+                <!-- Visor de Imagen -->
+                <div class="md:col-span-7 h-80 md:h-auto rounded-[2rem] border border-gray-800 overflow-hidden relative group">
+                    <!-- Overlay de escaneo falso -->
+                    <div id="scan-line" class="absolute top-0 left-0 w-full h-1 bg-brand shadow-[0_0_15px_#06b6d4] z-20 hidden"></div>
+                    
+                    <!-- Imagen Resultado (Placeholders de alta calidad simulando IA) -->
+                    <img id="render-result" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-opacity duration-500" alt="Render">
+                    
+                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur px-3 py-1 rounded text-xs font-mono text-cyan-300 border border-cyan-900/50 z-10">
+                        Midjourney v6.0 / Render
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             LABORATORIO 3: JUEGO - HUMANO VS IA
+             ============================================== -->
+        <section class="relative reveal pt-10 border-t border-gray-800">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">🕵️‍♂️ Juego: Humano vs. IA</h2>
+                <p class="text-gray-400 text-sm">¿Cuál copy para vender remeras fue generado con un prompt genérico, y cuál fue curado por un Humano? Haz clic en la tarjeta de la IA Genérica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tarjeta A -->
+                <div class="card-flip" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <!-- Front -->
+                        <div class="card-front glass-panel p-8 flex flex-col justify-between">
+                            <div>
+                                <span class="text-brand font-bold text-sm tracking-widest mb-4 block">OPCIÓN A</span>
+                                <p class="text-gray-300 text-sm italic">"🍕 ¡Atención amantes de la pizza! 🍕 ¿Quieres lucir increíble? Compra nuestra nueva camiseta. Es de alta calidad y te hará sentir muy bien. ¡Haz clic para comprar ahora! Tu estilo será el mejor. 😎👕 #Pizza #Moda"</p>
+                            </div>
+                            <p class="text-xs text-gray-500 text-center uppercase tracking-widest animate-pulse">Revelar Origen</p>
+                        </div>
+                        <!-- Back -->
+                        <div class="card-back bg-red-950/80 border border-red-500 p-8 flex flex-col items-center justify-center text-center">
+                            <span class="text-4xl mb-2">🤖 ❌</span>
+                            <h3 class="text-white font-bold text-xl mb-2">IA Genérica (Sin Curar)</h3>
+                            <p class="text-red-300 text-xs">Exceso de emojis, promesas vagas ("te hará sentir muy bien"), y tono de presentador de teletienda.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta B -->
+                <div class="card-flip" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <!-- Front -->
+                        <div class="card-front glass-panel p-8 flex flex-col justify-between">
+                            <div>
+                                <span class="text-brand font-bold text-sm tracking-widest mb-4 block">OPCIÓN B</span>
+                                <p class="text-gray-300 text-sm italic">"No es solo pizza, es religión. 🍕🔥 Ya está disponible la nueva hoodie 'Masa Madre'. Es edición ultra limitada (solo hicimos 50 unidades). Si ves este post, quedan 3 en stock. Llevatela en el link de la bio."</p>
+                            </div>
+                            <p class="text-xs text-gray-500 text-center uppercase tracking-widest animate-pulse">Revelar Origen</p>
+                        </div>
+                        <!-- Back -->
+                        <div class="card-back bg-green-950/80 border border-green-500 p-8 flex flex-col items-center justify-center text-center">
+                            <span class="text-4xl mb-2">🧠 ✅</span>
+                            <h3 class="text-white font-bold text-xl mb-2">Humano / IA Guiada</h3>
+                            <p class="text-green-300 text-xs">Aplica escasez (quedan 3). Tono irreverente ("es religión"). CTA directo sin rodeos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAJA FUERTE DE PROMPTS -->
+        <section class="reveal glass-panel p-8 md:p-12 rounded-[2rem] text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">🔐 La Caja Fuerte (Swipe File)</h2>
+            <p class="text-sm text-gray-400 mb-6">Guarda este prompt maestro en tus notas. Es la navaja suiza del Estratega de Redes 2026.</p>
+            
+            <div class="bg-darkBg border border-gray-800 p-6 rounded-xl text-left font-mono text-xs text-gray-300 overflow-x-auto relative group">
+                <button onclick="copiarNavaja()" class="absolute top-4 right-4 bg-brand text-darkBg px-3 py-1 rounded font-bold hover:bg-cyan-400 transition-colors opacity-0 group-hover:opacity-100 hover-target">Copiar</button>
+                <p id="navaja-text">
+                    "Actúa como un Copywriter experto en Neuromarketing. Escribe un guion para un Reel de Instagram (máximo 60 palabras) para vender [MI PRODUCTO]. 
+                    <br><br>
+                    Reglas: <br>
+                    1. Inicia con un Gancho visual contundente en los primeros 3 segundos.<br>
+                    2. Toca un 'dolor' de mi audiencia ideal.<br>
+                    3. Aplica el Sesgo de Prueba Social.<br>
+                    4. Termina con un Llamado a la Acción claro.<br>
+                    Tono: Profesional pero conversacional y dinámico."
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 border-t border-gray-800 text-center text-xs text-gray-600 font-mono mt-20">
+        <p>GKempe UDEMM/ITC ARG © 2026</p>
+        <p class="mt-1">All Systems Operational.</p>
+    </footer>
+
+    <script>
+        // Cursor
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth >= 768) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+        document.querySelectorAll('.hover-target, button, select').forEach(target => {
+            target.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            target.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Scroll Bar & Reveal
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
+            reveal();
+        });
+
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        reveal();
+
+        // LÓGICA DEL SIMULADOR CREATE
+        let promptData = { C: "", R: "", E: "", A: "", T: "" };
+
+        function selectChip(category, element, text) {
+            document.querySelectorAll(`.chip[data-category="${category}"]`).forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            promptData[category] = text;
+            actualizarConsola();
+        }
+
+        function actualizarConsola() {
+            const out = document.getElementById('prompt-output');
+            let result = "";
+            if(promptData.C) result += `<span class="text-cyan-500 font-bold">[C]</span> ${promptData.C}<br><br>`;
+            if(promptData.R) result += `<span class="text-cyan-500 font-bold">[R]</span> ${promptData.R}<br><br>`;
+            if(promptData.E) result += `<span class="text-cyan-500 font-bold">[E]</span> ${promptData.E}<br><br>`;
+            if(promptData.A) result += `<span class="text-cyan-500 font-bold">[A]</span> ${promptData.A}<br><br>`;
+            if(promptData.T) result += `<span class="text-cyan-500 font-bold">[T/E]</span> ${promptData.T}<br>`;
+            
+            out.innerHTML = result || `<span class="text-gray-600 italic animate-pulse">> Esperando selección de variables...</span>`;
+        }
+
+        function copiarPrompt() {
+            let final = Object.values(promptData).join(" ").trim();
+            if(final.length < 10) return alert("Selecciona variables primero.");
+            navigator.clipboard.writeText(final).then(() => alert("Prompt copiado!"));
+        }
+
+        function copiarNavaja() {
+            navigator.clipboard.writeText(document.getElementById('navaja-text').innerText).then(() => alert("Caja fuerte copiada!"));
+        }
+
+        // LÓGICA CARTAS
+        function flipCard(card) { card.classList.add('is-flipped'); }
+
+        // LÓGICA RENDERIZADOR VISUAL
+        const imagesDB = {
+            "burger-neon": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80", // Burger dark/neon-ish
+            "burger-nature": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80", // Burger natural
+            "sneaker-neon": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80", // Sneaker dark/neon
+            "sneaker-nature": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80" // Sneaker natural/bright
+        };
+
+        function renderImage() {
+            const suj = document.getElementById('v-sujeto').value;
+            const ent = document.getElementById('v-entorno').value;
+            const key = `${suj}-${ent}`;
+            const imgEl = document.getElementById('render-result');
+            const scan = document.getElementById('scan-line');
+            
+            // Animación de "Generación"
+            imgEl.style.opacity = 0.2;
+            scan.style.display = "block";
+            scan.animate([ { top: '0%' }, { top: '100%' } ], { duration: 1500, iterations: 1 });
+
+            setTimeout(() => {
+                imgEl.src = imagesDB[key] || imagesDB["burger-nature"];
+                imgEl.style.opacity = 1;
+                scan.style.display = "none";
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

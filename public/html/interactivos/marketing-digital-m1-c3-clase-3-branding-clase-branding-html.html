@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de Identidad de Marca y Branding</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #006EFF; 
+            --container-bg: rgba(255, 255, 255, 0.15); 
+            --text-color: #ffffff;
+            --primary-accent: #00FFcc; 
+            --secondary-accent: #FFD54F; 
+            --danger-color: #ff5252;
+            --border-color: rgba(255, 255, 255, 0.4);
+            --input-bg: rgba(255, 255, 255, 0.95);
+            --input-text: #333333;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            margin: 0; 
+            padding: 20px; 
+            padding-top: 80px; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+            /* Cursors personalizados */
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><text y="20" font-size="20">🚀</text></svg>'), auto;
+        }
+
+        button, a, input[type="color"], input[type="file"], .delete-color, input[type="checkbox"], label { 
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><text y="20" font-size="20">👆</text></svg>'), pointer; 
+        }
+
+        /* --- Distracciones Visuales Divertidas (Fondo) --- */
+        .bg-shapes { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden; pointer-events: none; }
+        .shape { position: absolute; background: rgba(255, 255, 255, 0.05); border-radius: 50%; animation: float 15s infinite ease-in-out alternate; }
+        .emoji-float { position: absolute; font-size: 2.5rem; opacity: 0.3; animation: float-emoji 20s infinite ease-in-out alternate; }
+        
+        @keyframes float { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-100px) scale(1.1); } }
+        @keyframes float-emoji { 0% { transform: translate(0, 0) rotate(0deg); } 100% { transform: translate(60px, -60px) rotate(25deg); } }
+
+        /* --- Estructura Principal --- */
+        .top-toolbar { 
+            position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color); padding: 15px 20px; display: flex; justify-content: center; gap: 15px; z-index: 1000; box-sizing: border-box; 
+        }
+
+        .container { 
+            max-width: 900px; margin: 0 auto; background-color: var(--container-bg); backdrop-filter: blur(8px);
+            padding: 40px; border-radius: 15px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); border: 1px solid var(--border-color);
+        }
+
+        h1, h2, h3 { color: var(--primary-accent); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        h1 { text-align: center; font-size: 2.5em; border-bottom: none; color: #fff; }
+
+        .form-group { margin-bottom: 25px; page-break-inside: avoid; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 1.1em; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        
+        input[type="text"], textarea { 
+            width: 100%; padding: 12px; background-color: var(--input-bg); border: 2px solid transparent; 
+            color: var(--input-text); border-radius: 8px; font-family: inherit; box-sizing: border-box; font-size: 1em; transition: 0.3s;
+        }
+        input[type="text"]:focus, textarea:focus { border-color: var(--primary-accent); outline: none; box-shadow: 0 0 8px rgba(0,255,204,0.5); }
+        textarea { resize: vertical; min-height: 80px; }
+
+        .input-group { display: flex; gap: 10px; align-items: stretch; }
+        .input-group input { flex: 1; }
+        .input-group button { white-space: nowrap; }
+
+        /* --- Componentes Interactivos --- */
+        .checkbox-group { display: flex; gap: 15px; flex-wrap: wrap; background: var(--input-bg); padding: 15px; border-radius: 8px; color: #333; margin-bottom: 15px; }
+        .checkbox-group label { display: inline-flex; align-items: center; font-weight: bold; margin: 0; text-shadow: none; gap: 5px; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><text y="20" font-size="20">👆</text></svg>'), pointer;}
+
+        .platform-details-card { background: rgba(0,0,0,0.2); border-left: 5px solid var(--primary-accent); padding: 20px; border-radius: 8px; margin-bottom: 20px; animation: slideDown 0.3s ease-out; page-break-inside: avoid; }
+        .platform-details-card h4 { color: #fff; margin-top: 0; font-size: 1.3em; margin-bottom: 15px; }
+        .platform-details-card label { font-size: 1em; }
+        
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .pitch-builder { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 8px; border-left: 5px solid var(--secondary-accent); }
+        .pitch-builder input { margin-bottom: 10px; }
+        .pitch-result { font-size: 1.2em; font-style: italic; color: #fff; margin-top: 15px; font-weight: bold; text-align: center; }
+
+        .foda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .foda-box { background: var(--input-bg); padding: 15px; border-radius: 8px; border-top: 5px solid; color: var(--input-text); }
+        .foda-box label { color: #333; text-shadow: none; }
+        .foda-f { border-color: #4CAF50; } .foda-d { border-color: #FF9800; }
+        .foda-o { border-color: #2196F3; } .foda-a { border-color: #F44336; }
+
+        .image-upload-container { border: 2px dashed #fff; padding: 20px; text-align: center; border-radius: 8px; background-color: rgba(255,255,255,0.1); margin-bottom: 15px; transition: 0.3s;}
+        .image-upload-container:hover { background-color: rgba(255,255,255,0.2); }
+        .image-preview { max-width: 100%; max-height: 200px; margin-top: 15px; display: none; border-radius: 8px; margin-left: auto; margin-right: auto; }
+        .moodboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 15px; }
+        .moodboard-grid img { width: 100%; height: 120px; object-fit: cover; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+        .color-picker-wrapper { display: flex; align-items: center; gap: 15px; background-color: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        input[type="color"] { -webkit-appearance: none; border: none; width: 50px; height: 50px; border-radius: 50%; padding: 0; background: none; }
+        input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type="color"]::-webkit-color-swatch { border: 2px solid #fff; border-radius: 50%; }
+        .palette-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .color-swatch { width: 80px; height: 80px; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); position: relative; border: 1px solid rgba(255,255,255,0.3); }
+        .delete-color { position: absolute; top: 2px; right: 4px; font-size: 10px; opacity: 0.8; }
+
+        .benchmark-card { background-color: var(--input-bg); color: var(--input-text); border-radius: 8px; padding: 20px; margin-bottom: 20px; display: flex; gap: 20px; position: relative; border-left: 5px solid var(--primary-accent); page-break-inside: avoid; flex-direction: column;}
+        .bench-details { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+        .bench-details label { color: #333; text-shadow: none; font-size: 0.9em; }
+
+        .instructions-box { background-color: rgba(255,255,255,0.2); border-left: 5px solid var(--secondary-accent); padding: 20px; border-radius: 8px; margin-top: 40px; margin-bottom: 20px; }
+        
+        button { padding: 12px 24px; font-size: 15px; font-weight: bold; border: none; border-radius: 8px; color: #333; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+        .btn-add { background-color: var(--secondary-accent); width: 100%; }
+        .btn-pdf { background-color: #ffffff; color: #d32f2f; }
+        .btn-word { background-color: #ffffff; color: #1976d2; }
+        .btn-search { background-color: #2196F3; color: white; border: 1px solid rgba(255,255,255,0.5); }
+        .btn-danger { background-color: #ff5252; color: white; padding: 5px 10px; font-size: 12px; }
+        .btn-danger:hover { background-color: #d32f2f; }
+
+        /* --- Optimizaciones para Impresión / PDF / Word --- */
+        @media print {
+            body { background: white !important; color: black !important; padding: 0 !important; cursor: auto; }
+            .bg-shapes { display: none !important; }
+            .container { background: transparent !important; box-shadow: none !important; max-width: 100% !important; padding: 0 !important; border: none !important; color: black !important; }
+            h1, h2, h3, label, h4 { color: black !important; text-shadow: none !important; border-color: #ccc !important; }
+            input[type="text"], textarea { background: transparent !important; border: 1px solid #ccc !important; color: black !important; }
+            .pitch-result { color: black !important; }
+            .foda-box { background: transparent !important; border: 1px solid #ccc !important; border-top: 4px solid !important; }
+            .benchmark-card, .platform-details-card { background: transparent !important; border: 1px solid #ccc !important; }
+            .checkbox-group { background: transparent !important; border: 1px solid #ccc !important; }
+            .top-toolbar, .instructions-box, button, input[type="file"], .delete-color, .color-picker-wrapper { display: none !important; }
+            .form-group, section, .benchmark-card, .foda-grid, .platform-details-card { page-break-inside: avoid !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shapes">
+        <div class="shape" style="width: 150px; height: 150px; top: 10%; left: 5%; animation-duration: 12s;"></div>
+        <div class="shape" style="width: 300px; height: 300px; top: 60%; left: 80%; animation-duration: 18s;"></div>
+        <div class="shape" style="width: 100px; height: 100px; top: 80%; left: 15%; animation-duration: 10s;"></div>
+        <div class="emoji-float" style="top: 20%; left: 85%;">🚀</div>
+        <div class="emoji-float" style="top: 75%; left: 10%;">💡</div>
+        <div class="emoji-float" style="top: 40%; left: 50%;">📱</div>
+        <div class="emoji-float" style="top: 10%; left: 40%;">🎯</div>
+    </div>
+
+    <div class="top-toolbar">
+        <button class="btn-word" onclick="exportWord()">📥 Descargar en Word</button>
+        <button class="btn-pdf" onclick="exportPDF()">📄 Descargar en PDF</button>
+    </div>
+
+    <div class="container" id="pdf-content">
+        <h1>Mi Identidad de Marca</h1>
+        <p style="text-align:center; font-size:1.1em; opacity: 0.9;">Taller Práctico: Estrategia Digital, Propuesta de Valor y Branding</p>
+
+        <section>
+            <h2>1. Identidad Central</h2>
+            
+            <div class="form-group">
+                <label>Nombre o Alias de la Marca:</label>
+                <div class="input-group">
+                    <input type="text" id="brand-name" placeholder="Ej: Delicias Sofi, FixCelulares...">
+                    <button type="button" class="btn-search" onclick="searchBrandName()">🔍 Buscar disponibilidad en línea</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Verificar Disponibilidad del Nombre:</label>
+                <p style="font-size:0.85em; margin-top:0;">Una vez que verifiques, marca dónde está libre tu nombre.</p>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="avail-ig" value="Instagram"> Instagram</label>
+                    <label><input type="checkbox" id="avail-fb" value="Facebook"> Facebook</label>
+                    <label><input type="checkbox" id="avail-tk" value="TikTok"> TikTok</label>
+                    <label><input type="checkbox" id="avail-yt" value="YouTube"> YouTube</label>
+                    <label><input type="checkbox" id="avail-web" value="Web"> Dominio Web (.com o .ar)</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Foto de Perfil o Logo (El "Envase"):</label>
+                <div class="image-upload-container">
+                    <input type="file" id="logo-upload" accept="image/*" onchange="previewImage(event, 'logo-preview')">
+                    <img id="logo-preview" class="image-preview" alt="Logo de tu marca">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Tu Historia / "El Porqué" (El "Contenido"):</label>
+                <textarea id="brand-story" placeholder="Ej: Empecé vendiendo pan para ayudar en casa... Comparte quién eres y por qué haces lo que haces."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Tono de Comunicación:</label>
+                <input type="text" id="brand-tone" placeholder="Ej: Cercano, informal, cálido, humorístico, técnico...">
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Ecosistema Digital y Contenidos</h2>
+            <p style="font-size:0.9em; margin-top:0;">Selecciona en qué plataformas estará presente tu marca. Aparecerán preguntas para cada una.</p>
+            
+            <div class="checkbox-group" style="background: rgba(255,255,255,0.2); color:#fff; border: 1px solid var(--border-color);">
+                <label><input type="checkbox" onchange="togglePlatform('Instagram', this.checked)"> Instagram</label>
+                <label><input type="checkbox" onchange="togglePlatform('Facebook', this.checked)"> Facebook</label>
+                <label><input type="checkbox" onchange="togglePlatform('TikTok', this.checked)"> TikTok</label>
+                <label><input type="checkbox" onchange="togglePlatform('YouTube', this.checked)"> YouTube</label>
+                <label><input type="checkbox" onchange="togglePlatform('Página Web / Tienda', this.checked)"> Web / Tienda</label>
+                <label><input type="checkbox" onchange="togglePlatform('WhatsApp Business', this.checked)"> WhatsApp</label>
+            </div>
+
+            <div id="dynamic-platforms-container"></div>
+        </section>
+
+        <section>
+            <h2>3. Propuesta de Valor y Objetivos</h2>
+            
+            <div class="form-group">
+                <label>Propuesta de Valor (Elevator Pitch):</label>
+                <p style="font-size:0.9em; margin-top:0;">Completa los campos para generar tu frase rápida y clara.</p>
+                <div class="pitch-builder">
+                    <input type="text" id="pitch-1" placeholder="1. ¿A quién ayudas? (Ej: a vecinos de mi barrio)" oninput="updatePitch()">
+                    <input type="text" id="pitch-2" placeholder="2. ¿A qué los ayudas? / Problema (Ej: a comer rico y casero)" oninput="updatePitch()">
+                    <input type="text" id="pitch-3" placeholder="3. ¿Cómo lo logras? (Ej: ofreciendo viandas saludables a buen precio)" oninput="updatePitch()">
+                    <div class="pitch-result" id="pitch-result-text">"Ayudamos a [...] a [...] mediante [...]."</div>
+                    <input type="hidden" id="pitch-export" value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Objetivos SMART (Específicos, Medibles, Alcanzables, Relevantes, a Tiempo):</label>
+                <textarea id="smart-goals" placeholder="Ej: 1. Aumentar 20% los seguidores en Instagram en 3 meses.&#10;2. Vender 5 viandas diarias más este mes."></textarea>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Embudos de Marketing (Funnel)</h2>
+            <div class="form-group">
+                <label>TOFU (Atracción - Top of Funnel):</label>
+                <textarea id="funnel-tofu" placeholder="¿Cómo harás que gente nueva te conozca? Ej: Reels de Instagram mostrando el antes y después."></textarea>
+            </div>
+            <div class="form-group">
+                <label>MOFU (Consideración - Middle of Funnel):</label>
+                <textarea id="funnel-mofu" placeholder="¿Cómo los educas o convences? Ej: Historias mostrando cómo preparo los pedidos paso a paso."></textarea>
+            </div>
+            <div class="form-group">
+                <label>BOFU (Conversión - Bottom of Funnel):</label>
+                <textarea id="funnel-bofu" placeholder="¿Cómo cierras la venta? Ej: Promoción especial o descuento por primer pedido por WhatsApp."></textarea>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Estilo Visual y Moodboard</h2>
+            <div class="form-group">
+                <label>Paleta de Colores:</label>
+                <div class="color-picker-wrapper">
+                    <input type="color" id="color-picker" value="#00FFcc">
+                    <button onclick="addColor()" style="background-color: var(--input-bg); color: #333;">+ Añadir Color</button>
+                </div>
+                <div class="palette-container" id="custom-palette"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Moodboard (Sube hasta 6 imágenes de inspiración):</label>
+                <div class="image-upload-container">
+                    <input type="file" id="moodboard-upload" accept="image/*" multiple onchange="previewMultipleImages(event, 'moodboard-grid')">
+                    <p id="moodboard-counter" style="margin: 5px 0 0 0; font-size: 0.9em;">0 / 6 imágenes</p>
+                </div>
+                <div class="moodboard-grid" id="moodboard-grid"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Análisis Estratégico (FODA)</h2>
+            <div class="form-group">
+                <div class="foda-grid">
+                    <div class="foda-box foda-f"><label>Fortalezas (Interno)</label><textarea id="foda-f" placeholder="¿En qué soy bueno?"></textarea></div>
+                    <div class="foda-box foda-d"><label>Debilidades (Interno)</label><textarea id="foda-d" placeholder="¿Qué me falta mejorar?"></textarea></div>
+                    <div class="foda-box foda-o"><label>Oportunidades (Externo)</label><textarea id="foda-o" placeholder="¿Qué situaciones externas me favorecen?"></textarea></div>
+                    <div class="foda-box foda-a"><label>Amenazas (Externo)</label><textarea id="foda-a" placeholder="¿Qué competencia o problemas hay afuera?"></textarea></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Benchmarking (Análisis de Referencias)</h2>
+            <div id="benchmarking-list"></div>
+            <div style="text-align: center;">
+                <button type="button" class="btn-add" onclick="addBenchmark()">+ Añadir Cuenta o Negocio para Analizar</button>
+            </div>
+        </section>
+
+        <div class="instructions-box">
+            <h3 style="color: var(--secondary-accent); border-bottom:none;">¡Gran trabajo! 🚀</h3>
+            <p>Revisa que todos tus textos e imágenes estén cargados. Cuando termines, utiliza los botones superiores para descargar tu documento en Word o PDF.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- BUSCADOR DE MARCA ---
+        function searchBrandName() {
+            const brandName = document.getElementById('brand-name').value;
+            if(brandName.trim() === '') {
+                window.open('https://namechk.com/', '_blank');
+            } else {
+                // Namechk utiliza la URL directa para búsquedas
+                window.open(`https://namechk.com/?q=${encodeURIComponent(brandName)}`, '_blank');
+            }
+        }
+
+        // --- PLATAFORMAS DINÁMICAS ---
+        function togglePlatform(platformName, isChecked) {
+            const container = document.getElementById('dynamic-platforms-container');
+            const safeId = platformName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase(); // Crear ID seguro
+            
+            if (isChecked) {
+                const div = document.createElement('div');
+                div.id = `plat-section-${safeId}`;
+                div.className = 'platform-details-card';
+                div.innerHTML = `
+                    <h4>📱 ${platformName}</h4>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>¿Qué pueden hacer los usuarios allí?</label>
+                        <textarea class="plat-actions" data-platform="${platformName}" placeholder="Ej: Ver el catálogo, comentar, compartir..." rows="2"></textarea>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label>¿Cómo van a acceder?</label>
+                        <textarea class="plat-access" data-platform="${platformName}" placeholder="Ej: Link en bio, escaneando QR..." rows="2"></textarea>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0;">
+                        <label>¿Qué tipo de contenido se va a subir?</label>
+                        <textarea class="plat-content" data-platform="${platformName}" placeholder="Ej: Fotos, Reels, historias diarias..." rows="2"></textarea>
+                    </div>
+                `;
+                container.appendChild(div);
+            } else {
+                const div = document.getElementById(`plat-section-${safeId}`);
+                if (div) div.remove();
+            }
+        }
+
+        // --- PITCH GENERATOR ---
+        function updatePitch() {
+            const p1 = document.getElementById('pitch-1').value || '[Público]';
+            const p2 = document.getElementById('pitch-2').value || '[Problema/Solución]';
+            const p3 = document.getElementById('pitch-3').value || '[Producto/Servicio]';
+            const finalPitch = `Ayudamos a ${p1} a ${p2} mediante ${p3}.`;
+            document.getElementById('pitch-result-text').innerText = `"${finalPitch}"`;
+            document.getElementById('pitch-export').value = finalPitch;
+        }
+
+        // --- MANEJO DE IMÁGENES ---
+        function previewImage(event, previewId) {
+            const input = event.target;
+            const preview = document.getElementById(previewId);
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function previewMultipleImages(event, containerId) {
+            const container = document.getElementById(containerId);
+            const files = event.target.files;
+            if (container.getElementsByTagName('img').length + files.length > 6) {
+                alert("Máximo 6 imágenes permitidas para el Moodboard.");
+                return;
+            }
+            for (let i = 0; i < files.length; i++) {
+                if (!files[i].type.startsWith('image/')) continue;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    container.appendChild(img);
+                    document.getElementById('moodboard-counter').innerText = `${container.getElementsByTagName('img').length} / 6 imágenes`;
+                };
+                reader.readAsDataURL(files[i]);
+            }
+        }
+
+        // --- PALETA DE COLORES ---
+        let brandColors = [];
+        function addColor() {
+            const colorValue = document.getElementById('color-picker').value.toUpperCase();
+            if (!brandColors.includes(colorValue)) {
+                brandColors.push(colorValue);
+                renderPalette();
+            }
+        }
+        function removeColor(colorValue) {
+            brandColors = brandColors.filter(c => c !== colorValue);
+            renderPalette();
+        }
+        function renderPalette() {
+            const container = document.getElementById('custom-palette');
+            container.innerHTML = '';
+            brandColors.forEach(color => {
+                const swatch = document.createElement('div');
+                swatch.className = 'color-swatch';
+                swatch.style.backgroundColor = color;
+                
+                const hex = color.replace('#', '');
+                const yiq = ((parseInt(hex.substr(0, 2), 16) * 299) + (parseInt(hex.substr(2, 2), 16) * 587) + (parseInt(hex.substr(4, 2), 16) * 114)) / 1000;
+                swatch.style.color = (yiq >= 128) ? '#000000' : '#FFFFFF';
+                
+                swatch.innerHTML = `<span class="delete-color" onclick="removeColor('${color}')">✖</span>${color}`;
+                container.appendChild(swatch);
+            });
+        }
+
+        // --- BENCHMARKING DINÁMICO ---
+        let benchCount = 0;
+        function addBenchmark() {
+            benchCount++;
+            const container = document.getElementById('benchmarking-list');
+            const div = document.createElement('div');
+            div.className = 'benchmark-card';
+            div.id = `bench-${benchCount}`;
+            div.innerHTML = `
+                <button type="button" class="btn-danger" style="position: absolute; top:10px; right:10px;" onclick="document.getElementById('bench-${benchCount}').remove()">X Eliminar</button>
+                <div class="bench-details">
+                    <label>Nombre de la Cuenta o Negocio (Ej: @TortasGabi):</label>
+                    <input type="text" id="bench-name-${benchCount}" placeholder="¿A quién estás analizando?">
+                    
+                    <label>Imagen de Referencia (Captura de pantalla):</label>
+                    <div class="image-upload-container" style="padding: 10px;">
+                        <input type="file" accept="image/*" onchange="previewImage(event, 'bench-img-${benchCount}')">
+                        <img id="bench-img-${benchCount}" class="image-preview" alt="Referencia">
+                    </div>
+
+                    <label>¿Qué me gusta de ellos? (Para imitar o inspirarse):</label>
+                    <textarea id="bench-good-${benchCount}" placeholder="Ej: Sus fotos tienen mucha luz, contestan rápido los comentarios..."></textarea>
+                    
+                    <label>¿Qué hacen mal? (Oportunidad para mí):</label>
+                    <textarea id="bench-bad-${benchCount}" placeholder="Ej: No tienen link de WhatsApp en la biografía, sus precios no están claros..."></textarea>
+                </div>
+            `;
+            container.appendChild(div);
+        }
+
+        function getAvailablePlatforms() {
+            let platforms = [];
+            if(document.getElementById('avail-ig').checked) platforms.push('Instagram');
+            if(document.getElementById('avail-fb').checked) platforms.push('Facebook');
+            if(document.getElementById('avail-tk').checked) platforms.push('TikTok');
+            if(document.getElementById('avail-yt').checked) platforms.push('YouTube');
+            if(document.getElementById('avail-web').checked) platforms.push('Web');
+            return platforms.length > 0 ? platforms.join(', ') : 'Ninguna seleccionada';
+        }
+
+        // --- EXPORTAR A PDF ---
+        function exportPDF() {
+            const element = document.getElementById('pdf-content');
+            const opt = {
+                margin:       10,
+                filename:     'Mi_Identidad_De_Marca.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            document.body.classList.add('exporting-pdf');
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                document.body.classList.remove('exporting-pdf');
+            });
+        }
+
+        // --- EXPORTAR A WORD ---
+        function exportWord() {
+            const brandName = document.getElementById('brand-name').value || '-';
+            const platformsAvail = getAvailablePlatforms();
+            const story = document.getElementById('brand-story').value || '-';
+            const tone = document.getElementById('brand-tone').value || '-';
+            const pitch = document.getElementById('pitch-export').value || '-';
+
+            // Recopilar Ecosistema Digital Dinámico
+            let ecosystemHtml = '';
+            const activePlatforms = document.querySelectorAll('.platform-details-card');
+            if (activePlatforms.length > 0) {
+                activePlatforms.forEach(card => {
+                    const pName = card.querySelector('.plat-actions').getAttribute('data-platform');
+                    const pAct = card.querySelector('.plat-actions').value || '-';
+                    const pAcc = card.querySelector('.plat-access').value || '-';
+                    const pCon = card.querySelector('.plat-content').value || '-';
+                    
+                    ecosystemHtml += `
+                    <h3 style="color: #008080; margin-bottom:5px;">Plataforma: ${pName}</h3>
+                    <table>
+                        <tr><th>¿Qué pueden hacer los usuarios?</th><td>${pAct.replace(/\n/g, '<br>')}</td></tr>
+                        <tr><th>¿Cómo acceden?</th><td>${pAcc.replace(/\n/g, '<br>')}</td></tr>
+                        <tr><th>Tipo de Contenido</th><td>${pCon.replace(/\n/g, '<br>')}</td></tr>
+                    </table><br>`;
+                });
+            } else {
+                ecosystemHtml = '<p>No se seleccionó ninguna plataforma en el Ecosistema Digital.</p>';
+            }
+            
+            const html = `
+            <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+            <head><meta charset='utf-8'><title>Branding</title>
+            <style>
+                body { font-family: Arial, sans-serif; color: #333; }
+                h1 { color: #006EFF; text-align: center; }
+                h2 { color: #008080; border-bottom: 2px solid #00FFcc; padding-bottom: 5px; margin-top: 30px;}
+                table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top;}
+                th { background-color: #f2f2f2; width: 35%; }
+            </style>
+            </head>
+            <body>
+                <h1>Mi Identidad de Marca</h1>
+                
+                <h2>1. Identidad Central</h2>
+                <table>
+                    <tr><th>Nombre/Alias</th><td>${brandName}</td></tr>
+                    <tr><th>Nombre Disponible en</th><td>${platformsAvail}</td></tr>
+                    <tr><th>Tono de Comunicación</th><td>${tone}</td></tr>
+                    <tr><th>Mi Historia</th><td>${story.replace(/\n/g, '<br>')}</td></tr>
+                </table>
+
+                <h2>2. Ecosistema Digital</h2>
+                ${ecosystemHtml}
+
+                <h2>3. Propuesta de Valor</h2>
+                <p><strong>Elevator Pitch:</strong> ${pitch}</p>
+                <p><strong>Objetivos SMART:</strong><br>${document.getElementById('smart-goals').value.replace(/\n/g, '<br>')}</p>
+
+                <h2>4. Embudos de Marketing</h2>
+                <table>
+                    <tr><th>TOFU (Atracción)</th><td>${document.getElementById('funnel-tofu').value || '-'}</td></tr>
+                    <tr><th>MOFU (Consideración)</th><td>${document.getElementById('funnel-mofu').value || '-'}</td></tr>
+                    <tr><th>BOFU (Conversión)</th><td>${document.getElementById('funnel-bofu').value || '-'}</td></tr>
+                </table>
+
+                <h2>5. Análisis FODA</h2>
+                <table>
+                    <tr><th>Fortalezas</th><td>${document.getElementById('foda-f').value || '-'}</td></tr>
+                    <tr><th>Debilidades</th><td>${document.getElementById('foda-d').value || '-'}</td></tr>
+                    <tr><th>Oportunidades</th><td>${document.getElementById('foda-o').value || '-'}</td></tr>
+                    <tr><th>Amenazas</th><td>${document.getElementById('foda-a').value || '-'}</td></tr>
+                </table>
+            </body>
+            </html>`;
+
+            const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Mi_Identidad_De_Marca.doc';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

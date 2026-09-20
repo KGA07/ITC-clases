@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TP Entregable — Diagnóstico y Presupuesto de PC (Editable)</title>
+<style>
+  :root{
+    --bg:#0b1220; --card:#071026; --accent:#06b6d4; --accent2:#10b981;
+    --paper:#fbfdff; --paper-text:#071026;
+  }
+  *{box-sizing:border-box}
+  body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; margin:0; background:linear-gradient(180deg,#071026,#0b1220); color:#e6eef6; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1100px;margin:20px auto;padding:18px;}
+  header{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+  h1{margin:0;color:var(--accent);font-size:1.35rem}
+  p.lead{margin:0;color:#9fb0c8}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  button, .btn{background:linear-gradient(90deg,var(--accent),#3dd5e6);border:none;padding:8px 12px;border-radius:8px;color:#012;font-weight:700;cursor:pointer}
+  .btn.secondary{background:transparent;color:#e6eef6;border:1px solid rgba(230,238,246,0.07)}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03); margin-bottom:12px}
+  label{display:block;font-size:0.86rem;color:#a8c0cf;margin-bottom:6px}
+  input[type="text"], input[type="number"], textarea, select{
+    width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;margin-bottom:8px;
+  }
+  textarea{min-height:84px;resize:vertical}
+  .flex{display:flex;gap:8px;flex-wrap:wrap}
+  .col{flex:1 1 240px}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;font-size:0.92rem}
+  th{color:#9fb0c8;font-weight:700}
+  .text-right{text-align:right}
+  .small{font-size:0.85rem;color:#9fb0c8}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  footer{margin-top:12px;color:#8ea6b8;font-size:0.84rem;text-align:center}
+  @media (max-width:900px){
+    .flex{flex-direction:column}
+  }
+
+  /* Printable / word styles */
+  .paper{
+    background:var(--paper); color:var(--paper-text); padding:16px; border-radius:8px; display:none;
+  }
+  @media print{
+    body{background:white;color:#000}
+    .wrap{max-width:100%;padding:0}
+    .card{background:white;border:0;box-shadow:none}
+    .no-print{display:none}
+    .paper{display:block}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>TP Entregable — Diagnóstico & Presupuesto de PC</h1>
+      <p class="lead">Completen los datos que se pidan, guarden el archivo y exporten a PDF o Word. Entreguen el PDF y el archivo .doc/.json según indique el docente.</p>
+
+      <div class="controls no-print">
+        <button id="btnPrint" title="Imprimir / Guardar como PDF">🖨️ Imprimir / PDF</button>
+        <button id="btnDownloadDoc" class="btn">📄 Descargar .doc (Word)</button>
+        <button id="btnDownloadJSON" class="btn secondary">💾 Descargar JSON</button>
+      </div>
+    </header>
+
+    <!-- Datos generales -->
+    <section class="card">
+      <label>Alumno/a (Nombre y Apellido)</label>
+      <input id="studentName" type="text" placeholder="Ej: Juan Pérez" />
+
+      <div class="flex">
+        <div class="col">
+          <label>Curso / División</label>
+          <input id="course" type="text" placeholder="Ej: 3° Técnico, Turno Tarde" />
+        </div>
+        <div class="col">
+          <label>Fecha</label>
+          <input id="date" type="text" placeholder="DD / MM / AAAA" />
+        </div>
+      </div>
+
+      <label>Objetivo del trabajo (breve)</label>
+      <input id="objective" type="text" placeholder="Ej: Presupuesto para ensamblado y diagnóstico de PC para aula" />
+    </section>
+
+    <!-- Presupuestos: reusable table component -->
+    <section class="card">
+      <h2>Parte A — Presupuesto por gamas</h2>
+      <p class="small">Completen las tablas con componentes y precios (en la moneda que indique el docente). Pueden agregar o eliminar filas.</p>
+
+      <!-- function to create table repeated -->
+      <div id="buildsContainer"></div>
+    </section>
+
+    <!-- Problems -->
+    <section class="card">
+      <h2>Parte B — 5 problemas frecuentes (diagnóstico y solución)</h2>
+      <p class="small">Describan 5 problemas reales o hipotéticos, indiquen causas probables, cómo diagnosticar y la solución propuesta. Al menos uno debe ser software y uno hardware.</p>
+
+      <div id="problems">
+        <!-- 5 problem blocks -->
+      </div>
+    </section>
+
+    <!-- Dream PC -->
+    <section class="card">
+      <h2>Parte C — Presupuesto de tu PC soñada (actividad creativa)</h2>
+      <p class="small">Armá la PC de tus sueños: listá componentes, precios, enlaces y una breve justificación del uso (gaming, edición, streaming).</p>
+
+      <label>Nombre de la PC soñada</label>
+      <input id="dreamName" type="text" placeholder="Ej: BeastStudio 9000" />
+
+      <label>Justificación / Para qué la querés</label>
+      <textarea id="dreamJust" placeholder="Ej: Edición 4K y renderizado 3D, prioridad CPU/GPU"></textarea>
+
+      <label>Componentes (peguen enlace + precio)</label>
+      <textarea id="dreamParts" placeholder="Ej: CPU: Ryzen 9 7950X - https://... - $699"></textarea>
+    </section>
+
+    <div class="card no-print">
+      <h3>Instrucciones de entrega</h3>
+      <ol class="small">
+        <li>Completá todos los campos y tablas.</li>
+        <li>Usá "Descargar .doc" o "Imprimir / PDF" para generar tu entrega.</li>
+        <li>Adjuntá capturas (si tuviste que buscar precios) en el PDF o como archivo aparte si te lo pide el docente.</li>
+      </ol>
+    </div>
+
+    <footer class="no-print">
+      <p>¿Querés que lo transforme para que envíen directamente desde el navegador? Puedo agregar subida de imágenes y enviar resultados a un correo o Google Drive (si me decís cómo querés). </p>
+    </footer>
+  </div>
+
+<script>
+/* ---------- Generadores dinámicos: tablas de presupuesto y problemas ---------- */
+
+const buildsTemplate = [
+  { key: 'baja', title: 'Gama Baja' },
+  { key: 'media', title: 'Gama Media' },
+  { key: 'alta', title: 'Gama Alta' },
+];
+
+function createBuildCard(build){
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `
+    <h3>${build.title}</h3>
+    <label>Descripción / Uso esperado</label>
+    <input data-bind="${build.key}-desc" type="text" placeholder="Ej: Oficina, estudio, gaming ligero..." />
+
+    <table data-build="${build.key}">
+      <thead>
+        <tr>
+          <th>Componente</th>
+          <th class="text-right">Modelo / Nota</th>
+          <th class="text-right">Precio</th>
+          <th class="text-right">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${[1,2,3,4,5,6,7].map(i => `
+          <tr>
+            <td><input type="text" class="cell comp" placeholder="Gabinete / CPU / Placa ..." /></td>
+            <td><input type="text" class="cell note" placeholder="Modelo o enlace" /></td>
+            <td><input type="number" step="0.01" min="0" class="cell price" placeholder="0.00" /></td>
+            <td class="text-right"><button class="btn add-row">➕</button> <button class="btn secondary remove-row">➖</button></td>
+          </tr>
+        `).join('')}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" class="text-right small"><strong>Subtotal</strong></td>
+          <td class="text-right"><strong class="subtotal">0.00</strong></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <p class="small">Periféricos: agregá filas para monitor, mouse, teclado, parlantes/auriculares y totalizá.</p>
+  `;
+  return div;
+}
+
+function attachBuilds(){
+  const container = document.getElementById('buildsContainer');
+  buildsTemplate.forEach(b => container.appendChild(createBuildCard(b)));
+}
+attachBuilds();
+
+/* Event delegation for add/remove rows and subtotal calculation */
+document.addEventListener('click', function(e){
+  // add row
+  if(e.target.matches('.add-row')){
+    const tr = e.target.closest('tr');
+    const tbody = tr.parentElement;
+    const newRow = tr.cloneNode(true);
+    // clear inputs
+    newRow.querySelectorAll('input').forEach(inp => inp.value = '');
+    tbody.appendChild(newRow);
+    return;
+  }
+  // remove row
+  if(e.target.matches('.remove-row')){
+    const tr = e.target.closest('tr');
+    const tbody = tr.parentElement;
+    // Only remove if more than 1 row present
+    if(tbody.querySelectorAll('tr').length > 1){
+      tr.remove();
+      recalcAllSubtotals();
+    } else {
+      // clear fields if only one row
+      tr.querySelectorAll('input').forEach(i=>i.value='');
+      recalcAllSubtotals();
+    }
+    return;
+  }
+});
+
+/* Recalculate subtotals when price inputs change */
+document.addEventListener('input', function(e){
+  if(e.target.matches('.cell.price')){
+    recalcAllSubtotals();
+  }
+});
+
+function recalcAllSubtotals(){
+  document.querySelectorAll('table[data-build]').forEach(table=>{
+    let sum = 0;
+    table.querySelectorAll('.cell.price').forEach(inp=>{
+      const v = parseFloat(inp.value);
+      if(!isNaN(v)) sum += v;
+    });
+    table.querySelector('.subtotal').textContent = sum.toFixed(2);
+  });
+}
+
+/* Create problems blocks (5) */
+function createProblemBlock(i){
+  const div = document.createElement('div');
+  div.style.marginTop = '8px';
+  div.innerHTML = `
+    <label><strong>Problema ${i}</strong> (título corto)</label>
+    <input class="problem-title" type="text" placeholder="Ej: PC no enciende" />
+    <label>Causas probables</label>
+    <textarea class="problem-causes" placeholder="Describir causas"></textarea>
+    <label>Diagnóstico / Cómo comprobar</label>
+    <textarea class="problem-diagnosis" placeholder="Pasos para diagnosticar"></textarea>
+    <label>Solución propuesta</label>
+    <textarea class="problem-solution" placeholder="Medidas, cambios, partes a reemplazar"></textarea>
+  `;
+  return div;
+}
+const problemsContainer = document.getElementById('problems');
+for(let i=1;i<=5;i++) problemsContainer.appendChild(createProblemBlock(i));
+
+/* --------------- Export / Download handlers --------------- */
+
+function collectAllData(){
+  const data = {};
+  data.student = document.getElementById('studentName').value || '';
+  data.course = document.getElementById('course').value || '';
+  data.date = document.getElementById('date').value || '';
+  data.objective = document.getElementById('objective').value || '';
+
+  // builds
+  data.builds = [];
+  document.querySelectorAll('table[data-build]').forEach(table=>{
+    const key = table.getAttribute('data-build');
+    const descInput = document.querySelector(`input[data-bind="${key}-desc"]`);
+    const build = { key, description: descInput ? descInput.value : '', items: [], subtotal: parseFloat(table.querySelector('.subtotal').textContent || 0) };
+    table.querySelectorAll('tbody tr').forEach(tr=>{
+      const comp = tr.querySelector('.comp') ? tr.querySelector('.comp').value : '';
+      const note = tr.querySelector('.note') ? tr.querySelector('.note').value : '';
+      const price = tr.querySelector('.price') ? parseFloat(tr.querySelector('.price').value || 0) : 0;
+      if(comp || note || price) build.items.push({ component: comp, note, price });
+    });
+    data.builds.push(build);
+  });
+
+  // problems
+  data.problems = [];
+  document.querySelectorAll('#problems > div').forEach(div=>{
+    const title = div.querySelector('.problem-title').value || '';
+    const causes = div.querySelector('.problem-causes').value || '';
+    const diag = div.querySelector('.problem-diagnosis').value || '';
+    const sol = div.querySelector('.problem-solution').value || '';
+    if(title || causes || diag || sol) data.problems.push({ title, causes, diagnosis: diag, solution: sol });
+  });
+
+  // dream pc
+  data.dream = {
+    name: document.getElementById('dreamName').value || '',
+    justification: document.getElementById('dreamJust').value || '',
+    components: document.getElementById('dreamParts').value || ''
+  };
+
+  // timestamp
+  data.generatedAt = new Date().toISOString();
+  return data;
+}
+
+/* Download JSON */
+document.getElementById('btnDownloadJSON').addEventListener('click', ()=>{
+  const data = collectAllData();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `TP_Diagnostico_${(data.student||'alumno').replace(/\s+/g,'_')}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+});
+
+/* Download .doc (simple HTML inside .doc) */
+document.getElementById('btnDownloadDoc').addEventListener('click', ()=>{
+  const data = collectAllData();
+  // Compose minimal HTML document
+  let html = `
+    <html><head><meta charset="utf-8"><title>TP Diagnóstico - ${escapeHtml(data.student || '')}</title>
+    <style>body{font-family:Arial,Helvetica,sans-serif;color:#111} table{border-collapse:collapse;width:100%} th,td{border:1px solid #ccc;padding:6px;text-align:left}</style>
+    </head><body>
+    <h1>TP Diagnóstico & Presupuesto de PC</h1>
+    <p><strong>Alumno/a:</strong> ${escapeHtml(data.student)}<br>
+    <strong>Curso:</strong> ${escapeHtml(data.course)} — <strong>Fecha:</strong> ${escapeHtml(data.date)}</p>
+    <h2>Objetivo</h2><p>${escapeHtml(data.objective)}</p>
+  `;
+
+  data.builds.forEach(b=>{
+    html += `<h3>${escapeHtml(b.key.toUpperCase())} — ${escapeHtml(b.description)}</h3>`;
+    html += `<table><thead><tr><th>Componente</th><th>Nota/Modelo</th><th>Precio</th></tr></thead><tbody>`;
+    b.items.forEach(it=>{
+      html += `<tr><td>${escapeHtml(it.component)}</td><td>${escapeHtml(it.note)}</td><td>${escapeHtml(it.price.toFixed(2))}</td></tr>`;
+    });
+    html += `</tbody><tfoot><tr><td colspan="2"><strong>Subtotal</strong></td><td><strong>${b.subtotal.toFixed(2)}</strong></td></tr></tfoot></table>`;
+  });
+
+  html += `<h2>Problemas reportados</h2>`;
+  data.problems.forEach((p, idx)=>{
+    html += `<h3>Problema ${idx+1}: ${escapeHtml(p.title)}</h3><p><strong>Causas:</strong> ${escapeHtml(p.causes)}<br><strong>Diagnóstico:</strong> ${escapeHtml(p.diagnosis)}<br><strong>Solución:</strong> ${escapeHtml(p.solution)}</p>`;
+  });
+
+  html += `<h2>PC soñada: ${escapeHtml(data.dream.name)}</h2><p><strong>Justificación:</strong> ${escapeHtml(data.dream.justification)}</p><pre>${escapeHtml(data.dream.components)}</pre>`;
+
+  html += `<p>Archivo generado: ${escapeHtml(data.generatedAt)}</p></body></html>`;
+
+  const blob = new Blob([html], { type: 'application/msword' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = `TP_Diagnostico_${(data.student||'alumno').replace(/\s+/g,'_')}.doc`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+});
+
+/* Print / PDF */
+document.getElementById('btnPrint').addEventListener('click', ()=>{
+  // before print: populate printable summary (if needed)
+  window.print();
+});
+
+/* small helper to escape HTML */
+function escapeHtml(str){
+  if(!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* Initialize example placeholders to guide students */
+document.querySelectorAll('input[data-bind], input[type=text]').forEach(inp=>{
+  // no-op
+});
+
+/* Place some helpful placeholders in each build table */
+document.querySelectorAll('table[data-build]').forEach(table=>{
+  // set first row example
+  const firstComp = table.querySelector('tbody tr .comp');
+  if(firstComp) firstComp.placeholder = 'Ej: Gabinete';
+  const firstNote = table.querySelector('tbody tr .note');
+  if(firstNote) firstNote.placeholder = 'Ej: Mid-tower, buena ventilación';
+  const firstPrice = table.querySelector('tbody tr .price');
+  if(firstPrice) firstPrice.placeholder = 'Precio';
+});
+
+/* Recalc on load */
+recalcAllSubtotals();
+
+/* Optional: autosave to localStorage every 20s to avoid data loss (helps alumnos) */
+setInterval(()=> {
+  try{
+    const data = collectAllData();
+    localStorage.setItem('TP_Diagnostico_autosave', JSON.stringify(data));
+  }catch(e){}
+}, 20000);
+
+/* Load autosave if exists (prompt) */
+window.addEventListener('load', ()=>{
+  const saved = localStorage.getItem('TP_Diagnostico_autosave');
+  if(saved){
+    if(confirm('Se encontró un borrador guardado en este navegador. ¿Deseas cargarlo?')){
+      try{
+        const data = JSON.parse(saved);
+        if(data.student) document.getElementById('studentName').value = data.student;
+        if(data.course) document.getElementById('course').value = data.course;
+        if(data.date) document.getElementById('date').value = data.date;
+        if(data.objective) document.getElementById('objective').value = data.objective;
+        // builds
+        if(data.builds && Array.isArray(data.builds)){
+          document.querySelectorAll('table[data-build]').forEach(table=>{
+            const key = table.getAttribute('data-build');
+            const b = data.builds.find(x=>x.key===key);
+            if(b){
+              const descInput = document.querySelector(`input[data-bind="${key}-desc"]`);
+              if(descInput) descInput.value = b.description || '';
+              const tbody = table.querySelector('tbody');
+              // clear existing rows
+              tbody.innerHTML = '';
+              (b.items||[]).forEach(it=>{
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td><input type="text" class="cell comp" value="${escapeHtml(it.component)}" /></td>
+                                <td><input type="text" class="cell note" value="${escapeHtml(it.note)}" /></td>
+                                <td><input type="number" step="0.01" min="0" class="cell price" value="${it.price || 0}" /></td>
+                                <td class="text-right"><button class="btn add-row">➕</button> <button class="btn secondary remove-row">➖</button></td>`;
+                tbody.appendChild(tr);
+              });
+            }
+          });
+        }
+        // problems
+        if(data.problems && Array.isArray(data.problems)){
+          document.querySelectorAll('#problems > div').forEach((div, idx)=>{
+            const p = data.problems[idx];
+            if(p){
+              div.querySelector('.problem-title').value = p.title || '';
+              div.querySelector('.problem-causes').value = p.causes || '';
+              div.querySelector('.problem-diagnosis').value = p.diagnosis || '';
+              div.querySelector('.problem-solution').value = p.solution || '';
+            }
+          });
+        }
+        // dream
+        if(data.dream){
+          document.getElementById('dreamName').value = data.dream.name || '';
+          document.getElementById('dreamJust').value = data.dream.justification || '';
+          document.getElementById('dreamParts').value = data.dream.components || '';
+        }
+        recalcAllSubtotals();
+      }catch(e){
+        console.warn('No se pudo cargar el borrador:', e);
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3: Redes Sociales para Emprendedores - JCDISEING</title>
+    <!-- Incluye Tailwind CSS desde CDN para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Un color de fondo suave similar a redes sociales */
+            color: #333;
+            padding-top: 4rem; /* Espacio para la barra de navegación fija */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .header-bg {
+            background-image: linear-gradient(to right top, #6d28d9, #9333ea); /* Gradiente morado para el encabezado */
+        }
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        /* Estilo para la tabla de diferencias entre redes */
+        .table-auto th, .table-auto td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .table-auto th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Encabezado tipo "barra superior de red social" -->
+        <header class="w-full py-4 text-white text-center header-bg rounded-b-lg shadow-md mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold">🚀 CLASE 3: Redes Sociales - Panorama y Uso Profesional 🚀</h1>
+            <p class="text-lg mt-2">¡Bienvenidos a la clase más práctica para tu negocio!</p>
+        </header>
+
+        <!-- Barra de navegación fija -->
+        <nav class="navbar-fixed w-full bg-white shadow-md py-3 px-4 flex justify-center">
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-medium">
+                <a href="#objetivo" class="text-purple-700 hover:text-purple-900 transition-colors duration-200 px-3 py-1 rounded-md hover:bg-purple-100">Objetivo</a>
+                <a href="#conceptos" class="text-purple-700 hover:text-purple-900 transition-colors duration-200 px-3 py-1 rounded-md hover:bg-purple-100">Conceptos Clave</a>
+                <a href="#herramientas" class="text-purple-700 hover:text-purple-900 transition-colors duration-200 px-3 py-1 rounded-md hover:bg-purple-100">Herramientas</a>
+                <a href="#actividad" class="text-purple-700 hover:text-purple-900 transition-colors duration-200 px-3 py-1 rounded-md hover:bg-purple-100">Actividad Práctica</a>
+                <a href="#tarea" class="text-purple-700 hover:text-purple-900 transition-colors duration-200 px-3 py-1 rounded-md hover:bg-purple-100">Tarea</a>
+            </div>
+        </nav>
+
+        <!-- Contenedor principal del contenido, simulando el feed de una red social -->
+        <main class="w-full max-w-4xl px-4">
+
+            <!-- Objetivo del Día -->
+            <section id="objetivo" class="card">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center text-purple-700">
+                    <span class="icon">🎯</span> Objetivo del Día:
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Aprenderás a usar las redes sociales como un PRO, entendiendo cómo funcionan sus algoritmos y qué tipo de publicaciones te convienen más. ¡Todo enfocado en que tu emprendimiento crezca online y GRATIS! <span class="text-green-500 font-bold">📈</span>
+                </p>
+            </section>
+
+            <!-- Parte 1 – Conceptos Clave -->
+            <section id="conceptos" class="card">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center text-purple-700">
+                    <span class="icon">🧠</span> Parte 1 – Conceptos Clave
+                </h2>
+
+                <!-- ¿Para qué sirven las redes sociales en un emprendimiento? -->
+                <h3 class="text-xl font-medium mb-3 mt-6 flex items-center text-blue-600">
+                    <span class="icon">🔹</span> ¿Para qué sirven las redes sociales en un emprendimiento?
+                </h3>
+                <ul class="list-none space-y-2 pl-0">
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-green-500">✅</span> <strong>Visibilidad:</strong> ¡Que te vean! Es como poner un cartel gigante de tu negocio en la calle más transitada. 👀
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-green-500">✅</span> <strong>Confianza:</strong> Mostrar tu trabajo real, tus procesos, la cara detrás del emprendimiento. ¡La gente compra a quienes confía! 💪
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-green-500">✅</span> <strong>Comunicación directa:</strong> Responder rápido a tus clientes sin intermediarios. ¡Atención personalizada al instante! 💬
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-green-500">✅</span> <strong>Ventas:</strong> De forma directa por mensajes, WhatsApp o enlaces a tu tienda. ¡Transforma "me gusta" en ventas! 💰
+                    </li>
+                </ul>
+
+                <!-- Diferencias entre redes -->
+                <h3 class="text-xl font-medium mb-3 mt-6 flex items-center text-blue-600">
+                    <span class="icon">🔹</span> Diferencias entre redes (en palabras simples)
+                </h3>
+                <p class="text-gray-700 mb-4">Cada red es un mundo y tiene su público. ¡Aquí te lo explico fácil! 👇</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full table-auto rounded-lg overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 bg-purple-100 text-purple-800">Red</th>
+                                <th class="px-4 py-2 bg-purple-100 text-purple-800">Ideal para…</th>
+                                <th class="px-4 py-2 bg-purple-100 text-purple-800">Público</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium"><strong>Facebook</strong></td>
+                                <td class="px-4 py-2">Promociones, ventas barriales</td>
+                                <td class="px-4 py-2">Adultos 30+</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium"><strong>Instagram</strong></td>
+                                <td class="px-4 py-2">Mostrar productos, stories, reels</td>
+                                <td class="px-4 py-2">Jóvenes-adultos</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium"><strong>TikTok</strong></td>
+                                <td class="px-4 py-2">Videos virales, contenido natural</td>
+                                <td class="px-4 py-2">Jóvenes</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium"><strong>WhatsApp Business</strong></td>
+                                <td class="px-4 py-2">Atención directa y catálogo</td>
+                                <td class="px-4 py-2">Todos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ¿Qué es el algoritmo? -->
+                <h3 class="text-xl font-medium mb-3 mt-6 flex items-center text-blue-600">
+                    <span class="icon">🔹</span> ¿Qué es el algoritmo?
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-2">
+                    Imagina que el algoritmo es un "robot" 🤖 que decide qué publicaciones mostrarte primero en tu inicio. Si tu contenido tiene muchos "me gusta" ❤️, comentarios 💬 o se comparte ↗️, ¡el algoritmo lo muestra a más gente!
+                </p>
+                <p class="text-green-600 font-medium flex items-center">
+                    <span class="text-xl mr-2">👉</span> <strong>Tip simple:</strong> Sube contenido útil o entretenido, ¡no solo ventas! Así, el algoritmo te amará. 😉
+                </p>
+
+                <!-- Tipos de publicaciones -->
+                <h3 class="text-xl font-medium mb-3 mt-6 flex items-center text-blue-600">
+                    <span class="icon">🔹</span> Tipos de publicaciones que te ayudarán a crecer:
+                </h3>
+                <p class="text-gray-700 mb-4">¡No todo es vender, vender, vender! Varía tu contenido para enganchar a tu audiencia.</p>
+                <ul class="list-none space-y-2 pl-0">
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-yellow-500">🌟</span> <strong>Posteo con foto + texto:</strong> Ideal para promociones, novedades de tu negocio. 📸📝
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-yellow-500">🌟</span> <strong>Historias (stories):</strong> Para el día a día, encuestas, preguntas y respuestas. ¡Genera cercanía! 🤳
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-yellow-500">🌟</span> <strong>Reels o videos cortos:</strong> ¡Tienen mucho alcance! Muestra procesos de tu trabajo, tutoriales rápidos. 🎬
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-yellow-500">🌟</span> <strong>Testimonios de clientes:</strong> ¡Construyen confianza como nada! Pide a tus clientes que compartan su experiencia. ✨
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-yellow-500">🌟</span> <strong>Tips o consejos:</strong> Educación y valor gratis para tu audiencia. ¡Demuestra que eres un experto! 💡
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Herramientas a utilizar -->
+            <section id="herramientas" class="card">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center text-purple-700">
+                    <span class="icon">🛠</span> Herramientas a utilizar
+                </h2>
+                <p class="text-gray-700 mb-4">¡No necesitas programas caros! Con estas herramientas gratuitas vas a crear contenido increíble.</p>
+                <ul class="list-none space-y-2 pl-0">
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-blue-500">🔹</span> <strong>Instagram / Facebook en navegador:</strong> Para gestionar tus cuentas desde la computadora. 💻
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-blue-500">🔹</span> <strong>Meta Business Suite:</strong> Para programar tus publicaciones y ahorrar tiempo. ¡Organización al poder! 🗓️
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-blue-500">🔹</span> <strong>Canva:</strong> Para diseñar posteos desde cero o con plantillas. ¡Tu creatividad no tendrá límites! 🎨
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-blue-500">🔹</span> <strong>ChatGPT:</strong> Para redactar frases llamativas o llamados a la acción que atrapen a tu público. ✍️
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Actividad práctica en clase -->
+            <section id="actividad" class="card">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center text-purple-700">
+                    <span class="icon">✍️</span> Actividad práctica en clase (¡Manos a la obra!)
+                </h2>
+                <p class="text-gray-700 mb-4">¡Es hora de poner en práctica lo aprendido!</p>
+                <h3 class="text-xl font-medium mb-3 flex items-center text-blue-600">Cada alumno deberá:</h3>
+                <ol class="list-decimal list-inside space-y-2 pl-0">
+                    <li class="text-gray-700">Acceder a su cuenta de Instagram/Facebook o crear una nueva si no la tiene.</li>
+                    <li class="text-gray-700">
+                        <strong>Diseñar 2 publicaciones diferentes:</strong>
+                        <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                            <li>Una para generar confianza (ej: mostrando el "detrás de escena" de tu trabajo, el proceso de creación de un producto).</li>
+                            <li>Otra para vender (ej: una promoción de un producto, un combo especial).</li>
+                        </ul>
+                    </li>
+                    <li class="text-gray-700">
+                        <strong>Planificar 1 historia</strong> para publicar en el día (ej: una encuesta rápida, un "buenos días" con tu producto).
+                    </li>
+                </ol>
+                <h3 class="text-xl font-medium mb-3 mt-6 flex items-center text-blue-600">Ejemplo práctico:</h3>
+                <ul class="list-none space-y-2 pl-0">
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-red-500">❤️</span> <strong>Publicación 1 (Confianza):</strong> Foto de tu producto + frase "Hecho con amor para vos".
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-red-500">🎁</span> <strong>Publicación 2 (Venta):</strong> Promo 2x1 lunes y martes con delivery gratis. ¡Imperdible!
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Tarea para la casa -->
+            <section id="tarea" class="card">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center text-purple-700">
+                    <span class="icon">📘</span> Tarea para la casa
+                </h2>
+                <p class="text-gray-700 mb-4">¡La práctica hace al maestro!</p>
+                <ul class="list-none space-y-2 pl-0">
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-indigo-500">✅</span> Publicar las piezas trabajadas (o prepararlas para publicar si aún no tienes seguidores).
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <span class="mr-2 text-indigo-500">✅</span> Sacar una captura de pantalla y enviarla como evidencia (o mostrarla en la próxima clase). ¡Así veo tu progreso! 📸
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Footer con derechos reservados -->
+            <footer class="w-full text-center py-6 text-gray-500 text-sm mt-8">
+                <p>&copy; Todos los derechos reservados para JCDISEING</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript para el desplazamiento suave al hacer clic en los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

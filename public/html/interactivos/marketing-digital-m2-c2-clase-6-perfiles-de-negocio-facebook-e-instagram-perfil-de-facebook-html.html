@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Pro: De Perfil Mediocre a Máquina de Ventas - JCDISEING</title>
+    <!-- Tailwind CSS CDN for modern and responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background like Facebook */
+            color: #1c1e21; /* Dark text color */
+            padding-top: 5rem; /* Space for fixed navbar */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .facebook-header {
+            background-color: #4267B2; /* Facebook blue */
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            border-radius: 0 0 0.75rem 0.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            color: #1c1e21;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+        .module-subtitle {
+            color: #333;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .tip-box {
+            background-color: #e7f3ff; /* Light blue for tips */
+            border-left: 4px solid #1877f2; /* Facebook blue border */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-weight: 500;
+            color: #1c1e21;
+        }
+        .penalty-box {
+            background-color: #ffe5e5; /* Light red for warnings */
+            border-left: 4px solid #fa3e3e; /* Red border */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-weight: 500;
+            color: #1c1e21;
+        }
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .navbar-link {
+            color: #4267B2;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .navbar-link:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Barra de Navegación Fija -->
+        <nav class="navbar-fixed w-full py-3 px-4 flex justify-center">
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <a href="#intro" class="navbar-link">👋 Introducción</a>
+                <a href="#pilares" class="navbar-link">🧱 Pilares</a>
+                <a href="#seo" class="navbar-link">🔍 SEO</a>
+                <a href="#contenido" class="navbar-link">💖 Contenido</a>
+                <a href="#herramientas" class="navbar-link">🛠️ Herramientas</a>
+                <a href="#video" class="navbar-link">▶️ Video</a>
+            </div>
+        </nav>
+
+        <!-- Encabezado de la Clase tipo Facebook -->
+        <header class="facebook-header">
+            <h1 class="text-3xl md:text-4xl font-bold">📘 Facebook Pro: De perfil mediocre a máquina de ventas 📈</h1>
+            <p class="text-lg mt-2">¡Optimiza tu presencia para generar confianza y ventas!</p>
+        </header>
+
+        <!-- Contenedor Principal del Contenido -->
+        <main class="container">
+
+            <!-- Módulo 1: Introducción Rápida -->
+            <section id="intro" class="card">
+                <h2 class="text-2xl section-title flex items-center">👋 Introducción Rápida: ¿Por qué importa tu perfil de Facebook?</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Tu perfil personal en Facebook no es solo "tu cuenta"; es tu **vidriera digital**. Cuando alguien ve una publicación tuya, un comentario o te busca después de ver tu negocio... ¡va directo a espiarte! Y ahí hay dos caminos:
+                </p>
+
+                <div class="mb-4">
+                    <h3 class="module-subtitle flex items-center">✅ Caso 1: Perfil que VENDE 💰</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Foto clara, profesional o con onda. 📸</li>
+                        <li>Descripción atractiva: quién sos + qué hacés. ✍️</li>
+                        <li>Publicaciones que muestran valor, historias reales, contenido útil o divertido. ✨</li>
+                        <li>Resultado: generás confianza, curiosidad, y sí... ¡ventas! 🚀</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="module-subtitle flex items-center">❌ Caso 2: Perfil ABANDONADO 👻</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Foto vieja o pixelada. 🖼️</li>
+                        <li>Nada en la bio. 🤷‍♀️</li>
+                        <li>Posteos del 2019, memes reciclados o puro contenido compartido sin contexto. 🗑️</li>
+                        <li>Resultado: parecer un bot o alguien que no se toma en serio su negocio. 📉</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <p class="font-bold">Moral de la historia: ¡Tu perfil habla incluso cuando vos no decís nada! Y si no lo usás para sumar, probablemente te está restando. 🧐</p>
+                </div>
+            </section>
+
+            <!-- Módulo 2: Los Pilares del Perfil Optimizado -->
+            <section id="pilares" class="card">
+                <h2 class="text-2xl section-title flex items-center">🧱 Los Pilares del Perfil Optimizado</h2>
+
+                <div class="mb-4">
+                    <h3 class="module-subtitle">1. Nombre y Usuario (URL personalizada) 🆔</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Debe ser claro, simple y reconocible.</li>
+                        <li>Incluí palabras clave si podés. Ej: "@ZapatosSantaFe" 👠</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="module-subtitle">2. Foto de perfil 📸</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Calidad profesional.</li>
+                        <li>Logo si es empresa / retrato pro si es marca personal. 🧑‍💼</li>
+                        <li>Tamaño mínimo recomendado: $180 \times 180$ px (formato PNG si hay texto).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="module-subtitle">3. Portada impactante 🖼️</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Dimensiones: $851 \times 315$ px. Puede ser imagen o video. 🎬</li>
+                        <li>Debe representar visualmente la marca.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="module-subtitle">4. Descripción / Acerca de 📝</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>¿Quién sos? ¿Qué hacés? ¿Cómo ayudás? 🤔</li>
+                        <li>Usá palabras clave relevantes sin parecer un robot. 🤖</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="module-subtitle">5. Historia de la empresa 📖</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Contá tu historia con emoción: origen, valores, visión. ❤️</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="module-subtitle">6. Enlaces y pestañas 🔗</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Agregá tu web, WhatsApp, Instagram, YouTube, etc.</li>
+                        <li>Elegí las pestañas adecuadas según tu negocio. 🛒</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Módulo 3: SEO y Facebook: Cómo Aparecer en Google -->
+            <section id="seo" class="card">
+                <h2 class="text-2xl section-title flex items-center">🔍 SEO y Facebook: Cómo Aparecer en Google</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Usá palabras clave en nombre, descripción y publicaciones. 🔑</li>
+                    <li>Generá contenido que invite a comentar, compartir y reaccionar. 💬↗️❤️</li>
+                    <li>Enlaces internos (a tu web) y externos (otros que te mencionen). 🌐</li>
+                    <li>Publicá con consistencia y en horarios clave. ⏰</li>
+                </ul>
+
+                <h3 class="module-subtitle">Optimización Activa y Vinculación 🔗</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong>Atención al cliente:</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>Responder mensajes en menos de 15 min = mayor visibilidad. ⚡</li>
+                            <li>Activá respuestas automáticas si no estás disponible. 🤖</li>
+                        </ul>
+                    </li>
+                    <li><strong>Vinculación con otras apps:</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>Instagram y WhatsApp: integralos para ganar alcance y facilitar contacto. 📲</li>
+                        </ul>
+                    </li>
+                    <li><strong>Privacidad:</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>Ajustá qué puede ver el público y qué no. 🔒</li>
+                            <li>Protegé tu info personal, pero dejá lo relevante a la vista. 👀</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Módulo 4: Contenido que Enamora -->
+            <section id="contenido" class="card">
+                <h2 class="text-2xl section-title flex items-center">💖 Contenido que Enamora</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Publicá imágenes y videos cortos, con buena calidad. 🎥✨</li>
+                    <li>Usá hashtags relevantes. #️⃣</li>
+                    <li>Tené una identidad visual (paleta, fuentes, estilo). 🎨</li>
+                    <li>Planificá con calendario de contenidos. 🗓️</li>
+                    <li>CTA (Call to Action): Siempre decirle al usuario qué hacer. ¡Sé claro! 👇</li>
+                </ul>
+            </section>
+
+            <!-- Módulo 5: Cierre y Herramientas -->
+            <section id="herramientas" class="card">
+                <h2 class="text-2xl section-title flex items-center">🛠️ Cierre y Herramientas</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Si querés que tu presencia en Facebook te traiga resultados reales, necesitás medir y ajustar constantemente. Acá entra en juego el famoso:
+                </p>
+
+                <h3 class="module-subtitle flex items-center">Facebook Insights 📊</h3>
+                <p class="text-gray-700 mb-2">La herramienta interna que te muestra:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Qué publicaciones funcionaron mejor (alcance, interacción, clics). 📈</li>
+                    <li>A qué hora está más activa tu audiencia. ⏰</li>
+                    <li>Qué tipo de contenido gusta más: videos, imágenes, textos, etc. 🖼️🎥📝</li>
+                </ul>
+                <div class="tip-box mt-4">
+                    <p class="font-bold">¡Con estos datos podés dejar de adivinar y empezar a tomar decisiones estratégicas! 💡</p>
+                </div>
+
+                <h3 class="module-subtitle mt-6">Aplicá la fórmula mágica ✨</h3>
+                <div class="bg-gray-100 p-4 rounded-lg border border-gray-200 text-gray-800 font-mono text-sm mb-4">
+                    Publicá con intención + Revisá las métricas + Duplica lo que funciona y corregí lo que no = Buenos Resultados
+                </div>
+                <div class="tip-box">
+                    <p class="font-bold">¡Esto te permite crecer sin quemarte la cabeza! 🧘‍♀️</p>
+                </div>
+
+                <h3 class="module-subtitle mt-6">Herramientas que te facilitan la vida: 🛠️</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong>Canva:</strong> para crear diseños atractivos sin ser diseñador (banners, flyers, historias). 🎨</li>
+                    <li><strong>Metricool:</strong> para programar posteos, ver estadísticas cruzadas y mejorar tu calendario. 🗓️</li>
+                    <li><strong>ChatGPT:</strong> para ideas de contenido, copies efectivos, respuestas inteligentes. ✍️🤖</li>
+                    <li><strong>Meta Business Suite:</strong> para gestionar tu página, responder mensajes, y controlar todo desde un solo lugar (incluso desde el celular). 📱</li>
+                </ul>
+
+                <h3 class="module-subtitle mt-6">Conclusión: 🏆</h3>
+                <div class="tip-box">
+                    <p class="font-bold">¡El éxito en Facebook no es cuestión de suerte, sino de estrategia, constancia y herramientas bien usadas! 🌟</p>
+                </div>
+            </section>
+
+            <!-- Módulo de Video de YouTube -->
+            <section id="video" class="card">
+                <h2 class="text-2xl section-title flex items-center">▶️ Video Extra: ¡Aprende más!</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">Aquí te dejamos un video complementario para seguir aprendiendo a dominar las redes sociales:</p>
+                <div class="relative w-full overflow-hidden rounded-lg" style="padding-top: 56.25%;">
+                    <!-- 16:9 aspect ratio -->
+                    <iframe
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/nbHa40TKdeY"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </section>
+
+            <!-- Footer con derechos reservados -->
+            <footer class="w-full text-center py-6 text-gray-500 text-sm mt-8">
+                <p>&copy; Todos los derechos reservados para JCDISEING y REIDEL DESIGN</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript para el desplazamiento suave al hacer clic en los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

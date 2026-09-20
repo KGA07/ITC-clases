@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase - ITC Aula Virtual</title>
+  <meta name="description" content="Materiales de la clase">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0058FF">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/config.js"></script>
+  <script src="/js/common.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+  <header class="topbar" id="topbar"></header>
+
+  <main class="container" id="main">
+    <div class="clase-head">
+      <nav class="crumb">
+        <a href="/inicio">🏠 Inicio</a> <span aria-hidden="true">/</span>
+        <a href="#" id="crumbCurso">Curso</a> <span aria-hidden="true">/</span>
+        <span id="crumbModulo">Modulo</span>
+      </nav>
+      <h1 id="claseTitulo">Clase</h1>
+      <p class="sub" id="claseSub"></p>
+    </div>
+
+    <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargando clase...</div>
+    <div id="list" class="hidden"></div>
+  </main>
+
+  <div class="modal-overlay hidden" id="modal" role="dialog" aria-modal="true" aria-label="Material interactivo">
+    <div class="modal">
+      <div class="modal-head">
+        <b id="modalTitle">Interactivo</b>
+        <span class="nota-modal">Usa Escape para cerrar</span>
+        <button type="button" class="btn btn-ghost btn-sm" id="modalOpen">↗ Abrir en pestania</button>
+        <button type="button" class="btn btn-primary btn-sm" id="modalClose">Cerrar ✕</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="modalFrame" title="Material interactivo" sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="/js/clase.js"></script>
+</body>
+</html>

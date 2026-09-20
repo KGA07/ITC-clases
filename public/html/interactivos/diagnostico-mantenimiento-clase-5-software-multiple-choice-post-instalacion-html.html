@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Multiple choice · Post-instalación de Windows</title>
+<style>
+:root{
+  --bg:#07111f; --panel:#0d1b2f; --panel2:#12233b; --glass:rgba(255,255,255,.075);
+  --line:rgba(255,255,255,.14); --text:#eef6ff; --muted:#aebbd0; --accent:#54d6ff;
+  --accent2:#8cffc1; --warn:#ffd166; --danger:#ff6b6b; --ok:#65f4a2; --purple:#b692ff;
+  --shadow:0 25px 60px rgba(0,0,0,.35); --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+*{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none;width:0;height:0}
+body{
+  margin:0;font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;color:var(--text);
+  background:
+    radial-gradient(circle at 12% 18%,rgba(84,214,255,.22),transparent 32%),
+    radial-gradient(circle at 90% 12%,rgba(182,146,255,.2),transparent 28%),
+    radial-gradient(circle at 65% 86%,rgba(140,255,193,.14),transparent 32%),var(--bg);
+  min-height:100vh;
+}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 95%);pointer-events:none}
+.wrap{max-width:920px;margin:0 auto;padding:34px 24px 80px;position:relative}
+header.top{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:var(--shadow);padding:26px 28px;position:relative;overflow:hidden;margin-bottom:22px}
+header.top:after{content:"QUIZ";position:absolute;right:-10px;bottom:-14px;font-weight:1000;font-size:5rem;color:rgba(255,255,255,.04);letter-spacing:-3px}
+.tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(84,214,255,.35);background:rgba(84,214,255,.1);color:#dff8ff;border-radius:999px;padding:8px 12px;font-size:.82rem;font-weight:700}
+header.top h1{font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:-1.5px;margin:14px 0 8px;line-height:1.02}
+header.top p{color:var(--muted);margin:0;line-height:1.6;max-width:640px}
+.scorebar-wrap{position:sticky;top:0;z-index:5;padding:14px 16px;margin-bottom:22px;border:1px solid var(--line);border-radius:18px;background:rgba(7,17,31,.82);backdrop-filter:blur(14px);display:flex;align-items:center;gap:16px}
+.scorebar-wrap .label{font-size:.82rem;color:var(--muted);white-space:nowrap;font-weight:700}
+.progress{flex:1;height:12px;background:#061222;border-radius:999px;overflow:hidden}
+.bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px;transition:.4s}
+.score{font-weight:900;font-size:1.05rem;white-space:nowrap}
+.score b{color:var(--accent2)}
+.q{border:1px solid var(--line);border-radius:var(--radius);background:rgba(13,27,47,.7);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:18px}
+.q .num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05111f;font-weight:900;font-size:.92rem;margin-bottom:12px}
+.q h3{margin:0 0 16px;font-size:1.08rem;line-height:1.45}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.045);color:var(--text);padding:13px 15px;cursor:pointer;transition:.18s;font-size:.96rem;line-height:1.45;font-family:inherit}
+.opt:hover:not(:disabled){background:rgba(84,214,255,.1);border-color:rgba(84,214,255,.4);transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt .mark{flex:0 0 24px;width:24px;height:24px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;font-weight:900;font-size:.85rem;color:var(--muted);background:#061222;margin-top:1px}
+.opt.correct{background:rgba(101,244,162,.12);border-color:rgba(101,244,162,.55)}
+.opt.correct .mark{background:var(--ok);color:#05111f;border-color:transparent}
+.opt.wrong{background:rgba(255,107,107,.12);border-color:rgba(255,107,107,.5)}
+.opt.wrong .mark{background:var(--danger);color:#fff;border-color:transparent}
+.opt.dim{opacity:.55}
+.feedback{margin-top:14px;padding:12px 14px;border-radius:14px;font-size:.92rem;line-height:1.55;display:none;border:1px solid var(--line)}
+.feedback.show{display:block}
+.feedback.good{background:rgba(101,244,162,.09);border-color:rgba(101,244,162,.35);color:#d6ffe9}
+.feedback.bad{background:rgba(255,107,107,.08);border-color:rgba(255,107,107,.35);color:#ffdede}
+.feedback b{color:var(--accent2)}
+.result{display:none;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:var(--shadow);padding:30px;text-align:center;margin-bottom:18px}
+.result.show{display:block;animation:pop .35s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:none}}
+.result h2{font-size:2.6rem;margin:0 0 6px;letter-spacing:-1px}
+.result .big{font-size:3.4rem;font-weight:1000;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.result p{color:var(--muted);margin:10px 0 0;line-height:1.6}
+.btn{border:0;border-radius:16px;padding:13px 22px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111f;font-weight:900;cursor:pointer;box-shadow:0 14px 28px rgba(84,214,255,.18);font-family:inherit;font-size:.98rem;margin-top:18px}
+.btn:hover{filter:brightness(1.05)}
+@media(max-width:620px){.wrap{padding:20px 14px 60px}.scorebar-wrap{flex-wrap:wrap;gap:10px}.progress{order:3;flex-basis:100%}}
+@media print{body{background:#fff;color:#000}.btn,.scorebar-wrap{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="tag">🧩 Autocorregido · 10 preguntas</span>
+    <h1>Post-instalación de Windows</h1>
+    <p>Elegí una opción en cada pregunta. Se corrige sola al instante: marca la correcta en verde, tu error en rojo y suma el puntaje arriba.</p>
+  </header>
+
+  <div class="scorebar-wrap">
+    <span class="label">Puntaje</span>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <span class="score" id="score"><b>0</b> / 10</span>
+  </div>
+
+  <div class="result" id="result">
+    <h2>Resultado</h2>
+    <div class="big" id="finalScore">0 / 10</div>
+    <p id="finalMsg"></p>
+    <button class="btn" id="restart">↻ Reiniciar quiz</button>
+  </div>
+
+  <div id="quiz"></div>
+</div>
+
+<script>
+const PREGUNTAS = [
+  {
+    q: "¿Cuál es la razón principal para conectar el equipo a internet inmediatamente después de instalar Windows?",
+    correcta: "Sin internet, Windows Update no puede descargar parches, drivers ni seguridad.",
+    opciones: [
+      "Para activar Windows con la licencia digital al instante.",
+      "Para sincronizar la hora del sistema con los servidores de Microsoft.",
+      "Para crear la cuenta de administrador obligatoria del equipo."
+    ]
+  },
+  {
+    q: "En el contexto de la gestión de drivers, ¿por qué se recomienda evitar el uso de programas conocidos como \"driver boosters\"?",
+    correcta: "Pueden instalar versiones incorrectas, traer publicidad o tocar componentes que ya estaban funcionando bien.",
+    opciones: [
+      "Solo funcionan con tarjetas de video NVIDIA y AMD, no con Intel.",
+      "Requieren una conexión a internet permanente para mantener los drivers.",
+      "Borran automáticamente los puntos de restauración del sistema."
+    ]
+  },
+  {
+    q: "¿Qué medida de seguridad es indispensable al realizar una actualización de firmware (BIOS/UEFI)?",
+    correcta: "Preparar energía estable: notebook conectada al cargador y batería suficiente; PC idealmente con estabilizador o UPS.",
+    opciones: [
+      "Desconectar todos los periféricos USB antes de empezar.",
+      "Desactivar el antivirus para que no interrumpa la instalación.",
+      "Tener instalada la última versión del navegador web."
+    ]
+  },
+  {
+    q: "¿Qué herramienta nativa de Windows se utiliza para identificar componentes de hardware que carecen del driver adecuado (indicados con triángulos amarillos)?",
+    correcta: "El Administrador de dispositivos (Win + X → Administrador de dispositivos).",
+    opciones: [
+      "El Administrador de tareas (Ctrl + Shift + Esc).",
+      "El Editor del Registro (regedit).",
+      "La herramienta msinfo32 de Información del sistema."
+    ]
+  },
+  {
+    q: "En una PC de bajos recursos, ¿cuál es la mejora física más efectiva para reducir el tiempo de carga y mejorar la respuesta del sistema?",
+    correcta: "Cambiar HDD por SSD suele ser el salto más notorio.",
+    opciones: [
+      "Agregar una placa de video dedicada de gama media.",
+      "Reemplazar el procesador por uno de más núcleos.",
+      "Instalar un ventilador adicional para bajar la temperatura."
+    ]
+  },
+  {
+    q: "Si se eliminan archivos importantes por error, ¿cuál es la regla de oro para maximizar las probabilidades de recuperación?",
+    correcta: "Dejar de usar ese disco, porque cada archivo nuevo puede sobrescribir lo perdido.",
+    opciones: [
+      "Reiniciar la PC de inmediato para refrescar la memoria.",
+      "Vaciar la papelera de reciclaje para liberar espacio.",
+      "Ejecutar un desfragmentador para reordenar los datos."
+    ]
+  },
+  {
+    q: "¿Por qué es recomendable utilizar una cuenta de usuario estándar en lugar de una de administrador para las tareas cotidianas?",
+    correcta: "Para alumnos o usuarios básicos, no conviene trabajar todo el día como administrador.",
+    opciones: [
+      "Porque la cuenta estándar permite instalar más programas a la vez.",
+      "Porque las cuentas de administrador no reciben actualizaciones de Windows.",
+      "Porque la cuenta estándar acelera el tiempo de arranque del sistema."
+    ]
+  },
+  {
+    q: "¿Qué define al \"firmware\" dentro del hardware de un equipo y por qué es una zona sensible de mantenimiento?",
+    correcta: "Es software interno del hardware (ejemplo: BIOS/UEFI); es sensible porque una actualización mal hecha puede dejar el equipo sin arrancar.",
+    opciones: [
+      "Es el sistema operativo principal; es sensible porque guarda los archivos del usuario.",
+      "Es el driver de la placa de video; es sensible porque afecta el rendimiento en juegos.",
+      "Es un antivirus integrado; es sensible porque controla los permisos de red."
+    ]
+  },
+  {
+    q: "¿Qué acción específica dentro del Administrador de tareas ayuda a mejorar el tiempo de arranque de Windows sin necesidad de desinstalar programas?",
+    correcta: "Desactivar el inicio innecesario: no desinstala programas, solo evita que arranquen con Windows.",
+    opciones: [
+      "Finalizar todos los procesos en segundo plano de la pestaña Procesos.",
+      "Bajar la prioridad de CPU de los programas más pesados.",
+      "Vaciar la memoria caché desde la pestaña Rendimiento."
+    ]
+  },
+  {
+    q: "¿Qué riesgos de seguridad implica el uso de cracks o activadores de software, especialmente cuando se descargan de sitios no oficiales?",
+    correcta: "Muchos traen troyanos, mineros o robo de cuentas.",
+    opciones: [
+      "Solo reducen la velocidad de internet mientras están activos.",
+      "Hacen que Windows pida la licencia cada 30 días.",
+      "Desinstalan los utilitarios oficiales del sistema."
+    ]
+  }
+];
+
+const TOTAL = PREGUNTAS.length;
+const quizEl = document.getElementById('quiz');
+const barEl = document.getElementById('bar');
+const scoreEl = document.getElementById('score');
+const resultEl = document.getElementById('result');
+let aciertos = 0;
+let respondidas = 0;
+
+function shuffle(a){
+  const arr = a.slice();
+  for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}
+  return arr;
+}
+
+function actualizarBarra(){
+  scoreEl.innerHTML = '<b>'+aciertos+'</b> / '+TOTAL;
+  barEl.style.width = (respondidas/TOTAL*100)+'%';
+}
+
+function mostrarResultado(){
+  const f = document.getElementById('finalScore');
+  const m = document.getElementById('finalMsg');
+  f.textContent = aciertos+' / '+TOTAL;
+  let msg;
+  if(aciertos===TOTAL) msg='Perfecto. Dominás la post-instalación de punta a punta.';
+  else if(aciertos>=8) msg='Muy bien. Repasá las que fallaste y queda redondo.';
+  else if(aciertos>=6) msg='Aprobado, pero hay conceptos para reforzar.';
+  else if(aciertos>=4) msg='A medio camino. Conviene volver sobre la clase antes de seguir.';
+  else msg='Repasá la guía completa y volvé a intentarlo, se entiende rápido.';
+  m.textContent = msg;
+  resultEl.classList.add('show');
+  resultEl.scrollIntoView({behavior:'smooth'});
+}
+
+function construir(){
+  quizEl.innerHTML='';
+  aciertos=0;respondidas=0;
+  resultEl.classList.remove('show');
+  actualizarBarra();
+
+  PREGUNTAS.forEach((p,i)=>{
+    const card=document.createElement('div');
+    card.className='q';
+
+    const opciones=shuffle([{texto:p.correcta,ok:true},...p.opciones.map(o=>({texto:o,ok:false}))]);
+    const letras=['A','B','C','D'];
+
+    card.innerHTML='<div class="num">'+(i+1)+'</div><h3>'+p.q+'</h3>';
+    const cont=document.createElement('div');cont.className='opts';
+
+    const fb=document.createElement('div');fb.className='feedback';
+
+    opciones.forEach((op,idx)=>{
+      const btn=document.createElement('button');
+      btn.className='opt';
+      btn.innerHTML='<span class="mark">'+letras[idx]+'</span><span>'+op.texto+'</span>';
+      btn.onclick=()=>{
+        const botones=[...cont.querySelectorAll('.opt')];
+        botones.forEach(b=>b.disabled=true);
+        respondidas++;
+        if(op.ok){
+          btn.classList.add('correct');
+          fb.className='feedback show good';
+          fb.innerHTML='✔ <b>Correcto.</b> '+p.correcta;
+          aciertos++;
+        }else{
+          btn.classList.add('wrong');
+          fb.className='feedback show bad';
+          fb.innerHTML='✘ <b>Incorrecto.</b> Respuesta correcta: '+p.correcta;
+          const correctoBtn=botones[opciones.findIndex(o=>o.ok)];
+          correctoBtn.classList.add('correct');
+        }
+        botones.forEach(b=>{if(!b.classList.contains('correct')&&!b.classList.contains('wrong'))b.classList.add('dim');});
+        actualizarBarra();
+        if(respondidas===TOTAL) mostrarResultado();
+      };
+      cont.appendChild(btn);
+    });
+
+    card.appendChild(cont);
+    card.appendChild(fb);
+    quizEl.appendChild(card);
+  });
+}
+
+document.getElementById('restart').onclick=()=>{construir();window.scrollTo({top:0,behavior:'smooth'});};
+construir();
+</script>
+</body>
+</html>

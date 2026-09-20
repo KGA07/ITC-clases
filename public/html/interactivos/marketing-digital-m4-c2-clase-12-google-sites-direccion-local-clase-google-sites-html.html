@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Ecosistema Google Sites - GKempe</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { 
+                        gBlue: '#4285F4',
+                        gRed: '#EA4335',
+                        gYellow: '#FBBC05',
+                        gGreen: '#34A853',
+                        darkBg: '#0f172a',
+                        panel: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Tabs */
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .tab-btn { transition: all 0.3s ease; }
+        .tab-btn.active { color: #4285F4; border-bottom: 2px solid #4285F4; background: rgba(66, 133, 244, 0.1); }
+
+        /* Checklist */
+        .check-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .check-item:hover { background: rgba(255,255,255,0.05); }
+        .check-item.completed .box { background-color: #34A853; border-color: #34A853; }
+        .check-item.completed .text { text-decoration: line-through; color: #64748b; }
+        
+        .progress-bar-container { width: 100%; height: 16px; background: #334155; border-radius: 8px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #4285F4, #34A853); transition: width 0.5s ease; }
+
+        /* Google Style Cards */
+        .g-card-blue { border-top: 4px solid #4285F4; }
+        .g-card-red { border-top: 4px solid #EA4335; }
+        .g-card-yellow { border-top: 4px solid #FBBC05; }
+        .g-card-green { border-top: 4px solid #34A853; }
+    </style>
+</head>
+<body class="antialiased selection:bg-gBlue selection:text-white">
+
+    <!-- Header -->
+    <header class="bg-darkBg/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🌐</span>
+                    <span class="font-extrabold text-xl tracking-tight text-white">GKempe <span class="text-gBlue">Ecosistema Local</span></span>
+                </div>
+                
+                <nav class="flex gap-2 mt-4 md:mt-0 bg-slate-900 p-1 rounded-xl border border-slate-800">
+                    <button onclick="switchTab('guia')" id="btn-guia" class="tab-btn active px-6 py-2 rounded-lg text-sm font-bold text-gray-400 hover:text-white">
+                        1. Guía: Google Sites
+                    </button>
+                    <button onclick="switchTab('lab')" id="btn-lab" class="tab-btn px-6 py-2 rounded-lg text-sm font-bold text-gray-400 hover:text-white">
+                        2. Laboratorio Práctico
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- ==========================================
+             PESTAÑA 1: GUÍA PASO A PASO
+             ========================================== -->
+        <div id="tab-guia" class="tab-content active space-y-12">
+            
+            <section class="text-center space-y-6">
+                <div class="inline-flex items-center bg-blue-900/30 text-gBlue px-4 py-2 rounded-full text-xs font-mono border border-blue-800">
+                    > MÓDULO VISIBILIDAD LOCAL
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Crea tu Sucursal Digital en <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-gBlue to-cyan-400">Google Sites</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Aprende a estructurar una página web gratuita, rápida y optimizada para posicionar negocios locales en el buscador más grande del mundo.
+                </p>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <!-- Paso 1 -->
+                <div class="glass-panel p-8 rounded-2xl g-card-blue hover:-translate-y-1 transition-transform">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+                        <span class="bg-gBlue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                        Alta y Plantilla
+                    </h3>
+                    <p class="text-sm text-gray-300 mb-4">El primer paso es acceder al constructor de Google.</p>
+                    <ul class="space-y-2 text-sm text-gray-400 list-decimal list-inside">
+                        <li>Ingresa a <strong class="text-white">sites.google.com</strong> con tu cuenta de Gmail.</li>
+                        <li>Haz clic en el botón <strong>"+" (En blanco)</strong> para empezar desde cero o elige la plantilla "Restaurante/Salón".</li>
+                        <li>Nombra tu sitio en la esquina superior izquierda (Ej: <em>"Cafetería Central"</em>).</li>
+                    </ul>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="glass-panel p-8 rounded-2xl g-card-red hover:-translate-y-1 transition-transform">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+                        <span class="bg-gRed text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                        Cabecera (Hero)
+                    </h3>
+                    <p class="text-sm text-gray-300 mb-4">Los primeros 3 segundos de visita son vitales.</p>
+                    <ul class="space-y-2 text-sm text-gray-400 list-decimal list-inside">
+                        <li>Sube una <strong>Imagen de Fondo</strong> nítida que muestre la fachada o el interior de tu local.</li>
+                        <li>Escribe un <strong>Título Claro</strong> con tu propuesta de valor (Ej: <em>"El mejor café de especialidad"</em>).</li>
+                        <li>Asegúrate de que el texto sea legible usando el ancla de legibilidad (icono de estrellitas).</li>
+                    </ul>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="glass-panel p-8 rounded-2xl g-card-yellow hover:-translate-y-1 transition-transform">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+                        <span class="bg-gYellow text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                        Imágenes y Servicios
+                    </h3>
+                    <p class="text-sm text-gray-300 mb-4">Construye la confianza visual del cliente.</p>
+                    <ul class="space-y-2 text-sm text-gray-400 list-decimal list-inside">
+                        <li>En el menú derecho, ve a la pestaña <strong>Insertar > Bloques de contenido</strong>.</li>
+                        <li>Selecciona el bloque de "3 imágenes con texto".</li>
+                        <li>Añade <strong>imágenes de referencia del local</strong> (productos, equipo trabajando, el salón).</li>
+                        <li>Añade descripciones usando palabras clave locales.</li>
+                    </ul>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="glass-panel p-8 rounded-2xl g-card-green hover:-translate-y-1 transition-transform">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+                        <span class="bg-gGreen text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                        Geolocalización (Mapa)
+                    </h3>
+                    <p class="text-sm text-gray-300 mb-4">El SEO Local depende de la dirección exacta (NAP).</p>
+                    <ul class="space-y-2 text-sm text-gray-400 list-decimal list-inside">
+                        <li>Ve a <strong>Insertar > Mapa</strong> en la barra derecha.</li>
+                        <li>Escribe la dirección exacta de tu negocio y haz clic en <strong>Seleccionar</strong>.</li>
+                        <li>Inserta un bloque de texto al lado con tus <strong>Horarios de Atención</strong> y <strong>Teléfono de WhatsApp</strong>.</li>
+                        <li>Haz clic en el botón azul superior <strong>"Publicar"</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             PESTAÑA 2: LABORATORIO PRÁCTICO
+             ========================================== -->
+        <div id="tab-lab" class="tab-content hidden space-y-10">
+            
+            <div class="text-center space-y-4">
+                <h2 class="text-4xl font-extrabold text-white">Laboratorio: <span class="text-gBlue">Crea tu Sitio</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Llegó el momento de la práctica. Sigue esta lista de verificación interactiva para construir y publicar la web de tu negocio en Google Sites.</p>
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 rounded-[2rem] max-w-3xl mx-auto shadow-2xl border border-slate-700 relative overflow-hidden">
+                
+                <div class="mb-8">
+                    <div class="flex justify-between items-end mb-2">
+                        <span class="text-sm font-bold text-gray-300 uppercase tracking-widest">Progreso del Sitio</span>
+                        <span id="progress-text" class="font-mono font-bold text-xl text-gBlue">0%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Checklist Interactiva -->
+                <div class="space-y-4" id="checklist">
+                    
+                    <div class="check-item flex items-center gap-4 p-4 rounded-xl border border-slate-700 bg-slate-800/50" onclick="toggleCheck(this)">
+                        <div class="box w-6 h-6 rounded border-2 border-slate-500 flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="text text-sm md:text-base font-semibold text-gray-200">
+                            1. He creado un sitio en blanco y le he puesto el nombre de mi negocio.
+                        </div>
+                    </div>
+
+                    <div class="check-item flex items-center gap-4 p-4 rounded-xl border border-slate-700 bg-slate-800/50" onclick="toggleCheck(this)">
+                        <div class="box w-6 h-6 rounded border-2 border-slate-500 flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="text text-sm md:text-base font-semibold text-gray-200">
+                            2. Subí una imagen de cabecera atractiva y escribí un Título Principal.
+                        </div>
+                    </div>
+
+                    <div class="check-item flex items-center gap-4 p-4 rounded-xl border border-slate-700 bg-slate-800/50" onclick="toggleCheck(this)">
+                        <div class="box w-6 h-6 rounded border-2 border-slate-500 flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="text text-sm md:text-base font-semibold text-gray-200">
+                            3. Inserté al menos TRES (3) imágenes de referencia del local o de mis productos.
+                        </div>
+                    </div>
+
+                    <div class="check-item flex items-center gap-4 p-4 rounded-xl border border-slate-700 bg-slate-800/50" onclick="toggleCheck(this)">
+                        <div class="box w-6 h-6 rounded border-2 border-slate-500 flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="text text-sm md:text-base font-semibold text-gray-200">
+                            4. Integré el mapa de Google Maps con la ubicación exacta.
+                        </div>
+                    </div>
+
+                    <div class="check-item flex items-center gap-4 p-4 rounded-xl border border-slate-700 bg-slate-800/50" onclick="toggleCheck(this)">
+                        <div class="box w-6 h-6 rounded border-2 border-slate-500 flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="text text-sm md:text-base font-semibold text-gray-200">
+                            5. Agregué los horarios de atención y un botón de "Contactar por WhatsApp".
+                        </div>
+                    </div>
+
+                    <div class="check-item flex items-center gap-4 p-4 rounded-xl border border-slate-700 bg-slate-800/50" onclick="toggleCheck(this)">
+                        <div class="box w-6 h-6 rounded border-2 border-slate-500 flex items-center justify-center transition-colors">
+                            <svg class="w-4 h-4 text-white opacity-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div class="text text-sm md:text-base font-semibold text-gray-200">
+                            6. Hice clic en PUBLICAR y copié el enlace final (URL) de mi sitio.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cajón de Entrega (Aparece al 100%) -->
+                <div id="submit-box" class="hidden mt-10 p-6 bg-slate-900 border border-gGreen rounded-xl text-center space-y-4">
+                    <h4 class="text-xl font-bold text-white">🎉 ¡Excelente trabajo!</h4>
+                    <p class="text-sm text-gray-400">Pega el enlace de tu sitio web de Google Sites aquí para la revisión del profesor.</p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <input type="url" id="site-url" placeholder="https://sites.google.com/view/tu-negocio" class="w-full sm:w-2/3 px-4 py-3 rounded-lg bg-slate-800 border border-slate-600 text-white focus:outline-none focus:border-gBlue">
+                        <button onclick="enviarActividad()" class="bg-gBlue hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            Enviar Web
+                        </button>
+                    </div>
+                    <p id="success-msg" class="hidden text-gGreen text-sm font-bold mt-2">¡Sitio web registrado correctamente!</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-8 text-center text-xs text-gray-600 font-mono mt-12 border-t border-slate-800">
+        <p>GKempe UDEMM/ITC ARG © 2026 | Estrategia Digital y Ecosistema Google</p>
+    </footer>
+
+    <script>
+        // Lógica de Pestañas
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+            document.getElementById(`btn-${tabId}`).classList.add('active');
+        }
+
+        // Lógica del Checklist y Barra de Progreso
+        let totalItems = 6;
+        
+        function toggleCheck(element) {
+            // Toggle clases
+            element.classList.toggle('completed');
+            
+            // Toggle SVG opacity
+            const svg = element.querySelector('svg');
+            if(element.classList.contains('completed')) {
+                svg.style.opacity = '1';
+            } else {
+                svg.style.opacity = '0';
+            }
+
+            actualizarProgreso();
+        }
+
+        function actualizarProgreso() {
+            const completedItems = document.querySelectorAll('.check-item.completed').length;
+            const percentage = Math.round((completedItems / totalItems) * 100);
+            
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const submitBox = document.getElementById('submit-box');
+
+            progressBar.style.width = `${percentage}%`;
+            progressText.innerText = `${percentage}%`;
+
+            if(percentage === 100) {
+                progressText.classList.replace('text-gBlue', 'text-gGreen');
+                submitBox.classList.remove('hidden');
+                submitBox.classList.add('animate-pulse');
+                setTimeout(() => submitBox.classList.remove('animate-pulse'), 1000);
+            } else {
+                progressText.classList.replace('text-gGreen', 'text-gBlue');
+                submitBox.classList.add('hidden');
+            }
+        }
+
+        function enviarActividad() {
+            const input = document.getElementById('site-url');
+            if(input.value.includes('sites.google.com')) {
+                document.getElementById('success-msg').classList.remove('hidden');
+                input.disabled = true;
+                input.classList.add('opacity-50');
+            } else {
+                alert("Por favor, ingresa una URL válida de Google Sites (debe contener 'sites.google.com').");
+            }
+        }
+    </script>
+</body>
+</html>

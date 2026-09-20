@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel Avanzado: Servidores y Wi-Fi</title>
+    <style>
+        :root {
+            --primary: #9d4edd; /* Purple neon for advanced */
+            --secondary: #ff006e;
+            --bg: #10002b;
+            --card-bg: #240046;
+            --text: #e0aaff;
+            --text-light: #f1f1f1;
+            --accent: #3a0ca3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #240046 0%, #7b2cbf 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .step-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        h2, h3 { color: var(--primary); }
+        h3 { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+
+        code {
+            background-color: #000;
+            color: #0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .warning-box {
+            background-color: rgba(255, 0, 110, 0.1);
+            border: 1px solid var(--secondary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .challenge-box {
+            background: linear-gradient(45deg, #3c096c, #5a189a);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+            border: 2px solid #fff;
+        }
+
+        ul { list-style-type: none; padding: 0; }
+        ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        ul li::before { content: "➤"; color: var(--secondary); position: absolute; left: 0; }
+
+        footer { text-align: center; padding: 40px; color: #888; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Módulo Avanzado <span class="badge">FAST TRACK</span></h1>
+        <p>Implementación de Servidor Web y Redes Inalámbricas</p>
+    </header>
+
+    <div class="container">
+        
+        <p style="text-align: center; font-size: 1.2rem;">
+            ¿Terminaste rápido? Excelente. Ahora vamos a simular algo más real: <br>
+            <strong>Una red Wi-Fi que accede a una página web local.</strong>
+        </p>
+
+        <div class="step-card">
+            <h3>1. El Cerebro: Montar el Servidor</h3>
+            <p>Necesitamos una computadora potente que guarde la página web.</p>
+            <ul>
+                <li>Ve a <strong>End Devices</strong> y selecciona el icono <strong>Server</strong> (parece una torre de PC).</li>
+                <li>Conéctalo al Switch usando cable directo (Copper Straight-Through).</li>
+                <li><strong>Configuración IP:</strong> Haz clic en el Servidor > Desktop > IP Configuration.</li>
+                <li>Usa la IP: <code>192.168.1.200</code> (Es común usar IPs altas para servidores).</li>
+            </ul>
+        </div>
+
+        <div class="step-card">
+            <h3>2. Configurar el Servicio Web (HTTP)</h3>
+            <p>Vamos a crear la página web que verán los usuarios.</p>
+            <ul>
+                <li>En la ventana del Servidor, ve a la pestaña <strong>Services</strong>.</li>
+                <li>En la columna izquierda, elige <strong>HTTP</strong>.</li>
+                <li>Asegúrate de que donde dice "HTTP" y "HTTPS" esté marcado <strong>On</strong>.</li>
+                <li>En la lista de archivos, busca <strong>index.html</strong> y haz clic en <strong>(edit)</strong>.</li>
+                <li>Borra lo que hay y escribe algo simple: <code>&lt;h1&gt;Hola Mundo, Soy ****&lt;/h1&gt;</code>.</li>
+                <li>Dale a <strong>Save</strong> y confirma.</li>
+            </ul>
+            <p><em>¡Ya tienes un servidor web activo!</em></p>
+        </div>
+
+        <div class="step-card">
+            <h3>3. Cortar los cables: Tecnología Wi-Fi</h3>
+            <p>Vamos a conectar una Notebook, pero las Notebooks en Packet Tracer vienen por defecto solo con tarjeta de cable. Hay que "operarlas".</p>
+            
+            <div class="warning-box">
+                <strong>⚠️ ATENCIÓN QUIRÚRGICA:</strong>
+                <ol>
+                    <li>Agrega una <strong>Notebooks</strong> al área de trabajo.</li>
+                    <li>Haz clic en ella (Pestaña <strong>Physical</strong>).</li>
+                    <li><strong>APAGA</strong> la Notebooks (botón pequeño al lado del conector amarillo). Si no la apagas, no te dejará cambiar piezas.</li>
+                    <li>Arrastra el módulo del puerto Ethernet (el hueco lateral) hacia la lista de módulos izquierda para quitarlo.</li>
+                    <li>Busca el módulo <strong>WPC300N</strong> (antena Wi-Fi) y arrástralo al hueco vacío.</li>
+                    <li><strong>ENCIENDE</strong> la laptop de nuevo.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <h3>4. Conexión Inalámbrica</h3>
+            <p>Para que funcione el Wi-Fi, necesitamos un Router Inalámbrico.</p>
+            <ul>
+                <li>Ve a <strong>Wireless Devices</strong> y elige el <strong>WRT300N</strong>.</li>
+                <li>Conecta con cable el puerto <strong>Ethernet 1</strong> del Router al <strong>Switch</strong>.</li>
+                <li>Espera unos segundos. La Notebook debería detectar el Router automáticamente y mostrar ondas de señal.</li>
+                <li>Si no conecta: Ve a la Notebooks > Desktop > PC Wireless > Connect > Refresh.</li>
+            </ul>
+        </div>
+
+        <div class="step-card">
+            <h3>5. La Prueba de Fuego</h3>
+            <p>Vamos a navegar por internet dentro de tu simulación.</p>
+            <ul>
+                <li>Abre la <strong>Notebook</strong>.</li>
+                <li>Ve a la pestaña <strong>Desktop</strong> y busca el icono <strong>Web Browser</strong>.</li>
+                <li>En la barra de direcciones (URL), escribe la IP de tu servidor: <code>192.168.1.200</code></li>
+                <li>Presiona <strong>Go</strong>.</li>
+            </ul>
+            <p>Si ves tu mensaje ("Hola Mundo"), ¡felicitaciones! Has creado una Intranet inalámbrica.</p>
+        </div>
+
+        <div class="challenge-box">
+            <h2>🏆 DESAFÍO HACKER</h2>
+            <p>Edita nuevamente el archivo <code>index.html</code> en el servidor.</p>
+            <p>Usa código HTML real para poner tu nombre en color rojo y centrado.</p>
+            <p><code>&lt;center&gt;&lt;font color="red"&gt; SITIO CREADO POR [TU NOMBRE] &lt;/font&gt;&lt;/center&gt;</code></p>
+            <p><strong>Muéstrale al profesor la página cargando desde la Notebook inalámbrica.</strong></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Advanced Networking Module, Actividad heavy por Facu ♥ | Diagnóstico y Mantenimiento</p>
+    </footer>
+
+</body>
+</html>

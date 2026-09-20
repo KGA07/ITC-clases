@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Integradora - Asistente Administrativo con IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="LogoITC.svg" alt="Logo ITC">
+            </div>
+            <h1>ACTIVIDAD INTEGRADORA</h1>
+            <div class="subtitle">Asistente Administrativo con Inteligencia Artificial</div>
+            <div class="badge">IA ITC 2026</div>
+        </header>
+
+        <div class="info-bar">
+            <div class="info-item">
+                <div class="label">Duración</div>
+                <div class="value">2 - 3 horas</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Modalidad</div>
+                <div class="value">Individual</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Tecnologías</div>
+                <div class="value">Sheets + Script + AI Studio + n8n</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Entrega</div>
+                <div class="value">Automatizada vía n8n</div>
+            </div>
+        </div>
+
+        <!-- FASE 1 -->
+        <div class="phase phase-1">
+            <div class="phase-header">
+                <div class="phase-number">1</div>
+                <div class="phase-title">
+                    <h2>REDACTAR COMUNICACIÓN OFICIAL</h2>
+                    <div class="time">⏱ 25 minutos</div>
+                </div>
+            </div>
+            <div class="phase-content">
+                <p>Redacta un <strong>Memorándum formal</strong> dirigido a la gerencia (tu profesor) para comunicar la implementación de un nuevo sistema de control y notificaciones para el departamento.</p>
+
+                <h3>Contenido Obligatorio del Memorándum</h3>
+                <ol>
+                    <li><strong>Problema identificado:</strong> Justifica brevemente (ej. pérdida de tiempo en seguimiento manual de vencimientos, falta de notificaciones automáticas, riesgo de olvidar fechas críticas).</li>
+                    <li><strong>Solución tecnológica propuesta:</strong> Describe la app móvil + automatización con Google Sheets, Apps Script y n8n.</li>
+                    <li><strong>Beneficios esperados:</strong> Ahorro de tiempo, control en tiempo real, reducción de errores humanos.</li>
+                    <li><strong>Solicitud:</strong> Solicitar aprobación para el despliegue del sistema.</li>
+                </ol>
+
+                <h3>Estructura del Memorándum</h3>
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <h4>📋 Ver plantilla del Memorándum</h4>
+                        <span class="collapsible-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="code-block">
+                            <code><pre>MEMORÁNDUM
+
+Para:      [Nombre del Profesor - Gerencia]
+De:        [Tu Nombre Completo]
+Fecha:     [Fecha actual]
+Asunto:    Implementación de Sistema de Control y Notificaciones
+
+1. PROBLEMA IDENTIFICADO
+   [Describe el problema administrativo actual]
+
+2. SOLUCIÓN PROPUESTA
+   [Describe la app + automatización]
+
+3. BENEFICIOS ESPERADOS
+   • [Beneficio 1]
+   • [Beneficio 2]
+   • [Beneficio 3]
+
+4. SOLICITUD
+   [Solicitar aprobación para despliegue]
+
+Atentamente,
+[Tu Nombre]
+Asistente Administrativo con IA - ITC 2026</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="deliverable">Entregable: Texto del memorandum (se incluirá en el correo)</span>
+            </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="phase phase-2">
+            <div class="phase-header">
+                <div class="phase-number">2</div>
+                <div class="phase-title">
+                    <h2>BASE DE DATOS + GOOGLE APPS SCRIPT</h2>
+                    <div class="time">⏱ 40 minutos</div>
+                </div>
+            </div>
+            <div class="phase-content">
+                <p>Crea tu propia base de datos backend usando <strong>Google Sheets</strong> y <strong>Google Apps Script</strong>. Deberás desarrollar un sistema completo con código <code>.gs</code> y <code>.html</code> dentro del editor de Apps Script.</p>
+
+                <h3>Paso 1: Crear la hoja de cálculo</h3>
+                <ol>
+                    <li>Ve a <code>sheets.google.com</code> y crea una hoja nueva</li>
+                    <li>Nómbrala: <strong>"BD_[TuNombre]_[Tema]"</strong> (ej: BD_JuanPerez_ControlDocumentos)</li>
+                    <li>Diseña las columnas según el tema que elegiste para tu app</li>
+                </ol>
+
+                <h3>Paso 2: Abrir el editor de Apps Script</h3>
+                <ol>
+                    <li>En tu hoja de cálculo, ve a <code>Extensiones → Apps Script</code></li>
+                    <li>Se abrirá el editor con un archivo <code>Code.gs</code> vacío</li>
+                    <li>Aquí escribirás tu lógica de servidor (back-end)</li>
+                </ol>
+
+                <h3>Paso 3: Crear el archivo .gs (Lógica del servidor)</h3>
+                <p>Este archivo contiene las funciones que se ejecutan en el servidor de Google. Copia la siguiente estructura como punto de partida y modifícala según tu necesidad:</p>
+
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <h4>📄 Code.gs — Ver código completo</h4>
+                        <span class="collapsible-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="code-block">
+                            <code><pre>// ===== CONFIGURACIÓN =====
+var HOJA_NAME = "Datos";
+var COL_NOMBRE = 1;
+var COL_EMAIL = 2;
+var COL_FECHA_INGRESO = 3;
+var COL_FECHA_VENCIMIENTO = 4;
+var COL_ESTADO = 5;
+var COL_ENVIADO = 6;
+
+// ===== FUNCIÓN PRINCIPAL: Verificar vencimientos =====
+function verificarVencimientos() {
+  var hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_NAME);
+  var datos = hoja.getDataRange().getValues();
+
+  for (var i = 1; i &lt; datos.length; i++) {
+    var fila = i + 1;
+    var fechaVenc = new Date(datos[i][COL_FECHA_VENCIMIENTO - 1]);
+    var estado = calcularEstado(fechaVenc);
+    var yaEnviado = datos[i][COL_ENVIADO - 1];
+
+    hoja.getRange(fila, COL_ESTADO).setValue(estado);
+
+    if (estado === "VENCIDO" && yaEnviado !== "Sí") {
+      var nombre = datos[i][COL_NOMBRE - 1];
+      var email = datos[i][COL_EMAIL - 1];
+      enviarNotificacion(nombre, email, fechaVenc);
+      hoja.getRange(fila, COL_ENVIADO).setValue("Sí");
+    }
+  }
+}
+
+// ===== CALCULAR ESTADO SEGÚN FECHA =====
+function calcularEstado(fechaVenc) {
+  var hoy = new Date();
+  var diffDias = Math.floor((fechaVenc - hoy) / (1000 * 60 * 60 * 24));
+
+  if (diffDias &lt; 0) return "VENCIDO";
+  if (diffDias &lt;= 7) return "POR VENCER";
+  return "VIGENTE";
+}
+
+// ===== ENVIAR NOTIFICACIÓN POR EMAIL =====
+function enviarNotificacion(nombre, email, fechaVenc) {
+  var asunto = "ALUMNO IA ITC 2026 - Documento Vencido";
+  var mensaje = "Estimado/a " + nombre + ",\n\n" +
+                "Su registro ha alcanzado estado VENCIDO.\n" +
+                "Fecha de vencimiento: " + fechaVenc.toLocaleDateString() + "\n\n" +
+                "Por favor regularice su situación.\n\n" +
+                "Atentamente,\nSistema Automatizado ITC 2026";
+
+  try {
+    MailApp.sendEmail(email, asunto, mensaje);
+    Logger.log("Notificación enviada a: " + email);
+  } catch (e) {
+    Logger.log("Error al enviar a " + email + ": " + e.message);
+  }
+}
+
+// ===== FUNCIONES PARA LA APP (API) =====
+function doGet(e) {
+  var accion = e.parameter.accion;
+
+  if (accion === "obtener") {
+    return ContentService.createTextOutput(
+      JSON.stringify(obtenerDatos())
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+
+  if (accion === "agregar") {
+    var resultado = agregarDato(
+      e.parameter.nombre,
+      e.parameter.email,
+      e.parameter.fechaIngreso,
+      e.parameter.fechaVencimiento
+    );
+    return ContentService.createTextOutput(
+      JSON.stringify(resultado)
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function obtenerDatos() {
+  var hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_NAME);
+  var datos = hoja.getDataRange().getValues();
+  var resultado = [];
+
+  for (var i = 1; i &lt; datos.length; i++) {
+    resultado.push({
+      nombre: datos[i][COL_NOMBRE - 1],
+      email: datos[i][COL_EMAIL - 1],
+      fechaIngreso: datos[i][COL_FECHA_INGRESO - 1],
+      fechaVencimiento: datos[i][COL_FECHA_VENCIMIENTO - 1],
+      estado: datos[i][COL_ESTADO - 1]
+    });
+  }
+
+  return resultado;
+}
+
+function agregarDato(nombre, email, fechaIngreso, fechaVencimiento) {
+  var hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_NAME);
+  var estado = calcularEstado(new Date(fechaVencimiento));
+
+  hoja.appendRow([nombre, email, fechaIngreso, fechaVencimiento, estado, "No"]);
+
+  return { "status": "ok", "mensaje": "Dato registrado exitosamente" };
+}
+
+// ===== CREAR MENÚ PERSONALIZADO =====
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('🤖 Sistema ITC')
+    .addItem('Verificar Vencimientos', 'verificarVencimientos')
+    .addItem('Actualizar Estados', 'actualizarEstados')
+    .addToUi();
+}
+
+function actualizarEstados() {
+  var hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA_NAME);
+  var datos = hoja.getDataRange().getValues();
+
+  for (var i = 1; i &lt; datos.length; i++) {
+    var fila = i + 1;
+    var fechaVenc = new Date(datos[i][COL_FECHA_VENCIMIENTO - 1]);
+    var estado = calcularEstado(fechaVenc);
+    hoja.getRange(fila, COL_ESTADO).setValue(estado);
+  }
+
+  SpreadsheetApp.getUi().alert('Estados actualizados correctamente');
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Paso 4: Crear el archivo .html (Interfaz web)</h3>
+                <p>En el editor de Apps Script, haz clic en <code>+</code> junto a "Archivos" y selecciona <strong>"HTML"</strong>. Nómbralo <code>index</code>. Este será tu front-end web:</p>
+
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <h4>🌐 index.html — Ver código completo</h4>
+                        <span class="collapsible-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="code-block">
+                            <code><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target="_top"&gt;
+  &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"&gt;
+  &lt;style&gt;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63);
+      color: white;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container { max-width: 600px; margin: 0 auto; }
+    h1 { text-align: center; margin-bottom: 20px; color: #3A7EFF; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; color: #aaa; font-size: 0.9em; }
+    input, select {
+      width: 100%; padding: 12px; border: 1px solid #333;
+      border-radius: 8px; background: rgba(255,255,255,0.1);
+      color: white; font-size: 1em;
+    }
+    button {
+      width: 100%; padding: 14px; border: none; border-radius: 8px;
+      background: linear-gradient(135deg, #3A7EFF, #8FB5FF);
+      color: white; font-size: 1em; font-weight: 600;
+      cursor: pointer; margin-top: 10px;
+    }
+    button:hover { opacity: 0.9; }
+    #resultado {
+      margin-top: 20px; padding: 15px;
+      background: rgba(0,206,158,0.2); border-radius: 8px;
+      display: none;
+    }
+    .datos-lista { margin-top: 20px; }
+    .dato-item {
+      background: rgba(255,255,255,0.1); padding: 12px;
+      border-radius: 8px; margin-bottom: 10px;
+      border-left: 4px solid #3A7EFF;
+    }
+    .estado-VENCIDO { border-left-color: #ff6b6b; }
+    .estado-POR-VENCER { border-left-color: #fdcb6e; }
+    .estado-VIGENTE { border-left-color: #00ce9e; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;📋 Sistema de Control&lt;/h1&gt;
+
+    &lt;div class="form-group"&gt;
+      &lt;label&gt;Nombre&lt;/label&gt;
+      &lt;input type="text" id="nombre" placeholder="Nombre completo"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+      &lt;label&gt;Email&lt;/label&gt;
+      &lt;input type="email" id="email" placeholder="correo@ejemplo.com"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+      &lt;label&gt;Fecha de Ingreso&lt;/label&gt;
+      &lt;input type="date" id="fechaIngreso"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+      &lt;label&gt;Fecha de Vencimiento&lt;/label&gt;
+      &lt;input type="date" id="fechaVencimiento"&gt;
+    &lt;/div&gt;
+
+    &lt;button onclick="agregarDato()"&gt;Guardar Registro&lt;/button&gt;
+    &lt;button onclick="cargarDatos()" style="background: linear-gradient(135deg, #00ce9e, #00b894);"&gt;Cargar Datos&lt;/button&gt;
+
+    &lt;div id="resultado"&gt;&lt;/div&gt;
+    &lt;div id="lista" class="datos-lista"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    function agregarDato() {
+      var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value;
+      var fechaIngreso = document.getElementById('fechaIngreso').value;
+      var fechaVencimiento = document.getElementById('fechaVencimiento').value;
+
+      google.script.run
+        .withSuccessHandler(function(resp) {
+          document.getElementById('resultado').style.display = 'block';
+          document.getElementById('resultado').textContent = '✅ ' + resp.mensaje;
+          cargarDatos();
+        })
+        .agregarDato(nombre, email, fechaIngreso, fechaVencimiento);
+    }
+
+    function cargarDatos() {
+      google.script.run
+        .withSuccessHandler(function(datos) {
+          var html = '';
+          datos.forEach(function(d) {
+            var clase = 'estado-' + d.estado.replace(/\s/g, '-');
+            html += '&lt;div class="dato-item ' + clase + '"&gt;';
+            html += '&lt;strong&gt;' + d.nombre + '&lt;/strong&gt;&lt;br&gt;';
+            html += '📧 ' + d.email + '&lt;br&gt;';
+            html += '📅 Vence: ' + d.fechaVencimiento + '&lt;br&gt;';
+            html += '📌 Estado: &lt;strong&gt;' + d.estado + '&lt;/strong&gt;';
+            html += '&lt;/div&gt;';
+          });
+          document.getElementById('lista').innerHTML = html;
+        })
+        .obtenerDatos();
+    }
+
+    cargarDatos();
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Paso 5: Desplegar como aplicación web</h3>
+                <ol>
+                    <li>En el editor de Apps Script, haz clic en <strong>"Implementar"</strong> → <strong>"Nueva implementación"</strong></li>
+                    <li>Tipo: <strong>Aplicación web</strong></li>
+                    <li>Describe: "Mi sistema de control"</li>
+                    <li>Ejecutar como: <strong>Tú</strong></li>
+                    <li>Quién tiene acceso: <strong>Cualquier persona</strong></li>
+                    <li>Copia la URL generada (la usarás en tu app Android)</li>
+                </ol>
+
+                <h3>Paso 6: Probar el sistema</h3>
+                <ol>
+                    <li>Ejecuta la función <code>verificarVencimientos</code> desde el editor</li>
+                    <li>Agrega 5 registros de prueba en tu hoja</li>
+                    <li>Verifica que el menú "🤖 Sistema ITC" aparece en la hoja</li>
+                    <li>Abre la URL de la app web y prueba agregar datos</li>
+                </ol>
+
+                <span class="deliverable">Entregable: Google Sheet + Apps Script (.gs + .html) desplegado como app web</span>
+            </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="phase phase-3">
+            <div class="phase-header">
+                <div class="phase-number">3</div>
+                <div class="phase-title">
+                    <h2>DISEÑO DE APP ANDROID CON AI STUDIO</h2>
+                    <div class="time">⏱ 40 minutos</div>
+                </div>
+            </div>
+            <div class="phase-content">
+                <p>Usa <strong>Google AI Studio</strong> para crear la interfaz móvil de tu aplicación Android. Esta herramienta de Google te permite generar apps funcionales con ayuda de inteligencia artificial.</p>
+
+                <h3>Paso 1: Acceder a AI Studio</h3>
+                <ol>
+                    <li>Ve a <code>https://aistudio.google.com/apps</code></li>
+                    <li>Inicia sesión con tu cuenta de Google</li>
+                    <li>Haz clic en <strong>"Create new app"</strong> o <strong>"Crear nueva app"</strong></li>
+                </ol>
+
+                <h3>Paso 2: Describir tu app al asistente de IA</h3>
+                <p>En el campo de chat/descripción, escribe algo como:</p>
+
+                <h3>Paso 3: Personalizar y probar</h3>
+                <ol>
+                    <li>AI Studio generará un prototipo de tu app</li>
+                    <li>Modifica el diseño según tus necesidades</li>
+                    <li>Prueba la funcionalidad en el emulador integrado</li>
+                    <li>Conecta tu URL de Apps Script para enviar datos al Sheet</li>
+                </ol>
+
+                <h3>Paso 4: Exportar la app</h3>
+                <ol>
+                    <li>Haz clic en <strong>"Export"</strong> o <strong>"Exportar"</strong></li>
+                    <li>Selecciona <strong>"Download APK"</strong> o <strong>"Android Project"</strong></li>
+                    <li>Guarda el archivo APK generado</li>
+                </ol>
+
+                <h3>Componentes que debe tener tu app</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pantalla</th>
+                                <th>Función</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Formulario de Ingreso</strong></td>
+                                <td>Campos para nombre, email, fecha de vencimiento + botón Guardar</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lista de Registros</strong></td>
+                                <td>Muestra todos los registros con código de color según estado</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conexión a Datos</strong></td>
+                                <td>Envía y recibe datos desde tu Google Sheet vía Apps Script, con entrega automática vía n8n</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <span class="deliverable">Entregable: App Android funcionando (APK o prototype en AI Studio)</span>
+            </div>
+        </div>
+
+        <!-- FASE 4 -->
+        <div class="phase phase-4">
+            <div class="phase-header">
+                <div class="phase-number">4</div>
+                <div class="phase-title">
+                    <h2>POWERPOINT EJECUTIVO</h2>
+                    <div class="time">⏱ 25 minutos</div>
+                </div>
+            </div>
+            <div class="phase-content">
+                <p>Crea una presentación ejecutiva donde presentes <strong>tu aplicación y tu proyecto final completo</strong>. Esta presentación será enviada automáticamente al profesor a través de n8n.</p>
+
+                <h3>Estructura de la Presentación (mínimo 10 diapositivas)</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Diapositiva</th>
+                                <th>Contenido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>Portada</strong></td>
+                                <td>Nombre completo, Materia, Fecha, Logo ITC, "IA ITC 2026"</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>Problema</strong></td>
+                                <td>Descripción del problema administrativo que resuelve tu app</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>Solución Propuesta</strong></td>
+                                <td>Descripción general de tu sistema automatizado</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>Arquitectura del Sistema</strong></td>
+                                <td>Diagrama completo: App → Apps Script → Sheets → n8n → Email</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>Base de Datos (Sheets)</strong></td>
+                                <td>Captura de tu hoja de cálculo + explicación de columnas</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>Código Apps Script</strong></td>
+                                <td>Capturas del código .gs y .html + explicación de funciones clave</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>App Web Desplegada</strong></td>
+                                <td>Captura de la interfaz web funcionando</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>App Android (AI Studio)</strong></td>
+                                <td>Capturas de la app móvil + proceso de creación con IA</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><strong>Automatización n8n</strong></td>
+                                <td>Captura del workflow de n8n configurado</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><strong>Conclusiones</strong></td>
+                                <td>Beneficios, resultados, aprendizaje y próximos pasos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <span class="deliverable">Entregable: PowerPoint (PPTX) con 10+ diapositivas</span>
+            </div>
+        </div>
+
+        <!-- FASE 5 -->
+        <div class="phase phase-5">
+            <div class="phase-header">
+                <div class="phase-number">5</div>
+                <div class="phase-title">
+                    <h2>AUTOMATIZACIÓN CON N8N + ENVÍO</h2>
+                    <div class="time">⏱ 25 minutos</div>
+                </div>
+            </div>
+            <div class="phase-content">
+                <p><strong>No enviarás el trabajo manualmente.</strong> Configura un flujo en n8n para realizar la entrega automática de todo tu proyecto al profesor.</p>
+
+                <h3>Paso 1: Crear la cuenta en n8n</h3>
+                <ol>
+                    <li>Ve a <code>https://n8n.io</code></li>
+                    <li>Regístrate con tu cuenta de Google</li>
+                    <li>Crea un nuevo workflow</li>
+                </ol>
+
+                <h3>Paso 2: Configurar el Workflow</h3>
+
+                <div class="flow-diagram">
+                    <span class="flow-step">▶ Manual Trigger</span>
+                    <span class="flow-arrow">→</span>
+                    <span class="flow-step">📧 Gmail (Send)</span>
+                </div>
+
+                <h3>Nodo 1: Manual Trigger</h3>
+                <ul>
+                    <li>Busca y agrega el nodo <strong>"Manual Trigger"</strong></li>
+                    <li>No requiere configuración adicional</li>
+                </ul>
+
+                <h3>Nodo 2: Gmail - Envío de Correo</h3>
+                <ul>
+                    <li>Busca y agrega el nodo <strong>"Gmail"</strong></li>
+                    <li><strong>Operation:</strong> Send Email</li>
+                    <li><strong>Credential:</strong> Conecta tu cuenta Gmail (autoriza los permisos)</li>
+                    <li><strong>To:</strong> <code>gustavokempexd@gmail.com</code></li>
+                    <li><strong>Subject:</strong> <code>ALUMNO IA ITC 2026</code></li>
+                    <li><strong>Message:</strong> Escribe el cuerpo del correo (ver abajo)</li>
+                    <li><strong>Attachments:</strong> Sube tu archivo PowerPoint (.pptx)</li>
+                </ul>
+
+                <h3>Cuerpo del Correo (Message)</h3>
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <h4>📧 Ver plantilla del correo</h4>
+                        <span class="collapsible-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="code-block">
+                            <code><pre>Memorándum:
+
+[Pega aquí el texto completo de tu memorandum]
+
+---
+
+Enlace a Google Sheet:
+[_pega aquí el enlace de tu hoja de cálculo con permisos de lectura]
+
+---
+
+Enlace a App Web Desplegada:
+[_pega aquí la URL de tu Apps Script deploy]
+
+---
+
+Presentación PowerPoint: Adjunta a este correo.
+
+---
+
+Flujo automatizado con n8n - ITC 2026</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Paso 3: Probar y Ejecutar</h3>
+                <ol>
+                    <li>Haz clic en <strong>"Test Workflow"</strong> para verificar que funciona</li>
+                    <li>Si el correo se envía correctamente, haz clic en <strong>"Execute Workflow"</strong></li>
+                    <li>Verifica en tu bandeja que el correo llegó con el asunto correcto</li>
+                </ol>
+
+                <div class="success-box">
+                    <strong>Verificación final:</strong> El profesor debe recibir un correo con asunto exacto <strong>"ALUMNO IA ITC 2026"</strong> que contenga: el memorandum, el enlace al Sheet, el enlace a la app web y el PowerPoint adjunto.
+                </div>
+
+                <span class="deliverable">Entregable: Workflow de n8n configurado + correo enviado</span>
+            </div>
+        </div>
+
+        <!-- CORREO FINAL -->
+        <div class="email-section">
+            <h2>DIRECCIÓN DE ENVÍO</h2>
+            <p style="color: #ccc; margin-bottom: 10px;">Envía tu trabajo a la siguiente dirección:</p>
+            <div class="email-address">gustavokempexd@gmail.com</div>
+            <br>
+            <div class="email-subject">
+                <span>Asunto Obligatorio: </span>
+                <strong>ALUMNO IA ITC 2026</strong>
+            </div>
+            <p style="color: #aaa; margin-top: 15px; font-size: 0.9em;">
+                El envío se realiza automáticamente a través de n8n. No envíes correos manuales.
+            </p>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="phase phase-2">
+            <div class="phase-header">
+                <div class="phase-number" style="background: linear-gradient(135deg, #00ce9e, #00b894);">✓</div>
+                <div class="phase-title">
+                    <h2>CHECKLIST DE ENTREGA FINAL</h2>
+                    <div class="time">Verifica que todo esté incluido</div>
+                </div>
+            </div>
+            <div class="phase-content">
+                <ul class="checklist">
+                    <li><strong>Memorándum formal</strong> (texto incluido en el correo)</li>
+                    <li><strong>Google Sheet</strong> con tu base de datos personalizada</li>
+                    <li><strong>Apps Script</strong> con código .gs y .html funcionando</li>
+                    <li><strong>App Web</strong> desplegada (URL funcional)</li>
+                    <li><strong>App Android</strong> creada con AI Studio (APK o prototype)</li>
+                    <li><strong>PowerPoint</strong> con 10+ diapositivas (adjunto al correo)</li>
+                    <li><strong>Enlace al Google Sheet</strong> (con permisos de lectura)</li>
+                    <li><strong>Workflow de n8n</strong> configurado y ejecutado</li>
+                    <li><strong>Correo enviado</strong> con asunto "ALUMNO IA ITC 2026"</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <div class="logo-container" style="margin-bottom: 15px;">
+                <img src="LogoITC.svg" alt="Logo ITC" style="width: 120px;">
+            </div>
+            <p><strong>Asistente Administrativo con IA</strong> — ITC 2026</p>
+            <p>Actividad Integradora | Confidencial para uso académico</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

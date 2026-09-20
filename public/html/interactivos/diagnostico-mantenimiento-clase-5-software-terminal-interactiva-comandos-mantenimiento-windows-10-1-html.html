@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comandos CMD para Mantenimiento en Windows 10</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    padding: 40px;
+  }
+  h1, h2 {
+    color: #00bcd4;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  code {
+    background: #1e1e1e;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #80cbc4;
+    font-family: Consolas, monospace;
+    display: block;
+    margin: 8px 0;
+  }
+  .descripcion {
+    color: #b0bec5;
+    margin-left: 10px;
+  }
+</style>
+</head>
+<body>
+<h1>Guía de Comandos CMD para Mantenimiento y Cuidado del Sistema (Windows 10)</h1>
+
+<p>Esta guía reúne los comandos más útiles del <b>Símbolo del sistema (CMD)</b> para mantener, limpiar y diagnosticar una PC con Windows 10. Se recomienda ejecutarlos con permisos de <b>Administrador</b> cuando sea necesario.</p>
+
+<section>
+<h2>1️⃣ Comandos de mantenimiento básico</h2>
+<code>sfc /scannow</code>
+<p class="descripcion">Analiza y repara archivos del sistema dañados. Ideal cuando Windows presenta errores o lentitud.</p>
+
+<code>dism /online /cleanup-image /restorehealth</code>
+<p class="descripcion">Repara la imagen del sistema operativo. Útil cuando el comando SFC no puede solucionar algunos problemas.</p>
+
+<code>chkdsk C: /f /r</code>
+<p class="descripcion">Revisa el disco duro, detecta y repara sectores defectuosos. Requiere reinicio para ejecutarse.</p>
+
+<code>cleanmgr</code>
+<p class="descripcion">Abre el liberador de espacio en disco para eliminar archivos temporales y basura del sistema.</p>
+
+<code>defrag C: /O</code>
+<p class="descripcion">Desfragmenta el disco (solo HDD). Mejora el rendimiento general del sistema.</p>
+</section>
+
+<section>
+<h2>2️⃣ Limpieza y optimización del sistema</h2>
+<code>powercfg -h off</code>
+<p class="descripcion">Desactiva la hibernación, liberando varios GB de espacio en disco.</p>
+
+<code>del /q /f /s *.tmp</code>
+<p class="descripcion">Elimina todos los archivos temporales en las carpetas seleccionadas.</p>
+
+<code>rd /s /q C:\Temp</code>
+<p class="descripcion">Borra completamente la carpeta C:\Temp (y su contenido).</p>
+
+<code>cipher /w:C</code>
+<p class="descripcion">Elimina de forma segura los rastros de archivos eliminados en el disco.</p>
+</section>
+
+<section>
+<h2>3️⃣ Diagnóstico y monitoreo</h2>
+<code>systeminfo</code>
+<p class="descripcion">Muestra información completa del sistema operativo y hardware.</p>
+
+<code>wmic logicaldisk get size,freespace,caption</code>
+<p class="descripcion">Muestra el espacio libre y total de cada disco.</p>
+
+<code>perfmon /report</code>
+<p class="descripcion">Genera un informe completo de rendimiento del sistema.</p>
+
+<code>eventvwr</code>
+<p class="descripcion">Abre el Visor de eventos para analizar errores del sistema y aplicaciones.</p>
+
+<code>tasklist</code>
+<p class="descripcion">Lista todos los procesos en ejecución.</p>
+
+<code>taskkill /f /im nombre.exe</code>
+<p class="descripcion">Finaliza un proceso que no responde. Ejemplo: <code>taskkill /f /im chrome.exe</code></p>
+</section>
+
+<section>
+<h2>4️⃣ Comandos de red</h2>
+<code>ipconfig /all</code>
+<p class="descripcion">Muestra la configuración completa de la red, IP y adaptadores.</p>
+
+<code>ipconfig /flushdns</code>
+<p class="descripcion">Limpia la caché DNS para resolver errores de conexión.</p>
+
+<code>netsh winsock reset</code>
+<p class="descripcion">Restaura la configuración de red. Soluciona problemas de conexión o Internet.</p>
+
+<code>ping google.com</code>
+<p class="descripcion">Verifica si hay conexión activa a Internet.</p>
+
+<code>tracert google.com</code>
+<p class="descripcion">Rastrea la ruta que toma la conexión hacia un servidor externo.</p>
+</section>
+
+<section>
+<h2>5️⃣ Seguridad y administración</h2>
+<code>net user</code>
+<p class="descripcion">Muestra la lista de usuarios registrados en el sistema.</p>
+
+<code>net user nombre /add</code>
+<p class="descripcion">Crea un nuevo usuario local en el sistema.</p>
+
+<code>net localgroup administrators nombre /add</code>
+<p class="descripcion">Agrega un usuario al grupo de administradores.</p>
+
+<code>cipher /e</code>
+<p class="descripcion">Encripta una carpeta o archivo para protegerlo de accesos no autorizados.</p>
+
+<code>shutdown /s /t 60</code>
+<p class="descripcion">Apaga la PC con un temporizador de 60 segundos.</p>
+</section>
+
+<section>
+<h2>6️⃣ Comandos informativos</h2>
+<code>wmic cpu get name</code>
+<p class="descripcion">Muestra el modelo exacto del procesador.</p>
+
+<code>wmic diskdrive get model,status</code>
+<p class="descripcion">Muestra el modelo y el estado del disco duro o SSD.</p>
+
+<code>powercfg /batteryreport</code>
+<p class="descripcion">Genera un informe de batería detallado (solo laptops). Se guarda como archivo HTML.</p>
+
+<code>taskmgr</code>
+<p class="descripcion">Abre el Administrador de tareas.</p>
+
+<code>resmon</code>
+<p class="descripcion">Abre el Monitor de recursos para analizar el uso de CPU, memoria, disco y red.</p>
+</section>
+
+<section>
+<h2>7️⃣ Secuencia recomendada de mantenimiento mensual</h2>
+<code>sfc /scannow</code>
+<code>dism /online /cleanup-image /restorehealth</code>
+<code>chkdsk C: /f</code>
+<code>cleanmgr</code>
+<code>defrag C: /O</code>
+<code>ipconfig /flushdns</code>
+<code>netsh winsock reset</code>
+<p class="descripcion">Ejecuta estos comandos (en orden) una vez al mes para mantener el sistema limpio, reparado y estable.</p>
+</section>
+
+</body>
+</html>

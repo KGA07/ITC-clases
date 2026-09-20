@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Neuromarketing para Redes - GKempe</title>
+    
+    <!-- Configuración de Tailwind para Modo Oscuro -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { brand: '#FF4500', brandLight: '#FF7F50', darkBg: '#0f172a' },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: none; 
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Barra de Progreso de Lectura */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FF4500;
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Cursor Personalizado (Simula un Eye Tracker) */
+        @media (min-width: 768px) {
+            .custom-cursor {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background-color: rgba(255, 69, 0, 0.4);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10000;
+                transform: translate(-50%, -50%);
+                transition: width 0.2s, height 0.2s, background-color 0.2s;
+                backdrop-filter: invert(10%);
+                border: 1px solid rgba(255, 69, 0, 0.8);
+            }
+            .custom-cursor.hover {
+                width: 60px;
+                height: 60px;
+                background-color: rgba(255, 69, 0, 0.15);
+                border: 2px dashed #FF4500;
+                animation: spin 4s linear infinite;
+            }
+            @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+        }
+        @media (max-width: 767px) {
+            body { cursor: auto; }
+            .custom-cursor { display: none; }
+        }
+
+        /* Tooltip (Glosario) */
+        .tooltip-word {
+            position: relative;
+            display: inline-block;
+            border-bottom: 2px dotted #FF4500;
+            cursor: help;
+            font-weight: 600;
+            color: #FF4500;
+        }
+        .tooltip-word .tooltip-text {
+            visibility: hidden;
+            width: 220px;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 10001;
+            bottom: 130%;
+            left: 50%;
+            margin-left: -110px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+            font-size: 0.75rem;
+            font-weight: 400;
+            pointer-events: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-word .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1f2937 transparent transparent transparent;
+        }
+        .tooltip-word:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            bottom: 140%;
+        }
+        html.dark .tooltip-word .tooltip-text { background-color: #f3f4f6; color: #1f2937; }
+        html.dark .tooltip-word .tooltip-text::after { border-color: #f3f4f6 transparent transparent transparent; }
+
+        /* Animaciones On-Scroll (Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos Tareas Interactivas */
+        .task-item { cursor: pointer; transition: all 0.3s ease; }
+        .task-item.completed .task-text { text-decoration: line-through; opacity: 0.5; }
+        .task-item.completed .task-circle { background-color: #FF4500; border-color: #FF4500; color: white; }
+
+        /* =========================================
+           SIMULADOR MAPA DE CALOR (EYE TRACKING)
+           ========================================= */
+        .phone-mockup {
+            width: 320px;
+            height: 650px;
+            background: #111;
+            border-radius: 40px;
+            border: 12px solid #222;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
+            position: relative;
+        }
+        /* UI Simulada de Reel */
+        .reel-ui-top { position: absolute; top: 20px; left: 20px; color: white; font-weight: bold; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); font-size: 1.2rem; }
+        .reel-hook-text { 
+            position: absolute; top: 15%; left: 10%; width: 80%;
+            background: #FFD700; color: black; font-weight: 800; text-align: center;
+            padding: 10px; border-radius: 8px; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .reel-ui-right { position: absolute; bottom: 100px; right: 15px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+        .icon-circle { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; backdrop-filter: blur(5px); }
+        .reel-ui-bottom { position: absolute; bottom: 20px; left: 15px; right: 80px; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.8); }
+        .caption-text { font-size: 0.85rem; line-height: 1.2; margin-top: 5px; opacity: 0.9; }
+
+        /* Capa de Mapa de Calor */
+        .heatmap-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: 
+                /* Ojo lee primero la esquina superior izquierda (Zona de Escaneo) */
+                radial-gradient(circle at 20% 10%, rgba(255, 0, 0, 0.8) 0%, rgba(255, 100, 0, 0.6) 15%, transparent 30%),
+                /* Alta fricción en el título amarillo / Gancho (Tercio Superior) */
+                radial-gradient(ellipse at 50% 18%, rgba(255, 0, 0, 0.9) 0%, rgba(255, 255, 0, 0.7) 20%, transparent 40%),
+                /* Mirada del personaje central / Neuronas Espejo */
+                radial-gradient(circle at 50% 45%, rgba(255, 165, 0, 0.6) 0%, rgba(0, 255, 0, 0.4) 25%, transparent 45%),
+                /* Zonas Frías (Puntos Ciegos) - Botones y Caption inferior (Azul) */
+                radial-gradient(ellipse at 85% 80%, rgba(0, 0, 255, 0.7) 0%, transparent 20%),
+                radial-gradient(ellipse at 40% 90%, rgba(0, 50, 255, 0.6) 0%, transparent 30%);
+            mix-blend-mode: multiply;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+        html.dark .heatmap-overlay { mix-blend-mode: screen; } /* Ajuste visual para modo oscuro si aplica */
+        .heatmap-overlay.active { opacity: 0.9; }
+
+        .pulse-btn {
+            box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 69, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-darkBg text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <div id="progress-bar"></div>
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40 shadow-sm transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3 hover-target">
+                <span class="text-3xl">🧠</span>
+                <span class="font-extrabold text-lg md:text-xl tracking-tight text-gray-800 dark:text-white">GKempe <span class="text-brand">Neuromarketing</span></span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="hover-target p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <!-- Iconos SVG (Luna/Sol) idénticos al anterior -->
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-20">
+        
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 reveal">
+            <div class="inline-flex items-center bg-orange-50 dark:bg-orange-900/30 text-brand px-5 py-2 rounded-full text-xs font-bold tracking-wide border border-orange-100 dark:border-orange-800 shadow-sm hover:scale-105 transition-transform cursor-default">
+                🧠 CÓMO HACKEAR EL ALGORITMO HUMANO
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">
+                El Cerebro <br> <span class="text-brand">No Puede Ignorarte</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Descubre cómo usar Neuromarketing aplicado a Reels para superar los <span class="font-bold text-brand">0.3 segundos</span> de atención instintiva y frenar el scroll.
+            </p>
+        </section>
+
+        <!-- Módulo 1: Los 3 Cerebros -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch reveal">
+            <div class="col-span-1 lg:col-span-3">
+                <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white text-center">1. Los 3 Cerebros (A quién le hablas)</h2>
+                <p class="text-center text-gray-600 dark:text-gray-400 mb-8">El scroll infinito es un mecanismo de defensa. De 11.000.000 de bits por segundo, solo 40 llegan a la mente consciente.</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transition-transform hover-target">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mb-4">1</div>
+                <h3 class="font-bold text-xl mb-2 dark:text-white">Córtex (Racional)</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Lógico y analítico. Evalúa características y precios. Consume mucha energía, por eso en redes sociales <strong>suele estar "apagado"</strong>.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transition-transform hover-target">
+                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center font-bold text-xl mb-4">2</div>
+                <h3 class="font-bold text-xl mb-2 dark:text-white">Límbico (Emocional)</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Siente, recuerda y genera empatía. Es el cerebro que conecta con las historias (Storytelling) y se emociona al ver caras humanas.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-2 border-brand hover:-translate-y-2 transition-transform hover-target relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 bg-brand text-white text-[10px] font-bold px-8 py-1 rotate-45">EL OBJETIVO</div>
+                <div class="w-12 h-12 bg-orange-100 text-brand rounded-full flex items-center justify-center font-bold text-xl mb-4">3</div>
+                <h3 class="font-bold text-xl mb-2 dark:text-white">Reptiliano (Instintivo)</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Rápido y automático. Busca supervivencia, alimento, peligro o novedad. <strong>Es el que domina el dedo pulgar y toma la decisión de comprar.</strong></p>
+            </div>
+        </section>
+
+        <!-- Modulo 2: Color y Neuronas -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+            <div class="bg-white dark:bg-gray-800 border-l-4 border-yellow-400 p-8 shadow-lg rounded-2xl hover-target">
+                <h3 class="font-bold text-gray-900 dark:text-white text-2xl mb-4">🎨 Psicología del Color Express</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Usar un texto flotante del color correcto despierta al reptiliano:</p>
+                <ul class="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+                    <li><span class="inline-block w-4 h-4 bg-yellow-400 rounded-full mr-2 shadow"></span><strong>Amarillo:</strong> Optimismo y ALERTA. Excelente para la caja de texto del gancho. Destaca brutalmente sobre imágenes.</li>
+                    <li><span class="inline-block w-4 h-4 bg-red-600 rounded-full mr-2 shadow"></span><strong>Rojo:</strong> Urgencia, peligro o descuento. Activa una respuesta instintiva inmediata (usar en CTAs).</li>
+                    <li><span class="inline-block w-4 h-4 bg-blue-500 rounded-full mr-2 shadow"></span><strong>Azul:</strong> Confianza y seguridad. Ideal para dar tips, tutoriales o hablar de servicios profesionales.</li>
+                </ul>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 border-l-4 border-green-400 p-8 shadow-lg rounded-2xl hover-target">
+                <h3 class="font-bold text-gray-900 dark:text-white text-2xl mb-4">🪞 Neuronas Espejo</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">¿Por qué mostrar tu cara (Voz In) funciona mejor que una placa estática?</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Las <span class="tooltip-word">neuronas espejo<span class="tooltip-text">Células cerebrales que se activan tanto al hacer una acción como al ver a otro hacerla. Generan empatía pura.</span></span> nos hacen "sentir" lo que el otro experimenta. Un primer plano a la cámara conectando miradas, o un plano detalle de unas manos usando un producto, engaña al cerebro haciéndole sentir que el producto ya es suyo.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SIMULADOR INTERACTIVO DE MAPA DE CALOR
+             ============================================== -->
+        <section class="space-y-10 reveal">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">🔥 Eye Tracking (Mapa de Calor)</h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-4 text-lg">Descubre dónde mira el ojo humano en un Reel (Patrón Z y F). Evita poner texto clave en los <strong>puntos ciegos</strong>.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center justify-center mt-10">
+                
+                <!-- Mockup de Teléfono -->
+                <div class="relative hover-target group">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-orange-500 to-brand rounded-[50px] blur-xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                    
+                    <div class="phone-mockup">
+                        <div class="screen-content">
+                            <!-- UI Superpuesta -->
+                            <div class="reel-ui-top">@gustavokempe</div>
+                            
+                            <!-- El Gancho -->
+                            <div class="reel-hook-text">¡3 TRUCOS PARA VENDER MÁS!</div>
+                            
+                            <!-- Botones DCH -->
+                            <div class="reel-ui-right">
+                                <div class="icon-circle"></div>
+                                <div class="icon-circle"></div>
+                                <div class="icon-circle"></div>
+                            </div>
+                            
+                            <!-- Caption INF -->
+                            <div class="reel-ui-bottom">
+                                <div class="font-bold text-sm">Kempe Marketing · Original Audio</div>
+                                <div class="caption-text">Evita estos puntos ciegos a toda costa. Tu mensaje más importante debe ir siempre arriba, donde el escaneo visual inicia... <em>ver más</em></div>
+                            </div>
+
+                            <!-- Capa interactiva de Calor -->
+                            <div class="heatmap-overlay" id="heatmap-layer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles del Mapa -->
+                <div class="max-w-md space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                        <h3 class="font-bold text-xl mb-4 dark:text-white flex items-center gap-2">🕹️ Panel de Control</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Activa el escáner visual para revelar cómo el Cerebro Reptiliano procesa un video vertical en el primer segundo.</p>
+                        
+                        <button id="toggle-heatmap" class="w-full bg-brand hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors pulse-btn hover-target flex justify-center items-center gap-2">
+                            <span id="btn-text">Activar Mapa de Calor</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-start p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl border-l-4 border-red-500">
+                            <div class="w-4 h-4 bg-red-500 rounded-full mt-1 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-sm dark:text-white">Zonas Calientes (Rojo/Amarillo)</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Tercio superior izquierdo (Patrón Z). Aquí <strong>debe ir el texto de Gancho</strong> en fondo amarillo.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border-l-4 border-blue-500">
+                            <div class="w-4 h-4 bg-blue-500 rounded-full mt-1 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-bold text-sm dark:text-white">Zonas Muertas (Azul/Transparente)</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Margen derecho y tercio inferior. El ojo ignora el texto aquí porque está tapado por los botones y el caption del sistema.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Módulo 3: Sesgos Cognitivos -->
+        <section class="bg-gray-900 text-white rounded-[2.5rem] p-8 md:p-14 shadow-2xl reveal relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+            
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center relative z-10">🧠 Los 3 Sesgos para Vender Más</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <div class="bg-gray-800/80 backdrop-blur border border-gray-700 p-6 rounded-2xl hover-target">
+                    <h3 class="text-xl font-bold text-brandLight mb-3">1. Principio de Escasez</h3>
+                    <p class="text-sm text-gray-300 mb-3"><span class="tooltip-word text-white border-white">FOMO<span class="tooltip-text">Fear Of Missing Out (Miedo a quedarse afuera). Ansiedad biológica de perder una oportunidad.</span></span>. Valoramos más lo que es difícil de conseguir.</p>
+                    <p class="text-xs text-gray-400 italic">Aplicación: "Solo abrimos cupos por 24 horas" o mostrar stock limitado (Ej: Quedan 2 lugares).</p>
+                </div>
+                
+                <div class="bg-gray-800/80 backdrop-blur border border-gray-700 p-6 rounded-2xl hover-target">
+                    <h3 class="text-xl font-bold text-brandLight mb-3">2. Prueba Social</h3>
+                    <p class="text-sm text-gray-300 mb-3">El cerebro ahorra energía copiando a la manada. Si otros lo aprueban, asume que es seguro.</p>
+                    <p class="text-xs text-gray-400 italic">Aplicación: Mostrar capturas de WhatsApp de clientes felices o grabar un testimonio vende más que hablar de la calidad técnica.</p>
+                </div>
+
+                <div class="bg-gray-800/80 backdrop-blur border border-gray-700 p-6 rounded-2xl hover-target">
+                    <h3 class="text-xl font-bold text-brandLight mb-3">3. Efecto Anclaje</h3>
+                    <p class="text-sm text-gray-300 mb-3">El cerebro se aferra a la primera cifra que ve y la usa de referencia para comparar el valor.</p>
+                    <p class="text-xs text-gray-400 italic">Aplicación: Al mostrar precios en pantalla, muestra primero el precio anterior alto (Tachado) y luego la oferta real enorme en rojo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desafío Práctico -->
+        <section class="space-y-10 reveal">
+            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 shadow-lg rounded-[2rem] border border-gray-200 dark:border-gray-700 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-3">
+                    <span class="text-brand">📋</span> Checklist del Creador
+                </h3>
+                <div class="space-y-4">
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-6 h-6 rounded border-2 border-gray-300 dark:border-gray-600 flex flex-shrink-0 items-center justify-center font-bold text-transparent group-hover:border-brand transition-colors text-sm">✓</div>
+                        <p class="task-text text-sm font-medium dark:text-gray-300">¿El video comienza con un movimiento brusco para el gancho (0.3s)?</p>
+                    </div>
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-6 h-6 rounded border-2 border-gray-300 dark:border-gray-600 flex flex-shrink-0 items-center justify-center font-bold text-transparent group-hover:border-brand transition-colors text-sm">✓</div>
+                        <p class="task-text text-sm font-medium dark:text-gray-300">¿Ubiqué el texto principal en el Tercio Superior (Patrón Z) con fondo Amarillo?</p>
+                    </div>
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-6 h-6 rounded border-2 border-gray-300 dark:border-gray-600 flex flex-shrink-0 items-center justify-center font-bold text-transparent group-hover:border-brand transition-colors text-sm">✓</div>
+                        <p class="task-text text-sm font-medium dark:text-gray-300">¿Miré a la cámara en el Primer Plano o mostré mis manos (Neuronas Espejo)?</p>
+                    </div>
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-6 h-6 rounded border-2 border-gray-300 dark:border-gray-600 flex flex-shrink-0 items-center justify-center font-bold text-transparent group-hover:border-brand transition-colors text-sm">✓</div>
+                        <p class="task-text text-sm font-medium dark:text-gray-300">¿Apliqué un Sesgo (Escasez o Prueba Social) antes de dar el CTA final?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 text-center">
+        <p class="text-gray-800 dark:text-gray-200 font-extrabold text-base tracking-widest uppercase">GKempe <span class="text-brand">Neuromarketing</span></p>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mt-2">© Todos los derechos reservados 2026</p>
+    </footer>
+
+    <!-- LIBRERÍAS EXTERNAS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <script>
+        // 1. TEMA CLARO / OSCURO
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function toggleThemeIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            }
+        }
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        toggleThemeIcons();
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            toggleThemeIcons();
+        });
+
+        // 2. CURSOR PERSONALIZADO
+        const cursor = document.getElementById('custom-cursor');
+        function initCursorHovers() {
+            const hoverTargets = document.querySelectorAll('.hover-target, a, button, .tooltip-word, .task-item');
+            hoverTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                target.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth >= 768) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+        initCursorHovers();
+
+        // 3. BARRA DE PROGRESO
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        });
+
+        // 4. ANIMACIONES ON-SCROLL
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // 5. LISTA DE TAREAS
+        function toggleTask(element) {
+            element.classList.toggle('completed');
+            const circle = element.querySelector('.task-circle');
+            if(element.classList.contains('completed')) {
+                circle.style.transform = "scale(1.2)";
+                setTimeout(() => circle.style.transform = "scale(1)", 200);
+            }
+        }
+
+        // 6. TOGGLE MAPA DE CALOR
+        const btnHeatmap = document.getElementById('toggle-heatmap');
+        const heatmapLayer = document.getElementById('heatmap-layer');
+        const btnText = document.getElementById('btn-text');
+
+        btnHeatmap.addEventListener('click', () => {
+            heatmapLayer.classList.toggle('active');
+            if(heatmapLayer.classList.contains('active')){
+                btnText.innerText = 'Desactivar Mapa de Calor';
+                btnHeatmap.classList.remove('pulse-btn');
+                btnHeatmap.classList.replace('bg-brand', 'bg-gray-800');
+            } else {
+                btnText.innerText = 'Activar Mapa de Calor';
+                btnHeatmap.classList.add('pulse-btn');
+                btnHeatmap.classList.replace('bg-gray-800', 'bg-brand');
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Capacitación: Redes (de Meta) 2026 - </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+        .module-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .tab-btn {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .tab-btn.active {
+            color: white;
+        }
+        /* Colores específicos por pestaña */
+        .tab-btn[data-tab="desafio"].active { background-color: #4f46e5; } /* Indigo */
+        .tab-btn[data-tab="facebook"].active { background-color: #1877F2; } /* Facebook Blue */
+        .tab-btn[data-tab="instagram"].active { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <a href="https://wa.me/543795569699" target="_blank" class="whatsapp-btn shadow-lg" title="Consultas sobre la clase">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <h1 class="text-xl font-extrabold text-slate-800 text-center md:text-left">Redes<span class="text-indigo-600">(de Meta 2026)</span></h1>
+            <nav class="flex bg-slate-100 p-1 rounded-xl w-full md:w-auto overflow-x-auto snap-x">
+                <button onclick="switchTab('desafio')" data-tab="desafio" class="tab-btn active snap-center flex-shrink-0 px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">Desafío Práctico</button>
+                <button onclick="switchTab('facebook')" data-tab="facebook" class="tab-btn snap-center flex-shrink-0 px-4 py-2 rounded-lg text-sm font-bold text-slate-500 whitespace-nowrap">Facebook Business</button>
+                <button onclick="switchTab('instagram')" data-tab="instagram" class="tab-btn snap-center flex-shrink-0 px-4 py-2 rounded-lg text-sm font-bold text-slate-500 whitespace-nowrap">Instagram Pro</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <div id="tab-desafio" class="tab-content space-y-10">
+            <div class="text-center pb-6">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-slate-900">Instagram y Facebook para Negocios🎯</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">Aplica lo aprendido. Utilizarás herramientas profesionales y técnicas avanzadas para crear el contenido real de tu emprendimiento.</p>
+            </div>
+
+            <section class="module-card p-6 sm:p-10 border-t-8 border-amber-400">
+                <h2 class="text-2xl font-bold mb-6 text-slate-800 flex items-center">
+                    <span class="mr-3">🔥</span> Técnicas de Oro para Retener y Vender
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100">
+                        <h3 class="font-bold text-lg text-amber-900 mb-3 flex items-center"><span class="text-2xl mr-2">🎣</span> Ganchos (Hooks) de 3 Segundos</h3>
+                        <p class="text-sm text-slate-700 leading-relaxed">En 2026, la atención del usuario es mínima. Los primeros 3 segundos de tu video o la primera imagen de tu carrusel deben tener un texto magnético que obligue a la persona a detenerse.</p>
+                        <div class="mt-3 bg-white p-3 rounded-lg border border-amber-200 text-sm">
+                            <span class="text-red-500 font-bold">❌ Mal:</span> "Hola, somos la marca X y vendemos zapatos."<br>
+                            <span class="text-green-600 font-bold mt-1 inline-block">✅ Bien:</span> "3 errores que estás cometiendo al elegir tu calzado (y cómo evitar el dolor de pies)."
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100">
+                        <h3 class="font-bold text-lg text-amber-900 mb-3 flex items-center"><span class="text-2xl mr-2">📢</span> Llamados a la Acción (CTA) Claros</h3>
+                        <p class="text-sm text-slate-700 leading-relaxed">El usuario rara vez hace algo si no se le indica directamente. Nunca dejes un posteo, video o historia sin dirección. Dile exactamente qué paso debe seguir.</p>
+                        <div class="mt-3 bg-white p-3 rounded-lg border border-amber-200 text-sm">
+                            <span class="font-bold text-slate-800">Ejemplos que funcionan:</span>
+                            <ul class="list-disc list-inside text-slate-600 mt-1 space-y-1">
+                                <li>"Comenta la palabra <strong>INFO</strong> y te mando el catálogo."</li>
+                                <li>"Guarda este post para no perder estos tips."</li>
+                                <li>"Ve al enlace de mi perfil para comprar."</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="module-card p-6 sm:p-10 border-t-8 border-sky-500">
+                <h2 class="text-2xl font-bold mb-8 text-slate-800 flex items-center">
+                    <span class="mr-3">🛠️</span> Tu Kit de Herramientas 2026
+                </h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Canva_logo.svg/1920px-Canva_logo.svg.png" alt="Canva" class="h-8 mr-3 object-contain">
+                            <h3 class="font-bold text-lg"></h3>
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-3">
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔️</span> <strong>Formatos:</strong> Usa tamaño 1080x1350px (Vertical) para ocupar más pantalla.</li>
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔️</span> <strong>Menos es más:</strong> No satures de texto. Deja respirar la imagen.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/CapCut_logo.svg" alt="CapCut" class="h-8 mr-3 object-contain">
+                            <h3 class="font-bold text-lg"></h3>
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-3">
+                            <li class="flex items-start"><span class="text-indigo-500 mr-2">✔️</span> <strong>Subtítulos IA:</strong> El 80% ve videos en silencio. Úsalos siempre.</li>
+                            <li class="flex items-start"><span class="text-indigo-500 mr-2">✔️</span> <strong>Cortes rápidos:</strong> Elimina silencios y respiraciones para dar ritmo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4 gap-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ChatGPT-Logo.svg/960px-ChatGPT-Logo.svg.png" alt="ChatGPT" class="h-6 object-contain">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/500px-Google_Gemini_logo.svg.png" alt="Gemini" class="h-6 object-contain">
+                            <h3 class="font-bold text-lg ml-1"></h3>
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-3">
+                            <li class="flex items-start"><span class="text-pink-500 mr-2">✔️</span> <strong>El Prompt:</strong> "Actúa como copywriter y escríbeme 3 opciones para vender [Producto]".</li>
+                            <li class="flex items-start"><span class="text-pink-500 mr-2">✔️</span> <strong>Humaniza:</strong> Úsalo como base, pero añade el tono de tu marca.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <img src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66634daccb34e6d65a41c76d_download.svg" alt="Linktree" class="h-8 mr-3 object-contain">
+                        </div>
+                        <ul class="text-sm text-slate-600 space-y-3">
+                            <li class="flex items-start"><span class="text-emerald-500 mr-2">✔️</span> <strong>El Árbol de Enlaces:</strong> Centraliza WhatsApp, tienda, catálogo y ubicaciones en un solo link profesional.</li>
+                            <li class="flex items-start"><span class="text-emerald-500 mr-2">✔️</span> <strong>Métricas:</strong> Te permite ver exactamente cuántos clientes hacen clic en cada botón.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-slate-900 text-white rounded-[2rem] p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-40 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-pink-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-center">🎯 Tareas a Completar</h2>
+                    <p class="text-center text-slate-300 mb-10 max-w-2xl mx-auto">Sigue estas instrucciones al pie de la letra para crear tus 3 piezas de contenido real combinando las herramientas y técnicas vistas.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+                            <div class="step-number bg-sky-500 text-white text-xl">1</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2 text-sky-300">Posteo: "¿Quiénes somos?"</h3>
+                                <p class="text-slate-300 text-sm mb-4">Diseña una imagen o carrusel de presentación. El texto (Copy) <strong>debe incluir obligatoriamente</strong>: Quiénes son, qué venden, horarios de atención, canales de venta (Gmail, WhatsApp), ubicación y canales de tráfico (en qué otras plataformas están). Recuerda aplicar un buen <strong>Llamado a la Acción</strong> al final.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+                            <div class="step-number bg-pink-500 text-white text-xl">2</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2 text-pink-300">Historia: "Detrás de Escena"</h3>
+                                <p class="text-slate-300 text-sm">Crea un video vertical (para Stories/Reels) editado en CapCut. Muestra el alma de tu negocio: preparando un pedido, acomodando stock o trabajando. Empieza con un <strong>Gancho verbal o visual</strong>. La gente conecta con los procesos reales, no solo con el producto final.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+                            <div class="step-number bg-indigo-500 text-white text-xl">3</div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2 text-indigo-300">Carrusel de Ventas (7 Imágenes)</h3>
+                                <p class="text-slate-300 text-sm mb-4">Diseña en Canva un carrusel estratégico de 7 imágenes para vender. Este formato retiene al usuario y le da señales positivas al algoritmo.</p>
+                                <div class="bg-black/30 p-5 rounded-xl text-sm border border-white/10">
+                                    <ul class="space-y-3">
+                                        <li class="text-slate-300"><strong class="text-white block mb-1">Imágenes 1 a 6:</strong> Comienza con un <strong>Gancho</strong> en la portada, luego describe el problema que resuelves, fotos del producto y beneficios principales.</li>
+                                        <li class="border-t border-white/20 pt-3">
+                                            <strong class="text-green-400 block mb-1 text-base">🚨 Imagen 7 (¡OBLIGATORIA!):</strong> 
+                                            <span class="text-slate-300">Debe contener tu <strong>estrategia de fidelización y un CTA Claro</strong>. (Ej: "Menciona que viste este post en nuestro WhatsApp y tenés 10% OFF", "Llévate una guía gratis con tu compra" o "Ve al Linktr.ee de nuestra bio para hacer tu pedido").</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="tab-facebook" class="tab-content hidden space-y-8">
+            <div class="bg-[#1877F2] text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-20 pointer-events-none">
+                    <svg class="w-64 h-64" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 relative z-10">Facebook Pro 2026</h2>
+                <p class="text-blue-100 text-lg md:text-xl relative z-10 max-w-2xl">Optimiza tu Fanpage para crear autoridad local, aprovechar los grupos y utilizar la plataforma como tu principal canal de atención al cliente.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="module-card p-6 sm:p-8 border-t-4 border-[#1877F2]">
+                    <h3 class="font-bold text-xl mb-4 text-[#1877F2]">Lección 1: La Nueva Fanpage</h3>
+                    <p class="text-slate-600 text-sm mb-4">En 2026, el alcance orgánico clásico está en 1-5%. La clave en Facebook hoy es construir comunidad.</p>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">📌</span> <strong>Nombre SEO:</strong> Usa Palabras Clave. Ej: "Juan | Plomería en Córdoba".</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">📌</span> <strong>Llamado a la acción:</strong> Configura el botón principal de tu página para que dirija directamente a tu WhatsApp Business o Linktr.ee.</li>
+                        <li class="flex items-start"><span class="text-blue-500 mr-2">📌</span> <strong>Información completa:</strong> Una página sin horarios, web o dirección genera desconfianza instantánea.</li>
+                    </ul>
+                </div>
+
+                <div class="module-card p-6 sm:p-8 border-t-4 border-[#1877F2]">
+                    <h3 class="font-bold text-xl mb-4 text-[#1877F2]">Mini Lección: Optimización Visual</h3>
+                    <ul class="space-y-4 text-sm text-slate-700">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3 flex-shrink-0">🖼️</span>
+                            <div>
+                                <strong>La Portada es tu Billboard:</strong> No pongas una foto de paisaje. Usa un banner (hecho en Canva) que diga tu promesa de valor y números de contacto.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3 flex-shrink-0">👤</span>
+                            <div>
+                                <strong>Foto de Perfil:</strong> Si es empresa, tu Logo adaptado al círculo. Si es marca personal, una foto tuya profesional, clara y sonriendo.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3 flex-shrink-0">🤖</span>
+                            <div>
+                                <strong>Respuestas Automáticas:</strong> Configura mensajes de bienvenida en Messenger para no perder clientes fuera de horario.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-card p-6 sm:p-10 bg-slate-50">
+                <h3 class="font-bold text-2xl mb-6 text-center text-slate-800">Videotutorial: Configura tu Página Paso a Paso</h3>
+                <div class="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+                    <a href="https://www.youtube.com/watch?v=1tOM7uOKwD0" target="_blank" class="block aspect-video relative">
+                        <img src="https://i.ytimg.com/vi/1tOM7uOKwD0/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAe055DUpjuep2niccIkMDyByumCA" alt="Tutorial Facebook" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="bg-blue-600 text-white rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shadow-2xl mb-3 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <span class="bg-black/80 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest backdrop-blur-sm">VER CLASE EN YOUTUBE</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-instagram" class="tab-content hidden space-y-8">
+            <div class="bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-20 pointer-events-none">
+                    <svg class="w-64 h-64" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 relative z-10">Instagram Pro 2026</h2>
+                <p class="text-pink-100 text-lg md:text-xl relative z-10 max-w-2xl">Estrategias de SEO, diseño de Biografía y contenido de alto impacto para convertir seguidores en clientes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="module-card p-6 sm:p-8 border-t-4 border-pink-500">
+                    <h3 class="font-bold text-xl mb-4 text-pink-600">Lección 1: SEO en Instagram 2026</h3>
+                    <p class="text-slate-600 text-sm mb-4">Instagram funciona como un buscador (igual que Google). Si no usas las palabras correctas, serás invisible.</p>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">📍</span> <strong>Nombre en Negrita:</strong> Es el campo más importante. No repitas tu usuario, pon tu nicho. Ej: "Ropa Deportiva | Rosario".</li>
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">📍</span> <strong>Biografía que venda:</strong> Explica en 3 líneas: Qué haces, para quién y un Llamado a la Acción claro (CTA).</li>
+                        <li class="flex items-start"><span class="text-pink-500 mr-2">🌲</span> <strong>Tu Enlace Estrella:</strong> Aunque IG permite 5 links, colocar un <strong>Linktr.ee</strong> da un salto de profesionalidad enorme y organiza todas tus vías de contacto.</li>
+                    </ul>
+                </div>
+
+                <div class="module-card p-6 sm:p-8 border-t-4 border-purple-500">
+                    <h3 class="font-bold text-xl mb-4 text-purple-700">Mini Lección: Feed, Historias y DMs</h3>
+                    <ul class="space-y-4 text-sm text-slate-700">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3 flex-shrink-0">📌</span>
+                            <div>
+                                <strong>Historias Destacadas (Highlights):</strong> Deben ser el "Menú" de tu tienda: Precios, Cómo Comprar, Envíos, Clientes Felices.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3 flex-shrink-0">📱</span>
+                            <div>
+                                <strong>Reels vs Carruseles:</strong> Reels para atraer gente nueva (alcance). Carruseles para educar y generar guardados (autoridad). Recuerda usar <strong>Ganchos</strong>.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3 flex-shrink-0">💬</span>
+                            <div>
+                                <strong>El poder del MD:</strong> En 2026, la mayor interacción ocurre en privado. Anima a la gente a responder tus historias para abrir conversaciones de venta.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-card p-6 sm:p-10 bg-slate-50">
+                <h3 class="font-bold text-2xl mb-6 text-center text-slate-800">Videotutorial: Configura tu Instagram Perfecto</h3>
+                <div class="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+                    <a href="https://www.youtube.com/watch?v=2cnjbzghWXU&t=6s" target="_blank" class="block aspect-video relative">
+                        <img src="https://i.ytimg.com/vi/2cnjbzghWXU/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAX8Nm3TjZOyZKyzZRBZHAVbWuOmw" alt="Tutorial Instagram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="bg-gradient-to-tr from-orange-500 to-pink-600 text-white rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shadow-2xl mb-3 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <span class="bg-black/80 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest backdrop-blur-sm">VER CLASE EN YOUTUBE</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-8 bg-white border-t border-slate-200 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <p class="text-slate-500 font-medium text-sm">© Todos los derechos reservados para GKempe UDEMM/ITC ARG</p>
+            <p class="text-slate-400 font-medium text-xs">Actualizado a tendencias 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+            
+            // Resetear estilos de todos los botones de pestaña
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-white');
+                btn.classList.add('text-slate-500');
+                btn.style.backgroundColor = '';
+                btn.style.background = '';
+            });
+
+            // Mostrar la sección seleccionada
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            
+            // Aplicar estilo activo a la pestaña seleccionada
+            const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            activeBtn.classList.add('active', 'text-white');
+            activeBtn.classList.remove('text-slate-500');
+            
+            // Centrar el botón en vista móvil (suave)
+            activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+    </script>
+</body>
+</html>

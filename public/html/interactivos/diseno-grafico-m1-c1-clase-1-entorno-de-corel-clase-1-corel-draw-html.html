@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1: Introducción a Corel Draw e Interface Vectorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pixelated {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        .no-context-menu {
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen dynamic-theme">
+
+    <div id="login-overlay" class="fixed inset-0 bg-slate-950 z-[100] flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl max-w-md w-full space-y-6">
+            <div class="text-center space-y-2">
+                <div class="inline-block bg-emerald-500 text-slate-950 p-3 rounded-xl font-black text-2xl mb-2 shadow-lg shadow-emerald-500/20">
+                    CD
+                </div>
+                <h2 class="text-xl font-bold text-white">Plataforma de Diseño Gráfico</h2>
+                <p class="text-xs text-slate-400">Introduce tus credenciales para acceder a la Clase 1 de Corel Draw.</p>
+            </div>
+
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Usuario</label>
+                    <input type="text" id="loginUser" required autocomplete="username"
+                           class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Contraseña</label>
+                    <input type="password" id="loginPassword" required autocomplete="current-password"
+                           class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                </div>
+                
+                <div id="loginError" class="hidden text-xs text-rose-400 bg-rose-950/30 border border-rose-900 p-2 rounded-lg text-center">
+                    Usuario o contraseña incorrectos.
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-500 text-slate-950 font-bold py-2.5 rounded-lg text-sm shadow-lg shadow-emerald-500/10 hover:bg-emerald-400 transition-all">
+                    Verificar y Entrar a Clase
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-content" class="hidden">
+        <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-md">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-emerald-500 text-slate-950 p-2 rounded-lg font-bold text-xl shadow-lg shadow-emerald-500/20">
+                        CD
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold tracking-tight text-white">Corel Draw | Campus Digital</h1>
+                        <div class="flex items-center gap-2">
+                            <p class="text-xs text-emerald-400 font-medium">Diseño Gráfico Publicitario — Clase 1</p>
+                            <span id="userBadge" class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full border border-slate-700 font-mono"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 w-full md:w-auto overflow-x-auto">
+                    <button onclick="switchTab('teoria')" id="tab-teoria" class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 bg-emerald-500 text-slate-950 shadow-md font-semibold">
+                        1. Fundamentos y Entorno
+                    </button>
+                    <button onclick="switchTab('simulador')" id="tab-simulador" class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200">
+                        2. Simulador Píxel vs Vector
+                    </button>
+                    <button onclick="switchTab('laboratorio')" id="tab-laboratorio" class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200">
+                        3. Laboratorio de Color
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-quiz" class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200">
+                        4. Evaluación Formativa
+                    </button>
+                    <button onclick="switchTab('admin')" id="tab-admin" class="hidden px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-amber-400 hover:text-amber-300 border border-dashed border-amber-500/30 bg-amber-550/10">
+                        ⚙️ Panel Profesor
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 py-8">
+
+            <section id="content-teoria" class="tab-content space-y-8 animate-fade-in">
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-6 rounded-2xl border border-slate-800 shadow-xl">
+                    <h2 class="text-2xl font-bold text-white mb-2">¡Bienvenidos a la Primera Clase Práctica!</h2>
+                    <p class="text-slate-300 leading-relaxed max-w-4xl">
+                        Hoy dominarás los pilares técnicos de la gráfica digital y el entorno de trabajo de uno de los softwares vectoriales más potentes de la industria publicitaria: <span class="text-emerald-400 font-semibold">Corel Draw</span>. Explora los módulos, interactúa con los laboratorios y pon a prueba tus conocimientos al final.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all shadow-md">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-amber-500/10 text-amber-400 rounded-lg">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Imagen en Mapa de Bits (Bitmap)</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Es una estructura de datos representada por una <span class="text-amber-400 font-semibold">cuadrícula o matriz de puntos</span> denominados <strong>píxeles</strong>. Al redimensionarse pierden resolución, generando <strong>distorsión o pixelación</strong>.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-all shadow-md">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Imagen Vectorial (Mapa de Vectores)</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Son series de <strong>puntos y líneas unidos entre sí</strong>, originando objetos formados <span class="text-emerald-400 font-semibold">matemáticamente</span>. Son <strong>escalables al 100% sin sufrir pérdida de calidad</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-emerald-500 rounded-full"></span> Anatomía de la Interfaz del Software
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-slate-950 p-4 rounded-lg border border-slate-800">
+                            <span class="text-emerald-400 font-mono text-xs block mb-1">01 / ENTRADA Y CONTROL</span>
+                            <h4 class="text-white font-semibold text-sm mb-2">Barra de Menús y Estándar</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Acceso a comandos globales (Guardar, Importar) y menús de organización jerárquica.</p>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 ring-1 ring-emerald-500/30">
+                            <span class="text-emerald-400 font-mono text-xs block mb-1">02 / INTERACTIVA CLAVE</span>
+                            <h4 class="text-white font-semibold text-sm mb-2">Barra de Propiedades</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Es contextual. Cambia según el objeto o herramienta activa para modificar numéricamente su ancho, alto, posición y ángulo.</p>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-lg border border-slate-800">
+                            <span class="text-emerald-400 font-mono text-xs block mb-1">03 / CREACIÓN</span>
+                            <h4 class="text-white font-semibold text-sm mb-2">Caja de Herramientas</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed">Ubicada a la izquierda. Contiene los útiles para dibujar formas básicas, aplicar zoom, mano y editar nodos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 lg:col-span-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                                Navegación y Atajos
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between items-center bg-slate-950 p-2 rounded border border-slate-800 text-xs">
+                                    <span class="text-slate-300">Herramienta Selección</span>
+                                    <kbd class="bg-slate-800 text-emerald-400 px-2 py-0.5 rounded font-mono text-[10px] border border-slate-700 shadow font-bold">Espaciador</kbd>
+                                </li>
+                                <li class="flex justify-between items-center bg-slate-950 p-2 rounded border border-slate-800 text-xs">
+                                    <span class="text-slate-300">Herramienta Zoom</span>
+                                    <kbd class="bg-slate-800 text-emerald-400 px-2 py-0.5 rounded font-mono text-[10px] border border-slate-700 shadow font-bold">Z</kbd>
+                                </li>
+                                <li class="flex justify-between items-center bg-slate-950 p-2 rounded border border-slate-800 text-xs">
+                                    <span class="text-slate-300">Herramienta Mano (Pan)</span>
+                                    <kbd class="bg-slate-800 text-emerald-400 px-2 py-0.5 rounded font-mono text-[10px] border border-slate-700 shadow font-bold">H</kbd>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 lg:col-span-2 space-y-4">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <span class="w-2 h-6 bg-emerald-500 rounded-full"></span> Dibujo de Formas y Proporciones
+                        </h3>
+                        <div class="bg-slate-950 border-l-4 border-emerald-500 p-4 rounded-r-xl shadow-inner">
+                            <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-1">
+                                Regla de Oro: La Tecla Control (Ctrl)
+                            </div>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                Si mantienes presionada la tecla <kbd class="bg-slate-800 px-1.5 py-0.5 rounded text-white font-mono text-[11px] border border-slate-700 shadow">Ctrl</kbd> MIENTRAS arrastras para dibujar, Corel Draw restringe las proporciones obligando a generar un **cuadrado perfecto** o un **círculo perfecto**.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-white font-semibold text-sm mb-2">Transformación (Las Dos Fases del Clic)</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                                <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+                                    <span class="bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded mb-2 inline-block">1° Clic Simple</span>
+                                    <p class="text-slate-400 leading-relaxed">Caja delimitadora con <strong>8 tiradores cuadrados</strong>: cambiar tamaño proporcional (esquinas), estirar o achatar (laterales).</p>
+                                </div>
+                                <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+                                    <span class="bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded mb-2 inline-block">2° Clic Consecutivo</span>
+                                    <p class="text-slate-400 leading-relaxed">Los tiradores mutan a <strong>flechas curvas</strong>: permite <strong>Girar</strong> alrededor de su eje (esquinas) e <strong>Inclinar</strong> el plano (laterales).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-simulador" class="tab-content hidden space-y-6 animate-fade-in">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <h2 class="text-xl font-bold text-white mb-2 flex items-center gap-2">Simulador Óptico</h2>
+                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 max-w-md mx-auto mb-8 flex items-center gap-4">
+                        <label for="zoomSlider" class="text-xs font-mono font-bold text-slate-300">ZOOM:</label>
+                        <input id="zoomSlider" type="range" min="1" max="12" value="1" step="1" oninput="updateSimulador(this.value)" class="w-full accent-emerald-500 bg-slate-800 h-2 rounded-lg appearance-none cursor-pointer">
+                        <span id="zoomDisplay" class="text-sm font-mono text-emerald-400 font-bold bg-slate-900 px-2 py-1 rounded border border-slate-800">100%</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col items-center">
+                            <span class="text-xs font-mono bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full mb-4 uppercase">Mapa de Bits (Bitmap)</span>
+                            <div class="w-64 h-64 border border-slate-800 bg-slate-900 rounded-lg flex items-center justify-center overflow-hidden relative">
+                                <div id="bitmapTarget" class="w-32 h-32 bg-amber-500 rounded-full flex items-center justify-center font-black text-slate-950 text-4xl shadow-inner">B</div>
+                                <div id="pixelGrid" class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:8px_8px] opacity-0 pointer-events-none"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col items-center">
+                            <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full mb-4 uppercase">Vector Puro</span>
+                            <div class="w-64 h-64 border border-slate-800 bg-slate-900 rounded-lg flex items-center justify-center overflow-hidden">
+                                <svg id="vectorTarget" class="w-32 h-32 text-emerald-400" viewBox="0 0 100 100" fill="currentColor">
+                                    <circle cx="50" cy="50" r="45" />
+                                    <text x="50" y="62" font-size="40" font-weight="900" fill="#020617" text-anchor="middle">V</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-laboratorio" class="tab-content hidden space-y-6 animate-fade-in">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <h2 class="text-xl font-bold text-white mb-2 flex items-center gap-2">Laboratorio Cromático</h2>
+                    <p class="text-sm text-slate-400 mb-6">
+                        <span class="text-emerald-400 font-semibold">Clic Izquierdo</span> para <strong>Relleno</strong>. <span class="text-cyan-400 font-semibold">Clic Derecho</span> para <strong>Contorno</strong>.
+                    </p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 lg:col-span-1 no-context-menu">
+                            <div class="grid grid-cols-4 gap-2" id="paletteGrid"></div>
+                        </div>
+
+                        <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 lg:col-span-3 flex flex-col md:flex-row items-center justify-around gap-6">
+                            <div class="w-64 h-64 bg-slate-900 border-2 border-dashed border-slate-800 rounded-xl flex items-center justify-center">
+                                <svg id="labShape" class="w-44 h-44 drop-shadow-2xl" viewBox="0 0 100 100">
+                                    <polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" fill="#10b981" stroke="#ffffff" stroke-width="4" />
+                                </svg>
+                            </div>
+
+                            <div class="space-y-4 w-full md:w-64">
+                                <div class="flex items-center justify-between bg-slate-900 p-3 rounded-lg border border-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <div id="monitorFillIndicator" class="w-5 h-5 rounded border bg-emerald-500"></div>
+                                        <span class="text-xs text-slate-300">Relleno:</span>
+                                    </div>
+                                    <span id="monitorFillText" class="text-xs font-mono text-emerald-400">#10B981</span>
+                                </div>
+                                <div class="flex items-center justify-between bg-slate-900 p-3 rounded-lg border border-slate-800">
+                                    <div class="flex items-center gap-2">
+                                        <div id="monitorStrokeIndicator" class="w-5 h-5 rounded border bg-white"></div>
+                                        <span class="text-xs text-slate-300">Contorno:</span>
+                                    </div>
+                                    <span id="monitorStrokeText" class="text-xs font-mono text-slate-300">#FFFFFF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-quiz" class="tab-content hidden space-y-6 animate-fade-in">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <form id="quizForm" class="space-y-6">
+                        <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
+                            <p class="text-sm font-semibold text-white">¿Qué barra de la interfaz de Corel Draw altera su configuración de forma automática ("contextual")?</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <label class="flex items-center gap-3 bg-slate-900 p-3 rounded-lg border border-slate-800 text-xs cursor-pointer"><input type="radio" name="q1" value="incorrecta"> <span>La Barra de Menús</span></label>
+                                <label class="flex items-center gap-3 bg-slate-900 p-3 rounded-lg border border-slate-800 text-xs cursor-pointer"><input type="radio" name="q1" value="correcta"> <span class="text-emerald-400">La Barra de Propiedades</span></label>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
+                            <p class="text-sm font-semibold text-white">¿Qué tecla mantiene las proporciones perfectas al dibujar?</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <label class="flex items-center gap-3 bg-slate-900 p-3 rounded-lg border border-slate-800 text-xs cursor-pointer"><input type="radio" name="q4" value="incorrecta"> <span>Alt</span></label>
+                                <label class="flex items-center gap-3 bg-slate-900 p-3 rounded-lg border border-slate-800 text-xs cursor-pointer"><input type="radio" name="q4" value="correcta"> <span class="text-emerald-400">Control (Ctrl)</span></label>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="calcularResultadoQuiz()" class="bg-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-xl">Calificar Respuestas</button>
+                    </form>
+
+                    <div id="quizResultBox" class="hidden mt-6 p-5 rounded-xl border">
+                        <h3 id="quizResultTitle" class="text-lg font-bold mb-1"></h3>
+                        <p id="quizResultText" class="text-sm opacity-90"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-admin" class="tab-content hidden space-y-6 animate-fade-in">
+                <div class="bg-slate-900 border border-amber-500/40 rounded-2xl p-6 space-y-6">
+                    <div class="border-b border-slate-800 pb-4">
+                        <h2 class="text-xl font-bold text-amber-400 mb-1 flex items-center gap-2">
+                            🔒 Panel de Control Docente: GKempe
+                        </h2>
+                        <p class="text-xs text-slate-400">Administración interactiva de alumnos y credenciales locales.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-4 lg:col-span-1">
+                            <h3 class="text-sm font-bold text-white uppercase font-mono tracking-wider flex items-center gap-1">
+                                <span class="w-1.5 h-3 bg-amber-500 inline-block"></span> Crear / Modificar Alumno
+                            </h3>
+                            <form id="adminUserForm" class="space-y-3">
+                                <div>
+                                    <label class="block text-[11px] font-mono text-slate-400 uppercase mb-1">Nombre de Usuario</label>
+                                    <input type="text" id="newStudentUser" placeholder="ej: alumno01" required
+                                           class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-mono text-slate-400 uppercase mb-1">Contraseña Nueva</label>
+                                    <input type="text" id="newStudentPass" placeholder="ej: clave123" required
+                                           class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-amber-500">
+                                </div>
+                                <button type="button" onclick="guardarOModificarUsuario()"
+                                        class="w-full bg-amber-500 text-slate-950 font-bold py-2 rounded-lg text-xs hover:bg-amber-400 transition-colors">
+                                    Guardar Credenciales
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-4 lg:col-span-2 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-sm font-bold text-white uppercase font-mono tracking-wider mb-3">
+                                    Alumnos Habilitados en este Navegador
+                                </h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-left text-xs text-slate-300">
+                                        <thead class="bg-slate-900 text-slate-400 uppercase font-mono text-[10px] border-b border-slate-800">
+                                            <tr>
+                                                <th class="p-2">Usuario</th>
+                                                <th class="p-2">Rol asignado</th>
+                                                <th class="p-2 text-right">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="userTableBody">
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-4 border-t border-slate-900 flex justify-between items-center text-[11px] text-slate-500">
+                                <span>Los datos persisten de manera local en el caché de este navegador.</span>
+                                <button onclick="restablecerBaseDatos()" class="text-rose-400 hover:underline">Restablecer valores fábrica</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // =========================================================================
+        // 🔒 SISTEMA DE ALMACENAMIENTO DE CONTROL CRÍTICO DEL DOCENTE
+        // =========================================================================
+        
+        // Base de Datos inicial obligatoria por defecto exigida por el Profesor
+        const baseDatosPredeterminada = {
+            "GKempe": { key: "Q29yZWxHSzI2", role: "profesor" }, // Contraseña original: CorelGK26
+            "alumno1": { key: "YWx1bW5vMDE=", role: "alumno" }  // Contraseña original: alumno01
+        };
+
+        // Inicializar almacenamiento persistente si no existe
+        if (!localStorage.getItem('corel_campus_db')) {
+            localStorage.setItem('corel_campus_db', JSON.stringify(baseDatosPredeterminada));
+        }
+
+        let usuarioLogueadoActual = "";
+        let rolLogueadoActual = "";
+
+        // Captura e inicio del Login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUser').value.trim();
+            const pass = document.getElementById('loginPassword').value.trim();
+            const errorBox = document.getElementById('loginError');
+
+            // Leer base de datos actualizada desde el LocalStorage
+            const baseDatosActual = JSON.parse(localStorage.getItem('corel_campus_db'));
+
+            if (baseDatosActual[user]) {
+                const claveDescifrada = atob(baseDatosActual[user].key);
+                if (pass === claveDescifrada) {
+                    usuarioLogueadoActual = user;
+                    rolLogueadoActual = baseDatosActual[user].role;
+                    
+                    desbloquearPlataforma();
+                    return;
+                }
+            }
+            errorBox.classList.remove('hidden');
+        });
+
+        function desbloquearPlataforma() {
+            document.getElementById('login-overlay').classList.add('hidden');
+            document.getElementById('app-content').classList.remove('hidden');
+            document.getElementById('userBadge').innerText = usuarioLogueadoActual.toUpperCase();
+
+            if (rolLogueadoActual === "profesor") {
+                document.getElementById('tab-admin').classList.remove('hidden');
+                actualizarTablaUsuariosAdmin();
+            }
+        }
+
+        // --- GESTIÓN DE USUARIOS (FUNCIONES EXCLUSIVAS DEL ADMINISTRADOR) ---
+        function actualizarTablaUsuariosAdmin() {
+            const baseDatosActual = JSON.parse(localStorage.getItem('corel_campus_db'));
+            const tbody = document.getElementById('userTableBody');
+            tbody.innerHTML = "";
+
+            Object.keys(baseDatosActual).forEach(username => {
+                const userObj = baseDatosActual[username];
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-slate-900 hover:bg-slate-900/50";
+                
+                // No permitir que se elimine o modifique a sí mismo desde la tabla de forma accidental
+                const esAdminPrincipal = (username === "GKempe");
+
+                tr.innerHTML = `
+                    <td class="p-2 font-bold text-white">${username}</td>
+                    <td class="p-2 text-slate-400 font-mono text-[11px]">${userObj.role.toUpperCase()}</td>
+                    <td class="p-2 text-right">
+                        ${esAdminPrincipal ? 
+                            `<span class="text-amber-500 text-[11px] font-semibold italic">Protegido</span>` : 
+                            `<button onclick="cargarUsuarioFormulario('${username}')" class="text-amber-400 hover:underline mr-3">Editar</button>
+                             <button onclick="eliminarUsuario('${username}')" class="text-rose-400 hover:underline">Eliminar</button>`
+                        }
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function guardarOModificarUsuario() {
+            const usernameInput = document.getElementById('newStudentUser').value.trim();
+            const passwordInput = document.getElementById('newStudentPass').value.trim();
+
+            if (!usernameInput || !passwordInput) {
+                alert("Por favor rellene ambos campos.");
+                return;
+            }
+
+            if (usernameInput === "GKempe") {
+                alert("No puede sobrescribir el usuario Administrador Maestro por esta vía.");
+                return;
+            }
+
+            const baseDatosActual = JSON.parse(localStorage.getItem('corel_campus_db'));
+            
+            // Inyectar datos codificando en Base64 para ocultamiento básico de contraseñas de alumnos
+            baseDatosActual[usernameInput] = {
+                key: btoa(passwordInput),
+                role: "alumno" // Todo usuario creado por el panel se asigna con rol alumno de forma segura
+            };
+
+            localStorage.setItem('corel_campus_db', JSON.stringify(baseDatosActual));
+            
+            // Limpiar inputs del formulario
+            document.getElementById('newStudentUser').value = "";
+            document.getElementById('newStudentPass').value = "";
+            
+            actualizarTablaUsuariosAdmin();
+            alert(`Usuario '${usernameInput}' guardado / modificado correctamente.`);
+        }
+
+        function cargarUsuarioFormulario(username) {
+            const baseDatosActual = JSON.parse(localStorage.getItem('corel_campus_db'));
+            if (baseDatosActual[username]) {
+                document.getElementById('newStudentUser').value = username;
+                document.getElementById('newStudentPass').value = atob(baseDatosActual[username].key);
+            }
+        }
+
+        function eliminarUsuario(username) {
+            if (confirm(`¿Está seguro de que desea retirar el acceso al alumno '${username}'?`)) {
+                const baseDatosActual = JSON.parse(localStorage.getItem('corel_campus_db'));
+                delete baseDatosActual[username];
+                localStorage.setItem('corel_campus_db', JSON.stringify(baseDatosActual));
+                actualizarTablaUsuariosAdmin();
+            }
+        }
+
+        function restablecerBaseDatos() {
+            if (confirm("¿Desea borrar todos los alumnos creados y regresar a la configuración limpia de fábrica?")) {
+                localStorage.setItem('corel_campus_db', JSON.stringify(baseDatosPredeterminada));
+                actualizarTablaUsuariosAdmin();
+            }
+        }
+
+        // --- CONTROL DE CAMBIO DE PESTAÑAS (SPA) ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('nav button').forEach(btn => {
+                if(btn.id === 'tab-admin') {
+                    btn.className = "px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-amber-400 hover:text-amber-300 border border-dashed border-amber-500/30 bg-amber-550/10";
+                } else {
+                    btn.className = "px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 text-slate-400 hover:text-slate-200";
+                }
+            });
+
+            const activeBtn = document.getElementById('tab-' + tabId);
+            if (tabId === 'admin') {
+                activeBtn.className = "px-4 py-2 text-sm font-bold rounded-lg transition-all duration-200 bg-amber-500 text-slate-950 shadow-md";
+            } else {
+                activeBtn.className = "px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 bg-emerald-500 text-slate-950 shadow-md font-semibold";
+            }
+        }
+
+        // --- SIMULADOR PÍXEL VS VECTOR ---
+        function updateSimulador(value) {
+            const display = document.getElementById('zoomDisplay');
+            const bitmap = document.getElementById('bitmapTarget');
+            const vector = document.getElementById('vectorTarget');
+            const grid = document.getElementById('pixelGrid');
+
+            display.innerText = (value * 100) + '%';
+            vector.style.transform = `scale(${value})`;
+            bitmap.style.transform = `scale(${value})`;
+
+            if (value > 1) {
+                bitmap.classList.add('pixelated');
+                bitmap.style.filter = `blur(${(value - 1) * 0.4}px)`;
+                grid.style.opacity = (value > 4) ? '0.4' : '0.1';
+            } else {
+                bitmap.classList.remove('pixelated');
+                bitmap.style.filter = 'none';
+                grid.style.opacity = '0';
+            }
+        }
+
+        // --- MINI LABORATORIO DE COLOR ---
+        const coloresPaleta = [
+            { nombre: 'Cian', hex: '#00aeef' }, { nombre: 'Magenta', hex: '#e20074' },
+            { nombre: 'Amarillo', hex: '#fff200' }, { nombre: 'Negro', hex: '#1a1a1a' },
+            { nombre: 'Verde Corel', hex: '#00a859' }, { nombre: 'Naranja', hex: '#f7931e' },
+            { nombre: 'Azul', hex: '#2e3192' }, { nombre: 'Blanco', hex: '#ffffff' }
+        ];
+
+        const paletteGrid = document.getElementById('paletteGrid');
+        const labShapePolygon = document.querySelector('#labShape polygon');
+        const fillInd = document.getElementById('monitorFillIndicator');
+        const fillText = document.getElementById('monitorFillText');
+        const strokeInd = document.getElementById('monitorStrokeIndicator');
+        const strokeText = document.getElementById('monitorStrokeText');
+
+        coloresPaleta.forEach(color => {
+            const tile = document.createElement('div');
+            tile.className = "w-full aspect-square rounded border border-slate-800 shadow cursor-pointer transition-transform duration-100 hover:scale-105";
+            tile.style.backgroundColor = color.hex;
+
+            tile.addEventListener('click', function(e) {
+                e.preventDefault();
+                labShapePolygon.setAttribute('fill', color.hex);
+                fillInd.style.backgroundColor = color.hex;
+                fillText.innerText = color.hex.toUpperCase();
+            });
+
+            tile.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                labShapePolygon.setAttribute('stroke', color.hex);
+                strokeInd.style.backgroundColor = color.hex;
+                strokeText.innerText = color.hex.toUpperCase();
+            });
+
+            paletteGrid.appendChild(tile);
+        });
+
+        // --- QUIZ DE AUTOEVALUACIÓN ---
+        function calcularResultadoQuiz() {
+            const form = document.getElementById('quizForm');
+            const resultBox = document.getElementById('quizResultBox');
+            const resultTitle = document.getElementById('quizResultTitle');
+            const resultText = document.getElementById('quizResultText');
+
+            const q1 = form.elements['q1'].value;
+            const q4 = form.elements['q4'].value;
+
+            if (!q1 || !q4) {
+                alert('Por favor, responde las preguntas disponibles.');
+                return;
+            }
+
+            let aciertos = 0;
+            if (q1 === 'correcta') aciertos++;
+            if (q4 === 'correcta') aciertos++;
+
+            resultBox.className = "mt-6 p-5 rounded-xl border transition-all duration-300";
+            if (aciertos === 2) {
+                resultBox.classList.add('bg-emerald-950/40', 'border-emerald-800', 'text-emerald-300');
+                resultTitle.innerText = "¡Excelente Trabajo!";
+                resultText.innerText = "Has respondido correctamente las directivas clave del examen técnico.";
+            } else {
+                resultBox.classList.add('bg-rose-950/40', 'border-rose-800', 'text-rose-300');
+                resultTitle.innerText = "Repaso Sugerido";
+                resultText.innerText = "Revisa los conceptos interactivos e inténtalo de nuevo.";
+            }
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

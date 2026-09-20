@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Buyer Persona y Customer Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-gray-900 text-white text-center py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Clase 3: 🎯 Buyer Persona y Customer Journey</h1>
+            <p class="text-lg md:text-xl text-gray-300">Aprende a conectar con tu cliente ideal y a guiarlo en su camino de compra.</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-6 md:p-12 space-y-16">
+
+        <!-- Módulo 1: ¿Qué es un Buyer Persona? -->
+        <section id="buyer-persona">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 1: ¿Quién es tu Cliente Ideal? 🤔</h2>
+                <p class="text-lg mb-4">Un <strong>Buyer Persona</strong> es como el "retrato robot" de tu cliente perfecto. No es una persona real, pero se basa en datos y observaciones para crear un perfil que te ayude a entender a quién le estás vendiendo.</p>
+                <div class="bg-indigo-50 border-l-4 border-indigo-500 text-indigo-800 p-4 rounded-lg mt-6">
+                    <p><strong>Ejemplo práctico 🏪:</strong> Imagina que tienes un kiosco que vende por WhatsApp. Tu Buyer Persona podría ser "Ana, la mamá ocupada". Vive cerca, tiene poco tiempo y valora la comodidad de pedir por mensaje para luego solo pasar a buscarlo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 2: ¿Por qué es importante? -->
+        <section id="importancia">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 2: ¿Por Qué Necesitas un Buyer Persona? 💡</h2>
+                <p class="text-lg mb-6">Conocer bien a tu cliente te ayuda a no malgastar recursos. Es la clave para que tus esfuerzos de marketing y ventas den en el blanco.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-2xl mr-4">💰</span>
+                        <div><strong>Ahorras tiempo y dinero:</strong> Dejas de hacer publicidad para gente que nunca te comprará.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-2xl mr-4">✍️</span>
+                        <div><strong>Creas contenido relevante:</strong> Sabes si tu público prefiere publicaciones emotivas, informativas, videos o memes.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-2xl mr-4">🎁</span>
+                        <div><strong>Ofreces promociones efectivas:</strong> Creas ofertas que realmente le interesan a tu cliente.</div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-2xl mr-4">🗣️</span>
+                        <div><strong>Mejoras tu comunicación:</strong> Usas las palabras y el tono que tu público entiende y con el que conecta.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Módulo 3: Elementos del Buyer Persona -->
+        <section id="elementos">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 3: Construyendo tu Buyer Persona 🧱</h2>
+                <p class="text-lg mb-6">Estos son los datos básicos que necesitas para armar el perfil de tu cliente ideal:</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-100 p-4 rounded-lg">👤 <strong>Nombre:</strong> Un nombre ficticio para identificarlo.</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">🎂 <strong>Edad:</strong> Un rango aproximado.</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">💼 <strong>Ocupación:</strong> ¿A qué se dedica? ¿Cuál es su situación económica?</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">📍 <strong>Ubicación:</strong> ¿Dónde vive o se mueve?</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">📱 <strong>Redes Sociales:</strong> ¿Cuáles usa más? (Facebook, Instagram, TikTok, etc.)</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">😥 <strong>Problemas y Necesidades:</strong> ¿Qué le preocupa? ¿Qué busca solucionar?</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">🚀 <strong>Motivaciones:</strong> ¿Qué lo impulsa a comprar?</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">🚧 <strong>Barreras:</strong> ¿Qué dudas o miedos tiene antes de comprar?</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 4: ¿Qué es el Customer Journey? -->
+        <section id="customer-journey">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 4: El Viaje del Cliente 🗺️</h2>
+                <p class="text-lg mb-4">El <strong>Customer Journey</strong> (o Viaje del Cliente) es el camino completo que una persona recorre desde que se da cuenta de que tiene una necesidad hasta que te compra y, con suerte, se convierte en un cliente fiel que te recomienda.</p>
+                <p class="text-lg">Entender este viaje te permite acompañarlo en cada paso con el mensaje correcto.</p>
+            </div>
+        </section>
+
+        <!-- Módulo 5: Etapas del Viaje -->
+        <section id="etapas">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 5: Las 4 Paradas del Viaje 🚌</h2>
+                <div class="space-y-8">
+                    <!-- Etapa 1 -->
+                    <div class="p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">1. Descubrimiento 🧐</h3>
+                        <p>El cliente se da cuenta de que tiene un problema o un deseo. Aún no sabe cómo solucionarlo, solo sabe que necesita algo.</p>
+                        <p class="mt-2 text-sm text-gray-600"><strong>Ejemplo:</strong> Claudia ve en Facebook una publicación sobre venta de perfumes por catálogo y piensa "podría ser una buena forma de ganar dinero extra".</p>
+                    </div>
+                    <!-- Etapa 2 -->
+                    <div class="p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">2. Consideración 🤔</h3>
+                        <p>El cliente empieza a investigar y a buscar opciones para resolver su necesidad. Compara, lee opiniones, mira videos.</p>
+                        <p class="mt-2 text-sm text-gray-600"><strong>Ejemplo:</strong> Claudia busca videos en YouTube sobre "cómo vender por catálogo", compara precios y lee comentarios de otras vendedoras.</p>
+                    </div>
+                    <!-- Etapa 3 -->
+                    <div class="p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">3. Decisión ✅</h3>
+                        <p>El cliente ya evaluó sus opciones y está listo para elegir una y realizar la compra. ¡Es el momento clave!</p>
+                        <p class="mt-2 text-sm text-gray-600"><strong>Ejemplo:</strong> Después de investigar, Claudia decide contactar por WhatsApp al proveedor que le pareció más confiable para hacer su primer pedido.</p>
+                    </div>
+                    <!-- Etapa 4 -->
+                    <div class="p-6 rounded-lg border border-gray-200">
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">4. Fidelización ❤️</h3>
+                        <p>La compra ya se hizo. Si la experiencia fue buena, el cliente vuelve a comprar y, lo más importante, te recomienda a otros.</p>
+                        <p class="mt-2 text-sm text-gray-600"><strong>Ejemplo:</strong> Claudia está contenta con sus ventas, publica una historia en Instagram agradeciendo y etiqueta a su proveedor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulo 6: Herramientas -->
+        <section id="herramientas">
+            <div class="card">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 6: Herramientas Útiles 🛠️</h2>
+                <p class="text-lg mb-6">No tienes que empezar de cero. Aquí tienes algunas herramientas (muchas gratuitas) que te ayudarán:</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">Make My Persona - HubSpot</h3>
+                        <p>Un generador gratuito que te guía paso a paso para crear tu Buyer Persona.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">Google Forms</h3>
+                        <p>Perfecto para hacer encuestas sencillas y rápidas a tus clientes o seguidores.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">Canva</h3>
+                        <p>Ideal para diseñar fichas visuales de tu Buyer Persona o mapas del Customer Journey.</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">ChatGPT</h3>
+                        <p>Puede ayudarte a generar ideas, completar descripciones o crear ejemplos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Módulo 7: Video Complementario -->
+    <section id="video" class="mt-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="card text-center">
+                <h2 class="text-3xl font-bold mb-6 gradient-text">Módulo 7: Refuerzo Visual 🎬</h2>
+                <p class="text-lg mb-6">Para complementar lo aprendido, aquí tienes un video que explica estos conceptos de forma visual.</p>
+                <div class="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <iframe src="https://www.youtube.com/embed/Ojg6Ijpm2_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-6 mt-16">
+        <p>&copy; 2024 jcdiseing. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

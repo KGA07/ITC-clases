@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente de Circuitos LED con Protoboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #00ff66;
+      --primary-glow: rgba(0,255,102,0.18);
+      --border-color: rgba(0,255,102,0.18);
+      --text-color: #e6ffe6;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text-color);
+      background: linear-gradient(120deg, #00110a, #04130b);
+    }
+    .app-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      box-shadow: 0 0 25px var(--primary-glow);
+    }
+    .control-panel h2 {
+      text-align: center;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+    }
+    .led-selectors { display:flex; flex-direction:column; gap:0.8rem; }
+    .led-selector { display:flex; align-items:center; gap:0.5rem; }
+    .custom-select { flex:1; padding:6px; border-radius:8px; background:#111; color:var(--text-color); border:1px solid var(--border-color); }
+    .btn { padding:8px 12px; background:transparent; border:1px solid var(--border-color); color:var(--primary-color); border-radius:8px; cursor:pointer; }
+    .btn:hover { background:rgba(0,255,102,0.1); }
+    .delete-led-btn { border:none; background:#400; color:#fff; border-radius:50%; width:26px; height:26px; cursor:pointer; }
+    .results-panel { margin-top:1rem; padding:1rem; border:1px solid var(--border-color); border-radius:12px; background:rgba(0,0,0,0.3); }
+    .line-result { margin-bottom:1rem; padding:0.6rem; border-radius:10px; background:rgba(0,0,0,0.4); box-shadow:0 0 10px rgba(0,255,102,0.2); }
+    .line-result h4 { color:var(--primary-color); margin:0 0 0.4rem 0; }
+    .protoboard { margin-top:2rem; padding:1rem; background:#08140b; border-radius:10px; border:1px solid var(--border-color); }
+    #protoboard-svg { width:100%; height:280px; display:block; }
+    .radio-group { display:flex; gap:10px; margin:10px 0; }
+    .radio-group label { cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="control-panel">
+      <h2>Asistente de Circuito LED</h2>
+      <div class="radio-group">
+        <input type="radio" id="bands4" name="bands" value="4">
+        <label for="bands4">Resistencia 4 Bandas</label>
+        <input type="radio" id="bands5" name="bands" value="5" checked>
+        <label for="bands5">Resistencia 5 Bandas</label>
+      </div>
+      <div class="led-selectors" id="led-selectors-container"></div>
+      <div style="display:flex; gap:8px; margin-top:10px;">
+        <button id="add-led-btn" class="btn">+ Añadir LED</button>
+        <button id="reset-btn" class="btn">Reset</button>
+      </div>
+      <div class="results-panel" id="results-panel-container">
+        <p>Añade LEDs para comenzar...</p>
+      </div>
+    </div>
+
+    <div class="protoboard">
+      <svg id="protoboard-svg" viewBox="0 0 800 280"></svg>
+    </div>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const V_SOURCE = 5;
+    const I_TARGET = 0.020;
+    const standardResistors = [22, 33, 47, 56, 68, 82, 100, 120, 150, 180, 220, 270, 330, 390, 470, 560, 680, 820, 1000];
+
+    const ledData = {
+      rojo: { vf: 2.0, color: '#ff4d4d' },
+      verde: { vf: 2.1, color: '#00ff66' },
+      azul: { vf: 3.0, color: '#4d94ff' },
+      amarillo: { vf: 2.0, color: '#ffff7a' },
+      blanco: { vf: 3.0, color: '#ffffff' },
+      naranja: { vf: 2.0, color: '#ff9933' },
+      violeta: { vf: 3.2, color: '#cc66ff' }
+    };
+
+    const colorBands = {
+      negro: '#000', marron: 'saddlebrown', rojo: 'red', naranja: 'orange', amarillo: 'yellow',
+      verde: 'limegreen', azul: 'blue', violeta: 'violet', gris: 'gray', blanco: 'white',
+      dorado: 'gold', plateado: 'silver'
+    };
+
+    let ledCount = 0;
+    const selectorsContainer = document.getElementById('led-selectors-container');
+    const resultsContainer = document.getElementById('results-panel-container');
+    const svg = document.getElementById('protoboard-svg');
+
+    document.getElementById('add-led-btn').addEventListener('click', addLedSelector);
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      selectorsContainer.innerHTML = ''; ledCount = 0; updateCircuit(); addLedSelector();
+    });
+
+    function addLedSelector() {
+      ledCount++;
+      const options = `<option value="">- Vacío -</option>` + Object.keys(ledData).map(c=>`<option value="${c}">${c.toUpperCase()}</option>`).join('');
+      const div = document.createElement('div');
+      div.className = 'led-selector';
+      div.innerHTML = `<label>LED ${ledCount}:</label><select class="custom-select">${options}</select><button class="delete-led-btn">✕</button>`;
+      selectorsContainer.appendChild(div);
+      div.querySelector('select').addEventListener('change', updateCircuit);
+      div.querySelector('.delete-led-btn').addEventListener('click', () => { div.remove(); updateCircuit(); });
+      updateCircuit();
+    }
+
+    function updateCircuit() {
+      const selected = [];
+      selectorsContainer.querySelectorAll('select').forEach(sel => { if(sel.value) selected.push({ key: sel.value, ...ledData[sel.value] }); });
+      if(selected.length===0){
+        resultsContainer.innerHTML = '<p>Añade y selecciona al menos un LED...</p>';
+        svg.innerHTML = '';
+        return;
+      }
+      const lines = buildSeriesParallel(selected);
+      showResults(lines);
+      drawProtoboard(lines);
+    }
+
+    function buildSeriesParallel(leds){
+      let remaining = [...leds];
+      const lines = [];
+      while(remaining.length>0){
+        let line = {leds:[], totalVf:0};
+        for(let i=remaining.length-1;i>=0;i--){
+          if(line.totalVf+remaining[i].vf < V_SOURCE-0.2){
+            line.leds.push(remaining[i]);
+            line.totalVf += remaining[i].vf;
+            remaining.splice(i,1);
+          }
+        }
+        if(line.leds.length===0){
+          line.leds.push(remaining.shift());
+          line.totalVf = line.leds.reduce((s,l)=>s+l.vf,0);
+        }
+        lines.push(line);
+      }
+      return lines;
+    }
+
+    function showResults(lines){
+      resultsContainer.innerHTML = '';
+      const bandsType = document.querySelector('input[name="bands"]:checked').value;
+      lines.forEach((line, idx) => {
+        const rValue = Math.max(1, Math.round((V_SOURCE - line.totalVf)/I_TARGET));
+        const recommendedR = standardResistors.find(r=>r>=rValue) || standardResistors[standardResistors.length-1];
+        const ledSummary = line.leds.map(l=>l.key.toUpperCase()).join(', ');
+        resultsContainer.innerHTML += `<div class="line-result"><h4>Línea ${idx+1}</h4><p><strong>LEDs en serie:</strong> ${ledSummary}</p><p><strong>Resistencia:</strong> ${recommendedR} Ω (${bandsType} bandas)</p>${renderResistorBands(recommendedR, bandsType)}</div>`;
+        line.resistance = recommendedR;
+      });
+    }
+
+    function renderResistorBands(value, bandsType){
+      const str = value.toString();
+      let bands = [];
+      if(bandsType==="5"){
+        const d1=parseInt(str[0]||'0');
+        const d2=parseInt(str[1]||'0');
+        const d3=parseInt(str[2]||'0');
+        const mult=Math.pow(10, Math.max(0,str.length-3));
+        bands=[d1,d2,d3,mult,'marron'];
+      } else {
+        const d1=parseInt(str[0]||'0');
+        const d2=parseInt(str[1]||'0');
+        const mult=Math.pow(10, Math.max(0,str.length-2));
+        bands=[d1,d2,mult,'dorado'];
+      }
+      return `<div style="display:flex;gap:4px;margin-top:6px;">${bands.map(b=>`<div style='width:12px;height:40px;background:${typeof b==='number'?getColorFromDigit(b):colorBands[b]};border:1px solid #222'></div>`).join('')}</div>`;
+    }
+
+    function getColorFromDigit(d){
+      const map=["#000","saddlebrown","red","orange","yellow","limegreen","blue","violet","gray","white"];
+      return map[d]||"#000";
+    }
+
+    function drawProtoboard(lines){
+      svg.innerHTML = '';
+      svg.innerHTML += `<rect x="10" y="10" width="780" height="260" rx="8" fill="#0a1a0f" stroke="#0f6" stroke-width="1"/>`;
+      const startY = 50;
+      const gapY = 50;
+      lines.forEach((line, idx) => {
+        const y = startY + idx*gapY;
+        // Resistencia
+        svg.innerHTML += `<rect x="100" y="${y-10}" width="40" height="20" fill="#b28a5b" stroke="#614a2d" rx="4"/>`;
+        svg.innerHTML += `<text x="150" y="${y+5}" font-size="12" fill="#fff">${line.resistance}Ω</text>`;
+        // LEDs
+        let lastX = 200;
+        line.leds.forEach((led, i) => {
+          svg.innerHTML += `<circle cx="${lastX}" cy="${y}" r="10" fill="${led.color}" stroke="#fff" stroke-width="1"/>`;
+          svg.innerHTML += `<text x="${lastX-12}" y="${y+25}" font-size="10" fill="#fff">${led.key.toUpperCase()}</text>`;
+          lastX += 50;
+        });
+        // Líneas de conexión simplificadas
+        svg.innerHTML += `<line x1="60" y1="${y}" x2="100" y2="${y}" stroke="#0f6" stroke-width="2"/>`;
+        svg.innerHTML += `<line x1="${lastX}" y1="${y}" x2="740" y2="${y}" stroke="#0f6" stroke-width="2"/>`;
+      });
+      // Etiquetas de fuente
+      svg.innerHTML += `<text x="40" y="30" fill="#0f6">5V</text>`;
+      svg.innerHTML += `<text x="740" y="240" fill="#0f6">GND</text>`;
+    }
+
+    addLedSelector();
+  });
+  </script>
+</body>
+</html>

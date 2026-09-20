@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4: Buyer Persona & Customer Journey - GKempe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fffbeb;
+            color: #1a1a1a;
+            overflow-x: hidden; /* Previene scroll horizontal en móviles */
+        }
+        .module-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #fef3c7;
+            transition: all 0.3s ease;
+        }
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .tool-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #4f46e5, #ec4899);
+        }
+        /* Ajuste para el iframe de videos en móviles */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="relative overflow-hidden bg-white pt-12 pb-20 md:pt-16 md:pb-24 border-b border-yellow-200 shadow-sm">
+        <div class="absolute inset-0 bg-gradient-to-b from-yellow-50 to-white opacity-50"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full mb-6 md:mb-8 border border-indigo-100">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                </span>
+                <span class="text-xs font-bold uppercase tracking-widest text-center">Lección Interactiva Academia</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 md:mb-6 leading-tight">
+                <span class="gradient-text">Buyer Persona y Customer Journey</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">
+                Identifica a tu cliente ideal y acompaña su proceso de compra con una estrategia empática, datos reales y visión profesional.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 space-y-8 md:space-y-12">
+
+        <section class="module-card p-6 sm:p-8 md:p-10">
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex flex-wrap items-center">
+                <span class="bg-indigo-100 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 text-indigo-800 text-sm sm:text-base whitespace-nowrap">Lección 1</span> 
+                ¿Quién es tu Cliente Ideal? 🤔
+            </h2>
+            <div class="space-y-4 sm:space-y-6">
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700">
+                    Un <span class="font-bold text-indigo-600 italic">Buyer Persona</span> es como el "retrato robot" de tu cliente perfecto. No es una persona real, pero se basa en datos y observaciones para crear un perfil que te ayude a entender a quién le estás vendiendo.
+                </p>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 sm:p-6 rounded-r-xl italic shadow-sm">
+                    <p class="font-semibold text-yellow-800 mb-1 sm:mb-2 text-sm sm:text-base">Ejemplo práctico 🏪:</p>
+                    <p class="text-yellow-900 text-base sm:text-lg">
+                        Imagina que tienes un kiosco que vende por WhatsApp. Tu Buyer Persona podría ser <strong>"Ana, la mamá ocupada"</strong>. Vive cerca, tiene poco tiempo y valora la comodidad de pedir por mensaje para luego solo pasar a buscarlo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10">
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex flex-wrap items-center text-indigo-700">
+                <span class="bg-indigo-50 text-indigo-600 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 border border-indigo-200 text-xs sm:text-sm uppercase tracking-widest whitespace-nowrap">Mini Lección</span>
+                Target vs. Buyer Persona 🎯
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8">Es muy común confundir ambos conceptos, pero marcar la diferencia es lo que transformará tu marketing de "bueno" a "excelente".</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div class="bg-slate-50 p-5 sm:p-6 rounded-2xl border-l-4 border-slate-300">
+                    <h3 class="font-bold text-base sm:text-lg mb-2 text-slate-700">Público Objetivo (Target) 📊</h3>
+                    <p class="text-slate-600 text-sm">Son datos fríos, generales y puramente demográficos. Agrupa a las personas, pero carece de rostro y emociones.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-200">
+                        <p class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Ejemplo Clásico:</p>
+                        <p class="text-slate-600 text-sm sm:text-base font-medium italic">"Mujeres de 30 a 45 años, de clase media, que viven en Argentina."</p>
+                    </div>
+                </div>
+                <div class="bg-indigo-50 p-5 sm:p-6 rounded-2xl border-l-4 border-indigo-500 shadow-sm">
+                    <h3 class="font-bold text-base sm:text-lg mb-2 text-indigo-800">Buyer Persona 👤</h3>
+                    <p class="text-slate-600 text-sm">Es una representación humana y profunda. Tiene nombre, miedos, metas diarias y una historia detrás de su compra.</p>
+                    <div class="mt-4 pt-4 border-t border-indigo-100">
+                        <p class="text-[10px] sm:text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">Ejemplo Real:</p>
+                        <p class="text-indigo-700 text-sm sm:text-base font-medium italic">"Claudia, 38 años. Administrativa. Busca ingresos extra para sus hijos, pero teme a las estafas online."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10">
+            <h2 class="text-xl sm:text-2xl font-bold mb-6 flex flex-wrap items-center">
+                <span class="bg-indigo-100 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 text-indigo-800 text-sm sm:text-base whitespace-nowrap">Lección 2</span> 
+                ¿Por Qué Necesitas un Buyer Persona? 💡
+            </h2>
+            <p class="text-base sm:text-lg text-slate-700 mb-8 sm:mb-10">Conocer a tu cliente evita el desperdicio de recursos. Es la brújula para que tus esfuerzos de marketing den siempre en el blanco.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                <div class="flex items-start">
+                    <span class="text-2xl sm:text-3xl mr-3 sm:mr-4 flex-shrink-0">💰</span>
+                    <div>
+                        <h4 class="font-bold text-indigo-700 text-sm sm:text-base">Ahorras tiempo y dinero</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-1">Focalizas tu publicidad solo en quienes realmente tienen interés en comprarte.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-2xl sm:text-3xl mr-3 sm:mr-4 flex-shrink-0">✍️</span>
+                    <div>
+                        <h4 class="font-bold text-indigo-700 text-sm sm:text-base">Contenido relevante</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-1">Sabes si tu audiencia prefiere mensajes informativos, videos cortos o historias emotivas.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-2xl sm:text-3xl mr-3 sm:mr-4 flex-shrink-0">🎁</span>
+                    <div>
+                        <h4 class="font-bold text-indigo-700 text-sm sm:text-base">Ofertas efectivas</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-1">Diseñas promociones que resuelven deseos específicos de tu cliente.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="text-2xl sm:text-3xl mr-3 sm:mr-4 flex-shrink-0">🗣️</span>
+                    <div>
+                        <h4 class="font-bold text-indigo-700 text-sm sm:text-base">Mejor comunicación</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-1">Utilizas el lenguaje y el tono que genera confianza y conexión inmediata.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10 bg-red-50 border-red-100">
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex flex-wrap items-center text-red-700">
+                <span class="bg-white text-red-600 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 border border-red-200 text-xs sm:text-sm uppercase tracking-widest shadow-sm whitespace-nowrap">Mini Lección</span>
+                El Anti-Persona (Negative Persona) 🚫
+            </h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 text-center md:text-left">
+                <div class="flex-shrink-0 text-5xl sm:text-6xl drop-shadow-md">🛑</div>
+                <div>
+                    <p class="text-base sm:text-lg text-red-900 leading-relaxed mb-2 sm:mb-3 font-medium">
+                        Así como definimos a quién le queremos vender, es vital tener totalmente claro a quién <strong>NO</strong> queremos como cliente en nuestro negocio.
+                    </p>
+                    <p class="text-red-700/80 text-xs sm:text-sm leading-relaxed">
+                        El Anti-Persona es aquel usuario que nos consume tiempo, recursos y energía, pero que nunca comprará, o peor aún, no valorará nuestro trabajo. Pueden ser clientes que solo buscan lo más barato, que piden rebajas constantes, o que tienen expectativas irreales. Identificar este perfil te ayuda a filtrar tus mensajes y proteger la salud de tu emprendimiento.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10 bg-slate-900 text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-32 h-32 sm:w-40 sm:h-40 bg-pink-500 rounded-full opacity-20 filter blur-3xl"></div>
+            <h2 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 flex flex-wrap items-center relative z-10">
+                <span class="bg-indigo-500/20 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 border border-indigo-500/30 text-indigo-300 text-sm sm:text-base whitespace-nowrap">Lección 3</span> 
+                Construyendo tu Buyer Persona 🧱
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 relative z-10">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <p class="text-[10px] sm:text-xs uppercase text-indigo-300 font-bold mb-1 sm:mb-2 tracking-widest">Perfil</p>
+                    <p class="font-semibold text-sm sm:text-base mb-1">👤 Nombre</p>
+                    <p class="font-semibold text-sm sm:text-base">🎂 Edad</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <p class="text-[10px] sm:text-xs uppercase text-indigo-300 font-bold mb-1 sm:mb-2 tracking-widest">Contexto</p>
+                    <p class="font-semibold text-sm sm:text-base mb-1">💼 Ocupación</p>
+                    <p class="font-semibold text-sm sm:text-base">📍 Ubicación</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <p class="text-[10px] sm:text-xs uppercase text-indigo-300 font-bold mb-1 sm:mb-2 tracking-widest">Digital</p>
+                    <p class="font-semibold text-sm sm:text-base mb-1">📱 Redes</p>
+                    <p class="font-semibold text-sm sm:text-base">🚀 Motivaciones</p>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <p class="text-[10px] sm:text-xs uppercase text-indigo-300 font-bold mb-1 sm:mb-2 tracking-widest">Psicología</p>
+                    <p class="font-semibold text-sm sm:text-base mb-1">😥 Problemas</p>
+                    <p class="font-semibold text-sm sm:text-base">🚧 Barreras</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10">
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex flex-wrap items-center text-indigo-700">
+                <span class="bg-indigo-100 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 text-sm sm:text-base whitespace-nowrap">Lección 4 y 5</span> 
+                El Viaje del Cliente 🗺️ 🚌
+            </h2>
+            <p class="text-base sm:text-lg text-slate-700 mb-8 sm:mb-12">
+                El <span class="font-bold italic">Customer Journey</span> es el camino completo que recorre una persona desde que nota una necesidad hasta que se convierte en un cliente fiel.
+            </p>
+
+            <div class="space-y-8 sm:space-y-10 relative">
+                <div class="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-indigo-100"></div>
+                
+                <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold z-10 shadow-lg shadow-indigo-200 text-sm sm:text-base">1</div>
+                    <div class="flex-grow pb-4 border-b border-slate-100">
+                        <h4 class="text-lg sm:text-xl font-bold mb-1">Descubrimiento 🧐</h4>
+                        <p class="text-slate-600 italic mb-2 text-xs sm:text-sm">El cliente identifica un problema o deseo.</p>
+                        <p class="bg-slate-50 p-3 rounded-lg text-xs sm:text-sm border border-slate-100"><strong>Ejemplo:</strong> Claudia ve una publicación sobre perfumes y piensa "podría ganar dinero extra".</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold z-10 shadow-lg shadow-indigo-200 text-sm sm:text-base">2</div>
+                    <div class="flex-grow pb-4 border-b border-slate-100">
+                        <h4 class="text-lg sm:text-xl font-bold mb-1">Consideración 🤔</h4>
+                        <p class="text-slate-600 italic mb-2 text-xs sm:text-sm">Compara opciones y busca referencias.</p>
+                        <p class="bg-slate-50 p-3 rounded-lg text-xs sm:text-sm border border-slate-100"><strong>Ejemplo:</strong> Claudia investiga proveedores y lee comentarios de otras vendedoras.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold z-10 shadow-lg shadow-pink-200 text-sm sm:text-base">3</div>
+                    <div class="flex-grow pb-4 border-b border-slate-100">
+                        <h4 class="text-lg sm:text-xl font-bold mb-1">Decisión ✅</h4>
+                        <p class="text-slate-600 italic mb-2 text-xs sm:text-sm">Momento crucial: elige la marca y realiza la compra.</p>
+                        <p class="bg-slate-50 p-3 rounded-lg text-xs sm:text-sm border border-slate-100"><strong>Ejemplo:</strong> Claudia contacta por WhatsApp al proveedor que le brindó más confianza.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold z-10 shadow-lg shadow-green-200 text-sm sm:text-base">4</div>
+                    <div class="flex-grow">
+                        <h4 class="text-lg sm:text-xl font-bold mb-1">Fidelización ❤️</h4>
+                        <p class="text-slate-600 italic mb-2 text-xs sm:text-sm">El cliente repite la compra y recomienda el servicio.</p>
+                        <p class="bg-slate-50 p-3 rounded-lg text-xs sm:text-sm border border-slate-100"><strong>Ejemplo:</strong> Claudia comparte una historia satisfecha y etiqueta a su proveedor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10 bg-white/90 shadow-lg backdrop-blur-sm">
+            <h2 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-10 flex flex-wrap items-center text-indigo-800">
+                <span class="bg-indigo-50 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 shadow-sm border border-indigo-100 text-sm sm:text-base whitespace-nowrap">Lección 6</span> 
+                Herramientas Útiles y Recomendadas 🛠️
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                
+                <a href="https://www.hubspot.es/" target="_blank" class="flex flex-row items-start sm:items-center space-x-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all">
+                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjU1LjgyIDM1NS45OSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmNDgwMDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9Ikh1YlNwb3RfTG9nbyIgZGF0YS1uYW1lPSJIdWJTcG90IExvZ28iPgogICAgPGc+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxMzYuMDEgMjAxLjQ4IDQzLjc5IDIwMS40OCA0My43OSAyOTguNjIgMCAyOTguNjIgMCA1OC45MyA0My43OSA1OC45MyA0My43OSAxNTkuMzUgMTM2LjAxIDE1OS4zNSAxMzYuMDEgNTguOTMgMTc5Ljc5IDU4LjkzIDE3OS43OSAyOTguNjIgMTM2LjAxIDI5OC42MiAxMzYuMDEgMjAxLjQ4Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMxOS45MSwyMjEuMTRjMCwxOS45Ni0xNi4yNiwzNi4yMS0zNi4yMiwzNi4yMXMtMzYuMjEtMTYuMjQtMzYuMjEtMzYuMjF2LTEwMi42NmgtNDEuNDd2MTAyLjY2YzAsNDIuODMsMzQuODUsNzcuNjcsNzcuNjgsNzcuNjdzNzcuNjctMzQuODQsNzcuNjctNzcuNjd2LTEwMi42NmgtNDEuNDV2MTAyLjY2WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02MjcuNiwxMjkuMDVjMC0yMS4wNSwxMy45My0yNy43MiwyOS4xOC0yNy43MiwxMi4yOCwwLDI4LjUzLDkuMzUsMzkuMTQsMjAuNzFsMjcuMTktMzIuMDZjLTEzLjU5LTE4LjM2LTQxLjEyLTMxLjA1LTYzLjY3LTMxLjA1LTQ1LjEyLDAtNzcuNjMsMjYuMzgtNzcuNjMsNzAuMTMsMCw4MS4xNCw5OS4xOSw1NS40Miw5OS4xOSwxMDAuODQsMCwxNC4wMS0xMy42LDI2LjM3LTI5LjE4LDI2LjM3LTI0LjU1LDAtMzIuNTItMTIuMDItNDMuNzktMjQuNzFsLTMwLjE5LDMxLjM4YzE5LjI1LDIzLjcxLDQzLjEzLDM1Ljc0LDcxLjY2LDM1Ljc0LDQyLjc5LDAsNzcuMjktMjYuNzEsNzcuMjktNjguNDYsMC05MC4xNS05OS4xOC02Mi4xLTk5LjE4LTEwMS4xNloiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTI0MS4yMSwyNjAuMzNjLTI0LjU0LDAtMzEuNS0xMC42MS0zMS41LTI2Ljg3di03MS45OGgzOC4xNHYtMzYuNDhoLTM4LjE0di00OC4xbC00Mi4xMiwxOC45MXYxNDYuNjJjMCwzNy40OSwyNS44Niw1Ni40LDYxLjM0LDU2LjQsNS4zMSwwLDEyLjYxLS4zNCwxNi42LTEuMzNsMTAuMjktMzcuODFjLTQuNjQuMzItOS45NS42NS0xNC42MS42NVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDc3Ljk2LDExOS42OGMtMjAuNTcsMC0zNC45Miw1Ljk3LTQ4Ljc5LDE5LjU4VjYwLjM2aC00MS42djE0Ni4yM2MwLDU0LjczLDM5LjU3LDkyLjIyLDg0LjA0LDkyLjIyLDQ5LjQzLDAsOTIuNzMtMzguMTUsOTIuNzMtODkuNTZzLTM5LjkzLTg5LjU3LTg2LjM4LTg5LjU3Wk00NzcuNywyNTYuOTVjLTI2LjA2LDAtNDcuMTgtMjEuMTItNDcuMTgtNDcuMThzMjEuMTItNDcuMTgsNDcuMTgsNDcuMTgsNDcuMTgsMjEuMTIsNDcuMTgsNDcuMTgtMjEuMTIsNDcuMTgtNDcuMTgsNDcuMThaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTkyOS41OSwyMDcuMDljMC01MS40MS00My4zMS04OS41Ni05Mi43My04OS41Ni00NC40NiwwLTg0LjA0LDM3LjQ5LTg0LjA0LDkyLjIydjE0Ni4yM2g0MS42di03OC45MWMxMy44NywxMy42MSwyOC4yMiwxOS41OCw0OC43OSwxOS41OCw0Ni40NSwwLDg2LjM4LTM4LjgxLDg2LjM4LTg5LjU3Wk04OTAuMTMsMjA2LjU4YzAsMjYuMDYtMjEuMTIsNDcuMTgtNDcuMTgsNDcuMThzLTQ3LjE4LTIxLjEyLTQ3LjE4LTQ3LjE4LDIxLjEyLTQ3LjE4LDQ3LjE4LTQ3LjE4LDQ3LjE4LDIxLjEyLDQ3LjE4LDQ3LjE4WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMDY0LjAxLDExNS41MnYtNDEuNzljMTAuOTEtNS4xNSwxOC41NS0xNi4xOSwxOC41NS0yOC45OXYtLjk3YzAtMTcuNjctMTQuNDYtMzIuMTMtMzIuMTMtMzIuMTNoLS45NmMtMTcuNjcsMC0zMi4xMywxNC40Ni0zMi4xMywzMi4xM3YuOTdjMCwxMi44MSw3LjY0LDIzLjg0LDE4LjU1LDI4Ljk5djQxLjc5Yy0xNi4yNCwyLjUxLTMxLjA4LDkuMjEtNDMuMzIsMTkuMDZsLTExNC43My04OS4yNWMuNzUtMi45MSwxLjI4LTUuOSwxLjI5LTkuMDRDODc5LjE0LDE2LjI3LDg2Mi45NC4wMyw4NDIuOTIsMGMtMjAuMDItLjAzLTM2LjI2LDE2LjE4LTM2LjI5LDM2LjItLjAyLDIwLjAyLDE2LjE4LDM2LjI2LDM2LjIsMzYuMjksNi41MiwwLDEyLjU2LTEuODQsMTcuODUtNC44NWwxMTIuODYsODcuNzljLTkuNiwxNC40OS0xNS4yMiwzMS44NC0xNS4yMiw1MC41MnM2LjE4LDM3LjY1LDE2LjYyLDUyLjUzbC0zNC4zMiwzNC4zMmMtMi43MS0uODEtNS41My0xLjM4LTguNTEtMS4zOC0xNi40NSwwLTI5Ljc4LDEzLjMzLTI5Ljc4LDI5Ljc4czEzLjM0LDI5Ljc4LDI5Ljc4LDI5Ljc4LDI5Ljc4LTEzLjMzLDI5Ljc4LTI5Ljc4YzAtMi45OC0uNTctNS44LTEuMzgtOC41MWwzMy45NS0zMy45NWMxNS40MSwxMS43NiwzNC42LDE4LjgzLDU1LjQ5LDE4LjgzLDUwLjYsMCw5MS42Mi00MS4wMiw5MS42Mi05MS42MiwwLTQ1LjgxLTMzLjY1LTgzLjY1LTc3LjU2LTkwLjQzWk0xMDQ5Ljk0LDI1Mi45MmMtMjUuOTQsMC00Ni45OC0yMS4wMy00Ni45OC00Ni45N3MyMS4wMy00Ni45Nyw0Ni45OC00Ni45Nyw0Ni45NywyMS4wMyw0Ni45Nyw0Ni45Ny0yMS4wMyw0Ni45Ny00Ni45Nyw0Ni45N1oiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="HubSpot Logo" class="tool-logo mt-1 sm:mt-0">
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm sm:text-base">HubSpot - CRM Gratuito</h5>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1"><strong>Para qué sirve:</strong> Ideal para centralizar los datos de tus Buyer Personas, sus interacciones y hacer seguimiento creando una base de datos.</p>
+                    </div>
+                </a>
+                
+                <a href="https://forms.google.com" target="_blank" class="flex flex-row items-start sm:items-center space-x-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Google_Forms_2020_Logo.svg" alt="Google Forms Logo" class="tool-logo mt-1 sm:mt-0">
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm sm:text-base">Google Forms</h5>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1"><strong>Para qué sirve:</strong> Crea encuestas sencillas. Úsala para preguntar directamente a tus clientes sobre sus necesidades y motivaciones.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.canva.com/" target="_blank" title="Logo by Canva - Public Domain (Wikimedia Commons)" class="flex flex-row items-start sm:items-center space-x-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/512px-Canva_icon_2021.svg.png" alt="Canva Logo" class="tool-logo mt-1 sm:mt-0">
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm sm:text-base">Canva</h5>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1"><strong>Para qué sirve:</strong> Utilízala para diseñar la ficha visual de tu Buyer Persona o dibujar el mapa del Customer Journey de forma profesional.</p>
+                    </div>
+                </a>
+
+                <a href="https://chat.openai.com/" target="_blank" class="flex flex-row items-start sm:items-center space-x-4 bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-300 hover:shadow-md transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo" class="tool-logo mt-1 sm:mt-0">
+                    <div>
+                        <h5 class="font-bold text-slate-800 text-sm sm:text-base">ChatGPT</h5>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1"><strong>Para qué sirve:</strong> Úsala como asistente para generar lluvias de ideas o simular descripciones basadas en tu nicho y datos reales.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10 overflow-hidden">
+            <h2 class="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 flex flex-wrap items-center">
+                <span class="bg-red-100 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 text-red-600 shadow-sm text-sm sm:text-base whitespace-nowrap">Lección 7</span> 
+                Refuerzo Visual 🎬
+            </h2>
+            
+            <div class="bg-yellow-50 p-2 rounded-xl flex flex-col sm:flex-row mb-6 sm:mb-8 gap-2 shadow-inner">
+                <button id="tab-btn-1" onclick="showVideo(1)" class="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 rounded-lg font-bold bg-white shadow-sm text-indigo-600 transition-all border border-yellow-200 text-sm sm:text-base">Recomendado #1: Clínica Emprendedores</button>
+                <button id="tab-btn-2" onclick="showVideo(2)" class="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 rounded-lg font-bold text-yellow-800 hover:text-indigo-600 transition-all border border-transparent text-sm sm:text-base">Recomendado #2: Tutorial Cyberclick</button>
+            </div>
+
+            <div id="video-content-1" class="block">
+                <div class="video-container bg-slate-900 rounded-xl sm:rounded-2xl shadow-xl mb-4 max-w-3xl border-4 border-white mx-auto md:mx-0">
+                    <iframe src="https://www.youtube.com/embed/Ojg6Ijpm2_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="font-bold text-lg sm:text-xl text-slate-800">Clínica de Emprendedores: El Buyer Persona</h3>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Observa cómo emprendedores locales definen a su público para potenciar sus ventas digitales.</p>
+            </div>
+
+            <div id="video-content-2" class="hidden">
+                <div class="video-container bg-slate-900 rounded-xl sm:rounded-2xl shadow-xl mb-4 max-w-3xl border-4 border-white mx-auto md:mx-0">
+                    <iframe src="https://www.youtube.com/embed/Pj1yWq4D6aQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="font-bold text-lg sm:text-xl text-slate-800">Creación del Buyer Persona paso a paso</h3>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Un tutorial dinámico de Cyberclick para realizar tu perfil con las preguntas correctas.</p>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10 bg-white shadow-sm">
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex flex-wrap items-center text-pink-700">
+                <span class="bg-pink-100 p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 border border-pink-200 text-sm sm:text-base whitespace-nowrap">Lección 8</span> 
+                Herramienta Clave: El Mapa de Empatía 🗺️✨
+            </h2>
+            <div class="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-700 leading-relaxed">
+                <p>Antes de definir los miedos y barreras, debemos **empatizar** profundamente 🤝. El Mapa de Empatía nos ayuda a estructurar lo que nuestra audiencia siente en su día a día.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 bg-yellow-50 p-4 sm:p-6 rounded-2xl shadow-inner border border-yellow-100">
+                    <div>
+                        <ul class="list-none space-y-3 sm:space-y-4 text-xs sm:text-sm">
+                            <li class="flex items-start"><span class="mr-2 text-lg sm:text-xl">👀</span> <span><strong>¿Qué ve?</strong> (Su entorno, amigos, oferta del mercado).</span></li>
+                            <li class="flex items-start"><span class="mr-2 text-lg sm:text-xl">👂</span> <span><strong>¿Qué oye?</strong> (Lo que dicen amigos, jefe, influencias).</span></li>
+                            <li class="flex items-start"><span class="mr-2 text-lg sm:text-xl">🧠</span> <span><strong>¿Qué piensa y siente?</strong> (Lo que realmente le importa).</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-none space-y-3 sm:space-y-4 text-xs sm:text-sm">
+                            <li class="flex items-start"><span class="mr-2 text-lg sm:text-xl">🗣️</span> <span><strong>¿Qué dice y hace?</strong> (Su comportamiento público, actitud).</span></li>
+                            <li class="flex items-start"><span class="mr-2 text-lg sm:text-xl">😰</span> <span><strong>Esfuerzos (Miedos)</strong> (Obstáculos, frustraciones).</span></li>
+                            <li class="flex items-start"><span class="mr-2 text-lg sm:text-xl">🏆</span> <span><strong>Resultados (Deseos)</strong> (Lo que quiere conseguir).</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-xs sm:text-sm font-bold text-indigo-700 bg-indigo-50 inline-block px-3 py-2 sm:px-4 sm:py-2 rounded-lg break-words w-full sm:w-auto">💡 Tip: Esta herramienta es el paso previo ideal antes de rellenar la tarea descargable.</p>
+            </div>
+        </section>
+
+        <section class="module-card p-6 sm:p-8 md:p-10 border-2 border-indigo-100 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 transform translate-x-1/2 -translate-y-1/2"></div>
+            
+            <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex flex-wrap items-center text-indigo-800 relative z-10">
+                <span class="bg-indigo-600 text-white p-2 rounded-lg mr-3 sm:mr-4 mb-2 sm:mb-0 shadow-md text-sm sm:text-base whitespace-nowrap">Lección 9</span>
+                Ejemplo de Ficha Final 📋✨
+            </h2>
+            <p class="text-sm sm:text-base text-slate-600 mb-6 sm:mb-8 relative z-10">
+                Así es como se ve un Buyer Persona terminado cuando unes toda la información. Esta claridad será tu superpoder al momento de vender.
+            </p>
+            
+            <div class="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 relative z-10 mt-6 sm:mt-0">
+                <div class="absolute -top-3 right-0 sm:top-0 sm:right-0 bg-pink-500 text-white text-[10px] sm:text-xs font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-l-xl rounded-tr-2xl sm:rounded-bl-xl sm:rounded-tl-none uppercase tracking-wider shadow-sm">Perfil de Éxito</div>
+                
+                <div class="flex flex-col md:flex-row gap-6 sm:gap-8 pt-4 sm:pt-0">
+                    <div class="md:w-1/3 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-slate-100 pb-6 md:pb-0 md:pr-6">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-indigo-100 to-pink-100 rounded-full flex items-center justify-center text-4xl sm:text-5xl mb-3 sm:mb-4 shadow-inner border-2 border-white">👩🏻‍💼</div>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-indigo-700 leading-tight">Claudia,<br><span class="text-base sm:text-lg text-pink-500">"La Mamá Práctica"</span></h3>
+                        <p class="text-[10px] sm:text-xs font-bold text-slate-400 mt-3 uppercase tracking-widest">Demografía</p>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1">38 años | Administrativa | CABA</p>
+                        
+                        <p class="text-[10px] sm:text-xs font-bold text-slate-400 mt-4 uppercase tracking-widest">Canales Preferidos</p>
+                        <div class="mt-2 flex flex-wrap gap-2 justify-center w-full">
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold text-slate-600">📱 Instagram</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold text-slate-600">💬 WhatsApp</span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div class="bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-slate-800 mb-2 flex items-center text-sm sm:text-base"><span class="mr-2 text-base sm:text-lg">😥</span> Retos y Problemas</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Trabaja 8 horas y tiene poco tiempo. Necesita ingresos extra para pagar actividades de sus hijos, pero su principal problema es la falta de organización.</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-slate-800 mb-2 flex items-center text-sm sm:text-base"><span class="mr-2 text-base sm:text-lg">🚀</span> ¿Qué la motiva?</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Valora la comodidad, las explicaciones claras, la honestidad y la posibilidad de gestionar todo desde su celular sin llamadas largas.</p>
+                        </div>
+                        <div class="sm:col-span-2 bg-red-50 p-4 rounded-xl border border-red-100">
+                            <h4 class="font-bold text-red-800 mb-2 flex items-center text-sm sm:text-base"><span class="mr-2 text-base sm:text-lg">🚧</span> Barreras de compra (Miedos)</h4>
+                            <p class="text-xs sm:text-sm text-red-700 italic font-medium">"Me da miedo que el proveedor me estafe, me cambie los precios a último momento o no me cumpla con los envíos, dejándome mal con mis propias clientas."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-r from-indigo-600 to-pink-500 rounded-3xl p-6 sm:p-10 text-white text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-30"></div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 italic">¡Es tu turno de brillar! 🚀</h3>
+                <p class="text-indigo-100 mb-6 sm:mb-8 max-w-xl mx-auto text-sm sm:text-lg">Descarga tu documento interactivo con todas las lecciones integradas, complétalo y comienza a conectar de verdad con tu audiencia.</p>
+                
+                <a href="https://drive.google.com/uc?export=download&id=1Xovy_0cd4xxghugto90gQtXun-7LeVKR" class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-4 sm:px-10 sm:py-5 bg-white text-indigo-600 font-extrabold rounded-full hover:bg-yellow-50 transition-transform hover:scale-105 shadow-xl shadow-indigo-900/30 cursor-pointer text-xs sm:text-base text-center">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span>DESCARGAR TAREA INTERACTIVA</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-10 sm:py-12 bg-white border-t border-yellow-200 shadow-inner">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <p class="font-bold text-indigo-300 text-xs sm:text-sm tracking-widest mb-2 uppercase">MATERIAL ACADÉMICO ITC/UDEMM - CLASE 4</p>
+            <p class="text-slate-500 font-medium text-xs sm:text-sm">© Todos los derechos reservados para GKempe UDEMM/ITC ARG</p>
+        </div>
+    </footer>
+
+    <script>
+        function showVideo(videoId) {
+            const vid1 = document.getElementById('video-content-1');
+            const vid2 = document.getElementById('video-content-2');
+            const btn1 = document.getElementById('tab-btn-1');
+            const btn2 = document.getElementById('tab-btn-2');
+
+            vid1.classList.add('hidden');
+            vid2.classList.add('hidden');
+            
+            // Inactivos (Mobile-first classes)
+            btn1.className = 'w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 rounded-lg font-bold text-yellow-800 hover:text-indigo-600 transition-all border border-transparent text-sm sm:text-base';
+            btn2.className = 'w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 rounded-lg font-bold text-yellow-800 hover:text-indigo-600 transition-all border border-transparent text-sm sm:text-base';
+
+            // Activo
+            if(videoId === 1) {
+                vid1.classList.remove('hidden');
+                btn1.className = 'w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 rounded-lg font-bold bg-white shadow-sm text-indigo-600 transition-all border border-yellow-200 text-sm sm:text-base';
+            } else {
+                vid2.classList.remove('hidden');
+                btn2.className = 'w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-2 rounded-lg font-bold bg-white shadow-sm text-indigo-600 transition-all border border-yellow-200 text-sm sm:text-base';
+            }
+        }
+    </script>
+</body>
+</html>

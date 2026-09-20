@@ -1,0 +1,22 @@
+# Dependencias
+node_modules/
+
+# Entorno y secretos
+.env
+.env.local
+*.env
+
+# Persistencia local de la app
+db.json
+
+# Cobertura y logs
+coverage/
+*.log
+*.tmp
+
+# Windows / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.idea/
+.vscode/

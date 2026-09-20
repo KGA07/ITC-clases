@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Meta Business Suite - GKempe</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { meta: '#1877F2' }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: none; 
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Barra de Progreso de Lectura */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #1877F2;
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Cursor Personalizado */
+        @media (min-width: 768px) {
+            .custom-cursor {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                background-color: rgba(24, 119, 242, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10000;
+                transform: translate(-50%, -50%);
+                transition: width 0.2s, height 0.2s, background-color 0.2s;
+            }
+            .custom-cursor.hover {
+                width: 50px;
+                height: 50px;
+                background-color: rgba(24, 119, 242, 0.2);
+                border: 2px solid #1877F2;
+            }
+        }
+        @media (max-width: 767px) {
+            body { cursor: auto; }
+            .custom-cursor { display: none; }
+        }
+
+        /* Estilos Base Elementos Interactivos */
+        .module-card {
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Tooltip (Burbuja de Glosario) */
+        .tooltip-word {
+            position: relative;
+            display: inline-block;
+            border-bottom: 2px dotted #1877F2;
+            cursor: help;
+            font-weight: 600;
+            color: #1877F2;
+        }
+        .tooltip-word .tooltip-text {
+            visibility: hidden;
+            width: 220px;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 10001;
+            bottom: 130%;
+            left: 50%;
+            margin-left: -110px;
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+            font-size: 0.75rem;
+            font-weight: 400;
+            pointer-events: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-word .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1f2937 transparent transparent transparent;
+        }
+        .tooltip-word:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            bottom: 140%;
+        }
+        html.dark .tooltip-word .tooltip-text { background-color: #f3f4f6; color: #1f2937; }
+        html.dark .tooltip-word .tooltip-text::after { border-color: #f3f4f6 transparent transparent transparent; }
+
+        /* Animaciones On-Scroll (Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos Tareas Interactivas */
+        .task-item { cursor: pointer; transition: all 0.3s ease; }
+        .task-item.completed .task-text { text-decoration: line-through; opacity: 0.5; }
+        .task-item.completed .task-circle { background-color: #1877F2; border-color: #1877F2; color: white; }
+
+        /* Estilos Tabla Interactiva */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+        html.dark .table-container { border-color: #374151; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: #f8fafc; font-weight: 800; text-align: left; padding: 16px; border-bottom: 2px solid #e5e7eb; }
+        html.dark th { background-color: #1f2937; border-bottom-color: #374151; color: white; }
+        td { padding: 16px; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem; }
+        html.dark td { border-bottom-color: #374151; }
+        tr:hover { background-color: #f1f5f9; transition: background 0.2s; }
+        html.dark tr:hover { background-color: #1e293b; }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-[#f0f2f5] dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <div id="progress-bar"></div>
+
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <a href="https://wa.me/543795569699" target="_blank" class="whatsapp-btn glow-hover hover-target" title="Consultas">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40 shadow-sm transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3 hover-target">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/960px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo" class="h-6 md:h-8">
+                <span class="font-extrabold text-lg md:text-xl tracking-tight text-gray-800 dark:text-white">Meta<span class="text-[#1877F2]">Business Suite</span></span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest hidden sm:block">Gestión Interactiva</div>
+                
+                <button id="theme-toggle" class="hover-target p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-20">
+        
+        <section class="text-center space-y-6 reveal">
+            <div class="inline-flex items-center bg-blue-50 dark:bg-blue-900/30 text-[#1877F2] dark:text-blue-400 px-5 py-2 rounded-full text-xs font-bold tracking-wide border border-blue-100 dark:border-blue-800 shadow-sm hover:scale-105 transition-transform cursor-default">
+                🚀 HERRAMIENTA ESTRATÉGICA 2026
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">
+                Gestiona tus Redes <br> <span class="text-[#1877F2]">Sin Perder Energía</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Transforma el caos de alternar entre aplicaciones en un sistema centralizado que te ayuda a vender más y trabajar menos.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center reveal">
+            <div class="space-y-6">
+                <div class="module-card bg-white dark:bg-gray-800 p-8 border-l-4 border-[#1877F2] hover-target shadow-sm" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">🤔 ¿Qué es y Por Qué Importa?</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-lg italic border-l-2 border-gray-300 dark:border-gray-600 pl-4">"¿Quién de acá siente que se pierde al pasar de una aplicación a otra? 😥"</p>
+                    <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                        Es un proceso agotador. Tu perfil es tu <span class="tooltip-word">vidriera digital<span class="tooltip-text">Es la primera impresión que tienen los clientes sobre tu marca en internet. ¡Debe lucir impecable!</span></span>. MBS es una herramienta <strong>centralizada y gratuita</strong> creada por Meta que actúa como tu centro de mando.
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    <h3 class="font-bold text-xl mb-4 flex items-center text-gray-800 dark:text-white">👑 Tu Centro de Mando</h3>
+                    <ul class="space-y-3 text-base text-gray-600 dark:text-gray-300">
+                        <li class="flex items-start"><span class="text-[#1877F2] mr-3 font-bold text-lg">•</span> Simplifica la gestión de Facebook e Instagram en una sola pantalla.</li>
+                        <li class="flex items-start"><span class="text-[#1877F2] mr-3 font-bold text-lg">•</span> Crea contenido y analiza métricas sin adivinar.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative group hover-target">
+                <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-[2rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div class="relative module-card bg-white dark:bg-gray-800 overflow-hidden rounded-[2rem] border-4 border-white dark:border-gray-700 shadow-2xl">
+                    <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeNkpaqbxC4DJ0cOEnpBlvZPDh9-c5rGSyHIpxw-s73gxEZrxTxh1IO8BWYkfU3wAsO0glhh3nKeASUJYmucg0B4fxOroaP-GFFC-1lxovyj-DB9iaku6S3IxdISJQ7H-QO7KdjVg?key=hMmQBXJodXiKUzDR299yAt2j" alt="Dashboard de Meta" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-center text-xs font-bold text-white uppercase tracking-widest">
+                        Vista del Dashboard de Meta Business Suite
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-10 reveal">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 dark:text-white">Beneficios Clave para Emprendedores ✨</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="module-card bg-white dark:bg-gray-800 p-8 text-center border border-gray-200 dark:border-gray-700 hover-target shadow-sm" data-tilt data-tilt-scale="1.05">
+                    <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/40 text-[#1877F2] dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm">⏰</div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-900 dark:text-white">Eficiencia Operativa</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Ahorro de tiempo significativo al no tener que cambiar de aplicaciones constantemente. Todo en un clic.</p>
+                </div>
+                <div class="module-card bg-white dark:bg-gray-800 p-8 text-center border border-gray-200 dark:border-gray-700 hover-target shadow-sm" data-tilt data-tilt-scale="1.05">
+                    <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/40 text-[#1877F2] dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm">🔄</div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-900 dark:text-white">Gestión Centralizada</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Elimina la fricción. Todo el flujo de trabajo, desde responder hasta publicar, está en una pantalla.</p>
+                </div>
+                <div class="module-card bg-white dark:bg-gray-800 p-8 text-center border border-gray-200 dark:border-gray-700 hover-target shadow-sm" data-tilt data-tilt-scale="1.05">
+                    <div class="w-16 h-16 bg-blue-50 dark:bg-blue-900/40 text-[#1877F2] dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm">📊</div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-900 dark:text-white">Decisiones con Datos</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Acceso a métricas detalladas para ajustar tus estrategias y maximizar el impacto de tus ventas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-10 reveal">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">🛠️ Tu Caja de Herramientas</h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-4 text-lg">Funciones clave diseñadas para ayudarte a vender más.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="module-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 hover-target shadow-sm" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.1">
+                        <h3 class="font-bold text-[#1877F2] text-xl flex items-center gap-3 mb-3">🗓️ El Planificador</h3>
+                        <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">Programa posts, historias y Reels con antelación. Visualiza tu estrategia en el calendario y mantén la consistencia que premia el algoritmo. Ayuda a tu estrategia de <span class="tooltip-word">SEO<span class="tooltip-text">Search Engine Optimization: Usar palabras clave correctas para que la gente te encuentre fácil en el buscador de la red social.</span></span>.</p>
+                    </div>
+                    <div class="module-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 hover-target shadow-sm" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.1">
+                        <h3 class="font-bold text-[#1877F2] text-xl flex items-center gap-3 mb-3">📥 Bandeja de Entrada</h3>
+                        <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">Centraliza mensajes de Messenger e Instagram. Vital para responder en menos de 15 minutos. ¡Puedes configurar respuestas automáticas!</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="module-card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 hover-target shadow-sm" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.1">
+                        <h3 class="font-bold text-[#1877F2] text-xl flex items-center gap-3 mb-3">📈 Estadísticas</h3>
+                        <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">Conoce tus <span class="tooltip-word">Insights<span class="tooltip-text">Métricas y estadísticas detalladas sobre quién ve tu contenido, a qué hora se conectan y qué les gusta más.</span></span> en tiempo real. Deja de adivinar y empieza a tomar decisiones estratégicas basadas en el alcance real.</p>
+                    </div>
+                    <div class="module-card bg-slate-900 dark:bg-gray-950 text-white p-6 md:p-8 hover-target shadow-lg border border-slate-800" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.2">
+                        <h3 class="font-bold text-xl mb-4 text-white">🌟 Extras de Poder</h3>
+                        <ul class="text-sm space-y-4 text-gray-300">
+                            <li class="flex items-center gap-3"><span class="text-2xl">📢</span> <strong>Ads Manager:</strong> Crea publicidad segmentada.</li>
+                            <li class="flex items-center gap-3"><span class="text-2xl">🤝</span> <strong>Equipo:</strong> Delega tareas de forma segura.</li>
+                            <li class="flex items-center gap-3"><span class="text-2xl">🛍️</span> <strong>Tienda:</strong> Etiqueta productos en tus fotos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container shadow-xl reveal mt-12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="hover-target">Herramienta</th>
+                            <th class="hover-target">¿Para qué sirve?</th>
+                            <th class="hover-target">Beneficio para tu negocio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover-target">
+                            <td class="font-bold text-[#1877F2]">Planificador 🗓️</td>
+                            <td>Programar publicaciones, historias y Reels con antelación.</td>
+                            <td>Consistencia y orden en tu estrategia de contenido.</td>
+                        </tr>
+                        <tr class="hover-target">
+                            <td class="font-bold text-[#1877F2]">Bandeja de Entrada 📥</td>
+                            <td>Responder mensajes de Facebook e Instagram en un solo lugar.</td>
+                            <td>Mejor servicio al cliente y mayor visibilidad.</td>
+                        </tr>
+                        <tr class="hover-target">
+                            <td class="font-bold text-[#1877F2]">Estadísticas 📊</td>
+                            <td>Analizar el rendimiento de tu contenido y audiencia.</td>
+                            <td>Toma de decisiones con datos, no con suposiciones.</td>
+                        </tr>
+                        <tr class="hover-target">
+                            <td class="font-bold text-[#1877F2]">Anuncios 📢</td>
+                            <td>Crear y gestionar campañas publicitarias segmentadas.</td>
+                            <td>Mayor alcance y ventas para tu negocio.</td>
+                        </tr>
+                        <tr class="hover-target">
+                            <td class="font-bold text-[#1877F2]">Roles de equipo 🤝</td>
+                            <td>Asignar permisos a otros usuarios de forma segura.</td>
+                            <td>Trabajo colaborativo y delegación segura.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-14 shadow-xl border border-gray-100 dark:border-gray-700 reveal transition-colors duration-300">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center text-gray-900 dark:text-white relative z-10">🚀 Ruta de Configuración</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                <div>
+                    <h3 class="font-extrabold text-xl mb-6 text-gray-800 dark:text-white">✅ Lo que necesitas primero</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl hover-target glow-hover">
+                            <div class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <p class="text-gray-700 dark:text-gray-300 font-medium">Cuenta personal de Facebook.</p>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl hover-target glow-hover">
+                            <div class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <p class="text-gray-700 dark:text-gray-300 font-medium">Tener una <span class="tooltip-word">Fan Page<span class="tooltip-text">Página comercial de Facebook. Es distinta a tu perfil de amigos personal. Es obligatoria para hacer anuncios.</span></span>. ¡Obligatorio!</p>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-2xl hover-target glow-hover">
+                            <div class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <p class="text-gray-700 dark:text-gray-300 font-medium">Instagram en perfil de Creador o Empresa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-xl mb-6 text-gray-800 dark:text-white">⚙️ El Paso a Paso</h3>
+                    <div class="border-l-2 border-gray-200 dark:border-gray-700 pl-6 space-y-8 relative">
+                        <div class="absolute w-3 h-3 bg-[#1877F2] rounded-full -left-[7px] top-1"></div>
+                        <div class="absolute w-3 h-3 bg-[#1877F2] rounded-full -left-[7px] top-[100px]"></div>
+                        <div class="absolute w-3 h-3 bg-[#1877F2] rounded-full -left-[7px] top-[195px]"></div>
+                        
+                        <div class="hover-target">
+                            <h4 class="font-bold text-lg text-[#1877F2]">1. Inicia Sesión</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Haz clic aquí para ir a <a href="https://business.facebook.com/" target="_blank" class="text-[#1877F2] underline font-bold hover:text-blue-700 transition-colors cursor-none hover-target">business.facebook.com</a> e inicia con tu cuenta personal.</p>
+                        </div>
+                        <div class="hover-target">
+                            <h4 class="font-bold text-lg text-[#1877F2]">2. Agrega Páginas</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Reclama tu página de Facebook y vincula tu Instagram ingresando las credenciales.</p>
+                        </div>
+                        <div class="hover-target">
+                            <h4 class="font-bold text-lg text-[#1877F2]">3. Configura Pagos y Roles</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Añade tu tarjeta para futuros anuncios e invita a tu equipo si lo necesitas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#1877F2] text-white rounded-[2.5rem] p-8 md:p-14 shadow-2xl reveal relative">
+            <div class="max-w-4xl mx-auto space-y-10">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-white">💡 Desafío Interactivo</h2>
+                    <p class="text-blue-100 text-lg">Haz clic en los círculos a medida que completes tu tarea para la casa.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 p-8 rounded-[2rem] shadow-lg space-y-6 transition-colors duration-300">
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-8 h-8 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center font-bold text-transparent group-hover:border-[#1877F2]">✓</div>
+                        <p class="task-text text-lg font-medium flex-1">Configurar tu cuenta de Meta Business Suite.</p>
+                    </div>
+                    <hr class="border-gray-100 dark:border-gray-700">
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-8 h-8 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center font-bold text-transparent group-hover:border-[#1877F2]">✓</div>
+                        <p class="task-text text-lg font-medium flex-1">Programar 3 posts usando el Planificador con <span class="tooltip-word">CTAs<span class="tooltip-text">Call To Action (Llamado a la Acción). Ej: "Compra aquí", "Envíanos un mensaje".</span></span> efectivos.</p>
+                    </div>
+                    <hr class="border-gray-100 dark:border-gray-700">
+                    <div class="task-item flex items-center gap-4 hover-target group" onclick="toggleTask(this)">
+                        <div class="task-circle w-8 h-8 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center font-bold text-transparent group-hover:border-[#1877F2]">✓</div>
+                        <p class="task-text text-lg font-medium flex-1">Tomar una captura del calendario y guardarla en la carpeta personal. 📸</p>
+                    </div>
+                </div>
+
+                <div class="text-center font-bold text-xl italic mt-8 text-blue-50">
+                    "Es momento de pasar de tener un negocio por estar, a uno que genera resultados reales."
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 text-center">
+        <p class="text-gray-800 dark:text-gray-200 font-extrabold text-base tracking-widest uppercase">Meta<span class="text-[#1877F2]">Business Suite</span></p>
+        <p class="text-gray-400 dark:text-gray-500 text-sm mt-2">© Todos los derechos reservadospara GKempe UDEMM/ITC ARG 2026</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <script>
+        // 1. TEMA CLARO / OSCURO
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function toggleThemeIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            }
+        }
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        toggleThemeIcons();
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            toggleThemeIcons();
+        });
+
+        // 2. CURSOR PERSONALIZADO
+        const cursor = document.getElementById('custom-cursor');
+        function initCursorHovers() {
+            const hoverTargets = document.querySelectorAll('.hover-target, a, button, .tooltip-word, .task-item');
+            hoverTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                target.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth >= 768) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+        initCursorHovers();
+
+        // 3. BARRA DE PROGRESO
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        });
+
+        // 4. ANIMACIONES ON-SCROLL
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // 5. LISTA DE TAREAS
+        function toggleTask(element) {
+            element.classList.toggle('completed');
+            const circle = element.querySelector('.task-circle');
+            if(element.classList.contains('completed')) {
+                circle.style.transform = "scale(1.2)";
+                setTimeout(() => circle.style.transform = "scale(1)", 200);
+            }
+        }
+    </script>
+</body>
+</html>

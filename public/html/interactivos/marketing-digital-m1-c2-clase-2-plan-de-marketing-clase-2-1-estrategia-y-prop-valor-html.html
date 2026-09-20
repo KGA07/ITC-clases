@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Interactiva: Estrategia, Valor y Branding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Harmony -->
+    <!-- Application Structure Plan: Se ha diseñado una SPA (Single Page Application) con una estructura de navegación fija y secciones temáticas que se desplazan suavemente. Esta arquitectura prioriza la exploración no lineal y el aprendizaje interactivo sobre la lectura pasiva de un documento. El usuario puede saltar a cualquier módulo de interés (Estrategia, Valor, SMART, etc.) en cualquier momento. Se utilizan tarjetas, acordeones y diagramas interactivos para desglosar la información compleja en fragmentos digeribles, mejorando la retención y el engagement del usuario. El flujo guía al usuario desde los conceptos fundamentales (Estrategia) hasta la aplicación práctica (Branding y Herramientas), culminando en una actividad. -->
+    <!-- Visualization & Content Choices: 
+        - Estrategia vs Táctica -> Goal: Comparar -> Viz: Columnas lado a lado -> Interaction: Hover para resaltar y enfocar -> Justification: Facilita la comparación directa de conceptos relacionados -> Method: HTML/Tailwind.
+        - Objetivos SMART -> Goal: Organizar/Informar -> Viz: Acordeón interactivo + Gráfico de Barras -> Interaction: Clic para expandir cada letra del acrónimo. El gráfico visualiza un objetivo numérico -> Justification: El acordeón condensa la información, mientras que el gráfico de Chart.js ofrece un ejemplo visual tangible y memorable -> Library: Chart.js.
+        - Embudo de Marketing -> Goal: Organizar/Proceso -> Viz: Diagrama de embudo vertical estilizado -> Interaction: Clic en cada etapa (TOFU, MOFU, BOFU) para revelar detalles -> Justification: Transforma una lista de texto en un proceso visual claro y fácil de seguir -> Method: HTML/CSS/JS.
+        - Elementos de Branding -> Goal: Organizar -> Viz: Cuadrícula de tarjetas responsivas -> Interaction: Efecto hover sutil -> Justification: Presenta cada elemento de branding como una unidad de información distinta y visualmente atractiva -> Method: HTML/Tailwind.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #1a1a1a;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #ec4899;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+            left: 0;
+            background-color: #ec4899;
+        }
+        .nav-link.active:after {
+             width: 100%;
+            left: 0;
+        }
+        .funnel-stage {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+            transition: all 0.3s ease-in-out;
+        }
+        .funnel-stage:hover {
+            transform: scale(1.03);
+            cursor: pointer;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold gradient-text">
+                jcdiseing
+            </div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#inicio" class="nav-link font-semibold text-gray-700 hover:text-black">Inicio</a></li>
+                <li><a href="#estrategia" class="nav-link font-semibold text-gray-700 hover:text-black">Estrategia</a></li>
+                <li><a href="#valor" class="nav-link font-semibold text-gray-700 hover:text-black">Valor</a></li>
+                <li><a href="#smart" class="nav-link font-semibold text-gray-700 hover:text-black">Metas</a></li>
+                <li><a href="#embudo" class="nav-link font-semibold text-gray-700 hover:text-black">Embudo</a></li>
+                <li><a href="#branding" class="nav-link font-semibold text-gray-700 hover:text-black">Branding</a></li>
+                <li><a href="#herramientas" class="nav-link font-semibold text-gray-700 hover:text-black">Herramientas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Clase 2: <span class="gradient-text">Estrategia, Valor y Branding</span></h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    ¡Bienvenido/a! En esta sesión interactiva aprenderás a definir objetivos concretos, diseñar una propuesta de valor irresistible y construir una marca memorable en el entorno digital.
+                </p>
+            </div>
+        </section>
+
+        <section id="estrategia" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">🗺️ El Mapa del Tesoro: Estrategia vs. Táctica</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="border border-gray-200 rounded-xl p-8 transition hover:shadow-xl hover:border-indigo-500">
+                        <h3 class="text-2xl font-bold mb-4">Estrategia 🧭</h3>
+                        <p class="text-gray-600">Es tu plan maestro, la visión a <strong>largo plazo</strong>. Define QUÉ quieres lograr y POR QUÉ. Incluye el análisis del entorno, tu público y tus objetivos generales.</p>
+                        <p class="mt-4 text-sm text-indigo-600 font-semibold">Ej: "Convertirnos en la marca de tortas preferida para eventos en nuestra ciudad".</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-xl p-8 transition hover:shadow-xl hover:border-pink-500">
+                        <h3 class="text-2xl font-bold mb-4">Táctica 🎟️</h3>
+                        <p class="text-gray-600">Son las acciones <strong>específicas y concretas</strong> que realizas para cumplir tu estrategia. Responden al CÓMO lo vas a lograr en el día a día.</p>
+                        <p class="mt-4 text-sm text-pink-600 font-semibold">Ej: "Lanzar una campaña de 3x2 en Instagram para el Día de la Madre".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="valor" class="py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-12">💖 Tu Superpoder: La Propuesta de Valor</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 mb-12">Es el corazón de tu marketing. Es una declaración clara que explica cómo resuelves el problema de tu cliente, qué beneficios ofreces y por qué eres la mejor opción.</p>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-4xl mb-4">🤕➡️😃</p>
+                        <h3 class="font-bold text-lg">1. Problema que solucionas</h3>
+                        <p class="text-gray-600 text-sm">Identifica el "dolor" o la necesidad real de tu cliente.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-4xl mb-4">🎁</p>
+                        <h3 class="font-bold text-lg">2. Beneficios que ofreces</h3>
+                        <p class="text-gray-600 text-sm">No son características, es el resultado positivo que obtiene el cliente.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-4xl mb-4">🏆</p>
+                        <h3 class="font-bold text-lg">3. Tu Diferencial</h3>
+                        <p class="text-gray-600 text-sm">¿Qué te hace único/a frente a la competencia?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="smart" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">🎯 Metas Claras, Resultados Reales: Objetivos SMART</h2>
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div id="smart-accordion">
+                        <!-- Accordion items will be generated by JS -->
+                    </div>
+                    <div>
+                        <p class="text-center text-gray-600 mb-4 font-semibold">Visualizando el Éxito</p>
+                        <div class="chart-container">
+                            <canvas id="smartChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="embudo" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4">🚶‍♀️➡️🛒 El Viaje del Cliente: Embudo de Marketing</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">No todos están listos para comprar al instante. Debes guiar a tus potenciales clientes a través de un viaje de descubrimiento y confianza.</p>
+                <div class="flex flex-col items-center space-y-2">
+                    <div id="funnel-tofu" class="funnel-stage bg-blue-400 text-white w-full md:w-2/3 lg:w-1/2 h-24 flex items-center justify-center text-xl font-bold">TOFU: Atracción 🍳</div>
+                    <div id="funnel-mofu" class="funnel-stage bg-yellow-400 text-white w-full md:w-2/3 lg:w-1/2 h-24 flex items-center justify-center text-xl font-bold">MOFU: Consideración 🥪</div>
+                    <div id="funnel-bofu" class="funnel-stage bg-red-500 text-white w-full md:w-2/3 lg:w-1/2 h-24 flex items-center justify-center text-xl font-bold">BOFU: Conversión 🥩</div>
+                </div>
+                <div id="funnel-details" class="mt-8 bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto text-center transition-opacity duration-500 opacity-0">
+                    <h3 id="funnel-title" class="text-2xl font-bold mb-2"></h3>
+                    <p id="funnel-description" class="text-gray-700"></p>
+                    <p id="funnel-content" class="text-sm mt-4 font-semibold text-indigo-600"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="branding" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4">😎 Tu Vibe Digital: ¿Qué es el Branding?</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">En criollo: es cómo te ven y te sienten en internet. Es tu personalidad, tu huella digital. No es solo un logo, es la suma de muchas partes que crean una experiencia coherente y memorable.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">🏷️ Nombre</h3>
+                        <p class="text-sm text-gray-600">Debe ser fácil de recordar, escribir y pronunciar.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">🎨 Estilo Visual</h3>
+                        <p class="text-sm text-gray-600">Tus colores, tipografías y estilo de fotos. La coherencia es clave.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">🗣️ Tono de Comunicación</h3>
+                        <p class="text-sm text-gray-600">¿Eres cercano, divertido, formal, experto? Define tu voz.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">📖 Tu Historia (Storytelling)</h3>
+                        <p class="text-sm text-gray-600">¿Por qué haces lo que haces? Conectar desde lo personal es poderoso.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">🤝 Tu Promesa</h3>
+                        <p class="text-sm text-gray-600">¿Qué pueden esperar siempre tus clientes de ti? Calidad, rapidez, etc.</p>
+                    </div>
+                     <div class="bg-pink-100 border-l-4 border-pink-500 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">🧭 Estrategia + Branding</h3>
+                        <p class="text-sm text-gray-700">La <b>estrategia</b> es el mapa, el <b>branding</b> es el estilo con el que recorres el camino.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">🛠️ Herramientas para Potenciarte</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <p class="text-3xl">💡</p><p class="font-semibold mt-2">AnswerThePublic</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <p class="text-3xl">🗺️</p><p class="font-semibold mt-2">Miro</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <p class="text-3xl">🎨</p><p class="font-semibold mt-2">Canva</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <p class="text-3xl">🌈</p><p class="font-semibold mt-2">Coolors.co</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md">
+                        <p class="text-3xl">✍️</p><p class="font-semibold mt-2">Notion</p>
+                    </div>
+                </div>
+                 <div class="mt-12 bg-green-100 border-l-4 border-green-500 p-8 rounded-lg max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">🧠 Desafío Práctico</h3>
+                    <p class="mb-4">Ahora es tu turno. Elige tu emprendimiento y define:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li><b>Tu Propuesta de Valor:</b> "Ayudo a __ a lograr __ para que puedan __".</li>
+                        <li><b>Un Objetivo SMART</b> para el próximo mes.</li>
+                        <li><b>Tres adjetivos</b> que describan el "vibe" de tu marca.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 jcdiseing. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            const smartData = [
+                {
+                    letter: 'S',
+                    name: 'Specific (Específico)',
+                    description: '¿Qué quieres lograr exactamente? Sé claro y conciso. Evita ambigüedades.'
+                },
+                {
+                    letter: 'M',
+                    name: 'Measurable (Medible)',
+                    description: '¿Cómo sabrás si lo lograste? Usa números, porcentajes o métricas concretas.'
+                },
+                {
+                    letter: 'A',
+                    name: 'Achievable (Alcanzable)',
+                    description: '¿Es realista con tus recursos actuales? Asegúrate de que sea un reto, pero no imposible.'
+                },
+                {
+                    letter: 'R',
+                    name: 'Relevant (Relevante)',
+                    description: '¿Este objetivo importa para el crecimiento general de tu negocio? Debe estar alineado con tu estrategia.'
+                },
+                {
+                    letter: 'T',
+                    name: 'Time-bound (Con Límite de Tiempo)',
+                    description: '¿Para cuándo? Establece una fecha límite clara para crear un sentido de urgencia.'
+                }
+            ];
+
+            const accordionContainer = document.getElementById('smart-accordion');
+            smartData.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.classList.add('border', 'border-gray-200', 'rounded-lg', 'mb-2');
+                div.innerHTML = `
+                    <button class="w-full text-left p-4 flex justify-between items-center focus:outline-none">
+                        <span class="font-bold text-lg"><span class="gradient-text">${item.letter}</span> - ${item.name}</span>
+                        <span class="text-xl transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                        <p class="p-4 pt-0 text-gray-600">${item.description}</p>
+                    </div>
+                `;
+                accordionContainer.appendChild(div);
+            });
+
+            const accordionButtons = accordionContainer.querySelectorAll('button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('span:last-child');
+                    
+                    accordionButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.nextElementSibling.style.maxHeight = null;
+                            otherButton.querySelector('span:last-child').classList.remove('rotate-45');
+                        }
+                    });
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.classList.remove('rotate-45');
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.classList.add('rotate-45');
+                    }
+                });
+            });
+
+            const ctx = document.getElementById('smartChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Seguidores Actuales', 'Objetivo SMART'],
+                    datasets: [{
+                        label: 'Seguidores en Instagram',
+                        data: [500, 600],
+                        backgroundColor: [
+                            'rgba(79, 70, 229, 0.6)',
+                            'rgba(236, 72, 153, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(79, 70, 229, 1)',
+                            'rgba(236, 72, 153, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.raw} seguidores`;
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Ejemplo: Aumentar seguidores en un 20% en 3 meses'
+                        }
+                    }
+                }
+            });
+            
+            const funnelData = {
+                tofu: {
+                    title: "TOFU: Atracción 🍳",
+                    description: "En esta etapa, tu objetivo es darte a conocer a un público amplio que aún no sabe que existes. El contenido debe ser útil, entretenido o educativo, sin una intención de venta directa.",
+                    content: "Ejemplos de contenido: Posts con tips, tutoriales, infografías, memes, reels virales."
+                },
+                mofu: {
+                    title: "MOFU: Consideración 🥪",
+                    description: "Aquí, te diriges a personas que ya te conocen y han mostrado interés. El objetivo es educarlos, construir confianza y posicionarte como la mejor solución a su problema.",
+                    content: "Ejemplos de contenido: Guías detalladas, comparativas, casos de estudio, webinars."
+                },
+                bofu: {
+                    title: "BOFU: Conversión 🥩",
+                    description: "Esta es la etapa final. Te comunicas con personas que están listas para tomar una decisión de compra. El contenido debe ser directo, persuasivo y facilitar la conversión.",
+                    content: "Ejemplos de contenido: Ofertas por tiempo limitado, demos de producto, testimonios de clientes, consultas gratuitas."
+                }
+            };
+
+            const funnelDetails = document.getElementById('funnel-details');
+            const funnelTitle = document.getElementById('funnel-title');
+            const funnelDescription = document.getElementById('funnel-description');
+            const funnelContent = document.getElementById('funnel-content');
+
+            function showFunnelDetails(stage) {
+                funnelTitle.textContent = funnelData[stage].title;
+                funnelDescription.textContent = funnelData[stage].description;
+                funnelContent.textContent = funnelData[stage].content;
+                funnelDetails.classList.remove('opacity-0');
+            }
+
+            document.getElementById('funnel-tofu').addEventListener('click', () => showFunnelDetails('tofu'));
+            document.getElementById('funnel-mofu').addEventListener('click', () => showFunnelDetails('mofu'));
+            document.getElementById('funnel-bofu').addEventListener('click', () => showFunnelDetails('bofu'));
+        });
+    </script>
+</body>
+</html>

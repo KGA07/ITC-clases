@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitación Pro: Periféricos y Productividad</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #006EFF;
+            --text-color: #ffffff;
+            --accent: #00FFcc;
+            --glass: rgba(255, 255, 255, 0.15);
+            --card-text: #333333;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding-top: 90px;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><text y="20" font-size="20">🚀</text></svg>'), auto;
+        }
+
+        /* --- Decoraciones de Fondo --- */
+        .decor { position: fixed; z-index: -1; opacity: 0.2; pointer-events: none; animation: float 12s infinite ease-in-out; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-30px) rotate(15deg); } }
+
+        /* --- Navegación --- */
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.5); 
+            backdrop-filter: blur(10px); padding: 15px; display: flex; 
+            justify-content: center; gap: 10px; z-index: 1000; flex-wrap: wrap;
+        }
+        nav button {
+            background: transparent; border: 2px solid var(--accent); color: white;
+            padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s;
+        }
+        nav button:hover, nav button.active { background: var(--accent); color: #004ba0; box-shadow: 0 0 15px var(--accent); }
+
+        /* --- Contenedores --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .tab-content { display: none; animation: fadeIn 0.4s; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95); color: var(--card-text);
+            border-radius: 15px; padding: 30px; margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-left: 8px solid var(--accent);
+            page-break-inside: avoid;
+        }
+
+        .img-real { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; border: 3px solid var(--bg-color); margin: 15px 0; }
+
+        /* --- Atajos Secciones --- */
+        .shortcut-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 15px; }
+        .app-box { background: #f4f7f6; padding: 15px; border-radius: 10px; border-top: 4px solid var(--bg-color); box-shadow: 0 4px 6px rgba(0,0,0,0.05);}
+        .app-box h4 { margin-top: 0; color: var(--bg-color); border-bottom: 2px solid #ddd; padding-bottom: 8px; font-size: 1.1em;}
+        .app-box p { display: flex; justify-content: space-between; align-items: center; margin: 8px 0; font-size: 0.95em;}
+        kbd { background: #333; color: white; padding: 3px 6px; border-radius: 5px; font-size: 0.85em; font-family: monospace; box-shadow: 0 2px 0 #000;}
+
+        /* --- Áreas de Juego --- */
+        .game-canvas {
+            background: #000; height: 500px; border-radius: 15px; position: relative;
+            overflow: hidden; border: 4px solid var(--accent); width: 100%;
+        }
+        .overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); display: flex; flex-direction: column;
+            align-items: center; justify-content: center; z-index: 100; text-align: center; color: white;
+        }
+        .btn-play { background: var(--accent); border: none; padding: 15px 30px; font-size: 1.2em; font-weight: bold; border-radius: 10px; cursor: pointer; margin-top: 15px; color: #004ba0; box-shadow: 0 4px 0 #00997a; transition: 0.2s;}
+        .btn-play:active { transform: translateY(4px); box-shadow: 0 0 0 #00997a; }
+        
+        .difficulty-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 15px; }
+        .btn-diff { padding: 10px 15px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; color: white; }
+        .d-1 { background: #4CAF50; } .d-2 { background: #8BC34A; } .d-3 { background: #FF9800; } .d-4 { background: #F44336; } .d-5 { background: #000; border: 1px solid red; color: red; }
+
+        /* --- Mecanografía --- */
+        #typing-area { font-size: 22px; line-height: 1.6; margin-bottom: 20px; min-height: 120px; padding: 25px; background: #fff; border-radius: 10px; color: #555; position: relative; border: 2px dashed #ccc;}
+        #typing-input { width: 100%; padding: 15px; font-size: 20px; border-radius: 10px; border: 2px solid var(--bg-color); outline: none; }
+        #typing-input:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(0,255,204,0.5); }
+        .correct { color: #2ecc71; background: rgba(46, 204, 113, 0.1); border-radius: 3px;}
+        .incorrect { color: #e74c3c; text-decoration: underline; background: rgba(231, 76, 60, 0.1);}
+        .stats-box { background: var(--bg-color); color: white; padding: 15px; border-radius: 10px; display: inline-block; margin-top: 15px; font-size: 1.1em;}
+
+        /* --- Elementos Juego --- */
+        .falling-letter { position: absolute; background: white; color: var(--bg-color); padding: 10px 15px; border-radius: 8px; font-weight: bold; font-size: 20px; box-shadow: 0 0 15px var(--accent); }
+        .mouse-target { position: absolute; border-radius: 50%; background: radial-gradient(circle, #00FFcc, #00997a); box-shadow: 0 0 15px white; cursor: crosshair; transition: transform 0.1s; }
+        .mouse-target:active { transform: scale(0.9); }
+
+        @media print {
+            body { background: white !important; color: black !important; padding-top: 0; }
+            nav, .overlay, button, .game-canvas, .decor { display: none !important; }
+            .card { box-shadow: none !important; border: 1px solid #ccc !important; width: 100% !important; margin: 10px 0 !important; }
+            .container { max-width: 100% !important; padding: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="decor" style="top: 10%; left: 5%; font-size: 50px;">⌨️</div>
+    <div class="decor" style="top: 60%; left: 85%; font-size: 60px;">🖱️</div>
+    <div class="decor" style="top: 30%; left: 90%; font-size: 40px;">📂</div>
+    <div class="decor" style="top: 85%; left: 15%; font-size: 45px;">🎯</div>
+
+    <nav>
+        <button class="active" onclick="showTab('manual')">📚 Manual Anatómico</button>
+        <button onclick="showTab('office')">🏢 Atajos Office 2024</button>
+        <button onclick="showTab('google')">🌐 Atajos Google Workspace</button>
+        <button onclick="showTab('typing')">✍️ Mecanografía Pro</button>
+        <button onclick="showTab('game-kb')">⌨️ Juego Teclado</button>
+        <button onclick="showTab('game-mouse')">🖱️ Juego Mouse</button>
+    </nav>
+
+    <div class="container">
+
+        <div id="manual" class="tab-content active">
+            <div class="card">
+                <h1 style="color: var(--bg-color);">Hardware: Fundamentos Anatómicos</h1>
+                <p>Comprender la división de tus dispositivos es el primer paso hacia la autonomía digital.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div>
+                        <h3 style="color: var(--bg-color);">⌨️ El Teclado y sus Zonas</h3>
+                        <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=1000&auto=format&fit=crop" class="img-real" alt="Teclado Real">
+                        <ul style="font-size: 0.95em;">
+                            <li><strong>Zona Alfanumérica:</strong> Núcleo de interacción. Usa <code>Tabulador</code> para sangrías y <code>Shift</code> para segundas opciones.</li>
+                            <li><strong>Alt Gr:</strong> Activa la tercera opción de una tecla (como la @ o €).</li>
+                            <li><strong>Teclas de Función (F1-F12):</strong> Atajos de hardware. F1 (Ayuda universal), F5 (Actualizar).</li>
+                            <li><strong>Escape (Esc):</strong> Tu botón de seguridad. Cancela cuadros de diálogo o acciones erróneas.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--bg-color);">🖱️ Biomecánica del Mouse</h3>
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=1000&auto=format&fit=crop" class="img-real" alt="Mouse Real">
+                        <ul style="font-size: 0.95em;">
+                            <li><strong>Clic Izquierdo:</strong> Selección (un clic) y ejecución (doble clic).</li>
+                            <li><strong>Clic Derecho:</strong> Descubrimiento de funciones avanzadas (menús contextuales).</li>
+                            <li><strong>Rueda (Scroll):</strong> Desplazamiento. Presionar la rueda permite un desplazamiento multidireccional dinámico.</li>
+                            <li><strong>Ergonomía:</strong> Ajusta la sensibilidad en Windows. Un puntero muy rápido frustra al principiante.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="office" class="tab-content">
+            <div class="card">
+                <h2 style="color: var(--bg-color);">Ecosistema Microsoft Office 2024</h2>
+                <p>La maestría se alcanza cuando dejas de depender de los menús visuales.</p>
+                <div class="shortcut-grid">
+                    <div class="app-box">
+                        <h4>⭐ Comandos Globales</h4>
+                        <p>Nuevo Archivo <kbd>Ctrl + U</kbd></p>
+                        <p>Abrir Archivo <kbd>Ctrl + A</kbd></p>
+                        <p>Guardar <kbd>Ctrl + S</kbd></p>
+                        <p>Cerrar Ventana <kbd>Ctrl + W</kbd></p>
+                        <p>Imprimir <kbd>Ctrl + P</kbd></p>
+                        <p>Deshacer <kbd>Ctrl + Z</kbd></p>
+                        <p>Rehacer <kbd>Ctrl + Y</kbd></p>
+                    </div>
+                    <div class="app-box">
+                        <h4>📄 Word</h4>
+                        <p>Negrita <kbd>Ctrl + N</kbd></p>
+                        <p>Cursiva <kbd>Ctrl + I</kbd></p>
+                        <p>Subrayado <kbd>Ctrl + S</kbd></p>
+                        <p>Salto de Página <kbd>Ctrl + Enter</kbd></p>
+                        <p>Aumentar Fuente <kbd>Ctrl + ]</kbd></p>
+                        <p>Reducir Fuente <kbd>Ctrl + [</kbd></p>
+                    </div>
+                    <div class="app-box">
+                        <h4>📊 Excel</h4>
+                        <p>Editar Celda <kbd>F2</kbd></p>
+                        <p>Autosuma <kbd>Alt + =</kbd></p>
+                        <p>Insertar Fecha <kbd>Ctrl + ;</kbd></p>
+                        <p>Filtros <kbd>Ctrl + Shift + L</kbd></p>
+                        <p>Crear Tabla <kbd>Ctrl + T</kbd></p>
+                    </div>
+                    <div class="app-box">
+                        <h4>🎬 PowerPoint & Access</h4>
+                        <p>Nueva Slide <kbd>Ctrl + M</kbd></p>
+                        <p>Duplicar <kbd>Ctrl + D</kbd></p>
+                        <p>Iniciar Show <kbd>F5</kbd></p>
+                        <p>Pantalla Negra <kbd>B</kbd></p>
+                        <p>Panel Access <kbd>F11</kbd></p>
+                        <p>Guardar Reg. <kbd>Ctrl + G</kbd></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="google" class="tab-content">
+            <div class="card">
+                <h2 style="color: var(--bg-color);">Ecosistema Google Workspace 2024</h2>
+                <p>Navegación fluida y colaborativa nativa en la nube.</p>
+                <div class="shortcut-grid">
+                    <div class="app-box">
+                        <h4>🌐 Globales en Navegador</h4>
+                        <p>Pegar sin formato <kbd>Ctrl + Shift + V</kbd></p>
+                        <p>Insertar Enlace <kbd>Ctrl + K</kbd></p>
+                        <p>Insertar Comentario <kbd>Ctrl + Alt + M</kbd></p>
+                        <p>Lista de Atajos <kbd>Ctrl + /</kbd></p>
+                    </div>
+                    <div class="app-box">
+                        <h4>💙 Google Docs</h4>
+                        <p>Título 1 <kbd>Ctrl + Alt + 1</kbd></p>
+                        <p>Contar Palabras <kbd>Ctrl + Shift + C</kbd></p>
+                        <p>Borrar Formato <kbd>Ctrl + \</kbd></p>
+                        <p>Mostrar Esquema <kbd>Ctrl+Alt+A, H</kbd></p>
+                    </div>
+                    <div class="app-box">
+                        <h4>💚 Google Sheets</h4>
+                        <p>Sel. Columna <kbd>Ctrl + Espacio</kbd></p>
+                        <p>Sel. Fila <kbd>Shift + Espacio</kbd></p>
+                        <p>Solo Valores <kbd>Ctrl + Alt + V</kbd></p>
+                        <p>Mostrar Fórmulas <kbd>Ctrl + `</kbd></p>
+                        <p>Lista de Hojas <kbd>Alt + Shift + K</kbd></p>
+                    </div>
+                    <div class="app-box">
+                        <h4>💛 Google Slides</h4>
+                        <p>Nueva Slide <kbd>Ctrl + M</kbd></p>
+                        <p>Duplicar Slide <kbd>Ctrl + D</kbd></p>
+                        <p>Añadir Slide <kbd>Ctrl + Alt + N</kbd></p>
+                        <p>Presentar <kbd>Ctrl + Alt + P</kbd></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="typing" class="tab-content">
+            <div class="card">
+                <h2 style="color: var(--bg-color);">✍️ Módulo de Mecanografía: Precisión y Velocidad</h2>
+                <p>La mecanografía es la culminación del entrenamiento. Escribe el texto exacto respetando mayúsculas y acentos.</p>
+                <div id="typing-area">Cargando texto...</div>
+                <input type="text" id="typing-input" placeholder="Comienza a escribir aquí para iniciar el cronómetro..." autocomplete="off">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div class="stats-box">
+                        <strong>WPM (Palabras/min):</strong> <span id="wpm">0</span><br>
+                        <strong>CPM (Caracteres/min):</strong> <span id="cpm">0</span><br>
+                        <strong>Precisión:</strong> <span id="accuracy">100</span>%
+                    </div>
+                    <button class="btn-play" onclick="loadNewSentence()" style="margin-top: 0;">Siguiente Texto ⏭️</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-kb" class="tab-content">
+            <div class="card">
+                <div class="game-canvas" id="kb-canvas">
+                    <div class="overlay" id="kb-overlay">
+                        <h2 id="kb-title" style="font-size: 2.5em; margin-bottom: 0;">Misión: Key Catch</h2>
+                        <p id="kb-desc" style="font-size: 1.2em;">Presiona la letra antes de que toque el suelo. Si fallas, pierdes una vida.</p>
+                        <div class="difficulty-btns">
+                            <button class="btn-diff d-1" onclick="startKbGame(1)">Muy Fácil</button>
+                            <button class="btn-diff d-2" onclick="startKbGame(2)">Fácil</button>
+                            <button class="btn-diff d-3" onclick="startKbGame(3)">Medio</button>
+                            <button class="btn-diff d-4" onclick="startKbGame(4)">Difícil</button>
+                            <button class="btn-diff d-5" onclick="startKbGame(5)">EXPERTO</button>
+                        </div>
+                    </div>
+                    <div class="overlay" id="kb-restart" style="display: none; background: rgba(200,0,0,0.9);">
+                        <h2 style="font-size: 3em; margin-bottom:0;">¡JUEGO TERMINADO!</h2>
+                        <p style="font-size: 1.5em;">Te quedaste sin vidas.</p>
+                        <p style="font-size: 1.2em;">Puntaje alcanzado: <span id="kb-final-score">0</span></p>
+                        <button class="btn-play" onclick="document.getElementById('kb-restart').style.display='none'; document.getElementById('kb-overlay').style.display='flex';" style="background: white; color: red;">Volver a Intentar</button>
+                    </div>
+                    <div style="padding: 15px; position: absolute; top:0; width:100%; display:flex; justify-content:space-between; color:white; font-size:1.2em; font-weight:bold; background:rgba(0,0,0,0.7);">
+                        <span>PUNTOS: <span id="kb-pts" style="color: var(--accent);">0</span></span>
+                        <span>VIDAS: <span id="kb-lives">❤️❤️❤️</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-mouse" class="tab-content">
+            <div class="card">
+                <div class="game-canvas" id="mouse-canvas">
+                    <div class="overlay" id="mouse-overlay">
+                        <h2 id="mouse-title" style="font-size: 2.5em; margin-bottom: 0;">Misión: Clic Veloz</h2>
+                        <p id="mouse-desc" style="font-size: 1.2em;">Tienes 20 segundos. Cada acierto te da un "bono de tiempo dinámico".</p>
+                        <div class="difficulty-btns">
+                            <button class="btn-diff d-1" onclick="startMouseGame(1)">Muy Fácil</button>
+                            <button class="btn-diff d-2" onclick="startMouseGame(2)">Fácil</button>
+                            <button class="btn-diff d-3" onclick="startMouseGame(3)">Medio</button>
+                            <button class="btn-diff d-4" onclick="startMouseGame(4)">Difícil</button>
+                            <button class="btn-diff d-5" onclick="startMouseGame(5)">EXPERTO</button>
+                        </div>
+                    </div>
+                    <div style="padding: 15px; position: absolute; top:0; width:100%; display:flex; justify-content:space-between; color:white; font-size:1.2em; font-weight:bold; background:rgba(0,0,0,0.7);">
+                        <span>DIANAS: <span id="m-pts" style="color: var(--accent);">0</span></span>
+                        <span>RELOJ: <span id="m-timer">20.0</span>s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- NAVEGACIÓN ---
+        function showTab(id) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+            stopGames();
+        }
+
+        function stopGames() {
+            clearInterval(kbLoop); clearInterval(kbSpawn);
+            clearInterval(mTimerInterval); clearTimeout(mSpawnTimeout);
+            document.removeEventListener('keydown', handleKb);
+        }
+
+        // --- MECANOGRAFÍA (CPM y WPM) ---
+        const sentences = [
+            "El teclado no es una superficie homogénea, sino un mapa complejo de funciones que responden a una organización lógica.",
+            "La tecla F1 se ha estandarizado universalmente como el acceso a la ayuda del sistema o programa.",
+            "El clic derecho es fundamental para el descubrimiento de funciones avanzadas, ya que despliega el menú contextual.",
+            "El uso de Ctrl + Enter para insertar un salto de página inmediato es una de las funciones más potentes en Word.",
+            "En la pedagogía del error, permitir que el alumno reinicie un nivel fomenta la persistencia tecnológica."
+        ];
+        let currentSentence = "";
+        let typingStartTime = null;
+
+        function loadNewSentence() {
+            currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
+            const area = document.getElementById('typing-area');
+            area.innerHTML = currentSentence.split('').map(char => `<span>${char}</span>`).join('');
+            document.getElementById('typing-input').value = "";
+            document.getElementById('typing-input').focus();
+            typingStartTime = null;
+            document.getElementById('cpm').innerText = "0";
+            document.getElementById('wpm').innerText = "0";
+            document.getElementById('accuracy').innerText = "100";
+        }
+
+        document.getElementById('typing-input').addEventListener('input', (e) => {
+            if (!typingStartTime) typingStartTime = new Date();
+            
+            const inputVal = e.target.value;
+            const spans = document.getElementById('typing-area').querySelectorAll('span');
+            let errors = 0;
+            let correctCount = 0;
+
+            spans.forEach((span, i) => {
+                if (inputVal[i] == null) {
+                    span.className = "";
+                } else if (inputVal[i] === span.innerText) {
+                    span.className = "correct";
+                    correctCount++;
+                } else {
+                    span.className = "incorrect";
+                    errors++;
+                }
+            });
+
+            // Cálculos Científicos
+            const timeElapsedMin = (new Date() - typingStartTime) / 60000;
+            if (timeElapsedMin > 0) {
+                const cpm = Math.round(correctCount / timeElapsedMin);
+                const wpm = Math.round(cpm / 5);
+                const acc = Math.round(((inputVal.length - errors) / Math.max(1, inputVal.length)) * 100);
+                
+                document.getElementById('cpm').innerText = cpm;
+                document.getElementById('wpm').innerText = wpm;
+                document.getElementById('accuracy').innerText = acc;
+            }
+
+            if (inputVal.length >= currentSentence.length) {
+                document.getElementById('typing-input').value = ""; // Prevenir seguir escribiendo
+                setTimeout(loadNewSentence, 2000); // Cargar siguiente tras 2 seg
+            }
+        });
+
+        // --- JUEGO TECLADO (Key Catch) ---
+        let kbLoop, kbSpawn, kbPts = 0, kbLives = 3, activeChars = [], currentKbLevel = 1;
+        const kbCanvas = document.getElementById('kb-canvas');
+        
+        const kbConfigs = {
+            1: { freq: 1500, speed: 2, chars: "ASDFGHJKL" },
+            2: { freq: 1200, speed: 3, chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
+            3: { freq: 900, speed: 4, chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" },
+            4: { freq: 600, speed: 6, chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$" },
+            5: { freq: 400, speed: 8, chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*" } // Experto: < 500ms
+        };
+
+        function startKbGame(lvl) {
+            currentKbLevel = lvl;
+            document.getElementById('kb-overlay').style.display = 'none';
+            document.getElementById('kb-restart').style.display = 'none';
+            kbPts = 0; kbLives = 3; activeChars = [];
+            updateKbUI();
+            document.querySelectorAll('.falling-letter').forEach(l => l.remove());
+            
+            document.addEventListener('keydown', handleKb);
+
+            const config = kbConfigs[lvl];
+
+            kbSpawn = setInterval(() => {
+                const char = config.chars[Math.floor(Math.random() * config.chars.length)];
+                const el = document.createElement('div');
+                el.className = 'falling-letter';
+                el.innerText = char;
+                el.style.left = Math.max(10, Math.random() * (kbCanvas.offsetWidth - 60)) + 'px';
+                el.style.top = '0px';
+                kbCanvas.appendChild(el);
+                
+                // La velocidad base aumenta ligeramente con los puntos
+                let dynamicSpeed = config.speed + (kbPts / 150); 
+                activeChars.push({ char, el, top: 0, speed: dynamicSpeed });
+            }, config.freq);
+
+            kbLoop = setInterval(() => {
+                activeChars.forEach((obj, i) => {
+                    obj.top += obj.speed;
+                    obj.el.style.top = obj.top + 'px';
+                    if (obj.top > 450) {
+                        obj.el.remove();
+                        activeChars.splice(i, 1);
+                        kbLives--;
+                        updateKbUI();
+                        flashScreen('red');
+                        if (kbLives <= 0) triggerKbGameOver();
+                    }
+                });
+            }, 30);
+        }
+
+        function handleKb(e) {
+            const key = e.key.toUpperCase();
+            // Evitar comandos del sistema
+            if (["CONTROL", "SHIFT", "ALT", "TAB", "ENTER", "BACKSPACE"].includes(key)) return;
+
+            let hit = false;
+            // Buscar la letra más baja que coincida
+            let lowestIndex = -1;
+            let maxTop = -1;
+
+            activeChars.forEach((obj, i) => {
+                if (obj.char === key && obj.top > maxTop) {
+                    maxTop = obj.top;
+                    lowestIndex = i;
+                }
+            });
+
+            if (lowestIndex !== -1) {
+                activeChars[lowestIndex].el.remove();
+                activeChars.splice(lowestIndex, 1);
+                kbPts += 10;
+                hit = true;
+            } else {
+                kbLives--; // Penalización por error
+                flashScreen('red');
+            }
+            
+            updateKbUI();
+            if (kbLives <= 0) triggerKbGameOver();
+        }
+
+        function updateKbUI() {
+            document.getElementById('kb-pts').innerText = kbPts;
+            document.getElementById('kb-lives').innerText = '❤️'.repeat(Math.max(0, kbLives));
+        }
+
+        function triggerKbGameOver() {
+            clearInterval(kbLoop); clearInterval(kbSpawn);
+            document.removeEventListener('keydown', handleKb);
+            document.getElementById('kb-final-score').innerText = kbPts;
+            document.getElementById('kb-restart').style.display = 'flex';
+        }
+
+        function flashScreen(color) {
+            kbCanvas.style.boxShadow = `inset 0 0 50px ${color}`;
+            setTimeout(() => kbCanvas.style.boxShadow = "none", 150);
+        }
+
+        // --- JUEGO MOUSE (Bono Dinámico) ---
+        let mPts = 0, mTimer = 20.0, mTimerInterval, mSpawnTimeout;
+        const mCanvas = document.getElementById('mouse-canvas');
+
+        function startMouseGame(lvl) {
+            document.getElementById('mouse-overlay').style.display = 'none';
+            mPts = 0; mTimer = 20.0;
+            updateMUI();
+            
+            // Loop de tiempo preciso (cada 100ms)
+            mTimerInterval = setInterval(() => {
+                mTimer -= 0.1;
+                updateMUI();
+                if (mTimer <= 0) endMouse();
+            }, 100);
+
+            spawnTarget(lvl);
+        }
+
+        function spawnTarget(lvl) {
+            document.querySelectorAll('.mouse-target').forEach(t => t.remove());
+            
+            // Tamaño reduce de 80px a mínimo 25px
+            const s = Math.max(25, 80 - (mPts / 10)); 
+            
+            const el = document.createElement('div');
+            el.className = 'mouse-target';
+            el.style.width = s + 'px';
+            el.style.height = s + 'px';
+            el.style.left = Math.max(10, Math.random() * (mCanvas.offsetWidth - s - 20)) + 'px';
+            el.style.top = Math.max(50, Math.random() * (mCanvas.offsetHeight - s - 60)) + 'px';
+            
+            el.onmousedown = () => {
+                mPts += 10;
+                // Fórmula de Bono de Tiempo Dinámico: Max(0.5, 2 - (Puntos/200))
+                let bonus = Math.max(0.5, 2 - (mPts / 200));
+                mTimer += bonus; 
+                
+                flashScreen('var(--accent)');
+                updateMUI();
+                spawnTarget(lvl);
+            };
+            mCanvas.appendChild(el);
+
+            // Velocidad de desaparición base según nivel, se acelera con puntos
+            let baseSpeed = lvl === 1 ? 2500 : (lvl === 5 ? 800 : 1500);
+            let currentSpeed = Math.max(400, baseSpeed - (mPts * 3));
+            
+            clearTimeout(mSpawnTimeout);
+            mSpawnTimeout = setTimeout(() => spawnTarget(lvl), currentSpeed);
+        }
+
+        function updateMUI() {
+            // Mostrar 1 decimal para precisión
+            document.getElementById('m-pts').innerText = mPts;
+            document.getElementById('m-timer').innerText = Math.max(0, mTimer).toFixed(1); 
+        }
+
+        function endMouse() {
+            clearInterval(mTimerInterval); clearTimeout(mSpawnTimeout);
+            document.getElementById('mouse-overlay').style.display = 'flex';
+            document.getElementById('mouse-title').innerText = "FIN DEL TIEMPO";
+            document.getElementById('mouse-desc').innerText = `Lograste ${mPts} puntos. ¡Intenta superar tu récord!`;
+        }
+
+        window.onload = loadNewSentence;
+    </script>
+</body>
+</html>

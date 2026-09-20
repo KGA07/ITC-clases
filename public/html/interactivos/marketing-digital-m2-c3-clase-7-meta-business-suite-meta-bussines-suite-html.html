@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Dominando Meta Business Suite - JCDISEING</title>
+    <!-- Tailwind CSS CDN para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Colores y estilo Pinterest */
+        :root {
+            --pinterest-red: #E60023;
+            --pinterest-gray: #EFEFEF;
+            --text-dark: #1F1F1F;
+            --text-medium: #767676;
+        }
+
+        html, body {
+            width: 100%; /* Asegura que el cuerpo y el HTML ocupen el 100% del ancho */
+            overflow-x: hidden; /* Oculta cualquier barra de desplazamiento horizontal */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--pinterest-gray);
+            color: var(--text-dark);
+            padding-top: 5rem; /* Espacio para la barra de navegación fija */
+        }
+
+        .header-bg {
+            background-color: var(--pinterest-red);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            border-radius: 0 0 1rem 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 1rem; /* Bordes más redondeados */
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            break-inside: avoid-column; /* Para el layout de columnas tipo Pinterest */
+            /* Se asegura que el contenido dentro de la tarjeta no desborde */
+            word-wrap: break-word; /* Para texto largo */
+            overflow-wrap: break-word; /* Para texto largo */
+        }
+
+        .section-title {
+            color: var(--pinterest-red);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #D1D1D1;
+            padding-bottom: 0.5rem;
+        }
+
+        .module-subtitle {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-box {
+            background-color: #f7f7f7;
+            border-left: 4px solid var(--pinterest-red);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        .navbar-link:hover {
+            background-color: var(--pinterest-red);
+            color: white;
+        }
+
+        .grid-container {
+            column-count: 1; /* Default for mobile */
+            column-gap: 1.5rem; /* Gap between columns */
+        }
+
+        @media (min-width: 768px) { /* Medium screens and up */
+            .grid-container {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) { /* Large screens and up */
+            .grid-container {
+                column-count: 2; /* Still 2 columns for a clean look */
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Barra de Navegación Fija -->
+        <nav class="navbar-fixed w-full py-3 px-4 flex justify-center">
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <a href="#objetivo" class="navbar-link">🎯 Objetivo</a>
+                <a href="#que-es-mbs" class="navbar-link">🤔 ¿Qué es MBS?</a>
+                <a href="#herramientas" class="navbar-link">🛠️ Herramientas</a>
+                <a href="#configuracion" class="navbar-link">🚀 Configuración</a>
+                <a href="#estrategia" class="navbar-link">🧠 Estrategia</a>
+                <a href="#resumen" class="navbar-link">✅ Resumen</a>
+                <a href="#video" class="navbar-link">▶️ Video</a>
+            </div>
+        </nav>
+
+        <!-- Encabezado de la Clase -->
+        <header class="header-bg">
+            <h1 class="text-3xl md:text-4xl font-bold">💻 Dominando Meta Business Suite para tu Negocio 🚀</h1>
+            <p class="text-lg mt-2">¡Simplifica, gestiona y vende más en Facebook e Instagram!</p>
+        </header>
+
+        <!-- Contenedor Principal del Contenido (Pinterest-like Grid) -->
+        <main class="container grid-container">
+
+            <!-- Módulo 1: Objetivo de la Clase -->
+            <section id="objetivo" class="card">
+                <h2 class="text-2xl section-title flex items-center">🎯 Objetivo de la Clase</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Al final de esta sesión, comprenderás por qué **Meta Business Suite** es tu herramienta más poderosa para gestionar Facebook e Instagram de forma profesional y estratégica, sin perder tiempo ni energía. Vamos a transformar la "gestión de redes" de un caos a un sistema que te ayuda a vender más. 📈
+                </p>
+            </section>
+
+            <!-- Módulo 2: ¿Qué es Meta Business Suite y Por Qué Debería Importarte? -->
+            <section id="que-es-mbs" class="card">
+                <h2 class="text-2xl section-title flex items-center">🤔 ¿Qué es Meta Business Suite y Por Qué Debería Importarte?</h2>
+
+                <h3 class="module-subtitle flex items-center">Bienvenida y Contexto: ¿Te sientes abrumado? 💬</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    ¿Quién de acá siente que se pierde al pasar de una aplicación a otra? 😥 Es un proceso agotador y, en el fondo, no sabes si lo que haces realmente funciona. El perfil de tu negocio es tu **vidriera digital**, y la eficiencia y estrategia son clave. Meta Business Suite es precisamente una de esas herramientas que te salvan.
+                </p>
+
+                <h3 class="module-subtitle flex items-center">Definición Simple: Tu Centro de Mando Digital 👑</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                    <li>MBS es una herramienta **centralizada y gratuita** creada por Meta.</li>
+                    <li>Simplifica la gestión de tus cuentas comerciales de Facebook e Instagram, junto con los mensajes de Messenger, **todo desde un único lugar**. 📱💻</li>
+                    <li>Te permite crear contenido, monitorear interacciones y analizar métricas desde un solo panel de gestión.</li>
+                </ul>
+                <div class="my-6 text-center">
+                    <img src="https://placehold.co/600x400/D1D1D1/767676?text=Meta+Business+Suite+Dashboard" alt="Dashboard de Meta Business Suite" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+                    <p class="text-xs text-gray-500 mt-2">Imagen de ejemplo del dashboard de Meta Business Suite.</p>
+                </div>
+
+                <h3 class="module-subtitle flex items-center">Beneficios Clave para Emprendedores y Pymes ✨</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>**Eficiencia operativa:** Ahorro de tiempo significativo al centralizar todo. ⏰</li>
+                    <li>**Gestión centralizada:** Elimina la necesidad de alternar entre Facebook e Instagram. 🔄</li>
+                    <li>**Decisiones estratégicas basadas en datos:** Acceso a métricas detalladas para ajustar tus estrategias y maximizar el impacto. 📊</li>
+                </ul>
+                <div class="tip-box">
+                    <p class="font-bold">MBS te permite **programar publicaciones con antelación**, asegurando una presencia constante y coherente, lo que el algoritmo premia. ¡Esto te permite crecer sin quemarte la cabeza! 🔥</p>
+                </div>
+            </section>
+
+            <!-- Módulo 3: Tu Caja de Herramientas de Meta Business Suite -->
+            <section id="herramientas" class="card">
+                <h2 class="text-2xl section-title flex items-center">🛠️ Tu Caja de Herramientas de Meta Business Suite</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Exploremos las funciones clave que hacen de MBS una herramienta tan poderosa. Es como una caja de herramientas digital diseñada para ayudarte a aplicar todas las estrategias de optimización.
+                </p>
+
+                <h3 class="module-subtitle flex items-center">El Planificador de Contenido 🗓️ (Planner)</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Crea y programa publicaciones, historias y Reels con antelación para Facebook e Instagram.</li>
+                    <li>Vista de calendario para tu estrategia de contenido mensual.</li>
+                    <li>Te ayuda a mantener la consistencia y a implementar calendarios de contenidos.</li>
+                    <li>Previsualiza cómo se verá tu feed. ✨</li>
+                </ul>
+
+                <h3 class="module-subtitle flex items-center">La Bandeja de Entrada Unificada 📥 (Inbox)</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Centraliza todos los mensajes y comentarios de Facebook, Instagram y Messenger en un solo lugar. 💬</li>
+                    <li>Vital para un buen servicio al cliente (responder en menos de 15 minutos).</li>
+                    <li>Configura respuestas automáticas para preguntas frecuentes. 🤖</li>
+                </ul>
+
+                <h3 class="module-subtitle flex items-center">Estadísticas 📊 (Insights)</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Datos en tiempo real sobre el rendimiento de tus páginas.</li>
+                    <li>Métricas clave como alcance e interacciones. 📈</li>
+                    <li>Te permite dejar de adivinar y empezar a tomar decisiones estratégicas.</li>
+                </ul>
+
+                <h3 class="module-subtitle flex items-center">Gestión de Publicidad 📢 (Ads Manager)</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Herramientas integradas para crear, lanzar y monitorear anuncios en ambas plataformas. 💰</li>
+                    <li>Segmenta a tu audiencia ideal y optimiza tus campañas.</li>
+                </ul>
+
+                <h3 class="module-subtitle flex items-center">Otras Herramientas Valiosas 🌟</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>**Colaboración en Equipo 🤝:** Permite a varios usuarios gestionar las mismas cuentas.</li>
+                    <li>**Monetización:** Herramientas para generar ingresos.</li>
+                    <li>**Tienda:** Crea un catálogo de productos en Meta para etiquetar en publicaciones. 🛍️</li>
+                </ul>
+                <div class="tip-box">
+                    <p class="font-bold">La verdadera ventaja de MBS es que libera tu tiempo de tareas operativas para que lo dediques a la estrategia que realmente importa: planificar, interactuar y analizar datos. 🧠</p>
+                </div>
+            </section>
+
+            <!-- Tabla de Herramientas -->
+            <section class="card">
+                <h2 class="text-2xl section-title flex items-center">Tabla: Herramientas MBS y sus Beneficios ✅</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 rounded-lg overflow-hidden">
+                        <thead class="text-xs text-white uppercase bg-red-600">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Herramienta</th>
+                                <th scope="col" class="px-6 py-3">¿Para qué sirve?</th>
+                                <th scope="col" class="px-6 py-3">Beneficio para tu negocio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Planificador</td>
+                                <td class="px-6 py-4">Programar publicaciones, historias y Reels</td>
+                                <td class="px-6 py-4">Consistencia y orden en tu estrategia de contenido</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Bandeja de Entrada</td>
+                                <td class="px-6 py-4">Responder mensajes de Facebook e Instagram en un solo lugar</td>
+                                <td class="px-6 py-4">Mejor servicio al cliente y mayor visibilidad</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Estadísticas</td>
+                                <td class="px-6 py-4">Analizar el rendimiento de tu contenido y audiencia</td>
+                                <td class="px-6 py-4">Toma de decisiones con datos, no con suposiciones</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Anuncios</td>
+                                <td class="px-6 py-4">Crear y gestionar campañas publicitarias</td>
+                                <td class="px-6 py-4">Mayor alcance y ventas para tu negocio</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Roles de Equipo</td>
+                                <td class="px-6 py-4">Asignar permisos a otros usuarios</td>
+                                <td class="px-6 py-4">Trabajo colaborativo y delegación segura</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Módulo 4: ¡Manos a la Obra! Cómo Configurar tu Cuenta -->
+            <section id="configuracion" class="card">
+                <h2 class="text-2xl section-title flex items-center">🚀 ¡Manos a la Obra! Cómo Configurar tu Cuenta</h2>
+
+                <h3 class="module-subtitle flex items-center">Requisitos Básicos: Lo que necesitas antes de empezar ✅</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                    <li>Una cuenta personal de **Facebook** (para iniciar sesión y verificar tu identidad).</li>
+                    <li>Una **Página de Negocio de Facebook** (Fan Page). ¡Fundamental!</li>
+                    <li>Una cuenta de **Instagram** convertida a perfil de negocio o creador.</li>
+                    <li>Solo puedes crear hasta dos cuentas de administrador comercial.</li>
+                </ul>
+
+                <h3 class="module-subtitle flex items-center">Guía Paso a Paso para la Configuración ⚙️</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>**Paso 1: Crea tu Cuenta**
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>Dirígete a <a href="https://business.facebook.com" target="_blank" class="text-blue-600 hover:underline">business.facebook.com</a> e inicia sesión.</li>
+                            <li>Sigue las instrucciones para crear tu cuenta comercial.</li>
+                        </ul>
+                    </li>
+                    <li>**Paso 2: Agrega tu Página de Facebook**
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>En el panel de MBS, ve a Configuración > Agregar Páginas.</li>
+                            <li>Reclama una página existente o crea una nueva.</li>
+                        </ul>
+                    </li>
+                    <li>**Paso 3: Conecta tu Cuenta de Instagram**
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>En Configuración de Negocio > Cuentas de Instagram, haz clic en Agregar.</li>
+                            <li>Ingresa tus credenciales de Instagram.</li>
+                        </ul>
+                    </li>
+                    <li>**Paso 4: Añade tu Cuenta Publicitaria y de Pagos**
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>Configura una Cuenta Publicitaria (reclamar o crear una nueva).</li>
+                            <li>En Facturación y pagos, añade tu método de pago (tarjeta de crédito, PayPal). 💳</li>
+                        </ul>
+                    </li>
+                    <li>**Paso 5: Gestiona Roles y Permisos**
+                        <ul class="list-disc list-inside ml-5 mt-1">
+                            <li>En Configuración de Negocio > Personas, invita a otros usuarios y asigna roles (Administrador, Editor, Analista). 🤝</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Tabla de Pasos de Configuración -->
+            <section class="card">
+                <h2 class="text-2xl section-title flex items-center">Ruta de Configuración: Guía Rápida 🗺️</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 rounded-lg overflow-hidden">
+                        <thead class="text-xs text-white uppercase bg-red-600">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Paso</th>
+                                <th scope="col" class="px-6 py-3">Acción a Realizar</th>
+                                <th scope="col" class="px-6 py-3">¿Por qué es importante?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">1. Crear Cuenta</td>
+                                <td class="px-6 py-4">Ir a business.facebook.com</td>
+                                <td class="px-6 py-4">Es el punto de partida de tu operación centralizada.</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">2. Agregar Fan Page</td>
+                                <td class="px-6 py-4">Reclamar o crear tu Página de Facebook</td>
+                                <td class="px-6 py-4">Conecta tu vidriera digital a la herramienta de gestión.</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">3. Vincular Instagram</td>
+                                <td class="px-6 py-4">Conectar tu cuenta de Instagram</td>
+                                <td class="px-6 py-4">Unifica tus plataformas para una gestión eficiente.</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">4. Añadir Pagos</td>
+                                <td class="px-6 py-4">Agregar una tarjeta o PayPal para anuncios</td>
+                                <td class="px-6 py-4">Necesario para hacer publicidad y aumentar tu alcance.</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">5. Asignar Roles</td>
+                                <td class="px-6 py-4">Invitar y asignar permisos a tu equipo</td>
+                                <td class="px-6 py-4">Permite delegar tareas de forma segura y profesional.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Módulo 5: La Estrategia que Potencia la Herramienta -->
+            <section id="estrategia" class="card">
+                <h2 class="text-2xl section-title flex items-center">🧠 La Estrategia que Potencia la Herramienta</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Meta Business Suite no es magia; es una herramienta que cobra vida cuando se le aplica una estrategia inteligente. Es el motor, pero tu visión y tu plan de acción son el combustible. 🔥
+                </p>
+
+                <h3 class="module-subtitle flex items-center">Integración con tu Estrategia de Contenido 🎨</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>**Optimización del Perfil:** El Planificador te permite previsualizar tu feed y asegurar que luce profesional, algo que el algoritmo premia. ✨</li>
+                    <li>**SEO y Engagement:** Usa el Planificador para asegurar palabras clave y la Bandeja de Entrada para responder rápido, fomentando la interacción genuina. 💬</li>
+                    <li>**Medición y Ajuste:** Las Estadísticas son clave para verificar si tus CTAs funcionaron y si tus Reels o historias tienen buen rendimiento. 📈</li>
+                </ul>
+                <div class="tip-box">
+                    <p class="font-bold">MBS te da los datos y la herramienta para ejecutar tu estrategia de forma efectiva, cerrando la brecha entre el "qué" y el "cómo". 💡</p>
+                </div>
+
+                <h3 class="module-subtitle flex items-center">Ejemplos Prácticos de Negocios en Argentina 🇦🇷</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>**Caso 1: Tienda de Ropa Online.** Usa el Planificador para programar un feed por columnas (Novedades, Testimonios, Reels de combinación). La Bandeja de Entrada gestiona pedidos y automatiza respuestas. 🛍️</li>
+                    <li>**Caso 2: Consultora de Marketing para Pymes.** Usa el Planificador para publicar tips y consejos que eduquen y empoderen. Las Estadísticas analizan qué contenido genera más comentarios y compartidos. 📈</li>
+                </ul>
+            </section>
+
+            <!-- Módulo 6: Resumen y Tarea Práctica -->
+            <section id="resumen" class="card">
+                <h2 class="text-2xl section-title flex items-center">✅ Resumen y Tarea Práctica</h2>
+
+                <h3 class="module-subtitle flex items-center">Recap: Tres Puntos Clave para Recordar 🧠</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>**Meta Business Suite es tu centro de mando:** Unifica la gestión para ahorrar tiempo y ser más eficiente. ⏰</li>
+                    <li>**MBS te da las herramientas:** Planificador (consistencia), Bandeja (conexión con clientes), Estadísticas (decisiones inteligentes). 🛠️</li>
+                    <li>**MBS es para la acción:** Transforma la teoría en práctica y convierte tu perfil en una máquina de ventas. 🚀</li>
+                </ul>
+
+                <h3 class="module-subtitle flex items-center">Desafío para la Casa: ¡Configura y Publica! 💡</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Si aún no lo hiciste, configura tu cuenta de Meta Business Suite siguiendo la Ruta de Configuración.</li>
+                    <li>Usando el Planificador de MBS, programa al menos **3 posts y 2 historias** para la semana que viene (contenido de valor, no solo de venta). 🗓️</li>
+                    <li>Envía a tu instructor una captura de pantalla de tu Planificador con el contenido programado para recibir feedback. 📸</li>
+                </ol>
+
+                <div class="tip-box mt-4">
+                    <p class="font-bold text-lg">"Ahora ya no tienes excusas. Tienes el conocimiento y la herramienta. Es momento de pasar de tener un negocio por estar a uno que genera resultados reales". 🌟</p>
+                </div>
+            </section>
+
+            <!-- Módulo de Video de YouTube -->
+            <section id="video" class="card">
+                <h2 class="text-2xl section-title flex items-center">▶️ Video Extra: ¡Aprende más sobre Meta Business Suite!</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">Aquí te dejamos un video complementario para seguir dominando esta potente herramienta:</p>
+                <div class="relative w-full overflow-hidden rounded-lg" style="padding-top: 56.25%;">
+                    <!-- 16:9 aspect ratio -->
+                    <iframe
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/IhYyN0d-SZs"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer con derechos reservados -->
+        <footer class="w-full text-center py-6 text-gray-500 text-sm mt-8">
+            <p>&copy; Todos los derechos reservados para JCDISEING y REIDEL DESIGN</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript para el desplazamiento suave al hacer clic en los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

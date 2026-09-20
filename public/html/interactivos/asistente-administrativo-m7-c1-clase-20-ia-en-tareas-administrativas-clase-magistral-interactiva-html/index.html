@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Antigravity - Clase Magistral Interactiva</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="neon-grid"></div>
+  
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logos-container">
+          <img class="logo-img" src="media/logo_itc.png" alt="Informatic Training Center">
+          <img class="logo-img" src="media/logo_udemm.png" alt="Universidad de la Marina Mercante">
+        </div>
+        <div class="sidebar-logo">Antigravity</div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-item cyan-theme active" data-target="welcome">
+          <span>🚀</span> Inicio
+        </div>
+        <div class="nav-item cyan-theme" data-target="modulo1">
+          <span>🔬</span> Módulo 1: Anatomía
+        </div>
+        <div class="nav-item green-theme" data-target="modulo2">
+          <span>🐍</span> Módulo 2: Python
+        </div>
+        <div class="nav-item cyan-theme" data-target="modulo3">
+          <span>🐙</span> Módulo 3: Git & GitHub
+        </div>
+        <div class="nav-item green-theme" data-target="modulo4">
+          <span>☁️</span> Módulo 4: Vercel
+        </div>
+        <div class="nav-item green-theme" data-target="reto">
+          <span>🏆</span> Reto Final
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- WELCOME SECTION -->
+      <section id="welcome" class="fade-in">
+        <div class="glass-card glow-cyan">
+          <div class="card-header">
+            <h2 class="card-title">🚀 Clase Magistral: Dominando el Ecosistema Google Antigravity</h2>
+            <span class="card-subtitle">Bienvenida</span>
+          </div>
+          <p>Bienvenido al entorno interactivo de aprendizaje diseñado para la clase magistral del ecosistema <strong>Google Antigravity</strong>.</p>
+          <br>
+          <p>Esta aplicación interactiva te servirá para explorar visualmente los conceptos teóricos, las arquitecturas backend y simular en tiempo real los flujos de desarrollo asistidos por IA. Utiliza la barra lateral para navegar a través de los diferentes módulos de la clase.</p>
+          <br>
+          <p>Aprenderás a orquestar subagentes, estructurar una API stateless de procesamiento en Python y Pandas, coordinar el control de versiones con GitHub mediante la aprobación de comandos de terminal, y desplegar automáticamente en Vercel.app.</p>
+          <br>
+          <button class="btn-cyber" onclick="app.navigateTo('modulo1')">Comenzar la clase</button>
+        </div>
+      </section>
+
+      <!-- MODULO 1 SECTION -->
+      <section id="modulo1" style="display: none;">
+        <div class="glass-card glow-cyan slide-up">
+          <div class="card-header">
+            <h2 class="card-title">🔬 Módulo 1: Anatomía de Google Antigravity y sus Modelos</h2>
+            <span class="card-subtitle" id="m1-duration"></span>
+          </div>
+          <p id="m1-resumen"></p>
+          
+          <h3 style="margin-top: 24px; margin-bottom: 8px;">Metas de Aprendizaje:</h3>
+          <ul id="m1-metas" style="margin-left: 20px; display: flex; flex-direction: column; gap: 8px;"></ul>
+          
+          <h3 style="margin-top: 32px; margin-bottom: 8px;">Comparador Interactivo de Modelos</h3>
+          <p class="text-muted">Haz clic en cada modelo para analizar sus fortalezas en el flujo de desarrollo de Antigravity:</p>
+          
+          <div class="models-grid">
+            <div class="model-card active" data-model="gemini-pro" onclick="app.selectModel('gemini-pro')">
+              <span class="model-tag">Razonamiento Lógico</span>
+              <div class="model-name">Gemini 3.5 Pro / Ultra</div>
+              <div class="model-desc">Ideal para planeación estructurada, refactorización masiva de bases de código completas y resolución de bugs lógicos complejos. Ventana de 2M de tokens.</div>
+            </div>
+            <div class="model-card" data-model="claude" onclick="app.selectModel('claude')">
+              <span class="model-tag">Estética & UX/UI</span>
+              <div class="model-name">Claude 3.5 Sonnet</div>
+              <div class="model-desc">Recomendado para el diseño de componentes interactivos frontend, maquetación CSS/HTML responsiva avanzada y animaciones fluidas premium.</div>
+            </div>
+            <div class="model-card" data-model="gemini-flash" onclick="app.selectModel('gemini-flash')">
+              <span class="model-tag">Tareas Rápidas</span>
+              <div class="model-name">Gemini 3.5 Flash</div>
+              <div class="model-desc">Excelente para scripts de automatización cortos, formateo de datos, traducción de comentarios y generación de pruebas unitarias ágiles.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULO 2 SECTION -->
+      <section id="modulo2" style="display: none;">
+        <div class="glass-card glow-green slide-up">
+          <div class="card-header">
+            <h2 class="card-title">🐍 Módulo 2: Integración con Python (El motor de datos)</h2>
+            <span class="card-subtitle" id="m2-duration"></span>
+          </div>
+          <p id="m2-resumen"></p>
+          
+          <h3 style="margin-top: 24px; margin-bottom: 8px;">Metas de Aprendizaje:</h3>
+          <ul id="m2-metas" style="margin-left: 20px; display: flex; flex-direction: column; gap: 8px;"></ul>
+
+          <h3 style="margin-top: 32px; margin-bottom: 8px;">Simulador de Procesamiento de Datos (Pandas)</h3>
+          <p class="text-muted">Arrastra o haz clic para subir una plantilla de datos Excel de ventas y ver el procesamiento de Pandas en memoria RAM:</p>
+          
+          <!-- Drag and drop simulation area -->
+          <div class="drag-drop-zone" id="drop-zone" onclick="app.triggerFileSelect()">
+            <div class="drag-drop-icon">📊</div>
+            <div class="drag-drop-text" id="drop-text">Arrastra tu archivo <strong>Excel de Ventas</strong> aquí o <strong>haz clic para examinar</strong></div>
+            <input type="file" id="file-input" style="display: none;" accept=".xlsx, .xls" onchange="app.handleFileSelect(event)">
+          </div>
+
+          <!-- Loading simulated area -->
+          <div id="loader-area" style="display: none;">
+            <div class="loader-container">
+              <div class="loader-pulse"></div>
+              <div class="loader-label">Pandas procesando en memoria RAM...</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output Simulation Results -->
+          <div id="results-area" style="display: none;" class="fade-in">
+            <div class="kpis-grid">
+              <div class="kpi-card">
+                <span class="kpi-label">Ingresos Totales (SUM)</span>
+                <span class="kpi-val" id="kpi-total">$0.00</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Ticket Promedio (MEAN)</span>
+                <span class="kpi-val" id="kpi-mean">$0.00</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Producto Estrella (MODE)</span>
+                <span class="kpi-val" id="kpi-top">-</span>
+              </div>
+            </div>
+
+            <div class="charts-sim-container">
+              <h4 style="margin-bottom: 12px; color: var(--text-bright);">Desglose de Ventas por Categoría (Agrupado por Pandas)</h4>
+              <div id="charts-list" style="display: flex; flex-direction: column; gap: 14px;"></div>
+            </div>
+            
+            <button class="btn-neon" style="margin-top: 20px;" onclick="app.resetUploadSim()">Subir otro archivo</button>
+          </div>
+
+          <!-- Python API Code View -->
+          <h3 style="margin-top: 32px; margin-bottom: 8px;">Código Backend API Python Producido</h3>
+          <p class="text-muted">Este es el código stateless que corre bajo el endpoint <code>/api/process</code> en memoria:</p>
+          <div class="code-panel">
+            <div class="code-header">
+              <div class="code-dots">
+                <div class="code-dot"></div>
+                <div class="code-dot"></div>
+                <div class="code-dot"></div>
+              </div>
+              <span class="code-filename">api/index.py</span>
+            </div>
+            <div class="code-body">
+              <div class="code-lines" id="python-lines"></div>
+              <div class="code-content" id="python-code"></div>
+            </div>
+          </div>
+
+          <!-- Prompt Alumno 1 -->
+          <div style="margin-top: 24px; padding: 20px; border-radius: var(--radius-md); background: hsla(180, 100%, 50%, 0.05); border: 1px solid var(--border-neon-cyan);">
+            <strong style="color: var(--neon-cyan); display: block; margin-bottom: 8px;">💡 Prompts exactos para el Alumno:</strong>
+            <p style="font-style: italic; font-size: 0.9rem;" id="prompt-m2-1"></p>
+            <br>
+            <p style="font-style: italic; font-size: 0.9rem;" id="prompt-m2-2"></p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MODULO 3 SECTION -->
+      <section id="modulo3" style="display: none;">
+        <div class="glass-card glow-cyan slide-up">
+          <div class="card-header">
+            <h2 class="card-title">🐙 Módulo 3: Control de Versiones con GitHub</h2>
+            <span class="card-subtitle" id="m3-duration"></span>
+          </div>
+          <p id="m3-resumen"></p>
+          
+          <h3 style="margin-top: 24px; margin-bottom: 8px;">Metas de Aprendizaje:</h3>
+          <ul id="m3-metas" style="margin-left: 20px; display: flex; flex-direction: column; gap: 8px;"></ul>
+
+          <h3 style="margin-top: 32px; margin-bottom: 8px;">Terminal Interactiva de Git</h3>
+          <p class="text-muted">Haz clic en los comandos en secuencia para aprobar su ejecución en el entorno controlado de Antigravity y subirlos a GitHub:</p>
+          
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <button class="btn-neon" id="btn-git-init" onclick="app.runGitStep(1)">1. Inicializar localmente</button>
+            <button class="btn-neon" id="btn-git-push" style="opacity: 0.5; pointer-events: none;" onclick="app.runGitStep(2)">2. Enviar a GitHub</button>
+            <button class="btn-neon-green" style="display: none;" id="btn-git-reset" onclick="app.resetGitSim()">Reiniciar Consola</button>
+          </div>
+
+          <!-- Terminal simulator -->
+          <div class="terminal-sim">
+            <div class="terminal-header">
+              <div class="terminal-title">Consola Git Interactiva</div>
+              <span class="terminal-badge" id="terminal-status">Inactivo</span>
+            </div>
+            <div class="terminal-body" id="terminal-console">
+              <div class="terminal-line output">Consola inicializada. Esperando aprobación de comando...<span class="terminal-cursor"></span></div>
+            </div>
+          </div>
+
+          <!-- Prompts Alumno M3 -->
+          <div style="margin-top: 24px; padding: 20px; border-radius: var(--radius-md); background: hsla(180, 100%, 50%, 0.05); border: 1px solid var(--border-neon-cyan);">
+            <strong style="color: var(--neon-cyan); display: block; margin-bottom: 8px;">💡 Prompts exactos para el Alumno:</strong>
+            <p style="font-style: italic; font-size: 0.9rem;" id="prompt-m3-1"></p>
+            <br>
+            <p style="font-style: italic; font-size: 0.9rem;" id="prompt-m3-2"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULO 4 SECTION -->
+      <section id="modulo4" style="display: none;">
+        <div class="glass-card glow-green slide-up">
+          <div class="card-header">
+            <h2 class="card-title">☁️ Módulo 4: Despliegue en la Nube con Vercel</h2>
+            <span class="card-subtitle" id="m4-duration"></span>
+          </div>
+          <p id="m4-resumen"></p>
+          
+          <h3 style="margin-top: 24px; margin-bottom: 8px;">Metas de Aprendizaje:</h3>
+          <ul id="m4-metas" style="margin-left: 20px; display: flex; flex-direction: column; gap: 8px;"></ul>
+
+          <h3 style="margin-top: 32px; margin-bottom: 8px;">Configuración de Enrutamiento</h3>
+          <p class="text-muted">El archivo <code>vercel.json</code> define cómo Vercel compila la API Serverless en Python y sirve el Frontend estático:</p>
+          
+          <div class="code-panel">
+            <div class="code-header">
+              <div class="code-dots">
+                <div class="code-dot"></div>
+                <div class="code-dot"></div>
+                <div class="code-dot"></div>
+              </div>
+              <span class="code-filename">vercel.json</span>
+            </div>
+            <div class="code-body">
+              <div class="code-lines" id="vercel-lines"></div>
+              <div class="code-content" id="vercel-code"></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; padding: 20px; border-radius: var(--radius-md); background: hsla(145, 100%, 50%, 0.05); border: 1px solid var(--border-neon-green);">
+            <strong style="color: var(--neon-green); display: block; margin-bottom: 8px;">💡 Prompt exacto para el Alumno:</strong>
+            <p style="font-style: italic; font-size: 0.9rem;" id="prompt-m4"></p>
+          </div>
+
+          <h3 style="margin-top: 32px; margin-bottom: 8px;">Simulador de Pipeline CI/CD</h3>
+          <p class="text-muted">Ejecuta un cambio de código y observa cómo Vercel recompila automáticamente desde GitHub:</p>
+          <button class="btn-neon-green" id="btn-deploy-vercel" onclick="app.runVercelDeploySim()">Simular Push & Auto-Deploy</button>
+          
+          <!-- Vercel Pipeline Terminal -->
+          <div class="terminal-sim" id="vercel-terminal" style="display: none;">
+            <div class="terminal-header">
+              <div class="terminal-title">Vercel Build Output</div>
+              <span class="terminal-badge" id="vercel-status">Building</span>
+            </div>
+            <div class="terminal-body" id="vercel-console"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RETO SECTION -->
+      <section id="reto" style="display: none;">
+        <div class="glass-card glow-green slide-up">
+          <div class="card-header">
+            <h2 class="card-title" id="reto-titulo">🏆 El Reto Final</h2>
+            <span class="card-subtitle">Evaluación</span>
+          </div>
+          
+          <h3 style="margin-bottom: 12px; color: var(--text-bright);">Requisitos Obligatorios del Proyecto:</h3>
+          <ul id="reto-requisitos" style="margin-left: 20px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;"></ul>
+
+          <h3 style="margin-bottom: 12px; color: var(--text-bright);">Ideas de Proyectos:</h3>
+          <div id="reto-ideas" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;"></div>
+
+          <h3 style="margin-bottom: 12px; color: var(--text-bright);">Rúbrica de Evaluación Completa:</h3>
+          <div class="table-container">
+            <table class="rubric-table">
+              <thead class="rubric-header">
+                <tr>
+                  <th style="width: 20%;">Criterio</th>
+                  <th style="width: 30%;">Excelente</th>
+                  <th style="width: 30%;">Aceptable</th>
+                  <th style="width: 15%;">Insuficiente</th>
+                  <th style="width: 5%;">Puntos</th>
+                </tr>
+              </thead>
+              <tbody id="rubric-rows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-text">
+        Clase Magistral Diseñada e Impartida por <strong>G.Kempe</strong><br>
+        Informatic Training Center & Universidad de la Marina Mercante
+      </footer>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

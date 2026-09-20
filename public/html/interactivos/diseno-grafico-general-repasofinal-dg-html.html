@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso de Diseño Gráfico</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-color: #00e5ff; /* Color neón inicial */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0c1d; /* Fondo oscuro tipo cyberpunk */
+            position: relative;
+            /* Se mantiene el overflow: hidden en el body para que el fondo de partículas cubra toda la pantalla sin scroll */
+            overflow: hidden; 
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        #background-image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) brightness(50%); /* Efecto visual cyberpunk */
+            z-index: -3;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 12, 29, 0.7); /* Overlay oscuro translúcido */
+            z-index: -1;
+        }
+
+        #quiz-container {
+            background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente para glassmorphism */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            /* Se corrigió el error: ahora el contenedor tiene scroll interno pero invisible */
+            overflow-y: auto;
+            max-height: 90vh; /* Se limita la altura para que el scroll funcione */
+        }
+        /* Oculta la barra de desplazamiento para navegadores basados en WebKit */
+        #quiz-container::-webkit-scrollbar {
+            display: none;
+        }
+        /* Oculta la barra de desplazamiento para Firefox y Edge */
+        #quiz-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+
+
+        /* Efecto de resplandor neón en botones */
+        .neon-button {
+            position: relative;
+            color: var(--neon-color);
+            border: 2px solid var(--neon-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px var(--neon-color), inset 0 0 5px var(--neon-color);
+        }
+        .neon-button:hover {
+            text-shadow: 0 0 8px var(--neon-color);
+            animation: jiggle 0.3s infinite;
+        }
+        .neon-button:disabled {
+            color: #6b7280;
+            border-color: #6b7280;
+            box-shadow: none;
+            cursor: not-allowed;
+            animation: none;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Título con degradado y resplandor animado */
+        .neon-title {
+            background-image: linear-gradient(45deg, var(--neon-color), #8a2be2); /* Degradado entre neón y morado */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .neon-title:hover {
+            text-shadow: 0 0 10px var(--neon-color), 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Animación de "temblor" */
+        @keyframes jiggle {
+            0% { transform: scale(1.02); }
+            50% { transform: scale(1.01); }
+            100% { transform: scale(1.02); }
+        }
+
+        /* Barra de progreso */
+        #progress-bar {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        #progress-bar-fill {
+            transition: width 0.5s ease;
+            background-image: linear-gradient(90deg, #8a2be2, var(--neon-color));
+        }
+
+        /* Opciones seleccionadas (correctas e incorrectas) */
+        .option-correct {
+            border-color: #38bdf8 !important;
+            box-shadow: 0 0 8px #38bdf8, inset 0 0 8px #38bdf8 !important;
+            color: #e0f2fe !important;
+            background: rgba(56, 189, 248, 0.1) !important;
+            animation: none !important;
+            text-shadow: none;
+        }
+        .option-incorrect {
+            border-color: #ef4444 !important;
+            box-shadow: 0 0 8px #ef4444, inset 0 0 8px #ef4444 !important;
+            color: #fecaca !important;
+            background: rgba(239, 68, 68, 0.1) !important;
+            animation: none !important;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8">
+
+    <!-- Fondo de imagen / gif (estático por la naturaleza del código, pero diseñado para rotar) -->
+    <div id="background-image-container" style="filter: grayscale(100%) brightness(50%);"></div>
+    <div id="overlay"></div>
+    <canvas id="particle-canvas"></canvas>
+
+    <div id="quiz-container" class="rounded-2xl shadow-xl w-full max-w-2xl p-6 md:p-10 transition-all duration-500 ease-in-out transform relative z-10">
+        
+        <!-- Pantalla de inicio -->
+        <div id="start-screen" class="text-center transition-opacity duration-500 text-white">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 neon-title">Repaso de CorelDRAW y Photoshop</h1>
+            <p class="text-lg text-gray-300 mb-8">
+                Prepárate para demostrar tus conocimientos en herramientas clave de diseño gráfico.
+            </p>
+            <button id="start-button" class="py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 neon-button font-semibold">
+                Comenzar Repaso
+            </button>
+        </div>
+
+        <!-- Pantalla del quiz -->
+        <div id="question-screen" class="hidden transition-opacity duration-500 text-white">
+            <div id="progress-bar" class="w-full h-2 rounded-full mb-6">
+                <div id="progress-bar-fill" class="h-2 rounded-full w-0"></div>
+            </div>
+            <div id="question-header" class="flex justify-between items-center mb-6 text-gray-400">
+                <p class="text-sm font-medium">Pregunta <span id="question-number">1</span> de <span id="total-questions">10</span></p>
+                <div id="score-display" class="text-sm font-medium">Puntaje: <span id="current-score">0</span></div>
+            </div>
+            
+            <h2 id="question-text" class="text-xl md:text-2xl font-semibold mb-6 leading-relaxed"></h2>
+            
+            <!-- Contenedor para la referencia visual -->
+            <div id="image-reference-container" class="mb-6 p-4 bg-gray-900 border border-gray-700 rounded-lg hidden">
+                <img id="image-reference" class="w-full h-auto rounded-lg" alt="Referencia visual para la pregunta">
+            </div>
+
+            <!-- Opciones -->
+            <div id="options-container" class="grid gap-4">
+                <!-- Las opciones se inyectarán aquí con JavaScript -->
+            </div>
+            
+            <!-- Área de feedback y explicación -->
+            <div id="feedback-area" class="mt-8 transition-all duration-300 transform -translate-y-2 opacity-0 hidden">
+                <div id="feedback-message" class="font-bold text-lg mb-2"></div>
+                <p id="explanation-text" class="text-gray-300 text-sm leading-relaxed"></p>
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="mt-8 flex justify-end">
+                <button id="next-button" class="py-2 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 neon-button font-semibold hidden">
+                    Siguiente
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla de resultados -->
+        <div id="results-screen" class="text-center hidden transition-opacity duration-500 text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 neon-title">Repaso Finalizado</h2>
+            <p class="text-xl text-gray-300 mb-2">Tu puntaje es:</p>
+            <p id="final-score" class="text-6xl font-black mb-8 neon-title"></p>
+            <button id="restart-button" class="py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 bg-gray-700 text-white hover:bg-gray-600">
+                Reiniciar
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Array de preguntas con descripciones para las imágenes
+        const questions = [
+            {
+                question: "CORE DRAW. Qué tecla se debe mantener presionada para seleccionar varios objetos?",
+                // Se ha movido la URL de la imagen 1 a la pregunta 2
+                image: "[Imagen del ícono de una flecha circular y un punto/nodo en la parte inferior izquierda, comparado con un cuadrado simple y un cuadrado con nodos internos.]",
+                options: ["a. SHIFT", "b. CONTROL", "c. ALT"],
+                correct: "a. SHIFT",
+                explanation: "En CorelDRAW, al igual que en muchos programas, la tecla SHIFT se mantiene presionada para seleccionar múltiples objetos individualmente haciendo clic sobre ellos. La tecla CONTROL también puede usarse, pero SHIFT es la respuesta más común en este contexto."
+            },
+            {
+                question: "CORE DRAW. Con cuál opción de la herramienta DAR FORMA se obtendría el resultado que muestra la figura?",
+                // Se ha añadido la URL de la imagen 1 para la pregunta 2
+                image: "https://i.postimg.cc/3W5V7mC6/Referencivisual1.png",
+                options: ["a. SOLDAR", "b. RECORTAR", "c. INTERSECCIÓN"],
+                correct: "b. RECORTAR",
+                explanation: "La operación RECORTAR (Trim) en CorelDRAW permite que un objeto (la estrella) elimine la parte superpuesta de otro (el círculo), creando un agujero. SOLDAR fusionaría los objetos e INTERSECCIÓN crearía un nuevo objeto solo del área superpuesta."
+            },
+            {
+                question: "CORE DRAW. Seleccione el botón que permite convertir un objeto a curvas para poder editar su forma a través de los nodos:",
+                image: "[Imagen de un ícono con una flecha circular y un punto/nodo en la parte inferior izquierda, comparado con un cuadrado simple y un cuadrado con nodos internos.]",
+                options: ["a. (Ícono de una flecha circular con un nodo)", "b. (Ícono de un cuadrado con nodos en el interior)", "c. (Ícono de un cuadrado simple)"],
+                correct: "a. (Ícono de una flecha circular con un nodo)",
+                explanation: "El ícono que representa una flecha circular y un nodo es el estándar para 'Convertir a curvas' en CorelDRAW, ya que sugiere la transformación de una forma simple en una manipulable por nodos."
+            },
+            {
+                question: "CORE DRAW. Con qué EFECTO INTERACTIVO podría conseguir el resultado que muestra la figura?",
+                // Se ha añadido la URL de la imagen 2 para la pregunta 4
+                image: "https://i.postimg.cc/fLP1263M/Referencivisual2.png",
+                options: ["a. Sombra", "b. Mezcla", "c. Transparencia"],
+                correct: "b. Mezcla",
+                explanation: "El efecto Mezcla (Blend) en CorelDRAW es la herramienta ideal para crear una progresión de objetos y colores entre dos o más formas, logrando una transición visual gradual como la del corazón a la estrella."
+            },
+            {
+                question: "CORE DRAW. Qué opción de RELLENO DEGRADADO lograría un resultado como el que muestra la imagen?",
+                // Se ha añadido la URL de la imagen 3 para la pregunta 5
+                image: "https://i.postimg.cc/MHjNhdRV/Referencivisual3.png",
+                options: ["a. Cuadrado", "b. Cónico", "c. Radial"],
+                correct: "c. Radial",
+                explanation: "Un relleno degradado Radial se origina desde un punto central y se expande hacia afuera en un patrón circular, lo que coincide exactamente con el patrón de relleno de la imagen."
+            },
+            {
+                question: "PHOTOSHOP. Qué herramienta de selección permite seleccionar, haciendo un clic, la zona de una imagen de color similar?",
+                options: ["a. Lazo Poligonal", "b. Varita Mágica", "c. Marco Rectangular"],
+                correct: "b. Varita Mágica",
+                explanation: "La herramienta Varita Mágica en Photoshop está diseñada para seleccionar áreas contiguas de píxeles con colores similares con un solo clic. Es muy útil para seleccionar fondos uniformes o grandes bloques de color."
+            },
+            {
+                question: "PHOTOSHOP. Con qué combinación de letras activa la Transformación Libre, para poder estirar o girar una capa?",
+                options: ["a. CONTROL + V", "b. ALT + I", "c. CONTROL + T"],
+                correct: "c. CONTROL + T",
+                explanation: "En Adobe Photoshop, la combinación de teclas CONTROL + T (o Command + T en Mac) es el atajo de teclado estándar para activar la Transformación Libre de una capa seleccionada, permitiendo modificar su tamaño y orientación."
+            },
+            {
+                question: "PHOTOSHOP. Con qué herramienta podría realizar la modificación que muestra la imagen?",
+                // Se ha añadido la URL de la imagen 4 para la pregunta 8
+                image: "https://i.postimg.cc/MZMG6wmb/Referencivisual4.png",
+                options: ["a. Tampón de clonar", "b. Pincel corrector", "c. Pincel"],
+                correct: "a. Tampón de clonar",
+                explanation: "La herramienta Tampón de Clonar en Photoshop permite copiar píxeles de una parte de la imagen a otra, lo que es ideal para duplicar objetos o retocar imperfecciones, como se muestra en la imagen de la flor."
+            },
+            {
+                question: "PHOTOSHOP. Seleccione el botón correspondiente para crear una nueva capa:",
+                image: "[Imagen del ícono de un cuadrado con un símbolo de más, comparado con el de un bote de basura y una carpeta.]",
+                options: ["a. (Ícono de un cuadrado con un símbolo de más)", "b. (Ícono de un bote de basura)", "c. (Ícono de una carpeta)"],
+                correct: "a. (Ícono de un cuadrado con un símbolo de más)",
+                explanation: "En Photoshop, el botón para crear una nueva capa es universalmente reconocido por el ícono de una hoja de papel con un pliegue o un signo más, como se muestra en la opción 'a'."
+            },
+            {
+                question: "PHOTOSHOP. Qué ajuste permitiría hacer una modificación en la imagen como se muestra a continuación?",
+                // Se ha añadido la URL de la imagen 5 para la pregunta 10
+                image: "https://i.postimg.cc/P5hfQws2/Referencivisual5.png",
+                options: ["a. Posterizar", "b. Tono / Saturación", "c. Filtro de fotografía"],
+                correct: "b. Tono / Saturación",
+                explanation: "El ajuste Tono/Saturación en Photoshop permite cambiar el matiz (tono) de los colores de una imagen, así como su intensidad (saturación), lo cual es ideal para aplicar un cambio de color global como el tinte magenta de la imagen."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        const startButton = document.getElementById('start-button');
+        const nextButton = document.getElementById('next-button');
+        const restartButton = document.getElementById('restart-button');
+
+        const startScreen = document.getElementById('start-screen');
+        const questionScreen = document.getElementById('question-screen');
+        const resultsScreen = document.getElementById('results-screen');
+
+        const questionText = document.getElementById('question-text');
+        const questionNumber = document.getElementById('question-number');
+        const totalQuestions = document.getElementById('total-questions');
+        const currentScore = document.getElementById('current-score');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackArea = document.getElementById('feedback-area');
+        const feedbackMessage = document.getElementById('feedback-message');
+        const explanationText = document.getElementById('explanation-text');
+        const finalScore = document.getElementById('final-score');
+        const imageReferenceContainer = document.getElementById('image-reference-container');
+        // Se ha modificado la referencia a 'image-reference-text' a 'image-reference'
+        const imageReference = document.getElementById('image-reference');
+        const progressBarFill = document.getElementById('progress-bar-fill');
+        const root = document.documentElement;
+
+        // Listeners
+        startButton.addEventListener('click', startQuiz);
+        nextButton.addEventListener('click', nextQuestion);
+        restartButton.addEventListener('click', restartQuiz);
+
+        // Funciones para el quiz
+        function startQuiz() {
+            startScreen.classList.add('hidden');
+            questionScreen.classList.remove('hidden');
+            questionScreen.classList.add('opacity-100');
+            currentQuestionIndex = 0;
+            score = 0;
+            answered = false;
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            answered = false;
+            nextButton.classList.add('hidden');
+            feedbackArea.classList.add('hidden', 'opacity-0', '-translate-y-2');
+            optionsContainer.innerHTML = '';
+            
+            const currentQuestion = questions[currentQuestionIndex];
+            questionNumber.textContent = currentQuestionIndex + 1;
+            totalQuestions.textContent = questions.length;
+            questionText.textContent = currentQuestion.question;
+            currentScore.textContent = score;
+            
+            updateProgressBar();
+
+            // Se ha corregido la lógica para mostrar una imagen o el contenedor vacío
+            if (currentQuestion.image && currentQuestion.image.startsWith('http')) {
+                imageReference.src = currentQuestion.image;
+                imageReferenceContainer.classList.remove('hidden');
+            } else {
+                imageReferenceContainer.classList.add('hidden');
+            }
+
+            currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.classList.add(
+                    'option-button',
+                    'text-left',
+                    'px-6',
+                    'py-4',
+                    'bg-gray-900',
+                    'text-gray-200',
+                    'rounded-lg',
+                    'border',
+                    'border-gray-700',
+                    'shadow-sm',
+                    'transition-all',
+                    'duration-300',
+                    'ease-in-out',
+                    'hover:shadow-md',
+                    'neon-button'
+                );
+                button.addEventListener('click', () => selectOption(index));
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectOption(selectedIndex) {
+            if (answered) return;
+            answered = true;
+
+            const currentQuestion = questions[currentQuestionIndex];
+            const options = document.querySelectorAll('.option-button');
+            const selectedOptionText = options[selectedIndex].textContent;
+
+            // Highlight all options based on correctness
+            options.forEach((button, index) => {
+                button.disabled = true;
+                if (button.textContent === currentQuestion.correct) {
+                    button.classList.add('option-correct');
+                } else if (index === selectedIndex) {
+                    button.classList.add('option-incorrect');
+                } else {
+                    button.classList.remove('neon-button');
+                    button.classList.add('text-gray-500', 'border-gray-800');
+                }
+            });
+
+            // Display feedback and explanation
+            feedbackArea.classList.remove('hidden', 'opacity-0', '-translate-y-2');
+            if (selectedOptionText === currentQuestion.correct) {
+                score++;
+                feedbackMessage.textContent = "¡Correcto!";
+                feedbackMessage.classList.add('text-cyan-400');
+            } else {
+                feedbackMessage.textContent = "Incorrecto.";
+                feedbackMessage.classList.add('text-red-400');
+            }
+            explanationText.textContent = currentQuestion.explanation;
+
+            // Show next button
+            nextButton.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            questionScreen.classList.add('hidden');
+            resultsScreen.classList.remove('hidden');
+            resultsScreen.classList.add('opacity-100');
+            finalScore.textContent = `${score}/${questions.length}`;
+        }
+
+        function restartQuiz() {
+            resultsScreen.classList.add('hidden');
+            startScreen.classList.remove('hidden');
+            startScreen.classList.add('opacity-100');
+            currentQuestionIndex = 0;
+            score = 0;
+            answered = false;
+        }
+
+        function updateProgressBar() {
+            const progress = (currentQuestionIndex / questions.length) * 100;
+            progressBarFill.style.width = `${progress}%`;
+        }
+
+        // --- Efectos visuales de fondo y neón ---
+
+        // Configuración de la animación de partículas
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const numParticles = 100;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+                if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
+            }
+            draw() {
+                const neonColor = getComputedStyle(root).getPropertyValue('--neon-color');
+                ctx.fillStyle = neonColor;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Cambio de color neón aleatorio
+        const neonColors = ['#00e5ff', '#ff00d9', '#ffcc00', '#00ff73', '#9400ff'];
+        let colorIndex = 0;
+        setInterval(() => {
+            colorIndex = (colorIndex + 1) % neonColors.length;
+            root.style.setProperty('--neon-color', neonColors[colorIndex]);
+        }, 5000);
+
+        // --- Sistema para fondos aleatorios ---
+        const backgroundGifs = [
+            'https://i.postimg.cc/qBNM2dHV/M5.gif',
+            'https://i.postimg.cc/gjX5jD7Q/M6.gif',
+            'https://i.postimg.cc/zXWzPSfx/M7.gif',
+            'https://i.postimg.cc/gk6F2zFj/M8.gif',
+            'https://i.postimg.cc/pTpxQK7Y/M3.gif'
+        ];
+
+        function setRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * backgroundGifs.length);
+            const randomGif = backgroundGifs[randomIndex];
+            const bgContainer = document.getElementById('background-image-container');
+            // La URL se envuelve en url() para que CSS la interprete correctamente.
+            bgContainer.style.backgroundImage = `url('${randomGif}')`;
+        }
+
+        // Iniciar todo
+        window.onload = function() {
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            animateParticles();
+            // Llama a la función para establecer un fondo aleatorio al cargar la página
+            setRandomBackground();
+        }
+    </script>
+</body>
+</html>

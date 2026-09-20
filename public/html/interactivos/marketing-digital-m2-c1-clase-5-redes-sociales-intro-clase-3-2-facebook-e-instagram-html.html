@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominando Redes en 2025 - JCDISEING</title>
+    <!-- Incluye Tailwind CSS para un estilo moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Colores Flúo y Estilo Instagram */
+        :root {
+            --fluo-purple: #8A2BE2; /* Amethyst */
+            --fluo-pink: #FF69B4; /* Hot Pink */
+            --fluo-green: #39FF14; /* Neon Green */
+            --fluo-blue: #00FFFF; /* Aqua */
+            --bg-light: #FAFAFA; /* Fondo ligero de Instagram */
+            --text-dark: #262626; /* Texto oscuro de Instagram */
+            --border-light: #DBDBDB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding-top: 5rem; /* Espacio para la barra de navegación fija */
+        }
+
+        .header-gradient {
+            background-image: linear-gradient(to right top, var(--fluo-purple), var(--fluo-pink));
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid var(--border-light);
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra suave */
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--fluo-purple);
+            border-bottom: 2px solid var(--fluo-pink);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Subtítulos de módulos ahora en color oscuro para mejor contraste */
+        .module-subtitle {
+            color: var(--text-dark); /* Color oscuro en lugar de cian */
+        }
+
+        .tip-box {
+            background-color: #f0f8ff; /* Light blue background for tips */
+            border-left: 4px solid var(--fluo-blue);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .penalty-box {
+            background-color: #fff0f5; /* Light pink background for penalties */
+            border-left: 4px solid var(--fluo-pink);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .navbar-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .navbar-link:hover {
+            background-color: var(--fluo-pink);
+            color: white;
+        }
+
+        /* Estilo para tablas */
+        .styled-table th, .styled-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .styled-table th {
+            background-color: var(--fluo-purple);
+            color: white;
+            font-weight: 600;
+        }
+        .styled-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .styled-table tr:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Barra de navegación fija -->
+        <nav class="navbar-fixed w-full py-3 px-4 flex justify-center shadow-sm">
+            <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                <a href="#instagram-intro" class="navbar-link">📸 Instagram</a>
+                <a href="#facebook-intro" class="navbar-link">👍 Facebook</a>
+                <a href="#actividad-insta" class="navbar-link">✍️ Actividad</a>
+                <a href="#tarea-insta" class="navbar-link">📚 Tarea</a>
+            </div>
+        </nav>
+
+        <!-- Encabezado de la Clase -->
+        <header class="w-full py-8 text-white text-center header-gradient rounded-b-3xl shadow-lg mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Dominando Redes en 2025</h1>
+            <p class="text-xl md:text-2xl mt-3 font-light">¡Tu guía definitiva para brillar en Instagram y Facebook!</p>
+        </header>
+
+        <!-- Contenedor principal de los módulos -->
+        <main class="w-full max-w-4xl px-4">
+
+            <!-- Módulo 1: Instagram - Introducción y Algoritmo -->
+            <section id="instagram-intro" class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">📸 Módulo 1: Instagram - ¡De la cueva a la luz! ✨</h2>
+                <p class="text-lg mb-4">¿Sientes que Instagram te tiene escondido? ¡Vamos a cambiar eso! 🚀</p>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">💡 Contexto Rápido 2025:</h3>
+                <ul class="list-none space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">🌟</span> Instagram actualiza su algoritmo ¡constantemente!
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">💎</span> Este año valora más la **calidad** y la **interacción auténtica** que los números vacíos.
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">🤖 ¿Cómo funciona el algoritmo de Instagram HOY?</h3>
+                <ul class="list-disc list-inside space-y-2 mb-6">
+                    <li><strong class="text-fluo-green">Personalización extrema:</strong> Cada sección (Feed, Stories, Explorar, Reels) ¡tiene su propio robot! 🧠</li>
+                    <li><strong class="text-fluo-green">Factores principales:</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1 space-y-1">
+                            <li><span class="text-fluo-blue">Actividad:</span> Likes, comentarios, guardados y compartidos. ¡El engagement es clave! ❤️💬💾↗️</li>
+                            <li><span class="text-fluo-blue">Relaciones:</span> Cuánto interactúas con un usuario. Si comentas a @pepito, ¡lo verás más! 👯‍♀️</li>
+                            <li><span class="text-fluo-blue">Calidad y originalidad del contenido:</span> ¡No copies! Sé tú mismo y creativo. 🎨✨</li>
+                            <li><span class="text-fluo-blue">Tiempo de sesión:</span> Instagram te muestra cosas diferentes según cuánto tiempo estés navegando. ⏳</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">🏆 ¿Qué PREMIA el algoritmo de Instagram?</h3>
+                <ul class="list-none space-y-2">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✅</span> **Contenido original y creativo.** ¡Sé único! 🌈
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✅</span> **Publicaciones que generan interacción rápida.** ¡Responde al instante! ⚡
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✅</span> **Constancia en las publicaciones** (especialmente en Stories y Reels). ¡No desaparezcas! 🗓️
+                    </li>
+                </ul>
+
+                <div class="penalty-box">
+                    <h4 class="text-xl font-bold text-fluo-pink mb-2">🚫 Penalizaciones de Instagram:</h4>
+                    <ul class="list-none space-y-1">
+                        <li class="flex items-start">
+                            <span class="mr-2 text-red-500 text-xl">❌</span> Publicar mucho contenido copiado o "reposteado" de otros. ¡Originalidad, por favor!
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-red-500 text-xl">❌</span> Mala calidad de video o audio en Reels. ¡Invierte en buena producción! 📉
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Módulo 2: Instagram - Optimizando Secciones y Tips de Oro -->
+            <section class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">optimize tus secciones de Instagram 🛠️</h2>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">✨ Cómo optimizar cada sección:</h3>
+                <ul class="list-none space-y-4 mb-6">
+                    <li>
+                        <strong class="text-fluo-pink text-xl flex items-center">Feed: 🏡</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1 space-y-1">
+                            <li>Publica contenido visual ¡ATRACTIVO! 🎨</li>
+                            <li>Usa títulos que inviten a comentar. 🗣️</li>
+                            <li>Publica en horarios donde tu audiencia esté conectada. ⏰</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-fluo-pink text-xl flex items-center">Stories: 📖</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1 space-y-1">
+                            <li>¡Interactúa! Usa stickers de preguntas, encuestas, GIFs. 🤔📊🎉</li>
+                            <li>Publica historias todos los días. ¡Mantente presente! ☀️</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-fluo-pink text-xl flex items-center">Explorar: 🧭</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1 space-y-1">
+                            <li>Usa hashtags bien pensados y ubicaciones relevantes. #️⃣📍</li>
+                            <li>Apuesta al contenido que genera interacción rápida (likes, shares, saves). ¡Que sea irresistible! 💖↗️💾</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong class="text-fluo-pink text-xl flex items-center">Reels: 🎬</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1 space-y-1">
+                            <li>Sigue tendencias y usa música popular. 🎶</li>
+                            <li>Duración ideal: ¡15-30 segundos! Corto y potente. ⏱️</li>
+                            <li>¡Alta calidad de imagen y sonido! (Importantísimo). 💎🎤</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">🌟 ¡Tips de Oro para Instagram! 🌟</h3>
+                <ul class="list-none space-y-2">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✨</span> Usa todas las funciones nuevas que puedas: Reels, Threads, Collabs. ¡Instagram te premiará por ello!
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✨</span> Interactúa con otras cuentas relevantes. ¡No seas un fantasma! 👻
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✨</span> Mide tu rendimiento cada semana (usa Metricool o Instagram Insights). ¡Conoce tus números! 📈
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">✨</span> Si ves que no avanzas, resetea tus sugerencias. ¡Un nuevo comienzo! 🔄
+                    </li>
+                </ul>
+
+                <div class="tip-box">
+                    <p class="text-xl font-bold text-fluo-blue">"Hoy Instagram quiere calidad, interacción real y creatividad. Si le das eso, te premia. Si te quedás en la vieja escuela, ¡te entierra!"</p>
+                </div>
+            </section>
+
+            <!-- Módulo 3: Facebook - Introducción y Algoritmo -->
+            <section id="facebook-intro" class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">👍 Módulo 3: Facebook - ¡No seas invisible! 👻</h2>
+                <p class="text-lg mb-4">Aprende cómo el algoritmo actual te puede ayudar a aumentar el engagement. 💪</p>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">  ¿Cómo funciona el algoritmo de Facebook hoy?</h3>
+                <ul class="list-disc list-inside space-y-2 mb-6">
+                    <li><strong class="text-fluo-green">Prioridad:</strong> Facebook prioriza el contenido de amigos, familia y grupos. ¡Las marcas tienen que ganarse su lugar! 👨‍👩‍👧‍👦</li>
+                    <li><strong class="text-fluo-green">Señales que afectan la visibilidad:</strong>
+                        <ul class="list-disc list-inside ml-5 mt-1 space-y-1">
+                            <li><span class="text-fluo-blue">Reacciones:</span> Sobre todo compartir y comentar. ¡El pulgar arriba no es suficiente! 💬↗️</li>
+                            <li><span class="text-fluo-blue">Tiempo de visualización:</span> ¡El video es el rey! 🎬⏳</li>
+                            <li><span class="text-fluo-blue">Interacciones genuinas:</span> Nada de trampas tipo "Etiqueta a 3 amigos". ¡Sé real! 🤝</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">🌟 ¿Qué tipo de publicaciones funcionan mejor en Facebook?</h3>
+                <ul class="list-none space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">🎥</span> **Videos nativos:** ¡No compartidos de YouTube! Súbelos directamente.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">🖼️</span> **Imágenes llamativas:** ¡Que detengan el scroll!
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">😂</span> **Memes y humor contextual:** ¡Sin perder la seriedad de tu marca!
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">💖</span> **Contenido emocional o educativo:** ¡Inspira y enseña!
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-pink text-xl">❓</span> **Preguntas abiertas y encuestas:** ¡Fomentan el debate!
+                    </li>
+                </ul>
+
+                <div class="tip-box">
+                    <p class="text-lg font-bold text-fluo-blue">¡Aplica la regla de las 3 E's! 👉 <span class="text-fluo-green">Educar, Entretener, Empoderar.</span></p>
+                </div>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">📈 Engagement real: ¿Cómo medirlo?</h3>
+                <p class="text-gray-700 mb-2">¡Aquí una fórmula rápida para saber si lo estás haciendo bien! 🔢</p>
+                <div class="bg-gray-100 p-4 rounded-lg border border-gray-200">
+                    <code class="block whitespace-pre-wrap text-sm text-gray-800 font-mono">
+                        (Me gusta + Comentarios + Compartidos) / Alcance * 100 = % de Engagement
+                    </code>
+                </div>
+                <div class="tip-box mt-4">
+                    <p class="text-fluo-blue font-bold">Tip: ¡No te quedes en los "me gusta" fáciles! Busca comentarios y compartidos. Son los que valen oro. 💎</p>
+                </div>
+            </section>
+
+            <!-- Módulo 4: Facebook - Buenas Prácticas y Errores a Evitar -->
+            <section class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">👍 Módulo 4: Facebook - ¡Crece sin morir en el intento! 🌱</h2>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">✅ Buenas prácticas para crecer en Facebook:</h3>
+                <ul class="list-none space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">⏰</span> Publica cuando tu audiencia está activa (usa Facebook Insights para ver horarios).
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl"> कैप्शन </span> Usa subtítulos en videos (¡el 80% los ve sin audio!).
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">💬</span> Responde siempre a los comentarios. ¡Un comentario respondido = un plus frente al algoritmo!
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-green text-xl">🔄</span> Varía tipos de contenido: no siempre vender, también cuenta historias, muestra procesos, haz humor, etc.
+                    </li>
+                </ul>
+
+                <div class="penalty-box">
+                    <h4 class="text-xl font-bold text-fluo-pink mb-2">❌ Errores que te MATAN el alcance en Facebook:</h4>
+                    <ul class="list-none space-y-1">
+                        <li class="flex items-start">
+                            <span class="mr-2 text-red-500 text-xl">🚫</span> Pedir "me gusta" o "comparte" de manera explícita tipo spam. ¡El algoritmo lo odia!
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-red-500 text-xl">🚫</span> Publicar links externos sin valor agregado (el algoritmo los castiga).
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-red-500 text-xl">🚫</span> Hacer posteos eternos sin CTA (Llamada a la Acción). ¡Sé claro en lo que quieres!
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tip-box mt-6">
+                    <p class="text-xl font-bold text-fluo-blue">"No publiques para vos mismo, ¡publica para que la gente quiera interactuar genuinamente!" 💖</p>
+                </div>
+            </section>
+
+            <!-- Módulo 5: Páginas de Facebook - ¿Sirven todavía? -->
+            <section class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">Páginas de Facebook: ¿Siguen siendo importantes? 🧐</h2>
+                <p class="text-lg mb-4">¡Sí, pero las reglas del juego cambiaron! 🔄</p>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">🎯 Para quiénes son CLAVE las páginas:</h3>
+                <ul class="list-disc list-inside space-y-2 mb-6">
+                    <li>Negocios locales (restaurantes, peluquerías, tiendas físicas, etc.) 🏪</li>
+                    <li>Empresas B2C (que venden directo a consumidores finales) 🛍️</li>
+                    <li>Marcas personales (coaches, artistas, influencers) 🎤</li>
+                    <li>Comunidades (eventos, ONG, clubes, grupos sociales) 🤝</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">🚨 ¿Qué CAMBIÓ? ¡Peeeero...!</h3>
+                <ul class="list-none space-y-2">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-red-500 text-xl">📉</span> El alcance orgánico (gratuito) ¡bajó al piso! Solo un 1%-5% de tus seguidores ven tus publicaciones.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-red-500 text-xl">💬</span> La gente interactúa más en grupos, reels y mensajes privados.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-red-500 text-xl">👨‍👩‍👧‍👦</span> Facebook prefiere mostrar contenido de amigos/grupos antes que de marcas en el feed.
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 mt-6 module-subtitle">🌟 Entonces, ¿para qué sirve todavía una página de Facebook?</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Tener presencia profesional (aparecer en Google, Facebook Maps, etc.) 🌐</li>
+                    <li>Publicidad paga (¡casi obligatoria si quieres volumen! Anuncios, retargeting, ventas). 💰</li>
+                    <li>Crear autoridad: reseñas, testimonios públicos, fotos de productos o servicios. ⭐</li>
+                    <li>Servicio al cliente: responder mensajes, WhatsApp, automatizar respuestas. 📞</li>
+                    <li>Proyectos a largo plazo: construir marca + redireccionar a otras plataformas (web propia, Instagram, TikTok, etc.) 📈</li>
+                </ul>
+
+                <div class="tip-box mt-6">
+                    <h4 class="text-xl font-bold text-fluo-blue mb-2">¡Conclusión RÁPIDA sobre Páginas de Facebook!</h4>
+                    <ul class="list-none space-y-1">
+                        <li class="flex items-start">
+                            <span class="mr-2 text-fluo-green text-xl">❓</span> ¿Tenés que tener página? → <strong class="text-fluo-pink">¡Sí!</strong>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-fluo-green text-xl">❓</span> ¿Vas a crecer solo con publicaciones gratis? → <strong class="text-fluo-pink">¡No!</strong>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2 text-fluo-green text-xl">❓</span> ¿Sirve si la combinás con estrategia de ads y contenidos bien pensados? → <strong class="text-fluo-pink">¡Definitivamente! 🎉</strong>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Módulo de Actividad Rápida (para ambas redes) -->
+            <section id="actividad-insta" class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">✍️ Actividad Práctica: ¡A crear contenido! 🎨</h2>
+                <p class="text-lg mb-4">Es hora de poner en práctica lo aprendido para Instagram y Facebook. 😉</p>
+
+                <h3 class="text-2xl font-semibold mb-4 module-subtitle">Mini Actividad (Instagram - Desafío express):</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Cada alumno anota una idea de Reel que podría aplicar en su cuenta ¡HOY! 💡</li>
+                    <li>Opcional: armar un esquema rápido de historia + audio + hashtag. 📝🎶#️⃣</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4 mt-6 module-subtitle">Actividad Rápida (Facebook - Crear un post efectivo):</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Crear en vivo un ejemplo de post efectivo para Facebook.</li>
+                    <li>Tipo: <strong class="text-fluo-pink">Imagen + Pregunta + CTA (Llamada a la Acción).</strong></li>
+                    <li>Analizar juntos qué señales positivas mandaría al algoritmo. 🤔</li>
+                </ul>
+            </section>
+
+            <!-- Tarea para la casa -->
+            <section id="tarea-insta" class="card">
+                <h2 class="text-3xl font-bold mb-6 section-title">📚 Tarea para la Casa: ¡A seguir brillando! ✨</h2>
+                <p class="text-lg mb-4">¡La práctica hace al maestro! Completa estas tareas para afianzar tus conocimientos.</p>
+                <ul class="list-none space-y-2">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-purple text-xl">✅</span> Publica las piezas trabajadas de Instagram (o prepáralas para publicar si aún no tienes seguidores).
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-purple text-xl">✅</span> Saca captura y envía como evidencia (o muestra en la próxima clase). ¡Quiero ver tu progreso! 📸
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-fluo-purple text-xl">✅</span> Implementa tu post efectivo de Facebook y observa sus resultados. 📈
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Footer con derechos reservados -->
+            <footer class="w-full text-center py-8 text-gray-500 text-sm mt-10">
+                <p>&copy; Todos los derechos reservados para JCDISEING y Reidel Design</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript para el desplazamiento suave al hacer clic en los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // Asegura que la sección se alinee al principio de la vista
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+ 

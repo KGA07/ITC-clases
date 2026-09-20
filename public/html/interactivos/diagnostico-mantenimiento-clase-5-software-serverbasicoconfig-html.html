@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva: Servidores en Cisco Packet Tracer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Warm Neutrals (Stone, Amber) -->
+    <!-- Application Structure Plan: A linear, step-by-step tutorial format with a sticky top navigation for quick access to sections. The core interactivity is focused on the 'Services' and 'Verification' sections, which use a tabbed interface. This structure was chosen because a procedural guide benefits from a clear, sequential flow. The tabs prevent information overload by breaking down complex configuration steps into manageable, user-selected chunks, improving learnability for networking beginners. -->
+    <!-- Visualization & Content Choices: 1. Topology: Goal(Inform) -> HTML/CSS Diagram -> Static -> A simple, lightweight visual representation of the network setup. 2. IP Config: Goal(Inform) -> Styled Text Columns -> Static -> Clear side-by-side view for scannable data. 3. Service/Verification Steps: Goal(Organize/Inform) -> Tabbed Content Panels -> JS show/hide -> Breaks down complex procedures into focused, digestible steps, enhancing user control and reducing cognitive load. No charts are used as the content is procedural, not statistical. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .active-tab {
+            background-color: #f59e0b; /* amber-500 */
+            color: #1c1917; /* stone-900 */
+        }
+        .inactive-tab {
+            background-color: #e7e5e4; /* stone-200 */
+            color: #44403c; /* stone-700 */
+        }
+        .topology-device {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #a8a29e; /* stone-400 */
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 80px;
+        }
+        .topology-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+
+    <header class="bg-stone-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <h1 class="text-xl md:text-2xl font-bold text-amber-400">Servidores en Packet Tracer</h1>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="#introduccion" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-700 transition-colors">Introducción</a>
+                    <a href="#topologia" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-700 transition-colors">Topología</a>
+                    <a href="#configuracion" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-700 transition-colors">Configuración</a>
+                    <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-700 transition-colors">Servicios</a>
+                    <a href="#simulacion" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-700 transition-colors">Simulación</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <section id="introduccion" class="mb-12 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">Guía para Simular Servidores Básicos</h2>
+            <p class="text-lg text-stone-700 leading-relaxed">
+                Bienvenido a esta guía interactiva para aprender a construir y simular una red simple con servicios de servidor básicos utilizando Cisco Packet Tracer v8.2.2. Este tutorial está diseñado para ser seguido paso a paso, desde la creación de la topología física hasta la verificación del funcionamiento de servicios como HTTP, DHCP y DNS. El objetivo es proporcionar una base sólida y práctica para entender cómo funcionan los servidores en un entorno de red controlado.
+            </p>
+        </section>
+
+        <div class="w-full h-px bg-stone-300 my-12"></div>
+
+        <section id="topologia" class="mb-12 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">Paso 1: Creación de la Topología</h2>
+            <p class="text-lg text-stone-700 leading-relaxed mb-8">
+                El primer paso es construir la estructura física de nuestra red. Añadiremos un servidor, un PC cliente y un switch para interconectarlos. Utilizaremos cables de cobre de par trenzado directo (Copper Straight-Through) para las conexiones, que es el estándar para conectar dispositivos finales a un switch.
+            </p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4 text-center">Diagrama de la Red</h3>
+                <div class="flex items-center justify-center space-x-8 md:space-x-16 w-full max-w-4xl mx-auto">
+                    <div class="topology-device">
+                        <span class="topology-icon">💻</span>
+                        <span class="font-semibold mt-2">PC-Cliente</span>
+                    </div>
+                    <div class="flex-grow h-0.5 bg-stone-500"></div> <!-- Connection line -->
+                    <div class="topology-device">
+                        <span class="topology-icon">🔄</span>
+                        <span class="font-semibold mt-2">Switch 2960</span>
+                    </div>
+                    <div class="flex-grow h-0.5 bg-stone-500"></div> <!-- Connection line -->
+                    <div class="topology-device">
+                        <span class="topology-icon">🗄️</span>
+                        <span class="font-semibold mt-2">Servidor</span>
+                    </div>
+                </div>
+                 <div class="mt-8">
+                    <h4 class="font-semibold text-lg mb-2">Instrucciones:</h4>
+                    <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                        <li>Desde la barra de dispositivos, selecciona <code class="bg-stone-200 px-2 py-1 rounded">End Devices</code> y arrastra un <code class="bg-stone-200 px-2 py-1 rounded">PC</code> y un <code class="bg-stone-200 px-2 py-1 rounded">Server</code> al área de trabajo.</li>
+                        <li>Selecciona <code class="bg-stone-200 px-2 py-1 rounded">Switches</code> y arrastra un switch modelo <code class="bg-stone-200 px-2 py-1 rounded">2960</code>.</li>
+                        <li>Selecciona <code class="bg-stone-200 px-2 py-1 rounded">Connections</code>, elige el cable <code class="bg-stone-200 px-2 py-1 rounded">Copper Straight-Through</code> (línea negra continua).</li>
+                        <li>Conecta el PC (puerto FastEthernet0) al Switch (puerto FastEthernet0/1).</li>
+                        <li>Conecta el Servidor (puerto FastEthernet0) al Switch (puerto FastEthernet0/2).</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-stone-300 my-12"></div>
+
+        <section id="configuracion" class="mb-12 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">Paso 2: Configuración de Direcciones IP</h2>
+             <p class="text-lg text-stone-700 leading-relaxed mb-8">
+                Para que los dispositivos puedan comunicarse, necesitan una dirección única en la red. Configuraremos direcciones IP estáticas. El servidor tendrá una IP fija para que los clientes siempre sepan cómo encontrarlo, y al PC le asignaremos una IP manualmente para la prueba inicial.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 border-b pb-2">Configuración del Servidor</h3>
+                    <p class="text-stone-600 mb-4">Haz clic en el Servidor, ve a la pestaña <code class="bg-stone-200 px-2 py-1 rounded">Desktop</code> > <code class="bg-stone-200 px-2 py-1 rounded">IP Configuration</code>.</p>
+                    <ul class="space-y-2">
+                        <li><strong>IP Address:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code></li>
+                        <li><strong>Subnet Mask:</strong> <code class="bg-stone-200 px-2 py-1 rounded">255.255.255.0</code></li>
+                        <li><strong>Default Gateway:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code> (apunta a sí mismo)</li>
+                        <li><strong>DNS Server:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code> (será su propio servidor DNS)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4 border-b pb-2">Configuración del PC-Cliente (Estática)</h3>
+                    <p class="text-stone-600 mb-4">Haz clic en el PC, ve a la pestaña <code class="bg-stone-200 px-2 py-1 rounded">Desktop</code> > <code class="bg-stone-200 px-2 py-1 rounded">IP Configuration</code>.</p>
+                     <ul class="space-y-2">
+                        <li><strong>IP Address:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.10</code></li>
+                        <li><strong>Subnet Mask:</strong> <code class="bg-stone-200 px-2 py-1 rounded">255.255.255.0</code></li>
+                        <li><strong>Default Gateway:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code></li>
+                        <li><strong>DNS Server:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-stone-300 my-12"></div>
+
+        <section id="servicios" class="mb-12 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">Paso 3: Configuración de Servicios del Servidor</h2>
+            <p class="text-lg text-stone-700 leading-relaxed mb-8">
+                Aquí es donde convertimos nuestro dispositivo "Servidor" en un servidor funcional. Habilitaremos y configuraremos los servicios HTTP (para alojar una página web), DHCP (para asignar IPs automáticamente) y DNS (para traducir nombres de dominio a IPs). Selecciona un servicio para ver las instrucciones.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6" id="service-tabs">
+                <button data-target="service-http" class="service-tab-btn px-4 py-2 rounded-md font-semibold transition-colors active-tab">HTTP</button>
+                <button data-target="service-dhcp" class="service-tab-btn px-4 py-2 rounded-md font-semibold transition-colors inactive-tab">DHCP</button>
+                <button data-target="service-dns" class="service-tab-btn px-4 py-2 rounded-md font-semibold transition-colors inactive-tab">DNS</button>
+            </div>
+            <div id="service-content" class="bg-white rounded-lg shadow-md p-6 min-h-[300px]">
+                <div id="service-http" class="service-panel">
+                    <h3 class="text-xl font-semibold mb-4">Servicio HTTP (Servidor Web)</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                        <li>Haz clic en el Servidor y ve a la pestaña <code class="bg-stone-200 px-2 py-1 rounded">Services</code>.</li>
+                        <li>En el menú de la izquierda, selecciona <code class="bg-stone-200 px-2 py-1 rounded">HTTP</code>.</li>
+                        <li>Asegúrate de que tanto <code class="bg-stone-200 px-2 py-1 rounded">HTTP</code> como <code class="bg-stone-200 px-2 py-1 rounded">HTTPS</code> estén en la posición <code class="bg-green-200 text-green-800 px-2 py-1 rounded">On</code>.</li>
+                        <li>(Opcional) Puedes hacer clic en <code class="bg-stone-200 px-2 py-1 rounded">index.html</code> y luego en <code class="bg-stone-200 px-2 py-1 rounded">Edit</code> para personalizar la página de bienvenida.</li>
+                    </ol>
+                </div>
+                <div id="service-dhcp" class="service-panel hidden">
+                    <h3 class="text-xl font-semibold mb-4">Servicio DHCP (Asignación Automática de IP)</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                         <li>En la misma pestaña <code class="bg-stone-200 px-2 py-1 rounded">Services</code> del Servidor, selecciona <code class="bg-stone-200 px-2 py-1 rounded">DHCP</code>.</li>
+                         <li>Enciende el servicio (<code class="bg-green-200 text-green-800 px-2 py-1 rounded">On</code>).</li>
+                         <li>Configura el "pool" de direcciones:
+                            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                <li><strong>Default Gateway:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code></li>
+                                <li><strong>DNS Server:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code></li>
+                                <li><strong>Start IP Address:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.100</code> (para empezar a asignar desde aquí).</li>
+                                <li><strong>Subnet Mask:</strong> <code class="bg-stone-200 px-2 py-1 rounded">255.255.255.0</code></li>
+                                <li><strong>Maximum Number of Users:</strong> <code class="bg-stone-200 px-2 py-1 rounded">50</code></li>
+                            </ul>
+                         </li>
+                         <li>Haz clic en <code class="bg-amber-400 px-2 py-1 rounded">Save</code> para guardar la configuración del pool.</li>
+                    </ol>
+                </div>
+                <div id="service-dns" class="service-panel hidden">
+                    <h3 class="text-xl font-semibold mb-4">Servicio DNS (Sistema de Nombres de Dominio)</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                        <li>En la pestaña <code class="bg-stone-200 px-2 py-1 rounded">Services</code> del Servidor, selecciona <code class="bg-stone-200 px-2 py-1 rounded">DNS</code>.</li>
+                        <li>Enciende el servicio (<code class="bg-green-200 text-green-800 px-2 py-1 rounded">On</code>).</li>
+                        <li>Crea un registro para tu servidor web:
+                             <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                <li><strong>Name:</strong> <code class="bg-stone-200 px-2 py-1 rounded">www.miservidor.com</code></li>
+                                <li><strong>Type:</strong> <code class="bg-stone-200 px-2 py-1 rounded">A Record</code></li>
+                                <li><strong>Address:</strong> <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code></li>
+                            </ul>
+                        </li>
+                        <li>Haz clic en <code class="bg-amber-400 px-2 py-1 rounded">Add</code> para añadir el registro a la tabla.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-stone-300 my-12"></div>
+        
+        <section id="simulacion" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-stone-900 mb-4">Paso 4: Simulación y Verificación</h2>
+             <p class="text-lg text-stone-700 leading-relaxed mb-8">
+                Es hora de probar si todo funciona como se esperaba. Realizaremos pruebas desde el PC-Cliente para verificar la conectividad básica y el correcto funcionamiento de cada uno de los servicios que hemos configurado en el servidor. Selecciona una prueba para ver las instrucciones.
+            </p>
+             <div class="flex flex-wrap gap-2 mb-6" id="sim-tabs">
+                <button data-target="sim-ping" class="sim-tab-btn px-4 py-2 rounded-md font-semibold transition-colors active-tab">Ping (Conectividad)</button>
+                <button data-target="sim-http" class="sim-tab-btn px-4 py-2 rounded-md font-semibold transition-colors inactive-tab">Navegador Web (HTTP)</button>
+                <button data-target="sim-dhcp" class="sim-tab-btn px-4 py-2 rounded-md font-semibold transition-colors inactive-tab">Solicitud DHCP</button>
+                <button data-target="sim-dns" class="sim-tab-btn px-4 py-2 rounded-md font-semibold transition-colors inactive-tab">Resolución DNS</button>
+            </div>
+            <div id="sim-content" class="bg-white rounded-lg shadow-md p-6 min-h-[300px]">
+                <div id="sim-ping" class="sim-panel">
+                    <h3 class="text-xl font-semibold mb-4">Prueba de Conectividad con Ping</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                        <li>Haz clic en el PC-Cliente, ve a la pestaña <code class="bg-stone-200 px-2 py-1 rounded">Desktop</code> y abre <code class="bg-stone-200 px-2 py-1 rounded">Command Prompt</code>.</li>
+                        <li>Escribe el comando: <code class="bg-gray-800 text-green-400 font-mono p-2 rounded block my-2">ping 192.168.1.1</code></li>
+                        <li>Presiona Enter. Deberías recibir 4 respuestas (<code class="bg-stone-200 px-1 rounded">Reply from 192.168.1.1...</code>), lo que indica que hay conectividad.</li>
+                    </ol>
+                </div>
+                <div id="sim-http" class="sim-panel hidden">
+                    <h3 class="text-xl font-semibold mb-4">Prueba del Servidor Web</h3>
+                     <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                        <li>En el PC-Cliente, abre el <code class="bg-stone-200 px-2 py-1 rounded">Web Browser</code> desde la pestaña <code class="bg-stone-200 px-2 py-1 rounded">Desktop</code>.</li>
+                        <li>En la barra de URL, escribe la dirección IP del servidor: <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.1</code> y presiona <code class="bg-stone-200 px-2 py-1 rounded">Go</code>.</li>
+                        <li>Debería aparecer la página de bienvenida de Cisco Packet Tracer, confirmando que el servicio HTTP funciona.</li>
+                    </ol>
+                </div>
+                <div id="sim-dhcp" class="sim-panel hidden">
+                    <h3 class="text-xl font-semibold mb-4">Prueba del Servicio DHCP</h3>
+                     <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                        <li>Vuelve a la configuración de IP del PC-Cliente (<code class="bg-stone-200 px-2 py-1 rounded">Desktop > IP Configuration</code>).</li>
+                        <li>Selecciona la opción <code class="bg-stone-200 px-2 py-1 rounded">DHCP</code> en lugar de <code class="bg-stone-200 px-2 py-1 rounded">Static</code>.</li>
+                        <li>Espera unos segundos. El PC debería recibir automáticamente una dirección IP del rango que configuraste (ej. <code class="bg-stone-200 px-2 py-1 rounded">192.168.1.100</code>), junto con la máscara, gateway y DNS. Esto confirma que DHCP funciona.</li>
+                    </ol>
+                </div>
+                <div id="sim-dns" class="sim-panel hidden">
+                    <h3 class="text-xl font-semibold mb-4">Prueba de Resolución DNS</h3>
+                     <ol class="list-decimal list-inside space-y-2 text-stone-600">
+                         <li>Asegúrate de que el PC tenga la IP del DNS configurada (ya sea estáticamente o vía DHCP).</li>
+                        <li>Abre nuevamente el <code class="bg-stone-200 px-2 py-1 rounded">Web Browser</code> en el PC.</li>
+                        <li>Esta vez, en la barra de URL, escribe el nombre de dominio: <code class="bg-stone-200 px-2 py-1 rounded">www.miservidor.com</code> y presiona <code class="bg-stone-200 px-2 py-1 rounded">Go</code>.</li>
+                        <li>Si la página web se carga, significa que el servicio DNS tradujo correctamente el nombre a la IP del servidor. ¡Felicidades, tu red está completamente funcional!</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-800 text-stone-400 mt-12 py-6">
+        <div class="container mx-auto text-center">
+            <p>Guía interactiva creada para la simulación de redes.</p>
+            <p class="text-sm mt-1">&copy; 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function setupTabs(tabContainerId, contentContainerId, buttonClass, panelClass) {
+                const tabContainer = document.getElementById(tabContainerId);
+                const contentContainer = document.getElementById(contentContainerId);
+                
+                if (!tabContainer || !contentContainer) return;
+
+                const tabButtons = tabContainer.querySelectorAll(`.${buttonClass}`);
+                const contentPanels = contentContainer.querySelectorAll(`.${panelClass}`);
+
+                tabContainer.addEventListener('click', (e) => {
+                    const clickedButton = e.target.closest(`.${buttonClass}`);
+                    if (!clickedButton) return;
+
+                    const targetPanelId = clickedButton.dataset.target;
+                    
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active-tab');
+                        btn.classList.add('inactive-tab');
+                    });
+                    
+                    clickedButton.classList.add('active-tab');
+                    clickedButton.classList.remove('inactive-tab');
+
+                    contentPanels.forEach(panel => {
+                        if (panel.id === targetPanelId) {
+                            panel.classList.remove('hidden');
+                        } else {
+                            panel.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+
+            setupTabs('service-tabs', 'service-content', 'service-tab-btn', 'service-panel');
+            setupTabs('sim-tabs', 'sim-content', 'sim-tab-btn', 'sim-panel');
+        });
+    </script>
+</body>
+</html>

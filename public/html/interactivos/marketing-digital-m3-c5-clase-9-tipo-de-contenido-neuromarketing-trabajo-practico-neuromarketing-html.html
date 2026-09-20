@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico: Neuromarketing - GKempe</title>
+    
+    <!-- Configuración de Tailwind para Modo Oscuro -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { brand: '#FF4500', brandLight: '#FF7F50', darkBg: '#0f172a', success: '#10b981', error: '#ef4444' },
+                    animation: {
+                        'bounce-slight': 'bounce 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: none; 
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Barra de Progreso de Lectura */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FF4500;
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Cursor Personalizado (Evaluador) */
+        @media (min-width: 768px) {
+            .custom-cursor {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background-color: rgba(255, 69, 0, 0.4);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 10000;
+                transform: translate(-50%, -50%);
+                transition: width 0.2s, height 0.2s, background-color 0.2s, border-radius 0.2s;
+                backdrop-filter: invert(10%);
+                border: 1px solid rgba(255, 69, 0, 0.8);
+            }
+            .custom-cursor.hover {
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255, 69, 0, 0.15);
+                border: 2px solid #FF4500;
+                border-radius: 8px; /* Se hace cuadrado al hacer hover */
+            }
+        }
+        @media (max-width: 767px) {
+            body { cursor: auto; }
+            .custom-cursor { display: none; }
+        }
+
+        /* Animaciones On-Scroll (Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glow-hover { transition: all 0.3s ease; }
+        .glow-hover:hover { box-shadow: 0 0 20px rgba(255, 69, 0, 0.4); transform: translateY(-3px); }
+
+        /* Estilos Quiz Interactivo */
+        .quiz-option {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .quiz-option:hover:not(.disabled) {
+            background-color: #fff7ed; /* orange-50 */
+            border-color: #FF4500;
+        }
+        html.dark .quiz-option:hover:not(.disabled) {
+            background-color: rgba(255, 69, 0, 0.1);
+        }
+        .quiz-option.correct {
+            background-color: #ecfdf5; border-color: #10b981; color: #065f46;
+        }
+        html.dark .quiz-option.correct {
+            background-color: rgba(16, 185, 129, 0.2); border-color: #10b981; color: #a7f3d0;
+        }
+        .quiz-option.incorrect {
+            background-color: #fef2f2; border-color: #ef4444; color: #991b1b;
+        }
+        html.dark .quiz-option.incorrect {
+            background-color: rgba(239, 68, 68, 0.2); border-color: #ef4444; color: #fecaca;
+        }
+        .quiz-option.disabled {
+            pointer-events: none; opacity: 0.7;
+        }
+
+        /* Contador del Gancho */
+        .char-counter { transition: color 0.3s; }
+        .char-over { color: #ef4444 !important; font-weight: bold; }
+        .input-over { border-color: #ef4444 !important; background-color: #fef2f2 !important; }
+        html.dark .input-over { background-color: rgba(239, 68, 68, 0.1) !important; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-darkBg text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+
+    <div id="progress-bar"></div>
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40 shadow-sm transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3 hover-target">
+                <span class="text-3xl">📝</span>
+                <span class="font-extrabold text-lg md:text-xl tracking-tight text-gray-800 dark:text-white">GKempe <span class="text-brand">Training</span></span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <span class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest hidden sm:block border border-gray-200 dark:border-gray-700 rounded-full px-3 py-1">Trabajo Práctico</span>
+                
+                <button id="theme-toggle" class="hover-target p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-20">
+        
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 reveal">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">
+                Misión: <span class="text-brand">Hackeando el Algoritmo</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Aplica la psicología del color, los sesgos cognitivos y la estructura de lectura visual aprendidas en la clase de Neuromarketing.
+            </p>
+        </section>
+
+        <!-- SECCIÓN 1: Trivia Interactiva -->
+        <section class="space-y-8 reveal">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center font-bold text-lg">1</div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Laboratorio Visual (Trivia)</h2>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Pregunta 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-4 dark:text-white">A. Vas a diseñar el título de tu Reel en la pantalla. Quieres generar "Alerta y Atención" inmediata en el cerebro reptiliano. ¿Qué color de fondo usas para esa caja de texto?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="q1">
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q1', this, false, '¡Cuidado! El azul transmite confianza y relajación, no alerta. El cerebro podría pasarlo por alto.')">
+                            <span class="inline-block w-4 h-4 bg-blue-500 rounded-full mr-2 align-middle"></span> Azul
+                        </div>
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q1', this, true, '¡Exacto! El amarillo es el color de mayor contraste visual y genera una alerta automática en el cerebro.')">
+                            <span class="inline-block w-4 h-4 bg-yellow-400 rounded-full mr-2 align-middle"></span> Amarillo
+                        </div>
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q1', this, false, 'Casi. El rojo es urgencia/escasez, pero para el gancho inicial visual (texto flotante), el amarillo es insuperable para captar atención sin asustar.')">
+                            <span class="inline-block w-4 h-4 bg-red-600 rounded-full mr-2 align-middle"></span> Rojo
+                        </div>
+                    </div>
+                    <p class="feedback-text mt-4 text-sm font-semibold hidden"></p>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-4 dark:text-white">B. Tienes que colocar el título gancho "3 Trucos para..." en tu Reel. Según el "Eye Tracking" y los Puntos Ciegos, ¿dónde lo ubicas?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="q2">
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q2', this, false, '¡Error grave! Abajo a la derecha están los botones de Like y Comentarios. Tu texto sería invisible (Zona Muerta).')">
+                            En el margen inferior derecho de la pantalla.
+                        </div>
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q2', this, true, '¡Correcto! El escaneo visual en occidente (Patrón Z) comienza arriba a la izquierda. Es la Zona Caliente principal.')">
+                            En el tercio superior izquierdo de la pantalla.
+                        </div>
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q2', this, false, 'Incorrecto. Abajo está la descripción (caption) y el nombre de usuario. Perderás legibilidad.')">
+                            En el margen inferior, bien centrado.
+                        </div>
+                        <div class="quiz-option p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 font-medium hover-target" onclick="checkAnswer('q2', this, false, 'No del todo. El centro es para el rostro humano (Neuronas Espejo). El texto gancho va más arriba.')">
+                            Justo en el centro exacto del video.
+                        </div>
+                    </div>
+                    <p class="feedback-text mt-4 text-sm font-semibold hidden"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Caso de Estudio (Desarrollo) -->
+        <section class="space-y-8 reveal">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center font-bold text-lg">2</div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">El Desafío Clínico (Resolución)</h2>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 md:p-10 shadow-lg rounded-[2rem] border border-gray-200 dark:border-gray-700 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-5 dark:opacity-10 pointer-events-none">📉</div>
+                
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">El Problema:</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    Un cliente tiene una estética automotriz (Detailing). Sus Reels son hermosos, con música épica y planos lentos de cómo pule los autos, pero al final solo escribe "Agenda tu turno". Sus videos tienen muchas vistas pero <strong>cero ventas</strong>.<br><br>
+                    <strong>Tu misión:</strong> Redactar un nuevo Call to Action (CTA) para él, aplicando <strong>al menos un Sesgo Cognitivo</strong> (Escasez, Prueba Social o Efecto Anclaje) para obligar al cerebro del espectador a tomar acción.
+                </p>
+
+                <div class="space-y-2">
+                    <label class="font-bold text-sm text-brand">Escribe tu nueva propuesta de CTA aquí:</label>
+                    <textarea class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-4 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent hover-target resize-none" rows="4" placeholder='Ej: "Más de 50 clientes en Resistencia ya recuperaron el brillo de su auto (Prueba Social). Solo nos quedan 3 lugares esta semana (Escasez). ¡Haz clic en el enlace!"'></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: El Temporizador Reptiliano -->
+        <section class="space-y-8 reveal">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center font-bold text-lg">3</div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">El Simulador de los 0.3 Segundos</h2>
+            </div>
+
+            <div class="bg-slate-900 text-white p-6 md:p-10 shadow-2xl rounded-[2rem] border border-slate-800 relative">
+                <h3 class="text-xl font-bold mb-4 text-white">Diseña tu Texto Gancho</h3>
+                <p class="text-sm text-gray-400 mb-8">
+                    El cerebro reptiliano no lee, <strong>escanea</strong>. Si tu texto en pantalla (Gancho visual) tiene demasiadas palabras, el espectador hará scroll antes de terminar. <br>
+                    <span class="text-yellow-400">Regla: No superes los 35 caracteres para el título en pantalla.</span>
+                </p>
+
+                <div class="relative">
+                    <input type="text" id="hook-input" class="w-full bg-slate-800 border-2 border-slate-700 rounded-xl p-5 text-xl font-bold text-white focus:outline-none focus:border-yellow-400 hover-target transition-colors" placeholder="Escribe tu gancho aquí..." autocomplete="off">
+                    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 font-mono font-bold text-lg char-counter" id="char-count">0/35</div>
+                </div>
+                
+                <div id="hook-feedback" class="mt-4 text-sm font-bold text-center h-6 transition-colors"></div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="generarReporte()" class="bg-brand hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all glow-hover hover-target shadow-lg uppercase tracking-wider text-sm">
+                        Enviar Trabajo Práctico
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-8 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 text-center transition-colors duration-300">
+        <p class="text-gray-800 dark:text-gray-200 font-extrabold text-base tracking-widest uppercase">GKempe <span class="text-brand">Training</span></p>
+        <p class="text-gray-400 dark:text-gray-500 text-xs mt-2">© 2026 - Neuromarketing Práctico</p>
+    </footer>
+
+    <script>
+        // Tema Claro / Oscuro
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        function toggleThemeIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            }
+        }
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        toggleThemeIcons();
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            toggleThemeIcons();
+        });
+
+        // Cursor
+        const cursor = document.getElementById('custom-cursor');
+        function initCursorHovers() {
+            const hoverTargets = document.querySelectorAll('.hover-target, a, button');
+            hoverTargets.forEach(target => {
+                target.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                target.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth >= 768) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            }
+        });
+        initCursorHovers();
+
+        // Scroll Bar & Reveal
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+            reveal();
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        reveal();
+
+        // Lógica del Quiz
+        function checkAnswer(questionId, element, isCorrect, feedbackMessage) {
+            const container = document.getElementById(questionId);
+            const options = container.querySelectorAll('.quiz-option');
+            const feedbackEl = container.nextElementSibling;
+
+            // Deshabilitar todas las opciones
+            options.forEach(opt => opt.classList.add('disabled'));
+
+            // Marcar estado
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedbackEl.classList.add('text-green-600', 'dark:text-green-400');
+                feedbackEl.classList.remove('text-red-600', 'dark:text-red-400');
+            } else {
+                element.classList.add('incorrect');
+                feedbackEl.classList.add('text-red-600', 'dark:text-red-400');
+                feedbackEl.classList.remove('text-green-600', 'dark:text-green-400');
+                // Encontrar y mostrar la correcta (opcional, pero educativamente bueno)
+            }
+
+            // Mostrar feedback
+            feedbackEl.innerText = feedbackMessage;
+            feedbackEl.classList.remove('hidden');
+        }
+
+        // Lógica del Contador de Gancho
+        const hookInput = document.getElementById('hook-input');
+        const charCount = document.getElementById('char-count');
+        const hookFeedback = document.getElementById('hook-feedback');
+        const maxChars = 35;
+
+        hookInput.addEventListener('input', function() {
+            const length = this.value.length;
+            charCount.innerText = `${length}/${maxChars}`;
+
+            if (length === 0) {
+                hookFeedback.innerText = "";
+                charCount.classList.remove('char-over', 'text-yellow-400');
+                this.classList.remove('input-over');
+            } else if (length > maxChars) {
+                charCount.classList.add('char-over');
+                charCount.classList.remove('text-yellow-400');
+                this.classList.add('input-over');
+                hookFeedback.innerText = "🚨 ¡Demasiado largo! El cerebro hizo scroll y se fue.";
+                hookFeedback.classList.add('text-red-500');
+                hookFeedback.classList.remove('text-green-400', 'text-yellow-400');
+            } else if (length > 25) {
+                charCount.classList.remove('char-over');
+                charCount.classList.add('text-yellow-400');
+                this.classList.remove('input-over');
+                hookFeedback.innerText = "⚠️ Al límite. Manténlo directo y claro.";
+                hookFeedback.classList.add('text-yellow-400');
+                hookFeedback.classList.remove('text-green-400', 'text-red-500');
+            } else {
+                charCount.classList.remove('char-over', 'text-yellow-400');
+                this.classList.remove('input-over');
+                hookFeedback.innerText = "✅ Excelente. Conciso y directo al reptiliano.";
+                hookFeedback.classList.add('text-green-400');
+                hookFeedback.classList.remove('text-red-500', 'text-yellow-400');
+            }
+        });
+
+        // Botón Final
+        function generarReporte() {
+            alert("¡Trabajo Práctico completado! En un entorno real, esto se enviaría por correo al instructor.");
+            // Efecto visual de envío exitoso
+            document.body.style.opacity = 0.5;
+            setTimeout(() => { document.body.style.opacity = 1; }, 500);
+        }
+    </script>
+</body>
+</html>

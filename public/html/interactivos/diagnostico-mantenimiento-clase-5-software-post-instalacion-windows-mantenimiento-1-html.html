@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Post-instalación de Windows | Clase interactiva</title>
+<style>
+:root{
+  --bg:#07111f; --panel:#0d1b2f; --panel2:#12233b; --glass:rgba(255,255,255,.075);
+  --line:rgba(255,255,255,.14); --text:#eef6ff; --muted:#aebbd0; --accent:#54d6ff;
+  --accent2:#8cffc1; --warn:#ffd166; --danger:#ff6b6b; --ok:#65f4a2; --purple:#b692ff;
+  --shadow:0 25px 60px rgba(0,0,0,.35); --radius:24px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+/* Ocultar barras de desplazamiento (el scroll sigue funcionando con rueda, touch y teclado) */
+*{scrollbar-width:none;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none;width:0;height:0}
+body{margin:0;font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;color:var(--text);background:
+  radial-gradient(circle at 12% 18%,rgba(84,214,255,.22),transparent 32%),
+  radial-gradient(circle at 90% 12%,rgba(182,146,255,.2),transparent 28%),
+  radial-gradient(circle at 65% 86%,rgba(140,255,193,.14),transparent 32%),var(--bg);min-height:100vh;}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 95%);pointer-events:none}.app{display:grid;grid-template-columns:310px 1fr;min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;padding:24px;background:rgba(7,17,31,.74);backdrop-filter:blur(16px);border-right:1px solid var(--line);overflow:auto}.logo{display:flex;gap:13px;align-items:center;margin-bottom:24px}.orb{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 32px rgba(84,214,255,.42);display:grid;place-items:center;color:#06111f;font-weight:900}.logo h1{font-size:1.08rem;line-height:1.15;margin:0}.logo span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}.progress-wrap{margin:18px 0 20px;padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--glass)}.progress-text{font-size:.82rem;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:10px}.progress{height:10px;background:#061222;border-radius:999px;overflow:hidden}.bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px;transition:.35s}.nav{display:grid;gap:8px}.nav button{width:100%;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.045);color:var(--muted);text-align:left;padding:12px 12px;cursor:pointer;transition:.2s;font-weight:650}.nav button:hover,.nav button.active{background:linear-gradient(135deg,rgba(84,214,255,.18),rgba(140,255,193,.1));color:var(--text);border-color:rgba(84,214,255,.45);transform:translateX(4px)}.side-note{font-size:.78rem;color:var(--muted);line-height:1.45;margin-top:20px;padding:14px;border-radius:16px;background:rgba(255,209,102,.08);border:1px solid rgba(255,209,102,.22)}main{padding:28px 34px 70px;overflow:hidden}.hero{min-height:280px;display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch;margin-bottom:24px}.hero-card,.terminal-card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.045));box-shadow:var(--shadow);padding:28px;position:relative;overflow:hidden}.hero-card:after{content:"POST-INSTALL";position:absolute;right:-18px;bottom:8px;font-weight:1000;font-size:4.6rem;color:rgba(255,255,255,.04);letter-spacing:-3px}.tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(84,214,255,.35);background:rgba(84,214,255,.1);color:#dff8ff;border-radius:999px;padding:8px 12px;font-size:.82rem;font-weight:700}.hero h2{font-size:clamp(2rem,4vw,4rem);letter-spacing:-2px;margin:16px 0 12px;line-height:.98}.hero p{color:var(--muted);font-size:1.05rem;line-height:1.65;max-width:780px}.terminal-top{display:flex;gap:8px;margin-bottom:18px}.dot{width:13px;height:13px;border-radius:50%;background:#ff5f57}.dot:nth-child(2){background:#ffbd2e}.dot:nth-child(3){background:#28c840}.terminal{font-family:Cascadia Mono,Consolas,monospace;background:#040b14;border:1px solid rgba(84,214,255,.22);border-radius:18px;padding:18px;min-height:210px;color:#d9f8ff;box-shadow:inset 0 0 24px rgba(84,214,255,.04)}.terminal .cmd{color:var(--accent2)}.terminal .comment{color:#7c8da8}.window{display:none;animation:pop .35s ease both}.window.active{display:block}@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.99)}to{opacity:1;transform:none}}.win-shell{border:1px solid var(--line);border-radius:var(--radius);background:rgba(13,27,47,.76);box-shadow:var(--shadow);overflow:hidden}.win-title{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;background:linear-gradient(90deg,rgba(84,214,255,.12),rgba(182,146,255,.11));border-bottom:1px solid var(--line)}.win-title strong{font-size:1.1rem}.win-body{padding:22px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{grid-column:span 4;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:20px;padding:18px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:rgba(84,214,255,.35);background:rgba(255,255,255,.075)}.card.wide{grid-column:span 8}.card.full{grid-column:1/-1}.card.half{grid-column:span 6}.card h3{margin:0 0 10px;font-size:1.02rem}.card p,.card li{color:var(--muted);line-height:1.55}.pill{display:inline-block;margin:4px 6px 4px 0;padding:7px 10px;border-radius:999px;background:rgba(84,214,255,.11);border:1px solid rgba(84,214,255,.23);font-size:.78rem;color:#dff8ff;font-weight:700}.steps{counter-reset:step;display:grid;gap:12px}.step{position:relative;padding:16px 16px 16px 58px;border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:18px}.step:before{counter-increment:step;content:counter(step);position:absolute;left:16px;top:15px;width:28px;height:28px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05111f;font-weight:900;display:grid;place-items:center}.mini-title{color:var(--accent2);font-weight:850}.warning{border-color:rgba(255,209,102,.38);background:rgba(255,209,102,.09)}.danger{border-color:rgba(255,107,107,.38);background:rgba(255,107,107,.08)}.ok{border-color:rgba(101,244,162,.35);background:rgba(101,244,162,.075)}.tool-table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}.tool-table th,.tool-table td{border-bottom:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}.tool-table th{color:#eaffff;background:rgba(84,214,255,.10)}.tool-table td{color:var(--muted)}.toggle{border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:14px;padding:10px 12px;cursor:pointer;font-weight:800}.drawer{display:none;margin-top:12px;padding:14px;border-radius:16px;border:1px dashed rgba(84,214,255,.28);background:rgba(4,11,20,.45)}.drawer.show{display:block}.footer-controls{display:flex;justify-content:space-between;gap:12px;margin-top:18px}.btn{border:0;border-radius:16px;padding:13px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111f;font-weight:900;cursor:pointer;box-shadow:0 14px 28px rgba(84,214,255,.18)}.btn.secondary{background:rgba(255,255,255,.07);color:var(--text);border:1px solid var(--line);box-shadow:none}.activity{display:grid;grid-template-columns:1fr 1fr;gap:16px}.checklist label{display:block;margin:10px 0;padding:12px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted)}.checklist input{transform:scale(1.15);margin-right:10px}code{font-family:Cascadia Mono,Consolas,monospace;background:rgba(0,0,0,.35);padding:3px 7px;border-radius:8px;color:#d9f8ff}.kbd{font-family:Cascadia Mono,Consolas,monospace;border:1px solid var(--line);border-bottom-width:3px;padding:2px 7px;border-radius:8px;background:#07111f;color:#fff}.sources{font-size:.78rem;color:#8392aa;line-height:1.5;margin-top:20px}.sources a{color:#a9ecff}@media(max-width:980px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.hero{grid-template-columns:1fr}.card,.card.wide,.card.half{grid-column:1/-1}.activity{grid-template-columns:1fr}main{padding:20px}}@media print{body{background:white;color:black}.sidebar,.footer-controls{display:none}.app{display:block}main{padding:0}.window{display:block;page-break-after:always}.win-shell,.hero-card,.terminal-card,.card{box-shadow:none;border-color:#999;background:white;color:black}.card p,.card li,.tool-table td{color:#222}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="logo"><div class="orb">⚙</div><div><h1>Windows después de instalar</h1><span>Mantenimiento, drivers, seguridad y rendimiento</span></div></div>
+    <div class="progress-wrap"><div class="progress-text"><span>Avance de ventanas</span><b id="percent">0%</b></div><div class="progress"><div class="bar" id="bar"></div></div></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-note"><b>Idea para la clase:</b> cada grupo avanza una ventana y completa una checklist real o simulada de una PC recién formateada.</div>
+  </aside>
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <span class="tag">🧩 Clase práctica · Post-instalación</span>
+        <h2>De Windows instalado a PC lista para usar</h2>
+        <p>Instalar Windows es solo el primer paso. Después hay que actualizar, revisar drivers, configurar seguridad, optimizar recursos y dejar utilitarios confiables. Esta guía funciona como recorrido por ventanas, con pasos claros para alumnos adolescentes.</p>
+        <span class="pill">Windows Update</span><span class="pill">Drivers</span><span class="pill">Firmware</span><span class="pill">Limpieza</span><span class="pill">Antivirus</span><span class="pill">Bajo recursos</span>
+      </div>
+      <div class="terminal-card">
+        <div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="terminal" id="fakeTerminal">
+          <div><span class="cmd">PS C:\Clase&gt;</span> iniciar-mantenimiento</div>
+          <div class="comment"># Objetivo: dejar el sistema estable, seguro y rápido.</div>
+          <br>
+          <div>1. Actualizar Windows</div><div>2. Revisar drivers</div><div>3. Firmware con cuidado</div><div>4. Utilitarios básicos</div><div>5. Optimizar sin romper nada</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="window active" data-title="Inicio: mapa general">
+      <div class="win-shell"><div class="win-title"><strong>🪟 Ventana 1 · Mapa de trabajo post-instalación</strong><span class="pill">orden recomendado</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card wide"><h3>¿Qué significa “post-instalación”?</h3><p>Es el conjunto de tareas que se hacen después de instalar Windows para que la PC no quede “pelada”: se revisa conexión a internet, actualizaciones, drivers, seguridad, programas básicos, rendimiento y respaldo. Es como entregar una moto recién armada: no alcanza con que encienda, también tiene que frenar, doblar y no fallar.</p></div>
+          <div class="card"><h3>Regla de oro</h3><p>No instalar 30 programas “milagrosos”. Primero usar herramientas oficiales de Windows, después utilitarios confiables y recién al final ajustes finos.</p></div>
+          <div class="card full steps">
+            <div class="step"><span class="mini-title">Conectar a internet y activar Windows.</span><br>Sin internet, Windows Update no puede descargar parches, drivers ni seguridad.</div>
+            <div class="step"><span class="mini-title">Actualizar el sistema.</span><br>Ir a Configuración → Windows Update → Buscar actualizaciones.</div>
+            <div class="step"><span class="mini-title">Revisar drivers.</span><br>Ver Administrador de dispositivos y componentes faltantes.</div>
+            <div class="step"><span class="mini-title">Instalar utilitarios.</span><br>Navegador, compresor, visor PDF, paquete oficina, reproductor, drivers de impresora si corresponde.</div>
+            <div class="step"><span class="mini-title">Optimizar.</span><br>Quitar inicio innecesario, limpiar temporales, revisar disco, energía y almacenamiento.</div>
+          </div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Drivers">
+      <div class="win-shell"><div class="win-title"><strong>🧠 Ventana 2 · Mejorar y actualizar drivers</strong><span class="pill">sin humo</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card half"><h3>¿Qué es un driver?</h3><p>Es el “traductor” entre Windows y el hardware. Sin driver correcto, una placa de video, Wi‑Fi, audio, touchpad o impresora puede funcionar mal o no funcionar.</p></div>
+          <div class="card half warning"><h3>Evitar</h3><p>Programas desconocidos de “driver booster” que prometen actualizar todo automáticamente. Pueden instalar versiones incorrectas, traer publicidad o tocar componentes que ya estaban funcionando bien.</p></div>
+          <div class="card full steps">
+            <div class="step"><span class="mini-title">Primero Windows Update.</span><br><code>Configuración → Windows Update → Opciones avanzadas → Actualizaciones opcionales</code>. Ahí pueden aparecer drivers recomendados.</div>
+            <div class="step"><span class="mini-title">Después Administrador de dispositivos.</span><br>Presionar <span class="kbd">Win</span> + <span class="kbd">X</span> → Administrador de dispositivos. Si hay triángulo amarillo, revisar ese hardware.</div>
+            <div class="step"><span class="mini-title">Luego fabricante.</span><br>Notebook: Lenovo, HP, Dell, Acer, Asus. PC de escritorio: placa madre, placa de video o adaptador Wi‑Fi.</div>
+            <div class="step"><span class="mini-title">Video dedicado.</span><br>NVIDIA, AMD o Intel desde sus páginas oficiales. Conviene para juegos, edición, 3D y monitores externos.</div>
+          </div>
+          <div class="card full"><button class="toggle">Ver mini diagnóstico de drivers</button><div class="drawer"><p><b>Ejercicio:</b> pedir a los alumnos que identifiquen en una captura o PC real: adaptador de pantalla, adaptador de red, controlador de sonido y controladora de almacenamiento. Pregunta clave: ¿cuál de esos afectaría más a una PC sin internet?</p></div></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Firmware">
+      <div class="win-shell"><div class="win-title"><strong>🧬 Ventana 3 · Actualizar firmware / BIOS / UEFI</strong><span class="pill">zona sensible</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card wide"><h3>¿Qué es firmware?</h3><p>Es software interno del hardware. El ejemplo más común es BIOS/UEFI de la placa madre o notebook. Puede mejorar estabilidad, compatibilidad con procesadores, seguridad o manejo de energía.</p></div>
+          <div class="card danger"><h3>Cuidado real</h3><p>Una actualización de BIOS/UEFI mal hecha puede dejar el equipo sin arrancar. No se hace “porque sí”; se hace cuando hay motivo, recomendación del fabricante o necesidad técnica.</p></div>
+          <div class="card full steps">
+            <div class="step"><span class="mini-title">Identificar modelo exacto.</span><br>En notebooks: modelo completo. En PC: modelo de motherboard. Usar <code>msinfo32</code> para ver fabricante, modelo y versión BIOS.</div>
+            <div class="step"><span class="mini-title">Buscar solo en fuente oficial.</span><br>Página del fabricante, app oficial del fabricante o Windows Update si aparece como actualización de firmware.</div>
+            <div class="step"><span class="mini-title">Preparar energía estable.</span><br>Notebook conectada al cargador y batería suficiente. PC idealmente con estabilizador o UPS.</div>
+            <div class="step"><span class="mini-title">No interrumpir.</span><br>No apagar, no reiniciar, no cerrar tapa y no tocar pendrive si el proceso lo usa.</div>
+          </div>
+          <div class="card full warning"><h3>Cuándo sí conviene</h3><p>Cuando corrige fallas de arranque, compatibilidad de memoria/procesador, problemas de temperatura, seguridad, errores con SSD NVMe, o cuando el fabricante lo recomienda para ese modelo.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Utilitarios">
+      <div class="win-shell"><div class="win-title"><strong>🧰 Ventana 4 · Programas utilitarios recomendados</strong><span class="pill">kit básico</span></div><div class="win-body">
+        <div class="card full"><h3>Kit de programas después de instalar Windows</h3><p>No todos son obligatorios. La idea es elegir según uso: oficina, diseño, estudio, mantenimiento o recuperación.</p></div>
+        <table class="tool-table">
+          <thead><tr><th>Categoría</th><th>Gratis</th><th>Pago / Pro</th><th>Uso en clase</th></tr></thead>
+          <tbody>
+            <tr><td>Compresor</td><td>7‑Zip</td><td>WinRAR</td><td>Comprimir, descomprimir, crear .zip/.7z, bajar peso de carpetas.</td></tr>
+            <tr><td>PDF</td><td>SumatraPDF, Adobe Reader</td><td>Adobe Acrobat Pro</td><td>Leer, imprimir, firmar o editar PDF según necesidad.</td></tr>
+            <tr><td>Oficina</td><td>LibreOffice, OnlyOffice</td><td>Microsoft 365</td><td>Documentos, planillas, presentaciones.</td></tr>
+            <tr><td>Navegador</td><td>Edge, Chrome, Firefox, Brave</td><td>—</td><td>Sincronización, extensiones, seguridad web.</td></tr>
+            <tr><td>Diagnóstico</td><td>CrystalDiskInfo, HWiNFO</td><td>Hard Disk Sentinel Pro</td><td>Estado de disco, temperaturas, componentes.</td></tr>
+            <tr><td>Capturas</td><td>Recortes de Windows, ShareX</td><td>Snagit</td><td>Crear tutoriales y evidencia técnica.</td></tr>
+          </tbody>
+        </table>
+        <div class="card full warning"><h3>Consejo de seguridad</h3><p>Descargar siempre desde sitios oficiales o Microsoft Store. En 2026 hubo campañas usando páginas falsas de 7‑Zip, así que el “primer resultado de Google” no siempre es el correcto.</p></div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Bajo recursos">
+      <div class="win-shell"><div class="win-title"><strong>🐢 Ventana 5 · Optimización en PC de bajos recursos</strong><span class="pill">sin magia</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card half"><h3>Primero: detectar el cuello de botella</h3><p>No todas las PC lentas tienen el mismo problema. Puede ser disco mecánico, poca RAM, exceso de programas al inicio, temperatura alta, malware o Windows sin actualizar.</p></div>
+          <div class="card half ok"><h3>Mejor mejora física</h3><p>Cambiar HDD por SSD suele ser el salto más notorio. Agregar RAM ayuda cuando hay muchas pestañas, programas de diseño o máquinas virtuales.</p></div>
+          <div class="card full steps">
+            <div class="step"><span class="mini-title">Administrador de tareas.</span><br><span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">Esc</span> → revisar CPU, Memoria, Disco e Inicio.</div>
+            <div class="step"><span class="mini-title">Desactivar inicio innecesario.</span><br>No desinstala programas, solo evita que arranquen con Windows.</div>
+            <div class="step"><span class="mini-title">Liberar almacenamiento.</span><br>Configuración → Sistema → Almacenamiento → Archivos temporales / Sensor de almacenamiento.</div>
+            <div class="step"><span class="mini-title">Efectos visuales.</span><br>Buscar “Ajustar la apariencia y rendimiento de Windows” → priorizar rendimiento si la PC es vieja.</div>
+            <div class="step"><span class="mini-title">Plan de energía.</span><br>En notebook usar equilibrado; en PC conectada, probar mejor rendimiento si la temperatura acompaña.</div>
+          </div>
+          <div class="card full danger"><h3>No recomendar como primera opción</h3><p>No borrar carpetas de Windows manualmente, no tocar registro sin saber, no usar scripts misteriosos de internet y no desactivar Windows Update como “optimización”.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Limpieza y recuperación">
+      <div class="win-shell"><div class="win-title"><strong>🧹 Ventana 6 · Limpieza y recuperación de archivos</strong><span class="pill">gratis y pago</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card half"><h3>Limpieza segura</h3><p>Empezar con herramientas de Windows: Archivos temporales, Sensor de almacenamiento, limpieza de descargas revisada manualmente y desinstalar programas que no se usan.</p></div>
+          <div class="card half warning"><h3>Limpiadores externos</h3><p>CCleaner puede servir para temporales y restos de navegador, pero no conviene abusar del limpiador de registro. La limpieza no reemplaza mantenimiento real.</p></div>
+          <div class="card full"><h3>Recuperación de archivos: regla urgente</h3><p>Si se borró algo importante, dejar de usar ese disco. Cada archivo nuevo puede sobrescribir lo perdido. Lo ideal es recuperar hacia otro disco o pendrive, nunca hacia el mismo lugar.</p></div>
+          <table class="tool-table card full">
+            <thead><tr><th>Herramienta</th><th>Tipo</th><th>Cuándo usar</th><th>Observación</th></tr></thead>
+            <tbody>
+              <tr><td>Historial de archivos / OneDrive</td><td>Windows / nube</td><td>Prevención y versiones anteriores</td><td>Mejor tener copia antes que recuperar después.</td></tr>
+              <tr><td>Windows File Recovery</td><td>Gratis</td><td>Recuperación por comando</td><td>Útil para clase avanzada; requiere práctica.</td></tr>
+              <tr><td>Recuva</td><td>Gratis / Pro</td><td>Archivos borrados, pendrive, tarjeta SD</td><td>Simple para alumnos; mejor si no se sobrescribió el disco.</td></tr>
+              <tr><td>Disk Drill / EaseUS / Stellar</td><td>Pago o freemium</td><td>Casos más complejos</td><td>Revisar límites de recuperación gratis antes de prometer resultados.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Antivirus y cuidado">
+      <div class="win-shell"><div class="win-title"><strong>🛡️ Ventana 7 · Antivirus y mejores hábitos de cuidado</strong><span class="pill">seguridad realista</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card wide"><h3>Microsoft Defender como base</h3><p>Windows incluye Seguridad de Windows con Microsoft Defender Antivirus, firewall, protección en tiempo real y control de estado del dispositivo. Para muchas PCs domésticas o educativas puede ser una base suficiente si está actualizado.</p></div>
+          <div class="card"><h3>Cuándo sumar pago</h3><p>Cuando se necesita control familiar, VPN, protección de identidad, soporte, varias PCs o usuarios con alto riesgo.</p></div>
+          <div class="card full steps">
+            <div class="step"><span class="mini-title">Actualizar Windows y Defender.</span><br>Un antivirus viejo es como un candado abierto.</div>
+            <div class="step"><span class="mini-title">No ejecutar cracks ni activadores.</span><br>Muchos traen troyanos, mineros o robo de cuentas.</div>
+            <div class="step"><span class="mini-title">Descargar desde sitios oficiales.</span><br>Evitar “descargar gratis full mega mediafire 2026”.</div>
+            <div class="step"><span class="mini-title">Usar cuenta estándar.</span><br>Para alumnos o usuarios básicos, no trabajar todo el día como administrador.</div>
+            <div class="step"><span class="mini-title">Backups.</span><br>La mejor defensa contra ransomware es tener copia externa o nube.</div>
+          </div>
+          <table class="tool-table card full">
+            <thead><tr><th>Opción</th><th>Gratis</th><th>Pago</th><th>Comentario docente</th></tr></thead>
+            <tbody>
+              <tr><td>Microsoft Defender</td><td>Sí, integrado</td><td>Microsoft Defender app/planes según cuenta</td><td>Primera línea: explicar que ya viene en Windows.</td></tr>
+              <tr><td>Malwarebytes</td><td>Escaneo y limpieza</td><td>Protección en tiempo real</td><td>Bueno como segunda opinión ante sospechas.</td></tr>
+              <tr><td>Bitdefender / ESET / Kaspersky / Norton</td><td>Varía</td><td>Sí</td><td>Comparar por consumo, soporte, detección y extras.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Mejorar Windows">
+      <div class="win-shell"><div class="win-title"><strong>🚀 Ventana 8 · Mejorar Windows y aprovechar recursos</strong><span class="pill">uso inteligente</span></div><div class="win-body">
+        <div class="grid">
+          <div class="card half"><h3>Aprovechar CPU, RAM y disco</h3><p>El objetivo no es que Windows “se vea pelado”, sino que use sus recursos donde importa: programas de clase, navegación, diseño, ofimática, juegos educativos o edición.</p></div>
+          <div class="card half"><h3>Configurar según uso</h3><p>Una PC para oficina no necesita lo mismo que una de diseño, robótica, gaming o reparación técnica.</p></div>
+          <div class="card full steps">
+            <div class="step"><span class="mini-title">Aplicaciones al inicio.</span><br>Dejar solo lo necesario: audio, seguridad, nube si se usa, drivers de periféricos.</div>
+            <div class="step"><span class="mini-title">Almacenamiento ordenado.</span><br>Separar documentos, instaladores, backups y temporales. No llenar el disco al 95%.</div>
+            <div class="step"><span class="mini-title">Actualizaciones con criterio.</span><br>Actualizar, reiniciar y verificar. Evitar cortar procesos.</div>
+            <div class="step"><span class="mini-title">Restauración y copias.</span><br>Crear punto de restauración antes de cambios grandes y enseñar copia 3‑2‑1: tres copias, dos medios, una externa/nube.</div>
+            <div class="step"><span class="mini-title">Perfiles de usuario.</span><br>Crear usuario administrador para mantenimiento y usuario estándar para uso diario.</div>
+          </div>
+          <div class="card full ok"><h3>Resultado esperado</h3><p>Una PC bien mantenida no es la que tiene “más programas”, sino la que arranca bien, navega segura, tiene drivers correctos, respaldo, espacio libre y herramientas justas.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="window" data-title="Actividad final">
+      <div class="win-shell"><div class="win-title"><strong>🎮 Ventana 9 · Actividad final para alumnos</strong><span class="pill">modo técnico</span></div><div class="win-body">
+        <div class="activity">
+          <div class="card full checklist"><h3>Checklist de entrega técnica</h3>
+            <label><input type="checkbox">Windows actualizado y reiniciado.</label>
+            <label><input type="checkbox">Drivers principales revisados: video, red, audio y chipset.</label>
+            <label><input type="checkbox">Firmware verificado sin actualizar innecesariamente.</label>
+            <label><input type="checkbox">Programas básicos instalados desde fuentes oficiales.</label>
+            <label><input type="checkbox">Inicio optimizado desde Administrador de tareas.</label>
+            <label><input type="checkbox">Archivos temporales limpiados con herramienta segura.</label>
+            <label><input type="checkbox">Antivirus activo y protección en tiempo real habilitada.</label>
+            <label><input type="checkbox">Punto de restauración o respaldo explicado al usuario.</label>
+          </div>
+          <div class="card full"><h3>Consigna</h3><p><b>Caso:</b> una notebook con Windows recién instalado tarda mucho en arrancar, no tiene Wi‑Fi estable y el disco está casi lleno.</p><p><b>Responder:</b> ¿qué revisarías primero? ¿Qué herramienta usarías? ¿Qué no harías nunca? ¿Qué mejora física recomendarías si el presupuesto alcanza?</p><button class="toggle">Ver respuesta orientativa</button><div class="drawer"><p>Primero Windows Update y Administrador de dispositivos para Wi‑Fi. Luego revisar inicio y almacenamiento. No usar cracks, limpiadores agresivos ni drivers de páginas raras. Si tiene HDD, recomendar SSD; si tiene poca RAM, evaluar ampliación.</p></div></div>
+        </div>
+        <div class="sources"><b>Fuentes base consultadas:</b> soporte de Microsoft sobre actualizar drivers desde Administrador de dispositivos, actualizaciones de hardware por Windows Update, rendimiento de Windows, salud del dispositivo y Seguridad de Windows; documentación Microsoft sobre plataforma de actualización UEFI; páginas oficiales de 7‑Zip, Recuva, CCleaner y Malwarebytes. Revisado en junio de 2026.</div>
+      </div></div>
+    </section>
+
+    <div class="footer-controls"><button class="btn secondary" id="prev">← Ventana anterior</button><button class="btn" id="next">Siguiente ventana →</button></div>
+  </main>
+</div>
+<script>
+const windows=[...document.querySelectorAll('.window')];
+const nav=document.getElementById('nav');
+let current=0;
+windows.forEach((w,i)=>{const b=document.createElement('button');b.textContent=(i+1).toString().padStart(2,'0')+' · '+w.dataset.title;b.onclick=()=>show(i);nav.appendChild(b);});
+const buttons=[...nav.querySelectorAll('button')];
+function show(i){current=Math.max(0,Math.min(windows.length-1,i));windows.forEach((w,idx)=>w.classList.toggle('active',idx===current));buttons.forEach((b,idx)=>b.classList.toggle('active',idx===current));const pct=Math.round(((current+1)/windows.length)*100);document.getElementById('bar').style.width=pct+'%';document.getElementById('percent').textContent=pct+'%';document.getElementById('prev').disabled=current===0;document.getElementById('next').textContent=current===windows.length-1?'Finalizado ✓':'Siguiente ventana →';window.scrollTo({top:0,behavior:'smooth'});}
+document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);
+document.querySelectorAll('.toggle').forEach(btn=>btn.addEventListener('click',()=>{const d=btn.nextElementSibling; if(d) d.classList.toggle('show')}));
+const lines=['PS C:\\Clase> revisar-drivers','PS C:\\Clase> activar-seguridad','PS C:\\Clase> limpiar-temporales','PS C:\\Clase> crear-checklist','PS C:\\Clase> entregar-pc-lista'];
+let t=0;setInterval(()=>{const term=document.getElementById('fakeTerminal');const last=document.createElement('div');last.innerHTML='<span class="cmd">'+lines[t%lines.length]+'</span>';term.appendChild(last);if(term.children.length>12)term.children[3].remove();t++;},2600);
+show(0);
+</script>
+</body>
+</html>

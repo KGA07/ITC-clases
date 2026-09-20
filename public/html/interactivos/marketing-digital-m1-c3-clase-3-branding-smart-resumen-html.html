@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMART explicado con ejemplos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#0f172a;color:#f1f5f9;line-height:1.6}
+    header{padding:40px;text-align:center;background:linear-gradient(90deg,#22d3ee,#a78bfa)}
+    header h1{margin:0;color:#0f172a;font-size:clamp(26px,4vw,40px)}
+    header p{color:#0f172a;margin-top:8px;font-size:18px}
+    main{max-width:900px;margin:40px auto;padding:0 20px}
+    details{background:#1e293b;border-radius:14px;margin-bottom:20px;box-shadow:0 6px 20px rgba(0,0,0,.3);overflow:hidden;transition:all .4s ease}
+    summary{cursor:pointer;padding:18px;font-weight:800;font-size:18px;color:#22d3ee;list-style:none;display:flex;align-items:center;gap:10px;transition:background .3s}
+    summary:hover{background:rgba(34,211,238,0.08)}
+    summary::marker{display:none}
+    details[open]{background:#0f172a;border:1px solid #22d3ee}
+    .content{padding:0 18px 18px;animation:fadeIn .6s ease}
+    h3{margin:10px 0;color:#a78bfa;font-size:20px}
+    .example{margin:10px 0;padding:10px;border-left:4px solid #22d3ee;background:rgba(255,255,255,.05);border-radius:6px;transition:transform .3s}
+    .example:hover{transform:scale(1.02)}
+    .example b{color:#22d3ee}
+    i.bi{font-size:20px;color:#a78bfa}
+
+    /* Animaciones */
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(-8px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Metodología SMART</h1>
+    <p>Explicación dinámica, detallada y con ejemplos claros para cada letra del acrónimo</p>
+  </header>
+  <main>
+    <details>
+      <summary><i class="bi bi-bullseye"></i> S = Específico</summary>
+      <div class="content">
+        <p>La “S” significa que tu objetivo debe estar <b>definido con absoluta claridad</b>. Si tu meta es vaga, como “quiero vender más”, no tendrás una guía de acción concreta. Un objetivo específico responde preguntas como: ¿qué quiero lograr exactamente?, ¿a quién va dirigido?, ¿por qué es importante?, ¿dónde se llevará a cabo? y ¿cuándo lo iniciaré? Cuanto más detallado seas, más fácil será que tu plan funcione en la práctica.</p>
+        <h3>Ejemplos</h3>
+        <div class="example"><b>Emprendedor principiante:</b> “Lograr 10 ventas de la colección ‘Solsticio’ en 30 días a través de mi tienda online, validando el sistema de envíos y obteniendo testimonios de clientes para generar confianza inicial”.</div>
+        <div class="example"><b>Emprendedor con experiencia:</b> “Conseguir 50 leads cualificados de agencias de marketing en España mediante una campaña de LinkedIn ofreciendo demos gratuitas de mi software SaaS”.</div>
+        <div class="example"><b>Creador de contenido:</b> “Impulsar la audiencia de mi podcast ‘Finanzas Claras’ compartiendo los 3 episodios más escuchados en grupos de Facebook y colaborando con otro podcaster del nicho financiero”.</div>
+        <div class="example"><b>Futuro influencer:</b> “Atraer mujeres de entre 20 y 30 años interesadas en rutinas de fuerza en casa para consolidar mi posición en el nicho de fitness digital”.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="bi bi-graph-up-arrow"></i> M = Medible</summary>
+      <div class="content">
+        <p>La “M” se refiere a que tu objetivo debe tener <b>indicadores concretos</b>. No basta con decir “quiero más seguidores”, hay que establecer números claros, como “aumentar en 2000 seguidores” o “incrementar la tasa de conversión en un 1%”. Los indicadores clave de rendimiento (KPI) son las métricas que te permiten medir avances, corregir estrategias y evaluar el éxito de tu plan.</p>
+        <h3>Ejemplos</h3>
+        <div class="example"><b>Principiante:</b> “Conseguir 10 ventas, midiendo la tasa de conversión inicial de 0.5% sobre los primeros 2000 visitantes a mi página”.</div>
+        <div class="example"><b>Experimentado:</b> “Obtener 50 leads con una tasa de conversión del 10% en la landing page de demo”.</div>
+        <div class="example"><b>Creador:</b> “Aumentar los oyentes únicos de mi podcast en un 20% (de 1000 a 1200 por episodio) según las métricas de Spotify”.</div>
+        <div class="example"><b>Influencer:</b> “Aumentar en 2000 seguidores netos en 3 meses y alcanzar un 3% de engagement promedio en publicaciones tipo Reel”.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="bi bi-ladder"></i> A = Alcanzable</summary>
+      <div class="content">
+        <p>Un objetivo debe ser <b>realista y posible de lograr</b>. Eso no significa que no sea ambicioso, sino que debe ajustarse a los recursos, tiempo y habilidades disponibles. Además, apoyarse en <b>benchmarks</b> del sector permite comparar tus metas con lo que se considera normal en tu industria, evitando frustraciones y mejorando la planificación.</p>
+        <h3>Ejemplos</h3>
+        <div class="example"><b>Principiante:</b> “Aspirar a 0.5% de conversión en mi tienda online es realista, ya que el promedio de la industria ronda el 1–2% y soy nuevo en el mercado”.</div>
+        <div class="example"><b>Experimentado:</b> “Buscar un 10% de conversión en mi landing de demo es ambicioso pero alcanzable, ya que he invertido en un buen diseño y copywriting persuasivo”.</div>
+        <div class="example"><b>Creador:</b> “Incrementar la audiencia de mi podcast en un 20% en 3 meses es alcanzable con promociones cruzadas y colaboraciones estratégicas”.</div>
+        <div class="example"><b>Influencer:</b> “Alcanzar un 3% de engagement en Instagram es desafiante pero posible, considerando que el promedio en cuentas pequeñas es de 1–2%”.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="bi bi-lightbulb"></i> R = Relevante</summary>
+      <div class="content">
+        <p>Un objetivo relevante es aquel que <b>está alineado con tu visión a largo plazo</b> y aporta un valor real al negocio o proyecto. Sirve para distinguir entre metas que generan impacto y las que solo son “métricas de vanidad” (que se ven bien pero no aportan resultados tangibles). La relevancia asegura que cada paso dado tenga sentido estratégico.</p>
+        <h3>Ejemplos</h3>
+        <div class="example"><b>Principiante:</b> “Conseguir 10 ventas y 5 testimonios de clientes es mucho más relevante que alcanzar 10k seguidores sin ventas”.</div>
+        <div class="example"><b>Experimentado:</b> “Incrementar la retención de clientes en un 10% es más relevante que reducir ligeramente el CPL, ya que mantener clientes es más rentable que atraer nuevos”.</div>
+        <div class="example"><b>Creador:</b> “Lanzar un curso digital básico es más relevante para mi audiencia que vender merchandising”.</div>
+        <div class="example"><b>Influencer:</b> “Colaborar con marcas alineadas a mis valores es más relevante que aceptar ofertas de marcas incoherentes aunque paguen más”.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="bi bi-calendar-event"></i> T = Temporal</summary>
+      <div class="content">
+        <p>Un objetivo sin un límite de tiempo es simplemente un deseo que se puede posponer indefinidamente. La “T” asegura que exista un <b>plazo definido</b>, generando compromiso y urgencia. Además, se recomienda dividir el tiempo en <b>hitos intermedios</b>, que permiten medir avances y ajustar la estrategia.</p>
+        <h3>Ejemplos</h3>
+        <div class="example"><b>Principiante:</b> “Lograr 10 ventas y 5 testimonios en 30 días, organizando campañas y contacto con clientes semana a semana”.</div>
+        <div class="example"><b>Experimentado:</b> “Alcanzar 50 MQLs durante el primer trimestre, con hitos mensuales para campañas y optimizaciones”.</div>
+        <div class="example"><b>Creador:</b> “Aumentar 20% los oyentes en 3 meses, dividiendo acciones en promoción, clips y campañas de email por mes”.</div>
+        <div class="example"><b>Influencer:</b> “Ganar 2000 seguidores en 3 meses con hitos mensuales: publicar Reels, organizar sorteos y participar en grupos”.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary><i class="bi bi-check2-circle"></i> Métodos para hacer que tu plan sea totalmente SMART</summary>
+      <div class="content">
+        <ul>
+          <li>Convertí cada idea vaga en una frase que incluya las 5 letras de SMART.</li>
+          <li>Definí indicadores claros como ventas, leads, oyentes o seguidores.</li>
+          <li>Usá benchmarks de tu sector para fijar metas alcanzables.</li>
+          <li>Prioriza lo que tenga impacto real y esté alineado a tu visión.</li>
+          <li>Establecé plazos y divídelos en hitos semanales o mensuales.</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+
+  <script>
+    // animación suave en la apertura de details
+    document.querySelectorAll("details").forEach((el)=>{
+      el.addEventListener("toggle",()=>{
+        if(el.open){
+          const content=el.querySelector(".content");
+          content.style.animation="fadeIn .6s ease";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

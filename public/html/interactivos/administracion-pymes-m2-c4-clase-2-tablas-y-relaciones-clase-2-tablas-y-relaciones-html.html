@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2 - Tablas y Relaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. THE SETUP */
+        * { box-sizing: border-box; }
+        p { margin: 0; margin-bottom: 15px; }
+        body {
+            background-color: #e2e8f0;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px 0;
+            place-items: center;
+        }
+
+        /* Slide Container */
+        .slide-container {
+            align-items: center;
+            background-color: #0f172a; 
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Lato', sans-serif;
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            padding: 60px;
+            position: relative;
+            width: 1280px;
+        }
+
+        .slide-container::before {
+            background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.05), transparent 40%);
+            content: ''; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0;
+        }
+
+        .slide-container::after {
+            background: rgba(14, 165, 233, 0.3);
+            bottom: 50px; content: ''; height: 1px; left: 60px; position: absolute; right: 60px; z-index: 0;
+        }
+        .slide-container > * { position: relative; z-index: 1; }
+
+        /* Typography */
+        .slide-container h1, .slide-container h2, .slide-container h3 {
+            color: #f8fafc; font-weight: 700; font-family: 'Poppins', sans-serif; margin: 0;
+        }
+        .slide-container h1 span, .slide-container h2 span, .slide-container h3 span { color: #0ea5e9; }
+        .slide-container h1 { font-size: 70px; }
+        
+        .slide-container .slide-title {
+            font-size: 40px; font-weight: 500; margin-bottom: 40px; text-align: left; width: 100%;
+        }
+        .slide-container h3 { font-size: 28px; font-weight: 500; margin-bottom: 15px; }
+        
+        .slide-container p, .slide-container li, .slide-container .subtitle {
+            color: #cbd5e1; font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.5;
+        }
+        .slide-container .subtitle { font-weight: 400; margin: 20px auto; font-size: 24px; color: #0ea5e9; }
+        
+        .content-area {
+            align-items: center; display: flex; flex-direction: column; flex-grow: 1; justify-content: center; width: 100%;
+        }
+
+        /* Layouts */
+        .title-layout { text-align: center; }
+        
+        .two-column {
+            align-items: center; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; width: 100%;
+        }
+        .two-column.tiled { align-items: stretch; }
+        .two-column.tiled > div {
+            background-color: #1e293b; border-radius: 12px; border: 1px solid #334155; padding: 40px; text-align: left;
+        }
+        
+        /* Image Placeholder Format */
+        .image-wrapper {
+            border-radius: 12px; height: 350px; max-width: 100%; overflow: hidden; width: 100%;
+            border: 2px solid #334155; background-color: #0f172a; display: flex; align-items: center; justify-content: center;
+            color: #cbd5e1; font-family: 'Lato', sans-serif; font-size: 20px; font-style: italic; text-align: center; padding: 20px;
+            position: relative;
+        }
+        .image-wrapper i {
+            font-size: 80px; color: #334155; position: absolute; opacity: 0.3;
+        }
+        .image-wrapper span { z-index: 2; }
+
+        /* Tiles */
+        .tiled-content {
+            align-items: stretch; display: flex; gap: 30px; justify-content: center; width: 100%;
+        }
+        .tile {
+            align-items: center; background-color: #1e293b; border-radius: 12px; border: 1px solid #334155;
+            display: flex; flex-direction: column; flex: 1; padding: 30px; text-align: center;
+        }
+        .tile .icon { color: #0ea5e9; font-size: 48px; margin-bottom: 20px; }
+        
+        /* Table Styles for Examples */
+        .data-table {
+            width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 16px;
+        }
+        .data-table th {
+            background-color: #0ea5e9; color: #fff; padding: 12px; text-align: left; font-family: 'Poppins', sans-serif;
+        }
+        .data-table td {
+            background-color: #1e293b; color: #cbd5e1; padding: 12px; border-bottom: 1px solid #334155;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table td:nth-child(2) { color: #11caa0; }
+
+        /* Schema Box */
+        .schema-box {
+            background-color: #1e293b; border: 2px dashed #0ea5e9; border-radius: 12px; padding: 40px;
+            width: 100%; text-align: center; display: flex; justify-content: space-around; align-items: center;
+        }
+        .schema-table {
+            background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .schema-header {
+            background-color: #0ea5e9; color: #fff; padding: 12px; font-weight: bold; border-radius: 8px 8px 0 0;
+            font-family: 'Poppins', sans-serif; letter-spacing: 1px;
+        }
+        .schema-row {
+            padding: 12px; border-bottom: 1px solid #334155; display: flex; justify-content: space-between; font-size: 15px;
+        }
+        .schema-row:last-child { border-bottom: none; }
+        .schema-row.pk { color: #f1c40f; font-weight: bold; background-color: rgba(241, 196, 15, 0.1); }
+        .schema-row.fk { color: #11caa0; background-color: rgba(17, 202, 160, 0.1); }
+        .schema-link { font-size: 34px; color: #94a3b8; display: flex; align-items: center; gap: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slide1">
+    <div class="title-layout">
+        <h1>Tablas y <span>Relaciones</span></h1>
+        <p class="subtitle">Clase 2: Estructurando el corazón de nuestra Base de Datos</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Objetivos del Negocio y la BD</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div style="border-top: 4px solid #0ea5e9;">
+                <h3><i class="fa-solid fa-store" style="color: #0ea5e9; margin-right:15px;"></i> Dinámica del Negocio</h3>
+                <p>Toda Pyme, como una tienda de ropa, funciona con dos pilares:</p>
+                <ul style="color: #cbd5e1; font-size: 18px; line-height: 1.8;">
+                    <li><strong>Venta:</strong> Comercialización de productos a Clientes.</li>
+                    <li><strong>Compra:</strong> Adquisición de stock a Proveedores.</li>
+                </ul>
+            </div>
+            <div style="border-top: 4px solid #11caa0;">
+                <h3><i class="fa-solid fa-server" style="color: #11caa0; margin-right:15px;"></i> Objetivos de la Base de Datos</h3>
+                <p>Para administrar esto, nuestra BD debe:</p>
+                <ul style="color: #cbd5e1; font-size: 18px; line-height: 1.8;">
+                    <li>Registrar Ventas (precios, cantidades).</li>
+                    <li>Registrar Compras (costos).</li>
+                    <li>Controlar el Stock disponible.</li>
+                    <li>Calcular precios, ganancias e IVA.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Estructura Base: Tienda de Ropa</h2>
+    <div class="content-area">
+        <p style="text-align: center; font-size: 22px; margin-bottom: 30px;">Para cumplir los objetivos, dividiremos la información en <strong>3 Tablas principales</strong>.</p>
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-shirt"></i></div>
+                <h3>Tabla 1: PRENDAS</h3>
+                <p>Almacena todo el catálogo: descripciones, talles, colores, precios y stock.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-truck"></i></div>
+                <h3>Tabla 2: PROVEEDORES</h3>
+                <p>Guarda los datos de contacto, Razón Social y CUIT de quienes nos abastecen.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-users"></i></div>
+                <h3>Tabla 3: CLIENTES</h3>
+                <p>Registra la información de las personas que compran nuestros artículos.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Diseño de Tabla: Tipos de Datos</h2>
+    <div class="content-area" style="flex-direction: row; gap: 40px; align-items: flex-start;">
+        <div style="flex: 1;">
+            <p>Al crear los campos en <strong>Vista Diseño</strong>, es vital elegir el tipo de dato correcto:</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Tipo de Dato</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>ID-ART</td><td>Autonumérico</td></tr>
+                    <tr><td>ARTICULOS</td><td>Texto Corto</td></tr>
+                    <tr><td>TALLE</td><td>Asistente p/Búsqueda (Lista)</td></tr>
+                    <tr><td>PRECIO</td><td>Moneda</td></tr>
+                    <tr><td>STOCK</td><td>Número</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="flex: 1;">
+            <div class="tiled-content" style="flex-direction: column; gap: 15px;">
+                <div class="tile" style="padding: 15px; text-align: left; align-items: flex-start;">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;"><i class="fa-solid fa-list" style="color:#0ea5e9;"></i> Asistente p/Búsqueda</h3>
+                    <p style="font-size: 16px;">Permite crear una lista de valores fija (ej: S, M, L, XL para Talles) evitando errores de tipeo.</p>
+                </div>
+                <div class="tile" style="padding: 15px; text-align: left; align-items: flex-start;">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;"><i class="fa-solid fa-money-bill" style="color:#11caa0;"></i> Moneda vs Número</h3>
+                    <p style="font-size: 16px;">Usamos <em>Moneda</em> para importes que llevan símbolo $, y <em>Número</em> para cantidades (Stock).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <div class="content-area" style="flex-direction: row; gap: 50px;">
+        <div style="flex: 1;">
+            <h2 class="slide-title" style="margin-bottom: 20px;">La Clave Principal <i class="fa-solid fa-key" style="color:#f1c40f;"></i></h2>
+            <p style="font-size: 22px;">Es el campo que <strong>identifica de forma única e irrepetible</strong> a cada registro dentro de su tabla.</p>
+            <br>
+            <ul style="color: #cbd5e1; font-size: 20px; line-height: 1.8; list-style-type: none; padding: 0;">
+                <li><i class="fa-solid fa-check" style="color: #0ea5e9; margin-right: 10px;"></i> En Proveedores: <strong>Id-PROV</strong></li>
+                <li><i class="fa-solid fa-check" style="color: #0ea5e9; margin-right: 10px;"></i> En Prendas: <strong>Id-ART</strong></li>
+                <li><i class="fa-solid fa-check" style="color: #0ea5e9; margin-right: 10px;"></i> Evita que existan dos artículos o proveedores con el mismo código.</li>
+            </ul>
+        </div>
+        <div style="flex: 1;">
+            <div class="image-wrapper" style="border-color: #f1c40f; height: 350px;">
+                <i class="fa-solid fa-table-list"></i>
+                <span>Imagen representativa de la Vista Diseño con llave asignada a Clave Principal</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Relaciones: Conectando el Negocio</h2>
+    <div class="content-area">
+        <p style="text-align: center; font-size: 20px; max-width: 1000px; margin-bottom: 30px;">
+            Para saber quién nos provee cada prenda sin repetir los datos del proveedor, agregamos el campo <strong>PROVEEDOR (Número)</strong> en Prendas y lo vinculamos con <strong>Id-PROV</strong>.
+        </p>
+        
+        <div class="schema-box">
+            <div class="schema-table">
+                <div class="schema-header">PROVEEDORES</div>
+                <div class="schema-row pk">
+                    <span><i class="fa-solid fa-key"></i> Id-PROV</span>
+                    <span>Autonumérico</span>
+                </div>
+                <div class="schema-row"><span>RAZON SOCIAL</span><span>Texto Corto</span></div>
+                <div class="schema-row"><span>CONTACTO</span><span>Texto Corto</span></div>
+                <div class="schema-row"><span>CUIT Nº</span><span>Texto Corto</span></div>
+            </div>
+            
+            <div class="schema-link">
+                <strong>1</strong> 
+                <i class="fa-solid fa-arrow-right-long"></i> 
+                <strong>∞</strong>
+            </div>
+            
+            <div class="schema-table">
+                <div class="schema-header">PRENDAS</div>
+                <div class="schema-row pk">
+                    <span><i class="fa-solid fa-key"></i> Id-ART</span>
+                    <span>Autonumérico</span>
+                </div>
+                <div class="schema-row"><span>ARTICULOS</span><span>Texto Corto</span></div>
+                <div class="schema-row"><span>PRECIO</span><span>Moneda</span></div>
+                <div class="schema-row fk">
+                    <span><i class="fa-solid fa-link"></i> PROVEEDOR</span>
+                    <span>Número</span>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 25px; color: #11caa0; font-weight: bold;">Relación de Uno a Varios: Un proveedor abastece varias prendas.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <div class="title-layout" style="margin: auto;">
+        <h2 style="font-size: 60px; margin-bottom: 20px;">Fin de la Teoría</h2>
+        <p class="subtitle" style="font-size: 28px;">Manos a la obra con la Práctica</p>
+        <p style="color: #94a3b8; font-size: 20px; margin-top: 40px;">
+            ¡Abran Access, generen las tablas PRENDAS y PROVEEDORES y establezcan su relación!
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

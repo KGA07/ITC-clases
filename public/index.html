@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITC Aula Virtual - Clases y materiales</title>
+  <meta name="description" content="Materiales didacticos de las capacitaciones de Informatic Training Center (UdeMM)">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0058FF">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/config.js"></script>
+  <script src="/js/common.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+  <header class="topbar" id="topbar"></header>
+
+  <main class="container" id="main">
+    <section class="hero">
+      <h1>Clases y materiales ITC</h1>
+      <p class="sub">Todas las capacitaciones en un solo lugar: temarios, clases, ejercicios y herramientas interactivas.</p>
+      <div class="search-box">
+        <span class="icon" aria-hidden="true">🔍</span>
+        <input type="search" id="searchInput" placeholder="Buscar clase, ejercicio o archivo..." autocomplete="off" aria-label="Buscar">
+      </div>
+    </section>
+
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo"></div>
+
+    <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargando catalogo...</div>
+    <div class="empty hidden" id="empty">No hay capacitaciones disponibles.</div>
+
+    <div class="grid-cursos" id="grid"></div>
+
+    <section id="results" class="hidden">
+      <h2 style="margin-bottom:12px">Resultados de busqueda</h2>
+      <div class="result-list" id="resultList"></div>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="/js/home.js"></script>
+</body>
+</html>

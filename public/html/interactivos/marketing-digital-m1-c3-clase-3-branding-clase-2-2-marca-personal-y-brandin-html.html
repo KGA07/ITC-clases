@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Interactiva: Branding y Marca Personal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Neon Night -->
+    <!-- Application Structure Plan: The SPA uses a single-page, vertical scrolling structure with a fixed top navigation for easy access to different modules. This design was chosen to create a fluid, story-like progression through the concepts of personal branding. Key interactions include: 1) A visual, side-by-side comparison of 'Identity vs. Brand'. 2) An interactive "workshop" section where users can input their own branding ideas, making the learning process active and personalized. 3) Tool cards with direct links. This structure turns a static document into an engaging, self-paced learning experience. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: 'What is Personal Brand?' -> Goal: Inform -> Method: Thematic cards with icons -> Interaction: Static -> Justification: Breaks down core concepts into digestible, visually distinct blocks. -> Library: Tailwind/Unicode.
+        - Report Info: 'Visual Identity vs. Personal Brand' -> Goal: Compare -> Method: Two-column grid layout -> Interaction: Static visual comparison -> Justification: Clearly contrasts the two related but different concepts for better understanding. -> Library: Tailwind.
+        - Report Info: 'Quick Activity' -> Goal: Apply -> Method: Interactive form/input fields -> Interaction: User input -> Justification: Encourages active participation and personal application of the concepts, reinforcing learning. -> Library: Vanilla JS.
+        - Report Info: 'Useful Tools' list -> Goal: Provide Resources -> Method: Grid of clickable cards -> Interaction: Click to open external links -> Justification: Provides actionable resources in an organized, easy-to-use format. -> Library: HTML/Tailwind.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111827;
+            color: #d1d5db;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #a855f7;
+            transition: width 0.3s ease;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #f0abfc;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7;
+        }
+        .input-field {
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            color: #f9fafb;
+        }
+        .btn-glow {
+            box-shadow: 0 0 5px #a855f7, 0 0 15px #a855f7, 0 0 20px #a855f7;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <header class="bg-gray-900/70 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-700/50">
+        <nav class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">✨</span>
+                    <span class="font-bold text-lg text-white">Branding Pop</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#marca-personal" class="nav-link font-semibold">Marca Personal</a>
+                    <a href="#branding-digital" class="nav-link font-semibold">Branding Digital</a>
+                    <a href="#herramientas" class="nav-link font-semibold">Herramientas</a>
+                    <a href="#actividad" class="nav-link font-semibold">Actividad</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+
+        <section id="marca-personal" class="text-center min-h-[90vh] flex flex-col justify-center items-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Tu <span class="text-fuchsia-400 neon-text">Marca Personal</span> es tu Súper Poder</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">Descubre cómo proyectar quién eres y por qué es clave en el mundo digital.</p>
+            
+            <div class="w-full max-w-4xl glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4">🤔 ¿Qué es la Marca Personal?</h2>
+                <p class="text-lg text-gray-300">Es la imagen que proyectas. No es solo un logo, es <strong>lo que la gente piensa y siente sobre ti</strong> al ver tus redes, tus publicaciones y cómo interactúas. Es tu reputación digital.</p>
+                <div class="bg-fuchsia-900/30 text-fuchsia-200 p-4 rounded-lg mt-6 text-left">
+                    <strong>Ejemplo Real:</strong> Un albañil que sube fotos de su trabajo a Instagram, comparte tips de construcción y responde dudas, está creando una marca personal fuerte, ¡aunque no tenga una empresa formal!
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">¿Por qué es <span class="text-cyan-400">CRUCIAL</span> para Emprendedores?</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-lg text-center"><span class="text-4xl">⚔️</span><h3 class="font-bold mt-2 text-white">Compite sin Dinero</h3><p class="text-sm text-gray-400">Te permite competir con negocios más grandes sin una gran inversión.</p></div>
+                <div class="glass-card p-6 rounded-lg text-center"><span class="text-4xl">🚀</span><h3 class="font-bold mt-2 text-white">Gana Visibilidad</h3><p class="text-sm text-gray-400">Te da a conocer en tu barrio, ciudad o en todas las redes sociales.</p></div>
+                <div class="glass-card p-6 rounded-lg text-center"><span class="text-4xl">🤝</span><h3 class="font-bold mt-2 text-white">Genera Confianza</h3><p class="text-sm text-gray-400">La gente compra a quienes conoce, sigue y en quienes confía.</p></div>
+                <div class="glass-card p-6 rounded-lg text-center"><span class="text-4xl">🚪</span><h3 class="font-bold mt-2 text-white">Atrae Oportunidades</h3><p class="text-sm text-gray-400">Nuevos clientes, colaboraciones e incluso empleos pueden llegar a ti.</p></div>
+            </div>
+        </section>
+        
+        <section id="branding-digital" class="py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Branding Digital: Tu Vibe Online ✌️</h2>
+                <p class="text-lg text-gray-400 mt-2 max-w-2xl mx-auto">Es la forma en que te presentas en internet para generar una identidad reconocible y una conexión emocional con tu público.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-4">El "Envase": Identidad Visual</h3>
+                    <p class="mb-4">Es la parte estética, lo que se ve a simple vista. Piensa en ello como la ropa de tu marca.</p>
+                    <ul class="space-y-2 list-disc list-inside text-cyan-200">
+                        <li>Colores</li>
+                        <li>Logo</li>
+                        <li>Tipografías</li>
+                        <li>Estética de fotos</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-fuchsia-400 mb-4">El "Contenido": Marca Personal</h3>
+                    <p class="mb-4">Es la esencia, el alma de tu proyecto. Es lo que realmente conecta con la gente.</p>
+                    <ul class="space-y-2 list-disc list-inside text-fuchsia-200">
+                        <li>Tu historia (el "porqué")</li>
+                        <li>Tus valores</li>
+                        <li>Tu forma de comunicar</li>
+                        <li>Tu reputación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center bg-yellow-900/30 text-yellow-200 p-6 rounded-lg mt-12 max-w-3xl mx-auto">
+                <h3 class="font-bold text-xl mb-2">🟨 ¡Importante! Branding NO es solo un logo</h3>
+                <p>Muchos creen que "tener marca" es tener un logo. En realidad, <strong>tu marca es cómo haces sentir a la gente</strong>. Si tu perfil transmite confianza, orden y coherencia, ¡ya estás haciendo branding!</p>
+            </div>
+        </section>
+
+        <section id="herramientas" class="py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Tu Kit de Herramientas <span class="text-purple-400">Gratuitas</span> 🛠️</h2>
+                <p class="text-lg text-gray-400 mt-2 max-w-2xl mx-auto">No necesitas gastar para empezar a construir tu marca. Estas herramientas son tus mejores aliadas.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-lg text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white">Canva</h3>
+                        <p class="text-sm text-gray-400 my-2">Para crear logos, plantillas para redes y todo tu universo visual.</p>
+                    </div>
+                    <a href="https://www.canva.com" target="_blank" class="mt-4 inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">Ir a Canva</a>
+                </div>
+                <div class="glass-card p-6 rounded-lg text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white">Namechk</h3>
+                        <p class="text-sm text-gray-400 my-2">Verifica si el nombre que quieres usar está disponible en todas las redes.</p>
+                    </div>
+                    <a href="https://www.namechk.com" target="_blank" class="mt-4 inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">Ir a Namechk</a>
+                </div>
+                 <div class="glass-card p-6 rounded-lg text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white">Coolors</h3>
+                        <p class="text-sm text-gray-400 my-2">Genera paletas de colores profesionales y armoniosas con un solo clic.</p>
+                    </div>
+                    <a href="https://coolors.co" target="_blank" class="mt-4 inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">Ir a Coolors</a>
+                </div>
+                <div class="glass-card p-6 rounded-lg text-center flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg text-white">ChatGPT</h3>
+                        <p class="text-sm text-gray-400 my-2">Para redactar tu biografía, tener ideas de publicaciones o definir tu tono.</p>
+                    </div>
+                    <a href="https://chat.openai.com" target="_blank" class="mt-4 inline-block bg-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">Ir a ChatGPT</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="actividad" class="py-16 md:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">✍️ Workshop: ¡Define tu Marca!</h2>
+                <p class="text-lg text-gray-400 mt-2 max-w-2xl mx-auto">Es tu turno. Responde estas preguntas para empezar a dar forma a tu universo de marca.</p>
+            </div>
+            <div class="max-w-3xl mx-auto glass-card p-8 rounded-2xl space-y-6">
+                <div>
+                    <label for="brand-name" class="font-semibold text-lg text-cyan-400">1. ¿Cómo se llama tu proyecto/marca?</label>
+                    <input type="text" id="brand-name" class="w-full p-2 mt-2 rounded-md input-field" placeholder="Ej: Delicias Sofi, FixCelulares...">
+                </div>
+                <div>
+                    <label for="brand-colors" class="font-semibold text-lg text-cyan-400">2. Si tu marca fuera 2-3 colores, ¿cuáles serían?</label>
+                    <input type="text" id="brand-colors" class="w-full p-2 mt-2 rounded-md input-field" placeholder="Ej: Tonos pastel, azul y blanco, negro y dorado...">
+                </div>
+                <div>
+                    <label for="brand-tone" class="font-semibold text-lg text-cyan-400">3. ¿Cómo le hablas a tu público?</label>
+                    <input type="text" id="brand-tone" class="w-full p-2 mt-2 rounded-md input-field" placeholder="Ej: Cercano y amigable, técnico y profesional, divertido...">
+                </div>
+                 <div>
+                    <label for="brand-feeling" class="font-semibold text-lg text-fuchsia-400">4. ¿Qué quieres que la gente SIENTA al ver tu perfil?</label>
+                    <textarea id="brand-feeling" rows="3" class="w-full p-2 mt-2 rounded-md input-field" placeholder="Ej: Confianza, alegría, profesionalismo, inspiración, antojo..."></textarea>
+                </div>
+                <div class="text-center pt-4">
+                    <button id="save-button" class="bg-fuchsia-600 text-white font-bold py-3 px-8 rounded-full hover:bg-fuchsia-700 transition-all transform hover:scale-105 btn-glow">¡Hecho! Guardar mis ideas</button>
+                    <p id="confirmation-message" class="text-green-400 mt-4 hidden">¡Genial! Tus ideas han sido guardadas en tu mente para el siguiente paso. 😉</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center py-8 border-t border-gray-800">
+        <p class="text-gray-500">© 2025 | Derechos Reservados para jcdiseing</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const saveButton = document.getElementById('save-button');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            saveButton.addEventListener('click', () => {
+                confirmationMessage.classList.remove('hidden');
+                setTimeout(() => {
+                    confirmationMessage.classList.add('hidden');
+                }, 4000);
+            });
+        });
+    </script>
+</body>
+</html>

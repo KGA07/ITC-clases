@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: IA, Antigravity y Vercel</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --text-color: #e2e8f0;
+            --neon-cyan: #00f0ff;
+            --neon-purple: #b026ff;
+            --card-bg: #1a202c;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 90%;
+            max-width: 1000px;
+            height: 85vh;
+            margin: 4vh auto;
+            position: relative;
+            background-color: var(--card-bg);
+            border: 2px solid var(--neon-purple);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            display: none;
+            padding: 40px 60px;
+            height: 100%;
+            box-sizing: border-box;
+            animation: fadeIn 0.5s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--neon-cyan);
+            font-size: 3em;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--neon-purple);
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--neon-cyan);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        p, li {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+            color: var(--neon-cyan);
+        }
+
+        li span {
+            color: var(--text-color);
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: transparent;
+            color: var(--neon-cyan);
+            border: 2px solid var(--neon-cyan);
+            padding: 10px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        button:disabled {
+            border-color: #555;
+            color: #555;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .grid-15 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--neon-purple);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--neon-cyan);
+            font-weight: bold;
+        }
+
+        .progress {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            color: var(--neon-purple);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+        
+        <!-- Diapositiva 1: Portada -->
+        <div class="slide active">
+            <br><br><br>
+            <h1>De la Idea a Internet</h1>
+            <h2 style="text-align: center; border: none;">Creando aplicaciones con Inteligencia Artificial</h2>
+            <p style="text-align: center;">Usando Google Antigravity y Vercel</p>
+        </div>
+
+        <!-- Diapositiva 2: ¿Qué es Antigravity? -->
+        <div class="slide">
+            <h2>¿Qué es Google Antigravity?</h2>
+            <p>Imagina que tienes un <strong>programador experto trabajando para ti</strong> 24/7. Eso es Google Antigravity.</p>
+            <p>No necesitas saber escribir código ni memorizar lenguajes extraños. Solo necesitas saber <strong>dar buenas instrucciones</strong>.</p>
+            <ul>
+                <li><span>Tú describes lo que quieres en lenguaje natural (español normal).</span></li>
+                <li><span>La IA entiende tu idea.</span></li>
+                <li><span>La IA escribe todo el código necesario (HTML, CSS y JavaScript) en segundos.</span></li>
+            </ul>
+        </div>
+
+        <!-- Diapositiva 3: ¿Qué es Vercel? -->
+        <div class="slide">
+            <h2>¿Qué es Vercel?</h2>
+            <p>Una vez que la IA te da el código de tu aplicación, ese código solo vive en tu computadora. Para que tus amigos o clientes puedan verla en sus celulares, necesitas subirla a Internet.</p>
+            <p><strong>Vercel</strong> es como un "estacionamiento gratuito" en Internet para tu página web.</p>
+            <ul>
+                <li><span>Es 100% gratuito.</span></li>
+                <li><span>Te da un enlace (link) público al instante.</span></li>
+                <li><span>¡Es tan fácil como arrastrar y soltar una carpeta!</span></li>
+            </ul>
+        </div>
+
+        <!-- Diapositiva 4: El Paso a Paso -->
+        <div class="slide">
+            <h2>El Plan de Acción (Paso a Paso)</h2>
+            <p>Sigue estos 3 pasos para crear tu app de la nada:</p>
+            <ol style="font-size: 1.2em; line-height: 1.8; color: var(--neon-cyan);">
+                <li><span style="color: var(--text-color);"><strong>Pide el código:</strong> Ve a Antigravity y dile: <em>"Crea una aplicación web que haga [TU IDEA]. Hazlo todo en un solo archivo llamado index.html, con diseño moderno."</em></span></li>
+                <li><span style="color: var(--text-color);"><strong>Guarda tu App:</strong> Crea una carpeta en tu escritorio (ej: "MiApp"). Pega el código que te dio la IA en el bloc de notas y guárdalo dentro de la carpeta con el nombre exacto de <span class="highlight">index.html</span>.</span></li>
+                <li><span style="color: var(--text-color);"><strong>Lanza al mundo:</strong> Entra a Vercel.com, crea una cuenta gratuita, arrastra la carpeta "MiApp" hacia la pantalla de Vercel... ¡Y listo! Copia tu nuevo enlace web.</span></li>
+            </ol>
+        </div>
+
+        <!-- Diapositiva 5: El Ejercicio -->
+        <div class="slide">
+            <h2>Ejercicio Práctico: ¡Tu turno!</h2>
+            <p>Hoy cada uno de ustedes creará y publicará una aplicación real en Internet.</p>
+            <p><strong>Reglas:</strong></p>
+            <ul>
+                <li><span>Elige <strong>solo una</strong> de las 15 opciones de la siguiente pantalla.</span></li>
+                <li><span>Pídele a Antigravity que te genere el código especificando que sea atractivo visualmente (puedes pedirle colores oscuros, neón, modo claro, etc.).</span></li>
+                <li><span>Guarda el archivo, arrástralo a Vercel y envíame el enlace de tu app terminada.</span></li>
+            </ul>
+            <p class="highlight" style="text-align: center; margin-top: 40px; font-size: 1.5em;">¿Listos para programar sin tocar código?</p>
+        </div>
+
+        <!-- Diapositiva 6: Las 15 Opciones -->
+        <div class="slide">
+            <h2>Elige tu Proyecto (Opciones 1 al 15)</h2>
+            <div class="grid-15">
+                <div class="grid-item">1. Generador de excusas aleatorias para llegar tarde.</div>
+                <div class="grid-item">2. Calculadora de edad humana a edad de perro.</div>
+                <div class="grid-item">3. Temporizador Pomodoro de 25 min para estudiar.</div>
+                <div class="grid-item">4. Generador de nombres espaciales para mascotas.</div>
+                <div class="grid-item">5. App de "Adivina el número del 1 al 10".</div>
+                <div class="grid-item">6. Mostrador de frases motivacionales aleatorias.</div>
+                <div class="grid-item">7. Lanzador de dados virtual (1 al 6).</div>
+                <div class="grid-item">8. Conversor simple de Dólares a la moneda local.</div>
+                <div class="grid-item">9. Tarjeta de presentación digital personal.</div>
+                <div class="grid-item">10. Reloj digital gigante en pantalla.</div>
+                <div class="grid-item">11. Contador: ¿Cuántos clics haces en 10 segundos?</div>
+                <div class="grid-item">12. Paleta de colores al azar para diseñadores.</div>
+                <div class="grid-item">13. Juego de Piedra, Papel o Tijera vs la IA.</div>
+                <div class="grid-item">14. Registro de vasos de agua tomados en el día.</div>
+                <div class="grid-item">15. Calculadora de propinas simple.</div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="progress" id="page-indicator">1 / 6</div>
+        <div class="controls">
+            <button id="prev-btn" onclick="cambiarSlide(-1)" disabled>Anterior</button>
+            <button id="next-btn" onclick="cambiarSlide(1)">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        let slideActual = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const indicator = document.getElementById('page-indicator');
+
+        function cambiarSlide(direccion) {
+            slides[slideActual].classList.remove('active');
+            slideActual += direccion;
+            
+            // Límites
+            if (slideActual < 0) slideActual = 0;
+            if (slideActual >= slides.length) slideActual = slides.length - 1;
+
+            slides[slideActual].classList.add('active');
+            actualizarBotones();
+        }
+
+        function actualizarBotones() {
+            prevBtn.disabled = slideActual === 0;
+            nextBtn.disabled = slideActual === slides.length - 1;
+            indicator.innerText = `${slideActual + 1} / ${slides.length}`;
+        }
+    </script>
+</body>
+</html>

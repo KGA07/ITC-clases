@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2: Herramientas de Dibujo Avanzado y Transformación de Formas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+        
+        /* Animaciones vectoriales por defecto para el carrusel interactivo */
+        @keyframes drawRect {
+            0% { width: 0px; height: 0px; }
+            50% { width: 120px; height: 90px; }
+            100% { width: 120px; height: 90px; border-radius: 16px; }
+        }
+        .anim-rect { animation: drawRect 3s infinite alternate ease-in-out; }
+
+        @keyframes drawEllipse {
+            0% { transform: scale(0); }
+            50% { transform: scale(1); }
+            100% { clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 0 100%, 0 0, 100% 0); transform: scale(1); }
+        }
+        .anim-ellipse { animation: drawEllipse 4s infinite alternate ease-in-out; }
+
+        @keyframes morphPolygon {
+            0% { transform: rotate(0deg) scale(0.6); }
+            50% { transform: rotate(180deg) scale(1); }
+            100% { transform: rotate(360deg) scale(0.8); }
+        }
+        .anim-poly { animation: morphPolygon 5s infinite linear; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-emerald-500 selection:text-slate-950">
+
+    <div id="login-overlay" class="fixed inset-0 bg-slate-950 z-[100] flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl max-w-md w-full space-y-6">
+            <div class="text-center space-y-2">
+                <div class="inline-block bg-emerald-500 text-slate-950 px-4 py-2 rounded-xl font-black text-2xl font-bebas tracking-wider shadow-lg shadow-emerald-500/20">
+                    CORELDRAW
+                </div>
+                <h2 class="text-xl font-bold text-white">Campus Digital | Clase 2</h2>
+                <p class="text-xs text-slate-400">Por favor, introduce tus credenciales para acceder al material didáctico.</p>
+            </div>
+
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Usuario / Alumno</label>
+                    <input type="text" id="loginUser" required autocomplete="username"
+                           class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-slate-400 uppercase mb-1">Contraseña</label>
+                    <input type="password" id="loginPassword" required autocomplete="current-password"
+                           class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                </div>
+                
+                <div id="loginError" class="hidden text-xs text-rose-400 bg-rose-950/30 border border-rose-900 p-2 rounded-lg text-center">
+                    Credenciales incorrectas. Verifica con el profesor GKempe.
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-500 text-slate-950 font-bold py-2.5 rounded-lg text-sm shadow-lg shadow-emerald-500/10 hover:bg-emerald-400 transition-all">
+                    Autenticar e Ingresar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-content" class="hidden">
+        <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-md">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-emerald-500 text-slate-950 font-bebas text-2xl px-3 py-1 rounded-lg font-bold shadow-md shadow-emerald-500/20">
+                        C2
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-white font-bebas tracking-wide">Guía de Herramientas de Dibujo y Operaciones de Objeto</h1>
+                        <div class="flex items-center gap-2">
+                            <p class="text-xs text-emerald-400 font-medium">Diseño Gráfico Publicitario</p>
+                            <span id="userBadge" class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full border border-slate-700 font-mono"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 w-full lg:w-auto overflow-x-auto">
+                    <button onclick="switchTab('dibujo')" id="tab-dibujo" class="px-3 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap bg-emerald-500 text-slate-950 font-bold shadow">
+                        1. Herramientas de Dibujo
+                    </button>
+                    <button onclick="switchTab('duplicar')" id="tab-duplicar" class="px-3 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap text-slate-400 hover:text-slate-200">
+                        2. Copiar, Duplicar y Orden
+                    </button>
+                    <button onclick="switchTab('forma')" id="tab-forma" class="px-3 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap text-slate-400 hover:text-slate-200">
+                        3. Dar Forma (Booleanas)
+                    </button>
+                    <button onclick="switchTab('quiz')" id="tab-quiz" class="px-3 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap text-slate-400 hover:text-slate-200">
+                        4. Evaluación Técnica
+                    </button>
+                    <button onclick="switchTab('admin')" id="tab-admin" class="hidden px-3 py-2 text-xs font-medium rounded-lg transition-all whitespace-nowrap text-amber-400 hover:text-amber-300 border border-dashed border-amber-500/20 bg-amber-500/5">
+                        ⚙️ Panel Profesor
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 py-8">
+
+            <section id="content-dibujo" class="tab-content space-y-6">
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-6 rounded-2xl border border-slate-800 shadow-xl">
+                    <h2 class="text-2xl font-bold font-bebas tracking-wide text-white mb-1">Módulo 1: Primitivas y Formas Geométricas</h2>
+                    <p class="text-xs text-slate-400 max-w-3xl">Haz clic sobre cualquiera de los botones de la caja de herramientas para desplegar la ventana modal interactiva con las descripciones técnicas y animaciones vectoriales integradas en el código.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <button class="tool-btn text-left p-5 bg-slate-900 border-b-4 border-emerald-500 rounded-xl hover:bg-slate-800 transition-all flex flex-col justify-between group"
+                            data-title="Herramienta Rectángulo (F6)"
+                            data-desc="Permite trazar rectángulos arrastrando libremente o cuadrados perfectos combinando la tecla CTRL. Desde su barra de propiedades contextuales es posible alterar sus esquinas para convertirlas en esquinas redondeadas, festoneadas (hacia adentro) o biseladas (chaflán plano) de manera milimétrica."
+                            data-type="rect">
+                        <span class="text-xs font-mono text-emerald-400 mb-2 block">HERRAMIENTA F6</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Rectángulo y Modificaciones de Esquina</h3>
+                    </button>
+                    <button class="tool-btn text-left p-5 bg-slate-900 border-b-4 border-emerald-500 rounded-xl hover:bg-slate-800 transition-all flex flex-col justify-between group"
+                            data-title="Herramienta Elipse (F7)"
+                            data-desc="Dibuja elipses concéntricas o círculos perfectos utilizando la restricción por teclado CTRL. Cuenta con tres modos estructurales críticos en la barra de propiedades: Elipse Completa, Sector Circular (forma de tarta/pastel ideal para infografías y gráficos estadísticos) y Arco Abierto (línea curva sin relleno)."
+                            data-type="ellipse">
+                        <span class="text-xs font-mono text-emerald-400 mb-2 block">HERRAMIENTA F7</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Elipse, Arcos y Sectores Circulares</h3>
+                    </button>
+                    <button class="tool-btn text-left p-5 bg-slate-900 border-b-4 border-emerald-500 rounded-xl hover:bg-slate-800 transition-all flex flex-col justify-between group"
+                            data-title="Herramienta Polígono (Y)"
+                            data-desc="Genera formas simétricas poligonales multinodales. Su gran ventaja publicitaria es que puedes aumentar o disminuir la cantidad de lados de forma viva directamente desde la barra de propiedades superior, incluso después de haber dibujado el objeto en la página."
+                            data-type="polygon">
+                        <span class="text-xs font-mono text-emerald-400 mb-2 block">HERRAMIENTA Y</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Polígonos Dinámicos</h3>
+                    </button>
+                    <button class="tool-btn text-left p-5 bg-slate-900 border-b-4 border-emerald-500 rounded-xl hover:bg-slate-800 transition-all flex flex-col justify-between group"
+                            data-title="Herramienta Estrella"
+                            data-desc="Permite trazar estrellas perfectas regulares. La barra de propiedades te permite configurar de manera independiente la cantidad de puntas y el nivel de perfilado o nitidez (profundidad de las puntas hacia el centro matemático de la figura)."
+                            data-type="star">
+                        <span class="text-xs font-mono text-emerald-400 mb-2 block">CAJA DE HERRAMIENTAS</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Estrella Standard e Indicador de Perfilado</h3>
+                    </button>
+                    <button class="tool-btn text-left p-5 bg-slate-900 border-b-4 border-emerald-500 rounded-xl hover:bg-slate-800 transition-all flex flex-col justify-between group"
+                            data-title="Estrella Compleja"
+                            data-desc="Genera formas estelares con intersecciones de líneas automáticas internas. Al aplicar rellenos uniformes o interactivos, las áreas donde las líneas se cruzan generan espacios vacíos intercalados automáticamente, creando patrones ópticos complejos ideales para logotipos y heráldica."
+                            data-type="complex-star">
+                        <span class="text-xs font-mono text-emerald-400 mb-2 block">CAJA DE HERRAMIENTAS</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Estrella Compleja y Cruce de Líneas</h3>
+                    </button>
+                    <button class="tool-btn text-left p-5 bg-slate-900 border-b-4 border-emerald-500 rounded-xl hover:bg-slate-800 transition-all flex flex-col justify-between group"
+                            data-title="Formas Básicas / Comunes"
+                            data-desc="Un catálogo de glifos vectoriales pre-diseñados de alta utilidad comercial: flechas perfectas, diagramas de flujo, banners publicitarios, orlas de diplomas y globos de diálogo para historietas. Muchas de estas formas poseen un nodo glifo de color rojo que permite deformar la anatomía de la pieza de forma controlada sin perder la simetría original."
+                            data-type="shapes">
+                        <span class="text-xs font-mono text-emerald-400 mb-2 block">FORMAS PERFECTAS</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Formas Comunes y Nodos de Control Rojo</h3>
+                    </button>
+                </div>
+            </section>
+
+            <section id="content-duplicar" class="tab-content hidden space-y-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-1 bg-slate-900 border border-slate-800 p-6 rounded-xl space-y-4">
+                        <h3 class="text-lg font-bold text-white font-bebas tracking-wide border-b border-slate-800 pb-2 text-emerald-400">Las 3 Variantes de Duplicado de Alta Velocidad</h3>
+                        <div class="space-y-3 text-xs leading-relaxed">
+                            <p><strong class="text-white block">1. Comando Ctrl + D:</strong> Duplica el objeto asignando una distancia de desplazamiento automático (*offset*) configurable desde la barra de propiedades libre de selección. Si mueves el primer duplicado a una posición, los siguientes recordarán el patrón exacto.</p>
+                            <p><strong class="text-white block">2. Tecla (+) del Teclado Numérico:</strong> Súper veloz. Saca una copia idéntica exactamente encima del objeto seleccionado, manteniendo la posición de coordenadas X e Y intacta.</p>
+                            <p><strong class="text-white block">3. Clic Derecho durante Arrastre:</strong> Tomas un objeto con el clic izquierdo, lo desplazas por el área de trabajo y, **antes de soltar el clic izquierdo**, presionas una vez el clic derecho del ratón. Verás aparecer un signo (+) en el cursor indicando la clonación de posición libre.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2 bg-slate-900 border border-slate-800 p-6 rounded-xl space-y-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-white font-bebas tracking-wide text-amber-400">Simulador de Orden de Apilamiento de Objetos</h3>
+                            <p class="text-xs text-slate-400">Simula el comportamiento real del menú Orden de Corel Draw. Selecciona una figura haciendo clic sobre ella y utiliza la botonera idéntica al programa para reordenar las profundidades en el eje Z.</p>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row items-center justify-around gap-6 bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <div class="flex flex-col gap-2 w-full md:w-56">
+                                <span class="text-[10px] font-mono font-bold text-slate-500 text-center uppercase tracking-wider block">Comandos de Profundidad</span>
+                                <button onclick="ejecutarOrden('adelantePag')" type="button" class="bg-slate-900 text-slate-200 border border-slate-700 hover:border-emerald-500 px-3 py-1.5 rounded text-xs font-medium text-left flex justify-between items-center transition-colors">
+                                    <span>Hacia delante de la página</span> <kbd class="text-[9px] bg-slate-800 px-1 rounded text-slate-400">Ctrl+Inicio</kbd>
+                                </button>
+                                <button onclick="ejecutarOrden('atrasPag')" type="button" class="bg-slate-900 text-slate-200 border border-slate-700 hover:border-emerald-500 px-3 py-1.5 rounded text-xs font-medium text-left flex justify-between items-center transition-colors">
+                                    <span>Hacia atrás de la página</span> <kbd class="text-[9px] bg-slate-800 px-1 rounded text-slate-400">Ctrl+Fin</kbd>
+                                </button>
+                                <button onclick="ejecutarOrden('avanzarUna')" type="button" class="bg-slate-900 text-slate-200 border border-slate-700 hover:border-emerald-500 px-3 py-1.5 rounded text-xs font-medium text-left flex justify-between items-center transition-colors">
+                                    <span>Avanzar una capa</span> <kbd class="text-[9px] bg-slate-800 px-1 rounded text-slate-400">Ctrl+AvPág</kbd>
+                                </button>
+                                <button onclick="ejecutarOrden('retrocederUna')" type="button" class="bg-slate-900 text-slate-200 border border-slate-700 hover:border-emerald-500 px-3 py-1.5 rounded text-xs font-medium text-left flex justify-between items-center transition-colors">
+                                    <span>Retroceder una capa</span> <kbd class="text-[9px] bg-slate-800 px-1 rounded text-slate-400">Ctrl+RePág</kbd>
+                                </button>
+                            </div>
+
+                            <div class="w-64 h-64 bg-slate-900 border-2 border-dashed border-slate-800 rounded-xl relative overflow-hidden flex items-center justify-center">
+                                <div id="shape-yellow" onclick="seleccionarObjetoOrden('shape-yellow')" class="shape-order w-28 h-28 bg-amber-400 rounded-lg absolute top-8 left-8 shadow-xl cursor-pointer border-2 border-transparent select-none flex items-center justify-center text-slate-950 font-bold" style="z-index: 10;">
+                                    Amarillo
+                                </div>
+                                <div id="shape-blue" onclick="seleccionarObjetoOrden('shape-blue')" class="shape-order w-28 h-28 bg-blue-500 rounded-full absolute top-16 left-16 shadow-xl cursor-pointer border-2 border-transparent select-none flex items-center justify-center text-white font-bold" style="z-index: 20;">
+                                    Azul
+                                </div>
+                                <div id="shape-red" onclick="seleccionarObjetoOrden('shape-red')" class="shape-order w-0 h-0 border-l-[60px] border-l-transparent border-r-[60px] border-r-transparent border-b-[105px] border-b-rose-500 absolute top-20 left-20 shadow-xl cursor-pointer border-2 border-transparent select-none flex items-center justify-center" style="z-index: 30;">
+                                    <span class="absolute top-12 -left-4 text-white font-bold text-xs">Rojo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-[11px] text-slate-400">
+                            Objeto seleccionado actual: <span id="selectedOrderLabel" class="text-emerald-400 font-bold uppercase font-mono">Ninguno (Haz clic en uno)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-forma" class="tab-content hidden space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <h2 class="text-xl font-bold text-white mb-2 font-bebas tracking-wide flex items-center gap-2">
+                        <span class="w-2 h-6 bg-emerald-500 rounded-full"></span> Laboratorio Avanzado de Intersección, Recorte y Soldadura
+                    </h2>
+                    <p class="text-xs text-slate-400 mb-6">
+                        Experimenta de forma directa la lógica matemática de trazados vectoriales. Disponemos de dos objetos: un Círculo Turquesa (Objeto Destino) y un Cuadrado Naranja (Objeto Origen / Cuchilla de corte). Presiona los botones tácticos de acción para visualizar el resultado geométrico interactivo calculado en código real.
+                    </p>
+
+                    <div class="flex flex-col lg:flex-row gap-8 items-center justify-center bg-slate-950 p-6 rounded-xl border border-slate-800">
+                        <div class="flex flex-col gap-3 w-full lg:w-64">
+                            <button onclick="aplicarOperacionBooleana('soldar')" class="bg-slate-900 hover:bg-emerald-600 hover:text-slate-950 text-white p-3 rounded-xl border border-slate-800 transition-all font-bold text-sm text-left flex items-center gap-2">
+                                <span class="w-3 h-3 bg-emerald-400 rounded-sm"></span> Soldar (Combinación total)
+                            </button>
+                            <button onclick="aplicarOperacionBooleana('recortar')" class="bg-slate-900 hover:bg-emerald-600 hover:text-slate-950 text-white p-3 rounded-xl border border-slate-800 transition-all font-bold text-sm text-left flex items-center gap-2">
+                                <span class="w-3 h-3 bg-rose-500 rounded-sm"></span> Recortar (Origen corta Destino)
+                            </button>
+                            <button onclick="aplicarOperacionBooleana('interseccion')" class="bg-slate-900 hover:bg-emerald-600 hover:text-slate-950 text-white p-3 rounded-xl border border-slate-800 transition-all font-bold text-sm text-left flex items-center gap-2">
+                                <span class="w-3 h-3 bg-blue-400 rounded-sm"></span> Intersección (Área en común)
+                            </button>
+                            <button onclick="aplicarOperacionBooleana('reset')" class="text-slate-500 text-xs hover:text-white underline transition-colors pt-2">
+                                Restablecer figuras iniciales
+                            </button>
+                        </div>
+
+                        <div class="w-80 h-80 bg-slate-900 rounded-xl border border-slate-800 flex items-center justify-center p-4">
+                            <svg id="booleanCanvas" width="260" height="260" viewBox="0 0 260 260" class="overflow-visible">
+                                <g id="group-normal-shapes">
+                                    <circle cx="100" cy="130" r="60" fill="#06b6d4" fill-opacity="0.7" stroke="#0891b2" stroke-width="2" />
+                                    <rect x="100" y="70" width="110" height="110" fill="#f97316" fill-opacity="0.7" stroke="#ea580c" stroke-width="2" />
+                                </g>
+                                <path id="path-soldar" d="M 100,70 L 210,70 L 210,180 L 160,180 A 60,60 0 1,1 100,70 Z" fill="#a855f7" stroke="#9333ea" stroke-width="3" class="hidden" />
+                                <path id="path-recortar" d="M 100,70 A 60,60 0 1,0 160,130 L 160,130 A 60,60 0 0,0 100,70 Z M 100,70 L 100,180 L 160,180" fill="#06b6d4" stroke="#0891b2" stroke-width="3" class="hidden" />
+                                <path id="path-interseccion" d="M 100,70 A 60,60 0 0,1 160,130 L 100,130 Z" fill="#22c55e" stroke="#16a34a" stroke-width="3" class="hidden" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-quiz" class="tab-content hidden space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                    <h2 class="text-xl font-bold text-white mb-4 font-bebas tracking-wider">Evaluación Formativa - Modulo Geometría y Estructuras</h2>
+                    <form id="quizForm" class="space-y-4">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-semibold text-white">1. ¿Qué tecla del teclado numérico saca un duplicado idéntico exactamente encima de la figura seleccionada?</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center gap-2 bg-slate-900 p-2.5 rounded border border-slate-800"><input type="radio" name="c2_q1" value="inc"> <span>Tecla Enter</span></label>
+                                <label class="flex items-center gap-2 bg-slate-900 p-2.5 rounded border border-slate-800"><input type="radio" name="c2_q1" value="cor"> <span class="text-emerald-400">La tecla Más (+)</span></label>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-semibold text-white">2. ¿Qué ocurre mecánicamente si arrastramos un elemento con el botón izquierdo del ratón y, antes de liberarlo, hacemos un clic derecho?</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center gap-2 bg-slate-900 p-2.5 rounded border border-slate-800"><input type="radio" name="c2_q2" value="cor"> <span class="text-emerald-400">Se genera una copia de posición libre del objeto de manera instantánea</span></label>
+                                <label class="flex items-center gap-2 bg-slate-900 p-2.5 rounded border border-slate-800"><input type="radio" name="c2_q2" value="inc"> <span>El software elimina el objeto original del lienzo de la página</span></label>
+                            </div>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
+                            <p class="text-sm font-semibold text-white">3. Si deseamos realizar un patrón de copias consecutivas que recuerde el espaciado o desplazamiento exacto que le dimos a la primera copia, ¿qué comando usamos?</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center gap-2 bg-slate-900 p-2.5 rounded border border-slate-800"><input type="radio" name="c2_q3" value="inc"> <span>Ctrl + C y luego Ctrl + V</span></label>
+                                <label class="flex items-center gap-2 bg-slate-900 p-2.5 rounded border border-slate-800"><input type="radio" name="c2_q3" value="cor"> <span class="text-emerald-400">El comando Ctrl + D (Duplicar con desvío)</span></label>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="calificarQuizC2()" class="bg-emerald-500 text-slate-950 font-bold px-5 py-2 rounded-lg text-xs shadow-md">Validar Respuestas</button>
+                    </form>
+                    <div id="quizResult" class="hidden mt-4 p-4 rounded-xl border text-sm font-bold"></div>
+                </div>
+            </section>
+
+            <section id="content-admin" class="tab-content hidden space-y-6">
+                <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-6 space-y-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-amber-400 font-bebas tracking-wide">Panel Administrativo Exclusivo del Profesor</h2>
+                        <p class="text-xs text-slate-400">Esta pestaña sólo es accesible para las credenciales maestras del docente administrador.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+                            <h3 class="text-xs font-bold font-mono text-white uppercase">Habilitar / Modificar Cuenta de Alumno</h3>
+                            <form id="adminForm" class="space-y-2 text-xs">
+                                <input type="text" id="adminNewUser" placeholder="Usuario nuevo o existente" class="w-full bg-slate-900 p-2 rounded border border-slate-800 text-white focus:outline-none focus:border-amber-500">
+                                <input type="text" id="adminNewPass" placeholder="Nueva contraseña" class="w-full bg-slate-900 p-2 rounded border border-slate-800 text-white focus:outline-none focus:border-amber-500">
+                                <button type="button" onclick="guardarCredencialesAlumno()" class="w-full bg-amber-500 text-slate-950 py-2 rounded font-bold">Guardar Cambios Locales</button>
+                            </form>
+                        </div>
+
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 lg:col-span-2">
+                            <h3 class="text-xs font-bold font-mono text-white uppercase mb-2">Base de datos de alumnos en esta computadora</h3>
+                            <div class="overflow-x-auto text-xs">
+                                <table class="w-full text-left">
+                                    <thead class="bg-slate-900 text-slate-400 border-b border-slate-800 font-mono text-[10px]">
+                                        <tr><th class="p-2">Usuario</th><th class="p-2">Rol</th><th class="p-2 text-right">Acción</th></tr>
+                                    </thead>
+                                    <tbody id="adminTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <div id="toolModal" class="fixed inset-0 bg-black/90 z-[101] hidden flex items-center justify-center p-4">
+        <span onclick="closeModal()" class="absolute top-5 right-8 text-white text-4xl font-bold cursor-pointer hover:text-emerald-400">&times;</span>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col items-center justify-center min-h-[260px] relative">
+                <div id="modalAnimCanvas" class="w-full h-full flex items-center justify-center">
+                    </div>
+                <div class="absolute bottom-2 text-[10px] font-mono text-slate-500">Visualización Vectorial Integrada vía Código</div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 id="modalTitle" class="text-3xl font-bebas tracking-wide text-emerald-400"></h3>
+                <p id="modalDesc" class="text-sm text-slate-300 leading-relaxed"></p>
+                <button onclick="closeModal()" class="w-full bg-slate-800 border border-slate-700 text-white font-bold py-2 rounded-lg text-xs hover:bg-slate-700">
+                    Cerrar Ventana de Análisis
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CONFIGURACIÓN DE ACCESOS POR DEFECTO REQUERIDOS POR EL PROFESOR
+        const dbInicial = {
+            "GKempe": { key: "Q29yZWxHSzI2", role: "profesor" }, // Contraseña descifrada: CorelGK26
+            "alumno1": { key: "YWx1bW5vMDE=", role: "alumno" }   // Contraseña descifrada: alumno01
+        };
+
+        if(!localStorage.getItem('corel_campus_db_c2')) {
+            localStorage.setItem('corel_campus_db_c2', JSON.stringify(dbInicial));
+        }
+
+        let usuarioActivo = "";
+        let rolActivo = "";
+        let objetoOrdenSeleccionado = "";
+
+        // Autenticación de Acceso Seguro
+        document.getElementById('loginForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const user = document.getElementById('loginUser').value.trim();
+            const pass = document.getElementById('loginPassword').value.trim();
+            const errorBox = document.getElementById('loginError');
+
+            const db = JSON.parse(localStorage.getItem('corel_campus_db_c2'));
+
+            if(db[user] && atob(db[user].key) === pass) {
+                usuarioActivo = user;
+                rolActivo = db[user].role;
+                
+                document.getElementById('login-overlay').classList.add('hidden');
+                document.getElementById('app-content').classList.remove('hidden');
+                document.getElementById('userBadge').innerText = usuarioActivo.toUpperCase();
+
+                // CONTROL RESTRICTIVO ABSOLUTO: Solo el profesor GKempe accede al botón del panel
+                if(rolActivo === "profesor") {
+                    document.getElementById('tab-admin').classList.remove('hidden');
+                    renderizarTablaAlumnosAdmin();
+                }
+            } else {
+                errorBox.classList.remove('hidden');
+            }
+        });
+
+        // Control de Pestañas (SPA)
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+
+            document.querySelectorAll('nav button').forEach(btn => {
+                if(btn.id === 'tab-admin') {
+                    btn.className = "px-3 py-2 text-xs font-medium rounded-lg transition-all text-amber-400 hover:text-amber-300 border border-dashed border-amber-500/20 bg-amber-500/5";
+                } else {
+                    btn.className = "px-3 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-slate-200";
+                }
+            });
+
+            const currentBtn = document.getElementById('tab-' + tabId);
+            if(tabId === 'admin') {
+                currentBtn.className = "px-3 py-2 text-xs font-bold rounded-lg bg-amber-500 text-slate-950 shadow";
+            } else {
+                currentBtn.className = "px-3 py-2 text-xs font-bold rounded-lg bg-emerald-500 text-slate-950 shadow";
+            }
+        }
+
+        // --- MANEJO DEL MODAL E INYECCIÓN DE ANIMACIONES VECTORIALES POR CÓDIGO ---
+        document.querySelectorAll('.tool-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const desc = this.getAttribute('data-desc');
+                const type = this.getAttribute('data-type');
+                const canvas = document.getElementById('modalAnimCanvas');
+
+                document.getElementById('modalTitle').innerText = title;
+                document.getElementById('modalDesc').innerText = desc;
+
+                // Enlace de animaciones vectoriales por defecto mediante código
+                if(type === 'rect') {
+                    canvas.innerHTML = `<div class="w-32 h-24 border-4 border-emerald-400 bg-emerald-500/20 anim-rect"></div>`;
+                } else if(type === 'ellipse') {
+                    canvas.innerHTML = `<div class="w-28 h-28 border-4 border-emerald-400 bg-emerald-500/20 rounded-full anim-ellipse"></div>`;
+                } else {
+                    canvas.innerHTML = `
+                        <svg class="w-28 h-28 text-emerald-400 anim-poly" viewBox="0 0 100 100" fill="currentColor">
+                            <polygon points="50,5 90,35 75,85 25,85 10,35" fill-opacity="0.3" stroke="currentColor" stroke-width="3"/>
+                        </svg>
+                    `;
+                }
+
+                document.getElementById('toolModal').classList.remove('hidden');
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('toolModal').classList.add('hidden');
+            document.getElementById('modalAnimCanvas').innerHTML = "";
+        }
+
+        // --- SIMULADOR DE ORDEN DE CAPAS (ESTILO BOTONERA CORELDRAW) ---
+        function seleccionarObjetoOrden(id) {
+            document.querySelectorAll('.shape-order').forEach(el => el.classList.remove('ring-4', 'ring-emerald-400'));
+            const target = document.getElementById(id);
+            target.classList.add('ring-4', 'ring-emerald-400');
+            objetoOrdenSeleccionado = id;
+            document.getElementById('selectedOrderLabel').innerText = id.replace('shape-', '');
+        }
+
+        function ejecutarOrden(accion) {
+            if(!objetoOrdenSeleccionado) {
+                alert("Por favor, selecciona primero una figura geométrica haciendo clic directo sobre ella.");
+                return;
+            }
+            const item = document.getElementById(objetoOrdenSeleccionado);
+            let z = parseInt(item.style.zIndex) || 0;
+
+            if(accion === 'adelantePag') item.style.zIndex = 50;
+            if(accion === 'atrasPag') item.style.zIndex = 5;
+            if(accion === 'avanzarUna') item.style.zIndex = z + 5;
+            if(accion === 'retrocederUna') item.style.zIndex = Math.max(0, z - 5);
+        }
+
+        // --- SIMULADOR DE OPERACIONES BOOLEANAS ---
+        function aplicarOperacionBooleana(op) {
+            document.getElementById('group-normal-shapes').classList.add('hidden');
+            document.getElementById('path-soldar').classList.add('hidden');
+            document.getElementById('path-recortar').classList.add('hidden');
+            document.getElementById('path-interseccion').classList.add('hidden');
+
+            if(op === 'reset') {
+                document.getElementById('group-normal-shapes').classList.remove('hidden');
+            } else {
+                document.getElementById('path-' + op).classList.remove('hidden');
+            }
+        }
+
+        // --- QUIZ FORMATIVO ---
+        function calificarQuizC2() {
+            const form = document.getElementById('quizForm');
+            const resBox = document.getElementById('quizResult');
+            
+            const r1 = form.elements['c2_q1'].value;
+            const r2 = form.elements['c2_q2'].value;
+            const r3 = form.elements['c2_q3'].value;
+
+            if(!r1 || !r2 || !r3) {
+                alert("Completa el examen interactivo antes de procesar.");
+                return;
+            }
+
+            let ok = (r1 === 'cor' && r2 === 'cor' && r3 === 'cor');
+            resBox.className = "mt-4 p-4 rounded-xl border text-sm font-bold block";
+            if(ok) {
+                resBox.classList.add('bg-emerald-950/40', 'border-emerald-800', 'text-emerald-300');
+                resBox.innerText = "¡Excelente! Has dominado las 3 variantes críticas de copia publicitaria en Corel Draw.";
+            } else {
+                resBox.classList.add('bg-rose-950/40', 'border-rose-800', 'text-rose-400');
+                resBox.innerText = "Revisión recomendada. Vuelve a analizar los atajos de la barra lateral.";
+            }
+        }
+
+        // --- GESTIÓN EXCLUSIVA DE ALUMNOS (PANEL DOCENTE) ---
+        function renderizarTablaAlumnosAdmin() {
+            const db = JSON.parse(localStorage.getItem('corel_campus_db_c2'));
+            const tbody = document.getElementById('adminTableBody');
+            tbody.innerHTML = "";
+
+            Object.keys(db).forEach(user => {
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-slate-900";
+                const esMaestro = (user === "GKempe");
+
+                tr.innerHTML = `
+                    <td class="p-2 text-white font-bold">${user}</td>
+                    <td class="p-2 text-slate-400 uppercase font-mono text-[10px]">${db[user].role}</td>
+                    <td class="p-2 text-right">
+                        ${esMaestro ? '<span class="text-amber-500 italic font-medium">Docente Maestro</span>' : 
+                        `<button onclick="eliminarEstudiante('${user}')" class="text-rose-400 hover:underline">Revocar Acceso</button>`}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function guardarCredencialesAlumno() {
+            const user = document.getElementById('adminNewUser').value.trim();
+            const pass = document.getElementById('adminNewPass').value.trim();
+
+            if(!user || !pass) { return alert("Rellena ambos parámetros."); }
+            if(user === "GKempe") { return alert("El Administrador Maestro no se puede modificar por esta interfaz."); }
+
+            const db = JSON.parse(localStorage.getItem('corel_campus_db_c2'));
+            db[user] = { key: btoa(pass), role: "alumno" };
+            localStorage.setItem('corel_campus_db_c2', JSON.stringify(db));
+
+            document.getElementById('adminNewUser').value = "";
+            document.getElementById('adminNewPass').value = "";
+            renderizarTablaAlumnosAdmin();
+            alert(`Acceso de Alumno '${user}' guardado con éxito.`);
+        }
+
+        function eliminarEstudiante(user) {
+            if(confirm(`¿Deseas deshabilitar las credenciales de '${user}'?`)) {
+                const db = JSON.parse(localStorage.getItem('corel_campus_db_c2'));
+                delete db[user];
+                localStorage.setItem('corel_campus_db_c2', JSON.stringify(db));
+                renderizarTablaAlumnosAdmin();
+            }
+        }
+    </script>
+</body>
+</html>
