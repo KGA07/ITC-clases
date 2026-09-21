@@ -1,0 +1,165 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 1,
+    "titulo": "La PC como herramienta de oficina",
+    "modulo": "Módulo 1 – Introducción y Manejo de PC",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a conocer las partes de la PC, los distintos tipos de equipos y a ordenar archivos como lo hace un asistente administrativo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 1\\Clase 1 Introducción",
+  "objetivos": [
+    "Identificar las partes principales de una PC: CPU, monitor, teclado y mouse.",
+    "Diferenciar entre computadora de escritorio y notebook según uso.",
+    "Realizar encendido, apagado y mantenimiento básico de la PC.",
+    "Crear carpetas y guardar archivos en el Escritorio de forma ordenada."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es una computadora personal?",
+      "emoji": "💻",
+      "imagen": {
+        "src": "img/hardware.png",
+        "alt": "Hardware y software",
+        "caption": "Hardware es todo lo que se puede tocar; el software son los programas y datos."
+      },
+      "parrafos": [
+        "La computadora es una máquina electrónica que recibe y procesa datos para convertirlos en información conveniente y útil. En el ámbito de oficina la conocemos como PC (Personal Computer)."
+      ],
+      "puntos": [
+        "Hardware: es la parte física y tangible (circuitos electrónicos, gabinete, teclado, monitor, placas).",
+        "Software: es la parte intangible (programas, datos e información).",
+        "Ambos deben trabajar juntos: el hardware ejecuta las órdenes del software."
+      ]
+    },
+    {
+      "titulo": "Partes principales de la PC",
+      "emoji": "🧩",
+      "imagenes": [
+        { "src": "img/gabinete.png", "alt": "CPU / gabinete", "caption": "CPU / Gabinete" },
+        { "src": "img/monitor.png", "alt": "Monitor", "caption": "Monitor" },
+        { "src": "img/teclado.png", "alt": "Teclado", "caption": "Teclado" },
+        { "src": "img/mouse.png", "alt": "Mouse", "caption": "Mouse" }
+      ],
+      "parrafos": [
+        "El teclado permite escribir; el mouse (o ratón) nos permite seleccionar y hacer clic; el monitor muestra la información; y la CPU (la unidad central de procesamiento) es el cerebro de la computadora que interpreta y ejecuta los programas."
+      ],
+      "puntos": [
+        "CPU / gabinete: aloja el procesador, la memoria y los discos.",
+        "Monitor: pantalla donde se visualiza el trabajo realizado.",
+        "Teclado: entrada de texto y atajos.",
+        "Mouse: navegación y selección en pantalla."
+      ]
+    },
+    {
+      "titulo": "Tipos de computadoras",
+      "emoji": "🖥️",
+      "imagenes": [
+        { "src": "img/escritorio.png", "alt": "PC de escritorio", "caption": "Escritorio" },
+        { "src": "img/notebook.png", "alt": "Notebook", "caption": "Notebook" },
+        { "src": "img/aio.png", "alt": "All in One", "caption": "All in One" }
+      ],
+      "parrafos": [
+        "Conocer los tipos de PC ayuda a elegir el equipo adecuado para cada puesto de trabajo."
+      ],
+      "puntos": [
+        "PC de escritorio: uso fijo (hogar/ oficina), económica, fácil de actualizar (disco, RAM, procesador, placa de video). Su desventaja es la portabilidad.",
+        "Notebook: apta para tareas básicas y profesionales; más costosa (2 a 3 veces); su desventaja es la batería limitada y menor capacidad de actualización.",
+        "Netbook: máxima portabilidad; pensar para tareas de oficina o internet con bajo procesamiento; batería más prolongada.",
+        "AIO (All in One): híbrido entre escritorio y notebook; ocupa poco espacio; solo se puede cambiar disco y RAM."
+      ]
+    },
+    {
+      "titulo": "Encendido, apagado y mantenimiento básico",
+      "emoji": "🔌",
+      "parrafos": [
+        "Un uso correcto prolonga la vida útil del equipo y evita pérdida de información."
+      ],
+      "puntos": [
+        "Encendido: presionar el botón de encendido y esperar la carga del sistema operativo (Windows).",
+        "Apagado correcto: Menú Inicio → Apagar. Evitar cortar la luz o mantener presionado el botón de encendido salvo emergencia.",
+        "Mantenimiento: mantener limpio el teclado y la carcasa, evitar polvo en ventiladores y conectar el equipo a una zapatilla con protección.",
+        "Guardar siempre: guardar los trabajos periódicamente (Ctrl + G) para no perder información."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Crear carpetas y guardar archivos",
+      "consigna": "Organizá tu Escritorio creando una estructura de carpetas como si fueras un asistente administrativo que recibe documentación de la empresa.",
+      "pasos": [
+        "Hacé clic derecho sobre un lugar vacío del Escritorio → Nuevo → Carpeta.",
+        "Nombre la carpeta «Documentos de trabajo».",
+        "Dentro creá dos subcarpetas: «Facturas» y «Recibos».",
+        "Creá un archivo de texto (clic derecho → Nuevo → Documento de texto) dentro de «Facturas» y nombralo «Factura 001».",
+        "Verificá que el archivo quedó guardado dentro de las carpetas correspondientes (Explorador de archivos)."
+      ],
+      "entrega": "Capturá la pantalla mostrando la estructura de carpetas y el archivo creado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál de estas partes de la PC es considerada HARDWARE?",
+            "opciones": ["El sistema operativo Windows", "El teclado", "Un documento de Word", "La información de un disco"],
+            "correcta": "El teclado"
+          },
+          {
+            "pregunta": "¿Cuál es la principal desventaja de una PC de escritorio?",
+            "opciones": ["Su elevado costo", "La poca portabilidad", "La imposibilidad de actualizarse", "Consume demasiado espacio en el escritorio de Windows"],
+            "correcta": "La poca portabilidad"
+          },
+          {
+            "pregunta": "¿Cuál fue el dato que usamos para nombrar un archivo en el ejercicio?",
+            "opciones": ["Recibos", "Documentos de trabajo", "Factura 001", "Documento de texto"],
+            "correcta": "Factura 001"
+          },
+          {
+            "pregunta": "¿Qué nos permite hacer la CPU en la computadora?",
+            "opciones": ["Mostrar la imagen en el monitor", "Interpretar y ejecutar los programas", "Guardar archivos en papel", "Escribir textos"],
+            "correcta": "Interpretar y ejecutar los programas"
+          },
+          {
+            "pregunta": "¿Cuál es la forma correcta de apagar la PC para no perder información?",
+            "opciones": ["Cortar la luz directamente", "Mantener presionado el botón de encendido", "Ir a Menú Inicio → Apagar", "Desconectar el monitor"],
+            "correcta": "Ir a Menú Inicio → Apagar"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la captura de pantalla con la estructura de carpetas ordenada correctamente.",
+  "lectura": "Conocer la PC como herramienta de oficina es la base de todo el trabajo administrativo. Saber qué es cada parte, cómo elegir entre escritorio y notebook, y cómo encender, apagar y mantener el equipo en buen estado te permite trabajar con autonomía, orden y sin perder información.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y motivación", "que": "Presentar el curso, contar qué van a lograr y encender las computadoras", "min": "10 min" },
+      { "titulo": "Qué es una PC y sus partes", "que": "Explicar hardware/software y recorrer con los equipos las partes reales", "min": "25 min" },
+      { "titulo": "Tipos de computadoras", "que": "Comparar escritorio, notebook, netbook y AIO; preguntar cuál usan en casa", "min": "15 min" },
+      { "titulo": "Encendido, apagado y mantenimiento", "que": "Mostrar el cierre correcto y hábitos de cuidado del equipo", "min": "15 min" },
+      { "titulo": "Práctica: carpetas en el Escritorio", "que": "Guiar el ejercicio paso a paso y que los alumnos compartan su pantalla", "min": "20 min" },
+      { "titulo": "Cierre y autoevaluación", "que": "Repaso oral rápido con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿con qué tipo de computadora trabajan en casa? ¿Alguna vez perdieron un archivo? Usar esa situación para conectar con el apagado correcto y el guardado.",
+      "Mostrar la propia PC y señalar CPU, monitor, teclado y mouse como 'el cuerpo de la máquina'.",
+      "Ritmo sugerido: mantener el turno de diálogo corto (5 minutos) y volver al equipo para practicar."
+    ],
+    "aclarar": [
+      "Hardware es todo lo que se puede tocar; software es lo que no (programas y datos).",
+      "La CPU NO es solo el 'gabinete': es el procesador que interpreta y ejecuta programas.",
+      "Apagar con Menú Inicio → Apagar, nunca cortando la luz; guardar cada tanto con Ctrl + G.",
+      "Notebook = más costosa y menos actualizable que el escritorio; útil para tareas básicas y profesionales."
+    ],
+    "ejemplos": [
+      "Abrir el Explorador de archivos y mostrar el Escritorio como 'el lugar visible' de carpetas y accesos.",
+      "Crear la carpeta del ejercicio en tiempo real mientras los alumnos la replican.",
+      "Mostrar la diferencia entre apagar (cierra todo) y simplemente cerrar la tapa (suspende)."
+    ]
+  }
+}

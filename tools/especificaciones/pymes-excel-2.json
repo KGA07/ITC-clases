@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 2,
+    "titulo": "Fórmulas y Tablas",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a sacarle el jugo a las fórmulas para calcular ventas y porcentajes, y a convertir tus datos en tablas con totales y filtros listos para usar.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 2 Formulas y Tablas",
+  "objetivos": [
+    "Distinguir fórmulas simples, fórmulas referenciales y funciones predefinidas.",
+    "Resolver suma, resta, división, multiplicación y porcentaje con las reglas de Excel.",
+    "Convertir un rango en Tabla con estilo, fila de totales y funciones.",
+    "Filtrar datos por texto, número o fecha y agregar segmentación de datos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Tipos de cálculos en Excel",
+      "emoji": "🧮",
+      "parrafos": [
+        "Excel calcula de tres maneras: fórmulas simples con valores sueltos, fórmulas referenciales que apuntan a celdas y funciones predefinidas listas para usar. Cuanto más referencial sea tu fórmula, más automática: si cambiás el dato, el resultado se actualiza solo."
+      ],
+      "puntos": [
+        "Fórmula simple: =10+5 usa valores directos; es rígida y conviene evitarla.",
+        "Fórmula referencial: =A2+B2 suma lo que hay en las celdas; si cambiás A2 o B2, el total se recalcula solo.",
+        "Función predefinida: =SUMA(A2:A10) resuelve un rango entero sin escribir celda por celda.",
+        "Consejo: en administración, casi siempre trabajás con referencias a celdas para que la planilla se procese sola."
+      ]
+    },
+    {
+      "titulo": "Los cálculos básicos",
+      "emoji": "➕",
+      "parrafos": [
+        "Las operaciones básicas tienen operadores propios y un orden de cálculo igual que en matemática: primero paréntesis, luego potencias, después multiplicación y división, y por último suma y resta."
+      ],
+      "puntos": [
+        "Suma: =A1+B1 o =SUMA(A1:A10). Resta: =A1-B1.",
+        "Multiplicación: =A1*B1. División: =A1/B1. Ojo: el operador no es la palabra, es el símbolo.",
+        "Porcentaje: =B1*21% para sumar IVA a un precio, o =B1*(1+21%) para precio final con IVA incluido.",
+        "Orden de prioridad: =5+10*2 da 25, no 30, porque la multiplicación se resuelve antes que la suma.",
+        "Si te olvidás un operador, Excel te avisa con un error (#¡NOMBRE!, #¡VALOR!) que está en la celda."
+      ]
+    },
+    {
+      "titulo": "Formato como tabla",
+      "emoji": "📋",
+      "parrafos": [
+        "Convertir un rango en Tabla (Ctrl + T) transforma tus datos en una estructura inteligente: se le pone nombre, se marcan los encabezados y cada columna se puede referenciar por nombre en las fórmulas."
+      ],
+      "puntos": [
+        "Seleccionar el rango con encabezados → Inicio → Dar formato como tabla, o Ctrl + T y confirmar.",
+        "Estilos de tabla: galería en el grupo Estilos con colores y franjas; se elige y se aplica al instante.",
+        "Con la tabla activa aparece la ficha contextual Diseño de tabla (opciones de estilo, botón tabla dinámica, fila de totales).",
+        "Ventaja administrativa: al agregar filas nuevas, la tabla las toma automáticamente, sin tener que ajustar los rangos de las fórmulas."
+      ]
+    },
+    {
+      "titulo": "Totales, filtros y segmentación",
+      "emoji": "🔍",
+      "parrafos": [
+        "Una tabla te da herramientas de análisis rápidas: la fila de totales calcula funciones como SUMA o PROMEDIO sobre el resto, y los filtros te dejan ver solo lo que necesitás."
+      ],
+      "puntos": [
+        "Fila de totales: Diseño de tabla → Fila de totales; aparece abajo y cada celda tiene una lista de funciones (PROMEDIO, SUMA, MAX, CONTAR...).",
+        "Filtros: la flecha en cada encabezado de la tabla permite filtrar por texto (contiene, empieza con), número (mayor que, entre) o fecha (este mes, este año).",
+        "Los filtros se activan con el botón Filtro en Datos, y se quitan con Borrar para volver a ver todo.",
+        "Segmentación de datos: Inicio o Ficha contextual → Segmentación; batones visuales que filtran con un clic y dejan ver qué filtros están activos (ideal para reportes)."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Tabla de ventas con totales y filtros",
+      "consigna": "Armá una tabla de ventas del mes con cálculos de subtotal e IVA, convertila en Tabla con estilo, agregá fila de totales y filtrá las ventas más altas.",
+      "pasos": [
+        "Creá una hoja «Ventas» y cargá encabezados: Fecha, Cliente, Producto, Cantidad, Precio unitario.",
+        "Cargá al menos 8 filas de ventas variadas (fechas de días distintos, distintos clientes y productos).",
+        "En la columna F copiá la fórmula =D2*E2 para calcular el importe de cada venta.",
+        "Seleccioná todo el rango con encabezados, tocá Ctrl + T y elegí un estilo de tabla con franjas.",
+        "Activá la Fila de totales y poné SUMA en la columna de importes y PROMEDIO en la de cantidades.",
+        "Aplicá un filtro de número en Importe para que muestre solo ventas mayores a un valor y probá un filtro por fecha."
+      ],
+      "entrega": "Guardá como «VentasMes_clase2.xlsx» y dejá activa la fila de totales con SUMA de importes.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es una fórmula REFERENCIAL correcta?",
+            "opciones": ["=5+5", "=A2*B2", "=SUMA(A2)", "=CINCO"],
+            "correcta": "=A2*B2"
+          },
+          {
+            "pregunta": "Resultado de =5+10*2 en Excel:",
+            "opciones": ["30", "25", "70", "35"],
+            "correcta": "25"
+          },
+          {
+            "pregunta": "¿Qué función se usa para sumar un rango completo?",
+            "opciones": ["SUMA", "MAX", "CONTAR", "PROMEDIO"],
+            "correcta": "SUMA"
+          },
+          {
+            "pregunta": "¿Qué es la Fila de totales de una tabla?",
+            "opciones": ["Una fila que solo guarda textos", "Una fila con funciones como SUMA o PROMEDIO aplicadas a la tabla", "La fila de encabezados", "Una fila obligatoria para escribir notas"],
+            "correcta": "Una fila con funciones como SUMA o PROMEDIO aplicadas a la tabla"
+          },
+          {
+            "pregunta": "¿Para qué sirve la Segmentación de datos?",
+            "opciones": ["Para sumar automáticamente", "Para filtrar con botones visuales e identificar filtros activos", "Para cambiar el color de la hoja", "Para imprimir más rápido"],
+            "correcta": "Para filtrar con botones visuales e identificar filtros activos"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la tabla con estilo, la fila de totales y al menos una operación de filtro aplicada.",
+  "lectura": "Las fórmulas referenciales y las funciones predefinidas dejan que Excel procese la información solo cuando cambian los datos. Convertir los rangos en Tabla agrega totales, filtros y estilos automáticos que aceleran el trabajo diario. Dominar estos tres conceptos (cálculos, tablas y filtros) es el corazón del trabajo administrativo con Excel.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar cargado de datos de la clase 1 y preguntar cómo calculan hoy", "min": "10 min" },
+      { "titulo": "Tipos de cálculos", "que": "Diferenciar fórmulas simples, referenciales y funciones con ejemplos en vivo", "min": "20 min" },
+      { "titulo": "Cálculos básicos", "que": "Mostrar operadores, orden de prioridad y porcentaje con IVA", "min": "20 min" },
+      { "titulo": "Formato como Tabla", "que": "Convertir un rango en tabla, estilos y fila de totales", "min": "15 min" },
+      { "titulo": "Filtros y segmentación", "que": "Probar filtros de texto, número y fecha y la segmentación", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué quiere saber cada uno de sus ventas del mes (cuánto vendió, promedio por venta) y resolverlo con la tabla.",
+      "Mostrar una tabla de ventas real ya convertida en Tabla con segmentación para que vean el resultado final."
+    ],
+    "aclarar": [
+      "El orden de prioridad cambia los resultados: explicar =5+10*2 con ejemplos de facturación.",
+      "Usar referencias, no valores escritos, para que la planilla se actualice sola: es la diferencia entre planilla viva y planilla muerta.",
+      "La fila de totales no es un total manual: cada celda tiene FUNCIONES de la lista desplegable.",
+      "Un filtro no borra datos: solo oculta filas temporalmente."
+    ],
+    "ejemplos": [
+      "Calcular el precio final con IVA: =B1*(1+21%) y comparar con =B1*21%.",
+      "Convertir las ventas en Tabla y sumar con la fila de totales en vivo.",
+      "Filtrar ventas mayores a un importe y reiniciar con Borrar filtro."
+    ]
+  }
+}

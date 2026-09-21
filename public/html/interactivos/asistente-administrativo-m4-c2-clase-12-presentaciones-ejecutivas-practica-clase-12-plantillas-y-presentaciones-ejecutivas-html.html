@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 12 - Plantillas y presentaciones ejecutivas</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0057ff;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0057ff;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Plantillas y presentaciones ejecutivas</h1>
+  <p class="sub">Práctica Presentación de un informe de ventas · Asistente Administrativo Digital con IA</p>
+  <div class="consigna">Armá la presentación de un informe de ventas usando una plantilla profesional, con un gráfico y una tabla insertados desde datos reales.</div>
+  
+    <div class="q" data-ok="El diseño ya está resuelto: solo completás el contenido">
+      <p class="qt">1. ¿Cuál es la principal ventaja de usar una plantilla?</p>
+      <label class="opt"><input type="radio" name="q0" value="El diseño ya está resuelto: solo completás el contenido"><span>El diseño ya está resuelto: solo completás el contenido</span></label>
+<label class="opt"><input type="radio" name="q0" value="Viene con texto escrito"><span>Viene con texto escrito</span></label>
+<label class="opt"><input type="radio" name="q0" value="No hace falta guardar el archivo"><span>No hace falta guardar el archivo</span></label>
+<label class="opt"><input type="radio" name="q0" value="Se rellena sola con los datos"><span>Se rellena sola con los datos</span></label>
+    </div>
+
+    <div class="q" data-ok="Archivo → Nuevo en PowerPoint, la galería de Slides o sitios online">
+      <p class="qt">2. ¿Dónde buscás plantillas de presentación?</p>
+      <label class="opt"><input type="radio" name="q1" value="Solo en un pendrive"><span>Solo en un pendrive</span></label>
+<label class="opt"><input type="radio" name="q1" value="Archivo → Nuevo en PowerPoint, la galería de Slides o sitios online"><span>Archivo → Nuevo en PowerPoint, la galería de Slides o sitios online</span></label>
+<label class="opt"><input type="radio" name="q1" value="En la impresora"><span>En la impresora</span></label>
+<label class="opt"><input type="radio" name="q1" value="No existen plantillas"><span>No existen plantillas</span></label>
+    </div>
+
+    <div class="q" data-ok="Agregándolo al patrón de diapositivas">
+      <p class="qt">3. ¿Cómo repetís el logo de la empresa en todas las diapositivas?</p>
+      <label class="opt"><input type="radio" name="q2" value="Insertándolo a mano en cada una"><span>Insertándolo a mano en cada una</span></label>
+<label class="opt"><input type="radio" name="q2" value="Agregándolo al patrón de diapositivas"><span>Agregándolo al patrón de diapositivas</span></label>
+<label class="opt"><input type="radio" name="q2" value="Copiando toda la presentación"><span>Copiando toda la presentación</span></label>
+<label class="opt"><input type="radio" name="q2" value="No se puede repetir"><span>No se puede repetir</span></label>
+    </div>
+
+    <div class="q" data-ok="Insertar → Gráfico y pegando los datos en la planilla que se abre">
+      <p class="qt">4. ¿Cómo insertás un gráfico en PowerPoint con tus propios datos?</p>
+      <label class="opt"><input type="radio" name="q3" value="Dibujándolo a mano"><span>Dibujándolo a mano</span></label>
+<label class="opt"><input type="radio" name="q3" value="Insertar → Gráfico y pegando los datos en la planilla que se abre"><span>Insertar → Gráfico y pegando los datos en la planilla que se abre</span></label>
+<label class="opt"><input type="radio" name="q3" value="Solo desde Google Maps"><span>Solo desde Google Maps</span></label>
+<label class="opt"><input type="radio" name="q3" value="Sacándole una foto a la pantalla"><span>Sacándole una foto a la pantalla</span></label>
+    </div>
+
+    <div class="q" data-ok="Unificar tipografía, colores y alineaciones en toda la presentación">
+      <p class="qt">5. ¿Qué es la consistencia visual?</p>
+      <label class="opt"><input type="radio" name="q4" value="Usar colores distintos en cada diapositiva"><span>Usar colores distintos en cada diapositiva</span></label>
+<label class="opt"><input type="radio" name="q4" value="Unificar tipografía, colores y alineaciones en toda la presentación"><span>Unificar tipografía, colores y alineaciones en toda la presentación</span></label>
+<label class="opt"><input type="radio" name="q4" value="Llenar de texto todas las diapositivas"><span>Llenar de texto todas las diapositivas</span></label>
+<label class="opt"><input type="radio" name="q4" value="Usar muchas animaciones"><span>Usar muchas animaciones</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

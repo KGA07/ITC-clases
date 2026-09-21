@@ -1,0 +1,166 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 13,
+    "titulo": "IA aplicada a presentaciones",
+    "modulo": "Módulo 4 – Presentaciones Profesionales",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a usar Canva, Magic Design y Copilot para generar presentaciones rápidas y después dejarlas listas a mano.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 4\\Clase 13 IA en presentaciones",
+  "objetivos": [
+    "Generar presentaciones rápidas con Canva y Magic Design a partir de un tema.",
+    "Crear presentaciones desde datos de Word y Excel con Microsoft Copilot.",
+    "Redactar prompts efectivos: tema, audiencia, tono y cantidad de diapositivas.",
+    "Revisar, corregir y personalizar lo que genera la IA, conociendo sus límites."
+  ],
+  "teoria": [
+    {
+      "titulo": "Canva y Magic Design",
+      "emoji": "🪄",
+      "parrafos": [
+        "Canva es un editor gráfico online con plantillas infinitas, y Magic Design genera una presentación completa a partir de un tema o un texto."
+      ],
+      "puntos": [
+        "Canva: presentaciones listas en la biblioteca de plantillas, editable en minutos.",
+        "Magic Design: escribís el tema, elegís un estilo y Canva arma el borrador en segundos.",
+        "Podés subir tu texto y Magic Design lo organiza en diapositivas.",
+        "Desde ahí se editan colores, fuentes y elementos arrastrando y soltando.",
+        "Ideal para: propuestas, informes visuales y presentaciones a clientes sin diseño previo."
+      ]
+    },
+    {
+      "titulo": "Microsoft Copilot: presentaciones desde Word y Excel",
+      "emoji": "📄",
+      "parrafos": [
+        "Copilot convierte documentos en diapositivas: le pasás un Word o un Excel y te devuelve la presentación armada con esa información."
+      ],
+      "puntos": [
+        "En PowerPoint con Copilot: «Crear presentación a partir de archivo» y seleccionás el Word o Excel.",
+        "Convierte el texto del documento en diapositivas con el tema seleccionado.",
+        "Ideal para informes largos: Copilot extrae lo esencial sin que leas todo el documento.",
+        "Cada diapositiva generada se puede editar como cualquier otra.",
+        "Requiere Microsoft 365 con Copilot activado en el plan de la empresa."
+      ]
+    },
+    {
+      "titulo": "Cómo pedir un buen prompt",
+      "emoji": "💬",
+      "parrafos": [
+        "La calidad de lo que genera la IA depende de lo que le pedís. Un buen prompt define todo antes de empezar."
+      ],
+      "puntos": [
+        "Tema: decí exactamente de qué trata («informe de ventas del primer trimestre»).",
+        "Audiencia: quién la va a ver (jefes, clientes, equipo interno).",
+        "Tono: formal, motivador, didáctico, comercial.",
+        "Cantidad: «hacé 8 diapositivas» evita presentaciones interminables.",
+        "Ejemplo listo: «Creá una presentación de 8 diapositivas sobre el balance 2025, para directivos, tono formal.»"
+      ]
+    },
+    {
+      "titulo": "Revisar, corregir y personalizar lo generado",
+      "emoji": "🔍",
+      "parrafos": [
+        "Lo que produce la IA es un borrador inteligente, no el producto final. Tu trabajo es dejarlo pulido."
+      ],
+      "puntos": [
+        "Leé todo: chequear datos, porcentajes y nombres que la IA pueda inventar.",
+        "Corregí la redacción hasta que suene como vos o como tu empresa.",
+        "Ajustá colores, logos y tipografías a la marca.",
+        "Eliminá diapositivas que sobren y ordená el flujo de ideas.",
+        "Regla de oro: la IA acelera el borrador; la calidad final es responsabilidad tuya."
+      ]
+    },
+    {
+      "titulo": "Derechos y límites de la IA",
+      "emoji": "⚖️",
+      "parrafos": [
+        "Usar IA implica conocer qué puede y qué no puede hacer, y qué responsabilidades quedan en vos."
+      ],
+      "puntos": [
+        "La IA puede inventar datos (alucinaciones): verificar siempre las cifras en la fuente original.",
+        "No subas información confidencial de la empresa a herramientas gratuitas de IA.",
+        "Revisá los términos de uso: algunas plataformas retienen lo que cargás.",
+        "El texto y las ideas finales son responsabilidad del profesional que las presenta.",
+        "Derechos: la IA no es dueña de las decisiones; vos sí sos responsable del resultado."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Pedir a la IA un borrador y mejorarlo manualmente",
+      "consigna": "Generá una presentación con IA a partir de un tema y luego personalizala para que quede profesional.",
+      "pasos": [
+        "Elegí un tema (tu presentación personal, un servicio, un informe de ventas ficticio).",
+        "Pedile a Canva Magic Design o a Copilot que genere 5 a 8 diapositivas con un prompt completo (tema, audiencia, tono y cantidad).",
+        "Revisá el borrador: marcá los datos dudosos y las frases que suenen raras.",
+        "Corregí textos, ajustá colores a una marca y agregale un logo.",
+        "Verificá que las cifras coincidan con tu fuente de datos y presentá la versión final."
+      ],
+      "entrega": "Compartí la presentación final (enlace de Canva o Slides, o archivo PPTX) junto con el prompt que usaste.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué hace Magic Design de Canva?",
+            "opciones": ["Imprime presentaciones", "Genera una presentación a partir de un tema o texto en segundos", "Corrige la ortografía de Word", "Edita solo fotos, no presentaciones"],
+            "correcta": "Genera una presentación a partir de un tema o texto en segundos"
+          },
+          {
+            "pregunta": "¿Cómo crea Copilot presentaciones desde tus documentos?",
+            "opciones": ["«Crear presentación a partir de archivo» seleccionando un Word o Excel", "Copiando manualmente el texto", "Solo con Google Slides", "No puede trabajar con documentos"],
+            "correcta": "«Crear presentación a partir de archivo» seleccionando un Word o Excel"
+          },
+          {
+            "pregunta": "¿Qué debe incluir un buen prompt para armar una presentación?",
+            "opciones": ["Solo el nombre del programa", "Tema, audiencia, tono y cantidad de diapositivas", "El precio de la imprenta", "Nada: la IA sabe solo"],
+            "correcta": "Tema, audiencia, tono y cantidad de diapositivas"
+          },
+          {
+            "pregunta": "Después de que la IA genera la presentación, ¿qué hacés?",
+            "opciones": ["La mando tal cual sin leer", "La reviso, corrijo datos y la personalizo con mi marca", "La borro por las dudas", "Cambio el tema completo"],
+            "correcta": "La reviso, corrijo datos y la personalizo con mi marca"
+          },
+          {
+            "pregunta": "¿Cuál es un límite importante de la IA al armar presentaciones?",
+            "opciones": ["Puede inventar datos que no existen", "Siempre acierta todos los números", "No hay ningún límite", "Roba imágenes siempre"],
+            "correcta": "Puede inventar datos que no existen"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la presentación final, comparará el borrador de la IA con la versión personalizada y evaluará el prompt usado.",
+  "lectura": "La IA acelera el armado de presentaciones: Canva Magic Design genera un borrador a partir del tema en segundos y Copilot convierte un Word o Excel en diapositivas. La clave está en pedir bien (tema, audiencia, tono y cantidad) y en que el resultado final pase por tus manos: revisar datos, corregir textos y personalizar con la marca. La IA da el borrador; la calidad final la definís vos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar si usaron alguna vez IA para crear algo visual y mostrar una presentación hecha con Magic Design", "min": "10 min" },
+      { "titulo": "Canva y Magic Design", "que": "Demostrar la generación de una presentación por tema en vivo", "min": "20 min" },
+      { "titulo": "Copilot desde Word y Excel", "que": "Crear una presentación a partir de un archivo de datos o documento", "min": "15 min" },
+      { "titulo": "Buenos prompts", "que": "Mostrar un prompt pobre y uno completo, comparando los resultados", "min": "15 min" },
+      { "titulo": "Práctica: borrador y mejora", "que": "Guiar el ejercicio de generar, revisar, corregir y personalizar", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo y reflexión sobre límites de la IA", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cuánto tardarían en hacer una presentación a mano y cuánto creen que tarda la IA: la velocidad se usa para dedicarle tiempo a la calidad.",
+      "Mostrar una presentación generada por IA y preguntar qué le cambiarían."
+    ],
+    "aclarar": [
+      "Magic Design y Copilot son herramientas distintas: una genera por tema/estilo y la otra transforma tus documentos.",
+      "Copilot no siempre está en todas las cuentas de Microsoft 365; verificar la licencia antes de prometerla.",
+      "La IA puede «alucinar» datos: las cifras de un informe ejecutivo siempre se verifican en la fuente."
+    ],
+    "ejemplos": [
+      "Generar una presentación de 5 diapositivas en Magic Design escribiendo un tema frente a todos.",
+      "Pasar un Word de ejemplo por Copilot y mostrar las diapositivas resultantes.",
+      "Comparar un prompt vago («hacé una presentación») con uno completo y mostrar por qué el segundo funciona mejor."
+    ]
+  }
+}

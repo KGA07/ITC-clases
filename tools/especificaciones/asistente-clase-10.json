@@ -1,0 +1,162 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 10,
+    "titulo": "Gráficos y análisis simple con IA",
+    "modulo": "Módulo 3 – Planillas de Cálculo",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a crear gráficos de barras y tortas, y a pedirle a la IA que genere fórmulas y conclusiones sobre tus tablas como lo hace un asistente administrativo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 3\\Clase 10 Gráficos y Analisis con IA",
+  "objetivos": [
+    "Reconocer qué tipo de gráfico usar según el dato: barras, tortas o líneas.",
+    "Crear y editar gráficos en Excel y Google Sheets paso a paso.",
+    "Pedir a la IA que genere una fórmula para una celda específica.",
+    "Usar la IA para analizar una tabla y obtener conclusiones claras."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un gráfico y cuál elijo?",
+      "emoji": "📊",
+      "parrafos": [
+        "Un gráfico convierte números en una imagen que se entiende de un vistazo. Elegir el tipo correcto es la mitad del trabajo profesional."
+      ],
+      "puntos": [
+        "Barras: comparar valores entre categorías (ventas de cada mes o de cada sucursal).",
+        "Tortas: mostrar qué porcentaje del total representa cada parte (distribución de gastos).",
+        "Líneas: ver la evolución o tendencia en el tiempo (ingresos de enero a junio).",
+        "Regla simple: si comparás categorías usá barras; si hablás de partes de un todo, torta; si hablás de cambio en el tiempo, línea."
+      ]
+    },
+    {
+      "titulo": "Crear un gráfico en Excel y Google Sheets",
+      "emoji": "📈",
+      "parrafos": [
+        "El gráfico se apoya siempre en los datos: primero tu tabla ordenada, después el gráfico. El mismo procedimiento funciona en Excel y en Sheets."
+      ],
+      "puntos": [
+        "Seleccioná la tabla completa incluyendo los títulos de las columnas.",
+        "En Excel: Insertar → el tipo de gráfico (Columna, Circular, Línea).",
+        "En Sheets: Insertar → Gráfico y Google sugiere el tipo al detectar tus datos.",
+        "Para editar: seleccioná el gráfico y aparecen las herramientas para cambiar títulos, colores y etiquetas.",
+        "Etiquetas de datos: clic sobre el gráfico → Agregar etiquetas para mostrar los valores sobre las barras o porciones."
+      ]
+    },
+    {
+      "titulo": "Pedirle a la IA que genere la fórmula",
+      "emoji": "🤖",
+      "parrafos": [
+        "No necesitás memorizar funciones: podés describirle el problema a la IA y ella te escribe la fórmula lista para pegar."
+      ],
+      "puntos": [
+        "Escribí qué querés calcular y en qué celdas está la información, por ejemplo: «los datos están de A2 a A10, pasame el promedio».",
+        "ChatGPT o Gemini responden con la función exacta, por ejemplo: =PROMEDIO(A2:A10).",
+        "Copiá la fórmula y pegala en la celda donde quieras el resultado.",
+        "Doble chequeo: la IA puede equivocarse; compará el resultado con un cálculo simple tuyo."
+      ]
+    },
+    {
+      "titulo": "IA que analiza tu tabla y devuelve conclusiones",
+      "emoji": "💡",
+      "parrafos": [
+        "La IA no solo calcula: también puede leer una tabla completa y explicarte qué está pasando con los datos, como un mini analista."
+      ],
+      "puntos": [
+        "Copiá los datos de la tabla y pegalos en el chat, o describilos con claridad.",
+        "Pedí conclusiones concretas: «¿qué mes tuvo más ventas? ¿cuál el menor? ¿hay tendencia?».",
+        "La IA te devuelve frases listas para poner en un informe o mail.",
+        "Verificá siempre: las conclusiones deben coincidir con el gráfico que creaste."
+      ]
+    },
+    {
+      "titulo": "Ideas previas: tus datos ordenados primero",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Antes de graficar o analizar, la base debe estar prolija: es la base de datos de tu gráfico."
+      ],
+      "puntos": [
+        "Una fila por elemento y una columna por dato (fecha, concepto, importe).",
+        "Sin celdas vacías en el medio y con títulos claros en la primera fila.",
+        "Usá formato de moneda o número para que el gráfico lea valores reales.",
+        "Cuando los datos están ordenados, el gráfico, la fórmula y la IA trabajan sin errores."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Gráficos de ventas o gastos",
+      "consigna": "Creá un gráfico de torta sobre tus gastos o ventas del mes y pedile a la IA que saque conclusiones de la tabla.",
+      "pasos": [
+        "Armá una tabla de 4 a 6 filas con rubros y montos (ej.: sueldos, insumos, alquiler, otros).",
+        "Seleccioná los datos y creá un gráfico de torta en Excel o Sheets.",
+        "Agregá títulos y etiquetas de porcentaje sobre cada porción.",
+        "Pegale la tabla a la IA y pedile 3 conclusiones: cuál rubro pesa más, cuál menos y qué porcentaje representan.",
+        "Compará las conclusiones de la IA con lo que muestra tu torta."
+      ],
+      "entrega": "Capturá la pantalla (Win + Shift + S) mostrando la tabla, el gráfico de torta y las conclusiones de la IA.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué gráfico conviene para mostrar qué porcentaje del total representa cada gasto?",
+            "opciones": ["Barras", "Torta", "Líneas", "Dispersión"],
+            "correcta": "Torta"
+          },
+          {
+            "pregunta": "¿Qué hacés PRIMERO antes de insertar un gráfico?",
+            "opciones": ["Elegir un color de fondo", "Seleccionar la tabla de datos", "Agregar animaciones", "Guardar el archivo"],
+            "correcta": "Seleccionar la tabla de datos"
+          },
+          {
+            "pregunta": "¿Para qué sirve pedirle una fórmula a la IA?",
+            "opciones": ["Para que escriba el texto del informe", "Para que me devuelva la función exacta lista para pegar, por ejemplo =PROMEDIO(A2:A10)", "Para dibujar el gráfico automáticamente", "Para eliminar datos de la tabla"],
+            "correcta": "Para que me devuelva la función exacta lista para pegar, por ejemplo =PROMEDIO(A2:A10)"
+          },
+          {
+            "pregunta": "Después de que la IA analiza tu tabla y te da conclusiones, ¿qué debés hacer?",
+            "opciones": ["Copiar sin leer", "Comparar las conclusiones con el gráfico y verificar que coincidan", "Borrar la tabla", "Cambiar los datos para que coincidan"],
+            "correcta": "Comparar las conclusiones con el gráfico y verificar que coincidan"
+          },
+          {
+            "pregunta": "¿Cómo tiene que estar la base de datos antes de graficar?",
+            "opciones": ["Con celdas vacías en el medio", "Una fila por elemento y una columna por dato, ordenada", "Solo con números sin títulos", "En un documento aparte"],
+            "correcta": "Una fila por elemento y una columna por dato, ordenada"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la captura con la tabla, el gráfico de torta con etiquetas y las conclusiones de la IA.",
+  "lectura": "Un gráfico transforma números en información que se entiende de un vistazo: barras para comparar, tortas para ver partes de un todo y líneas para tendencias. La IA acelera el trabajo porque genera la fórmula exacta y analiza tu tabla como un analista, pero siempre hay que verificar sus conclusiones contra el gráfico real.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar suma, promedio y porcentaje; mostrar un gráfico terminado como motivación", "min": "10 min" },
+      { "titulo": "Qué gráfico elegir", "que": "Comparar botes de barras, tortas y líneas con ejemplos reales de oficina", "min": "15 min" },
+      { "titulo": "Crear gráficos", "que": "Demostrar en vivo selección de datos y creación de gráfico en Excel y Sheets", "min": "20 min" },
+      { "titulo": "IA para fórmulas", "que": "Mostrar cómo pedir una función a ChatGPT/Gemini y pegarla en la celda", "min": "15 min" },
+      { "titulo": "IA para conclusiones + práctica", "que": "Guiar el ejercicio de torta y el pedido de conclusiones a la IA", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo y chequeo de capturas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez necesitaron mostrar una cifra en una reunión y no sabían cómo: el gráfico es la respuesta.",
+      "Mostrar un gráfico de gastos de la vida real (ej.: mercado mensual) para bajar el tema a tierra."
+    ],
+    "aclarar": [
+      "La torta muestra partes de un TOTAL; si la pregunta es comparar, la torta no es la mejor opción.",
+      "La IA puede inventar fórmulas o conclusiones erróneas: siempre verificar contra los datos.",
+      "Etiquetas de datos no son lo mismo que título: el título explica el gráfico completo y las etiquetas muestran los valores."
+    ],
+    "ejemplos": [
+      "Crear un gráfico de barras de ventas mensuales en vivo mientras los alumnos replican.",
+      "Pedirle a la IA «promedio de A2:A10» y mostrar el resultado pegado en la celda.",
+      "Comparar la conclusión de la IA con lo que se ve en la torta, verificando aciertos."
+    ]
+  }
+}

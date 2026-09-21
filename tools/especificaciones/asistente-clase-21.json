@@ -1,0 +1,155 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 21,
+    "titulo": "IA aplicada a datos y comunicación",
+    "modulo": "Módulo 7 – Inteligencia Artificial en la Oficina",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a analizar datos con IA, generar fórmulas y redactar respuestas profesionales para mails.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 7\\Clase 21 IA a datos",
+  "objetivos": [
+    "Usar la IA para analizar tablas y obtener conclusiones y tendencias.",
+    "Generar fórmulas de Excel/Sheets a partir de instrucciones en lenguaje común.",
+    "Redactar respuestas a correos de clientes con IA y pulirlas.",
+    "Crear plantillas de respuestas automáticas para mensajes frecuentes."
+  ],
+  "teoria": [
+    {
+      "titulo": "Analizar tablas con IA",
+      "emoji": "📊",
+      "parrafos": [
+        "La IA lee tablas de Excel o Sheets y te da lectura de datos: totales, promedios, máximos, mínimos, tendencias y anomalías. Es como tener un analista junior que responde en segundos.",
+        "El método: describí la tabla (columnas y filas) o pegá una muestra, y preguntá específicamente: «¿qué mes tuvo más ventas?», «¿qué producto cae desde marzo?»."
+      ],
+      "puntos": [
+        "Datos en contexto: señalá qué es cada columna y sobre qué período.",
+        "Preguntas dirigidas: en vez de «analizame», pedí «compará ventas de este año con el anterior».",
+        "Tendencias: pedile que resuma lo que sube, lo que baja y lo que se mantiene.",
+        "Verificación: siempre contrastá los números que dice con la celda real: un análisis correcto depende de los datos que le diste."
+      ]
+    },
+    {
+      "titulo": "Generar fórmulas a partir de instrucciones",
+      "emoji": "🧮",
+      "parrafos": [
+        "No hace falta memorizar fórmulas de Excel: describís el cálculo en palabras y la IA te devuelve la fórmula lista para pegar. Ej.: «sumá el total de la columna B solo si la columna A dice PAGADO».",
+        "La fórmula se pega en la celda y se prueba. Si da error, describí el error y la IA lo ajusta hasta que funcione.",
+        "Ej. de pedido: «En C2, calculá el IVA 21% del valor de B2 y redondeá a 2 decimales» → =ROUND(B2*0.21,2)"
+      ],
+      "puntos": [
+        "Fórmulas comunes: SUMAR.SI, PROMEDIO, CONTAR.SI, SI, BUSCARV/XLOOKUP.",
+        "Describí el objetivo, no la sintaxis: «cómo quiero el resultado» en vez de «qué función usar».",
+        "Probá con datos conocidos: si el resultado da lo que esperás, la fórmula sirve.",
+        "Adaptación: la IA te da la versión de Excel y de Sheets; si pasa algo, pedile que las ajuste."
+      ]
+    },
+    {
+      "titulo": "Escribir respuestas a correos de clientes con IA",
+      "emoji": "📧",
+      "parrafos": [
+        "Responder mails es una de las tareas más repetidas del asistente. Con IA, copiás el mensaje del cliente, describís el tono y la información que querés dar, y obtenés un borrador en segundos.",
+        "Después lo pulís: ajustás nombres, montos y detalles, y lo hacés sonar como tu oficina. El pulido convierte el borrador genérico en una respuesta profesional."
+      ],
+      "puntos": [
+        "Prompt: «Tengo este mail de un cliente que pide el estado de su pedido 2045. Respondé cordial, formal y confirmando envío para el jueves.»",
+        "Pulido: cambiá saludos demasiado formales o informales según la relación con el cliente.",
+        "Verificate que coincidieran datos: número de pedido, montos, fechas.",
+        "Curaduría: la IA no sabe si el cliente es sensible, si hay antecedentes de reclamos o si el envío se atrasó."
+      ]
+    },
+    {
+      "titulo": "Plantillas de respuestas automáticas",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Las respuestas frecuentes (pedidos de estado, consultas de precio, confirmación de reunión) se transforman en plantillas reutilizables. La IA las redacta y vos las guardás en Gmail o en un documento para copiar y pegar.",
+        "Una plantilla es un marco: deja espacios para llenar (número de pedido, fecha) y podés pedirle variantes por tono o por área."
+      ],
+      "puntos": [
+        "Creá plantillas para: estado de pedido, presupuesto, confirmación de reunión, cierre de mes.",
+        "Variantes: versión formal para gerente y versión cercana para cliente habitual.",
+        "Guardado: en Gmail se configuran como plantillas (Ajustes → Plantillas) o en un Doc compartido.",
+        "Actualización: revisá cada temporada; las condiciones de envío o precios cambian."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Datos y mails con IA",
+      "consigna": "Dale a la IA una tabla de ventas, generá las fórmulas necesarias y respondé dos mails de clientes usando plantillas.",
+      "pasos": [
+        "Armá en Sheets una mini tabla: Producto, Mes, Unidades, Precio (5 filas con datos inventados pero consistentes).",
+        "Pedile a la IA: «sumá las unidades de todos los productos y calculá la venta total (unidades × precio)» y pegá la fórmula.",
+        "Pedile que «muestra qué producto vendió más y qué tendencia ves»; revisá que coincida con tus datos.",
+        "Escribile un mail de cliente pidiendo el estado de un pedido; pedile a la IA una respuesta formal con envío para el jueves.",
+        "Pedí una variante más cercana para un cliente habitual.",
+        "Guardá tu tabla, fórmula y mails en un único documento de Google y adjuntá la plantilla de respuesta creada."
+      ],
+      "entrega": "Compartí con el docente el documento con la tabla, la fórmula funcional y las dos respuestas pulidas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Pediste a la IA una fórmula y devolvió algo con error. ¿Qué hacés?",
+            "opciones": ["Elimino la celda", "Describo el error a la IA y pido ajustarla", "Reinicio la PC", "Copio otra fórmula al azar"],
+            "correcta": "Describo el error a la IA y pido ajustarla"
+          },
+          {
+            "pregunta": "¿Cómo lográs que la IA genere una fórmula que funcione?",
+            "opciones": ["Diciendo «copiame EXCELSIVA»", "Describiendo con palabras qué cálculo querés", "Sin contexto", "Escribiendo la celda al revés"],
+            "correcta": "Describiendo con palabras qué cálculo querés"
+          },
+          {
+            "pregunta": "La IA dice que tu producto A vendió más que el B. ¿Qué hacés antes de creerle?",
+            "opciones": ["Lo anoto en el calendario", "Lo contrasto con los datos reales de la tabla", "Lo borro todo", "Envío el mail sin revisar"],
+            "correcta": "Lo contrasto con los datos reales de la tabla"
+          },
+          {
+            "pregunta": "¿Por qué hay que pulir la respuesta de IA a un cliente?",
+            "opciones": ["Porque la IA suena genérica y puede no conocer el contexto del cliente", "Porque los mails no se pueden editar", "Porque siempre dice groserías", "Para que tarde más"],
+            "correcta": "Porque la IA suena genérica y puede no conocer el contexto del cliente"
+          },
+          {
+            "pregunta": "¿Para qué sirve una plantilla de respuesta automática?",
+            "opciones": ["Para borrar mails viejos", "Para responder mails frecuentes llenando los datos de cada caso", "Para compartir pantalla", "Para crear videollamadas"],
+            "correcta": "Para responder mails frecuentes llenando los datos de cada caso"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento con la tabla, la fórmula funcional y las respuestas pulidas con IA.",
+  "lectura": "La IA se vuelve diferencial cuando procesa datos y comunicación: analiza tablas, genera fórmulas y redacta respuestas que después se pulen. Con plantillas de respuestas automáticas el asistente administrativo contesta más rápido y con calidad estable, siempre bajo su revisión final.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué mails reciben seguido y qué cálculos repiten cada mes", "min": "10 min" },
+      { "titulo": "Análisis de tablas con IA", "que": "Analizar una tabla de ventas en vivo y verificar conclusiones", "min": "20 min" },
+      { "titulo": "Fórmulas por instrucciones", "que": "Generar suma condicional y promedio pidiéndolas en palabras", "min": "20 min" },
+      { "titulo": "Respuestas a clientes", "que": "Redactar y pulir dos mails con IA, con datos correctos", "min": "20 min" },
+      { "titulo": "Plantillas automáticas", "que": "Armar la plantilla de estado de pedido y variantes por tono", "min": "10 min" },
+      { "titulo": "Cierre", "que": "Repaso oral y validación cruzada con el interactivo", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar cuántos tuvieron que calcular «a mano» totales o promedios para un jefe: la IA lo hace en segundos.",
+      "Mostrar un mail real de queja de cliente y dejar que la IA proponga la primera respuesta."
+    ],
+    "aclarar": [
+      "La IA no ve tu planilla: solo ve lo que vos le pegás o describís. Datos incompletos = conclusiones incompletas.",
+      "Una fórmula de la IA puede decir «para Excel/Sheets»: siempre probala en una celda antes de confiar.",
+      "Copiar y pegar el mail del cliente a la IA expone el mismo dato; borrá lo sensible si aplica.",
+      "El pulido no es opcional: la respuesta «enlatada» se nota y daña la relación con el cliente."
+    ],
+    "ejemplos": [
+      "Pegar una tabla de 10 filas y pedir «¿qué conviene promocionar este mes?» y debatir el resultado.",
+      "Generar =SUMAR.SI para «sumar solo lo pagado» y probarlo juntos.",
+      "Transformar un mail cortante en uno cordial pidiéndole a la IA «reformulá con tono cercano»."
+    ]
+  }
+}

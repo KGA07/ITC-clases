@@ -1,0 +1,146 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 5,
+    "titulo": "Instagram y Facebook para Negocios",
+    "modulo": "Módulo 2 – Redes Sociales y Gestión de Contenidos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a crear perfiles de negocio profesionales en Facebook e Instagram, entender sus métricas, armar contenido estratégico y aplicar tips para que tu perfil venda.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 2 - Redes Sociales y Gestión de Contenidos\\Clase 6 Perfiles de Negocio Facebook e Instagram",
+  "objetivos": [
+    "Convertir perfiles de Instagram y Facebook en perfiles de negocio profesionales.",
+    "Completar categoría, contacto y bio de forma estratégica.",
+    "Interpretar métricas básicas: alcance, interacciones, seguidores y clics.",
+    "Utilizar reels y contenido estratégico para los objetivos del negocio."
+  ],
+  "teoria": [
+    {
+      "titulo": "Claves de una presencia efectiva",
+      "emoji": "🔑",
+      "parrafos": [
+        "Una presencia efectiva no es tener muchos seguidores: es que las personas correctas te encuentren, entiendan qué hacés y confíen en tu marca. Para eso, tu perfil tiene que comunicar tu propuesta de valor en los primeros segundos."
+      ],
+      "puntos": [
+        "La primera vista define todo: bio, foto de perfil y destacadas tienen que estar impecables.",
+        "Propuesta de valor clara en la bio: qué hacés, para quién y cómo contactarte.",
+        "Publicá con constancia y respondé todos los mensajes.",
+        "Link en bio: hacia tu WhatsApp, tu tienda o tu página."
+      ]
+    },
+    {
+      "titulo": "Tu perfil comercial paso a paso",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Convertir tu cuenta a perfil de negocio abre funciones clave: datos de contacto, estadísticas, botón de compra y la posibilidad de pautar. En Instagram se hace desde Ajustes; en Facebook, creás la Página de tu negocio."
+      ],
+      "puntos": [
+        "Instagram: Ajustes → Cuenta → Cambiar a cuenta profesional → elegí la categoría.",
+        "Facebook: creá una Página con nombre, categoría, descripción y botón de contacto.",
+        "Agregá teléfono, dirección, horarios y el botón de acción: WhatsApp, llamada o tienda."
+      ]
+    },
+    {
+      "titulo": "Métricas que importan",
+      "emoji": "📊",
+      "parrafos": [
+        "Las estadísticas del perfil te dicen si vas en la dirección correcta. No mires solo seguidores: el alcance, la interacción y los clics explican qué contenidos funcionan."
+      ],
+      "puntos": [
+        "Alcance: cuántas personas vieron tus publicaciones.",
+        "Interacción: me gusta, comentarios, guardados y compartidos.",
+        "Seguidores: el crecimiento neto del período.",
+        "Clics en el perfil: cuántas personas quisieron saber más de tu negocio."
+      ]
+    },
+    {
+      "titulo": "Reels y contenido estratégico",
+      "emoji": "📹",
+      "parrafos": [
+        "Los reels son hoy la vía más rápida de alcance. Para que funcionen, el contenido tiene que ser útil, entretenido y con un llamado a la acción claro hacia tu negocio."
+      ],
+      "puntos": [
+        "Gancho en los primeros 3 segundos: una pregunta, un dato o un problema.",
+        "Cada reel con un objetivo: mostrar el producto, educar o resolver una objeción.",
+        "Tips: subtítulos, luz natural, llamado a la acción al final y constancia."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi perfil de negocio en Instagram",
+      "consigna": "Convertí tu cuenta de Instagram en profesional y completala de forma estratégica para el negocio que definiste en las clases anteriores.",
+      "pasos": [
+        "Entrá a tu Instagram → Ajustes → Cuenta → Cambiar a cuenta profesional.",
+        "Elegí la categoría que corresponda a tu negocio y agregá la información de contacto.",
+        "Escribí tu bio: propuesta de valor, público y cómo contactarte, sin textos genéricos.",
+        "Publicá un reel introductorio de 15 a 20 segundos presentando tu negocio, grabado con el celular o armado con capturas y texto.",
+        "Capturá tu perfil terminado y el reel publicado."
+      ],
+      "entrega": "Compartí la captura de tu perfil profesional completo y del reel publicado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Para convertir tu Instagram en cuenta profesional vas a...",
+            "opciones": ["Ajustes → Cuenta → Cambiar a cuenta profesional", "Borrar la cuenta", "Crear un grupo", "Activar el modo avión"],
+            "correcta": "Ajustes → Cuenta → Cambiar a cuenta profesional"
+          },
+          {
+            "pregunta": "La métrica 'alcance' indica...",
+            "opciones": ["Cuántas personas vieron tus publicaciones", "Cuántos seguidores tenés", "Cuántas veces cambiaste tu foto", "Cuántos mensajes enviaste"],
+            "correcta": "Cuántas personas vieron tus publicaciones"
+          },
+          {
+            "pregunta": "¿Qué dato NO es imprescindible en la bio de un perfil de negocio?",
+            "opciones": ["Tu número de documento", "Qué hacés, para quién y cómo contactarte", "Un llamado a la acción", "Tu propuesta de valor"],
+            "correcta": "Tu número de documento"
+          },
+          {
+            "pregunta": "Los primeros segundos de un reel tienen que...",
+            "opciones": ["Enganchar con una pregunta, un dato o un problema", "Mostrar todos los créditos", "Ser solo música", "Estar vacíos"],
+            "correcta": "Enganchar con una pregunta, un dato o un problema"
+          },
+          {
+            "pregunta": "Un perfil comercial en Instagram te permite...",
+            "opciones": ["Ver estadísticas y agregar botón de acción", "Leer el horóscopo", "Descargar música", "Cambiar el idioma del celular"],
+            "correcta": "Ver estadísticas y agregar botón de acción"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará que el perfil esté como negocio, con bio estratégica y reel publicado.",
+  "lectura": "Un perfil de negocio bien armado es la puerta de entrada de tu marca: bio clara, contacto y constancia. Las métricas te dicen qué funciona, y los reels con buen gancho multiplican el alcance. En una sola clase podés dejar tu perfil listo como una vidriera profesional.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar redes y preguntar quién tiene cuenta profesional", "min": "10 min" },
+      { "titulo": "Claves de presencia", "que": "Analizar perfiles buenos y malos en vivo", "min": "15 min" },
+      { "titulo": "Configuración de perfil", "que": "Guiar el paso a paso para convertir a perfil de negocio", "min": "25 min" },
+      { "titulo": "Métricas", "que": "Explicar alcance, interacción y clics con ejemplos", "min": "15 min" },
+      { "titulo": "Reels y práctica", "que": "Ver ejemplos y guiarlos en su reel y su bio", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué perfil de negocio viste esta semana y qué te hizo confiar o desconfiar?",
+      "Contar el caso de un emprendimiento que creció solo por tener la bio ordenada."
+    ],
+    "aclarar": [
+      "El perfil profesional es gratis: no hace falta pagar para pasar a negocio.",
+      "Alcance no es lo mismo que seguidores: una publicación puede alcanzar gente que no te sigue.",
+      "El botón de acción (WhatsApp, llamada) se configura una vez y queda funcionando solo."
+    ],
+    "ejemplos": [
+      "Abrir una bio real y mostrar cómo se lee en los primeros segundos.",
+      "Comparar el alcance de un reel con buen gancho contra uno sin gancho.",
+      "Mostrar en vivo el panel de estadísticas de una cuenta profesional."
+    ]
+  }
+}

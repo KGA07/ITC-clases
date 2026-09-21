@@ -1,0 +1,157 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 6,
+    "titulo": "Tablas, imágenes y estilos",
+    "modulo": "Módulo 2 – Procesador de Textos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a aprender a insertar tablas para reportes, sumar imágenes y logotipos con un encuadre prolijo, y usar estilos para que los informes largos se vean profesionales de principio a fin.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 2\\Clase 6 Tabla Imagen y logos",
+  "objetivos": [
+    "Insertar y editar tablas para presentar datos en reportes y planillas.",
+    "Unir celdas, ajustar anchos y aplicar bordes y sombreado prolijos.",
+    "Incluir imágenes y logotipos con tamaño, alineación y ajuste de texto correctos.",
+    "Usar estilos y temas para mantener consistente un informe largo y generar su tabla de contenidos.",
+    "Armar una planilla de asistencia o un listado de precios con formato profesional."
+  ],
+  "teoria": [
+    {
+      "titulo": "Insertar tablas para reportes",
+      "emoji": "📊",
+      "parrafos": [
+        "Las tablas son la forma más clara de presentar datos en un informe: nombres, fechas, montos o cantidades quedan ordenados en filas y columnas. Word y Google Docs te permiten crearlas y ajustarlas sin complicarte."
+      ],
+      "puntos": [
+        "Insertar → Tabla → elegir la cuadrícula dibujada (ej. 6x4) o «Insertar tabla» para configurar filas y columnas exactas.",
+        "Unir celdas: seleccioná varias celdas, clic derecho → Combinar celdas. Ideal para el título de la tabla o encabezados que abarcan varias columnas.",
+        "Ancho de columnas: arrastrá los bordes o usá «Distribuir columnas» para que queden parejas.",
+        "Bordes y sombreado: marcá los bordes para un look prolijo y sombreá la fila de encabezado para diferenciarla.",
+        "Consejo profesional: no dibujes columnas con la barra espaciadora ni con tabulaciones: los datos se desalinean al imprimir o al abrir el archivo en otro equipo."
+      ]
+    },
+    {
+      "titulo": "Incluir imágenes y logotipos",
+      "emoji": "🖼️",
+      "parrafos": [
+        "Un informe con el logo de la empresa o con capturas de pantalla transmite seriedad. Lo importante no es la cantidad de imágenes, sino que queden bien ubicadas, con el tamaño justo y con un ajuste de texto coherente."
+      ],
+      "puntos": [
+        "Insertar → Imágenes y elegir el archivo desde el equipo (en Docs usás «Insertar → Imagen → Subir desde el equipo»).",
+        "Tamaño: seleccioná la imagen y arrastrá una esquina para mantener la proporción; para logos en el encabezado suele alcanzar con 4 a 6 cm.",
+        "Ajuste de texto: en Word vas a «Opciones de diseño» (Detrás del texto, Cuadro, Ajuste estrecho) y en Docs elegís el icono de ajuste para que el texto fluya alrededor.",
+        "Alineación: un logo suele ir a la izquierda del título o centrado arriba; las fotos de un informe interno, centradas con su leyenda debajo.",
+        "Formato de imagen: recortar, brillo o bordes redondeados solo si aportan; lo fundamental es mantener el mismo estilo en todo el documento."
+      ]
+    },
+    {
+      "titulo": "Estilos y temas para informes largos",
+      "emoji": "🎨",
+      "parrafos": [
+        "Cuando un informe tiene muchas páginas, marcar los títulos con estilos no es estética: es navegación. Los estilos mantienen el formato idéntico en todo el documento y son la base de la tabla de contenidos automática."
+      ],
+      "puntos": [
+        "En Word, la galería «Estilos» está en la pestaña Inicio: marcá los títulos como «Título 1» y «Título 2», y no cambies solo la letra a mano.",
+        "En Google Docs usás los menús desplegables con «Título 1», «Título 2», etc., que cumplen la misma función.",
+        "Temas: en Word, Diseño → Temas cambia en un clic la paleta de colores y las fuentes de todo el documento.",
+        "Tabla de contenidos: Referencias → Tabla de contenido; con «Actualizar tabla» se refresca sola cuando movés o editás secciones.",
+        "Ventaja clave: si cambiás un estilo, todas las secciones que lo usan se actualizan solas, sin retocar página por página."
+      ]
+    },
+    {
+      "titulo": "Formato profesional de una planilla de asistencia o listado de precios",
+      "emoji": "✅",
+      "parrafos": [
+        "La planilla de asistencia y el listado de precios son dos modelos que un asistente arma seguido. Con tablas, estilos y un formato de datos uniforme dejás ambos listos en minutos."
+      ],
+      "puntos": [
+        "Encabezado de tabla: fila con sombreado suave y letra en negrita; títulos claros como «Nombre», «Fecha», «Horario», «Firma» o «Producto», «Precio», «Cantidad».",
+        "Datos uniformes: mismo formato para todas las fechas (ej. 21/09/2026) y mismo formato para los montos ($1.500,00) en todo el listado.",
+        "Totales: dejá una última fila para el total. Como en texto no hay cálculo automático, lo completás al final con la suma verificada.",
+        "Consistencia del informe: mismo tipo de letra, mismo tamaño y misma alineación de los encabezados en todas las páginas.",
+        "Revisión final: exportá a PDF y mirá que las líneas de las tablas no se corten ni los anchos se desacomoden."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Informe con tabla de asistencia",
+      "consigna": "Redactá un informe simple en Word o Google Docs que incluya la tabla de asistencia de una actividad, aplique estilos de título y tenga un logotipo insertado con encuadre profesional.",
+      "pasos": [
+        "Creá un documento nuevo en Word o Google Docs.",
+        "Escribí el título con estilo «Título 1»: «Informe de asistencia – Taller de presentaciones».",
+        "Insertá una tabla de 8 filas por 3 columnas (1 fila de encabezado + 7 participantes).",
+        "Completala con las columnas «Nombre», «Fecha» y «Firma».",
+        "Uní las celdas de la primera fila y escribí «Lista de asistencia» dentro.",
+        "Sombreá la fila de encabezado y distribuí las columnas para que queden parejas.",
+        "Insertá el logo del curso o de una empresa ficticia y alinealo a la izquierda del título.",
+        "Ajustá el tamaño del logo a unos 5 cm de ancho y configurá el ajuste de texto para que no desacomode el título.",
+        "Cargá 7 nombres con fechas en el mismo formato y verificá que todos los encabezados se vean iguales."
+      ],
+      "entrega": "Subí o entregá el PDF del informe con la tabla completa, el logo insertado y al menos un estilo de título aplicado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la forma correcta de crear una tabla con un número exacto de filas y columnas?",
+            "opciones": ["Insertar → Tabla → Insertar tabla y definir las cantidades", "Dibujar columnas con la barra espaciadora", "Usar tabulaciones entre textos", "Copiar una imagen de otra planilla"],
+            "correcta": "Insertar → Tabla → Insertar tabla y definir las cantidades"
+          },
+          {
+            "pregunta": "¿Para qué sirve combinar (unir) celdas en una tabla?",
+            "opciones": ["Para mezclar colores de la tabla", "Para que una celda ocupe varias y quepa el título o un encabezado de grupo", "Para borrar toda la tabla", "Para cerrar el documento"],
+            "correcta": "Para que una celda ocupe varias y quepa el título o un encabezado de grupo"
+          },
+          {
+            "pregunta": "¿Qué ventaja tiene usar «Título 1» en lugar de cambiar la letra a mano?",
+            "opciones": ["El archivo pesa menos y se imprime más rápido", "Los estilos mantienen el formato igual en todo el documento y permiten armar la tabla de contenidos", "No tiene ninguna ventaja", "Los estilos agregan imágenes automáticas"],
+            "correcta": "Los estilos mantienen el formato igual en todo el documento y permiten armar la tabla de contenidos"
+          },
+          {
+            "pregunta": "¿Qué herramienta usás para que el texto fluya alrededor de una imagen?",
+            "opciones": ["Ajuste de texto / Opciones de diseño", "Cambiar el tipo de letra", "Insertar otra tabla", "Aplicar sombreado a la imagen"],
+            "correcta": "Ajuste de texto / Opciones de diseño"
+          },
+          {
+            "pregunta": "¿Qué verificás antes de entregar una planilla de asistencia?",
+            "opciones": ["Que se vea bien solo en tu pantalla", "Que todas las fechas y nombres tengan el mismo formato y que los bordes se vean prolijos", "Que la palabra «informe» aparezca muchas veces", "Que el logo esté desalineado"],
+            "correcta": "Que todas las fechas y nombres tengan el mismo formato y que los bordes se vean prolijos"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el PDF del informe: tabla de asistencia completa con datos reales, logotipo insertado con encuadre correcto y, al menos, un estilo de título aplicado.",
+  "lectura": "Una tabla ordena los datos de un reporte, una imagen bien insertada profesionaliza un documento y los estilos te permiten manejar informes largos sin rehacer el formato a mano. Si dominás esas tres herramientas, podés armar en minutos una planilla de asistencia o un listado de precios que representen bien a un lugar de trabajo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Mostrar un informe feo y uno prolijo; preguntar qué diferencias ven", "min": "10 min" },
+      { "titulo": "Insertar y editar tablas", "que": "Crear una tabla en vivo, unir celdas y distribuir columnas", "min": "20 min" },
+      { "titulo": "Imágenes y logotipos", "que": "Insertar un logo, ajustar tamaño y probar los ajustes de texto", "min": "15 min" },
+      { "titulo": "Estilos y temas", "que": "Aplicar Título 1/2, cambiar un tema y generar la tabla de contenidos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el informe con tabla de asistencia paso a paso con cada alumno", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez armaron una lista de participantes, de gastos o de horarios? Mostrar cómo esas listas ya son tablas y que ahora van a poder hacerlas prolijas.",
+      "Mostrar un informe oficial (ej. de sueldo o de una reunión) con tabla y logo como ejemplo real de lo que se ve en una oficina."
+    ],
+    "aclarar": [
+      "Combinar celdas es para encabezados y títulos: no sobres que luego dificultan leer los datos uno por uno.",
+      "Cambiar la letra a mano NO es lo mismo que aplicar un estilo: solo los estilos alimentan la tabla de contenidos.",
+      "En texto no hay fórmulas: los totales de una tabla en Word/Docs se completan a mano, no como en Excel."
+    ],
+    "ejemplos": [
+      "Crear en vivo una tabla de 6x3, unir la primera fila para el título y distribuir columnas mientras los alumnos replican.",
+      "Insertar el mismo logo de dos maneras: sin ajuste (desacomodado) y con ajuste de texto, para comparar.",
+      "Armar una tabla de contenidos en un informe de 3 páginas y actualizarla tras mover una sección."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 10 - Uso de ChatGPT para redes sociales</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#e11d48;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#e11d48;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Uso de ChatGPT para redes sociales</h1>
+  <p class="sub">Práctica Mi copy con ChatGPT · Marketing Digital</p>
+  <div class="consigna">Generá una publicación de Instagram con ChatGPT aplicando un prompt bien armado y después pulí el resultado con tu criterio.</div>
+  
+    <div class="q" data-ok="Rol, contexto, público, tono y formato">
+      <p class="qt">1. Un prompt efectivo para ChatGPT incluye...</p>
+      <label class="opt"><input type="radio" name="q0" value="Rol, contexto, público, tono y formato"><span>Rol, contexto, público, tono y formato</span></label>
+<label class="opt"><input type="radio" name="q0" value="Solo la palabra 'texto'"><span>Solo la palabra 'texto'</span></label>
+<label class="opt"><input type="radio" name="q0" value="La contraseña del negocio"><span>La contraseña del negocio</span></label>
+<label class="opt"><input type="radio" name="q0" value="Una sola palabra clave"><span>Una sola palabra clave</span></label>
+    </div>
+
+    <div class="q" data-ok="La personalidad y la forma de hablar consistente en sus contenidos">
+      <p class="qt">2. ¿Qué es el tono de voz de una marca?</p>
+      <label class="opt"><input type="radio" name="q1" value="La personalidad y la forma de hablar consistente en sus contenidos"><span>La personalidad y la forma de hablar consistente en sus contenidos</span></label>
+<label class="opt"><input type="radio" name="q1" value="El volumen de los videos"><span>El volumen de los videos</span></label>
+<label class="opt"><input type="radio" name="q1" value="La cantidad de seguidores"><span>La cantidad de seguidores</span></label>
+<label class="opt"><input type="radio" name="q1" value="El ancho de la tipografía"><span>El ancho de la tipografía</span></label>
+    </div>
+
+    <div class="q" data-ok="Es un borrador que siempre hay que revisar">
+      <p class="qt">3. El texto generado por ChatGPT...</p>
+      <label class="opt"><input type="radio" name="q2" value="Es un borrador que siempre hay que revisar"><span>Es un borrador que siempre hay que revisar</span></label>
+<label class="opt"><input type="radio" name="q2" value="Sale perfecto y no se corrige"><span>Sale perfecto y no se corrige</span></label>
+<label class="opt"><input type="radio" name="q2" value="No necesita contexto"><span>No necesita contexto</span></label>
+<label class="opt"><input type="radio" name="q2" value="No puede editarse"><span>No puede editarse</span></label>
+    </div>
+
+    <div class="q" data-ok="Pedir una reformulación con instrucciones más precisas">
+      <p class="qt">4. Si ChatGPT no respeta el tono pedido, lo mejor es...</p>
+      <label class="opt"><input type="radio" name="q3" value="Pedir una reformulación con instrucciones más precisas"><span>Pedir una reformulación con instrucciones más precisas</span></label>
+<label class="opt"><input type="radio" name="q3" value="Aceptarlo sin leerlo"><span>Aceptarlo sin leerlo</span></label>
+<label class="opt"><input type="radio" name="q3" value="Cambiar de rubro"><span>Cambiar de rubro</span></label>
+<label class="opt"><input type="radio" name="q3" value="Borrar el negocio"><span>Borrar el negocio</span></label>
+    </div>
+
+    <div class="q" data-ok="Comparar opciones y elegir la mejor">
+      <p class="qt">5. ¿Para qué sirve pedir 3 variantes del mismo texto?</p>
+      <label class="opt"><input type="radio" name="q4" value="Comparar opciones y elegir la mejor"><span>Comparar opciones y elegir la mejor</span></label>
+<label class="opt"><input type="radio" name="q4" value="Llenar más el documento"><span>Llenar más el documento</span></label>
+<label class="opt"><input type="radio" name="q4" value="Hacer perder el tiempo"><span>Hacer perder el tiempo</span></label>
+<label class="opt"><input type="radio" name="q4" value="Publicar las 3 juntas"><span>Publicar las 3 juntas</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

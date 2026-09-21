@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 19 - WhatsApp Business como herramienta laboral</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0057ff;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0057ff;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>WhatsApp Business como herramienta laboral</h1>
+  <p class="sub">Práctica Configurá tu WhatsApp Business · Asistente Administrativo Digital con IA</p>
+  <div class="consigna">Armá desde cero tu perfil comercial completo y simulá la atención de un cliente con respuestas rápidas.</div>
+  
+    <div class="q" data-ok="Agrega herramientas comerciales: catálogo, etiquetas y respuestas rápidas">
+      <p class="qt">1. ¿Qué diferencia principal tiene WhatsApp Business frente al WhatsApp normal?</p>
+      <label class="opt"><input type="radio" name="q0" value="Es más caro de usar"><span>Es más caro de usar</span></label>
+<label class="opt"><input type="radio" name="q0" value="Agrega herramientas comerciales: catálogo, etiquetas y respuestas rápidas"><span>Agrega herramientas comerciales: catálogo, etiquetas y respuestas rápidas</span></label>
+<label class="opt"><input type="radio" name="q0" value="Se usa solo en PC"><span>Se usa solo en PC</span></label>
+<label class="opt"><input type="radio" name="q0" value="No envia mensajes"><span>No envia mensajes</span></label>
+    </div>
+
+    <div class="q" data-ok="Un mensaje preparado que se inserta con una palabra clave">
+      <p class="qt">2. ¿Qué es una respuesta rápida en WhatsApp Business?</p>
+      <label class="opt"><input type="radio" name="q1" value="Un mensaje preparado que se inserta con una palabra clave"><span>Un mensaje preparado que se inserta con una palabra clave</span></label>
+<label class="opt"><input type="radio" name="q1" value="Una grabación de voz"><span>Una grabación de voz</span></label>
+<label class="opt"><input type="radio" name="q1" value="Una encuesta de Google Forms"><span>Una encuesta de Google Forms</span></label>
+<label class="opt"><input type="radio" name="q1" value="Un enlace al catálogo"><span>Un enlace al catálogo</span></label>
+    </div>
+
+    <div class="q" data-ok="Una respuesta rápida configurada">
+      <p class="qt">3. Para escribir /horario y que aparezca tu horario de atención, ¿qué implementación necesitás?</p>
+      <label class="opt"><input type="radio" name="q2" value="Un mensaje de ausencia"><span>Un mensaje de ausencia</span></label>
+<label class="opt"><input type="radio" name="q2" value="Una respuesta rápida configurada"><span>Una respuesta rápida configurada</span></label>
+<label class="opt"><input type="radio" name="q2" value="Un catálogo de productos"><span>Un catálogo de productos</span></label>
+<label class="opt"><input type="radio" name="q2" value="Una etiqueta"><span>Una etiqueta</span></label>
+    </div>
+
+    <div class="q" data-ok="Para contestar automáticamente fuera del horario de atención">
+      <p class="qt">4. ¿Para qué sirve el mensaje de ausencia?</p>
+      <label class="opt"><input type="radio" name="q3" value="Para borrar el chat"><span>Para borrar el chat</span></label>
+<label class="opt"><input type="radio" name="q3" value="Para contestar automáticamente fuera del horario de atención"><span>Para contestar automáticamente fuera del horario de atención</span></label>
+<label class="opt"><input type="radio" name="q3" value="Para bloquear clientes"><span>Para bloquear clientes</span></label>
+<label class="opt"><input type="radio" name="q3" value="Para cambiar el número"><span>Para cambiar el número</span></label>
+    </div>
+
+    <div class="q" data-ok="En proceso">
+      <p class="qt">5. ¿Qué etiqueta usarías para una conversación con pago pendiente?</p>
+      <label class="opt"><input type="radio" name="q4" value="Cerrado"><span>Cerrado</span></label>
+<label class="opt"><input type="radio" name="q4" value="Nuevo"><span>Nuevo</span></label>
+<label class="opt"><input type="radio" name="q4" value="En proceso"><span>En proceso</span></label>
+<label class="opt"><input type="radio" name="q4" value="Spam"><span>Spam</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

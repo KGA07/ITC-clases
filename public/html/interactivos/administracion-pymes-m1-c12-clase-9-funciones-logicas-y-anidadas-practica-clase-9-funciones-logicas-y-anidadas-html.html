@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 9 - Funciones lógicas y anidadas</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0f766e;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0f766e;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Funciones lógicas y anidadas</h1>
+  <p class="sub">Práctica Clasificación de clientes y etiquetas de pago · Administración de PyMEs</p>
+  <div class="consigna">Sobre una lista de clientes y su facturación, clasificá el nivel de cada uno con SI anidado, aplicá una condición con Y y generá etiquetas automáticas de estado de pago con CONCATENAR.</div>
+  
+    <div class="q" data-ok="(prueba_lógica; valor_si_verdadero; valor_si_falso)">
+      <p class="qt">1. ¿Cuál es la estructura correcta de la función SI?</p>
+      <label class="opt"><input type="radio" name="q0" value="(valor_si_verdadero; prueba; valor_si_falso)"><span>(valor_si_verdadero; prueba; valor_si_falso)</span></label>
+<label class="opt"><input type="radio" name="q0" value="(prueba_lógica; valor_si_verdadero; valor_si_falso)"><span>(prueba_lógica; valor_si_verdadero; valor_si_falso)</span></label>
+<label class="opt"><input type="radio" name="q0" value="(prueba; rango)"><span>(prueba; rango)</span></label>
+<label class="opt"><input type="radio" name="q0" value="(rango; criterio; suma)"><span>(rango; criterio; suma)</span></label>
+    </div>
+
+    <div class="q" data-ok="Cuando hay más de dos resultados posibles">
+      <p class="qt">2. ¿Cuándo se anidan funciones SI?</p>
+      <label class="opt"><input type="radio" name="q1" value="Cuando hay más de dos resultados posibles"><span>Cuando hay más de dos resultados posibles</span></label>
+<label class="opt"><input type="radio" name="q1" value="Cuando hay un solo caso"><span>Cuando hay un solo caso</span></label>
+<label class="opt"><input type="radio" name="q1" value="Cuando se suma un rango"><span>Cuando se suma un rango</span></label>
+<label class="opt"><input type="radio" name="q1" value="Cuando se formatea una celda"><span>Cuando se formatea una celda</span></label>
+    </div>
+
+    <div class="q" data-ok="Que se cumplan TODAS las condiciones">
+      <p class="qt">3. ¿Qué exige la función Y() dentro de la prueba lógica?</p>
+      <label class="opt"><input type="radio" name="q2" value="Que se cumpla al menos una condición"><span>Que se cumpla al menos una condición</span></label>
+<label class="opt"><input type="radio" name="q2" value="Que se cumplan TODAS las condiciones"><span>Que se cumplan TODAS las condiciones</span></label>
+<label class="opt"><input type="radio" name="q2" value="Que ninguna se cumpla"><span>Que ninguna se cumpla</span></label>
+<label class="opt"><input type="radio" name="q2" value="Que solo los números cuenten"><span>Que solo los números cuenten</span></label>
+    </div>
+
+    <div class="q" data-ok="CONCATENAR">
+      <p class="qt">4. ¿Qué función une el contenido de varias celdas en un texto?</p>
+      <label class="opt"><input type="radio" name="q3" value="CONCATENAR"><span>CONCATENAR</span></label>
+<label class="opt"><input type="radio" name="q3" value="CONTAR.SI"><span>CONTAR.SI</span></label>
+<label class="opt"><input type="radio" name="q3" value="SUMAR.SI"><span>SUMAR.SI</span></label>
+<label class="opt"><input type="radio" name="q3" value="BUSCARV"><span>BUSCARV</span></label>
+    </div>
+
+    <div class="q" data-ok="&">
+      <p class="qt">5. ¿Qué símbolo equivale a CONCATENAR?</p>
+      <label class="opt"><input type="radio" name="q4" value="&amp;"><span>&amp;</span></label>
+<label class="opt"><input type="radio" name="q4" value="#"><span>#</span></label>
+<label class="opt"><input type="radio" name="q4" value="="><span>=</span></label>
+<label class="opt"><input type="radio" name="q4" value="@"><span>@</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

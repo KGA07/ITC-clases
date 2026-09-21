@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 11,
+    "titulo": "Facturación, Impuestos y Balance",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a armar la registración de tu facturación: tipòs de facturas, cálculo de IVA, IIBB, Ganancias y retenciones, y el balance mensual y anual que te dice si el negocio cierra el mes en azul.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 11 Facturación, Impuestos y Balance Mensual",
+  "objetivos": [
+    "Distinguir los tipos de factura (A, B, C, M) y su tratamiento en la planilla.",
+    "Calcular IVA discriminado, IIBB, Ganancias y retenciones con fórmulas.",
+    "Registrar la facturación del mes y clasificarla por tipo.",
+    "Armar el balance mensual y anual con ingresos, egresos y resultado."
+  ],
+  "teoria": [
+    {
+      "titulo": "Tipos de facturas y su tratamiento",
+      "emoji": "🧾",
+      "parrafos": [
+        "En Argentina cada tipo de factura tiene un tratamiento distinto en el IVA: la factura A se emite a responsables inscriptos y discrimina IVA; la B se emite a consumidores finales y no lo discrimina; la C es para monotributistas; la M es del monotributo en ciertos casos. Tu planilla debe registrar este dato para calcular impuestos bien."
+      ],
+      "puntos": [
+        "Factura A: para responsables inscriptos. Discrimina IVA: neto + IVA = total.",
+        "Factura B: para consumidor final o monotributista. Precio final incluye IVA (no se discrimina al cliente).",
+        "Factura C: la emite un monotributista a cualquier persona. No lleva IVA discriminado.",
+        "Factura M: emitida por monotributistas sociales o bajo determinados regímenes.",
+        "En la planilla siempre se registra: tipo, número, fecha, cliente, neto, IVA y total: así después se totalizan por tipo."
+      ]
+    },
+    {
+      "titulo": "Impuestos: IVA, IIBB, Ganancias y Retenciones",
+      "emoji": "💸",
+      "parrafos": [
+        "El IVA (21% general) se calcula sobre el neto; el IIBB se paga según la jurisdicción; las retenciones de IIBB y Ganancias se descuentan sobre la facturación. Conocer dónde va cada uno evita sorpresas en la liquidación."
+      ],
+      "puntos": [
+        "IVA: =neto*21%. Precio final = neto*(1+21%). Para pasar de bruto a neto: =bruto/1,21.",
+        "IIBB: alícuota provincial variable (ej. 3,5% según jurisdicción y actividad): =total*alicuota.IIBB() o directo =total*3,5%.",
+        "Ganancias: la retención se aplica cuando el proveedor supera ciertos montos; se calcula sobre el total facturado con la alícuota correspondiente.",
+        "Retención IIBB: se descuenta al pagar: líquido a pagar = total - retenciones.",
+        "Clave: en un mismo registro conviene tener columnas separadas: Bruto, IVA, IIBB, Ganancias, Retención y Neto a cobrar."
+      ]
+    },
+    {
+      "titulo": "Registración de la facturación del mes",
+      "emoji": "📒",
+      "parrafos": [
+        "El registro de facturación es la base de todo el resto: sin una lista limpia de facturas, no hay impuestos ni balance. Se registra una fila por factura y después se totaliza con SUMAR.SI o Tabla Dinámica."
+      ],
+      "puntos": [
+        "Estructura de la base: Fecha, Tipo, Número, Cliente, Neto, IVA, Total, Retenciones, Neto a cobrar.",
+        "Total de ventas del mes: =SUMAR.SI(rango_fecha; \"mes año\"; rango_total) o filtrar por fecha y mirar la fila de totales.",
+        "Totales por tipo: =SUMAR.SI(tipo;\"A\";total) para saber cuánto se facturó tipo A y cuánto B.",
+        "Con Tabla Dinámica (clase 3) podés armar el resumen por tipo y mes en un clic.",
+        "Sugerencia: separar factura emitida (ventas) de factura recibida (compras) para poder restar en el balance."
+      ]
+    },
+    {
+      "titulo": "Balance mensual y anual",
+      "emoji": "⚖️",
+      "parrafos": [
+        "El balance junta lo que entró (ingresos) y lo que salió (egresos) para mostrar el RESULTADO: si los ingresos superan los gastos, el mes cierra en azul; si no, en rojo. Se arma mensual y se acumula al anual."
+      ],
+      "puntos": [
+        "Balance mensual: Ingresos (ventas, cobranzas) menos Egresos (compras, sueldos, impuestos, servicios) = Resultado del mes.",
+        "Las celdas de cada rubro se calculan con SUMAR.SI sobre la base de movimientos o con SUMAS sobre las hojas de detalle.",
+        "Balance anual: acumular los 12 balances mensuales, con una columna por mes o una fórmula que filtre por AÑO.",
+        "Formato sugerido: formato moneda, resultados positivos en negro y negativos en rojo (con formato condicional, clase 7).",
+        "Un resultado recurrente negativo es la señal de alarma temprana para ajustar precios o recortar gastos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Registro de facturación y balance del trimestre",
+      "consigna": "Armá la registración completa de las facturas del trimestre de un emprendimiento, calculá IVA, IIBB y retenciones en columnas separadas y construí el balance mensual y el resultado del trimestre.",
+      "pasos": [
+        "Creá una hoja «Facturas» con columnas: Fecha, Tipo, Número, Cliente, Neto, IVA, Total, Retención IIBB, Retención Ganancias, Neto a cobrar.",
+        "Cargá 12 facturas repartidas en 3 meses: algunas tipo A (con IVA) y otras tipo B (total final). Tip para B: el Total ya incluye IVA, así que Neto = Total/1,21.",
+        "Calculá IVA con =E2*21% solo para tipo A (podés usar SI: =SI(B2=\"A\";E2*21%;0)).",
+        "Calculá Retención IIBB =G2*3% y Retención Ganancias =G2*2% como ejemplo de alícuotas.",
+        "Neto a cobrar: =G2-H2-I2 (Total menos retenciones).",
+        "En una hoja «Balance» armá: Ingresos del mes (SUMAR.SI por fecha), Egresos del mes (una fila por servicio y sueldo) y el Resultado mensual y del trimestre con formato condicional rojo si da negativo."
+      ],
+      "entrega": "Guardá como «FacturacionBalance_clase11.xlsx» con el registro completo y el balance con resultado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué factura discrimina IVA?",
+            "opciones": ["La A", "La C", "La B", "La M"],
+            "correcta": "La A"
+          },
+          {
+            "pregunta": "Si el IVA es 21%, ¿cómo se calcula el total con IVA desde el neto?",
+            "opciones": ["=neto*21%", "=neto*(1+21%)", "=neto/21%", "=neto+21"],
+            "correcta": "=neto*(1+21%)"
+          },
+          {
+            "pregunta": "Para pasar de un total CON IVA a su neto:",
+            "opciones": ["=total*1,21", "=total/1,21", "=total+21", "=total-21%"],
+            "correcta": "=total/1,21"
+          },
+          {
+            "pregunta": "¿Qué NO forma parte de la columna de retenciones?",
+            "opciones": ["IIBB", "Ganancias", "IVA", "Percepciones"],
+            "correcta": "IVA"
+          },
+          {
+            "pregunta": "¿Cómo se calcula el RESULTADO del mes?",
+            "opciones": ["Ingresos menos Egresos", "Egresos por Ingresos", "Ingresos más Egresos", "Total de facturas A menos las B"],
+            "correcta": "Ingresos menos Egresos"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la registración de facturas con IVA y retenciones y el balance con resultado del trimestre.",
+  "lectura": "La facturación ordenada es la base de los impuestos: cada tipo de factura define cómo se trata el IVA, y el IIBB y las retenciones de Ganancias se descargan sobre el total facturado. Con esas columnas discriminadas, el balance mensual y anual (ingresos menos egresos) se arma solo y muestra si el negocio cierra en azul o en rojo. Esta planilla es la que cualquier contador te va a agradecer.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar SUMAR.SI y formato; preguntar qué facturas emiten hoy", "min": "10 min" },
+      { "titulo": "Tipos de facturas", "que": "Explicar A, B, C y M y su tratamiento de IVA con ejemplos", "min": "20 min" },
+      { "titulo": "Impuestos", "que": "Calcular IVA, IIBB, Ganancias y retenciones en columnas separadas", "min": "25 min" },
+      { "titulo": "Registración", "que": "Armar la base de facturas y totalizar por tipo y mes", "min": "15 min" },
+      { "titulo": "Balance mensual y anual", "que": "Construir ingresos, egresos y resultado con formato condicional", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si le alcanzan los números del mes y mostrar cómo la planilla responde esa pregunta al final del ejercicio.",
+      "Mostrar un registro de facturación de una PyME real con todas las columnas de impuestos."
+    ],
+    "aclarar": [
+      "Factura B no discrimina IVA al cliente, pero el IVA SÍ está incluido: para el neto se divide por 1,21.",
+      "Las alícuotas (IIBB, retenciones) dependen de la jurisdicción: usar valores de ejemplo y dejarlo anotado.",
+      "La registración separa factura emitida (venta) de recibida (compra): no mezclarlas.",
+      "Un balance mensual negativo no es drama puntual; es la señal de revisar el mes siguiente."
+    ],
+    "ejemplos": [
+      "Pasar un total de $12.100 a neto: 12100/1,21 = $10.000 con IVA $2.100.",
+      "Calcular retención IIBB del 3% sobre el total y restarla al neto a cobrar.",
+      "Balance del mes: ventas $500.000 - gastos $420.000 = resultado $80.000 en azul."
+    ]
+  }
+}

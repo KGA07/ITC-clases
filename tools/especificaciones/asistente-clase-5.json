@@ -1,0 +1,161 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 5,
+    "titulo": "Formato de documentos ejecutivos",
+    "modulo": "Módulo 2 – Procesador de Textos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a convertir documentos simples en piezas ejecutivas: tipografía y espacios que se leen bien, organización visual con listas y sangrías, membrete con logo y una guía completa para diseñar un memorándum corporativo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 2\\Clase 5 Memorándum",
+  "objetivos": [
+    "Elegir tipografía, tamaño e interlineado profesional para que el documento se lea bien en pantalla y en papel.",
+    "Organizar el contenido visualmente con texto justificado, listas y sangría con la tecla TAB.",
+    "Agregar encabezados y pies de página con membrete, datos de la empresa y numeración.",
+    "Diseñar un memorándum completo con branding corporativo siguiendo una guía paso a paso."
+  ],
+  "teoria": [
+    {
+      "titulo": "Tipografía, tamaño y espacios",
+      "emoji": "🔤",
+      "parrafos": [
+        "La tipografía es la «voz» visual del documento. En el ámbito ejecutivo se usan fuentes clásicas y neutras que garantizan legibilidad: Arial y Times New Roman son las reinas de la oficina.",
+        "El tamaño y el interlineado no son decisión estética: definen si tu jefe lee el documento o lo aparta con fastidio. Documentos demasiado grandes o apretados cansan; muy pequeños exigen lupa."
+      ],
+      "puntos": [
+        "Fuentes recomendadas: Arial (sin serif, moderna y limpia) o Times New Roman (serif, clásica). Evitá fuentes decorativas en documentos de trabajo.",
+        "Tamaño estándar: 11 o 12 puntos para el cuerpo del texto; los títulos pueden ir más grandes pero siempre en la misma familia de fuente.",
+        "Interlineado: 1,15 o 1,5 para que el texto respire. El interlineado sencillo (1.0) se usa solo en documentos muy largos.",
+        "Normas APA: cuando la institución pide estilo académico, se usa Times New Roman 12, interlineado doble y márgenes de 2,54 cm. Estate atento a cuándo se piden.",
+        "Consistencia: un solo tipo de letra y tamaño en todo el documento. Cambiar de fuente cada párrafo delata amateurismo."
+      ]
+    },
+    {
+      "titulo": "Organización visual: justificado, listas y sangría",
+      "emoji": "📐",
+      "parrafos": [
+        "Un documento ejecutivo se escanea antes de leerse. Si no se «ve» ordenado, no se lee. Tres herramientas visuales resuelven el orden: la alineación justificada, las listas y la sangría con TAB.",
+        "La sangría es el espacio que separa la primera línea del párrafo del borde del texto: le da ritmo al documento y separa visualmente una idea de otra."
+      ],
+      "puntos": [
+        "Texto justificado: alinea el párrafo a ambos bordes, igual que en los libros. Ideal para el cuerpo de las notas y memorándums.",
+        "Listas con viñetas: para enumerar ítems o pendientes. Viñetas (•) para temas sin jerarquía y numeración (1., 2.) para pasos o prioridades.",
+        "Sangría con TAB: presioná Tab para sangrar la primera línea del párrafo (5 espacios aprox.). No uses espacios sueltos: no quedan parejos.",
+        "No conjugues varias herramientas: un párrafo justificado con lista numerada interna se ve recargado.",
+        "Antes de imprimir, activá la vista previa: el documento debe «respirar», con espacios vacíos que inviten a leer."
+      ]
+    },
+    {
+      "titulo": "Encabezados y pies de página",
+      "emoji": "🧭",
+      "parrafos": [
+        "El manejo de documentos corporativo se reconoce por sus márgenes consistentes y por el membrete: el nombre y datos de la empresa en el encabezado. Cuando cada hoja lleva el logo y la numeración, el documento se vuelve institucional.",
+        "En Word y Google Docs, los encabezados (arriba) y pies de página (abajo) se repiten automáticamente en todas las hojas: se configuran una vez y el programa las completa."
+      ],
+      "puntos": [
+        "Encabezado: Insertar → Encabezado. Ahí va el membrete: nombre de la empresa, logo, dirección, teléfono y correo.",
+        "Para el logo usá el menú Imágenes dentro del encabezado; lo más profesional es logo a la izquierda y datos de contacto a la derecha o debajo.",
+        "Pie de página: Insertar → Número de página. La numeración «Página X de Y» evita que se pierda alguna hoja al imprimir.",
+        "Los datos del encabezado se repiten solos en cada página: no los escribas de nuevo en el cuerpo.",
+        "En Google Docs, los encabezados y pies de página se configuran igual: Insertar → Encabezado y número de página."
+      ]
+    },
+    {
+      "titulo": "Cómo diseñar un memorándum",
+      "emoji": "📋",
+      "parrafos": [
+        "El memorándum (o memo) es la comunicación interna por excelencia: breve, directa y con datos de referencia que permiten archivarlo, rastrearlo y responderlo.",
+        "Su estructura incluye un encabezado con membrete corporativo, el título MEMORÁNDUM, los campos Para / De / Fecha / Asunto y un cuerpo corto y accionable."
+      ],
+      "puntos": [
+        "Primero el membrete: logo y nombre de la empresa por arriba de todo (puede ser una plantilla ya hecha).",
+        "Título «MEMORÁNDUM» centrado y en negrita, destacado con letra más grande.",
+        "Campos de referencia: Para (destinatario), De (remitente), Fecha y Asunto. Se alinean a la izquierda y los valores se separan con TAB o se usa una tabla invisible.",
+        "Asunto siempre claro y corto: «Asunto: Cambio de horario de reuniones», no «Asunto: tema importante».",
+        "Cuerpo de 3 a 5 líneas: qué se decide y qué se espera de cada uno. Cierra con una línea de acción clara («Confirmar asistencia antes del viernes»).",
+        "Firma o rúbrica: en el memo formal va la firma de quien lo emite junto a su nombre y cargo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Diseñá un memorándum",
+      "consigna": "Armá un memorándum de tu propia miniempresa (inventá nombre, logo simple con formas o emoji y datos de contacto) aplicando todo el formato ejecutivo de la clase. Tomalo como modelo para los que vas a usar en la práctica laboral.",
+      "pasos": [
+        "Creá el documento en Word o Google Docs y nombralo «Memorandum_TuNombre».",
+        "Configurá la tipografía general: Arial o Times New Roman, tamaño 12 y márgenes estándar.",
+        "Insertá el encabezado con el membrete: nombre de tu empresa, un logo simple (Insertar → Imagen, o una forma) y los datos de contacto en una sola línea.",
+        "Escribí el título «MEMORÁNDUM» centrado, en negrita y con letra un poco más grande.",
+        "Completá los campos de referencia: Para, De, Fecha y Asunto. Usá Tab para alinear los valores y que queden parejos.",
+        "Redactá el cuerpo justificado con interlineado 1,15: qué se comunica, para cuándo y qué se espera.",
+        "Agregá en el pie de página la numeración «Página X de Y».",
+        "Guardá en .docx y exportá a PDF para tu entrega."
+      ],
+      "entrega": "Exportá el memorándum a PDF mostrando el grupo de trabajo el membrete, los campos alineados, el cuerpo justificado y la numeración.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tamaño de letra recomendamos para el cuerpo de un documento ejecutivo?",
+            "opciones": ["8 o 9 puntos", "10 puntos siempre", "11 o 12 puntos", "14 o 16 puntos"],
+            "correcta": "11 o 12 puntos"
+          },
+          {
+            "pregunta": "¿Con qué tecla sangrás la primera línea de un párrafo para que quede pareja?",
+            "opciones": ["Enter", "La barra espaciadora", "Tab", "F2"],
+            "correcta": "Tab"
+          },
+          {
+            "pregunta": "¿Qué es el membrete de un documento?",
+            "opciones": ["El número de página", "El nombre y datos de la empresa en el encabezado", "La firma del remitente", "El asunto del mensaje"],
+            "correcta": "El nombre y datos de la empresa en el encabezado"
+          },
+          {
+            "pregunta": "¿Dónde se coloca la numeración de páginas?",
+            "opciones": ["En el encabezado", "En el pie de página", "En el título", "En los márgenes"],
+            "correcta": "En el pie de página"
+          },
+          {
+            "pregunta": "¿Qué interlineado conviene para que el texto de un documento ejecutivo respire?",
+            "opciones": ["Interlineado 0,5", "Interlineado simple (1.0) en todos los casos", "Interlineado 1,15 o 1,5", "Interlineado doble siempre"],
+            "correcta": "Interlineado 1,15 o 1,5"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el PDF del memorándum: membrete con logo y datos, título centrado, campos Para/De/Fecha/Asunto alineados, cuerpo justificado y numeración en el pie de página.",
+  "lectura": "El formato ejecutivo se apoya en tres decisiones: una tipografía profesional (Arial o Times New Roman, 11-12 puntos, interlineado 1,15-1,5), una organización visual clara (justificado, listas y sangría con Tab) y el membrete con numeración en encabezados y pies de página. Con eso, más la estructura Para / De / Fecha / Asunto, diseñar un memorándum con branding de empresa se vuelve un procedimiento, no un misterio.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la estructura de la nota administrativa y preguntar qué memorándums conocen del trabajo", "min": "10 min" },
+      { "titulo": "Tipografía, tamaño y espacios", "que": "Comparar documentos con mala y buena tipografía e interlineado en vivo; ver cuál se lee mejor", "min": "20 min" },
+      { "titulo": "Organización visual", "que": "Practicar justificado, listas y sangría con Tab sobre un texto modelo", "min": "20 min" },
+      { "titulo": "Encabezados y pies de página", "que": "Configurar juntos un encabezado con membrete y la numeración de página", "min": "15 min" },
+      { "titulo": "Práctica: memorándum", "que": "Guiar el diseño completo del memorándum con branding inventado y exportar a PDF", "min": "20 min" },
+      { "titulo": "Cierre y autoevaluación", "que": "Pasar el interactivo en voz alta y mostrar 2 memorándums destacados del grupo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez les tocó escribir un memo o una circular y qué tan formales los ves. Usar esa experiencia como punto de partida.",
+      "Mostrar un memorándum corporativo real (del docente o de un ejemplo de internet) y que los alumnos identifiquen cada parte antes de diseñar el suyo."
+    ],
+    "aclarar": [
+      "Normas APA no son obligatorias para todo: se usan cuando el documento lo pide (ámbito académico o institucional). Preguntá siempre el estilo de la casa.",
+      "TAB sangra parejo; la barra espaciadora no. Esa es la diferencia entre un documento prolijo y uno desprolijo.",
+      "El encabezado se configura UNA vez y se repite en todas las hojas: no hay que copiar el logo en cada página.",
+      "El interlineado doble no es el estándar general: se reserva para borradores que se corrigen en papel o documentos APA."
+    ],
+    "ejemplos": [
+      "Proyectar en vivo la creación del encabezado con un logo simple insertado y los datos de contacto.",
+      "Mostrar el mismo párrafo con sangría con espaciados y con Tab para ver la diferencia real.",
+      "Generar el memorándum del ejercicio completo delante del grupo mientras los alumnos lo copian en sus equipos."
+    ]
+  }
+}

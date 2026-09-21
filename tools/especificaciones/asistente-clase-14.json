@@ -1,0 +1,163 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 14,
+    "titulo": "Google Drive y organización en la nube",
+    "modulo": "Módulo 5 – Gestión de la Información y Nube",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a compartir carpetas, subir tus documentos de Word y Excel, y organizar todo en la nube con respaldo automático.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 5\\Clase 14 Drive",
+  "objetivos": [
+    "Entender qué es la nube y por qué Google Drive la hace más segura que el disco local.",
+    "Crear carpetas y subcarpetas para organizar documentos por temática.",
+    "Subir archivos de Word, Excel y otros formatos a Drive arrastrándolos desde el Explorador.",
+    "Compartir carpetas con permisos de editor o lector según el tipo de colaborador."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es la nube y qué es Google Drive?",
+      "emoji": "☁️",
+      "parrafos": [
+        "La nube es un espacio de almacenamiento que vive en Internet: tus archivos no dependen de un solo equipo. Google Drive es el servicio de nube de Google, integrado con el correo Gmail y el resto del Workspace.",
+        "Cuando guardás en Drive, el archivo queda sincronizado: si trabajás desde tu PC, una tablet o un celular, siempre ves la última versión."
+      ],
+      "puntos": [
+        "15 GB gratuitos por cuenta de Google, compartidos entre Gmail, fotos y Drive.",
+        "Riesgo: si rompés o perdés tu PC, tus archivos siguen a salvo en Drive.",
+        "Todo lo que creás en Docs, Sheets o Slides ya nace guardado en Drive, sin botón 'Guardar'."
+      ]
+    },
+    {
+      "titulo": "Crear carpetas y subcarpetas",
+      "emoji": "📁",
+      "parrafos": [
+        "Drive admite la misma lógica que el Explorador de Windows: carpetas dentro de carpetas para mantener todo en orden.",
+        "Una buena estructura replica las áreas de trabajo del asistente: por ejemplo, «Clientes» con una subcarpeta por cliente, o «2026» con subcarpetas por mes."
+      ],
+      "puntos": [
+        "Nuevo → Carpeta para crear; el nombre debe ser descriptivo, sin «Nueva carpeta». Ej.: «Facturas 2026».",
+        "Clic derecho sobre una carpeta → Mover a... para reorganizar sin copiar duplicados.",
+        "El buscador de Drive (arriba) encuentra archivos por nombre, tipo y contenido del texto."
+      ]
+    },
+    {
+      "titulo": "Subir y arrastrar documentos de Word y Excel",
+      "emoji": "📄",
+      "parrafos": [
+        "Podés llevar al Drive los archivos que ya tenés en tu PC: Word, Excel, PDF, imágenes o comprimidos. Drive los guarda tal cual y te permite abrirlos sin convertirlos.",
+        "El truco más rápido es arrastrar el archivo desde la carpeta de Windows directamente a la ventana de Drive."
+      ],
+      "puntos": [
+        "Arrastrar y soltar sobre el área central, o usar Nuevo → Subida de archivos / Subida de carpetas.",
+        "Un archivo de Word subido se abre con Word online; también podés convertirlo a Documentos de Google para poder editar en conjunto.",
+        "Para convertir: Archivo → Guardar como → Documentos de Google."
+      ]
+    },
+    {
+      "titulo": "Compartir con permisos: editor o lector",
+      "emoji": "🔗",
+      "parrafos": [
+        "Compartir en Drive no es mandar una copia: es dar acceso al mismo archivo. Podés decidir qué puede hacer cada persona y revocar el permiso cuando quieras.",
+        "El asistente administrativo comparte planillas de gastos con el gerente, documentos con colegas y hace copias públicas o internas según la necesidad."
+      ],
+      "puntos": [
+        "Editor: puede cambiar el contenido y agregar comentarios. Para compañeros del equipo.",
+        "Lector: solo puede ver o descargar. Para clientes, jefes o audiencias que no deben modificar nada.",
+        "Nivel de acceso: restringido (solo con invitación) o cualquiera con el enlace.",
+        "Consejo: configurá «Restringido» siempre que el documento sea interno o sensible."
+      ]
+    },
+    {
+      "titulo": "Organizar por temática y backup",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Una estructura lógica te ahorra minutos buscando: guardá cada cosa en su lugar desde el primer momento, con nombres de archivo claros que incluyan fecha.",
+        "Drive es, además, tu respaldo: aunque el disco de tu PC falle, todo lo sincronizado queda a salvo."
+      ],
+      "puntos": [
+        "Convención de nombres: «2026-09-15 Nota de pedido - ClienteA.docx» en vez de «nota final def.docx».",
+        "Backup: subí a Drive una copia de lo crítico (facturas, contratos, planillas) aunque lo sigas editando localmente.",
+        "La Papelera de Drive permite recuperar lo borrado hasta 30 días."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Montá tu oficina en la nube",
+      "consigna": "Creá tu estructura de Drive, subí archivos de tu PC y compartí una carpeta con el docente con el permiso correcto.",
+      "pasos": [
+        "Entrá a drive.google.com con tu cuenta y creá una carpeta principal con tu nombre.",
+        "Dentro, armá subcarpetas por temática: «Documentos de trabajo», «Facturas» y «Backup».",
+        "Subí un archivo de Word y uno de Excel usando arrastrar y soltar desde el Explorador.",
+        "Convertí el Word a Documentos de Google con Guardar como.",
+        "Compartí la carpeta principal con el docente como editor y avisá el enlace."
+      ],
+      "entrega": "Compartí el enlace de tu carpeta principal con el docente y adjuntá una captura de pantalla de tu estructura en Drive.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué pasa con tus archivos en Drive si se rompe tu PC?",
+            "opciones": ["Se pierden para siempre", "Quedan a salvo en la nube", "Se borran automáticamente", "Se pasan a otro equipo sin permiso"],
+            "correcta": "Quedan a salvo en la nube"
+          },
+          {
+            "pregunta": "¿Qué permiso le das a una colega que debe poder editar la planilla?",
+            "opciones": ["Lector", "Editor", "Comentarista", "Restringido"],
+            "correcta": "Editor"
+          },
+          {
+            "pregunta": "¿Cómo subís rápido un archivo desde Windows a Drive?",
+            "opciones": ["Copiándolo al portapapeles", "Reiniciando la PC", "Arrastrándolo a la ventana de Drive", "Enviándolo por Gmail"],
+            "correcta": "Arrastrándolo a la ventana de Drive"
+          },
+          {
+            "pregunta": "¿Cuál es un buen nombre de archivo para un asistente ordenado?",
+            "opciones": ["documento.docx", "nuevo1.docx", "2026-09-15 Nota de pedido - ClienteA.docx", "final definitivo v3 FINAL.docx"],
+            "correcta": "2026-09-15 Nota de pedido - ClienteA.docx"
+          },
+          {
+            "pregunta": "Un cliente solo debe VER el documento, no tocarlo. ¿Qué permiso le das?",
+            "opciones": ["Editor", "Lector", "Propietario", "Comentarista"],
+            "correcta": "Lector"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el enlace compartido y la captura de la estructura de carpetas en Drive.",
+  "lectura": "Google Drive es la base de la oficina en la nube del asistente administrativo. Saber crear carpetas temáticas, subir documentos de Word y Excel con arrastrar y soltar, y compartir con permisos de editor o lector organiza el trabajo y protege la información con respaldo automático.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar dónde guardan hoy sus archivos y si alguna vez perdieron algo", "min": "10 min" },
+      { "titulo": "¿Qué es la nube?", "que": "Explicar concepto, los 15 GB y beneficios de respaldo", "min": "15 min" },
+      { "titulo": "Carpetas y subcarpetas", "que": "Crear en vivo la estructura por temática y nombrar bien", "min": "15 min" },
+      { "titulo": "Subir y convertir archivos", "que": "Mostrar arrastrar-soltar y conversión de Word a Docs", "min": "15 min" },
+      { "titulo": "Compartir y permisos", "que": "Compartir con docente (editor) y con lector; probar acceso", "min": "20 min" },
+      { "titulo": "Práctica y cierre", "que": "Terminar el ejercicio completo y repasar con el interactivo", "min": "15 min" }
+    ],
+    "conecta": [
+      "Preguntar si perdieron archivos por fallas de PC o pendrives: usar eso para entrar a la nube.",
+      "Mostrar en el proyector un Drive real bien organizado con subcarpetas por cliente y mes."
+    ],
+    "aclarar": [
+      "Subir un archivo NO es compartirlo: el archivo subido solo lo ve el dueño hasta que lo comparte.",
+      "Convertir a Documento de Google cambia el archivo original a otro formato; la versión de Word queda como copia.",
+      "'Restringido' no bloquea: simplemente exige que solo quienes fueron invitados entren al enlace.",
+      "Borrar de Drive va a la Papelera, donde se puede recuperar hasta 30 días."
+    ],
+    "ejemplos": [
+      "Armar la estructura «Clientes / ClienteA / 2026 / facturas» en vivo.",
+      "Arrastrar un .docx desde el Explorador y convertirlo a Documento de Google.",
+      "Compartir una misma carpeta como editor y como lector para que noten la diferencia de permisos."
+    ]
+  }
+}

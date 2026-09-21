@@ -1,0 +1,145 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 4,
+    "titulo": "Redes Sociales: panorama y uso profesional",
+    "modulo": "Módulo 2 – Redes Sociales y Gestión de Contenidos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a recorrer el panorama de las redes en 2025: cómo funcionan los algoritmos, qué tipos de publicaciones elegir según objetivo y con qué herramientas se trabaja de forma profesional.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 2 - Redes Sociales y Gestión de Contenidos\\Clase 5  redes sociales Intro",
+  "objetivos": [
+    "Describir el panorama actual de las redes sociales y su uso profesional.",
+    "Explicar cómo funcionan los algoritmos actuales de las principales plataformas.",
+    "Distinguir tipos de publicaciones según el objetivo buscado.",
+    "Elegir herramientas para crear, programar y medir contenidos."
+  ],
+  "teoria": [
+    {
+      "titulo": "El panorama de redes en 2025",
+      "emoji": "🌐",
+      "parrafos": [
+        "Instagram, Facebook, TikTok, YouTube y LinkedIn siguen siendo las plataformas centrales, pero cambió el uso: hoy se prioriza el contenido entretenido, auténtico y vertical. Las marcas ya no solo publican: conversan, responden y entretienen."
+      ],
+      "puntos": [
+        "Cada red tiene una audiencia y un uso: elegí según tu buyer persona.",
+        "El video corto domina la interacción en casi todas las plataformas.",
+        "La autenticidad y la respuesta rápida valen tanto como el contenido."
+      ]
+    },
+    {
+      "titulo": "Cómo funcionan los algoritmos actuales",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Los algoritmos muestran el contenido que estiman que te va a interesar, no en orden cronológico. Se basan en señales: tiempo de visualización, interacciones, compartidos y frecuencia de uso de cada persona."
+      ],
+      "puntos": [
+        "Instagram (Reels): prioriza el video corto, original y con retención.",
+        "TikTok: algoritmo de descubrimiento muy fuerte, basado en el comportamiento de cada persona.",
+        "Facebook: valora comunidades, grupos y contenido que genera conversación."
+      ]
+    },
+    {
+      "titulo": "Tipos de publicaciones",
+      "emoji": "📝",
+      "parrafos": [
+        "No todo es una publicación: cada red ofrece formatos que cumplen distintos trabajos. La elección depende del objetivo: dar a conocer, educar, vender o fidelizar."
+      ],
+      "puntos": [
+        "Reels y videos cortos: alcance y entretenimiento.",
+        "Publicaciones de feed: identidad, contenido de valor y ventas.",
+        "Historias: cercanía diaria, encuestas y promociones temporales.",
+        "Carrouseles: educar con contenido en varias piezas."
+      ]
+    },
+    {
+      "titulo": "Herramientas para gestionar redes",
+      "emoji": "🛠️",
+      "parrafos": [
+        "Trabajar de forma profesional implica organizarse: una herramienta de diseño, una de programación y una de métricas. Empezá por las versiones gratuitas y sumá funciones de a poco."
+      ],
+      "puntos": [
+        "Diseño: Canva para piezas y CapCut para editar videos cortos.",
+        "Programación y gestión: Meta Business Suite (Facebook, Instagram y WhatsApp).",
+        "Métricas: cada red tiene su panel de estadísticas; Business Suite las centraliza."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Auditoría de un perfil de marca",
+      "consigna": "Elegí una marca real que te guste y analizá su presencia en una red social con mirada profesional: qué publica, qué tipos usa y cómo le responde a su gente.",
+      "pasos": [
+        "Elegí el perfil de una marca o emprendimiento que conozcas, en Instagram o TikTok.",
+        "Revisá sus últimas 6 publicaciones y clasificalas por tipo: reel, carrousel, publicación simple o historia destacada.",
+        "Identificá qué objetivo parece tener cada una: dar a conocer, educar, vender o fidelizar.",
+        "Fijate en los comentarios: ¿responde la marca? ¿con qué tono?",
+        "Armá un listado de hallazgos en Google Docs con capturas de 2 publicaciones."
+      ],
+      "entrega": "Compartí el documento con la clasificación de publicaciones, los objetivos detectados y 2 capturas del perfil.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Los algoritmos de las redes sociales muestran...",
+            "opciones": ["El contenido que estiman que te va a interesar, según tus señales", "Las publicaciones en orden cronológico estricto", "Solo publicaciones pagas", "Las publicaciones de tus amigos y nada más"],
+            "correcta": "El contenido que estiman que te va a interesar, según tus señales"
+          },
+          {
+            "pregunta": "¿Qué tipo de publicación suele priorizar el algoritmo de Instagram hoy?",
+            "opciones": ["Reels y video corto", "Historias viejas", "Solo texto", "Enlaces externos"],
+            "correcta": "Reels y video corto"
+          },
+          {
+            "pregunta": "Un carrousel sirve principalmente para...",
+            "opciones": ["Educar con contenido en varias piezas", "Cobrar suscripciones", "Cambiar la foto de perfil", "Eliminar comentarios"],
+            "correcta": "Educar con contenido en varias piezas"
+          },
+          {
+            "pregunta": "¿Qué herramienta permite programar publicaciones en Facebook e Instagram juntas?",
+            "opciones": ["Meta Business Suite", "Una calculadora", "El explorador de archivos", "Un antivirus"],
+            "correcta": "Meta Business Suite"
+          },
+          {
+            "pregunta": "El 'tiempo de visualización' le indica al algoritmo que...",
+            "opciones": ["El contenido engancha y conviene difundirlo", "La publicación es un error", "Hay que borrar el perfil", "La persona está desconectada"],
+            "correcta": "El contenido engancha y conviene difundirlo"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el informe de auditoría con tipos de publicaciones y objetivos detectados.",
+  "lectura": "Las redes sociales en 2025 se parecen más a un juego de entretenimiento que a un mural de carteles: los algoritmos premian lo que engancha. Cada público y cada objetivo piden un tipo de publicación, y trabajar de forma profesional implica organizarse con herramientas de diseño, programación y métricas.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué redes usan y cuánto tiempo por día", "min": "10 min" },
+      { "titulo": "Panorama de redes", "que": "Recorrer cada plataforma, su audiencia y su uso", "min": "20 min" },
+      { "titulo": "Algoritmos", "que": "Explicar cómo las plataformas deciden qué contenido muestran", "min": "20 min" },
+      { "titulo": "Tipos de publicaciones", "que": "Repasar formatos y cuándo usar cada uno", "min": "15 min" },
+      { "titulo": "Herramientas y práctica", "que": "Presentar Canva y Business Suite; guiar la auditoría", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué fue lo último que viste en tu feed y por qué lo viste? Conectar con el algoritmo.",
+      "Pedir que nombren marcas que siguen y por qué las siguen."
+    ],
+    "aclarar": [
+      "El algoritmo no es un enemigo: es un sistema de empatía que premia lo que a la gente le gusta.",
+      "Tener presencia en todas las redes no sirve si no elegís bien dónde está tu audiencia.",
+      "Las herramientas gratuitas alcanzan para empezar a trabajar de forma profesional."
+    ],
+    "ejemplos": [
+      "Mostrar en vivo el panel de estadísticas de una cuenta.",
+      "Comparar dos perfiles del mismo rubro: uno activo y otro abandonado.",
+      "Reproducir un reel exitoso y analizar qué hizo que funcione."
+    ]
+  }
+}

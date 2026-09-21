@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 19,
+    "titulo": "Facebook Ads 2: optimización",
+    "modulo": "Módulo 5 – Automatización y Email Marketing",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a leer el administrador de anuncios como un profesional: interpretar métricas clave de campañas pagas, optimizar presupuestos, armar retargeting y tomar decisiones con datos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 5 - Automatización y Email Marketing\\Clase 19 - Facebook Ads 2",
+  "objetivos": [
+    "Interpretar las métricas clave del administrador de anuncios.",
+    "Optimizar el presupuesto según el rendimiento de los conjuntos.",
+    "Crear una campaña de retargeting para clientes que ya interactuaron.",
+    "Tomar decisiones de pausa, ajuste o escala basadas en datos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Métricas clave de campañas pagas",
+      "emoji": "📊",
+      "parrafos": [
+        "El administrador de anuncios mide todo: pero no toda métrica sirve para todas las decisiones. Hay que diferenciar lo que muestra el rendimiento del anuncio del resultado final de tu negocio."
+      ],
+      "puntos": [
+        "Alcance: cuántas personas vieron el anuncio al menos una vez.",
+        "Frecuencia: cuántas veces, en promedio, cada persona lo vio.",
+        "CTR: porcentaje de clics sobre visualizaciones; mide si el anuncio engancha.",
+        "CPC y CPM: costo por clic y costo por mil visualizaciones.",
+        "Conversiones y costo por resultado: la métrica que finalmente importa si vendés."
+      ]
+    },
+    {
+      "titulo": "Frecuencia y fatiga del anuncio",
+      "emoji": "🔄",
+      "parrafos": [
+        "Cuando un anuncio se muestra muchas veces a la misma persona, el interés cae y el costo sube. Leer la frecuencia evita seguir pagando por un anuncio que ya nadie mira."
+      ],
+      "puntos": [
+        "Frecuencia de 1 a 2 es sana para campañas de respuesta directa.",
+        "Otra frecuencia de 3 o más en poco tiempo suele significar fatiga.",
+        "Se combate cambiando el creativo, la audiencia o pausando el anuncio.",
+        "El CTR en baja con frecuencia alta es la señal clásica de fatiga.",
+        "Metas empuja el anuncio a otra gente o te advierte del desgaste."
+      ]
+    },
+    {
+      "titulo": "Optimización de presupuesto",
+      "emoji": "💰",
+      "parrafos": [
+        "El presupuesto de una campaña se puede repartir de dos formas: fijo entre conjuntos o automático. La optimización automática mueve el dinero hacia el conjunto que mejor rinde."
+      ],
+      "puntos": [
+        "Presupuesto fijo por conjunto: reparto igual de lo que definiste.",
+        "Presupuesto de campaña (CBO): Meta reparte solo entre los conjuntos ganadores.",
+        "La CBO conviene cuando tenés varios conjuntos probando audiencias.",
+        "Regla: no cambiar de estrategia de presupuesto en las primeras 48 horas.",
+        "Escalar: subir presupuesto de a poco (10-20%) para no romper el rendimiento."
+      ]
+    },
+    {
+      "titulo": "Retargeting y audiencias personalizadas",
+      "emoji": "🔁",
+      "parrafos": [
+        "No todos los clientes compran la primera vez que ven un anuncio. El retargeting vuelve a mostrar tus anuncios a quienes ya interactuaron con tu marca o visitaron tu sitio."
+      ],
+      "puntos": [
+        "Audiencia personalizada: personas que visitaron el sitio, vieron videos o siguieron tus redes.",
+        "Se arma desde el píxel de Meta instalado en tu web o desde la interacción con tu página.",
+        "Es la campaña con mejor costo porque habla con gente que ya te conoce.",
+        "Exclusión obligatoria: retargeting no es para quienes ya compraron.",
+        "Combinar retargeting con una audiencia nueva y similar amplía resultados."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Optimizá un caso de campaña real",
+      "consigna": "Analizá los datos de una campaña de ejemplo que te da el docente, detectá el problema en cada conjunto y proponé una estrategia de optimización y retargeting en un documento.",
+      "pasos": [
+        "Leé la tabla de rendimiento del caso: alcance, frecuencia, CTR, CPC y resultados por conjunto.",
+        "Identificá qué conjunto gasta más y qué conjunto convierte mejor por costo.",
+        "Proponé a cuál le subirías presupuesto y a cuál pausarías o cambiarías el creativo.",
+        "Detectá si hay fatiga: frecuencia alta con CTR en baja.",
+        "Definí la audiencia personalizada para el retargeting: ejemplo, visitantes de la página de servicios.",
+        "Redactá el plan de acción: presupuesto nuevo, creativo nuevo y la campaña de retargeting."
+      ],
+      "entrega": "Entregá el documento con el diagnóstico por conjunto, la nueva distribución de presupuesto y el plan de retargeting.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué métrica muestra cuántas veces vio cada persona tu anuncio?",
+            "opciones": ["Alcance", "Frecuencia", "CTR", "CPM"],
+            "correcta": "Frecuencia"
+          },
+          {
+            "pregunta": "¿Qué indica una frecuencia alta con CTR en baja?",
+            "opciones": ["Que el anuncio está en su mejor momento", "Fatiga del anuncio: el público ya no muestra interés", "Que la audiencia es perfecta", "Que el presupuesto es bajo"],
+            "correcta": "Fatiga del anuncio: el público ya no muestra interés"
+          },
+          {
+            "pregunta": "¿Qué hace la optimización de presupuesto de campaña (CBO)?",
+            "opciones": ["Reparte el dinero solo entre los conjuntos que mejor rinden", "Pausa todos los anuncios", "Fija el presupuesto por día sin cambios", "Multiplica el presupuesto automáticamente"],
+            "correcta": "Reparte el dinero solo entre los conjuntos que mejor rinden"
+          },
+          {
+            "pregunta": "¿A quién apunta una campaña de retargeting?",
+            "opciones": ["A personas que ya interactuaron con tu marca", "A una audiencia completamente nueva", "Solo a tus empleados", "A cualquier persona del país"],
+            "correcta": "A personas que ya interactuaron con tu marca"
+          },
+          {
+            "pregunta": "¿Qué conviene excluir de una campaña de retargeting?",
+            "opciones": ["A quienes ya compraron", "A los usuarios de celular", "A los seguidores de tu página", "A quienes están cerca del local"],
+            "correcta": "A quienes ya compraron"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el diagnóstico del caso, la nueva distribución de presupuesto y el plan de retargeting con audiencia definida.",
+  "lectura": "Optimizar es leer el administrador con criterio: reconocer alcance, frecuencia y CTR, detectar fatiga y mover el presupuesto hacia los conjuntos ganadores. El retargeting recupera a quienes ya mostraron interés y suele ser la campaña más rentable del plan.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar estructura de campaña y preguntar qué harían con una campaña que no convierte", "min": "10 min" },
+      { "titulo": "Métricas clave", "que": "Recorrer cada métrica del administrador con una campaña real o simulada", "min": "20 min" },
+      { "titulo": "Frecuencia y fatiga", "que": "Analizar un anuncio desgastado y comparar CTR con frecuencia en la tabla", "min": "15 min" },
+      { "titulo": "Optimización de presupuesto", "que": "Explicar CBO vs fijo y practicar un reparto con datos reales", "min": "20 min" },
+      { "titulo": "Retargeting", "que": "Armar una audiencia personalizada paso a paso y su campaña", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Revisar un plan de un alumno y cerrar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Partir de la campaña de la clase 18: hoy aprendemos qué hacer cuando ya hay datos.",
+      "Preguntar si se sintieron acosados por anuncios de algo que solo buscaron una vez: ese es el retargeting."
+    ],
+    "aclarar": [
+      "Alcance y frecuencia son distintas: muchas impresiones no son mucha gente distinta.",
+      "El CTR depende de la creatividad y la audiencia: un CTR bajo con audiencia mala no es culpa del texto.",
+      "La CBO necesita tiempo: mover presupuesto antes de las 48 horas desestabiliza la optimización.",
+      "Subir el presupuesto de golpe rompe el aprendizaje: se escala de a 10-20%."
+    ],
+    "ejemplos": [
+      "Mostrar una campaña con frecuencia 4 y CTR en caída para que detecten la fatiga.",
+      "Simular dos conjuntos: uno caro que convierte y uno barato que no, y decidir el reparto.",
+      "Armar un retargeting en vivo con la audiencia de visitantes del sitio del emprendimiento."
+    ]
+  }
+}

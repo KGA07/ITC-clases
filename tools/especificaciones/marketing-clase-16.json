@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 16,
+    "titulo": "Google Ads: planificador de palabras clave",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a conocer Google Ads en profundidad y usar el planificador de palabras clave para investigar qué busca la gente, cuánto se busca ese término y cuánta competencia tiene.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 5 - Automatización y Email Marketing\\Clase 16 Google Ads",
+  "objetivos": [
+    "Identificar las secciones principales de Google Ads.",
+    "Usar el planificador de palabras clave para descubrir nuevas ideas.",
+    "Interpretar el volumen de búsquedas y la competencia de cada término.",
+    "Convertir los datos del planificador en decisiones de campaña."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es Google Ads y cómo se navega",
+      "emoji": "🗺️",
+      "parrafos": [
+        "Google Ads es la plataforma completa de publicidad de Google: ahí administrás las campañas de Búsqueda, Display y Video. Conocer sus secciones evita perderse en el panel y hace que cada clic trabajé para tu negocio."
+      ],
+      "puntos": [
+        "Campaigns: todas tus campañas y su rendimiento en un tablero.",
+        "Keywords: las palabras clave de cada grupo y su actividad.",
+        "Tools/Planificador: la caja de herramientas para investigar antes de gastar.",
+        "Reports: gráficos de clics, impresiones, costo y conversiones.",
+        "Ajustá fechas y ubicación en el filtro superior para leer datos correctos."
+      ]
+    },
+    {
+      "titulo": "El planificador de palabras clave",
+      "emoji": "🛠️",
+      "parrafos": [
+        "El planificador responde la pregunta que todo SEM debe hacerse antes de pautar: ¿qué escribe la gente cuando quiere lo que yo vendo? No se decide por intuición: se decide con datos."
+      ],
+      "puntos": [
+        "Dos funciones: Descubrir palabras nuevas y Ver pronósticos de búsquedas.",
+        "Arrancás con el rubro, el sitio web o una palabra semilla.",
+        "Devuelve listas de palabras relacionadas con el volumen y la competencia.",
+        "Se puede filtrar por ubicación geográfica e idioma (no es igual en todo el país).",
+        "Se exporta a un archivo para llevar la investigación a tu plan de campaña."
+      ]
+    },
+    {
+      "titulo": "Volumen de búsquedas",
+      "emoji": "📊",
+      "parrafos": [
+        "El volumen de búsquedas indica cuántas veces se busca ese término por mes. Es la prueba de que hay demanda real, pero también un dato que hay que leer con cuidado: alto volumen no siempre significa mejor negocio."
+      ],
+      "puntos": [
+        "Volumen alto: muchas personas buscan, pero también más competencia y anuncios caros.",
+        "Volumen bajo: idea más nichada, más económica y con intención más clara.",
+        "La que combina bien: volumen medio con competencia baja suele ser la más rentable.",
+        "El volumen varía por época del año: registrá estacionalidad si tu rubro la tiene.",
+        "El promedio mensual se ajusta con las fluctuaciones reales de tu segmento."
+      ]
+    },
+    {
+      "titulo": "Competencia y cómo elegir",
+      "emoji": "⚖️",
+      "parrafos": [
+        "La competencia muestra cuántos anunciantes pujan por esa palabra. Cruzar volumen, competencia y precio sugerido te deja armado un plan de palabras clave defensible."
+      ],
+      "puntos": [
+        "Competencia alta: varios anunciantes por la misma palabra, pujas caras.",
+        "Competencia baja: hay espacio para aparecer con presupuesto chico.",
+        "El planificador sugiere rango de ofertas para posicionarse y salir primero.",
+        "Combiná palabras de competencia baja para arrancar y midas sin quemar el presupuesto.",
+        "Las palabras con intención clara (comprar, precio, urgente) convierten mejor."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Investigá palabras clave con el planificador",
+      "consigna": "Hacé una investigación de palabras clave en el planificador de Google Ads para el negocio de tus clases anteriores y armá una tabla priorizada con datos reales.",
+      "pasos": [
+        "Entrá a ads.google.com con tu Gmail y abrí el planificador de palabras clave.",
+        "Ingresá la url de tu sitio o el rubro del negocio como semilla.",
+        "Filtrá por tu país o provincia y por idioma español.",
+        "Anotá 10 palabras relacionadas con su volumen mensual y su competencia.",
+        "Elegí 3 palabras recomendadas: buscá volumen medio con competencia baja.",
+        "Guardá la lista en tu documento con el rango de oferta sugerido para cada una."
+      ],
+      "entrega": "Presentá la tabla con 10 palabras, su volumen, competencia y las 3 elegidas con justificación.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Para qué sirve principalmente el planificador de palabras clave?",
+            "opciones": ["Para diseñar los anuncios", "Para descubrir qué busca la gente y cuánto", "Para armar el sitio web", "Para facturar campañas"],
+            "correcta": "Para descubrir qué busca la gente y cuánto"
+          },
+          {
+            "pregunta": "¿Qué indica el volumen de búsquedas?",
+            "opciones": ["Cuántos anuncios hay en la cuenta", "Cuántas veces se busca esa palabra al mes", "Cuánto cobra Google por cada clic", "El índice de calidad de tu sitio"],
+            "correcta": "Cuántas veces se busca esa palabra al mes"
+          },
+          {
+            "pregunta": "¿Una palabra con competencia alta qué significa?",
+            "opciones": ["Que poca gente la busca", "Que muchos anunciantes pujan por ella", "Que es gratis publicitar", "Que no se puede usar"],
+            "correcta": "Que muchos anunciantes pujan por ella"
+          },
+          {
+            "pregunta": "¿Qué combinación suele ser la más rentable para arrancar?",
+            "opciones": ["Volumen alto con competencia alta", "Volumen bajo con competencia alta", "Volumen medio con competencia baja", "El volumen no importa"],
+            "correcta": "Volumen medio con competencia baja"
+          },
+          {
+            "pregunta": "¿Qué filtro hay que aplicar para leer bien el volumen en tu zona?",
+            "opciones": ["Ubicación geográfica e idioma", "Formato del anuncio", "Color del panel", "Tipo de facturación"],
+            "correcta": "Ubicación geográfica e idioma"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la tabla de palabras clave con volumen y competencia y la selección justificada de 3 palabras.",
+  "lectura": "El planificador de palabras clave convierte la intuición en datos: muestra qué busca la gente, cuántas veces y con qué competencia. Investigar antes de pautar evita gastar en palabras que nadie busca o que cuestan demasiado, y deja un plan de campaña sólido.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la estructura de campaña y preguntar qué buscarían para su negocio", "min": "10 min" },
+      { "titulo": "Panel de Google Ads", "que": "Recorrer las secciones principales de la interfaz con la pantalla en vivo", "min": "15 min" },
+      { "titulo": "Planificador: descubrir palabras", "que": "Usar el planificador con una semilla de ejemplo y analizar el resultado en grupo", "min": "25 min" },
+      { "titulo": "Volumen y competencia", "que": "Leer las columnas del planificador y explicar cómo cruzar los datos", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Guiar la investigación de cada alumno, filtrando por ciudad e idioma", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar dos tablas elegidas por alumnos y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Anclar a lo planificado en la clase 14 y 15: ahora validamos las palabras con datos reales.",
+      "Mostrar una búsqueda real del rubro y el anuncio que aparece como prueba de la competencia."
+    ],
+    "aclarar": [
+      "El planificador muestra estimaciones: los números reales pueden diferir de la proyección.",
+      "Volumen alto no es sinónimo de cliente: un término genérico trae clics sin intención de compra.",
+      "La competencia se mide entre anunciantes, no entre resultados orgánicos.",
+      "Los datos cambian sin publicar campañas: guardar la investigación sirve pero hay que revalidarla."
+    ],
+    "ejemplos": [
+      "Ingresar «pastelería» vs «pastelería por encargo zona norte» y comparar volumen e intención.",
+      "Mostrar cómo exportar la lista del planificador a un archivo para tu propio plan.",
+      "Leer en grupo una tabla con 5 palabras y decidir juntos cuáles dejarían fuera."
+    ]
+  }
+}

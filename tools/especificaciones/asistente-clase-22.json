@@ -1,0 +1,157 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 22,
+    "titulo": "Cierre del curso y proyecto final",
+    "modulo": "Módulo 8 – Proyecto Final",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Integrás todo lo aprendido en un proyecto final: documento ejecutivo, planilla, presentación y Drive, con IA en alguna parte.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 8",
+  "objetivos": [
+    "Integrar ofimática, nube e IA en un único proyecto de oficina real.",
+    "Producir un documento ejecutivo en Word/Docs con formato profesional.",
+    "Construir una planilla con cálculos y gráficos y una presentación final.",
+    "Planificar el trabajo por etapas y conocer los criterios de evaluación del proyecto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Repaso integral del curso",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Este curso te llevó desde el manejo de Windows hasta la IA aplicada: organización de archivos, documentos ejecutivos, planillas de cálculo, presentaciones, nube, correo, videoconferencias y herramientas de IA.",
+        "El proyecto final une todo eso alrededor de un caso de oficina: pensá en el asistente administrativo que tenés que ser en tu primer empleo."
+      ],
+      "puntos": [
+        "Módulo 1-2: PC, archivos, Word y Docs para cartas e informes.",
+        "Módulo 3-4: Excel/Sheets con fórmulas y gráficos; PowerPoint/Slides para comunicar.",
+        "Módulo 5-6: Drive, Calendar, Forms, colaboración, Gmail y reuniones.",
+        "Módulo 7: IA para redactar, calcular, analizar y responder."
+      ]
+    },
+    {
+      "titulo": "Alcance del proyecto final",
+      "emoji": "🎯",
+      "parrafos": [
+        "El proyecto es una tarea integral con cuatro entregables funcionales que se relacionan entre sí: un documento ejecutivo, una planilla con cálculos y gráficos, una presentación y una estructura completa en Drive, con IA utilizada en al menos una parte del trabajo.",
+        "Trabajá con un caso real o inventado de empresa: los entregables cuentan una misma historia administrativa."
+      ],
+      "puntos": [
+        "Documento ejecutivo (Word/Docs): descripción del caso, objetivos y conclusiones, con formato profesional.",
+        "Planilla (Excel/Sheets): tabla de datos, cálculos con fórmulas y al menos un gráfico que resuma la información.",
+        "Presentación (PowerPoint/Slides): 6 a 8 diapositivas que cuenten el proyecto.",
+        "Todo en Google Drive: carpeta compartida con el docente, bien organizada y con nombres claros.",
+        "IA: al menos un texto o análisis del proyecto debe generarse con IA y señalarse dónde (ej. la carta de presentación)."
+      ]
+    },
+    {
+      "titulo": "Planificación por etapas",
+      "emoji": "🔨",
+      "parrafos": [
+        "Un proyecto se construye por etapas. Planificar primero qué vas a hacer en cada semana te evita el apuro final: primero el caso y los datos, después el documento, después la planilla y el gráfico, después la presentación y al final el orden en Drive.",
+        "Definí fechas límites propias para cada etapa y usá Calendar para recordarlas."
+      ],
+      "puntos": [
+        "Etapa 1: definir el caso de empresa y los datos base.",
+        "Etapa 2: redactar el documento ejecutivo en Docs con la IA como apoyo.",
+        "Etapa 3: armar la planilla con fórmulas, verificar cálculos y crear el gráfico.",
+        "Etapa 4: preparar la presentación y revisar coherencia de los tres entregables.",
+        "Etapa 5: organizar todo en Drive y compartir la carpeta con el docente."
+      ]
+    },
+    {
+      "titulo": "Criterios de evaluación",
+      "emoji": "⭐",
+      "parrafos": [
+        "El proyecto se evalúa con una rúbrica simple: cómo está lograda cada parte y cómo se nota el uso de lo aprendido. No se busca perfección de diseño: se busca un trabajo completo, coherente y profesional.",
+        "Revisá los criterios antes de entregar para saber exactamente qué se va a mirar."
+      ],
+      "puntos": [
+        "Completitud: los 4 entregables presentes y terminados.",
+        "Coherencia: la historia del caso, los datos de la planilla y la presentación cuentan lo mismo.",
+        "Profesionalismo: formato prolijo, nombres claros de archivos y carpetas.",
+        "Uso de herramientas: fórmulas reales, gráfico incluido, cita de dónde se usó la IA.",
+        "Entrega en plazo: carpeta de Drive compartida antes de la fecha acordada."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Armá tu proyecto final",
+      "consigna": "Producí los cuatro entregables de tu proyecto final integrador siguiendo las etapas planificadas.",
+      "pasos": [
+        "Definí tu caso: una empresa (real o inventada) y una necesidad administrativa (facturación, agenda, comunicación, ventas).",
+        "Creá la estructura en Drive: carpeta «Proyecto Final - [Tu nombre]» con subcarpetas Documento, Planilla, Presentación.",
+        "Redactá el documento ejecutivo en Docs: descripción del caso, objetivos, una conclusión; usá IA para al menos un párrafo y señalalo.",
+        "Armá la planilla con datos reales del caso, 3 fórmulas (suma, promedio, porcentaje) y un gráfico.",
+        "Creá la presentación de 6 a 8 diapositivas con la historia del proyecto.",
+        "Ordená todo en Drive, compartí la carpeta con el docente y completá el comentario final explicando tu trabajo."
+      ],
+      "entrega": "Compartí la carpeta de Drive completa con el docente antes de la fecha acordada, con todo ordenado y el uso de IA señalado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuántos entregables forman el proyecto final?",
+            "opciones": ["Dos: documento y presentación", "Cuatro: documento, planilla, presentación y Drive", "Uno: solo la presentación", "Cinco: incluye un video"],
+            "correcta": "Cuatro: documento, planilla, presentación y Drive"
+          },
+          {
+            "pregunta": "¿Dónde se debe señalar el uso de la IA en el proyecto?",
+            "opciones": ["En ninguna parte", "En el texto o análisis concreto que generó", "Solo en un mail", "En la portada"],
+            "correcta": "En el texto o análisis concreto que generó"
+          },
+          {
+            "pregunta": "¿Qué debe tener la planilla del proyecto?",
+            "opciones": ["Fotos y colores", "Datos, fórmulas reales y un gráfico", "Solo un título", "Tablas de Word"],
+            "correcta": "Datos, fórmulas reales y un gráfico"
+          },
+          {
+            "pregunta": "¿Qué comprueba la coherencia del proyecto?",
+            "opciones": ["Que documento, planilla y presentación cuenten la misma historia", "Que todos usen el mismo color", "Que todo esté en un solo archivo", "Que no haya IA"],
+            "correcta": "Que documento, planilla y presentación cuenten la misma historia"
+          },
+          {
+            "pregunta": "¿Cómo se entrega el proyecto según el criterio de evaluación?",
+            "opciones": ["Por correo interno", "Compartiendo la carpeta de Drive con el docente", "En pendrive", "Imprimiéndolo"],
+            "correcta": "Compartiendo la carpeta de Drive con el docente"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente evaluará la carpeta de Drive compartida y dará una devolución según la rúbrica de criterios.",
+  "lectura": "El proyecto final integra cada módulo del curso: documento ejecutivo, planilla con cálculos y gráficos, presentación y una estructura completa en Drive, con IA como apoyo señalado. Planificar por etapas y trabajar de forma coherente y prolija garantiza una entrega profesional lista para el mundo laboral.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso final", "que": "Recorrer el mapa del curso y celebrar el recorrido; resolver dudas", "min": "10 min" },
+      { "titulo": "Alcance del proyecto", "que": "Explicar los 4 entregables y el requisito del uso de IA señalado", "min": "15 min" },
+      { "titulo": "Planificación por etapas", "que": "Definir fechas y armar el cronograma de cada etapa en vivo", "min": "15 min" },
+      { "titulo": "Taller de armado", "que": "Acompañar a cada alumno en el borrador del caso y la estructura de Drive", "min": "35 min" },
+      { "titulo": "Criterios de evaluación", "que": "Repasar la rúbrica y que cada uno autoevalúe su avance", "min": "10 min" },
+      { "titulo": "Cierre del curso", "que": "Ronda final de devoluciones y próximos pasos laborales", "min": "5 min" }
+    ],
+    "conecta": [
+      "Mostrar el recorrido completo: cada carpeta del temario se convierte en un entregable del proyecto.",
+      "Preguntar: «¿en qué trabajo de oficina real aplicarías lo que más te gustó?» para anclar el proyecto."
+    ],
+    "aclarar": [
+      "El proyecto NO es un examen memorístico: es un trabajo práctico que integra lo aprendido.",
+      "Usar IA no es «trampa»: es un requisito, siempre que el texto generado se revise y se señale.",
+      "La planilla debe tener fórmulas reales y un gráfico: una tabla pegada como imagen no cuenta.",
+      "Entregar incompleto cuenta menos que entregar a tiempo algo prolijo y a medias."
+    ],
+    "ejemplos": [
+      "Mostrar un proyecto final de una edición anterior como referencia de nivel y de formato.",
+      "Armar juntos el gráfico de una planilla de ejemplo y explicar por qué comunica.",
+      "Revisar un borrador de documento ejecutivo y marcar los ajustes con los criterios de la rúbrica."
+    ]
+  }
+}

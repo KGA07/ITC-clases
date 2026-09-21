@@ -1,0 +1,157 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 8,
+    "titulo": "Introducción a Excel y Google Sheets",
+    "modulo": "Módulo 3 – Planillas de Cálculo",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a crear tu primera planilla de cálculo, entender filas, columnas y celdas, y cargar datos con tipos correctos como lo hace un asistente administrativo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 3\\Clase 8 Excel y Sheets",
+  "objetivos": [
+    "Reconocer qué es una planilla de cálculo y qué problemas resuelve.",
+    "Identificar filas, columnas, celdas y la dirección de una celda (A1, B2).",
+    "Usar la barra de fórmulas para ver y editar el contenido de una celda.",
+    "Ingresar y editar datos con el tipo correcto (texto, número, fecha) y usar autocompletar.",
+    "Insertar columnas y filas, nombrar hojas y diferenciar Excel instalado de Google Sheets online."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es una planilla de cálculo?",
+      "emoji": "🧮",
+      "parrafos": [
+        "Una planilla de cálculo es un programa que organiza datos en una cuadrícula y puede hacer cálculos con ellos. Las dos herramientas más usadas en la oficina son Excel (instalado con Office) y Google Sheets (online, se guarda en drive y es gratis)."
+      ],
+      "puntos": [
+        "Sirve para listas, gastos, asistencias, presupuestos y control de stock: cualquier cosa que sea datos en filas y columnas.",
+        "Podés escribir un número una sola vez y que las operaciones se calculen solas.",
+        "Es uno de los programas más pedidos en un puesto administrativo: dominarlo te abre oportunidades.",
+        "No importa cuál uses: la lógica es la misma, y lo que aprendés en una se adapta a la otra."
+      ]
+    },
+    {
+      "titulo": "Filas, columnas y celdas",
+      "emoji": "📐",
+      "parrafos": [
+        "La cuadrícula tiene filas horizontales (numeradas 1, 2, 3...) y columnas verticales (con letras A, B, C...). La unión de una fila y una columna se llama celda y tiene una dirección única."
+      ],
+      "puntos": [
+        "Celda: la intersección de una fila y una columna; cada celda guarda un dato.",
+        "Dirección de la celda: columna + fila. La celda de la columna B y la fila 3 se llama B3.",
+        "La celda seleccionada se marca con un borde grueso y su dirección aparece en el cuadro de nombre (arriba a la izquierda).",
+        "Barra de fórmulas: la franja que está arriba de la grilla; ahí ves y editás el contenido (y más adelante, las fórmulas) de la celda seleccionada."
+      ]
+    },
+    {
+      "titulo": "Tipos de datos, ingreso y autocompletar",
+      "emoji": "⚡",
+      "parrafos": [
+        "En una celda escribís datos de distintos tipos: texto (nombres, ciudades), números (montos, cantidades) y fechas. Cada tipo se ve distinto por defecto, y eso te ayuda a detectar cargas mal hechas."
+      ],
+      "puntos": [
+        "Seleccioná la celda, escribí y presioná Enter para confirmar; Tab te mueve a la celda de la derecha.",
+        "El texto se alinea a la izquierda y los números a la derecha: si un número se ve a la izquierda, probablemente entró como texto.",
+        "Autocompletar: arrastrá el cuadradito de la esquina inferior derecha de una celda para repetir series (1, 2, 3... o días y meses).",
+        "Editar: doble clic sobre la celda o presioná F2 para modificar lo que ya escribiste.",
+        "Insertar filas o columnas: clic derecho sobre el número de fila o la letra de columna y elegí «Insertar».",
+        "Nombrar hojas: doble clic sobre «Hoja1» (o «Hoja 1») en la solapa inferior y escribí el nombre, por ejemplo «Gastos»."
+      ]
+    },
+    {
+      "titulo": "Excel instalado vs. Google Sheets online",
+      "emoji": "🌐",
+      "parrafos": [
+        "Excel y Sheets hacen lo mismo con matices: elegís uno u otro según cómo trabaje tu lugar de trabajo. Conocer las diferencias te evita sorpresas cuando te toca pasar de uno a otro."
+      ],
+      "puntos": [
+        "Excel: se instala en la PC, funciona sin internet y tiene más herramientas avanzadas. Es el estándar en muchas oficinas",
+        "Sheets: anda en el navegador con cualquier cuenta de Google, se guarda solo en Drive y lo podés abrir desde cualquier equipo.",
+        "Colaboración: en Sheets varios usuarios editan el mismo archivo en simultáneo; en Excel clásico eso no es tan simple.",
+        "En ambos el formato de guardado es compatible: un archivo que abrís en Excel se puede subir a Drive y abrirlo en Sheets y viceversa.",
+        "Regla práctica: para la mayoría de las tareas administrativas, cualquiera de los dos funciona perfecto."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Lista de gastos personales",
+      "consigna": "Creá una planilla con tus gastos del mes: cargá los datos con el tipo de celda correcto, organizá las hojas y dejá los encabezados prolijos.",
+      "pasos": [
+        "Abrí Excel o Google Sheets y creá un libro nuevo.",
+        "En la solapa inferior, hacé doble clic sobre el nombre de la hoja y renombrala «Gastos».",
+        "En la celda A1 escribí «Fecha», en B1 «Concepto», en C1 «Categoría» y en D1 «Monto».",
+        "Cargá al menos 6 gastos (reales o inventados) con su fecha: presioná Tab para saltar de celda en celda.",
+        "Ingresá los montos solo con números (sin el símbolo $): el formato se aplica después.",
+        "Usá autocompletar: escribí «Efectivo» en una celda y arrastrá el cuadradito para repetirlo en varias filas.",
+        "Insertá una columna nueva entre «Concepto» y «Categoría» (clic derecho en la letra C → Insertar).",
+        "Sumá la fila que falta para un gasto nuevo y llená los datos.",
+        "Creá una segunda hoja, nombrala «Resumen» y dejá en A1 el texto «Total del mes».",
+        "Revisá que las fechas se hayan cargado como fecha y los montos como números (alineados a la derecha)."
+      ],
+      "entrega": "Subí o capturá la planilla mostrando las dos hojas nombradas, al menos 6 gastos cargados y los encabezados prolijos.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es una celda en una planilla de cálculo?",
+            "opciones": ["Un archivo de imagen", "La intersección de una fila y una columna", "Una hoja de papel para imprimir", "Un tipo de letra"],
+            "correcta": "La intersección de una fila y una columna"
+          },
+          {
+            "pregunta": "¿Cómo se llama la celda que está en la columna B y la fila 3?",
+            "opciones": ["B3", "3B", "B2", "C3"],
+            "correcta": "B3"
+          },
+          {
+            "pregunta": "¿Para qué sirve la barra de fórmulas?",
+            "opciones": ["Para cambiar el color de la hoja", "Para ver y editar el contenido de la celda seleccionada", "Para dibujar en la hoja", "Para cerrar el programa"],
+            "correcta": "Para ver y editar el contenido de la celda seleccionada"
+          },
+          {
+            "pregunta": "¿Qué pasa si arrastrás el cuadradito de la esquina inferior derecha de una celda con un número?",
+            "opciones": ["Se borra la celda", "Se repite o continúa la serie (autocompletar)", "Se imprime la hoja", "Se abre una nueva ventana"],
+            "correcta": "Se repite o continúa la serie (autocompletar)"
+          },
+          {
+            "pregunta": "¿Cuál es una ventaja de Google Sheets frente a Excel instalado?",
+            "opciones": ["Funciona sin internet", "Se accede desde cualquier equipo con el navegador y se guarda en la nube", "No necesita contar con una cuenta", "Autocompleta sola los datos de la empresa"],
+            "correcta": "Se accede desde cualquier equipo con el navegador y se guarda en la nube"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la planilla o captura con las dos hojas nombradas, al menos 6 gastos cargados con tipos de datos correctos y encabezados prolijos.",
+  "lectura": "La planilla de cálculo es la caja de herramientas invisibles de la oficina: gastos, asistencias, presupuestos y stock viven en una cuadrícula de filas, columnas y celdas. Una vez que manejás la dirección de las celdas, la barra de fórmulas y el autocompletar, y que entendés si trabajás en Excel instalado o en Sheets online, ya estás listo para que la planilla empiece a calcular por vos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la IA de la clase 7 y preguntar dónde llevarían la cuenta de sus gastos", "min": "10 min" },
+      { "titulo": "Estructura de la planilla", "que": "Mostrar en vivo filas, columnas, celdas y la barra de fórmulas", "min": "20 min" },
+      { "titulo": "Datos y autocompletar", "que": "Cargar datos de distintos tipos y probar autocompletar e insertar filas/columnas", "min": "20 min" },
+      { "titulo": "Excel vs. Sheets", "que": "Comparar los dos programas en el navegador y hablar de cuándo usar cada uno", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar la lista de gastos personales paso a paso con cada alumno", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿cómo anotarían hoy sus gastos del mes? Comparar un cuaderno, una foto y una planilla para mostrar la ventaja de los datos ordenados.",
+      "Mostrar tu propia planilla de gastos o presupuesto como ejemplo real de uso cotidiano."
+    ],
+    "aclarar": [
+      "Un número que se ve a la izquierda de la celda no es un número: entró como texto y no se puede calcular hasta que se recargue.",
+      "Escribir el símbolo $ dentro del monto convierte el dato en texto: los montos se cargan como número y el formato se aplica después.",
+      "La solapa inferior con el nombre de la hoja se edita con doble clic: es tan importante como el contenido mismo para orientarse."
+    ],
+    "ejemplos": [
+      "Crear en vivo la estructura de la lista de gastos mientras los alumnos replican en sus equipos.",
+      "Mostrar autocompletar con días de la semana y con números consecutivos para que se vea la diferencia con una lista escrita a mano.",
+      "Abrir el mismo archivo en Excel y en Sheets para comparar la vista y confirmar que la lógica es igual."
+    ]
+  }
+}

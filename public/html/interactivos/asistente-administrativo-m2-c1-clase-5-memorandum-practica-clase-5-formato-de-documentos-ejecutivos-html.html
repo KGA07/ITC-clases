@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 5 - Formato de documentos ejecutivos</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0057ff;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0057ff;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Formato de documentos ejecutivos</h1>
+  <p class="sub">Práctica Diseñá un memorándum · Asistente Administrativo Digital con IA</p>
+  <div class="consigna">Armá un memorándum de tu propia miniempresa (inventá nombre, logo simple con formas o emoji y datos de contacto) aplicando todo el formato ejecutivo de la clase. Tomalo como modelo para los que vas a usar en la práctica laboral.</div>
+  
+    <div class="q" data-ok="11 o 12 puntos">
+      <p class="qt">1. ¿Qué tamaño de letra recomendamos para el cuerpo de un documento ejecutivo?</p>
+      <label class="opt"><input type="radio" name="q0" value="8 o 9 puntos"><span>8 o 9 puntos</span></label>
+<label class="opt"><input type="radio" name="q0" value="10 puntos siempre"><span>10 puntos siempre</span></label>
+<label class="opt"><input type="radio" name="q0" value="11 o 12 puntos"><span>11 o 12 puntos</span></label>
+<label class="opt"><input type="radio" name="q0" value="14 o 16 puntos"><span>14 o 16 puntos</span></label>
+    </div>
+
+    <div class="q" data-ok="Tab">
+      <p class="qt">2. ¿Con qué tecla sangrás la primera línea de un párrafo para que quede pareja?</p>
+      <label class="opt"><input type="radio" name="q1" value="Enter"><span>Enter</span></label>
+<label class="opt"><input type="radio" name="q1" value="La barra espaciadora"><span>La barra espaciadora</span></label>
+<label class="opt"><input type="radio" name="q1" value="Tab"><span>Tab</span></label>
+<label class="opt"><input type="radio" name="q1" value="F2"><span>F2</span></label>
+    </div>
+
+    <div class="q" data-ok="El nombre y datos de la empresa en el encabezado">
+      <p class="qt">3. ¿Qué es el membrete de un documento?</p>
+      <label class="opt"><input type="radio" name="q2" value="El número de página"><span>El número de página</span></label>
+<label class="opt"><input type="radio" name="q2" value="El nombre y datos de la empresa en el encabezado"><span>El nombre y datos de la empresa en el encabezado</span></label>
+<label class="opt"><input type="radio" name="q2" value="La firma del remitente"><span>La firma del remitente</span></label>
+<label class="opt"><input type="radio" name="q2" value="El asunto del mensaje"><span>El asunto del mensaje</span></label>
+    </div>
+
+    <div class="q" data-ok="En el pie de página">
+      <p class="qt">4. ¿Dónde se coloca la numeración de páginas?</p>
+      <label class="opt"><input type="radio" name="q3" value="En el encabezado"><span>En el encabezado</span></label>
+<label class="opt"><input type="radio" name="q3" value="En el pie de página"><span>En el pie de página</span></label>
+<label class="opt"><input type="radio" name="q3" value="En el título"><span>En el título</span></label>
+<label class="opt"><input type="radio" name="q3" value="En los márgenes"><span>En los márgenes</span></label>
+    </div>
+
+    <div class="q" data-ok="Interlineado 1,15 o 1,5">
+      <p class="qt">5. ¿Qué interlineado conviene para que el texto de un documento ejecutivo respire?</p>
+      <label class="opt"><input type="radio" name="q4" value="Interlineado 0,5"><span>Interlineado 0,5</span></label>
+<label class="opt"><input type="radio" name="q4" value="Interlineado simple (1.0) en todos los casos"><span>Interlineado simple (1.0) en todos los casos</span></label>
+<label class="opt"><input type="radio" name="q4" value="Interlineado 1,15 o 1,5"><span>Interlineado 1,15 o 1,5</span></label>
+<label class="opt"><input type="radio" name="q4" value="Interlineado doble siempre"><span>Interlineado doble siempre</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

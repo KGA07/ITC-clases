@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 20,
+    "titulo": "Uso de IA en tareas administrativas",
+    "modulo": "Módulo 7 – Inteligencia Artificial en la Oficina",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a usar la IA generativa para redactar cartas, notas y resúmenes, y armar listas de tareas inteligentes.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 7\\Clase 20 IA en tareas administrativas",
+  "objetivos": [
+    "Identificar tareas administrativas diarias que la IA generativa puede agilizar.",
+    "Escribir prompts claros para redactar cartas, notas y resúmenes profesionales.",
+    "Usar la IA para generar y priorizar listas de tareas.",
+    "Organizar la agenda semanal de un secretario con ayuda de IA y revisar el resultado con criterio humano."
+  ],
+  "teoria": [
+    {
+      "titulo": "IA generativa aplicada a la oficina",
+      "emoji": "🤖",
+      "parrafos": [
+        "La IA generativa (ChatGPT, Gemini, Copilot) crea textos, listas y borradores a partir de lo que le pedís. Para el asistente administrativo es un aliado para el primer borrador: carta, nota, minuta o resumen, que después se revisa y personaliza.",
+        "La regla es siempre la misma: la IA propone, el asistente decide. El borrador ahorra horas, pero la revisión final es humana."
+      ],
+      "puntos": [
+        "Trabajos tipo: cartas formales, notas internas, resúmenes de reuniones, comunicados.",
+        "Velocidad: un borrador en segundos que antes tomaba media hora.",
+        "La IA no reemplaza tu criterio: errores de datos, nombres o contexto se corrigen en la revisión.",
+        "Herramientas accesibles: ChatGPT, Gemini y Copilot se usan desde el navegador con cuenta gratuita."
+      ]
+    },
+    {
+      "titulo": "Redactar con buenos prompts",
+      "emoji": "✍️",
+      "parrafos": [
+        "El prompt (la instrucción) define la calidad del resultado. Cuanto más contexto le des a la IA —rol, destinatario, tono, extensión, datos clave— mejor será el texto.",
+        "Una fórmula práctica: Rol + Tarea + Datos + Formato. Ej.: «Sos un asistente administrativo. Escribí una nota interna avisando un corte de luz mañana de 14 a 16 hs, tono formal, dos párrafos.»"
+      ],
+      "puntos": [
+        "Rol: «Actuá como secretaria ejecutiva de una empresa de logística...»",
+        "Contexto: destinatario, motivo y datos concretos (fechas, nombres, números).",
+        "Formato: «en 2 párrafos», «con viñetas», «tono cordial pero formal».",
+        "Iterar: si no quedó bien, seguí pidiendo «más corto», «más formal», «corregí el primer párrafo»."
+      ]
+    },
+    {
+      "titulo": "Listas de tareas generadas y priorizadas",
+      "emoji": "✅",
+      "parrafos": [
+        "La IA ordena el día: con tus pendientes en una frase, genera una lista de tareas, las agrupa por tipo y las ordena por importancia.",
+        "Priorizar no es solo ordenar: es decidir qué avanza hoy y qué espera. Pedile a la IA que marque lo urgente y lo importante, y después ajustá con tu criterio."
+      ],
+      "puntos": [
+        "Prompt útil: «Estas son mis tareas del día: ... . Ordenalas por urgencia e importancia y agrupalas en administrativas, de seguimiento y personales.»",
+        "Fijá plazos: pedile que asigne orden según fechas de vencimiento.",
+        "Vos elegís el orden final: la IA no conoce tus clientes ni tus compromisos internos.",
+        "Dejá registro: pegá la lista final en un documento de Drive o en un mail para el día."
+      ]
+    },
+    {
+      "titulo": "La agenda semanal de un secretario",
+      "emoji": "🗓️",
+      "parrafos": [
+        "Un secretario gestiona la agenda del jefe: reuniones, llamadas, rendiciones y horas libres para imprevistos. Con IA podés armar una agenda modelo: bloques de tareas, tiempos de viaje y espacios de reserva.",
+        "El resultado es una propuesta: después se carga en Google Calendar y se ajusta según la realidad de cada semana."
+      ],
+      "puntos": [
+        "Prompt: «Diseñame la agenda semanal de un secretario: lunes a viernes, con reuniones, correspondencia, archivo y 1 hora de margen por día.»",
+        "Pedile horarios sensatos: mañana para trabajo profundo, tarde para trámites y llamadas.",
+        "Sumá bloque de «imprevistos»: ninguna agenda real funciona sin margen.",
+        "Cargá la versión final en Calendar con recordatorios: ahí se cumple la herramienta."
+      ]
+    },
+    {
+      "titulo": "Límites y revisión humana",
+      "emoji": "🧠",
+      "parrafos": [
+        "La IA es veloz pero no infalible: puede inventar datos (alucinaciones), confundir nombres o usar frases que no suenan a tu organización. Nunca envíes un texto generado sin leerlo con ojo crítico.",
+        "Confidencialidad también es un límite: no le pegues datos sensibles de clientes ni contraseñas a herramientas externas."
+      ],
+      "puntos": [
+        "Verificá siempre: fechas, nombres, montos y datos sensibles del texto generado.",
+        "Compará con el contexto real: una nota que suena perfecta pero dice la fecha equivocada no sirve.",
+        "No compartas información confidencial de personas o empresas en la IA.",
+        "Revisión final: leé en voz alta o compará con la norma de tu oficina antes de enviar."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cartas y agenda con IA",
+      "consigna": "Usá la IA para redactar una nota formal y armar la agenda semanal de un secretario; después revisá ambos resultados como harías en una oficina real.",
+      "pasos": [
+        "Escribí pidiendo la nota con la fórmula Rol + Tarea + Datos + Formato: aviso formal de reunión bimestral de ventas el próximo viernes 10:00.",
+        "Pedile una versión más corta y una más formal, y compará.",
+        "Pedile «listá 8 tareas diarias de un asistente administrativo y priorizá: urgente vs importante».",
+        "Pedile una agenda semanal lunes a viernes con 1 hora de margen por día.",
+        "Revisá cada texto: encontrá al menos un dato o frase que tengas que corregir.",
+        "Guardá la versión final como documento de Google nuevo, con tu nombre en el asunto."
+      ],
+      "entrega": "Compartí con el docente el documento final con la nota, la lista priorizada y tu corrección explicada en un comentario.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué fórmula de prompt mejora el resultado de la IA?",
+            "opciones": ["Rol + Tarea + Datos + Formato", "Solo «escribime algo»", "Escribir en mayúsculas", "No dar contexto"],
+            "correcta": "Rol + Tarea + Datos + Formato"
+          },
+          {
+            "pregunta": "¿Cuál es la regla de oro al usar IA en la oficina?",
+            "opciones": ["Enviar todo lo que genere sin leer", "La IA propone, el asistente decide y revisa", "Reemplazar a todos los compañeros", "Nunca usarla"],
+            "correcta": "La IA propone, el asistente decide y revisa"
+          },
+          {
+            "pregunta": "¿Qué es una «alucinación» de la IA?",
+            "opciones": ["Una foto mal tomada", "Que la IA invente datos o información falsa", "Una falla de internet", "Un error del teclado"],
+            "correcta": "Que la IA invente datos o información falsa"
+          },
+          {
+            "pregunta": "¿Por qué conviene pedir «1 hora de margen por día» en una agenda con IA?",
+            "opciones": ["Para perder tiempo", "Porque ninguna agenda real funciona sin espacio para imprevistos", "Para llenar el calendario de huecos vacíos", "Porque así quedan más reuniones"],
+            "correcta": "Porque ninguna agenda real funciona sin espacio para imprevistos"
+          },
+          {
+            "pregunta": "¿Está bien pegar datos sensibles de clientes en ChatGPT o Gemini?",
+            "opciones": ["Sí, siempre", "Solo en horas laborales", "No: son herramientas externas y la confidencialidad es un límite", "Solo con mayúscula"],
+            "correcta": "No: son herramientas externas y la confidencialidad es un límite"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento con la nota, la lista priorizada y la corrección comentada del alumno.",
+  "lectura": "La IA generativa acelera el trabajo administrativo: redacta cartas y notas, resume y prioriza listas de tareas y propone agendas semanales. La clave profesional es pegar el texto con buenos prompts y revisarlo siempre con criterio humano, manteniendo la confidencialidad de los datos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué es lo que más tiempo les hace perder en el día administrativo", "min": "10 min" },
+      { "titulo": "IA generativa en la oficina", "que": "Introducir la idea y mostrar un borrador producido en vivo", "min": "10 min" },
+      { "titulo": "Prompts y redacción", "que": "Practicar la fórmula con una carta y una nota reales", "min": "20 min" },
+      { "titulo": "Listas y prioridades", "que": "Generar lista de tareas y separar urgente de importante", "min": "15 min" },
+      { "titulo": "Agenda semanal", "que": "Diseñar agenda de secretario con IA y cargarla en calendario", "min": "20 min" },
+      { "titulo": "Límites y cierre", "que": "Revisar alucinaciones, confidencialidad y repasar con el interactivo", "min": "15 min" }
+    ],
+    "conecta": [
+      "Mostrar una minuta de reunión real mal redactada y pedirle a la IA una versión mejor en televisión.",
+      "Preguntar si alguna vez no tenían tiempo de redactar una carta formal: de ahí nace el caso."
+    ],
+    "aclarar": [
+      "La IA no «piensa»: genera texto probable a partir de tus instrucciones; por eso hay que darle contexto.",
+      "Un buen prompt se itera: el primer resultado casi nunca es el final.",
+      "Los datos confidenciales no se pegan en herramientas externas; usar textos genéricos o anonimizados.",
+      "Prioridad de la IA es una sugerencia: el asistente conoce la relación con cada cliente."
+    ],
+    "ejemplos": [
+      "Pedirle a la IA la nota del corte de luz y corregir la fecha que inventó.",
+      "Generar la lista de tareas de un día tipo y reordenarla según la realidad del grupo.",
+      "Armar la agenda semanal «con imprevistos» y discutir por qué funciona."
+    ]
+  }
+}

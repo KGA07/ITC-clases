@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 9,
+    "titulo": "Funciones lógicas y anidadas",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a enseñarle a Excel a DECIDIR: si se cumple una condición, un resultado; si no, otro. Con la función SI y sus versiones anidadas, tu planilla empieza a razonar, y CONCATENAR te arma textos automáticos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 9 Funciones Logicas y Anidadas",
+  "objetivos": [
+    "Escribir la función SI con su prueba lógica y sus valores VERDADERO/FALSO.",
+    "Combinar condiciones con Y() y O() dentro del SI.",
+    "Anidar funciones SI para clasificar en más de dos categorías.",
+    "Armar textos automáticos con CONCATENAR y el símbolo &."
+  ],
+  "teoria": [
+    {
+      "titulo": "La función SI: decisiones en la planilla",
+      "emoji": "🚦",
+      "parrafos": [
+        "La función SI evalúa una prueba lógica (una pregunta que se responde VERDADERO o FALSO) y devuelve un valor si es verdadero y otro si es falso. Es la forma más usada de darle criterio a la planilla."
+      ],
+      "puntos": [
+        "Estructura: =SI(prueba_lógica; valor_si_verdadero; valor_si_falso).",
+        "Ejemplo: =SI(C2>=100000;\"Venta importante\";\"Venta normal\") clasifica automáticamente.",
+        "El valor si falso es opcional pero recomendado; sin él, una condición no cumplida devuelve FALSO.",
+        "Pruebas lógicas se arman con comparadores: =, >, <, >=, <=, <> (distinto).",
+        "La prueba puede ser un número (0 = FALSO), una referencia o el resultado de otra función."
+      ]
+    },
+    {
+      "titulo": "Prueba lógica combinada: Y() y O()",
+      "emoji": "🧪",
+      "parrafos": [
+        "Una misma decisión suele depender de más de una condición: pagar comisión si el vendedor superó la meta Y cobró el mes. Ahí entran Y() que exige todas las condiciones, y O() que alcanza con una."
+      ],
+      "puntos": [
+        "=SI(Y(C2>=100000;D2>=50);\"Recompensa\";\"Sin recompensa\"): las DOS condiciones.",
+        "=SI(O(C2=\"A\";C2=\"B\");\"Prioritario\";\"Normal\"): alcanza UNA de las dos.",
+        "Las condiciones van entre paréntesis separadas por punto y coma.",
+        "Regla mental: Y() es exigente (todas), O() es flexible (cualquiera)."
+      ]
+    },
+    {
+      "titulo": "Funciones lógicas anidadas: SI dentro de SI",
+      "emoji": "🔁",
+      "parrafos": [
+        "Cuando hay más de dos resultados posibles (diferenciar tres, cuatro o cinco categorías), se anidan funciones: en el valor si falso se coloca otra función SI. Esto crea una estructura de decisiones en cascada."
+      ],
+      "puntos": [
+        "Ejemplo: =SI(C2>=200000;\"VIP\";SI(C2>=100000;\"Importante\";\"Normal\")): primero el caso mayor y se va bajando.",
+        "Ojo con la cantidad de paréntesis: se abren y cierran en orden; Excel pinta cada par con un color.",
+        "Mejor práctica: ordenar las condiciones de mayor a menor para no pisar casos.",
+        "Los textos entre comillas, los números sin comillas, y siempre separando con punto y coma."
+      ]
+    },
+    {
+      "titulo": "CONCATENAR: textos que se arman solos",
+      "emoji": "🧵",
+      "parrafos": [
+        "CONCATENAR une el contenido de varias celdas en una sola: nombre y apellido, dirección, leyendas para impresiones. Se puede combinar con & para agregar espacios y signos."
+      ],
+      "puntos": [
+        "=CONCATENAR(A2;\" \";B2): une nombre (A) y apellido (B) dejando un espacio.",
+        "Equivalente con & : =A2&\" \"&B2. Ambos caminos sirven; el & es más directo.",
+        "Combinar texto y cálculo: =A2&\" debe $\"&TEXTO(C2;\"#.##0,00\") arma el aviso de deuda.",
+        "Con SI dentro: =SI(C2>=100000;\"Pago completo\";\"Debe saldo\")&\" - \"&A2: junta decisión y dato."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Clasificación de clientes y etiquetas de pago",
+      "consigna": "Sobre una lista de clientes y su facturación, clasificá el nivel de cada uno con SI anidado, aplicá una condición con Y y generá etiquetas automáticas de estado de pago con CONCATENAR.",
+      "pasos": [
+        "Creá una hoja «Clientes» con encabezados: Nombre, Apellido, Facturación, Deuda, Estado.",
+        "Cargá 8 clientes con montos de facturación y deuda variados.",
+        "En Estado poné =SI(C2>=200000;\"VIP\";SI(C2>=100000;\"Importante\";\"Normal\")) para clasificar.",
+        "Agregá una columna «Recompensa» con =SI(Y(C2>=100000;D2=0);\"Sin deuda - bono\";\"A revisar\") para premiar a los que facturan mucho y no deben.",
+        "Agregá una columna «Etiqueta de pago» con =A2&\" \"&B2&\" - \"&SI(D2>0;\"DEBE $ \"&TEXTO(D2;\"#.##0,00\");\"AL DIA\") usando CONCATENAR o &.",
+        "Verificá que las etiquetas muestren nombre completo y estado de deuda en texto."
+      ],
+      "entrega": "Guardá como «Clientes_clase9.xlsx» con SI anidado, la condición Y y las etiquetas concatenadas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la estructura correcta de la función SI?",
+            "opciones": ["(valor_si_verdadero; prueba; valor_si_falso)", "(prueba_lógica; valor_si_verdadero; valor_si_falso)", "(prueba; rango)", "(rango; criterio; suma)"],
+            "correcta": "(prueba_lógica; valor_si_verdadero; valor_si_falso)"
+          },
+          {
+            "pregunta": "¿Cuándo se anidan funciones SI?",
+            "opciones": ["Cuando hay más de dos resultados posibles", "Cuando hay un solo caso", "Cuando se suma un rango", "Cuando se formatea una celda"],
+            "correcta": "Cuando hay más de dos resultados posibles"
+          },
+          {
+            "pregunta": "¿Qué exige la función Y() dentro de la prueba lógica?",
+            "opciones": ["Que se cumpla al menos una condición", "Que se cumplan TODAS las condiciones", "Que ninguna se cumpla", "Que solo los números cuenten"],
+            "correcta": "Que se cumplan TODAS las condiciones"
+          },
+          {
+            "pregunta": "¿Qué función une el contenido de varias celdas en un texto?",
+            "opciones": ["CONCATENAR", "CONTAR.SI", "SUMAR.SI", "BUSCARV"],
+            "correcta": "CONCATENAR"
+          },
+          {
+            "pregunta": "¿Qué símbolo equivale a CONCATENAR?",
+            "opciones": ["&", "#", "=", "@"],
+            "correcta": "&"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la clasificación con SI anidado, la Y() combinada y las etiquetas concatenadas.",
+  "lectura": "La función SI le da criterio a Excel: evalúa una prueba lógica y decide entre dos caminos, y combinando Y, O y SI anidado se resuelven clasificaciones de tres o más niveles. CONCATENAR y el símbolo & construyen textos automáticos, como etiquetas de pago que se actualizan solas. Así, la planilla pasa de almacenar datos a tomar decisiones de administración.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar funciones condicionales previas y preguntar qué decisiones toma la PyME", "min": "10 min" },
+      { "titulo": "Función SI", "que": "Explicar prueba lógica y valores VERDADERO/FALSO con ejemplos", "min": "25 min" },
+      { "titulo": "Y y O", "que": "Combinar condiciones y ver la diferencia entre exigir todo o alcanzar una", "min": "15 min" },
+      { "titulo": "SI anidado", "que": "Clasificar en VIP/Importante/Normal armando la cascada", "min": "15 min" },
+      { "titulo": "CONCATENAR", "que": "Armar etiquetas y avisos automáticos con &", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo decide hoy quién recibe crédito o quién es cliente importante y traducirlo a SI.",
+      "Mostrar una etiqueta de pago concatenada armada sobre datos reales."
+    ],
+    "aclarar": [
+      "El orden en SI anidado importa: evaluar primero el caso mayor para no pisar condiciones.",
+      "Los textos van entre comillas; los números y celdas, sin comillas.",
+      "Y exige todas; O alcanza con una. Es el error más común al combinar.",
+      "CONCATENAR no formatea números: usar TEXTO(...) dentro para monedas y fechas."
+    ],
+    "ejemplos": [
+      "SI anidado para estado del cliente con tres niveles.",
+      "SI con Y para bonificar a quien factura mucho y no debe nada.",
+      "Etiqueta con &: nombre + estado de deuda, lista para imprimir."
+    ]
+  }
+}

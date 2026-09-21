@@ -1,0 +1,146 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 7,
+    "titulo": "Marketing de Contenidos y Storytelling",
+    "modulo": "Módulo 3 – Diseño de Contenidos y Copywriting con IA",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a conocer los tipos de contenidos, aprender a contar historias que conecten con tu audiencia y analizar qué hace virales a algunos contenidos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA\\Clase 8 Creacion de Contenido- ejemplos videos virales",
+  "objetivos": [
+    "Clasificar contenidos según su objetivo: educativo, emocional y de conversión.",
+    "Aplicar storytelling para conectar con la audiencia.",
+    "Reconocer los elementos que hacen viral a un contenido.",
+    "Analizar ejemplos virales y extraer aprendizajes para tu marca."
+  ],
+  "teoria": [
+    {
+      "titulo": "Tipos de contenido",
+      "emoji": "📚",
+      "parrafos": [
+        "Todo contenido cumple un trabajo. El educativo enseña algo útil, el emocional genera vínculo y sensación, y el de conversión empuja a una acción concreta. Una buena estrategia combina los tres."
+      ],
+      "puntos": [
+        "Educativo: tutoriales, consejos, listas y datos curiosos.",
+        "Emocional: historias de clientes, procesos reales y momentos de la marca.",
+        "Conversión: ofertas, promos, testimonios y llamados a la acción claros."
+      ]
+    },
+    {
+      "titulo": "Storytelling: contar para conectar",
+      "emoji": "📖",
+      "parrafos": [
+        "Storytelling es el arte de contar una historia en vez de tirar un dato. Las historias se recuerdan y generan empatía: la audiencia recuerda cómo la hiciste sentir más que tu eslogan."
+      ],
+      "puntos": [
+        "Estructura clásica: un personaje con un problema, encuentra tu solución y su historia cambia.",
+        "Elementos: personaje identificable, conflicto o dolor, resolución y emoción.",
+        "Aplicaciones: el origen de tu marca, un caso de cliente o el detrás de escena."
+      ]
+    },
+    {
+      "titulo": "¿Qué hace viral a un contenido?",
+      "emoji": "🔥",
+      "parrafos": [
+        "Lo viral no es solo suerte: suele combinar emoción fuerte, valor compartible y un gancho inmediato. La gente comparte lo que la hace sentir algo o lo que la hace quedar bien con otros."
+      ],
+      "puntos": [
+        "Emociones potentes: sorpresa, humor, bronca compartida o ternura.",
+        "Valor práctico: algo que le sirva a otros y que se comparte para ayudar.",
+        "Gancho inicial que obliga a seguir viendo.",
+        "Contexto justo: un tema de actualidad o algo que todos están comentando."
+      ]
+    },
+    {
+      "titulo": "Analizando contenido viral",
+      "emoji": "📺",
+      "parrafos": [
+        "Mirar contenido viral con ojo analítico es una gran escuela: fijate qué promete el inicio, cuál es la historia y por qué la gente lo compartió. Del análisis sale tu próxima idea."
+      ],
+      "puntos": [
+        "Identificá el gancho y el ritmo de los primeros segundos.",
+        "Relevá las reacciones y los comentarios: ¿qué resonó en la audiencia?",
+        "Traducilo a tu rubro: no copies la fórmula exacta, pero sí la lógica."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi historia de marca en 5 líneas",
+      "consigna": "Redactá una mini historia de marca usando storytelling: personaje, problema, resolución y emoción. Después identificá a qué tipo de contenido pertenece y dónde la publicarías.",
+      "pasos": [
+        "Abrí un documento en Google Docs.",
+        "Escribí tu mini historia con la estructura: 'Él o ella tenía [problema], hasta que encontró [tu solución] y logró [resultado]'.",
+        "Agregá el detalle emocional: qué cambió en la vida de esa persona.",
+        "Determiná el tipo de contenido: educativo, emocional o de conversión, y justificá por qué.",
+        "Elegí la plataforma y el formato donde la publicarías, y anotá el motivo.",
+        "Compartí el enlace del documento."
+      ],
+      "entrega": "Compartí el documento con tu historia de marca, el tipo de contenido elegido y la plataforma.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Un contenido educativo busca...",
+            "opciones": ["Enseñar algo útil para la audiencia", "Generar bronca", "Vender sin argumentos", "Mostrar solo memes"],
+            "correcta": "Enseñar algo útil para la audiencia"
+          },
+          {
+            "pregunta": "La estructura básica de storytelling incluye...",
+            "opciones": ["Un personaje, un conflicto y una resolución", "Solo datos y números", "Un listado de precios", "Una encuesta"],
+            "correcta": "Un personaje, un conflicto y una resolución"
+          },
+          {
+            "pregunta": "¿Por qué la gente comparte contenidos?",
+            "opciones": ["Por emociones fuertes y valor que le sirve a otros", "Porque están obligados", "Solo para ganar premios", "Porque el algoritmo lo pide"],
+            "correcta": "Por emociones fuertes y valor que le sirve a otros"
+          },
+          {
+            "pregunta": "Un contenido de conversión generalmente termina con...",
+            "opciones": ["Un llamado a la acción claro", "Un agradecimiento largo", "El logo gigante", "Tres párrafos de teoría"],
+            "correcta": "Un llamado a la acción claro"
+          },
+          {
+            "pregunta": "El 'gancho' de un contenido viral se ubica...",
+            "opciones": ["En el inicio, para obligar a seguir", "Al final, como sorpresa", "En los comentarios", "En la descripción"],
+            "correcta": "En el inicio, para obligar a seguir"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la historia de marca y la justificación de tipo de contenido y plataforma.",
+  "lectura": "El contenido construye la relación con tu audiencia: educativo suma valor, emocional genera vínculo y el de conversión convierte. El storytelling transforma mensajes en historias que se recuerdan, y una mirada analítica a lo viral te da la lógica de qué compartir.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué cuentas siguen y por qué las siguen", "min": "10 min" },
+      { "titulo": "Tipos de contenido", "que": "Clasificar ejemplos reales en vivo", "min": "20 min" },
+      { "titulo": "Storytelling", "que": "Contar la misma noticia como dato y como historia", "min": "20 min" },
+      { "titulo": "Contenidos virales", "que": "Analizar un video viral y sus reacciones", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar la escritura de la mini historia de marca", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿contaron alguna vez cómo empezó un negocio de la familia? Eso ya es storytelling.",
+      "Pedir que nombren una publicidad que recuerden de chicos y por qué la recuerdan."
+    ],
+    "aclarar": [
+      "Un contenido no tiene que ser solo uno de los tres tipos: puede combinar, pero tiene un objetivo principal.",
+      "Storytelling no es inventar historias falsas: es ordenar la historia real de forma atrapante.",
+      "No todo lo viral es bueno para tu marca: tiene que encajar con tu tono y tu objetivo."
+    ],
+    "ejemplos": [
+      "Tomar un producto simple (un termo) y contar tres versiones: educativa, emocional y de conversión.",
+      "Reproducir el video del detrás de escena de un emprendimiento local y analizarlo.",
+      "Reescribir un anuncio clásico como una historia de un personaje."
+    ]
+  }
+}

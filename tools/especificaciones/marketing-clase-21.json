@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 21,
+    "titulo": "Creación de Campaña de Email",
+    "modulo": "Módulo 6 – E-commerce y Marketplaces",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a crear tu primera campaña de email completa: redactar el asunto, armar el contenido con un llamado a la acción claro, enviar el mensaje y medir aperturas y clics como un profesional.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 5 - Automatización y Email Marketing\\Clase 19 - Creación de Campaña Email",
+  "objetivos": [
+    "Crear una campaña de email paso a paso en Mailchimp o Doppler.",
+    "Redactar asuntos atractivos y contenido orientado al lector.",
+    "Diseñar un llamado a la acción (CTA) claro y medible.",
+    "Enviar la campaña y leer las métricas de apertura y clics."
+  ],
+  "teoria": [
+    {
+      "titulo": "Crear una campaña paso a paso",
+      "emoji": "🧭",
+      "parrafos": [
+        "Toda campaña en Mailchimp o Doppler sigue el mismo flujo: elegir el tipo de campaña, la lista de destinatarios, el asunto, armar el contenido con el editor de bloques y programar o mandar el envío."
+      ],
+      "puntos": [
+        "Elegí el tipo: campaña regular, automatización o prueba A/B.",
+        "Seleccioná la lista o segmento que va a recibir el mensaje.",
+        "Blanqueá el remitente: nombre y correo verificados para evitar spam.",
+        "El editor por bloques permite armar texto, fotos y botones sin diseñar.",
+        "Antes de enviar, revisá la vista previa en celular y computadora."
+      ]
+    },
+    {
+      "titulo": "El asunto: la primera batalla",
+      "emoji": "📩",
+      "parrafos": [
+        "La apertura se decide en la bandeja de entrada en una fracción de segundo. El asunto es el título que define si alguien abre tu email o lo borra."
+      ],
+      "puntos": [
+        "Menos de 50 caracteres: en el celular se corta y se pierde el mensaje.",
+        "Beneficio claro y concreto: decile al lector qué gana con abrir.",
+        "Curiosidad honesta: intriga, pero sin prometer mentiras.",
+        "Personalizar con el nombre del suscriptor mejora la apertura.",
+        "Probá dos asuntos con el test A/B de la misma herramienta."
+      ]
+    },
+    {
+      "titulo": "Contenido y llamado a la acción",
+      "emoji": "✍️",
+      "parrafos": [
+        "El cuerpo del email debe ser corto, escaneable y orientado al lector, no a tu marca. El llamado a la acción es el botón que transforma el mensaje en resultado."
+      ],
+      "puntos": [
+        "Un solo mensaje central por email: mucho texto dispersa la atención.",
+        "Párrafos cortos, negritas y espacios en blanco para leer rápido.",
+        "Foto o visual clara que acompañe el mensaje sin recargar el correo.",
+        "CTA con verbo de acción: Conocé más, Reservá tu lugar, Comprá ahora.",
+        "Un solo CTA principal y repetido: en el medio y al final del mensaje."
+      ]
+    },
+    {
+      "titulo": "Envío y medición",
+      "emoji": "📈",
+      "parrafos": [
+        "Después del envío la campaña no termina: empieza la lectura de resultados. Las métricas de apertura y clics te dicen si el asunto y el contenido funcionaron."
+      ],
+      "puntos": [
+        "Tasa de apertura: porcentaje de destinatarios que abrieron el email.",
+        "Tasa de clics: porcentaje de destinatarios que tocaron un enlace.",
+        "CTR del click: clics sobre aperturas, mide qué tan bueno es el contenido.",
+        "Bajas: si aumenta, revisá frecuencia, asunto y segmentación.",
+        "Referencia: aperturas de 20 a 30% y clics de 2 a 5% son puntos de partida sanos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Creá y enviá tu campaña de email de prueba",
+      "consigna": "Armá una campaña de email real en Mailchimp o Doppler para la base de la clase anterior, con asunto, contenido y CTA, y enviásela a tu propia dirección de pruebas para medir el resultado.",
+      "pasos": [
+        "En la herramienta elegida, creá una campaña regular y seleccioná la lista o segmento.",
+        "Escribí dos asuntos candidatos y elegí el mejor con tu criterio.",
+        "Armá el contenido: saludo personalizado, párrafo corto de valor y un botón de CTA.",
+        "Agregá tu propio correo como destinatario de prueba y la lista de test.",
+        "Revisá la vista previa en celular y enviá la campaña.",
+        "Esperá unos minutos y leé el reporte: aperturas, clics y bajas."
+      ],
+      "entrega": "Capturá el reporte de la campaña enviada con la tasa de apertura y de clics, junto al asunto elegido.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué define en gran parte si abren tu email?",
+            "opciones": ["El asunto", "El color del botón", "La cantidad de fotos", "La firma del remitente"],
+            "correcta": "El asunto"
+          },
+          {
+            "pregunta": "¿Cómo conviene escribir el asunto?",
+            "opciones": ["Largo y lleno de mayúsculas", "Corto, con beneficio claro y sin exagerar", "Solo con emojis", "Sin el nombre de la marca"],
+            "correcta": "Corto, con beneficio claro y sin exagerar"
+          },
+          {
+            "pregunta": "¿Qué es un buen llamado a la acción en un email?",
+            "opciones": ["Un enlace sin texto", "Un botón con verbo de acción como Comprá ahora", "Un párrafo largo de despedida", "La dirección del local"],
+            "correcta": "Un botón con verbo de acción como Comprá ahora"
+          },
+          {
+            "pregunta": "¿Qué muestra la tasa de APERTURA?",
+            "opciones": ["Cuántos abrieron el email", "Cuántos hicieron clic", "Cuántos se dieron de baja", "Cuántos lo reenviaron"],
+            "correcta": "Cuántos abrieron el email"
+          },
+          {
+            "pregunta": "¿Qué métrica indica cuántos tocaron un enlace?",
+            "opciones": ["Tasa de apertura", "Tasa de clics", "Rebotes", "Frecuencia"],
+            "correcta": "Tasa de clics"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la campaña enviada y el reporte con sus tasas de apertura y clics.",
+  "lectura": "Una campaña de email se arma en cuatro pasos: eligir el tipo y la lista, redactar un asunto que invite a abrir, construir un contenido corto con un CTA claro y enviar para luego medir. Aperturas y clics decodifican si el mensaje llegó y si la gente actuó.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la base de suscriptores y abrir el reporte de un email recibido en clase", "min": "10 min" },
+      { "titulo": "Flujo de creación", "que": "Recorrer la creación de una campaña desde el panel de la herramienta en vivo", "min": "15 min" },
+      { "titulo": "El asunto", "que": "Comparar asuntos reales y armar listas de buenos y malos ejemplos", "min": "20 min" },
+      { "titulo": "Contenido y CTA", "que": "Redactar el email de ejemplo con un solo mensaje central y CTA repetido", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Guiar el armado y envío de cada campaña de prueba a la propia dirección", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Leer los reportes en voz alta y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Usar la base creada en la clase 20: hoy esa lista cobra vida con la primera campaña.",
+      "Mostrar un email de una marca famosa y pedir que evalúen asunto, contenido y CTA."
+    ],
+    "aclarar": [
+      "El asunto con mayúsculas y signos no abre más: el filtro antispam lo desconfía.",
+      "La tasa de apertura no mide si leyeron: mide si abrieron; el CTR mide la lectura.",
+      "Enviar a la lista completa sin prueba es el error clásico: siempre probá primero.",
+      "Aperturas del 30% no son magia: dependen de la base, el asunto y la frecuencia."
+    ],
+    "ejemplos": [
+      "Redactar dos asuntos para el mismo email y votar en grupo cuál abrirían.",
+      "Mostrar el editor de bloques armando el botón de CTA con color y texto.",
+      "Analizar un reporte real: aperturas altas con clics bajos y su diagnóstico."
+    ]
+  }
+}

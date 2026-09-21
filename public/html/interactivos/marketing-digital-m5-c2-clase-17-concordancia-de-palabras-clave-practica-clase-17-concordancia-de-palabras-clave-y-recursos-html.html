@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 17 - Concordancia de palabras clave y recursos</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#e11d48;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#e11d48;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Concordancia de palabras clave y recursos</h1>
+  <p class="sub">Práctica Afina tus palabras y potenciá tus anuncios · Marketing Digital</p>
+  <div class="consigna">Sobre la campaña de la clase 15, reescribí las palabras clave con el tipo de concordancia correcto y creá los recursos de anuncio para tu negocio de prueba.</div>
+  
+    <div class="q" data-ok="Exacta">
+      <p class="qt">1. ¿Qué tipo de concordancia da el MAYOR control sobre cuándo aparece el anuncio?</p>
+      <label class="opt"><input type="radio" name="q0" value="Amplia"><span>Amplia</span></label>
+<label class="opt"><input type="radio" name="q0" value="Frase"><span>Frase</span></label>
+<label class="opt"><input type="radio" name="q0" value="Exacta"><span>Exacta</span></label>
+<label class="opt"><input type="radio" name="q0" value="Literal"><span>Literal</span></label>
+    </div>
+
+    <div class="q" data-ok="Entre corchetes [palabra]">
+      <p class="qt">2. ¿Cómo se escribe una palabra clave en concordancia EXACTA?</p>
+      <label class="opt"><input type="radio" name="q1" value="Entre corchetes [palabra]"><span>Entre corchetes [palabra]</span></label>
+<label class="opt"><input type="radio" name="q1" value="Entre comillas «palabra»"><span>Entre comillas «palabra»</span></label>
+<label class="opt"><input type="radio" name="q1" value="Con un guión antes"><span>Con un guión antes</span></label>
+<label class="opt"><input type="radio" name="q1" value="Sin ningún símbolo"><span>Sin ningún símbolo</span></label>
+    </div>
+
+    <div class="q" data-ok="Frase">
+      <p class="qt">3. ¿Qué concordancia muestra con comillas «repuestos celular»?</p>
+      <label class="opt"><input type="radio" name="q2" value="Exacta"><span>Exacta</span></label>
+<label class="opt"><input type="radio" name="q2" value="Frase"><span>Frase</span></label>
+<label class="opt"><input type="radio" name="q2" value="Amplia"><span>Amplia</span></label>
+<label class="opt"><input type="radio" name="q2" value="Negativa"><span>Negativa</span></label>
+    </div>
+
+    <div class="q" data-ok="Para mostrar enlaces directos del sitio dentro del anuncio">
+      <p class="qt">4. ¿Para qué sirve el recurso de VÍNCULOS de sitio?</p>
+      <label class="opt"><input type="radio" name="q3" value="Para mostrar enlaces directos del sitio dentro del anuncio"><span>Para mostrar enlaces directos del sitio dentro del anuncio</span></label>
+<label class="opt"><input type="radio" name="q3" value="Para hacer zoom al mapa"><span>Para hacer zoom al mapa</span></label>
+<label class="opt"><input type="radio" name="q3" value="Para cambiar el color del anuncio"><span>Para cambiar el color del anuncio</span></label>
+<label class="opt"><input type="radio" name="q3" value="Para sumar palabras negativas"><span>Para sumar palabras negativas</span></label>
+    </div>
+
+    <div class="q" data-ok="Usar frase y exacta con palabras negativas">
+      <p class="qt">5. ¿Cuál es una buena práctica al empezar una campaña?</p>
+      <label class="opt"><input type="radio" name="q4" value="Usar todo en concordancia amplia"><span>Usar todo en concordancia amplia</span></label>
+<label class="opt"><input type="radio" name="q4" value="Usar frase y exacta con palabras negativas"><span>Usar frase y exacta con palabras negativas</span></label>
+<label class="opt"><input type="radio" name="q4" value="Evitar todos los recursos"><span>Evitar todos los recursos</span></label>
+<label class="opt"><input type="radio" name="q4" value="No revisar los informes"><span>No revisar los informes</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

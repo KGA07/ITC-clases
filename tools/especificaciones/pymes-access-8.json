@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 8,
+    "titulo": "Informes",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a transformar los datos de la base en documentos profesionales listos para imprimir: informes, listados y remitos de compra y venta.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 8 Informes",
+  "objetivos": [
+    "Entender el concepto de informe y su aplicación en la gestión de una PyME.",
+    "Crear y modificar informes con el asistente y en vista Diseño.",
+    "Aplicar filtros, ordenar datos y agregar campos calculados a un informe.",
+    "Crear informes dependientes o derivados, como un remito de compra o de venta."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un informe?",
+      "emoji": "🗞️",
+      "parrafos": [
+        "Un informe es un objeto de Access orientado a la presentación e impresión de datos. A diferencia de un formulario (pantalla de carga), el informe está diseñado para leer: listados de clientes, resúmenes de ventas, remitos, facturas o inventarios de stock.",
+        "Los informes se basan en tablas o consultas como origen de datos, y se pueden agrupar, ordenar y totalizar por secciones."
+      ],
+      "puntos": [
+        "Listados: clientes, productos, proveedores ordenados por campo.",
+        "Resúmenes: totales de ventas por mes, por cliente o por producto.",
+        "Documentos: remitos, facturas, recibos con formato de empresa.",
+        "El informe se puede ver en pantalla (Vista previa de impresión) o convertirse a PDF después."
+      ]
+    },
+    {
+      "titulo": "Creación y modificación de informes",
+      "emoji": "🛠️",
+      "parrafos": [
+        "El Asistente de informes genera un informe en pocos pasos: se eligen los campos, el nivel de agrupación, el orden y el estilo. Luego se afina en la vista Diseño para ajustar títulos, etiquetas y valores.",
+        "Las secciones de un informe son: Encabezado del informe (aparece una vez al inicio), Encabezado de página, Detalle (una vez por registro) y Pie de página."
+      ],
+      "puntos": [
+        "Crear → Asistente de informes: elegir tabla o consulta y campos.",
+        "Agrupar por un campo (ej: por ciudad o por mes) para encabezados de grupo con subtotales.",
+        "En la vista Diseño se cambian fuentes, tamaños, colores y se mueven los controles.",
+        "La Vista previa de impresión muestra cómo quedará el documento en papel."
+      ]
+    },
+    {
+      "titulo": "Edición, filtros y campos calculados",
+      "emoji": "🎛️",
+      "parrafos": [
+        "Los informes pueden filtrarse en la consulta origen o desde el propio informe. Además, se pueden agregar cuadros de texto calculados como en los formularios: subtotales, totales generales, IVA o fecha de emisión."
+      ],
+      "puntos": [
+        "Filtro en la consulta origen: más controlado y reutilizable.",
+        "Filtro en el informe: la propiedad «Filtro» del informe o el orden de la vista previa.",
+        "Campo calculado en Detalle: ej: =[Precio]*[Cantidad] como columna «Subtotal».",
+        "Total general en el Pie: =Suma([Precio]) o =Suma([Subtotal]).",
+        "=Fecha() en el encabezado para la fecha de emisión del documento."
+      ]
+    },
+    {
+      "titulo": "Informes dependientes: el remito",
+      "emoji": "🧾",
+      "parrafos": [
+        "Un informe dependiente (o derivado) es el que se genera a partir de una consulta con parámetros: por ejemplo, un remito de venta que pregunta por un número de factura o de remito y muestra solo los datos de ese documento.",
+        "Este patrón es el corazón de una PyME comercial: con una consulta parámetro como origen, el mismo informe sirve para cualquier documento de la empresa."
+      ],
+      "puntos": [
+        "Crear una consulta de selección con parámetro (ej: [Ingresá el número de factura]) sobre la tabla de ventas.",
+        "El informe se basa en esa consulta y muestra solo el documento pedido.",
+        "Se puede generar el remito de compra (proveedores y compras) con la misma técnica.",
+        "El informe dependiente se distribuye por la empresa tal cual, listo para firmar y entregar."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Armá el listado de productos y el remito de venta",
+      "consigna": "Creá un informe de listado de productos con totales y un informe dependiente de remito de venta basado en una consulta con parámetro.",
+      "pasos": [
+        "Creá una consulta que muestre los productos con Descripcion, Precio y Stock.",
+        "Con el Asistente de informes, generá un informe de productos agrupado por categoría (si existe el campo) u ordenado por precio.",
+        "Agregá un campo calculado en el Detalle que multiplique precio por stock (ej: ValorStock: =[Precio]*[Stock]).",
+        "Agregá en el Pie un cuadro de texto con =Suma([Precio]) y otro con =Suma([ValorStock]).",
+        "Creá la consulta de remito: una consulta de selección sobre ventas/facturas con el parámetro [Ingresá el número de factura] y sus líneas de detalle.",
+        "Creá el informe «RemitoVenta» basado en esa consulta y armá el encabezado con la fecha, el número y los datos del cliente.",
+        "Probá generar el remito ingresando distintos números en el parámetro."
+      ],
+      "entrega": "Guardá el archivo .accdb y compartí la Vista previa del informe de listado de productos con totales y la del remito de venta generado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Para qué está pensado principalmente un informe en Access?",
+            "opciones": ["Para cargar datos", "Para presentar e imprimir la información", "Para borrar registros", "Para crear tablas"],
+            "correcta": "Para presentar e imprimir la información"
+          },
+          {
+            "pregunta": "¿En qué sección se coloca el total general de un informe?",
+            "opciones": ["Detalle", "Encabezado de página", "Pie del informe", "Encabezado del informe"],
+            "correcta": "Pie del informe"
+          },
+          {
+            "pregunta": "¿Qué permite que un mismo informe muestre un documento distinto según lo que se pida?",
+            "opciones": ["Una consulta con parámetro como origen", "Un formulario en blanco", "Una tabla nueva", "Un formato condicional"],
+            "correcta": "Una consulta con parámetro como origen"
+          },
+          {
+            "pregunta": "¿Qué herramienta crea un informe en forma guiada eligiendo campos y agrupaciones?",
+            "opciones": ["El Asistente de informes", "La importación desde Excel", "La vista Hoja de datos", "El Panel de navegación"],
+            "correcta": "El Asistente de informes"
+          },
+          {
+            "pregunta": "¿Qué campo calculado mostraría el valor total del stock en un informe de productos?",
+            "opciones": ["Nombre: [Precio]+[Stock]", "ValorStock: [Precio]*[Stock]", "Stock: [Precio]-[Stock]", "Promedio: [Stock]"],
+            "correcta": "ValorStock: [Precio]*[Stock]"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con el informe de productos con totales y el remito de venta funcionando con parámetro.",
+  "lectura": "Los informes son la salida profesional de la base de datos: listados, resúmenes y documentos como remitos. Se crean con el asistente, se afinan en vista Diseño y, vinculados a una consulta con parámetro, generan documentos específicos para la empresa.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar consultas de totales. Preguntar qué documentos imprime una PyME cada semana (listados, remitos, facturas).", "min": "10 min" },
+      { "titulo": "Concepto de informe", "que": "Diferenciar formulario (carga) de informe (salida). Mostrar ejemplos de listados y documentos.", "min": "15 min" },
+      { "titulo": "Creación con el asistente", "que": "Generar el informe de productos en vivo: campos, orden, agrupación y estilo.", "min": "15 min" },
+      { "titulo": "Campos calculados y totales", "que": "Agregar el campo ValorStock y los totales Suma en el Pie del informe.", "min": "15 min" },
+      { "titulo": "Remito con parámetro", "que": "Crear la consulta de remito con parámetro y el informe dependiente en vivo.", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Los alumnos arman su listado y su remito. El docente revisa las vistas previas de cada uno.", "min": "15 min" }
+    ],
+    "conecta": [
+      "Pedir que cada alumno nombre un documento que necesite su trabajo (remito, listado de precios, resumen mensual). Con eso se ancla el valor de los informes.",
+      "Mostrar una vista previa de un informe real de facturación para que visualicen el resultado profesional."
+    ],
+    "aclarar": [
+      "Un informe NO permite cargar datos: sirve para mostrar e imprimir.",
+      "La vista Diseño edita la estructura; la Vista previa de impresión muestra el resultado final.",
+      "Los totales con Suma solo funcionan en el Pie de grupo o del informe, no en el Detalle.",
+      "El parámetro en la consulta origen hace que el informe pida el documento cada vez que se abre."
+    ],
+    "ejemplos": [
+      "Generar en vivo un remito de venta pidiendo el número de factura y mostrando cómo cambia el documento.",
+      "Mostrar el listado de productos con totales de valor de stock."
+    ]
+  }
+}

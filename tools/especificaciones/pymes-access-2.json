@@ -1,0 +1,150 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 2,
+    "titulo": "Tablas y Relaciones",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a crear tablas con campos bien definidos, establecer relaciones entre ellas y aprender a importar datos desde Excel para no arrancar de cero.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 2 Tablas y Relaciones",
+  "objetivos": [
+    "Crear tablas en Access definiendo campos, tipos de dato y propiedades correctamente.",
+    "Distinguir entre la vista Hoja de datos y la vista Diseño y usar cada una según la tarea.",
+    "Establecer relaciones entre tablas y comprender los tipos de relaciones (uno a varios, tablas intermedias).",
+    "Importar datos desde una planilla Excel a una tabla de Access."
+  ],
+  "teoria": [
+    {
+      "titulo": "Creación de tablas y tipos de vista",
+      "emoji": "📋",
+      "parrafos": [
+        "En Access, las tablas son la columna vertebral de la base de datos: ahí se almacena toda la información. Se pueden crear desde la pestaña Crear → Tabla, y se trabajan en dos vistas principales.",
+        "La vista Hoja de datos permite agregar, editar y eliminar registros como en una planilla. La vista Diseño se usa para definir los campos: nombre, tipo de dato, propiedades y clave primaria."
+      ],
+      "puntos": [
+        "Vista Hoja de datos: pensada para cargar y consultar datos, similar a una hoja de cálculo.",
+        "Vista Diseño: permite configurar la estructura de la tabla (campos, tipos, propiedades, clave primaria).",
+        "Para cambiar de vista: clic derecho sobre la pestaña de la tabla → cambiar a la vista deseada.",
+        "Cada campo debe tener un tipo de dato definido: Texto corto, Texto largo, Número, Moneda, Fecha/Hora, Autonumeración, Sí/No, etc."
+      ]
+    },
+    {
+      "titulo": "Inserción de campos y propiedades",
+      "emoji": "🔧",
+      "parrafos": [
+        "Los campos se definen en la vista Diseño. Cada campo tiene un nombre descriptivo y un tipo de dato que determina qué tipo de información puede contener. Las propiedades adicionales controlan el formato, la validación y el comportamiento."
+      ],
+      "puntos": [
+        "Nombre del campo: descriptivo y sin espacios (usar guión bajo si es necesario).",
+        "Tipo de dato: Texto corto (hasta 255 caracteres), Número, Moneda, Fecha/Hora, Autonumeración (clave primaria automática), Sí/No.",
+        "Propiedades del campo: Tamaño, Formato, Máscara de entrada, Texto de validación, Valor predeterminado, Campo requerido.",
+        "La clave primaria se asigna seleccionando el campo y haciendo clic en la llave dorada de la cinta de opciones."
+      ]
+    },
+    {
+      "titulo": "Relaciones entre tablas",
+      "emoji": "🔗",
+      "parrafos": [
+        "Las relaciones conectan tablas para que la información no esté aislada. En una PyME, un cliente puede tener muchas facturas, y cada factura pertenece a un solo cliente. Esa conexión se establece con un campo común (clave primaria / clave foránea)."
+      ],
+      "puntos": [
+        "Relación uno a varios: un registro de la tabla A se vincula con muchos registros de la tabla B (ej: un cliente tiene muchas facturas).",
+        "Tablas intermedias (muchos a muchos): cuando dos tablas se relacionan de muchos a muchos, se crea una tabla intermedia (ej: Productos y Facturas → tabla DetalleFactura).",
+        "Para crear relaciones: pestaña Herramientas de base de datos → Relaciones, arrastrar el campo clave de una tabla sobre el campo clave de la otra.",
+        "Activar la integridad referencial para que Access no permita facturas sin un cliente válido."
+      ]
+    },
+    {
+      "titulo": "Importación desde Excel",
+      "emoji": "📥",
+      "parrafos": [
+        "Si ya tenés datos en una planilla Excel, no es necesario cargarlos manualmente. Access permite importar directamente desde Excel, mapeando las columnas de la hoja a los campos de la tabla."
+      ],
+      "puntos": [
+        "Pestaña Datos externos → Excel → Seleccionar el archivo .xlsx.",
+        "Elegir si importar a una tabla nueva o agregar los datos a una tabla existente.",
+        "El asistente permite mapear columnas, definir clave primaria y ajustar tipos de dato.",
+        "Verificar los datos importados en la vista Hoja de datos y corregir posibles errores de formato."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Armá las tablas de stock y facturación",
+      "consigna": "En la base de datos de repuestos automotores, creá las tablas Productos, Proveedores y Facturas. Establecé relaciones entre ellas e importá datos de un archivo Excel de ejemplo.",
+      "pasos": [
+        "Abrí la base de datos «Repuestos_Automotores.accdb» de la clase anterior.",
+        "Creá la tabla Proveedores con campos: CodigoProv (Autonumeración, clave primaria), NombreProv, Telefono, Email.",
+        "Modificá la tabla Productos: agregá el campo CodigoProv (Número) para vincular cada producto con su proveedor.",
+        "Creá la tabla Facturas con campos: NroFactura (Número, clave primaria), FechaFactura (Fecha/Hora), CodigoCliente (Número), MontoTotal (Moneda).",
+        "Abrí la ventana Relaciones (Herramientas de base de datos → Relaciones) y vinculá Productos.CodigoProv con Proveedores.CodigoProv, y Facturas.CodigoCliente con Clientes (si existe la tabla).",
+        "Importá desde un archivo Excel la lista de proveedores a la tabla Proveedores usando Datos externos → Excel."
+      ],
+      "entrega": "Guardá el archivo .accdb y compartí una captura de la ventana Relaciones mostrando las conexiones entre tablas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de dato se usa para un campo que se genera automáticamente y no se repite?",
+            "opciones": ["Texto", "Número", "Autonumeración", "Moneda"],
+            "correcta": "Autonumeración"
+          },
+          {
+            "pregunta": "¿Qué tipo de relación existe entre un cliente y sus facturas?",
+            "opciones": ["Uno a uno", "Uno a varios", "Muchos a muchos", "Sin relación"],
+            "correcta": "Uno a varios"
+          },
+          {
+            "pregunta": "¿Desde dónde se importan datos de Excel en Access?",
+            "opciones": ["Pestaña Inicio", "Pestaña Datos externos", "Pestaña Crear", "Panel de navegación"],
+            "correcta": "Pestaña Datos externos"
+          },
+          {
+            "pregunta": "¿En qué vista se definen las propiedades de los campos de una tabla?",
+            "opciones": ["Hoja de datos", "Vista diseño", "Vista previa", "Vista formulario"],
+            "correcta": "Vista diseño"
+          },
+          {
+            "pregunta": "¿Qué hace la integridad referencial en las relaciones?",
+            "opciones": ["Permite valores nulos en todos los campos", "Evita que existan registros huérfanos sin referencia válida", "Borra automáticamente los registros relacionados", "Duplica los registros entre tablas"],
+            "correcta": "Evita que existan registros huérfanos sin referencia válida"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con las tablas creadas, las relaciones establecidas y los datos importados correctamente.",
+  "lectura": "Las tablas en Access se definen en vista Diseño con tipos de dato y propiedades específicas. Las relaciones conectan tablas para mantener la integridad de los datos, e importar desde Excel agiliza la carga inicial.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la creación de tablas de la clase anterior. Preguntar cómo organizarían los proveedores y facturas.", "min": "10 min" },
+      { "titulo": "Vistas y campos", "que": "Explicar Hoja de datos vs. Diseño. Mostrar propiedades de campo: formato, validación, valor predeterminado.", "min": "15 min" },
+      { "titulo": "Relaciones", "que": "Crear relaciones en vivo con el ejemplo de Productos-Proveedores. Explicar integridad referencial.", "min": "20 min" },
+      { "titulo": "Importación desde Excel", "que": "Mostrar el asistente de importación paso a paso con un archivo de ejemplo.", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Los alumnos crean sus tablas, relaciones e importan datos. El docente circula revisando.", "min": "20 min" },
+      { "titulo": "Cierre y repaso", "que": "Repasar con las preguntas del interactivo. Mostrar la ventana Relaciones completa.", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez tuvieron que buscar un dato en una planilla y no encontraron la información relacionada? Eso no pasa con las relaciones en Access.",
+      "Mostrar una base de datos bien relacionada con datos de ejemplo para que vean el resultado final."
+    ],
+    "aclarar": [
+      "La clave primaria no puede repetirse; la clave foránea en la tabla relacionada sí puede repetirse (muchos registros apuntan al mismo proveedor).",
+      "Cuando se crea una relación, es recomendable activar la integridad referencial para mantener la coherencia de los datos.",
+      "Si los nombres de campo coinciden en ambas tablas, Access puede inferir la relación automáticamente, pero es mejor definirla manualmente.",
+      "La importación desde Excel no modifica el archivo original; solo copia los datos a la tabla de Access."
+    ],
+    "ejemplos": [
+      "Crear una tabla Proveedores completa en vivo, mostrando cómo asignar Autonumeración y definir la clave primaria.",
+      "Importar una lista de proveedores desde un archivo Excel y verificar los datos en la vista Hoja de datos."
+    ]
+  }
+}

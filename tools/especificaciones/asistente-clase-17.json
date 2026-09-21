@@ -1,0 +1,153 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 17,
+    "titulo": "Gmail y Outlook",
+    "modulo": "Módulo 6 – Comunicación Digital",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a redactar correos formales y a organizar tu bandeja de entrada con etiquetas y filtros.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 6\\Clase 17 Correo",
+  "objetivos": [
+    "Redactar un correo formal con asunto claro, saludo, cuerpo y firma profesional.",
+    "Diferenciar responder, reenviar, CC y CCO y elegir cuál usar en cada caso.",
+    "Organizar la bandeja de entrada con etiquetas y filtros automáticos en Gmail.",
+    "Aplicar buenas prácticas: adjuntos, urgencias y tiempos de respuesta."
+  ],
+  "teoria": [
+    {
+      "titulo": "Redactar un correo formal paso a paso",
+      "emoji": "✉️",
+      "parrafos": [
+        "El correo es la carta de presentación del asistente administrativo. Un mensaje formal tiene cuatro partes fijas: asunto claro, saludo, cuerpo ordenado y despedida con firma.",
+        "La regla de oro: el asunto debe decir de qué se trata sin abrir el mail (ej. «Factura 2026-045 - Vencimiento 30/09»)."
+      ],
+      "puntos": [
+        "Asunto: corto, específico y con contexto. Nada de «hola» ni «urgente» sin motivo.",
+        "Saludo: «Estimado/a Sr./Sra. Apellido», solo nombre si ya hay trato cercano.",
+        "Cuerpo: un párrafo de contexto, uno de acción o pedido, y uno de cierre amable.",
+        "Firma: nombre y apellido, cargo, empresa, teléfono y mail. Lista para enviar."
+      ]
+    },
+    {
+      "titulo": "Responder, reenviar, CC y CCO",
+      "emoji": "🔁",
+      "parrafos": [
+        "Saber qué botón usar es clave: responder va solo al remitente; responder a todos alcanza a todos los destinatarios; reenviar manda el mail original a otras personas.",
+        "CC (con copia) deja visible a quién llegó la copia; CCO (con copia oculta) oculta la lista de destinatarios, ideal para envíos masivos o para proteger direcciones."
+      ],
+      "puntos": [
+        "Responder: para tratar el tema con quien te escribió. Responder a todos: cuando todo el hilo debe enterarse.",
+        "Reenviar: para pasar un correo a alguien que no estaba incluido. Avisá con una línea arriba del reenvío.",
+        "CC: todos ven quién está en copia. CCO: la copia no se ve; uso típico en comunicados a clientes.",
+        "Ojo con responder a todos por error: revisá siempre la lista de destinatarios antes de enviar."
+      ]
+    },
+    {
+      "titulo": "Organización: etiquetas y filtros en Gmail",
+      "emoji": "🏷️",
+      "parrafos": [
+        "Gmail permite «etiquetas» (carpetas virtuales) para clasificar los mails, y «filtros» para que los mensajes se ordenen solos. El asistente administrativo configura que las facturas de proveedores lleguen a su etiqueta automáticamente.",
+        "En Outlook el equivalente son las categorías y las reglas: el orden llega solo una vez establecido."
+      ],
+      "puntos": [
+        "Crear etiqueta: arrastrá un mail a Nueva etiqueta, o con su menú de tres puntos.",
+        "Filtro: Configuración → Filtros y direcciones bloqueadas → Crear un filtro (por remitente, asunto o palabra).",
+        "Después de filtrar podés decidir: aplicar etiqueta, marcar importante o omitir la bandeja de entrada.",
+        "Un filtro bien armado: «proveedores@empresa.com» + etiqueta Facturas + marcar como leído."
+      ]
+    },
+    {
+      "titulo": "Buenas prácticas: adjuntos y urgencias",
+      "emoji": "📎",
+      "parrafos": [
+        "Un adjunto mal nombrado o de más de 25 MB frustra a cualquier destinatario. Compartí archivos pesados por Drive (link) en vez de adjuntarlos.",
+        "Las urgencias se comunican en el asunto y en la primera línea, no abusando de «URGENTE» en mayúsculas."
+      ],
+      "puntos": [
+        "Adjunto: nombrar el archivo antes de adjuntarlo (ej. «2026-09 CV - M. Pérez.pdf»).",
+        "Más de 25 MB en Gmail: subilo a Drive y pegá el enlace en el cuerpo.",
+        "Marcar prioridad: el ícono de flecha de prioridad alta existe en Gmail y en Outlook.",
+        "Revisá ortografía y destinatarios antes de enviar: un mail mal enviado no se puede retirar."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Correo formal + bandeja organizada",
+      "consigna": "Redactá un correo formal completo y después armá un filtro y una etiqueta para simular la bandeja de un asistente real.",
+      "pasos": [
+        "Redactá un mail formal: asunto «Solicitud de reunión - Proyecto de facturación», saludo, contexto, pedido de agenda y firma completa.",
+        "Agregá en CCO una casilla de prueba y explicá por qué elegiste CCO y no CC.",
+        "Creá la etiqueta «Facturas» en Gmail.",
+        "Creá un filtro que etiquete y separe los mails de un remitente que vos elijas (tu propio mail de prueba).",
+        "Escribí una línea al comienzo del ejercicio indicando en qué mail usarías responder, responder a todos y reenviar."
+      ],
+      "entrega": "Enviá el correo formal al docente y adjuntá una captura de tu etiqueta y filtro creados.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué asunto es el más profesional para un mail formal?",
+            "opciones": ["hola", "URGENTE!!!", "2026-09 Factura - Vencimiento 30/09", "😊😊"],
+            "correcta": "2026-09 Factura - Vencimiento 30/09"
+          },
+          {
+            "pregunta": "Querés que todos los destinatarios vean quién más recibe el mail. ¿Qué usás?",
+            "opciones": ["CCO", "CC", "Responder", "Reenviar"],
+            "correcta": "CC"
+          },
+          {
+            "pregunta": "Querés mandar una comunicación a 80 clientes sin mostrar las direcciones. ¿Qué usás?",
+            "opciones": ["CCO", "CC", "Responder a todos", "Adjunto"],
+            "correcta": "CCO"
+          },
+          {
+            "pregunta": "¿Cómo lográs que los mails de un proveedor se etiqueten solos como «Facturas»?",
+            "opciones": ["Borrarlos todos los días", "Con un filtro por remitente", "Reenviándolos", "Marcándolos con estrella a mano cada vez"],
+            "correcta": "Con un filtro por remitente"
+          },
+          {
+            "pregunta": "Tu archivo pesa 30 MB. ¿Qué hacés?",
+            "opciones": ["Lo adjunto igual aunque tarde", "Lo subo a Drive y comparto el enlace", "Lo borro", "Lo comprimo y lo mando por CCO"],
+            "correcta": "Lo subo a Drive y comparto el enlace"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el correo formal recibido y las capturas de etiqueta y filtro.",
+  "lectura": "Gmail y Outlook son el canal central de la oficina. Saber redactar un correo formal con asunto claro y firma, dominar responder/reenviar/CC/CCO, y usar etiquetas y filtros para ordenar la bandeja convierte el mail en una herramienta de productividad en vez de una fuente de desorden.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar cómo escriben mails hoy y si los leen con orden", "min": "10 min" },
+      { "titulo": "Correo formal", "que": "Analizar un mail bien y uno mal redactado; armar el propio en vivo", "min": "20 min" },
+      { "titulo": "Responder/reenviar/CC/CCO", "que": "Explicar cada botón con casos reales y riesgos de responder a todos", "min": "20 min" },
+      { "titulo": "Etiquetas y filtros", "que": "Crear etiqueta Facturas y un filtro por remitente en cada PC", "min": "20 min" },
+      { "titulo": "Adjuntos y urgencias", "que": "Practicar envío con adjunto nombrado y link de Drive para archivos pesados", "min": "10 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo y ejemplos de la semana", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar quién recibió alguna vez un mail derivado a quien no correspondía (responder a todos).",
+      "Mostrar una bandeja de entrada real con filtros en acción: los mails caen solos en la etiqueta."
+    ],
+    "aclarar": [
+      "CCO no oculta al remitente del mensaje, solo la lista de otros destinatarios.",
+      "Responder lleva respuesta a un único remitente; «responder a todos» alcanza a toda la lista.",
+      "Los filtros no eliminan mails por sí solos: primero configurás qué hacer con ellos.",
+      "Adjuntar archivos pesados por mail falla: Drive por enlace es la alternativa."
+    ],
+    "ejemplos": [
+      "Redactar un mail de aviso de corte de servicios y criticarlo como grupo (asunto, tono, firma).",
+      "Crear un filtro en vivo que etiquete los mails del docente en cada alumno.",
+      "Mostrar la diferencia entre CC y CCO enviando un mail de prueba a dos cuentas."
+    ]
+  }
+}

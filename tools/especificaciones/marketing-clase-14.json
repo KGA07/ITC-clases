@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 14,
+    "titulo": "Fundamentos de Publicidad Digital",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a entender cómo funcionan las campañas pagas desde cero: los tipos de campaña, los formatos de anuncios, los objetivos de publicidad y los conceptos básicos de SEM con palabras clave y estructura de campaña.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas\\Clase 13 Fundamentos del Marketing digital",
+  "objetivos": [
+    "Diferenciar publicidad paga de alcance orgánico en cada plataforma.",
+    "Conocer los tipos de campaña y los formatos de anuncio más usados.",
+    "Definir objetivos de publicidad según la etapa del embudo.",
+    "Comprender los conceptos básicos de SEM: palabras clave y estructura de campaña."
+  ],
+  "teoria": [
+    {
+      "titulo": "Publicidad paga vs. alcance orgánico",
+      "emoji": "💡",
+      "parrafos": [
+        "El alcance orgánico depende de que el algoritmo y la audiencia te encuentren: funciona, pero es lento. La publicidad paga garantiza exposición: pagás para aparecer en el momento exacto en que el cliente busca o navega."
+      ],
+      "puntos": [
+        "Orgánico: publicaciones, SEO y contenido que crecen sin presupuesto.",
+        "Pago: anuncios en Google, Meta e Instagram que se muestran a cambio de dinero.",
+        "Lo profesional combina ambos: la pauta acompaña al contenido orgánico.",
+        "El pago no compra ventas, compra visibilidad: el cierre depende del anuncio y la oferta."
+      ]
+    },
+    {
+      "titulo": "Tipos de campaña y formatos de anuncio",
+      "emoji": "🎯",
+      "parrafos": [
+        "Cada plataforma ofrece campañas para distintos momentos: búsqueda, display (banners en sitios), video, redes y compras. El formato es cómo se ve el anuncio: texto, foto, video o carrusel."
+      ],
+      "puntos": [
+        "Campañas de Búsqueda: aparecen cuando la persona busca una palabra en Google.",
+        "Campañas Display: banners en sitios y apps asociados a la red de Google.",
+        "Video: anuncios que interrumpen o preceden a los videos en YouTube.",
+        "Redes sociales: anuncios integrados al feed y a las historias de Meta.",
+        "Shopping/Catálogo: productos con foto y precio directo del catálogo."
+      ]
+    },
+    {
+      "titulo": "Objetivos de publicidad",
+      "emoji": "🧭",
+      "parrafos": [
+        "Antes de pautar hay que decidir qué querés lograr. La plataforma usa ese objetivo para optimizar la entrega: no es lo mismo buscar clics que buscar llamadas o ventas."
+      ],
+      "puntos": [
+        "Conocimiento: que más personas vean la marca (alcance, reproducciones).",
+        "Consideración: que interactúen con el anuncio (clics, mensajes, visitas).",
+        "Conversión: que realicen una acción de valor (compra, pedido, formulario).",
+        "Objetivos SMART: específicos, medibles, alcanzables, relevantes y con fecha.",
+        "Un solo objetivo por campaña: mezclar objetivos confunde la optimización."
+      ]
+    },
+    {
+      "titulo": "Conceptos básicos de SEM",
+      "emoji": "🔍",
+      "parrafos": [
+        "SEM (Search Engine Marketing) es publicidad en buscadores: pagás por aparecer ante una búsqueda. Todo gira alrededor de las palabras clave y de cómo se estructura la campaña."
+      ],
+      "puntos": [
+        "Palabra clave: el término o frase que dispara tu anuncio (ej: repuesto de celular Rosario).",
+        "Estructura jerárquica: Campaña → Grupo de anuncios → Palabras clave y anuncios.",
+        "La campaña define objetivos, presupuesto y ubicación geográfica.",
+        "El grupo de anuncios agrupa palabras afines con sus propios anuncios.",
+        "Se paga por clic (CPC) o por mil visualizaciones (CPM), según el objetivo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Planificá tu primera campaña de prueba",
+      "consigna": "Armá el plan de una campaña de prueba en un documento para el negocio de tus clases anteriores, definiendo objetivo, tipo, formato y las primeras palabras clave.",
+      "pasos": [
+        "Elegí el negocio que venís trabajando y definí un objetivo SMART con una semana como plazo.",
+        "Decidí el tipo de campaña: Búsqueda, Display, Video o Redes sociales, y justificá por qué.",
+        "Elegí el formato de anuncio adecuado a ese tipo (texto, video, carrusel).",
+        "Redactá 5 palabras clave iniciales relacionadas con el rubro y la zona.",
+        "Completá el documento con presupuesto estimado por día y la audiencia a la que apuntás."
+      ],
+      "entrega": "Presentá el documento con el objetivo SMART, el tipo y formato de campaña, las 5 palabras clave y el presupuesto estimado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué buscás garantizar cuando pagás publicidad?",
+            "opciones": ["Ventas sin importar el anuncio", "Exposición en el momento en que el cliente busca", "Reemplazar al contenido orgánico", "Eliminar la competencia"],
+            "correcta": "Exposición en el momento en que el cliente busca"
+          },
+          {
+            "pregunta": "¿En qué momento aparece una campaña de Búsqueda?",
+            "opciones": ["Cuando alguien busca esa palabra en Google", "Siempre en el feed de Instagram", "En los videos de YouTube al azar", "En la bandeja de entrada del correo"],
+            "correcta": "Cuando alguien busca esa palabra en Google"
+          },
+          {
+            "pregunta": "¿Qué objetivo elegís si querés que la gente complete un formulario?",
+            "opciones": ["Conocimiento", "Video", "Conversión", "Cobertura"],
+            "correcta": "Conversión"
+          },
+          {
+            "pregunta": "¿Cuál es la estructura correcta de una campaña SEM?",
+            "opciones": ["Anuncio → Campaña → Palabra clave", "Campaña → Grupo de anuncios → Palabras clave", "Palabra clave → Grupo → Campaña", "Grupo → Campaña → Anuncio"],
+            "correcta": "Campaña → Grupo de anuncios → Palabras clave"
+          },
+          {
+            "pregunta": "¿Qué es el CPC?",
+            "opciones": ["Costo por clic", "Costo por mil visualizaciones", "Costo promedio de conversión", "Clic por computadora"],
+            "correcta": "Costo por clic"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento de planificación con objetivo SMART, tipo de campaña, formato y palabras clave cohérentes.",
+  "lectura": "La publicidad paga compra visibilidad: la probabilidad de aparecer frente al cliente en el momento indicado. Definir un objetivo claro, elegir el tipo y formato correctos y dominar la estructura Campaña-Grupo-Anuncio con palabras clave es la base del SEM que vas a practicar en las próximas clases.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué anuncios vieron hoy en Google o Instagram y por qué creen que les llegaron", "min": "10 min" },
+      { "titulo": "Pagado vs orgánico", "que": "Comparar alcance orgánico y pago con ejemplos de cuentas reales", "min": "20 min" },
+      { "titulo": "Tipos y formatos", "que": "Recorrer Búsqueda, Display, Video y Social con ejemplos en vivo", "min": "20 min" },
+      { "titulo": "Objetivos", "que": "Explicar conocimiento, consideración y conversión con casos del rúbro", "min": "15 min" },
+      { "titulo": "Conceptos SEM", "que": "Armar en vivo la estructura Campaña-Grupo-Anuncio y ejemplos de CPC/CPM", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Revisar un plan de ejemplo y repasar con el interactivo", "min": "10 min" }
+    ],
+    "conecta": [
+      "Partir de los anuncios que los propios alumnos vieron y preguntar quién creen que los pagó.",
+      "Retomar el negocio de Google Mi Negocio y del sitio: ahora vamos a ponerlo frente al cliente."
+    ],
+    "aclarar": [
+      "Pagado no significa mejor: un anuncio mal segmentado molesta y no convierte.",
+      "La palabra clave dispara el anuncio, pero no aparece solo: el anuncio y la página destino deben coincidir.",
+      "CPC y CPM se eligen según el objetivo: no se paga lo mismo por un clic que por una visualización.",
+      "Una campaña no se define por una sola decisión sino por objetivo + tipo + formato + audiencia."
+    ],
+    "ejemplos": [
+      "Mostrar la diferencia entre un resultado orgánico y un anuncio de Búsqueda bien marcado.",
+      "Buscar en vivo una palabra del rubro y analizar qué anuncios aparecen y qué estructura usan.",
+      "Comparar un banner display con un anuncio de carrusel en Instagram del mismo negocio."
+    ]
+  }
+}

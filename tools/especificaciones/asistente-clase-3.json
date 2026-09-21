@@ -1,0 +1,161 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 3,
+    "titulo": "Herramientas básicas de la PC para secretariado",
+    "modulo": "Módulo 1 – Introducción y Manejo de PC",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a dejar tu PC lista para trabajar: idioma, fecha y hora bien configurados, atajos de teclado que te vuelan media hora por día y capturas de pantalla para armar reportes como un profesional del secretariado.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 1\\Clase 3 Atajos de Teclado y Nota que son archivos",
+  "objetivos": [
+    "Configurar el idioma, la fecha, la hora y la zona horaria de Windows para que tu PC trabaje con el formato de Argentina.",
+    "Usar los atajos de teclado esenciales (Alt+Tab, Win+D, Win+L, Ctrl+E, Ctrl+F, Ctrl+P, Ctrl+Z) sin depender del mouse.",
+    "Capturar partes de la pantalla con Win+Shift+S y guardarlas para usarlas en reportes, notas y correos.",
+    "Distinguir qué es un archivo, cómo se nombra y qué indica su extensión al momento de guardar y enviar documentación."
+  ],
+  "teoria": [
+    {
+      "titulo": "Configuración regional: idioma, fecha y hora",
+      "emoji": "🌐",
+      "parrafos": [
+        "Antes de escribir la primera nota, tu PC tiene que hablar tu idioma y entender tus fechas. Windows trae una configuración regional que define el idioma de los menús, el formato de las fechas y el huso horario.",
+        "En Argentina trabajamos con el formato de fecha día/mes/año y el huso horario de Buenos Aires (GMT-3). Si tu PC está mal configurada, las fechas de tus documentos van a aparecer en formato estadounidense (mes/día/año) y los horarios de reuniones van a quedar corridos."
+      ],
+      "puntos": [
+        "Para revisarla: Configuración → Hora e idioma → Idioma y región.",
+        "Región: seleccionar «Argentina» y verificar que la fecha se vea como 21/01/2026 (dd/mm/aaaa), no 01/21/2026.",
+        "Hora e idioma → Fecha y hora: activar «Establecer zona horaria automáticamente» y elegir (UTC-03:00) Buenos Aires.",
+        "Idioma: añadir el español (España) o (Argentina) como idioma de pantalla si Windows aparece en inglés u otro idioma.",
+        "En Ecuador y otras regiones hispanas varían decimales y moneda; por eso siempre revisá el formato regional antes de imprimir o compartir."
+      ]
+    },
+    {
+      "titulo": "Atajos de teclado que usás todos los días",
+      "emoji": "⌨️",
+      "parrafos": [
+        "El mouse es cómodo, pero el teclado es rápido. Cada vez que sacás la mano del mouse, perdés segundos; sumados, son minutos y un día de trabajo que se va en clics.",
+        "Un asistente administrativo con atajos memorizados responde más rápido a los pedidos: cambia de ventana, imprime, guarda y deshace sin buscar menús."
+      ],
+      "puntos": [
+        "Alt+Tab: cambiar de ventana abierta sin tocar el mouse. Mantené Alt y presioná Tab para ir pasando; soltá en la que necesites.",
+        "Win+D: mostrar el Escritorio al instante (y volver con la misma tecla). Ideal para limpiar la pantalla antes de una reunión.",
+        "Win+L: bloquear la PC al levantarte del puesto. Protegé la información confidencial siempre.",
+        "Ctrl+E: ir directo a la búsqueda dentro del Explorador de archivos.",
+        "Ctrl+F: buscar una palabra dentro del documento o archivo que estés viendo.",
+        "Ctrl+P: abrir la ventana de impresión sin pasar por el menú Archivo.",
+        "Ctrl+Z: deshacer la última acción. Tu salvavidas cuando borraste algo por accidente.",
+        "No los memorices todos de golpe: elegí tres para esta semana y sumá uno nuevo cada semana."
+      ]
+    },
+    {
+      "titulo": "Capturas de pantalla con Win+Shift+S",
+      "emoji": "📸",
+      "parrafos": [
+        "En secretariado, una imagen vale más que un correo mal explicado. Mostrarle a tu jefe o a un cliente lo que estás viendo en pantalla resuelve consultas y deja evidencia de lo que se hizo.",
+        "Windows 10 y 11 traen la barra de recorte: con Win+Shift+S elegís qué parte de la pantalla capturar y el recorte queda en el portapapeles, listo para pegar."
+      ],
+      "puntos": [
+        "Win+Shift+S abre el recorte; con el mouse marcás el área y la captura queda en el portapapeles.",
+        "Modos de recorte: rectangular (el más usado), forma libre, ventana completa o pantalla entera.",
+        "Después de capturar, pegá con Ctrl+V en un documento, un correo o un chat. Si capturaste por error, Ctrl+Z o esperá que el recorte desaparezca.",
+        "La app «Herramienta de recorte» (Snipping Tool) permite anotar la captura: resaltar, flechas y recuadros para señalar puntos importantes.",
+        "Uso real en secretariado: adjuntar la captura de un error del sistema al soporte, documentar carpetas organizadas o armar manuales con pasos visuales."
+      ]
+    },
+    {
+      "titulo": "¿Qué es un archivo?",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Todo lo que tocás en la PC —una nota, una planilla, una foto— vive en un archivo. Un archivo es un bloque de información guardado en el disco con un nombre y una extensión que le dice a Windows con qué programa abrirlo.",
+        "Entender esto te evita el clásico «no me abre el archivo»: muchas veces el problema es que no existe el programa correcto en la PC que lo recibe."
+      ],
+      "puntos": [
+        "El nombre tiene dos partes: el nombre elegido y la extensión: «Nota_Enero.docx» → nombre + tipo de documento de Word.",
+        "Extensiones comunes: .docx (Word), .xlsx (Excel), .pdf (documento final para compartir), .jpg (imagen), .txt (texto simple).",
+        "WordPad y el Bloc de notas guardan «.rtf» y «.txt»: simples y sin formato elaborado; el secretariado profesional apunta a .docx.",
+        "Nombrá siempre con contenido descriptivo y fecha: «Nota_Reunion_21-01-2026» en vez de «documento1».",
+        "Guardar (Ctrl+G) sobrescribe; Guardar como te permite cambiar el nombre o la carpeta donde queda el archivo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Prepará tu reporte con capturas",
+      "consigna": "Armá un documento que muestre, con capturas de pantalla, la estructura de carpetas que organizaste en la clase 2. Este es el tipo de evidencia que un asistente adjunta a un correo o a un informe de gestión.",
+      "pasos": [
+        "Abrí el Explorador de archivos y ubicá tus carpetas de «Facturas», «Recibos» y «Documentos de trabajo».",
+        "Capturá la estructura con Win+Shift+S (modo rectangular) desde el panel izquierdo del Explorador.",
+        "Abrí Word o WordPad y pegá la captura con Ctrl+V sobre un documento nuevo.",
+        "Agregale un título en negrita: «Reporte de organización de archivos» y tu nombre debajo.",
+        "Guardá el documento con nombre descriptivo: «Reporte_Carpetas_TuNombre.docx».",
+        "Verificá con un doble clic que el archivo abre bien y revisá el formato de fecha en el documento."
+      ],
+      "entrega": "Capturá la pantalla (Win + Shift + S) mostrando tu documento terminado con la estructura de carpetas visible y envialo como imagen.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Con qué combinación de teclas capturás una parte de la pantalla?",
+            "opciones": ["Win + Shift + S", "Alt + Tab", "Ctrl + P", "Win + L"],
+            "correcta": "Win + Shift + S"
+          },
+          {
+            "pregunta": "¿Qué atajo usás para bloquear la PC al levantarte del escritorio?",
+            "opciones": ["Win + D", "Win + L", "Ctrl + Z", "Alt + Tab"],
+            "correcta": "Win + L"
+          },
+          {
+            "pregunta": "¿Con qué atajo alternás entre las ventanas abiertas?",
+            "opciones": ["Ctrl + F", "Ctrl + E", "Alt + Tab", "Win + Shift + S"],
+            "correcta": "Alt + Tab"
+          },
+          {
+            "pregunta": "En Argentina, ¿qué formato de fecha es el correcto para un documento oficial?",
+            "opciones": ["21/01/2026 (día/mes/año)", "01/21/2026 (mes/día/año)", "2026/01/21", "21-01 en formato americano"],
+            "correcta": "21/01/2026 (día/mes/año)"
+          },
+          {
+            "pregunta": "¿Qué indica la extensión .docx de un archivo?",
+            "opciones": ["Que es un documento de Word", "Que es una imagen", "Que es una planilla de Excel", "Que es un archivo de sistema"],
+            "correcta": "Que es un documento de Word"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la captura con el documento armado: título, nombre descriptivo, formato de fecha correcto y la estructura de carpetas visible en la captura insertada.",
+  "lectura": "Una PC bien configurada (idioma, fecha y hora de Argentina) ya es media oficina resuelta. Los atajos de teclado te dan velocidad, la captura con Win+Shift+S te da evidencia para reportes y correos, y entender qué es un archivo con su extensión te evita perder documentación o mandarla rota.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar carpetas de la clase 2 y preguntar si alguna vez no les abrió un archivo; de ahí sale el tema de extensiones", "min": "10 min" },
+      { "titulo": "Configuración regional", "que": "Guiar el recorrido Configuración → Hora e idioma → Idioma y región y verificarla en cada PC", "min": "15 min" },
+      { "titulo": "Atajos de teclado", "que": "Mostrar cada atajo en vivo y que los alumnos lo prueben sobre su escritorio", "min": "20 min" },
+      { "titulo": "Capturas de pantalla", "que": "Practicar Win+Shift+S en los distintos modos y anotar un recorte con la herramienta de recorte", "min": "20 min" },
+      { "titulo": "Práctica: reporte con capturas", "que": "Guiar el ejercicio completo en Word/WordPad verificando nombres y guardado", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo y los tres atajos que cada uno eligió aprender", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez les mandaron un archivo que no pudieron abrir. Esa experiencia real conecta directo con la extensión de los archivos.",
+      "Mostrar tu propia barra de recorte anotando una captura en vivo como ejemplo de reporte profesional."
+    ],
+    "aclarar": [
+      "Win+Shift+S copia al portapapeles; todavía hay que pegarlo con Ctrl+V para que quede guardado en un documento.",
+      "La fecha en formato estadounidense (mes/día/año) es un error típico de documentos corporativos: verificá siempre la configuración regional.",
+      "Win+L no apaga la PC, solo bloquea la sesión: es seguro y rápido para los momentos en que te levantás.",
+      "Pegar con Ctrl+V convierte en .docx automáticamente la captura; si vas a enviar por correo, considerá exportarlo a PDF en la clase 4."
+    ],
+    "ejemplos": [
+      "Capturar la propia estructura de carpetas del docente y armarla como modelo del reporte a entregar.",
+      "Mostrar un archivo «documento1.docx» vs «documento1.pdf» y preguntar cuál conviene enviar en cada caso.",
+      "Bloquear la PC con Win+L frente al grupo para que vean el resultado exacto."
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 5,
+    "titulo": "Cálculos y funciones",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a usar fórmulas y funciones dentro de formularios y consultas para totalizar, promediar y tomar decisiones, como lo hacen las PyME en la gestión diaria.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 5 Calculos y Funciones",
+  "objetivos": [
+    "Crear cuadros de texto calculados en formularios, tanto en el detalle como en las secciones de encabezado y pie.",
+    "Usar las funciones Suma, Promedio, Máximo, Mínimo, SiInm, Nz y Fecha en formularios.",
+    "Aplicar formato condicional a controles para destacar valores.",
+    "Realizar cálculos en consultas y usar la función DBúsq para buscar datos en tablas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Cálculos en formularios",
+      "emoji": "➕",
+      "parrafos": [
+        "Un formulario no solo muestra campos de la tabla: también puede mostrar cálculos en cuadros de texto. Estos cuadros tienen un origen de control con una expresión que comienza siempre con el signo =.",
+        "En la sección Detalle del formulario se calculan valores de cada registro (ej: precio con IVA), y en el Pie se colocan totales que abarcan todos los registros (ej: suma de todos los montos)."
+      ],
+      "puntos": [
+        "Cuadro de texto calculado: en la propiedad «Origen del control» se escribe la fórmula precedida por =.",
+        "Cálculo en Detalle: se calcula para cada registro, ej: =[Precio]*1.21.",
+        "Cálculo en Pie: muestra totales del conjunto de registros usando funciones de agregado.",
+        "Sintaxis: los campos se referencian entre corchetes: =[Precio]*[Cantidad]."
+      ]
+    },
+    {
+      "titulo": "Funciones de agregado y de uso diario",
+      "emoji": "🧮",
+      "parrafos": [
+        "En los pies de formulario se usan funciones que resumen todos los registros. En controles particulares se usan funciones que muestran información contextual como la fecha actual."
+      ],
+      "puntos": [
+        "=Suma([Monto]): total de la columna en el contexto actual.",
+        "=Promedio([Monto]): valor medio.",
+        "=Máx([Monto]) y =Mín([Monto]): valor más alto y más bajo.",
+        "=Fecha(): muestra la fecha actual del sistema.",
+        "=SiInm(Condición; ValorSiVerdadero; ValorSiFalso): decisión condicional, ej: =SiInm([Stock]<5; «Reponer»; «OK»).",
+        "=Nz(Campo; 0): convierte un valor nulo en 0 para que las sumas no queden con espacios en blanco."
+      ]
+    },
+    {
+      "titulo": "Formato condicional",
+      "emoji": "🎨",
+      "parrafos": [
+        "El formato condicional permite cambiar el aspecto de un control según su valor: por ejemplo, pintar de rojo el stock que está por debajo de un límite o de verde los saldos positivos."
+      ],
+      "puntos": [
+        "Seleccionar el control → pestaña Formato → Formato condicional (o clic derecho → Formato condicional).",
+        "Se define una condición como «El valor del campo es menor que 20» y se eligen fuente, color o fondo.",
+        "Se pueden agregar varias condiciones y una regla por defecto.",
+        "Es una herramienta de lectura: ayuda al ojo a detectar excepciones sin cambiar los datos."
+      ]
+    },
+    {
+      "titulo": "Cálculos en consultas y función DBúsq",
+      "emoji": "🔎",
+      "parrafos": [
+        "También se pueden calcular campos nuevos dentro de una consulta escribiendo expresiones en una columna extra de la cuadrícula. La función DBúsq (buscar en Dominio) toma un valor de una tabla según un criterio."
+      ],
+      "puntos": [
+          "Campo calculado en consulta: escribir =Precio*[Cantidad] en la cuadrícula y renombrar la columna, ej: TotalLinea: [Precio]*[Cantidad].",
+          "DBúsq(campo a devolver, tabla/consulta, criterio): busca un dato en esa tabla, ej: =DBúsq(«Precio»; «Productos»; «Codigo=» & [CodigoProd]).",
+          "DBúsq es útil para mostrar datos relacionados sin crear una consulta con uniones.",
+          "Los campos calculados de consultas se pueden usar después en formularios e informes."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Calculá precios y totales en tu formulario",
+      "consigna": "Sobre el formulario de una tabla de ventas o remitos de la base de repuestos, agregá cálculos de precio con IVA, subtotales con funciones y formato condicional.",
+      "pasos": [
+        "En el formulario de la tabla de remitos (o creá una consulta de ventas como origen), agregá un cuadro de texto en Detalle con la fórmula =[Precio]*1.21 para ver el precio con IVA.",
+        "En el Pie del formulario, agregá un cuadro de texto con =Suma([Precio]) para totalizar los importes.",
+        "Agregá otros tres cuadros de texto en Pie con =Promedio([Precio]), =Máx([Precio]) y =Mín([Precio]).",
+        "En la cabecera o pie, agregá un campo con =Fecha() para mostrar la fecha actual.",
+        "Agregá un cuadro calculado usando SiInm: =SiInm([Stock]<10; «Pedir repuesto»; «Suficiente») si trabajás con una tabla de productos.",
+        "Aplicá formato condicional al campo Stock para pintarlo de rojo cuando sea menor a 10."
+      ],
+      "entrega": "Guardá el archivo .accdb y compartí una captura del formulario en vista Presentación mostrando los totales calculados y el formato condicional aplicado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Con qué símbolo comienza siempre una fórmula en un cuadro de texto de Access?",
+            "opciones": ["Con +", "Con =", "Con *", "Con #"],
+            "correcta": "Con ="
+          },
+          {
+            "pregunta": "¿Qué función devuelve la fecha actual del sistema?",
+            "opciones": ["=Ahora()", "=Fecha()", "=Hoy()", "=Tiempo()"],
+            "correcta": "=Fecha()"
+          },
+          {
+            "pregunta": "¿Qué función evita que un valor nulo arruine una suma?",
+            "opciones": ["=Suma()", "=Nz()", "=DBúsq()", "=Máx()"],
+            "correcta": "=Nz()"
+          },
+          {
+            "pregunta": "¿Qué hace la función SiInm?",
+            "opciones": ["Suma todos los valores", "Evalúa una condición y devuelve uno de dos valores", "Busca un dato en otra tabla", "Muestra la fecha"],
+            "correcta": "Evalúa una condición y devuelve uno de dos valores"
+          },
+          {
+            "pregunta": "¿Qué función permite traer un dato de otra tabla según un criterio?",
+            "opciones": ["=Fecha()", "=Suma()", "=DBúsq()", "=Contar()"],
+            "correcta": "=DBúsq()"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con los cuadros calculados funcionando (IVA, totales, promedio, máx, mín, fecha) y el formato condicional activo.",
+  "lectura": "Los cuadros de texto calculados llevan fórmulas que arrancan con =. En los pies se totalizan registros con Suma, Promedio, Máximo y Mínimo, y las funciones SiInm, Nz y Fecha resuelven casos diarios. El formato condicional destaca valores críticos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar formularios y consultas. Preguntar: ¿qué cálculos necesita una PyME que factura con IVA todos los días?", "min": "10 min" },
+      { "titulo": "Cuadros de texto calculados", "que": "Explicar el origen del control y crear en vivo el cálculo =[Precio]*1.21 en el Detalle.", "min": "15 min" },
+      { "titulo": "Funciones en pies", "que": "Agregar Suma, Promedio, Máx y Mín en el Pie. Explicar la diferencia entre una función de registro y una de agregado.", "min": "15 min" },
+      { "titulo": "SiInm, Nz, Fecha y formato condicional", "que": "Mostrar SiInm, Nz y Fecha con ejemplos reales, aplicar formato condicional al campo Stock y explorar sus opciones", "min": "30 min" },
+      { "titulo": "Cálculos en consultas y DBúsq", "que": "Mostrar un campo calculado en consulta y la función DBúsq con un ejemplo de productos", "min": "15 min" },
+      { "titulo": "Cierre y repaso", "que": "Repasar con las preguntas del interactivo. Verificar los formularios de los alumnos", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿cómo calculan hoy el IVA en su comercio? Mostrar que Access lo hace solo con una fórmula.",
+      "Mostrar un ejemplo real de una factura con subtotal, IVA y total para que identifiquen los cálculos."
+    ],
+    "aclarar": [
+      "El signo = es obligatorio al inicio de toda fórmula: sin él, Access trata el texto como un simple rótulo.",
+      "Las funciones en el Pie totalizan los registros del contexto; en Detalle calculan para cada registro.",
+      "La función Nz convierte nulos en 0 para que las sumas y comparaciones no fallen.",
+      "Los campos se referencian siempre entre corchetes, ej: [Precio]."
+    ],
+    "ejemplos": [
+      "Crear en vivo un total de ventas con IVA en el formulario de remitos.",
+      "Usar formato condicional para pintar de rojo los productos con stock bajo mientras se muestran en pantalla."
+    ]
+  }
+}

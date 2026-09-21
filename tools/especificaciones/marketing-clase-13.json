@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 13,
+    "titulo": "Google Sites",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a crear tu primer sitio web sin escribir una línea de código con Google Sites: configurarás el diseño, armarás las secciones y cargarás los recursos que necesita tu negocio para mostrarse online.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas\\Clase 12 Google Sites - Dirección Local",
+  "objetivos": [
+    "Reconocer qué es Google Sites y para qué tipos de negocio sirve.",
+    "Configurar la estructura, el tema y la navegación de un sitio nuevo.",
+    "Armar secciones con textos, enlaces, mapas y fotos organizadas.",
+    "Publicar el sitio con una dirección propia y compartirlo con el equipo."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es Google Sites",
+      "emoji": "🛠️",
+      "parrafos": [
+        "Google Sites es el creador de sitios gratuito de Google: arrastrás bloques, elegís un tema y el resultado queda listo para publicar. No hace falta saber programar y el sitio queda alojado en la nube con la extensión sites.google.com."
+      ],
+      "puntos": [
+        "Gratis y con la misma cuenta de Google que usás para el correo.",
+        "Ideal para un negocio chico, un emprendimiento o una ficha de presentación profesional.",
+        "Se edita en la computadora y se ve bien en el celular automáticamente.",
+        "Perfecto como complemento de Google Mi Negocio: un lugar para mostrar toda la info."
+      ]
+    },
+    {
+      "titulo": "Configuración y diseño del sitio",
+      "emoji": "🎨",
+      "parrafos": [
+        "Antes de cargar contenido, conviene definir el aspecto: tema, tipografía, colores y logo. Esta decisión ordena todo lo que viene después y le da identidad visual al negocio."
+      ],
+      "puntos": [
+        "Elegir tema y estilo de portada (foto de cabecera) desde la barra de configuración.",
+        "Definir el nombre del sitio y la dirección: termina en sites.google.com/view/tusitio.",
+        "Usar el panel Navegación para crear páginas: Inicio, Servicios, Contacto y Galería.",
+        "Cambiar el color de fondo y la tipografía para que acompañen la marca.",
+        "Configurar quién puede ver el sitio: público o solo algunas personas."
+      ]
+    },
+    {
+      "titulo": "Secciones y recursos",
+      "emoji": "🧱",
+      "parrafos": [
+        "El contenido se arma con bloques que se arrastran: textos, títulos, botones, mapas, tablas y listas. Cada sección responde a una necesidad del cliente: qué hacemos, dónde estamos y cómo contactarnos."
+      ],
+      "puntos": [
+        "Embebé el mapa de Google Maps para mostrar tu ubicación exacta en Contacto.",
+        "Sumá botones de Llamar y WhatsApp que funcionen desde el celular.",
+        "Insertá videos y presentaciones de Drive para mostrar tus servicios o promociones.",
+        "Organizá las secciones por bloques con titulares claros y textos cortos.",
+        "Agregá formularios de Google para que los clientes te dejen su consulta."
+      ]
+    },
+    {
+      "titulo": "Publicar y mantener el sitio",
+      "emoji": "🚀",
+      "parrafos": [
+        "El sitio se publica con un clic y cada cambio se puede deshacer si no quedó bien. Publicar no es el final: un sitio que no se actualiza transmite abandono y desconfianza."
+      ],
+      "puntos": [
+        "Publicá y compartí el enlace en tu bio de Instagram y en tu ficha de Google.",
+        "Revisá cómo se ve en el celular con el modo de vista previa.",
+        "Actualizá horarios, precios y promociones cada vez que cambien.",
+        "Usá el historial de versiones para recuperar una versión anterior si algo sale mal."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Creá el sitio web de tu negocio",
+      "consigna": "Armá un sitio de prueba en Google Sites para el mismo negocio que cargaste en Google Mi Negocio, con al menos tres páginas y los recursos vistos en clase.",
+      "pasos": [
+        "Entrá a sites.google.com con tu Gmail y creá un sitio nuevo en blanco.",
+        "Poné el nombre del negocio y elegí un tema y una cabecera acorde a la marca.",
+        "Creá tres páginas desde el panel Navegación: Inicio, Servicios y Contacto.",
+        "En Inicio sumá un titular y un párrafo de presentación; en Servicios, una lista con tres servicios.",
+        "En Contacto embebé un mapa con la ubicación y un botón de Llamar.",
+        "Publicá el sitio y guardá el enlace en tu documento de trabajo."
+      ],
+      "entrega": "Capturá las tres páginas del sitio publicado y pegá el enlace en tu documento junto a la captura.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué lenguaje de programación necesitás para hacer un sitio en Google Sites?",
+            "opciones": ["HTML y CSS", "JavaScript", "Ninguno: se arma con bloques arrastrando", "Python"],
+            "correcta": "Ninguno: se arma con bloques arrastrando"
+          },
+          {
+            "pregunta": "¿Cómo se organiza la estructura del sitio?",
+            "opciones": ["Con páginas en el panel Navegación", "Con la extensión del archivo", "Con permisos de Drive", "Con el historial de versiones"],
+            "correcta": "Con páginas en el panel Navegación"
+          },
+          {
+            "pregunta": "¿Qué recurso podés incrustar en la página de Contacto?",
+            "opciones": ["Un mapa de Google Maps", "Un archivo MP3", "Un antivirus", "Una cuenta de redes"],
+            "correcta": "Un mapa de Google Maps"
+          },
+          {
+            "pregunta": "¿Qué dirección toma un sitio creado en Google Sites?",
+            "opciones": ["www.tusitio.com.ar", "sites.google.com/view/tusitio", "tusitio.la.com", "drive.google.com/tusitio"],
+            "correcta": "sites.google.com/view/tusitio"
+          },
+          {
+            "pregunta": "¿Qué conviene hacer cuando cambian tus horarios de atención?",
+            "opciones": ["Cambiar de plataforma", "Actualizar el sitio y publicar el cambio", "Borrar el sitio entero", "No hace falta: nadie lo mira"],
+            "correcta": "Actualizar el sitio y publicar el cambio"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el sitio publicado con tres páginas, el mapa en Contacto y el diseño configurado según la marca.",
+  "lectura": "Google Sites permite crear un sitio limpio y funcional sin programación, ideal para acompañar la ficha de Google Mi Negocio. Elegir tema y páginas, armar secciones con recursos como mapas y contactos, y publicar con un clic convierte a cualquier emprendimiento en negocio online.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar qué es el perfil local y preguntar qué le falta a un negocio que no tiene web", "min": "10 min" },
+      { "titulo": "Qué es Google Sites", "que": "Mostrar tres sitios reales y analizar sus secciones en voz alta", "min": "15 min" },
+      { "titulo": "Configuración y diseño", "que": "Configurar tema, nombre de sitio y páginas en vivo con el grupo", "min": "20 min" },
+      { "titulo": "Secciones y recursos", "que": "Armar Inicio, Servicios y Contacto con bloque, mapa, botones y videos", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Acompañar la creación de cada sitio y resolver dudas de edición", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Publicar un sitio al azar y repasar con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Usar el negocio de la clase anterior: el sitio es la web a la que enlaza la ficha de Google Mi Negocio.",
+      "Mostrar cómo quedan online los trabajos de alumnos avanzados como meta concreta."
+    ],
+    "aclarar": [
+      "El nombre del sitio no se puede cambiar después de publicarlo: elegilo bien desde el inicio.",
+      "Las páginas se ordenan arrastrando desde el panel Navegación, no con el bloque de texto.",
+      "El sitio NO se guarda en Drive como un archivo: se publica y se actualiza desde Sites.",
+      "La extensión sites.google.com no es 'poco profesional': hoy es de las más usadas para negocios chicos."
+    ],
+    "ejemplos": [
+      "Armar la página Inicio completa en vivo y mostrar el resultado publicado a la vista general.",
+      "Insertar un mapa con la dirección del instituto y un botón de Llamar como referencia.",
+      "Comparar una web con información actualizada contra otra abandonada hace meses."
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 8,
+    "titulo": "Funciones de fecha y validación",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a controlar fechas, antigüedades y vencimientos con funciones HOY, AÑO, MES, DIA y SIFECHA, y a blindar la planilla con validación de datos para que nadie cargue cualquier cosa.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 8 Funciones SiFecha",
+  "objetivos": [
+    "Usar HOY y AHORA para tener la fecha actual siempre actualizada.",
+    "Extraer partes de una fecha con DIA, MES y AÑO, y construir fechas con FECHA.",
+    "Calcular antigüedades y diferencias entre fechas con SIFECHA.",
+    "Controlar la carga de datos con Validación de datos (listas y números permitidos)."
+  ],
+  "teoria": [
+    {
+      "titulo": "Las funciones de fecha: HOY, AHORA, DIA, MES, AÑO y FECHA",
+      "emoji": "📅",
+      "parrafos": [
+        "Para Excel una fecha es un número con formato de fecha, y por eso se puede restar, sumar y comparar. Las funciones de fecha te dejan obtener la fecha actual o desarmar y armar fechas por partes."
+      ],
+      "puntos": [
+        "=HOY(): devuelve la fecha de hoy y se actualiza cada vez que se abre el libro.",
+        "=AHORA(): devuelve fecha y hora actuales del sistema.",
+        "=DIA(A2), =MES(A2) y =AÑO(A2): extraen el día, el mes y el año de una fecha.",
+        "=FECHA(año;mes;día): arma una fecha válida a partir de tres valores, útil para calcular vencimientos.",
+        "Sumar días: =A2+30 suma 30 días a una fecha; restar fechas con formato Número te da días transcurridos."
+      ]
+    },
+    {
+      "titulo": "SIFECHA: años, meses y días entre dos fechas",
+      "emoji": "⏳",
+      "parrafos": [
+        "SIFECHA (o Sifecha en algunas versiones en español) calcula la diferencia entre dos fechas en la unidad que elijas: años completos, meses completos o días. Es la función estrella para antigüedades de empleados y edades."
+      ],
+      "puntos": [
+        "Estructura: =SIFECHA(fecha_inicial; fecha_final; \"unidad\").",
+        "Unidades: \"Y\" para años completos, \"M\" para meses completos, \"D\" para días.",
+        "Ejemplo: =SIFECHA(C2;HOY();\"Y\") da la antigüedad del empleado de la celda C2 en años.",
+        "Antigüedad combinada: =SIFECHA(C2;HOY();\"Y\")&\" años \"&SIFECHA(C2;HOY();\"M\")&\" meses\" arma el texto «5 años 2 meses».",
+        "La fecha inicial siempre va primero y debe ser menor a la final."
+      ]
+    },
+    {
+      "titulo": "Validación de datos",
+      "emoji": "🚧",
+      "parrafos": [
+        "La validación de datos controla qué se puede escribir en una celda: un número dentro de un rango, una fecha, o un valor de una lista desplegable. Evita errores de carga, que son la principal causa de planillas rotas."
+      ],
+      "puntos": [
+        "Datos → Validación de datos, o ficha Datos → botón Validación de datos, y elegir la regla.",
+        "Listas: criterio Lista y se escriben los valores separados por punto y coma (;), o se apunta a un rango: genera una lista desplegable para elegir.",
+        "Entero/Decimal: definir mínimo y máximo, con un mensaje de error automático si se viola.",
+        "Fecha: restringir a un período (por ejemplo, fechas no anteriores a HOY()).",
+        "Buzón de entrada y mensaje de error: texto que ayuda al que carga los datos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Control de antigüedad y vencimientos",
+      "consigna": "Armá una planilla de empleados con fecha de ingreso donde se calcule la antigüedad con SIFECHA, se avise la fecha de vacaciones con FECHA, y se proteja la carga con validación de datos.",
+      "pasos": [
+        "Creá una hoja «Empleados» con: Nombre, Fecha ingreso, Antigüedad años, Antigüedad meses, y una columna con el número de DNI.",
+        "Cargá 6 empleados con fechas de ingreso distintas (≥ 6 meses de antigüedad).",
+        "En Antigüedad años usá =SIFECHA(B2;HOY();\"Y\") y en meses =SIFECHA(B2;HOY();\"M\")&\" meses\".",
+        "Agregá una columna «Fecha vacaciones» con =FECHA(AÑO(B2)+1;AÑO(B2)+1>0;MES(B2)-1) solo si querés explorar FECHA, o directamente probá =B2+365 con formato de fecha.",
+        "Aplicá Validación de datos en la columna DNI: entero entre 10000000 y 99999999 con mensaje de error.",
+        "Aplicá Validación de datos de Lista en una columna «Liquidación» con las opciones: Aporte; Feria; Licencia. Cargá un valor y probá escribir uno no permitido."
+      ],
+      "entrega": "Guardá como «Antiguedad_clase8.xlsx» con SIFECHA, FECHA, validación de DNI y lista desplegable.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función devuelve la fecha de hoy siempre actualizada?",
+            "opciones": ["=HOY()", "=AHORA()", "=FECHA(2026;1;1)", "=DIA(HOY())"],
+            "correcta": "=HOY()"
+          },
+          {
+            "pregunta": "¿Qué calcula SIFECHA?",
+            "opciones": ["La diferencia entre dos fechas en años, meses o días", "El promedio de fechas", "La suma de dos fechas", "El número de la semana"],
+            "correcta": "La diferencia entre dos fechas en años, meses o días"
+          },
+          {
+            "pregunta": "¿Cuál es la estructura de SIFECHA?",
+            "opciones": ["(fecha_inicial; fecha_final; \"unidad\")", "(\"unidad\"; fecha_inicial; fecha_final)", "(rango; criterio)", "(fecha; valor_falso)"],
+            "correcta": "(fecha_inicial; fecha_final; \"unidad\")"
+          },
+          {
+            "pregunta": "¿Para qué sirve la Validación de datos tipo Lista?",
+            "opciones": ["Para crear una lista desplegable que limita la carga", "Para ordenar los datos", "Para sumar automáticamente", "Para pintar las celdas"],
+            "correcta": "Para crear una lista desplegable que limita la carga"
+          },
+          {
+            "pregunta": "¿Qué función extrae solo el MES de una fecha?",
+            "opciones": ["=MES(A2)", "=HOY()", "=FECHA()", "=AÑO(A2)"],
+            "correcta": "=MES(A2)"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará las fórmulas de antigüedad con SIFECHA y las validaciones de datos configuradas.",
+  "lectura": "Las funciones de fecha convierten fechas en información de gestión: HOY trae la fecha actual, DIA/MES/AÑO la desarman y SIFECHA calcula antigüedades y vencimientos. La validación de datos, por su lado, protege la planilla antes de que el error exista, limitando qué se puede cargar en cada celda. Con estas herramientas, controlás el tiempo y blindás la carga de información.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar formato Número y Fecha; preguntar qué vencimientos controlan hoy", "min": "10 min" },
+      { "titulo": "Funciones de fecha", "que": "Explicar HOY, AHORA, DIA, MES, AÑO y FECHA con ejemplos", "min": "20 min" },
+      { "titulo": "SIFECHA", "que": "Calcular antigüedades en años, meses y el texto combinado", "min": "20 min" },
+      { "titulo": "Validación de datos", "que": "Configurar validación Entero, Fecha y Lista con mensajes", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Resolver la planilla de antigüedad y vencimientos paso a paso", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cuánto hace que está cada empleado y mostrar cómo SIFECHA responde al instante.",
+      "Mostrar una planilla con fechas mal cargadas (texto) y el mismo dato con formato Fecha."
+    ],
+    "aclarar": [
+      "SIFECHA no aparece en la lista autocompleta de todas las versiones: escribila completa a mano.",
+      "La fecha final va después de la inicial; invertirlas da error o resultado raro.",
+      "HOY() se actualiza con el sistema; si la PC tiene la fecha mal, Excel calcula mal.",
+      "La validación de datos solo afecta la carga manual: no protege contra pegado o fórmulas."
+    ],
+    "ejemplos": [
+      "Antigüedad de empleados con =SIFECHA(C2;HOY();\"Y\")&\" años\".",
+      "Vencimiento de facturas con =FECHA puede ser comparado con HOY() para detectar vencidos.",
+      "Lista desplegable de tipos de liquidación para evitar errores de tipeo."
+    ]
+  }
+}

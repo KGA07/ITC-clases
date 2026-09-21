@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 5 - Dashboards</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0f766e;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0f766e;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Dashboards</h1>
+  <p class="sub">Práctica Tablero de ventas de la PyME · Administración de PyMEs</p>
+  <div class="consigna">Armá un dashboard en una sola hoja con dos Tablas Dinámicas del mismo origen, sus gráficos dinámicos y una segmentación conectada a todas, para ver el negocio de una mirada.</div>
+  
+    <div class="q" data-ok="Una pantalla con indicadores clave resumidos y conectados">
+      <p class="qt">1. ¿Qué es un dashboard?</p>
+      <label class="opt"><input type="radio" name="q0" value="Una hoja con todos los detalles de cada factura"><span>Una hoja con todos los detalles de cada factura</span></label>
+<label class="opt"><input type="radio" name="q0" value="Una pantalla con indicadores clave resumidos y conectados"><span>Una pantalla con indicadores clave resumidos y conectados</span></label>
+<label class="opt"><input type="radio" name="q0" value="Un gráfico circular completo"><span>Un gráfico circular completo</span></label>
+<label class="opt"><input type="radio" name="q0" value="Una base de datos en Access"><span>Una base de datos en Access</span></label>
+    </div>
+
+    <div class="q" data-ok="Clic derecho → Conexiones de informe">
+      <p class="qt">2. ¿Cómo se conecta una segmentación a varias Tablas Dinámicas?</p>
+      <label class="opt"><input type="radio" name="q1" value="Clic derecho → Conexiones de informe"><span>Clic derecho → Conexiones de informe</span></label>
+<label class="opt"><input type="radio" name="q1" value="Copiando la TD"><span>Copiando la TD</span></label>
+<label class="opt"><input type="radio" name="q1" value="Cambiando el color de la segmentación"><span>Cambiando el color de la segmentación</span></label>
+<label class="opt"><input type="radio" name="q1" value="Actualizando el libro"><span>Actualizando el libro</span></label>
+    </div>
+
+    <div class="q" data-ok="Un gráfico conectado a una Tabla Dinámica que se filtra y actualiza con ella">
+      <p class="qt">3. ¿Qué es un gráfico dinámico (PivotChart)?</p>
+      <label class="opt"><input type="radio" name="q2" value="Un gráfico armado a mano"><span>Un gráfico armado a mano</span></label>
+<label class="opt"><input type="radio" name="q2" value="Un gráfico conectado a una Tabla Dinámica que se filtra y actualiza con ella"><span>Un gráfico conectado a una Tabla Dinámica que se filtra y actualiza con ella</span></label>
+<label class="opt"><input type="radio" name="q2" value="Una captura fija de la pantalla"><span>Una captura fija de la pantalla</span></label>
+<label class="opt"><input type="radio" name="q2" value="Un minigráfico dentro de una celda"><span>Un minigráfico dentro de una celda</span></label>
+    </div>
+
+    <div class="q" data-ok="Usar la MISMA fuente de datos">
+      <p class="qt">4. Condición para que dos Tablas Dinámicas compartan filtros:</p>
+      <label class="opt"><input type="radio" name="q3" value="Tener el mismo nombre de hoja"><span>Tener el mismo nombre de hoja</span></label>
+<label class="opt"><input type="radio" name="q3" value="Usar la MISMA fuente de datos"><span>Usar la MISMA fuente de datos</span></label>
+<label class="opt"><input type="radio" name="q3" value="Tener la misma cantidad de filas"><span>Tener la misma cantidad de filas</span></label>
+<label class="opt"><input type="radio" name="q3" value="Estar en la misma columna"><span>Estar en la misma columna</span></label>
+    </div>
+
+    <div class="q" data-ok="Actualizar todos los datos y ocultar las hojas de trabajo">
+      <p class="qt">5. ¿Qué conviene hacer antes de mostrar el dashboard?</p>
+      <label class="opt"><input type="radio" name="q4" value="Actualizar todos los datos y ocultar las hojas de trabajo"><span>Actualizar todos los datos y ocultar las hojas de trabajo</span></label>
+<label class="opt"><input type="radio" name="q4" value="Borrar las Tablas Dinámicas"><span>Borrar las Tablas Dinámicas</span></label>
+<label class="opt"><input type="radio" name="q4" value="Ponerle contraseña al archivo"><span>Ponerle contraseña al archivo</span></label>
+<label class="opt"><input type="radio" name="q4" value="Imprimir cada hoja por separado"><span>Imprimir cada hoja por separado</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

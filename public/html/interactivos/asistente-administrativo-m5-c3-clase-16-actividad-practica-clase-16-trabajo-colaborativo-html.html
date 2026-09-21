@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 16 - Trabajo colaborativo</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0057ff;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0057ff;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Trabajo colaborativo</h1>
+  <p class="sub">Práctica Documento compartido entre todos · Asistente Administrativo Digital con IA</p>
+  <div class="consigna">Todo el curso completa en simultáneo un mismo documento de Google Docs: una lista colaborativa de buenas prácticas de oficina.</div>
+  
+    <div class="q" data-ok="Por el historial de versiones y los colores por autor">
+      <p class="qt">1. ¿Cómo sabés quién escribió cada parte del documento compartido?</p>
+      <label class="opt"><input type="radio" name="q0" value="Por el historial de versiones y los colores por autor"><span>Por el historial de versiones y los colores por autor</span></label>
+<label class="opt"><input type="radio" name="q0" value="Reiniciando el navegador"><span>Reiniciando el navegador</span></label>
+<label class="opt"><input type="radio" name="q0" value="Borrando el documento"><span>Borrando el documento</span></label>
+<label class="opt"><input type="radio" name="q0" value="Por el tamaño de la letra"><span>Por el tamaño de la letra</span></label>
+    </div>
+
+    <div class="q" data-ok="Proponer cambios que el dueño acepta o rechaza">
+      <p class="qt">2. El modo «Sugerir cambios» sirve para...</p>
+      <label class="opt"><input type="radio" name="q1" value="Borrar el documento directamente"><span>Borrar el documento directamente</span></label>
+<label class="opt"><input type="radio" name="q1" value="Proponer cambios que el dueño acepta o rechaza"><span>Proponer cambios que el dueño acepta o rechaza</span></label>
+<label class="opt"><input type="radio" name="q1" value="Cambiar el correo del archivo"><span>Cambiar el correo del archivo</span></label>
+<label class="opt"><input type="radio" name="q1" value="Compartir el archivo por WhatsApp"><span>Compartir el archivo por WhatsApp</span></label>
+    </div>
+
+    <div class="q" data-ok="Usar Archivo → Historial de versiones y restaurar">
+      <p class="qt">3. Borraron por error un párrafo entero. ¿Qué hacés?</p>
+      <label class="opt"><input type="radio" name="q2" value="Rehacerlo de memoria"><span>Rehacerlo de memoria</span></label>
+<label class="opt"><input type="radio" name="q2" value="Usar Archivo → Historial de versiones y restaurar"><span>Usar Archivo → Historial de versiones y restaurar</span></label>
+<label class="opt"><input type="radio" name="q2" value="Apagar la PC"><span>Apagar la PC</span></label>
+<label class="opt"><input type="radio" name="q2" value="Crear otro documento desde cero"><span>Crear otro documento desde cero</span></label>
+    </div>
+
+    <div class="q" data-ok="Porque así todos ven los cambios en el mismo documento">
+      <p class="qt">4. ¿Por qué es mejor trabajar sobre UN solo enlace compartido que mandar copias por mail?</p>
+      <label class="opt"><input type="radio" name="q3" value="Porque así todos ven los cambios en el mismo documento"><span>Porque así todos ven los cambios en el mismo documento</span></label>
+<label class="opt"><input type="radio" name="q3" value="Porque se ahorra internet"><span>Porque se ahorra internet</span></label>
+<label class="opt"><input type="radio" name="q3" value="Porque es la única forma"><span>Porque es la única forma</span></label>
+<label class="opt"><input type="radio" name="q3" value="Porque las copias son más seguras"><span>Porque las copias son más seguras</span></label>
+    </div>
+
+    <div class="q" data-ok="Que identifica a cada autor">
+      <p class="qt">5. ¿Qué significa el color de cada cursor en un documento compartido?</p>
+      <label class="opt"><input type="radio" name="q4" value="Que el texto tiene formato distinto"><span>Que el texto tiene formato distinto</span></label>
+<label class="opt"><input type="radio" name="q4" value="Que identifica a cada autor"><span>Que identifica a cada autor</span></label>
+<label class="opt"><input type="radio" name="q4" value="Que el documento está dañado"><span>Que el documento está dañado</span></label>
+<label class="opt"><input type="radio" name="q4" value="Que hay una sugerencia"><span>Que hay una sugerencia</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

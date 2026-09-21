@@ -1,0 +1,147 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 8,
+    "titulo": "Videos Cortos: formatos y estructura",
+    "modulo": "Módulo 3 – Diseño de Contenidos y Copywriting con IA",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a entender por qué funcionan los videos cortos, cuáles son los formatos por plataforma y cómo estructurar gancho, desarrollo y cierre para captar atención.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA\\Clase 8 - Videos Cortos",
+  "objetivos": [
+    "Explicar por qué el video corto domina la interacción actual.",
+    "Reconocer los formatos propios de cada plataforma.",
+    "Estructurar un video corto en gancho, desarrollo y cierre.",
+    "Aplicar tips de captación para los primeros segundos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Por qué funcionan los videos cortos",
+      "emoji": "🎬",
+      "parrafos": [
+        "El video corto (de 15 a 60 segundos) funciona porque respeta la atención de la gente: promete algo, lo entrega rápido y puede verse desde el celular en cualquier momento. Las plataformas lo premian con mayor alcance."
+      ],
+      "puntos": [
+        "Alto tiempo de visualización: si la persona ve el video completo, el algoritmo lo difunde más.",
+        "Aprovecha el scroll continuo: la persona queda atrapada en el próximo video.",
+        "Reutilizables: un mismo video corto puede publicarse en varias cuentas."
+      ]
+    },
+    {
+      "titulo": "Formatos y plataformas",
+      "emoji": "📱",
+      "parrafos": [
+        "Cada plataforma tiene su formato nativo: vertical 9:16 en TikTok e Instagram Reels, y en Facebook también funciona horizontal. Conocer el formato correcto evita piezas cortadas y mejora la experiencia."
+      ],
+      "puntos": [
+        "Reels (Instagram): vertical, hasta 90 segundos, ideal para el descubrimiento.",
+        "TikTok: vertical, hasta 10 minutos, se descubre por hashtags y tendencias.",
+        "YouTube Shorts: vertical, hasta 60 segundos, conecta con tu canal largo.",
+        "Facebook Reels: el mismo video vertical, distribuido también en páginas y grupos."
+      ]
+    },
+    {
+      "titulo": "La estructura: gancho, desarrollo y cierre",
+      "emoji": "🪝",
+      "parrafos": [
+        "Un video corto efectivo tiene 3 partes. El gancho atrapa en los primeros 2-3 segundos, el desarrollo entrega el valor, y el cierre pide una acción o deja la promesa cumplida."
+      ],
+      "puntos": [
+        "Gancho: pregunta, dato fuerte, problema o promesa. Ejemplo: 'El error que está frenando tus ventas'.",
+        "Desarrollo: una sola idea, con ritmo y recursos visuales que la sostienen.",
+        "Cierre: llamado a la acción (seguirte, comentar, ir al perfil) o un remate sorpresa."
+      ]
+    },
+    {
+      "titulo": "Tips de captación",
+      "emoji": "⚡",
+      "parrafos": [
+        "El scroll no perdona: tenés 2 o 3 segundos antes de que deslicen. La retención se juega en el primer plano, la promesa y el ritmo general del video."
+      ],
+      "puntos": [
+        "Texto en pantalla desde los primeros segundos, para atrapar incluso sin sonido.",
+        "Prometé algo concreto y cumplilo: nunca engañes con el título.",
+        "Ritmo: cortá las pausas muertas y mantené acción constante.",
+        "Consistencia visual y de línea editorial para que te reconozcan."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi guion de video corto",
+      "consigna": "Escribí el guion completo de un video corto para tu marca con gancho, desarrollo y cierre, y calculá los tiempos estimados de cada parte.",
+      "pasos": [
+        "Elegí un tema de tu rubro: un consejo, una promoción o la respuesta a una pregunta frecuente.",
+        "Escribí el gancho (2 a 3 segundos) con el texto en pantalla propuesto.",
+        "Desarrollá una única idea en 20 a 30 segundos, con pasos o argumentos.",
+        "Redactá el cierre con llamado a la acción (10 a 15 segundos).",
+        "Graba un borrador de 30 segundos con el celular siguiendo tu guion, o leelo en voz alta para sincronizar los tiempos.",
+        "Guardalo en Google Docs y compartí el enlace."
+      ],
+      "entrega": "Compartí el guion con sus tres partes y la duración estimada.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "La duración típica de un video corto va de...",
+            "opciones": ["15 a 60 segundos", "3 a 5 minutos", "1 a 2 horas", "Nunca menos de 10 minutos"],
+            "correcta": "15 a 60 segundos"
+          },
+          {
+            "pregunta": "El formato vertical de Reels y TikTok es...",
+            "opciones": ["9:16", "16:9", "1:1", "4:3"],
+            "correcta": "9:16"
+          },
+          {
+            "pregunta": "El gancho de un video corto debe aparecer...",
+            "opciones": ["En los primeros 2-3 segundos", "A los 40 segundos", "Al final del video", "Solo en la descripción"],
+            "correcta": "En los primeros 2-3 segundos"
+          },
+          {
+            "pregunta": "El objetivo del cierre de un video corto es...",
+            "opciones": ["Guiar hacia una acción con un llamado a la acción claro", "No pedir nada", "Mostrar el nombre muy largo", "Despedirse despacio"],
+            "correcta": "Guiar hacia una acción con un llamado a la acción claro"
+          },
+          {
+            "pregunta": "¿Qué técnica ayuda a captar atención aunque el video se vea sin sonido?",
+            "opciones": ["Texto en pantalla desde el inicio", "Una intro larga", "Música muy baja", "Letras oscuras sobre fondo oscuro"],
+            "correcta": "Texto en pantalla desde el inicio"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el guion completo y la coherencia de las tres partes del video.",
+  "lectura": "El video corto respeta la atención moderna: promesa rápida, una sola idea y un cierre que invita a actuar. La estructura gancho-desarrollo-cierre es el molde que podés repetir para cada video de tu marca. Con un guion claro, la edición se vuelve simple.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué videos cortos vieron esta semana y por qué los siguieron viendo", "min": "10 min" },
+      { "titulo": "Por qué funcionan", "que": "Explicar atención, alcance y reutilización del video corto", "min": "20 min" },
+      { "titulo": "Formatos por plataforma", "que": "Mostrar las diferencias entre Reels, TikTok y Shorts", "min": "20 min" },
+      { "titulo": "Estructura gancho, desarrollo y cierre", "que": "Analizar un video real dividido en sus tres partes", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar la escritura del guion y el cálculo de tiempos", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿algún video los hizo comprar o seguir una cuenta? Analizar por qué.",
+      "Mostrar tu propio intento de video corto y qué aprendiste al editarlo."
+    ],
+    "aclarar": [
+      "No hace falta equipo caro: el celular y la luz natural alcanzan para empezar.",
+      "El gancho no es gritar: es prometer algo concreto en los primeros segundos.",
+      "Un video viral ya subido no garantiza repetirlo: la lógica se copia, no el contenido exacto."
+    ],
+    "ejemplos": [
+      "Reproducir un reel y pausarlo a los 3 segundos preguntando por qué seguirían viéndolo.",
+      "Tomar una receta corta y mostrarla sin gancho vs con gancho.",
+      "Comparar dos versiones del mismo chiste: con texto en pantalla y sin texto."
+    ]
+  }
+}

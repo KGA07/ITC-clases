@@ -1,0 +1,150 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 5,
+    "titulo": "Dashboards",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a juntar tus Tablas Dinámicas y gráficos en una sola pantalla donde todo responde a un mismo filtro: el tablero de control de tu PyME.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 5 Dashboard",
+  "objetivos": [
+    "Entender qué es un dashboard y qué información debe mostrar una PyME en un solo vistazo.",
+    "Conectar el filtro de una Tabla Dinámica con otras para que todas respondan juntas.",
+    "Insertar y configurar gráficos dinámicos (pivotchart) conectados a las Tablas Dinámicas.",
+    "Diseñar un dashboard ordenado con tablas, gráficos y segmentaciones conectadas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Concepto de dashboard",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Un dashboard es una pantalla que concentra los indicadores clave de un negocio: cuánto vendí, cuánto cobré, qué producto mueve más, cómo viene el mes. Se apoya en Tablas Dinámicas y gráficos conectados para que todo responda a los mismos filtros."
+      ],
+      "puntos": [
+        "Es un tablero de control, no un detalle: muestra indicadores resumidos, no cada factura.",
+        "Buen dashboard = pocas cifras con contexto: total general, comparación con el mes pasado, top de productos y evolución.",
+        "Se arma con Tablas Dinámicas como motor, gráficos dinámicos como vista y segmentaciones como controles.",
+        "Conecta con el trabajo real: seguimiento de facturación, stock, cobranzas y metas mensuales de la PyME."
+      ]
+    },
+    {
+      "titulo": "Conexiones de filtro entre Tablas Dinámicas",
+      "emoji": "🔗",
+      "parrafos": [
+        "El corazón de un dashboard es que un solo filtro toque todos los bloques a la vez. Eso se logra conectando las segmentaciones a varias Tablas Dinámicas."
+      ],
+      "puntos": [
+        "Cada Tabla Dinámica se inserta sobre la misma fuente de datos (el mismo rango o Tabla) para poder compartir filtros.",
+        "Insertar segmentación → clic derecho sobre la segmentación → Conexiones de informe (o Conexiones de informes filtrados).",
+        "En el cuadro de conexiones se tildan las Tablas Dinámicas que deben responder a esa segmentación.",
+        "Así, el botón «Cliente A» filtra todos los gráficos y totales del dashboard al mismo tiempo."
+      ]
+    },
+    {
+      "titulo": "Gráficos dinámicos (PivotChart)",
+      "emoji": "📉",
+      "parrafos": [
+        "Un gráfico dinámico nace conectado a una Tabla Dinámica: se actualiza y se filtra junto con ella. Es la forma estándar de visualizar un dashboard."
+      ],
+      "puntos": [
+        "Insertar → Gráfico dinámico, o clic en la Tabla Dinámica → Ficha Analizar → Gráfico dinámico.",
+        "El gráfico refleja la estructura de la TD: si a la TD le agregás Filas o Columnas, el gráfico cambia solo.",
+        "Mostrar campos en el gráfico: la lista de campos sigue disponible y se pueden arrastrar desde el gráfico.",
+        "Combinar varias TDs con sus gráficos dinámicos en la misma hoja arma el tablero completo."
+      ]
+    },
+    {
+      "titulo": "Diseño de un dashboard",
+      "emoji": "🎛️",
+      "parrafos": [
+        "El diseño ordena la información para que se lea de arriba hacia abajo: primero los totales, después el detalle, y los filtros siempre a la vista o agrupados."
+      ],
+      "puntos": [
+        "Estructura típica: arriba títulos e indicadores clave (ventas totales, clientes, ticket promedio), al costado las segmentaciones, y en el centro los gráficos.",
+        "Usar colores de la paleta de la empresa, fondos claros y un tamaño de letra consistente.",
+        "Los indicadores se pueden calcular con funciones sobre las TDs o con fórmulas que apunten a sus celdas.",
+        "Antes de cerrar: Actualizar todos los datos (Datos → Actualizar todo) y esconder las hojas de trabajo para que solo se vea el tablero."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Tablero de ventas de la PyME",
+      "consigna": "Armá un dashboard en una sola hoja con dos Tablas Dinámicas del mismo origen, sus gráficos dinámicos y una segmentación conectada a todas, para ver el negocio de una mirada.",
+      "pasos": [
+        "Cargá en la hoja «Base» una lista de ventas con Fecha, Cliente, Producto, Vendedor e Importe (mínimo 15 filas, con algunos meses).",
+        "Creá una Tabla Dinámica «TD1» en la hoja Dashboard: Importe SUMADO por Mes como Columnas y Total general.",
+        "Creá una segunda Tabla Dinámica «TD2»: Importe por Cliente (top de clientes) y otra con Importe por Producto si necesitás tres bloques.",
+        "Insertá un Gráfico dinámico para TD1 (línea de evolución mensual) y otro para TD2 (columnas por cliente).",
+        "Insertá una Segmentación de datos por «Vendedor» y abrí Conexiones de informe para que filtre TD1, TD2 y sus gráficos.",
+        "Ordená los bloques en la hoja con títulos y probá el filtro: al tocar un vendedor, todo el tablero debe responder."
+      ],
+      "entrega": "Guardá como «DashboardVentas_clase5.xlsx» con el tablero armado y la segmentación conectada a todo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es un dashboard?",
+            "opciones": ["Una hoja con todos los detalles de cada factura", "Una pantalla con indicadores clave resumidos y conectados", "Un gráfico circular completo", "Una base de datos en Access"],
+            "correcta": "Una pantalla con indicadores clave resumidos y conectados"
+          },
+          {
+            "pregunta": "¿Cómo se conecta una segmentación a varias Tablas Dinámicas?",
+            "opciones": ["Clic derecho → Conexiones de informe", "Copiando la TD", "Cambiando el color de la segmentación", "Actualizando el libro"],
+            "correcta": "Clic derecho → Conexiones de informe"
+          },
+          {
+            "pregunta": "¿Qué es un gráfico dinámico (PivotChart)?",
+            "opciones": ["Un gráfico armado a mano", "Un gráfico conectado a una Tabla Dinámica que se filtra y actualiza con ella", "Una captura fija de la pantalla", "Un minigráfico dentro de una celda"],
+            "correcta": "Un gráfico conectado a una Tabla Dinámica que se filtra y actualiza con ella"
+          },
+          {
+            "pregunta": "Condición para que dos Tablas Dinámicas compartan filtros:",
+            "opciones": ["Tener el mismo nombre de hoja", "Usar la MISMA fuente de datos", "Tener la misma cantidad de filas", "Estar en la misma columna"],
+            "correcta": "Usar la MISMA fuente de datos"
+          },
+          {
+            "pregunta": "¿Qué conviene hacer antes de mostrar el dashboard?",
+            "opciones": ["Actualizar todos los datos y ocultar las hojas de trabajo", "Borrar las Tablas Dinámicas", "Ponerle contraseña al archivo", "Imprimir cada hoja por separado"],
+            "correcta": "Actualizar todos los datos y ocultar las hojas de trabajo"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el dashboard con las TDs y gráficos conectados a la segmentación de vendedor.",
+  "lectura": "El dashboard junta en una sola pantalla las Tablas Dinámicas, los gráficos dinámicos y las segmentaciones conectadas para que cualquier filtro se aplique a todo el tablero. Es la herramienta con la que una PyME mira su facturación, cobranzas y cartera de un solo vistazo. Con las conexiones de informe bien configuradas, el tablero queda listo para reutilizarse mes a mes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar Tablas Dinámicas y gráficos; preguntar qué indicadores mirarían", "min": "10 min" },
+      { "titulo": "Concepto de dashboard", "que": "Explicar el tablero de control con ejemplos de PyMEs en vivo", "min": "15 min" },
+      { "titulo": "Conexiones de filtro", "que": "Crear dos TDs sobre la misma fuente y conectar la segmentación", "min": "25 min" },
+      { "titulo": "Gráficos dinámicos", "que": "Insertar y configurar PivotChart para cada TD", "min": "15 min" },
+      { "titulo": "Práctica del tablero", "que": "Ordenar bloques, títulos y probar el filtro unificado", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué número miran primero cuando cierra el mes (¿vendí, cobré, perdí plata?) y usar ese número como centro del dashboard.",
+      "Mostrar un dashboard terminado de una empresa y desarmar de qué bloques está hecho."
+    ],
+    "aclarar": [
+      "Sin la MISMA fuente de datos, las segmentaciones no pueden conectar las TDs.",
+      "Las conexiones de informe se configuran sobre la segmentación, no sobre la Tabla Dinámica.",
+      "Un dashboard no reemplaza el detalle: es un resumen ejecutivo apoyado en las hojas de detalle.",
+      "Los gráficos dinámicos nacen de una TD; no se pueden crear desde una tabla común si se quiere filtrado sincronizado."
+    ],
+    "ejemplos": [
+      "Conectar una segmentación de Vendedor y mostrar cómo los tres gráficos cambian a la vez.",
+      "Convertir el mismo dashboard en informe mensual solo cambiando la base del mes.",
+      "Ocultar la hoja «Base» y dejar visible solo el tablero para presentar al dueño."
+    ]
+  }
+}

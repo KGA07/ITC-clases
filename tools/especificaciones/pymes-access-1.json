@@ -1,0 +1,150 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 1,
+    "titulo": "Entorno de Access y diseño de bases de datos",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a conocer por qué las bases de datos son superiores a las planillas para organizar información de una PyME y a crear tu primera base de datos en Access.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 1 Introduccion a Access",
+  "objetivos": [
+    "Entender el concepto de base de datos y su diferencia con una planilla Excel.",
+    "Reconocer el área de trabajo de Access: cinta de opciones, panel de navegación y ventana de objetos.",
+    "Diseñar la estructura de una base de datos antes de crearla en Access.",
+    "Crear una base de datos nueva desde cero en Microsoft Access."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es una base de datos?",
+      "emoji": "🗄️",
+      "parrafos": [
+        "Una base de datos es un conjunto organizado de información almacenada en tablas con campos y registros, diseñada para ser consultada y actualizada de forma eficiente. A diferencia de una planilla Excel, donde todo puede mezclarse en una sola hoja, en Access cada dato tiene su lugar en una tabla específica.",
+        "En una PyME, una base de datos permite guardar clientes, proveedores, productos, facturas y movimientos de stock de manera relacionada, evitando duplicaciones y errores."
+      ],
+      "puntos": [
+        "Tabla: organiza la información en filas (registros) y columnas (campos).",
+        "Registro: cada fila es un elemento (un cliente, un producto, una factura).",
+        "Campo: cada columna describe un atributo del registro (nombre, precio, fecha).",
+        "Clave primaria: campo o conjunto de campos que identifican de forma única cada registro."
+      ]
+    },
+    {
+      "titulo": "Diseño de bases de datos",
+      "emoji": "✏️",
+      "parrafos": [
+        "Antes de abrir Access, es fundamental diseñar la base de datos: definir qué tablas vas a crear, qué campos va a tener cada una y cómo se relacionarán entre sí. Un buen diseño ahorra horas de retoques después.",
+        "El proceso comienza identificando los elementos de la empresa (clientes, productos, proveedores, facturas) y luego definiendo los campos necesarios para cada uno."
+      ],
+      "puntos": [
+        "Listá los objetos de información: ¿qué necesita registrar la empresa? (clientes, artículos, pedidos).",
+        "Definí los campos de cada tabla: nombre, tipo de dato (texto, número, fecha, moneda), longitud y si admite valores nulos.",
+        "Identificá la clave primaria de cada tabla para poder relacionarlas.",
+        "Evitá la redundancia: si un dato se repite en varias tablas, creá una tabla separada y vinculala con una clave foránea."
+      ]
+    },
+    {
+      "titulo": "El área de trabajo de Access",
+      "emoji": "💻",
+      "parrafos": [
+        "Microsoft Access presenta un entorno organizado en pestañas que facilitan la creación y gestión de todos los objetos de la base de datos: tablas, consultas, formularios e informes."
+      ],
+      "puntos": [
+        "Cinta de opciones: pestañas Archivo, Inicio, Crear, Datos externos, Herramientas de base de datos con grupos de comandos.",
+        "Panel de navegación: lista a la izquierda todos los objetos de la base de datos agrupados por tipo.",
+        "Ventana de trabajo: área central donde se editan tablas, consultas y otros objetos.",
+        "Barra de estado: muestra información contextual como el modo actual (Diseño, Hoja de datos, Vista previa)."
+      ]
+    },
+    {
+      "titulo": "Crear una base de datos nueva",
+      "emoji": "🆕",
+      "parrafos": [
+        "Para crear una nueva base de datos, se accede a Archivo → Nuevo → Base de datos en blanco. Access pide elegir la ubicación y el nombre del archivo con extensión .accdb. Luego se empieza a crear tablas desde la pestaña Crear."
+      ],
+      "puntos": [
+        "En Archivo → Nuevo, seleccioná «Base de datos en blanco» y guardá el archivo con un nombre descriptivo (ej: PyME_Taller.accdb).",
+        "La primera tabla aparece en modo Hoja de datos: ahí se definen los campos haciendo clic en «Haga clic para agregar».",
+        "Para definir tipos de dato y propiedades, cambiá a la vista Diseño con clic derecho sobre la pestaña de la tabla.",
+        "Guardá constantemente con Ctrl + S para no perder avances."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Creá tu primera base de datos de una PyME",
+      "consigna": "Creá en Access una base de datos para una empresa de repuestos automotores que necesita organizar sus clientes y productos. Definí la estructura antes de abrir Access.",
+      "pasos": [
+        "En papel o en un documento, listá los campos necesarios para una tabla de Clientes (nombre, teléfono, email, dirección) y otra de Productos (código, descripción, precio, stock).",
+        "Abrí Microsoft Access y creá una nueva base de datos en blanco llamada «Repuestos_Automotores.accdb».",
+        "En la primera tabla, definí los campos de Clientes en vista Diseño: asigná tipo Texto a nombre, teléfono, email y dirección; elegí un campo como clave primaria.",
+        "Creá una segunda tabla para Productos: campo Código (Número corto, clave primaria), Descripción (Texto), Precio (Moneda), Stock (Número entero).",
+        "Guardá ambas tablas y verificá que aparezcan en el Panel de navegación."
+      ],
+      "entrega": "Guardá el archivo .accdb y compartí una captura del Panel de navegación mostrando ambas tablas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de archivo crea Microsoft Access para una base de datos?",
+            "opciones": [".xlsx", ".accdb", ".docx", ".csv"],
+            "correcta": ".accdb"
+          },
+          {
+            "pregunta": "¿Qué campo identifica de forma única cada registro en una tabla?",
+            "opciones": ["Campo texto", "Campo fecha", "Clave primaria", "Campo moneda"],
+            "correcta": "Clave primaria"
+          },
+          {
+            "pregunta": "¿Qué vista permite definir tipos de dato y propiedades de los campos?",
+            "opciones": ["Hoja de datos", "Vista diseño", "Vista previa", "Vista formulario"],
+            "correcta": "Vista diseño"
+          },
+          {
+            "pregunta": "¿Cuál es la diferencia principal entre una planilla Excel y una base de datos Access?",
+            "opciones": ["Excel es más rápido", "Access organiza la información en tablas relacionadas", "Excel no puede guardar números", "No hay diferencia"],
+            "correcta": "Access organiza la información en tablas relacionadas"
+          },
+          {
+            "pregunta": "¿Qué tipo de dato usarías para el precio de un producto en Access?",
+            "opciones": ["Texto", "Número entero", "Moneda", "Fecha"],
+            "correcta": "Moneda"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con ambas tablas correctamente estructuradas y los tipos de datos asignados.",
+  "lectura": "Una base de datos organiza la información en tablas relacionadas, superando las limitaciones de una planilla. En Access, el diseño previo define qué tablas, campos y claves necesitás antes de crear la base.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y motivación", "que": "Preguntar cómo organizan hoy los datos de clientes y stock en sus trabajos. Mostrar un ejemplo de planilla desordenada vs. base de datos.", "min": "10 min" },
+      { "titulo": "Concepto de base de datos", "que": "Explicar tablas, registros, campos y claves primarias con el ejemplo de una PyME de repuestos.", "min": "15 min" },
+      { "titulo": "Diseño previo", "que": "Guiar el diseño en papel de las tablas Clientes y Productos: campos, tipos de dato y relaciones.", "min": "15 min" },
+      { "titulo": "El área de trabajo de Access", "que": "Abrir Access y recorrer la cinta de opciones, el panel de navegación y la ventana de trabajo.", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Crear la base de datos y las dos tablas en vivo, paso a paso. Los alumnos replican en sus PCs.", "min": "25 min" },
+      { "titulo": "Cierre y repaso", "que": "Repasar con las preguntas del interactivo. Resaltar la importancia del diseño previo.", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez tuvieron datos repetidos o perdidos en una planilla de Excel? Usar esa frustración para explicar por qué Access es mejor para datos relacionados.",
+      "Mostrar una captura de una base de datos pequeña funcionando para que vean el resultado final antes de empezar."
+    ],
+    "aclarar": [
+      "Access no reemplaza Excel: cada uno tiene un uso distinto. Excel para cálculos y gráficos, Access para datos estructurados y relacionados.",
+      "El nombre de la clave primaria debe ser único y no repetirse nunca dentro de la tabla.",
+      "Cuando se guarda una tabla en vista Diseño, Access verifica que tenga clave primaria asignada; si no tiene, la pide.",
+      "La extensión .accdb reemplazó a la vieja extensión .mdb desde Access 2007."
+    ],
+    "ejemplos": [
+      "Crear una tabla de Clientes en vivo mostrando cada paso: nombre del campo, tipo de dato, clave primaria.",
+      "Abrir una base de datos existente de ejemplo para mostrar cómo se ve el Panel de navegación con varios objetos."
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 9,
+    "titulo": "Diseño gráfico para redes con Canva",
+    "modulo": "Módulo 3 – Diseño de Contenidos y Copywriting con IA",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a usar Canva para crear piezas visuales profesionales: plantillas, kit de marca, tamaños correctos por red y jerarquía visual para que tu contenido comunique.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA\\Clase 9 Canva Diseño de Contenido",
+  "objetivos": [
+    "Usar las funciones principales de Canva para diseñar piezas de redes.",
+    "Aplicar plantillas y armar un mini kit de marca.",
+    "Crear piezas optimizadas según el tamaño que pide cada red.",
+    "Aplicar principios de jerarquía visual en tus diseños."
+  ],
+  "teoria": [
+    {
+      "titulo": "Canva como herramienta central",
+      "emoji": "🎨",
+      "parrafos": [
+        "Canva es una herramienta de diseño en línea con cientos de plantillas listas: no necesitás saber dibujar para hacer piezas prolijas. La versión gratuita alcanza de sobra para este curso."
+      ],
+      "puntos": [
+        "Acceso: canva.com, sin instalar nada. Todo se guarda solo en la nube.",
+        "Plantillas por red y por objetivo: publicación, historia, flyer o portada.",
+        "Exportá en el formato correcto: PNG para piezas, video para animaciones."
+      ]
+    },
+    {
+      "titulo": "Plantillas y kit de marca",
+      "emoji": "🖌️",
+      "parrafos": [
+        "El kit de marca guarda tus colores, tipografías y logo para aplicarlos a todas tus piezas con un clic. La coherencia visual hace que te reconozcan en el scroll."
+      ],
+      "puntos": [
+        "Establecé 2 o 3 colores de marca y usalos siempre.",
+        "Elegí 1 o 2 tipografías legibles y respetá su uso.",
+        "Guardá el kit en Canva para que cada diseño nuevo salga con tu estilo."
+      ]
+    },
+    {
+      "titulo": "Tamaños correctos por red",
+      "emoji": "📐",
+      "parrafos": [
+        "Cada plataforma tiene medidas ideales: respetarlas evita cortes y piezas desenfocadas. Con un solo diseño grande, Canva te permite redimensionar para todas las redes."
+      ],
+      "puntos": [
+        "Feed de Instagram: 1080 x 1080 (cuadrado) o 1080 x 1350 (retrato).",
+        "Historias y Reels: 1080 x 1920, vertical 9:16.",
+        "Antes de diseñar, configurá el tamaño correcto en el lienzo."
+      ]
+    },
+    {
+      "titulo": "Jerarquía visual y tipografía",
+      "emoji": "🔍",
+      "parrafos": [
+        "La jerarquía visual ordena lo que el ojo lee primero: primero el título, después el mensaje de apoyo y al final el dato menor. El diseño comunica aunque nadie lea todo."
+      ],
+      "puntos": [
+        "Un solo foco grande y claro: el título o el producto.",
+        "Usá contraste para separar lo importante de lo decorativo.",
+        "Dejá espacios en blanco: la pieza respira y se lee mejor.",
+        "Tipografía legible por encima de la 'linda': probala en el celular."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi pieza de marca en Canva",
+      "consigna": "Creá una publicación para el feed de Instagram de tu negocio usando una plantilla de Canva, con colores de tu marca y jerarquía visual clara.",
+      "pasos": [
+        "Entrá a canva.com e iniciá sesión; creá cuenta gratis si todavía no tenés.",
+        "Buscá 'Publicación Instagram' y elegí una plantilla acorde a tu rubro.",
+        "Definí tu mini kit: 2 o 3 colores y 1 o 2 tipografías, y aplicalos.",
+        "Editá los textos: título principal, mensaje de apoyo y llamado a la acción, respetando la jerarquía visual.",
+        "Descargá la pieza en PNG y guardala.",
+        "Compartí tu diseño con el docente."
+      ],
+      "entrega": "Compartí el diseño terminado y explicá en 2 oraciones qué elegiste y por qué.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la medida vertical recomendada para historias y reels?",
+            "opciones": ["1080 x 1920", "1080 x 1080", "1920 x 1080", "800 x 600"],
+            "correcta": "1080 x 1920"
+          },
+          {
+            "pregunta": "El kit de marca en Canva sirve para...",
+            "opciones": ["Guardar colores, tipografías y logos y aplicarlos a todos los diseños", "Subir fotos personales", "Grabar videos largos", "Crear un sitio completo"],
+            "correcta": "Guardar colores, tipografías y logos y aplicarlos a todos los diseños"
+          },
+          {
+            "pregunta": "En la jerarquía visual, el ojo lee primero...",
+            "opciones": ["El elemento principal, el más grande y contrastado", "El pie de página", "Los créditos", "La letra más pequeña"],
+            "correcta": "El elemento principal, el más grande y contrastado"
+          },
+          {
+            "pregunta": "Para diseñar en Canva sin saber dibujar, lo más práctico es...",
+            "opciones": ["Usar una plantilla de la biblioteca", "Dibujar con el mouse", "Pagar a un ilustrador", "Escribir código"],
+            "correcta": "Usar una plantilla de la biblioteca"
+          },
+          {
+            "pregunta": "¿Qué formato conviene para una publicación de feed de Instagram?",
+            "opciones": ["1080 x 1350 (retrato) o 1080 x 1080 (cuadrado)", "1920 x 1080 horizontal", "1080 x 1920 siempre", "50 x 50"],
+            "correcta": "1080 x 1350 (retrato) o 1080 x 1080 (cuadrado)"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la pieza diseñada y la justificación de las decisiones visuales.",
+  "lectura": "Canva pone el diseño al alcance de cualquiera: con plantillas, un kit de marca y medidas correctas tu pieza se ve profesional. La jerarquía visual ordena el mensaje antes de que alguien lo lea completo. Diseñar para redes es consistencia, legibilidad y buen ritmo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar si usaron Canva y qué les resultó complicado", "min": "10 min" },
+      { "titulo": "Canva y cuentas", "que": "Crear cuentas y recorrer la interfaz", "min": "15 min" },
+      { "titulo": "Kit de marca", "que": "Armar colores y tipografías de su marca", "min": "20 min" },
+      { "titulo": "Tamaños y jerarquía", "que": "Explicar medidas por red y cómo se lee un diseño", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la creación de la pieza con plantilla", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué publicaciones de marcas les llaman la atención en el feed y por qué se destacan?",
+      "Pedir que comparen dos diseños de la misma marca: uno con kit y otro sin."
+    ],
+    "aclarar": [
+      "El tamaño se configura antes de diseñar; estirar una pieza después la degrada.",
+      "Canva gratis tiene miles de plantillas: la calidad no depende de pagar.",
+      "La jerarquía visual no es solo estética: un diseño confuso no vende."
+    ],
+    "ejemplos": [
+      "Armar una pieza en vivo a partir de una plantilla y aplicarle un kit.",
+      "Comparar la misma campaña en 1:1, retrato y 9:16 para mostrar qué pasa con cada medida.",
+      "Mostrar una pieza recargada vs una limpia y pedir cuál se lee mejor."
+    ]
+  }
+}

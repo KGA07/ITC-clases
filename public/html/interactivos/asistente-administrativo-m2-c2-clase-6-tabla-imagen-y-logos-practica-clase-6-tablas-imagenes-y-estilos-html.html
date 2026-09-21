@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 6 - Tablas, imágenes y estilos</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0057ff;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0057ff;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Tablas, imágenes y estilos</h1>
+  <p class="sub">Práctica Informe con tabla de asistencia · Asistente Administrativo Digital con IA</p>
+  <div class="consigna">Redactá un informe simple en Word o Google Docs que incluya la tabla de asistencia de una actividad, aplique estilos de título y tenga un logotipo insertado con encuadre profesional.</div>
+  
+    <div class="q" data-ok="Insertar → Tabla → Insertar tabla y definir las cantidades">
+      <p class="qt">1. ¿Cuál es la forma correcta de crear una tabla con un número exacto de filas y columnas?</p>
+      <label class="opt"><input type="radio" name="q0" value="Insertar → Tabla → Insertar tabla y definir las cantidades"><span>Insertar → Tabla → Insertar tabla y definir las cantidades</span></label>
+<label class="opt"><input type="radio" name="q0" value="Dibujar columnas con la barra espaciadora"><span>Dibujar columnas con la barra espaciadora</span></label>
+<label class="opt"><input type="radio" name="q0" value="Usar tabulaciones entre textos"><span>Usar tabulaciones entre textos</span></label>
+<label class="opt"><input type="radio" name="q0" value="Copiar una imagen de otra planilla"><span>Copiar una imagen de otra planilla</span></label>
+    </div>
+
+    <div class="q" data-ok="Para que una celda ocupe varias y quepa el título o un encabezado de grupo">
+      <p class="qt">2. ¿Para qué sirve combinar (unir) celdas en una tabla?</p>
+      <label class="opt"><input type="radio" name="q1" value="Para mezclar colores de la tabla"><span>Para mezclar colores de la tabla</span></label>
+<label class="opt"><input type="radio" name="q1" value="Para que una celda ocupe varias y quepa el título o un encabezado de grupo"><span>Para que una celda ocupe varias y quepa el título o un encabezado de grupo</span></label>
+<label class="opt"><input type="radio" name="q1" value="Para borrar toda la tabla"><span>Para borrar toda la tabla</span></label>
+<label class="opt"><input type="radio" name="q1" value="Para cerrar el documento"><span>Para cerrar el documento</span></label>
+    </div>
+
+    <div class="q" data-ok="Los estilos mantienen el formato igual en todo el documento y permiten armar la tabla de contenidos">
+      <p class="qt">3. ¿Qué ventaja tiene usar «Título 1» en lugar de cambiar la letra a mano?</p>
+      <label class="opt"><input type="radio" name="q2" value="El archivo pesa menos y se imprime más rápido"><span>El archivo pesa menos y se imprime más rápido</span></label>
+<label class="opt"><input type="radio" name="q2" value="Los estilos mantienen el formato igual en todo el documento y permiten armar la tabla de contenidos"><span>Los estilos mantienen el formato igual en todo el documento y permiten armar la tabla de contenidos</span></label>
+<label class="opt"><input type="radio" name="q2" value="No tiene ninguna ventaja"><span>No tiene ninguna ventaja</span></label>
+<label class="opt"><input type="radio" name="q2" value="Los estilos agregan imágenes automáticas"><span>Los estilos agregan imágenes automáticas</span></label>
+    </div>
+
+    <div class="q" data-ok="Ajuste de texto / Opciones de diseño">
+      <p class="qt">4. ¿Qué herramienta usás para que el texto fluya alrededor de una imagen?</p>
+      <label class="opt"><input type="radio" name="q3" value="Ajuste de texto / Opciones de diseño"><span>Ajuste de texto / Opciones de diseño</span></label>
+<label class="opt"><input type="radio" name="q3" value="Cambiar el tipo de letra"><span>Cambiar el tipo de letra</span></label>
+<label class="opt"><input type="radio" name="q3" value="Insertar otra tabla"><span>Insertar otra tabla</span></label>
+<label class="opt"><input type="radio" name="q3" value="Aplicar sombreado a la imagen"><span>Aplicar sombreado a la imagen</span></label>
+    </div>
+
+    <div class="q" data-ok="Que todas las fechas y nombres tengan el mismo formato y que los bordes se vean prolijos">
+      <p class="qt">5. ¿Qué verificás antes de entregar una planilla de asistencia?</p>
+      <label class="opt"><input type="radio" name="q4" value="Que se vea bien solo en tu pantalla"><span>Que se vea bien solo en tu pantalla</span></label>
+<label class="opt"><input type="radio" name="q4" value="Que todas las fechas y nombres tengan el mismo formato y que los bordes se vean prolijos"><span>Que todas las fechas y nombres tengan el mismo formato y que los bordes se vean prolijos</span></label>
+<label class="opt"><input type="radio" name="q4" value="Que la palabra «informe» aparezca muchas veces"><span>Que la palabra «informe» aparezca muchas veces</span></label>
+<label class="opt"><input type="radio" name="q4" value="Que el logo esté desalineado"><span>Que el logo esté desalineado</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

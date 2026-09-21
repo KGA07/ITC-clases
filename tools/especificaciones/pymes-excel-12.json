@@ -1,0 +1,153 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 12,
+    "titulo": "Liquidación de Sueldos y Recibo",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a armar la planilla maestra que todo empleador necesita: liquidación de sueldos con convenio, hábiles/no remunerativos, aportes, horas extra y vacaciones, y el recibo perfecto para entregar a cada trabajador.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 12 Liquidación de Sueldos, Recibo de Sueldo y Planilla de liquidación",
+  "objetivos": [
+    "Identificar qué regula el convenio colectivo en la liquidación de sueldos.",
+    "Distinguir ítems remunerativos y no remunerativos en la liquidación.",
+    "Calcular aportes, descuentos, horas extra y vacaciones con Excel.",
+    "Emitir recibo de sueldo válido desde una planilla de liquidación."
+  ],
+  "teoria": [
+    {
+      "titulo": "Convenio colectivo y la escala salarial",
+      "emoji": "📜",
+      "parrafos": [
+        "El convenio colectivo de trabajo del sector fija la escala salarial, las categorías, jornada, horas extra y vacaciones. Sin la escala del convenio no hay sueldo: cada categoría tiene su valor de referencia del que parten los cálculos."
+      ],
+      "puntos": [
+        "Escala salarial: categoría (Administrativo A, B, C...) y valor mensual básico publicado por el convenio.",
+        "Jornada y horas: la escala se fija para la jornada legal; las horas extra se calculan sobre ese valor horario.",
+        "El convenio determina también adicionales (antigüedad, presentismo, zona) según el sector.",
+        "En la planilla, la escala va en una hoja propia que se actualiza con cada paritaria; el resto de la liquidación se recalcula sola."
+      ]
+    },
+    {
+      "titulo": "Ítems remunerativos y no remunerativos",
+      "emoji": "🧾",
+      "parrafos": [
+        "Dentro de un recibo hay dos grande grupos: lo REMUNERATIVO, que integra la base para aportes y futuros cálculos (aguinaldo, indemnizaciones), y lo NO REMUNERATIVO, que paga pero no tributa igual (por ejemplo, ciertos acuerdos paritarios o el viático no reintegrable)."
+      ],
+      "puntos": [
+        "Remunerativos: básico, presentismo, antigüedad, horas extra, viáticos sin reintegrar.",
+        "No remunerativos: sumas fijas acordadas por paritaria que no hacen base para aportes.",
+        "Total remunerativo + total no remunerativo = Total bruto del recibo.",
+        "Regla contable: los aportes y descuentos se calculan sobre las cifras REMUNERATIVAS (y a veces sobre parte de las no rem.), según la legislación vigente."
+      ]
+    },
+    {
+      "titulo": "Aportes, descuentos, horas extra y vacaciones",
+      "emoji": "💼",
+      "parrafos": [
+        "Del bruto se descuentan los aportes del trabajador (jubilación, obra social, ley 19.032, sindicato) y se pagan las horas extra con recargo del 50% o el 100% según día. Las vacaciones pagan días hábiles con el 100% del sueldo."
+      ],
+      "puntos": [
+        "Aportes habituales del empleado: Jubilación 11%, Obra social 3%, Ley 19.032 (INSSJP) 3%: se restan del bruto.",
+        "Horas extra: valor hora = básico mensual / horas del mes; recargo 50% días comunes y 100% sábados y feriados.",
+        "Descuento total = suma de aportes y otros descuentos; Líquido a cobrar = Total bruto - Descuentos.",
+        "Vacaciones: antigüedad determina los días: 14 días laborables hasta 5 años; 21 de 5 a 10; 28 de 10 a 20; 35 más de 20. Se liquidan y se descuentan de la ausencia.",
+        "SIFECHA (clase 8) sirve para calcular la antigüedad que define los días de vacaciones."
+      ]
+    },
+    {
+      "titulo": "Recibo de sueldo válido y planilla de liquidación",
+      "emoji": "🧾",
+      "parrafos": [
+        "El recibo de sueldo es el documento que respalda el pago y debe contener elementos obligatorios: datos del empleador y del trabajador, período, categoría, la discriminación de haberes y descuentos, y el líquido. La planilla de liquidación genera cada recibo."
+      ],
+      "puntos": [
+        "Datos obligatorios del recibo: razón social y CUIT del empleador, nombre/legajo del trabajador, CUIL, categoría, período liquidado, fecha de pago.",
+        "Cuerpo del recibo: haberes discriminados (remunerativos y no remunerativos), descuentos discriminados y líquido total.",
+        "El recibo debe reflejar TOTALES: total bruto, total descuentos y neto (líquido) a cobrar.",
+        "Con la planilla lista, el recibo se imprime desde CONCATENAR (clase 9-10) o desde una hoja con referencias hacia la planilla de liquidación.",
+        "Firma del trabajador y sello de empresa: los recibe el empleado y una copia queda en el legajo."
+
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Planilla de liquidación y recibo de un empleado",
+      "consigna": "Creá la planilla de liquidación de sueldos del mes con escala, haberes, aportes y horas extra, y armá el recibo de sueldo válido con todos sus elementos.",
+      "pasos": [
+        "Creá una hoja «Escala» con: Categoría, Básico mensual, Horas del mes (por ejemplo 160).",
+        "Creá una hoja «Liquidación» con columnas: Nombre, Categoría, Antigüedad (años), Básico, Presentismo, Horas extra comunes, Horas extra dobles.",
+        "Completá las celdas de Básico con =BUSCARV de la categoría sobre la hoja Escala.",
+        "Calculá el Monto horas extra: valor hora = Básico/160, y montos = horas*valor_hora*1,5 (común) y *2 (doble).",
+        "Sumá Total Remunerativo = Básico + Presentismo + Horas extra, sacá total bruto y calculá descuentos: =bruto*11%, =bruto*3% (obra) y =bruto*3% (Ley 19.032), y después el Líquido = bruto - descuentos.",
+        "En una hoja «Recibo» armá un recibo válido: los datos del empleador, datos del trabajador (con CUIL), período, haberes discrimizados con sus valores, totales, y el líquido a cobrar referenciando a la planilla."
+      ],
+      "entrega": "Guardá como «LiquidacionSueldos_clase12.xlsx» con la planilla completa, cálculos y el recibo listo para imprimir.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué fija el convenio colectivo?",
+            "opciones": ["La escala salarial por categoría", "El color de la hoja", "Las funciones de Excel", "El tipo de factura a emitir"],
+            "correcta": "La escala salarial por categoría"
+          },
+          {
+            "pregunta": "¿Cuál de estos es un ítem NO remunerativo?",
+            "opciones": ["Básico", "Una suma fija de paritaria que no hace base para aportes", "Presentismo", "Horas extra 50%"],
+            "correcta": "Una suma fija de paritaria que no hace base para aportes"
+          },
+          {
+            "pregunta": "Fórmula para el líquido a cobrar:",
+            "opciones": ["Total bruto menos Descuentos", "Total bruto más Descuentos", "Total bruto por 21%", "Descuentos menos Bruto"],
+            "correcta": "Total bruto menos Descuentos"
+          },
+          {
+            "pregunta": "¿Cómo se calcula el valor de la hora?",
+            "opciones": ["Básico mensual / horas del mes", "Básico mensual * 2", "Horas del mes / Básico", "Básico por 160"],
+            "correcta": "Básico mensual / horas del mes"
+          },
+          {
+            "pregunta": "¿Qué dato NO puede faltar en un recibo de sueldo válido?",
+            "opciones": ["CUIL y categoría del trabajador", "El color de la empresa", "El número de factura", "La foto del empleado"],
+            "correcta": "CUIL y categoría del trabajador"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la planilla de liquidación con cálculos completos y el recibo con los datos obligatorios.",
+  "lectura": "La liquidación de sueldos arranca del convenio colectivo y su escala, y se compone de ítems remunerativos y no remunerativos sobre los que se calculan aportes, horas extra y vacaciones. La planilla de liquidación repite el cálculo para todo el plantel, y el recibo, con sus elementos obligatorios, cierra el ciclo de pago. Con BUSCARV, SIFECHA y fórmulas de porcentaje, esta planilla se mantiene sola mes a mes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar SIFECHA y BUSCARV; preguntar cómo se pagan hoy los sueldos", "min": "10 min" },
+      { "titulo": "Convenio y escala", "que": "Explicar el convenio y cargar la escala salarial en una hoja", "min": "20 min" },
+      { "titulo": "Remunerativos y no rem.", "que": "Clasificar ítems y armar la estructura del recibo", "min": "15 min" },
+      { "titulo": "Aportes, extras, vacaciones", "que": "Calcular descuentos, valor hora con recargos y días según antigüedad", "min": "25 min" },
+      { "titulo": "Planilla y recibo", "que": "Armar la liquidación con BUSCARV y el recibo válido referenciado", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cuántos empleados tendría cada alumno y qué datos les pide el contador; armar el recibo con esos datos.",
+      "Mostrar un recibo de sueldo real (sin datos sensibles) y señalar cada elemento obligatorio."
+    ],
+    "aclarar": [
+      "No todo lo que se paga se descuenta ni tributa igual: la diferencia remunerativo/no remunerativo es central.",
+      "La escala es solo el básico: los adicionales (presentismo, antigüedad) salen del convenio de cada sector.",
+      "Las vacaciones dependen de la antigüedad (14/21/28/35 días) y se pagan, no se descuentan.",
+      "El recibo sin los datos obligatorios del empleador o del CUIL del trabajador no vale como respaldo."
+    ],
+    "ejemplos": [
+      "Calcular el valor hora de un básico de $400.000 en 160 horas y el extra al 50% y al 100%.",
+      "Descontar aportes del 17% (11+3+3) sobre el bruto y mostrar el líquido.",
+      "Definir los días de vacaciones con un SI según la antigüedad calculada con SIFECHA."
+    ]
+  }
+}

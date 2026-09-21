@@ -1,0 +1,153 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 15,
+    "titulo": "SEM: estructura de campañas",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a armar una campaña SEM completa en la estructura real de Google Ads: definís objetivo y presupuesto, organizás grupos de anuncios, elegís palabras clave y configurás las pujas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas\\Clase 15 - SEM Estructura de Campañas",
+  "objetivos": [
+    "Crear una cuenta de Google Ads y reconocer su panel principal.",
+    "Configurar una campaña de Búsqueda siguiendo la estructura Campaña-Grupo-Anuncio.",
+    "Agrupar palabras clave relacionadas en grupos de anuncios coherentes.",
+    "Definir presupuesto diario y pujas según el objetivo de la campaña."
+  ],
+  "teoria": [
+    {
+      "titulo": "La cuenta de Google Ads",
+      "emoji": "🏢",
+      "parrafos": [
+        "Google Ads es la plataforma de publicidad de Google. La cuenta se crea con un Gmail y desde el panel se administran todas las campañas, el presupuesto y las estadísticas de un negocio."
+      ],
+      "puntos": [
+        "Se crea en ads.google.com con tu cuenta de Google, sin costo de alta.",
+        "Cada campaña tiene objetivo, presupuesto, ubicación geográfica e idioma.",
+        "El panel muestra rendimiento: clics, impresiones, costo y conversiones.",
+        "Es la misma cuenta donde están las facturas: vos definís cuánto y cuándo pagar."
+      ]
+    },
+    {
+      "titulo": "Estructura: Campaña → Grupo → Anuncio",
+      "emoji": "🧭",
+      "parrafos": [
+        "Toda campaña en Google Ads tiene tres niveles que conviene pensar de arriba hacia abajo. Mantener esa jerarquía ordenada facilita la optimización y el control del presupuesto."
+      ],
+      "puntos": [
+        "Campaña: define objetivo, ubicación, idioma, presupuesto y pujas.",
+        "Grupo de anuncios: agrupa palabras clave y anuncios con la misma temática.",
+        "Anuncio: el texto y el enlace que ve la persona al buscar.",
+        "Ejemplo claro: «repuestos de celular» y «repuestos de tablet» van en grupos separados.",
+        "Cada grupo debe tener al menos 2 anuncios para que Google pruebe cuál rinde mejor."
+      ]
+    },
+    {
+      "titulo": "Palabras clave y su agrupación",
+      "emoji": "🔑",
+      "parrafos": [
+        "Las palabras clave son el motor de la búsqueda paga: deciden cuándo aparece tu anuncio. Agruparlas por intención evita pagar por búsquedas que no te sirven."
+      ],
+      "puntos": [
+        "Separá por intención: «celular roto Rosario» (urgencia) vs «repuestos celular» (comparación).",
+        "Usá palabras negativas para excluir búsquedas: «gratis», «tutorial», «como hacerlo».",
+        "Comenzá con 10 a 20 palabras por grupo y ajustá con los datos reales.",
+        "Mirá las búsquedas reales que activaron el anuncio para descartar irrelevantes.",
+        "Revisá el índice de calidad: mejora tu posición y baja tu costo por clic."
+      ]
+    },
+    {
+      "titulo": "Presupuesto y pujas",
+      "emoji": "💰",
+      "parrafos": [
+        "En Google Ads no comprás un lugar fijo: competís por cada clic. El presupuesto diario es el techo que estás dispuesto a pagar y la puja define cuánto valoras cada clic."
+      ],
+      "puntos": [
+        "Presupuesto diario: el promedio que querés gastar por día (se puede superar algunos días).",
+        "Estrategias de puja: CPC manual para controlar, Maximizar clics o Conversiones para automatizar.",
+        "Pujas más altas no dan clics mejores: dan mejores posiciones.",
+        "Empezá con presupuestos chicos y ajustá según el rendimiento medido.",
+        "El CTR (tasa de clics) muestra si tu anuncio interesa: clics / impresiones."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Armá la estructura de tu campaña SEM",
+      "consigna": "Diseñá en un documento la estructura completa de una campaña de Búsqueda para tu negocio de prueba, con niveles, palabras clave, presupuesto y pujas, como quedaría en Google Ads.",
+      "pasos": [
+        "Definí el nombre de la campaña, el objetivo y el presupuesto diario (ej: ARS 2000).",
+        "Cargá la ubicación geográfica: tu ciudad o barrio y el idioma español.",
+        "Creá dos grupos de anuncios con temáticas distintas (ej: productos y servicios).",
+        "En cada grupo anotá 5 palabras clave y 2 palabras negativas.",
+        "Elegí la estrategia de puja (manual o automática) y justificá tu elección.",
+        "Redactá 2 anuncios por grupo: 2 títulos, 2 líneas descriptivas y la URL."
+      ],
+      "entrega": "Entregá el documento con la estructura completa y los anuncios redactados, listos para cargar en Google Ads.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué definís a nivel de CAMPAÑA?",
+            "opciones": ["El texto de cada anuncio", "El presupuesto diario y la ubicación geográfica", "Cada palabra clave individual", "La paleta de colores del sitio"],
+            "correcta": "El presupuesto diario y la ubicación geográfica"
+          },
+          {
+            "pregunta": "¿Qué van juntos dentro de un mismo GRUPO de anuncios?",
+            "opciones": ["Palabras clave y anuncios de la misma temática", "Campañas completas", "Pujas y presupuestos globales", "Cuentas de facturación"],
+            "correcta": "Palabras clave y anuncios de la misma temática"
+          },
+          {
+            "pregunta": "¿Para qué sirven las palabras negativas?",
+            "opciones": ["Para mejorar el diseño del anuncio", "Para excluir búsquedas que no querés pagar", "Para subir el presupuesto", "Para rankear en YouTube"],
+            "correcta": "Para excluir búsquedas que no querés pagar"
+          },
+          {
+            "pregunta": "¿Qué indica la tasa de clics (CTR)?",
+            "opciones": ["Cuánto gastaste por día", "Si tu anuncio interesa: clics sobre impresiones", "Cuántas conversiones hubo", "El índice de calidad de la página"],
+            "correcta": "Si tu anuncio interesa: clics sobre impresiones"
+          },
+          {
+            "pregunta": "¿Qué hace una puja más alta en la subasta?",
+            "opciones": ["Garantiza ventas", "Da mejores posiciones del anuncio", "Elimina a la competencia", "Baja el índice de calidad"],
+            "correcta": "Da mejores posiciones del anuncio"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento con la estructura jerárquica completa, palabras clave agrupadas y anuncios redactados.",
+  "lectura": "Una campaña SEM bien estructurada se piensa en tres niveles: la campaña define objetivo y presupuesto, los grupos ordenan palabras clave por temática y los anuncios cierran la propuesta. Presupuesto, pujas, palabras negativas e índice de calidad determinan cuánto pagás por cada clic.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar los conceptos de SEM de la clase anterior y anclar la estructura de tres niveles", "min": "10 min" },
+      { "titulo": "Cuenta de Google Ads", "que": "Recorrer el panel real de ads.google.com y sus secciones principales", "min": "20 min" },
+      { "titulo": "Estructura jerárquica", "que": "Armar en vivo una Campaña-Grupo-Anuncio con un rubro de ejemplo", "min": "20 min" },
+      { "titulo": "Palabras clave y negativas", "que": "Agrupar palabras de ejemplo y construir palabras negativas", "min": "15 min" },
+      { "titulo": "Presupuesto y pujas", "que": "Comparar CPC manual vs estrategias automáticas y definir el presupuesto", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Revisar una estructura hecha por un alumno y resolver dudas con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Volver al plan de la clase 14: ahora la campaña pasa de papel a estructura concreta.",
+      "Mostrar una cuenta real de alto/bajo rendimiento para que vean por qué la estructura importa."
+    ],
+    "aclarar": [
+      "Presupuesto diario y puja son cosas distintas: uno es el techo, la otra la estrategia de competencia.",
+      "Los grupos de anuncios se crean ANTES de las palabras clave, no después.",
+      "El presupuesto diario no se multiplica por 30 exacto: Google lo promedia a lo largo del mes.",
+      "Tener pocas palabras negativas es la razón más común de gasto perdido."
+    ],
+    "ejemplos": [
+      "Buscar en vivo un rubro y mostrar cómo cada grupo plantea anuncios distintos.",
+      "Simular dos grupos (productos / servicios) para el mismo negocio y comparar redacciones.",
+      "Mostrar la tabla de palabras clave: impresiones, clics y costo reales de una campaña."
+    ]
+  }
+}

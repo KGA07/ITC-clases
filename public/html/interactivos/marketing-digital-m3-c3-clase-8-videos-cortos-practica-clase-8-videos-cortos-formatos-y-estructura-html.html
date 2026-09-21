@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 8 - Videos Cortos: formatos y estructura</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#e11d48;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#e11d48;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Videos Cortos: formatos y estructura</h1>
+  <p class="sub">Práctica Mi guion de video corto · Marketing Digital</p>
+  <div class="consigna">Escribí el guion completo de un video corto para tu marca con gancho, desarrollo y cierre, y calculá los tiempos estimados de cada parte.</div>
+  
+    <div class="q" data-ok="15 a 60 segundos">
+      <p class="qt">1. La duración típica de un video corto va de...</p>
+      <label class="opt"><input type="radio" name="q0" value="15 a 60 segundos"><span>15 a 60 segundos</span></label>
+<label class="opt"><input type="radio" name="q0" value="3 a 5 minutos"><span>3 a 5 minutos</span></label>
+<label class="opt"><input type="radio" name="q0" value="1 a 2 horas"><span>1 a 2 horas</span></label>
+<label class="opt"><input type="radio" name="q0" value="Nunca menos de 10 minutos"><span>Nunca menos de 10 minutos</span></label>
+    </div>
+
+    <div class="q" data-ok="9:16">
+      <p class="qt">2. El formato vertical de Reels y TikTok es...</p>
+      <label class="opt"><input type="radio" name="q1" value="9:16"><span>9:16</span></label>
+<label class="opt"><input type="radio" name="q1" value="16:9"><span>16:9</span></label>
+<label class="opt"><input type="radio" name="q1" value="1:1"><span>1:1</span></label>
+<label class="opt"><input type="radio" name="q1" value="4:3"><span>4:3</span></label>
+    </div>
+
+    <div class="q" data-ok="En los primeros 2-3 segundos">
+      <p class="qt">3. El gancho de un video corto debe aparecer...</p>
+      <label class="opt"><input type="radio" name="q2" value="En los primeros 2-3 segundos"><span>En los primeros 2-3 segundos</span></label>
+<label class="opt"><input type="radio" name="q2" value="A los 40 segundos"><span>A los 40 segundos</span></label>
+<label class="opt"><input type="radio" name="q2" value="Al final del video"><span>Al final del video</span></label>
+<label class="opt"><input type="radio" name="q2" value="Solo en la descripción"><span>Solo en la descripción</span></label>
+    </div>
+
+    <div class="q" data-ok="Guiar hacia una acción con un llamado a la acción claro">
+      <p class="qt">4. El objetivo del cierre de un video corto es...</p>
+      <label class="opt"><input type="radio" name="q3" value="Guiar hacia una acción con un llamado a la acción claro"><span>Guiar hacia una acción con un llamado a la acción claro</span></label>
+<label class="opt"><input type="radio" name="q3" value="No pedir nada"><span>No pedir nada</span></label>
+<label class="opt"><input type="radio" name="q3" value="Mostrar el nombre muy largo"><span>Mostrar el nombre muy largo</span></label>
+<label class="opt"><input type="radio" name="q3" value="Despedirse despacio"><span>Despedirse despacio</span></label>
+    </div>
+
+    <div class="q" data-ok="Texto en pantalla desde el inicio">
+      <p class="qt">5. ¿Qué técnica ayuda a captar atención aunque el video se vea sin sonido?</p>
+      <label class="opt"><input type="radio" name="q4" value="Texto en pantalla desde el inicio"><span>Texto en pantalla desde el inicio</span></label>
+<label class="opt"><input type="radio" name="q4" value="Una intro larga"><span>Una intro larga</span></label>
+<label class="opt"><input type="radio" name="q4" value="Música muy baja"><span>Música muy baja</span></label>
+<label class="opt"><input type="radio" name="q4" value="Letras oscuras sobre fondo oscuro"><span>Letras oscuras sobre fondo oscuro</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

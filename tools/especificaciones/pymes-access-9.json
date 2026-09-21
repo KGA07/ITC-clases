@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 9,
+    "titulo": "Finalización y exportación de datos",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a cerrar la base de datos como un producto terminado: con un menú de inicio que guía al usuario y con exportación de tablas, consultas e informes a PDF.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 9 Finalización y Exportación de datos a PDF",
+  "objetivos": [
+    "Crear un menú de inicio con un formulario en blanco y botones que abren los distintos objetos.",
+    "Configurar las propiedades de la base de datos: título, autor y opciones de arranque.",
+    "Exportar tablas, consultas e informes al formato PDF.",
+    "Entregar una base de datos completa, usable y profesional para la PyME."
+  ],
+  "teoria": [
+    {
+      "titulo": "El menú de inicio",
+      "emoji": "🏠",
+      "parrafos": [
+        "Un formulario de menú (menú principal) es la puerta de entrada a la base. Su diseño es simple: un formulario en blanco con el título de la empresa y botones que ejecutan acciones como abrir formularios, consultas o informes.",
+        "Para que la base arranque directamente en el menú, se indica en las Opciones de inicio cuál es el formulario que se abre primero."
+      ],
+      "puntos": [
+        "Formulario en blanco: pestaña Crear → Formulario en blanco.",
+        "Los botones se colocan con el control Botón de la pestaña Diseño.",
+        "Cada botón ejecuta una acción: abrir formulario, abrir consulta, abrir informe, o una macro.",
+        "Las acciones de los botones se definen con el Asistente para botones de comandos o con macros."
+      ]
+    },
+    {
+      "titulo": "Botones de menú y macros de arranque",
+      "emoji": "🔘",
+      "parrafos": [
+        "El Asistente para botones de comandos ofrece categorías de acciones listas para usar: abrir un formulario, abrir un informe, terminar la aplicación. Al soltar el botón, el asistente pregunta qué categoría y qué comando asignar, y si se quiere adjuntar una macro para ejecutar después."
+      ],
+      "puntos": [
+        "Categoría «Operaciones con formularios» → «Abrir formulario»: elegí el formulario objetivo.",
+        "Categoría «Operaciones con informes» → «Vista previa informe»: abrir la vista previa del informe.",
+        "Categoría «Aplicación» → «Terminar la aplicación»: botón de salida de Access.",
+        "Los botones se agrupan en el menú con rótulos claros: Clientes, Productos, Facturas, Informes, Salir."
+      ]
+    },
+    {
+      "titulo": "Propiedades de la base de datos",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Las propiedades generales identifican la base de datos: título, autor, empresa y comentarios. También se configuran las opciones de inicio para controlar cómo se muestra la base al abrirse: qué formulario es el inicial, si se muestra el panel de navegación, etc."
+      ],
+      "puntos": [
+        "Información general: Archivo → Información → Ver y editar propiedades de la base.",
+        "Título de la aplicación y autor en los cuadros de «Propiedades del documento».",
+        "Opciones de inicio: Archivo → Opciones → Base de datos actual: campo «Formulario de aplicación». IA Función.",
+        "Configurar el formulario de inicio permite que la base abra directamente en el menú."
+      ]
+    },
+    {
+      "titulo": "Exportación a PDF",
+      "emoji": "📄",
+      "parrafos": [
+        "Exportar a PDF es la forma estándar de compartir informes, listados y documentación sin que nadie modifique los datos. Se exportan tablas, consultas y especialmente informes desde la pestaña Datos externos."
+      ],
+      "puntos": [
+        "Seleccionar el objeto (consulta o informe) → pestaña Datos externos → PDF o XPS.",
+        "Elegir la ubicación, el nombre del archivo y las opciones de diseño (páginas, calidad).",
+        "Un informe exportado a PDF mantiene el formato exacto y se puede enviar por mail o imprimir.",
+        "En el caso de tablas y consultas, PDF es una vista para lectura; para entregar datos editables conviene Excel."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Terminá tu base con menú y exportaciones",
+      "consigna": "Armá el menú de inicio de la base de datos de repuestos, configurá las propiedades y exportá a PDF el listado de productos y un informe.",
+      "pasos": [
+        "Creá un formulario en blanco (Crear → Formulario en blanco) y agregá en el encabezado el título «Repuestos Automotores – Sistema de Gestión».",
+        "Con el control Botón, agregá en el menú los botones: Clientes (abre FormClientes), Productos (abre la tabla o formulario de productos), Facturas (abre el formulario de facturas) y Remitos (abre la vista previa del informe RemitoVenta).",
+        "Agregá un botón de salida con la categoría «Aplicación → Terminar la aplicación».",
+        "Guardá el formulario como «MenuPrincipal».",
+        "En Archivo → Opciones → Base de datos actual, configurá el Formulario de aplicación como MenuPrincipal para que la base abra ahí.",
+        "Cerrá y volvé a abrir la base para verificar que arranca en el menú.",
+        "En la pestaña Datos externos, exportá el informe de listado de productos y el remito de venta a PDF."
+      ],
+      "entrega": "Guardá el archivo .accdb final y entregá los dos PDF exportados: el listado de productos y el remito de venta.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué objeto conviene usar como menú principal de una base de datos?",
+            "opciones": ["Una tabla", "Un formulario en blanco con botones", "Una consulta", "Un informe"],
+            "correcta": "Un formulario en blanco con botones"
+          },
+          {
+            "pregunta": "¿Dónde se configura que la base abra directamente en el menú?",
+            "opciones": ["En Archivo → Opciones → Base de datos actual (formulario de aplicación)", "En la cinta Inicio", "En el Panel de navegación", "En la vista Diseño del informe"],
+            "correcta": "En Archivo → Opciones → Base de datos actual (formulario de aplicación)"
+          },
+          {
+            "pregunta": "¿Qué responsable exportar un informe a PDF?",
+            "opciones": ["Pestaña Inicio → Copiar", "Pestaña Datos externos → PDF o XPS", "Pestaña Crear → Tabla", "Pestaña Herramientas de base de datos"],
+            "correcta": "Pestaña Datos externos → PDF o XPS"
+          },
+          {
+            "pregunta": "¿Qué hace el botón de categoría «Aplicación → Terminar»?",
+            "opciones": ["Guarda la base", "Cierra Access", "Exporta a PDF", "Abre el menú"],
+            "correcta": "Cierra Access"
+          },
+          {
+            "pregunta": "¿Para qué sirve exportar un informe a PDF en una PyME?",
+            "opciones": ["Para que nadie modifique los datos", "Para perder el formato", "Para borrar información", "Para acelerar la PC"],
+            "correcta": "Para que nadie modifique los datos"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb final que abre en el menú con los botones funcionando, y los PDF exportados.",
+  "lectura": "La base de datos termina con un menú de inicio que la hace usable para cualquier persona de la empresa y con las propiedades configuradas. Exportar informes a PDF permite compartir documentación sin riesgo de que se modifiquen los datos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar informes y consultas. Preguntar: ¿qué pantalla le mostrarían al dueño de la PyME para que use el sistema?", "min": "10 min" },
+      { "titulo": "Formulario de menú", "que": "Crear el formulario en blanco y armar la estructura del menú con botones en vivo.", "min": "20 min" },
+      { "titulo": "Botones y acciones", "que": "Usar el Asistente para botones de comandos: abrir formulario, vista previa de informe, salir.", "min": "20 min" },
+      { "titulo": "Propiedades de la base", "que": "Configurar título, autor y las opciones de inicio (formulario de aplicación).", "min": "15 min" },
+      { "titulo": "Exportación a PDF", "que": "Exportar el listado de productos y el remito a PDF mostrando cada paso.", "min": "10 min" },
+      { "titulo": "Cierre y prueba final", "que": "Cerrar y abrir la base para probar el arranque en el menú. Repasar con las preguntas del interactivo y mostrar los PDF generados.", "min": "15 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué espera el dueño de una PyME al abrir el sistema? Un menú claro que lo lleve a todo. Eso justifica el formulario de inicio.",
+      "Mostrar un ejemplo de menú de un sistema comercial y comparar con lo que van a construir."
+    ],
+    "aclarar": [
+      "El formulario de menú NO necesita estar vinculado a una tabla: es un formulario en blanco de control.",
+      "Sin la configuración del formulario de aplicación, la base abre en el Panel de navegación, no en el menú.",
+      "El PDF exportado es una foto del informe: no se actualiza solo si cambian los datos; hay que volver a exportarlo.",
+      "Los botones del menú apuntan a objetos existentes: si se renombra un formulario, hay que actualizar el botón."
+    ],
+    "ejemplos": [
+      "Armar el menú completo en vivo y mostrar el flujo: clic en Clientes → abre el formulario de clientes.",
+      "Exportar un informe a PDF y abrirlo para verificar que el formato quedó igual que en pantalla."
+    ]
+  }
+}

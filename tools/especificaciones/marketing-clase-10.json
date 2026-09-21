@@ -1,0 +1,144 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 10,
+    "titulo": "Uso de ChatGPT para redes sociales",
+    "modulo": "Módulo 3 – Diseño de Contenidos y Copywriting con IA",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a usar ChatGPT como asistente de copywriting: prompts efectivos, adaptación del tono de tu marca, generación de piezas visuales con IA y revisión humana de cada resultado.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA\\Clase 10 IA Chat GPT para Copys e Imagenes",
+  "objetivos": [
+    "Escribir prompts efectivos para generar textos de redes con ChatGPT.",
+    "Adaptar el tono y la voz de tu marca en cada generación.",
+    "Generar piezas visuales con IA dentro de tu flujo de trabajo.",
+    "Corregir y pulir los textos generados con criterio humano."
+  ],
+  "teoria": [
+    {
+      "titulo": "ChatGPT como asistente de copywriting",
+      "emoji": "🤖",
+      "parrafos": [
+        "ChatGPT es un asistente que genera borradores de copys para tus publicaciones: desde una bio hasta un guion de reel. No reemplaza tu criterio: te da una base que después pulís."
+      ],
+      "puntos": [
+        "Le pedís con contexto: negocio, público, objetivo y formato.",
+        "Genera en segundos ideas que antes tomaban horas.",
+        "Vale como borrador: siempre revisás, ajustás y mejorás."
+      ]
+    },
+    {
+      "titulo": "Prompts efectivos: el arte de pedir",
+      "emoji": "⌨️",
+      "parrafos": [
+        "Un buen prompt es específico: rol, contexto, audiencia, tono y formato. Cuanto más preciso seas en el pedido, mejor resultado vas a obtener."
+      ],
+      "puntos": [
+        "Estructura base: 'Actuá como community manager de [rubro]', más contexto, público, tono y formato.",
+        "Pedí variantes: 'generá 3 opciones de título' o '5 publicaciones' y elegí la mejor.",
+        "Indicá límites claros: 'máximo 150 caracteres', 'con llamado a la acción al final'."
+      ]
+    },
+    {
+      "titulo": "Tono y voz de marca",
+      "emoji": "🎙️",
+      "parrafos": [
+        "Tu marca tiene una personalidad: puede ser cercana, profesional, divertida o inspiradora. El tono tiene que mantenerse siempre igual para construir confianza."
+      ],
+      "puntos": [
+        "Definí el tono en el prompt: 'escribí con tono cercano y con humor, usando vos'.",
+        "Redactá un 'perfil de marca' en un párrafo y reutilizalo en cada prompt.",
+        "Corregí las respuestas que no respeten tu tono y pedí reformulaciones."
+      ]
+    },
+    {
+      "titulo": "Piezas visuales con IA y revisión humana",
+      "emoji": "🎨",
+      "parrafos": [
+        "ChatGPT también genera piezas visuales a partir de descripciones: estilo, colores y ambiente. Son útiles como base, pero el criterio humano decide qué se usa en tu marca."
+      ],
+      "puntos": [
+        "Describí con detalle: estilo, colores, composición y tipo de plano.",
+        "Generá varias opciones y elegí la que mejor comunique.",
+        "Revisión siempre: datos, ortografía, mensaje y coherencia con tu marca."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi copy con ChatGPT",
+      "consigna": "Generá una publicación de Instagram con ChatGPT aplicando un prompt bien armado y después pulí el resultado con tu criterio.",
+      "pasos": [
+        "Abrí ChatGPT en chatgpt.com e iniciá sesión.",
+        "Escribí un prompt con la estructura completa: rol, negocio, público, tono, formato y límites.",
+        "Pedí 3 variantes del texto para tu publicación.",
+        "Elegí la mejor, corregila y ajustala al tono de tu marca: si algo no suena a vos, reescribilo.",
+        "Juntá el prompt, las variantes y el texto final en un Google Docs y compartilo."
+      ],
+      "entrega": "Compartí el enlace con el prompt utilizado, las 3 variantes y el texto final corregido.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Un prompt efectivo para ChatGPT incluye...",
+            "opciones": ["Rol, contexto, público, tono y formato", "Solo la palabra 'texto'", "La contraseña del negocio", "Una sola palabra clave"],
+            "correcta": "Rol, contexto, público, tono y formato"
+          },
+          {
+            "pregunta": "¿Qué es el tono de voz de una marca?",
+            "opciones": ["La personalidad y la forma de hablar consistente en sus contenidos", "El volumen de los videos", "La cantidad de seguidores", "El ancho de la tipografía"],
+            "correcta": "La personalidad y la forma de hablar consistente en sus contenidos"
+          },
+          {
+            "pregunta": "El texto generado por ChatGPT...",
+            "opciones": ["Es un borrador que siempre hay que revisar", "Sale perfecto y no se corrige", "No necesita contexto", "No puede editarse"],
+            "correcta": "Es un borrador que siempre hay que revisar"
+          },
+          {
+            "pregunta": "Si ChatGPT no respeta el tono pedido, lo mejor es...",
+            "opciones": ["Pedir una reformulación con instrucciones más precisas", "Aceptarlo sin leerlo", "Cambiar de rubro", "Borrar el negocio"],
+            "correcta": "Pedir una reformulación con instrucciones más precisas"
+          },
+          {
+            "pregunta": "¿Para qué sirve pedir 3 variantes del mismo texto?",
+            "opciones": ["Comparar opciones y elegir la mejor", "Llenar más el documento", "Hacer perder el tiempo", "Publicar las 3 juntas"],
+            "correcta": "Comparar opciones y elegir la mejor"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento con el prompt completo, las variantes generadas y el copy final corregido.",
+  "lectura": "ChatGPT acelera la redacción de copys, pero el resultado depende de cómo pedís: rol, contexto, público, tono y formato definen la calidad. El tono de tu marca se sostiene con instrucciones claras y corrección constante. La IA propone; el criterio humano decide.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué conocen de ChatGPT y si ya lo usaron", "min": "10 min" },
+      { "titulo": "ChatGPT como asistente", "que": "Mostrar ejemplos de copys generados por IA", "min": "20 min" },
+      { "titulo": "Prompts efectivos", "que": "Construir un prompt completo en vivo", "min": "20 min" },
+      { "titulo": "Tono y revisión", "que": "Comparar tonos distintos para el mismo negocio", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar la generación y el pulido del copy", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿les pasó de quedarse en blanco frente a la hoja para escribir una publicación? Presentar a ChatGPT como punto de partida.",
+      "Mostrar un prompt tuyo real y el resultado que obtuviste en tu marca."
+    ],
+    "aclarar": [
+      "ChatGPT inventa datos: la revisión humana no es opcional, es parte del trabajo.",
+      "El tono se pide en el prompt, pero también se corrige después: la consistencia se construye.",
+      "No hace falta pagar para empezar: la versión gratuita alcanza para el curso."
+    ],
+    "ejemplos": [
+      "Generar 3 titulares para el mismo negocio y analizar cuál suena mejor.",
+      "Pedirle a ChatGPT y a un alumno que escriban sobre lo mismo y comparar resultados.",
+      "Corregir en vivo un copy de IA con errores de tono o de datos."
+    ]
+  }
+}

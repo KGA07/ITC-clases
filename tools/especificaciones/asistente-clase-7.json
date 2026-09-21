@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 7,
+    "titulo": "IA aplicada a redacción ejecutiva",
+    "modulo": "Módulo 2 – Procesador de Textos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a usar ChatGPT o Gemini para corregir la ortografía de tus textos y transformar cartas y notas simples en redacciones formales y cordiales, siempre con tu revisión final.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 2\\Clase 7 Introduccion a la IA",
+  "objetivos": [
+    "Entender qué es un asistente de IA generativa y cómo genera texto a partir de un prompt.",
+    "Escribir prompts claros para corregir ortografía y gramática de un documento.",
+    "Reformular textos simples en tono profesional: formal, cordial y claro.",
+    "Aplicar la IA a tareas del puesto: cartas, notas internas y resúmenes.",
+    "Conocer los límites de la IA y la importancia de la verificación humana."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es una IA generativa de texto?",
+      "emoji": "🤖",
+      "parrafos": [
+        "ChatGPT, Gemini y otros asistentes son programas de inteligencia artificial generativa que producen texto a partir de lo que les escribís: el «prompt». Aprendieron de muchísimos ejemplos de lenguaje real, por eso redactan con fluidez."
+      ],
+      "puntos": [
+        "No «piensan» ni conocen la verdad: predicen texto probable según lo que les pediste y su entrenamiento.",
+        "ChatGPT (OpenAI) y Gemini (Google) funcionan desde el navegador, con cuentas gratuitas, sin instalar nada.",
+        "Funcionan muy bien con tareas concretas: corregir, reformular, resumir y ordenar ideas.",
+        "Clave del puesto: la IA es un asistente de redacción, pero el responsable del texto final siempre sos vos."
+      ]
+    },
+    {
+      "titulo": "Buenos prompts para corregir",
+      "emoji": "✍️",
+      "parrafos": [
+        "El prompt es la instrucción que le das a la IA. Cuanto más clara la pedís, mejor es el resultado. La diferencia entre una respuesta floja y una excelente está casi siempre en cómo escribís la consigna."
+      ],
+      "puntos": [
+        "Estructura ganadora: contexto + tarea + formato. Ej.: «Soy asistente administrativo. Corregí la ortografía y la puntuación de este texto y devolvémelo listo: [pegar el texto]».",
+        "Especificá el alcance: «solo ortografía y gramática, no cambies el contenido» evita que reescriba de más.",
+        "Pegá el texto completo, no parafraseado: la IA corrige sobre lo que realmente escribiste.",
+        "Si el resultado no te convence, mejorá el prompt: menos extensión, otro tono o pedir que marque los errores explicados."
+      ]
+    },
+    {
+      "titulo": "De texto simple a tono profesional",
+      "emoji": "📝",
+      "parrafos": [
+        "Muchas notas de trabajo se escriben apuradas y en tono coloquial. La IA te ayuda a reformularlas: mantenés la idea pero la entregás con el registro que espera una oficina."
+      ],
+      "puntos": [
+        "Pedile: «Reescribí este texto en tono formal y cordial: [texto]» y compará las versiones.",
+        "Pedí variantes: una formal, una cordial y una directa, y elegí la que mejor se adapte al receptor.",
+        "Un buen texto laboral es claro, cortés y va al grano: la IA ayuda a encontrar la palabra justa.",
+        "Traducción práctica: «tío, no pude venir» puede convertirse en «Le informo que no me fue posible asistir» sin que cambie el hecho."
+      ]
+    },
+    {
+      "titulo": "Usos en el puesto y límites",
+      "emoji": "🗒️",
+      "parrafos": [
+        "La asistencia administrativa está llena de textos: cartas de presentación, notas internas, resúmenes de reuniones y agendas. La IA los agiliza, pero tiene límites que conviene conocer."
+      ],
+      "puntos": [
+        "Ideales: redacción de cartas y notas, resúmenes de reuniones y resúmenes de documentos largos.",
+        "Nunca pegues datos personales sensibles: DNI, números de cuenta, sueldos o información médica.",
+        "La IA puede inventar datos o nombres (alucinaciones) y a veces repite errores del original: hay que revisar siempre.",
+        "Regla práctica: usala para generar un borrador o una versión mejorada, y leé y ajustá antes de enviar. La verificación humana es obligatoria."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mejorar una carta con IA",
+      "consigna": "Escribís una carta simple en tu tono natural, se la pasás a la IA con un buen prompt y comparás las dos versiones para elegir cuál enviar.",
+      "pasos": [
+        "Escribí en un documento una carta breve (3 a 4 oraciones) avisando que se cambió el horario de una reunión, en tu tono natural y sin pulir.",
+        "Copialá tal cual la escribiste, sin autocorregirte.",
+        "Abrí ChatGPT o Gemini (o compartí el navegador si no tenés cuenta).",
+        "Escribí el prompt: «Soy asistente administrativo. Corregí la ortografía y la gramática y reescribí esta carta en tono formal y cordial: [pegar la carta]».",
+        "Copiá la respuesta y pegala en el documento, rotulada «Versión IA».",
+        "Compará las dos versiones: ¿qué cambió? ¿hay algo que vos mejorarías distinto?",
+        "Elegí la versión final y escribí una frase que justifique la decisión."
+      ],
+      "entrega": "Subí un documento con las dos versiones (original y mejorada) y una frase que explique cuál elegiste y por qué.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es un prompt?",
+            "opciones": ["Una fórmula de Excel", "La instrucción en texto que le damos a la IA", "Un tipo de letra de Word", "Un virus informático"],
+            "correcta": "La instrucción en texto que le damos a la IA"
+          },
+          {
+            "pregunta": "¿Cuál es la estructura recomendada de un prompt claro?",
+            "opciones": ["Contexto + tarea + formato", "Solo una palabra", "Una pregunta sin contexto", "Un texto sin terminar"],
+            "correcta": "Contexto + tarea + formato"
+          },
+          {
+            "pregunta": "¿Qué NO conviene pegarle a una IA?",
+            "opciones": ["Un texto de práctica", "Datos personales sensibles como DNI o sueldos", "Una carta genérica", "Un texto sin errores de tipeo"],
+            "correcta": "Datos personales sensibles como DNI o sueldos"
+          },
+          {
+            "pregunta": "¿Por qué hay que revisar siempre lo que escribe la IA?",
+            "opciones": ["Porque tarda mucho en responder", "Porque puede equivocarse o inventar datos", "Porque siempre responde en inglés", "Porque borra archivos del equipo"],
+            "correcta": "Porque puede equivocarse o inventar datos"
+          },
+          {
+            "pregunta": "¿Qué le pedís a la IA para llevar una nota simple a tono profesional?",
+            "opciones": ["Que la traduzca a otro idioma", "Que la reescriba en tono formal y cordial", "Que la haga más larga", "Que la elimine"],
+            "correcta": "Que la reescriba en tono formal y cordial"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento con las dos versiones de la carta y la justificación de cuál elegiste y por qué.",
+  "lectura": "La IA no reemplaza al asistente: lo acelera. Con un prompt bien escrito corregís ortografía en segundos y convertís una nota apurada en una carta formal y cordial. El secreto profesional es usar la IA como borrador veloz y reservar siempre la lectura final y la verificación de los datos para vos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar el informe de la clase 6 y preguntar si usaron alguna vez ChatGPT", "min": "10 min" },
+      { "titulo": "Qué es la IA generativa", "que": "Explicar con ejemplo en vivo qué es un prompt y qué hace la IA", "min": "15 min" },
+      { "titulo": "Prompts para corregir", "que": "Probar prompts de corrección con textos de los alumnos en pantalla", "min": "20 min" },
+      { "titulo": "Tono profesional y usos", "que": "Reformular una nota coloquial en vivo y listar usos del puesto", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el ejercicio: carta original, prompt, comparación y justificación", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez les dio vergüenza mandar un mensaje y enojarse con su ortografía? Usar esa experiencia para mostrarlos como casos reales de oficina.",
+      "Mostrar en vivo el mismo texto corregido por ChatGPT y por Gemini y comparar respuestas."
+    ],
+    "aclarar": [
+      "La IA no siempre acierta: puede «arreglar» algo que estaba bien o inventar datos que no estaban. Siempre hay que leer la respuesta.",
+      "No hace falta pagar: los planes gratuitos de ChatGPT y Gemini alcanzan para corregir y reformular textos.",
+      "Prompts largos y detallados funcionan mejor que pedidos vagos como «corregí esto»."
+    ],
+    "ejemplos": [
+      "Mostrar una carta «coloquial» y pedirle a la IA una versión formal, una cordial y una directa para elegir.",
+      "Pedirle que corrija un texto con errores a propósito y mostrar dónde acierta y dónde no.",
+      "Armar una lista de prompts tipo que cada alumno puede guardar para su trabajo: corregir, resumir, reformular."
+    ]
+  }
+}

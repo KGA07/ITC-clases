@@ -1,0 +1,167 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 15,
+    "titulo": "Google Calendar y Google Forms",
+    "modulo": "Módulo 5 – Gestión de la Información y Nube",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a gestionar reuniones con recordatorios y a diseñar formularios profesionales para encuestas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 5\\Clase 15 Reunion",
+  "objetivos": [
+    "Crear eventos en Google Calendar con fecha, hora, duración y recordatorios.",
+    "Invitar participantes a una reunión y administrar sus confirmaciones.",
+    "Diseñar formularios en Google Forms con distintos tipos de pregunta y obligatoriedad.",
+    "Ver y analizar las respuestas en Google Sheets y difundir el enlace del formulario."
+  ],
+  "teoria": [
+    {
+      "titulo": "Google Calendar: eventos y recordatorios",
+      "emoji": "📅",
+      "parrafos": [
+        "Google Calendar es la agenda digital del asistente: cada reunión, trámite o entrega vive en un mismo lugar y puede avisarte solo. Se sincroniza con Gmail: los vuelos, reservas y mails con fechas pueden sumarse automáticamente.",
+        "Al crear un evento definís título, fecha, hora, duración y si se repite (semanal, mensual). Siempre Sumá la ubicación o el enlace de la videollamada."
+      ],
+      "puntos": [
+        "Botón Crear → Evento: ingresá nombre claro, por ej. «Reunión con ClienteA - cierre de contrato».",
+        "Recordatorio: configura 1 o 2 alarmas, por ej. «10 minutos antes» por mail y notificación.",
+        "Eventos recurrentes: reuniones de equipo todos los lunes se repiten sin volver a crearlas.",
+        "Vista de agenda del mes o semana: arrastrá un evento para cambiarle el día y la hora."
+      ]
+    },
+    {
+      "titulo": "Invitar participantes y gestionar confirmaciones",
+      "emoji": "👥",
+      "parrafos": [
+        "Invitás a las personas con su correo y Calendar las notifica automáticamente. Cada invitado responde «Sí», «Tal vez» o «No», y vos ves el estado en la pestaña de la invitación.",
+        "También podés proponer alternar horas con «Encontrar un horario» para ubicar el hueco donde todos estén libres."
+      ],
+      "puntos": [
+        "Agregá invitados en el campo Agregar invitados; Calendar mostrará su disponibilidad.",
+        "Hacé clic en Suficientes respuestas para ver quién confirmó.",
+        "Si alguien no confirmó, enviá un recordatorio o escribile directo desde el evento.",
+        "Videollamada: sumá la reunión de Meet con un clic y el enlace llega en la invitación."
+      ]
+    },
+    {
+      "titulo": "Google Forms: preguntas y tipos",
+      "emoji": "📝",
+      "parrafos": [
+        "Google Forms sirve para encuestas, registros de asistencia, inscripciones y pedidos internos. Cada formulario tiene preguntas con un tipo: opción múltiple, casillas de verificación, respuesta corta o párrafo, y listas desplegables.",
+        "La clave de un buen formulario es la claridad: preguntas cortas, opciones bien redactadas y un objetivo definido."
+      ],
+      "puntos": [
+        "Opción múltiple: una sola respuesta (ej. nivel de satisfacción).",
+        "Casillas: se pueden marcar varias (ej. qué temas te interesan).",
+        "Escala lineal: valoraciones del 1 al 5 para medir satisfacción.",
+        "Botón «Obligatoria»: fuerza una respuesta para no recibir datos incompletos."
+      ]
+    },
+    {
+      "titulo": "Ver respuestas y enviar el formulario",
+      "emoji": "📊",
+      "parrafos": [
+        "Las respuestas se guardan automáticamente. Podés ver un resumen con gráficos en la pestaña Respuestas, o mandarlas a una planilla de Google Sheets para analizarlas.",
+        "Para difundir, el botón Enviar te da el enlace para copiar y pegar en WhatsApp, Gmail o Meet."
+      ],
+      "puntos": [
+        "Pestaña Respuestas → Resumen: gráficos de torta y barras generados al toque.",
+        "«Crear hoja de cálculo» vuelca cada respuesta a una fila de Sheets para filtrar y calcular.",
+        "Revisá la vista previa desde el punto de vista del usuario antes de difundir el enlace.",
+        "Cerrá el formulario con «Aceptar respuestas» cuando termine el plazo."
+      ]
+    },
+    {
+      "titulo": "Encuesta de satisfacción: caso real",
+      "emoji": "😊",
+      "parrafos": [
+        "El asistente administrativo arma encuestas de satisfacción para clientes internos y externos: ¿cómo fue la atención? ¿cumplimos los plazos? Las respuestas sirven para mejorar y para presentar resultados a la gerencia.",
+        "Una encuesta corta (5 a 8 preguntas) tiene más respuestas que una interminable."
+      ],
+      "puntos": [
+        "Empezá con una escala 1-5 de satisfacción general.",
+        "Sumá una pregunta abierta: «¿Qué mejorarías?».",
+        "Finalizá con opción múltiple de frecuencia de uso del servicio.",
+        "Exportá el resumen a PDF o gráfico para adjuntarlo a un informe."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Agenda una reunión y armá la encuesta de satisfacción",
+      "consigna": "Creá un evento en Calendar invitando a un compañero, y diseñá una encuesta de satisfacción para enviar después de la reunión.",
+      "pasos": [
+        "Creá un evento llamado «Reunión de seguimiento de proyectos» mañana a las 11:00 con 45 minutos de duración.",
+        "Activá un recordatorio 10 minutos antes y sumá la videollamada de Meet.",
+        "Invitá a un/a compañero/a con su correo y enviá la invitación.",
+        "Creá un Forms con: escala 1-5 de satisfacción general, una pregunta abierta de sugerencias y una de opción múltiple sobre el tema que más se quiera tratar.",
+        "Marcá dos preguntas como obligatorias, copiá el enlace y compartilo con el docente."
+      ],
+      "entrega": "Compartí con el docente el enlace del formulario y la captura del evento creado en Calendar.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Para qué sirve el recordatorio en Google Calendar?",
+            "opciones": ["Para borrar el evento solo", "Para que el sistema te avise antes de la reunión", "Para cambiar la hora de la reunión", "Para compartir la pantalla"],
+            "correcta": "Para que el sistema te avise antes de la reunión"
+          },
+          {
+            "pregunta": "¿Qué tipo de pregunta elegís para que solo se pueda marcar UNA opción?",
+            "opciones": ["Casillas de verificación", "Opción múltiple", "Párrafo", "Respuesta corta"],
+            "correcta": "Opción múltiple"
+          },
+          {
+            "pregunta": "¿Cómo ves las respuestas resumidas con gráficos?",
+            "opciones": ["En la pestaña Respuestas → Resumen", "Borrando el formulario", "En un mail automático", "En el historial de Drive"],
+            "correcta": "En la pestaña Respuestas → Resumen"
+          },
+          {
+            "pregunta": "¿Qué significa obligar una pregunta en Forms?",
+            "opciones": ["Que no se puede editar", "Que es obligatorio responderla para enviar el formulario", "Que solo la responde el docente", "Que desaparece"],
+            "correcta": "Que es obligatorio responderla para enviar el formulario"
+          },
+          {
+            "pregunta": "Hiciste clic por error en una reunión. ¿Qué botón usás para recuperarla o avisar?",
+            "opciones": ["Borrar el calendario entero", "Cancelar evento y notificar a los invitados", "Apagar la PC", "Ninguna: no hay solución"],
+            "correcta": "Cancelar evento y notificar a los invitados"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el enlace del formulario, la obligatoriedad de las preguntas y el evento creado en Calendar.",
+  "lectura": "Google Calendar ordena la agenda con eventos, recordatorios e invitaciones, mientras que Google Forms transforma encuestas y registros en datos con gráficos. Juntas cubren dos tareas cotidianas del asistente: saber cuándo hay que estar y cómo medir la satisfacción.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar cómo anotan hoy sus compromisos y si hicieron alguna encuesta", "min": "10 min" },
+      { "titulo": "Calendar: eventos y recordatorios", "que": "Crear evento con fecha, hora, recordatorio y recurrencia en vivo", "min": "20 min" },
+      { "titulo": "Invitaciones y confirmaciones", "que": "Invitar a un compañero y revisar estados de respuesta", "min": "15 min" },
+      { "titulo": "Forms: tipos de pregunta", "que": "Armar preguntas de opción múltiple, casillas y escala, con obligatoriedad", "min": "20 min" },
+      { "titulo": "Respuestas y difusión", "que": "Enviar el form, abrir el resumen con gráficos y el volcado a Sheets", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo y dudas finales", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar cuántas veces llegaron tarde por no tener avisos: el recordatorio es eso.",
+      "Mostrar una encuesta de satisfacción real de un negocio y preguntar si la respondieron alguna vez."
+    ],
+    "aclarar": [
+      "El recordatorio solo avisa: no mueve ni cancela el evento por sí solo.",
+      "Invitado «No» no molesta: simplemente filtra huecos en «Encontrar un horario».",
+      "Obligatoria fuerza a responder, pero no valida el contenido: alguien puede tipear cualquier cosa.",
+      "El resumen de Forms muestra respuestas acumuladas; la hoja de Sheets permite trabajar con filas individuales."
+    ],
+    "ejemplos": [
+      "Programar una reunión real del curso para la próxima semana con Meet.",
+      "Armar una mini encuesta «¿cómo te gustaría practicar?» y cargarla en vivo con respuestas del grupo.",
+      "Mostrar cómo un mail con fecha de vuelo crea solo el evento en Calendar."
+    ]
+  }
+}

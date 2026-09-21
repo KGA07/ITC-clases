@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 4,
+    "titulo": "Consultas",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a aprender a extraer información puntual de la base de datos con consultas de selección, usando criterios, parámetros y consultas de eliminación.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 4 Consultas",
+  "objetivos": [
+    "Entender el concepto de consulta y diferenciar sus tipos: selección, resumen, actualización y eliminación.",
+    "Crear consultas de selección que muestren campos y registros que cumplan ciertos criterios.",
+    "Usar criterios simples y parámetros para filtrar datos de forma dinámica.",
+    "Crear consultas de eliminación para depurar registros no deseados."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es una consulta?",
+      "emoji": "🔍",
+      "parrafos": [
+        "Una consulta es un objeto de Access que extrae y muestra información de una o varias tablas según ciertas condiciones. Es la forma profesional de preguntarle a la base de datos: por ejemplo, «mostrame todos los clientes de Córdoba que compraron este mes».",
+        "La consulta no copia los datos: muestra una vista de los registros de las tablas en el momento en que se ejecuta. Los datos siempre quedan actualizados."
+      ],
+      "puntos": [
+        "Consulta de selección: muestra los registros que cumplen un criterio, sin modificarlos.",
+        "Consulta de resumen: agrupa registros y calcula totales (Suma, Promedio, Cuenta, Mínimo, Máximo).",
+        "Consulta de actualización: modifica registros en lote.",
+        "Consulta de eliminación: borra registros que cumplen un criterio.",
+        "El resultado de una consulta se puede usar como origen de datos de un formulario o informe."
+      ]
+    },
+    {
+      "titulo": "Consultas de selección",
+      "emoji": "🗃️",
+      "parrafos": [
+        "La consulta de selección es la más usada. Se crea en la pestaña Crear → Asistente de consultas o → Diseño de consultas. Se agregan las tablas o consultas que participan, se eligen los campos a mostrar y se definen los criterios."
+      ],
+      "puntos": [
+        "En la vista Diseño, el cajón superior muestra las tablas y el inferior la cuadrícula de diseño (Campo, Tabla, Orden, Criterios, etc.).",
+        "Se arrastra el campo deseado a la fila «Campo» o se usa el doble clic.",
+        "Con doble clic en un campo que no se necesita en el resultado, se puede desmarcar su casilla «Mostrar».",
+        "En la fila «Orden» se puede ordenar ascendente o descendente el resultado."
+      ]
+    },
+    {
+      "titulo": "Criterios y parámetros",
+      "emoji": "🎯",
+      "parrafos": [
+        "Los criterios son condiciones que filtran los registros. Se escriben en la fila «Criterios» de la cuadrícula de diseño. Los parámetros convierten el filtro en interactivo: Access pide el dato cada vez que se ejecuta."
+      ],
+      "puntos": [
+        "Criterio de texto: poner el valor exacto entre comillas, ej: «Córdoba».",
+        "Criterios numéricos y de comparación: un campo mayor a un valor, ej: [Stock] > 100.",
+        "Operadores de comparación: >, <, >=, <=, <> (distinto).",
+        "Combinar criterios con Y (todos) u O (al menos uno) en la misma fila o en filas distintas.",
+        "Parámetro: escribir entre corchetes la pregunta, ej: [Ingresá la ciudad]."
+      ]
+    },
+    {
+      "titulo": "Consultas de eliminación",
+      "emoji": "🗑️",
+      "parrafos": [
+        "La consulta de eliminación borra en lote todos los registros que cumplan un criterio. Es una operación destructiva: se pierde información de forma definitiva, por eso siempre hay que probar primero la consulta como de selección para verificar qué registros van a ser borrados."
+      ],
+      "puntos": [
+        "Crear primero una consulta de selección con el criterio deseado y verificarla en vista Hoja de datos.",
+        "Pestaña Diseño de consulta → Tipo de consulta → Eliminar.",
+        "La cuadrícula cambia y el resultado borra todos los registros que coinciden con el criterio.",
+        "Siempre hacer una copia de seguridad de la base antes de ejecutar consultas de eliminación."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Consultá los datos de tu PyME",
+      "consigna": "En la base de datos de repuestos, creá consultas de selección para encontrar información útil de la empresa y una consulta de eliminación para depurar registros.",
+      "pasos": [
+        "Creá una consulta de selección que muestre los clientes de la ciudad de Córdoba: campos Nombre y Telefono, criterio en la columna Ciudad.",
+        "Creá una segunda consulta que muestre los productos con stock menor a 20 unidades: campo Descripcion, criterio Stock < 20.",
+        "Modificá la consulta de stock para que pida el límite con un parámetro: en Criterios escribí [Ingresá el stock mínimo].",
+        "Creá una consulta de selección que muestre todas las facturas con monto mayor a 1000.",
+        "A partir de esta última, convertila en consulta de eliminación para borrar facturas de monto menor a 50, previa verificación del resultado en selección.",
+        "Ejecutá cada consulta y guardala con un nombre descriptivo."
+      ],
+      "entrega": "Guardá el archivo .accdb con al menos 3 consultas creadas. Compartí una captura del resultado de la consulta de stock y de la consulta con parámetro.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de consulta muestra los registros que cumplen un criterio sin modificarlos?",
+            "opciones": ["Consulta de eliminación", "Consulta de selección", "Consulta de actualización", "Consulta de resumen"],
+            "correcta": "Consulta de selección"
+          },
+          {
+            "pregunta": "¿Cómo se escribe un parámetro en una consulta de Access?",
+            "opciones": ["Entre paréntesis", "Entre corchetes", "Entre comillas", "Sin símbolos"],
+            "correcta": "Entre corchetes"
+          },
+          {
+            "pregunta": "¿Qué operador se usa para mostrar valores mayores a un número?",
+            "opciones": ["<", ">", "<>", "="],
+            "correcta": ">"
+          },
+          {
+            "pregunta": "Antes de ejecutar una consulta de eliminación, ¿qué conviene hacer siempre?",
+            "opciones": ["Probarla como consulta de selección primero", "Borrar las tablas", "Reiniciar la PC", "No verificar nada"],
+            "correcta": "Probarla como consulta de selección primero"
+          },
+          {
+            "pregunta": "¿Qué hace la consulta de resumen?",
+            "opciones": ["Borra registros", "Agrupa registros y calcula totales", "Actualiza registros en lote", "Crea formularios"],
+            "correcta": "Agrupa registros y calcula totales"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con las consultas creadas y sus resultados correctos.",
+  "lectura": "Las consultas permiten preguntarle información específica a la base de datos. Las de selección filtran sin modificar, los parámetros hacen el filtro interactivo y las de eliminación depuran registros de forma definitiva.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar tablas y formularios. Preguntar: ¿qué información le pedirían a una base de datos de repuestos?", "min": "10 min" },
+      { "titulo": "Concepto de consulta", "que": "Explicar los tipos de consultas con ejemplos de la vida de una PyME: qué clientes, qué productos con bajo stock.", "min": "15 min" },
+      { "titulo": "Consultas de selección", "que": "Crear una consulta de selección en vivo: agregar tablas, campos, orden y criterios.", "min": "20 min" },
+      { "titulo": "Criterios y parámetros", "que": "Mostrar operadores de comparación y parámetros con ejemplos prácticos en vivo.", "min": "20 min" },
+      { "titulo": "Consultas de eliminación", "que": "Explicar riesgos y el procedimiento seguro: probar en selección antes de eliminar.", "min": "15 min" },
+      { "titulo": "Cierre y repaso", "que": "Repasar con las preguntas del interactivo. Recomendar copias de seguridad.", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿cómo averiguarían hoy qué productos tienen bajo stock sin una consulta? Mostrar el poder de las consultas con un ejemplo real.",
+      "Pedir que cada alumno piense una pregunta concreta para su base antes de crear consultas."
+    ],
+    "aclarar": [
+      "La consulta no duplica los datos: muestra la información en vivo desde las tablas.",
+      "Un parámetro entre corchetes pide el valor cada vez que se ejecuta la consulta, no es un valor fijo.",
+      "La consulta de eliminación es definitiva: no se puede deshacer con Ctrl + Z.",
+      "Si un criterio textual no funciona, revisar las comillas o que el valor coincida exactamente con lo cargado."
+    ],
+    "ejemplos": [
+      "Crear la consulta «Clientes de Córdoba» en vivo y mostrar cómo ordena y filtra los registros.",
+      "Ejecutar la consulta con parámetro dos veces con valores distintos para mostrar cómo cambia el resultado."
+    ]
+  }
+}

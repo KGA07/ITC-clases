@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 20,
+    "titulo": "Email Marketing",
+    "modulo": "Módulo 5 – Automatización y Email Marketing",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a entrar al mundo del email marketing: elegir herramientas como Mailchimp o Doppler, conocer los tipos de campaña y configurar tu cuenta y tu base de suscriptores desde cero.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 5 - Automatización y Email Marketing\\Clase 18 Email Marketing",
+  "objetivos": [
+    "Explicar por qué el email sigue siendo uno de los canales de mayor retorno.",
+    "Comparar herramientas de email como Mailchimp y Doppler.",
+    "Configurar una cuenta de prueba y agregar la marca del negocio.",
+    "Crear y organizar una base de suscriptores con listas segmentadas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Por qué el email marketing sigue funcionando",
+      "emoji": "📬",
+      "parrafos": [
+        "El email permite hablar directamente con gente que te eligió: vos tenés la base, no dependés del algoritmo de una red. Por eso suele tener el mejor retorno por peso invertido de todo el marketing digital."
+      ],
+      "puntos": [
+        "El usuario te dio su correo voluntariamente: ya mostró interés real.",
+        "No dependés del algoritmo: el mensaje llega directo a la bandeja de entrada.",
+        "Es medible al detalle: aperturas, clics, bajas y devoluciones.",
+        "Creá esa base desde el día 1: cada correo recogido es un cliente potencial.",
+        "Regla de oro: siempre con permiso (opt-in) para no caer en spam."
+      ]
+    },
+    {
+      "titulo": "Tipos de campañas de email",
+      "emoji": "🗂️",
+      "parrafos": [
+        "No todas las campañas buscan vender. Un calendario de email equilibra informar, enamorar y vender sin cansar a la lista."
+      ],
+      "puntos": [
+        "Boletín periódico: novedades, contenido útil y enlaces al sitio.",
+        "Email promocional: descuentos, ofertas y lanzamientos de productos.",
+        "Campaña de bienvenida: el primer mensaje que define la relación con el suscriptor.",
+        "Carrito abandonado: recupera gente que dejó productos sin comprar.",
+        "Serie de automatización: secuencia de emails que se disparan sola por comportamiento."
+      ]
+    },
+    {
+      "titulo": "Elegir y configurar la herramienta",
+      "emoji": "🛠️",
+      "parrafos": [
+        "Mailchimp y Doppler simplifican el envío, el diseño y la medición. La elección depende del tamaño de la base, los idiomas que necesites (los dos hablan español) y el presupuesto."
+      ],
+      "puntos": [
+        "Mailchimp: muy popular, plan gratis para listas chicas y editor por bloques.",
+        "Doppler: argentino, con planes claros, plantillas y buena atención local.",
+        "La cuenta se configura con correo, nombre de la marca y datos del remitente.",
+        "Configurar SPF/DKIM mejora la entrega y evita caer en spam.",
+        "Severificar el email de la cuenta antes de habilitar el primer envío."
+      ]
+    },
+    {
+      "titulo": "La base de suscriptores y su segmentación",
+      "emoji": "👥",
+      "parrafos": [
+        "Una base de suscriptores no es solo una lista de correos: es gente con intereses y comportamientos distintos. Segmentarla hace que cada mensaje llegue al público correcto y mejore las métricas."
+      ],
+      "puntos": [
+        "Importar contactos con nombre, correo, ciudad y fecha de alta.",
+        "Listas segmentadas: clientes, interesados, mayoristas, zona de cobertura.",
+        "Etiquetar contactos según cómo llegaron: formulario, evento, compra.",
+        "El doble opt-in (confirmación por correo) mantiene una base limpia.",
+        "Depurar bajas y correos rebotados mantiene la salud de la base."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Configurá tu cuenta y tu base de prueba",
+      "consigna": "Creá tu cuenta de prueba en Mailchimp o Doppler, configurá la marca de tu negocio y armá una base de suscriptores segmentada con 20 contactos de ejemplo.",
+      "pasos": [
+        "Elegí la herramienta (Mailchimp o Doppler) y registrate con tu correo.",
+        "Verificá el email de la cuenta y completá los datos de la marca y el remitente.",
+        "Creá dos listas: por ejemplo, Clientes y Interesados.",
+        "Subí 20 contactos de ejemplo divididos por lista con nombre, correo y ciudad.",
+        "Escogé un segmento (ej: los de tu ciudad) y guardalo como audiencia.",
+        "Capturá la pantalla de tu base con las listas y el segmento creado."
+      ],
+      "entrega": "Entregá la captura de tu cuenta configurada con las dos listas, los contactos y el segmento de audiencia.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Por qué el email marketing mantiene buen retorno?",
+            "opciones": ["Porque depende del algoritmo de las redes", "Porque hablás directo con gente que se suscribió", "Porque no puede medirse", "Porque llega a cualquier correo sin permiso"],
+            "correcta": "Porque hablás directo con gente que se suscribió"
+          },
+          {
+            "pregunta": "¿Cuál es una campaña de automatización típica?",
+            "opciones": ["El saludo de bienvenida que se dispara al suscribirse", "Un email enviado a mano todos los días", "El informe de ventas del negocio", "Una búsqueda en Google"],
+            "correcta": "El saludo de bienvenida que se dispara al suscribirse"
+          },
+          {
+            "pregunta": "¿Qué herramientas son opciones válidas para email marketing?",
+            "opciones": ["Mailchimp y Doppler", "Google Ads y Meta Ads", "Canva y CapCut", "Drive y Docs"],
+            "correcta": "Mailchimp y Doppler"
+          },
+          {
+            "pregunta": "¿Para qué sirve segmentar la base de suscriptores?",
+            "opciones": ["Para mandar el mismo email a todos igual", "Para que cada mensaje llegue al público correcto", "Para aumentar el spam", "Para borrar contactos útiles"],
+            "correcta": "Para que cada mensaje llegue al público correcto"
+          },
+          {
+            "pregunta": "¿Qué es el doble opt-in?",
+            "opciones": ["Confirmar la suscripción con un clic en un correo de verificación", "Enviar dos emails seguidos", "Comprar dos listas de contactos", "Borrar la base cada mes"],
+            "correcta": "Confirmar la suscripción con un clic en un correo de verificación"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la cuenta configurada y la base con listas segmentadas y un segmento de audiencia creado.",
+  "lectura": "El email marketing conecta directo con gente que quiso recibirte, sin depender de algoritmos. Elegir la herramienta, configurar la marca y construir una base segmentada y limpia son los cimientos de cualquier campaña de correo que mida bien y convierta mejor.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar cuántos abren y cuántos borran los emails que reciben, y por qué", "min": "10 min" },
+      { "titulo": "Por qué el email funciona", "que": "Explicar permiso, propiedad de la base y comparar con la volatilidad de las redes", "min": "15 min" },
+      { "titulo": "Tipos de campañas", "que": "Recorrer boletín, promocional, bienvenida y automatización con ejemplos reales", "min": "20 min" },
+      { "titulo": "Herramientas", "que": "Comparar Mailchimp y Doppler en vivo: planes, editor y configuración", "min": "15 min" },
+      { "titulo": "Base y segmentación", "que": "Crear listas, cargar contactos y definir un segmento juntos en el proyector", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y preparar la base para crear campañas en la próxima clase", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo se enteran de promociones de sus marcas favoritas: seguro el correo está en la mezcla.",
+      "Retomar la base de Google Mi Negocio y del sitio: cada formulario suma suscriptores."
+    ],
+    "aclarar": [
+      "Comprar bases de correos es ilegal y arruina la entregabilidad: siempre opt-in.",
+      "El plan gratis de las herramientas limita el tamaño de la lista y el branding.",
+      "Una base llena de correos rebotados LASTRA la entrega de los mensajes buenos.",
+      "Mailchimp y Doppler difieren en costos y límites: la mejor es la que vas a mantener."
+    ],
+    "ejemplos": [
+      "Mostrar el email de bienvenida de una marca conocida y analizar su estructura.",
+      "Comparar una lista segmentada contra una única lista gigante y su efecto en las métricas.",
+      "Configurar la marca en el proyector mientras los alumnos replican en sus equipos."
+    ]
+  }
+}

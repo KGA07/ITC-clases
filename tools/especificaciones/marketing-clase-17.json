@@ -1,0 +1,153 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 17,
+    "titulo": "Concordancia de palabras clave y recursos",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a controlar con precisión cuándo aparece tu anuncio eligiendo el tipo de concordancia correcto y a potenciarlo con recursos de llamada, promoción y vínculos de sitio.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 5 - Automatización y Email Marketing\\Clase 17 - Concordancia de Palabras Clave",
+  "objetivos": [
+    "Diferenciar los tipos de concordancia: amplia, frase y exacta.",
+    "Elegir la concordancia adecuada según el control que querés tener.",
+    "Agregar recursos de anuncio como llamada, promoción y vínculos de sitio.",
+    "Combinar concordancias y recursos para mejorar el rendimiento de la campaña."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es la concordancia de palabras clave",
+      "emoji": "🎛️",
+      "parrafos": [
+        "La concordancia decide qué tan parecida tiene que ser la búsqueda de la persona para que aparezca tu anuncio. Es tu control de precisión: más amplio, más alcance; más exacto, más control del gasto."
+      ],
+      "puntos": [
+        "Es el primer filtro que decide si participás en la subasta.",
+        "Cada palabra se escribe con un símbolo según su tipo.",
+        "Del control depende cuánto desperdiciás en búsquedas que no te sirven.",
+        "Se combina con las palabras negativas para afinar el resultado."
+      ]
+    },
+    {
+      "titulo": "Concordancia amplia, frase y exacta",
+      "emoji": "🔎",
+      "parrafos": [
+        "Las tres concordancias van de lo más flexible a lo más estricto. La misma palabra puede disparar tu anuncio en miles de búsquedas o en casi una sola, según cómo la escribas."
+      ],
+      "puntos": [
+        "Amplia: sin símbolos. Ej: repuestos celular → también «repuestos iphone baratos».",
+        "Frase: entre comillas «...». Ej: «repuestos celular» → frases que contienen esos términos en orden.",
+        "Exacta: entre corchetes [...]. Ej: [repuestos celular] → solo búsquedas con muy alta similitud.",
+        "La amplia con intención (el sistema inteligente) sale por defecto y conviene vigilarla.",
+        "Recomendado: empezar con frase y exacta para controlar el gasto, sumando negativas."
+      ]
+    },
+    {
+      "titulo": "Recursos adicionales de anuncio",
+      "emoji": "➕",
+      "parrafos": [
+        "Los recursos (extensiones) agrandan tu anuncio: agregan datos, atajos y promesas que no entran en el título. Hacen que tu anuncio ocupe más lugar y que la gente encuentre su atajo sin buscar más."
+      ],
+      "puntos": [
+        "Vínculos de sitio (sitelinks): enlaces directos a Inicio, Servicios, Promos.",
+        "Recurso de llamada: un número que se marca directo desde el anuncio, ideal para celular.",
+        "Recurso de promoción: descuentos y fechas, con etiqueta de precio u oferta.",
+        "Ubicación y reseñas: muestran dirección y calificaciones del perfil local.",
+        "Los recursos se muestran según el espacio: agregá varios para que Google elija el mejor."
+      ]
+    },
+    {
+      "titulo": "Combinar concordancias y recursos",
+      "emoji": "⚙️",
+      "parrafos": [
+        "El SEM profesional no usa una sola concordancia: mezcla tipos y suma recursos para cubrir distintas intenciones. El objetivo es ampliar alcance donde conviene y controlar gasto donde no."
+      ],
+      "puntos": [
+        "Mismo grupo con palabras en frase y exacta para distintos niveles de intención.",
+        "Una palabra exacta bien elegida puede costar menos y convertir mejor.",
+        "Los recursos transforman un anuncio «chico» en una ficha informativa completa.",
+        "Revisá el informe de recursos para saber cuáles se muestran y cuáles no.",
+        "Optimizá en ciclos: datos → ajuste de concordancias → prueba de nuevos recursos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Afina tus palabras y potenciá tus anuncios",
+      "consigna": "Sobre la campaña de la clase 15, reescribí las palabras clave con el tipo de concordancia correcto y creá los recursos de anuncio para tu negocio de prueba.",
+      "pasos": [
+        "Tomá las 10 palabras de tu investigación de la clase 16.",
+        "Elegí 4 en concordancia de frase y escribilas con sus comillas.",
+        "Elegí 2 con intención de compra y escribilas en exacta con corchetes.",
+        "Definí qué palabras negativas sumarías para proteger esas concordancias.",
+        "Creá los recursos: 4 vínculos de sitio, 1 recurso de llamada y 1 de promoción.",
+        "Justificá en el documento por qué elegiste cada concordancia y recurso."
+      ],
+      "entrega": "Entregá el documento con las palabras clasificadas por concordancia y los recursos redactados, listos para cargar.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de concordancia da el MAYOR control sobre cuándo aparece el anuncio?",
+            "opciones": ["Amplia", "Frase", "Exacta", "Literal"],
+            "correcta": "Exacta"
+          },
+          {
+            "pregunta": "¿Cómo se escribe una palabra clave en concordancia EXACTA?",
+            "opciones": ["Entre corchetes [palabra]", "Entre comillas «palabra»", "Con un guión antes", "Sin ningún símbolo"],
+            "correcta": "Entre corchetes [palabra]"
+          },
+          {
+            "pregunta": "¿Qué concordancia muestra con comillas «repuestos celular»?",
+            "opciones": ["Exacta", "Frase", "Amplia", "Negativa"],
+            "correcta": "Frase"
+          },
+          {
+            "pregunta": "¿Para qué sirve el recurso de VÍNCULOS de sitio?",
+            "opciones": ["Para mostrar enlaces directos del sitio dentro del anuncio", "Para hacer zoom al mapa", "Para cambiar el color del anuncio", "Para sumar palabras negativas"],
+            "correcta": "Para mostrar enlaces directos del sitio dentro del anuncio"
+          },
+          {
+            "pregunta": "¿Cuál es una buena práctica al empezar una campaña?",
+            "opciones": ["Usar todo en concordancia amplia", "Usar frase y exacta con palabras negativas", "Evitar todos los recursos", "No revisar los informes"],
+            "correcta": "Usar frase y exacta con palabras negativas"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la clasificación de concordancias, las negativas propuestas y los recursos redactados.",
+  "lectura": "La concordancia controla el alcance de tu anuncio y los recursos lo agrandan y lo hacen más útil. Empezar con frase y exacta, cuidar las negativas y sumar vínculos de sitio, llamada y promociones logra anuncios precisos y con mejor rendimiento.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar volumen y competencia y preguntar qué pasaría si todo disparara el anuncio", "min": "10 min" },
+      { "titulo": "Qué es la concordancia", "que": "Explicar el control de disparo con ejemplos de búsquedas reales", "min": "15 min" },
+      { "titulo": "Amplia, frase y exacta", "que": "Mostrar en vivo cómo cambia la búsqueda según el símbolo y probar con datos", "min": "25 min" },
+      { "titulo": "Recursos del anuncio", "que": "Recorrer vínculos de sitio, llamada y promoción con un anuncio ampliado real", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Guiar la reclasificación de palabras y la redacción de recursos de cada alumno", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y dejar la agenda de carga de la clase de práctica", "min": "5 min" }
+    ],
+    "conecta": [
+      "Retomar exactamente las palabras de la investigación de la clase 16: hoy les damos precisión.",
+      "Mostrar un anuncio real con vínculos de sitio desplegados para que vean lo que estamos armando."
+    ],
+    "aclarar": [
+      "La concordancia amplia hoy es inteligente: puede disparar por sinónimos aunque no lo esperes, por eso hay que vigilarla.",
+      "Escribir la palabra con corchetes o comillas dentro del sistema NO cambia el texto visible: son símbolos de configuración.",
+      "Los recursos no se muestran siempre: Google decide por espacio y relevancia.",
+      "Más concordancias no significa más control; a veces menos, bien elegidas, rinde más."
+    ],
+    "ejemplos": [
+      "Comparar una misma palabra en las tres concordancias y listar qué búsquedas dispararía cada una.",
+      "Mostrar un anuncio ampliado con promoción y llamada en el celular y otro sin recursos.",
+      "Simular el informe de recursos y decidir en grupo cuál eliminar por bajo rendimiento."
+    ]
+  }
+}

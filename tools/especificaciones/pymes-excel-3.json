@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 3,
+    "titulo": "Tablas Dinámicas",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a convertir listas enormes de movimientos en resúmenes de un clic: totales por cliente, por producto o por mes, con la clave de la Tabla Dinámica.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 3 Tabla Dinámicas",
+  "objetivos": [
+    "Insertar una Tabla Dinámica desde un rango o desde una Tabla.",
+    "Armar el resumen arrastrando campos a Filtros, Columnas, Filas y Valores.",
+    "Configurar un campo de valor: resumir como SUMA o PROMEDIO y mostrar como porcentaje.",
+    "Aplicar formato de número, estilos y diseño, y filtrar con segmentación y escala de tiempo."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es una Tabla Dinámica y cómo insertarla",
+      "emoji": "🔁",
+      "parrafos": [
+        "Una Tabla Dinámica (TD) resume grandes volúmenes de datos en segundos: en vez de sumar fila por fila, vos decidís qué mirar (por cliente, por mes, por producto) y Excel arma el cuadro al instante. La magia está en la lista de campos."
+      ],
+      "puntos": [
+        "Insertar: seleccionar el rango o la Tabla → Insertar → Tabla dinámica, y elegir Nueva hoja de cálculo.",
+        "La fuente debe ser una lista limpia: encabezados en la primera fila, sin filas vacías ni totales dentro.",
+        "En el panel derecho aparecen los campos de origen y cuatro zonas: Filtros, Columnas, Filas y Valores.",
+        "Actualizar: clic derecho sobre la tabla dinámica → Actualizar, o Datos → Actualizar todo, cuando cambiás los datos de origen."
+      ]
+    },
+    {
+      "titulo": "Armar el resumen con los campos",
+      "emoji": "🧱",
+      "parrafos": [
+        "Cada zona define cómo se ve el resumen: lo que va a Filas se lista hacia abajo, lo que va a Columnas se reparte en columnas, lo que va a Valores se calcula y lo que va a Filtros actúa como selector global."
+      ],
+      "puntos": [
+        "Filas: por ejemplo «Cliente» para ver un renglón por cliente.",
+        "Valores: por ejemplo «Importe» resumido como SUMA para totalizar facturado por cliente.",
+        "Columnas: por ejemplo «Mes» para ver cada mes en una columna distinta.",
+        "Filtros: por ejemplo «Vendedor» para elegir con la flechita de qué vendedor querés ver el resumen.",
+        "Configuración de campo: clic derecho sobre un valor → Configuración de campo de valor para cambiar SUMA por PROMEDIO, CONTAR o MIN/MAX."
+      ]
+    },
+    {
+      "titulo": "Resumir, mostrar valores como y formato",
+      "emoji": "📐",
+      "parrafos": [
+        "Las Tablas Dinámicas no solo suman: podés mostrar el mismo dato como porcentaje del total, como diferencia con la fila anterior o como porcentaje de columna. Eso convierte el resumen en análisis."
+      ],
+      "puntos": [
+        "Mostrar valores como: clic derecho sobre el valor → Mostrar valores como → % del total general, % del total de filas, Diferencia de la fila anterior...",
+        "Formato de número: seleccionar los valores → clic derecho → Formato de número, y elegir Moneda, por ejemplo $ #.##0,00.",
+        "Ventaja: la lista de campos combina todo, por ejemplo dos medias en esperas en Valores: total facturado y cantidad de facturas (CONTAR).",
+        "El botón Insertar segmentación en Ficha analizar permite filtrar la TD con botones visuales."
+      ]
+    },
+    {
+      "titulo": "Estilos, diseño, segmentación y escala de tiempo",
+      "emoji": "🎨",
+      "parrafos": [
+        "La Tabla Dinámica tiene estilos propios y opciones de diseño para mostrar totales y subtotales donde querés. Además, con las segmentaciones y la escala de tiempo se filtra sin tocar la lista de campos."
+      ],
+      "puntos": [
+        "Ficha contextual Analizar (o Tabla dinámica): segmentación, escala de tiempo, campos activos, opciones.",
+        "Ficha Diseño: subtotales (en la parte superior o inferior, o ninguno), Total general, y diseño de informe condensado/tabular.",
+        "Estilos de tabla dinámica: galería en Diseño con franjas y colores para leer rápido el resumen.",
+        "Escala de tiempo: botón en Analizar → Insertar escala de tiempo; elegí el campo de fecha y filtrás por año, trimestre o mes arrastrando la barra.",
+        "Diferencia clave: los datos de origen NO cambian; la TD es una vista que se regenera y se puede actualizar cuando cambian los datos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Resumen de ventas por cliente y por mes",
+      "consigna": "Partiendo de la tabla de ventas de la clase 2, construí una Tabla Dinámica que resuma el total facturado por cliente y por mes, con formato moneda y segmentación.",
+      "pasos": [
+        "Reutilizá la tabla «Ventas» del ejercicio anterior o cargá 15 filas con Fecha, Cliente, Producto e Importe.",
+        "Seleccioná el rango y andá a Insertar → Tabla dinámica → en Nueva hoja.",
+        "Arrastrá «Cliente» a Filas, «Mes» (o Fecha) a Columnas y «Importe» a Valores (resumido como SUMA).",
+        "Aplicá formato de número Moneda $ a los valores de la TD.",
+        "Cambiá un campo a «Mostrar valores como» → % del total general y observá cómo cambia la lectura.",
+        "Insertá una Segmentación de datos por «Producto» y una Escala de tiempo por «Fecha»; probá filtrar con ambas."
+      ],
+      "entrega": "Guardá como «VentasResumen_clase3.xlsx» con la TD armada, formato moneda y la segmentación activa.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Dónde arrastrás un campo para que se calcule (sumar, contar, promedio)?",
+            "opciones": ["Filtros", "Filas", "Valores", "Columnas"],
+            "correcta": "Valores"
+          },
+          {
+            "pregunta": "¿Qué función es la predeterminada al arrastrar un importe a Valores?",
+            "opciones": ["CONTAR", "SUMA", "PROMEDIO", "MAX"],
+            "correcta": "SUMA"
+          },
+          {
+            "pregunta": "¿Dónde se cambia SUMA por PROMEDIO?",
+            "opciones": ["Configuración de campo de valor", "Insertar gráfico", "Formato condicional", "Dividir celdas"],
+            "correcta": "Configuración de campo de valor"
+          },
+          {
+            "pregunta": "Si cambiás datos en la hoja de origen, ¿qué hay qué hacer?",
+            "opciones": ["Borrar la TD y crear otra", "Actualizar la Tabla Dinámica", "Reiniciar la PC", "Guardar el archivo dos veces"],
+            "correcta": "Actualizar la Tabla Dinámica"
+          },
+          {
+            "pregunta": "¿Qué permite la Escala de tiempo?",
+            "opciones": ["Sumar por vendedor", "Filtrar por período de fechas (mes, trimestre, año)", "Cambiar el color de los datos", "Crear una macro"],
+            "correcta": "Filtrar por período de fechas (mes, trimestre, año)"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la Tabla Dinámica con totales por cliente y mes, formato moneda y filtros activos.",
+  "lectura": "La Tabla Dinámica resume grandes listas de movimientos sin escribir una sola fórmula: elegís Filas, Columnas y Valores y Excel arma el cuadro de totales al instante. Con configurar el campo, mostrar valores como porcentaje y filtrar con segmentación y escala de tiempo, un mismo dato se puede mirar de diez formas distintas para decidir mejor.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar tablas y fila de totales; preguntar qué resúmenes necesitan", "min": "10 min" },
+      { "titulo": "Insertar TD", "que": "Crear una Tabla Dinámica desde la tabla de ventas y recorrer el panel de campos", "min": "20 min" },
+      { "titulo": "Armar el resumen", "que": "Arrastrar campos a Filas, Columnas, Valores y Filtros mirando el resultado", "min": "20 min" },
+      { "titulo": "Configuración y formato", "que": "Resumir como PROMEDIO/CONTAR, mostrar como % y formato moneda", "min": "15 min" },
+      { "titulo": "Estilos, segmentación, escala", "que": "Aplicar estilos, insertar segmentación y escala de tiempo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué preguntas se hacen sobre sus ventas (¿quién compra más? ¿qué mes vende más?) y mostrar cómo la TD las responde.",
+      "Mostrar un dashboard de ventas con TD ya armado como objetivo de las próximas clases."
+    ],
+    "aclarar": [
+      "La TD es una vista, no una copia: los datos de origen no cambian y hay que Actualizar después de editar.",
+      "Sin encabezados, sin filas vacías ni totales dentro de la fuente, la TD falla o arma columnas raras.",
+      "La SUMA predeterminada puede querer decir PROMEDIO o CONTAR: siempre revisar la configuración de campo.",
+      "Los filtros de la TD (flechita de cada campo) son distintos de las segmentaciones, aunque cumplen función parecida."
+    ],
+    "ejemplos": [
+      "Mostrar la misma lista de ventas como total por cliente, luego por producto y luego por mes.",
+      "Convertir la columna Importe en % del total general y mostrar el 80/20 de los clientes.",
+      "Filtrar con segmentación por producto mientras la escala de tiempo fija un trimestre."
+    ]
+  }
+}

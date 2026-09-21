@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 3,
+    "titulo": "Formularios",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a crear formularios profesionales para que los usuarios carguen y consulten datos sin tocar las tablas directamente.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 3 Formularios",
+  "objetivos": [
+    "Crear formularios automáticamente y personalizar su diseño.",
+    "Distinguir entre la vista Presentación y la vista Diseño de un formulario.",
+    "Insertar controles y campos en un formulario para una experiencia de carga de datos amigable.",
+    "Usar formularios para ingresar, editar y consultar registros de las tablas."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué son los formularios?",
+      "emoji": "📝",
+      "parrafos": [
+        "Un formulario es una pantalla de entrada de datos que facilita la carga y consulta de registros sin necesidad de abrir la tabla directamente. En Access, los formularios se vinculan a una tabla o consulta como origen de datos.",
+        "En una PyME, un formulario de clientes permite al personal cargar nuevos clientes sin equivocarse en los campos, ya que cada campo tiene validaciones y formato predeterminado."
+      ],
+      "puntos": [
+        "Seguridad: evita que el usuario modifique la estructura de la tabla accidentalmente.",
+        "Usabilidad: campos con formato, listas desplegables y validaciones que guían la carga.",
+        "Personalización: se puede agregar logo, colores, botones de navegación y controles calculados.",
+        "Origen de datos: cada campo del formulario proviene de un campo de la tabla o consulta vinculada."
+      ]
+    },
+    {
+      "titulo": "Creación de formularios",
+      "emoji": "🆕",
+      "parrafos": [
+        "Access ofrece varias formas de crear formularios: el asistente automático, el formulario en blanco y la herramienta de diseño. El método más rápido es seleccionar la tabla en el Panel de navegación y hacer clic en Formulario en la pestaña Crear."
+      ],
+      "puntos": [
+        "Formulario automático: seleccionar la tabla → pestaña Crear → Formulario. Access genera un formulario con todos los campos.",
+        "Asistente de formularios: pestaña Crear → Asistente de formularios. Elegís los campos, el diseño y el estilo.",
+        "Formulario en blanco: pestaña Crear → Formulario en blanco. Se agregan campos manualmente desde la lista de campos.",
+        "Cada formulario creado aparece en el Panel de navegación con un ícono de formulario."
+      ]
+    },
+    {
+      "titulo": "Vista Presentación y vista Diseño",
+      "emoji": "🎨",
+      "parrafos": [
+        "Los formularios en Access se trabajan en dos vistas principales. La vista Presentación (o Formulario) muestra el formulario como lo vería el usuario final, permitiendo navegar entre registros. La vista Diseño permite modificar la apariencia, agregar controles y ajustar el diseño."
+      ],
+      "puntos": [
+        "Vista Presentación: muestra un registro a la vez, con botones de navegación inferior para moverse entre registros.",
+        "Vista Diseño: se arrastran campos desde el panel de lista de campos, se ajustan tamaños, colores y fuentes.",
+        "Sección Detalle: el cuerpo principal del formulario donde aparecen los campos.",
+        "Encabezado y Pie: secciones opcionales para títulos, logos, totales o botones."
+      ]
+    },
+    {
+      "titulo": "Inserción de datos desde formularios",
+      "emoji": "💾",
+      "parrafos": [
+        "Una vez creado el formulario, se usa para cargar y editar registros. La navegación entre registros se realiza con las flechas inferiores del formulario o con los botones de registro."
+      ],
+      "puntos": [
+        "Para agregar un nuevo registro: clic en el botón «Registro nuevo» (flecha con estrella) en la parte inferior.",
+        "Para guardar: el registro se guarda automáticamente al pasar al siguiente o presionar Ctrl + S.",
+        "Para buscar un registro: Ctrl + F o usar la barra de búsqueda del formulario.",
+        "Para eliminar un registro: Ctrl + - (menos) o el botón de eliminar en la cinta de opciones."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Creá un formulario de carga de clientes",
+      "consigna": "Creá un formulario profesional para la tabla Clientes de la base de datos de repuestos, personalizando el diseño para que sea cómodo de usar.",
+      "pasos": [
+        "Abrí la base de datos «Repuestos_Automotores.accdb».",
+        "En el Panel de navegación, seleccioná la tabla Clientes.",
+        "En la pestaña Crear, hacé clic en Formulario para que Access genere uno automáticamente.",
+        "Cambiá a la vista Diseño: clic derecho sobre la pestaña del formulario → Vista Diseño.",
+        "Ajustá el tamaño de los campos, agregá un título en el encabezado (ej: «Altas de Clientes») y cambiá los colores de fondo.",
+        "Volvé a la vista Presentación y cargá al menos dos registros nuevos usando el formulario.",
+        "Guardá el formulario con un nombre descriptivo (ej: «FormClientes»)."
+      ],
+      "entrega": "Guardá el archivo .accdb con el formulario creado y al menos dos registros cargados. Compartí una captura del formulario en vista Presentación.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué vista del formulario se usa para modificar su diseño y agregar controles?",
+            "opciones": ["Vista Presentación", "Vista Diseño", "Vista Hoja de datos", "Vista previa"],
+            "correcta": "Vista Diseño"
+          },
+          {
+            "pregunta": "¿Qué botón se usa para agregar un registro nuevo en un formulario?",
+            "opciones": ["Ctrl + Z", "Registro nuevo (flecha con estrella)", "Supr", "Ctrl + S"],
+            "correcta": "Registro nuevo (flecha con estrella)"
+          },
+          {
+            "pregunta": "¿De dónde provienen los campos que se muestran en un formulario de Access?",
+            "opciones": ["De un archivo Excel", "De una tabla o consulta vinculada como origen de datos", "De un archivo de texto", "De internet"],
+            "correcta": "De una tabla o consulta vinculada como origen de datos"
+          },
+          {
+            "pregunta": "¿Cómo se guarda un registro en un formulario?",
+            "opciones": ["Con el botón Guardar siempre", "Se guarda automáticamente al pasar al siguiente registro", "Con Ctrl + C", "No se puede guardar desde un formulario"],
+            "correcta": "Se guarda automáticamente al pasar al siguiente registro"
+          },
+          {
+            "pregunta": "¿Cuál es la ventaja principal de usar formularios en vez de cargar datos directamente en la tabla?",
+            "opciones": ["Son más rápidos", "Permiten validaciones, formato y evitan errores del usuario", "Ocupan menos espacio", "No necesitan una tabla vinculada"],
+            "correcta": "Permiten validaciones, formato y evitan errores del usuario"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con el formulario personalizado y los registros cargados correctamente.",
+  "lectura": "Los formularios son la interfaz amigable entre el usuario y la base de datos. Se crean vinculados a una tabla, se personalizan en vista Diseño y se usan para cargar, editar y consultar registros de forma segura.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar tablas y relaciones. Preguntar: ¿cargarían datos directamente en la tabla o preferirían una pantalla más amigable?", "min": "10 min" },
+      { "titulo": "¿Qué son los formularios?", "que": "Explicar el concepto con el ejemplo de una pantalla de carga de clientes. Mostrar las diferencias con la tabla directa.", "min": "15 min" },
+      { "titulo": "Creación y personalización", "que": "Crear un formulario en vivo con el asistente, cambiar a vista Diseño y personalizar encabezado, colores y tamaños.", "min": "25 min" },
+      { "titulo": "Uso del formulario", "que": "Mostrar cómo cargar registros, navegar entre ellos y buscar con Ctrl + F.", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Los alumnos crean y personalizan su propio formulario. El docente circula revisando y ayudando.", "min": "20 min" },
+      { "titulo": "Cierre y repaso", "que": "Repasar con las preguntas del interactivo. Mostrar los formularios creados por los alumnos.", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez tuvieron que cargar datos en una tabla y se confundieron de columna? Los formularios evitan ese problema.",
+      "Mostrar un formulario bien diseñado de otra empresa (ej: sistema de pedidos) para inspirar a los alumnos."
+    ],
+    "aclarar": [
+      "Un formulario NO crea una tabla nueva: se vincula a una tabla existente como origen de datos.",
+      "Los registros se guardan automáticamente al cambiar de registro; no hay botón de guardar obligatorio.",
+      "Si se borra un registro desde el formulario, se borra también de la tabla. No hay papelera de reciclaje en Access.",
+      "Los formularios pueden anidarse (formulario con subformulario) pero eso se verá en una clase más avanzada."
+    ],
+    "ejemplos": [
+      "Crear el formulario de Clientes en vivo desde el inicio, mostrando cada paso de la personalización.",
+      "Cargar tres registros de ejemplo en vivo usando el formulario para que los alumnos vean la experiencia de uso."
+    ]
+  }
+}

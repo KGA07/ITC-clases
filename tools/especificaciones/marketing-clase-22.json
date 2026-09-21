@@ -1,0 +1,154 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 22,
+    "titulo": "GA4 y medición de resultados",
+    "modulo": "Módulo 7 – Análisis de Resultados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a cerrar el curso midiendo de verdad: conocer Google Analytics 4, leer métricas claves e informes, crear eventos personalizados y armar el informe de KPIs que presentaría un profesional de marketing.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 7 - Análisis de Resultados\\Clase 22 - GA4 y Métricas",
+  "objetivos": [
+    "Identificar qué es GA4 y qué mide cada informe principal.",
+    "Leer métricas claves: usuarios, sesiones, engagement y conversiones.",
+    "Crear y configurar eventos personalizados en GA4.",
+    "Armar y presentar un informe de KPIs de redes y campañas pagas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es Google Analytics 4",
+      "emoji": "🧮",
+      "parrafos": [
+        "GA4 es la versión actual de Google Analytics: mide qué pasa en tu sitio y en tu app con foco en eventos y en el comportamiento real de los usuarios. Reemplazó a Universal Analytics y se aprende con una lógica distinta."
+      ],
+      "puntos": [
+        "Se basa en eventos: toda acción (clic, scroll, compra) es un evento.",
+        "Mide usuarios únicos reales, no solo navegadores como antes.",
+        "Sigue a las personas entre dispositivos con Google Signals.",
+        "La propiedad se crea en analytics.google.com y se conecta con un código.",
+        "Tiene forma de vista de demostración para practicar sin tocar datos reales."
+      ]
+    },
+    {
+      "titulo": "Métricas claves e informes",
+      "emoji": "📊",
+      "parrafos": [
+        "GA4 organiza la información en informes de adquisición, participación y monetización. Para marketing lo esencial es aprender a leer usuarios, sesiones y el compromiso real con el contenido."
+      ],
+      "puntos": [
+        "Usuarios: personas que visitaron tu sitio en el período.",
+        "Sesiones: visitas registradas, puede haber varias por usuario.",
+        "Tasa de participación promedio: compromiso real con la página.",
+        "Vistas a páginas: ayuda a saber qué contenido atrae más.",
+        "En un primer momento: usuarios nuevos, de qué canal vienen y qué hacen."
+      ]
+    },
+    {
+      "titulo": "Eventos personalizados",
+      "emoji": "🎯",
+      "parrafos": [
+        "Los eventos estándar no alcanzan para medir tu negocio específico. GA4 permite crear eventos a medida: clic en WhatsApp, envío de formulario, botón de compra, descarga de un pdf."
+      ],
+      "puntos": [
+        "Evento: una acción puntual (clic, envío) registrada con un nombre propio.",
+        "Se crean desde la sección Administración con reglas de disparo.",
+        "Parámetros: los datos extra del evento (valor, página, campaña).",
+        "Los eventos clave se marcan como Conversiones para priorizarlos.",
+        "Ejemplo: trackear click_en_whatsapp para ver cuántos contactos pide tu sitio."
+      ]
+    },
+    {
+      "titulo": "KPIs de redes y campañas: cómo medir y presentar",
+      "emoji": "📈",
+      "parrafos": [
+        "El marketing digital se cierra cuando presentás resultados. Cada canal tiene sus KPIs y cada campaña exige un informe que no solo muestre números, sino que cuente la historia del negocio."
+      ],
+      "puntos": [
+        "Redes: alcance, seguidores, interacciones, tasa de interacción por publicación.",
+        "Google Ads: clics, CTR, CPC, costo por conversión.",
+        "Meta Ads: frecuencia, CTR, costo por resultado, retorno de inversión.",
+        "Informe con comparativa: contra la semana anterior y contra el objetivo.",
+        "Presentación: KPI, dato, análisis breve y próxima acción recomendada."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Armá el informe de KPIs del curso",
+      "consigna": "Usando los datos de ejemplo que te da el docente y la vista de demostración de GA4, armá un informe profesional de resultados con KPIs de redes y campañas para tu negocio de prueba.",
+      "pasos": [
+        "Entrá a la vista de demostración de GA4 y explorá los informes de adquisición y participación.",
+        "Anotá 3 métricas de GA4: usuarios, sesiones y tasa de participación promedio.",
+        "Sumales los KPIs de redes: alcance, interacciones y tasa de interacción.",
+        "Agregá los KPIs de campañas: CTR, CPC y costo por conversión.",
+        "Armá la tabla comparativa: resultado, objetivo y variación.",
+        "Escribí un análisis de 2 frases por KPI y una recomendación de mejora para el próximo mes."
+      ],
+      "entrega": "Entregá el informe en un documento con la tabla de KPIs, el análisis y las recomendaciones.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿En qué se basa GA4 para medir el comportamiento?",
+            "opciones": ["En eventos", "Solo en impresiones", "En visitas manuales", "En correos abiertos"],
+            "correcta": "En eventos"
+          },
+          {
+            "pregunta": "¿Qué diferencia a una sesión de un usuario?",
+            "opciones": ["Son lo mismo", "Un usuario es una persona; una sesión es una visita", "La sesión dura más", "El usuario es más caro"],
+            "correcta": "Un usuario es una persona; una sesión es una visita"
+          },
+          {
+            "pregunta": "¿Para qué sirve marcar un evento como Conversión en GA4?",
+            "opciones": ["Para priorizarlo y medirlo como resultado clave", "Para ocultarlo del informe", "Para enviarlo por correo", "Para borrar su registro"],
+            "correcta": "Para priorizarlo y medirlo como resultado clave"
+          },
+          {
+            "pregunta": "¿Cuál es el KPI típico de una campaña de Google Ads?",
+            "opciones": ["Tasa de apertura", "CTR y costo por conversión", "Frecuencia cardíaca", "Seguidores nuevos"],
+            "correcta": "CTR y costo por conversión"
+          },
+          {
+            "pregunta": "¿Qué incluye un informe de resultados bien presentado?",
+            "opciones": ["Solo números sueltos", "KPI, dato, análisis y próxima acción", "Únicamente capturas de pantalla", "Solo el presupuesto gastado"],
+            "correcta": "KPI, dato, análisis y próxima acción"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el informe final con la tabla de KPIs, los análisis y las recomendaciones de mejora.",
+  "lectura": "GA4 mide el comportamiento real del sitio con eventos, usuarios y sesiones, y permite crear eventos personalizados como clic en WhatsApp o envío de formularios. Cerrar el trabajo con un informe que compare KPI, resultado y objetivo es lo que transforma datos en decisiones de marketing.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué midieron en el curso y qué métricas ya saben explicar con una frase", "min": "10 min" },
+      { "titulo": "Qué es GA4", "que": "Mostrar la vista de demostración y recorrer su estructura de informes en vivo", "min": "20 min" },
+      { "titulo": "Métricas e informes", "que": "Leer usuarios, sesiones y tasa de participación con el informe de adquisición", "min": "20 min" },
+      { "titulo": "Eventos personalizados", "que": "Crear un evento de ejemplo (click_en_whatsapp) y marcarlo como conversión", "min": "20 min" },
+      { "titulo": "KPIs y armado del informe", "que": "Cruzar KPIs de redes y campañas con un caso completo y armar la tabla", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Presentar un informe de un alumno y cerrar el curso con repaso general", "min": "5 min" }
+    ],
+    "conecta": [
+      "Cerrar el círculo del curso: todo lo que se pautó en Google y Meta hoy se pone en un único panel de resultados.",
+      "Mostrar el embudo completo: visita del sitio por pauta → evento registrado en GA4 → venta."
+    ],
+    "aclarar": [
+      "GA4 no reemplaza los datos de las plataformas: cada plataforma mide con su propio criterio.",
+      "Los eventos estándar no cubren tu negocio: hay que crear los propios.",
+      "Los informes recién muestran datos completos días después: hoy no se ve todo al momento.",
+      "La muestra de datos exige contexto: un KPI sin objetivo no cuenta una historia."
+    ],
+    "ejemplos": [
+      "Recorrer la vista de demostración y buscar de qué canal vienen los usuarios nuevos.",
+      "Crear el evento click_en_whatsapp en vivo y mostrar dónde se marca la conversión.",
+      "Presentar un informe de ejemplo con la estructura KPI-dato-análisis-acción."
+    ]
+  }
+}

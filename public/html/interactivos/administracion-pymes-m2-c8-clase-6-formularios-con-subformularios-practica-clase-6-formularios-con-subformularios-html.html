@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 6 - Formularios con subformularios</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0f766e;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0f766e;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Formularios con subformularios</h1>
+  <p class="sub">Práctica Vincular clientes con sus facturas · Administración de PyMEs</p>
+  <div class="consigna">Creá un formulario principal de Clientes que muestre en un subformulario todas las facturas de cada cliente. Agregá cálculos y verificá la sincronización.</div>
+  
+    <div class="q" data-ok="Los registros relacionados del cliente seleccionado">
+      <p class="qt">1. ¿Qué muestra el subformulario de un formulario de clientes?</p>
+      <label class="opt"><input type="radio" name="q0" value="Los datos de todos los clientes"><span>Los datos de todos los clientes</span></label>
+<label class="opt"><input type="radio" name="q0" value="Los registros relacionados del cliente seleccionado"><span>Los registros relacionados del cliente seleccionado</span></label>
+<label class="opt"><input type="radio" name="q0" value="Las tablas de la base de datos"><span>Las tablas de la base de datos</span></label>
+<label class="opt"><input type="radio" name="q0" value="Los informes guardados"><span>Los informes guardados</span></label>
+    </div>
+
+    <div class="q" data-ok="Usando el Asistente de formularios con las dos tablas">
+      <p class="qt">2. ¿Cómo se crea un formulario con subformulario de forma sencilla?</p>
+      <label class="opt"><input type="radio" name="q1" value="Creando una consulta"><span>Creando una consulta</span></label>
+<label class="opt"><input type="radio" name="q1" value="Usando el Asistente de formularios con las dos tablas"><span>Usando el Asistente de formularios con las dos tablas</span></label>
+<label class="opt"><input type="radio" name="q1" value="Usando la vista Hoja de datos"><span>Usando la vista Hoja de datos</span></label>
+<label class="opt"><input type="radio" name="q1" value="Renombrando tablas"><span>Renombrando tablas</span></label>
+    </div>
+
+    <div class="q" data-ok="Un campo común (clave primaria y clave foránea)">
+      <p class="qt">3. El formulario principal y el subformulario quedan conectados por…</p>
+      <label class="opt"><input type="radio" name="q2" value="Un campo común (clave primaria y clave foránea)"><span>Un campo común (clave primaria y clave foránea)</span></label>
+<label class="opt"><input type="radio" name="q2" value="El nombre del formulario"><span>El nombre del formulario</span></label>
+<label class="opt"><input type="radio" name="q2" value="El color de fondo"><span>El color de fondo</span></label>
+<label class="opt"><input type="radio" name="q2" value="La misma carpeta"><span>La misma carpeta</span></label>
+    </div>
+
+    <div class="q" data-ok="En el Pie del subformulario">
+      <p class="qt">4. ¿Dónde se coloca la suma de todos los montos de las facturas del cliente?</p>
+      <label class="opt"><input type="radio" name="q3" value="En el Detalle del formulario principal"><span>En el Detalle del formulario principal</span></label>
+<label class="opt"><input type="radio" name="q3" value="En el Pie del subformulario"><span>En el Pie del subformulario</span></label>
+<label class="opt"><input type="radio" name="q3" value="En el encabezado de la tabla Clientes"><span>En el encabezado de la tabla Clientes</span></label>
+<label class="opt"><input type="radio" name="q3" value="En el Panel de navegación"><span>En el Panel de navegación</span></label>
+    </div>
+
+    <div class="q" data-ok="Cliente → Facturas">
+      <p class="qt">5. ¿Qué vínculo se arma en una base relacional con subformularios?</p>
+      <label class="opt"><input type="radio" name="q4" value="Producto → Proveedor"><span>Producto → Proveedor</span></label>
+<label class="opt"><input type="radio" name="q4" value="Cliente → Facturas"><span>Cliente → Facturas</span></label>
+<label class="opt"><input type="radio" name="q4" value="Factura → Proveedor"><span>Factura → Proveedor</span></label>
+<label class="opt"><input type="radio" name="q4" value="Informe → Consulta"><span>Informe → Consulta</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

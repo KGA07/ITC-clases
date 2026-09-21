@@ -1,0 +1,150 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 6,
+    "titulo": "Funciones básicas y referencias",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a dominar las funciones de RESUMEN (SUMA, PROMEDIO, CONTAR) y a entender por qué las referencias relativas y absolutas son el secreto de una planilla que nunca se rompe.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 6 Funciones",
+  "objetivos": [
+    "Usar SUMA, MIN, MAX, PROMEDIO para resumir movimientos de la empresa.",
+    "Contar datos con CONTAR, CONTARA y CONTAR.BLANCO y distinguirlas.",
+    "Copiar fórmulas arrastrando y predecir cómo cambia la referencia relativa.",
+    "Fijar celdas con referencia absoluta (F4) para porcentajes y tasas que no cambian."
+  ],
+  "teoria": [
+    {
+      "titulo": "Funciones de resumen: SUMA, MIN, MAX y PROMEDIO",
+      "emoji": "∑",
+      "parrafos": [
+        "Estas funciones resumen rangos completos y son las más usadas en administración. Todas tienen la misma estructura: el nombre de la función y entre paréntesis el rango a procesar."
+      ],
+      "puntos": [
+        "=SUMA(A2:A10): totaliza los valores del rango. Podés sumar rangos separados por coma: =SUMA(A2:A10;C2:C10).",
+        "=PROMEDIO(A2:A10): el valor medio; útil para el ticket promedio o gasto promedio mensual.",
+        "=MAX(A2:A10) y =MIN(A2:A10): el mayor y el menor del rango; por ejemplo, la factura más alta y la más baja del mes.",
+        "Atajo: seleccionar un rango y tocar en Inicio → Autosuma (Σ) inserta la función más probable.",
+        "Si el rango tiene textos, Max/Promedio los ignoran; solo se usan los números."
+      ]
+    },
+    {
+      "titulo": "Contar datos: CONTAR, CONTARA y CONTAR.BLANCO",
+      "emoji": "🔢",
+      "parrafos": [
+        "Contar es una necesidad constante: cuántas facturas se emitieron, cuántos clientes no tienen teléfono cargado, cuántas filas tienen datos. Cada función cuenta algo diferente."
+      ],
+      "puntos": [
+        "=CONTAR(A2:A10): cuenta solo celdas con NÚMEROS (fechas también son números para Excel).",
+        "=CONTARA(A2:A10): cuenta celdas que NO están vacías, sea texto o número.",
+        "=CONTAR.BLANCO(A2:A10): cuenta las celdas VACÍAS del rango; ideal para detectar datos faltantes.",
+        "Combinación práctica: =CONTARA(A2:A10)-CONTAR(A2:A10) te dice cuántas celdas tienen texto, es decir, cuántos registros cargados sin número."
+      ]
+    },
+    {
+      "titulo": "Modos de referencia: relativas",
+      "emoji": "🔄",
+      "parrafos": [
+        "Cuando copiás una fórmula arrastrando el controlador, Excel ajusta las referencias según la posición. Si =B2*C2 está en D2, al copiarla a D3 se transforma automáticamente en =B3*C3. Eso es una referencia RELATIVA y es el motor del autorrelleno."
+      ],
+      "puntos": [
+        "La referencia relativa se adapta a la nueva fila o columna al copiar.",
+        "Permite que una sola fórmula genere el cálculo para cientos de filas.",
+        "Mirá la barra de fórmulas al seleccionar cada celda copiada: cada una muestra su propia versión ajustada."
+      ]
+    },
+    {
+      "titulo": "Referencias absolutas: el dólar $",
+      "emoji": "🔒",
+      "parrafos": [
+        "A veces NO querés que la referencia cambie al copiar: por ejemplo, un porcentaje de comisión que vive en una sola celda. Ahí nace la referencia ABSOLUTA, que se marca con el signo $ y se fija con la tecla F4."
+      ],
+      "puntos": [
+        "=B2*$E$1: copiada hacia abajo cambia B2 pero SIEMPRE usa E1 (la celda de la comisión).",
+        "F4 sobre una referencia la recorre: $E$1 (fija total), E$1 (fija solo fila), $E1 (fija solo columna) y vuelve a E1.",
+        "Usos administrativos: IVA en una celda, comisiones, inflación, precio dólar: valores que no deben moverse.",
+        "Error típico: copiar una fórmula relativa y que el porcentaje desaparezca; fijalo con F4 y el problema se termina."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Resumen de movimientos y comisiones",
+      "consigna": "Sobre una lista de movimientos de productos, aplicá las funciones de resumen y de conteo, y calculá comisiones usando una referencia absoluta para el porcentaje.",
+      "pasos": [
+        "Creá una hoja «Stock» con encabezados: Producto, Precio, Cantidad, Valor total (=Precio*Cantidad).",
+        "Cargá 10 productos con precios y cantidades, dejando 2 celdas de Cantidad vacías a propósito.",
+        "Debajo del cuadro armá los resúmenes: =SUMA(D2:D11) para valor total del stock, =PROMEDIO(B2:B11) para precio promedio, =MAX(C2:C11) y =MIN(C2:C11) para cantidades.",
+        "Agregá =CONTARA(C2:C11), =CONTAR(C2:C11) y =CONTAR.BLANCO(C2:C11) y compará qué cuenta cada una.",
+        "Poné en E1 el texto «Comisión» y en F1 el valor 5% (0,05), y en la columna E calculá =D2*$F$1 para la comisión del mes.",
+        "Copiá la fórmula de comisión hasta E11 y verificá que todas usen $F$1."
+      ],
+      "entrega": "Guardá como «ResumenStock_clase6.xlsx» con los resúmenes y las comisiones con referencia absoluta.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es el mayor valor de un rango?",
+            "opciones": ["=MAX(A2:A10)", "=SUMA(A2:A10)", "=CONTAR(A2:A10)", "=MIN(A2:A10)"],
+            "correcta": "=MAX(A2:A10)"
+          },
+          {
+            "pregunta": "¿Qué cuenta CONTAR.BLANCO(A2:A10)?",
+            "opciones": ["Las celdas con números", "Las celdas vacías del rango", "Las celdas con texto", "Las filas ocultas"],
+            "correcta": "Las celdas vacías del rango"
+          },
+          {
+            "pregunta": "¿Qué pasa con una referencia RELATIVA al copiar la fórmula?",
+            "opciones": ["Se ajusta a la nueva posición", "Se borra", "Queda fija siempre", "Falla con un error"],
+            "correcta": "Se ajusta a la nueva posición"
+          },
+          {
+            "pregunta": "¿Con qué tecla se fija una referencia como absoluta?",
+            "opciones": ["F4", "F5", "Supr", "Shift"],
+            "correcta": "F4"
+          },
+          {
+            "pregunta": "Diferencia entre CONTAR y CONTARA:",
+            "opciones": ["CONTAR cuenta números y CONTARA cuenta todo lo que no está vacío", "Son exactamente iguales", "CONTARA solo cuenta letras", "CONTAR cuenta vacías"],
+            "correcta": "CONTAR cuenta números y CONTARA cuenta todo lo que no está vacío"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará las funciones de resumen, los tres conteos y las comisiones con $F$1.",
+  "lectura": "SUMA, PROMEDIO, MÁX, MÍN y las funciones de conteo resumen en una celda lo que antes se sacaba a mano. La referencia relativa permite copiar una fórmula a cientos de filas, y la absoluta (con $ y F4) fija valores como porcentajes que no deben cambiar. Con estas dos herramientas, una planilla de stock o de movimientos se vuelve automática y confiable.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar fórmulas y cálculos de la clase 2; preguntar qué resúmenes arman a mano", "min": "10 min" },
+      { "titulo": "Funciones de resumen", "que": "Explicar y probar SUMA, PROMEDIO, MAX y MIN con datos en vivo", "min": "20 min" },
+      { "titulo": "Conteo de celdas", "que": "Comparar CONTAR, CONTARA y CONTAR.BLANCO sobre el mismo rango", "min": "20 min" },
+      { "titulo": "Referencias relativas", "que": "Copiar fórmulas con el controlador y ver cómo se ajustan", "min": "15 min" },
+      { "titulo": "Referencias absolutas", "que": "Fijar un porcentaje con F4 y explicar cuándo se necesita", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué promedios sacan hoy (ticket promedio, gasto promedio) y mostrarlo con PROMEDIO.",
+      "Mostrar un error real: copiar fórmula con porcentaje relativo y ver cómo el dato se corrompe fila a fila."
+    ],
+    "aclarar": [
+      "CONTAR cuenta números; CONTARA cuenta todo lo que no esté vacío; CONTAR.BLANCO cuenta los vacíos. Son tres preguntas distintas.",
+      "Las fechas son números para Excel: CONTAR las va a contar.",
+      "La referencia absoluta usa $, no se escribe a mano si usás F4 sobre la referencia.",
+      "MAX y MIN ignoran los textos del rango: no se rompen por una celda con palabras."
+    ],
+    "ejemplos": [
+      "Calcular ticket promedio con PROMEDIO sobre una lista de facturas.",
+      "Detectar clientes sin teléfono cargado con CONTAR.BLANCO.",
+      "Comisión del 5% en F1 y copiar =D2*$F$1 hasta el final sin que se rompa."
+    ]
+  }
+}

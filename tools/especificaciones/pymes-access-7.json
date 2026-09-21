@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 7,
+    "titulo": "Consultas de actualización y campos calculados",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a modificar cientos de registros de una sola vez con consultas de actualización y a calcular campos derivados y totales dentro de las consultas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 7 Consultas y calculos con consultas",
+  "objetivos": [
+    "Crear consultas de actualización y de eliminación con criterios y parámetros.",
+    "Crear campos calculados dentro de una consulta.",
+    "Usar la consulta de totales para agrupar y resumir datos.",
+    "Calcular el stock disponible, conociendo la existencia de macros como herramienta de automatización."
+  ],
+  "teoria": [
+    {
+      "titulo": "Consultas de actualización",
+      "emoji": "🔄",
+      "parrafos": [
+        "Una consulta de actualización modifica en lote todos los registros que cumplen un criterio. Es ideal cuando, por ejemplo, la empresa decide aumentar todos los precios un 10%: en vez de editar producto por producto, una sola consulta ajusta toda la tabla."
+      ],
+      "puntos": [
+        "Se crea primero como consulta de selección con el criterio, y luego se cambia el tipo a Actualizar (pestaña Diseño de consulta → Actualizar).",
+        "Se escribe en la cuadrícula la expresión de actualización, ej: [Precio]*1.10.",
+        "Con parámetros el valor se pregunta al ejecutar: actualizar precios según un porcentaje que el usuario ingresa.",
+        "Es una operación que modifica datos: conviene hacer copia de seguridad previa y siempre verificar los registros afectados."
+      ]
+    },
+    {
+      "titulo": "Consultas de eliminación (repaso) y criterios",
+      "emoji": "🗑️",
+      "parrafos": [
+        "Como se vio en la clase de consultas, la consulta de eliminación borra los registros que cumplen un criterio. Aquí se la combina con parámetros y criterios combinados con O e Y para depurar la base de forma controlada."
+      ],
+      "puntos": [
+        "Combinar criterios con Y: se escriben en la misma fila de Criterios.",
+        "Combinar criterios con O: se escriben en la fila siguiente (O).",
+        "El parámetro permite decidir en el momento qué registros se afectan.",
+        "Siempre probar la consulta en modo Selección antes de activar el modo Eliminar."
+      ]
+    },
+    {
+      "titulo": "Campos calculados y totales en consultas",
+      "emoji": "🧮",
+      "parrafos": [
+        "Las consultas permiten generar campos calculados que no existen en las tablas: por ejemplo, una columna «TotalLinea» que multiplica precio por cantidad, o una columna de IVA. Además, se pueden agrupar registros y totalizarlos con la consulta de totales."
+      ],
+      "puntos": [
+        "Campo calculado: escribir en la cuadrícula una expresión con nombre, dos puntos y fórmula, ej: TotalLinea: [Precio]*[Cantidad].",
+        "Botón Totales (Σ): pestaña Diseño de consulta → Totales, activa la fila «Total» para agrupar.",
+        "Tipos de agregado: Suma, Promedio, Cuenta, Mínimo, Máximo, o Agrupar por.",
+        "Un campo calculado puede referenciar otros campos calculados: total con IVA: TotalLinea*1.21."
+      ]
+    },
+    {
+      "titulo": "Cálculo de stock y macros",
+      "emoji": "📦",
+      "parrafos": [
+        "Para calcular el stock disponible se combinan los ingresos y egresos de mercadería: stock inicial + entradas - salidas. En Access esto se resuelve con una consulta de totales que agrupe por producto, y con campos calculados.",
+        "Las macros son un primer paso de automatización: secuencias de comandos que ejecutan acciones predefinidas (como abrir un formulario o ejecutar una consulta) con un solo clic."
+      ],
+      "puntos": [
+        "Stock disponible = (entradas) - (salidas) calculado con consultas de totales sobre la tabla de movimientos.",
+        "Se puede usar una consulta de actualización para actualizar el campo Stock de la tabla Productos con el resultado del cálculo.",
+        "Una macro guarda pasos: pestaña Crear → Macro, donde se eligen acciones como AbrirFormulario o EjecutarConsulta.",
+        "Las macros se usan luego en botones de formularios: clic → ejecutar macro."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Actualizá precios y calculá stock",
+      "consigna": "En la base de repuestos, usá una consulta de actualización para ajustar precios, creá un campo calculado de ley de IVA y armá el cálculo de stock por producto.",
+      "pasos": [
+        "Creá una consulta de selección sobre Productos que muestre Precio y Descripcion.",
+        "Cambiá el tipo de consulta a Actualizar y en la fila «Actualizar a» escribí la expresión [Precio]*1.10 para aplicar un recargo del 10%.",
+        "Tenés que probar primero en selección: para eso, guardá una copia de la base antes de ejecutarla.",
+        "Creá una consulta nueva de VentaDetalle con un campo calculado: TotalLinea: [Precio]*[Cantidad].",
+        "Añadí un segundo campo calculado con IVA: TotalIVA: [TotalLinea]*0.21.",
+        "Armá una consulta de totales sobre la tabla de movimientos que agrupe por producto y sume entradas y salidas para calcular el stock disponible (Entradas - Salidas).",
+        "Mencioná en el plan cómo se automatizaría con una macro la apertura de la consulta del día."
+      ],
+      "entrega": "Guardá el archivo .accdb y compartí una captura de la consulta de actualización y de la consulta de totales con el resultado del stock.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de consulta modifica varios registros a la vez?",
+            "opciones": ["Selección", "Actualización", "Resumen", "Cruce"],
+            "correcta": "Actualización"
+          },
+          {
+            "pregunta": "¿Qué botón activa la agrupación y totalización en una consulta?",
+            "opciones": ["Vista Diseño", "Totales (Σ)", "Ejecutar", "Guardar"],
+            "correcta": "Totales (Σ)"
+          },
+          {
+            "pregunta": "¿Cómo se escribe un campo calculado en una consulta?",
+            "opciones": ["Nombre: [Campo1]*[Campo2]", "Nombre =", "Suma([Campo])", "DBúsq([Campo])"],
+            "correcta": "Nombre: [Campo1]*[Campo2]"
+          },
+          {
+            "pregunta": "¿Qué acción realiza una macro en Access?",
+            "opciones": ["Formatea la PC", "Ejecuta secuencias de acciones como abrir formularios o consultas", "Borra la base de datos", "Crea un archivo Excel"],
+            "correcta": "Ejecuta secuencias de acciones como abrir formularios o consultas"
+          },
+          {
+            "pregunta": "¿Cómo se calcula el stock disponible de un producto?",
+            "opciones": ["Entradas + Salidas", "Entradas - Salidas", "Salidas solo", "El máximo precio"],
+            "correcta": "Entradas - Salidas"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con la consulta de actualización ejecutada, el campo calculado del IVA y la consulta de stock correcta.",
+  "lectura": "Las consultas de actualización modifican registros en masa según criterios y parámetros. Los campos calculados y la consulta de totales permiten derivar valores como IVA o stock sin tocar las tablas, y las macros automatizan acciones repetitivas en un clic.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar consultas de selección y parámetros. Preguntar: ¿cómo aumentan un precio todas las PyME cuando cambia el proveedor?", "min": "10 min" },
+      { "titulo": "Consulta de actualización", "que": "Explicar el riesgo y el procedimiento. Crear en vivo una actualización de precios con parámetro.", "min": "20 min" },
+      { "titulo": "Campos calculados", "que": "Crear TotalLinea y TotalIVA en una consulta de detalle de ventas en vivo.", "min": "15 min" },
+      { "titulo": "Totales y stock", "que": "Usar la consulta de totales con Agrupar por y Suma para calcular el stock por producto.", "min": "20 min" },
+      { "titulo": "Macros", "que": "Presentar la pestaña Crear → Macro y armar una macro simple que abre un formulario.", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Los alumnos arman su consulta de actualización con copia de seguridad, campos calculados y total de stock. El docente circula.", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez actualizaron precios en una planilla producto por producto? Mostrar que Access lo hace en segundos.",
+      "Mostrar el problema del stock: ¿cómo saber cuántas unidades quedan si no se descuentan las ventas? La consulta de totales lo resuelve."
+    ],
+    "aclarar": [
+      "La consulta de actualización NO se puede deshacer: siempre copia de seguridad antes.",
+      "Los campos calculados no se guardan en la tabla: se calculan al ejecutar la consulta.",
+      "En la consulta de totales, cada campo debe ir con Agrupar por o con una función de agregado; no se mezclan arbitrariamente.",
+      "Las macros son una introducción a la automatización; Access luego permite VBA para tareas más complejas."
+    ],
+    "ejemplos": [
+      "Actualizar en vivo los precios de un catálogo de repuestos un 10% con una sola consulta.",
+      "Calcular el stock de tres productos en vivo y mostrar cómo cambia al cargar nuevas ventas."
+    ]
+  }
+}

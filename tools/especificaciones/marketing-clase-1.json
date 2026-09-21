@@ -1,0 +1,145 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 1,
+    "titulo": "Introducción al Marketing Digital",
+    "modulo": "Módulo 1 – Fundamentos del Marketing Digital",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a entender qué es el marketing digital hoy, qué tendencias lo atraviesan en 2025 y cuál es la diferencia entre SEO y SEM, además del recorrido completo del curso.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 1 - Fundamentos del Marketing Digital\\Clase 1 - Introducción al marketing",
+  "objetivos": [
+    "Explicar qué es el marketing digital y para qué sirve en la actualidad.",
+    "Reconocer las tendencias 2025: IA, automatización y contenido personalizado.",
+    "Distinguir los conceptos de SEO y SEM.",
+    "Conocer el plan del curso y el recorrido por sus módulos."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es el marketing digital?",
+      "emoji": "🎯",
+      "parrafos": [
+        "El marketing digital es el conjunto de estrategias y acciones que usás para promocionar productos o servicios en el entorno digital: redes sociales, buscadores, sitios web, apps y mensajería. No es solo publicar: es planificar, medir y mejorar cada acción."
+      ],
+      "puntos": [
+        "Busca atraer, convertir y fidelizar clientes a través de canales digitales.",
+        "Hoy la mayor parte de la gente investiga en internet antes de comprar.",
+        "Funciona para cualquier rubro: comercios, servicios, emprendimientos y marcas personales."
+      ]
+    },
+    {
+      "titulo": "Tendencias 2025",
+      "emoji": "🤖",
+      "parrafos": [
+        "El marketing de 2025 está atravesado por la inteligencia artificial, la automatización y el contenido personalizado. Estas tendencias cambian cómo se crean las campañas y también qué esperan las personas cuando se encuentran con una marca."
+      ],
+      "puntos": [
+        "IA: se usa para generar textos, ideas y personalizar mensajes a escala.",
+        "Automatización: los mensajes y las publicaciones se programan y se disparan según el comportamiento del usuario.",
+        "Contenido personalizado: cada persona recibe mensajes pensados para su etapa y sus intereses."
+      ]
+    },
+    {
+      "titulo": "SEO y SEM: la puerta de los buscadores",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Son las dos grandes formas de hacerte ver en los buscadores. SEO (Search Engine Optimization) busca posicionar tu contenido de forma orgánica, sin pagar por cada clic. SEM (Search Engine Marketing) es la publicidad paga que aparece etiquetada como 'Anuncio'."
+      ],
+      "puntos": [
+        "SEO: optimizás contenido, estructura y autoridad para aparecer en los resultados orgánicos de Google.",
+        "SEM: pagás por cada clic o impresión y podés aparecer casi al instante en la parte superior.",
+        "Conviven: un buen plan usa SEO para el mediano plazo y SEM para resultados rápidos."
+      ]
+    },
+    {
+      "titulo": "Qué vas a aprender en el curso",
+      "emoji": "🗺️",
+      "parrafos": [
+        "Este curso te lleva de la base a la práctica: empezás por fundamentos y estrategia, seguís por redes sociales y contenidos, y avanzás hasta diseño, copywriting con IA, publicidad y métricas."
+      ],
+      "puntos": [
+        "Módulo 1: fundamentos, branding, objetivos, buyer persona y viaje del cliente.",
+        "Módulo 2: redes sociales y gestión de contenidos (Instagram, Facebook y Meta Business Suite).",
+        "Módulo 3: diseño, copywriting y uso de IA para contenidos.",
+        "Módulos 4 a 7: directorios locales, publicidad, email, e-commerce y análisis de resultados."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Detective de búsquedas en Google",
+      "consigna": "Identificá en una búsqueda real cuáles resultados son orgánicos (SEO) y cuáles son anuncios pagos (SEM), y anotá tus observaciones.",
+      "pasos": [
+        "Abrí Chrome y entrá a google.com.",
+        "Buscá una palabra clave del rubro que te interese, por ejemplo 'curso de marketing digital'.",
+        "Identificá los resultados marcados con 'Anuncio' (SEM) y anotá su posición.",
+        "Comparalos con los resultados orgánicos, que aparecen más abajo y sin etiqueta.",
+        "Escribí 3 diferencias que veas entre ambos y capturá la pantalla (Win + Shift + S)."
+      ],
+      "entrega": "Capturá la pantalla de tu búsqueda y escribí las 3 diferencias entre resultados orgánicos y anuncios.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es el SEO?",
+            "opciones": ["Optimización para motores de búsqueda sin pagar por clic", "Publicidad paga en Google", "Envío de correos electrónicos", "Publicar en redes sociales"],
+            "correcta": "Optimización para motores de búsqueda sin pagar por clic"
+          },
+          {
+            "pregunta": "El resultado que dice 'Anuncio' en Google corresponde a...",
+            "opciones": ["SEO", "SEM", "Email marketing", "Storytelling"],
+            "correcta": "SEM"
+          },
+          {
+            "pregunta": "Una tendencia fuerte del marketing digital en 2025 es...",
+            "opciones": ["El contenido personalizado con IA", "Eliminar el uso de internet", "Publicar solo en televisión", "Vender únicamente cara a cara"],
+            "correcta": "El contenido personalizado con IA"
+          },
+          {
+            "pregunta": "¿Para qué sirve el marketing digital?",
+            "opciones": ["Conectar con clientes y vender en el entorno digital", "Imprimir folletos en papel", "Diseñar software", "Administrar sueldos"],
+            "correcta": "Conectar con clientes y vender en el entorno digital"
+          },
+          {
+            "pregunta": "En una búsqueda, los resultados orgánicos aparecen...",
+            "opciones": ["Debajo de los anuncios y sin la etiqueta 'Anuncio'", "Siempre primero", "Solo si pagás una campaña", "En la barra de direcciones"],
+            "correcta": "Debajo de los anuncios y sin la etiqueta 'Anuncio'"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la captura de pantalla y las 3 diferencias anotadas entre SEO y SEM.",
+  "lectura": "El marketing digital conecta marcas y clientes en el entorno digital, a partir de acciones planificadas y medibles. Conocer SEO y SEM te permite aparecer en los buscadores, mientras la IA, la automatización y la personalización marcan el rumbo de 2025. Este curso te da la ruta completa: de la estrategia a los contenidos y las métricas.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Presentar la materia y preguntar qué idea tienen de 'marketing'", "min": "10 min" },
+      { "titulo": "Qué es el marketing digital", "que": "Explicar con ejemplos locales del rubro y para qué sirve", "min": "15 min" },
+      { "titulo": "Tendencias 2025", "que": "Mostrar casos con IA, automatización y contenido personalizado", "min": "20 min" },
+      { "titulo": "SEO y SEM", "que": "Comparar resultados orgánicos y anuncios con un ejemplo en vivo", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la búsqueda real y la captura de diferencias", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿buscaste algo en Google y notaste qué resultado tocaste? Usar eso para explicar SEO vs SEM.",
+      "Traer un ejemplo real de un comercio local que aparezca siempre primero en su rubro."
+    ],
+    "aclarar": [
+      "SEO no es pago por clic: es posicionamiento orgánico y no aparece al instante.",
+      "No alcanza con 'publicar': el marketing digital se planifica y se mide.",
+      "La IA es una herramienta, no un reemplazo del criterio humano."
+    ],
+    "ejemplos": [
+      "Buscar 'curso de marketing digital' en vivo y señalar anuncios frente a orgánicos.",
+      "Mostrar una campaña local que use contenido personalizado en redes.",
+      "Comparar dos publicaciones: una espontánea y otra planificada con estrategia."
+    ]
+  }
+}

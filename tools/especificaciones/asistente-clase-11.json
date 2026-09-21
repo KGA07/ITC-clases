@@ -1,0 +1,178 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 11,
+    "titulo": "PowerPoint y Google Slides",
+    "modulo": "Módulo 4 – Presentaciones Profesionales",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a crear presentaciones desde cero: diapositivas, diseño y transiciones para comunicar como un profesional.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 4\\Clase 11 PP y Google Slides",
+  "objetivos": [
+    "Estructurar una presentación con título, desarrollo y cierre.",
+    "Crear, duplicar y reordenar diapositivas en PowerPoint y Google Slides.",
+    "Elegir diseños y layouts según el contenido de cada diapositiva.",
+    "Insertar texto, imágenes e íconos y aplicar transiciones con mesura."
+  ],
+  "teoria": [
+    {
+      "titulo": "La estructura de una presentación",
+      "emoji": "📐",
+      "parrafos": [
+        "Toda presentación profesional se arma con la misma lógica: decís qué vas a contar, lo desarrollás y cerrás con una conclusión o llamado a la acción."
+      ],
+      "puntos": [
+        "Diapositiva de título: nombre de la presentación, autor y fecha.",
+        "Esquema o agenda: qué puntos vas a recorrer (3 a 5 como máximo).",
+        "Desarrollo: una idea principal por diapositiva, sin amontonar texto.",
+        "Cierre: resumen, conclusiones y el siguiente paso que esperás del público."
+      ]
+    },
+    {
+      "titulo": "Crear diapositivas: duplicar y reordenar",
+      "emoji": "🖱️",
+      "parrafos": [
+        "No hace falta empezar de cero cada vez: PowerPoint y Slides trabajan con diapositivas que podés duplicar, mover y borrar como fichas."
+      ],
+      "puntos": [
+        "Nueva diapositiva: botón superior o Ctrl + M en PowerPoint.",
+        "Duplicar: clic derecho sobre la miniatura → Duplicar diapositiva. Ideal para mantener el mismo diseño.",
+        "Reordenar: arrastrá las miniaturas en el panel izquierdo para cambiar el orden.",
+        "Borrar: seleccionar la miniatura y presionar Supr.",
+        "En Slides las diapositivas se arrastran igual desde el panel izquierdo."
+      ]
+    },
+    {
+      "titulo": "Diseños y layouts",
+      "emoji": "🎨",
+      "parrafos": [
+        "Los layouts son plantillas de cada diapositiva: te dicen dónde va el título, el texto o una imagen, y mantienen todo prolijo."
+      ],
+      "puntos": [
+        "En PowerPoint: clic derecho sobre la diapositiva → Diseño, y elegí el que encaje (Título, Comparación, Dos objetos).",
+        "En Slides: Diseño en el menú superior con opciones similares.",
+        "A veces el layout de «Comparación» es perfecto para mostrar dos opciones lado a lado.",
+        "Espacio en blanco: ideal para gráficos, capturas de pantalla o diagramas propios.",
+        "Los temas uniforman colores y tipografías en todas las diapositivas automáticamente."
+      ]
+    },
+    {
+      "titulo": "Insertar texto, imágenes e íconos",
+      "emoji": "🖼️",
+      "parrafos": [
+        "El contenido se vuelve visual: cada diapositiva combina poco texto con imágenes que refuerzan la idea."
+      ],
+      "puntos": [
+        "Texto: cuadro de texto nuevo o los espacios que ya trae el layout.",
+        "Imágenes: desde tu PC, en línea (PowerPoint) y búsqueda web integrada (Slides).",
+        "Íconos y formas: en Insertar → Ilustraciones; útiles para esquemas y diagramas.",
+        "Dos consejos: una imagen = una idea, y redimensioná desde las esquinas para no deformar la imagen."
+      ]
+    },
+    {
+      "titulo": "Transiciones y animaciones con mesura",
+      "emoji": "✨",
+      "parrafos": [
+        "Las transiciones unen las diapositivas y las animaciones mueven los objetos. Son el condimento, no el plato principal."
+      ],
+      "puntos": [
+        "Transición: efecto de entrada entre una diapositiva y la siguiente.",
+        "Animación: efecto sobre un texto o imagen dentro de la diapositiva.",
+        "Regla profesional: una transición suave (Fundido) para todas y animaciones solo donde aportan.",
+        "Poca cantidad: mostrar demasiados efectos distrae y se ve amateur.",
+        "Revisá la presentación en modo «Presentación» (F5 en PowerPoint) para controlar tiempos."
+      ]
+    },
+    {
+      "titulo": "Consejos para una presentación ejecutiva",
+      "emoji": "💼",
+      "parrafos": [
+        "El asistente administrativo presenta ante jefes o clientes: la forma de mostrar importa tanto como el contenido."
+      ],
+      "puntos": [
+        "Texto mínimo: frases cortas, palabras clave, nunca párrafos enteros en pantalla.",
+        "Regla 1-7-7: una idea, hasta 7 líneas, hasta 7 palabras por línea como guía.",
+        "Contraste: texto oscuro sobre fondo claro, o claro sobre fondo oscuro.",
+        "Letra legible: 24 puntos o más para el cuerpo y una sola tipografía en toda la presentación.",
+        "Repetí en voz alta: la presentación es tu guión, no tu guía de lectura."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Presentación personal de cada alumno",
+      "consigna": "Creá una presentación de 3 a 5 diapositivas sobre vos, aplicando estructura, diseños y transiciones suaves.",
+      "pasos": [
+        "Diapositiva 1: tu nombre, a qué te dedicás y el título de la presentación.",
+        "Diapositiva 2: tu formación y experiencia laboral (frases cortas, no párrafos).",
+        "Diapositiva 3: tus fortalezas y habilidades con íconos o formas.",
+        "Diapositiva 4: un objetivo profesional concreto para los próximos años.",
+        "Aplicá un tema de color, una transición suave común y revisá con F5."
+      ],
+      "entrega": "Guardá la presentación como archivo (PPTX o Google Slides compartido con el docente) y mostrala en modo presentación.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es el orden correcto de la estructura de una presentación?",
+            "opciones": ["Cierre, desarrollo, título", "Título, esquema, desarrollo y cierre", "Desarrollo, título, cierre", "Esquema, cierre, título"],
+            "correcta": "Título, esquema, desarrollo y cierre"
+          },
+          {
+            "pregunta": "¿Qué hacés para mantener el mismo diseño en una diapositiva nueva?",
+            "opciones": ["Empezar en otra presentación", "Duplicar la diapositiva existente", "Borrar todas las diapositivas", "Cambiar el tamaño de la hoja"],
+            "correcta": "Duplicar la diapositiva existente"
+          },
+          {
+            "pregunta": "¿Cuál es la mejor cantidad de texto por diapositiva?",
+            "opciones": ["Un párrafo completo por diapositiva", "Frases cortas y palabras clave", "Todo el informe copiado", "Solo números sin contexto"],
+            "correcta": "Frases cortas y palabras clave"
+          },
+          {
+            "pregunta": "¿Para qué sirve el espacio en blanco de un layout?",
+            "opciones": ["Para dejar la diapositiva vacía", "Para insertar gráficos, capturas o diagramas propios", "Para escribir texto más grande", "Para nada"],
+            "correcta": "Para insertar gráficos, capturas o diagramas propios"
+          },
+          {
+            "pregunta": "¿Cómo conviene usar las transiciones en una presentación profesional?",
+            "opciones": ["Una animación distinta en cada objeto", "Una transición suave para todas y animaciones con mesura", "Las más llamativas posibles", "Ningún efecto siempre"],
+            "correcta": "Una transición suave para todas y animaciones con mesura"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la presentación personal, su estructura completa y el uso correcto de diseños, imágenes y transiciones.",
+  "lectura": "Una presentación se arma como un discurso con título, desarrollo y cierre. PowerPoint y Google Slides te dejan crear, duplicar y reordenar diapositivas, elegir layouts que acomodan el contenido y sumar imágenes e íconos. Las transiciones y animaciones suman cuando se usan con mesura, y menos texto en pantalla siempre comunica mejor ante un jefe o cliente.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar qué presentaciones vieron alguna vez y cuáles les gustaron o aburrieron", "min": "10 min" },
+      { "titulo": "Estructura", "que": "Explicar título, esquema, desarrollo y cierre con el ejemplo de una presentación de ventas", "min": "15 min" },
+      { "titulo": "Diapositivas y layouts", "que": "Demostrar crear, duplicar, reordenar y elegir diseños en PowerPoint y Slides", "min": "20 min" },
+      { "titulo": "Textos, imágenes y formas", "que": "Insertar en vivo cuadros de texto, imágenes e íconos con buenas prácticas", "min": "15 min" },
+      { "titulo": "Transiciones y práctica", "que": "Aplicar transición suave y guiar la presentación personal paso a paso", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez tuvieron que exponer algo en el trabajo o en una materia y cómo lo hicieron.",
+      "Mostrar una presentación mal hecha (mucho texto) y la misma versionada con pocas palabras."
+    ],
+    "aclarar": [
+      "Transición ≠ animación: la transición une diapositivas y la animación se aplica a objetos dentro de una.",
+      "Duplicar no es copiar y pegar slide por slide: mantiene el diseño exacto.",
+      "Diapositiva no es sinónimo de documento Word: debe tener poco texto y mucho apoyo visual."
+    ],
+    "ejemplos": [
+      "Crear una diapositiva de «Comparación» mostrando dos opciones lado a lado en vivo.",
+      "Duplicar la diapositiva de título para reutilizar su diseño en el cierre.",
+      "Insertar una captura de pantalla y un ícono para mostrar cómo se arma un esquema visual."
+    ]
+  }
+}

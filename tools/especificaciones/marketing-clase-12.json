@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 12,
+    "titulo": "Google Mi Negocio",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a dar de alta tu empresa en Google Mi Negocio, completar la ficha con datos de contacto, horarios, servicios y fotos, y descubrir por qué el perfil local define si aparece tu negocio cuando alguien busca cerca.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas\\Clase 12 - Google Mi Negocio",
+  "objetivos": [
+    "Crear y verificar el perfil de un negocio en Google Mi Negocio.",
+    "Completar una ficha local con datos de contacto, horarios y categorías.",
+    "Agregar servicios, fotos y responder reseñas para fortalecer la ficha.",
+    "Reconocer por qué el perfil local es clave para la búsqueda y la confianza del cliente."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es Google Mi Negocio",
+      "emoji": "📍",
+      "parrafos": [
+        "Google Mi Negocio (negocio local en la cuenta de Google) es la ficha gratuita que le muestra al dueño cómo aparece su empresa en Google Maps y en los resultados de búsqueda cuando alguien busca un rubro cerca. Es la puerta de entrada de los negocios con local físico hacia el cliente que busca en el celular."
+      ],
+      "puntos": [
+        "Es gratuito y se gestiona desde business.google.com o la app Mi Negocio.",
+        "Alimenta el paquete local: el conjunto de negocios con mapa que aparece arriba en Google.",
+        "Se vincula a una cuenta de Google (Gmail), la misma que usás para otras herramientas.",
+        "Permite responder reseñas, publicar novedades y ver estadísticas de tus clientes."
+      ]
+    },
+    {
+      "titulo": "Alta y verificación de la empresa",
+      "emoji": "🏪",
+      "parrafos": [
+        "El alta es el primer paso y aclara si tu negocio atiende en un local o en modo virtual. Después de cargar los datos básicos, Google exige una verificación para confirmar que realmente sos el dueño."
+      ],
+      "puntos": [
+        "Entrá con tu Gmail a business.google.com y tocá Agregar negocio.",
+        "Cargá nombre comercial, categoría principal (rubro) y ubicación (dirección o zona de servicio).",
+        "Elegí método de verificación: por código postal, por teléfono, por video o por llamada.",
+        "La verificación puede tardar unos días; el perfil queda inactivo hasta completarla.",
+        "Si atendés solo online, marcá Atender a clientes en otro lugar para no mostrar una dirección en el mapa."
+      ]
+    },
+    {
+      "titulo": "La ficha completa",
+      "emoji": "📋",
+      "parrafos": [
+        "Una ficha incompleta genera desconfianza y pierde chances de aparecer. Completar cada sección mejora la calidad del perfil y le da al cliente toda la información antes de decidir."
+      ],
+      "puntos": [
+        "Datos de contacto: teléfono, sitio web, WhatsApp y red social principal.",
+        "Horarios de atención día por día, incluyendo feriados si los definís.",
+        "Descripción de 400 a 750 caracteres con los servicios y el diferencial del negocio.",
+        "Fotos de portada, logo y del local: los perfiles con fotos reciben más visitas.",
+        "Servicios con precios orientativos y atributos como Estacionamiento o Acceso para sillas de ruedas."
+      ]
+    },
+    {
+      "titulo": "Por qué importa el perfil local",
+      "emoji": "📈",
+      "parrafos": [
+        "Las búsquedas con intención local, como carpintero cerca o peluquería abierta ahora, deciden en segundos. El perfil local es gratis, genera confianza a través de las reseñas y acompaña a la publicidad paga que vas a ver en las próximas clases."
+      ],
+      "puntos": [
+        "El paquete local aparece ANTES que los anuncios y los resultados orgánicos.",
+        "Las reseñas positivas y las respuestas del dueño mejoran el ranking local.",
+        "El botón Cómo llegar o Llamar convierte la búsqueda en visita al toque.",
+        "Combinado con Google Ads, el perfil refuerza la presencia del negocio en todo el buscador."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Dale de alta tu negocio de prueba",
+      "consigna": "Creá el perfil de un emprendimiento tuyo o inventado en Google Mi Negocio y completá la ficha como si fuera real, aplicando cada sección vista en clase.",
+      "pasos": [
+        "Andá a business.google.com e iniciá sesión con tu Gmail.",
+        "Tocá Agregar negocio y cargá nombre comercial, categoría y ubicación.",
+        "Completá teléfono, sitio web (podés usar Google Sites de agenda si no tenés) y horarios de atención.",
+        "Agregá tres servicios con descripción y subí una foto de portada y un logo de ejemplo.",
+        "Guardá los datos de tu ficha en un documento y anotá qué método de verificación elegirías y por qué."
+      ],
+      "entrega": "Capturá tu ficha en edición y el documento con los datos cargados, listos para la verificación.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Dónde aparece tu negocio cuando lo das de alta en Google Mi Negocio?",
+            "opciones": ["Solo en la web del propio negocio", "En Google Maps y en el paquete local de la búsqueda", "En Instagram de forma automática", "En la base de datos de la AFIP"],
+            "correcta": "En Google Maps y en el paquete local de la búsqueda"
+          },
+          {
+            "pregunta": "¿Qué necesitás como primer paso para dar de alta un negocio?",
+            "opciones": ["Pagar una suscripción mensual", "Contratar una agencia", "Una cuenta de Google (Gmail)", "Tener sitio web propio"],
+            "correcta": "Una cuenta de Google (Gmail)"
+          },
+          {
+            "pregunta": "¿Qué dato NO puede faltar en una ficha completa?",
+            "opciones": ["Los horarios de atención", "El número de CUIL del dueño", "La cotización del dólar", "El CBU del negocio"],
+            "correcta": "Los horarios de atención"
+          },
+          {
+            "pregunta": "¿Para qué sirven las reseñas en el perfil local?",
+            "opciones": ["Solo para entretener a los clientes", "Generan confianza y mejoran el ranking local", "Reemplazan la ficha completa", "No tienen ningún efecto"],
+            "correcta": "Generan confianza y mejoran el ranking local"
+          },
+          {
+            "pregunta": "¿Qué es el paquete local de Google?",
+            "opciones": ["Una promoción paga exclusiva", "El conjunto de negocios del mapa que aparece junto a la búsqueda", "Un filtro para anuncios", "La bandeja de reseñas del dueño"],
+            "correcta": "El conjunto de negocios del mapa que aparece junto a la búsqueda"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la captura del perfil dado de alta con la ficha completa y el análisis del método de verificación.",
+  "lectura": "Google Mi Negocio es la ficha gratuita que muestra tu empresa en Maps y en las búsquedas locales. Completar datos, horarios, servicios y fotos, junto con la verificación y las reseñas, define si el cliente te encuentra y te elige antes que a tu competencia.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar cuántos buscaron un negocio en Google Maps esta semana y qué elegiría", "min": "10 min" },
+      { "titulo": "Qué es Google Mi Negocio", "que": "Mostrar el paquete local con un negocio real de la zona y explicar cada parte", "min": "15 min" },
+      { "titulo": "Alta y verificación", "que": "Recorrer business.google.com paso a paso y explicar los métodos de verificación", "min": "20 min" },
+      { "titulo": "Ficha completa", "que": "Completar datos, horarios, servicios y fotos con un caso ejemplo en vivo", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Acompañar el alta de cada alumno y resolver bloqueos de cuenta o categoría", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo y dudas de verificación", "min": "5 min" }
+    ],
+    "conecta": [
+      "Arrancar con la pregunta de si alguna vez eligieron un local por cómo aparecía en Google Maps, y usar esa respuesta para abrir el tema.",
+      "Mostrar en vivo un negocio de la zona con ficha completa y otro sin foto para comparar."
+    ],
+    "aclarar": [
+      "Google Mi Negocio es gratuito: nadie cobra por la ficha ni por aparecer en el mapa.",
+      "La ficha no queda activa hasta completar la verificación; los cambios tampoco son visibles al instante.",
+      "El perfil local no es una red social: sirve para encontrarnos y darnos datos, no para encadenar publicaciones.",
+      "Atender solo online no es un error: hay que marcar la opción de zona de servicio para no mostrar una dirección falsa."
+    ],
+    "ejemplos": [
+      "Cargar un negocio de ejemplo completo en vivo mientras los alumnos replican.",
+      "Comparar el paquete local de dos rubros en la misma zona y leer las reseñas en voz alta.",
+      "Mostrar cómo quedaría la ficha sin horarios y hacer notar la desconfianza que genera."
+    ]
+  }
+}

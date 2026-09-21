@@ -1,0 +1,145 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 3,
+    "titulo": "Buyer Persona y Customer Journey",
+    "modulo": "Módulo 1 – Fundamentos del Marketing Digital",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a segmentar el mercado, construir tu buyer persona y trazar el viaje que recorre tu cliente desde que te descubre hasta que compra.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 1 - Fundamentos del Marketing Digital\\Clase 4 - BUyer Persona y Buyer Journey",
+  "objetivos": [
+    "Segmentar el mercado en grupos con características y necesidades comunes.",
+    "Construir un buyer persona con datos, dolores y deseos.",
+    "Describir el embudo de conversión y sus etapas.",
+    "Mapear el customer journey identificando los puntos de contacto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Segmentación y arquetipos",
+      "emoji": "🎯",
+      "parrafos": [
+        "Segmentar es dividir el mercado en grupos con características y necesidades parecidas: edad, ubicación, intereses o problemas. El arquetipo es ese cliente tipo que representa a un segmento y al que le hablás como si fuera una persona de verdad."
+      ],
+      "puntos": [
+        "No le hablás a 'todo el mundo': le hablás a un segmento concreto.",
+        "Criterios de segmentación: demográficos, geográficos, de intereses y de comportamiento.",
+        "Ejemplo: 'mates sustentables' no vende a todos, le vende a quienes ya se preocupan por el planeta."
+      ]
+    },
+    {
+      "titulo": "El embudo de conversión",
+      "emoji": "🔻",
+      "parrafos": [
+        "El embudo (funnel) describe cómo va bajando la cantidad de personas desde que conocen tu marca hasta que compran. Arriba está la multitud que te descubre, en el medio quienes te consideran y, al final, quienes compran."
+      ],
+      "puntos": [
+        "Parte superior: generar visibilidad y captar atención.",
+        "Parte media: construir confianza con contenidos de valor.",
+        "Parte inferior: convertir con ofertas claras y pasos simples."
+      ]
+    },
+    {
+      "titulo": "El viaje del cliente",
+      "emoji": "🧭",
+      "parrafos": [
+        "El customer journey es el recorrido completo de una persona con tu marca: descubrimiento, consideración, decisión y post-compra. En cada etapa tu contenido responde distinto: primero qué sos, después por qué te conviene y al final cómo compro."
+      ],
+      "puntos": [
+        "Descubrimiento: la persona te encuentra por una búsqueda, una red o una recomendación.",
+        "Consideración: compara opciones y estudia tus contenidos.",
+        "Decisión: necesita confianza, testimonios y un llamado a la acción claro.",
+        "Post-compra: fidelización, reseñas y recompra."
+      ]
+    },
+    {
+      "titulo": "Herramientas para mapear el viaje",
+      "emoji": "🛠️",
+      "parrafos": [
+        "Armar el viaje del cliente no requiere software caro. Las encuestas, las entrevistas y hasta los mensajes que te llegan en WhatsApp te dan datos. Las plantillas en línea te ayudan a organizar cada etapa y cada punto de contacto."
+      ],
+      "puntos": [
+        "Datos propios: preguntá a clientes reales qué dudaron antes de comprar.",
+        "Plantillas de customer journey en Google Slides, Miro o Notion.",
+        "Revisá tus propias compras: qué contenidos te hicieron decidir por una marca."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi buyer persona y su viaje",
+      "consigna": "Creá una ficha de buyer persona para un emprendimiento real o que estés por lanzar, y mapeá las 3 etapas principales de su viaje del cliente.",
+      "pasos": [
+        "Elegí el emprendimiento o la marca con la que trabajás en el curso.",
+        "Definí tu segmento: edad, ubicación, intereses y qué le molesta.",
+        "Redactá la ficha de buyer persona: nombre ficticio, dolor principal, deseo y dónde pasa tiempo en internet.",
+        "En el mismo documento, mapeá las etapas de descubrimiento, consideración y decisión, y qué contenido ofrecerías en cada una.",
+        "Guardalo en Google Docs y compartí el enlace."
+      ],
+      "entrega": "Compartí el enlace con la ficha de buyer persona y el viaje del cliente en 3 etapas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Un buyer persona es...",
+            "opciones": ["La representación semi-ficticia de tu cliente ideal, basada en datos reales", "El personaje principal de una película", "Una fotografía de un cliente", "Un test de personalidad"],
+            "correcta": "La representación semi-ficticia de tu cliente ideal, basada en datos reales"
+          },
+          {
+            "pregunta": "¿Qué es la segmentación?",
+            "opciones": ["Dividir el mercado en grupos con características y necesidades similares", "Vender a todo el mundo por igual", "Borrar clientes", "Publicar una vez al año"],
+            "correcta": "Dividir el mercado en grupos con características y necesidades similares"
+          },
+          {
+            "pregunta": "En el embudo de conversión, la parte superior sirve para...",
+            "opciones": ["Generar visibilidad y atraer atención", "Cobrar la compra", "Cerrar la venta directa", "Enviar facturas"],
+            "correcta": "Generar visibilidad y atraer atención"
+          },
+          {
+            "pregunta": "En la etapa de consideración, el cliente...",
+            "opciones": ["Compara opciones y evalúa tu marca", "Ya compró y no te habla más", "Todavía no sabe que existís", "Pide un reembolso"],
+            "correcta": "Compara opciones y evalúa tu marca"
+          },
+          {
+            "pregunta": "Una herramienta práctica para mapear el viaje del cliente es...",
+            "opciones": ["Encuestas a clientes y plantillas en Google Slides", "Una calculadora", "El explorador de archivos", "Un antivirus"],
+            "correcta": "Encuestas a clientes y plantillas en Google Slides"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento con la ficha de buyer persona y el mapa de viaje del cliente.",
+  "lectura": "Detrás de cada compra hay una persona con dolores y deseos. Segmentar y crear tu buyer persona te permite hablarle a la audiencia correcta, mientras el embudo y el viaje del cliente ordenan qué contenido dar en cada etapa. Con encuestas y plantillas simples podés armar este mapa sin grandes inversiones.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Recordar propuesta de valor y preguntar a quién le venden", "min": "10 min" },
+      { "titulo": "Segmentación y arquetipos", "que": "Explicar por qué no se le habla a 'todos'", "min": "15 min" },
+      { "titulo": "Embudo y buyer persona", "que": "Construir un buyer persona en vivo con los alumnos", "min": "20 min" },
+      { "titulo": "Viaje del cliente", "que": "Recorrer descubrimiento, consideración y decisión", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la ficha de buyer persona y el mapa de viaje", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿cómo descubriste tu heladería preferida y por qué la elegiste? Usar ese recorrido real como ejemplo de journey.",
+      "Pedir que cuenten una compra que hayan hecho en línea y qué dudaron antes de pagar."
+    ],
+    "aclarar": [
+      "El buyer persona se construye con datos, no es inventar un personaje que te guste.",
+      "El embudo y el journey se miran juntos: uno muestra el proceso, el otro el detalle de cada etapa.",
+      "No hace falta gastar plata para mapear: las encuestas y las plantillas alcanzan."
+    ],
+    "ejemplos": [
+      "Crear la ficha de 'la mamá ocupada' para una marca de comidas.",
+      "Trazar el viaje de una compra por WhatsApp paso a paso.",
+      "Mostrar cómo cambia el mensaje de un mismo negocio en cada etapa del embudo."
+    ]
+  }
+}

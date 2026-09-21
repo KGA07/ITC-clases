@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 4,
+    "titulo": "Gráficos y visualización de datos",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a transformar números en gráficos que se entienden de un vistazo y a elegir el tipo correcto para cada mensaje: ventas, partes del total, evolución en el tiempo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 4 Graficos",
+  "objetivos": [
+    "Agregar minigráficos dentro de celdas para ver tendencias en una fila de datos.",
+    "Crear gráficos básicos: circular, de columnas/barras y de líneas.",
+    "Explorar gráficos modernos: de personas, de rectángulos (treemap) y proyección solar.",
+    "Elegir el gráfico adecuado según el mensaje: comparar partes, evoluciones o participaciones."
+  ],
+  "teoria": [
+    {
+      "titulo": "Minigráficos: tendencias en una celda",
+      "emoji": "📈",
+      "parrafos": [
+        "Los minigráficos son mini gráficos que viven dentro de una celda y resumen la tendencia de una fila: líneas, columnas o ganancia/pérdida. En administración son ideales para ver la evolución de un producto sin ocupar espacio."
+      ],
+      "puntos": [
+        "Insertar → Minigráficos → elegir Línea, Columna o Ganancia/Pérdida, marcar el rango de datos y el rango de ubicación.",
+        "Muestran la forma de la serie sin ejes ni títulos, perfectos para celda de total.",
+        "Editar: ficha contextual Minigráfico permite cambiar el tipo y marcar el punto alto/bajo con puntos de color.",
+        "Consejo: una columna con minigráficos por cliente muestra de un vistazo quién crece y quién cae."
+      ]
+    },
+    {
+      "titulo": "Los gráficos básicos",
+      "emoji": "📊",
+      "parrafos": [
+        "Los gráficos básicos de Excel cubren casi todo el trabajo administrativo: circular para partes del total, columnas/barras para comparar, y líneas para ver la evolución en el tiempo."
+      ],
+      "puntos": [
+        "Circular: muestra la participación de cada parte en el total (por ejemplo, % de ventas por producto). Usar con pocas categorías (hasta 6-8).",
+        "Columnas/Barras: comparan valores entre categorías; las barras horizontales sirven cuando los nombres son largos.",
+        "Líneas: ideal para la evolución de una variable en el tiempo (ventas por mes, caja diaria).",
+        "Insertar → Gráficos recomendados: Excel propone el gráfico que mejor se ajusta a tus datos."
+      ]
+    },
+    {
+      "titulo": "Gráficos modernos: personas, rectángulos y proyección solar",
+      "emoji": "🧑‍🤝‍🧑",
+      "parrafos": [
+        "Además de los clásicos, Excel trae gráficos modernos útiles para administración: vertical de personas, de rectángulos (treemap) y de proyección solar (sunburst) que muestran jerarquías y proporciones de forma visual."
+      ],
+      "puntos": [
+        "Barra de personas (People Graph): muestra proporciones con figuritas humanas; sirve para comunicar datos simples en informes.",
+        "Gráfico de rectángulos (Treemap): cada categoría es un rectángulo cuyo tamaño representa el valor; muy útil para ver qué clientes o productos concentran la facturación.",
+        "Proyección solar (Sunburst): representa jerarquías en anillos concéntricos, por ejemplo Región → Cliente → Venta.",
+        "Se insertan desde Insertar → Gráficos, en el grupo de gráficos jerárquicos o complementos de Office."
+      ]
+    },
+    {
+      "titulo": "¿Cuándo uso cada tipo?",
+      "emoji": "🎯",
+      "parrafos": [
+        "El gráfico correcto depende de la pregunta que querés responder. Elegir mal el tipo hace que un dato bueno no se entienda."
+      ],
+      "puntos": [
+        "Comparar valores entre categorías → Columnas o Barras.",
+        "Ver evolución en el tiempo → Líneas o un gráfico de área suave.",
+        "Mostrar partes de un total → Circular (pocas categorías) o Treemap/Sunburst (jerarquías).",
+        "Ver tendencia dentro de una celda → Minigráfico.",
+        "Regla práctica: si vas a explicar algo en una reunión, prepará el gráfico más simple que cuente la historia sin adornos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Gráficos del resumen de ventas",
+      "consigna": "Sobre el resumen de ventas del mes, creá un gráfico de líneas con la evolución diaria, un circular con la participación por producto, y una batería de minigráficos por cliente.",
+      "pasos": [
+        "Armá en una hoja los datos mínimos: para cada día del mes, el total vendido del día.",
+        "Seleccioná el rango de Fecha y Total y creá un gráfico de Líneas (Insertar → Líneas).",
+        "Armá un pequeño cuadro con % de ventas por producto y creá un gráfico Circular con esas participaciones.",
+        "En otra hoja, poné 6 meses de facturación por cliente y en una columna extra insertá Minigráficos de Línea para cada cliente.",
+        "Probá cambiar el gráfico a Columnas desde la ficha contextual Diseño → Cambiar tipo de gráfico.",
+        "Anotá en una celda qué gráfico usarías para: evolución anual, comparación entre sucursales y partes del total."
+      ],
+      "entrega": "Guardá como «GraficosVentas_clase4.xlsx» con el gráfico de líneas, el circular y los minigráficos completos.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué gráfico conviene para mostrar la EVOLUCIÓN de las ventas en el año?",
+            "opciones": ["Circular", "De líneas", "De barras horizontales", "De proyección solar"],
+            "correcta": "De líneas"
+          },
+          {
+            "pregunta": "¿Para qué sirve un minigráfico?",
+            "opciones": ["Para ver la tendencia de una fila dentro de la celda", "Para imprimir la hoja", "Para sumar celdas", "Para cambiar el tamaño de la fuente"],
+            "correcta": "Para ver la tendencia de una fila dentro de la celda"
+          },
+          {
+            "pregunta": "¿Cuál es el mejor gráfico para comparar la PARTICIPACIÓN de cada producto en el total?",
+            "opciones": ["Circular", "De líneas", "Minigráfico de ganancia/pérdida", "De dispersión"],
+            "correcta": "Circular"
+          },
+          {
+            "pregunta": "¿Qué gráfico jerárquico muestra las categorías como rectángulos según su tamaño?",
+            "opciones": ["Treemap (rectángulos)", "De líneas", "Circular", "De columna agrupada"],
+            "correcta": "Treemap (rectángulos)"
+          },
+          {
+            "pregunta": "¿Cómo se cambia el tipo de un gráfico ya creado?",
+            "opciones": ["Ficha Diseño → Cambiar tipo de gráfico", "Borrando y reinsertando", "Clic derecho → Deshacer", "Insertar → Minigráficos"],
+            "correcta": "Ficha Diseño → Cambiar tipo de gráfico"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará los tres gráficos armados y la justificación escrita de cuándo usar cada tipo.",
+  "lectura": "Un buen gráfico comunica en segundos lo que una tabla cuenta en minutos. Excel ofrece desde minigráficos dentro de la celda hasta gráficos modernos como treemap y proyección solar, y la clave es elegir el tipo según la pregunta: líneas para evolución, columnas para comparar, circular para partes del total. Con esta caja de herramientas, tus reportes dejan de ser planillas y se vuelven decisiones.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la Tabla Dinámica y preguntar qué quieren comunicar con sus datos", "min": "10 min" },
+      { "titulo": "Minigráficos", "que": "Insertar minigráficos de línea y columnas por cliente", "min": "15 min" },
+      { "titulo": "Gráficos básicos", "que": "Crear circular, columnas/barras y líneas eligiendo datos", "min": "25 min" },
+      { "titulo": "Gráficos modernos", "que": "Mostrar personas, treemap y proyección solar con el mismo set de datos", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Armar los tres gráficos del ejercicio y discutir cuándo usar cada uno", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué reportes entregan hoy (¿a mano, con números sueltos?) y mostrar cómo un gráfico cambia la reunión.",
+      "Mostrar un gráfico mal elegido y el mismo dato con el gráfico correcto para que sientan la diferencia."
+    ],
+    "aclarar": [
+      "El circular no sirve para muchos datos: con más de 8 categorías se vuelve ilegible, mejor treemap o barras.",
+      "El minigráfico no es un gráfico normal: vive dentro de la celda y no se puede mandar a otra hoja.",
+      "Cambiar tipo de gráfico conserva los datos; no hace falta volver a insertar desde cero.",
+      "Los gráficos modernos (personas, proyección solar) a veces dependen de la versión de Excel de la PC."
+    ],
+    "ejemplos": [
+      "Evolución de facturación mensual como línea: la curva se lee de un vistazo.",
+      "Mismo dato de ventas por producto como circular y como treemap para comparar estilos.",
+      "Columna de minigráficos por cliente marcando el punto máximo en rojo."
+    ]
+  }
+}

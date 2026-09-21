@@ -1,0 +1,144 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 6,
+    "titulo": "Meta Business Suite",
+    "modulo": "Módulo 2 – Redes Sociales y Gestión de Contenidos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a centralizar Facebook, Instagram y WhatsApp en Meta Business Suite: programar contenidos, unificar mensajes, leer métricas y administrar anuncios desde un solo lugar.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 2 - Redes Sociales y Gestión de Contenidos\\Clase 7 Meta Business Suite",
+  "objetivos": [
+    "Conectar las cuentas de Facebook, Instagram y WhatsApp en Meta Business Suite.",
+    "Crear y programar publicaciones desde el calendario de contenidos.",
+    "Usar la bandeja de entrada unificada para responder mensajes.",
+    "Leer insights y administrar anuncios y notificaciones desde la herramienta."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es Meta Business Suite",
+      "emoji": "💼",
+      "parrafos": [
+        "Meta Business Suite es la plataforma gratuita de Meta para gestionar Facebook, Instagram y WhatsApp desde un solo lugar. Reemplaza andar cambiando de app: ahí programás, contestás y medís."
+      ],
+      "puntos": [
+        "Acceso: business.facebook.com con tu cuenta de Facebook.",
+        "Conectá tu perfil de Instagram y tu WhatsApp Business a la misma cuenta.",
+        "Todo centralizado: publicaciones, mensajes, anuncios y estadísticas."
+      ]
+    },
+    {
+      "titulo": "Calendario: creación y programación",
+      "emoji": "🗓️",
+      "parrafos": [
+        "El calendario te permite planificar la semana sin depender de la memoria: creás la publicación, elegís fecha y hora, y la plataforma la publica sola. Es la base de la constancia."
+      ],
+      "puntos": [
+        "Creá la publicación y elegí a qué cuentas va: Facebook, Instagram o ambas.",
+        "Programá horarios según el momento en que tu audiencia está activa.",
+        "Revisá los insights para ajustar el calendario de la semana siguiente."
+      ]
+    },
+    {
+      "titulo": "Bandeja unificada y respuestas",
+      "emoji": "📬",
+      "parrafos": [
+        "Todos los mensajes de Facebook, Instagram y WhatsApp llegan a una sola bandeja. Responder rápido y con buen tono convierte consultas en ventas."
+      ],
+      "puntos": [
+        "Configurá respuestas automáticas para los horarios fuera de atención.",
+        "Etiquetá conversaciones y seguí cuáles requieren un seguimiento.",
+        "El tiempo de respuesta figura en tu perfil: la velocidad también suma."
+      ]
+    },
+    {
+      "titulo": "Insights, anuncios y automatización",
+      "emoji": "⚡",
+      "parrafos": [
+        "El panel de insights centraliza las métricas de tus perfiles, y desde la misma herramienta podés impulsar publicaciones existentes y crear anuncios simples. Las notificaciones automáticas te avisan de cada actividad sin revisar cada app."
+      ],
+      "puntos": [
+        "Insights: alcance, interacción y público por perfil, en un solo panel.",
+        "'Impulsar' una publicación la convierte en anuncio con presupuesto.",
+        "Configurá notificaciones automáticas para mensajes y comentarios."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Planificá la semana en Business Suite",
+      "consigna": "Usando Meta Business Suite, diseñá un calendario de contenidos de 1 semana para tu negocio y programá al menos 3 publicaciones.",
+      "pasos": [
+        "Entrá a business.facebook.com e iniciá sesión con tu cuenta.",
+        "Verificá que tu Página de Facebook y tu Instagram estén conectadas; si no, hacelo en Configuración.",
+        "En 'Planificador', abrí el calendario de la semana y asigná un tema a cada día.",
+        "Creá y programá 3 publicaciones con texto, elemento visual o video, y la fecha y hora elegidas.",
+        "Activá las notificaciones de la bandeja unificada y verificá que las publicaciones aparezcan en el calendario."
+      ],
+      "entrega": "Capturá la vista del calendario con las 3 publicaciones programadas y compartila con el docente.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "Meta Business Suite sirve para...",
+            "opciones": ["Gestionar Facebook, Instagram y WhatsApp en un solo lugar", "Editar videos profesionales", "Crear un sitio web", "Vender en Mercado Libre"],
+            "correcta": "Gestionar Facebook, Instagram y WhatsApp en un solo lugar"
+          },
+          {
+            "pregunta": "La 'bandeja de entrada unificada' junta...",
+            "opciones": ["Los mensajes de Facebook, Instagram y WhatsApp", "Solo el correo del banco", "Las notificaciones del celular", "Los comentarios de YouTube"],
+            "correcta": "Los mensajes de Facebook, Instagram y WhatsApp"
+          },
+          {
+            "pregunta": "Programar publicaciones te permite...",
+            "opciones": ["Planificar con antelación y mantener constancia", "Publicar más rápido sin revisar nada", "Eliminar tus cuentas", "Responder mensajes grabados"],
+            "correcta": "Planificar con antelación y mantener constancia"
+          },
+          {
+            "pregunta": "¿Qué hacés al 'impulsar' una publicación?",
+            "opciones": ["La convertís en un anuncio con presupuesto", "Borrás la publicación", "La programás para el año que viene", "La enviás por WhatsApp"],
+            "correcta": "La convertís en un anuncio con presupuesto"
+          },
+          {
+            "pregunta": "Los insights te muestran...",
+            "opciones": ["Alcance, interacción y público de tus perfiles", "El clima de la semana", "Las contraseñas guardadas", "Los mensajes eliminados"],
+            "correcta": "Alcance, interacción y público de tus perfiles"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el calendario programado y el uso correcto del planificador.",
+  "lectura": "Meta Business Suite centraliza el trabajo diario del community manager: programación, mensajes, métricas y anuncios en una sola pantalla. Con un calendario planificado ganás constancia, y con la bandeja unificada no se te escapa ninguna consulta. Es la herramienta base para trabajar redes de forma profesional.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Verificar accesos y cuentas conectadas", "min": "10 min" },
+      { "titulo": "Qué es y cómo se conecta", "que": "Mostrar la plataforma y conectar las cuentas", "min": "15 min" },
+      { "titulo": "Calendario y programación", "que": "Crear una publicación programada en vivo", "min": "20 min" },
+      { "titulo": "Bandeja e insights", "que": "Recorrer la bandeja unificada y las estadísticas", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el calendario semanal y la programación", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez se les pasó responder un mensaje de clientes que venía por una app y no por otra? Conectar con la bandeja unificada.",
+      "Mostrar tu propio Business Suite con contenido programado como ejemplo real."
+    ],
+    "aclarar": [
+      "Business Suite es gratis y no reemplaza a las apps: las apps siguen existiendo, la gestión se centraliza.",
+      "Programar no es 'dejar de curar': hay que revisar y reaccionar en tiempo real.",
+      "'Impulsar' una publicación es pautar: se paga por alcance, así que elegí bien cuáles."
+    ],
+    "ejemplos": [
+      "Programar una publicación en vivo mientras los alumnos replican en sus cuentas.",
+      "Responder un mensaje de la bandeja unificada y mostrar la etiqueta.",
+      "Comparar el panel de insights antes y después de una semana de publicaciones."
+    ]
+  }
+}

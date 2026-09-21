@@ -1,0 +1,155 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 18,
+    "titulo": "Videoconferencias en Google Meet y Zoom",
+    "modulo": "Módulo 6 – Comunicación Digital",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a crear reuniones virtuales, conducirlas y manejarte con etiqueta digital profesional.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 6\\Clase 18 Meet",
+  "objetivos": [
+    "Crear y agendar una reunión en Google Meet y en Zoom con su enlace.",
+    "Unirse a una videollamada con enlace o código y dominar cámara y micrófono.",
+    "Compartir pantalla, usar el chat y grabar la reunión correctamente.",
+    "Aplicar reglas de etiqueta digital: puntualidad, presentación y fondo profesional."
+  ],
+  "teoria": [
+    {
+      "titulo": "Crear y agendar una reunión",
+      "emoji": "📌",
+      "parrafos": [
+        "Google Meet está integrado a Calendar: al crear el evento podés sumar la videollamada con un clic y el enlace llega en la invitación. Zoom funciona con una reunión programada y una ID o enlace de acceso.",
+        "El asistente administrativo agenda y difunde reuniones: el enlace debe llegar por mail o calendario, nunca improvisado en el último momento."
+      ],
+      "puntos": [
+        "Meet: en Calendar → «Agregar videollamada de Google Meet» genera el enlace automáticamente.",
+        "Zoom: programa desde la app o el portal y copiá el enlace para la invitación.",
+        "Configurá «Se requieren aprobación del anfitrión» o sala de espera según quién deba entrar.",
+        "Proba el micrófono y la cámara antes de la reunión: en Meet se puede desde el panel de ajustes."
+      ]
+    },
+    {
+      "titulo": "Unirse con enlace y manejar cámara y micrófono",
+      "emoji": "🎥",
+      "parrafos": [
+        "Unirse es simple: clic en el enlace, elegir «Unirse ahora» y aceptar el ingreso. Antes de prender la cámara, revisá el entorno: fondo limpio, luz de frente y sin ruido de fondo.",
+        "Saber silenciar y prender el micrófono es básico: un micrófono abierto arruina una reunión entera."
+      ],
+      "puntos": [
+        "Botones principales: micrófono (abrir/cerrar), cámara (prender/apagar) y los tres puntitos de ajustes.",
+        "En Meet: Ctrl + D silencia el micrófono; en Zoom, Alt + A (Windows). Atajos que economizan segundos.",
+        "Usá «Levantar la mano» para pedir la palabra sin interrumpir al orador.",
+        "Fondo mal elegido o desordenado distrae: activá fondo virtual si tu espacio no es presentable."
+      ]
+    },
+    {
+      "titulo": "Compartir pantalla, chat y grabación",
+      "emoji": "🖥️",
+      "parrafos": [
+        "Compartir pantalla convierte la reunión en una sala de trabajo: mostrás una planilla, un documento o una presentación. Elegí qué ventana compartir, no todo el escritorio, para no exponer datos innecesarios.",
+        "El chat sirve para dejar enlaces y notas del lado, y la grabación genera el acta digital de la reunión."
+      ],
+      "puntos": [
+        "«Presentar ahora» en Meet: elegí pestaña o ventana; en Zoom, «Compartir pantalla».",
+        "Chat: link de un documento colaborativo para anotar conclusiones y decisiones.",
+        "Grabar: desde los tres puntitos → Grabar reunión. Queda en Drive (Meet) o en la nube/local (Zoom).",
+        "Antes de grabar, avisá a los participantes: es buena práctica y a veces requisito legal."
+      ]
+    },
+    {
+      "titulo": "Etiqueta digital profesional",
+      "emoji": "✨",
+      "parrafos": [
+        "La videollamada tiene su código de conducta. Llegar a horario, presentarse al prender la cámara y mantener un fondo prolijo son señales de profesionalismo que nunca pasan desapercibidas.",
+        "El asistente administrativo suele ser quien «anfitriona»: dar la bienvenida, controlar participantes y resumir al cierre."
+      ],
+      "puntos": [
+        "Puntualidad: entrá 2 o 3 minutos antes, como si fuera presencial.",
+        "Presentarte al abrir el micro: «Buen día, soy...» evita voces anónimas.",
+        "Fondo: luz de frente, espacio limpio o fondo virtual neutro; evitá cámara apuntando a una ventana.",
+        "Nada de escribir en el chat por fuera del tema ni comer durante la reunión.",
+        "Al terminar: cerrá el micrófono, despedí y salí de la llamada con un clic."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Reunión simulada con roles",
+      "consigna": "Armá una reunión en Meet con roles definidos (secretario, gerente y cliente) y practicá conducirla completa.",
+      "pasos": [
+        "Creá en Calendar un evento con videollamada Meet para la próxima hora y agregá como invitados a dos compañeros.",
+        "Entrá a la reunión, probá con el ajuste la cámara y el micrófono, y saludá presentándote.",
+        "El secretario comparte una ventana de Docs con la agenda del día y anota acuerdos en el chat.",
+        "Practicá silenciar a un participante que no esté hablando y «levantar la mano» para pedir la palabra.",
+        "Grabá los últimos dos minutos de práctica y cerrá la reunión con un resumen.",
+        "Pegá en el chat el enlace del documento con las conclusiones antes de despedirte."
+      ],
+      "entrega": "Capturá la pantalla con la reunión en curso, el chat con el enlace del documento y el aviso de grabación.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo agendás una videollamada de Meet desde Calendar?",
+            "opciones": ["Escribiendo «Meet» en el cuerpo del mail", "Agregando «Videollamada de Google Meet» al evento", "Reiniciando el navegador", "Compartiendo tu pantalla"],
+            "correcta": "Agregando «Videollamada de Google Meet» al evento"
+          },
+          {
+            "pregunta": "¿Qué conviene compartir en una reunión para trabajar un documento?",
+            "opciones": ["Todo el escritorio", "Solo la ventana de la app necesaria", "La papelera de reciclaje", "Nada, solo el chat"],
+            "correcta": "Solo la ventana de la app necesaria"
+          },
+          {
+            "pregunta": "¿Qué hacés para pedir la palabra sin interrumpir?",
+            "opciones": ["Hablar más fuerte", "Levantar la mano virtual", "Apagar la cámara", "Salir y volver a entrar"],
+            "correcta": "Levantar la mano virtual"
+          },
+          {
+            "pregunta": "¿Qué es buena etiqueta al inicio de una reunión?",
+            "opciones": ["Prender el micrófono y presentarte con nombre y rol", "Escribir «hola» en el chat y nada más", "Llegar 20 minutos tarde", "Comer mientras hablás"],
+            "correcta": "Prender el micrófono y presentarte con nombre y rol"
+          },
+          {
+            "pregunta": "Antes de grabar una reunión, ¿qué conviene hacer?",
+            "opciones": ["Nada, se graba en silencio", "Avisar a los participantes", "Cerrar el chat", "Salir de la reunión"],
+            "correcta": "Avisar a los participantes"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará las capturas de la reunión simulada: chat con enlace, roles y grabación.",
+  "lectura": "Las videoconferencias son la sala de reuniones moderna del asistente administrativo. Saber crear y agendar reuniones en Meet y Zoom, unirse con cámara y micrófono correctos, compartir pantalla, grabar y respetar la etiqueta digital convierte cualquier llamada en una reunión productiva y profesional.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar cuántos usaron Meet o Zoom y qué resultados tuvieron", "min": "10 min" },
+      { "titulo": "Agendar y crear reunión", "que": "Crear un evento con Meet y programar una reunión de Zoom", "min": "15 min" },
+      { "titulo": "Unirse, cámara y micrófono", "que": "Entrar a la sala de prueba, ajustar audio/video y probar atajos", "min": "15 min" },
+      { "titulo": "Compartir, chat y grabación", "que": "Compartir una ventana, pegar link en el chat y probar grabación", "min": "20 min" },
+      { "titulo": "Etiqueta y roles", "que": "Simular la reunión con roles secretario/gerente/cliente", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo y checklist de etiqueta", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar quién tuvo que reenviar la grabación de una reunión que todos necesitaban: de eso se trata el acta digital.",
+      "Mostrar el calendario con la videollamada generada para que vean el enlace listo."
+    ],
+    "aclarar": [
+      "El enlace de Meet se genera solo al agregar la videollamada: no hay que crear ninguna URL manual.",
+      "Silenciarte es tu responsabilidad; el anfitrión también puede silenciar a otros, pero es un acto invasivo.",
+      "Grabar en Meet queda en Drive del organizador; en Zoom puede quedar en la nube con cuota limitada.",
+      "Compartir «todo el escritorio» puede exponer mails o ventanas privadas: siempre ventana puntual."
+    ],
+    "ejemplos": [
+      "Simular una entrevista de trabajo: entrevistador, candidato y secretario anfitrión.",
+      "Compartir en vivo un Google Sheets y corregir juntos un presupuesto.",
+      "Mostrar el atajo Ctrl + D para silenciar/activar el micrófono en plena práctica."
+    ]
+  }
+}

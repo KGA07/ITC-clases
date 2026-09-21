@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 2 - Branding, Objetivos y Propuesta de Valor</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#e11d48;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#e11d48;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Branding, Objetivos y Propuesta de Valor</h1>
+  <p class="sub">Práctica Mi objetivo SMART y mi propuesta de valor · Marketing Digital</p>
+  <div class="consigna">Definí en un documento en línea tu propuesta de valor y un objetivo SMART, y armá un mini mapa de 3 canales para tu marca o emprendimiento.</div>
+  
+    <div class="q" data-ok="Específico">
+      <p class="qt">1. ¿Qué significa la S en SMART?</p>
+      <label class="opt"><input type="radio" name="q0" value="Específico"><span>Específico</span></label>
+<label class="opt"><input type="radio" name="q0" value="Sustancioso"><span>Sustancioso</span></label>
+<label class="opt"><input type="radio" name="q0" value="Seguro"><span>Seguro</span></label>
+<label class="opt"><input type="radio" name="q0" value="Social"><span>Social</span></label>
+    </div>
+
+    <div class="q" data-ok="La promesa de beneficios que diferencia tu marca">
+      <p class="qt">2. Una propuesta de valor es...</p>
+      <label class="opt"><input type="radio" name="q1" value="La promesa de beneficios que diferencia tu marca"><span>La promesa de beneficios que diferencia tu marca</span></label>
+<label class="opt"><input type="radio" name="q1" value="El logo de la empresa"><span>El logo de la empresa</span></label>
+<label class="opt"><input type="radio" name="q1" value="El precio más bajo de todas"><span>El precio más bajo de todas</span></label>
+<label class="opt"><input type="radio" name="q1" value="La cantidad de seguidores"><span>La cantidad de seguidores</span></label>
+    </div>
+
+    <div class="q" data-ok="Llegar a 500 seguidores en Instagram en 3 meses con 3 publicaciones semanales">
+      <p class="qt">3. ¿Cuál de estos objetivos está redactado como SMART?</p>
+      <label class="opt"><input type="radio" name="q2" value="Llegar a 500 seguidores en Instagram en 3 meses con 3 publicaciones semanales"><span>Llegar a 500 seguidores en Instagram en 3 meses con 3 publicaciones semanales</span></label>
+<label class="opt"><input type="radio" name="q2" value="Quiero ser famoso"><span>Quiero ser famoso</span></label>
+<label class="opt"><input type="radio" name="q2" value="Subir más fotos"><span>Subir más fotos</span></label>
+<label class="opt"><input type="radio" name="q2" value="Tener muchos clientes"><span>Tener muchos clientes</span></label>
+    </div>
+
+    <div class="q" data-ok="Construir la identidad y la percepción de una marca en el entorno digital">
+      <p class="qt">4. Branding digital es...</p>
+      <label class="opt"><input type="radio" name="q3" value="Construir la identidad y la percepción de una marca en el entorno digital"><span>Construir la identidad y la percepción de una marca en el entorno digital</span></label>
+<label class="opt"><input type="radio" name="q3" value="Pintar un local"><span>Pintar un local</span></label>
+<label class="opt"><input type="radio" name="q3" value="Hacer carteles de oferta"><span>Hacer carteles de oferta</span></label>
+<label class="opt"><input type="radio" name="q3" value="Enviar mensajes a todos los contactos"><span>Enviar mensajes a todos los contactos</span></label>
+    </div>
+
+    <div class="q" data-ok="Saber dónde está tu audiencia y para qué usás cada plataforma">
+      <p class="qt">5. El mapa de canales te sirve para...</p>
+      <label class="opt"><input type="radio" name="q4" value="Saber dónde está tu audiencia y para qué usás cada plataforma"><span>Saber dónde está tu audiencia y para qué usás cada plataforma</span></label>
+<label class="opt"><input type="radio" name="q4" value="Cambiar tu contraseña"><span>Cambiar tu contraseña</span></label>
+<label class="opt"><input type="radio" name="q4" value="Imprimir tarjetas"><span>Imprimir tarjetas</span></label>
+<label class="opt"><input type="radio" name="q4" value="Hacer el logo más grande"><span>Hacer el logo más grande</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

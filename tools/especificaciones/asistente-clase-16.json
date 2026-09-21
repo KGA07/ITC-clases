@@ -1,0 +1,153 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 16,
+    "titulo": "Trabajo colaborativo",
+    "modulo": "Módulo 5 – Gestión de la Información y Nube",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a editar documentos en simultáneo con otras personas y a dominar comentarios y control de versiones.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 5\\Clase 16 Actividad",
+  "objetivos": [
+    "Editar un documento compartido de Docs o Sheets en simultáneo con otros usuarios.",
+    "Identificar quién escribió cada parte usando los colores por autor.",
+    "Comentar y sugerir cambios sin modificar el original.",
+    "Recuperar versiones anteriores del documento con el historial de versiones."
+  ],
+  "teoria": [
+    {
+      "titulo": "Edición simultánea en Docs y Sheets",
+      "emoji": "✍️",
+      "parrafos": [
+        "Un documento de Google puede abrirse y editarse a la vez por varias personas: cada quien ve los cambios de los demás casi al instante. En la esquina superior derecha aparecen los avatares de quienes están conectados.",
+        "Cada cursor lleva el color del autor, así sabés quién está escribiendo qué, ideal para las reuniones de trabajo en vivo."
+      ],
+      "puntos": [
+        "Los colores por autor: cada persona que edita tiene un color distinto para su cursor y sus celdas.",
+        "Trabajar en vivo: abrí el enlace, aparecé como coautor y editá mientras hablás por Meet.",
+        "En Sheets los cambios se comparten igual, perfecto para relevar datos de varios a la vez."
+      ]
+    },
+    {
+      "titulo": "Comentarios y sugerencias",
+      "emoji": "💬",
+      "parrafos": [
+        "Comentar es escribir una nota al margen sin tocar el texto original: seleccionás la parte, hacés clic en el ícono de comentario y responden ahí mismo. Ideal para pedir cambios o dejar indicaciones.",
+        "Más potente aún es «Sugerir cambios»: cada modificación queda marcada en verde y el dueño del documento decide aceptarla o rechazarla."
+      ],
+      "puntos": [
+        "Comentario: Ctrl + Alt + M (o Cmd + Option + M en Mac) sobre el texto seleccionado.",
+        "Modo sugerencia: clic en el lápiz (arriba a la derecha) → Sugerir cambios.",
+        "Las sugerencias se aceptan o rechazan con un clic en los botones ✔ / ✖.",
+        "Responder un comentario cierra el hilo con @menciones para que alguien lo vea."
+      ]
+    },
+    {
+      "titulo": "Historial de versiones: volver atrás",
+      "emoji": "🕘",
+      "parrafos": [
+        "Google guarda automáticamente todas las versiones del documento. Podés ver quién cambió qué y cuándo, y restaurar una versión anterior si algo salió mal.",
+        "Para el asistente administrativo es una red de seguridad enorme: un borrado accidental o un texto que se desestabilizó se recupera en segundos."
+      ],
+      "puntos": [
+        "Archivo → Historial de versiones → Ver historial de versiones.",
+        "Cada versión muestra la fecha y la lista de autores de esos cambios.",
+        "Volver a una versión: Restaurar esta versión; se genera una copia nueva sin perder la actual.",
+        "Podés nombrar versiones importantes (ej. «Versión aprobada por gerencia») con «Asignar nombre»."
+      ]
+    },
+    {
+      "titulo": "Buenas prácticas al colaborar",
+      "emoji": "🤝",
+      "parrafos": [
+        "El trabajo en equipo digital tiene reglas de convivencia. El orden, los nombres claros y los permisos bien configurados evitan el caos: vos sabés quién edita, qué toca y cuándo se da por aprobado el documento.",
+        "Antes de compartir un documento como editor, pensá si la persona necesita tanta capacidad o le alcanza con comentar o leer."
+      ],
+      "puntos": [
+        "Una versión soberana: trabajá siempre sobre un mismo enlace, no mandes archivos sueltos por mail.",
+        "Definí al dueño: quien aprobará la versión final (ej. gerente) tiene la última palabra.",
+        "Usá comentarios para asignar tareas: @nombre + indicación clara y plazo.",
+        "Al finalizar, nombrá la versión final y archivá: «2026-09 Facturación - FINAL»."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Documento compartido entre todos",
+      "consigna": "Todo el curso completa en simultáneo un mismo documento de Google Docs: una lista colaborativa de buenas prácticas de oficina.",
+      "pasos": [
+        "El docente crea un Documento de Google compartido y habilita el enlace para editar.",
+        "Cada alumno abre el enlace desde su PC y agrega su nombre en la lista con su color de autor.",
+        "Cada uno escribe dos buenas prácticas de oficina usando el modo Sugerir cambios sobre un párrafo de un compañero.",
+        "Dejá un comentario con @mencion en la práctica de otro colega proponiendo una mejora.",
+        "El docente acepta las sugerencias y muestra el historial de versiones para ver quién aportó cada parte.",
+        "Finalmente, cada alumno restaura mentalmente: verifica una versión anterior y vuelve a la actual."
+      ],
+      "entrega": "Capturá la pantalla con tu color de autor, un comentario y una sugerencia visible.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo sabés quién escribió cada parte del documento compartido?",
+            "opciones": ["Por el historial de versiones y los colores por autor", "Reiniciando el navegador", "Borrando el documento", "Por el tamaño de la letra"],
+            "correcta": "Por el historial de versiones y los colores por autor"
+          },
+          {
+            "pregunta": "El modo «Sugerir cambios» sirve para...",
+            "opciones": ["Borrar el documento directamente", "Proponer cambios que el dueño acepta o rechaza", "Cambiar el correo del archivo", "Compartir el archivo por WhatsApp"],
+            "correcta": "Proponer cambios que el dueño acepta o rechaza"
+          },
+          {
+            "pregunta": "Borraron por error un párrafo entero. ¿Qué hacés?",
+            "opciones": ["Rehacerlo de memoria", "Usar Archivo → Historial de versiones y restaurar", "Apagar la PC", "Crear otro documento desde cero"],
+            "correcta": "Usar Archivo → Historial de versiones y restaurar"
+          },
+          {
+            "pregunta": "¿Por qué es mejor trabajar sobre UN solo enlace compartido que mandar copias por mail?",
+            "opciones": ["Porque así todos ven los cambios en el mismo documento", "Porque se ahorra internet", "Porque es la única forma", "Porque las copias son más seguras"],
+            "correcta": "Porque así todos ven los cambios en el mismo documento"
+          },
+          {
+            "pregunta": "¿Qué significa el color de cada cursor en un documento compartido?",
+            "opciones": ["Que el texto tiene formato distinto", "Que identifica a cada autor", "Que el documento está dañado", "Que hay una sugerencia"],
+            "correcta": "Que identifica a cada autor"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente verificará la captura del documento compartido con comentarios y sugerencias visibles.",
+  "lectura": "El trabajo colaborativo convierte al asistente administrativo en un colaborador ágil dentro del equipo. Editar en simultáneo con avatares y colores por autor, comentar y sugerir cambios, y usar el historial de versiones permiten construir un único documento final con todos los aportes y sin perder nada.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar si alguna vez tuvieron que coordinar un documento entre varios", "min": "10 min" },
+      { "titulo": "Edición simultánea", "que": "Crear un Docs compartido y abrirlo en todos los equipos con colores por autor", "min": "20 min" },
+      { "titulo": "Comentarios y sugerencias", "que": "Practicar comentar con @mencion y cambiar al modo sugerir", "min": "20 min" },
+      { "titulo": "Historial de versiones", "que": "Mostrar versiones, restaurar y nombrar versiones clave", "min": "15 min" },
+      { "titulo": "Buenas prácticas", "que": "Discutir permisos y cuándo cada rol debe editar o solo comentar", "min": "10 min" },
+      { "titulo": "Práctica y cierre", "que": "Completar el ejercicio con todo el grupo y repasar con el interactivo", "min": "15 min" }
+    ],
+    "conecta": [
+      "Preguntar cuántos mandan la «versión final FINAL v2» por WhatsApp: con Drive se termina eso.",
+      "Armar en vivo el documento colaborativo del grupo y mostrar los avatares apareciendo a medida que entran."
+    ],
+    "aclarar": [
+      "El modo sugerir NO edita: el dueño decide. Entender la diferencia evita pisar textos ajenos.",
+      "Restaurar una versión crea una nueva versión actual: no borra el historial ni todo el trabajo.",
+      "Los avatares muestran presencia en vivo; si alguien trabaja offline, sus cambios se ven al sincronizar.",
+      "Comentar no modifica el texto: es una nota al margen que el autor puede resolver."
+    ],
+    "ejemplos": [
+      "Completar una planilla de asistencia conjunta en Sheets con todos editando a la vez.",
+      "Dejar una sugerencia de mejora sobre el texto de un alumno y aceptarla en vivo.",
+      "Recuperar un párrafo borrado con el historial de versiones para demostrar la red de seguridad."
+    ]
+  }
+}

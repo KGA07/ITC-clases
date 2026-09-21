@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 12 - Liquidación de Sueldos y Recibo</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0f766e;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0f766e;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>Liquidación de Sueldos y Recibo</h1>
+  <p class="sub">Práctica Planilla de liquidación y recibo de un empleado · Administración de PyMEs</p>
+  <div class="consigna">Creá la planilla de liquidación de sueldos del mes con escala, haberes, aportes y horas extra, y armá el recibo de sueldo válido con todos sus elementos.</div>
+  
+    <div class="q" data-ok="La escala salarial por categoría">
+      <p class="qt">1. ¿Qué fija el convenio colectivo?</p>
+      <label class="opt"><input type="radio" name="q0" value="La escala salarial por categoría"><span>La escala salarial por categoría</span></label>
+<label class="opt"><input type="radio" name="q0" value="El color de la hoja"><span>El color de la hoja</span></label>
+<label class="opt"><input type="radio" name="q0" value="Las funciones de Excel"><span>Las funciones de Excel</span></label>
+<label class="opt"><input type="radio" name="q0" value="El tipo de factura a emitir"><span>El tipo de factura a emitir</span></label>
+    </div>
+
+    <div class="q" data-ok="Una suma fija de paritaria que no hace base para aportes">
+      <p class="qt">2. ¿Cuál de estos es un ítem NO remunerativo?</p>
+      <label class="opt"><input type="radio" name="q1" value="Básico"><span>Básico</span></label>
+<label class="opt"><input type="radio" name="q1" value="Una suma fija de paritaria que no hace base para aportes"><span>Una suma fija de paritaria que no hace base para aportes</span></label>
+<label class="opt"><input type="radio" name="q1" value="Presentismo"><span>Presentismo</span></label>
+<label class="opt"><input type="radio" name="q1" value="Horas extra 50%"><span>Horas extra 50%</span></label>
+    </div>
+
+    <div class="q" data-ok="Total bruto menos Descuentos">
+      <p class="qt">3. Fórmula para el líquido a cobrar:</p>
+      <label class="opt"><input type="radio" name="q2" value="Total bruto menos Descuentos"><span>Total bruto menos Descuentos</span></label>
+<label class="opt"><input type="radio" name="q2" value="Total bruto más Descuentos"><span>Total bruto más Descuentos</span></label>
+<label class="opt"><input type="radio" name="q2" value="Total bruto por 21%"><span>Total bruto por 21%</span></label>
+<label class="opt"><input type="radio" name="q2" value="Descuentos menos Bruto"><span>Descuentos menos Bruto</span></label>
+    </div>
+
+    <div class="q" data-ok="Básico mensual / horas del mes">
+      <p class="qt">4. ¿Cómo se calcula el valor de la hora?</p>
+      <label class="opt"><input type="radio" name="q3" value="Básico mensual / horas del mes"><span>Básico mensual / horas del mes</span></label>
+<label class="opt"><input type="radio" name="q3" value="Básico mensual * 2"><span>Básico mensual * 2</span></label>
+<label class="opt"><input type="radio" name="q3" value="Horas del mes / Básico"><span>Horas del mes / Básico</span></label>
+<label class="opt"><input type="radio" name="q3" value="Básico por 160"><span>Básico por 160</span></label>
+    </div>
+
+    <div class="q" data-ok="CUIL y categoría del trabajador">
+      <p class="qt">5. ¿Qué dato NO puede faltar en un recibo de sueldo válido?</p>
+      <label class="opt"><input type="radio" name="q4" value="CUIL y categoría del trabajador"><span>CUIL y categoría del trabajador</span></label>
+<label class="opt"><input type="radio" name="q4" value="El color de la empresa"><span>El color de la empresa</span></label>
+<label class="opt"><input type="radio" name="q4" value="El número de factura"><span>El número de factura</span></label>
+<label class="opt"><input type="radio" name="q4" value="La foto del empleado"><span>La foto del empleado</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 6,
+    "titulo": "Formularios con subformularios",
+    "modulo": "Módulo 2 – Access: Bases de Datos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Access",
+    "bajada": "Vas a vincular un formulario principal con un subformulario para ver datos relacionados en una sola pantalla, como un cliente con todas sus facturas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 2 Access\\Clase 6 Formularios con subformularios",
+  "objetivos": [
+    "Crear un formulario con subformulario aplicando el asistente de formularios.",
+    "Editar un subformulario y ajustar su diseño y campos mostrados.",
+    "Agregar campos calculados dentro del subformulario.",
+    "Comprender el uso de subformularios en bases relacionales (cliente → facturas, producto → movimientos)."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un subformulario?",
+      "emoji": "📑",
+      "parrafos": [
+        "Un subformulario es un formulario insertado dentro de otro formulario llamado principal. Ambos quedan vinculados por un campo común: al moverse entre clientes en el formulario principal, el subformulario muestra automáticamente solo las facturas de ese cliente.",
+        "Esta estructura es la clave de las bases relacionales de una PyME: en una sola pantalla se consulta un cabecera (el cliente) y todos sus detalles (las facturas)."
+      ],
+      "puntos": [
+        "Formulario principal: muestra los datos del registro cabecera (ej: datos del cliente).",
+        "Subformulario: muestra los registros relacionados del detalle (ej: facturas de ese cliente).",
+        "Vinculación automática: el asistente detecta la relación entre tablas y sincroniza ambos formularios.",
+        "Campos de vínculo: los campos que conectan, normalmente la clave primaria y su correspondiente clave foránea."
+      ]
+    },
+    {
+      "titulo": "Creación del formulario con subformulario",
+      "emoji": "🛠️",
+      "parrafos": [
+        "El método más cómodo es el Asistente de formularios: se elige primero la tabla principal (Clientes) y luego, en el mismo asistente, la tabla relacionada (Facturas). Access crea ambos formularios y el control de subformulario queda insertado automáticamente."
+      ],
+      "puntos": [
+        "Pestaña Crear → Asistente de formularios.",
+        "En la lista de Tablas/Consultas, primero la tabla de cliente principal (ej: Clientes) y hasta allí pasar los campos.",
+        "Volver a la lista, elegir la tabla de detalle (ej: Facturas) y agregar sus campos.",
+        "Access pregunta cómo ver los datos: elegir «por Clientes» y la opción «Formularios con subformularios».",
+        "Elegir el estilo y el asistente genera automáticamente el formulario y el control de subformulario."
+      ]
+    },
+    {
+      "titulo": "Edición del subformulario",
+      "emoji": "✏️",
+      "parrafos": [
+        "El subformulario se edita como cualquier formulario, pero en vista de Hoja de datos dentro del principal. Se puede cambiar su tamaño, reorganizar columnas, agregar totales y ajustar su ancho para que no queden columnas cortadas."
+      ],
+      "puntos": [
+        "El control «Subformulario/AInforme» dentro del formulario principal abre el subformulario como objeto propio en el Panel de navegación.",
+        "En vista Diseño se puede cambiar el ancho del subformulario y de sus columnas.",
+        "El subformulario suele mostrarse en vista Hoja de datos (columnas), la más compacta.",
+        "Los cambios se guardan dentro del objeto del subformulario; el principal refleja los cambios automáticamente."
+      ]
+    },
+    {
+      "titulo": "Campos calculados en subformularios",
+      "emoji": "🧮",
+      "parrafos": [
+        "Dentro del subformulario se pueden agregar campos calculados que operen sobre los registros del detalle: por ejemplo, el total de cada factura, o la suma de todos los montos de las facturas del cliente al pie del subformulario."
+      ],
+      "puntos": [
+        "En el Pie del subformulario se puede poner =Suma([MontoTotal]) para ver el total facturado al cliente.",
+        "En cada fila (Detalle) se pueden calcular subtotales, por ejemplo el precio por cantidad: =[Precio]*[Cantidad].",
+        "El subformulario se usa con tablas intermedias: Cliente → Factura (cabecera) y Factura → DetalleFactura (líneas).",
+        "Los totales del subformulario se actualizan automáticamente a medida que se cargan nuevos registros relacionados."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Vincular clientes con sus facturas",
+      "consigna": "Creá un formulario principal de Clientes que muestre en un subformulario todas las facturas de cada cliente. Agregá cálculos y verificá la sincronización.",
+      "pasos": [
+        "Verificá que en la base existan las tablas Clientes (con CodigoCliente) y Facturas (con NroFactura, FechaFactura, MontoTotal y el campo CodigoCliente que la conecta).",
+        "Abrí el Asistente de formularios (Crear → Asistente de formularios).",
+        "Agregá los campos de Clientes: Nombre, Telefono y Email.",
+        "Después, desde Tablas/Consultas, elegí Facturas y agregá NroFactura, FechaFactura y MontoTotal.",
+        "En la pregunta «¿Cómo desea ver los datos?», elegí «por Clientes» y la opción «Formularios con subformularios».",
+        "En la vista Diseño, agregá en el Pie del subformulario un cuadro de texto con =Suma([MontoTotal]) y mostralo como Total.",
+        "Probá en vista Presentación: movete entre clientes y verificá que el subformulario muestre las facturas de cada cliente."
+      ],
+      "entrega": "Guardá el archivo .accdb y compartí una captura del formulario en vista Presentación mostrando un cliente y sus facturas con el total calculado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué muestra el subformulario de un formulario de clientes?",
+            "opciones": ["Los datos de todos los clientes", "Los registros relacionados del cliente seleccionado", "Las tablas de la base de datos", "Los informes guardados"],
+            "correcta": "Los registros relacionados del cliente seleccionado"
+          },
+          {
+            "pregunta": "¿Cómo se crea un formulario con subformulario de forma sencilla?",
+            "opciones": ["Creando una consulta", "Usando el Asistente de formularios con las dos tablas", "Usando la vista Hoja de datos", "Renombrando tablas"],
+            "correcta": "Usando el Asistente de formularios con las dos tablas"
+          },
+          {
+            "pregunta": "El formulario principal y el subformulario quedan conectados por…",
+            "opciones": ["Un campo común (clave primaria y clave foránea)", "El nombre del formulario", "El color de fondo", "La misma carpeta"],
+            "correcta": "Un campo común (clave primaria y clave foránea)"
+          },
+          {
+            "pregunta": "¿Dónde se coloca la suma de todos los montos de las facturas del cliente?",
+            "opciones": ["En el Detalle del formulario principal", "En el Pie del subformulario", "En el encabezado de la tabla Clientes", "En el Panel de navegación"],
+            "correcta": "En el Pie del subformulario"
+          },
+          {
+            "pregunta": "¿Qué vínculo se arma en una base relacional con subformularios?",
+            "opciones": ["Producto → Proveedor", "Cliente → Facturas", "Factura → Proveedor", "Informe → Consulta"],
+            "correcta": "Cliente → Facturas"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo .accdb con el formulario principal y el subformulario sincronizados y el total calculado.",
+  "lectura": "El formulario con subformulario muestra datos relacionados en una sola pantalla: el registro cabecera y su detalle. Se crea con el Asistente de formularios seleccionando ambas tablas, y se puede enriquecer con campos calculados y totales.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar relaciones y formularios. Preguntar qué información consulta un dueño de PyME cuando abre la ficha de un cliente.", "min": "10 min" },
+      { "titulo": "Concepto de subformulario", "que": "Explicar la idea de cabecera y detalle. Mostrar un ejemplo de cliente → facturas en pantalla.", "min": "15 min" },
+      { "titulo": "Creación con el asistente", "que": "Crear el formulario con subformulario en vivo paso a paso con el Asistente de formularios.", "min": "20 min" },
+      { "titulo": "Edición y campos calculados", "que": "Ajustar el diseño del subformulario y agregar =Suma([MontoTotal]) en su Pie.", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Los alumnos crean su propio formulario con subformulario y prueban la sincronización. El docente circula.", "min": "20 min" },
+      { "titulo": "Cierre y repaso", "que": "Repasar con las preguntas del interactivo. Ver las capturas de los alumnos.", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿cómo saberían hoy cuánto le facturaron a un cliente en total? Mostrar que el subformulario lo responde al instante.",
+      "Mostrar el formulario de un sistema comercial conocido (ej: facturación) donde se ven el cliente arriba y las líneas abajo."
+    ],
+    "aclarar": [
+      "Sin una relación entre las tablas, el asistente no puede crear la sincronización del subformulario.",
+      "El subformulario es un objeto independiente que se guarda por separado en el Panel de navegación.",
+      "Los totales del Pie del subformulario se actualizan solos: no hace falta recalcular.",
+      "El subformulario puede ser un formulario entero o una hoja de datos, según el diseño que se elija."
+    ],
+    "ejemplos": [
+      "Crear en vivo el formulario Clientes → Facturas y navegar entre clientes para mostrar la sincronización.",
+      "Agregar un total de facturación por cliente y mostrar cómo cambia al pasar de un cliente a otro."
+    ]
+  }
+}

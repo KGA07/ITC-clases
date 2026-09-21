@@ -1,0 +1,145 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 2,
+    "titulo": "Branding, Objetivos y Propuesta de Valor",
+    "modulo": "Módulo 1 – Fundamentos del Marketing Digital",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a distinguir objetivo de estrategia, definir tu propuesta de valor y armar objetivos SMART que guíen tu marca en cada canal.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 1 - Fundamentos del Marketing Digital\\Clase 3 - Branding",
+  "objetivos": [
+    "Distinguir los conceptos de objetivo y estrategia en un plan de marketing.",
+    "Definir una propuesta de valor clara y diferenciada.",
+    "Construir un branding digital sólido y una marca personal memorable.",
+    "Formular objetivos SMART y relevar un mapa de canales."
+  ],
+  "teoria": [
+    {
+      "titulo": "Objetivo y estrategia",
+      "emoji": "🎯",
+      "parrafos": [
+        "El objetivo es el punto al que querés llegar: por ejemplo, 'aumentar las ventas de la tienda online'. La estrategia es el camino que elegís para llegar: qué canales usás, a quién le hablás y con qué mensaje."
+      ],
+      "puntos": [
+        "El objetivo responde qué querés lograr; la estrategia, cómo lo vas a lograr.",
+        "Un objetivo sin estrategia es un deseo; una estrategia sin objetivo no se puede medir.",
+        "Ejemplo: objetivo 'más seguidores', estrategia 'publicaciones diarias de valor + colaboraciones'."
+      ]
+    },
+    {
+      "titulo": "La propuesta de valor",
+      "emoji": "💎",
+      "parrafos": [
+        "La propuesta de valor es la promesa concreta de beneficios que le ofrece tu marca a un cliente, y por qué debería elegirte a vos y no a la marca de al lado. Si no está clara, el precio termina siendo el único factor de decisión."
+      ],
+      "puntos": [
+        "Responde: qué problema resolvés, para quién y por qué sos mejor.",
+        "Debe ser específica y memorable: evitá 'somos los mejores' y usá beneficios concretos.",
+        "Se comunica en todos los canales: bio, slogan, publicidad y textos."
+      ]
+    },
+    {
+      "titulo": "Branding digital y marca personal",
+      "emoji": "🧲",
+      "parrafos": [
+        "El branding es la construcción de identidad: nombre, tono, colores y la percepción que la gente tiene de tu marca. La marca personal es lo mismo, pero aplicado a vos: tu reputación y lo que otros dicen de tu trabajo."
+      ],
+      "puntos": [
+        "Elementos de identidad: nombre, colores, tipografía, tono de voz y personalidad.",
+        "La coherencia genera confianza: el mismo estilo en todos los canales.",
+        "Marca personal: tu experiencia y tus valores deben verse en tu perfil y en tus contenidos."
+      ]
+    },
+    {
+      "titulo": "Objetivos SMART y mapa de canales",
+      "emoji": "🗺️",
+      "parrafos": [
+        "SMART es una regla para formular objetivos que se puedan cumplir y medir: Específico, Medible, Alcanzable, Relevante y con Tiempo definido. El mapa de canales te dice en qué plataformas está tu audiencia y para qué usás cada una."
+      ],
+      "puntos": [
+        "Específico: 'llegar a 500 seguidores en Instagram' en vez de 'crecer en redes'.",
+        "Medible: elegí números concretos: seguidores, ventas, clics.",
+        "Temporal: definí una fecha, por ejemplo 'en 3 meses'.",
+        "Mapa de canales: trazás tu público y decidís dónde invertir tu tiempo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi objetivo SMART y mi propuesta de valor",
+      "consigna": "Definí en un documento en línea tu propuesta de valor y un objetivo SMART, y armá un mini mapa de 3 canales para tu marca o emprendimiento.",
+      "pasos": [
+        "Abrí un documento en Google Docs (docs.google.com).",
+        "Escribí tu propuesta de valor: qué ofrecés, a quién y por qué te eligen.",
+        "Redactá un objetivo SMART completo, con número y fecha.",
+        "Elegí 3 canales (Instagram, Facebook, WhatsApp, TikTok, email) y anotá qué objetivo cumplís en cada uno.",
+        "Guardá el documento y generá el link de compartir."
+      ],
+      "entrega": "Compartí el enlace del documento con tu propuesta de valor, tu objetivo SMART y el mapa de canales.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué significa la S en SMART?",
+            "opciones": ["Específico", "Sustancioso", "Seguro", "Social"],
+            "correcta": "Específico"
+          },
+          {
+            "pregunta": "Una propuesta de valor es...",
+            "opciones": ["La promesa de beneficios que diferencia tu marca", "El logo de la empresa", "El precio más bajo de todas", "La cantidad de seguidores"],
+            "correcta": "La promesa de beneficios que diferencia tu marca"
+          },
+          {
+            "pregunta": "¿Cuál de estos objetivos está redactado como SMART?",
+            "opciones": ["Llegar a 500 seguidores en Instagram en 3 meses con 3 publicaciones semanales", "Quiero ser famoso", "Subir más fotos", "Tener muchos clientes"],
+            "correcta": "Llegar a 500 seguidores en Instagram en 3 meses con 3 publicaciones semanales"
+          },
+          {
+            "pregunta": "Branding digital es...",
+            "opciones": ["Construir la identidad y la percepción de una marca en el entorno digital", "Pintar un local", "Hacer carteles de oferta", "Enviar mensajes a todos los contactos"],
+            "correcta": "Construir la identidad y la percepción de una marca en el entorno digital"
+          },
+          {
+            "pregunta": "El mapa de canales te sirve para...",
+            "opciones": ["Saber dónde está tu audiencia y para qué usás cada plataforma", "Cambiar tu contraseña", "Imprimir tarjetas", "Hacer el logo más grande"],
+            "correcta": "Saber dónde está tu audiencia y para qué usás cada plataforma"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el documento compartido con propuesta de valor, objetivo SMART y mapa de canales.",
+  "lectura": "Todo plan de marketing parte de un objetivo claro y una estrategia para alcanzarlo. La propuesta de valor te diferencia, el branding construye confianza y los objetivos SMART te permiten medir si vas avanzando. El mapa de canales ordena dónde poner tu esfuerzo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar qué marcas siguen y por qué; conectar con branding", "min": "10 min" },
+      { "titulo": "Objetivo y estrategia", "que": "Explicar la diferencia con un ejemplo de venta concreta", "min": "15 min" },
+      { "titulo": "Propuesta de valor", "que": "Armar una propuesta de valor en vivo para un ejemplo", "min": "20 min" },
+      { "titulo": "Branding y marca personal", "que": "Mostrar perfiles coherentes y hablar de marca personal", "min": "15 min" },
+      { "titulo": "SMART y mapa de canales", "que": "Redactar un objetivo SMART en conjunto y armar el mapa", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo y dudas del ejercicio", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué te hace elegir un local antes que otro aunque venda lo mismo? Conectar con propuesta de valor.",
+      "Pedir que busquen su propio nombre en redes y ver qué encuentra la gente."
+    ],
+    "aclarar": [
+      "Objetivo y estrategia son cosas distintas: el objetivo se mide, la estrategia es el camino.",
+      "SMART no es una fórmula rígida, pero el número y la fecha son indispensables.",
+      "La marca personal también se trabaja: no alcanza con tener el perfil actualizado."
+    ],
+    "ejemplos": [
+      "Redactar en voz alta un objetivo SMART para un kiosco local.",
+      "Comparar dos bios de Instagram: una genérica y otra con propuesta de valor.",
+      "Mostrar el mapa de canales de un emprendimiento de comida casera."
+    ]
+  }
+}

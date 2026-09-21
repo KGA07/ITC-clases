@@ -1,0 +1,158 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 4,
+    "titulo": "Introducción a Word y Google Docs",
+    "modulo": "Módulo 2 – Procesador de Textos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a descubrir el procesador de textos como tu herramienta principal de redacción: programas instalados vs online, cómo crear y guardar bien tus documentos y la estructura exacta de una nota administrativa.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 1\\Clase 4 Formtato de Nota administrativa",
+  "objetivos": [
+    "Diferenciar Microsoft Word (instalado) de Google Docs (online) y elegir cuál usar según la tarea.",
+    "Crear un documento, guardarlo con Ctrl+G y nombrarlo de forma descriptiva desde el primer momento.",
+    "Redactar una nota administrativa completa con lugar y fecha, destinatario, cuerpo, despedida y firma.",
+    "Aplicar formato profesional básico: negrita para lo importante y texto justificado."
+  ],
+  "teoria": [
+    {
+      "titulo": "Word instalado vs Google Docs online",
+      "emoji": "⚖️",
+      "parrafos": [
+        "Microsoft Word es el procesador clásico que se instala en tu PC: potente, con herramientas avanzadas de diseño y archivos locales en formato .docx que funcionan sin internet. Google Docs vive en la nube: se abre desde docs.google.com con una cuenta de Gmail y se guarda solo en Google Drive.",
+        "No es «uno mejor que otro»: es elegir la herramienta correcta para cada contexto. Un documento confidencial con formato complejo puede pedir Word; un borrador que se edita entre varios, Google Docs."
+      ],
+      "puntos": [
+        "Word: 100% offline, más herramientas de diseño avanzado y manejo de archivos .docx. Ideal para documentos complejos y con formato elaborado.",
+        "Google Docs: gratuito con cuenta de Gmail, guardado automático en la nube y acceso desde cualquier dispositivo con internet. Diferencia clave: colaboración en tiempo real con varias personas a la vez.",
+        "Google Docs funciona offline si activás el acceso sin conexión, y los cambios se sincronizan cuando volvés a conectarte.",
+        "En la oficina real vas a convivir con ambos: sabé abrir, guardar y exportar en los dos.",
+        "Los .docx se abren en Google Docs y los de Docs se pueden descargar como .docx: los dos mundos dialogan."
+      ]
+    },
+    {
+      "titulo": "Crear y guardar documentos",
+      "emoji": "📄",
+      "parrafos": [
+        "El procesador de textos no sirve de nada si no sabés guardar bien. Un documento sin nombre o guardado cada vez menos es fuente de dolores de cabeza: archivos perdidos, versiones viejas y el eterno «no encuentro la última versión».",
+        "El orden empieza antes de escribir: poné nombre al archivo, pensá la carpeta y guardá apenas creás el documento."
+      ],
+      "puntos": [
+        "Word: Archivo → Nuevo documento en blanco para empezar, o Ctrl+U con el cuadro de «Guardar como» abierto apenas arrancás.",
+        "Ctrl+G guarda. En Word, «Guardar como» (F12) te deja elegir carpeta, nombre y formato la primera vez que guardás.",
+        "Google Docs no tiene botón de guardado: guarda solo en Google Drive en cada cambio, al instante.",
+        "Nombrá siempre antes de empezar: «Nota_Evento_Enero.docx» evita confusiones y pérdidas de tiempo buscando «documento sin título».",
+        "Formato final para compartir: exportá a PDF cuando el documento ya esté cerrado, así nadie lo modifica sin autorización."
+      ]
+    },
+    {
+      "titulo": "La nota administrativa: estructura",
+      "emoji": "📝",
+      "parrafos": [
+        "Una nota administrativa es una comunicación escrita breve de la institución hacia adentro o hacia un destinatario. Tené en cuenta que tiene una estructura fija que se repite en toda la carrera y en la oficina real.",
+        "Si dominás la estructura, redactar cualquier nota te lleva minutos: solamente completás los campos."
+      ],
+      "puntos": [
+        "Lugar y fecha: se inicia con la ubicación y la fecha completa. Ejemplo: «Buenos Aires, 22 de enero de 2026».",
+        "Destinatario: especificar claramente a quién va dirigida la comunicación: nombre y cargo si se conocen.",
+        "Cuerpo del mensaje: redactalo breve, claro y cortés, en lenguaje profesional y sin rodeos. Motivo, día y hora exacta, y lugar específico.",
+        "Despedida y firma: finalizá con una despedida formal seguida de tu nombre completo y el cargo institucional.",
+        "Orden estricto: lo primero que se lee es el lugar y la fecha; el destinatario va arriba del cuerpo; la firma cierra el documento."
+      ]
+    },
+    {
+      "titulo": "Formato profesional en dos claves",
+      "emoji": "✨",
+      "parrafos": [
+        "El contenido importa, pero el aspecto grita antes que el contenido. Un documento alineado y con énfasis en lo importante se lee rápido y da confianza al lector.",
+        "Dos herramientas alcanzan para darle aspecto ejecutivo a una nota: la negrita y la alineación justificada."
+      ],
+      "puntos": [
+        "Negrita: resaltá información clave como fechas, nombres o importes. Menos es más: dos o tres palabras, no párrafos enteros.",
+        "Justificado: alinear el texto a ambos bordes para que el bloque luzca ordenado, con bordes rectos como los libros y diarios.",
+        "Márgenes estándar (2,5 cm aprox.): no uses márgenes extremos a menos que la plantilla lo pida.",
+        "Una sola fuente legible (Arial o Times New Roman) y el mismo tamaño en todo el documento: pruebá 11 o 12 puntos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Comunicado de evento",
+      "consigna": "Redactá la nota administrativa «CONVOCATORIA A REUNIÓN DE PERSONAL» aplicando toda la estructura y el formato vistos en clase, y exportala a PDF como lo harías en una oficina real.",
+      "pasos": [
+        "Creá un documento nuevo en Word o Google Docs y nombralo «Nota_Evento_TuNombre» antes de escribir.",
+        "Título centrado y en negrita: «CONVOCATORIA A REUNIÓN DE PERSONAL».",
+        "Colocá la fecha completa en la esquina superior derecha, alineada a la derecha.",
+        "Escribí el destinatario (por ejemplo «A todo el personal administrativo») y el cuerpo: motivo de la reunión, día y hora exacta, y lugar específico donde se realiza.",
+        "Aplicá negrita a la fecha, la hora y el lugar; alineá el cuerpo del texto justificado.",
+        "Cerrá con despedida y firma: tu nombre completo y el cargo institucional.",
+        "Guardá como .docx y exportá a PDF (Archivo → Exportar → Crear PDF) para distribución oficial."
+      ],
+      "entrega": "Exportá el documento a PDF (o compartí el enlace si usaste Google Docs) mostrando el comunicado terminado con los 5 elementos de la estructura.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la principal ventaja de Google Docs frente a Word instalado?",
+            "opciones": ["Funciona sin internet siempre", "La colaboración en tiempo real con guardado automático en la nube", "Tiene más herramientas de diseño avanzado", "Es más caro pero más seguro"],
+            "correcta": "La colaboración en tiempo real con guardado automático en la nube"
+          },
+          {
+            "pregunta": "¿Qué atajo de teclado guardás en Word?",
+            "opciones": ["Ctrl + P", "Ctrl + G", "Ctrl + B", "F2"],
+            "correcta": "Ctrl + G"
+          },
+          {
+            "pregunta": "¿En qué formato exportás el documento para distribuirlo sin que lo modifiquen?",
+            "opciones": [".docx", ".txt", ".pdf", ".jpg"],
+            "correcta": ".pdf"
+          },
+          {
+            "pregunta": "¿Cuál es el PRIMER elemento de una nota administrativa?",
+            "opciones": ["La despedida", "El destinatario", "Lugar y fecha", "La firma"],
+            "correcta": "Lugar y fecha"
+          },
+          {
+            "pregunta": "¿Qué alineación recomendamos para el cuerpo del texto de una nota profesional?",
+            "opciones": ["Centrada", "Izquierda", "Derecha", "Justificada"],
+            "correcta": "Justificada"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el PDF o el enlace compartido: estructura completa (lugar y fecha, destinatario, cuerpo, despedida y firma), título en negrita centrado, fecha a la derecha y cuerpo justificado.",
+  "lectura": "Word y Google Docs no compiten: se complementan según la tarea. La base de todo es guardar bien y poner nombre desde el primer segundo. Y la nota administrativa tiene una estructura fija —lugar y fecha, destinatario, cuerpo, despedida y firma— que, junto con negrita estratégica y texto justificado, te deja documentos con aspecto ejecutivo en minutos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar atajos de la clase 3 y preguntar qué usan hoy para escribir: Word, Docs, WhatsApp", "min": "10 min" },
+      { "titulo": "Instalados vs online", "que": "Comparar Word vs Google Docs con una tabla en vivo y ejemplos de oficina", "min": "15 min" },
+      { "titulo": "Crear y guardar documentos", "que": "Crear un documento, ponerle nombre y guardarlo en los dos programas mostrando Ctrl+G", "min": "20 min" },
+      { "titulo": "Estructura de la nota administrativa", "que": "Desarrollar los 5 elementos con un ejemplo completo proyectado", "min": "20 min" },
+      { "titulo": "Práctica: comunicado de evento", "que": "Guiar el ejercicio paso a paso: título centrado, fecha derecha, cuerpo justificado y exportar a PDF", "min": "20 min" },
+      { "titulo": "Cierre y autoevaluación", "que": "Pasar el interactivo en voz alta y repasar cuándo conviene cada programa", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿alguna vez dos o tres personas tuvieron que editar el mismo documento? Ahí asoma Google Docs y la colaboración en tiempo real.",
+      "Mostrar un mismo archivo abierto en Word y en Docs para que vean la diferencia de interfaz y de guardado."
+    ],
+    "aclarar": [
+      "Ctrl+G guarda en Word; Google Docs guarda solo, sin botón de guardar: no hace falta apretar nada.",
+      "Exportar a PDF no es «convertir a imagen»: es crear un archivo para distribución que conserva el formato y no se edita fácil.",
+      "La firma no es lo mismo que el destinatario: el destinatario va arriba y la firma cierra el documento.",
+      "La negrita se usa para resaltar palabras clave, no párrafos enteros: el exceso de negrita resta profesionalismo."
+    ],
+    "ejemplos": [
+      "Proyectar una nota administrativa real bien armada como modelo para imitar.",
+      "Mostrar la «historial de revisiones» de Google Docs (Archivo → Historial de versiones) para ver la evolución de un documento.",
+      "Exportar el mismo archivo a .docx y .pdf y comparar cuál conviene enviar por mail en cada ocasión."
+    ]
+  }
+}

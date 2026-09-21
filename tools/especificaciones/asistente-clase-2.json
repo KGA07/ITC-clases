@@ -1,0 +1,157 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 2,
+    "titulo": "Windows 10/11 y organización de archivos",
+    "modulo": "Módulo 1 – Introducción y Manejo de PC",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a dominar el Escritorio, el Menú Inicio y el Explorador de archivos, y a organizar tus documentos como lo hace un asistente administrativo profesional.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 1\\Clase 2 Introduccion programas Windows, Teclado y Mouse",
+  "objetivos": [
+    "Usar el Escritorio, el Menú Inicio y la barra de tareas de Windows 10/11.",
+    "Navegar con el Explorador de archivos y distinguir sus áreas principales.",
+    "Crear, copiar, mover y borrar documentos sin perder información.",
+    "Elegir dónde guardar: disco local, pendrive o nube, según necesidad."
+  ],
+  "teoria": [
+    {
+      "titulo": "El Escritorio y el Menú Inicio",
+      "emoji": "🖥️",
+      "parrafos": [
+        "El Escritorio es la pantalla principal de Windows: ahí viven los íconos, accesos directos y la barra de tareas. El Menú Inicio está en la esquina inferior izquierda y es el punto de entrada a todos los programas."
+      ],
+      "puntos": [
+        "Windows 10: los íconos del Menú Inicio aparecen como cuadros organizados (Live Tiles).",
+        "Windows 11: menú y barra centrados, con bordes redondeados y apariencia más limpia.",
+        "Consejo profesional: presioná la tecla Windows y escribí el nombre del programa para encontrarlo al instante."
+      ]
+    },
+    {
+      "titulo": "El Explorador de archivos",
+      "emoji": "📁",
+      "imagen": {
+        "src": "img/explorador.png",
+        "alt": "Explorador de archivos de Windows",
+        "caption": "El Explorador de archivos es tu panel de control de documentos."
+      },
+      "parrafos": [
+        "El Explorador de archivos es la herramienta para ver y organizar todos los archivos y carpetas del equipo."
+      ],
+      "puntos": [
+        "Barra de navegación: panel izquierdo con Escritorio, Documentos, Descargas y unidades.",
+        "Cinta de opciones: herramientas para copiar, mover, eliminar y organizar.",
+        "Área de contenido: la zona donde ves tus archivos y carpetas.",
+        "Vistas: 'Iconos grandes' para fotos, 'Detalles' para ver fechas, tamaños y tipos."
+      ]
+    },
+    {
+      "titulo": "Crear, copiar, mover y borrar",
+      "emoji": "✂️",
+      "parrafos": [
+        "Saber mover documentación sin equivocarse es una tarea diaria del asistente administrativo. Los atajos de teclado son la forma más rápida y segura de hacerlo."
+      ],
+      "puntos": [
+        "Ctrl + C: copiar el elemento seleccionado sin eliminarlo del original.",
+        "Ctrl + X: cortar para mover (el elemento queda 'sobre el portapapeles').",
+        "Ctrl + V: pegar donde esté el cursor o la carpeta abierta.",
+        "Ctrl + Z: deshacer la última acción. ¡Tu salvavidas digital!",
+        "Para borrar: seleccionar con clic y presionar Supr, confirmando que no vas a necesitarlo."
+      ]
+    },
+    {
+      "titulo": "¿Dónde guardo mis cosas?",
+      "emoji": "💾",
+      "imagen": {
+        "src": "img/comparativa.png",
+        "alt": "Comparativa de almacenamiento",
+        "caption": "Disco local, pendrive y nube: cada opción tiene su momento."
+      },
+      "parrafos": [
+        "Conocer las opciones de almacenamiento y sus ventajas te ayuda a decidir dónde guardar cada archivo."
+      ],
+      "puntos": [
+        "Disco Local (C:): el corazón de tu PC, acceso rápido y constante sin internet. Si la PC falla, recuperar datos puede ser difícil.",
+        "Pendrive (USB): portátil y práctico, sin internet. Cuidado: puede perderse o dañarse físicamente.",
+        "Nube (Drive/OneDrive): acceso desde cualquier lugar con internet y copias de seguridad automáticas. Protegido aunque el equipo se dañe."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Organizá tu archivo digital",
+      "consigna": "Creá una estructura de carpetas lógica y profesional para separar tus documentos personales de los de trabajo, aplicando lo visto en clase.",
+      "pasos": [
+        "Creá tu carpeta personal con tu nombre: clic derecho → Nuevo → Carpeta.",
+        "Dentro, creá tres carpetas temáticas: «Facturas», «Recibos» y «Documentos de trabajo».",
+        "Copiá un archivo existente (Ctrl + C / Ctrl + V) y movelo a la carpeta correcta (Ctrl + X / Ctrl + V).",
+        "Borrá un archivo que no uses (Supr) y confirmá la acción.",
+        "Verificá el resultado en el Explorador de archivos: vista Detalles para ver fechas y tamaños."
+      ],
+      "entrega": "Capturá la pantalla (Win + Shift + S) mostrando tu estructura de carpetas y el archivo movido.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo encontrás un programa rápido sin navegar los menús?",
+            "opciones": ["Presionando la tecla Windows y escribiendo el nombre", "Reiniciando la PC", "Abriendo todos los programas", "Borrando el Escritorio"],
+            "correcta": "Presionando la tecla Windows y escribiendo el nombre"
+          },
+          {
+            "pregunta": "¿Qué parte del Explorador muestra Escritorio, Documentos y unidades?",
+            "opciones": ["Cinta de opciones", "Barra de navegación", "Área de contenido", "Barra de título"],
+            "correcta": "Barra de navegación"
+          },
+          {
+            "pregunta": "¿Qué atajo usás para MOVER un archivo a otra carpeta?",
+            "opciones": ["Ctrl + C y Ctrl + V", "Ctrl + X y Ctrl + V", "Ctrl + Z", "Supr"],
+            "correcta": "Ctrl + X y Ctrl + V"
+          },
+          {
+            "pregunta": "¿Cuál es la ventaja de guardar en la nube?",
+            "opciones": ["No requiere internet nunca", "Acceso desde cualquier lugar con internet y respaldo automático", "Solo funciona offline", "Ocupa menos espacio que el pendrive"],
+            "correcta": "Acceso desde cualquier lugar con internet y respaldo automático"
+          },
+          {
+            "pregunta": "¿Qué vista del Explorador conviene para ver fechas y tamaños de archivos?",
+            "opciones": ["Iconos grandes", "Detalles", "Iconos medianos", "Miniaturas"],
+            "correcta": "Detalles"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la captura con la estructura de carpetas ordenada y el archivo movido correctamente.",
+  "lectura": "Windows es el escritorio donde trabaja el asistente administrativo. Saber moverse en el Explorador, manejar los atajos de copiar/cortar/pegar y elegir el lugar correcto para guardar (disco, pendrive o nube) organiza tu día y protege tu información.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar encendido apagado y preguntar qué guardan y dónde", "min": "10 min" },
+      { "titulo": "Escritorio y Menú Inicio", "que": "Mostrar en vivo Windows 10 vs 11 y el buscador con tecla Windows", "min": "20 min" },
+      { "titulo": "Explorador de archivos", "que": "Recorrer barra de navegación, cinta y área de contenido", "min": "20 min" },
+      { "titulo": "Dónde guardar", "que": "Comparar disco local, pendrive y nube con ejemplos", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar la estructura de carpetas paso a paso con atajos", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿perdieron alguna vez un archivo? ¿dónde guardan los documentos hoy? Usar eso para explicar las opciones de almacenamiento.",
+      "Mostrar tu propio Explorador con carpetas bien organizadas como ejemplo real."
+    ],
+    "aclarar": [
+      "Copiar deja el original; cortar lo quita. Muchos errores vienen de confundir Ctrl+C con Ctrl+X.",
+      "El Explorador NO borra nada definitivo al tirar a la Papelera: siempre se puede restaurar.",
+      "Guardar en el Escritorio de Windows 11 tiene vistas y atajos propios; mostrar diferencias."
+    ],
+    "ejemplos": [
+      "Crear carpetas Facturas/Recibos en vivo mientras los alumnos replican en sus equipos.",
+      "Mover un archivo entre carpetas y mostrar cómo cambia su ubicación en el Explorador.",
+      "Comparar una captura de Windows 10 y Windows 11 lado a lado."
+    ]
+  }
+}

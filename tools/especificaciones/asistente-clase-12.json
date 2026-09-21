@@ -1,0 +1,165 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 12,
+    "titulo": "Plantillas y presentaciones ejecutivas",
+    "modulo": "Módulo 4 – Presentaciones Profesionales",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a usar plantillas profesionales e insertar imágenes, gráficos y tablas para armar presentaciones de nivel ejecutivo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 4\\Clase 12 Presentaciones Ejecutivas",
+  "objetivos": [
+    "Reconocer por qué una plantilla profesional ahorra tiempo y mejora el resultado.",
+    "Encontrar plantillas en Office, Themes y sitios online.",
+    "Adaptar una plantilla a la marca propia con colores y logos.",
+    "Insertar tablas y gráficos desde datos y mantener consistencia visual."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Por qué usar plantillas?",
+      "emoji": "🏛️",
+      "parrafos": [
+        "La plantilla es el diseño hecho: colores, tipografías y estructura ya resueltos. Vos solo te concentrás en el contenido."
+      ],
+      "puntos": [
+        "Ahorro de tiempo: no arrancás de cero, la distribución ya está pensada.",
+        "Estética profesional: los colores, fuentes y espacios combinan entre sí.",
+        "Consistencia: todas las diapositivas comparten el mismo estilo automáticamente.",
+        "Ventaja en el laburo: una presentación prolija transmite seriedad y confianza ante jefes y clientes."
+      ]
+    },
+    {
+      "titulo": "Dónde encontrar plantillas",
+      "emoji": "🔍",
+      "parrafos": [
+        "Tenés plantillas gratuitas sin salir del programa y miles más en internet. La clave es elegir la adecuada al mensaje."
+      ],
+      "puntos": [
+        "PowerPoint: Archivo → Nuevo y secciones de plantillas y temas de presentación.",
+        "Google Slides: galería de plantillas al crear una presentación nueva.",
+        "Office.com (themes): plantillas oficiales de Microsoft para descargar.",
+        "Sitios online: templates de PowerPoint y Slides gratuitos en varios portales.",
+        "Cuidado con la licencia: verificá que la plantilla sea de uso libre si la usás en una empresa."
+      ]
+    },
+    {
+      "titulo": "Adaptar la plantilla a la marca",
+      "emoji": "🎯",
+      "parrafos": [
+        "Una plantilla genérica se vuelve tuya cuando le ponés los colores y el logo de tu empresa."
+      ],
+      "puntos": [
+        "Colores: desde Diseño → Variantes → Colores, o personalizá los colores del tema.",
+        "Fuentes: Diseño → Variantes → Fuentes para elegir la tipografía corporativa.",
+        "Logo: Insertar → Imágenes y lo ubicás en el mismo lugar de cada diapositiva.",
+        "Para repetir el logo en todas, agregalo al diseño patrón (vista Patrón de diapositivas).",
+        "Menos es más: una paleta de 2 o 3 colores de la marca basta para unificar."
+      ]
+    },
+    {
+      "titulo": "Insertar tablas y gráficos desde datos",
+      "emoji": "📉",
+      "parrafos": [
+        "Las presentaciones ejecutivas viven de datos: tablas para comparar y gráficos para contar la historia visualmente."
+      ],
+      "puntos": [
+        "Tabla: Insertar → Tabla y elegí filas y columnas; usala con pocos valores clave.",
+        "Gráfico en PowerPoint: Insertar → Gráfico y se abre una planilla para pegar tus datos.",
+        "Desde Excel: copiá el gráfico (Ctrl + C) y pegalo en la diapositiva (Ctrl + V).",
+        "En Slides: Insertar → Gráfico; el gráfico de Sheets queda vinculado a los datos.",
+        "Regla: un gráfico por diapositiva, con título claro y sin tablas de 50 filas."
+      ]
+    },
+    {
+      "titulo": "Consistencia visual",
+      "emoji": "🧩",
+      "parrafos": [
+        "Lo que distingue una presentación amateur de una ejecutiva es la uniformidad: mismas fuentes, tamaños y alineaciones en todo."
+      ],
+      "puntos": [
+        "Una sola tipografía (dos como máximo: una para títulos y una para cuerpo).",
+        "Mismos colores en todo el archivo, alineados a la marca.",
+        "Alinear los elementos: usá las guías para que títulos e imágenes queden en el mismo lugar.",
+        "Mismo tamaño y estilo para las imágenes en todas las diapositivas.",
+        "Revisá la presentación completa en «Vista de clasificador» (PowerPoint) para notar desprolijidades."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Presentación de un informe de ventas",
+      "consigna": "Armá la presentación de un informe de ventas usando una plantilla profesional, con un gráfico y una tabla insertados desde datos reales.",
+      "pasos": [
+        "Elegí una plantilla profesional en PowerPoint o Slides (Archivo → Nuevo o galería de plantillas).",
+        "Creá la estructura: título, resumen de ventas, desarrollo, gráfico del mes y cierre.",
+        "Insertá una tabla con los valores clave de ventas (producto, unidades, importe).",
+        "Creá un gráfico de barras desde esos mismos datos.",
+        "Ajustá colores a una marca ficticia, agregales un logo y revisá la consistencia visual."
+      ],
+      "entrega": "Guardá la presentación (PPTX o Slides compartido) y capturá la diapositiva con el gráfico y la tabla para el docente.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la principal ventaja de usar una plantilla?",
+            "opciones": ["El diseño ya está resuelto: solo completás el contenido", "Viene con texto escrito", "No hace falta guardar el archivo", "Se rellena sola con los datos"],
+            "correcta": "El diseño ya está resuelto: solo completás el contenido"
+          },
+          {
+            "pregunta": "¿Dónde buscás plantillas de presentación?",
+            "opciones": ["Solo en un pendrive", "Archivo → Nuevo en PowerPoint, la galería de Slides o sitios online", "En la impresora", "No existen plantillas"],
+            "correcta": "Archivo → Nuevo en PowerPoint, la galería de Slides o sitios online"
+          },
+          {
+            "pregunta": "¿Cómo repetís el logo de la empresa en todas las diapositivas?",
+            "opciones": ["Insertándolo a mano en cada una", "Agregándolo al patrón de diapositivas", "Copiando toda la presentación", "No se puede repetir"],
+            "correcta": "Agregándolo al patrón de diapositivas"
+          },
+          {
+            "pregunta": "¿Cómo insertás un gráfico en PowerPoint con tus propios datos?",
+            "opciones": ["Dibujándolo a mano", "Insertar → Gráfico y pegando los datos en la planilla que se abre", "Solo desde Google Maps", "Sacándole una foto a la pantalla"],
+            "correcta": "Insertar → Gráfico y pegando los datos en la planilla que se abre"
+          },
+          {
+            "pregunta": "¿Qué es la consistencia visual?",
+            "opciones": ["Usar colores distintos en cada diapositiva", "Unificar tipografía, colores y alineaciones en toda la presentación", "Llenar de texto todas las diapositivas", "Usar muchas animaciones"],
+            "correcta": "Unificar tipografía, colores y alineaciones en toda la presentación"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la presentación de ventas: plantilla aplicada, tablas y gráficos insertados desde datos, y consistencia visual.",
+  "lectura": "Las plantillas profesionales te dan el diseño resuelto: solo completás el contenido. Podés encontrarlas en Office, la galería de Slides o sitios online, y adaptarlas a tu marca con colores, fuentes y el logo en el patrón. Insertar tablas y gráficos desde datos reales le da peso a la presentación, y mantener la misma tipografía y alineación en todas las diapositivas transmite el nivel ejecutivo que espera un jefe.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar una presentación genérica y una ejecutiva con plantilla; preguntar cuál comprarían", "min": "10 min" },
+      { "titulo": "Por qué y dónde encontrar plantillas", "que": "Recorrer Archivo → Nuevo de PowerPoint y la galería de Slides", "min": "15 min" },
+      { "titulo": "Adaptar a la marca", "que": "Cambiar colores, fuentes y agregar logo al patrón de diapositivas", "min": "20 min" },
+      { "titulo": "Tablas y gráficos desde datos", "que": "Insertar una tabla y un gráfico de barras desde datos de ventas en vivo", "min": "20 min" },
+      { "titulo": "Práctica del informe de ventas", "que": "Guiar el armado completo de la presentación con plantilla", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo y revisión de capturas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si vieron presentaciones en su trabajo donde los números se entendían muy bien: casi seguro usaban plantilla y gráficos.",
+      "Mostrar la misma información en una tabla fea y en una tabla prolija con gráfico para que sientan la diferencia."
+    ],
+    "aclarar": [
+      "Plantilla ≠ tema suelto: la plantilla trae estructura de diapositivas completa; el tema solo colores y fuentes.",
+      "Insertar → Gráfico abre una mini planilla: es ahí donde se pegan los datos, no en un Word aparte.",
+      "Cambiar el fondo de una sola diapositiva rompe la consistencia: los cambios de estilo van en el patrón o tema."
+    ],
+    "ejemplos": [
+      "Descargar una plantilla de Office.com y aplicarla a una presentación de ventas ejemplo.",
+      "Pegar en la mini planilla de Excel los datos de ventas y ver cómo el gráfico se actualiza solo.",
+      "Poner el logo en el patrón y mostrar cómo aparece en todas las diapositivas sin repetir trabajo."
+    ]
+  }
+}

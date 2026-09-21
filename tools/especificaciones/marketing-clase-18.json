@@ -1,0 +1,156 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 18,
+    "titulo": "Facebook Ads e Instagram Ads",
+    "modulo": "Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a entrar a Meta Business Suite y armar tu primera campaña de anuncios en Facebook e Instagram con la estructura de campaña, conjunto y anuncio, segmentando tu audiencia."
+    ,
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 5 - Automatización y Email Marketing\\Clase 18 - Facebook Ads e Instagram Ads",
+  "objetivos": [
+    "Configurar un administrador de anuncios y una página de negocio.",
+    "Armar la estructura de campaña: campaña, conjunto de anuncios y anuncio.",
+    "Segmentar la audiencia por ubicación, edad, intereses y comportamientos.",
+    "Publicar una campaña de prueba siguiendo el flujo de nivel de campaña."
+  ],
+  "teoria": [
+    {
+      "titulo": "Meta Business Suite y el administrador de anuncios",
+      "emoji": "🏢",
+      "parrafos": [
+        "Para pautar en Facebook e Instagram primero se configura una página de negocio y se la conecta con Business Suite. Desde ahí se gestionan las cuentas, los mensajes y, sobre todo, los anuncios en el administrador."
+      ],
+      "puntos": [
+        "Página de negocio: obligatoria para crear anuncios; no es un perfil personal.",
+        "Meta Business Suite: panel central de meta.business del negocio.",
+        "Ads Manager: herramienta específica para crear y medir campañas.",
+        "Se conectan las cuentas de Facebook e Instagram para publicar en ambas.",
+        "Medios de pago: tarjeta o saldo configurado en la cuenta publicitaria."
+      ]
+    },
+    {
+      "titulo": "La estructura en tres niveles",
+      "emoji": "🗂️",
+      "parrafos": [
+        "En Meta las campañas se organizan en campaña, conjunto de anuncios y anuncio: objetivo, audiencia y creatividad. Cambiar un nivel no rompe los otros, pero cada uno tiene su función única."
+      ],
+      "puntos": [
+        "Campaña: define el objetivo (conocimiento, tráfico, interacción, ventas).",
+        "Conjunto de anuncios: audiencia, presupuesto, programación y ubicaciones.",
+        "Anuncio: el formato creativo, texto, foto o video, y el botón de acción.",
+        "Se puede probar un mismo anuncio con dos audiencias distintas.",
+        "La optimización elige dónde mostrar el anuncio dentro de lo que definiste."
+      ]
+    },
+    {
+      "titulo": "Segmentación de audiencia",
+      "emoji": "🎯",
+      "parrafos": [
+        "El gran diferencial de Meta es segmentar: llegar solo a las personas con más chances de interesarse. Una audiencia mal definida gasta presupuesto mostrando anuncios a cualquiera."
+      ],
+      "puntos": [
+        "Ubicación: país, provincia, ciudad o un radio alrededor de tu negocio.",
+        "Edad y género: según el perfil de tu cliente real, no tu intuición.",
+        "Intereses: hobbies, marcas y páginas relacionadas con tu rubro.",
+        "Comportamientos: compras online, tipos de celular, temporada.",
+        "Audiencias similares: Meta busca perfiles parecidos a tus mejores clientes."
+      ]
+    },
+    {
+      "titulo": "Práctica inicial: el flujo de creación",
+      "emoji": "🚀",
+      "parrafos": [
+        "Crear una campaña es seguir un formulario guiado en tres pasos. Antes de publicar conviene revisar: objetivo coherente, audiencia definida, presupuesto diario y anuncio aprobado."
+      ],
+      "puntos": [
+        "Activar el modo A/B o la práctica sin publicar si solo querés ensayar.",
+        "Presupuesto diario vs presupuesto total: definí el techo antes de lanzar.",
+        "Elegí ubicaciones automáticas (Facebook, Instagram y Messenger) o manuales.",
+        "Revisá la vista previa: el anuncio se ve distinto en feed, historias y reels.",
+        "El anuncio pasa por revisión de Meta antes de mostrarse (hasta 24 hs)."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Armá tu primera campaña de prueba en Meta",
+      "consigna": "Configurá una campaña de prueba en el administrador de anuncios para el negocio de tus clases anteriores: definí objetivo, audiencia, presupuesto y anuncio sin necesidad de publicar.",
+      "pasos": [
+        "Creá una página de negocio si no la tenés y conectala a Meta Business Suite.",
+        "Entrá al administrador de anuncios y tocá Crear campaña.",
+        "Elegí un objetivo según tu etapa: Ej. Tráfico para conseguir visitas al sitio.",
+        "En el conjunto definí audiencia: ciudad, edad e interés específico del rubro.",
+        "Poné presupuesto diario de prueba (ej: ARS 1000) y las ubicaciones automáticas.",
+        "En el nivel anuncio cargá el texto, el botón de acción y una foto o video de ejemplo.",
+        "Guardá la campaña SIN publicar y capturá la vista previa en el feed y las historias."
+      ],
+      "entrega": "Capturá los tres niveles de tu campaña de prueba: objetivo, audiencia y la vista previa del anuncio.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es obligatorio para crear anuncios en Meta?",
+            "opciones": ["Una página de negocio", "Un perfil personal abierto", "Un sitio web propio", "10 mil seguidores"],
+            "correcta": "Una página de negocio"
+          },
+          {
+            "pregunta": "¿En qué nivel se define la AUDIENCIA?",
+            "opciones": ["En el anuncio", "En el conjunto de anuncios", "En la campaña", "En la facturación"],
+            "correcta": "En el conjunto de anuncios"
+          },
+          {
+            "pregunta": "¿Qué define el nivel CAMPAÑA?",
+            "opciones": ["El objetivo de la publicidad", "El texto del anuncio", "La ubicación física", "El número de fotos"],
+            "correcta": "El objetivo de la publicidad"
+          },
+          {
+            "pregunta": "¿Qué podés segmentar usando intereses?",
+            "opciones": ["Personas que les gustan temas relacionados con tu rubro", "Solo personas con tarjeta de crédito", "La hora del día que abren el navegador", "El sistema operativo del celular"],
+            "correcta": "Personas que les gustan temas relacionados con tu rubro"
+          },
+          {
+            "pregunta": "¿Cuándo se activa un anuncio creado en Meta?",
+            "opciones": ["Inmediatamente", "Después de pasar la revisión de Meta", "Cuando llegues a 10 publicaciones", "Solo los fines de semana"],
+            "correcta": "Después de pasar la revisión de Meta"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará las capturas de los tres niveles de la campaña y la coherencia del objetivo con la audiencia.",
+  "lectura": "Pautar en Facebook e Instagram exige una página de negocio y el administrador de anuncios con su estructura de campaña, conjunto y anuncio. La segmentación por ubicación, edad e intereses es el corazón de Meta Ads y su ventaja frente a los buscadores.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar SEM y comparar cuándo conviene Google y cuándo Meta", "min": "10 min" },
+      { "titulo": "Business Suite y Ads Manager", "que": "Conectar la página con Business Suite y recorrer el administrador en vivo", "min": "20 min" },
+      { "titulo": "Estructura en tres niveles", "que": "Explicar campaña-conjunto-anuncio con un caso del rubro de la clase", "min": "20 min" },
+      { "titulo": "Segmentación", "que": "Definir audiencia de ejemplo y mostrar segmentos, intereses y similares", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Guiar la creación de cada campaña de prueba sin publicar y revisar vistas previas", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y acordar las dudas para la próxima clase", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué anuncios vieron en Instagram esta semana y por qué creen que llegaron exactamente a ellos.",
+      "Comparar la lógica de intención de Google con la lógica de segmentación por intereses de Meta."
+    ],
+    "aclarar": [
+      "Sin página de negocio no hay anuncios: el perfil personal no sirve para pautar.",
+      "El objetivo de campaña NO se puede cambiar después de publicar: elegilo bien.",
+      "La audiencia se define en el conjunto, no en el anuncio.",
+      "Con presupuesto diario chico también se puede empezar: la puja se ajusta sola."
+    ],
+    "ejemplos": [
+      "Crear una audiencia en vivo: «personas de +18 que viven en Rosario y le interesan mascotas».",
+      "Mostrar un anuncio real de feed vs historias y analizar el botón de acción de cada uno.",
+      "Comparar dos anuncios del mismo producto con textos distintos para explicar las pruebas."
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 19,
+    "titulo": "WhatsApp Business como herramienta laboral",
+    "modulo": "Módulo 6 – Comunicación Digital",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a configurar un perfil comercial profesional y a usar catálogo y respuestas rápidas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 6\\Clase 19 Whatsaspp Business",
+  "objetivos": [
+    "Diferenciar WhatsApp normal de WhatsApp Business y saber cuándo conviene cada uno.",
+    "Completar el perfil profesional con descripción, horario, dirección y logo.",
+    "Crear y administrar un catálogo de productos o servicios.",
+    "Configurar respuestas rápidas, mensajes de ausencia y etiquetas para organizar clientes."
+  ],
+  "teoria": [
+    {
+      "titulo": "WhatsApp vs WhatsApp Business",
+      "emoji": "💬",
+      "parrafos": [
+        "WhatsApp Business es la misma aplicación a la que estás acostumbrado, pero pensada para empresas: agrega perfil con datos comerciales, catálogo, etiquetas y respuestas automáticas. Se usa igual que WhatsApp personal, con una cuenta y teléfono propios.",
+        "El asistente administrativo usa Business para atender clientes, tomar pedidos y comunicar novedades sin mezclar la vida personal."
+      ],
+      "puntos": [
+        "Cuenta independiente: se instala aparte y usa otro número; no se mezcla con el WhatsApp personal.",
+        "Puede usarse en computadora por WhatsApp Web o la app de escritorio.",
+        "Herramientas de negocio: catálogo, etiquetas, respuestas rápidas, ausencia.",
+        "Diferencia clave: Business muestra «Empresa verificada» y estadísticas de mensajes enviados/leídos."
+      ]
+    },
+    {
+      "titulo": "Perfil profesional completo",
+      "emoji": "🧾",
+      "parrafos": [
+        "El perfil comercial es la primera impresión: quien te escribe ve tu nombre, logo, descripción, horario y dirección. Un perfil incompleto genera desconfianza; uno prolijo cierra ventas.",
+        "Configurá horario de atención real: evita responder fuera de horario o prometer atención 24/7."
+      ],
+      "puntos": [
+        "Empresa: nombre comercial que el cliente reconozca.",
+        "Descripción: qué vendés o hacés en 2-3 líneas claras (ej. «Consultora administrativa: gestión de agendas, facturación y trámites»).",
+        "Horario: marcá días y franjas; el sistema lo muestra en el chat.",
+        "Dirección: usala solo si recibís clientes cara a cara; si no, omitíla para no exponer datos.",
+        "Catálogo: fotos, precios y descripciones de producto o servicio."
+      ]
+    },
+    {
+      "titulo": "Catálogo de productos o servicios",
+      "emoji": "🛍️",
+      "parrafos": [
+        "El catálogo digital es tu vidriera dentro de WhatsApp: cada ítem tiene foto, precio, descripción y enlace. El cliente ve se compra sin preguntar «¿y cuánto cuesta?».",
+        "Armar un buen catálogo: fotos claras sobre fondo neutro, precio visible y texto corto con la ventaja principal."
+      ],
+      "puntos": [
+        "Acceso: Ajustes → Herramientas comerciales → Catálogo.",
+        "Cada artículo: nombre descriptivo, precio en tu moneda, descripción breve y categoría.",
+        "Vincular web: cada ítem puede llevar un enlace a tu página o Drive de fichas técnicas.",
+        "El catálogo se comparte con un botón; el cliente puede agregar varios productos a una misma conversación."
+      ]
+    },
+    {
+      "titulo": "Respuestas rápidas, ausencia y etiquetas",
+      "emoji": "⚡",
+      "parrafos": [
+        "Las respuestas rápidas son mensajes guardados que se insertan escribiendo una barra y una palabra clave (ej. /horario, /precio). El mensaje de ausencia contesta solo cuando no estás disponible.",
+        "Las etiquetas clasifican conversaciones por estado: Nuevo, En proceso, Pagado, Entregado. Con ellas filtrás y priorizás el día."
+      ],
+      "puntos": [
+        "Respuesta rápida: Ajustes → Herramientas comerciales → Respuestas rápidas; ej. /horario → «Nuestro horario es de 9 a 18 hs».",
+        "Mensaje de ausencia: se activa por rango de horario; avisá cuándo vas a volver.",
+        "Mensaje de bienvenida: saludo automático al primer contacto con tu número.",
+        "Etiquetas: se asignan a cada conversación y se filtran en la pestaña de chats.",
+        "Valor estratégico: saber cuántos «Nuevos» hay hoy te da el termómetro de trabajo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Configurá tu WhatsApp Business",
+      "consigna": "Armá desde cero tu perfil comercial completo y simulá la atención de un cliente con respuestas rápidas.",
+      "pasos": [
+        "Instalá o abrí WhatsApp Business y configurá el perfil con tu nombre comercial o un negocio ficticio.",
+        "Completá descripción, horario de atención y categoría; cargá una imagen de perfil representativa.",
+        "Creá un catálogo con al menos 3 productos o servicios con foto, precio y descripción.",
+        "Definí una respuesta rápida con /horario y un mensaje de ausencia para un rango horario.",
+        "Creá las etiquetas «Nuevo», «En proceso» y «Cerrado».",
+        "Escribile a tu compañero como `cliente` y respondé usando la respuesta rápida; clasificá la conversación con una etiqueta."
+      ],
+      "entrega": "Capturá tu perfil comercial, el catálogo y la conversación etiquetada.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué diferencia principal tiene WhatsApp Business frente al WhatsApp normal?",
+            "opciones": ["Es más caro de usar", "Agrega herramientas comerciales: catálogo, etiquetas y respuestas rápidas", "Se usa solo en PC", "No envia mensajes"],
+            "correcta": "Agrega herramientas comerciales: catálogo, etiquetas y respuestas rápidas"
+          },
+          {
+            "pregunta": "¿Qué es una respuesta rápida en WhatsApp Business?",
+            "opciones": ["Un mensaje preparado que se inserta con una palabra clave", "Una grabación de voz", "Una encuesta de Google Forms", "Un enlace al catálogo"],
+            "correcta": "Un mensaje preparado que se inserta con una palabra clave"
+          },
+          {
+            "pregunta": "Para escribir /horario y que aparezca tu horario de atención, ¿qué implementación necesitás?",
+            "opciones": ["Un mensaje de ausencia", "Una respuesta rápida configurada", "Un catálogo de productos", "Una etiqueta"],
+            "correcta": "Una respuesta rápida configurada"
+          },
+          {
+            "pregunta": "¿Para qué sirve el mensaje de ausencia?",
+            "opciones": ["Para borrar el chat", "Para contestar automáticamente fuera del horario de atención", "Para bloquear clientes", "Para cambiar el número"],
+            "correcta": "Para contestar automáticamente fuera del horario de atención"
+          },
+          {
+            "pregunta": "¿Qué etiqueta usarías para una conversación con pago pendiente?",
+            "opciones": ["Cerrado", "Nuevo", "En proceso", "Spam"],
+            "correcta": "En proceso"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará las capturas del perfil comercial, el catálogo y la conversación etiquetada.",
+  "lectura": "WhatsApp Business convierte el WhatsApp personal en un canal profesional: perfil con datos comerciales, catálogo de productos o servicios, respuestas rápidas y etiquetas. Configurarlo bien mejora la atención, ordena las conversaciones y le da al asistente administrativo una vidriera digital siempre disponible.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Preguntar cuántos usan WhatsApp para atender gente hoy y qué problemas notan", "min": "10 min" },
+      { "titulo": "WhatsApp vs Business", "que": "Comparar ambas apps y sus herramientas pensadas para empresas", "min": "10 min" },
+      { "titulo": "Perfil profesional", "que": "Cargar descripción, horario, logo y categoría en cada teléfono", "min": "20 min" },
+      { "titulo": "Catálogo", "que": "Armar catálogo con foto, precio y descripción en vivo", "min": "20 min" },
+      { "titulo": "Respuestas rápidas, ausencia y etiquetas", "que": "Configurar /horario, mensaje de ausencia y etiquetas de estado", "min": "20 min" },
+      { "titulo": "Práctica y cierre", "que": "Simular cliente/atendido y repasar con el interactivo", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar cuántos clientes mandaron «¿me pasás el horario?» a un comercio: la respuesta rápida lo resuelve.",
+      "Mostrar un catálogo real bien armado y uno desprolijo para comparar al instante."
+    ],
+    "aclarar": [
+      "Business usa el mismo ícono de WhatsApp: es una app aparte con número de teléfono propio.",
+      "Las respuestas rápidas se escriben con un / delante de una clave que define el asistente: no aparecen solas.",
+      "El mensaje de ausencia se activa manual o por horario: no cubre feriados solos.",
+      "Las etiquetas no son carpetas de archivos: clasifican conversaciones para filtrar el trabajo."
+    ],
+    "ejemplos": [
+      "Atender a un «cliente» que pregunta precio: responder con catálogo compartido y etiquetar la conversación.",
+      "Armar la respuesta rápida /envio con «Enviamos de 9 a 18 hs por moto en capital».",
+      "Activar la ausencia un mediodía y mostrar cómo contesta sola."
+    ]
+  }
+}

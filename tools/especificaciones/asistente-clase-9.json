@@ -1,0 +1,155 @@
+{
+  "curso": {
+    "id": "asistente-administrativo",
+    "nombre": "Asistente Administrativo Digital con IA",
+    "emoji": "💼",
+    "color": "#0057ff"
+  },
+  "clase": {
+    "numero": 9,
+    "titulo": "Fórmulas y funciones simples",
+    "modulo": "Módulo 3 – Planillas de Cálculo",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Windows 10/11",
+    "bajada": "Vas a hacer que la planilla calcule por vos: sumas, promedios y porcentajes, y vas a aprender el formato de celdas y a resolver los errores más comunes.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\1- Asistente Administrativo Digital con IA\\@Clases\\Modulo 3\\Clase 9 Formulas",
+  "objetivos": [
+    "Referenciar celdas (A1, B2) y escribir fórmulas simples con el signo =.",
+    "Usar la función SUMA para sumar rangos de celdas.",
+    "Calcular promedios con PROMEDIO y aplicar porcentajes a descuentos.",
+    "Formatear celdas con números, moneda, porcentaje y fecha.",
+    "Identificar y resolver errores comunes como #REF!, #DIV/0! y ######."
+  ],
+  "teoria": [
+    {
+      "titulo": "Referencias de celdas y operadores básicos",
+      "emoji": "🎯",
+      "parrafos": [
+        "Cada celda tiene una dirección (A1, B2) y las fórmulas usan esas direcciones para leer los valores. Eso es lo que diferencia a una planilla de una tabla escrita a mano: si cambias un valor, el cálculo se actualiza solo."
+      ],
+      "puntos": [
+        "Toda fórmula empieza con el signo =: en una celda escribís = y después la cuenta.",
+        "Operadores básicos: + (suma), - (resta), * (multiplicación) y / (división).",
+        "Ejemplo: si en B2 hay 10 y en B3 hay 5, la celda con =B2+B3 muestra 15.",
+        "La referencia es dinámica: si cambiás el valor de B2, el resultado de la fórmula cambia automáticamente sin tocarla."
+      ]
+    },
+    {
+      "titulo": "SUMA y PROMEDIO",
+      "emoji": "➕",
+      "parrafos": [
+        "Sumar celdas una por una funciona, pero para rangos largos existen las funciones SUMA y PROMEDIO: más cortas de escribir y mucho más difíciles de equivocar."
+      ],
+      "puntos": [
+        "SUMA: =SUMA(B2:B10) suma todos los valores desde la celda B2 hasta la B10.",
+        "Un rango se escribe con dos puntos: B2:B10 significa «de B2 a B10».",
+        "PROMEDIO: =PROMEDIO(B2:B10) calcula el promedio (suma dividida por la cantidad de valores).",
+        "Consejo: usá siempre la función SUMA en vez de escribir =B2+B3+B4..., sobre todo en listas que van a crecer."
+      ]
+    },
+    {
+      "titulo": "Porcentajes y formato de celdas",
+      "emoji": "💵",
+      "parrafos": [
+        "Los porcentajes aparecen todo el tiempo en la oficina: descuentos, impuestos, aumentos. En la planilla se representan como números y se muestran con el formato Porcentaje."
+      ],
+      "puntos": [
+        "Descuento en el puesto: sueldo neto = bruto − (bruto × descuento). Si el bruto está en B2 y el descuento en C2, la fórmula es =B2-B2*C2.",
+        "Formato Porcentaje: si escribís 0,1 en una celda y le aplicás formato Porcentaje, se muestra como 10%.",
+        "Formato Moneda: muestra los montos prolijos ($1.500,00) sin que cambie el valor guardado.",
+        "Formato Fecha y Número: cambian cómo se ve un dato sin modificar lo que realmente está en la celda.",
+        "La regla de oro: el formato es solo apariencia; el valor y los cálculos siempre usan el número real."
+      ]
+    },
+    {
+      "titulo": "Errores comunes",
+      "emoji": "⚠️",
+      "parrafos": [
+        "Cuando una celda muestra #REF!, #DIV/0! o ###### no es que se rompió la planilla: es la planilla avisándote que algo no cierra. Saber leer esos mensajes es parte del oficio."
+      ],
+      "puntos": [
+        "#REF!: la fórmula referencia celdas que ya no existen (probablemente borraste una fila o columna que usaba).",
+        "#DIV/0!: intentaste dividir por cero o por una celda vacía en el divisor.",
+        "######: la columna es demasiado angosta para mostrar el número. Se arregla ensanchando la columna (arrastrá el borde de la letra).",
+        "Consejo: cuando veas un error, hacé clic en la celda y mirá la barra de fórmulas: el mensaje que acompañe al símbolo suele decir exactamente qué está mal."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Calcular sueldos con descuentos",
+      "consigna": "Armá una planilla que calcule el sueldo neto de cada empleado: restá el descuento porcentual del sueldo bruto usando fórmulas y dale formato de moneda.",
+      "pasos": [
+        "Abrí una hoja de cálculo nueva y renombrá la hoja como «Sueldos».",
+        "Cargá los encabezados en la fila 1: A1 «Nombre», B1 «Sueldo bruto», C1 «Descuento», D1 «Sueldo neto».",
+        "Ingresá 4 empleados con sus sueldos brutos en números simples, sin el símbolo $.",
+        "En la columna C cargá el descuento: escribí 17% en C2 usando el formato Porcentaje.",
+        "En D2 escribí la fórmula =B2-B2*C2 (bruto menos el descuento) y presioná Enter.",
+        "Arrastrá el cuadradito de D2 hacia abajo para copiar la fórmula a los otros empleados.",
+        "Seleccioná las columnas B y D y aplicáles formato Moneda.",
+        "Verificá que la columna C esté en formato Porcentaje para todos.",
+        "Debajo de los empleados, escribí en A7 «Total de sueldos netos» y en D7 la fórmula =SUMA(D2:D5).",
+        "Probá cambiar un sueldo bruto y mirá cómo el neto y el total se actualizan solos."
+      ],
+      "entrega": "Subí la planilla (o una captura con la hoja visible) mostrando la columna de sueldo neto calculada con fórmulas y el formato de moneda aplicado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo se escribe una fórmula en Excel o Google Sheets?",
+            "opciones": ["Escribiendo un texto libre en la celda", "Empezando el contenido de la celda con el signo =", "Pegando una imagen en la celda", "Imprimiendo la hoja"],
+            "correcta": "Empezando el contenido de la celda con el signo ="
+          },
+          {
+            "pregunta": "¿Qué hace la fórmula =SUMA(B2:B10)?",
+            "opciones": ["Resta los valores de B2 a B10", "Suma los valores de la celda B2 hasta la B10", "Cuenta cuántas celdas hay en el rango", "Calcula el promedio del rango"],
+            "correcta": "Suma los valores de la celda B2 hasta la B10"
+          },
+          {
+            "pregunta": "Si en B2 hay 10 y escribís =B2*2, ¿qué muestra la celda con la fórmula?",
+            "opciones": ["12", "20", "102", "Un error #DIV/0!"],
+            "correcta": "20"
+          },
+          {
+            "pregunta": "¿Qué significa ###### en una celda?",
+            "opciones": ["La columna es demasiado angosta para mostrar el número", "La fórmula está mal escrita", "Hay un virus en la planilla", "La celda está vacía"],
+            "correcta": "La columna es demasiado angosta para mostrar el número"
+          },
+          {
+            "pregunta": "¿Qué formato elegís para mostrar un descuento como 10%?",
+            "opciones": ["Texto", "Porcentaje", "Fecha", "General"],
+            "correcta": "Porcentaje"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará la planilla o captura con la columna «Sueldo neto» calculada con fórmulas, el total con SUMA y el formato de moneda aplicado.",
+  "lectura": "Las fórmulas convierten una grilla de datos en una herramienta de trabajo: la planilla suma, promedia y descuenta sola mientras vos te ocupás de los datos. Con el signo =, las referencias de celdas y las funciones SUMA y PROMEDIO ya podés resolver la mayoría de los cálculos administrativos cotidianos; y cuando la planilla se queje (####, #DIV/0!, #REF!) vas a saber qué mensaje te está enviando.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar la lista de gastos de la clase 8 y preguntar cómo sumarían todo eso sin hacerlo a mano", "min": "10 min" },
+      { "titulo": "Referencias y operadores", "que": "Introducir el signo =, las direcciones de celda y los operadores con ejemplos en vivo", "min": "20 min" },
+      { "titulo": "SUMA y PROMEDIO", "que": "Probar SUMA y PROMEDIO sobre un rango real y ver la actualización automática", "min": "20 min" },
+      { "titulo": "Porcentajes y formato", "que": "Mostrar el descuento como porcentaje y aplicar formato moneda en vivo", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el ejercicio de sueldos con descuentos paso a paso con cada alumno", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿cómo calculan en su laburo un descuento o un aumento? Mostrar que una fórmula de Excel lo hace en segundos y sin errores.",
+      "Mostrar una liquidación de sueldo real (anónimo) y señalar dónde intervendrían una SUMA, un porcentaje y un formato moneda."
+    ],
+    "aclarar": [
+      "El formato (moneda, porcentaje) cambia cómo se ve el dato, no su valor: una celda con formato Moneda sigue siendo un número y se puede calcular.",
+      "Los errores no son virus: ###### se arregla ensanchando la columna, y #REF! se arregla corrigiendo o reescribiendo la fórmula.",
+      "Copiar una fórmula arrastrando el cuadradito ajusta las referencias a cada fila: es la forma correcta de repetirla en la lista."
+    ],
+    "ejemplos": [
+      "Construir en vivo la tabla de sueldos con descuento mientras los alumnos la replican en sus equipos.",
+      "Mostrar qué pasa si borrás la columna que usa una fórmula (aparece #REF!) y cómo se corrige.",
+      "Comparar una celda con el número 0,1 antes y después de aplicarle formato Porcentaje."
+    ]
+  }
+}

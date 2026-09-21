@@ -1,0 +1,151 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 10,
+    "titulo": "Funciones de búsqueda",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a hacer que Excel BUSQUE por vos: asignar precios de una lista maestra con BUSCARV y BUSCARH, armar textos por sus partes con CONCATENAR y mantener los títulos siempre a la vista con Inmovilizar paneles.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 10 Funciones de Busqueda, Concatenar e Inmovilizar Paneles",
+  "objetivos": [
+    "Buscar un valor en vertical con BUSCARV y en horizontal con BUSCARH.",
+    "Resolver los casos de error de búsqueda con SI.ERROR.",
+    "Combinar CONCATENAR para armar códigos y textos de trabajo.",
+    "Mantener títulos visibles al desplazarte con Inmovilizar paneles."
+  ],
+  "teoria": [
+    {
+      "titulo": "BUSCARV: búsqueda vertical",
+      "emoji": "🔎",
+      "parrafos": [
+        "BUSCARV busca un valor en la PRIMERA columna de una tabla y devuelve un dato de otra columna de la misma fila. Es la función estrella para asignar precios, descripciones o datos de clientes desde una lista maestra."
+      ],
+      "puntos": [
+        "Estructura: =BUSCARV(valor_buscado; tabla; nro_columna; [ordenado]).",
+        "Ejemplo: =BUSCARV(A2;ListaProductos;3;FALSO) devuelve el precio (columna 3) del código X (A2).",
+        "El cuarto argumento: FALSO (o 0) pide coincidencia EXACTA; VERDADERO (o 1) busca aproximado (no lo uses si no entendés las listas ordenadas).",
+        "Regla clave: el valor buscado debe estar en la PRIMERA columna de la tabla y hacia la DERECHA está el dato a devolver (BUSCARV no mira hacia la izquierda).",
+        "La tabla se escribe fijándola con F4 para que no se corra al copiar: =BUSCARV(A2;$B$2:$E$100;3;FALSO)."
+      ]
+    },
+    {
+      "titulo": "BUSCARH: búsqueda horizontal",
+      "emoji": "🔁",
+      "parrafos": [
+        "BUSCARH hace lo mismo que BUSCARV pero en horizontal: busca un valor en la PRIMERA FILA de una tabla y devuelve un dato de otra fila de la misma columna. Se usa cuando la lista maestra tiene encabezados en filas."
+      ],
+      "puntos": [
+        "Estructura: =BUSCARH(valor_buscado; tabla; nro_fila; [ordenado]).",
+        "Ejemplo: =BUSCARH(\"Precio\";$A$1:$H$20;2;FALSO) devuelve lo que hay en la fila 2 bajo la columna Precio.",
+        "Menos común que BUSCARV, pero imprescindible cuando los datos viajan orientados en filas.",
+        "Mismas reglas: el valor buscado en la primera fila, tabla fijada con F4 y FALSO para coincidencia exacta."
+      ]
+    },
+    {
+      "titulo": "Manejo de errores y CONCATENAR",
+      "emoji": "🛡️",
+      "parrafos": [
+        "Cuando BUSCARV no encuentra un valor muestra #N/D. Para que la planilla quede prolija se envuelve con SI.ERROR, y CONCATENAR (o &) completa el trabajo armando códigos y textos compuestos."
+      ],
+      "puntos": [
+        "=SI.ERROR(BUSCARV(A2;$B$2:$E$100;3;FALSO);\"SIN PRECIO\") muestra un texto en vez de #N/D.",
+        "SI.ERROR(a;b): si la fórmula a da error, devuelve b; si no, devuelve el resultado normal.",
+        "CONCATENAR para códigos: =A2&\"-\"&B2 arma el número de documento (CU-0001).",
+        "Texto y fórmula juntos: =A2&\" \"&TEXTO(BUSCARV(...);\"$#.##0,00\") para armarte el aviso con el dato buscado."
+      ]
+    },
+    {
+      "titulo": "Inmovilizar paneles",
+      "emoji": "📌",
+      "parrafos": [
+        "Inmovilizar paneles congela las primeras filas y/o columnas para que queden visibles mientras te desplazás por la planilla. En listas de precios largas, el encabezado se queda arriba siempre."
+      ],
+      "puntos": [
+        "Vista → Inmovilizar paneles → Inmovilizar fila superior: fija la fila 1.",
+        "Inmovilizar primeros dos planos: fila y columna a la vez: seleccionar la celda que queda abajo-derecha del punto fijo y Vista → Inmovilizar paneles.",
+        "Para quitar: Vista → Inmovilizar paneles → Inmovilizar paneles de nuevo (o Quitar inmovilización de paneles).",
+        "Se aplica a HOJA por hoja: cada hoja recuerda su propia inmovilización."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Lista de precios con búsqueda automática",
+      "consigna": "Creá una lista maestra de productos y una planilla de ventas donde los precios y descripciones se completen solos con BUSCARV, con control de errores y paneles inmovilizados.",
+      "pasos": [
+        "En una hoja «Productos» cargá: Código, Producto, Precio unitario (con 8 productos, códigos como PR-001).",
+        "En otra hoja «Ventas» cargá Código y Cantidad para 10 compras (algunos códigos pueden no existir a propósito).",
+        "En la columna Producto usá =SI.ERROR(BUSCARV(A2;Productos!$A$2:$C$9;2;FALSO);\"NO ENCONTRADO\").",
+        "En la columna Precio usá =SI.ERROR(BUSCARV(A2;Productos!$A$2:$C$9;3;FALSO);0).",
+        "Calculá el Total en otra columna con =Precio*Cantidad.",
+        "Inmovilizá la fila 1 (encabezados) con Vista → Inmovilizar paneles y corroborá que al bajar se mantengan los títulos."
+      ],
+      "entrega": "Guardá como «BusquedaProductos_clase10.xlsx» con BUSCARV, SI.ERROR y paneles inmovilizados.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué busca BUSCARV?",
+            "opciones": ["Un valor en la primera columna y devuelve un dato de esa fila", "El valor máximo de un rango", "Una serie de fechas", "El total de una columna"],
+            "correcta": "Un valor en la primera columna y devuelve un dato de esa fila"
+          },
+          {
+            "pregunta": "¿Cuál es la estructura de BUSCARV?",
+            "opciones": ["(valor_buscado; tabla; nro_columna; [ordenado])", "(tabla; valor; criterio)", "(rango; criterio)", "(valor; si_verdadero; si_falso)"],
+            "correcta": "(valor_buscado; tabla; nro_columna; [ordenado])"
+          },
+          {
+            "pregunta": "¿Qué conviene usar para que BUSCARV no muestre #N/D?",
+            "opciones": ["SI.ERROR", "SUMAR.SI", "CONTAR.BLANCO", "F4"],
+            "correcta": "SI.ERROR"
+          },
+          {
+            "pregunta": "¿Para qué se usa Inmovilizar paneles?",
+            "opciones": ["Para mantener filas/columnas visibles al desplazarse", "Para bloquear la impresión", "Para ocultar celdas borradas", "Para cambiar el formato de la hoja"],
+            "correcta": "Para mantener filas/columnas visibles al desplazarse"
+          },
+          {
+            "pregunta": "¿De qué sirve fijar la tabla con F4 en BUSCARV?",
+            "opciones": ["Para que la referencia no cambie al copiar la fórmula", "Para buscar en horizontal", "Para ordenar la tabla", "Para crear una tabla dinámica"],
+            "correcta": "Para que la referencia no cambie al copiar la fórmula"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el BUSCARV con SI.ERROR funcionando en todas las filas y los paneles inmovilizados.",
+  "lectura": "BUSCARV y BUSCARH cruzan datos entre hojas: completan descripciones, precios y datos de clientes sin tipear nada a mano. Envolverlas en SI.ERROR evita los #N/D que asustan a cualquiera, y CONCATENAR/& arma códigos y textos para el día a día. Con Inmovilizar paneles, hasta la lista más larga se maneja con el encabezado siempre a la vista.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar CONCATENAR y referencias; preguntar si tipean precios a mano hoy", "min": "10 min" },
+      { "titulo": "BUSCARV", "que": "Explicar estructura, cuarto argumento FALSO y regla de la primera columna", "min": "25 min" },
+      { "titulo": "BUSCARH", "que": "Mostrar el caso horizontal con encabezados en filas", "min": "15 min" },
+      { "titulo": "SI.ERROR y CONCATENAR", "que": "Blindar la búsqueda y armar códigos con &", "min": "15 min" },
+      { "titulo": "Inmovilizar paneles", "que": "Fijar encabezados y columnas y resolver la práctica", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo asignan precios cuando cambia la lista de productos (¿a mano, celda por celda?) y mostrarlo con BUSCARV.",
+      "Mostrar una planilla de ventas donde el precio llega solo desde la lista maestra."
+    ],
+    "aclarar": [
+      "BUSCARV solo mira hacia la DERECHA de la primera columna: si el dato que querés está a la izquierda, no va a poder.",
+      "El cuarto argumento FALSO significa coincidencia exacta; es el más seguro para códigos.",
+      "Fijar la tabla con F4 es obligatorio si copiás la fórmula; si no, el rango se corre.",
+      "Inmovilizar paneles se configura por hoja y se desarma con el mismo botón."
+    ],
+    "ejemplos": [
+      "Precio cargado solo desde la lista maestra con BUSCARV y la tabla fijada con F4.",
+      "Código de factura armado con CONCATENAR: CU-0001 a partir de dos celdas.",
+      "Derretir el #N/D con SI.ERROR mostrando «SIN PRECIO»."
+    ]
+  }
+}

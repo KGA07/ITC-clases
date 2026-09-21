@@ -1,0 +1,152 @@
+{
+  "curso": {
+    "id": "administracion-pymes",
+    "nombre": "Administración de PyMEs",
+    "emoji": "📊",
+    "color": "#0f766e"
+  },
+  "clase": {
+    "numero": 1,
+    "titulo": "Intro a Excel: entorno y datos",
+    "modulo": "Módulo 1 – Excel para Administración",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Microsoft Excel",
+    "bajada": "Vas a conocer el entorno de Excel, cargar tus primeros datos y moverte por la hoja con soltura para arrancar con tu planilla de administración.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\2- Administracion de Pymes\\@Clases\\Modulo 1 Excel\\Clase 1 Introducción",
+  "objetivos": [
+    "Reconocer el área de trabajo de Excel: celdas, hojas, cuadro de nombres, barra de fórmulas y barra de estado.",
+    "Usar la cinta de opciones, sus fichas y grupos, y personalizar la barra de acceso rápido.",
+    "Insertar, eliminar, renombrar y colorear hojas para ordenar la planilla.",
+    "Cargar textos, valores y cálculos, y aprovechar el autorrelleno del puntero del mouse."
+  ],
+  "teoria": [
+    {
+      "titulo": "El área de trabajo de Excel",
+      "emoji": "🖥️",
+      "parrafos": [
+        "Excel organiza la información en una cuadrícula de celdas formada por columnas (letras) y filas (números). Cada celda tiene una dirección única, por ejemplo A1, que se muestra en el cuadro de nombres."
+      ],
+      "puntos": [
+        "Encabezado de columnas (A, B, C...) y de filas (1, 2, 3...): identifican cada celda en la hoja.",
+        "Cuadro de nombres: a la izquierda de la barra de fórmulas; te muestra qué celda está seleccionada o te permite ir directo a otra (escribís B15 y tocás Enter).",
+        "Barra de fórmulas: donde ves y editás el contenido o la fórmula de la celda activa.",
+        "Barra de desplazamiento y barra de estado: la primera te mueve por la hoja y la segunda muestra el estado, el modo de visualización y el zoom."
+      ]
+    },
+    {
+      "titulo": "La cinta de opciones: fichas y grupos",
+      "emoji": "🧩",
+      "parrafos": [
+        "La cinta de opciones es la franja superior con todas las herramientas de Excel. Está dividida en fichas (Inicio, Insertar, Datos...) y cada ficha agrupa herramientas por función."
+      ],
+      "puntos": [
+        "Ficha Inicio: portapapeles, fuente, alineación, número, estilos, celdas y modificar. La vas a usar todo el tiempo.",
+        "Fichas principales para administración: Insertar (tablas, gráficos), Datos (filtros, validación), Fórmulas (biblioteca de funciones).",
+        "Grupo: por ejemplo, en Inicio el grupo Fuente concentra tipo, tamaño, negrita, color y bordes.",
+        "Barra de acceso rápido: arriba a la izquierda. Agregá ahí los comandos que usás seguido, como Guardar, Deshacer o Imprimir.",
+        "Pestaña Archivo (antes Botón de Office): abre la vista donde guardás, abrís, imprimís y configurás el archivo."
+      ]
+    },
+    {
+      "titulo": "Las hojas del libro",
+      "emoji": "📑",
+      "parrafos": [
+        "Un archivo de Excel es un libro y cada libro contiene hojas (las etiquetas de abajo). Organizar las hojas con nombres claros es el primer hábito administrativo: facturas, stock, sueldos, gastos."
+      ],
+      "puntos": [
+        "Insertar hoja: clic en el signo + al lado de las etiquetas o Inicio → Insertar → Insertar hoja.",
+        "Eliminar hoja: clic derecho sobre la etiqueta → Eliminar (ojo: se borra el contenido).",
+        "Renombrar: doble clic en la etiqueta o clic derecho → Cambiar nombre.",
+        "Cambiar color de etiqueta: clic derecho → Color de etiqueta; sirve para distinguir rápido tipo de hojas, por ejemplo rojo para pagos."
+      ]
+    },
+    {
+      "titulo": "Introducción de datos y autorrelleno",
+      "emoji": "⌨️",
+      "parrafos": [
+        "En cada celda podés cargar tres tipos de contenido: texto (nombres, conceptos), valores (números y fechas) y cálculos (fórmulas que empiezan con el signo =)."
+      ],
+      "puntos": [
+        "Texto: se alinea a la izquierda por defecto; si es largo, se desborda a la celda vecina. Valor: se alinea a la derecha y puede operarse matemáticamente.",
+        "Cálculo: todo empieza con =, por ejemplo =5+3 o =A1*10. Los resultados se actualizan si cambiás los datos.",
+        "Puntero del mouse: una cruz blanca selecciona celdas; una cruz finita en la esquina inferior derecha es el controlador de relleno.",
+        "Autorrelleno: arrastrando el controlador copiás valores y completás series: meses, días, números consecutivos (Enero, Febrero... se completan solos).",
+        "Para seleccionar un rango amplio: mantené Shift y hacé clic, o arrastrá con la cruz blanca."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Tu primera lista de precios",
+      "consigna": "Creá una lista de precios inicial para el negocio cargando textos, valores y un primer cálculo, y organizá las hojas del libro como lo harías en la oficina.",
+      "pasos": [
+        "Renombrá la Hoja1 como «Lista de precios» y cambiale el color de etiqueta a verde.",
+        "En A1 cargá el texto «Producto», en B1 «Precio unitario» y en C1 «Cantidad en stock».",
+        "En A2:A6 cargá cinco productos de tu PyME (por ejemplo: Resma de papel, Lapicera, Cartucho de tinta, Café 1 kg, Escritorio).",
+        "En B2:B6 cargá valores numéricos de precio y en C2:C6 las cantidades en stock.",
+        "En D2 escribí la fórmula =B2*C2 y arrastrá el controlador de relleno hasta D6 para calcular el valor del stock de cada producto.",
+        "Insertá una segunda hoja con el nombre «Gastos» y borrá cualquier hoja vacía que sobre."
+      ],
+      "entrega": "Guardá el archivo como «ListaPrecios_clase1.xlsx» y mostrá la hoja lista con fórmulas y etiquetas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué muestra el cuadro de nombres?",
+            "opciones": ["La dirección de la celda activa", "El total de filas ocupadas", "La barra de fórmulas", "El color de la hoja"],
+            "correcta": "La dirección de la celda activa"
+          },
+          {
+            "pregunta": "¿Con qué signo empieza siempre un cálculo en Excel?",
+            "opciones": ["#", "&", "=", "+"],
+            "correcta": "="
+          },
+          {
+            "pregunta": "¿Cómo se renombra una hoja?",
+            "opciones": ["Doble clic sobre la etiqueta de la hoja", "Tecla F5", "Presionando Supr en la etiqueta", "Sacando el libro de la pantalla"],
+            "correcta": "Doble clic sobre la etiqueta de la hoja"
+          },
+          {
+            "pregunta": "¿Qué hace el autorrelleno (controlador de relleno)?",
+            "opciones": ["Completa series y copia valores arrastrando", "Borra el contenido de la hoja", "Cambia el color de las celdas", "Imprime la planilla"],
+            "correcta": "Completa series y copia valores arrastrando"
+          },
+          {
+            "pregunta": "¿Cómo se alinean por defecto los VALORES (números) en la celda?",
+            "opciones": ["A la izquierda", "Al centro", "A la derecha", "Se alinean al azar"],
+            "correcta": "A la derecha"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el archivo con la lista de precios cargada, la fórmula en D y las hojas ordenadas.",
+  "lectura": "Excel organiza toda la información en celdas dentro de hojas agrupadas en un libro. Conocer el entorno (cinta de opciones, cuadro de nombres, barra de fórmulas) y cargar correctamente textos, valores y cálculos es la base de toda planilla de administración. El autorrelleno y el orden de las hojas ahorran tiempo y evitan errores desde el primer día.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Presentar el curso y preguntar qué planillas usan en su trabajo o negocio", "min": "10 min" },
+      { "titulo": "Área de trabajo", "que": "Recorrer en vivo celdas, cuadro de nombres, barra de fórmulas y barra de estado", "min": "20 min" },
+      { "titulo": "Cinta y hojas", "que": "Mostrar fichas y grupos, la barra de acceso rápido y las operaciones con hojas", "min": "20 min" },
+      { "titulo": "Datos y autorrelleno", "que": "Explicar tipos de contenido (texto, valor, cálculo) y el controlador de relleno", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar la lista de precios paso a paso con fórmulas y renombrado de hojas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué documentos maneja cada alumno (precios, proveedores, stock) y usarlo para nombrar las hojas del libro.",
+      "Mostrar un libro propio con varias hojas coloreadas como ejemplo profesional real."
+    ],
+    "aclarar": [
+      "Texto se alinea a la izquierda y número a la derecha: esa diferencia rápida te dice el tipo de dato cargado.",
+      "Las fórmulas se ven en la barra de fórmulas; en la celda se ve el resultado. No es un error.",
+      "Borrar el contenido de una celda no es lo mismo que eliminar la hoja completa.",
+      "Todo cálculo empieza con =, no con +, para que Excel no lo tome como texto."
+    ],
+    "ejemplos": [
+      "Completar la serie Enero, Febrero, Marzo con autorrelleno mientras los alumnos replican.",
+      "Renombrar y colorear las etiquetas (Lista precios verde, Gastos rojo) en vivo.",
+      "Escribir =B2*C2 y arrastrar el controlador para mostrar cómo se copia la fórmula a D6."
+    ]
+  }
+}

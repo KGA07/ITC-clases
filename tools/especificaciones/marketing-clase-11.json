@@ -1,0 +1,145 @@
+{
+  "curso": {
+    "id": "marketing-digital",
+    "nombre": "Marketing Digital",
+    "emoji": "📣",
+    "color": "#e11d48"
+  },
+  "clase": {
+    "numero": 11,
+    "titulo": "Utilización de IAs para contenidos",
+    "modulo": "Módulo 3 – Diseño de Contenidos y Copywriting con IA",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con internet y cuentas de Google",
+    "bajada": "Vas a integrar la IA en todo tu flujo de contenidos: textos, piezas visuales, videos y calendarios, con un proceso ordenado de idea, borrador y pulido.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\5- Marketing Digital\\@Clases\\Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA\\Clase 11 IA para creacion de COntenido",
+  "objetivos": [
+    "Utilizar herramientas de IA para generar textos, piezas visuales y videos.",
+    "Aplicar un flujo de trabajo de idea → borrador → pulido.",
+    "Crear un calendario de contenido con ayuda de la IA.",
+    "Evaluar y corregir los resultados generados por IA."
+  ],
+  "teoria": [
+    {
+      "titulo": "IA generativa para textos",
+      "emoji": "✍️",
+      "parrafos": [
+        "La IA generativa escribe publicaciones, descripciones, newsletters y respuestas. La clave está en alimentarla con buen contexto y convertir sus borradores en contenido propio."
+      ],
+      "puntos": [
+        "ChatGPT sirve para copys y variantes; otras herramientas se especializan por tarea.",
+        "Un ejemplo útil: pedir 10 ideas de reels y seleccionar las 3 mejores.",
+        "Nunca publiques sin revisión: el tono y los datos siempre los decide una persona."
+      ]
+    },
+    {
+      "titulo": "IA para piezas visuales y videos",
+      "emoji": "🎨",
+      "parrafos": [
+        "Además de textos, la IA genera piezas visuales a partir de descripciones y edita videos con funciones automáticas. Estas herramientas se combinan para producir más rápido."
+      ],
+      "puntos": [
+        "Generación de piezas visuales: describí estilo, colores y composición.",
+        "Edición de video asistida: cortes por voz, subtítulos automáticos y transcripción.",
+        "Canva Magic y funciones similares integran IA en herramientas que ya usás."
+      ]
+    },
+    {
+      "titulo": "Flujo de trabajo: idea → borrador → pulido",
+      "emoji": "🔄",
+      "parrafos": [
+        "El proceso profesional con IA es repetible: primero definís la idea y el objetivo, la IA genera un borrador, y al final pulís contenido, tono y datos. Así se produce con calidad y velocidad."
+      ],
+      "puntos": [
+        "Idea: definí objetivo, público y canal.",
+        "Borrador: usá la IA para generar opciones rápido.",
+        "Pulido: corregís, ajustás el tono y verificás los datos antes de publicar.",
+        "Este flujo vale para textos, piezas visuales, videos y calendarios."
+      ]
+    },
+    {
+      "titulo": "Calendario de contenido con IA",
+      "emoji": "🗓️",
+      "parrafos": [
+        "La IA también te ayuda a planificar el mes: temas, formatos y fechas según tu objetivo. Después vos asignás los días y horarios de publicación."
+      ],
+      "puntos": [
+        "Pedile: 'proponé 15 ideas de contenido para [rubro] con formato y objetivo para cada día'.",
+        "Clasificá las ideas por etapa del embudo: descubrir, considerar y convertir.",
+        "Completá la programación en Meta Business Suite con fechas y horarios."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi calendario de contenido con IA",
+      "consigna": "Diseñá un calendario de contenido de 7 días para tu marca, generando las ideas con ChatGPT y completando la programación en Meta Business Suite.",
+      "pasos": [
+        "Abrí ChatGPT y pedile 7 ideas de contenido para tu rubro, con formato y objetivo para cada día.",
+        "Seleccioná y ajustá las mejores ideas a tu marca: corregí tono y datos.",
+        "Armá el calendario en una tabla de Google Docs: día, tema, formato, objetivo y canal.",
+        "Programá al menos 2 de esas publicaciones en Meta Business Suite.",
+        "Compartí el enlace del documento con el calendario y las fechas programadas."
+      ],
+      "entrega": "Compartí el enlace con el calendario de 7 días y la captura de las publicaciones programadas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "El flujo de trabajo recomendado con IA es...",
+            "opciones": ["Idea → borrador → pulido", "Borrador → idea → publicar directo", "Pulido → idea → borrador", "Publicar sin revisar"],
+            "correcta": "Idea → borrador → pulido"
+          },
+          {
+            "pregunta": "¿Qué le describís a la IA para generar piezas visuales?",
+            "opciones": ["Estilo, colores y composición", "La URL de la competencia", "Tu número de teléfono", "Un archivo de Excel"],
+            "correcta": "Estilo, colores y composición"
+          },
+          {
+            "pregunta": "El calendario de contenido sirve para...",
+            "opciones": ["Planificar temas, formatos y fechas con anticipación", "Reemplazar el diseño", "Borrar tu cuenta", "Sumar seguidores automáticamente"],
+            "correcta": "Planificar temas, formatos y fechas con anticipación"
+          },
+          {
+            "pregunta": "Antes de publicar un contenido generado por IA, siempre hay que...",
+            "opciones": ["Revisar datos, tono y ortografía", "Publicar sin mirar", "Duplicar el texto", "Cambiar el idioma"],
+            "correcta": "Revisar datos, tono y ortografía"
+          },
+          {
+            "pregunta": "¿Qué hace un calendario bien armado?",
+            "opciones": ["Equilibra tipos de contenido según el objetivo de cada etapa", "Publica siempre lo mismo", "Olvida las fechas", "Solo incluye ofertas"],
+            "correcta": "Equilibra tipos de contenido según el objetivo de cada etapa"
+          }
+        ]
+      }
+    }
+  ],
+  "entrega": "El docente revisará el calendario de 7 días y las publicaciones programadas en Business Suite.",
+  "lectura": "La IA generativa acelera el proceso completo: textos, piezas visuales, videos e ideas para el calendario. El flujo idea → borrador → pulido convierte su velocidad en calidad propia. Al final, la persona decide qué publicar, cuándo y con qué tono.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Recuperar lo visto de ChatGPT y Canva", "min": "10 min" },
+      { "titulo": "IA para textos y visuales", "que": "Recorrer usos de la IA según la etapa del proceso", "min": "20 min" },
+      { "titulo": "Flujo idea → borrador → pulido", "que": "Mostrar el mismo contenido en sus 3 estados", "min": "15 min" },
+      { "titulo": "Calendario con IA", "que": "Generar ideas de calendario en vivo", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el armado del calendario y la programación", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué tarea de contenidos les lleva más tiempo hoy? Mostrar cómo la IA la acorta.",
+      "Recuperar el calendario que armaron en la clase de Business Suite y mejorarlo con IA."
+    ],
+    "aclarar": [
+      "La IA no publica sola: la programación y la revisión son tareas humanas.",
+      "El flujo idea → borrador → pulido se mantiene aunque cambie la herramienta.",
+      "Una idea generada por IA necesita tu contexto: sin él, salen contenidos genéricos."
+    ],
+    "ejemplos": [
+      "Pedirle a la IA 7 ideas para un rubro real y mejorarlas en vivo.",
+      "Mostrar el mismo texto antes y después del pulido humano.",
+      "Armar el calendario publicado de una semana entera en Business Suite."
+    ]
+  }
+}
