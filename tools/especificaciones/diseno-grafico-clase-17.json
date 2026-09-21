@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 17,
+    "titulo": "Capas en Photoshop: organización, grupos y objetos inteligentes",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a entender las capas como el sistema nervioso de Photoshop: visualización, bloqueo, enlace, combinación, grupos, rasterizado y objetos inteligentes. Con capas ordenadas, cualquier diseño se edita sin romper nada.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 17 Capas",
+  "objetivos": [
+    "Mostrar, ocultar, bloquear y enlazar capas.",
+    "Combinar capas y acoplar la imagen cuando corresponda.",
+    "Agrupar capas y rasterizar formas o textos.",
+    "Crear y editar objetos inteligentes en Photoshop."
+  ],
+  "teoria": [
+    {
+      "titulo": "El panel de capas",
+      "emoji": "🗂️",
+      "imagen": {
+        "src": "img/capas.jpg",
+        "alt": "Panel de capas de Photoshop",
+        "caption": "El panel de capas apila los elementos: el de arriba tapa al de abajo."
+      },
+      "parrafos": [
+        "Cada elemento de tu diseño vive en una capa: las capas se apilan como hojas y la de arriba se ve por encima. El panel de capas (a la derecha) muestra el apilado, con un ojo por capa para mostrarla u ocultarla.",
+        "A la derecha de cada capa hay celdas de control: el candado de bloqueo protege la capa, y la celda del al lado permite pintar sin salirse (bloqueo de píxeles transparentes). La miniatura de la capa se usa para seleccionarla."
+      ],
+      "puntos": [
+        "Clic en el ojo: mostrar u ocultar la capa.",
+        "Candado: bloquea la capa para no moverla ni editarla.",
+        "La capa activa se resalta: todo lo que hagas afecta a esa capa.",
+        "Doble clic sobre el nombre de la capa lo renombra."
+      ]
+    },
+    {
+      "titulo": "Enlazar, combinar y acoplar",
+      "emoji": "🔗",
+      "parrafos": [
+        "Enlazar dos capas las agrupa para moverse juntas: seleccionás ambas y clic en el ícono de eslabón del panel. Las enlazadas se desplazan, escalan y transforman a la vez pero siguen siendo capas independientes.",
+        "Combinar (Ctrl + E) fusiona las capas seleccionadas en una sola: se usa cuando ya no las necesitás separar. Acoplar la imagen aplana TODAS las capas en un único fondo: el paso final antes de exportar una pieza terminada."
+      ],
+      "puntos": [
+        "Enlace: capas que se transforman juntas sin fusionarse.",
+        "Combinar capas (Ctrl + E): unir seleccionadas en una.",
+        "Acoplar imagen: aplana todas las capas del documento.",
+        "Acoplá solo al final: acoplar temprano destruye la flexibilidad."
+      ]
+    },
+    {
+      "titulo": "Grupos y rasterizado",
+      "emoji": "🗃️",
+      "imagen": {
+        "src": "img/figura-capas.png",
+        "alt": "Figura de apoyo de organización de capas",
+        "caption": "Los grupos mantienen ordenada una composición con muchas capas."
+      },
+      "parrafos": [
+        "Los grupos (carpetas) contienen varias capas: se crean con Ctrl + G y se abren y cierran como árbol de archivos. Agrupar un logo, un botón o los elementos de un afiche mantiene el panel limpio y permite mover todo el grupo de una vez.",
+        "Rasterizar convierte una capa vectorial o de texto en píxeles. Se necesita para aplicar algunos efectos que solo funcionan sobre píxeles. Una vez rasterizada, la capa ya no conserva su naturaleza editable original."
+      ],
+      "puntos": [
+        "Ctrl + G agrupa las capas seleccionadas.",
+        "El grupo se mueve y transforma como un bloque.",
+        "Rasterizar texto o forma lo convierte en píxeles.",
+        "Rasterizá solo cuando el efecto lo exija: no hay vuelta atrás."
+      ]
+    },
+    {
+      "titulo": "Objetos inteligentes",
+      "emoji": "✨",
+      "parrafos": [
+        "El objeto inteligente incrusta una imagen 'viva': podés escalarla, rotarla y hasta deformarla una y otra vez SIN perder calidad, porque Photoshop conserva el original dentro de la capa.",
+        "Al hacer doble clic en un objeto inteligente, se abre su contenido en otra pestaña y ahí lo editás; al guardar, el objeto se actualiza en tu composición. Es el estándar para trabajar con fotos y reutilizar diseños sin degradarlos."
+      ],
+      "puntos": [
+        "El objeto inteligente protege la calidad al transformar.",
+        "Doble clic lo abre aparte para editarlo.",
+        "Se crea arrastrando una imagen al lienzo o con clic derecho > Convertir en objeto inteligente.",
+        "Ideal para logos, textos y fotos que vas a escalar muchas veces."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Composición ordenada con capas",
+      "consigna": "Armá una composición de 3 elementos sobre un fondo, organizada con grupos y con un objeto inteligente reescalado sin pérdida.",
+      "pasos": [
+        "Creá un documento 1920x1080 y fijá una capa de fondo con un color.",
+        "Abrí o arrastrá una imagen (por ej. una foto tuya) al lienzo: Photoshop la crea como objeto inteligente.",
+        "Escalala con Ctrl + T hasta el tamaño de un avatar y dejala en una esquina.",
+        "Agregá un texto con tu nombre (capa de texto) y una forma de color (capa de forma).",
+        "Seleccioná texto y forma y agrupalos con Ctrl + G; nombralo 'Identidad'.",
+        "Ocultá, bloqueá y combiná capas para practicar; al final acoplá la imagen y exportá como capas-nombre.png."
+      ],
+      "entrega": "Exportá el resultado final en PNG y comentá en qué momento usarías cada acción (ocultar, enlazar, acoplar).",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué hace el ícono del OJO en el panel de capas?",
+            "opciones": ["Muestra u oculta la capa", "Borra la capa", "Duplica la capa", "Cambia su color"],
+            "correcta": "Muestra u oculta la capa"
+          },
+          {
+            "pregunta": "¿Qué hace ENLAZAR dos capas?",
+            "opciones": ["Que se muevan juntas sin fusionarse", "Que se borren juntas", "Que cambien de nombre", "Que se impriman aparte"],
+            "correcta": "Que se muevan juntas sin fusionarse"
+          },
+          {
+            "pregunta": "¿Para qué se usa Acoplar imagen?",
+            "opciones": ["Aplanar todas las capas en un único fondo", "Sumar dos capas seleccionadas", "Crear un grupo nuevo", "Rasterizar texto"],
+            "correcta": "Aplanar todas las capas en un único fondo"
+          },
+          {
+            "pregunta": "¿Qué ventaja tiene el objeto inteligente?",
+            "opciones": ["Se reescala sin perder calidad", "Ocupa menos memoria", "No se puede editar", "Solo funciona con texto"],
+            "correcta": "Se reescala sin perder calidad"
+          },
+          {
+            "pregunta": "Rasterizar una capa de texto la convierte en:",
+            "opciones": ["Píxeles no editables como texto", "Un vector editable", "Un grupo de capas", "Un canal alfa"],
+            "correcta": "Píxeles no editables como texto"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Muevo el grupo, no la capa",
+      "consigna": "Organizá una composición de 5 elementos en dos grupos y mové cada grupo completo para demostrar la ventaja del orden de capas.",
+      "pasos": [
+        "Creá un documento y dibujá 5 objetos simples (2 + 3).",
+        "Nombrá cada capa con un nombre descriptivo (doble clic).",
+        "Seleccioná las 2 primeras y agrupalas con Ctrl + G; hacé lo mismo con las 3 restantes.",
+        "Con la herramienta Movimiento, mové cada grupo completo por el lienzo.",
+        "Bloqueá uno de los grupos con el candado, intentá moverlo y comprobá que no se mueve; exportá como grupos-nombre.png."
+      ],
+      "entrega": "Entregá el PNG final y un screen del panel de capas mostrando los dos grupos."
+    }
+  ],
+  "entrega": "Se evalúa la composición final (fondo, avatar, texto y forma) y la comprensión de cuándo ocultar, enlazar, combinar y acoplar.",
+  "lectura": "Las capas son lo que hace a Photoshop un programa profesional: cada elemento editable por separado, sin destruir el resto. Aprender a organizarlas (bloquear, enlazar, agrupar) evita decenas de errores y frustraciones. Y los objetos inteligentes garantizan que podés seguir cambiando de idea sin pagar el costo en calidad.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar un PSD real bien ordenado y uno caótico; que aprecien el orden", "min": "10 min" },
+      { "titulo": "Panel y control de capas", "que": "Mostrar, ocultar, bloquear y renombrar capas sobre una composición", "min": "20 min" },
+      { "titulo": "Enlazar, combinar y acoplar", "que": "Practicar los tres casos y decidir cuándo usar cada uno", "min": "20 min" },
+      { "titulo": "Grupos y rasterizado", "que": "Organizar una composición en carpetas y rasterizar de forma intencional", "min": "20 min" },
+      { "titulo": "Objetos inteligentes y práctico", "que": "Crear, editar y reescalar sin pérdida; armar la composición final", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y revisar los PNG entregados", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar capas con transparencias físicas o esténciles: cada elemento es una hoja.",
+      "Relacionar con Corel: las capas existen también allí, pero en PSD son el corazón."
+    ],
+    "aclarar": [
+      "Acoplar imagen es irreversible: siempre guardá un PSD antes.",
+      "El bloqueo total del candado impide mover y editar; hay bloqueos parciales.",
+      "El objeto inteligente hecho a partir de un PSD se actualiza en cadena si lo editás."
+    ],
+    "ejemplos": [
+      "Escalar una foto normal hasta que se pixele y ver que el objeto inteligente aguanta.",
+      "Agrupar las piezas de un logo en una carpeta y mover todo el grupo.",
+      "Combinar dos capas de prueba y mostrar cómo desapareció una del panel."
+    ]
+  }
+}

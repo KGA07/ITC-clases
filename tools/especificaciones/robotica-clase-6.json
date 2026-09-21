@@ -1,0 +1,179 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 6,
+    "titulo": "LEDs, resistencias y Ley de Ohm",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + multímetro (opcional)",
+    "bajada": "Vas a entender cómo funciona un LED, por qué siempre lo conectás con una resistencia y cómo calcularla usando la Ley de Ohm, armando LEDs en serie y en paralelo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 6 - LEDs, resistencias y Ley de Ohm",
+  "objetivos": [
+    "Explicar el funcionamiento de un LED y su polaridad.",
+    "Calcular la resistencia protectora de un LED usando la Ley de Ohm.",
+    "Leer el valor de una resistencia con el código de colores.",
+    "Diferenciar la conexión de LEDs en serie y en paralelo."
+  ],
+  "teoria": [
+    {
+      "titulo": "El LED y su polaridad",
+      "emoji": "💡",
+      "imagen": {
+        "src": "img/led-resistencia.jpg",
+        "alt": "LED conectado con resistencia",
+        "caption": "Un LED siempre va acompañado de su resistencia limitadora."
+      },
+      "parrafos": [
+        "Un LED (Light Emitting Diode) es un diodo que emite luz cuando la corriente circula en el sentido correcto. Es un componente polarizado: tiene una pata más larga (ánodo, positivo) y una más corta (cátodo, negativo).",
+        "Si lo conectás al revés, no se enciende; y si lo conectás sin resistencia, puede quemarse porque la corriente que circula es demasiado alta."
+      ],
+      "puntos": [
+        "Pata larga → ánodo → se conecta hacia el positivo.",
+        "Pata corta → cátodo → se conecta hacia GND (negativo).",
+        "El LED necesita corriente limitada: por eso va con resistencia.",
+        "LED integrado del Arduino: ya tiene su resistencia interna en la placa."
+      ]
+    },
+    {
+      "titulo": "La Ley de Ohm",
+      "emoji": "⚡",
+      "imagen": {
+        "src": "img/resistor-codigo-color.jpg",
+        "alt": "Código de colores de resistencias",
+        "caption": "Los colores de la resistencia indican su valor en ohmios."
+      },
+      "parrafos": [
+        "La Ley de Ohm relaciona tres magnitudes: tensión (V, en voltios), corriente (I, en amperios) y resistencia (R, en ohmios). La fórmula es V = I × R.",
+        "Para calcular la resistencia que protege a un LED usamos: R = (V fuente − V LED) / I LED. Por ejemplo, para un LED que pide 2V y una corriente de 20mA (0,02 A), alimentado con 5V: R = (5 − 2) / 0,02 = 150 Ω. En la práctica usamos 220 Ω, un valor comercial cercano y seguro."
+      ],
+      "puntos": [
+        "V = I × R: tensión igual a corriente por resistencia.",
+        "R = (Vfuente − Vled) / Iled para calcular la resistencia protectora.",
+        "Resultado en ohmios (Ω).",
+        "Siempre redondeá al valor comercial más cercano (220, 330, 470 Ω)."
+      ]
+    },
+    {
+      "titulo": "Serie y paralelo",
+      "emoji": "🔗",
+      "imagen": {
+        "src": "img/led-paralelo.jpg",
+        "alt": "LEDs en paralelo",
+        "caption": "En paralelo, cada LED recibe la tensión completa de la fuente."
+      },
+      "parrafos": [
+        "En serie, los LEDs se encadenan uno detrás de otro y comparten la misma corriente: la tensión se reparte entre todos. En paralelo, cada LED recibe toda la tensión de la fuente y la corriente se divide entre las ramas.",
+        "En los proyectos con Arduino, lo más común es el paralelo: cada LED se conecta a su propio pin y a GND a través de su resistencia, así se puede controlar cada uno por separado."
+      ],
+      "puntos": [
+        "Serie: misma corriente, tensión repartida. Un LED cortado apaga todos.",
+        "Paralelo: misma tensión, corriente repartida. Cada LED funciona solo.",
+        "Con la placa, cada LED en un pin distinto = control independiente.",
+        "En paralelo, sumá el consumo total de corriente: la placa entrega como máximo unos 40mA por pin."
+      ]
+    },
+    {
+      "titulo": "Leer el código de colores",
+      "emoji": "🎨",
+      "parrafos": [
+        "Las resistencias del kit indican su valor con bandas de colores. Las tres primeras franjas dan el valor y la cuarta la tolerancia. Por ejemplo: rojo, rojo, marrón = 22 × 10 = 220 Ω.",
+        "Tener la tabla de colores a mano (o la foto en el celular) te permite identificar de un vistazo las resistencias de 220 Ω, 330 Ω y 10 kΩ que vas a usar seguido."
+      ],
+      "puntos": [
+        "Negro 0, marrón 1, rojo 2, naranja 3, amarillo 4.",
+        "Verde 5, azul 6, violeta 7, gris 8, blanco 9.",
+        "Tercera banda = multiplicador (cantidad de ceros).",
+        "220 Ω = rojo, rojo, marrón. 10 kΩ = marrón, negro, naranja."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Ley de Ohm en acción",
+      "consigna": "Respondé el quiz aplicando la Ley de Ohm y el código de colores.",
+      "pasos": [
+        "Tené a mano la tabla de colores y la fórmula V = I × R.",
+        "Aplicá la fórmula paso a paso con una calculadora.",
+        "Convencé a tu compañero de cada respuesta antes de confirmarla."
+      ],
+      "entrega": "Resoluciones escritas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la pata positiva del LED?",
+            "opciones": ["La más corta", "La más larga", "No tiene", "Ambas por igual"],
+            "correcta": "La más larga"
+          },
+          {
+            "pregunta": "¿Para qué sirve la resistencia en serie con el LED?",
+            "opciones": ["Para limitar la corriente y proteger al LED", "Para hacerlo más brillante", "Para ahorrar cables", "Para cambiar su color"],
+            "correcta": "Para limitar la corriente y proteger al LED"
+          },
+          {
+            "pregunta": "Con 5V de fuente, un LED de 2V y 20mA, ¿qué resistencia se necesita?",
+            "opciones": ["100 Ω", "150 Ω", "10 Ω", "1000 Ω"],
+            "correcta": "150 Ω"
+          },
+          {
+            "pregunta": "¿Qué valor indica la resistencia rojo, rojo, marrón?",
+            "opciones": ["22 Ω", "220 Ω", "2,2 kΩ", "22 kΩ"],
+            "correcta": "220 Ω"
+          },
+          {
+            "pregunta": "En un circuito en serie, ¿qué pasa si se corta un LED?",
+            "opciones": ["Los demás siguen encendidos", "Se apagan todos", "Se prende solo el último", "Aumenta el brillo"],
+            "correcta": "Se apagan todos"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Leds en serie y en paralelo",
+      "consigna": "Armá dos circuitos con la placa: tres LEDs en serie y tres LEDs en paralelo, y comparalos.",
+      "pasos": [
+        "En setup() configura tres pines digitales como salida: 8, 9 y 10.",
+        "En loop(), encendé los tres LEDs con digitalWrite(pin, HIGH) y un delay entre cada conmutación.",
+        "Circuito en paralelo: conectá cada LED con su resistencia de 220 Ω a su pin y el cátodo a GND.",
+        "Probá y verificá que cada LED se controla de forma independiente.",
+        "Circuito en serie: encadená tres LEDs seguidos con una sola resistencia en la rama común.",
+        "Conectá la cadena serie a la placa y observá qué pasa cuando sacás un LED de la fila.",
+        "Registrá en el cuaderno las diferencias de brillo y comportamiento entre ambos circuitos."
+      ],
+      "entrega": "Fotos de los dos circuitos (serie y paralelo) con la explicación de sus diferencias."
+    }
+  ],
+  "entrega": "El docente revisará las fotos de los circuitos y las resoluciones de los cálculos.",
+  "lectura": "LED y resistencia son un dúo inseparable: el LED convierte corriente en luz y la resistencia mantiene esa corriente bajo control. Con la Ley de Ohm podés calcular cualquier protector y con el código de colores identificar componentes al instante.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Encender un LED directo a 5V y mostrar por qué se necesita resistencia", "min": "10 min" },
+      { "titulo": "El LED y polaridad", "que": "Explicar ánodo/cátodo con LED físicos y fotos", "min": "15 min" },
+      { "titulo": "Ley de Ohm", "que": "Derivar la fórmula con ejemplo resuelto en el pizarrón", "min": "20 min" },
+      { "titulo": "Código de colores", "que": "Tablas y lectura de resistencias del kit en grupos", "min": "15 min" },
+      { "titulo": "Práctica serie/paralelo", "que": "Guiar el armado de ambos circuitos por parejas", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y puesta en común de observaciones", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué pasó alguna vez con un foquito conectado a mucha tensión: se quema. Así se conectan con la corriente excesiva en el LED.",
+      "Comparar la resistencia con una canilla que limita el agua que pasa por un caño."
+    ],
+    "aclarar": [
+      "La formula da un valor mínimo: usar un valor comercial mayor (220 Ω en vez de 150 Ω) es más seguro para el LED.",
+      "En paralelo, si los LEDs son del mismo tipo, la corriente total es la suma de cada rama.",
+      "El Arduio entrega 5V por el pin de salida digital HIGH, pero con corriente limitada: por eso el 40mA por pin es un límite."
+    ],
+    "ejemplos": [
+      "Resolver juntos R = (5 − 2) / 0,02 en el pizarrón.",
+      "Leer resistencias al azar del kit y verificar con el multímetro.",
+      "Mostrar en TinkerCad el aviso de sobrecorriente al conectar un LED sin resistencia."
+    ]
+  }
+}

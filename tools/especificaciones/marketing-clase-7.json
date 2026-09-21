@@ -33,7 +33,8 @@
         "Educativo: tutoriales, consejos, listas y datos curiosos.",
         "Emocional: historias de clientes, procesos reales y momentos de la marca.",
         "Conversión: ofertas, promos, testimonios y llamados a la acción claros."
-      ]
+      ],
+      "imagen": { "src": "img/tipos.jpg", "alt": "Marketing de contenidos", "caption": "Toda estrategia combina contenido educativo, emocional y de conversión" }
     },
     {
       "titulo": "Storytelling: contar para conectar",
@@ -45,7 +46,8 @@
         "Estructura clásica: un personaje con un problema, encuentra tu solución y su historia cambia.",
         "Elementos: personaje identificable, conflicto o dolor, resolución y emoción.",
         "Aplicaciones: el origen de tu marca, un caso de cliente o el detrás de escena."
-      ]
+      ],
+      "imagen": { "src": "img/storytelling.jpg", "alt": "Contar historias que conectan", "caption": "Las historias se recuerdan más que los datos" }
     },
     {
       "titulo": "¿Qué hace viral a un contenido?",
@@ -58,7 +60,8 @@
         "Valor práctico: algo que le sirva a otros y que se comparte para ayudar.",
         "Gancho inicial que obliga a seguir viendo.",
         "Contexto justo: un tema de actualidad o algo que todos están comentando."
-      ]
+      ],
+      "imagen": { "src": "img/viral.jpg", "alt": "Contenido que se vuelve viral", "caption": "Lo viral combina emoción fuerte y valor compartible" }
     },
     {
       "titulo": "Analizando contenido viral",

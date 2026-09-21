@@ -1,0 +1,173 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 6,
+    "titulo": "Memorias RAM",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Módulos RAM DDR3/DDR4 sueltos, PCs del aula, tornillos de banco",
+    "bajada": "La RAM es la memoria de trabajo: decide cuántos programas podés tener abiertos sin que la PC se trabe. Vas a aprender qué es, qué tecnologías existen y cómo elegirla e instalarla.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 6 - Memorias RAM",
+  "objetivos": [
+    "Explicar el funcionamiento de la memoria RAM.",
+    "Diferenciar tecnologías y generaciones DDR.",
+    "Interpretar capacidad y velocidad de los módulos.",
+    "Instalar un módulo RAM en el slot correcto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Funcionamiento de la RAM",
+      "emoji": "💨",
+      "imagen": {
+        "src": "img/memorias-ram.jpg",
+        "alt": "Módulos de memoria RAM en un banco de pruebas",
+        "caption": "La RAM es la memoria de trabajo donde corren los programas abiertos."
+      },
+      "parrafos": [
+        "La memoria RAM guarda en forma temporal los programas y datos que estás usando ahora mismo. Es rápida pero volátil: al apagar la PC, todo lo que tenía se borra."
+      ],
+      "puntos": [
+        "RAM = Random Access Memory (memoria de acceso aleatorio).",
+        "Es volátil: pierde los datos al cortarse la energía.",
+        "Cuanta más RAM, más programas podés tener abiertos sin lentitud.",
+        "No confundir con el disco: el disco guarda, la RAM trabaja."
+      ]
+    },
+    {
+      "titulo": "Tecnologías y generaciones DDR",
+      "emoji": "🔢",
+      "imagen": {
+        "src": "img/generaciones-ram.jpg",
+        "alt": "Comparación de módulos de memoria DDR",
+        "caption": "Cada generación DDR cambia el número de pines y la velocidad."
+      },
+      "parrafos": [
+        "Las memorias evolucionaron en generaciones llamadas DDR. La posición de la muesca cambia entre generaciones, así que no podés mezclar DDR3 con DDR4."
+      ],
+      "puntos": [
+        "DDR: la primera generación; hoy en desuso.",
+        "DDR2, DDR3, DDR4: generaciones sucesivas, hasta 256GB teóricos por módulo.",
+        "DDR5: la más nueva, mayor velocidad por módulo.",
+        "Cada placa madre soporta una sola generación de RAM."
+      ]
+    },
+    {
+      "titulo": "Capacidad y velocidad",
+      "emoji": "📊",
+      "imagen": {
+        "src": "img/modulo-ddr4.jpg",
+        "alt": "Módulo DDR4 de memoria RAM",
+        "caption": "En la etiqueta del módulo se lee capacidad y velocidad."
+      },
+      "parrafos": [
+        "Dos números importan al elegir RAM: la capacidad (cuántos gigabytes) y la velocidad (qué tan rápido se transfieren los datos, en MT/s o MHz)."
+      ],
+      "puntos": [
+        "Capacidad: 4, 8, 16 o 32 GB por módulo (ej: 16 GB DDR4).",
+        "Velocidad: 2400, 2666, 3200 MT/s en DDR4; más altas en DDR5.",
+        "PC1600/PC4-17000 mapetas: el nombre del módulo incluye su ancho de banda.",
+        "Mezclar módulos de distinta velocidad: la placa usa la menor."
+      ]
+    },
+    {
+      "titulo": "Instalación y doble canal",
+      "emoji": "🧩",
+      "parrafos": [
+        "Instalar RAM es de lo más simple del mantenimiento: solo hay que respetar la muesca, el sentido y los slots recomendados."
+      ],
+      "puntos": [
+        "Abrir las trabas del slot antes de insertar el módulo.",
+        "Alinear la muesca del módulo con la del slot DIMM.",
+        "Presionar hasta escuchar el click de las trabas.",
+        "Doble canal: usar slots alternados (A2+B2) para más rendimiento."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: memoria RAM",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre RAM, DDR, capacidad y velocidad.",
+      "pasos": [
+        "Recorré la teoría y los módulos del aula.",
+        "Respondé el interactivo.",
+        "Consultá dudas de instalación."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Por qué la RAM se borra al apagar la PC?",
+            "opciones": ["Porque es una memoria volátil", "Porque es muy lenta", "Porque la protege el antivirus", "Porque está en el disco"],
+            "correcta": "Porque es una memoria volátil"
+          },
+          {
+            "pregunta": "¿Qué tecnologías de RAM NO son compatibles entre sí?",
+            "opciones": ["DDR3 y DDR4", "DDR4 y DDR5", "DDR y DDR2", "Todas las anteriores"],
+            "correcta": "Todas las anteriores"
+          },
+          {
+            "pregunta": "¿Qué unidad indica la capacidad de un módulo RAM?",
+            "opciones": ["Gigabytes (GB)", "Gigahertz (GHz)", "Watts (W)", "RPM"],
+            "correcta": "Gigabytes (GB)"
+          },
+          {
+            "pregunta": "Si mezclás RAM de 2666 y 3200, la placa usará...",
+            "opciones": ["2666 (la menor)", "3200 (la mayor)", "El promedio de ambas", "No funcionará nunca"],
+            "correcta": "2666 (la menor)"
+          },
+          {
+            "pregunta": "Para activar el modo doble canal conviene...",
+            "opciones": ["Usar los slots alternados (A2+B2)", "Colocar toda la RAM en un mismo slot", "Usar un módulo gigante", "Insertar RAM de distinta generación"],
+            "correcta": "Usar los slots alternados (A2+B2)"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Instalá un módulo RAM",
+      "consigna": "Sacá y volvé a colocar un módulo RAM en la PC del aula respetando los pasos correctos.",
+      "pasos": [
+        "Apagá la PC y desconectala de la corriente.",
+        "Abrí el gabinete y localizá los slots DIMM.",
+        "Sacá el módulo presionando las trabas de los extremos.",
+        "Observá la muesca y la posición correcta.",
+        "Volvé a insertar hasta el click y verificá con el Administrador de tareas."
+      ],
+      "entrega": "Módulo colocado correctamente y RAM visible en el sistema."
+    }
+  ],
+  "entrega": "El docente verificará la instalación del módulo y el interactivo.",
+  "lectura": "La memoria RAM es la de trabajo: volátil, rápida y determinante para la fluidez del equipo. Elegir la generación DDR correcta, la capacidad y la velocidad adecuadas, e instalarla en el slot correcto, evita incompatibilidades y es una de las tareas más frecuentes del mantenimiento.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar CPU y conectar con la memoria de trabajo que necesita", "min": "10 min" },
+      { "titulo": "Funcionamiento de RAM", "que": "Explicar volátil vs permanente con ejemplos y un módulo a la vista", "min": "15 min" },
+      { "titulo": "Generaciones DDR", "que": "Comparar DDR3, DDR4 y DDR5 con módulos reales y sus muescas", "min": "20 min" },
+      { "titulo": "Capacidad y velocidad", "que": "Leer etiquetas de módulos y relacionarlas con el uso real", "min": "20 min" },
+      { "titulo": "Práctica de instalación", "que": "Guiar la remoción e inserción del módulo en cada equipo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿le pasó que con el celular o la PC 'no entraba más' al abrir muchas apps? Explicar con RAM.",
+      "Comparar apagar la PC con 'limpiar el escritorio': la RAM se vacía al apagar."
+    ],
+    "aclarar": [
+      "La RAM no aumenta el almacenamiento: no vas a tener 'más lugar' para fotos.",
+      "Instalar RAM con la PC encendida daña el módulo y la placa: siempre apagada y desenchufada.",
+      "El modo doble canal no duplica el total: duplica el ancho de banda del acceso."
+    ],
+    "ejemplos": [
+      "Pasar una DDR3 y una DDR4 por los bancos para comparar la posición de la muesca.",
+      "Mostrar en Administrador de tareas cuánta RAM usa la PC en ese momento.",
+      "Simular una PC con poca RAM (abrir muchos programas) y ver la lentitud."
+    ]
+  }
+}

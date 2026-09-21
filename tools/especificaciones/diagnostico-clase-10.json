@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 10,
+    "titulo": "Chipset y encendido",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PCs del aula, acceso al setup de la BIOS/UEFI, guía de fallas de arranque",
+    "bajada": "El encendido es la primera prueba de salud de una PC. Vas a aprender a usar el setup de la BIOS/UEFI, comprobar el arranque y diagnosticar las fallas más comunes: sus causas y soluciones.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 10 - Chipset y encendido",
+  "objetivos": [
+    "Diferenciar BIOS tradicional de UEFI.",
+    "Ingresar al setup y modificar configuración básica.",
+    "Comprobar el orden de arranque de un equipo.",
+    "Identificar, enmarcar causa y resolver fallas de arranque comunes."
+  ],
+  "teoria": [
+    {
+      "titulo": "BIOS vs UEFI",
+      "emoji": "🧬",
+      "parrafos": [
+        "Al encender, el primer programa que corre está grabado en la placa madre: antes se llamó BIOS y hoy se usa UEFI, su versión moderna. Ambos chequean el hardware y buscan el disco para iniciar el sistema."
+      ],
+      "puntos": [
+        "BIOS: firmware clásico, interfaz de teclado, texto.",
+        "UEFI: reemplazo moderno con interfaz gráfica y mouse.",
+        "UEFI arranca más rápido y soporta discos GPT grandes.",
+        "Ambos muestran el POST: la prueba de los componentes."
+      ]
+    },
+    {
+      "titulo": "Setup y configuración",
+      "emoji": "🛠️",
+      "imagen": {
+        "src": "img/bios-setup.jpg",
+        "alt": "Pantalla de configuración del setup de BIOS",
+        "caption": "En el setup se configuran orden de arranque, fecha y energía."
+      },
+      "parrafos": [
+        "El setup (o configuration utility) es la pantalla de configuración del firmware. Se accede con una tecla al arrancar (Supr, F2, Esc o F10 según la placa)."
+      ],
+      "puntos": [
+        "Acceso: presionar la tecla indicada durante el POST.",
+        "Configuraciones típicas: fecha/hora, arranque y energía.",
+        "En UEFI se navega con mouse; en BIOS con teclas.",
+        "Cambios se guardan con F10 (Save & Exit)."
+      ]
+    },
+    {
+      "titulo": "Comprobación de arranque",
+      "emoji": "🔍",
+      "imagen": {
+        "src": "img/uefi.jpg",
+        "alt": "Interfaz UEFI de una placa madre moderna",
+        "caption": "El orden de arranque se define en la sección Boot de la UEFI."
+      },
+      "parrafos": [
+        "El orden de arranque (boot order) decide qué dispositivo se prueba primero para iniciar: disco, pendrive, DVD o red. Es clave para instalar un sistema con pendrive."
+      ],
+      "puntos": [
+        "Boot order: secuencia de dispositivos a intentar.",
+        "Según la placa: prioridad a UEFI o Legacy (BIOS).",
+        "Para bootear por pendrive hay que ponerlo primero.",
+        "La placa avanza al siguiente dispositivo si el anterior no arranca."
+      ]
+    },
+    {
+      "titulo": "Fallas de arranque: identificar, causa, solución",
+      "emoji": "❗",
+      "parrafos": [
+        "Cuando la PC no enciende, hay que ir por partes: beeps, luces, imagen en pantalla y mensajes. Cada síntoma apunta a una causa y a una solución distinta."
+      ],
+      "puntos": [
+        "No enciende nada: falta corriente, fuente o botón del panel.",
+        "Enciende pero sin video y con beeps: RAM mal colocada o CPU.",
+        "Queda en logo/mensaje: disco no detectado o sin sistema.",
+        "Zumba y apaga: temperatura o fuente insuficiente."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: chipset y encendido",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre BIOS/UEFI, setup y fallas de arranque.",
+      "pasos": [
+        "Leé la teoría de arranque.",
+        "Respondé el interactivo.",
+        "Chequeá las respuestas en la PC si es posible."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué software arranca primero al encender la PC?",
+            "opciones": ["La BIOS/UEFI", "Windows", "El antivirus", "El driver de video"],
+            "correcta": "La BIOS/UEFI"
+          },
+          {
+            "pregunta": "¿Qué reemplaza hoy a la BIOS tradicional?",
+            "opciones": ["UEFI", "DOS", "CMOS", "NTFS"],
+            "correcta": "UEFI"
+          },
+          {
+            "pregunta": "¿Para qué se usa el setup de la BIOS?",
+            "opciones": ["Configurar arranque, fecha y energía", "Editar documentos", "Crear archivos de texto", "Formatear el disco automáticamente"],
+            "correcta": "Configurar arranque, fecha y energía"
+          },
+          {
+            "pregunta": "La PC no enciende y no hay nada de video. La primera causa a revisar es...",
+            "opciones": ["La fuente o la conexión de energía", "El driver del teclado", "El antivirus desactualizado", "La resolución del monitor"],
+            "correcta": "La fuente o la conexión de energía"
+          },
+          {
+            "pregunta": "¿Qué es el orden de arranque (boot order)?",
+            "opciones": ["La secuencia de dispositivos que intentan iniciar el sistema", "El orden de las letras de las unidades", "La temperatura del disco", "La cantidad de núcleos"],
+            "correcta": "La secuencia de dispositivos que intentan iniciar el sistema"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Caso práctico de diagnóstico",
+      "consigna": "Dado un síntoma de falla de arranque, encontrá la causa probable y proponé la solución.",
+      "pasos": [
+        "Elegí un síntoma de la lista: no enciende, beeps sin video, logo con reinicio continuo.",
+        "Anotá las preguntas que le harías al usuario.",
+        "Indicá la causa más probable.",
+        "Proponé los pasos de solución en orden.",
+        "Presentá el caso al resto del curso."
+      ],
+      "entrega": "Ficha del caso con identificación, causa y solución."
+    }
+  ],
+  "entrega": "El docente revisará el caso práctico y el interactivo.",
+  "lectura": "El arranque es el termómetro de la PC: la BIOS/UEFI chequea el hardware, busca el disco y da lugar al sistema operativo. Saber navegar el setup, definir el orden de booteo y diagnosticar fallas comunes te convierte en el técnico que detecta el problema de un solo vistazo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar discos y conectar con la secuencia de arranque", "min": "10 min" },
+      { "titulo": "BIOS vs UEFI", "que": "Explicar diferencias y entrar al setup de una PC del aula", "min": "20 min" },
+      { "titulo": "Comprobación de arranque", "que": "Recorrer el boot order y probar cambios sin guardar", "min": "20 min" },
+      { "titulo": "Fallas de arranque", "que": "Presentar síntomas reales y sus causas con una guía", "min": "20 min" },
+      { "titulo": "Práctica de diagnóstico", "que": "Resolver casos de falla en grupos con la guía", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar quién vio una pantalla azul o un mensaje de error al encender y qué hizo.",
+      "Abrir el setup en vivo y mostrar que todos los equipos tienen configuraciones similares."
+    ],
+    "aclarar": [
+      "Salir del setup sin guardar (Exit without saving) descarta los cambios: importante al practicar.",
+      "Los beeps no son ruido 'de más': cada secuencia identifica un componente.",
+      "Una PC que enciende con el cooler y apaga en segundos suele ser temperatura o RAM."
+    ],
+    "ejemplos": [
+      "Simular un 'no boot device' desconectando el disco del sistema (con cuidado) y mostrar el mensaje.",
+      "Entrar al setup y cambiar el primer dispositivo de arranque y revertirlo.",
+      "Mostrar el tiempo de POST en una PC con BIOS y una con UEFI."
+    ]
+  }
+}

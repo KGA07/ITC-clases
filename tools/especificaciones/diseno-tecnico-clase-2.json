@@ -1,0 +1,172 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 2,
+    "titulo": "Selección, líneas y propiedades de objeto",
+    "modulo": "Módulo 1 – Fundamentos de AutoCAD",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a aprender a seleccionar y eliminar objetos, a dibujar líneas con precisión y a cambiar su color, grosor y tipo de línea desde el panel de propiedades.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 2 Herramienta de Dibujo",
+  "objetivos": [
+    "Seleccionar objetos con clic, ventana y captura, y eliminarlos con la tecla Supr.",
+    "Dibujar líneas con el comando LINEA definiendo sus extremos.",
+    "Modificar en propiedades el color, el grosor y el tipo de línea de un objeto.",
+    "Aplicar la referencia a objetos y el rastreo de referencia para dibujar con precisión."
+  ],
+  "teoria": [
+    {
+      "titulo": "Selección y eliminación de objetos",
+      "emoji": "🎯",
+      "imagen": {
+        "src": "img/seleccion.jpg",
+        "alt": "Cursor de selección de objetos",
+        "caption": "El cursor y los rectángulos de selección son las formas básicas de elegir objetos."
+      },
+      "parrafos": [
+        "Antes de modificar cualquier cosa hay que seleccionarla. AutoCAD ofrece dos formas clásicas: hacer clic sobre el objeto, o arrastrar un rectángulo de selección. La dirección del arrastre cambia el resultado: de izquierda a derecha selecciona solo lo que queda totalmente adentro; de derecha a izquierda selecciona todo lo que toca el rectángulo."
+      ],
+      "puntos": [
+        "Clic simple: selecciona un único objeto.",
+        "Ventana (drag izquierda→derecha): selecciona los objetos completamente encerrados.",
+        "Captura (drag derecha→izquierda): selecciona los objetos que cruza el rectángulo.",
+        "Con Supr se elimina lo seleccionado; con ESC se deselecciona todo."
+      ]
+    },
+    {
+      "titulo": "Dibujo de líneas con LINEA",
+      "emoji": "📏",
+      "imagen": {
+        "src": "img/lineas.jpg",
+        "alt": "Líneas dibujadas en CAD",
+        "caption": "El comando LINEA arma cada segmento entre dos puntos que elegís."
+      },
+      "parrafos": [
+        "El comando LINEA dibuja segmentos rectos de un punto a otro. AutoCAD te pide el primer punto y luego el siguiente punto; podés seguir agregando segmentos hasta dar Enter o ESC.",
+        "Con Orto activado (F8) el segmento queda horizontal o vertical, ideal para arrancar los dibujos de planta."
+      ],
+      "puntos": [
+        "Ingresar: LINEA o L + Enter.",
+        "Primer punto: clic en el área de dibujo o coordenada por teclado.",
+        "Siguiente punto: clic o coordenada; Enter termina el comando.",
+        "Cada clic deja un segmento; con los pinzamientos se ajusta después."
+      ]
+    },
+    {
+      "titulo": "Referencias y rastreo de referencia",
+      "emoji": "🧭",
+      "parrafos": [
+        "Para que las líneas conecten exactamente con otras figuras usás la Referencia a Objetos (F3), que 'atrae' el cursor hacia finales, centros, intersecciones y otros puntos geométricos. El Rastreo de Referencia a Objetos (F11) además proyecta las extensiones de esos puntos como guías."
+      ],
+      "puntos": [
+        "Final, centro e intersección son las referencias que más se usan.",
+        "Con clic derecho en el botón de referencia podés configurar cuáles están activas.",
+        "El rastreo (F11) muestra líneas guía desde puntos clave para alinear con precisión.",
+        "Las referencias se activan con F3 y su rastreo con F11 (barra de estado)."
+      ]
+    },
+    {
+      "titulo": "Propiedades: color, grosor y tipo de línea",
+      "emoji": "🎨",
+      "imagen": {
+        "src": "img/propiedades.jpg",
+        "alt": "Paleta de propiedades y tipo de línea",
+        "caption": "Desde propiedades definís color, grosor y tipo de línea de los objetos."
+      },
+      "parrafos": [
+        "Cada objeto tiene propiedades que podés cambiar en cualquier momento. Las tres más visibles en un plano son el color, el grosor y el tipo de línea: con ellas se distinguen, por ejemplo, muros, ejes y líneas ocultas.",
+        "Se pueden cambiar desde el panel Propiedades de la cinta (con el objeto seleccionado) o desde la paleta Propiedades (Ctrl+1)."
+      ],
+      "puntos": [
+        "Color: se elige desde la lista Color del panel Propiedades.",
+        "Grosor: ancho de la línea al imprimir; se ve rojo/morado echado con el botón Grosor de línea activo.",
+        "Tipo de línea: continua, oculta, centro... se carga con el administrador de tipos de línea.",
+        "Los cambios se aplican al objeto seleccionado o quedan para el próximo dibujo según el estado."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá selección y propiedades",
+      "consigna": "Respondé las preguntas del interactivo sobre selección, eliminación y propiedades de objetos.",
+      "pasos": [
+        "Dibujá tres líneas con Orto activado.",
+        "Seleccioná una con clic y borrala con Supr.",
+        "Seleccioná otra con la ventana (izquierda→derecha) y otra con la captura (derecha→izquierda).",
+        "Cambiale el color, el grosor y el tipo de línea a las líneas que quedaron.",
+        "Respondé el interactivo al final de la consigna."
+      ],
+      "entrega": "Repaso oral de las respuestas del interactivo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tecla borra los objetos seleccionados?",
+            "opciones": ["Backspace", "Supr", "F3", "ESC"],
+            "correcta": "Supr"
+          },
+          {
+            "pregunta": "¿Qué hace la ventana de selección (izquierda→derecha)?",
+            "opciones": ["Selecciona solo lo que queda totalmente adentro", "Selecciona lo que toca el rectángulo", "Borra todo", "Abre las propiedades"],
+            "correcta": "Selecciona solo lo que queda totalmente adentro"
+          },
+          {
+            "pregunta": "¿Qué atajo de teclado inicia el comando LINEA?",
+            "opciones": ["P", "L", "LI", "D"],
+            "correcta": "L"
+          },
+          {
+            "pregunta": "¿Qué F activa la Referencia a Objetos?",
+            "opciones": ["F8", "F10", "F3", "F12"],
+            "correcta": "F3"
+          },
+          {
+            "pregunta": "¿Dónde cambiás el color, grosor y tipo de línea de un objeto?",
+            "opciones": ["En la línea de comandos", "En Propiedades", "En el bloque de texto", "En la impresora"],
+            "correcta": "En Propiedades"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Dibujá un rectángulo de líneas con propiedades",
+      "consigna": "Dibujá un recuadro con cuatro líneas, borrá una, y dejá cada lado con un color y tipo de línea distinto.",
+      "pasos": [
+        "Activá Orto (F8) y dibujá las cuatro líneas que forman un rectángulo de 10 x 6 unidades.",
+        "Seleccioná el lado superior y borralo con Supr.",
+        "Volvé a dibujarlo con LINEA.",
+        "Seleccioná cada lado y asignale un color distinto desde Propiedades.",
+        "A un lado cambiale el tipo de línea a 'oculta' o 'centro'.",
+        "Guardá como clase2-rectangulo.dwg."
+      ],
+      "entrega": "El docente revisa el archivo y verifica que cada lado tenga su color y tipo de línea asignado."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase2-rectangulo.dwg y el repaso interactivo sobre selección y propiedades.",
+  "lectura": "La selección es la puerta de entrada a todas las modificaciones: con el clic, la ventana y la captura elegís qué objeto tocar. El comando LINEA arma la base de casi todos los planos, y las propiedades definen cómo se ve cada cosa. Sumar referencias a objetos y saber cambiar color, grosor y tipo de línea es lo que distingue un dibujo prolijo de uno desprolijo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar la interfaz y las ayudas de la clase anterior", "min": "10 min" },
+      { "titulo": "Selección y borrado", "que": "Mostrar clic, ventana, captura y Supr sobre ejemplos", "min": "15 min" },
+      { "titulo": "Línea y referencias", "que": "Dibujar con LINEA y activar F3/F11 con referencias", "min": "20 min" },
+      { "titulo": "Propiedades", "que": "Cambiar color, grosor y tipo de línea seleccionando objetos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el rectángulo de líneas y el interactivo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso de las propiedades usadas y dudas finales", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo distinguirían 'muros' de 'aberturas' en un plano a mano: con color y grosor de lápiz. Eso es lo mismo que propiedades."
+    ],
+    "aclarar": [
+      "El grosor de línea se ve en pantalla solo con el botón Grosor de línea activo en la barra de estado.",
+      "La ventana y la captura son opuestas: repetir el ejemplo lado a lado hasta que se entienda.",
+      "Supr no pregunta confirmación: si borraste algo de más, Ctrl+Z lo recupera."
+    ],
+    "ejemplos": [
+      "Borrar un objeto y recuperarlo con Ctrl+Z.",
+      "Dibujar dos líneas una con F8 y otra sin F8 para ver la diferencia.",
+      "Cambiar una misma línea a tipo oculta y mostrar cómo cambia en pantalla y en impresión."
+    ]
+  }
+}

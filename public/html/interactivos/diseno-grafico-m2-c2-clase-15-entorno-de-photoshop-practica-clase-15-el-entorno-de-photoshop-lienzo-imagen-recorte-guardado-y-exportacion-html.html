@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 15 - El entorno de Photoshop: lienzo, imagen, recorte, guardado y exportación</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#7c3aed;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#7c3aed;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+</style></head>
+<body><div class="card">
+  <h1>El entorno de Photoshop: lienzo, imagen, recorte, guardado y exportación</h1>
+  <p class="sub">Práctica Recortar, reencuadrar y exportar · Diseño Gráfico Publicitario</p>
+  <div class="consigna">Tomá una foto (puede ser una que traigas o una de muestra del docente), recortala con proporción 16:9, enderezá el horizonte si hace falta, achicala a 1920 px de ancho y exportala en JPG y PNG.</div>
+  
+    <div class="q" data-ok="Imagen > Tamaño de imagen">
+      <p class="qt">1. ¿Qué comando cambia el TAMAÑO DE LA IMAGEN (escala el contenido)?</p>
+      <label class="opt"><input type="radio" name="q0" value="Imagen &gt; Tamaño de imagen"><span>Imagen &gt; Tamaño de imagen</span></label>
+<label class="opt"><input type="radio" name="q0" value="Imagen &gt; Tamaño de lienzo"><span>Imagen &gt; Tamaño de lienzo</span></label>
+<label class="opt"><input type="radio" name="q0" value="Edición &gt; Reemplazar color"><span>Edición &gt; Reemplazar color</span></label>
+<label class="opt"><input type="radio" name="q0" value="Capa &gt; Rasterizar"><span>Capa &gt; Rasterizar</span></label>
+    </div>
+
+    <div class="q" data-ok="El lienzo es la superficie de trabajo; la imagen es el contenido">
+      <p class="qt">2. ¿Qué diferencia hay entre lienzo e imagen?</p>
+      <label class="opt"><input type="radio" name="q1" value="El lienzo es la superficie de trabajo; la imagen es el contenido"><span>El lienzo es la superficie de trabajo; la imagen es el contenido</span></label>
+<label class="opt"><input type="radio" name="q1" value="Son lo mismo"><span>Son lo mismo</span></label>
+<label class="opt"><input type="radio" name="q1" value="El lienzo solo aplica a video"><span>El lienzo solo aplica a video</span></label>
+<label class="opt"><input type="radio" name="q1" value="La imagen no se puede escalar"><span>La imagen no se puede escalar</span></label>
+    </div>
+
+    <div class="q" data-ok="C">
+      <p class="qt">3. ¿Con qué tecla activás la herramienta Recortar?</p>
+      <label class="opt"><input type="radio" name="q2" value="C"><span>C</span></label>
+<label class="opt"><input type="radio" name="q2" value="R"><span>R</span></label>
+<label class="opt"><input type="radio" name="q2" value="P"><span>P</span></label>
+<label class="opt"><input type="radio" name="q2" value="V"><span>V</span></label>
+    </div>
+
+    <div class="q" data-ok="PSD">
+      <p class="qt">4. ¿Qué formato guardás para NO perder las capas?</p>
+      <label class="opt"><input type="radio" name="q3" value="PSD"><span>PSD</span></label>
+<label class="opt"><input type="radio" name="q3" value="JPG"><span>JPG</span></label>
+<label class="opt"><input type="radio" name="q3" value="GIF"><span>GIF</span></label>
+<label class="opt"><input type="radio" name="q3" value="BMP"><span>BMP</span></label>
+    </div>
+
+    <div class="q" data-ok="Ventana > Espacio de trabajo > Restablecer">
+      <p class="qt">5. ¿Dónde recuperás un panel perdido?</p>
+      <label class="opt"><input type="radio" name="q4" value="Ventana &gt; Espacio de trabajo &gt; Restablecer"><span>Ventana &gt; Espacio de trabajo &gt; Restablecer</span></label>
+<label class="opt"><input type="radio" name="q4" value="Archivo &gt; Nuevo"><span>Archivo &gt; Nuevo</span></label>
+<label class="opt"><input type="radio" name="q4" value="Filtro &gt; Galería"><span>Filtro &gt; Galería</span></label>
+<label class="opt"><input type="radio" name="q4" value="Edición &gt; Preferencias"><span>Edición &gt; Preferencias</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

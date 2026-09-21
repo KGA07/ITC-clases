@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 20,
+    "titulo": "Introducción a redes",
+    "modulo": "Módulo 3 – Redes",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Switch, router, módem y placas de red reales, PCs del aula",
+    "bajada": "Abrimos el módulo de redes: para qué sirve una red, cómo se clasifican (por área y por conexión) y cuál es el hardware que las hace funcionar: placas, switch, router y módem.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 20 - Introduccion a redes",
+  "objetivos": [
+    "Explicar la utilidad de una red de computadoras.",
+    "Clasificar redes por área de cobertura e interfaz.",
+    "Identificar placas de red, switch, router y módem.",
+    "Diferenciar conexiones punto a punto y punto a multipunto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Utilidad de las redes",
+      "emoji": "🌐",
+      "imagen": {
+        "src": "img/switch.jpg",
+        "alt": "Switch o conmutador de red",
+        "caption": "El switch conecta las PCs de una red local entre sí."
+      },
+      "parrafos": [
+        "Una red de computadoras es un conjunto de equipos conectados para compartir recursos: archivos, impresoras, juegos e internet. De eso vive el mundo actual."
+      ],
+      "puntos": [
+        "Compartir archivos y carpetas entre equipos.",
+        "Compartir impresoras y periféricos.",
+        "Compartir la conexión a internet.",
+        "Mandar mensajes y trabajar en equipo."
+      ]
+    },
+    {
+      "titulo": "Clasificación por área de cobertura",
+      "emoji": "🗺️",
+      "parrafos": [
+        "Según el tamaño del área cubierta, las redes se ordenan en tipos: LAN, MAN y WAN."
+      ],
+      "puntos": [
+        "LAN: red local, un aula, oficina o casa.",
+        "MAN: red metropolitana, una ciudad o campus.",
+        "WAN: red amplia, país o mundo (internet).",
+        "La LAN es la que armamos y configuramos en este curso."
+      ]
+    },
+    {
+      "titulo": "Clasificación por interfaz y conexión",
+      "emoji": "🔁",
+      "parrafos": [
+        "También se clasifican por el medio físico y por el tipo de conexión: punto a punto (directa entre dos equipos) o punto a multipunto (varios equipos a un centro)."
+      ],
+      "puntos": [
+        "Por interfaz: alambrada (UTP, fibra) o inalámbrica (WiFi).",
+        "Punto a punto: dos equipos conectados directamente.",
+        "Punto a multipunto: varios equipos a un switch o router.",
+        "En una LAN moderna casi todo es punto a multipunto."
+      ]
+    },
+    {
+      "titulo": "Hardware de red",
+      "emoji": "🖧",
+      "imagen": {
+        "src": "img/router-wifi.png",
+        "alt": "Router inalámbrico con antenas",
+        "caption": "El router distribuye internet y arma la red local."
+      },
+      "parrafos": [
+        "Las redes físicas necesitan placas en cada PC y equipos que conecten y dirijan el tráfico: placas de red, switch, router y módem."
+      ],
+      "puntos": [
+        "Placa de red: tarjeta LAN o WiFi de cada equipo.",
+        "Switch: conmuta y une las PCs de la LAN.",
+        "Router: une redes y dirige el tráfico hacia internet.",
+        "Módem y módem-router: convierten la señal del proveedor."
+      ]
+    },
+    {
+      "titulo": "Módem y módem-router",
+      "emoji": "📡",
+      "parrafos": [
+        "Para llegar a internet, la señal del proveedor (fibra, cable o ADSL) se convierte con un módem. En casa, el módem y el router suelen venir en un solo equipo: el módem-router."
+      ],
+      "puntos": [
+        "Módem: modula/demodula la señal del proveedor.",
+        "Router: arma la red local y reparte la conexión.",
+        "Módem-router: todo en uno, el equipo típico hogareño.",
+        "Este dispositivo es el que configuramos en las próximas clases."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: redes",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre utilidad, clasificación y hardware de red.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Observá los equipos de red del aula."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es una utilidad de las redes?",
+            "opciones": ["Compartir archivos e internet", "Cambiar el sistema operativo", "Reparar la RAM", "Acelerar el procesador"],
+            "correcta": "Compartir archivos e internet"
+          },
+          {
+            "pregunta": "Una red que cubre un aula u oficina se clasifica como...",
+            "opciones": ["LAN", "WAN", "MAN", "SAT"],
+            "correcta": "LAN"
+          },
+          {
+            "pregunta": "El equipo que une varias PCs de una red local se llama...",
+            "opciones": ["Switch", "Módem", "Placa de sonido", "Fuente"],
+            "correcta": "Switch"
+          },
+          {
+            "pregunta": "Una conexión directa entre dos equipos con cable se llama...",
+            "opciones": ["Punto a punto", "Punto a multipunto", "WAN", "MAN"],
+            "correcta": "Punto a punto"
+          },
+          {
+            "pregunta": "¿Qué equipo convierte la señal del proveedor para tener internet?",
+            "opciones": ["El módem", "El disipador", "La placa de video", "El estabilizador"],
+            "correcta": "El módem"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Inventario de red del aula",
+      "consigna": "Identificá y documentá todos los equipos de red del aula.",
+      "pasos": [
+        "Listá los equipos de red presentes (switch, router, módem).",
+        "Anotá cuántos puertos tiene el switch.",
+        "Identificá las placas de red de una PC (LAN y WiFi).",
+        "Dibujá un esquema de cómo se conectan entre sí.",
+        "Presentá el esquema al grupo."
+      ],
+      "entrega": "Esquema de la red del aula con todos los equipos identificados."
+    }
+  ],
+  "entrega": "El docente revisará el esquema de red y el interactivo.",
+  "lectura": "Las redes conectan PCs para compartir archivos, impresoras e internet. Se clasifican por área (LAN, MAN, WAN) y por conexión (punto a punto o multipunto), y corren sobre hardware específico: placas, switch, router y módem. Este mapa base es el punto de partida del módulo de redes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Cerrar módulo de software y motivar con la red del aula", "min": "10 min" },
+      { "titulo": "Utilidad de las redes", "que": "Preguntar qué comparten entre equipos y mostrarlo en vivo", "min": "15 min" },
+      { "titulo": "Clasificación", "que": "Explicar LAN/MAN/WAN y punto a punto vs multipunto con esquemas", "min": "20 min" },
+      { "titulo": "Hardware de red", "que": "Mostrar placa, switch, router y módem reales", "min": "20 min" },
+      { "titulo": "Inventario guiado", "que": "Guiar el esquema de la red del aula por grupos", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo llega internet a sus casas y qué equipos tienen arriba del mueble.",
+      "Mostrar el router del aula y contar su historia: qué luz indica qué cosa."
+    ],
+    "aclarar": [
+      "Switch unifica la LAN; el router une redes diferentes (tu LAN e internet).",
+      "Módem y router son dos funciones que pueden estar en el mismo equipo.",
+      "WiFi también es una red: solo cambia el medio de transporte."
+    ],
+    "ejemplos": [
+      "Conectar dos PCs al switch y ver las luces de los puertos.",
+      "Dibujar en el pizarrón la red del aula con switch, router y PCs.",
+      "Mostrar una placa de red PCIe fuera de la PC."
+    ]
+  }
+}

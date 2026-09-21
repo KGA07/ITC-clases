@@ -1,0 +1,171 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 4,
+    "titulo": "Herramientas de dibujo",
+    "modulo": "Módulo 1 – Fundamentos de AutoCAD",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a dominar las herramientas de dibujo centrales: polilínea, rectángulo, arco, círculo, elipse y polígono, y vas a ver cuándo conviene usar cada una.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 4 - Herramientas de dibujo",
+  "objetivos": [
+    "Dibujar con polilínea y comprender la diferencia con una línea común.",
+    "Crear rectángulos y polígonos regulares con sus opciones.",
+    "Trazar arcos y círculos por distintos métodos de definición.",
+    "Usar la elipse y sus variantes para dibujar curvas técnicas."
+  ],
+  "teoria": [
+    {
+      "titulo": "La polilínea",
+      "emoji": "➿",
+      "imagen": {
+        "src": "img/polilinea.jpg",
+        "alt": "Polilínea con segmentos continuos",
+        "caption": "La polilínea dibuja varios segmentos como un único objeto continuo."
+      },
+      "parrafos": [
+        "La polilínea (POL) dibuja una secuencia de segmentos rectos y curvos que quedan unidos como un único objeto. A diferencia de varias líneas, una polilínea se puede seleccionar, mover y sopesar de una sola vez.",
+        "Además permite cambiar su ancho, lo que la vuelve ideal para muros y contornos."
+      ],
+      "puntos": [
+        "Se ingresa con POL o PL + Enter.",
+        "Con la opción 'Á' se alterna a arco dentro de la misma polilínea.",
+        "Tiene ancho propio que se puede cambiar (opción 'Anchura').",
+        "A diferencia de LINEA, toda la cadena es un solo objeto."
+      ]
+    },
+    {
+      "titulo": "Rectángulo y polígono",
+      "emoji": "▭",
+      "imagen": {
+        "src": "img/poligono.jpg",
+        "alt": "Formas geométricas regulares",
+        "caption": "El rectángulo y los polígonos regulares se crean con esquinas o con centro y radio."
+      },
+      "parrafos": [
+        "El rectángulo (RECTANG) se dibuja tomando dos esquinas opuestas o escribiendo las medidas de base y altura. El polígono (POLIGONO) crea figuras regulares de 3 a 1024 lados definiendo su centro y su radio."
+      ],
+      "puntos": [
+        "Rectángulo: RECTANG + dos esquinas o longitudes.",
+        "Método de bordes: permite exactas medidas base y altura.",
+        "Polígono: POLIGONO + cantidad de lados + centro.",
+        "Inscrito/circunscrito: el polígono se apoya dentro o fuera del círculo de referencia."
+      ]
+    },
+    {
+      "titulo": "Arco y círculo",
+      "emoji": "⭕",
+      "imagen": {
+        "src": "img/arcocirculo.jpg",
+        "alt": "Arcos y círculos con sus centros",
+        "caption": "Los arcos y círculos se definen por centro, puntos o tangencias."
+      },
+      "parrafos": [
+        "El círculo (CIRCULO o C) admite muchos métodos de construcción: centro-radi, centro-diámetro, 3 puntos, 2 puntos o tangente-tangente-radio. El arco (ARCO) parte de un principio, un centro y un final, o del recorrido de tres puntos."
+      ],
+      "puntos": [
+        "Círculo por centro y radio: el método más común.",
+        "Círculo por 2P, 3P, TTR: para encajar el círculo en figuras existentes.",
+        "Arco de 3 puntos: arranca, medio y final definidos con clics.",
+        "Los arcos también se pueden iniciar desde el centro usando la opción 'C'."
+      ]
+    },
+    {
+      "titulo": "Elipse y variantes",
+      "emoji": "🥚",
+      "parrafos": [
+        "La elipse se crea definiendo su eje mayor y el extremo del eje menor, o desde el centro con los dos semiejes. AutoCAD también ofrece arco de elipse, que traza solo una parte de la curva.",
+        "La elipse es la base de los isocírculos que vas a ver en el dibujo isométrico."
+      ],
+      "puntos": [
+        "ELIPSE + extremos del eje mayor + borde del eje menor.",
+        "Variante desde el Centro: 2 clics con los semiejes.",
+        "Arco de elipse: igual pero con un sector angulado.",
+        "Se usa con ejes verticales, horizontales o con rotación."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Identificá cada herramienta",
+      "consigna": "Respondé el interactivo sobre cuándo conviene usar polilínea, rectángulo, polígono, arco, círculo y elipse.",
+      "pasos": [
+        "Dibujá un polígono de 6 lados y un círculo concéntrico a su centro.",
+        "Dibujá un arco de tres puntos.",
+        "Compará una polilínea cerrada con un rectángulo del mismo tamaño.",
+        "Respondé las preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral con las respuestas del interactivo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué herramienta crea un único objeto con varios segmentos unidos?",
+            "opciones": ["Linea", "Polilínea", "Rectángulo", "Arco"],
+            "correcta": "Polilínea"
+          },
+          {
+            "pregunta": "¿Qué comando dibuja figuras regulares de 3 a 1024 lados?",
+            "opciones": ["CIRCULO", "POLIGONO", "RECTANG", "ELIPSE"],
+            "correcta": "POLIGONO"
+          },
+          {
+            "pregunta": "¿Cuál es el método más común para crear un círculo?",
+            "opciones": ["Centro y radio", "Tangente-tangente", "3 puntos", "2 puntos"],
+            "correcta": "Centro y radio"
+          },
+          {
+            "pregunta": "¿Qué opción de la polilínea permite dibujar curvas?",
+            "opciones": ["Anchura", "Aquí", "Á", "Mitad"],
+            "correcta": "Á"
+          },
+          {
+            "pregunta": "¿Qué se define para crear un arco con el método de 3 puntos?",
+            "opciones": ["Centro, inicio y final", "Inicio, medio y final", "Dos radios", "Un diámetro y un radio"],
+            "correcta": "Inicio, medio y final"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Dibujá un tablero técnico completo",
+      "consigna": "Combiná todas las herramientas de dibujo en una figura única estilo pieza.",
+      "pasos": [
+        "Dibujá un rectángulo de 20 x 12.",
+        "En la esquina inferior izquierda dibujá un círculo de radio 2.",
+        "Desde el centro del círculo trazá una diagonal usando un arco.",
+        "En el centro del rectángulo dibujá un polígono de 8 lados inscrito en un círculo de radio 3.",
+        "Juntá el contorno del rectángulo con polilínea para que quede un único objeto.",
+        "Guardá como clase4-combinado.dwg."
+      ],
+      "entrega": "El docente revisa el archivo y verifica la presencia y correcta ejecución de cada herramienta."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase4-combinado.dwg y el repaso interactivo de herramientas de dibujo.",
+  "lectura": "Las herramientas de dibujo son la caja de lápices del curso: polilínea para contornos únicos, rectángulo y polígono para formas regulares, arco y círculo para lo curvo, y elipse para proyecciones. Elegir la herramienta correcta no solo acelera el trabajo sino que deja el dibujo más fácil de modificar después.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar coordenadas y presentar el panel Dibujo", "min": "10 min" },
+      { "titulo": "Polilínea", "que": "Diferenciar de la línea y mostrar ancho y arcos internos", "min": "20 min" },
+      { "titulo": "Rectángulo y polígono", "que": "Crear rectángulos por medidas y polígonos inscritos/circunscritos", "min": "15 min" },
+      { "titulo": "Arco y círculo", "que": "Mostrar métodos centro-radi, 3P, 2P y TTR; arcos de 3 puntos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la figura combinada y el interactivo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso de cuándo usar cada herramienta", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cuál herramienta usarían para dibujar un muro largo con esquinas. La polilínea es la respuesta técnica."
+    ],
+    "aclarar": [
+      "Un polígono 'inscrito' está dentro del círculo guía y uno 'circunscrito' lo rodea.",
+      "La polilínea con opción Á dibuja arco pero vuelve con la opción L a segmentos rectos.",
+      "El círculo TTR sirve para encajar una curva entre dos líneas sin calcular nada."
+    ],
+    "ejemplos": [
+      "Dibujar el mismo rectángulo con líneas sueltas y con polilínea y seleccionarlo: uno se selecciona completo, el otro por partes.",
+      "Crear un círculo que toque dos líneas usando TTR.",
+      "Construir un hexágono inscrito en un círculo de radio 3 y compararlo con uno circunscrito."
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 18,
+    "titulo": "Instalación dual",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Instaladores de Windows y Linux, PCs del aula con espacio libre en disco",
+    "bajada": "¿Windows y Linux juntos en la misma PC? Sí, con instalación dual. Vas a preparar las particiones en el orden correcto e instalar Linux como sistema secundario sin perder Windows.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 18 - Instalacion dual",
+  "objetivos": [
+    "Explicar qué es la instalación dual (multi boot).",
+    "Definir el orden correcto de instalación de los sistemas.",
+    "Preparar las particiones para convivir ambos sistemas.",
+    "Instalar Linux como sistema operativo secundario."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es la instalación dual",
+      "emoji": "🪄",
+      "imagen": {
+        "src": "img/grub.jpg",
+        "alt": "Menú de arranque GRUB con dos sistemas",
+        "caption": "GRUB te deja elegir qué sistema arrancar al prender la PC."
+      },
+      "parrafos": [
+        "La instalación dual (dual boot) permite tener Windows y Linux en una misma PC. Al encender, un menú de arranque (GRUB) te pregunta cuál sistema querés usar."
+      ],
+      "puntos": [
+        "Cada sistema vive en su propia partición.",
+        "GRUB es el menú que organiza el arranque.",
+        "Los archivos de un sistema no se tocan entre sí.",
+        "Se comparten disco, RAM y periféricos, nunca los sistemas."
+      ]
+    },
+    {
+      "titulo": "Orden de instalación",
+      "emoji": "🔢",
+      "parrafos": [
+        "Hay una regla de oro: primero Windows, después Linux. Windows tiende a 'comerse' el arranque y no reconoce a Linux, en cambio Linux detecta a Windows y crea el menú doble."
+      ],
+      "puntos": [
+        "1º: instalar Windows en su partición.",
+        "2º: instalar Linux en el espacio libre.",
+        "Linux detecta Windows y arma GRUB.",
+        "A la inversa, Windows no respeta el menú y hay que repararlo."
+      ]
+    },
+    {
+      "titulo": "Preparación de particiones",
+      "emoji": "🗂️",
+      "imagen": {
+        "src": "img/ubuntu-instalacion.png",
+        "alt": "Pantalla de particionado en la instalación de Ubuntu",
+        "caption": "En la instalación de Ubuntu se elige el espacio libre para crear particiones."
+      },
+      "parrafos": [
+        "Antes de instalar hay que dejar espacio: desde Windows podés reducir la partición C: con el Administrador de discos y dejar espacio sin asignar para Linux."
+      ],
+      "puntos": [
+        "Reducir C: desde el Administrador de discos.",
+        "Dejar espacio sin asignar (mínimo 30-50 GB).",
+        "En la instalación de Linux, elegir 'Instalar junto a Windows' o particionado manual.",
+        "Windows crea particiones extras (MSR, Recovery): no borrarlas."
+      ]
+    },
+    {
+      "titulo": "Instalación de Linux como secundario",
+      "emoji": "🐧",
+      "parrafos": [
+        "Con el espacio listo, se arranca el instalador de Linux, se elige el idioma y las particiones, y se completa la instalación. Al reiniciar aparece el menú GRUB."
+      ],
+      "puntos": [
+        "Arrancar desde el pendrive de la distro.",
+        "Instalar en el espacio sin asignar (particionado manual).",
+        "Elegir dónde va la raíz (/) y el intercambio (swap).",
+        "Al final: reiniciar y elegir el sistema en GRUB."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: dual boot",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre orden, particiones y arranque.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Repasá el particionado en el Administrador de discos."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es una instalación dual?",
+            "opciones": ["Tener dos sistemas operativos en una misma PC con menú de arranque", "Instalar dos veces Windows", "Usar dos monitores", "Dos discos en una PC sin sistema"],
+            "correcta": "Tener dos sistemas operativos en una misma PC con menú de arranque"
+          },
+          {
+            "pregunta": "¿Cuál es el orden correcto de instalación?",
+            "opciones": ["Primero Windows, después Linux", "Primero Linux, después Windows", "Da igual el orden", "Solo se puede Windows"],
+            "correcta": "Primero Windows, después Linux"
+          },
+          {
+            "pregunta": "El menú que permite elegir el sistema al encender se llama...",
+            "opciones": ["GRUB", "BIOS", "NFTS", "FAT32"],
+            "correcta": "GRUB"
+          },
+          {
+            "pregunta": "Para dejar lugar a Linux, en Windows se...",
+            "opciones": ["Reduce la partición C: y deja espacio sin asignar", "Borra Windows", "Compra un SSD nuevo", "Apaga la PC"],
+            "correcta": "Reduce la partición C: y deja espacio sin asignar"
+          },
+          {
+            "pregunta": "¿Por qué Windows no se instala segundo?",
+            "opciones": ["Porque pisa el arranque y no reconoce a Linux", "Porque es más grande", "Porque necesita más RAM", "Porque Linux lo borra"],
+            "correcta": "Porque pisa el arranque y no reconoce a Linux"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Prepará el arranque dual",
+      "consigna": "En la PC del aula, prepará las particiones para una futura instalación dual.",
+      "pasos": [
+        "Abrí el Administrador de discos de Windows.",
+        "Identificá la partición del sistema.",
+        "Reducí C: si hay espacio libre suficiente.",
+        "Dejá el espacio sin asignar identificado.",
+        "Documentá el proceso con capturas y explicá los pasos."
+      ],
+      "entrega": "Informe del particionado con el espacio libre listo para Linux."
+    }
+  ],
+  "entrega": "El docente revisará el informe de particionado y el interactivo.",
+  "lectura": "La instalación dual es la puerta a un mundo de posibilidades: Windows para lo cotidiano y Linux para experimentar sin costo. La clave está en el orden (primero Windows, después Linux) y en dejar una partición preparada para convivir sin pisarse.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar instalación de Linux y plantear la pregunta del doble sistema", "min": "10 min" },
+      { "titulo": "Concepto de dual boot", "que": "Explicar GRUB y mostrar una PC real o capturas del menú", "min": "15 min" },
+      { "titulo": "Orden de instalación", "que": "Justificar por qué Windows primero con ejemplos", "min": "15 min" },
+      { "titulo": "Preparación de particiones", "que": "Reducir C: en el Administrador de discos en vivo", "min": "20 min" },
+      { "titulo": "Práctica de particionado", "que": "Guiar la preparación del espacio libre en cada equipo", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguien quiere probar Linux pero 'no se anima a perder Windows'.",
+      "Mostrar el menú GRUB de una PC con dual boot real si hay una."
+    ],
+    "aclarar": [
+      "Reducir C: no borra archivos, solo achica la partición.",
+      "Si Windows se instala segundo, GRUB desaparece y hay que repararlo.",
+      "Cada sistema usa su propia partición: los archivos estás guardados por separado."
+    ],
+    "ejemplos": [
+      "Reducir 40 GB de C: y dejar el 'espacio sin asignar' marcado en el Administrador de discos.",
+      "Mostrar el menú GRUB y elegir cada sistema al arrancar.",
+      "Comparar el arranque de Windows y Linux en la misma hora."
+    ]
+  }
+}

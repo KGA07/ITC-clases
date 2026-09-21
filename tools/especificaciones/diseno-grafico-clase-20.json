@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 20,
+    "titulo": "Estilos de capa y modos de fusión",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a darle acabado profesional a tus elementos con los estilos de capa —bisel, trazo, sombras, resplandores, satinado y superposiciones— y a mezclar capas con los modos de fusión.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 20 Estilos de capa y modos de fusion",
+  "objetivos": [
+    "Aplicar y combinar estilos de capa: bisel, trazo, sombras y resplandores.",
+    "Usar satinado y superposiciones de color, degradado y patrón.",
+    "Combinar capas con los modos de fusión más usados.",
+    "Construir un botón o ficha digital con acabado profesional."
+  ],
+  "teoria": [
+    {
+      "titulo": "El panel de estilos de capa",
+      "emoji": "🎛️",
+      "imagen": {
+        "src": "img/figura-estilos.png",
+        "alt": "Figura de apoyo de estilos de capa",
+        "caption": "Los estilos de capa suman sombras, biseles y resplandores sin tocar los píxeles."
+      },
+      "parrafos": [
+        "Doble clic sobre una capa (al costado del nombre) abre el panel de estilos de capa: efectos aplicados y editables sin alterar la imagen original. Cada estilo se activa con su casilla y se ajusta con sus deslizadores.",
+        "Los estilos se guardan con la capa y se pueden copiar a otras capas (clic derecho > Copiar estilo de capa). Son la base del diseño de botones, íconos y textos de piezas digitales."
+      ],
+      "puntos": [
+        "Doble clic en la capa abre los estilos.",
+        "Los efectos se pueden encender y apagar con su casilla.",
+        "Copiar y pegar estilo repite el acabado en otras capas.",
+        "Los estilos no destruyen los píxeles de la capa."
+      ]
+    },
+    {
+      "titulo": "Sombra, bisel y relieve, y trazo",
+      "emoji": "🌗",
+      "imagen": {
+        "src": "img/figura-fusion.png",
+        "alt": "Figura de apoyo de modos de fusión",
+        "caption": "Sombras y trazos definen los bordes del elemento sobre cualquier fondo."
+      },
+      "parrafos": [
+        "La sombra paralela proyecta el objeto hacia el fondo; la sombra interior le da profundidad hacia adentro. Bisel y relieve esculpe los bordes con luz y sombra, dándole aspecto 3D a texto y botones.",
+        "El trazo agrega un borde de color al elemento, con grosor y posición (adentro, centro o afuera). Es la forma más rápida de hacer que un texto o botón se destaque del fondo."
+      ],
+      "puntos": [
+        "Sombra paralela y sombra interior: liga el objeto al fondo.",
+        "Bisel y relieve: volumen con luz y sombra en los bordes.",
+        "Trazo: contorno coloreado con grosor ajustable.",
+        "Los controles de distancia, tamaño y opacidad afinan cada efecto."
+      ]
+    },
+    {
+      "titulo": "Resplandores y satinado",
+      "emoji": "✨",
+      "parrafos": [
+        "El resplandor interior ilumina desde el borde hacia adentro y el exterior desde el borde hacia afuera: se usan para efectos neon, glows y luces de marca.",
+        "El satinado aplica una sombra interna con textura de pliegue, dando a la superficie un acabado de seda o metal pulido. Un recurso sutil que agrega realismo a superficies grandes."
+      ],
+      "puntos": [
+        "Resplandor interior/exterior: luz que emana de los bordes.",
+        "El efecto neon se logra con resplandor exterior y un color intenso.",
+        "El satinado crea pliegues internos de seda o metal.",
+        "La combinación bisel + resplandor genera el clásico look 3D."
+      ]
+    },
+    {
+      "titulo": "Superposiciones y modos de fusión",
+      "emoji": "🔄",
+      "parrafos": [
+        "Las superposiciones pintan la capa con un color, degradado o patrón que se mezclan con el contenido. El modo de fusión (arriba del panel de capas) define CÓMO se mezcla la capa activa con las de abajo: multiplicar oscurece, sobreexponer aclara, y los modos de luz (superponer, luz suave) intensifican contrastes.",
+        "Cada modo tiene su lógica: multiplicar y trama son los más usados para sombras y luces; superponer para dar color y textura a una foto. Probarlos sobre la misma imagen muestra el abanico expresivo."
+      ],
+      "puntos": [
+        "Superposición de color, degradado o patrón: tono sobre la capa.",
+        "Multiplicar: oscurece, perfecto para sombras.",
+        "Trama: aclara, ideal para brillos.",
+        "Superponer y luz suave: realzado del contraste y la textura."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Botón moderno con estilos de capa",
+      "consigna": "Creá un botón de interfaz llamado 'COMPRAR' con bisel y relieve, sombra, trazo y un degradado de colores; después aplicá un modo de fusión a una imagen de fondo.",
+      "pasos": [
+        "Creá un documento 1920x1080 y pintá un fondo degradado.",
+        "Con la herramienta Forma, dibujá un rectángulo redondeado de color.",
+        "Escribí el texto 'COMPRAR' y colocalo centrado sobre el botón.",
+        "Doble clic en la capa del botón: activá bisel y relieve, sombra paralela y trazo, ajustando a gusto.",
+        "Guardá el estilo y aplicá también un resplandor exterior al texto del botón.",
+        "Abrí una foto como capa y probá sobre ella los modos de fusión multiplicar, trama y superponer; elegí el que mejor luz le dé y exportá como estilos-nombre.png."
+      ],
+      "entrega": "Exportá el botón terminado y, en un segundo archivo, la foto con los tres modos de fusión lado a lado.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo abrís el panel de estilos de capa?",
+            "opciones": ["Doble clic sobre la capa", "Clic derecho en el lienzo", "Menú Archivo", "Tecla Supr"],
+            "correcta": "Doble clic sobre la capa"
+          },
+          {
+            "pregunta": "¿Qué estilo esculpe los bordes con luz y sombra en 3D?",
+            "opciones": ["Bisel y relieve", "Trazo", "Satinado", "Resplandor"],
+            "correcta": "Bisel y relieve"
+          },
+          {
+            "pregunta": "El modo de fusión MULTIPLICAR tiende a:",
+            "opciones": ["Oscurecer la imagen", "Aclarar la imagen", "Invertir los colores", "Borrar la capa"],
+            "correcta": "Oscurecer la imagen"
+          },
+          {
+            "pregunta": "¿Qué estilo agrega un borde coloreado al elemento?",
+            "opciones": ["Trazo", "Sombra interior", "Satinado", "Superposición de degradado"],
+            "correcta": "Trazo"
+          },
+          {
+            "pregunta": "El resplandor EXTERIOR se usa para lograr efectos:",
+            "opciones": ["Neon o glow", "Metálicos con pliegues", "Bordes suaves", "Granulado fotográfico"],
+            "correcta": "Neon o glow"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Icono con estilo para una red social",
+      "consigna": "Diseñá un ícono cuadrado (favorito, estrella o like) con bisel, sombra y resplandor, listo para usar como botón de una red.",
+      "pasos": [
+        "Creá un documento cuadrado de 500x500 píxeles con fondo neutro.",
+        "Dibujá un círculo o cuadrado redondeado como base del ícono.",
+        "Elegí un símbolo (estrella o corazón) y centralo en la base.",
+        "Aplicale estilos: bisel y relieve, sombra paralela y resplandor exterior.",
+        "Probá el ícono sobre fondo claro y oscuro y exportá ambas versiones como icono-nombre.png."
+      ],
+      "entrega": "Entregá las dos versiones del ícono (fondo claro y oscuro)."
+    }
+  ],
+  "entrega": "Se evalúa el botón con al menos tres estilos visibles y la comparación de modos de fusión sobre la foto.",
+  "lectura": "Los estilos de capa entregan acabados profesionales sin tocar los píxeles originales: se puede experimentar sin riesgo y repetir el estilo en toda la pieza. Combinados con los modos de fusión, permiten integrar imágenes y elementos como si siempre hubieran estado juntos. Esta clase es la llave del 'look marketinero' que ves en banners y redes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar banners y botones reales con efectos y enumerar los que ven", "min": "10 min" },
+      { "titulo": "Estilos de capa básicos", "que": "Aplicar sombras, trazo y bisel sobre una forma", "min": "20 min" },
+      { "titulo": "Resplandores y satinado", "que": "Crear un efecto neon y un acabado metálico", "min": "20 min" },
+      { "titulo": "Superposiciones", "que": "Tintar capas con color, degradado y patrón", "min": "15 min" },
+      { "titulo": "Modos de fusión y práctico", "que": "Probar multiplicar, trama y superponer; armar el botón", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y corregir entregas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué emojis/botones usan a diario que tienen efectos de capa aplicados.",
+      "Comparar el look de un botón plano vs. uno con bisel (ej. redes antiguas vs actuales)."
+    ],
+    "aclarar": [
+      "Los estilos se pueden desactivar: no rompen la capa, se prueban y se quitan.",
+      "Multiplicar con negro no se nota; con blanco se nota: son extremos.",
+      "Los modos de fusión dependen de las capas de abajo: mismo modo, distinto fondo, distinto resultado."
+    ],
+    "ejemplos": [
+      "Aplicar bisel + resplandor a la palabra 'NEON' y mostrarla sobre fondo oscuro.",
+      "Duplicar una foto y poner una capa negra con multiplicar para oscurecer.",
+      "Copiar el estilo de un botón a otros tres para que la pieza sea coherente."
+    ]
+  }
+}

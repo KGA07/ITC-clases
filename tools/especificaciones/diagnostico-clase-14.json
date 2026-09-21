@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 14,
+    "titulo": "Programas utilitarios, mantenimiento y recuperación",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PCs con Windows, software utilitario instalado, pendrives de respaldo",
+    "bajada": "Una PC se mantiene con programas utilitarios: manejo de particiones, limpieza, registro, defragmentación y control del inicio. También vas a recuperar archivos eliminados y trabajar con conexión remota.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 14 - Programas utilitarios",
+  "objetivos": [
+    "Manejar particiones con software especializado.",
+    "Aplicar limpieza de archivos temporales y desfragmentación.",
+    "Usar regedit y MSCONFIG para optimizar el arranque.",
+    "Recuperar archivos eliminados y conectarse en forma remota."
+  ],
+  "teoria": [
+    {
+      "titulo": "Manejo de particiones",
+      "emoji": "🗂️",
+      "imagen": {
+        "src": "img/gparted.jpg",
+        "alt": "Editor de particiones GParted",
+        "caption": "Los editores de particiones permiten redimensionar y crear particiones."
+      },
+      "parrafos": [
+        "Para arreglar un disco sin perder todo, se usan editores de particiones (GParted o el Administrador de discos de Windows): crear, borrar, redimensionar o mover particiones."
+      ],
+      "puntos": [
+        "Administrador de discos: incluido en Windows.",
+        "GParted: editor libre con más opciones.",
+        "Recordar: redimensionar la partición del sistema pide reinicio.",
+        "Siempre respaldar antes de tocar particiones."
+      ]
+    },
+    {
+      "titulo": "Limpieza del sistema",
+      "emoji": "🧹",
+      "parrafos": [
+        "Windows junta archivos temporales y basura que ocupan disco y frenan la PC. Una limpieza periódica es un mantenimiento básico."
+      ],
+      "puntos": [
+        "Limpieza de disco: herramienta incluida en Windows.",
+        "Borrar temporales de navegador y del sistema (temp).",
+        "Desinstalar programas que no se usan.",
+        "Vaciar la papelera de reciclaje."
+      ]
+    },
+    {
+      "titulo": "Registro de Windows y Regedit",
+      "emoji": "📋",
+      "imagen": {
+        "src": "img/regedit.jpg",
+        "alt": "Editor del Registro de Windows (regedit)",
+        "caption": "Regedit administra la base de datos de configuración de Windows."
+      },
+      "parrafos": [
+        "El Registro es la base de datos donde Windows guarda la configuración. Regedit lo edita, y una limpieza cuidadosa (o con software especializado) puede acelerar y estabilizar el sistema."
+      ],
+      "puntos": [
+        "Regedit: editor del Registro incluido en Windows.",
+        "Entradas válidas: Run, Uninstall, servicios...",
+        "Editar a mano solo lo que se conoce: un error puede romper el sistema.",
+        "Para mantenimiento se usan limpiadores (CCleaner y similares)."
+      ]
+    },
+    {
+      "titulo": "Defragmentación y MSCONFIG",
+      "emoji": "⚙️",
+      "parrafos": [
+        "En discos HDD, los archivos se fragmentan y la defragmentación los ordena. Y con MSCONFIG podés controlar qué programas arrancan con Windows."
+      ],
+      "puntos": [
+        "Desfragmentar: útil en HDD; en SSD no es necesario.",
+        "Desfragmentador incluido en Windows, o mejorado (Defraggler).",
+        "MSCONFIG(msconfig): administra programas de inicio.",
+        "Desactivar inicios innecesarios acelera el encendido."
+      ]
+    },
+    {
+      "titulo": "Recuperación de archivos y conexión remota",
+      "emoji": "🌐",
+      "parrafos": [
+        "Falló todo: ahora hay que rescatarlo. Los archivos eliminados se pueden recuperar si no fueron sobrescritos, y la conexión remota permite ayudar a otra PC sin viajar."
+      ],
+      "puntos": [
+        "Recuperar archivos: Recuva (u otro recuperador) en el pendrive.",
+        "Nunca instalar el programa en el mismo disco que se recupera.",
+        "Conexión remota: TeamViewer, AnyDesk o Escritorio Remoto.",
+        "Compartir un código de ID para que el otro equipo se conecte."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: mantenimiento",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre particiones, limpieza, registro y recuperación.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Probá las herramientas en tu PC con supervisión."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Para qué sirve el Administrador de discos?",
+            "opciones": ["Crear y redimensionar particiones", "Escanear virus", "Cambiar el nombre del usuario", "Cargar drivers de video"],
+            "correcta": "Crear y redimensionar particiones"
+          },
+          {
+            "pregunta": "¿Qué herramienta de Windows borra archivos temporales?",
+            "opciones": ["Limpieza de disco", "Regedit", "CMD", "TeamViewer"],
+            "correcta": "Limpieza de disco"
+          },
+          {
+            "pregunta": "Regedit es el editor de...",
+            "opciones": ["El Registro de Windows", "Las particiones", "Los drivers", "La BIOS"],
+            "correcta": "El Registro de Windows"
+          },
+          {
+            "pregunta": "MSCONFIG sirve para...",
+            "opciones": ["Controlar programas que inician con Windows", "Formatear discos", "Editar fotos", "Cambiar la contraseña"],
+            "correcta": "Controlar programas que inician con Windows"
+          },
+          {
+            "pregunta": "¿Cuándo se puede recuperar un archivo eliminado?",
+            "opciones": ["Si no fue sobrescrito en el disco", "Solo si pagás por software", "Nunca se puede", "Solo en Linux"],
+            "correcta": "Si no fue sobrescrito en el disco"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Plán de mantenimiento de un equipo",
+      "consigna": "Aplicá a la PC del aula un ciclo completo de mantenimiento de software.",
+      "pasos": [
+        "Ejecutá la limpieza de disco y borrá temporales.",
+        "Revisá con MSCONFIG los programas de inicio.",
+        "Desfragmentá (si es HDD) o verificá el estado del disco.",
+        "Creá una partición de datos adicional si el disco lo permite.",
+        "Documentá los pasos y el tiempo que llevó cada uno."
+      ],
+      "entrega": "Informe del mantenimiento con capturas de cada paso."
+    }
+  ],
+  "entrega": "El docente revisará el informe de mantenimiento y el interactivo.",
+  "lectura": "El mantenimiento de software evita que la PC se haga lenta o se rompa: particiones ordenadas, limpieza regular, un Registro sano, inicio controlado y recuperación de archivos cuando algo se pierde. Son las herramientas que distinguen al técnico del usuario común.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar drivers y preguntar qué herramientas de mantenimiento conocen", "min": "10 min" },
+      { "titulo": "Particiones", "que": "Mostrar Administrador de discos y GParted en vivo", "min": "20 min" },
+      { "titulo": "Limpieza y registro", "que": "Ejecutar limpieza, regedit y limpiador de registro por equipos", "min": "20 min" },
+      { "titulo": "Desfragmentación y MSCONFIG", "que": "Explicar ambas herramientas y aplicarlas", "min": "15 min" },
+      { "titulo": "Recuperación y remoto", "que": "Recuperar un archivo de prueba y conectarse entre dos PCs", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si notaron que su PC arranca lento por el inicio de muchos programas.",
+      "Simular la pérdida de un archivo importante y recuperarlo en vivo."
+    ],
+    "aclarar": [
+      "Editar el Registro a mano es riesgoso: explicar los respaldos del Registro.",
+      "No desfragmentar SSD: acorta su vida y no aporta nada.",
+      "Para recuperar archivos, apagar equipos con problemas evita sobrescribir datos."
+    ],
+    "ejemplos": [
+      "Mostrar cómo crecer la partición del sistema cuando queda poco espacio.",
+      "Recuperar un archivo borrado con Recuva mientras los alumnos lo ven.",
+      "Conectar dos PC por TeamViewer y ayudar al compañero desde otro equipo."
+    ]
+  }
+}

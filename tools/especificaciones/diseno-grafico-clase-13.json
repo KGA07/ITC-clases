@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 13,
+    "titulo": "Maquetación y diagramación: tarjeta personal y folleto",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a aplicar los principios de maquetación y diagramación —cuadrículas, proporciones y balance— diseñando dos piezas reales: tu tarjeta personal y un folleto de 3 caras.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\CLASE 13 - FOLLETO Y TARJETAS",
+  "objetivos": [
+    "Armar una cuadrícula de maquetación y respetar proporciones.",
+    "Lograr balance visual en una composición impresa.",
+    "Diseñar una tarjeta personal estándar de 8,5 x 5,5 cm.",
+    "Diagramar un folleto tríptico con frente, dorso y dos caras internas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Maquetación: cuadrículas y proporciones",
+      "emoji": "📐",
+      "parrafos": [
+        "Maquetar es ordenar el contenido dentro de un formato. La cuadrícula divide la página en columnas y márgenes que guían la ubicación de textos e imágenes: todo queda alineado sin esfuerzo. Las proporciones clásicas (como la regla de tercios) hacen la composición equilibrada.",
+        "Antes de dibujar, definís la cuadrícula: cuántas columnas, qué márgenes, qué zonas de aire. En CorelDRAW podés volcar la cuadrícula con guías desde las reglas y dibujar los rectángulos guía."
+      ],
+      "puntos": [
+        "La cuadrícula da orden: márgenes y columnas definidos antes de diseñar.",
+        "La regla de tercios ubica los puntos de atención en intersecciones naturales.",
+        "Los espacios en blanco ('aire') tienen el mismo trabajo que el contenido.",
+        "Las guías desde la regla arrastran con precisión la estructura de la página."
+      ]
+    },
+    {
+      "titulo": "Diagramación: jerarquía y balance",
+      "emoji": "⚖️",
+      "imagen": {
+        "src": "img/folleto.jpg",
+        "alt": "Folleto diagramado",
+        "caption": "En el folleto, la diagramación reparte títulos, imágenes y textos en el espacio."
+      },
+      "parrafos": [
+        "Diagramar es distribuir los contenidos dentro de esa cuadrícula con jerarquía: qué se lee primero, segundo y tercero. Un título grande, una imagen protagonista y un texto en bloque equilibran la vista.",
+        "El balance puede ser simétrico (elementos espejados) o asimétrico (contrapesos visuales). Lo importante es que ningún sector del formato quede 'vacío' por descuido ni 'aplastado' por exceso."
+      ],
+      "puntos": [
+        "Jerarquía visual: tamaño, color y posición marcan el orden de lectura.",
+        "Balance simétrico: espejo de elementos iguales.",
+        "Balance asimétrico: pesos visuales diferentes que se compensan.",
+        "Todo texto e imagen debe tener un lugar definido por la cuadrícula."
+      ]
+    },
+    {
+      "titulo": "La tarjeta personal",
+      "emoji": "💳",
+      "imagen": {
+        "src": "img/tarjeta-personal.jpg",
+        "alt": "Tarjeta personal de diseño",
+        "caption": "La tarjeta estándar mide 8,5 x 5,5 cm y condensa la identidad en un espacio mínimo."
+      },
+      "parrafos": [
+        "La tarjeta personal es identidad pura en 8,5 x 5,5 cm. Frente: logo, nombre y rol. Dorso: datos de contacto. Con una buena cuadrícula, el logo queda arriba a la izquierda, el nombre en el centro y los datos alineados con precisión.",
+        "En CorelDRAW configurás el tamaño exacto (ancho 8,5 cm, alto 5,5 cm), trabajás con guías para los márgenes interiores y agregás texto de párrafo para los datos de contacto."
+      ],
+      "puntos": [
+        "Medidas estándar: 8,5 cm de ancho por 5,5 cm de alto.",
+        "Márgenes interiores de 0,5 cm para que nada quede pegado al corte.",
+        "Frente: logo + nombre + rol; dorso: datos de contacto.",
+        "Tipografías: una para títulos y otra para datos, máximo dos familias."
+      ]
+    },
+    {
+      "titulo": "El folleto tríptico",
+      "emoji": "📄",
+      "parrafos": [
+        "El folleto tríptico (bifoliado en 3) se imprime en una hoja A4 doblada en tres: el frente y dorso de la hoja tienen cada uno tres caras. Las medidas se calculan dividiendo el ancho del A4 en paneles (aprox. 10 cm cada uno).",
+        "La cara exterior recibe el título y el contacto; las caras internas, el desarrollo en bloques de párrafo con imágenes enmarcadas. La cuadrícula de la clase 6 (texto en marcos) se combina con los recortes PowerClip para un resultado profesional."
+      ],
+      "puntos": [
+        "A4 doblado en tres: 3 paneles por cara (frente y dorso).",
+        "Panel exterior: título, beneficio y datos de contacto.",
+        "Paneles internos: el contenido en columnas con imágenes.",
+        "La diagramación en columnas guía la lectura de izquierda a derecha."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Tarjeta más folleto de tu marca",
+      "consigna": "Diseñá tu tarjeta personal (8,5 x 5,5 cm) y una cara interna del folleto tríptico de tu marca ficcional, aplicando la cuadrícula y la jerarquía vistas.",
+      "pasos": [
+        "Creá dos documentos: uno A4 para la tarjeta (con 4 o 8 tarjetas repetidas) y uno A4 para el folleto.",
+        "En la tarjeta: dibujá una tarjeta de 8,5 cm x 5,5 cm con guías de margen de 0,5 cm.",
+        "Colocá el logo vectorial, tu nombre y tu rol; en el dorso, los datos de contacto con texto de párrafo.",
+        "En el folleto: dividí el A4 en 3 paneles con guías verticales.",
+        "Diagramá el panel central: título arriba, una foto enmarcada en el medio y dos columnas de párrafo.",
+        "Ajustá la paleta (2-3 colores) y las tipografías; exportá ambos documentos en PNG y guardá como maqueta-nombre.cdr."
+      ],
+      "entrega": "Entregá las dos piezas exportadas (tarjeta frente/dorso y panel del folleto) con breves notas de cuadrícula.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuáles son las medidas estándar de una tarjeta personal?",
+            "opciones": ["8,5 cm x 5,5 cm", "10 cm x 15 cm", "5 cm x 9 cm", "A4 completo"],
+            "correcta": "8,5 cm x 5,5 cm"
+          },
+          {
+            "pregunta": "¿Qué función cumple la cuadrícula en la maquetación?",
+            "opciones": ["Alinear y ordenar el contenido en la página", "Cambiar los colores", "Agregar efectos 3D", "Reducir el archivo"],
+            "correcta": "Alinear y ordenar el contenido en la página"
+          },
+          {
+            "pregunta": "¿Cuántos paneles tiene un folleto tríptico por cara?",
+            "opciones": ["Tres", "Dos", "Cuatro", "Cinco"],
+            "correcta": "Tres"
+          },
+          {
+            "pregunta": "La jerarquía visual determina:",
+            "opciones": ["El orden en que se lee la pieza", "El peso del archivo", "El idioma del texto", "La resolución de impresión"],
+            "correcta": "El orden en que se lee la pieza"
+          },
+          {
+            "pregunta": "El balance asimétrico logra equilibrio con:",
+            "opciones": ["Contrapesos visuales distintos", "Elementos idénticos espejados", "Un solo color", "Mayor contraste tipográfico"],
+            "correcta": "Contrapesos visuales distintos"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Retícula de folleto en CorelDRAW",
+      "consigna": "Armá la estructura impresa de un folleto tríptico: la grilla de 3 paneles con márgenes y columnas, sin contenido, lista para diagramar.",
+      "pasos": [
+        "Creá un documento A4 horizontal y activá las reglas (Ver > Reglas).",
+        "Arrastrá guías verticales para dividir el ancho en 3 paneles de ~10 cm.",
+        "Arrastrá guías de margen superior e inferior de 2 cm.",
+        "Dentro de cada panel, agregá 2 columnas de texto con rectángulos guía transparentes.",
+        "Duplicá la estructura en la segunda página para el dorso y exportá una página como reticula-nombre.png."
+      ],
+      "entrega": "Entregá el PNG de la retícula con las guías visibles."
+    }
+  ],
+  "entrega": "Se evalúan la tarjeta (medidas correctas, márgenes, jerarquía) y el panel del folleto (uso de cuadrícula, columnas y enmarcado de imágenes).",
+  "lectura": "La maquetación convierte un montón de elementos sueltos en una pieza ordenada y estética. La cuadrícula y el balance no son restricciones: son la estructura que libera al diseño para comunicar. Al diseñar estas dos piezas —tu tarjeta y un folleto— aplicás en un solo proyecto todo lo aprendido: formas, texto, color, efectos y recortes. Es el cierre natural del módulo de CorelDRAW.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repartir tarjetas y folletos reales para que los alumnos señalen cuadrícula y jerarquía", "min": "10 min" },
+      { "titulo": "Cuadrículas y proporciones", "que": "Configurar guías y columnas en un documento A4 modelo", "min": "15 min" },
+      { "titulo": "Balance y jerarquía", "que": "Analizar piezas reales y aplicar jerarquía a un boceto", "min": "15 min" },
+      { "titulo": "La tarjeta personal", "que": "Armar frente y dorso con medidas exactas y márgenes interiores", "min": "20 min" },
+      { "titulo": "El folleto tríptico", "que": "Dividir en paneles y diagramar el panel central con texto e imagen", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Presentar tarjetas y folletos, repasar con el interactivo y cerrar el módulo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Analizar la tarjeta personal del docente como ejemplo real.",
+      "Recordar los recorridos visuales de afiches vistos en la calle y ubicar jerarquías."
+    ],
+    "aclarar": [
+      "La tarjeta se diseña en centímetros y en gráfica hay que dejar 0,3 cm de sangrado de corte.",
+      "Un tríptico tiene 6 caras visibles: frente, dorso y 4 internas; el diseño se hace en 2 páginas.",
+      "La cuadrícula no limita: podés romperla con una imagen protagonista, pero a propósito."
+    ],
+    "ejemplos": [
+      "Armar la cuadrícula del folleto en vivo con guías y columnas.",
+      "Diseñar la tarjeta del docente frente a la clase en tiempo real.",
+      "Mostrar dos folletos: uno con balance y otro sin, para que la diferencia se vea."
+    ]
+  }
+}

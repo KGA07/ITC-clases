@@ -1,0 +1,194 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 17,
+    "titulo": "Sensor DHT y display 7 segmentos",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a medir temperatura y humedad con el sensor DHT usando su librería, y a mostrar números en displays de 7 segmentos con el registro 74HC595 y la librería LedControl.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 17 - Sensor DHT y display 7 segmentos",
+  "objetivos": [
+    "Conectar y leer el sensor DHT con la librería DHT.",
+    "Mostrar lecturas de temperatura y humedad por Serial.",
+    "Controlar un display de 7 segmentos con el IC 74HC595.",
+    "Usar la librería LedControl y el operador módulo (%) para cada dígito."
+  ],
+  "teoria": [
+    {
+      "titulo": "El sensor DHT",
+      "emoji": "🌡️",
+      "imagen": {
+        "src": "img/dht11.jpg",
+        "alt": "Sensor de temperatura y humedad DHT11",
+        "caption": "El DHT11 mide temperatura y humedad con un solo pin de señal."
+      },
+      "parrafos": [
+        "El sensor DHT11 (o DHT22) mide temperatura y humedad relativa en un solo componente de tres patas: VCC, GND y un pin de datos. Comunica sus lecturas en formato digital por ese mismo pin.",
+        "Usa la librería DHT (de la misma familia), que lee el sensor y nos devuelve los valores listos para usar."
+      ],
+      "puntos": [
+        "Tres pines: VCC (5V), GND y DATOS.",
+        "Librería: #include <DHT.h>",
+        "dht.readTemperature(): devuelve grados centígrados.",
+        "dht.readHumidity(): devuelve el porcentaje de humedad."
+      ]
+    },
+    {
+      "titulo": "El display de 7 segmentos",
+      "emoji": "🔢",
+      "imagen": {
+        "src": "img/siete-segmentos.jpg",
+        "alt": "Display de 7 segmentos",
+        "caption": "Siete LEDs organizados forman los dígitos del 0 al 9."
+      },
+      "parrafos": [
+        "El display de 7 segmentos es un conjunto de LEDs acomodados en forma de 8, con un segmento más para el punto decimal. Prendiendo distintas combinaciones de segmentos se forman todos los dígitos.",
+        "Un display de un dígito necesita manejar sus 8 segmentos; por eso se usa el registro de desplazamiento 74HC595, que permite controlar muchas salidas con pocos pines."
+      ],
+      "puntos": [
+        "Segmentos a, b, c, d, e, f, g y dp (punto decimal).",
+        "Combinando segmentos se forman dígitos y letras.",
+        "El 74HC595 amplía las salidas usando pocos pines.",
+        "Con la librería LedControl, mostrar un dígito es una línea."
+      ]
+    },
+    {
+      "titulo": "El IC 74HC595",
+      "emoji": "🧮",
+      "imagen": {
+        "src": "img/ic-74hc595.jpg",
+        "alt": "Circuito integrado 74HC595",
+        "caption": "El registro de desplazamiento entrega hasta 8 salidas con 3 señales de control."
+      },
+      "parrafos": [
+        "El 74HC595 es un registro de desplazamiento: recibe datos en serie (pocas señales) y los entrega en paralelo (muchas salidas). Con él, un display de 8 segmentos se maneja con solo 3 pines de la placa.",
+        "En las placas que trae el kit, el módulo ya viene lo bastante simplificado: conectás DS (datos), STCP/CLK y SHCP y la librería LedControl se encarga del resto."
+      ],
+      "puntos": [
+        "Entra en serie, sale en paralelo: más salidas con menos pines.",
+        "Tres señales controlan los 8 segmentos.",
+        "Sirve para displays y matrices de LEDs.",
+        "La librería LedControl abstrae el trabajo del registro."
+      ]
+    },
+    {
+      "titulo": "LedControl y displays de 4 dígitos",
+      "emoji": "🕘",
+      "parrafos": [
+        "Con cuatro displays de 7 segmentos podés mostrar números de 4 dígitos (como un reloj o la temperatura completa). La librería LedControl maneja el multiplexado: enciende los cuatro a gran velocidad para que parezcan prendidos a la vez.",
+        "El truco para separar dígitos usa el operador módulo (%): con % 10 obtenés la última cifra del número y con / 10 sacás el resto. Por ejemplo: 2026 % 10 = 6, 2026 / 10 = 202."
+      ],
+      "puntos": [
+        "LedControl led(11, 13, 10, 4): cuatro displays conectados.",
+        "led.setChar / led.setDigit escriben en cada posición.",
+        "El módulo (%) extrae las cifras de un número.",
+        "4 dígitos con 4 displays: relojes y contadores."
+      ]
+    },
+    {
+      "titulo": "El operador módulo (%)",
+      "emoji": "➗",
+      "parrafos": [
+        "El operador módulo devuelve el resto de una división: 7 % 3 = 1. Su uso estrella en displays es partir un número en dígitos: cuanto más chico en potencia, más simple es explicarlo.",
+        "Para 4 dígitos: miles = num / 1000; cientos = (num / 100) % 10; decenas = (num / 10) % 10; unidades = num % 10;"
+      ],
+      "puntos": [
+        "% devuelve el resto de dividir.",
+        "num % 10 da la última cifra.",
+        "num / 10 le saca la última cifra.",
+        "Combinando ambos, partís cualquier número."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "DHT y displays",
+      "consigna": "Respondé el quiz sobre el sensor DHT, el 74HC595 y el módulo.",
+      "pasos": [
+        "Recordá las funciones de la librería DHT.",
+        "Pensá qué hace el registro de desplazamiento.",
+        "Probá el operador % con números antes de contestar."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función de la librería DHT devuelve la temperatura?",
+            "opciones": ["dht.readTemperature()", "dht.humidity()", "dht.print()", "dht.readHumidity()"],
+            "correcta": "dht.readTemperature()"
+          },
+          {
+            "pregunta": "¿Qué lectura nos da dht.readHumidity()?",
+            "opciones": ["La presión", "El porcentaje de humedad", "La temperatura", "La distancia"],
+            "correcta": "El porcentaje de humedad"
+          },
+          {
+            "pregunta": "¿Qué función cumple el 74HC595?",
+            "opciones": ["Medir temperatura", "Expandir salidas: entra en serie y sale en paralelo", "Almacenar datos para siempre", "Detectar movimiento"],
+            "correcta": "Expandir salidas: entra en serie y sale en paralelo"
+          },
+          {
+            "pregunta": "¿Cuánto da 2026 % 10?",
+            "opciones": ["202", "6", "2", "0"],
+            "correcta": "6"
+          },
+          {
+            "pregunta": "¿Qué librería controla displays de 7 segmentos y matrices?",
+            "opciones": ["LedControl", "DHT", "Servo", "Keypad"],
+            "correcta": "LedControl"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "¿Cuánto hace calor?",
+      "consigna": "Medí temperatura y humedad con el DHT y mostralo por Serial y en el display.",
+      "pasos": [
+        "Conectá el DHT: VCC a 5V, GND a GND y DATOS al pin 2.",
+        "Instalá la librería DHT desde el gestor (buscá por 'DHT sensor library').",
+        "Incluila: #include <DHT.h> y definí: #define PIN_DHT 2; #define TIPO DHT11; DHT dht(PIN_DHT, TIPO);",
+        "En setup(): Serial.begin(9600); dht.begin();",
+        "En loop(): float t = dht.readTemperature(); float h = dht.readHumidity();",
+        "Mostralo: Serial.print(\"Temp: \"); Serial.print(t); Serial.print(\" C  Hum: \"); Serial.println(h);",
+        "Refrescá cada 2 segundos con delay(2000).",
+        "Desafío: si tenés el módulo de display 7 segmentos, mostrá la temperatura en los 4 dígitos con LedControl separando las cifras con % y /."
+      ],
+      "entrega": "Captura del Serial con las lecturas de temperatura y humedad."
+    }
+  ],
+  "entrega": "El docente revisará la captura del Serial con las lecturas del DHT.",
+  "lectura": "El DHT convierte a tu placa en un termómetro-higrómetro, y el display de 7 segmentos con el 74HC595 te permite mostrar esas mediciones sin ocupar todos los pines. El operador % completa el conjunto: separar cifras para mostrar cualquier número.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar cómo mostrarían la temperatura actual de la sala", "min": "10 min" },
+      { "titulo": "Sensor DHT", "que": "Explicar el sensor y sus funciones con el componente en mano", "min": "20 min" },
+      { "titulo": "Display 7 segmentos y 74HC595", "que": "Mostrar el IC y cómo ahorra pines", "min": "20 min" },
+      { "titulo": "LedControl y el módulo (%)", "que": "Explicar displays de 4 dígitos y separar cifras con ejemplos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la lectura del DHT por parejas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Quiz y comparación de lecturas entre mesas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar la temperatura de distintos lugares de la sala: el sensor lo mide distinto según dónde esté.",
+      "Relacionar la humedad que mide el sensor con el ambiente del aula."
+    ],
+    "aclarar": [
+      "Las lecturas del DHT tardan un momento en estabilizarse: no alarmarse si el primer valor es 1.",
+      "% y / no modifican el número original: hay que usar sus resultados.",
+      "En displays de 4 dígitos con multiplexado, los dígitos parpadean a una frecuencia invisible al ojo humano."
+    ],
+    "ejemplos": [
+      "Exponer el sensor al vaho del aliento y ver la humedad subir al instante.",
+      "Mostrar 2026 separado en 2, 0, 2, 6 con / y %.",
+      "Prender secciones del display una a una para explicar cada segmento."
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 5,
+    "titulo": "Edición de formas: herramienta Forma, curvas y nodos",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a convertir formas predefinidas en curvas editables y a moldearlas nodo por nodo: agregar, eliminar y clasificar nodos hasta dibujar cualquier silueta que imagines.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 3 Edición de Formas",
+  "objetivos": [
+    "Usar la herramienta Forma para editar el contorno de un objeto.",
+    "Convertir objetos a curvas para liberar sus nodos de edición.",
+    "Dibujar líneas y polilíneas con las herramientas de mano alzada y Bézier.",
+    "Agregar, eliminar y clasificar nodos en simétricos, suavizados y asimétricos."
+  ],
+  "teoria": [
+    {
+      "titulo": "La herramienta Forma y convertir a curva",
+      "emoji": "🖊️",
+      "imagen": {
+        "src": "img/nodos.jpg",
+        "alt": "Nodos y curva editables",
+        "caption": "Cada curva editable está formada por nodos que se tocan y arrastran."
+      },
+      "parrafos": [
+        "Un rectángulo común tiene pocos puntos de edición. Para moldear su contorno libremente hay que convertirlo a curva (Ctrl + Q o Menú Objeto > Convertir a curva). Ahí los nodos se liberan y podés arrastrarlos, curvarlos y modificarlos a gusto.",
+        "La herramienta Forma (el cursor con forma de flecha negra) selecciona nodos individuales. Al tocar un nodo aparecen las 'manijas' de dirección que curvan sus segmentos vecinos."
+      ],
+      "puntos": [
+        "Ctrl + Q convierte un objeto predefinido en curva editable.",
+        "Con la herramienta Forma tocás nodos para ver sus manijas de curvatura.",
+        "Podés seleccionar varios nodos arrastrando un marco o con Shift + clic.",
+        "Convertir a curva es irreversible en lo mecánico: guardá copia si necesitás volver."
+      ]
+    },
+    {
+      "titulo": "Líneas, polilíneas, mano alzada y Bézier",
+      "emoji": "〰️",
+      "imagen": {
+        "src": "img/figura-node.png",
+        "alt": "Figura de apoyo para la edición de nodos",
+        "caption": "Las polilíneas combinan trazos rectos y curvos editables."
+      },
+      "parrafos": [
+        "Las herramientas Mano alzada y Polilínea dibujan trazados libres: la primera reproduce el movimiento del mouse como una curva continua; la segunda dibuja con clics, creando segmentos rectos que se cierran con un doble clic.",
+        "La herramienta Bézier es la más potente: con clics colocás puntos de ancla y arrastrás para definir la curvatura de cada tramo. Es la técnica que usan los profesionales para dibujar siluetas y logotipos precisos."
+      ],
+      "puntos": [
+        "Mano alzada: dibujo libre como con lápiz sobre papel.",
+        "Polilínea: clic a clic con tramos rectos; doble clic cierra el trazo.",
+        "Bézier: nodos + manijas para curvas matemáticamente perfectas.",
+        "Cualquier trazo dibujado se puede repasar y corregir después con la herramienta Forma."
+      ]
+    },
+    {
+      "titulo": "Agregar, eliminar y modificar segmentos",
+      "emoji": "➕",
+      "parrafos": [
+        "Con un objeto en curva seleccionado y la herramienta Forma activa, el doble clic sobre una línea agrega un nodo nuevo; seleccionar un nodo y presionar Supr lo elimina. Los nodos extras dan mayor control al contorno.",
+        "La barra de propiedades muestra botones para convertir segmentos: 'A línea' endereza el tramo y 'A curva' le devuelve la curvatura con sus manijas. Es el modo de esculpir el trazo entre dos puntos."
+      ],
+      "puntos": [
+        "Doble clic en el trazo: crea un nodo nuevo.",
+        "Seleccionar nodo y Supr: lo elimina, uniendo sus vecinos.",
+        "Botón 'A línea' y 'A curva': definen cómo es el segmento entre nodo y nodo.",
+        "Los nodos se arrastran para reposicionar el contorno sin redibujar."
+      ]
+    },
+    {
+      "titulo": "Nodos simétricos, suavizados y asimétricos",
+      "emoji": "🎯",
+      "parrafos": [
+        "La calidad de una curva depende del tipo de nodo. El nodo simétrico curva igual de ambos lados (perfecto para arcos); el suavizado mantiene una transición continua sin fuerzas iguales; el asimétrico permite manijas independientes para contornos con formas irregulares.",
+        "Se cambia el tipo de nodo desde la barra de propiedades de la herramienta Forma, tocando el botón correspondiente o con clic derecho sobre el nodo. Probar los tres tipos sobre la misma forma es la mejor forma de entenderlos."
+      ],
+      "puntos": [
+        "Nodo simétrico: las dos manijas se mueven juntas, curva equilibrada.",
+        "Nodo suavizado: transición continua, manijas independientes en largo.",
+        "Nodo asimétrico: completa libertad de cada manija.",
+        "Un buen dibujo vectorial combina los tres tipos donde corresponde."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Dibujar una hoja con Bézier",
+      "consigna": "Convertí un círculo a curva y transformalo en una hoja vegetal editando nodos; después dibujá una segunda hoja completa desde cero con la herramienta Bézier.",
+      "pasos": [
+        "Dibujá un círculo con la herramienta Elipse, seleccionalo y convertí a curva con Ctrl + Q.",
+        "Con la herramienta Forma, seleccioná el nodo de la derecha y arrastralo suavemente hacia afuera para formar la punta.",
+        "Doble clic en el trazo para agregar un nodo en el medio y arrastralo hacia adentro: creá así la forma de hoja.",
+        "Clasificá los nodos: dejá el superior simétrico y el resto suavizados.",
+        "Dibujá una segunda hoja con la herramienta Bézier, haciendo clic en la punta y arrastrando para curvar el contorno.",
+        "Coloreá ambas hojas en verde con el mismo tono y guardá como hoja-nombre.cdr."
+      ],
+      "entrega": "Exportá ambas hojas en un PNG y describí qué tipo de nodo usaste en cada punta.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué hace Ctrl + Q sobre un objeto?",
+            "opciones": ["Lo convierte en curva editable", "Lo duplica", "Lo borra", "Le cambia el color"],
+            "correcta": "Lo convierte en curva editable"
+          },
+          {
+            "pregunta": "¿Cómo agregás un nodo nuevo a un trazo?",
+            "opciones": ["Doble clic sobre el trazo", "Tocando la barra de menú", "Haciendo clic derecho sobre el objeto", "Girando el objeto"],
+            "correcta": "Doble clic sobre el trazo"
+          },
+          {
+            "pregunta": "¿Qué nodo curva igual de ambos lados?",
+            "opciones": ["El simétrico", "El suavizado", "El asimétrico", "El recto"],
+            "correcta": "El simétrico"
+          },
+          {
+            "pregunta": "¿Qué herramienta dibuja curvas con nodos y manijas precisas?",
+            "opciones": ["La Bézier", "La mano alzada", "La elipse", "El papel cuadriculado"],
+            "correcta": "La Bézier"
+          },
+          {
+            "pregunta": "¿Para qué sirve el botón 'A línea' en la barra de propiedades?",
+            "opciones": ["Enderezar el segmento entre dos nodos", "Agregar color al relleno", "Acercar el zoom", "Duplicar el trazo"],
+            "correcta": "Enderezar el segmento entre dos nodos"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Silueta de corazón a mano alzada",
+      "consigna": "Dibujá un corazón con la herramienta Mano alzada y repasalo después con la herramienta Forma editando nodos hasta que la curva quede prolija.",
+      "pasos": [
+        "Con la mano alzada, dibujá un corazón de una sola pasada (sin levantar el botón).",
+        "Con la herramienta Forma, activá los nodos del trazo.",
+        "Eliminá los nodos sobrantes que ensucien el contorno.",
+        "Clasificá los nodos: las dos puntas superiores simétricas y el resto suavizados.",
+        "Redondeá el contorno arrastrando las manijas y luego colorealo; exportá como corazon-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del corazón corregido y comentá cuántos nodos eliminas."
+    }
+  ],
+  "entrega": "Se entrega el PNG con las dos hojas: una convertida de círculo y otra dibujada con Bézier, indicando los tipos de nodo empleados.",
+  "lectura": "La edición de nodos es donde el diseño vectorial se vuelve verdaderamente tuyo: ya no dependés de las formas que trae el programa, podés construir cualquier contorno. La curva Bézier parece rara al principio, pero es la técnica profesional detrás de casi todos los logotipos: la práctica de hoy (agregar nodos, clasificarlos) es la base de la clase de logotipos más adelante.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar un dibujo vectorial complejo e invitar a descubrir cuántos nodos tiene", "min": "10 min" },
+      { "titulo": "Convertir a curva y herramienta Forma", "que": "Convertir un círculo y mover nodos con las manijas", "min": "20 min" },
+      { "titulo": "Líneas, polilíneas y Bézier", "que": "Dibujar trazos con mano alzada, polilínea y Bézier comparando resultados", "min": "20 min" },
+      { "titulo": "Agregar, eliminar y convertir segmentos", "que": "Practicar doble clic, Supr y botones A línea / A curva", "min": "15 min" },
+      { "titulo": "Tipos de nodos y práctico", "que": "Clasificar nodos y dibujar las dos hojas del ejercicio", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar hojas y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Buscar en la memoria colectiva un logotipo con curvas (una letra, una silueta) y preguntar cuántos clics imaginan para dibujarla.",
+      "Relacionar los nodos con los puntos de un dibujo continuo del colegio."
+    ],
+    "aclarar": [
+      "Convertir a curva no se puede deshacer de forma mecánica: hay que guardar copias.",
+      "El doble clic agrega nodo solo con la herramienta Forma activa y sobre un objeto en curva.",
+      "Nodo simétrico no es igual a nodo suavizado: el simétrico fuerza el ángulo de ambas manijas."
+    ],
+    "ejemplos": [
+      "Dibujar una gota de agua convertida de un círculo en vivo.",
+      "Mostrar el mismo contorno con nodo simétrico, suavizado y asimétrico.",
+      "Redibujar sobre una foto una silueta simple con Bézier mientras los alumnos siguen."
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 12,
+    "titulo": "Ingreso de datos por Serial",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Tu placa no solo habla: también escucha. Vas a enviarle datos desde el Monitor Serie, a leer caracteres con Serial.read() y números completos con Serial.parseInt() para controlar tus circuitos desde el teclado.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 12 - Ingreso de datos por Serial",
+  "objetivos": [
+    "Recibir datos desde el Monitor Serie hacia la placa.",
+    "Leer caracteres individuales con Serial.read().",
+    "Leer números completos con Serial.parseInt().",
+    "Controlar LEDs y otros actuadores según los datos ingresados."
+  ],
+  "teoria": [
+    {
+      "titulo": "La comunicación es de ida y vuelta",
+      "emoji": "🔁",
+      "imagen": {
+        "src": "img/arduino-serial.jpg",
+        "alt": "Conexión USB entre placa y PC",
+        "caption": "El Monitor Serie permite tanto enviar como recibir datos por el mismo cable USB."
+      },
+      "parrafos": [
+        "En la clase anterior viste cómo la placa envía datos a la PC. Pero la comunicación te permite también lo contrario: vos escribís un dato en el cuadro superior del Monitor Serie y, al presionar Enviar, ese dato viaja hacia la placa.",
+        "La placa recibe los datos por el canal Serial y puede usarlos para decidir qué hacer: prender un LED, cambiar un tiempo o mover un motor."
+      ],
+      "puntos": [
+        "Escribís en el campo superior del monitor y presionás Enviar.",
+        "Los datos viajan por el mismo cable USB.",
+        "La placa lee el dato y puede usarlo en su lógica.",
+        "Para revisar si llegó algo, usás Serial.available()."
+      ]
+    },
+    {
+      "titulo": "Serial.available() y Serial.read()",
+      "emoji": "📥",
+      "imagen": {
+        "src": "img/puerto-serial.jpg",
+        "alt": "Monitor Serie con caja de envío",
+        "caption": "El cuadro de texto superior del Monitor Serie es el envío de datos."
+      },
+      "parrafos": [
+        "Serial.available() devuelve la cantidad de bytes que llegaron y están esperando para leerse. Serial.read() lee un byte (un carácter) de esa cola de datos entrantes.",
+        "La receta clásica: if (Serial.available() > 0) { char tecla = Serial.read(); ... } para actuar solo cuando haya datos."
+      ],
+      "puntos": [
+        "Serial.available() > 0 indica que hay datos esperando.",
+        "Serial.read() devuelve un carácter (por ejemplo '1' o 'a').",
+        "Esperar con available() evita leer datos vacíos.",
+        "Los caracteres se pueden comparar: if (tecla == 'a') { ... }"
+      ]
+    },
+    {
+      "titulo": "Serial.parseInt()",
+      "emoji": "🔢",
+      "parrafos": [
+        "read() lee de a un carácter, lo que complica recibir números de varios dígitos. Serial.parseInt() resuelve el problema: lee la secuencia y la convierte en un número entero listo para usar.",
+        "Por ejemplo, si enviás 255, parseInt() te devuelve el número 255 (y no tres caracteres sueltos). Ideal para ingresar valores de brillo, tiempos o posiciones."
+      ],
+      "puntos": [
+        "int valor = Serial.parseInt();",
+        "Convierte la tira de dígitos recibida en un entero.",
+        "Es bloqueante si no llega ningún número: cuidado con delays.",
+        "Ideal para valores como tiempos y brillos."
+      ]
+    },
+    {
+      "titulo": "Aplicaciones del ingreso de datos",
+      "emoji": "🎮",
+      "parrafos": [
+        "Con el ingreso por Serial podés hacer tus primeros controles remotos por teclado: un comando para cada acción. Esto se llama protocolo simple de comandos y es la base de muchos sistemas reales.",
+        "Una buena práctica es mostrar un menú de opciones en el monitor para guiar al usuario: la placa imprime qué opciones hay y vos respondés por teclado."
+      ],
+      "puntos": [
+        "Menú: la placa imprime \"1=Rojo 2=Verde 3=Apagar\".",
+        "Vos escribís el número y presionás Enviar.",
+        "La placa compara la entrada y ejecuta la acción.",
+        "Desde acá llegás en pocas clases a controlar motores y displays."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Escuchando a la placa",
+      "consigna": "Respondé el quiz sobre la recepción de datos por Serial.",
+      "pasos": [
+        "Distinguí enviar de recibir: dónde escribe el usuario y dónde lee la placa.",
+        "Recordá que read() es de a un carácter y parseInt() arma números.",
+        "Pensá para qué sirve available() antes de leer."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función indica cuántos datos llegaron al Serial?",
+            "opciones": ["Serial.read()", "Serial.available()", "Serial.begin()", "Serial.flush()"],
+            "correcta": "Serial.available()"
+          },
+          {
+            "pregunta": "¿Qué devuelve Serial.read()?",
+            "opciones": ["Un número entero de varios dígitos", "Un byte o carácter", "Una cadena completa", "Un flotante"],
+            "correcta": "Un byte o carácter"
+          },
+          {
+            "pregunta": "¿Qué función convierte la secuencia recibida en un número entero?",
+            "opciones": ["Serial.read()", "Serial.parseInt()", "Serial.print()", "Serial.available()"],
+            "correcta": "Serial.parseInt()"
+          },
+          {
+            "pregunta": "¿Qué condición usamos para saber que hay datos antes de leerlos?",
+            "opciones": ["if (Serial.available() > 0)", "if (Serial.read() > 0)", "delay(1000)", "if (Serial == true)"],
+            "correcta": "if (Serial.available() > 0)"
+          },
+          {
+            "pregunta": "¿Cómo se comparan caracteres recibidos?",
+            "opciones": ["if (tecla == 1)", "if (tecla == 'a')", "if (tecla = a)", "if (read = 'a')"],
+            "correcta": "if (tecla == 'a')"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Control remoto de un LED por teclado",
+      "consigna": "Programá un LED que responda a comandos enviados desde el Monitor Serie.",
+      "pasos": [
+        "Conectá un LED con su resistencia al pin 9 (PWM) y GND.",
+        "En setup(): Serial.begin(9600); pinMode(9, OUTPUT); Serial.println(\"Envia 0=apagar 1=prender 2=parpadear\");",
+        "En loop(): if (Serial.available() > 0) { int cmd = Serial.parseInt();",
+        "Con if (cmd == 0) apagá: analogWrite(9, 0);",
+        "Con if (cmd == 1) prendé a máximo: analogWrite(9, 255);",
+        "Con if (cmd == 2) parpadeá: tres ciclos de HIGH/LOW con delay(200).",
+        "Agregá un comando extra que acepte un valor de 0 a 255 para graduar el brillo: analogWrite(9, cmd); usando parseInt.",
+        "Enviá cada comando desde el monitor y verificá la respuesta del LED."
+      ],
+      "entrega": "Captura del Monitor Serie con los comandos enviados + foto del LED respondiendo."
+    }
+  ],
+  "entrega": "El docente revisará la secuencia de comandos enviada y la respuesta del LED.",
+  "lectura": "El Serial convierte a tu placa en un dispositivo bidireccional: envía datos y también los recibe. Con read() y parseInt() podés controlar tus circuitos desde el teclado, creando menús y comandos que más adelante moverán motores y displays.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Recordar el envío Serial y preguntar cómo se haría para que la placa RECIBA", "min": "10 min" },
+      { "titulo": "Available y read()", "que": "Explicar la cola de datos y la lectura por caracteres", "min": "20 min" },
+      { "titulo": "parseInt()", "que": "Completar números de varios dígitos y su utilidad", "min": "15 min" },
+      { "titulo": "Menú de comandos", "que": "Diseñar el protocolo de comandos en el pizarrón", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el control del LED por comandos por parejas", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y demostración cruzada entre bancos", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar el sistema con la app de una heladera: escribís en el celular y el aparato hace algo.",
+      "Preguntar qué comandos usarían para controlar un robot: tan solo con Serial ya pueden."
+    ],
+    "aclarar": [
+      "Los caracteres que entran al Serial quedan en una cola: hay que leerlos cuando available() los avisa.",
+      "parseInt() puede quedarse esperando un número: combinado con delays largos puede trabar el programa.",
+      "El carácter '1' (entre comillas) es distinto del número 1: compará consistentemente."
+    ],
+    "ejemplos": [
+      "Hacer que la placa reciba 'r' y responda \"Recibido: r\" para ver el eco.",
+      "Controlar el brillo enviando 0, 64, 128, 192 y 255.",
+      "Crear un mini semáforo controlado por teclado: 0=apagar, 1=verde, 2=amarillo, 3=rojo."
+    ]
+  }
+}

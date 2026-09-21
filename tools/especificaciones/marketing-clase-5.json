@@ -34,7 +34,8 @@
         "Propuesta de valor clara en la bio: qué hacés, para quién y cómo contactarte.",
         "Publicá con constancia y respondé todos los mensajes.",
         "Link en bio: hacia tu WhatsApp, tu tienda o tu página."
-      ]
+      ],
+      "imagen": { "src": "img/presencia.jpg", "alt": "Perfil de Instagram de un negocio", "caption": "El perfil comunica tu propuesta de valor en segundos" }
     },
     {
       "titulo": "Tu perfil comercial paso a paso",
@@ -46,7 +47,8 @@
         "Instagram: Ajustes → Cuenta → Cambiar a cuenta profesional → elegí la categoría.",
         "Facebook: creá una Página con nombre, categoría, descripción y botón de contacto.",
         "Agregá teléfono, dirección, horarios y el botón de acción: WhatsApp, llamada o tienda."
-      ]
+      ],
+      "imagen": { "src": "img/perfil.jpg", "alt": "Redes sociales en un smartphone", "caption": "Convertir a perfil de negocio abre estadísticas y botones" }
     },
     {
       "titulo": "Métricas que importan",
@@ -59,7 +61,8 @@
         "Interacción: me gusta, comentarios, guardados y compartidos.",
         "Seguidores: el crecimiento neto del período.",
         "Clics en el perfil: cuántas personas quisieron saber más de tu negocio."
-      ]
+      ],
+      "imagen": { "src": "img/metricas.jpg", "alt": "Tablero de métricas de redes sociales", "caption": "Las estadísticas te dicen qué contenido funciona" }
     },
     {
       "titulo": "Reels y contenido estratégico",

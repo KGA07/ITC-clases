@@ -1,0 +1,172 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 22,
+    "titulo": "Introducción al 3D y sólidos",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a entrar al mundo tridimensional: manejar el SCP, dibujar sólidos básicos y combinarlos con unión, diferencia e intersección para construir piezas volumétricas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\3D",
+  "objetivos": [
+    "Trabajar en el entorno tridimensional con ejes y planos de trabajo.",
+    "Manejar el SCP y desplazar y girar en 3D.",
+    "Crear sólidos básicos: polisólido, prisma, cuña, cono, esfera, cilindro, toroide y pirámide.",
+    "Combinar sólidos con unión, diferencia e intersección."
+  ],
+  "teoria": [
+    {
+      "titulo": "El entorno tridimensional",
+      "emoji": "🌐",
+      "imagen": {
+        "src": "img/modelo3d.jpg",
+        "alt": "Modelo 3D básico",
+        "caption": "En 3D se trabaja con tres ejes (X, Y, Z) y puntos de vista isométricos."
+      },
+      "parrafos": [
+        "En el 3D de AutoCAD aparecen los tres ejes: X e Y en el suelo, Z hacia arriba. Las herramientas 2D siguen funcionando pero solo en el plano de trabajo actual (plano XY del SCP vigente).",
+        "Se cambia de punto de vista con VISTA y con las vistas isométricas del panel."
+      ],
+      "puntos": [
+        "El plano de trabajo es el plano XY del SCP actual.",
+        "Las vistas planas se ven desde arriba (planta), de frente y de costado.",
+        "Las vistas isométricas (NE, NO, SE, SO) muestran el volumen.",
+        "El desplazamiento y giro 3D ubican los objetos en el espacio."
+      ]
+    },
+    {
+      "titulo": "El SCP: sistema de coordenadas personales",
+      "emoji": "🧭",
+      "imagen": {
+        "src": "img/solidos.jpg",
+        "alt": "Sólidos básicos primitivos",
+        "caption": "El SCP se mueve y rota para dibujar sobre cualquier plano del espacio."
+      },
+      "parrafos": [
+        "El icono SCP marca el origen y la orientación de los ejes del plano de trabajo. Con SCP se puede desplazar y girar los ejes para dibujar en cualquier cara; SCP Universal vuelve todo al origen (0,0,0) original."
+      ],
+      "puntos": [
+        "SCP se desplaza con 'Origen' y se rota con 'Z', 'X' o 'Y'.",
+        "SCP Universal (U) restaura el sistema del modelo.",
+        "Trabajar en el plano XY de un SCP local permite dibujar de costado.",
+        "La orientación del SCP se ve siempre en el icono de la esquina."
+      ]
+    },
+    {
+      "titulo": "Sólidos básicos",
+      "emoji": "🧱",
+      "imagen": {
+        "src": "img/booleano.jpg",
+        "alt": "Combinación de sólidos",
+        "caption": "Unión, diferencia e intersección combinan los sólidos básicos en piezas."
+      },
+      "parrafos": [
+        "Los sólidos básicos se crean con un dibujo de prisma, cuña, cono, esfera, cilindro, toroide o pirámide: se definen la base y la altura. El polisólido dibuja muros y perfiles como una polilínea con grosor y altura.",
+        "Cada comando ofrece opciones de base 2P, 3P o Ttr y formas especiales como el cono truncado y la base elíptica."
+      ],
+      "puntos": [
+        "Polisólido: anchura, altura y justificación de la sección.",
+        "Prisma y cuña: base rectangular + altura.",
+        "Cono: con truncamiento, base por 2P/3P/Ttr o elíptica.",
+        "Esfera, cilindro, toroide y pirámide completan la familia de primitivas."
+      ]
+    },
+    {
+      "titulo": "Sólidos compuestos: operaciones booleanas",
+      "emoji": "➕",
+      "parrafos": [
+        "Con los sólidos básicos se construyen piezas combinándolos: UNION suma dos sólidos en uno; DIFERENCA le resta un sólido a otro (por ejemplo, un agujero cilíndrico en una pieza); INTERSECCION conserva solo el volumen común entre ambos.",
+        "Estas operaciones son las booleanas de AutoCAD y la base del modelado sólido."
+      ],
+      "puntos": [
+        "UNIR (UNION): fusiona los sólidos seleccionados.",
+        "DIFERENCIA: quita el segundo sólido del primero.",
+        "INTERSECCION: deja el cruce de los dos volúmenes.",
+        "Una pieza real se arma con primitivas + booleanas y luego las aristas se redondean."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá el 3D",
+      "consigna": "Respondé el interactivo sobre SCP, sólidos básicos y operaciones booleanas.",
+      "pasos": [
+        "Explorá los puntos de vista isométricos del panel Vista.",
+        "Creá un prisma y mové el SCP con origen.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con el cubo 3D en pantalla.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué sistema vuelve el SCP al origen del modelo?",
+            "opciones": ["SCP Universal", "SCP Girar", "SCP Origen", "SCP Nuevo"],
+            "correcta": "SCP Universal"
+          },
+          {
+            "pregunta": "¿Qué sólido se dibuja como una polilínea con anchura y altura?",
+            "opciones": ["Prisma", "Polisólido", "Cuña", "Cono"],
+            "correcta": "Polisólido"
+          },
+          {
+            "pregunta": "¿Qué operación resta un sólido a otro (crea el agujero)?",
+            "opciones": ["Unión", "Diferencia", "Intersección", "Matriz"],
+            "correcta": "Diferencia"
+          },
+          {
+            "pregunta": "¿Qué conserva la intersección?",
+            "opciones": ["Todo", "El volumen común de los dos sólidos", "El más grande", "Nada"],
+            "correcta": "El volumen común de los dos sólidos"
+          },
+          {
+            "pregunta": "¿En qué plano trabajan las herramientas 2D en 3D?",
+            "opciones": ["En el plano XZ", "En el plano XY del SCP vigente", "Siempre en el suelo", "En el plano YZ"],
+            "correcta": "En el plano XY del SCP vigente"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Tu primera pieza 3D",
+      "consigna": "Construí una pieza simple combinando sólidos básicos con operaciones booleanas.",
+      "pasos": [
+        "Creá un prisma de 40 x 30 x 10 como base.",
+        "Sobre su cara superior dibujá un cilindro de radio 8 y altura 15.",
+        "Uní el cilindro y el prisma con UNIÓN.",
+        "Creá otro cilindro de radio 4 y altura 10 en el centro para el agujero.",
+        "Réstalo con DIFERENCIA para obtener el agujero pasante.",
+        "Explorá la pieza con las vistas isométricas y el giro 3D.",
+        "Guardá como clase22-pieza3d.dwg."
+      ],
+      "entrega": "El docente revisa el modelo 3D: prisma, cilindro unido y agujero por diferencia."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase22-pieza3d.dwg con la pieza y su agujero por diferencia.",
+  "lectura": "El 3D cierra el curso: con el SCP se dibuja en cualquier plano del espacio, los sólidos básicos modelan prisma, cuña, cono, esfera, cilindro, toroide y pirámide, y las operaciones de unión, diferencia e intersección convierten esas formas en piezas reales. Desde aquí el dibujo técnico se modela y se presenta como objeto.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar una pieza 3D y motivar el cierre del curso", "min": "10 min" },
+      { "titulo": "Entorno 3D y vistas", "que": "Recorrer los ejes, puntos de vista planos e isométricos", "min": "15 min" },
+      { "titulo": "SCP", "que": "Desplazar, girar y volver con SCP Universal", "min": "20 min" },
+      { "titulo": "Sólidos básicos", "que": "Crear polisólido, prisma, cuña, cono, esfera, cilindro, toroide y pirámide", "min": "25 min" },
+      { "titulo": "Booleanas", "que": "Unión, diferencia e intersección sobre las primitivas", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo; cierre del curso y repaso general", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar la pieza 2D de la clase 14 con la misma pieza modelada en 3D: el curso cierra el círculo."
+    ],
+    "aclarar": [
+      "El SCP atento: las 2D no saben 'de costado' si no movés el SCP.",
+      "La diferencia pide orden: el sólido a tallar primero y el que resta después.",
+      "El punto de vista no cambia el modelo: solo cómo lo ves."
+    ],
+    "ejemplos": [
+      "Un muro de polisólido con anchura 0.20 y altura 3.00 con giro 3D.",
+      "Un prisma con un cilindro que lo atraviesa por el medio para ver el agujero.",
+      "Intersección de dos cilindros para ver el lente de cruce con volumen."
+    ]
+  }
+}

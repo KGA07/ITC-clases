@@ -1,0 +1,180 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 15,
+    "titulo": "Motores PAP y servomotor",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a darle movimiento a tus proyectos: controlar un motor paso a paso con su driver SBT0811 y posicionar un servomotor con precisión de grados.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 15 - Motores PAP y servomotor",
+  "objetivos": [
+    "Explicar el funcionamiento del motor paso a paso (PAP) y del servomotor.",
+    "Conectar el motor PAP a través del driver SBT0811.",
+    "Controlar un servomotor con la librería Servo.",
+    "Generar movimientos repetitivos programados (barridos y pasos)."
+  ],
+  "teoria": [
+    {
+      "titulo": "Motor paso a paso (PAP)",
+      "emoji": "🔩",
+      "imagen": {
+        "src": "img/motor-pap.jpg",
+        "alt": "Motor paso a paso",
+        "caption": "El motor paso a paso gira en pasos discretos, ideales para posicionar con precisión."
+      },
+      "parrafos": [
+        "El motor paso a paso (PAP) gira en pasos discretos y controlables: cada pulso eléctrico lo avanza un ángulo fijo. Por eso sirve para posicionar objetos con exactitud, como en impresoras 3D y brazos robóticos.",
+        "A diferencia de un motor común, el PAP no solo gira: 'sabe dónde está' sin necesidad de sensores, porque cada paso se cuenta desde el inicio."
+      ],
+      "puntos": [
+        "Gira en pasos: cada pulso = un pequeño avance angular.",
+        "Posición precisa sin sensores de retroalimentación.",
+        "Se usa en impresoras, cortadoras y brazos robóticos.",
+        "Requiere un driver que entregue las fases de corriente."
+      ]
+    },
+    {
+      "titulo": "El driver SBT0811",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/motor-driver.jpg",
+        "alt": "Driver de motor paso a paso",
+        "caption": "El driver entrega a las bobinas del motor la secuencia de pulsos ordenada."
+      },
+      "parrafos": [
+        "La placa Arduino no puede mover el motor directo: necesita un driver (puente) que maneje las bobinas del motor paso a paso. El SBT0811 es el módulo que viene en tu kit y hace exactamente eso.",
+        "Se conectan GND y VCC del driver a la placa, y las entradas de pulso y dirección a un par de pines digitales. Luego, las cuatro salidas van a las bobinas del motor."
+      ],
+      "puntos": [
+        "Driver: manda la secuencia de pulsos a las bobinas del motor.",
+        "Entrada de pulso (step): cada pulso avanza un paso.",
+        "Entrada de dirección (dir): sentido de giro.",
+        "Verificá la alimentación del driver: algunos usan 5V, otros mayor tensión."
+      ]
+    },
+    {
+      "titulo": "El servomotor",
+      "emoji": "🎯",
+      "imagen": {
+        "src": "img/servo.jpg",
+        "alt": "Servomotor",
+        "caption": "El servomotor posiciona su eje entre 0° y 180° con buena precisión."
+      },
+      "parrafos": [
+        "El servomotor es un motor con engranajes y un sensor de posición interno: podés pedirle que gire a un ángulo determinado entre 0° y 180° y se queda ahí. Perfecto para ruedas direccionales, brazos y válvulas.",
+        "Con la librería Servo es muy simple: creás un objeto servo, lo conectás a un pin y usás servo.write(angulo) para posicionarlo."
+      ],
+      "puntos": [
+        "Rango típico: 0° a 180°.",
+        "Librería: #include <Servo.h>",
+        "servo.attach(pin): asigna el servo a un pin.",
+        "servo.write(90): lo posiciona en 90 grados."
+      ]
+    },
+    {
+      "titulo": "Movimientos programados",
+      "emoji": "🔄",
+      "parrafos": [
+        "Con delays y la estructura for() podés generar barridos: mover el servo de 0° a 180° y volver. Para el motor paso a paso, cada pulso en su entrada 'step' avanza un paso; si querés dar una vuelta, enviás la cantidad de pasos que define el motor.",
+        "La típica combinación 'cargar, avanzar, esperar' con estados claros es la base de cualquier mecanismo robótico controlado."
+      ],
+      "puntos": [
+        "for (int ang = 0; ang <= 180; ang = ang + 5) { servo.write(ang); delay(15); }",
+        "El servo vuelve: for invertido de 180 a 0.",
+        "Pulso por paso: cada señal en step avanza un paso del PAP.",
+        "Dos entradas (step/dir) controlan avance y sentido."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Motores y desplazamientos",
+      "consigna": "Respondé el quiz sobre motores PAP, driver y servomotores.",
+      "pasos": [
+        "Distinguí en qué se posiciona cada motor.",
+        "Recordá qué hace cada entrada del driver.",
+        "Pensá qué comando usa la librería Servo."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué caracteriza al motor paso a paso?",
+            "opciones": ["Gira en pasos discretos y controlables", "Gira sin control", "Solo gira a derecha", "No puede posicionarse"],
+            "correcta": "Gira en pasos discretos y controlables"
+          },
+          {
+            "pregunta": "¿Para qué sirve el driver SBT0811?",
+            "opciones": ["Para alimentar el LED", "Para manejar las bobinas del motor paso a paso", "Para medir distancia", "Para el teclado"],
+            "correcta": "Para manejar las bobinas del motor paso a paso"
+          },
+          {
+            "pregunta": "¿Qué rango de ángulos típico tiene el servomotor?",
+            "opciones": ["0° a 90°", "0° a 180°", "0° a 360°", "-90° a 90°"],
+            "correcta": "0° a 180°"
+          },
+          {
+            "pregunta": "¿Qué instrucción posiciona el servo en 90 grados?",
+            "opciones": ["servo.girar(90)", "servo.write(90)", "servo.angle(90)", "tone(servo, 90)"],
+            "correcta": "servo.write(90)"
+          },
+          {
+            "pregunta": "¿Qué hace la entrada de pulso (step) del driver?",
+            "opciones": ["Cada pulso avanza un paso del motor", "Cambia el color del motor", "Apaga el servo", "Lee la temperatura"],
+            "correcta": "Cada pulso avanza un paso del motor"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Servo que saluda",
+      "consigna": "Conectá un servomotor y programá un barrido de ida y vuelta.",
+      "pasos": [
+        "Conectá el servomotor: rojo a 5V, negro a GND y la señal (naranja) al pin 9.",
+        "Incluí la librería: #include <Servo.h>",
+        "Declará el objeto global: Servo servo1;",
+        "En setup(): servo1.attach(9);",
+        "En loop(): un for() que suba el ángulo de 0 a 180 de a 5 con delay(20).",
+        "Agregá otro for() que baje de 180 a 0. Probalo: el servo hace un barrido.",
+        "Cambiá el delay a 5: el movimiento se hace más rápido.",
+        "Desafío: si conseguís el módulo SBT0811 con el motor PAP, hacé girar el motor cierta cantidad de pasos y volver al inicio con la entrada 'step'."
+      ],
+      "entrega": "Video corto del servo barriendo de 0° a 180° y volviendo."
+    }
+  ],
+  "entrega": "El docente revisará el video del servo y la comprobación del circuito.",
+  "lectura": "Los motores convierten tu placa en una máquina que se mueve: el paso a paso avanza con precisión milimétrica controlada por pulsos, y el servomotor obedece ángulos exactos. Con esos dos, podés construir brazos, ruedas y mecanismos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Movilizar las sillas para explicar el movimiento controlado", "min": "10 min" },
+      { "titulo": "Motor paso a paso", "que": "Explicar pasos discretos con el motor en mano", "min": "20 min" },
+      { "titulo": "Driver SBT0811", "que": "Mostrar las conexiones del driver con esquema", "min": "20 min" },
+      { "titulo": "Servomotor y librería Servo", "que": "Conectar el servo y explicar write() y attach()", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el barrido del servo por parejas", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Quiz y muestreo de los barridos", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué máquinas usan pasos exactos: impresora 3D, CNC, cámara robótica.",
+      "Comparar el servo con el hombro humano: se mueve a una posición y se queda."
+    ],
+    "aclarar": [
+      "El motor PAP NO gira solo con digitalWrite HIGH: necesita la secuencia de pulsos.",
+      "No alimentes el servo directo con pines de datos: usá 5V de la placa.",
+      "El driver del kit puede necesitar alimentación externa según el motor: revisá la guía del equipo."
+    ],
+    "ejemplos": [
+      "Hacer el barrido completo del servo en vivo y dejar que lo pidan dos veces.",
+      "Mostrar el giro del PAP paso a paso muy despacio para contar cada avance.",
+      "Movimiento del servo siguiendo un potenciómetro: mapa de analogRead al ángulo."
+    ]
+  }
+}

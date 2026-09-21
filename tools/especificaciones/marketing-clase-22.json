@@ -35,7 +35,8 @@
         "Sigue a las personas entre dispositivos con Google Signals.",
         "La propiedad se crea en analytics.google.com y se conecta con un código.",
         "Tiene forma de vista de demostración para practicar sin tocar datos reales."
-      ]
+      ],
+      "imagen": { "src": "img/ga4.jpg", "alt": "Tablero de Google Analytics", "caption": "GA4 mide eventos y comportamiento real de usuarios" }
     },
     {
       "titulo": "Métricas claves e informes",
@@ -49,7 +50,8 @@
         "Tasa de participación promedio: compromiso real con la página.",
         "Vistas a páginas: ayuda a saber qué contenido atrae más.",
         "En un primer momento: usuarios nuevos, de qué canal vienen y qué hacen."
-      ]
+      ],
+      "imagen": { "src": "img/metricas.jpg", "alt": "Analítica web con métricas", "caption": "Usuarios, sesiones y engagement se leen en los informes" }
     },
     {
       "titulo": "Eventos personalizados",
@@ -63,7 +65,8 @@
         "Parámetros: los datos extra del evento (valor, página, campaña).",
         "Los eventos clave se marcan como Conversiones para priorizarlos.",
         "Ejemplo: trackear click_en_whatsapp para ver cuántos contactos pide tu sitio."
-      ]
+      ],
+      "imagen": { "src": "img/eventos.jpg", "alt": "Eventos de analítica web", "caption": "Los eventos a medida miden tu negocio específico" }
     },
     {
       "titulo": "KPIs de redes y campañas: cómo medir y presentar",

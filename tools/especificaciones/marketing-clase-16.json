@@ -35,7 +35,8 @@
         "Tools/Planificador: la caja de herramientas para investigar antes de gastar.",
         "Reports: gráficos de clics, impresiones, costo y conversiones.",
         "Ajustá fechas y ubicación en el filtro superior para leer datos correctos."
-      ]
+      ],
+      "imagen": { "src": "img/navegar.jpg", "alt": "Tablero de Google Ads", "caption": "Conocer las secciones del panel evita perderse" }
     },
     {
       "titulo": "El planificador de palabras clave",
@@ -49,7 +50,8 @@
         "Devuelve listas de palabras relacionadas con el volumen y la competencia.",
         "Se puede filtrar por ubicación geográfica e idioma (no es igual en todo el país).",
         "Se exporta a un archivo para llevar la investigación a tu plan de campaña."
-      ]
+      ],
+      "imagen": { "src": "img/planificador.jpg", "alt": "Herramienta de planificación de palabras clave", "caption": "El planificador responde qué busca la gente" }
     },
     {
       "titulo": "Volumen de búsquedas",
@@ -63,7 +65,8 @@
         "La que combina bien: volumen medio con competencia baja suele ser la más rentable.",
         "El volumen varía por época del año: registrá estacionalidad si tu rubro la tiene.",
         "El promedio mensual se ajusta con las fluctuaciones reales de tu segmento."
-      ]
+      ],
+      "imagen": { "src": "img/volumen.jpg", "alt": "Estadísticas de búsquedas", "caption": "El volumen de búsquedas prueba que hay demanda real" }
     },
     {
       "titulo": "Competencia y cómo elegir",

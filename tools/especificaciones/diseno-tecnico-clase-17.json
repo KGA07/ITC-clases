@@ -1,0 +1,177 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 17,
+    "titulo": "Dibujo isométrico",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a dibujar en proyección isométrica usando la variable DIBUJOISO, a cambiar de isoplano, a crear isocírculos con la elipse y a acotar en oblicuo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Isométrico",
+  "objetivos": [
+    "Configurar la rejilla isométrica con la variable DIBUJOISO.",
+    "Desplazarse entre isoplanos derecho, izquierdo y superior.",
+    "Dibujar isocírculos con elipse dentro del modo isométrico.",
+    "Acotar oblicuamente sobre el dibujo isométrico."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es el dibujo isométrico?",
+      "emoji": "🧊",
+      "imagenes": [
+        {
+          "src": "img/isometrico.jpg",
+          "alt": "Dibujo isométrico",
+          "caption": "El dibujo isométrico representa tres caras de un objeto en un solo plano."
+        },
+        {
+          "src": "img/vista-isometrica.jpg",
+          "alt": "Vista isométrica de un objeto",
+          "caption": "En isométrico las aristas se dibujan a 30°: se ven frente, costado y arriba."
+        }
+      ],
+      "parrafos": [
+        "El dibujo isométrico es una representación en 2D que simula el volumen: las caras del frente, del costado y de arriba se dibujan todas juntas sobre líneas a 30°, 90° y 150°. No es una perspectiva real: las medidas se mantienen verdaderas sobre los ejes isométricos."
+      ],
+      "puntos": [
+        "Los tres ejes isométricos apuntan a 30°, 90° y 150°.",
+        "Ninguna línea se dibuja en horizontal ni en vertical libre.",
+        "Las tres caras visibles se llaman plano superior, izquierdo y derecho.",
+        "Es el puente entre el plano técnico y el 3D."
+      ]
+    },
+    {
+      "titulo": "La variable DIBUJOISO",
+      "emoji": "⚙️",
+      "imagen": {
+        "src": "img/isoplanos.jpg",
+        "alt": "Planos isométricos",
+        "caption": "Los isoplanos se alternan dibujando sobre cada cara del cubo isométrico."
+      },
+      "parrafos": [
+        "Se activa con la variable de sistema DIBUJOISO (o desde las rejillas/ajustes): la cruz y la rejilla pasan a orientarse isométricamente. Después, cada dibujo que hagas seguirá automáticamente esa dirección."
+      ],
+      "puntos": [
+        "DIBUJOISO=1 activa la rejilla isométrica.",
+        "La rejilla se cierra con DIBUJOISO=0.",
+        "El modo Orto sigue funcionando pero a lo largo de los ejes isométricos.",
+        "Confirmar la activación viendo la rejilla a 30° en pantalla."
+      ]
+    },
+    {
+      "titulo": "Isoplanos e isocírculos",
+      "emoji": "🥏",
+      "imagen": {
+        "src": "img/isocirculo.jpg",
+        "alt": "Isocírculo dibujado con elipse",
+        "caption": "El isocírculo es una elipse que representa un círculo apoyado en una cara isométrica."
+      },
+      "parrafos": [
+        "Con F5 (o Ctrl+E) se cambia de isoplano: derecho, superior o izquierdo. El isocírculo no se dibuja con CÍRCULO sino con ELIPSE dentro del modo isométrico: AutoCAD la orienta sola según el isoplano activo."
+      ],
+      "puntos": [
+        "F5 / Ctrl+E: alternar plano derecho, superior e izquierdo.",
+        "ELIPSE en modo isométrico crea el isocírculo correcto.",
+        "El isocírculo se alinea automáticamente con el isoplano.",
+        "Se usa para agujeros y bases circulares en vistas isométricas."
+      ]
+    },
+    {
+      "titulo": "Cotas oblicuas",
+      "emoji": "📏",
+      "parrafos": [
+        "Acotar isométrico es especial: las cotas comunes quedan horizontales o verticales y no acompañan las líneas a 30°. Se usa la cota alineada y luego la opción de texto/cota oblícua para inclinar la línea de cota según la dirección del eje.",
+        "El resultado: la cota parece 'acostada' sobre la cara isométrica del objeto."
+      ],
+      "puntos": [
+        "Cota alineada: medidas a lo largo de las aristas.",
+        "Opción Oblicua (editor de cotas) inclina el texto y la línea.",
+        "Los textos se pueden rotar para quedar sobre la cara.",
+        "La cota oblicua completa la representación isométrica."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá el isométrico",
+      "consigna": "Respondé el interactivo sobre DIBUJOISO, isoplanos, isocírculos y cotas oblicuas.",
+      "pasos": [
+        "Configurá DIBUJOISO en un dibujo nuevo.",
+        "Cambiá de isoplano con F5.",
+        "Dibujá un isocírculo con elipse.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con el cubo isométrico a la vista.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué variable activa la rejilla isométrica?",
+            "opciones": ["DIBUJOISO", "ORTO", "REJILLA", "SNAP"],
+            "correcta": "DIBUJOISO"
+          },
+          {
+            "pregunta": "¿Qué tecla cambia de isoplano?",
+            "opciones": ["F3", "F5", "F8", "F12"],
+            "correcta": "F5"
+          },
+          {
+            "pregunta": "¿Cómo se dibuja un círculo sobre una cara isométrica?",
+            "opciones": ["Con CIRCULO", "Con ELIPSE en modo isométrico", "Con ARCO", "Con SPLINE"],
+            "correcta": "Con ELIPSE en modo isométrico"
+          },
+          {
+            "pregunta": "¿A qué ángulo apuntan los ejes isométricos?",
+            "opciones": ["45°, 90° y 135°", "30°, 90° y 150°", "15°, 45° y 75°", "60°, 60° y 60°"],
+            "correcta": "30°, 90° y 150°"
+          },
+          {
+            "pregunta": "¿Qué herramienta inclina las cotas sobre la cara isométrica?",
+            "opciones": ["Cota lineal", "Cota oblicua", "Marca de centro", "Cota angular"],
+            "correcta": "Cota oblicua"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Completá la caja con isocírculo",
+      "consigna": "Dibujá una caja isométrica, sumale un isocírculo en su cara superior y acotala en oblicuo.",
+      "pasos": [
+        "Activá DIBUJOISO en un dibujo nuevo.",
+        "Dibujá tres caras de una caja: isoplano superior primero, luego los dos laterales.",
+        "Ponete en el isoplano superior y dibujá un isocírculo con ELIPSE de radio 3.",
+        "Convertí el isocírculo en un agujero con dos elipses menor/mayor y el sombreado base.",
+        "Acotá un lado de la caja con cota alineada y aplicá la opción oblicua.",
+        "Guardá como clase17-isometrico.dwg."
+      ],
+      "entrega": "El docente revisa el archivo: caja, isocírculo correcto y cota oblicua."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase17-isometrico.dwg con la caja, el isocírculo y la cota oblicua.",
+  "lectura": "El dibujo isométrico muestra tres caras de un objeto en una sola vista: DIBUJOISO orienta la rejilla, F5 cambia de isoplano y la elipse dibuja los isocírculos. Las cotas oblicuas completan la ilusión de volumen. Es la antesala perfecta del modelado 3D real que vas a ver en las últimas clases.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar ejemplos isométricos y comparar con un plano 2D", "min": "10 min" },
+      { "titulo": "DIBUJOISO", "que": "Activación y ejes a 30°, 90° y 150°", "min": "15 min" },
+      { "titulo": "Isoplanos", "que": "Practicar F5 y dibujar sobre las tres caras", "min": "25 min" },
+      { "titulo": "Isocírculos", "que": "Dibujar agujeros y bases con ELIPSE en cada isoplano", "min": "20 min" },
+      { "titulo": "Cotas oblicuas", "que": "Acotar alineado y aplicar la opción oblicua", "min": "10 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo; revisión de cubos", "min": "10 min" }
+    ],
+    "conecta": [
+      "Mostrar un cubo isométrico a mano alzada y pedir que señalen cuál es la cara superior, izquierda y derecha."
+    ],
+    "aclarar": [
+      "En isométrico NO hay líneas horizontales libres: todo sigue los 30°.",
+      "El isocírculo se crea con la ELIPSE, no con CIRCULO: circular da una elipse desorientada.",
+      "La cota oblicua requiere primero una cota alineada: no se crea de cero."
+    ],
+    "ejemplos": [
+      "Dibujar el mismo agujero en la cara superior y en una lateral para ver cómo cambia la elipse.",
+      "Completar la caja de 10x8x6 con sus tres caras y ver los vértices comunes.",
+      "Acotar un eje a 30° con alineada + oblicua y comparar con una cota horizontal."
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 4,
+    "titulo": "Copiar, duplicar, ordenar y dar forma a objetos",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a aprender a copiar y duplicar objetos, a manejar el orden de apilado y a crear formas nuevas combinando otras: recortar, soldar e intersección.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 4 Copiar Orden y Dar Forma",
+  "objetivos": [
+    "Copiar y duplicar objetos con atajos y arrastre.",
+    "Controlar el orden de los objetos superpuestos.",
+    "Soldar, recortar e intersectar formas para crear figuras nuevas.",
+    "Aplicar la combinación de formas en un objeto de diseño real."
+  ],
+  "teoria": [
+    {
+      "titulo": "Copiar y duplicar objetos",
+      "emoji": "📑",
+      "parrafos": [
+        "Copiar un objeto es duplicarlo con su color, tamaño y propiedades intactas. Los atajos son los clásicos: Ctrl + C para copiar y Ctrl + V para pegar. El objeto pegado aparece encima del original.",
+        "El duplicado (Ctrl + D) va un paso más allá: CorelDRAW recuerda el desplazamiento que hiciste y repite ese 'paso' cada vez. Es perfecto para filas de botones, remeras, repeticiones decorativas o cualquier patrón."
+      ],
+      "puntos": [
+        "Ctrl + C / Ctrl + V: copiar y pegar un objeto.",
+        "Ctrl + D: duplicar con el último desplazamiento aplicado.",
+        "Arrastrar con clic derecho sobre la copia: duplica en el lugar exacto donde soltás.",
+        "Con el duplicado podés crear series: filas, grillas y tramas en segundos."
+      ]
+    },
+    {
+      "titulo": "Orden de objetos",
+      "emoji": "🪜",
+      "imagen": {
+        "src": "img/figura-dar-forma.png",
+        "alt": "Figura de apoyo sobre orden y combinación de formas",
+        "caption": "El orden define qué objeto queda adelante y cuál queda atrás."
+      },
+      "parrafos": [
+        "Los objetos se apilan como hojas de papel: el último dibujado queda arriba. Si superponés un círculo sobre un cuadrado, el círculo tapa al cuadrado.",
+        "Desde el menú Organizar (o clic derecho > Orden) podés traer hacia adelante, llevar hacia atrás, adelantar o atrasar un paso. Orden correcto es la diferencia entre una composición prolija y un desastre visual."
+      ],
+      "puntos": [
+        "Cada objeto nuevo se dibuja por encima de los anteriores.",
+        "Orden > Traer al frente / Enviar al fondo: mueven un objeto a los extremos del apilado.",
+        "Adelantar un paso o atrasar un paso: movimiento fino en la pila.",
+        "El orden repetido (Ctrl + Tabulador) recorre la selección entre objetos apilados."
+      ]
+    },
+    {
+      "titulo": "Dar forma: soldar, recortar e intersección",
+      "emoji": "✂️",
+      "imagen": {
+        "src": "img/interseccion-circulos.jpg",
+        "alt": "Círculos superpuestos",
+        "caption": "Dos círculos superpuestos se pueden soldar en una sola pieza o recortar."
+      },
+      "parrafos": [
+        "'Dar forma' combina objetos para generar figuras nuevas. Está en el menú Objeto > Forma o en la barra de propiedades cuando tenés dos o más objetos seleccionados.",
+        "Soldar une los objetos en una sola forma continua; Recortar usa el objeto de arriba para 'cortar' la silueta del de abajo; Intersección deja solo la parte que se superpone. Cada uno produce un objeto único que se puede volver a colorear y transformar."
+      ],
+      "puntos": [
+        "Soldar: dos o más formas se fusionan en una sola pieza.",
+        "Recortar: la forma superior es un molde que recorta la inferior.",
+        "Intersección: queda única la zona común de los objetos.",
+        "El resultado es una curva editable, ideal para crear elipses con picos, letras recortadas o siluetas nuevas."
+      ]
+    },
+    {
+      "titulo": "Operaciones desde la barra de propiedades",
+      "emoji": "🎛️",
+      "parrafos": [
+        "Cuando tenés dos o más objetos seleccionados, la barra de propiedades muestra los botones de dar forma en vivo. Allí también aparecen otras operaciones muy útiles, como la de recorte con técnica de muescas y la de separación de partes, que trabajan sobre objetos superpuestos.",
+        "La clave es la selección y el orden: antes de pulsar el botón, pensá qué objeto es el 'molde' (el que recorta) y cuál es la 'pieza' (el que se recorta). Con la misma lógica resolvés agrupaciones: Ctrl + G une objetos para tratarlos como uno solo, y Ctrl + U los desagrupa."
+      ],
+      "puntos": [
+        "Los botones de dar forma viven en la barra de propiedades con objetos seleccionados.",
+        "El orden de selección define qué objeto actúa como molde.",
+        "Agrupar (Ctrl + G) trata varios objetos como uno; desagrupar (Ctrl + U) los libera.",
+        "Las operaciones se pueden repetir: el resultado vuelve a ser una forma combinable."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Fila de botones y recorte de silueta",
+      "consigna": "Creá una fila de 5 botones idénticos con Ctrl + D y después armá una silueta de luna creciente con dos círculos recortados.",
+      "pasos": [
+        "Dibujá un rectángulo redondeado de 3 cm de ancho y pintalo de un color.",
+        "Seleccionalo y hacé Ctrl + D: aparece una copia desplazada. Movela a la derecha (ej. 4 cm).",
+        "Seguí haciendo Ctrl + D tres veces más: CorelDRAW repite el paso y te queda la fila uniforme.",
+        "Dibujá un círculo grande y superponé otro círculo más chico arriba.",
+        "Con ambos seleccionados, aplicá Recortar: quedó la luna creciente como una sola curva.",
+        "Coloreá la luna en amarillo y guardá como dar-forma-nombre.cdr."
+      ],
+      "entrega": "Exportá el archivo a PNG con la fila de botones y la luna creciente visibles.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué hace Ctrl + D en CorelDRAW?",
+            "opciones": ["Duplica el objeto repitiendo el último desplazamiento", "Borra el objeto", "Cambia su color", "Abre el zoom"],
+            "correcta": "Duplica el objeto repitiendo el último desplazamiento"
+          },
+          {
+            "pregunta": "Dos círculos superpuestos: ¿qué operación deja solo la zona común?",
+            "opciones": ["Intersección", "Soldar", "Recortar", "Duplicar"],
+            "correcta": "Intersección"
+          },
+          {
+            "pregunta": "¿Qué comando permite que un objeto dibujado antes pase a estar adelante de todos?",
+            "opciones": ["Orden > Traer al frente", "Copiar y pegar", "Soldar", "Inclinar"],
+            "correcta": "Orden > Traer al frente"
+          },
+          {
+            "pregunta": "¿Qué hace la operación Soldar?",
+            "opciones": ["Une dos o más formas en una sola pieza", "Borra una de las formas", "Crea una copia exacta", "Rota el objeto"],
+            "correcta": "Une dos o más formas en una sola pieza"
+          },
+          {
+            "pregunta": "¿Cuál es la herramienta que crea una 'luna creciente' a partir de dos círculos?",
+            "opciones": ["Recortar", "Estrella compleja", "Zoom", "Papel cuadriculado"],
+            "correcta": "Recortar"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Figura combinada con orden y forma",
+      "consigna": "Construí un símbolo de infinito apilando dos anillos y una flecha, usando orden de objetos y una soldadura final para convertirlo en una sola pieza.",
+      "pasos": [
+        "Dibujá dos elipses idénticas rotadas hacia adentro para simular un infinito.",
+        "Superponelas y ajusta su orden para que se vean entrelazadas.",
+        "Dibujá un triángulo pequeño como flecha debajo del símbolo.",
+        "Seleccioná los tres objetos y aplicá Soldar para unirlos en una sola forma.",
+        "Coloreá la pieza soldada y exportala como simbolo-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del símbolo soldado y el .cdr con los objetos originales."
+    }
+  ],
+  "entrega": "Se entrega el PNG con la fila de botones y la luna creciente; opcional el .cdr con las formas originales conservadas.",
+  "lectura": "Copiar y duplicar son la clave de la productividad en CorelDRAW: en vez de dibujar 5 veces lo mismo, dibujás una vez y repetís. El orden de objetos ordena la lectura visual, y dar forma convierte figuras simples en logotipos y siluetas imposibles de dibujar a mano. Estas tres ideas aparecen juntas en casi todos los diseños futuros.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar transformación y mostrar el después: filas y siluetas armadas con estas técnicas", "min": "10 min" },
+      { "titulo": "Copiar y duplicar", "que": "Practicar Ctrl+C/V, Ctrl+D y arrastre con clic derecho", "min": "20 min" },
+      { "titulo": "Orden de objetos", "que": "Apilar formas y moverlas con Orden, comparando frente y fondo", "min": "15 min" },
+      { "titulo": "Dar forma", "que": "Probar soldar, recortar e intersección en ejemplos simples", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Armar la fila de botones y la luna creciente en cada equipo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Corregir resultados y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Mostrar logotipos hechos con formas superpuestas (dos círculos = infinito) para motivar dar forma.",
+      "Preguntar cuántas veces repitieron algo a mano (dibujos, carteles) y mostrar cómo Ctrl + D lo automatiza."
+    ],
+    "aclarar": [
+      "Ctrl + D solo funciona después de haber movido la primera copia: primero se desplaza, después se duplica.",
+      "Recortar usa la forma de arriba como cuchillo: el orden importa antes de recortar.",
+      "Soldar definitivamente une: no se puede 'desoldar'; conviene guardar el original aparte si dudás."
+    ],
+    "ejemplos": [
+      "Crear una fila de 5 botones en vivo y contar cuántos clics llevó.",
+      "Hacer una luna creciente con dos círculos ante la clase.",
+      "Superponer un cuadrado y un círculo y mostrar los tres resultados (soldado, recortado, intersección) lado a lado."
+    ]
+  }
+}

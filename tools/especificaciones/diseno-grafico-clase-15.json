@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 15,
+    "titulo": "El entorno de Photoshop: lienzo, imagen, recorte, guardado y exportación",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a reconocer la ventana de Photoshop, ajustar el tamaño del lienzo y el tamaño de la imagen, recortar composiciones y dominar el guardado y la exportación de tu trabajo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 15 Entorno de Photoshop",
+  "objetivos": [
+    "Identificar las áreas de la ventana de Photoshop: panel de herramientas, opciones y paneles.",
+    "Distinguir tamaño de lienzo de tamaño de imagen.",
+    "Recortar y reencuadrar imágenes con la herramienta Recortar.",
+    "Guardar en PSD y exportar en PNG y JPG correctamente."
+  ],
+  "teoria": [
+    {
+      "titulo": "La ventana de Photoshop",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/photoshop-entorno.jpg",
+        "alt": "Ventana de Adobe Photoshop",
+        "caption": "La ventana de Photoshop: herramientas a la izquierda y paneles al costado."
+      },
+      "parrafos": [
+        "Photoshop organiza su ventana en zonas: arriba la barra de opciones de la herramienta activa; a la izquierda el panel de herramientas; a la derecha los paneles de propiedades (Capas, Color, Historial); en el centro el lienzo con tus documentos.",
+        "Los paneles se abren y cierran desde el menú Ventana. Si perdés un panel, Ventana > Espacio de trabajo > Restablecer esencial lo vuelve a su lugar."
+      ],
+      "puntos": [
+        "Barra de opciones: cambia según la herramienta activa.",
+        "Panel de herramientas: a la izquierda, con grupos plegables.",
+        "Paneles de capas e historial: el centro de control a la derecha.",
+        "Ventana > Espacio de trabajo permite recuperar el orden por defecto."
+      ]
+    },
+    {
+      "titulo": "Tamaño de lienzo y tamaño de imagen",
+      "emoji": "📐",
+      "parrafos": [
+        "El tamaño del lienzo es el área de trabajo completa: su ancho y alto en píxeles o centímetros. Agrandar el lienzo te da más espacio alrededor de la imagen; achicarlo recorta el área útil.",
+        "El tamaño de imagen cambia LA imagen misma: la escala del contenido. Son conceptos opuestos: uno modifica el tablero y el otro la foto que está sobre el tablero."
+      ],
+      "puntos": [
+        "Imagen > Tamaño de lienzo: cambiás la superficie de trabajo.",
+        "Imagen > Tamaño de imagen: escalás el contenido de la imagen.",
+        "Agrandar el lienzo no deforma la foto; escalarla sí la puede deformar.",
+        "El anclaje del lienzo define de qué lado crece o se recorta el área."
+      ]
+    },
+    {
+      "titulo": "La herramienta Recortar",
+      "emoji": "✂️",
+      "imagen": {
+        "src": "img/photoshop-logo.jpg",
+        "alt": "Logo de Adobe Photoshop",
+        "caption": "Photoshop prepara retoque y composición: recortar es el paso de orden inicial."
+      },
+      "parrafos": [
+        "La herramienta Recortar (C) reencuadra la foto: arrastrás el marco sobre la imagen, movés los bordes y confirmás con Enter. Podés pedir proporciones fijas (cuadrado, 4:3, 16:9) para afiches y carteles.",
+        "El recorte también permite enderezar horizontes: estirás una esquina para rotar y la imagen se alinea. Es la herramienta de encuadre inicial de toda pieza."
+      ],
+      "puntos": [
+        "Tecla C activa la herramienta Recortar.",
+        "Confirmás el recorte con Enter, lo cancelás con Esc.",
+        "Proporciones fijas: elegilas en la barra de opciones.",
+        "El recorte para enderezar corrige fotos torcidas en un clic."
+      ]
+    },
+    {
+      "titulo": "Guardar y exportar",
+      "emoji": "💾",
+      "parrafos": [
+        "Guardá siempre el trabajo en PSD (Archivo > Guardar como) para no perder capas. Después, para compartir, exportás: PNG de máxima calidad para logos y gráficos, JPG liviano para fotos.",
+        "La opción Archivo > Exportar > Exportar como permite elegir formato, tamaño y calidad en una ventana moderna con vista previa. Alternativa clásica: Guardar para web (heredado) para optimizar peso para web."
+      ],
+      "puntos": [
+        "Guardar como PSD: preserva capas y ajustes para seguir editando.",
+        "Exportar como: formato, tamaño y calidad con vista previa.",
+        "PNG para calidad con transparencia; JPG para fotos livianas.",
+        "Guardá con frecuencia (Ctrl + S) mientras trabajás."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Recortar, reencuadrar y exportar",
+      "consigna": "Tomá una foto (puede ser una que traigas o una de muestra del docente), recortala con proporción 16:9, enderezá el horizonte si hace falta, achicala a 1920 px de ancho y exportala en JPG y PNG.",
+      "pasos": [
+        "Abrí la foto en Photoshop con Archivo > Abrir.",
+        "Elegí la herramienta Recortar (C) y configurá proporción 16:9 en la barra de opciones.",
+        "Acomodá el marco para elegir el mejor encuadre y confirmá con Enter.",
+        "Si el horizonte está torcido, usá el recorte rotando hasta nivelarlo.",
+        "Imagen > Tamaño de imagen: cambiá el ancho a 1920 píxeles (proporción bloqueada).",
+        "Guardá como PSD y exportá dos copias: entorno-nombre.jpg y entorno-nombre.png, comparando pesos."
+      ],
+      "entrega": "Subí el JPG y el PNG finales y anotá el peso de cada uno en el chat de entrega.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué comando cambia el TAMAÑO DE LA IMAGEN (escala el contenido)?",
+            "opciones": ["Imagen > Tamaño de imagen", "Imagen > Tamaño de lienzo", "Edición > Reemplazar color", "Capa > Rasterizar"],
+            "correcta": "Imagen > Tamaño de imagen"
+          },
+          {
+            "pregunta": "¿Qué diferencia hay entre lienzo e imagen?",
+            "opciones": ["El lienzo es la superficie de trabajo; la imagen es el contenido", "Son lo mismo", "El lienzo solo aplica a video", "La imagen no se puede escalar"],
+            "correcta": "El lienzo es la superficie de trabajo; la imagen es el contenido"
+          },
+          {
+            "pregunta": "¿Con qué tecla activás la herramienta Recortar?",
+            "opciones": ["C", "R", "P", "V"],
+            "correcta": "C"
+          },
+          {
+            "pregunta": "¿Qué formato guardás para NO perder las capas?",
+            "opciones": ["PSD", "JPG", "GIF", "BMP"],
+            "correcta": "PSD"
+          },
+          {
+            "pregunta": "¿Dónde recuperás un panel perdido?",
+            "opciones": ["Ventana > Espacio de trabajo > Restablecer", "Archivo > Nuevo", "Filtro > Galería", "Edición > Preferencias"],
+            "correcta": "Ventana > Espacio de trabajo > Restablecer"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Recorte cuadrado para foto de perfil",
+      "consigna": "Prepará una foto de perfil de red social: recorte cuadrado 1:1, tamaño de 800x800 píxeles y exportación en PNG.",
+      "pasos": [
+        "Abrí la foto que elegiste en Photoshop.",
+        "Seleccioná la herramienta Recortar y configurá proporción 1:1.",
+        "Encuadrá el rostro u objeto y confirmá con Enter.",
+        "Con Tamaño de imagen, llevá la foto a 800 x 800 píxeles.",
+        "Exportá como perfil-nombre.png y verificá el peso en el Explorador."
+      ],
+      "entrega": "Entregá el PNG de perfil de 800 x 800 y anotá su peso."
+    }
+  ],
+  "entrega": "Se evalúa el recorte con proporción correcta, el encuadre mejorado y los formatos de exportación adecuados.",
+  "lectura": "Photoshop se domina cuando sabés qué cambia qué: el tamaño de lienzo modifica el tablero, el tamaño de imagen escala la foto y el recorte reencuadra la toma. Dominar guardado y exportación evita los clásicos problemas de 'se veía distinto en mi PC' y 'no me deja subirlo'. Casi todas las próximas clases arrancan configurando un lienzo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Recorrer la ventana de Photoshop en vivo y ubicar herramientas y paneles", "min": "10 min" },
+      { "titulo": "Lienzo vs imagen", "que": "Probar ambos comandos sobre una misma foto y observar la diferencia", "min": "20 min" },
+      { "titulo": "Recortar", "que": "Practicar recortes libres, con proporción y enderezado de horizonte", "min": "20 min" },
+      { "titulo": "Guardado y exportación", "que": "Guardar PSD, exportar JPG y PNG y comparar pesos y calidad", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Resolver el ejercicio completo de recorte y exportación", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y mostrar dos entregas modelo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar con Corel: allá el lienzo era la página; acá el canvas digital.",
+      "Preguntar qué formato usan para compartir lo que hacen y por qué."
+    ],
+    "aclarar": [
+      "Enderezar con Recortar no 'retoca' la foto, solo la reencuadra.",
+      "Al exportar JPG se pierde transparencia: se rellena de blanco o se evita.",
+      "PSD es el original; nunca se entrega un PSD como pieza final web si es pesado."
+    ],
+    "ejemplos": [
+      "Recortar la misma foto en 16:9, cuadrado y vertical para comparar usos.",
+      "Agrandar el lienzo y mostrar el espacio nuevo alrededor de la foto.",
+      "Exportar el mismo archivo en calidad 'alta' y 'media' y comparar pesos."
+    ]
+  }
+}

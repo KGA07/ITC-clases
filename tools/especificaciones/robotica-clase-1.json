@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 1,
+    "titulo": "¿Qué es Arduino?",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard",
+    "bajada": "Vas a descubrir qué es Arduino, los distintos modelos de placas que existen, para qué sirven los shields y los sensores, y vas a conocer las aplicaciones reales de esta plataforma en el mundo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 1 Introducción que es Arduino",
+  "objetivos": [
+    "Explicar qué es Arduino y por qué es la plataforma ideal para aprender robótica.",
+    "Reconocer los modelos de placas más usados y sus características principales.",
+    "Describir el rol de los shields y los sensores en un proyecto de Arduino.",
+    "Identificar aplicaciones reales de Arduino en la vida cotidiana."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es Arduino?",
+      "emoji": "🧠",
+      "imagen": {
+        "src": "img/arduino-uno.jpg",
+        "alt": "Placa Arduino Uno",
+        "caption": "Arduino Uno: la placa más popular para empezar a programar hardware."
+      },
+      "parrafos": [
+        "Arduino es una plataforma de electrónica abierta que combina una placa con un microcontrolador y un entorno de programación sencillo. Te permite crear proyectos interactivos: leer sensores, encender luces, mover motores y controlar dispositivos, todo a partir de código que vos escribís.",
+        "La clave de Arduino es que une el mundo físico con el mundo del software: la placa recibe señales del entorno (temperatura, luz, sonido, distancia) y actúa sobre él (LEDs, displays, motores, relés) según las instrucciones que cargués."
+      ],
+      "puntos": [
+        "Es de hardware libre: hay esquemas, ejemplos y comunidades en todo el mundo.",
+        "Solo necesitás una computadora y un cable USB para empezar.",
+        "Programás en un lenguaje parecido a C, simple y con mucha documentación."
+      ]
+    },
+    {
+      "titulo": "Modelos de placas y características",
+      "emoji": "🛠️",
+      "parrafos": [
+        "Existen muchos modelos de Arduino para distintos niveles y proyectos. Todos comparten la misma lógica de programación, así que lo que aprendés con uno te sirve para los demás.",
+        "En este curso trabajamos con Arduino Uno y Arduino Nano, los modelos más comunes en kits educativos. Son placas con pines digitales y analógicos, salida USB y alimentación propia."
+      ],
+      "puntos": [
+        "Arduino Uno: la placa clásica, ideal para aprender y prototipar.",
+        "Arduino Nano: versión compacta, excelente para proyectos que van dentro de una carcasa.",
+        "Arduino Mega: más memoria y muchos más pines, para proyectos grandes.",
+        "Todas se programan con el mismo IDE de Arduino."
+      ]
+    },
+    {
+      "titulo": "Shields y sensores",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/arduino-shields.jpg",
+        "alt": "Escudos o shields apilables sobre Arduino",
+        "caption": "Los shields se conectan directo sobre la placa y le agregan funciones."
+      },
+      "parrafos": [
+        "Un shield es una placa que se ensambla sobre Arduino para sumarle funciones: WiFi, motor, reloj, display, entre otras. Se conecta con los pines y amplía el proyecto sin tener que hacer cableado complejo.",
+        "Los sensores, en cambio, se conectan con cables: miden algo del mundo físico (temperatura, humedad, distancia, sonido, luz) y le envían la información a la placa para que decida qué hacer."
+      ],
+      "puntos": [
+        "Shield: se apila sobre la placa y agrega capacidades (WiFi, motors, pantalla).",
+        "Sensor: capta información del entorno y la convierte en señal eléctrica.",
+        "Actuador: elemento que produce una acción, como un LED, buzzer o motor."
+      ]
+    },
+    {
+      "titulo": "Aplicaciones de Arduino",
+      "emoji": "🌍",
+      "parrafos": [
+        "Arduino está presente en la robótica educativa, en domótica, en proyectos de arte interactivo y hasta en prototipos industriales y médicos. Es la herramienta que más rápido pasa de una idea a un prototipo funcionando."
+      ],
+      "puntos": [
+        "Robótica educativa: robots que evitan obstáculos, siguen líneas o responden a comandos.",
+        "Domótica: control de luces, persianas, riego y sensores de seguridad en el hogar.",
+        "Arte interactivo: instalaciones que reaccionan al movimiento o al sonido.",
+        "Internet de las Cosas: transimisión de datos de sensores a la nube."
+      ]
+    },
+    {
+      "titulo": "Tu kit de desarrollo",
+      "emoji": "🎒",
+      "parrafos": [
+        "El kit de trabajo de este curso trae la placa Arduino, la protoboard para armar circuitos, cables, LEDs, resistencias, pulsadores, sensores, displays y motores. Lo vamos a usar por parejas: programás, armás el circuito, lo probás en la placa y también en la simulación de TinkerCad."
+      ],
+      "puntos": [
+        "Armen el kit al inicio de cada clase y devuélvanlo completo al finalizar.",
+        "Prueben primero el circuito en TinkerCad y después en la protoboard real.",
+        "Compartan la placa en la pareja: uno arma y el otro programa, y van rotando."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Arduino en pocas palabras",
+      "consigna": "Respondé el siguiente quiz para fijar los conceptos básicos que acabamos de ver.",
+      "pasos": [
+        "Leé cada pregunta con atención.",
+        "Elegí la opción correcta justificando mentalmente por qué.",
+        "Compará tus respuestas con tu compañero de banco."
+      ],
+      "entrega": "Respuestas correctas del quiz resueltas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es Arduino?",
+            "opciones": ["Una placa con microcontrolador y un entorno de programación", "Un programa de diseño 3D", "Un sistema operativo", "Un tipo de motor eléctrico"],
+            "correcta": "Una placa con microcontrolador y un entorno de programación"
+          },
+          {
+            "pregunta": "¿Cuál es la placa más popular para empezar a aprender?",
+            "opciones": ["Arduino Mega", "Arduino Uno", "Arduino Due", "Arduino Nano 33"],
+            "correcta": "Arduino Uno"
+          },
+          {
+            "pregunta": "¿Qué hace un sensor?",
+            "opciones": ["Amplia las funciones de la placa apilándose sobre ella", "Mide información del entorno y la envía a la placa", "Almacena el programa", "Suministra energía al circuito"],
+            "correcta": "Mide información del entorno y la envía a la placa"
+          },
+          {
+            "pregunta": "¿Qué es un shield?",
+            "opciones": ["Un cable de conexión", "Una placa que se apila sobre Arduino para sumarle funciones", "Un tipo de resistencia", "Un microcontrolador"],
+            "correcta": "Una placa que se apila sobre Arduino para sumarle funciones"
+          },
+          {
+            "pregunta": "¿Con qué herramienta de simulación probamos los circuitos antes de armarlos?",
+            "opciones": ["Photoshop", "Excel", "TinkerCad", "Word"],
+            "correcta": "TinkerCad"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Conocé tu placa de cerca",
+      "consigna": "Identificá las partes físicas de tu Arduino Uno o Nano y anotalas en el cuaderno.",
+      "pasos": [
+        "Tomá la placa de tu kit y observala con lupa sin forzar ningún componente.",
+        "Ubicá el microcontrolador: es el chip principal con varios pines a los costados.",
+        "Buscá el conector USB por donde se carga el programa y por donde recibe energía.",
+        "Identificá los pines machos de ambos lados: son los puntos para conectar cables y componentes.",
+        "Escribí en tu cuaderno: nombre del modelo, cantidad de pines que contás y dónde está el USB."
+      ],
+      "entrega": "Dibujo de tu placa con sus partes señaladas en el cuaderno."
+    }
+  ],
+  "entrega": "El docente revisará el dibujo de la placa con sus partes identificadas y las respuestas del quiz.",
+  "lectura": "Arduino es el punto de partida de la robótica: una placa programable que une sensores y actuadores con el mundo del software. Conocer los modelos de placas, los shields y los sensores te da el mapa completo para resolver cada proyecto del curso.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar el curso, el kit y el sistema de trabajo por parejas", "min": "10 min" },
+      { "titulo": "¿Qué es Arduino?", "que": "Explicar concepto con la placa en mano y ejemplos de la vida real", "min": "20 min" },
+      { "titulo": "Modelos de placas", "que": "Mostrar Uno, Nano y Mega, comparando memoria y pines", "min": "20 min" },
+      { "titulo": "Shields y sensores", "que": "Diferenciar sensores, actuadores y shields con componentes físicos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el reconocimiento físico de la placa con el quiz final", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Mostrar objetos tecnológicos cotidianos y preguntar qué sensor o actuador usan: el termómetro digital, el sensor de presencia del baño, el cajero automático.",
+      "Contar un proyecto real hecho con Arduino para motivar: una maceta que se riega sola o una persiana automática."
+    ],
+    "aclarar": [
+      "Arduino UNO y Arduino Nano se diferencian solo en tamaño y forma, usan el mismo microcontrolador y el mismo lenguaje.",
+      "Un shield no es un sensor: se conecta por pines y suma funciones, mientras que el sensor se cablea.",
+      "El cable USB sirve tanto para programar como para alimentar la placa en proyectos simples."
+    ],
+    "ejemplos": [
+      "Mostrar la placa Uno conectada por USB y señalar el LED que titila al recibir energía.",
+      "Pasar una placa Nano y una Mega por los bancos para que comparen tamaño y cantidad de pines.",
+      "Mostrar fotos de proyectos terminados: brazo robótico, estación meteorológica, cerradura con RFID."
+    ]
+  }
+}

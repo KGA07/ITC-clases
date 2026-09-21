@@ -1,0 +1,172 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 4,
+    "titulo": "Pines de conexión de la placa",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a conocer los pines de la placa, diferenciar entradas y salidas, y entender la diferencia entre señales analógicas y digitales para conectar bien cada componente.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 4 - Pines de conexión de la placa",
+  "objetivos": [
+    "Identificar los pines de alimentación, digitales y analógicos de la placa.",
+    "Diferenciar entradas y salidas y su función en un circuito.",
+    "Comprender la diferencia entre señal digital y señal analógica.",
+    "Localizar los pines correctos para cada tipo de componente."
+  ],
+  "teoria": [
+    {
+      "titulo": "La anatomía de la placa",
+      "emoji": "🧩",
+      "imagen": {
+        "src": "img/arduino-pinout.jpg",
+        "alt": "Diagrama de pines de Arduino Uno",
+        "caption": "Cada pin de la placa tiene un número y una función específica."
+      },
+      "parrafos": [
+        "Los pines son los puntos de conexión de la placa: ahí se insertan los cables que llevan la señal a los componentes. Cada pin tiene un número y una función.",
+        "La placa tiene pines de alimentación (5V, 3.3V y GND), pines digitales numerados y pines analógicos marcados con la letra A. Saber cuál usar te evita dañar los componentes."
+      ],
+      "puntos": [
+        "5V y 3.3V: entregan energía para alimentar sensores y módulos.",
+        "GND: tierra o masa, el punto de referencia de todo el circuito.",
+        "Pines digitales (0 a 13): leen o escriben valores digitales.",
+        "Pines analógicos (A0 a A5): leen señales analógicas de 0 a 1023."
+      ]
+    },
+    {
+      "titulo": "Entradas y salidas",
+      "emoji": "↔️",
+      "parrafos": [
+        "Cada pin digital se puede configurar como entrada (para leer datos, por ejemplo de un pulsador o un sensor) o como salida (para enviar señal, por ejemplo a un LED o un buzzer).",
+        "La configuración se hace en setup() con pinMode(): declarás el número de pin y su modo, INPUT o OUTPUT. Usar el modo correcto evita lecturas falsas y sobrecargas."
+      ],
+      "puntos": [
+        "pinMode(13, OUTPUT): el pin 13 entrega señal hacia afuera.",
+        "pinMode(2, INPUT): el pin 2 lee la señal que llega.",
+        "Sin pinMode, el pin no sabe si debe leer o escribir.",
+        "Los pines analógicos solo funcionan como entrada en el Uno."
+      ]
+    },
+    {
+      "titulo": "Señal digital vs señal analógica",
+      "emoji": "📶",
+      "imagen": {
+        "src": "img/arduino-mega.jpg",
+        "alt": "Placa Arduino Mega",
+        "caption": "Placas como la Mega dan más pines, pero los principios son los mismos."
+      },
+      "parrafos": [
+        "Una señal digital tiene solo dos estados: HIGH (encendido, 5V) o LOW (apagado, 0V). Es como un interruptor: prende o apaga. La mayoría de los componentes interactivos usan señales digitales.",
+        "Una señal analógica varía de forma continua. Un potenciómetro o un sensor de temperatura entregan valores analógicos que el pin analógico lee como números del 0 al 1023."
+      ],
+      "puntos": [
+        "Digital: HIGH (1) o LOW (0), por ejemplo para prender y apagar un LED.",
+        "Analógico: valores variables de 0 a 1023, por ejemplo temperatura o luz.",
+        "Los pines digitales leen/escriben digital, los pines A leen analógico.",
+        "La placa convierte lo analógico a número con su conversor internamente."
+      ]
+    },
+    {
+      "titulo": "Cómo elegir el pin correcto",
+      "emoji": "🎯",
+      "parrafos": [
+        "Antes de cablear, hacé estas tres preguntas: ¿el componente entrega o recibe señal? ¿Es digital o analógico? ¿Necesita alimentación aparte? Con esas respuestas elegís el pin y evitás conexiones fallidas.",
+        "Una buena regla: los componentes que prende y apaga la placa van a pines digitales; los que miden valores variables van a pines analógicos; y todo lo que necesita 5V se conecta también a la línea de alimentación."
+      ],
+      "puntos": [
+        "LED, buzzer y relay: salidas digitales.",
+        "Pulsador y sensores digitales: entradas digitales.",
+        "Potenciómetro y sensores analógicos: pines A0 a A5.",
+        "Siempre compartí el GND entre la placa y los sensores."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "¿Dónde conecto cada cosa?",
+      "consigna": "Resolvé el quiz eligiendo el pin y el modo correctos para cada componente.",
+      "pasos": [
+        "Tené el esquema de pines delante para consultarlo.",
+        "Pensá primero si el componente es entrada o salida.",
+        "Pensá después si la señal es digital o analógica."
+      ],
+      "entrega": "Respuestas del quiz en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué hace GND en el circuito?",
+            "opciones": ["Entrega 5V de energía", "Es el punto de referencia o tierra de todo el circuito", "Lee señales analógicas", "Solo conecta motores"],
+            "correcta": "Es el punto de referencia o tierra de todo el circuito"
+          },
+          {
+            "pregunta": "¿Qué función se usa en setup() para configurar un pin?",
+            "opciones": ["delay()", "pinMode()", "Serial.print()", "highMode()"],
+            "correcta": "pinMode()"
+          },
+          {
+            "pregunta": "¿En qué modo se configura un pin que lee un pulsador?",
+            "opciones": ["OUTPUT", "INPUT", "POWER", "ANALOG"],
+            "correcta": "INPUT"
+          },
+          {
+            "pregunta": "¿Qué valores lee un pin analógico?",
+            "opciones": ["0 y 1", "0 a 1023", "0 a 255", "1 a 10"],
+            "correcta": "0 a 1023"
+          },
+          {
+            "pregunta": "Si querés prender y apagar un LED, ¿qué pin elegís?",
+            "opciones": ["Un pin digital configurado como OUTPUT", "Un pin analógico", "El pin 5V", "El pin GND"],
+            "correcta": "Un pin digital configurado como OUTPUT"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Cableá vos los pines",
+      "consigna": "Identificá sobre una placa real los grupos de pines y registralos.",
+      "pasos": [
+        "Tomá la placa y ubicala con el USB hacia vos.",
+        "Marca con cinta de papel los grupos: alimentación (5V, 3.3V, GND), digitales (0-13) y analógicos (A0-A5).",
+        "Anotá en el cuaderno qué componentes de tu kit se conectan en cada grupo.",
+        "Elegí tres pines digitales y tres pines analógicos y escribí su número.",
+        "Compartí el resultado con tu compañero y compará."
+      ],
+      "entrega": "Foto o esquema de tu placa con los grupos de pines rotulados."
+    }
+  ],
+  "entrega": "El docente revisará el esquema rotulado de pines y las respuestas del quiz.",
+  "lectura": "Los pines son los portales de la placa: por alimentación circula la energía, por los digitales viajan los estados encendido/apagado y por los analógicos los valores continuos. Elegir bien el pin y el modo es la mitad de un circuito que funciona.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Entregar placas y pedir que observen los pines sin tocar nada", "min": "10 min" },
+      { "titulo": "Grupos de pines", "que": "Recorrer alimentación, digitales y analógicos sobre la placa real", "min": "20 min" },
+      { "titulo": "Entradas y salidas", "que": "Explicar pinMode INPUT/OUTPUT con ejemplos", "min": "20 min" },
+      { "titulo": "Digital vs analógico", "que": "Diferenciar HIGH/LOW de valores 0-1023 con ejemplos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la rotulación y el esquema de pines por parejas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Quiz interactivo y corrección conjunta", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar la placa con un enchufe múltiple: algunos puntos dan energía y otros llevan datos.",
+      "Preguntar qué pasa si enchufás un componente en el pin equivocado para fomentar el cuidado."
+    ],
+    "aclarar": [
+      "Los pines 0 y 1 se usan para comunicación por Serial en algunos programas: verificá conflictos.",
+      "Un pin digital configurado como salida no debe conectarse directo a otro pin.",
+      "En el Uno, los pines analógicos A0-A5 no pueden emitir voltaje constante analógico (eso se logra con PWM)."
+    ],
+    "ejemplos": [
+      "Conectar un LED al pin 13 en vivo y prenderlo con digitalWrite mientras se ve el cableado.",
+      "Mostrar la diferencia de lectura de un potenciómetro en la consola Serial.",
+      "Comparar la cantidad de pines del Uno con la Mega que ya vimos."
+    ]
+  }
+}

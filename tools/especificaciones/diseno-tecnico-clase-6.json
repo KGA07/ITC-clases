@@ -1,0 +1,169 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 6,
+    "titulo": "Modificación II: empalme, chaflán, matriz y simetría",
+    "modulo": "Módulo 1 – Fundamentos de AutoCAD",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a redondear esquinas con empalme, cortarlas con chaflán, multiplicar objetos con matrices y generar espejos simétricos en un solo paso.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 6 - Funciones de modificación II",
+  "objetivos": [
+    "Empalmar objetos curvándolos con un radio determinado.",
+    "Aplicar chaflán con distancias sobre aristas y esquinas.",
+    "Crear matrices rectangulares, polares y de camino.",
+    "Usar la simetría para generar reflejos exactos de objetos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Empalme (redondeo)",
+      "emoji": "🌀",
+      "imagen": {
+        "src": "img/empalme.jpg",
+        "alt": "Empalme y chaflán en esquinas",
+        "caption": "El empalme redondea la esquina; el chaflán la corta en bisel."
+      },
+      "parrafos": [
+        "El empalme (EMPALME o F) une dos objetos con un arco de radio definido. Con radio 0 termina por recortar o alargar las dos líneas hasta que se toquen, muy útil para limpiar esquinas.",
+        "También empalma polilíneas completas y arcos con líneas."
+      ],
+      "puntos": [
+        "Configurar el radio antes: opción 'Radio' del comando.",
+        "Hacer clic sobre los dos objetos a unir.",
+        "Radio 0 une las líneas en un vértice limpio.",
+        "Se puede aplicar a todo un contorno de polilínea con la opción 'Polilínea'."
+      ]
+    },
+    {
+      "titulo": "Chaflán",
+      "emoji": "📐",
+      "parrafos": [
+        "El chaflán (CHAFLAN o CHA) corta una esquina en bisel definiendo dos distancias o una distancia y un ángulo. Es típico en piezas mecánicas para eliminar aristas vivas."
+      ],
+      "puntos": [
+        "Configurar distancias con la opción 'Distancia'.",
+        "Hacer clic sobre la primera y la segunda arista.",
+        "Alternativa por ángulo: define la pendiente del bisel.",
+        "Con distancias 0 une las aristas en un vértice."
+      ]
+    },
+    {
+      "titulo": "Matrices: rectangular, polar y de camino",
+      "emoji": "🔢",
+      "imagen": {
+        "src": "img/matriz.jpg",
+        "alt": "Patrón repetido en matriz",
+        "caption": "La matriz repite un objeto en filas, en círculo o siguiendo un camino."
+      },
+      "parrafos": [
+        "La matriz (MATRIZ o AR) multiplica objetos seleccionados siguiendo tres patrones: rectangular (filas y columnas), polar (alrededor de un centro en círculo) y camino (a lo largo de una curva)."
+      ],
+      "puntos": [
+        "Rectangular: se define número de filas, columnas y separaciones.",
+        "Polar: punto central, cantidad de elementos y ángulo total.",
+        "Camino: se elige una curva guía y el número de copias.",
+        "Se puede editar la matriz con los pinzamientos después de crearla."
+      ]
+    },
+    {
+      "titulo": "Simetría",
+      "emoji": "🪞",
+      "imagen": {
+        "src": "img/simetria.jpg",
+        "alt": "Simetría de un objeto",
+        "caption": "La simetría crea el reflejo exacto de un objeto respecto de un eje."
+      },
+      "parrafos": [
+        "SIMETRIA (MI) crea una copia reflejada de los objetos seleccionados respecto de un eje que definís con dos puntos. Antes de terminar AutoCAD pregunta si querés borrar el original."
+      ],
+      "puntos": [
+        "Seleccionar los objetos, luego el eje de simetría (dos puntos).",
+        "El eje puede ser vertical, horizontal o inclinado.",
+        "Responder Sí/No para borrar los objetos originales.",
+        "Ideal para plantas de viviendas con lados iguales o piezas mecánicas simétricas."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá los conceptos de modificación II",
+      "consigna": "Respondé el interactivo sobre empalme, chaflán, matriz y simetría.",
+      "pasos": [
+        "Recorré las herramientas del panel Modificar.",
+        "Evaluá en qué figura se aplicaría cada una.",
+        "Respondé las 5 preguntas del repaso interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con ejemplos dibujados al momento.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué comando redondea una esquina con un arco?",
+            "opciones": ["CHAFLAN", "EMPALME", "RECORTA", "MATRIZ"],
+            "correcta": "EMPALME"
+          },
+          {
+            "pregunta": "¿Qué radio usa el empalme para unir dos líneas en un vértice limpio?",
+            "opciones": ["Radio 0", "Radio 50", "Radio 90", "No usa radio"],
+            "correcta": "Radio 0"
+          },
+          {
+            "pregunta": "¿Qué matriz repite objetos alrededor de un centro?",
+            "opciones": ["Rectangular", "Polar", "Camino", "Base"],
+            "correcta": "Polar"
+          },
+          {
+            "pregunta": "¿Cuántos puntos definen el eje de simetría?",
+            "opciones": ["Uno", "Dos", "Tres", "Cuatro"],
+            "correcta": "Dos"
+          },
+          {
+            "pregunta": "¿Qué herramienta corta una esquina en bisel?",
+            "opciones": ["Empalme", "Chaflán", "Círculo", "Polilínea"],
+            "correcta": "Chaflán"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Construí una brida con matrices y simetría",
+      "consigna": "Aplicá empalme, chaflán, matriz polar y simetría para dibujar una pieza industrial simple.",
+      "pasos": [
+        "Dibujá un cuadrado de 10 x 10.",
+        "Empalmá sus cuatro esquinas con radio 2.",
+        "En cada esquina redondeada dibujá un pequeño círculo de radio 0.5.",
+        "Aplicá una matriz polar alrededor del centro con 4 elementos.",
+        "Agregá un chaflán de 1 en un vértice y reflejaló con simetría para el costado opuesto.",
+        "Guardá como clase6-brida.dwg."
+      ],
+      "entrega": "El docente revisa el archivo final con las tres herramientas aplicadas correctamente."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase6-brida.dwg y el repaso interactivo de modificación II.",
+  "lectura": "Empalme y chaflán resuelven las esquinas de las piezas: la primera las redondea y la segunda las corta en bisel. Las matrices multiplican objetos siguiendo filas, círculos o caminos, y la simetría refleja mitades enteras de un dibujo. Dominarlas convierte un dibujo en diez sin repetir el trabajo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar modificación I y presentar las nuevas cuatro herramientas", "min": "10 min" },
+      { "titulo": "Empalme", "que": "Ejemplificar radio fijo, radio 0 y la opción polilínea", "min": "15 min" },
+      { "titulo": "Chaflán", "que": "Mostrar distancias y el método por ángulo", "min": "15 min" },
+      { "titulo": "Matrices", "que": "Crear una rectangular, una polar y una de camino en vivo", "min": "25 min" },
+      { "titulo": "Simetría", "que": "Reflejar una mitad de figura y decidir borrar o mantener el original", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso de cuándo usar cada herramienta", "min": "10 min" }
+    ],
+    "conecta": [
+      "Mostrar el patrón de una escalera circular o una rueda con agujeros: eso es una matriz polar."
+    ],
+    "aclarar": [
+      "Empalme y chaflán piden configurar radio/distancias ANTES de tocar los objetos.",
+      "La matriz polar gira las copias si está activada la rotación; si se desactiva, las copias quedan paralelas.",
+      "La simetría pregunta si borrar el original: respondé No para conservar el dibujo completo."
+    ],
+    "ejemplos": [
+      "Dibujar una rueda: círculo central + matriz polar de 6 agujeros.",
+      "Pieza mecánica con esquinas empalmadas de radio 2 y bisel de ingreso de 1x1.",
+      "Reflejar la mitad izquierda de una planta de vivienda para completar la derecha."
+    ]
+  }
+}

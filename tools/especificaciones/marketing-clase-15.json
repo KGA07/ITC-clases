@@ -34,7 +34,8 @@
         "Cada campaña tiene objetivo, presupuesto, ubicación geográfica e idioma.",
         "El panel muestra rendimiento: clics, impresiones, costo y conversiones.",
         "Es la misma cuenta donde están las facturas: vos definís cuánto y cuándo pagar."
-      ]
+      ],
+      "imagen": { "src": "img/ads.jpg", "alt": "Panel de Google Ads", "caption": "Google Ads administra campañas, presupuesto y estadísticas" }
     },
     {
       "titulo": "Estructura: Campaña → Grupo → Anuncio",
@@ -48,7 +49,8 @@
         "Anuncio: el texto y el enlace que ve la persona al buscar.",
         "Ejemplo claro: «repuestos de celular» y «repuestos de tablet» van en grupos separados.",
         "Cada grupo debe tener al menos 2 anuncios para que Google pruebe cuál rinde mejor."
-      ]
+      ],
+      "imagen": { "src": "img/estructura.jpg", "alt": "Jerarquía de estructura organizativa", "caption": "Campaña → Grupo → Anuncio: la jerarquía del SEM" }
     },
     {
       "titulo": "Palabras clave y su agrupación",
@@ -62,7 +64,8 @@
         "Comenzá con 10 a 20 palabras por grupo y ajustá con los datos reales.",
         "Mirá las búsquedas reales que activaron el anuncio para descartar irrelevantes.",
         "Revisá el índice de calidad: mejora tu posición y baja tu costo por clic."
-      ]
+      ],
+      "imagen": { "src": "img/palabras.jpg", "alt": "Búsqueda de palabras clave", "caption": "Las palabras clave deciden cuándo aparece el anuncio" }
     },
     {
       "titulo": "Presupuesto y pujas",

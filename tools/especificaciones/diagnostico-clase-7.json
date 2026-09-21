@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 7,
+    "titulo": "Tarjetas de video",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Tarjetas de video integradas y dedicadas, conectores de video, ficha de consumo",
+    "bajada": "La tarjeta de video (integrada o dedicada) genera la imagen que ves. Vas a aprender sus tipos, qué son GPU y VRAM y cómo elegirla según el uso que le des a la PC.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 7 - Tarjetas de video",
+  "objetivos": [
+    "Diferenciar tarjeta de video integrada de una dedicada.",
+    "Identificar formatos low profile y high profile.",
+    "Explicar qué son GPU, VRAM y rendimiento gráfico.",
+    "Evaluar consumo y conectores al elegir una tarjeta."
+  ],
+  "teoria": [
+    {
+      "titulo": "Funcionamiento: de la placa a la pantalla",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/tarjeta-video.jpg",
+        "alt": "Tarjeta de video dedicada con ventiladores",
+        "caption": "La tarjeta dedicada transforma los datos del sistema en imagen."
+      },
+      "parrafos": [
+        "La tarjeta de video procesa los gráficos y los envía al monitor. Cada cuadro de los juegos, el escritorio o un video requiere de una GPU que calcule píxeles y texturas."
+      ],
+      "puntos": [
+        "GPU: el procesador gráfico, corazón de la tarjeta.",
+        "VRAM: memoria propia de la tarjeta para texturas e imagen.",
+        "Trabaja en paralelo con la CPU para liberar el procesamiento.",
+        "Sin salida de video, la PC no muestra nada por ese conector."
+      ]
+    },
+    {
+      "titulo": "Integradas vs. dedicadas",
+      "emoji": "⚖️",
+      "parrafos": [
+        "La diferencia central es dónde vive el procesador gráfico: dentro de la CPU (integrada) o en una placa propia (dedicada)."
+      ],
+      "puntos": [
+        "Integrada: usa recursos de la CPU/RAM, baja consumo, sobra para oficina.",
+        "Dedicada: placa con su propia GPU y VRAM, mucho más rendimiento.",
+        "Uso recomendado: integrada para internet y ofimática; dedicada para juegos y diseño.",
+        "La dedicada se instala en un slot PCIe x16."
+      ]
+    },
+    {
+      "titulo": "Low profile y high profile",
+      "emoji": "📐",
+      "parrafos": [
+        "Las tarjetas dedicadas vienen en dos físicas según el gabinete: de perfil reducido para torres chicas y de perfil alto o gran tamaño para gabinetes estándar."
+      ],
+      "puntos": [
+        "Low profile: tarjeta bajita para gabinetes delgados (SFF).",
+        "High profile: tarjeta de tamaño estándar con doble ventilador.",
+        "Hay que medir el gabinete antes de comprar.",
+        "Además importa el largo y el consumo para elegir la fuente."
+      ]
+    },
+    {
+      "titulo": "Rendimiento y VRAM",
+      "emoji": "📈",
+      "parrafos": [
+        "A la hora de comparar, miran chip GPU, cantidad de VRAM, velocidad de memoria y resolución soportada."
+      ],
+      "puntos": [
+        "GPU: NVIDIA (GTX, RTX) o AMD (Radeon RX).",
+        "VRAM: 4 a 16 GB según gama; más VRAM, más texturas y resolución.",
+        "Rendimiento se mide en FPS (fotogramas por segundo).",
+        "Una tarjeta de gama alta exige buena fuente y refrigeración."
+      ]
+    },
+    {
+      "titulo": "Consumo y conectores",
+      "emoji": "⚡",
+      "imagen": {
+        "src": "img/gpu-nvidia.jpg",
+        "alt": "Tarjeta de video NVIDIA de gama media",
+        "caption": "Las tarjetas dedicadas necesitan energía extra desde la fuente."
+      },
+      "parrafos": [
+        "Las tarjetas dedicadas consumen más y se conectan a la fuente con conectores PCIe, además de tener sus propias salidas de video."
+      ],
+      "puntos": [
+        "Consumo típico: 75 W desde el slot hasta 300+ W en gama alta.",
+        "Conectores de energía: 6/8 pines PCIe desde la fuente.",
+        "Salidas: HDMI, DisplayPort, DVI para los monitores.",
+        "La fuente debe tener potencia y conectores suficientes."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: tarjetas de video",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre integradas, dedicadas, GPU y VRAM.",
+      "pasos": [
+        "Leé la teoría completa.",
+        "Respondé el interactivo.",
+        "Comentá las dudas."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué componente procesa los gráficos dentro de la tarjeta?",
+            "opciones": ["La GPU", "La CPU", "La fuente", "El chipset"],
+            "correcta": "La GPU"
+          },
+          {
+            "pregunta": "Una tarjeta integrada...",
+            "opciones": ["Vive dentro de la CPU/placa y comparte recursos", "Es una placa separada con VRAM propia", "No genera video nunca", "Solo sirve para juegos"],
+            "correcta": "Vive dentro de la CPU/placa y comparte recursos"
+          },
+          {
+            "pregunta": "¿Qué es la VRAM?",
+            "opciones": ["La memoria propia de la tarjeta para gráficos", "Un ventilador de la tarjeta", "El slot donde se instala", "Un tipo de cable de video"],
+            "correcta": "La memoria propia de la tarjeta para gráficos"
+          },
+          {
+            "pregunta": "Una tarjeta low profile sirve para...",
+            "opciones": ["Gabinete pequeño o delgado (SFF)", "Gabinetes gigantes con triple ventilador", "Servidores sin video", "Monitores antiguos solos"],
+            "correcta": "Gabinete pequeño o delgado (SFF)"
+          },
+          {
+            "pregunta": "¿Qué conecta la tarjeta de video a la fuente de alimentación?",
+            "opciones": ["Conectores PCIe de 6/8 pines", "Cables SATA", "Conector ATX de 24 pines", "El cable de red"],
+            "correcta": "Conectores PCIe de 6/8 pines"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Elegí la tarjeta adecuada",
+      "consigna": "Dado un uso de la PC (oficina, juegos o diseño), elegí integrada o dedicada y justificá.",
+      "pasos": [
+        "Seleccioná un caso: PC de oficina, PC gamer o PC de diseño.",
+        "Determiná si conviene tarjeta integrada o dedicada.",
+        "Indicá cuánta VRAM considerás mínima.",
+        "Calculá qué fuente se necesitaría aproximadamente.",
+        "Presentá tu elección con justificación."
+      ],
+      "entrega": "Ficha con la elección de tarjeta y su justificación."
+    }
+  ],
+  "entrega": "El docente revisará la ficha de elección y el interactivo.",
+  "lectura": "La tarjeta de video genera toda la imagen de la PC. Distinguir integrada de dedicada, entender GPU y VRAM, y conocer formatos low/high profile y consumo te permite elegir el gráfico correcto para oficina, juegos o diseño, y armar equipos equilibrados.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar GPU integrada de la clase de procesadores", "min": "10 min" },
+      { "titulo": "Integradas vs dedicadas", "que": "Explicar la diferencia con una placa integrada y una tarjeta dedicada en mano", "min": "20 min" },
+      { "titulo": "Low/high profile y formatos", "que": "Mostrar tamaños y medir en gabinetes reales", "min": "15 min" },
+      { "titulo": "GPU, VRAM y rendimiento", "que": "Comparar fichas de tarjetas y leer etiquetas", "min": "20 min" },
+      { "titulo": "Consumo y conectores", "que": "Mostrar conectores de 6/8 pines y salidas de video", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguien juega o edita video, y relacionar con la necesidad de VRAM.",
+      "Mostrar tarjetas viejas con VGA y nuevas con solo HDMI/DisplayPort."
+    ],
+    "aclarar": [
+      "La tarjeta integrada usa RAM del sistema: no suma memoria física.",
+      "VRAM y RAM son memorias distintas y no se intercambian.",
+      "Una fuente chica no puede alimentar una tarjeta de gama alta: revisar antes de comprar."
+    ],
+    "ejemplos": [
+      "Instalar una tarjeta dedicada en un slot PCIe x16 y retirarla frente a los alumnos.",
+      "Comparar el consumo en la etiqueta de una GTX y una tarjeta integrada.",
+      "Mostrar FPS distintos corriendo un juego en integrada vs dedicada."
+    ]
+  }
+}

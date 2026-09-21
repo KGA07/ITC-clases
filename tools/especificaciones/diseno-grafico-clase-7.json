@@ -1,0 +1,176 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 7,
+    "titulo": "Color, modelos de color y armonías",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a entender los modelos de color CMYK y RGB, la rueda de color y las armonías más usadas: monocromática, complementaria, tríadica y doble complementaria. Después vas a armar tu propia paleta de documento.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 7 Color",
+  "objetivos": [
+    "Explicar la diferencia entre los modelos de color CMYK y RGB.",
+    "Usar la rueda de color para construir una paleta.",
+    "Aplicar armonías monocromática, complementaria, tríadica y doble complementaria.",
+    "Crear y guardar una paleta de documento en CorelDRAW."
+  ],
+  "teoria": [
+    {
+      "titulo": "Teoría del color y la rueda cromática",
+      "emoji": "🌈",
+      "imagen": {
+        "src": "img/rueda-color.jpg",
+        "alt": "Rueda de color",
+        "caption": "La rueda de color ordena los tonos en primarios, secundarios y terciarios."
+      },
+      "parrafos": [
+        "La luz blanca se descompone en los colores que vemos. En la rueda cromática están los primarios (rojo, amarillo y azul), los secundarios (naranja, verde y violeta, producto de mezclar primarios) y los terciarios (mezclas intermedias).",
+        "Con la rueda en mente, elegir colores que combinen deja de ser cuestión de gusto: se convierte en matemática visual. Frente a un color cualquiera, la rueda te dice cuál es su opuesto, sus vecinos y sus tríadas."
+      ],
+      "puntos": [
+        "Colores primarios: rojo, amarillo y azul.",
+        "Colores secundarios: naranja, verde y violeta.",
+        "Colores complementarios: opuestos en la rueda.",
+        "La rueda organiza todas las armonías: con ella planificás la paleta."
+      ]
+    },
+    {
+      "titulo": "Modelos de color: CMYK y RGB",
+      "emoji": "🖨️",
+      "imagen": {
+        "src": "img/cmyk.jpg",
+        "alt": "Modelo de color CMYK",
+        "caption": "CMYK es el modelo de las imprentas: cian, magenta, amarillo y negro."
+      },
+      "parrafos": [
+        "RGB (Rojo, Verde, Azul) es el modelo de las pantallas: las pantallas emiten luz y suman estos tres componentes. Cuando un diseño se ve en el monitor, se está mirando en RGB.",
+        "CMYK (Cian, Magenta, Amarillo y Negro) es el modelo de la imprenta: las tintas se mezclan sobre el papel y cuanto más color se suma, más oscuro es el resultado (sustractivo). Un diseño pensado para imprimir debe definirse y revisarse en CMYK."
+      ],
+      "puntos": [
+        "RGB suma luz: se usa para pantallas, web y redes.",
+        "CMYK resta luz: se usa para imprimir en gráfica e imprenta.",
+        "El negro CMYK (K) evita tintas cargadas y da negros profundos.",
+        "Lo que ves en el monitor puede verse distinto impreso: siempre validá en CMYK."
+      ]
+    },
+    {
+      "titulo": "Armonías de color",
+      "emoji": "🎭",
+      "imagen": {
+        "src": "img/rgb.jpg",
+        "alt": "Modelo de color RGB",
+        "caption": "RGB suma luz: los diseños digitales se arman en este modelo."
+      },
+      "parrafos": [
+        "Una armonía es un conjunto de colores que, juntos, producen una sensación agradable y coherente. La monocromática usa distintos tonos de un mismo color (claro, medio, oscuro); la complementaria enfrenta dos opuestos de la rueda, generando contraste fuerte.",
+        "La tríadica toma tres colores equidistantes en la rueda (como los primarios), equilibrada y vibrante; la doble complementaria combina dos pares de complementarios, riqueza con más control. Elegida la armonía, la paleta queda definida."
+      ],
+      "puntos": [
+        "Monocromática: un solo color en distintas luminosidades.",
+        "Complementaria: dos opuestos, máximo contraste.",
+        "Tríadica: tres colores en triángulo sobre la rueda.",
+        "Doble complementaria: dos pares enfrentados para paletas ricas."
+      ]
+    },
+    {
+      "titulo": "Paletas de documento",
+      "emoji": "🎨",
+      "parrafos": [
+        "Una paleta de documento guarda SOLO los colores que usás en ese diseño. Se abre desde el menú Ventana > Paletas de colores > Paleta de documento, y con el selector de color agregás cada tono a la paleta.",
+        "Trabajar siempre con la paleta de tu documento garantiza coherencia: nunca más un rojo 'se fue' distinto porque lo elegiste al azar. La paleta se guarda con el archivo y viaja con él.",
+        "Armá la paleta ANTES de dibujar: elegí la armonía en papel o en la rueda, cargá los tonos y pintá solo desde ahí."
+      ],
+      "puntos": [
+        "Ventana > Paletas de colores abre la paleta de documento.",
+        "Los colores elegidos se agregan con un clic en 'agregar color'.",
+        "La paleta de documento se guarda junto con el archivo .cdr.",
+        "Pintar solo con la paleta evita colores sueltos incoherentes."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Mi primera paleta armada",
+      "consigna": "Elegí un color base y construí una paleta de documento con las cuatro armonías vistas, aplicando cada una a una pieza simple.",
+      "pasos": [
+        "Definí tu color base (ej. un azul) con el selector de color y anotá su código CMYK.",
+        "Creá la armonía monocromática: tres tonos del mismo azul (claro, medio, oscuro).",
+        "Armá la complementaria: tu azul y su opuesto naranja.",
+        "Armá la tríadica: tu azul con el amarillo y el rojo de sus posiciones en la rueda.",
+        "Combiná dos pares para la doble complementaria y cargá TODOS los tonos en la paleta de documento.",
+        "Dibujá un pequeño cartel o tarjeta y coloreala exclusivamente con esa paleta; guardá como paleta-nombre.cdr."
+      ],
+      "entrega": "Entregá el PNG del cartel colorado y una captura de la paleta de documento con los tonos visibles.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué modelo de color usás para un diseño que va a IMPRIMIRSE?",
+            "opciones": ["CMYK", "RGB", "TIFF", "Hex"],
+            "correcta": "CMYK"
+          },
+          {
+            "pregunta": "¿Qué colores son los opuestos en la rueda cromática?",
+            "opciones": ["Complementarios", "Monocromáticos", "Terciarios", "Grises"],
+            "correcta": "Complementarios"
+          },
+          {
+            "pregunta": "La armonía tríadica usa:",
+            "opciones": ["Tres colores equidistantes en la rueda", "Un solo color", "Solo primarios y nada más", "Dos negros"],
+            "correcta": "Tres colores equidistantes en la rueda"
+          },
+          {
+            "pregunta": "¿Para qué sirve la paleta de documento?",
+            "opciones": ["Guardar solo los colores de ese diseño", "Cambiar el idioma del programa", "Imprimir más rápido", "Aumentar el zoom"],
+            "correcta": "Guardar solo los colores de ese diseño"
+          },
+          {
+            "pregunta": "La armonía MONOCROMÁTICA consiste en:",
+            "opciones": ["Tonos de un mismo color en distintas luminosidades", "Dos colores opuestos", "Tres primarios juntos", "Colores al azar"],
+            "correcta": "Tonos de un mismo color en distintas luminosidades"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Análisis de color de una marca",
+      "consigna": "Elegí una marca conocida, identificá su paleta, clasificá su armonía en la rueda cromática y recreala en CorelDRAW con tu paleta de documento.",
+      "pasos": [
+        "Elegí una marca con colores claros (ej. un banco, una red social, un supermercado).",
+        "Identificá sus 2 o 3 colores principales mirando su sitio o su perfil.",
+        "Ubicalos en la rueda cromática y determiná qué armonía usan (complementaria, tríadica u otra).",
+        "Creá una paleta de documento con esos tonos en CorelDRAW.",
+        "Dibujá un rectángulo por cada color, etiquetalo con su función y exportá el análisis en PNG."
+      ],
+      "entrega": "Entregá el PNG del análisis con la armonía identificada y la paleta recreada."
+    }
+  ],
+  "entrega": "Se evalúa el cartel (debe usar una sola paleta coherente) y la captura de la paleta que demuestra el armado por armonías.",
+  "lectura": "El color decide la primera impresión de toda pieza publicitaria. Saber qué modelo usar (CMYK para imprimir, RGB para pantalla) evita errores de impresión carísimos, y saber construir una armonía hace que cualquier afiche parezca diseñado por un profesional. La paleta de documento vuelve esa elección sistemática: se diseña con planificación, no con prueba y error.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar qué color asociamos a distintas marcas y por qué", "min": "10 min" },
+      { "titulo": "Teoría y rueda", "que": "Recorrer la rueda cromática con primarios, secundarios y terciarios", "min": "15 min" },
+      { "titulo": "CMYK y RGB", "que": "Comparar pantalla vs impresión con ejemplos reales impresos", "min": "20 min" },
+      { "titulo": "Armonías", "que": "Mostrar las cuatro armonías sobre la rueda con ejemplos gráficos", "min": "20 min" },
+      { "titulo": "Paleta de documento y práctico", "que": "Armar la paleta por pasos y colorear el cartel desde ella", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar paletas entre alumnos y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Analizar paletas de marcas conocidas (rojo de tal refresco, azul de tal red) y ubicarlas en la rueda.",
+      "Preguntar si imprimieron una vez algo que en la pantalla se veía de un color y salió de otro: ahí entra CMYK."
+    ],
+    "aclarar": [
+      "El monitor muestra RGB siempre, aunque el archivo sea CMYK: las herramientas de conversión avisan de los colores no imprimibles.",
+      "Naranja y azul son complementarios, no 'apareados': se definen por posición en la rueda.",
+      "La paleta de documento no remplaza el selector de color: lo organiza."
+    ],
+    "ejemplos": [
+      "Mostrar un impreso y su versión en pantalla lado a lado para evidenciar el color.",
+      "Dibujar en vivo la tríada de colores primarios y la complementaria de un azul.",
+      "Cargar la paleta de un logo famoso en la paleta de documento desde el selector."
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 22,
+    "titulo": "Circuitos de integración",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Es el cierre del curso: vas a integrar todo lo aprendido en un proyecto libre que combine sensores, actuadores y pantallas para resolver un problema real con tu propio robot.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 22 - Circuitos de integración",
+  "objetivos": [
+    "Integrar sensores, actuadores y displays en un mismo circuito.",
+    "Diseñar el diagrama del proyecto en TinkerCad.",
+    "Planificar y programar por módulos una aplicación completa.",
+    "Documentar y presentar el proyecto robótico final."
+  ],
+  "teoria": [
+    {
+      "titulo": "Todos los componentes juntos",
+      "emoji": "🧩",
+      "imagen": {
+        "src": "img/proyecto-arduino.jpg",
+        "alt": "Proyecto de robot armado",
+        "caption": "Un proyecto robótico combina sensores, actuadores, pantallas y alimentación en un mismo circuito."
+      },
+      "parrafos": [
+        "A lo largo del curso probaste cada componente por separado: LEDs, pulsadores, motores, sensores, displays y módulos. En un proyecto real, todo eso convive en la misma placa y en el mismo programa.",
+        "La clave de la integración es el orden: planificá qué entrada (sensor) manda a qué salida (actuador/pantalla), y revisá los pines que ocupás para no chocar direcciones."
+      ],
+      "puntos": [
+        "Identificá entradas: sensores, pulsadores, joystick, RFIDs, IR.",
+        "Identificá salidas: LEDs, motores, relays, displays, buzzer.",
+        "Planificá el pinout de la placa antes de cablear.",
+        "Un proyecto integra módulos que ya dominaste por separado."
+      ]
+    },
+    {
+      "titulo": "Del papel al prototipo",
+      "emoji": "📐",
+      "imagen": {
+        "src": "img/robot-arduino.jpg",
+        "alt": "Robot basado en Arduino",
+        "caption": "Un robot completo combina sensores y actuadores trabajando en conjunto."
+      },
+      "parrafos": [
+        "Todo robot nace en el papel: se define el problema, las entradas que lo informan y las salidas que resuelven. Después se arma el diagrama lógico y recién ahí se conecta y programa.",
+        "En TinkerCad modelamos el circuito sin quemar nada: conectar virtualmente y ver si las señales llegan antes de tocar la protoboard real."
+      ],
+      "puntos": [
+        "Problema → entradas → salidas → pinout → diagrama.",
+        "TinkerCad: simulación previa sin riesgo.",
+        "Etapa por etapa: cablear, probar, documentar, pasar a la siguiente.",
+        "Anotá qué pin va a qué componente para no perderte."
+      ]
+    },
+    {
+      "titulo": "Programar por módulos",
+      "emoji": "📦",
+      "parrafos": [
+        "Un programa largo se escribe por partes: una función para leer sensores, otra para mostrar en pantalla, otra para manejar motores. Así, si algo falla, el error está aislado.",
+        "Las variables globales que ya conocés (estados, tiempos con millis()) permiten que los módulos dialoguen sin bloquearse: el display actualiza mientras el motor sigue su secuencia."
+      ],
+      "puntos": [
+        "Funciones: una tarea por función.",
+        "millis(): varios tiempos corriendo a la vez.",
+        "Estados con variables globales compartidas.",
+        "Probá cada módulo por separado antes de integrarlo."
+      ]
+    },
+    {
+      "titulo": "Documentar y presentar",
+      "emoji": "🎓",
+      "parrafos": [
+        "El último paso del curso es documentar: qué problema resuelve, qué componentes usa, cómo está cableado (foto del montaje) y cómo funciona el programa comentado. Después se presenta a la clase.",
+        "Una buena presentación es breve y en orden: el problema, el plan, el circuito, la demo en vivo y las lecciones aprendidas."
+      ],
+      "puntos": [
+        "Armá una carpeta: foto, esquema y sketch comentado.",
+        "Prepará la demo: mostrá el proyecto en funcionamiento.",
+        "Contá qué aprendiste y qué harías distinto.",
+        "Terminala con un video corto para mostrar fuera de clase."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Proyecto integrador",
+      "consigna": "Respondé el quiz final sobre el curso y la integración.",
+      "pasos": [
+        "Repasá los sensores y actuadores del kit.",
+        "Pensá qué entradas y salidas elegirías para tu robot.",
+        "Recordá la metodología: papel, diagrama, circuito, código."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es el primer paso de un proyecto robótico?",
+            "opciones": ["Conectar todo rapidito", "Definir el problema y planificar", "Comprar más LEDs", "Subir un código random"],
+            "correcta": "Definir el problema y planificar"
+          },
+          {
+            "pregunta": "¿Para qué sirve el pinout o mapa de pines?",
+            "opciones": ["Para saber qué pin va a cada componente", "Para decorar el protoboard", "Para gastar cables", "Para el manual del teléfono"],
+            "correcta": "Para saber qué pin va a cada componente"
+          },
+          {
+            "pregunta": "¿Qué comando evita que un delay() frene todo el proyecto?",
+            "opciones": ["millis()", "noDelay()", "pause()", "Serial.read()"],
+            "correcta": "millis()"
+          },
+          {
+            "pregunta": "¿Qué variable global y estados permiten que los módulos dialoguen?",
+            "opciones": ["Los estados con variables globales", "Los delays largos", "Las fotos", "El color de los cables"],
+            "correcta": "Los estados con variables globales"
+          },
+          {
+            "pregunta": "¿Qué herramienta permite probar el circuito sin quemar componentes?",
+            "opciones": ["TinkerCad", "El Monitor Serie", "El Multímetro", "El destornillador"],
+            "correcta": "TinkerCad"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mi robot final",
+      "consigna": "Diseñá y armá tu proyecto integrador en TinkerCad y en el kit real.",
+      "pasos": [
+        "Elegí un problema real: por ejemplo un semáforo inteligente, una estación meteorológica con LCD, o un robot que esquiva obstáculos.",
+        "Armá el diagrama en TinkerCad con los componentes de tu kit y verificá que las conexiones funcionen en simulación.",
+        "Definí el pinout de datos en el cuaderno antes de cablear.",
+        "Conectá el prototipo real siguiendo el plano: alimentación primero, sensores después, actuadores al final.",
+        "Escribí el programa por módulos: una función por tarea, usando millis() para los tiempos.",
+        "Integrá cada parte de a una: primero el sensor, después la pantalla, después el actuador.",
+        "Probá el circuito completo y corregí errores anotando lo que falló.",
+        "Documentá: foto del montaje, esquema, sketch comentado y un video corto de la demostración.",
+        "Presentá tu robot a la clase en 3 minutos: problema, plan, circuito y demo en vivo."
+      ],
+      "entrega": "Carpeta con foto del montaje, esquema, sketch comentado y video de la demostración."
+    }
+  ],
+  "entrega": "El docente evaluará la carpeta del proyecto y la presentación en clase.",
+  "lectura": "En esta clase cerrás el ciclo: ya sos capaz de leer el mundo (sensores), decidir (código) y moverlo (actuadores), todo en un mismo robot. Lo que sigue es tuyo: cada problema real es un nuevo proyecto esperando por una placa, un plan y tus ganas.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Recorrer todo lo aprendido en el curso con un repaso relámpago", "min": "10 min" },
+      { "titulo": "Diseño del proyecto", "que": "Guiar la elección del problema y el diagrama en TinkerCad", "min": "20 min" },
+      { "titulo": "Integración de módulos", "que": "Repasar pinout, funciones y millis() aplicadas a integrar", "min": "15 min" },
+      { "titulo": "Construcción y programación", "que": "Acompañar etapa por etapa el montaje real", "min": "30 min" },
+      { "titulo": "Documentación", "que": "Ayudar a armar la carpeta y el video de demo", "min": "10 min" },
+      { "titulo": "Presentaciones y cierre", "que": "Presentar los robots y cerrar el curso con devolución", "min": "10 min" }
+    ],
+    "conecta": [
+      "Recorrer los proyectos reales del aula: cada uno es cierre de este curso.",
+      "Preguntar qué problemas de su entorno resolverían ahora con Arduino."
+    ],
+    "aclarar": [
+      "La integración se arma de a una etapa: no conectes todo de golpe.",
+      "Los pines no se repiten: el pinout es tu mapa de orden.",
+      "millis() permite que una pantalla y un motor laburen juntos sin pisarse."
+    ],
+    "ejemplos": [
+      "Mostrar un proyecto completo en TinkerCad y su gemelo físico.",
+      "Repasar el semáforo integrado con pulsador de la clase 9 como base de proyecto.",
+      "Destacar trabajos anteriores: estación meteorológica, robot esquiva-obstáculos."
+    ]
+  }
+}

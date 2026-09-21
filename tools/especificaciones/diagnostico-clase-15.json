@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 15,
+    "titulo": "Sistema operativo Windows 10",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Instalador de Windows 10 (ISO o pendrive), PCs del aula",
+    "bajada": "Windows 10 es hoy el sistema más usado: instalación moderna, configuración integral y herramientas que no estaban en Windows 7. Vas a conocerlo de punta a punta y ver su diferencia generacional.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 15 - Windows 10",
+  "objetivos": [
+    "Instalar Windows 10 desde un pendrive booteable.",
+    "Configurar el sistema al primer arranque (cuentas, privacidad, actualizaciones).",
+    "Comparar Windows 10 con Windows 7 en interfaz y herramientas.",
+    "Identificar las novedades clave de Windows 10 (Edge, Cortana, Configuración)."
+  ],
+  "teoria": [
+    {
+      "titulo": "Windows 10: instalación",
+      "emoji": "💿",
+      "imagen": {
+        "src": "img/windows10.jpg",
+        "alt": "Escritorio de Windows 10",
+        "caption": "Windows 10 unifica escritorio, tabletas y equipos táctiles."
+      },
+      "parrafos": [
+        "Windows 10 se instala igual que Windows 7, pero más rápido y con opciones extra. El instalador se obtiene con la herramienta Media Creation Tool o como ISO descargada."
+      ],
+      "puntos": [
+        "Medios: pendrive con la ISO o la Media Creation Tool.",
+        "Durante la instalación: idioma, edición (Home/Pro) y partición de destino.",
+        "Los equipos nuevos traen el sistema activado por UEFI.",
+        "La instalación pide reiniciar y repetir el proceso de configuración."
+      ]
+    },
+    {
+      "titulo": "Configuración inicial",
+      "emoji": "🛠️",
+      "imagen": {
+        "src": "img/win10-config.jpg",
+        "alt": "Configuración de Windows 10",
+        "caption": "La app Configuración concentra sistema, red, privacidad y cuentas."
+      },
+      "parrafos": [
+        "El primer arranque de Windows 10 ofrece opciones de cuenta, privacidad y conectividad. Elegirlas bien (o desactivar lo que no se usa) define una instalación limpia."
+      ],
+      "puntos": [
+        "Cuenta local o cuenta Microsoft.",
+        "Opciones de privacidad: ubicación, telemetría y publicidad.",
+        "Conexión a red e instalación de actualizaciones iniciales.",
+        "Windows Hello y PIN como opción de ingreso."
+      ]
+    },
+    {
+      "titulo": "Diferencias con Windows 7",
+      "emoji": "⚖️",
+      "parrafos": [
+        "Windows 7 y Windows 10 son hermanos lejanos: misma familia, interfaz y herramientas muy cambiadas."
+      ],
+      "puntos": [
+        "Menú Inicio: se modernizó con Live Tiles y buscador potente.",
+        "App Configuración reemplaza de a poco al Panel de control.",
+        "Edge reemplaza a Internet Explorer.",
+        "Windows Update: más automático, cumple con el modelo de servicio continuo."
+      ]
+    },
+    {
+      "titulo": "Novedades y herramientas clave",
+      "emoji": "✨",
+      "parrafos": [
+        "Windows 10 agrega utilidades que no estaban antes: asistentes, multitarea avanzada y centro de notificaciones."
+      ],
+      "puntos": [
+        "Cortana: asistente por voz (regional).",
+        "Vistas de tareas y escritorios virtuales.",
+        "Centro de notificaciones y modo noche.",
+        "Clipboard en la nube y configuración de múltiples monitores."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: Windows 10",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre instalación, configuración y diferencias.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Explorá tu Windows 10 para confirmar lo aprendido."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Con qué herramienta de Microsoft se obtiene el instalador de Windows 10?",
+            "opciones": ["Media Creation Tool", "Rufus", "CCleaner", "Paint"],
+            "correcta": "Media Creation Tool"
+          },
+          {
+            "pregunta": "¿Qué app moderna reemplaza en gran parte al Panel de control?",
+            "opciones": ["Configuración", "Administrador de tareas", "Explorador", "Bloc de notas"],
+            "correcta": "Configuración"
+          },
+          {
+            "pregunta": "¿Qué navegador reemplaza a Internet Explorer en Windows 10?",
+            "opciones": ["Edge", "Mosaic", "Netscape", "Mozilla"],
+            "correcta": "Edge"
+          },
+          {
+            "pregunta": "En el primer arranque de Windows 10 podés elegir...",
+            "opciones": ["Cuenta local o cuenta Microsoft", "El modelo del disco", "El voltaje de la fuente", "La cantidad de núcleos"],
+            "correcta": "Cuenta local o cuenta Microsoft"
+          },
+          {
+            "pregunta": "¿Cuál NO es una novedad de Windows 10 frente a Windows 7?",
+            "opciones": ["El Panel de control clásico como única opción", "Los escritorios virtuales", "El centro de notificaciones", "El buscador potente del Inicio"],
+            "correcta": "El Panel de control clásico como única opción"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Configuración guiada de Windows 10",
+      "consigna": "Recorré y optimizá las opciones de Configuración de la PC del aula.",
+      "pasos": [
+        "Creá la cuenta de usuario que corresponda (local o Microsoft).",
+        "Ajustá las opciones de privacidad según recomendaciones.",
+        "Configurá el idioma, la fecha y la hora.",
+        "Explorá la herramienta 'Verificar estado de Windows' o actualización.",
+        "Anotá qué ajustes cambié y por qué."
+      ],
+      "entrega": "Lista de ajustes aplicados con su justificación."
+    }
+  ],
+  "entrega": "El docente revisará la lista de ajustes y el interactivo.",
+  "lectura": "Windows 10 es la evolución moderna de Windows 7: instalación con Media Creation Tool, configuración integral desde la app Configuración y un puñado de novedades (Edge, escritorios virtuales, centro de notificaciones). Dominarlo te deja listo para el parque informático actual.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Comparar con Windows 7 visto en las clases anteriores", "min": "10 min" },
+      { "titulo": "Instalación de Windows 10", "que": "Recorrer el instalador con la Media Creation Tool en vivo", "min": "20 min" },
+      { "titulo": "Configuración inicial", "que": "Configurar usuario, privacidad y red en una PC real", "min": "20 min" },
+      { "titulo": "Diferencias 7 vs 10", "que": "Comparar lado a lado menú Inicio, Explorer, Configuración y Edge", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Guiar el recorrido de Configuración en cada equipo", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar quién usa Windows 10 en casa y qué extrañan o valoran frente al 7.",
+      "Mostrar en vivo el buscador del Inicio resolviendo una tarea."
+    ],
+    "aclarar": [
+      "Windows 7 dejó de recibir soporte: explicar riesgos de seguridad.",
+      "La cuenta Microsoft sincroniza datos en la nube: mostrar diferencias con la local.",
+      "El Panel de control sigue existiendo, pero Configuración es el camino principal."
+    ],
+    "ejemplos": [
+      "Crear un escritorio virtual y mover ventanas entre ellos.",
+      "Mostrar el centro de notificaciones y el modo noche.",
+      "Buscar 'configuración de pantalla' desde el Inicio y abrirla."
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 13,
+    "titulo": "Textos y tablas",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a insertar, modificar y configurar textos, a administrar estilos de tabla y a completar el plano con rótulos y listados de información técnica.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 13 - Textos y tablas",
+  "objetivos": [
+    "Insertar texto de una línea y texto múltiple (MText).",
+    "Modificar y configurar las propiedades del texto.",
+    "Crear estilos de tabla con el administrador de estilos.",
+    "Insertar textos y tablas de datos en el plano."
+  ],
+  "teoria": [
+    {
+      "titulo": "Texto de una línea y texto múltiple",
+      "emoji": "🔤",
+      "imagen": {
+        "src": "img/textos.jpg",
+        "alt": "Textos en un plano técnico",
+        "caption": "Los textos de una línea se usan para rótulos cortos; los múltiples para párrafos de notas."
+      },
+      "parrafos": [
+        "El texto de una línea (TEXTO o DT) escribe rótulos simples como nombres de ambientes o títulos. El texto múltiple (TEXTOM o MT) abre un editor con párrafos, negrita, listas y colores, ideal para notas técnicas y especificaciones."
+      ],
+      "puntos": [
+        "TEXTO: una sola línea rápida; Enter escribe, Enter confirma.",
+        "TEXTOM: cuadro de editor con formato completo.",
+        "Se elige altura, ángulo y justificación al crearlos.",
+        "Ambos se reutilizan con el estilo de texto configurado."
+      ]
+    },
+    {
+      "titulo": "Modificación y configuración de texto",
+      "emoji": "✏️",
+      "parrafos": [
+        "Un texto se modifica haciendo doble clic sobre él o con PROPIEDADES: ahí se cambia contenido, altura, estilo, capa y rotación. Los estilos de texto (ESTILO) agrupan la fuente, la altura y la inclinación para que todo el plano hable con la misma letra."
+      ],
+      "puntos": [
+        "Doble clic para editar el contenido.",
+        "Propiedades cambia altura, capa, rotación y estilo.",
+        "ESTILO administra las fuentes y alturas de los estilos.",
+        "Los estilos de texto van de la mano con las normas de rótulos."
+      ]
+    },
+    {
+      "titulo": "Administrador de estilos de tabla",
+      "emoji": "📊",
+      "imagen": {
+        "src": "img/tablas.jpg",
+        "alt": "Tabla de datos en el plano",
+        "caption": "Las tablas bajan de celdas y columnas configuradas que se editan como hojas de cálculo."
+      },
+      "parrafos": [
+        "Las tablas de AutoCAD insertan una grilla con texto dentro, configurable en columnas, filas y estilos. El administrador de estilos de tabla crea y modifica los estilos: apariencia de encabezado, datos y bordes.",
+        "La grilla tiene propiedades de celdas que se pueden unir, dividir y alinear."
+      ],
+      "puntos": [
+        "TABLA inserta la grilla en el dibujo.",
+        "Administrador de estilos: nuevo o modificar estilos existentes.",
+        "Se puede vincular datos desde Excel u otros orígenes.",
+        "Las celdas se editan como una mini planilla de cálculo."
+      ]
+    },
+    {
+      "titulo": "Inserción de textos y tablas al plano",
+      "emoji": "📝",
+      "parrafos": [
+        "En el plano final se combinan rótulos cortos (nombres de ambientes, títulos de vistas) con tablas de datos (listado de aberturas, planilla de locales, nomenclatura de materiales). Todo esto se coloca sobre su capa de ANOTACIÓN o TEXTO.",
+        "El resultado es lo que después va integrando la presentación final del plano."
+      ],
+      "puntos": [
+        "Ubicar los textos en capa propia (por ejemplo TEXTO).",
+        "Tablas para listados: aberturas, revestimientos, carpinterías.",
+        "Mantener la coherencia de alturas entre textos cercanos.",
+        "Revisar que nada quede superpuesto a la geometría."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá textos y tablas",
+      "consigna": "Respondé el interactivo sobre texto de línea, texto múltiple y estilos de tabla.",
+      "pasos": [
+        "Probá el comando TEXTO y TEXTOM sobre tu dibujo.",
+        "Explorá el administrador de estilos.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con ejemplos a la vista.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué comando escribe un párrafo con editor completo?",
+            "opciones": ["TEXTO", "TEXTOM", "ESTILO", "TABLA"],
+            "correcta": "TEXTOM"
+          },
+          {
+            "pregunta": "¿Cómo se modifica el contenido de un texto ya existente?",
+            "opciones": ["Borrándolo", "Doble clic sobre él", "Reiniciando AutoCAD", "Con Rastreo Polar"],
+            "correcta": "Doble clic sobre él"
+          },
+          {
+            "pregunta": "¿Qué administra las fuentes y alturas de los textos?",
+            "opciones": ["Estilo de texto", "Estilo de tabla", "Capa 0", "Design Center"],
+            "correcta": "Estilo de texto"
+          },
+          {
+            "pregunta": "¿Para qué sirven las tablas en un plano?",
+            "opciones": ["Dibujar muros", "Listados de datos como aberturas y materiales", "Acotar", "Imprimir"],
+            "correcta": "Listados de datos como aberturas y materiales"
+          },
+          {
+            "pregunta": "¿Qué se define en el administrador de estilos de tabla?",
+            "opciones": ["El grosor de los muros", "La apariencia de encabezados, datos y bordes", "Los colores de la cinta", "Las unidades"],
+            "correcta": "La apariencia de encabezados, datos y bordes"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Rótulos y listado de aberturas",
+      "consigna": "Agregá a tu plano un rótulo de ambiente y una tabla con el listado de aberturas de la vivienda.",
+      "pasos": [
+        "Con TEXTO, escribí el nombre de cada ambiente de la planta.",
+        "Con TEXTOM agregá una nota técnica de dos renglones al pie del plano.",
+        "Creá una tabla nueva con 4 columnas: Abertura, Ancho, Alto y Cantidad.",
+        "Completá la tabla con las puertas y ventanas reales de tu planta.",
+        "Configurá un estilo de tabla y aplicáselo.",
+        "Guardá como clase13-textos.dwg."
+      ],
+      "entrega": "El docente revisa el archivo: textos configurados y tabla de aberturas completa."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase13-textos.dwg con los textos y la tabla de aberturas.",
+  "lectura": "El texto pone nombre y explicación al dibujo: rótulos de ambiente con TEXTO y notas técnicas con TEXTOM. Las tablas ordenan los datos de aberturas, materiales y cantidades. Configurar estilos de texto y de tabla mantiene todo el plano con una letra y un formato coherente, como marca la práctica profesional.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar el plano acotado y presentar la anotación con texto y tablas", "min": "10 min" },
+      { "titulo": "TEXTO y TEXTOM", "que": "Crear rótulos y notas con ambos comandos", "min": "20 min" },
+      { "titulo": "Modificación y estilos", "que": "Editar texto con doble clic y configurar estilos de texto", "min": "20 min" },
+      { "titulo": "Tablas", "que": "Insertar tabla, administrar estilos y editar celdas", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el rótulo de ambientes y el listado de aberturas", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo final", "min": "5 min" }
+    ],
+    "conecta": [
+      "Pedir que encuentren rótulos y listados en el ejemplo: el plano profesional siempre mezcla dibujo y anotación."
+    ],
+    "aclarar": [
+      "TEXTO es para una línea; TEXTOM para párrafos. No conviene escribir párrafos con TEXTO.",
+      "Los estilos de tabla y de texto afectan a todo el dibujo que los use: definilos una vez y usalos siempre.",
+      "Las tablas se insertan sobre la capa indicada; verificá que no quede en la capa 0."
+    ],
+    "ejemplos": [
+      "Escribir 'DORMITORIO' con TEXTO y una nota de especificación con TEXTOM.",
+      "Crear el listado de aberturas real de la planta: Puerta 0,80 x 2,10 - 2 unidades.",
+      "Aplicar un estilo de tabla con encabezado en cursiva y datos centrados."
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 3,
+    "titulo": "Estructura básica de un programa Arduino",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a escribir tu primer programa completo: entenderás qué son setup() y loop(), y vas a cargar tu primer sketch en la placa para verlo funcionar.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 3 - Estructura básica de un programa Arduino",
+  "objetivos": [
+    "Reconocer la estructura base de todo programa de Arduino.",
+    "Diferenciar las funciones setup() y loop() y su momento de ejecución.",
+    "Escribir y verificar el primer sketch sin errores de sintaxis.",
+    "Cargar un programa en la placa y comprobar su funcionamiento."
+  ],
+  "teoria": [
+    {
+      "titulo": "El esqueleto de todo programa",
+      "emoji": "🦴",
+      "imagen": {
+        "src": "img/arduino-sketch.jpg",
+        "alt": "Ventana del IDE con un sketch",
+        "caption": "Todo sketch de Arduino contiene siempre setup() y loop()."
+      },
+      "parrafos": [
+        "Todo programa de Arduino tiene dos funciones obligatorias: setup(), que se ejecuta una sola vez al encender la placa, y loop(), que se repite por siempre en un ciclo continuo.",
+        "En setup() se preparan los pines y configuraciones iniciales. En loop() se escribe la lógica que se ejecuta una y otra vez, como encender alternadamente dos LEDs o leer un sensor de forma continua."
+      ],
+      "puntos": [
+        "setup(): se ejecuta una sola vez al arrancar la placa.",
+        "loop(): se ejecuta de forma infinita y en bucle.",
+        "Todo lo que va dentro de las llaves { } forma un bloque de código.",
+        "Cada instrucción termina con punto y coma (;)."
+      ]
+    },
+    {
+      "titulo": "El primer sketch paso a paso",
+      "emoji": "✍️",
+      "imagen": {
+        "src": "img/arduino-uno-placa.jpg",
+        "alt": "Placa Arduino Uno conectada por USB",
+        "caption": "Conectá la placa por USB para poder cargar tu programa."
+      },
+      "parrafos": [
+        "Un sketch clásico para empezar es el que enciende y apaga el LED integrado de la placa (pin 13 del Uno). Te permite probar que todo el sistema (código + placa) funciona sin conectar ningún componente externo.",
+        "Escribí el código en el editor, presioná el botón Verificar para compilar y después Cargar para enviarlo a la placa. El LED de la placa debería parpadear."
+      ]
+    },
+    {
+      "titulo": "¿Qué pasa cuando cargás?",
+      "emoji": "🔌",
+      "parrafos": [
+        "Al presionar Cargar, el IDE compila el código (lo traduce a lenguaje de máquina) y lo envía por el cable USB al microcontrolador. La placa guarda ese programa en su memoria y lo ejecuta apenas recibe energía.",
+        "Por eso, una vez cargado el programa, podés desconectar el USB y, si alimentás la placa con una fuente, el programa sigue funcionando solo."
+      ],
+      "puntos": [
+        "Compilar: traducir el código a instrucciones que entiende el chip.",
+        "Cargar: transferir el programa por USB a la memoria de la placa.",
+        "Luego de cargar, el programa queda guardado en la placa.",
+        "Verificá siempre el modelo de placa y el puerto antes de cargar."
+      ]
+    },
+    {
+      "titulo": "Errores comunes al empezar",
+      "emoji": "🚨",
+      "parrafos": [
+        "Es normal que los primeros sketches den error. El IDE marca la línea problemática y describe el problema en la consola. Los errores más frecuentes son la falta de punto y coma, las llaves sin cerrar y escribir mal el nombre de una función."
+      ],
+      "puntos": [
+        "Punto y coma olvidado al final de una instrucción.",
+        "Llaves { } sin abrir o cerrar correctamente.",
+        "Mayúsculas: Arduino distingue tiene_tiempo de TIENE_tiempo.",
+        "Leé el mensaje de la consola: suele indicar el número de línea del error."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Estructura del programa",
+      "consigna": "Respondé el quiz sobre setup(), loop() y el proceso de carga del programa.",
+      "pasos": [
+        "Repasá las imágenes y apuntes de la teoría.",
+        "Preguntate cuándo se ejecuta cada función antes de responder.",
+        "Resolvé las cinco preguntas del interactivo."
+      ],
+      "entrega": "Respuestas del quiz anotadas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuántas veces se ejecuta setup() al encender la placa?",
+            "opciones": ["Ninguna", "Una sola vez", "Dos veces", "Un número infinito de veces"],
+            "correcta": "Una sola vez"
+          },
+          {
+            "pregunta": "¿Qué hace loop()?",
+            "opciones": ["Se ejecuta una vez al inicio", "Se ejecuta en bucle infinito", "Apaga la placa", "Solo compila el código"],
+            "correcta": "Se ejecuta en bucle infinito"
+          },
+          {
+            "pregunta": "¿Cómo termina cada instrucción en Arduino?",
+            "opciones": ["Con dos puntos ( : )", "Con punto y coma ( ; )", "Con coma ( , )", "No necesita nada"],
+            "correcta": "Con punto y coma ( ; )"
+          },
+          {
+            "pregunta": "¿Qué hace el botón Verificar (✓)?",
+            "opciones": ["Enciende la placa", "Compila el código para detectar errores", "Borra el sketch", "Desconecta el USB"],
+            "correcta": "Compila el código para detectar errores"
+          },
+          {
+            "pregunta": "Después de cargar un programa, ¿qué pasa si desconectás el USB?",
+            "opciones": ["El programa se borra", "El programa queda guardado y se ejecuta al alimentar la placa", "La placa se quema", "No se puede volver a usar"],
+            "correcta": "El programa queda guardado y se ejecuta al alimentar la placa"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mi primer parpadeo",
+      "consigna": "Cargá en tu placa el sketch Blink (LED integrado parpadeante) y comprobá su funcionamiento.",
+      "pasos": [
+        "Conectá tu Arduino por USB a la PC.",
+        "Abrí el IDE y en Archivo → Ejemplos → 01.Basics abrí Blink.",
+        "En Herramientas → Placa, seleccioná tu modelo (Uno o Nano).",
+        "En Herramientas → Puerto, elegí el puerto donde está la placa.",
+        "Presioná Verificar y esperá que compile sin errores.",
+        "Presioná Cargar y observá el LED integrado (pin 13) parpadeando cada segundo.",
+        "Cambiá el valor del delay de 1000 a 250, volvé a cargar y observá la diferencia."
+      ],
+      "entrega": "Captura del IDE con el sketch Blink compilado y el LED parpadeando."
+    }
+  ],
+  "entrega": "El docente revisará la captura con el sketch cargado y el LED parpadeando.",
+  "lectura": "setup() y loop() son la base de todo programa de Arduino: el primer bloque prepara la placa y el segundo repite la acción para siempre. Saber compilar y cargar te permite pasar del código al hardware y ver el resultado real.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar componentes del kit y preguntar qué programa escribirían primero", "min": "10 min" },
+      { "titulo": "setup() y loop()", "que": "Explicar la estructura con el Blink en el proyector", "min": "20 min" },
+      { "titulo": "Verificar y cargar", "que": "Compilar y cargar en vivo mostrando cada paso del IDE", "min": "20 min" },
+      { "titulo": "Errores comunes", "que": "Forzar errores a propósito y leer los mensajes de consola", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el sketch Blink por parejas hasta que todos parpadeen", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y recuento de errores que aparecieron", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué pasa con las luces del semáforo en la calle: se repiten en bucle. Así se conectan con loop().",
+      "Comparar setup() con acomodar la mesa antes de empezar a cocinar: una vez, al inicio."
+    ],
+    "aclarar": [
+      "setup() se ejecuta una vez pero no significa que el código ahí adentro corra una sola vez en toda la vida de la placa: se ejecuta cada vez que se conecta o resetea.",
+      "El delay() congela todo el programa durante esos milisegundos.",
+      "Cambiar solo el delay no cambia la estructura del programa: la estructura sigue siendo setup()+loop()."
+    ],
+    "ejemplos": [
+      "Escribir Blink en vivo y pedir que pronostiquen qué va a pasar antes de cargar.",
+      "Hacer parpadear el LED con delays de 1000, 500 y 100 ms para que noten el ritmo.",
+      "Mostrar el error de llave sin cerrar y resolverlo leyendo el mensaje de la consola."
+    ]
+  }
+}

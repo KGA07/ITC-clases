@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 12,
+    "titulo": "Sistema operativo Windows 7",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Instalador de Windows (ISO o pendrive), pendrives booteables, PCs del aula",
+    "bajada": "Arrancamos el módulo de software con Windows 7: instalación, configuración, arquitectura 32/64 bits y el trabajo con archivos ISO y pendrives booteables para cualquier sistema.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 12 - Windows 7",
+  "objetivos": [
+    "Instalar Windows 7 desde un pendrive booteable.",
+    "Configurar el sistema al primer arranque (idioma, usuario, hora).",
+    "Explicar la diferencia entre arquitecturas 32 y 64 bits.",
+    "Crear un pendrive booteable a partir de un archivo ISO."
+  ],
+  "teoria": [
+    {
+      "titulo": "Windows 7 y su instalación",
+      "emoji": "💿",
+      "imagen": {
+        "src": "img/windows7.jpg",
+        "alt": "Escritorio de Windows 7",
+        "caption": "Windows 7 es el clásico sistema que se usa en gran parte de los equipos del parque informático."
+      },
+      "parrafos": [
+        "Windows 7 marcó una era en las oficinas y aulas. Su instalación sigue siendo la base para entender cómo se instala cualquier Windows: elegir partición, copiar archivos y configurar por primera vez."
+      ],
+      "puntos": [
+        "Requisitos mínimos: 1 GHz, 1-2 GB de RAM, 16-20 GB de disco.",
+        "Arrancar desde pendrive o DVD con el instalador.",
+        "Elegir el idioma y la edición (Home, Professional, Ultimate).",
+        "En la parte de disco: seleccionar la partición destino."
+      ]
+    },
+    {
+      "titulo": "Configuración inicial del sistema",
+      "emoji": "🛠️",
+      "imagen": {
+        "src": "img/pendrive-booteable.jpg",
+        "alt": "Pendrive USB para instalación del sistema",
+        "caption": "Un pendrive booteable con la ISO permite instalar en cualquier PC."
+      },
+      "parrafos": [
+        "Después de copiar los archivos, Windows pide algunos datos: nombre de usuario, contraseña y zona horaria. Ese paso define el perfil del equipo."
+      ],
+      "puntos": [
+        "Nombre del equipo y nombre de usuario.",
+        "Clave si se desea (en aula puede dejarse vacía).",
+        "Idioma y formato de hora/teclado.",
+        "Verificación de red y conexión a internet."
+      ]
+    },
+    {
+      "titulo": "Arquitectura 32 y 64 bits",
+      "emoji": "🔢",
+      "parrafos": [
+        "Windows 7 se consigue en versiones de 32 bits (x86) y 64 bits (x64). La principal diferencia: la cantidad de memoria RAM que puede usar el sistema."
+      ],
+      "puntos": [
+        "32 bits (x86): usa hasta 4 GB de RAM y programas de 32 bits.",
+        "64 bits (x64): soporta RAM muy superior (8, 16, 32 GB...).",
+        "Un programa de 64 bits no corre en un sistema de 32 bits.",
+        "En equipos de hoy conviene sistemas de 64 bits."
+      ]
+    },
+    {
+      "titulo": "Archivos ISO y pendrive booteable",
+      "emoji": "💾",
+      "parrafos": [
+        "El instalador se descarga como imagen ISO (una copia exacta del disco). Para instalarlo sin lector óptico, se 'quema' esa ISO en un pendrive USB y se arranca desde él."
+      ],
+      "puntos": [
+        "ISO: archivo de imagen del disco de instalación.",
+        "Herramientas: Rufus, Ventoy o Media Tool del mismo Windows.",
+        "Seleccionar en Rufus: dispositivo, ISO y partición (MBR/GPT).",
+        "En el setup, poner el pendrive primero en el boot order."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: Windows 7 y pendrives",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre instalación y arquitectura.",
+      "pasos": [
+        "Leé la teoría completa.",
+        "Respondé el interactivo.",
+        "Revisá las respuestas con el docente."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es un archivo ISO?",
+            "opciones": ["La imagen exacta de un disco de instalación", "Un tipo de virus", "Un driver de video", "Un formato de foto"],
+            "correcta": "La imagen exacta de un disco de instalación"
+          },
+          {
+            "pregunta": "Un sistema de 64 bits puede usar...",
+            "opciones": ["Más de 4 GB de RAM", "Solo 512 MB de RAM", "Nada de RAM", "Solo un disco rígido"],
+            "correcta": "Más de 4 GB de RAM"
+          },
+          {
+            "pregunta": "¿Qué herramienta sirve para crear un pendrive booteable?",
+            "opciones": ["Rufus", "Paint", "Bloc de notas", "Calculadora"],
+            "correcta": "Rufus"
+          },
+          {
+            "pregunta": "Para arrancar desde el pendrive hay que configurar...",
+            "opciones": ["El orden de arranque en el setup", "El fondo de pantalla", "El antivirus", "La impresora"],
+            "correcta": "El orden de arranque en el setup"
+          },
+          {
+            "pregunta": "Windows 7 de 32 bits se identifica como...",
+            "opciones": ["x86", "x64", "NTFS", "GPT"],
+            "correcta": "x86"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Create un pendrive booteable",
+      "consigna": "Convertí un pendrive USB en un instalador de Windows 7 con la ISO provista.",
+      "pasos": [
+        "Conectá el pendrive y abrí Rufus.",
+        "Seleccioná el dispositivo USB correcto.",
+        "Cargá la imagen ISO de Windows 7.",
+        "Elegí el esquema de partición según el equipo (MBR/GPT).",
+        "Ejecutá la creación y verificá que el pendrive arranque."
+      ],
+      "entrega": "Pendrive booteable creado y arrancando el instalador."
+    }
+  ],
+  "entrega": "El docente verificará el pendrive booteable y el interactivo.",
+  "lectura": "Windows 7 enseña las bases de la instalación de sistemas operativos: arquitectura 32/64 bits, archivos ISO y pendrives booteables. Con estas herramientas podés instalar cualquier Windows en cualquier equipo del parque informático.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Cerrar módulo de hardware y presentar el módulo de software", "min": "10 min" },
+      { "titulo": "Windows 7 y requisitos", "que": "Explicar requisitos e instalación con capturas y equipos", "min": "20 min" },
+      { "titulo": "Configuración inicial", "que": "Recorrer los pasos de primer arranque en una PC real", "min": "15 min" },
+      { "titulo": "32 vs 64 bits", "que": "Comparar ambas arquitecturas con ejemplos de RAM y software", "min": "15 min" },
+      { "titulo": "ISO y pendrive booteable", "que": "Crear el pendrive con Rufus en vivo mientras los alumnos replican", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez formatearon una PC o intentaron instalar un sistema y cómo les fue.",
+      "Mostrar el pendrive de instalación real del aula y de dónde salió la ISO."
+    ],
+    "aclarar": [
+      "Rufus borra todo el contenido del pendrive: respaldar antes.",
+      "x86 no es solo 'viejo': es la arquitectura de 32 bits.",
+      "Instalar sobre una partición con datos NO los borra hasta confirmar el formateo."
+    ],
+    "ejemplos": [
+      "Arrancar el instalador de una PC del aula y llevarlo hasta la pantalla de particiones.",
+      "Comparar en las propiedades del sistema si es 32 o 64 bits.",
+      "Mostrar el paso 'Expandir Windows' y explicar por qué tarda."
+    ]
+  }
+}

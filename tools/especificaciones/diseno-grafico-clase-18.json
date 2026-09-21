@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 18,
+    "titulo": "Herramientas de corrección de imagen",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a limpiar, reparar y dar acabado profesional a tus fotos: pincel corrector, parche, tampón de clonar, pincel de historia y las herramientas de enfoque, exposición y saturación.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 18 Herramientas de correccion",
+  "objetivos": [
+    "Eliminar manchas e imperfecciones con el pincel corrector y el corrector puntual.",
+    "Reparar zonas grandes con el parche y el tampón de clonar.",
+    "Volver estados anteriores con el pincel de historia.",
+    "Usar desenfocar, enfocar, dedo, sobreexponer, subexponer y esponja."
+  ],
+  "teoria": [
+    {
+      "titulo": "Pincel corrector y corrector puntual",
+      "emoji": "🩹",
+      "imagen": {
+        "src": "img/retoque.jpg",
+        "alt": "Retoque de fotografía",
+        "caption": "El pincel corrector empareja textura, luz y sombra de la zona reparada."
+      },
+      "parrafos": [
+        "El pincel corrector puntual (tecla J) borra manchas con un solo clic: Photoshop inventa la textura de alrededor y la fusiona. Ideal para granitos, motas de polvo y cables finos.",
+        "El pincel corrector toma además una zona de muestra (pintando con Alt desde otra parte de la foto) y mezcla esa textura con la luz de donde estás pintando: sirve para arrugas, brillos y defectos medianos sin dejar marcas."
+      ],
+      "puntos": [
+        "Corrector puntual: un clic sobre la mancha y listo.",
+        "Pincel corrector: Alt + clic toma la muestra, luego pintás sobre el defecto.",
+        "El resultado mezcla textura, luz y sombra automáticamente.",
+        "Reducí el pincel (tecla [ ]) para detalles finos."
+      ]
+    },
+    {
+      "titulo": "Parche y tampón de clonar",
+      "emoji": "🧽",
+      "imagen": {
+        "src": "img/restauracion.jpg",
+        "alt": "Restauración de una fotografía antigua",
+        "caption": "El parche y el tampón reparan zonas grandes, como rasgaduras en fotos viejas."
+      },
+      "parrafos": [
+        "El parche selecciona un área dañada y la arrastra sobre una zona sana: el programa remplaza los defectos copiando la textura de destino. Se usa para rasgaduras, objetos a remover y regiones grandes.",
+        "El tampón de clonar copia píxeles literalmente: Alt + clic en el origen y pintás réplicas exactas donde quieras. Es la herramienta más precisa para reconstruir fondos, quitar elementos y duplicar texturas."
+      ],
+      "puntos": [
+        "Parche: seleccionás el daño y lo arrastrás sobre zona sana.",
+        "Tampón de clonar: copia píxeles exactos de la muestra.",
+        "El tampón respeta la misma distancia entre origen y destino al pintar.",
+        "Zonas grandes, texturas y fondos: la dupla parche + tampón."
+      ]
+    },
+    {
+      "titulo": "Pincel de historia y el historial",
+      "emoji": "⏮️",
+      "parrafos": [
+        "El historial (Ventana > Historial) guarda los pasos recientes como una lista. El pincel de historia pinta RESTAURANDO un estado anterior: por ejemplo, tras desenfocar todo, podés devolver la nitidez solo en los ojos usando el pincel de historia sobre ese paso.",
+        "Es la herramienta del ajuste selectivo: cambiás el estado de origen en el panel de historial y pintás esa versión sobre zonas puntuales de la imagen actual."
+      ],
+      "puntos": [
+        "El historial registra pasos recientes, no todo el trabajo.",
+        "El pincel de historia restaura un estado anterior en la zona pintada.",
+        "Fijá un 'origen' en el historial para que el pincel pinte ese estado.",
+        "Perfecto para recuperar miradas nítidas o zonas dañadas."
+      ]
+    },
+    {
+      "titulo": "Enfoque, desenfoque, dedo y exposición",
+      "emoji": "🌗",
+      "parrafos": [
+        "El grupo de herramientas de tono y enfoque pule el detalle: desenfocar suaviza zonas (fondos distractivos), enfocar acentúa bordes (ojos, texto) y el dedo embarra como si arrastraras pintura húmeda.",
+        "Sobreexponer aclara las zonas que pintás (como si les dieras más luz), subexponer las oscurece y la esponja ajusta la saturación (más o menos color). Con estas tres se modela luz y color de forma localizada."
+      ],
+      "puntos": [
+        "Desenfocar: suaviza y aleja la atención de una zona.",
+        "Enfocar: acentúa los bordes de contacto.",
+        "Sobreexponer / subexponer: aclaran u oscurecen sin cambiar la imagen entera.",
+        "La esponja controla la saturación (viveza del color) por zonas."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Limpieza de una foto de paisaje",
+      "consigna": "Tomá una foto (de las que traigas o del material) y limpiala: quitá manchas y objetos, recuperá detalles con el pincel de historia y modelá la luz con sobreexponer y subexponer.",
+      "pasos": [
+        "Abrí la foto y duplicá la capa de fondo (Ctrl + J) para trabajar sin tocar el original.",
+        "Con el corrector puntual, eliminá 3 manchas o detalles chicos (polvo, cables).",
+        "Con el parche, remové un objeto mediano arrastrándolo sobre zona limpia.",
+        "Usá el tampón de clonar para reconstruir una textura repetida (césped, pared).",
+        "Desenfocá un fondo y, con el pincel de historia, devolvé la nitidez al centro.",
+        "Con la esponja, intensificá el color del cielo; guardá como correccion-nombre.psd y exportá un JPG."
+      ],
+      "entrega": "Entregá un antes-después: el JPG original junto al JPG corregido.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué herramienta borra una mancha con un SOLO clic?",
+            "opciones": ["El corrector puntual", "El lazo", "El marco elíptico", "La pluma"],
+            "correcta": "El corrector puntual"
+          },
+          {
+            "pregunta": "¿Qué hace el TAMPÓN de clonar?",
+            "opciones": ["Copia píxeles exactos del área de muestra", "Desenfoca toda la imagen", "Agrega ruido", "Cambia el modo de color"],
+            "correcta": "Copia píxeles exactos del área de muestra"
+          },
+          {
+            "pregunta": "Para reparar una zona grande de una foto vieja arruinada, conviene:",
+            "opciones": ["El parche o el tampón", "El marco rectangular", "El texto", "La herramienta dedo sola"],
+            "correcta": "El parche o el tampón"
+          },
+          {
+            "pregunta": "El pincel de historia sirve para:",
+            "opciones": ["Restaurar un estado anterior en zonas puntuales", "Borrar el historial", "Guardar el archivo", "Cambiar la resolución"],
+            "correcta": "Restaurar un estado anterior en zonas puntuales"
+          },
+          {
+            "pregunta": "¿Qué herramienta aclara solo la zona que pintas?",
+            "opciones": ["Sobreexponer", "Desenfocar", "Subexponer", "Dedo"],
+            "correcta": "Sobreexponer"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Quitar un elemento de una foto",
+      "consigna": "Eliminá un elemento que estorba de una foto (un poste, una persona lejana o un cable) reconstruyendo el fondo con parche y tampón.",
+      "pasos": [
+        "Abrí la foto y duplicá la capa de fondo (Ctrl + J).",
+        "Identificá el elemento a quitar y elegí la escala de zoom adecuada.",
+        "Con el parche, seleccioná el elemento y arrastralo sobre una zona limpia cercana.",
+        "Con el tampón de clonar, retocá los bordes que quedaron marcados.",
+        "Compará el antes/después ocultando la capa duplicada y exportá como sin-elemento-nombre.jpg."
+      ],
+      "entrega": "Entregá el antes-después (una imagen o dos archivos) con el elemento eliminado."
+    }
+  ],
+  "entrega": "Se evalúa la limpieza de la foto (manchas y objetos removidos sin marcas) y el uso de al menos cuatro herramientas distintas documentado en el antes-después.",
+  "lectura": "La corrección de imagen es el oficio del retocador: saber cuándo usar cada herramienta deja la foto impecable sin que se note el 'arreglo'. El corrector fusiona textura, el tampón copia exacto y el pincel de historia recupera zonas puntuales. Con la luz (sobreexponer/subexponer) y la saturación (esponja) terminás de darle el look profesional a cualquier composición.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar una foto 'antes' y 'después' de retoque e invitar a adivinar las herramientas", "min": "10 min" },
+      { "titulo": "Correctores", "que": "Practicar corrector puntual y pincel corrector sobre manchas", "min": "20 min" },
+      { "titulo": "Parche y tampón", "que": "Remover objetos y reconstruir texturas en zonas grandes", "min": "20 min" },
+      { "titulo": "Historia y enfoque", "que": "Recorrer historial, pincel de historia, desenfocar y enfocar", "min": "15 min" },
+      { "titulo": "Luz y saturación", "que": "Modelar con sobreexponer, subexponer y esponja", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar antes-después y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si conocen apps de retoque del celular y comparar con herramientas profesionales.",
+      "Mostrar cómo se quitan 'turistas' de una foto: el tampón lo hace en segundos."
+    ],
+    "aclarar": [
+      "Siempre trabajar sobre una copia de la capa (Ctrl + J): el original jamás se toca.",
+      "El corrector hace magia con textura, pero el tampón es más literal y predecible.",
+      "Sobreexponer en exceso quema la foto: usar exposición baja."
+    ],
+    "ejemplos": [
+      "Quitar el polvo de una skyline con corrector puntual en vivo.",
+      "Clonar un trozo de pared para borrar un grafiti.",
+      "Aclarar solo un ojo de un retrato y mostrar la sutileza del cambio."
+    ]
+  }
+}

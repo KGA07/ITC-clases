@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 6,
+    "titulo": "Texto artístico y de párrafo",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a trabajar con texto artístico y de párrafo: inserción, edición, texto sobre trayecto y marcos adaptados a formas, más las propiedades tipográficas profesionales.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 4 Texto",
+  "objetivos": [
+    "Diferenciar texto artístico de texto de párrafo y saber cuándo usar cada uno.",
+    "Insertar y editar texto adaptado a un trayecto.",
+    "Crear marcos de texto adaptados a una forma vectorial.",
+    "Ajustar propiedades tipográficas con el panel de propiedades del texto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Texto artístico y texto de párrafo",
+      "emoji": "✍️",
+      "imagen": {
+        "src": "img/tipografia.jpg",
+        "alt": "Ejemplo de tipografía",
+        "caption": "El texto puede ser decorativo (artístico) o contenedor de contenido (párrafo)."
+      },
+      "parrafos": [
+        "CorelDRAW distingue dos tipos de texto. El texto artístico se escribe directamente apuntando con la herramienta Texto y haciendo clic en la página: es ideal para títulos, pocas palabras con mucha personalidad. El texto de párrafo se crea arrastrando un marco y permite bloques de texto con renglones que fluyen.",
+        "El texto artístico admite efectos tipográficos y deformaciones; el de párrafo es el indicado para folletos y textos largos porque maneja justificación, columnas y sangrías."
+      ],
+      "puntos": [
+        "Clic con la herramienta Texto = texto artístico.",
+        "Arrastre con la herramienta Texto = marco de texto de párrafo.",
+        "El texto artístico sirve para títulos y palabras sueltas.",
+        "El texto de párrafo ordena bloques largos con formato fluido."
+      ]
+    },
+    {
+      "titulo": "Familias tipográficas y propiedades",
+      "emoji": "🔠",
+      "imagen": {
+        "src": "img/tipos-letra.jpg",
+        "alt": "Letras y familias tipográficas",
+        "caption": "Serif, sans serif, display: cada familia comunica distinto."
+      },
+      "parrafos": [
+        "La fuente (tipografía) define el diseño de las letras. Hay familias con serifas (remates), sans serif (sin remates) y display (decorativas). La elección de fuente comunica tanto como el color: una sans serif es moderna, una con serifas transmite tradición.",
+        "Desde la barra de propiedades o el panel de propiedades del texto elegís fuente, tamaño, interletrado, interlineado, alineación y color. Con el texto seleccionado, escribís los valores exactos para un resultado profesional."
+      ],
+      "puntos": [
+        "Serif: remates en los trazos, lectura elegante y tradicional.",
+        "Sans serif: limpia y moderna, la más usada en pantalla.",
+        "El interletrado ajusta la distancia entre letras.",
+        "El interlineado ajusta la distancia entre renglones."
+      ]
+    },
+    {
+      "titulo": "Texto adaptado a trayecto",
+      "emoji": "〰️",
+      "parrafos": [
+        "El texto adaptado a trayecto hace que las palabras sigan una línea curva o una forma. Dibujás una línea o círculo (la 'ruta'), escribís el texto y desde el menú Texto > Adaptar texto a trayecto lo hacés montar sobre esa ruta.",
+        "Una vez adaptado, movés la rutinha de desplazamiento para invertir el texto o cambiar su ubicación. El texto queda pegado a la forma, y ambas se pueden mover juntas."
+      ],
+      "puntos": [
+        "Texto + trayecto = palabras que siguen la curva dibujada.",
+        "Se adapta desde el menú Texto > Adaptar texto a trayecto.",
+        "Arrastrando la marca de desplazamiento invertís el texto o lo separás.",
+        "Ideal para sellos circulares, etiquetas y logotipos con texto curvo."
+      ]
+    },
+    {
+      "titulo": "Marcos de texto adaptados a forma",
+      "emoji": "📦",
+      "parrafos": [
+        "Además de seguir una línea, el texto puede vivir DENTRO de una forma: por ejemplo, dentro de una elipse o de un rótulo. Hacés clic derecho sobre la forma con la herramienta Texto y elegís 'Insertar texto interno' (o usás el comando de adaptar texto a marco).",
+        "El marco se comporta como un contenedor: el texto fluye dentro y oculta lo que no entra, salvo que agrandes la forma o el tipo. Es la base de los rótulos y de los folletos con bloques sobre color."
+      ],
+      "puntos": [
+        "Cualquier forma vectorial puede convertirse en marco de texto.",
+        "El texto interno se ajusta al contorno de la forma.",
+        "Si el texto no entra, se desborda: podés reducir el tamaño o agrandar el marco.",
+        "Combinado con párrafos, sirve para los bloques de un folleto."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Sello circular y bloque de folleto",
+      "consigna": "Creá un sello circular con texto artístico adaptado a un círculo y un bloque de texto de párrafo dentro de un rectángulo redondeado.",
+      "pasos": [
+        "Dibujá un círculo grande con la herramienta Elipse y sin relleno.",
+        "Escribí tu nombre y el curso como texto artístico (ej. 'MARCA ITC • AÑO 2026').",
+        "Aplicá Texto > Adaptar texto a trayecto para que siga el círculo.",
+        "Con la marca de desplazamiento, acomodá el texto arriba o abajo del círculo.",
+        "Dibujá un rectángulo redondeado y convertilo en marco de texto escribiendo un párrafo de presentación.",
+        "Ajustá fuente, tamaño, interletrado y color, y guardá como texto-nombre.cdr."
+      ],
+      "entrega": "Exportá el sello circular y el bloque de texto en un solo PNG.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo creás TEXTO ARTÍSTICO con la herramienta Texto?",
+            "opciones": ["Haciendo clic en la página y escribiendo", "Arrastrando un marco", "Dibujando un círculo", "Importando una imagen"],
+            "correcta": "Haciendo clic en la página y escribiendo"
+          },
+          {
+            "pregunta": "¿Qué comando hace que el texto siga una curva?",
+            "opciones": ["Texto > Adaptar texto a trayecto", "Texto > Convertir a párrafo", "Objeto > Soldar", "Edición > Recortar"],
+            "correcta": "Texto > Adaptar texto a trayecto"
+          },
+          {
+            "pregunta": "¿Qué familia tipográfica es la más usada en pantalla por ser limpia?",
+            "opciones": ["Sans serif", "Con serifa", "Script caligráfica", "Blackletter"],
+            "correcta": "Sans serif"
+          },
+          {
+            "pregunta": "¿Qué diferencia al texto de párrafo del artístico?",
+            "opciones": ["Fluir dentro de un marco con renglones", "No se puede colorear", "Solo sirve para títulos", "No acepta fuentes"],
+            "correcta": "Fluir dentro de un marco con renglones"
+          },
+          {
+            "pregunta": "¿Cómo hace un texto para vivir DENTRO de una forma como una elipse?",
+            "opciones": ["Convirtiendo la forma en marco de texto", "Duplicando la forma", "Soldando el texto", "Haciendo zoom"],
+            "correcta": "Convirtiendo la forma en marco de texto"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Cartel tipográfico de dos familias",
+      "consigna": "Combiná texto artístico y de párrafo en un mini cartel: un título impactante, un subtítulo y un bloque de presentación dentro de un marco.",
+      "pasos": [
+        "Creá un documento A4 y escribí un título con texto artístico de al menos 5 palabras.",
+        "Elegí para el título una tipografía display o sans serif de gran tamaño.",
+        "Agregá un subtítulo más chico en una familia contrastante.",
+        "Creá un bloque de texto de párrafo con una presentación de 3 o 4 renglones.",
+        "Ajustá interletrado e interlineado para que todo respire y exportá como cartel-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del cartel y anotá qué familias tipográficas usaste y por qué."
+    }
+  ],
+  "entrega": "Se entrega el PNG con el sello circular (texto sobre trayecto) y el bloque en marco, con tipografía y color elegidos coherentemente para una marca personal.",
+  "lectura": "El texto es la mitad de la comunicación visual. CorelDRAW separa el texto artístico (para impactar) del de párrafo (para informar), y la verdadera destreza está en combinarlos: un título sobre un trayecto curvo y una descripción en párrafo dentro de un marco redondeado ya es una pieza publicitaria. La tipografía también comunica: elegir bien la fuente es parte del diseño.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar sellos y folletos con texto curvo y preguntar cómo se hicieron", "min": "10 min" },
+      { "titulo": "Textos artístico y de párrafo", "que": "Insertar ambos tipos y ver diferencias de comportamiento", "min": "20 min" },
+      { "titulo": "Tipografía y propiedades", "que": "Probar familias, interletrado e interlineado en vivo", "min": "15 min" },
+      { "titulo": "Texto sobre trayecto", "que": "Adaptar texto a círculos y curvas, invirtiendo la dirección", "min": "20 min" },
+      { "titulo": "Marcos internos y práctico", "que": "Convertir formas en marcos y armar el sello con su bloque", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Corregir sellos y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Buscar sellos de escuelas, monedas o redes sociales: el texto curvo está en todos lados.",
+      "Preguntar qué letra les parece 'seria' y cuál 'divertida' para introducir la semántica tipográfica."
+    ],
+    "aclarar": [
+      "No confundir el arrastre de marco (párrafo) con el clic simple (artístico): una línea de texto en artístico no se puedes justificar igual que en párrafo.",
+      "El texto adaptado a trayecto sigue siendo texto: se puede editar haciendo doble clic.",
+      "Si el marco se desborda, el texto sobrante no se elimina: solo queda oculto."
+    ],
+    "ejemplos": [
+      "Armar un sello circular de ejemplo ante la clase con el nombre del curso.",
+      "Poner el mismo título en serif y sans serif para que comparen el clima visual.",
+      "Mostrar un folleto real y señalar sus bloques de texto de párrafo sobre marcos."
+    ]
+  }
+}

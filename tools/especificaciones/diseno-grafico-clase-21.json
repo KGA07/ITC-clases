@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 21,
+    "titulo": "Ajustes y capas de ajuste de color",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a corregir y organizar el color de tus fotos con variaciones, niveles, tono/saturación, sombra/iluminación, brillo/contraste y equilibrio de color, todo trabajando con capas de ajuste no destructivas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 21 Ajustes y capas de ajuste",
+  "objetivos": [
+    "Usar variaciones para elegir el tinte visualmente.",
+    "Corregir tonos con niveles y leer un histograma.",
+    "Ajustar tono/saturación, brillo/contraste y equilibrio de color.",
+    "Trabajar con capas de ajuste no destructivas y de relleno."
+  ],
+  "teoria": [
+    {
+      "titulo": "Variaciones y niveles",
+      "emoji": "🎚️",
+      "imagen": {
+        "src": "img/niveles.jpg",
+        "alt": "Ajuste de niveles en una fotografía",
+        "caption": "Los niveles ordenan sombras, medios tonos y luces de la fotografía."
+      },
+      "parrafos": [
+        "Variaciones muestra la foto en mosaico con previsualizaciones de cada cambio de color y luminosidad: elegís visualmente 'más amarillo', 'más rojo' o 'más oscuro'. Es el ajuste más intuitivo para corregir un tinte malo.",
+        "Niveles es el ajuste técnico: un histograma reparte sombras, medios tonos y luces, y moviendo los marcadores corregís el contraste y el equilibrio de la imagen. Ver el histograma funciona como un electrocardiograma de la foto: luces a la derecha, sombras a la izquierda."
+      ],
+      "puntos": [
+        "Variaciones: clics visuales para sumar o quitar tinte.",
+        "Niveles: histograma + deslizadores de sombras, medios y luces.",
+        "El histograma apretado y pegado a los extremos = contraste óptimo.",
+        "Los ajustes se aplican a la foto completa por defecto."
+      ]
+    },
+    {
+      "titulo": "Tono/saturación",
+      "emoji": "🌈",
+      "imagen": {
+        "src": "img/histograma.jpg",
+        "alt": "Histograma de una foto",
+        "caption": "El histograma lee la luz de la imagen: ayuda a equilibrar niveles."
+      },
+      "parrafos": [
+        "Tono/saturación controla el color en tres ejes: el tono rota los colores (por ejemplo, verde a azul), la saturación ajusta la viveza (de gris a fluorescente) y la luminosidad cambia el brillo. Podés afinar un rango de color puntual, como el cielo, sin tocar el resto.",
+        "Este ajuste es el favorito para darle 'clima' a una foto: desaturar un fondo para que el producto brille, o saturar los colores de un afiche para impacto."
+      ],
+      "puntos": [
+        "Tono rota la rueda de colores; saturación controla la viveza.",
+        "Se puede trabajar sobre un rango de color específico.",
+        "Desaturar el fondo hace resaltar el sujeto.",
+        "La luminosidad, dentro de este panel, aclara u oscurece."
+      ]
+    },
+    {
+      "titulo": "Sombra/iluminación, brillo/contraste y equilibrio de color",
+      "emoji": "🕯️",
+      "parrafos": [
+        "Sombra/iluminación recupera detalle: aclara las sombras quemadas y apaga las luces reventadas, ideal para fotos con contraluz donde la cara queda en negro.",
+        "Brillo/contraste es el ajuste exprés: suma luz o fuerza los polos de la imagen. Equilibrio de color empuja los tonos hacia cian, magenta o amarillo en cada rango (sombras, medios, luces) para corregir tintes o crear climas."
+      ],
+      "puntos": [
+        "Sombra/iluminación: recupera zonas oscuras y luces duras.",
+        "Brillo/contraste: el ajuste rápido de luminosidad.",
+        "Equilibrio de color: tinte selectivo por rango tonal.",
+        "Combinados dan la corrección completa de luz y color."
+      ]
+    },
+    {
+      "titulo": "Capas de ajuste y capas de relleno",
+      "emoji": "🧱",
+      "parrafos": [
+        "Las capas de ajuste aplican el efecto sin tocar los píxeles de la foto original: se agregan desde el panel o menú Capa > Nueva capa de ajuste, y con un clic en su miniatura editás los parámetros cuando quieras.",
+        "Las capas de relleno pintan de color sólido, degradado o patrón. Ambas viajan apiladas y se pueden acoplar a una capa con una máscara de recorte para que el ajuste afecte solo a un elemento."
+      ],
+      "puntos": [
+        "Las capas de ajuste son no destructivas: editables siempre.",
+        "Se aplican a todas las capas de abajo por defecto.",
+        "La máscara de recorte limita el ajuste a la capa de abajo.",
+        "Las capas de relleno pintan color, degradado o patrón sin borrar."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Rescatar el clima de una foto",
+      "consigna": "Tomá una foto apagada o con contraluz y rescatela con ajustes: niveles para el contraste, sombra/iluminación para las sombras, tono/saturación para el color y equilibrio para el clima final.",
+      "pasos": [
+        "Abrí la foto y duplicá la capa de fondo (Ctrl + J) por seguridad.",
+        "Sumá una capa de ajuste de Niveles y arrastrá los marcadores hasta que el histograma cubra los extremos.",
+        "Sumá una capa de ajuste de Sombra/iluminación y recuperá las zonas oscuras.",
+        "Sumá Tono/saturación: subí la saturación general y probá desaturar solo el fondo.",
+        "Sumá Equilibrio de color y dale el clima (más frío o más cálido) a la imagen.",
+        "Ocultá y mostrá las capas de ajuste para comparar antes/después; exportá como ajustes-nombre.png y guardá el PSD."
+      ],
+      "entrega": "Entregá un antes-después (original vs. corregido) y el PSD con las capas de ajuste activas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué lee el histograma de Niveles?",
+            "opciones": ["El reparto de sombras, medios tonos y luces", "La cantidad de capas", "El tamaño del archivo", "El tipo de fuente"],
+            "correcta": "El reparto de sombras, medios tonos y luces"
+          },
+          {
+            "pregunta": "¿Qué ajuste es el más visual para corregir un tinte, eligiendo con previsualizaciones?",
+            "opciones": ["Variaciones", "Niveles", "Curvas", "Umbral"],
+            "correcta": "Variaciones"
+          },
+          {
+            "pregunta": "¿Qué controla la SATURACIÓN?",
+            "opciones": ["La viveza del color", "El contraste", "El brillo general", "El ruido de la foto"],
+            "correcta": "La viveza del color"
+          },
+          {
+            "pregunta": "¿Qué comando recupera detalle en zonas quemadas o negras?",
+            "opciones": ["Sombra/iluminación", "Posterizar", "Solarizar", "Umbral"],
+            "correcta": "Sombra/iluminación"
+          },
+          {
+            "pregunta": "La ventaja principal de una capa de ajuste es que:",
+            "opciones": ["No destruye los píxeles originales y se puede editar", "Oculta todas las capas", "Comprime el archivo", "Mejora la resolución"],
+            "correcta": "No destruye los píxeles originales y se puede editar"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Tres fotos, tres climas",
+      "consigna": "Tomá tres fotos distintas y aplicales una corrección diferente a cada una: una de contraste, una de color y una de clima con equilibrio de color.",
+      "pasos": [
+        "Abrí la primera foto y corregila con Niveles (contraste).",
+        "En la segunda, subí o bajá la saturación con Tono/saturación y desaturá solo una zona.",
+        "En la tercera, aplicá Equilibrio de color para crear un clima cálido o frío.",
+        "En todas trabajá con capas de ajuste nuevas (sin tocar el original).",
+        "Exportá las tres corregidas en un contacto de 3 imágenes como climas-nombre.png."
+      ],
+      "entrega": "Entregá el PNG con el contacto de las tres fotos corregidas."
+    }
+  ],
+  "entrega": "Se evalúa la mejora clara de la foto (contraste, sombras y color equilibrados) y el uso de al menos tres capas de ajuste no destructivas en el PSD.",
+  "lectura": "Corregir color es la mitad del oficio del retocador publicitario: una foto bien expuesta y con colores equilibrados 'vende' sola. Entender el histograma y usar capas de ajuste —en vez de aplicar ajustes directos irreversibles— te permite experimentar sin miedo y mantener el original intacto. Es el mismo profesionalismo que aplicaste con la paleta de documento en CorelDRAW.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar fotos apagadas y rescatadas para motivar la corrección", "min": "10 min" },
+      { "titulo": "Variaciones y niveles", "que": "Corregir tintes y leer el histograma en fotos reales", "min": "20 min" },
+      { "titulo": "Tono/saturación", "que": "Ajustar viveza por zonas y crear climas de color", "min": "20 min" },
+      { "titulo": "Sombra, brillo y equilibrio", "que": "Recuperar sombras y ajustar brillo/contraste y equilibrio de color", "min": "20 min" },
+      { "titulo": "Capas de ajuste y práctico", "que": "Trabajar de forma no destructiva y rescatar una foto completa", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar antes-después y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar por filtros de apps que usan a diario y sus equivalentes profesionales.",
+      "Comparar la corrección automática vs. el control manual con niveles."
+    ],
+    "aclarar": [
+      "Las capas de ajuste afectan a todas las capas de abajo: se limitan con máscara de recorte.",
+      "Variaciones puede sobresaturar muy rápido: un clic a la vez.",
+      "El histograma no 'miente': si queda pegada a un borde, hay luces perdidas."
+    ],
+    "ejemplos": [
+      "Rescatar una foto con contraluz completa delante de la clase.",
+      "Desaturar el fondo de una bodega para que el producto resalte.",
+      "Mostrar el antes/después con la capa de ajuste oculta y visible."
+    ]
+  }
+}

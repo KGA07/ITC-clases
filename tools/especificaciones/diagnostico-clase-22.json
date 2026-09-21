@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 22,
+    "titulo": "Configuración de red y routers",
+    "modulo": "Módulo 3 – Redes",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PCs en red, router real o simulado en la web, cableado armado en clase anterior",
+    "bajada": "La clase que une todo: protocolo TCP/IP y DHCP, compartir carpetas e impresoras, y la configuración completa de un router: WAN/LAN/WLAN, SSID, cifrado, filtrado MAC y puertos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 22 - Configuracion de red y routers",
+  "objetivos": [
+    "Configurar TCP/IP v4 en un equipo y usar el ping.",
+    "Explicar IP, máscara, puerta de enlace y DNS.",
+    "Compartir carpetas e impresoras en la red.",
+    "Configurar un router: WAN/LAN/WLAN, cifrado y filtrado MAC."
+  ],
+  "teoria": [
+    {
+      "titulo": "TCP/IP: dirección IP v4 y v6",
+      "emoji": "🌐",
+      "parrafos": [
+        "Cada equipo en una red necesita una dirección para ser encontrado: la IP. La v4 (192.168.1.x) es la clásica y la v6 la versión moderna con direcciones enormes."
+      ],
+      "puntos": [
+        "IP v4: cuatro números separados por puntos (192.168.0.10).",
+        "IP v6: ocho bloques hexagonales (fe80::...).",
+        "La IP identifica cada equipo dentro de la red.",
+        "Hoy conviven ambas versiones en los equipos modernos."
+      ]
+    },
+    {
+      "titulo": "Máscara, puerta de enlace y DNS",
+      "emoji": "🧭",
+      "imagen": {
+        "src": "img/dhcp.jpg",
+        "alt": "Servidor DHCP asignando direcciones IP",
+        "caption": "El DHCP reparte IP, máscara, puerta de enlace y DNS automáticamente."
+      },
+      "parrafos": [
+        "Una IP sola no alcanza: la máscara define la porción de red, la puerta de enlace (gateway) sale hacia afuera y el DNS traduce nombres de dominio a IPs."
+      ],
+      "puntos": [
+        "Máscara: separa red y equipo (255.255.255.0 es lo típico).",
+        "Puerta de enlace: IP del router para salir a internet.",
+        "DNS: traduce www.ejemplo.com a su dirección IP real.",
+        "Estos 4 datos forman la configuración IP de un equipo."
+      ]
+    },
+    {
+      "titulo": "Servidor DHCP",
+      "emoji": "🤝",
+      "parrafos": [
+        "Para no escribir datos a mano, el router actúa como servidor DHCP: entrega IP, máscara, puerta de enlace y DNS automáticamente a cada equipo que se conecta."
+      ],
+      "puntos": [
+        "DHCP: protocolo de configuración dinámica de equipos.",
+        "El router reparte direcciones de un rango (pool).",
+        "El equipo pide y el servidor asigna en segundos.",
+        "Configuración manual (estática) se usa para impresoras y servidores."
+      ]
+    },
+    {
+      "titulo": "Configuración de red en el equipo",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/router-config.png",
+        "alt": "Panel de configuración de un router",
+        "caption": "El panel del router muestra WAN, LAN, clientes y opciones de WiFi."
+      },
+      "parrafos": [
+        "En el equipo se configura el nombre, el grupo de trabajo y el protocolo TCP/IP, y se prueban las conexiones con ping. Compartir carpetas e impresoras permite que todos usen lo mismo."
+      ],
+      "puntos": [
+        "Nombre del equipo y grupo de trabajo (WORKGROUP).",
+        "Protocolo TCP/IP v4: automático (DHCP) o manual.",
+        "Ping: prueba de conectividad (ping 192.168.0.1).",
+        "Compartir carpetas e impresoras y mapear unidades de red."
+      ]
+    },
+    {
+      "titulo": "Router: configuración básica y avanzada",
+      "emoji": "📶",
+      "parrafos": [
+        "El router se configura desde su panel web: estado WAN/LAN/WLAN, red WiFi con SSID y cifrado, y opciones avanzadas como WPS, filtrado MAC y puertos."
+      ],
+      "puntos": [
+        "WAN: la conexión hacia internet (PPPoE, IP dinámica).",
+        "LAN: la red local, su IP, DHCP y máscara.",
+        "WLAN: WiFi: SSID, canal y cifrado (WPA2/WPA3).",
+        "Avanzado: filtrado MAC, reserva de IP, puertos y control de acceso."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: red y router",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre TCP/IP, DHCP y router.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Probá los comandos en tu PC."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es la dirección IP?",
+            "opciones": ["La identificación de un equipo dentro de la red", "El nombre del usuario", "La velocidad del disco", "El modelo del router"],
+            "correcta": "La identificación de un equipo dentro de la red"
+          },
+          {
+            "pregunta": "¿Qué diferencia la IP v4 de la v6?",
+            "opciones": ["La v6 tiene direcciones mucho más largas", "La v4 no funciona nunca", "La v6 es de pago", "La v4 es para impresoras"],
+            "correcta": "La v6 tiene direcciones mucho más largas"
+          },
+          {
+            "pregunta": "¿Qué entrega el servidor DHCP automáticamente?",
+            "opciones": ["IP, máscara, puerta de enlace y DNS", "Programas instalados", "Archivos de usuario", "Contraseñas de WiFi"],
+            "correcta": "IP, máscara, puerta de enlace y DNS"
+          },
+          {
+            "pregunta": "El comando que prueba la conectividad es...",
+            "opciones": ["ping", "format", "copy", "dir"],
+            "correcta": "ping"
+          },
+          {
+            "pregunta": "El SSID es...",
+            "opciones": ["El nombre de la red WiFi", "El cifrado de la red", "Una dirección IP", "El tipo de cable"],
+            "correcta": "El nombre de la red WiFi"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Compartí y configurá la red",
+      "consigna": "Armá la red del aula y compartí una carpeta entre equipos.",
+      "pasos": [
+        "Conectá las PCs al switch con los cables armados.",
+        "Verificá que cada equipo reciba IP por DHCP.",
+        "Configurá nombre de equipo y grupo de trabajo.",
+        "Compartí una carpeta con permisos de lectura/escritura.",
+        "Accedé a la carpeta compartida desde otra PC y probá con ping."
+      ],
+      "entrega": "Red armada y carpeta compartida accesible entre dos PCs."
+    }
+  ],
+  "entrega": "El docente verificará la red compartida y el interactivo (y el panel del router si hay acceso).",
+  "lectura": "La red se configura de abajo hacia arriba: TCP/IP les da identidad a los equipos, el DHCP los registra solo, y el router reparte internet y arma la WiFi. Compartir carpetas e impresoras completa el valor de una LAN. Con esto cerramos un curso de principio a fin: hardware, sistemas y redes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar cableado y hardware de red y presentar el cierre del curso", "min": "10 min" },
+      { "titulo": "TCP/IP y datos de red", "que": "Explicar IP, máscara, gateway y DNS con ejemplos del aula", "min": "20 min" },
+      { "titulo": "DHCP y configuración de equipo", "que": "Mostrar ipconfig y la configuración automática/manual en vivo", "min": "15 min" },
+      { "titulo": "Compartir recursos", "que": "Compartir una carpeta y una impresora entre dos PCs", "min": "20 min" },
+      { "titulo": "Router: básico y avanzado", "que": "Recorrer el panel del router: WAN, LAN, WLAN, cifrado, MAC y puertos", "min": "20 min" },
+      { "titulo": "Cierre final", "que": "Repaso integral del curso con el interactivo y cierre", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo se conectan a WiFi en sus casas y si saben dónde está el '192.168.0.1' de su router.",
+      "Cerrar el curso repasando el hilo rojo: la PC se arma, se configura y se conecta."
+    ],
+    "aclarar": [
+      "DHCP automático no es lo mismo que IP fija: cada uso tiene su momento.",
+      "El cifrado WEP es inseguro: usar WPA2/WPA3.",
+      "Cambiar la contraseña del router por defecto es lo primero que hay que hacer."
+    ],
+    "ejemplos": [
+      "Escribir en la terminal ipconfig y leer IP, máscara y gateway reales.",
+      "Hacer ping entre dos PCs del aula y ver la respuesta.",
+      "Mostrar el panel de un router real: SSID, clientes DHCP y filtrado MAC."
+    ]
+  }
+}

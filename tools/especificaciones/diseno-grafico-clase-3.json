@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 3,
+    "titulo": "Selección, Zoom, Mano y transformación de objetos",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a aprender a seleccionar objetos, navegar con Zoom y Mano, y transformarlos: tamaño, giro, inclinación y colores de relleno y contorno. Todo lo que se edita, primero se selecciona.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 3 Seleccion Zoom y Transformacion",
+  "objetivos": [
+    "Seleccionar objetos con clic, con clic prolongado y con arrastre de marco.",
+    "Usar Zoom y Mano para navegar documentos grandes.",
+    "Redimensionar, girar, inclinar y mover objetos con precisión.",
+    "Aplicar color de relleno y de contorno desde la paleta y el selector de color."
+  ],
+  "teoria": [
+    {
+      "titulo": "La selección: tu herramienta principal",
+      "emoji": "🖱️",
+      "imagen": {
+        "src": "img/cursor-mouse.jpg",
+        "alt": "Cursor de mouse",
+        "caption": "La herramienta Selección decide qué objeto se edita: siempre seleccionás primero."
+      },
+      "parrafos": [
+        "Para editar cualquier cosa en CorelDRAW primero tenés que seleccionarla. Con la herramienta Selección (la flecha) podés hacer clic sobre un objeto para elegirlo o arrastrar un marco para seleccionar varios a la vez.",
+        "Si mantenés presionada la tecla Shift mientras hacés clic, sumás o restás objetos a la selección. El objeto seleccionado muestra sus 'mangos': ocho cuadraditos en el borde que te permiten transformarlo."
+      ],
+      "puntos": [
+        "Clic sobre el objeto: lo seleccionás con sus mangos de control.",
+        "Arrastre de marco: seleccionás todos los objetos que toca el rectángulo.",
+        "Shift + clic: agregás o quitás objetos de la selección.",
+        "Clic en un espacio vacío de la página: deseleccionás todo."
+      ]
+    },
+    {
+      "titulo": "Zoom y Mano: tu navegación",
+      "emoji": "🔍",
+      "parrafos": [
+        "Cuando un documento tiene elementos chicos o detalles finos, el Zoom te acerca y aleja sin cambiar nada del dibujo. La herramienta Mano arrastra la vista como si desplazaras un papel sobre el escritorio.",
+        "El atajo más cómodo es la rueda del mouse: girar para acercar y alejar, y mantener la rueda presionada (o tocar la barra espaciadora) para arrastrar la vista con la Mano."
+      ],
+      "puntos": [
+        "Rueda del mouse: zoom hacia adentro (acercar) o hacia afuera (alejar).",
+        "Doble clic en la herramienta Zoom restablece el 100%.",
+        "La barra espaciadora activa temporalmente la Mano sin cambiar de herramienta.",
+        "Zoom a la selección: encuadra justo el objeto que estás editando."
+      ]
+    },
+    {
+      "titulo": "Transformar: tamaño, giro e inclinación",
+      "emoji": "📐",
+      "imagen": {
+        "src": "img/transformar.jpg",
+        "alt": "Transformación de objetos",
+        "caption": "Los mangos permiten escalar, girar e inclinar un objeto con el mouse."
+      },
+      "parrafos": [
+        "Al seleccionar un objeto, los mangos de las esquinas y los lados te permiten redimensionarlo. Arrastrá el mango de una esquina manteniendo Ctrl para conservar las proporciones.",
+        "Un segundo clic sobre el objeto cambia los mangos por flechas de giro e inclinación: arrastrá las flechas curvas para girar y las rectas para inclinar (sesgar)."
+      ],
+      "puntos": [
+        "Mangos de esquina: escalan en dos direcciones; Ctrl conserva proporciones.",
+        "Segundo clic: modo girar/inclinar con flechas curvas y rectas.",
+        "Desde la barra de propiedades podés escribir tamaño exacto y ángulo de rotación.",
+        "El espejado horizontal o vertical se hace arrastrando un mango de lado hacia el lado opuesto."
+      ]
+    },
+    {
+      "titulo": "Color de relleno y contorno",
+      "emoji": "🎨",
+      "parrafos": [
+        "Con el objeto seleccionado, hacé clic izquierdo en la paleta para pintar el relleno y clic derecho para pintar el contorno (el borde). Si querés más precisión o colores personalizados, abrí el selector de color haciendo clic en las flechitas que están al final de la paleta.",
+        "El grosor del contorno se define desde la barra de propiedades o desde el botón de contorno de la caja de herramientas: podés elegir desde un trazo finísimo hasta un contorno grueso."
+      ],
+      "puntos": [
+        "Clic izquierdo = relleno; clic derecho = contorno; clic derecho en la cruz = sin color.",
+        "El selector de color permite mezclar tonos, transparencia y colores CMYK exactos.",
+        "El grosor del contorno se mide en puntos (pt) y se elige en la barra de propiedades.",
+        "Podés quitar el contorno para que una figura quede solo con relleno."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Transformador de formas",
+      "consigna": "Dibujá varias figuras y transformala a cada una de forma distinta: una escalada, una girada, una inclinada y una con contorno grueso, para ver cómo conviven todas las transformaciones.",
+      "pasos": [
+        "Dibujá un cuadrado, un círculo, un triángulo y un corazón (o estrella).",
+        "Al cuadrado: escalalo al doble manteniendo Ctrl para que siga siendo cuadrado.",
+        "Al círculo: hacé segundo clic y giralo 45 grados (no se nota, pero sí en un círculo con relleno a medias).",
+        "Al triángulo: inclinalo arrastrando la flecha recta superior.",
+        "Al corazón: pintale relleno rojo con clic izquierdo, contorno grueso y oscuro.",
+        "Con la Mano y el Zoom, encuadrá bien los cuatro objetos y guardá el archivo."
+      ],
+      "entrega": "Exportá la composición en PNG de tamaño mediano y nombrala como seleccion-transformacion-nombre.png.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo seleccionás varios objetos a la vez?",
+            "opciones": ["Arrastrando un marco que los toque", "Borrando la página", "Haciendo zoom", "Cambiando de paleta"],
+            "correcta": "Arrastrando un marco que los toque"
+          },
+          {
+            "pregunta": "¿Qué atajo activa temporalmente la Mano sobre cualquier herramienta?",
+            "opciones": ["La barra espaciadora", "La tecla Ctrl", "La tecla Alt", "La tecla F5"],
+            "correcta": "La barra espaciadora"
+          },
+          {
+            "pregunta": "¿Qué hacés con un segundo clic sobre un objeto seleccionado?",
+            "opciones": ["Cambiar los mangos a modo giro e inclinación", "Borrar el objeto", "Cambiar su color automáticamente", "Abrir el texto"],
+            "correcta": "Cambiar los mangos a modo giro e inclinación"
+          },
+          {
+            "pregunta": "¿Cómo mantenés las proporciones al escalar con el mouse?",
+            "opciones": ["Manteniendo presionada la tecla Ctrl", "Usando siempre la Mano", "Con doble clic", "Con la rueda del mouse"],
+            "correcta": "Manteniendo presionada la tecla Ctrl"
+          },
+          {
+            "pregunta": "¿Con cuál clic pintás el contorno de un objeto?",
+            "opciones": ["Clic derecho sobre el color", "Clic izquierdo sobre el color", "Doble clic sobre el color", "Arrastrando el objeto"],
+            "correcta": "Clic derecho sobre el color"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Galería de transformaciones",
+      "consigna": "Armá una grilla de cuatro casillas donde la misma figura base muestre cuatro transformaciones distintas: original, escalada, girada e inclinada.",
+      "pasos": [
+        "Dibujá un rectángulo rojo de 4 x 4 cm como figura base.",
+        "Duplicado (Ctrl + D), escalalo al 50% manteniendo Ctrl.",
+        "De otro duplicado, girado 25 grados con el segundo clic y la flecha curva.",
+        "Al último duplicado inclinalo con la flecha recta superior.",
+        "Separalos en fila, escribí debajo de cada uno su nombre de transformación y exportá en PNG."
+      ],
+      "entrega": "Entregá el PNG de la galería con los cuatro casos rotulados."
+    }
+  ],
+  "entrega": "Se revisa la captura o PNG final: debe haber una figura escalada, una girada, una inclinada y una con contorno grueso, todas correctamente construidas.",
+  "lectura": "La selección es el idioma de CorelDRAW: cada herramienta, efecto o color actúa sobre lo que está seleccionado. Saber transformar (escalar, girar, inclinar) y dar color desde la paleta con el clic correcto vuelve el dibujo mucho más rápido. Este flujo seleccionar-transformar-colorear es el mismo que vas a repetir en cada clase siguiente.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar las formas de la clase 2 y activar la herramienta Selección", "min": "10 min" },
+      { "titulo": "Selección", "que": "Probar clic, Shift + clic, arrastre de marco y deselección con ejercicios rápidos", "min": "20 min" },
+      { "titulo": "Zoom y Mano", "que": "Navegar un zoom profundo con rueda y barra espaciadora", "min": "15 min" },
+      { "titulo": "Transformación", "que": "Escalar con Ctrl, girar e inclinar con segundo clic, medidas exactas", "min": "20 min" },
+      { "titulo": "Color y contorno", "que": "Practicar clic izquierdo y derecho y grosor de contorno", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y corregir las figuras del práctico", "min": "5 min" }
+    ],
+    "conecta": [
+      "Mostrar cómo se selecciona una foto en el celular para moverla y compararlo con el concepto de selección.",
+      "Preguntar en qué diseño cotidiano vieron elementos inclinados (etiquetas, posters) para motivar el giro."
+    ],
+    "aclarar": [
+      "El segundo clic cambia al modo transformación: hay que esperar un momento entre clic y clic para no hacer doble clic.",
+      "Ctrl conserva proporciones al escalar manualmente, pero no al escribir medidas en la barra.",
+      "Clic derecho en la cruz de la paleta quita el color (sin contorno / sin relleno)."
+    ],
+    "ejemplos": [
+      "Girar la marca de agua de un documento y mostrar cómo quedó inclinada con la flecha curva.",
+      "Escalar un círculo y mostrar que sin Ctrl se deforma en elipse.",
+      "Poner un contorno de 10 pt a un rectángulo y comparar con uno de 0.5 pt."
+    ]
+  }
+}

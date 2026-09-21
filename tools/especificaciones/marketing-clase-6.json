@@ -33,7 +33,8 @@
         "Acceso: business.facebook.com con tu cuenta de Facebook.",
         "Conectá tu perfil de Instagram y tu WhatsApp Business a la misma cuenta.",
         "Todo centralizado: publicaciones, mensajes, anuncios y estadísticas."
-      ]
+      ],
+      "imagen": { "src": "img/suite.jpg", "alt": "Panel de Meta Business Suite", "caption": "Business Suite centraliza Facebook, Instagram y WhatsApp" }
     },
     {
       "titulo": "Calendario: creación y programación",
@@ -45,7 +46,8 @@
         "Creá la publicación y elegí a qué cuentas va: Facebook, Instagram o ambas.",
         "Programá horarios según el momento en que tu audiencia está activa.",
         "Revisá los insights para ajustar el calendario de la semana siguiente."
-      ]
+      ],
+      "imagen": { "src": "img/calendario.jpg", "alt": "Calendario editorial de contenidos", "caption": "El calendario planifica la semana sin depender de la memoria" }
     },
     {
       "titulo": "Bandeja unificada y respuestas",
@@ -69,7 +71,8 @@
         "Insights: alcance, interacción y público por perfil, en un solo panel.",
         "'Impulsar' una publicación la convierte en anuncio con presupuesto.",
         "Configurá notificaciones automáticas para mensajes y comentarios."
-      ]
+      ],
+      "imagen": { "src": "img/insights.jpg", "alt": "Panel de insights y métricas", "caption": "Los insights centralizan las métricas de tus perfiles" }
     }
   ],
   "ejercicios": [

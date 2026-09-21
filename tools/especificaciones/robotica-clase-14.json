@@ -1,0 +1,176 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 14,
+    "titulo": "Teclado 4x4 y matrices",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a conectar un teclado 4x4 a la placa usando la librería Keypad, y a manejar textos con String, caracteres y matrices para procesar lo que escribís.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 14 - Teclado 4x4 y matrices",
+  "objetivos": [
+    "Instalar la librería Keypad desde el gestor de librerías.",
+    "Conectar un teclado matricial 4x4 identificando filas y columnas.",
+    "Leer teclas presionadas y mostrarlas por Serial.",
+    "Manejar cadenas con String y caracteres, y recorrer matrices."
+  ],
+  "teoria": [
+    {
+      "titulo": "El teclado 4x4",
+      "emoji": "🔢",
+      "imagen": {
+        "src": "img/teclado-4x4.jpg",
+        "alt": "Teclado matricial 4x4",
+        "caption": "El teclado 4x4 tiene 16 teclas y solo 8 pines de conexión."
+      },
+      "parrafos": [
+        "Un teclado matricial 4x4 tiene 16 teclas dispuestas en 4 filas y 4 columnas. Gracias a esa matriz, con solo 8 pines (4 de fila y 4 de columna) la placa puede saber qué tecla se presionó.",
+        "La lectura se hace por barrrido: la placa activa una fila por vez y detecta en qué columna hay contacto. Ese trabajo ya lo hace la librería Keypad por nosotros."
+      ],
+      "puntos": [
+        "16 teclas: números del 0 al 9 y símbolos.",
+        "8 pines: 4 filas (R1-R4) y 4 columnas (C1-C4).",
+        "Solo 8 pines para leer 16 teclas: a esto se llama multiplexado.",
+        "La librería Keypad se encarga del barrido de filas y columnas."
+      ]
+    },
+    {
+      "titulo": "Instalación con el gestor de librerías",
+      "emoji": "📦",
+      "imagen": {
+        "src": "img/keypad-matriz.jpg",
+        "alt": "Matriz de teclas del teclado 4x4",
+        "caption": "La disposición en filas y columnas define el mapa de teclas."
+      },
+      "parrafos": [
+        "Las librerías son código ya escrito que reutilizamos para no reinventar la rueda. Se instalan desde el IDE en Programa → Incluir librería → Administrar bibliotecas, buscando Keypad.",
+        "Una vez instalada, en el código se la importa con #include <Keypad.h> y se configura el mapa de teclas y los pines de filas y columnas."
+      ],
+      "puntos": [
+        "Gestor: Herramientas → Administrar bibliotecas → buscar Keypad → instalar.",
+        "#include <Keypad.h> importa la librería.",
+        "Se define el arreglo de teclas (chars) y los pines de fila/columna.",
+        "keypad.getKey() devuelve la tecla presionada o vacío si no hay."
+      ]
+    },
+    {
+      "titulo": "String, char y matrices",
+      "emoji": "🧵",
+      "parrafos": [
+        "char guarda un solo carácter (una tecla). String guarda una cadena de texto y permite sumarlas con +. Las matrices son arreglos de datos del mismo tipo, y en el teclado se usan para definir el mapa (por ejemplo, un char con 16 posiciones).",
+        "Con String podés ir concatenando las teclas que se presionan y mostrar la secuencia: como un marcador de contraseña o de número de teléfono."
+      ],
+      "puntos": [
+        "char tecla; guarda un carácter.",
+        "String texto; guarda cadenas y las suma con +.",
+        "char teclas[4][4]: matriz de 4x4 con el mapa del teclado.",
+        "Para comparar cadenas usás strcmp() o == entre Strings."
+      ]
+    },
+    {
+      "titulo": "strcmp() y comparación",
+      "emoji": "⚖️",
+      "parrafos": [
+        "strcmp(cadena1, cadena2) compara dos cadenas de caracteres: devuelve 0 si son iguales. Es la función por debajo de la comparación de contraseñas o códigos.",
+        "Con las Strings de Arduino, la comparación directa con == funciona igualmente. En este curso comparamos el texto ingresado contra un código esperado para armar un candado digital."
+      ],
+      "puntos": [
+        "strcmp devuelve 0 cuando las cadenas son iguales.",
+        "Códigos de acceso: una cadena esperada y una ingresada.",
+        "Con String de Arduino: if (textoIngresado == \"1234\")",
+        "Ojo con mayúsculas: 'A' no es igual a 'a'."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Teclado y matrices",
+      "consigna": "Respondé el quiz sobre el teclado 4x4, las librerías y las cadenas.",
+      "pasos": [
+        "Recordá cuántos pines usa un 4x4.",
+        "Distinguí char, String y matrices.",
+        "Pensá qué devuelve strcmp si las cadenas son iguales."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuántos pines necesita el teclado 4x4?",
+            "opciones": ["16", "8", "4", "2"],
+            "correcta": "8"
+          },
+          {
+            "pregunta": "¿Cómo se importa la librería Keypad en el código?",
+            "opciones": ["#include <Keypad.h>", "import Keypad", "load keypad", "use Keypad"],
+            "correcta": "#include <Keypad.h>"
+          },
+          {
+            "pregunta": "¿Qué función devuelve la tecla presionada del teclado?",
+            "opciones": ["keypad.readAll()", "keypad.getKey()", "keypad.press()", "keypad.delay()"],
+            "correcta": "keypad.getKey()"
+          },
+          {
+            "pregunta": "¿Qué tipo de dato guarda UNA sola letra o número?",
+            "opciones": ["String", "char", "float", "int"],
+            "correcta": "char"
+          },
+          {
+            "pregunta": "¿Qué devuelve strcmp() cuando dos cadenas son iguales?",
+            "opciones": ["1", "-1", "0", "true siempre"],
+            "correcta": "0"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Candado digital con teclado",
+      "consigna": "Conectá el teclado 4x4 y programá un candado que abra un LED al ingresar el código correcto.",
+      "pasos": [
+        "Conectá los pines de columnas (C1-C4) a los pines digitales 5, 4, 3, 2 y las filas (R1-R4) a los pines 9, 8, 7, 6.",
+        "Instalá la librería Keypad desde el gestor de bibliotecas.",
+        "En el código definí el mapa: char teclas[4][4] = { {'1','2','3','A'},{'4','5','6','B'},{'7','8','9','C'},{'*','0','#','D'} };",
+        "Configurá filas y columnas y creá: Keypad teclado = Keypad(makeKeymap(teclas), filas, columnas, 4, 4);",
+        "En setup(): Serial.begin(9600); pinMode(13, OUTPUT);",
+        "En loop(): char tecla = teclado.getKey(); y si hay, mostrala con Serial.println(tecla);",
+        "Sumá la tecla a un String y comparalo contra \"1234\" con ==.",
+        "Si coincide, encendé el LED del pin 13 y avisá por Serial \"Acceso concedido\"; si no, avisá \"Codigo incorrecto\" y vaciá el String.",
+        "Probá con el código correcto y con uno equivocado."
+      ],
+      "entrega": "Captura del Serial mostrando las teclas presionadas y el acceso concedido/denegado."
+    }
+  ],
+  "entrega": "El docente revisará el Serial del candado y el código comentado.",
+  "lectura": "El teclado 4x4 te enseña cómo ahorrar pines con matrices y cuánto poder ganás con las librerías. Sumado a String y strcmp, ya podés construir sistemas con contraseña: una puerta de entrada a la seguridad y los proyectos de acceso.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar el teclado alambre a alambre y contar por qué tiene pocas patas", "min": "10 min" },
+      { "titulo": "Teclado matricial", "que": "Explicar filas-columnas y el multiplexado", "min": "15 min" },
+      { "titulo": "Gestor de librerías", "que": "Instalar Keypad en vivo en todos los equipos", "min": "20 min" },
+      { "titulo": "String, char y matrices", "que": "Recorrer tipos de texto y el mapa del teclado", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el candado digital paso a paso", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y prueba de códigos entre parejas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué códigos son difíciles de adivinar para explicar el valor de la comparación.",
+      "Comparar la matriz del teclado con la tabla de una hoja de cálculo: filas por columnas."
+    ],
+    "aclarar": [
+      "Cada tecla es un char: en el mapa de Keypad van entre comillas simples.",
+      "Un String recién inicializado es \"\" (vacío): compará con cuidado al principio.",
+      "getKey() devuelve el char nulo si no hay tecla: chequearlo antes de usar la tecla."
+    ],
+    "ejemplos": [
+      "Mostrar el eco de cada tecla en el monitor al presionarla.",
+      "Cambiar el código esperado a \"2580\" y ver que el candado solo responde a ese.",
+      "Contar cuántas teclas se presionan y mostrarlas como un pin acumulado con String."
+    ]
+  }
+}

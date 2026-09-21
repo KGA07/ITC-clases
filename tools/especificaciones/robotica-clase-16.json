@@ -1,0 +1,190 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 16,
+    "titulo": "Display LCD con módulo I2C",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a mostrar texto en un display LCD de 16x2 usando el módulo I2C, instalando la librería manualmente y manejando funciones como setCursor y print.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 16 - Display LCD con módulo I2C",
+  "objetivos": [
+    "Instalar manualmente la librería LiquidCrystal_I2C.",
+    "Conectar el LCD I2C usando solo los pines SDA, SCL, VCC y GND.",
+    "Usar las funciones begin, setBacklight, clear, setCursor y print.",
+    "Aplicar millis() para actualizar textos sin bloquear el programa."
+  ],
+  "teoria": [
+    {
+      "titulo": "El display LCD 16x2",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/lcd-16x2.jpg",
+        "alt": "Display LCD 16x2",
+        "caption": "El LCD 16x2 muestra 16 caracteres en 2 líneas."
+      },
+      "parrafos": [
+        "El display LCD 16x2 tiene 16 columnas y 2 filas, por lo que muestra hasta 32 caracteres. Es ideal para mostrar lecturas de sensores, mensajes y estados sin depender del monitor de la PC.",
+        "Conectarlo directo ocuparía muchos pines; por eso usamos el módulo I2C, que lo maneja con solo dos cables de datos."
+      ],
+      "puntos": [
+        "16 columnas × 2 filas = 32 caracteres.",
+        "Posiciones: columna (0 a 15) y fila (0 o 1).",
+        "Sirve para ver datos sin conectar la PC.",
+        "Retroiluminado (backlight) para leerlo en la oscuridad."
+      ]
+    },
+    {
+      "titulo": "El módulo I2C",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/lcd-i2c.jpg",
+        "alt": "Módulo I2C para LCD",
+        "caption": "El adaptador I2C se enchufa atrás del LCD y reduce el cableado a 4 hilos."
+      },
+      "parrafos": [
+        "El módulo I2C se conecta detrás del LCD y lleva la comunicación con solo dos señales: SDA (datos) y SCL (reloj), además de VCC y GND. En el Uno, SDA es A4 y SCL es A5.",
+        "Con I2C, el código queda elegante: creás el objeto del LCD, lo inicializás y usás funciones simples para escribir."
+      ],
+      "puntos": [
+        "SDA → A4 y SCL → A5 en Arduino Uno.",
+        "VCC → 5V y GND → GND.",
+        "Mismo bus I2C: varios módulos pueden compartirlo.",
+        "El potenciómetro del módulo ajusta el contraste."
+      ]
+    },
+    {
+      "titulo": "Instalación manual de la librería",
+      "emoji": "📦",
+      "parrafos": [
+        "LiquidCrystal_I2C no siempre viene con el IDE: hay que instalarla. Se descarga como .zip desde GitHub oficial y se agrega en Programa → Incluir librería → Añadir librería .ZIP.",
+        "Una vez instalada, se importa con #include <LiquidCrystal_I2C.h> y se crea el objeto: LiquidCrystal_I2C lcd(0x27, 16, 2); (la dirección 0x27 es la típica del módulo)."
+      ],
+      "puntos": [
+        "Descargá el .zip de LiquidCrystal_I2C desde la web oficial.",
+        "IDE: Programa → Incluir librería → Añadir librería .ZIP.",
+        "#include <LiquidCrystal_I2C.h> la activa en tu sketch.",
+        "Dirección usual del módulo: 0x27 (a veces 0x3F)."
+      ]
+    },
+    {
+      "titulo": "Funciones principales",
+      "emoji": "⌨️",
+      "parrafos": [
+        "Las funciones de la librería son: lcd.begin(16, 2) que inicia el display; lcd.setBacklight(HIGH/LOW) que enciende o apaga la luz; lcd.clear() que borra; lcd.setCursor(columna, fila) que posiciona el cursor; y lcd.print(texto) que escribe.",
+        "Un detalle clave: setCursor(0,1) coloca el cursor en la primera columna de la segunda fila. Después de escribir, podés mover el cursor y escribir otra línea."
+      ],
+      "puntos": [
+        "lcd.begin(16, 2): inicializa el display.",
+        "lcd.setCursor(0, 0): arriba a la izquierda.",
+        "lcd.print(\"Hola\"): escribe el texto.",
+        "lcd.clear(): borra todo y vuelve al inicio."
+      ]
+    },
+    {
+      "titulo": "millis(): tiempo de fondo",
+      "emoji": "⏱️",
+      "parrafos": [
+        "millis() devuelve los milisegundos desde que arrancó la placa, y no bloquea el programa como delay(). Con ella podés actualizar el display cada cierto tiempo mientras el resto sigue corriendo.",
+        "La técnica: si (millis() - ultimaActualizacion >= 2000) { actualizar display; ultimaActualizacion = millis(); } así el texto se refresca cada 2 segundos sin frenar nada."
+      ],
+      "puntos": [
+        "millis() cuenta desde el encendido de la placa.",
+        "No detiene el programa a diferencia de delay().",
+        "Compará millis() actual contra uno anterior para esperar.",
+        "Ideal para refrescar texto cada ciertos segundos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "LCD y librerías",
+      "consigna": "Respondé el quiz sobre el LCD I2C, sus funciones y millis().",
+      "pasos": [
+        "Recordá qué pines usa I2C en el Uno.",
+        "Diferenciá cada función del display.",
+        "Pensá qué diferencia hay entre delay() y millis()."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuántos caracteres muestra un LCD 16x2?",
+            "opciones": ["16", "2", "32", "64"],
+            "correcta": "32"
+          },
+          {
+            "pregunta": "¿Qué pines usa I2C en el Arduino Uno?",
+            "opciones": ["0 y 1", "A4 (SDA) y A5 (SCL)", "3 y 5", "USB"],
+            "correcta": "A4 (SDA) y A5 (SCL)"
+          },
+          {
+            "pregunta": "¿Qué función inicializa el display?",
+            "opciones": ["lcd.print()", "lcd.begin(16, 2)", "lcd.clear()", "lcd.write()"],
+            "correcta": "lcd.begin(16, 2)"
+          },
+          {
+            "pregunta": "Con lcd.setCursor(0, 1), ¿dónde se ubica el cursor?",
+            "opciones": ["Primera columna de la segunda fila", "Segunda columna de la primera fila", "Última posición", "Fuera del display"],
+            "correcta": "Primera columna de la segunda fila"
+          },
+          {
+            "pregunta": "¿Qué ventaja tiene millis() sobre delay()?",
+            "opciones": ["Gasta menos memoria", "No bloquea el programa", "Hace más rápido el LCD", "No necesita librería"],
+            "correcta": "No bloquea el programa"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Tu nombre en el display",
+      "consigna": "Mostrá un mensaje personalizado en el LCD y refrescalo usando millis().",
+      "pasos": [
+        "Conectá el módulo I2C: VCC a 5V, GND a GND, SDA a A4 y SCL a A5.",
+        "Girá el potenciómetro del módulo hasta que el contraste se vea bien.",
+        "Instalá la librería LiquidCrystal_I2C desde el .zip.",
+        "Incluila: #include <LiquidCrystal_I2C.h> y creá: LiquidCrystal_I2C lcd(0x27, 16, 2);",
+        "En setup(): lcd.begin(16, 2); lcd.setBacklight(HIGH); lcd.print(\"Hola, robotica!\");",
+        "En loop(): usá setCursor(0, 1) y lcd.print(\"Ano 2026\");",
+        "Con millis(): refrescá un contador de segundos cada segundo: int s = millis() / 1000; y mostralo en la segunda fila.",
+        "Probalo y mostrá tu nombre de usuario: lcd.print(\"Profe: Gkempe\");",
+        "Desafío: que el mensaje se desplace con setCursor según un contador."
+      ],
+      "entrega": "Foto del display mostrando tu mensaje y el contador de segundos."
+    }
+  ],
+  "entrega": "El docente revisará la foto del LCD y la instalación de la librería verificada.",
+  "lectura": "El display LCD con I2C es tu salida visual definitiva: cuatro cables, una librería y texto al instante en el mundo físico. Con millis() además aprendés a manejar tiempos sin congelar el programa, algo clave en proyectos complejos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar el LCD apagado y preguntar cuántos cables creen que necesitará", "min": "10 min" },
+      { "titulo": "LCD 16x2 y módulo I2C", "que": "Explicar la pantalla y las 4 conexiones del módulo", "min": "20 min" },
+      { "titulo": "Instalación de librería", "que": "Descargar e instalar LiquidCrystal_I2C en vivo", "min": "20 min" },
+      { "titulo": "Funciones del LCD", "que": "Recorrer begin, setCursor, print y clear con el proyector", "min": "20 min" },
+      { "titulo": "millis() y práctica", "que": "Guiar el mensaje personalizado y el contador", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Quiz y puesta en común de los displays", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué lerían en un display en su cuarto: temperatura, hora, mensaje. Así conectan con los datos.",
+      "Comparar millis() con el reloj del aula: pasa todo el tiempo aunque no lo mires."
+    ],
+    "aclarar": [
+      "La dirección I2C puede ser 0x27 o 0x3F: probá con un escaneo o probando y error.",
+      "El potenciómetro del módulo ajusta el contraste: los caracteres ilegibles se arreglan girándolo.",
+      "delay() en el loop congela el refresco del contador; millis() lo mantiene fluido."
+    ],
+    "ejemplos": [
+      "Mostrar el mensaje \u201cHola, robotica!\u201d con setCursor(0,1) para la segunda línea.",
+      "Hacer un contador de segundos en vivo con millis().",
+      "Que cada pareja muestre su nombre: personalización inmediata del proyecto."
+    ]
+  }
+}

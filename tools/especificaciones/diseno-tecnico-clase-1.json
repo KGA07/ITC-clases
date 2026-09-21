@@ -1,0 +1,173 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 1,
+    "titulo": "Introducción e interfaz de AutoCAD",
+    "modulo": "Módulo 1 – Fundamentos de AutoCAD",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a conocer la pantalla de AutoCAD: la cinta de opciones, la línea de comandos y las ayudas al dibujo. Además vas a aprender a manejar el mouse para encuadrar y hacer zoom sobre tu trabajo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 1 Introducción Autocad",
+  "objetivos": [
+    "Reconocer las áreas principales de la interfaz: cinta de opciones, línea de comandos y área de dibujo.",
+    "Ingresar comandos por teclado y por cinta, y utilizar las opciones que ofrece cada comando.",
+    "Activar Orto (F8), Rastreo Polar (F10) y Referencia a Objetos (F3) y explicar para qué sirve cada uno.",
+    "Usar el scroll y el encuadre del mouse para acercar, alejar y desplazar la vista del dibujo."
+  ],
+  "teoria": [
+    {
+      "titulo": "La interfaz de AutoCAD",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/interfaz.jpg",
+        "alt": "Pantalla de AutoCAD con cinta de opciones",
+        "caption": "La pantalla de AutoCAD se organiza para que todo tu trabajo quede a un clic de distancia."
+      },
+      "parrafos": [
+        "AutoCAD es un programa de dibujo técnico asistido por computadora. Cuando lo abrís, ves un gran espacio oscuro donde vas a dibujar, rodeado de barras, menús y paneles que concentran todas las herramientas.",
+        "No hace falta memorizar ninguna pantalla: la clave es entender dónde vive cada familia de herramientas para encontrarlas rápido cuando las necesites."
+      ],
+      "puntos": [
+        "Área de dibujo: la zona central en negro donde se dibuja y se ven los objetos.",
+        "Cinta de opciones: la barra superior con pestañas y paneles (Dibujo, Modificar, Capas...).",
+        "Línea de comandos: la franja en la parte inferior donde se escriben y responden los comandos.",
+        "Barra de estado: a la vez abajo, donde se activan los modos de referencia y las ayudas."
+      ]
+    },
+    {
+      "titulo": "La cinta de opciones y los paneles",
+      "emoji": "🧩",
+      "imagen": {
+        "src": "img/ayudas.jpg",
+        "alt": "Barras y ayudas de dibujo de AutoCAD",
+        "caption": "Las ayudas al dibujo se activan desde la barra de estado con un clic o con las teclas F."
+      },
+      "parrafos": [
+        "La cinta de opciones reemplazó a los antiguos menús: está dividida en pestañas y cada pestaña contiene paneles con herramientas afines. Por ejemplo, la pestaña Inicio concentra las herramientas que se usan todos los días."
+      ],
+      "puntos": [
+        "Pestañas: Inicio, Insertar, Anotar, Capas, Paramétrico, Visualizar y más.",
+        "Paneles: grupos temáticos como Dibujo, Modificar, Propiedades y Capas.",
+        "Cada botón tiene una ayuda flotante si dejás el mouse apoyado un instante.",
+        "Si perdés un panel, hacé clic derecho sobre la cinta y activá el que te falte."
+      ]
+    },
+    {
+      "titulo": "La línea de comandos",
+      "emoji": "⌨️",
+      "parrafos": [
+        "La línea de comandos es el corazón de AutoCAD: por teclado escribís un comando (por ejemplo LINEA) y el programa te va guiando con preguntas, opciones y valores. Aunque todo tiene botones, el teclado es el camino más rápido y profesional."
+      ],
+      "puntos": [
+        "Se escribe el comando y se confirma con Enter o Espacio.",
+        "Las opciones entre corchetes (por ejemplo [Deshacer]) se eligen escribiendo su letra.",
+        "ESC cancela el comando en curso; reiniciar con Enter repite el último comando.",
+        "El autocompletado sugiere comandos mientras escribís: se elige con flechas y Enter."
+      ]
+    },
+    {
+      "titulo": "Ayudas al dibujo y manejo de la vista",
+      "emoji": "🎯",
+      "imagen": {
+        "src": "img/encuadre.jpg",
+        "alt": "Navegación de la vista con el mouse",
+        "caption": "Con el scroll acercás y alejás; con el encuadre desplazás la vista sin mover el dibujo."
+      },
+      "parrafos": [
+        "Las ayudas al dibujo son modos que se activan para que AutoCAD haga el trabajo pesado por vos: mantener líneas rectas, señalar ángulos y detectar puntos exactos de la geometría existente.",
+        "Por su parte, la vista se maneja principalmente con el mouse: el scroll acerca y aleja, y mantenerlo presionado (o la tecla de encuadre) desplaza la vista."
+      ],
+      "puntos": [
+        "Orto (F8): fuerza que las líneas salgan perfectamente horizontales o verticales.",
+        "Rastreo Polar (F10): ofrece guías de ángulos (90°, 45°...) mientras dibujás.",
+        "Referencia a Objetos (F3): detecta finales, centros e intersecciones de objetos existentes.",
+        "Scroll hacia adelante = acercar; hacia atrás = alejar; mantener = encuadrar."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Verificá que entendés la interfaz",
+      "consigna": "Respondé las preguntas del repaso interactivo sobre las partes de la pantalla y las ayudas al dibujo.",
+      "pasos": [
+        "Abrí AutoCAD y abrí un dibujo nuevo (plantilla acad).",
+        "Recorré con el mouse cada pestaña de la cinta y mirá los paneles que contiene.",
+        "Escribí LINEA en la línea de comandos y mirá cómo aparece la guía de opciones.",
+        "Activá y desactivá Orto (F8), Rastreo Polar (F10) y Referencia a Objetos (F3) mirando su botón en la barra de estado.",
+        "Probalo con encuadre y zoom usando el scroll, y respondé el interactivo."
+      ],
+      "entrega": "El docente repasa tus respuestas del interactivo en la pizarra y despeja dudas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tecla activa el modo Orto?",
+            "opciones": ["F3", "F8", "F10", "F12"],
+            "correcta": "F8"
+          },
+          {
+            "pregunta": "¿Dónde se escriben los comandos y sus opciones?",
+            "opciones": ["En la cinta de opciones", "En la línea de comandos", "En la barra de estado", "En el área de dibujo"],
+            "correcta": "En la línea de comandos"
+          },
+          {
+            "pregunta": "¿Qué hace el scroll del mouse en el área de dibujo?",
+            "opciones": ["Borra objetos", "Acerca y aleja la vista", "Cambia el color de la pantalla", "Guarda el dibujo"],
+            "correcta": "Acerca y aleja la vista"
+          },
+          {
+            "pregunta": "¿Cómo se cancela un comando que se empezó por error?",
+            "opciones": ["Con ESC", "Con Enter", "Con F3", "Cerrando el programa"],
+            "correcta": "Con ESC"
+          },
+          {
+            "pregunta": "¿Qué ayuda detecta finales y centros de objetos existentes?",
+            "opciones": ["Orto", "Rastreo Polar", "Referencia a Objetos", "Entrada dinámica"],
+            "correcta": "Referencia a Objetos"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Dibujá tu primera línea con ayudas",
+      "consigna": "Dibujá una línea horizontal y otra vertical usando Orto, y practicá el encuadre y el zoom sobre ellas.",
+      "pasos": [
+        "Creá un dibujo nuevo (nuevo DWG).",
+        "Activá Orto con F8.",
+        "Con el comando LINEA (L + Enter), hacé clic en un punto, mové el mouse hacia la derecha y hacé clic para fijar la línea horizontal.",
+        "Volvé a usar LINEA, ahora hacia arriba, para dibujar una vertical.",
+        "Usá el scroll para acercar y alejar, y el encuadre para recorrer el área alrededor de tus dos líneas.",
+        "Guardá el archivo como clase1-lineas.dwg."
+      ],
+      "entrega": "Mostrale al docente el archivo con tus dos líneas y explicá qué hizo cada ayuda al dibujo."
+    }
+  ],
+  "entrega": "El docente revisa el archivo clase1-lineas.dwg y el repaso interactivo para confirmar el manejo de la interfaz y las ayudas.",
+  "lectura": "AutoCAD es un programa de dibujo asistido por computadora que se maneja con la cinta de opciones, la línea de comandos y las ayudas al dibujo. Saber dónde vive cada herramienta, activar Orto, el rastreo polar y la referencia a objetos, y dominar el encuadre con el mouse es la base de todo el curso: después, dibujar es solo combinar esos recursos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar el curso, los objetivos y la forma de trabajo con PC individual", "min": "10 min" },
+      { "titulo": "La interfaz", "que": "Recorrer en vivo la cinta, el área de dibujo y la barra de estado", "min": "20 min" },
+      { "titulo": "Línea de comandos", "que": "Mostrar escritura de comandos, opciones y autocompletado", "min": "15 min" },
+      { "titulo": "Ayudas y vistas", "que": "Activar F8, F10 y F3 y practicar zoom y encuadre", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el dibujo de las dos líneas y el repaso interactivo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguien dibujó alguna vez a mano y qué herramientas usaba (escuadra, regla). Comparar con Orto y referencia a objetos.",
+      "Mostrar un plano hecho en AutoCAD como ejemplo de destino del curso."
+    ],
+    "aclarar": [
+      "La línea de comandos NO es un chat: responde sí o no con opciones concretas.",
+      "Un clic en el scroll es encuadre; la rueda sola es zoom. Es común confundirlos al principio.",
+      "ESC es el gran deshacedor de errores de comando: repetir con Enter es un ahorro enorme de tiempo."
+    ],
+    "ejemplos": [
+      "Dibujar una línea en vivo mientras los alumnos la replican y alternan Orto activado/desactivado.",
+      "Comparar una línea recta hecha 'a ojo' con una hecha con Orto activado.",
+      "Acercar con scroll hasta un extremo y encuadrar para recorrer el dibujo completo."
+    ]
+  }
+}

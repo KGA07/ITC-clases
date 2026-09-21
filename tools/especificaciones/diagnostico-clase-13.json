@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 13,
+    "titulo": "Drivers, programas básicos y seguridad",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PCs con Windows, instaladores de drivers y programas básicos, acceso a internet",
+    "bajada": "Un equipo recién instalado no termina ahí: necesita drivers para que funcionen placa, video y audio, programas básicos para el usuario y protección contra virus. Eso es lo que vas a aprender hoy.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 13 - Drivers",
+  "objetivos": [
+    "Definir qué es un driver y cómo funciona.",
+    "Identificar el modelo de placa y buscar sus drivers.",
+    "Instalar programas básicos y entender virus y antivirus.",
+    "Hacer backup de drivers para una reinstalación."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es un driver",
+      "emoji": "🧩",
+      "imagen": {
+        "src": "img/admin-dispositivos.jpg",
+        "alt": "Administrador de dispositivos de Windows",
+        "caption": "El Administrador de dispositivos muestra qué drivers faltan o fallan."
+      },
+      "parrafos": [
+        "Un driver (controlador) es un programa que le dice al sistema operativo cómo usar un hardware: placa de video, audio, red o impresora. Sin el driver correcto, el componente no funciona o anda mal."
+      ],
+      "puntos": [
+        "Windows trae drivers genéricos; los del fabricante aportan funciones completas.",
+        "El Administrador de dispositivos muestra dispositivos con falla.",
+        "Un ícono amarillo = falta driver.",
+        "Actualizar drivers mejora rendimiento y estabilidad."
+      ]
+    },
+    {
+      "titulo": "Identificación de placa y búsqueda de drivers",
+      "emoji": "🔍",
+      "parrafos": [
+        "Para buscar el driver correcto hay que saber qué componente tenés. Se identifica el modelo y se descarga desde el sitio oficial del fabricante."
+      ],
+      "puntos": [
+        "Identificar modelo: etiqueta de la placa, CPU-Z, o Administrador de dispositivos.",
+        "Buscar siempre en el sitio oficial del fabricante.",
+        "Descargar la versión para la arquitectura correcta (32/64 bits).",
+        "Guardar los instaladores en una carpeta de respaldo."
+      ]
+    },
+    {
+      "titulo": "Instalación de drivers y backup",
+      "emoji": "📦",
+      "parrafos": [
+        "La instalación suele ser un doble clic, pero conviene crear un backup del driver actual antes de reinstalar o cambiar de sistema."
+      ],
+      "puntos": [
+        "Descomprimir y ejecutar el instalador con permisos de administrador.",
+        "Reiniciar cuando lo pida el sistema.",
+        "Backup de drivers: software como Double Driver exporta los controladores.",
+        "Verificar resultado en el Administrador de dispositivos."
+      ]
+    },
+    {
+      "titulo": "Instalación de programas básicos",
+      "emoji": "🧰",
+      "parrafos": [
+        "Una PC 'recién instalada' necesita navegador, lector de PDF, ofimática y un compresor. Son los programas base de cualquier usuario."
+      ],
+      "puntos": [
+        "Navegador: Chrome, Firefox o Edge.",
+        "Ofimática: LibreOffice u Office.",
+        "PDF: lector y editores básicos.",
+        "Compresor: WinRAR o 7-Zip, y desinstalar extras que vienen de regalo."
+      ]
+    },
+    {
+      "titulo": "Virus y antivirus",
+      "emoji": "🦠",
+      "imagen": {
+        "src": "img/antivirus.jpg",
+        "alt": "Escaneo del sistema con antivirus",
+        "caption": "El antivirus detecta y neutraliza amenazas en tiempo real."
+      },
+      "parrafos": [
+        "Un virus es un programa malicioso que daña o roba datos. El antivirus lo detecta y el usuario evita riesgos con buenas prácticas."
+      ],
+      "puntos": [
+        "Virus: se propagan pegados a programas, archivos o pendrives.",
+        "Antivirus: escanea archivos y protege en tiempo real.",
+        "Mantener el sistema y el antivirus actualizados.",
+        "Desconfiar de adjuntos raros y de 'crackers' o parches no oficiales."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: drivers y seguridad",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre drivers, programas y antivirus.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Verificá en tu PC los puntos que aprendiste."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es un driver?",
+            "opciones": ["Un programa que le enseña al sistema a usar un hardware", "Un virus informático", "Un archivo ISO", "Un tipo de memoria"],
+            "correcta": "Un programa que le enseña al sistema a usar un hardware"
+          },
+          {
+            "pregunta": "¿Dónde conviene descargar los drivers?",
+            "opciones": ["Del sitio oficial del fabricante", "De cualquier página random", "De adjuntos de correos", "De un pendrive ajeno sin revisar"],
+            "correcta": "Del sitio oficial del fabricante"
+          },
+          {
+            "pregunta": "Un dispositivo con ícono amarillo en Administrador de dispositivos indica...",
+            "opciones": ["Falta o problema con el driver", "Que funciona perfecto", "Que es nuevo", "Que está apagado"],
+            "correcta": "Falta o problema con el driver"
+          },
+          {
+            "pregunta": "¿Cuál es un programa básico que conviene instalar tras formatear?",
+            "opciones": ["Un navegador", "Un lector de malware", "Un editor de BIOS", "Una fuente de alimentación"],
+            "correcta": "Un navegador"
+          },
+          {
+            "pregunta": "¿Qué hace un antivirus?",
+            "opciones": ["Detecta y elimina programas maliciosos", "Acelera el disco", "Aumenta la RAM", "Edita documentos"],
+            "correcta": "Detecta y elimina programas maliciosos"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Enderezá los drivers de una PC",
+      "consigna": "Detectá con el Administrador de dispositivos qué drivers faltan en tu PC y buscá la solución.",
+      "pasos": [
+        "Abrí el Administrador de dispositivos.",
+        "Detectá dispositivos con ícono amarillo o 'Dispositivo desconocido'.",
+        "Anotá el modelo mediante la identificación del hardware.",
+        "Buscá el driver oficial del fabricante.",
+        "Instalalo y verificá que desaparezca el aviso."
+      ],
+      "entrega": "Administrador de dispositivos sin errores o informe de lo resuelto."
+    }
+  ],
+  "entrega": "El docente revisará el informe de drivers y el interactivo.",
+  "lectura": "Después de instalar un sistema operativo, los drivers devuelven la vida a placa, video y audio; los programas básicos hacen útil la PC y el antivirus la protege. Aprender a identificarlos, buscarlos y respaldarlos es el día a día del mantenimiento de software.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar instalación de Windows y preguntar qué harían después", "min": "10 min" },
+      { "titulo": "Driver y Administrador de dispositivos", "que": "Explicar drivers con el Administrador de dispositivos en vivo", "min": "20 min" },
+      { "titulo": "Identificación y descarga", "que": "Buscar el modelo de placa y los drivers oficiales con internet", "min": "20 min" },
+      { "titulo": "Programas básicos y backup", "que": "Instalar programas base y armar un backup de drivers", "min": "15 min" },
+      { "titulo": "Virus y antivirus", "que": "Explicar tipos de malware y práctica de escaneo", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué programas no le pueden faltar después de formatear una PC.",
+      "Contar un caso real de una PC que no tenía audio por falta de driver."
+    ],
+    "aclarar": [
+      "No usar instaladores de 'driver packs' de terceros en PC ajenas: mejor el fabricante.",
+      "Windows Update también trae drivers, pero no siempre los últimos.",
+      "Un antivirus por vez: dos antivirus se pelean y frenan la PC."
+    ],
+    "ejemplos": [
+      "Mostrar el Administrador de dispositivos y desinstalar/reinstalar el driver de red.",
+      "Buscar el driver de una placa real en el sitio del fabricante.",
+      "Simular un mail con adjunto 'cuentas bancarias.exe' y explicar por qué no abrirlo."
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 7,
+    "titulo": "Sintaxis de lenguaje Arduino",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a aprender las reglas de escritura del lenguaje Arduino: variables, constantes, tipos de datos, ámbito de declaración y cómo se inicializan esos valores en tu primer código prolijo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 7 - Sintaxis de lenguaje Arduino",
+  "objetivos": [
+    "Aplicar las reglas básicas de sintaxis: llaves, punto y coma y comentarios.",
+    "Declarar e inicializar variables y constantes correctamente.",
+    "Diferenciar los tipos de datos principales de Arduino.",
+    "Comprender el ámbito de una variable global y local."
+  ],
+  "teoria": [
+    {
+      "titulo": "Las reglas de escritura",
+      "emoji": "✒️",
+      "imagen": {
+        "src": "img/arduino-sintaxis.jpg",
+        "alt": "Código de Arduino en el editor",
+        "caption": "Una sintaxis prolija hace que el código se lea como un texto."
+      },
+      "parrafos": [
+        "La sintaxis es el conjunto de reglas para escribir código que la placa entienda. En Arduino, cada instrucción termina con punto y coma, los bloques van entre llaves { } y los comentarios se escriben con // para una línea o /* */ para varias.",
+        "Una buena práctica: escribir comentarios que expliquen qué hace cada parte. Cuando vuelvas a leer el código a la semana, te vas a agradecer a vos mismo."
+      ],
+      "puntos": [
+        "// comentario de una línea.",
+        "/* ... */ comentario de varias líneas.",
+        "Cada instrucción (statement) termina en ;",
+        "Las llaves { } agrupan bloques como setup() y loop()."
+      ]
+    },
+    {
+      "titulo": "Variables y constantes",
+      "emoji": "📦",
+      "imagen": {
+        "src": "img/arduino-codigo.jpg",
+        "alt": "Declaración de variables en Arduino",
+        "caption": "int, float y const se usan a diario en los sketches."
+      },
+      "parrafos": [
+        "Una variable es un espacio de memoria con nombre donde guardás un valor que puede cambiar. Una constante es un valor que no cambia durante el programa, y se declara con const.",
+        "Declarar e inicializar es definir el tipo y el nombre, y asignarle un primer valor. Podés hacerlo en la misma línea: int contador = 0; o hacerlo después: int contador; contador = 0;"
+      ],
+      "puntos": [
+        "Declaración: indicar tipo y nombre, por ejemplo int led;",
+        "Inicialización: darle el primer valor, por ejemplo led = 13;",
+        "En una línea: int led = 13;",
+        "Constante: const int pinBoton = 2; (no se puede reasignar)."
+      ]
+    },
+    {
+      "titulo": "Tipos de datos",
+      "emoji": "🔤",
+      "parrafos": [
+        "Arduino maneja varios tipos de datos según el valor que quieras guardar. Elegir el tipo correcto ahorra memoria y evita resultados inesperados.",
+        "Los tipos principales son int (números enteros), float (números con coma, como temperaturas), char (un solo carácter) y boolean (verdadero o falso). También existe String para cadenas de texto, que veremos más adelante con el Serial."
+      ],
+      "puntos": [
+        "int: números enteros, por ejemplo la hora en segundos.",
+        "float: números decimales, por ejemplo 23.5 °C.",
+        "char: una letra, por ejemplo 'A'.",
+        "bool: true o false, por ejemplo la lectura de un pulsador.",
+        "long: números enteros grandes, por ejemplo millis() largo."
+      ]
+    },
+    {
+      "titulo": "Ámbito de las variables",
+      "emoji": "🌐",
+      "parrafos": [
+        "El ámbito indica desde qué partes del código se puede usar una variable. Las variables globales se declaran fuera de las funciones, al inicio del sketch, y son visibles en todo el programa. Las locales se declaran dentro de una función y solo existen ahí.",
+        "Es una convención común declarar las constantes de pines como globales arriba del código: así cualquier función puede usarlas y son fáciles de cambiar en un solo lugar."
+      ],
+      "puntos": [
+        "Global: declarada fuera de toda función, visible en todo el sketch.",
+        "Local: declarada dentro de setup(), loop() u otra función, solo se usa ahí.",
+        "Una variable local no se puede leer fuera de su función.",
+        "Declarar las constantes de pines arriba hace el código más ordenado."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Reglas de la sintaxis",
+      "consigna": "Resolvé el quiz aplicando reglas de sintaxis, tipos y ámbito.",
+      "pasos": [
+        "Pensá cada enunciado como si lo escribieras en el IDE.",
+        "Verificá mentalmente si la declaración tiene tipo y punto y coma.",
+        "Repasá qué es global y qué es local."
+      ],
+      "entrega": "Respuestas con la justificación de cada una en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo se escribe un comentario de una línea?",
+            "opciones": ["// comentario", "* comentario", "-- comentario", "' comentario"],
+            "correcta": "// comentario"
+          },
+          {
+            "pregunta": "¿Qué tipo de dato usás para guardar 23.5 (la temperatura)?",
+            "opciones": ["int", "float", "char", "bool"],
+            "correcta": "float"
+          },
+          {
+            "pregunta": "¿Qué declaración es correcta y completa (declarar e inicializar)?",
+            "opciones": ["int led 13", "int led = 13;", "led = 13", "int; led"],
+            "correcta": "int led = 13;"
+          },
+          {
+            "pregunta": "Una variable declarada dentro de setup() se llama:",
+            "opciones": ["global", "constante", "local", "pin"],
+            "correcta": "local"
+          },
+          {
+            "pregunta": "¿Cuál es la sintaxis correcta de una constante?",
+            "opciones": ["const int pin = 2;", "int const = 2", "const pin = 2", "pin const int = 2"],
+            "correcta": "const int pin = 2;"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mi primer código bien declarado",
+      "consigna": "Escribí un sketch que declare constantes y variables con buen estilo, y probalo en la placa.",
+      "pasos": [
+        "Declará arriba del setup(): const int pinLed = 13;",
+        "Declará también: int duracion = 1000;",
+        "En setup(), ejecutá pinMode(pinLed, OUTPUT);",
+        "En loop(), prende el LED con digitalWrite(pinLed, HIGH); delay(duracion); (probad que compila).",
+        "Cambiá el valor de duracion a 250 y volvé a cargar: el parpadeo cambia sin modificar loop().",
+        "Probá declarar una variable local dentro de loop() llamada retardo = 100; y usala con delay(retardo);",
+        "Cargá el código final y corroborá que parpadea usando ambas variables."
+      ],
+      "entrega": "Captura del sketch final con const int, int global y variable local bien comentada."
+    }
+  ],
+  "entrega": "El docente revisará la captura del código y las respuestas del quiz.",
+  "lectura": "La sintaxis es la gramática del código: escribir con reglas claras, elegir el tipo de dato correcto y definir bien el ámbito de cada variable transforma sketches que compilan a la primera en programas fáciles de mantener.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar Blink y preguntar qué valores se podrían guardar en variables", "min": "10 min" },
+      { "titulo": "Reglas de sintaxis", "que": "Mostrar llaves, punto y coma y comentarios con código en vivo", "min": "15 min" },
+      { "titulo": "Variables y constantes", "que": "Declarar e inicializar tipos con ejemplos comparativos", "min": "20 min" },
+      { "titulo": "Tipos de datos", "que": "Cuadro de tipos y elección según el valor a guardar", "min": "15 min" },
+      { "titulo": "Ámbito", "que": "Explicar global vs local con un ejemplo que cambia de lugar las variables", "min": "20 min" },
+      { "titulo": "Práctica y cierre", "que": "Guiar el sketch y resolver el quiz final", "min": "15 min" }
+    ],
+    "conecta": [
+      "Sacar el valor 1000 que está fijo en el Blink y preguntar: ¿y si quiero cambiarlo en un solo lugar? Ahí aparece la variable.",
+      "Comparar la variable con un casillero rotulado donde podés guardar distintos valores."
+    ],
+    "aclarar": [
+      "En Arduino, la coma decimal se escribe con punto: 23.5 no 23,5.",
+      "const y #define cumplen funciones parecidas pero const respeta el tipo de dato.",
+      "Las variables globales consumen memoria todo el tiempo: usalas con criterio."
+    ],
+    "ejemplos": [
+      "Mostrar el mismo código con y sin comentarios para valorar la lectura.",
+      "Cambiar duracion de 1000 a 250 y ver el parpadeo rápido.",
+      "Mostrar un error de tipo: asignar un float a un int y ver cómo se trunca el valor."
+    ]
+  }
+}

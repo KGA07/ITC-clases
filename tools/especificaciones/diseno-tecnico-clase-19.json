@@ -1,0 +1,171 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 19,
+    "titulo": "Texto, tablas y bloques con atributos",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a crear bloques con atributos para las carátulas dinámicas de tus planos: campos de texto editables dentro de un mismo bloque, insertados y modificados en cada plano.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 19 - Bloques con atributos",
+  "objetivos": [
+    "Crear definiciones de atributo dentro de un bloque.",
+    "Insertar y modificar los valores de los atributos.",
+    "Diseñar una carátula dinámica para los planos.",
+    "Completar los datos del plano editando los atributos del bloque."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un bloque con atributos?",
+      "emoji": "🏷️",
+      "imagen": {
+        "src": "img/atributos.jpg",
+        "alt": "Campos de atributos editables",
+        "caption": "Los atributos son campos de texto que forman parte del bloque y cambian en cada inserción."
+      },
+      "parrafos": [
+        "Un atributo es un campo de texto definido dentro de un bloque: el bloque guarda la geometría y cada vez que se inserta se pide el valor del campo. Así, un mismo bloque 'carátula' sirve para todos los planos cambiando solo sus datos.",
+        "La definición de atributo se crea con el comando ATTDEF antes de convertir el bloque."
+      ],
+      "puntos": [
+        "El atributo tiene un nombre (etiqueta) y una pregunta (indicador).",
+        "Al definir se elige justificación, altura y estilo de texto.",
+        "Cada inserción pide el valor o lo pide 'oculto' continuado.",
+        "Los atributos se editan después con doble clic."
+      ]
+    },
+    {
+      "titulo": "Creación e inserción de bloques con atributos",
+      "emoji": "🧩",
+      "imagen": {
+        "src": "img/caratula.jpg",
+        "alt": "Carátula o rótulo de un plano",
+        "caption": "La carátula es un bloque con atributos: mismo rótulo, datos distintos en cada plano."
+      },
+      "parrafos": [
+        "Se dibuja la carátula (marcos, texto fijo), se agregan los atributos con ATTDEF (proyecto, autor, escala, fecha...) y se convierte todo con BLOQUE. Al insertar el bloque, AutoCAD pregunta los datos con sus etiquetas.",
+        "El resultado es un rótulo dinámico: una única definición sirve para todo el trabajo."
+      ],
+      "puntos": [
+        "ATTDEF define cada campo editable.",
+        "Los textos fijos van dibujados aparte y no son atributos.",
+        "BLOQUE agrupa geometría + atributos.",
+        "Insertar pide los valores: se pueden dejar para completar después."
+      ]
+    },
+    {
+      "titulo": "Modificación de atributos",
+      "emoji": "✏️",
+      "imagen": {
+        "src": "img/rotulo.jpg",
+        "alt": "Rótulo completado con datos",
+        "caption": "Los datos del rótulo se completan y corrigen desde el editor de atributos."
+      },
+      "parrafos": [
+        "Con doble clic sobre el bloque se abre el editor de atributos: se cambian los valores sin tocar la geometría. Si algo se definió mal (altura, rótulo), se puede editar la definición de atributo desde el Editor de bloques."
+      ],
+      "puntos": [
+        "Doble clic abre el editor de atributos.",
+        "También se pueden modificar en la paleta de propiedades.",
+        "Los valores por defecto se cambian en la definición.",
+        "Reordenar y rellenear campos se hace en el editor avanzado."
+      ]
+    },
+    {
+      "titulo": "Carátulas dinámicas para los planos",
+      "emoji": "📂",
+      "parrafos": [
+        "La carátula del curso se arma como bloque con atributos y se inserta en cada lámina con su propia información: título del plano, asignatura, alumno, docente, escala, fecha y número de lámina.",
+        "Al terminar, cada plano de la carpeta usa el mismo rótulo y se distingue solo por sus atributos completos."
+      ],
+      "puntos": [
+        "Diseñar el rótulo de una vez y guardarlo en la biblioteca de bloques.",
+        "Los atributos se rellenan en cada inserción.",
+        "Con Design Center se trae la carátula a cualquier archivo nuevo.",
+        "La presentación final del plano se completa con estos datos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá los atributos",
+      "consigna": "Respondé el interactivo sobre definición, inserción y modificación de atributos.",
+      "pasos": [
+        "Repasá el flujo ATTDEF → BLOQUE → INSERT.",
+        "Explorá el editor de atributos con doble clic.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con la carátula en pantalla.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué comando define un atributo?",
+            "opciones": ["BLOQUE", "ATTDEF", "INSERT", "TEXTO"],
+            "correcta": "ATTDEF"
+          },
+          {
+            "pregunta": "¿Qué se pide al insertar un bloque con atributos?",
+            "opciones": ["El color", "Los valores de los atributos", "El grosor de línea", "La impresora"],
+            "correcta": "Los valores de los atributos"
+          },
+          {
+            "pregunta": "¿Cómo se modifican los atributos luego de insertar?",
+            "opciones": ["Con doble clic sobre el bloque", "Borrando el bloque", "Con UNIDADES", "Con SPLINE"],
+            "correcta": "Con doble clic sobre el bloque"
+          },
+          {
+            "pregunta": "¿Qué es una etiqueta (tag) de atributo?",
+            "opciones": ["El color del texto", "El nombre con que se identifica el campo", "La capa del bloque", "El tamaño del rótulo"],
+            "correcta": "El nombre con que se identifica el campo"
+          },
+          {
+            "pregunta": "¿Para qué sirve una carátula como bloque con atributos?",
+            "opciones": ["Para imprimir más rápido", "Para que un mismo rótulo tenga datos distintos en cada plano", "Para acotar", "Para colorear"],
+            "correcta": "Para que un mismo rótulo tenga datos distintos en cada plano"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Carátula dinámica del curso",
+      "consigna": "Creá la carátula que va a usar en todos los planos del curso.",
+      "pasos": [
+        "Dibujá un marco A4 o la carátula con los rectángulos de datos.",
+        "Definí con ATTDEF los campos: PROYECTO, ALUMNO, DOCENTE, ESCALA, FECHA y LAMINA.",
+        "Convertí todo en bloque con BLOQUE llamado CARATULA.",
+        "Insertalo en un dibujo nuevo y completá los datos.",
+        "Cambiá el valor de FECHA con doble clic para verificar que edita.",
+        "Guardá el archivo como clase19-caratula.dwg y el bloque para tus planos."
+      ],
+      "entrega": "El docente revisa el bloque CARATULA insertado y la correcta edición de sus atributos."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase19-caratula.dwg con el bloque de carátula y sus atributos funcionando.",
+  "lectura": "Los bloques con atributos unen la geometría con los datos: el rótulo se dibuja una vez y la información de cada plano se completa en cada inserción. La carátula dinámica define la identidad del curso: mismo marco, y los datos correctos de cada proyecto.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar rótulos de planos reales y ubicar los campos que cambian", "min": "10 min" },
+      { "titulo": "ATTDEF y configuración", "que": "Definir atributos con etiqueta, pregunta y altura", "min": "20 min" },
+      { "titulo": "BLOQUE y orden de selección", "que": "Convertir geometría + atributos con BLOQUE", "min": "15 min" },
+      { "titulo": "Inserto y edición", "que": "Insertar completando datos y editar con doble clic", "min": "20 min" },
+      { "titulo": "Práctica de carátula", "que": "Guiar la construcción de la carátula completa de cada alumno", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo final", "min": "5 min" }
+    ],
+    "conecta": [
+      "Pedir que armen el rótulo a mano de un plano y que digan qué campos cambian de plano en plano: esos son los atributos."
+    ],
+    "aclarar": [
+      "Los textos fijos (título 'DIBUJO TÉCNICO') no son atributos: solo los campos editables lo son.",
+      "ATTDEF definido pero sin BLOQUE no pide datos al insertar: hay que convertirlos.",
+      "La etiqueta y el valor no son lo mismo: la etiqueta es el nombre del campo, el valor lo que escribís."
+    ],
+    "ejemplos": [
+      "Crear el atributo FECHA y cambiar su valor de 'Septiembre' a 'Octubre' con doble clic.",
+      "Dos planos que usan el mismo bloque CARATULA con datos distintos.",
+      "Rellenar ALUMNO en cada tanda con los nombres de la clase."
+    ]
+  }
+}

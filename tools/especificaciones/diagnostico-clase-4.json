@@ -1,0 +1,186 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 4,
+    "titulo": "Placa madre II: conectores internos",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Placas madres sueltas, cables SATA/IDE, conectores de fuente, cajón de conectores sueltos",
+    "bajada": "El corazón de la placa son sus conectores internos: alimentación, ventiladores, discos y el panel frontal. Aprender a identificarlos evita cables sueltos, cortocircuitos y fallas de encendido.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 4 - Placa madre II",
+  "objetivos": [
+    "Identificar los conectores ATX de 20/24 pines y CPU Power de la placa.",
+    "Reconocer conectores SATA, IDE y FLOPPY y sus cables.",
+    "Localizar los pines del panel frontal (power, reset, LEDs).",
+    "Distinguir slots de RAM y conectores de USB/audio frontal."
+  ],
+  "teoria": [
+    {
+      "titulo": "Conectores de alimentación ATX",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/conector-atx.jpg",
+        "alt": "Conector ATX de 24 pines de la fuente de alimentación",
+        "caption": "El conector ATX de 24 pines alimenta la placa madre."
+      },
+      "parrafos": [
+        "La placa madre se alimenta con el conector ATX principal y el CPU Power en la zona del socket. Sin ambos bien conectados, la PC no enciende o el procesador se queda sin energía."
+      ],
+      "puntos": [
+        "ATX 24 pines: energía general de la placa (antes era de 20 pines).",
+        "CPU Power (4/8 pines): energía exclusiva para el procesador.",
+        "La ficha entra con un clip de retención: hay que trabarla.",
+        "Conectores sueltos = fallas intermitentes de encendido."
+      ]
+    },
+    {
+      "titulo": "Conectores de discos: IDE, SATA y FLOPPY",
+      "emoji": "💽",
+      "imagen": {
+        "src": "img/cable-sata.jpg",
+        "alt": "Cables SATA de datos y de alimentación",
+        "caption": "Los cables SATA son angostos y de conexión fácil."
+      },
+      "parrafos": [
+        "Los discos y lectores se conectaban por IDE (cinta ancha y plana) y hoy se conectan por SATA (cable fino). El conector FLOPPY quedó para la disquetera clásica."
+      ],
+      "puntos": [
+        "IDE: cinta plana de 40 pines, permite 2 dispositivos por cable (master/slave).",
+        "SATA: cable fino de 7 pines, un dispositivo por cable, muy veloz.",
+        "FLOPPY: cable angosto de 34 pines para disqueteras (ya casi no se usa).",
+        "En placas modernas solo se ven conectores SATA."
+      ]
+    },
+    {
+      "titulo": "CPU Fan y conectores de ventiladores",
+      "emoji": "🌀",
+      "parrafos": [
+        "Los ventiladores del procesador y del gabinete se enchufan en conectores especiales de la placa para recibir energía y enviar el dato de velocidad."
+      ],
+      "puntos": [
+        "CPU_FAN: conector del cooler del procesador, 4 pines (PWM).",
+        "SYS_FAN: ventiladores del gabinete.",
+        "PUMP_FAN: bombas de refrigeración líquida en placas de gama alta.",
+        "Conectar el cooler en el lugar fijo evita errores de temperatura."
+      ]
+    },
+    {
+      "titulo": "Slots de memoria RAM",
+      "emoji": "🧠",
+      "imagen": {
+        "src": "img/slots-ram.jpg",
+        "alt": "Slots de memoria RAM en la placa madre",
+        "caption": "Los slots DIMM alojan los módulos de memoria RAM."
+      },
+      "parrafos": [
+        "Los módulos de RAM se colocan en slotes llamados DIMM. En placas modernas hay 2 o 4, y la mitad de ellos se usan para optimizar el modo de doble canal."
+      ],
+      "puntos": [
+        "DIMM: slot largo con trabas en los extremos.",
+        "Cantidad típica: 2 o 4 slots por placa.",
+        "Doble canal: colocar los módulos en el par de slots correcto.",
+        "Formas y compatibilidad: DDR3, DDR4, DDR5 no son intercambiables."
+      ]
+    },
+    {
+      "titulo": "Panel frontal, USB y audio frontal",
+      "emoji": "🖥️",
+      "parrafos": [
+        "El gabinete trae botones de encendido, reset y LEDs que se conectan a pines finos de la placa. USB y audio frontales usan conectores de bloque específicos."
+      ],
+      "puntos": [
+        "F_PANEL: pines para power, reset, LED de encendido y de disco.",
+        "USB frontal: conector de 9 pines para los puertos USB del gabinete.",
+        "Audio frontal: bloque HD Audio (AUDIO) para auriculares y micrófono.",
+        "Fijarse en la polaridad (positivo/negativo) de cada pin."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: conectores de placa",
+      "consigna": "Respondé las 5 preguntas del interactivo para identificar cada conector interno.",
+      "pasos": [
+        "Recorré las imágenes de la teoría.",
+        "Respondé el interactivo.",
+        "Chequeá las respuestas con el docente."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué conector alimenta exclusivamente al procesador?",
+            "opciones": ["CPU Power (4/8 pines)", "SATA", "IDE", "F_PANEL"],
+            "correcta": "CPU Power (4/8 pines)"
+          },
+          {
+            "pregunta": "El cable de 7 pines que usan los discos actuales es...",
+            "opciones": ["SATA", "IDE", "FLOPPY", "ATX"],
+            "correcta": "SATA"
+          },
+          {
+            "pregunta": "¿Dónde se enchufa la disquetera clásica?",
+            "opciones": ["Conector FLOPPY", "SATA", "M.2", "CPU_FAN"],
+            "correcta": "Conector FLOPPY"
+          },
+          {
+            "pregunta": "Los pines F_PANEL del gabinete sirven para...",
+            "opciones": ["Conectar botones y LEDs frontales", "Alimentar el disco", "Conectar el monitor", "Extender la red"],
+            "correcta": "Conectar botones y LEDs frontales"
+          },
+          {
+            "pregunta": "¿En qué conector se enchufa el ventilador del procesador?",
+            "opciones": ["CPU_FAN", "SATA", "F_PANEL", "ATX"],
+            "correcta": "CPU_FAN"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Circuitería guiada",
+      "consigna": "Con la placa madre sobre la mesa, ubicá y marcá cada familia de conectores con etiquetas.",
+      "pasos": [
+        "Ubicá el conector ATX principal y el CPU Power.",
+        "Marcá los conectores SATA disponibles.",
+        "Identificá los pines F_PANEL y el bloque USB frontal.",
+        "Señalá los slots de RAM y el conector CPU_FAN.",
+        "Escribí en la ficha de la clase anterior qué conectores tiene tu placa."
+      ],
+      "entrega": "Placa etiquetada o ficha con la ubicación de cada conector."
+    }
+  ],
+  "entrega": "El docente verificará la ubicación de los conectores en la placa y el interactivo.",
+  "lectura": "Los conectores internos de la placa madre son el cableado invisible de la PC: ATX y CPU Power dan energía, SATA/IDE conectan discos, CPU_FAN refrigera el procesador y el panel frontal enciende la máquina. Dominarlos es fundamental para el armado y el diagnóstico de fallas de encendido.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar socket, chipset y pila de la clase anterior", "min": "10 min" },
+      { "titulo": "Alimentación", "que": "Mostrar ATX 24 pines y CPU Power con conectores reales de fuente", "min": "15 min" },
+      { "titulo": "Discos y ventiladores", "que": "Comparar cables IDE, SATA y FLOPPY y conectar CPU_FAN", "min": "20 min" },
+      { "titulo": "Slots de RAM y panel frontal", "que": "Ubicar DIMM, pines F_PANEL, USB y audio frontal en la placa", "min": "20 min" },
+      { "titulo": "Práctica de etiquetado", "que": "Guiar la identificación de conectores en cada placa por banco", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna PC les falló por un cable suelto: los conectores de la fuente son la causa más común.",
+      "Traer una disquetera vieja para que vean el conector FLOPPY antes de que desaparezca."
+    ],
+    "aclarar": [
+      "No forzar el ATX de 20 pines en un conector de 24: las placas nuevas usan 24 pines.",
+      "El cable SATA no lleva energía: se usa el SATA power de la fuente.",
+      "La polaridad del panel frontal importa para los LEDs (positivo/negativo)."
+    ],
+    "ejemplos": [
+      "Conectar y desconectar el ATX de 24 pines para mostrar el clip de retención.",
+      "Mostrar un módulo RAM insertado y trabado en un slot DIMM.",
+      "Simular un cable de panel frontal mal conectado (power en reset) y su consecuencia."
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 10,
+    "titulo": "Efectos interactivos: sombra, silueta, mezcla, distorsión, envoltura, extrusión y transparencia",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a darles profundidad y vida a tus diseños con los efectos interactivos de CorelDRAW: sombras, siluetas, mezclas, distorsiones, envolturas, extrusiones y transparencias. Todo aplicado desde la caja de herramientas con un arrastre.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 11 Efectos creacion de Marca",
+  "objetivos": [
+    "Aplicar y editar sombras interactivas sobre objetos y textos.",
+    "Crear siluetas y mezclas entre dos objetos.",
+    "Usar distorsión, envoltura y extrusión para dar forma y volumen.",
+    "Controlar la transparencia de un objeto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Sombra interactiva",
+      "emoji": "🌑",
+      "imagen": {
+        "src": "img/sombra.jpg",
+        "alt": "Sombra proyectada por un objeto",
+        "caption": "La sombra separa el objeto del fondo y le da sensación de altura."
+      },
+      "parrafos": [
+        "La herramienta Sombra se arrastra desde el objeto hacia afuera: CorelDRAW genera una sombra suave con desenfoque. En la barra de propiedades controlás la distancia, la opacidad, el desvanecimiento y el ángulo de la luz.",
+        "Las sombras separan el objeto del fondo y agregan jerarquía: una profunda 'aterriza' el objeto, una lejana y clara lo hace flotar."
+      ],
+      "puntos": [
+        "Arrastrá la herramienta Sombra desde el objeto hacia la dirección de la luz.",
+        "Opacidad, desvanecimiento y punto de perspectiva se ajustan en la barra.",
+        "La sombra se separa del objeto con Ctrl + K.",
+        "Las sombras suaves y direccionales se ven más profesionales que las negras densas."
+      ]
+    },
+    {
+      "titulo": "Silueta y mezcla",
+      "emoji": "🔁",
+      "imagen": {
+        "src": "img/resplandor.jpg",
+        "alt": "Resplandor luminoso",
+        "caption": "La silueta crea contornos concéntricos; el resplandor es una de sus variantes."
+      },
+      "parrafos": [
+        "La Silueta dibuja contornos concéntricos alrededor del objeto, hacia adentro o hacia afuera, con pasos de color. Si la hacés crecer hacia afuera con tonos claros obtenés un resplandor.",
+        "La Mezcla une dos objetos: elegís el primero y el segundo, y CorelDRAW calcula una serie de formas intermedias que transicionan de uno al otro, ideal para tramas, brillos y sombreados."
+      ],
+      "puntos": [
+        "Silueta: contornos concéntricos hacia adentro o hacia afuera.",
+        "La silueta hacia afuera con tonos claros simula un resplandor.",
+        "Mezcla: pasos intermedios entre dos objetos distintos.",
+        "La mezcla soporta cambios de color progresivos entre los extremos."
+      ]
+    },
+    {
+      "titulo": "Distorsión, envoltura y extrusión",
+      "emoji": "🧲",
+      "parrafos": [
+        "La Distorsión deforma el contorno con empujes, como si apretaras una masa: pellizcos y soplidos que generan formas orgánicas. La Envoltura adapta el objeto a los límites de un sobre que movés con nodos, muy usada para texto.",
+        "La Extrusión agrega profundidad: desde el objeto se estira una cara tridimensional con perspectiva y luz propia. Se aplica a números, letras y formas para lograr un efecto 3D."
+      ],
+      "puntos": [
+        "Distorsión: empujá o pellizcá el contorno como una masa.",
+        "Envoltura: sobre editable que moldea el objeto como un globo.",
+        "Extrusión: profundidad tridimensional con luz y sombra propia.",
+        "La envoltura es ideal para adaptar títulos a siluetas."
+      ]
+    },
+    {
+      "titulo": "Transparencia interactiva",
+      "emoji": "💧",
+      "parrafos": [
+        "La transparencia flota un objeto sobre otro y deja ver a través. Con la herramienta Transparencia arrastrás el fundido: de opaco a transparente, lineal o radial, con un nodo movible para definir de qué lado se ve.",
+        "Combinar transparencia con sombra y mezcla crea las piezas actuales: capas de color semitransparentes sobre fotos, marcas flotantes y fondos degradados."
+      ],
+      "puntos": [
+        "La transparencia se arrastra y se edita de forma interactiva.",
+        "El fundido lineal o radial controla de dónde parte el efecto.",
+        "La transparencia se aplica también a rellenos y a mapas de bits.",
+        "Con transparencias superponés colores sin tapar la base."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Ficha de marca con efectos",
+      "consigna": "Creá una placa para una marca: el nombre con extrusión, una sombra direccional debajo y un fondo con transparencia y mezcla que le dé profundidad.",
+      "pasos": [
+        "Creá un documento horizontal y pintá el fondo con un degradado suave.",
+        "Escribí el nombre de una marca ficticia con texto artístico grande y colorealo.",
+        "Aplicale una sombra direccional hacia abajo a la derecha, con desvanecimiento.",
+        "Aplicale una extrusión para darle grosor 3D al nombre.",
+        "Añadí una elipse con transparencia (fundido) como reflejo sobre el nombre.",
+        "Dibujá dos formas y hacé una mezcla entre ellas como adorno inferior; guardá como efectos-marca-nombre.cdr."
+      ],
+      "entrega": "Exportá el PNG de la ficha con sus efectos y enumerá cuáles aplicaste.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué efecto separa el objeto del fondo con desenfoque?",
+            "opciones": ["La sombra interactiva", "El relleno uniforme", "La estrella compleja", "El alineado"],
+            "correcta": "La sombra interactiva"
+          },
+          {
+            "pregunta": "La silueta que crece hacia afuera con tonos claros simula:",
+            "opciones": ["Un resplandor", "Una textura de piedra", "Un texto de párrafo", "Un zoom"],
+            "correcta": "Un resplandor"
+          },
+          {
+            "pregunta": "¿Qué efecto agrega profundidad 3D a un objeto?",
+            "opciones": ["La extrusión", "La paleta de documento", "La Bézier", "El papel cuadriculado"],
+            "correcta": "La extrusión"
+          },
+          {
+            "pregunta": "La mezcla entre dos objetos crea:",
+            "opciones": ["Formas intermedias que transicionan de uno al otro", "Una copia idéntica", "Un patrón repetido", "Una página nueva"],
+            "correcta": "Formas intermedias que transicionan de uno al otro"
+          },
+          {
+            "pregunta": "¿Qué herramienta deja ver el fondo a través de un objeto?",
+            "opciones": ["Transparencia interactiva", "Sombra profunda", "Extrusión", "Recortar"],
+            "correcta": "Transparencia interactiva"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Profundidad con sombra y transparencia",
+      "consigna": "Creá una composición de dos objetos superpuestos donde la profundidad se logre solo con sombra y transparencia, sin dibujar nada a mano.",
+      "pasos": [
+        "Dibujá un rectángulo grande de color y una elipse que lo superponga.",
+        "Aplicale a la elipse una transparencia interactiva lineal para que se funda con el fondo.",
+        "Dibujá un círculo con una sombra direccional fuerte para darle altura sobre la pieza.",
+        "Ajustá la opacidad de la sombra hasta que el objeto parezca 'volando'.",
+        "Exportá la composición como profundidad-nombre.png."
+      ],
+      "entrega": "Entregá el PNG y describí qué efecto usaste para lograr la profundidad."
+    }
+  ],
+  "entrega": "Se evalúa la ficha con al menos tres efectos aplicados (sombra, extrusión o transparencia) y una lectura visual clara del nombre de la marca.",
+  "lectura": "Los efectos interactivos son el paso del dibujo plano a la pieza viva: la sombra da altura, la extrusión da cuerpo y la transparencia da capas. La regla de oro es la moderación: los efectos deben apoyar el mensaje, no competir con él. Un solo efecto bien aplicado comunica más que un diseño lleno de recursos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar piezas finales con efectos y que los alumnos adivinen qué efecto se usó", "min": "10 min" },
+      { "titulo": "Sombra interactiva", "que": "Arrastrar sombras y ajustar opacidad, distancia y dirección", "min": "20 min" },
+      { "titulo": "Silueta y mezcla", "que": "Generar contornos concéntricos y mezclas entre pares de figuras", "min": "20 min" },
+      { "titulo": "Distorsión, envoltura y extrusión", "que": "Deformar contornos, moldear envolturas y extrudir textos", "min": "15 min" },
+      { "titulo": "Transparencia y práctico", "que": "Fundir capas y armar la ficha de marca con la guía del docente", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y dar pauta de uso moderado de efectos", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué posters con sombras o 3D han visto en la calle y comentar cómo se habrán hecho.",
+      "Comparar una pieza con un solo efecto bien logrado vs. otra recargada."
+    ],
+    "aclarar": [
+      "La sombra no es un objeto dibujado: es un efecto vivo que se ajusta desde la barra.",
+      "La extrusión pesa en el archivo: usar en piezas puntuales.",
+      "La mezcla no borra los originales: los extremos siguen existiendo y se pueden editar."
+    ],
+    "ejemplos": [
+      "Colgar una sombra lejana y acercarla con los controles para ver el cambio de 'flotación'.",
+      "Extruir una letra y comparar con la misma letra plana.",
+      "Fundir dos colores con transparencia sobre una foto en vivo."
+    ]
+  }
+}

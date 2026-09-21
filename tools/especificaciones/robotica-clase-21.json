@@ -1,0 +1,177 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 21,
+    "titulo": "Módulo RTC (reloj en tiempo real)",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a agregar la hora exacta a tus proyectos: configurar un reloj en tiempo real (DS3231 o DS1307), leer fecha y hora por Serial y mostrar la hora en el LCD con la librería RTClib.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 21 - Módulo RTC",
+  "objetivos": [
+    "Reconocer los módulos RTC DS1307 y DS3231.",
+    "Conectar el RTC por I2C a la placa.",
+    "Ajustar y leer fecha y hora con la librería RTClib.",
+    "Mostrar la hora en el LCD con formato legible."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un reloj en tiempo real (RTC)?",
+      "emoji": "⏰",
+      "imagen": {
+        "src": "img/rtc-ds1307.jpg",
+        "alt": "Módulo RTC DS1307",
+        "caption": "El RTC sigue la hora aunque la placa esté apagada gracias a su pila."
+      },
+      "parrafos": [
+        "La placa Arduino no sabe qué hora es: pierde la cuenta cuando se apaga. El módulo RTC (Real Time Clock) es un reloj de precisión con su propia pila, así que conoce la fecha y la hora incluso sin energía de la placa.",
+        "Dos módulos típicos conviven en los kits: el DS1307 (clásico, con pila CR2032) y el DS3231 (más preciso, con su oscilador de cuarzo compensado por temperatura)."
+      ],
+      "puntos": [
+        "RTC: reloj de precisión con pila propia.",
+        "Sigue la hora cuando la placa está apagada.",
+        "DS1307: módulo clásico con CR2032.",
+        "DS3231: más exacto, con compensación de temperatura."
+      ]
+    },
+    {
+      "titulo": "Conexión y librería RTClib",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/rtc-ds3231.jpg",
+        "alt": "Módulo RTC DS3231",
+        "caption": "El DS3231 se conecta igual que el DS1307: SDA, SCL, VCC y GND."
+      },
+      "parrafos": [
+        "El RTC usa el bus I2C, como el LCD de la clase 16: SDA a A4 y SCL a A5, con VCC (5V o 3.3V según el módulo) y GND. En un mismo bus pueden convivir el RTC y el LCD.",
+        "La librería RTClib (de Adafruit, desde el gestor) abstrae todo: autoestablecer la hora con un parámetro, leerla con rtc.now() y acceder a sus campos."
+      ],
+      "puntos": [
+        "SDA → A4; SCL → A5 (Uno).",
+        "Usa la misma librería RTClib para DS1307 y DS3231.",
+        "rtc.adjust(DateTime(...)): ajusta la fecha y hora iniciales.",
+        "DateTime ahora = rtc.now(): obtiene el instante actual."
+      ]
+    },
+    {
+      "titulo": "Ajuste y lectura de la hora",
+      "emoji": "🕐",
+      "parrafos": [
+        "El módulo recién comprado viene con hora de fábrica: hay que ajustarlo una vez, por ejemplo en setup() con la fecha y hora del momento en que subís el programa. Después hace falta sacar esa línea para que no se resetee en cada carga.",
+        "rtc.now() devuelve un objeto DateTime con todo: anio(), mes(), dia(), hora(), minute() y second(). Con eso armamos cualquier texto de hora, incluso al LCD."
+      ],
+      "puntos": [
+        "rtc.adjust(DateTime(2026, 9, 21, 10, 30, 0)) ajusta una vez.",
+        "Sacá o comentá el adjust() después del primer uso.",
+        "DateTime ahora = rtc.now();",
+        "campos: ahora.hora(), ahora.minute(), ahora.second(), ahora.dia()..."
+      ]
+    },
+    {
+      "titulo": "Hora en el LCD",
+      "emoji": "🖥️",
+      "parrafos": [
+        "El punto más vistoso: mostrar la hora en el LCD con formato HH:MM:SS. Se completa el relleno con ceros para que '09:05:03' no quede como '9:5:3'.",
+        "Una línea típica: lcd.setCursor(0, 0); lcd.print(ahora.hora()); lcd.print(':'); lcd.print(ahora.minute()); ... y se refresca con millis() cada segundo para no bloquear el resto."
+      ],
+      "puntos": [
+        "Formato 2 dígitos por campo: agregá ceros a la izquierda.",
+        "Refrescá con millis(): un print cada segundo.",
+        "En un 16x2 podés poner hora arriba y temperatura abajo.",
+        "Con el RTC y el LCD, tu placa se vuelve un reloj digital."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "RTC y tiempos",
+      "consigna": "Respondé el quiz sobre el módulo RTC.",
+      "pasos": [
+        "Recordá qué pines usa I2C.",
+        "Pensá qué diferencia hay entre DS1307 y DS3231.",
+        "Ubicá cuándo se llama a rtc.adjust()."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Para qué sirve la pila en el RTC?",
+            "opciones": ["Para encender el LCD", "Para que siga la hora con la placa apagada", "Para cargar el teléfono", "Para sonar la alarma"],
+            "correcta": "Para que siga la hora con la placa apagada"
+          },
+          {
+            "pregunta": "¿Qué función ajusta la fecha y hora iniciales?",
+            "opciones": ["rtc.adjust()", "rtc.begin()", "rtc.setup()", "rtc.hora()"],
+            "correcta": "rtc.adjust()"
+          },
+          {
+            "pregunta": "¿Qué función trae la fecha y hora actuales?",
+            "opciones": ["rtc.now()", "rtc.today()", "rtc.read()", "rtc.print()"],
+            "correcta": "rtc.now()"
+          },
+          {
+            "pregunta": "¿Con qué librería se manejan el DS1307 y el DS3231?",
+            "opciones": ["RTClib", "DHT", "Servo", "LedControl"],
+            "correcta": "RTClib"
+          },
+          {
+            "pregunta": "¿Qué característica destaca al DS3231?",
+            "opciones": ["Es más preciso gracias a la compensación de temperatura", "No tiene pila", "Es un sensor de luz", "Se conecta por USB"],
+            "correcta": "Es más preciso gracias a la compensación de temperatura"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Reloj digital con LCD",
+      "consigna": "Configurá el RTC y mostrá la hora en el LCD al estilo reloj digital.",
+      "pasos": [
+        "Conectá el RTC: SDA a A4, SCL a A5, VCC a 5V (según tu módulo) y GND a GND.",
+        "Conectá el LCD I2C (de la clase 16): mismo bus, sin pines extra: SDA y SCL compartidos.",
+        "Instalá la librería RTClib desde el gestor de librerías.",
+        "Inclui: #include <Wire.h> #include <RTClib.h> #include <LiquidCrystal_I2C.h>",
+        "Creá los objetos: RTC_DS3231 rtc; (o RTC_DS1307) y LiquidCrystal_I2C lcd(0x27, 16, 2);",
+        "En setup(): rtc.begin(); y ajustá una vez: rtc.adjust(DateTime(2026, 9, 21, 10, 30, 0));",
+        "Inicializá el LCD: lcd.begin(16, 2); lcd.setBacklight(HIGH);",
+        "Construí la hora como texto: DateTime ahora = rtc.now(); String hora = String(ahora.hora()) + \":\" + String(ahora.minute());",
+        "Mostrala en lcd.setCursor(0, 0); lcd.print(hora); y refrescala con millis() cada segundo.",
+        "Desafío: sumá los segundos (String(ahora.second())) y la fecha en la segunda línea: DD/MM/AAAA."
+      ],
+      "entrega": "Foto del LCD mostrando hora y fecha correctas con tu RTC."
+    }
+  ],
+  "entrega": "El docente revisará la foto del LCD con la hora andando y el ajuste verificado.",
+  "lectura": "El RTC devuelve el tiempo real a tus proyectos: con pila propia sigue la hora aunque todo se apague. Sumado al LCD, tu placa deja de ser una caja muda y se convierte en un reloj digital, una estación meteorológica o el corazón de scheduling de tu robot.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar qué hora es sin mirar el celu: imposible. El RTC lo resuelve", "min": "10 min" },
+      { "titulo": "RTC y pila", "que": "Mostrar el DS1307 y DS3231 y el rol de la pila CR2032", "min": "15 min" },
+      { "titulo": "Conexión I2C", "que": "Cablear RTC y LCD compartiendo el bus", "min": "15 min" },
+      { "titulo": "RTClib: adjust y now", "que": "Explicar ajuste de una vez y lectura de campos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el reloj digital con LCD y millis()", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y sincronización entre placas: todos la misma hora", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar con el reloj de la pared: sigue la hora aunque se apague el proyector.",
+      "Preguntar qué dato dejaría registro de tiempo en sus proyectos."
+    ],
+    "aclarar": [
+      "El adjust() debe correr UNA vez: después hay que sacarlo o comentarlo.",
+      "Hay que limpiar los segundos en cero o con ceros a la izquierda en el LCD.",
+      "El LCD y el RTC comparten I2C: no se pelean si cada uno usa su dirección."
+    ],
+    "ejemplos": [
+      "Encender la placa dos veces y ver que la hora avanzó sola entre una y otra.",
+      "Comparar dos placas con RTC y sincronizarlas a la misma hora.",
+      "Poner la fecha completa en la segunda línea del LCD."
+    ]
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 2,
+    "titulo": "Puertos externos",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PCs del aula, ficha del panel trasero de la placa, cable USB y cables de video",
+    "bajada": "El panel trasero de la PC es la puerta de entrada y salida de datos. Vas a aprender a reconocer cada puerto y a saber qué conectar en cada uno sin forzar nada.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 2 - Puertos externos",
+  "objetivos": [
+    "Reconocer los puertos estándar del panel trasero de una placa madre.",
+    "Identificar puertos adicionales de placas de media-alta gama.",
+    "Diferenciar conectores de video (VGA, DVI, HDMI, DisplayPort).",
+    "Conectar periféricos en el puerto correcto sin dañar el equipo."
+  ],
+  "teoria": [
+    {
+      "titulo": "Puertos estándar en placas madres",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/puertos-usb.jpg",
+        "alt": "Puertos USB del panel trasero",
+        "caption": "Los puertos USB son los más usados del panel trasero."
+      },
+      "parrafos": [
+        "Toda placa madre trae un conjunto de puertos traseros estándar. Conocerlos te permite conectar cualquier periférico sin errores y diagnosticar de entrada por qué algo no anda."
+      ],
+      "puntos": [
+        "PS/2: verde para mouse, violeta para teclado (placas clásicas).",
+        "USB: en varias versiones y colores; actualmente USB 3.x marca el ritmo.",
+        "RJ45 o LAN: ficha plástica para el cable de red.",
+        "Audio: tres mini-jack (rosa, verde, celeste) para micrófono, salida y entrada."
+      ]
+    },
+    {
+      "titulo": "Panel trasero completo",
+      "emoji": "🖧",
+      "imagen": {
+        "src": "img/panel-io.jpg",
+        "alt": "Panel de conectores traseros de una placa madre",
+        "caption": "El panel I/O agrupa salidas de video, USB, red y audio."
+      },
+      "parrafos": [
+        "El panel trasero (panel I/O) viene soldado a la placa madre y ordena los conectores por función."
+      ],
+      "puntos": [
+        "Video integrado: salidas desde la placa si el CPU tiene GPU integrada.",
+        "USB: suelen ser 4 a 10 puertos distribuidos en el panel.",
+        "Red (LAN) y audio: siempre presentes en placas modernas.",
+        "La mayoría de conectores solo entran en una posición: nunca forzar."
+      ]
+    },
+    {
+      "titulo": "Conectores de video: VGA, DVI, HDMI, DisplayPort",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/conectores-video.jpg",
+        "alt": "Conectores de video VGA, DVI y HDMI",
+        "caption": "Cada conector de video tiene forma y resolución propia."
+      },
+      "parrafos": [
+        "El monitor se conecta por distintos estándares. El correcto depende de la calidad de imagen que necesites y de lo que soporte tu placa o tarjeta."
+      ],
+      "puntos": [
+        "VGA: analógico, azul, 15 pines. El más antiguo, para monitores económicos.",
+        "DVI: blanco, digital; intermedio entre VGA y HDMI.",
+        "HDMI: digital, transmite video y audio por un solo cable.",
+        "DisplayPort: digital, usado en monitores de alta gama y TV."
+      ]
+    },
+    {
+      "titulo": "Puertos de media y alta gama",
+      "emoji": "⚡",
+      "parrafos": [
+        "Las placas de gama media y alta agregan conectores extra para mayor velocidad y versatilidad: más USB, video mejorado y puertos especializados."
+      ],
+      "puntos": [
+        "USB Type-C: conector reversible y de alta velocidad.",
+        "Thunderbolt: muy veloz para discos externos y docking.",
+        "S/PDIF: audio digital óptico para equipos de sonido.",
+        "WiFi y Bluetooth integrados con antenas en placas modernas."
+      ]
+    },
+    {
+      "titulo": "Buenas prácticas de conexión",
+      "emoji": "🛡️",
+      "parrafos": [
+        "Conectar bien los periféricos evita fallas y daños. Solo tenés que respetar la forma de cada ficha y algunas reglas básicas."
+      ],
+      "puntos": [
+        "Siempre mirar la forma del conector antes de insertar.",
+        "Nunca forzar: si no entra, es porque no es el puerto correcto.",
+        "Enchufar o desenchufar sin mover la placa madre.",
+        "Usar los puertos traseros para dispositivos que quedan fijos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: puertos y conectores",
+      "consigna": "Respondé las 5 preguntas del interactivo para reconocer cada puerto externo.",
+      "pasos": [
+        "Observá las imágenes de cada puerto en la teoría.",
+        "Respondé cada pregunta del interactivo.",
+        "Revisá con el docente los conectores que confundiste."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué conector se usa para el cable de red?",
+            "opciones": ["RJ45", "VGA", "PS/2", "S/PDIF"],
+            "correcta": "RJ45"
+          },
+          {
+            "pregunta": "¿Qué conector de video es analógico?",
+            "opciones": ["VGA", "HDMI", "DVI digital", "DisplayPort"],
+            "correcta": "VGA"
+          },
+          {
+            "pregunta": "El puerto PS/2 violeta se usa para...",
+            "opciones": ["El teclado", "El mouse", "El monitor", "La impresora"],
+            "correcta": "El teclado"
+          },
+          {
+            "pregunta": "¿Qué conector transmite video y audio por un solo cable?",
+            "opciones": ["HDMI", "VGA", "PS/2", "RJ45"],
+            "correcta": "HDMI"
+          },
+          {
+            "pregunta": "¿Cuál de estos es un puerto de alta velocidad y conector reversible?",
+            "opciones": ["USB Type-C", "USB 2.0 clásico", "VGA", "PS/2"],
+            "correcta": "USB Type-C"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mapear el panel trasero",
+      "consigna": "Dibujá y etiquetá el panel trasero de la PC del aula indicando la función de cada puerto.",
+      "pasos": [
+        "Mirá la parte trasera de tu PC e identificá cada conector.",
+        "Dibujá el panel en una hoja (o capturá una foto).",
+        "Etiquetá: USB, LAN, video, audio, PS/2 si existe.",
+        "Anotá cuántos puertos USB 2.0 y USB 3.0 hay.",
+        "Compará tu diagrama con el de un compañero."
+      ],
+      "entrega": "Diagrama del panel trasero con todos los puertos etiquetados."
+    }
+  ],
+  "entrega": "El docente revisará el diagrama del panel y el resultado del interactivo.",
+  "lectura": "El panel trasero concentra todos los conectores externos de la PC. Saber reconocer puertos estándar (USB, LAN, audio, video) y los extra de gama alta (Type-C, Thunderbolt, S/PDIF) te permite conectar cualquier periférico en el lugar correcto y detectar conectores dañados durante un diagnóstico.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Recordar componentes esenciales y preguntar qué conectan en sus PCs", "min": "10 min" },
+      { "titulo": "Panel trasero real", "que": "Mostrar el panel de una PC real y los puertos estándar uno por uno", "min": "20 min" },
+      { "titulo": "Conectores de video", "que": "Comparar VGA, DVI, HDMI y DisplayPort con ejemplos y cables físicos", "min": "20 min" },
+      { "titulo": "Gamas y puertos extra", "que": "Mostrar placas de distintas gamas y sus conectores adicionales", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el mapeo del panel trasero de cada equipo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral usando las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez enchufaron algo al revés o un cable que no entraba. Usar esas anécdotas para la regla de no forzar.",
+      "Comparar un monitor viejo (VGA) con uno nuevo (HDMI) que tengan en el aula o casa."
+    ],
+    "aclarar": [
+      "El color del puerto no siempre indica la versión USB: aclarar que es una guía visual.",
+      "VGA no lleva audio; HDMI sí. Error común al conectar TV.",
+      "No todos los paneles traseros son iguales: cada placa madre define su distribución."
+    ],
+    "ejemplos": [
+      "Pasar por los bancos una USB 2.0 y una USB 3.0 para comparar su forma interna.",
+      "Conectar un monitor por VGA y por HDMI durante la clase y comparar calidad.",
+      "Mostrar un cable crossover y uno normal para avisar sobre la red (se ve en módulo de redes)."
+    ]
+  }
+}

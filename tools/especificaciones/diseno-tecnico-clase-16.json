@@ -1,0 +1,177 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 16,
+    "titulo": "Plano de mensura: grados y superficie",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a dibujar un plano de mensura: cálculos con grados, minutos y segundos, y el cálculo de superficie con las herramientas de consulta y contorno.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\clase 15 mensura",
+  "objetivos": [
+    "Representar ángulos en grados, minutos y segundos.",
+    "Dibujar el polígono de un lote con sus rumbos y medidas.",
+    "Calcular la superficie con la consulta de área y la lista.",
+    "Cerrar contornos con la herramienta contorno y verificar la superficie."
+  ],
+  "teoria": [
+    {
+      "titulo": "Grados, minutos y segundos",
+      "emoji": "🧭",
+      "imagen": {
+        "src": "img/grados.jpg",
+        "alt": "Medición de ángulos en grados",
+        "caption": "Los ángulos de una mensura se expresan en grados, minutos y segundos."
+      },
+      "parrafos": [
+        "En mensura los ángulos se escriben como grados (°) minutos (') y segundos (\"): por ejemplo 45° 30' 15\". Un grado tiene 60 minutos y un minuto tiene 60 segundos.",
+        "AutoCAD acepta este formato, por ejemplo 45d30'15\" en la línea de comandos, para dibujar rumbos con precisión absoluta."
+      ],
+      "puntos": [
+        "1° = 60', 1' = 60\".",
+        "En AutoCAD el grado se escribe 'd' (por ejemplo 35d20').",
+        "Los rumbos se miden desde el norte o el sur hasta el este o el oeste.",
+        "Un plano de mensura se dibuja con los rumbos y distancias del título de propiedad."
+      ]
+    },
+    {
+      "titulo": "El polígono del lote",
+      "emoji": "📐",
+      "imagen": {
+        "src": "img/mensura.jpg",
+        "alt": "Polígono de un lote en mensura",
+        "caption": "El lote se dibuja como polígono cerrado con sus rumbos y distancias."
+      },
+      "parrafos": [
+        "La mensura arranca dibujando el polígono del terreno: se elige un punto inicial y se van agregando los lados con rumbo y distancia, usando coordenadas polares tipo @distancia<ángulo en el formato de grados, minutos y segundos.",
+        "Al cerrar el polígono, cierre y superficie se comparan con la escritura."
+      ],
+      "puntos": [
+        "Punto inicial libre en el área de dibujo.",
+        "Cada lado: @medida<rumbo (por ejemplo @12.50<35d20').",
+        "La orientación de los rumbos sigue la brújula.",
+        "El escalamiento del dibujo se ajusta según el tamaño del lote."
+      ]
+    },
+    {
+      "titulo": "Cálculo de superficie: consultar área y lista",
+      "emoji": "🟩",
+      "imagen": {
+        "src": "img/superficie.jpg",
+        "alt": "Cálculo de superficie de un terreno",
+        "caption": "La consulta de área mide el terreno; la superficie se vuelca al rótulo del plano."
+      },
+      "parrafos": [
+        "Para calcular la superficie se usa el comando CONSULTAR con la opción Área: se van tomando los vértices del polígono y AutoCAD muestra la superficie calculada. La opción Lista (LISTA) mostró el detalle de los objetos seleccionados, incluida su área."
+      ],
+      "puntos": [
+        "Consultar → Área: clic en cada vértice del terreno.",
+        "El área se puede sumar o restar entre objetos.",
+        "LISTA muestra el área del objeto seleccionado.",
+        "Un error de cierre se detecta comparando la superficie con la escritura."
+      ]
+    },
+    {
+      "titulo": "La herramienta contorno",
+      "emoji": "🔲",
+      "imagen": {
+        "src": "img/mensu.png",
+        "alt": "Plano de mensura de ejemplo",
+        "caption": "El contorno detecta la polilínea cerrada del terreno para medirla y acotarla."
+      },
+      "parrafos": [
+        "El comando Contorno (Dirección Dibujo) detecta automáticamente el límite cerrado de una zona: con un clic interior crea una polilínea que rodea el espacio libre. Es la forma más segura de obtener un objeto cerrado para medir y sombrear.",
+        "Después de cerrar el contorno, la superficie medida vale como dato del plano."
+      ],
+      "puntos": [
+        "Contorno → punto interior → genera la polilínea cerrada.",
+        "El contorno sirve para lote, ambientes y zonas verdes.",
+        "La superficie se expresa en m².",
+        "El texto de la superficie se coloca con cota o texto al pie del lote."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá grados y superficie",
+      "consigna": "Respondé el interactivo sobre grados/minutos/segundos, rumbos y cálculo de superficie.",
+      "pasos": [
+        "Repasá la conversión entre grados, minutos y segundos.",
+        "Explorá Consultar → Área sobre un polígono.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con un lote de ejemplo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuántos minutos tiene un grado?",
+            "opciones": ["10", "60", "100", "90"],
+            "correcta": "60"
+          },
+          {
+            "pregunta": "¿Con qué letra se escribe el grado en CAD?",
+            "opciones": ["g", "d", "p", "o"],
+            "correcta": "d"
+          },
+          {
+            "pregunta": "¿Qué opción del comando Consultar calcula la superficie?",
+            "opciones": ["Lista", "Área", "Distancia", "Ángulo"],
+            "correcta": "Área"
+          },
+          {
+            "pregunta": "¿Qué genera la herramienta Contorno?",
+            "opciones": ["Una línea recta", "La polilínea cerrada de la zona", "Un sombreado", "Un bloque"],
+            "correcta": "La polilínea cerrada de la zona"
+          },
+          {
+            "pregunta": "¿En qué unidades se informa la superficie de un terreno?",
+            "opciones": ["m²", "cm³", "kg", "lts"],
+            "correcta": "m²"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mensurá un lote",
+      "consigna": "Dibujá un lote rectangular con un lado en diagonal y calculá su superficie de tres formas.",
+      "pasos": [
+        "Con LINEA y coordenadas polares en grados, dibujá un lote de 20 m de frente y 30 m de fondo.",
+        "Que el cierre incluya un rumbo en diagonal, por ejemplo 10d30' al este.",
+        "Usá Consultar → Área y tomá cada vértice para obtener la superficie.",
+        "Con LISTA seleccioná el contorno y compará el área.",
+        "Generá el contorno cerrado con la herramienta Contorno y releé la superficie.",
+        "Agregá un texto con la superficie total en m².",
+        "Guardá como clase16-mensura.dwg."
+      ],
+      "entrega": "El docente revisa el lote, el rumbo diagonal y el cálculo de superficie consistente entre las tres herramientas."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase16-mensura.dwg con el lote, el rumbo y la superficie consistente entre métodos.",
+  "lectura": "La mensura es el puente entre el campo y el plano: los rumbos se dibujan con grados, minutos y segundos, y la superficie del terreno es el dato central del documento. Con Consultar, Área, Lista y la herramienta Contorno, AutoCAD verifica en segundos lo que antes se calculaba a mano y con errores.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar la mensura como trabajo real de campo y dibujo, con ejemplos locales", "min": "10 min" },
+      { "titulo": "Grados, minutos y segundos", "que": "Explicar la conversión y el formato 'd' de CAD", "min": "20 min" },
+      { "titulo": "Polígono del lote", "que": "Dibujar el terreno con rumbos y distancias por coordenadas polares", "min": "20 min" },
+      { "titulo": "Consultar área y lista", "que": "Calcular la superficie con Área y verificar con Lista", "min": "15 min" },
+      { "titulo": "Contorno", "que": "Generar la polilínea cerrada del lote y releer su superficie", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo; revisar los cálculos de cada alumno", "min": "10 min" }
+    ],
+    "conecta": [
+      "Pedir que traigan un plano de su barrio o 'una esquina' y explicar qué dato es la superficie y cuál el rumbo."
+    ],
+    "aclarar": [
+      "Los rumbos no son ángulos cartesianos: se miden desde N/S hacia E/O. Aclarar con un dibujo de la rosa.",
+      "Consultar → Área requiere tomar los vértices en orden para que la superficie sea correcta.",
+      "El contorno marca el espacio libre: si el lote lo ocupa un edificio, primero se delimita el lote."
+    ],
+    "ejemplos": [
+      "Dibujar el rumbo 35d20'30\" y verificar con una cota angular.",
+      "Calcular el mismo terreno con Área y verificar que coincida con Lista.",
+      "Un lote con ochava: cerrar la diagonal y medir la superficie total con contorno."
+    ]
+  }
+}

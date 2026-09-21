@@ -33,7 +33,8 @@
         "ChatGPT sirve para copys y variantes; otras herramientas se especializan por tarea.",
         "Un ejemplo útil: pedir 10 ideas de reels y seleccionar las 3 mejores.",
         "Nunca publiques sin revisión: el tono y los datos siempre los decide una persona."
-      ]
+      ],
+      "imagen": { "src": "img/textos.jpg", "alt": "Generación de texto con IA", "caption": "La IA genera textos rápido con buen contexto" }
     },
     {
       "titulo": "IA para piezas visuales y videos",
@@ -45,7 +46,8 @@
         "Generación de piezas visuales: describí estilo, colores y composición.",
         "Edición de video asistida: cortes por voz, subtítulos automáticos y transcripción.",
         "Canva Magic y funciones similares integran IA en herramientas que ya usás."
-      ]
+      ],
+      "imagen": { "src": "img/visual.jpg", "alt": "Arte y piezas visuales generadas con IA", "caption": "La IA también produce piezas visuales y edita video" }
     },
     {
       "titulo": "Flujo de trabajo: idea → borrador → pulido",
@@ -58,7 +60,8 @@
         "Borrador: usá la IA para generar opciones rápido.",
         "Pulido: corregís, ajustás el tono y verificás los datos antes de publicar.",
         "Este flujo vale para textos, piezas visuales, videos y calendarios."
-      ]
+      ],
+      "imagen": { "src": "img/flujo.jpg", "alt": "Flujo de trabajo en etapas", "caption": "Idea → borrador → pulido: el proceso profesional con IA" }
     },
     {
       "titulo": "Calendario de contenido con IA",

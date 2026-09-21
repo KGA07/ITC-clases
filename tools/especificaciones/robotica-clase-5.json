@@ -1,0 +1,174 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 5,
+    "titulo": "Protoboard y simulación en TinkerCad",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a entender cómo funciona la protoboard por dentro, vas a armar tu primer circuito en TinkerCad y a reproducirlo después en la mesa de trabajo real.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 5 - Protoboard y simulación en TinkerCad",
+  "objetivos": [
+    "Explicar el funcionamiento interno de la protoboard y sus líneas conductoras.",
+    "Armar un circuito en TinkerCad siguiendo un esquema.",
+    "Transferir el circuito simulado a la protoboard física.",
+    "Verificar la continuidad de las conexiones antes de energizar."
+  ],
+  "teoria": [
+    {
+      "titulo": "La protoboard por dentro",
+      "emoji": "📐",
+      "imagen": {
+        "src": "img/protoboard.jpg",
+        "alt": "Protoboard de desarrollo",
+        "caption": "La protoboard permite armar y desarmar circuitos sin soldar."
+      },
+      "parrafos": [
+        "La protoboard es una tabla con orificios conectados entre sí por dentro mediante láminas metálicas. No todo agujero está conectado con todos: hay filas y columnas con conexiones específicas.",
+        "Las líneas largas de los bordes son las barras de alimentación (generalmente marcadas en rojo para VCC y azul o negro para GND). El centro se divide en dos bloques, donde cada fila de 5 orificios está conectada de forma horizontal e interna."
+      ],
+      "puntos": [
+        "Barras laterales: conectan toda la línea, ideales para 5V y GND.",
+        "Filas centrales: grupos de 5 agujeros conectados entre sí.",
+        "El canal central separa los dos bloques: ahí encaja el chip o el Arduino.",
+        "Nunca insertes componentes con los pines torcidos: se dañan."
+      ]
+    },
+    {
+      "titulo": "Por qué simular antes",
+      "emoji": "🧪",
+      "parrafos": [
+        "TinkerCad te deja armar el circuito exacto y probarlo sin riesgo: si conectás algo mal, la simulación te avisa, no se quema ningún componente. Además, podés probar cambios de código al toque.",
+        "La metodología del curso es clara: primero diseño y simulación en TinkerCad, después construcción en la protoboard física. Así cada error se descubre en el entorno digital y la práctica física sale a la primera."
+      ],
+      "puntos": [
+        "El simulador detecta cortocircuitos y conexiones erradas.",
+        "Podés cambiar resistencias y ver el efecto inmediato.",
+        "Compartís el circuito por enlace para mostrar tu trabajo.",
+        "Simular primero ahorra tiempo y componentes."
+      ]
+    },
+    {
+      "titulo": "Circuitos en serie y en paralelo en la protoboard",
+      "emoji": "🔀",
+      "imagen": {
+        "src": "img/protoboard-circuito.jpg",
+        "alt": "Circuito armado sobre protoboard",
+        "caption": "En la protoboard cada componente ocupa su fila y se encadena con cables."
+      },
+      "parrafos": [
+        "En la protoboard, un componente se inserta con cada pata en una fila distinta, y las conexiones se hacen saltando con cables entre filas. El punto clave es entender que la fila une las patas hacia un mismo cable.",
+        "Cuando conectás componentes encadenados uno detrás de otro, formás un circuito en serie; cuando los conectás en ramas paralelas sobre las mismas líneas de alimentación, es un circuito en paralelo. Los dos van a aparecer en las próximas clases."
+      ],
+      "puntos": [
+        "Cada fila de 5 agujeros es un mismo nudo eléctrico.",
+        "Saltar entre filas requiere cables puente (jumpers).",
+        "Serie: la misma corriente circula por todos los componentes.",
+        "Paralelo: cada rama recibe la tensión completa de la fuente."
+      ]
+    },
+    {
+      "titulo": "Orden al armar",
+      "emoji": "🧹",
+      "parrafos": [
+        "Un circuito prolijo se arma en etapas: primero la alimentación (5V y GND) por las barras laterales, después los componentes de mayor a menor y por último los cables de señal. Trabajar ordenado hace que los errores se encuentren en segundos."
+      ],
+      "puntos": [
+        "Conectá las barras de alimentación antes que nada.",
+        "Colocá el LED o componente respetando la polaridad.",
+        "Usá cables de colores: rojo para 5V, negro para GND, otros para señales.",
+        "Revisá cada pata contra el esquema antes de encender."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Protoboard y TinkerCad",
+      "consigna": "Respondé el quiz sobre el funcionamiento de la protoboard y el uso del simulador.",
+      "pasos": [
+        "Observá la protoboard real mientras respondés.",
+        "Acordate de los grupos de filas y las barras de alimentación.",
+        "Pensá en qué hace TinkerCad antes de cada pregunta."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué conecta la protoboard entre los 5 agujeros de una fila?",
+            "opciones": ["Nada, están aislados", "Una lámina conductora interna", "Un imán", "Un cable USB"],
+            "correcta": "Una lámina conductora interna"
+          },
+          {
+            "pregunta": "¿Para qué sirven las barras laterales de la protoboard?",
+            "opciones": ["Solo para decorar", "Para distribuir la alimentación 5V y GND por toda la fila", "Para insertar el Arduino", "Para conectar impresoras"],
+            "correcta": "Para distribuir la alimentación 5V y GND por toda la fila"
+          },
+          {
+            "pregunta": "¿Qué ventaja tiene simular el circuito en TinkerCad antes de armarlo?",
+            "opciones": ["No usar cableado", "Probar sin riesgo y corregir errores antes de la placa real", "Hacer el circuito más rápido de construir", "Reemplazar al Arduino"],
+            "correcta": "Probar sin riesgo y corregir errores antes de la placa real"
+          },
+          {
+            "pregunta": "¿Cómo conectás dos filas distintas de la protoboard?",
+            "opciones": ["Con un cable puente (jumper)", "Con una resistencia", "No se pueden conectar", "Con el mouse"],
+            "correcta": "Con un cable puente (jumper)"
+          },
+          {
+            "pregunta": "¿Qué color conviene usar para los cables de GND?",
+            "opciones": ["Rojo", "Amarillo", "Negro", "Azul cielo"],
+            "correcta": "Negro"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mi primer circuito simulado y real",
+      "consigna": "Armá en TinkerCad un circuito con un LED y una resistencia, y reprodúcelo en la protoboard física.",
+      "pasos": [
+        "Ingresá a TinkerCad → Circuitos y creá un circuito nuevo.",
+        "Arrastrá una placa Arduino Uno al área de trabajo.",
+        "Agregá un LED y una resistencia de 220 Ω (ohmios).",
+        "Conectá el ánodo del LED (pata larga) a la resistencia y esta al pin 13.",
+        "Conectá el cátodo del LED (pata corta) a GND.",
+        "Cargá el ejemplo Blink y corré la simulación: el LED debe parpadear.",
+        "Ahora reproducí el mismo circuito en tu protoboard física y conectalo a tu placa.",
+        "Compará el comportamiento real con el simulado y anotá si hubo diferencias."
+      ],
+      "entrega": "Captura del circuito terminado en TinkerCad + foto del circuito real funcionando."
+    }
+  ],
+  "entrega": "El docente revisará la captura de TinkerCad, la foto del circuito real y el quiz.",
+  "lectura": "La protoboard transforma ideas en circuitos sin soldar, y TinkerCad transforma el miedo al error en experimentación libre. Aprender las conexiones internas de la protoboard y armar primero en el simulador te hace resolver cualquier proyecto sin romper componentes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repartir protoboards y preguntar qué creen que hay por dentro", "min": "10 min" },
+      { "titulo": "La protoboard por dentro", "que": "Explicar filas y barras con una protoboard abierta o diagrama", "min": "20 min" },
+      { "titulo": "TinkerCad", "que": "Recorrer la sección Circuitos y crear el primer proyecto", "min": "20 min" },
+      { "titulo": "LED simulado", "que": "Guiar el armado del LED+resistencia en el simulador", "min": "20 min" },
+      { "titulo": "Construcción real", "que": "Transferir el circuito a la protoboard física por parejas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar simulación vs real y resolver quiz", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez armaron un circuito con cables sueltos y qué problema tuvieron: la protoboard ordena ese caos.",
+      "Mostrar el costo de un error en hardware (resistencia quemada) vs el error en simulación para valorar TinkerCad."
+    ],
+    "aclarar": [
+      "Las filas centrales no conectan de izquierda a derecha de forma completa: el canal central corta la conexión.",
+      "Conservar la polaridad del LED: pata larga al positivo, pata corta al negativo.",
+      "La simulación no reemplaza la práctica real: hay que validar el comportamiento en la placa."
+    ],
+    "ejemplos": [
+      "Armar en TinkerCad el mismo LED conectado directo sin resistencia y mostrar el aviso de sobrecorriente.",
+      "Demostrar en vivo cómo un jumper une dos filas de la protoboard.",
+      "Mostrar el circuito real y pedir que encuentren dónde está la resistencia."
+    ]
+  }
+}

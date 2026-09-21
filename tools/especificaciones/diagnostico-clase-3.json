@@ -1,0 +1,191 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 3,
+    "titulo": "Placa madre",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Placa madre real, fichas técnicas de fabricantes, lupa para detalle",
+    "bajada": "La placa madre es la columna vertebral de la PC: conecta cada componente y define qué CPU, memoria y discos podés usar. Vas a aprender a leerla como un plano técnico.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 2 Placas",
+  "objetivos": [
+    "Describir la función de la placa madre en el sistema.",
+    "Reconocer fabricantes y gamas de placas madres.",
+    "Identificar socket, chipset, BIOS y componentes internos en una placa real.",
+    "Explicar el papel de la pila CMOS y el chip CMOS."
+  ],
+  "teoria": [
+    {
+      "titulo": "Funcionamiento de la placa madre",
+      "emoji": "🧩",
+      "imagen": {
+        "src": "img/placa-madre.jpg",
+        "alt": "Placa madre ATX completa",
+        "caption": "La placa madre interconecta todos los componentes del sistema."
+      },
+      "parrafos": [
+        "La placa madre (motherboard) es el circuito impreso principal. Distribuye el voltaje de la fuente, comunica CPU, RAM y discos, y expone los puertos externos. Prácticamente todo pasa por ella."
+      ],
+      "puntos": [
+        "Distribuye la energía que llega de la fuente.",
+        "Conecta CPU, memoria, almacenamiento y periféricos.",
+        "Su chipset regula la comunicación entre componentes.",
+        "Define qué CPU, RAM y discos soporta el equipo."
+      ]
+    },
+    {
+      "titulo": "Fabricantes y gamas",
+      "emoji": "🏭",
+      "parrafos": [
+        "Las placas madres no son todas iguales: cambian por fabricante, gama y plataforma. Elegir la correcta es clave para el armado y la compatibilidad."
+      ],
+      "puntos": [
+        "Fabricantes: ASUS, Gigabyte, MSI, ASRock (los líderes del mercado).",
+        "Gama baja: básicas, pocas ranuras y sin extras (H610, A520).",
+        "Gama media: buen equilibrio de puertos, slots y disipadores (B760, B550).",
+        "Gama alta: overclock, más PCIe, mejor audio y red (Z790, X670)."
+      ]
+    },
+    {
+      "titulo": "Socket, chipset y BIOS",
+      "emoji": "⚙️",
+      "imagen": {
+        "src": "img/socket-cpu.jpg",
+        "alt": "Zócalo del procesador en la placa madre",
+        "caption": "El socket recibe al procesador y debe ser compatible con él."
+      },
+      "parrafos": [
+        "El socket es el zócalo donde se inserta el procesador. El chipset gestiona el tráfico de datos. Y la BIOS (o UEFI) es el firmware que pone en marcha el equipo al encender."
+      ],
+      "puntos": [
+        "Socket: define qué familias de CPU entran (LGA1700, AM5, AM4...).",
+        "Chipset: el 'puente' que organiza USB, SATA, PCIe y audio.",
+        "BIOS/UEFI: programa inicial grabado en un chip de la placa.",
+        "Compatibilidad: una placa solo acepta los procesadores que soporta su socket."
+      ]
+    },
+    {
+      "titulo": "CMOS y batería CR-2032",
+      "emoji": "🔋",
+      "imagen": {
+        "src": "img/bateria-cmos.jpg",
+        "alt": "Batería CR-2032 sobre la placa madre",
+        "caption": "La pila CR-2032 mantiene viva la memoria CMOS con la configuración."
+      },
+      "parrafos": [
+        "El chip CMOS guarda la configuración de la BIOS (fecha, hora, orden de arranque). Se mantiene con una pila tipo botón CR-2032 que dura varios años."
+      ],
+      "puntos": [
+        "CMOS: memoria que guarda la configuración aunque la PC esté apagada.",
+        "CR-2032: pila de litio de 3 voltios, se agota y se cambia fácil.",
+        "Pila sin carga: perdés fecha/hora y la configuración de la BIOS.",
+        "Reset: quitar la pila unos minutos restaura la BIOS a valores de fábrica."
+      ]
+    },
+    {
+      "titulo": "Componentes internos de la placa",
+      "emoji": "🔍",
+      "imagen": {
+        "src": "img/chipset.jpg",
+        "alt": "Chipset con disipador en la placa madre",
+        "caption": "El chipset suele estar cubierto por un disipador metálico."
+      },
+      "parrafos": [
+        "Recorrer la placa madre de cerca te permite identificar cada bloque: CPU, RAM, slots de expansión, conectores de energía y storage."
+      ],
+      "puntos": [
+        "Socket CPU y slots DIMM de memoria.",
+        "Slots de expansión PCIe, conectores SATA y M.2.",
+        "Conectores de energía ATX y CPU Power.",
+        "Conexiones del panel frontal (power, reset, leds)."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: la placa madre",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre funcionamiento, fabricantes, socket, chipset y BIOS.",
+      "pasos": [
+        "Recorré la teoría y la placa real del aula.",
+        "Respondé el interactivo.",
+        "Consultá dudas sobre gamas y fabricantes."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función cumple la placa madre?",
+            "opciones": ["Interconectar todos los componentes del sistema", "Guardar los archivos del usuario", "Refrescar la pantalla", "Dar energía desde la red"],
+            "correcta": "Interconectar todos los componentes del sistema"
+          },
+          {
+            "pregunta": "El zócalo donde se coloca el procesador se llama...",
+            "opciones": ["Socket", "Chipset", "DIMM", "SATA"],
+            "correcta": "Socket"
+          },
+          {
+            "pregunta": "¿Cuál es un fabricante de placas madres?",
+            "opciones": ["ASUS", "Kingston", "Seagate", "Logitech"],
+            "correcta": "ASUS"
+          },
+          {
+            "pregunta": "La pila CR-2032 mantiene la configuración de...",
+            "opciones": ["La memoria CMOS/BIOS", "El disco rígido", "La memoria RAM", "El procesador"],
+            "correcta": "La memoria CMOS/BIOS"
+          },
+          {
+            "pregunta": "¿Qué programa arranca la PC al encender?",
+            "opciones": ["La BIOS/UEFI", "El antivirus", "El explorador de archivos", "El driver de video"],
+            "correcta": "La BIOS/UEFI"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Inventario de placa madre",
+      "consigna": "Armá una ficha técnica de la placa madre que te toque, identificando sus partes principales.",
+      "pasos": [
+        "Observá la placa madre asignada.",
+        "Localizá socket, slots de RAM, slots PCIe y conectores SATA.",
+        "Identificá chipset, batería CR-2032 y chip de BIOS.",
+        "Anotá cantidad de puertos USB del panel trasero.",
+        "Presentá tu ficha en una hoja con diagrama."
+      ],
+      "entrega": "Ficha de placa madre con las partes identificadas y etiquetadas."
+    }
+  ],
+  "entrega": "El docente revisará la ficha de la placa madre y el resultado del interactivo.",
+  "lectura": "La placa madre define qué procesador, memoria y discos acepta una PC. Saber identificar fabricante, gama, socket, chipset y la pila CMOS te permite elegir componentes compatibles, actualizar equipos y diagnosticar fallas relacionadas con la configuración base del sistema.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Retomar puertos externos y presentar la placa madre como el centro del sistema", "min": "10 min" },
+      { "titulo": "Funcionamiento y gamas", "que": "Explicar el rol de la placa y comparar gamas con placas reales", "min": "15 min" },
+      { "titulo": "Socket, chipset y BIOS", "que": "Mostrar en la placa real socket, chipset y el chip de BIOS", "min": "20 min" },
+      { "titulo": "CMOS y batería", "que": "Sacar y volver a colocar la CR-2032 y explicar su función", "min": "20 min" },
+      { "titulo": "Inventario guiado", "que": "Guiar la ficha técnica de cada placa por banco", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo y dudas finales", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar quién tiene una PC vieja y qué placa creen que tiene; ver juntos cómo averiguarlo.",
+      "Si un alumno tuvo que cambiar fecha/hora al encender, contar esa anécdota para introducir la CR-2032."
+    ],
+    "aclarar": [
+      "CMOS y BIOS no son lo mismo: la BIOS es el programa, el CMOS la memoria donde guarda la configuración.",
+      "Socket y chipset son cosas distintas: el primero recibe la CPU, el segundo organiza los datos.",
+      "No existe una placa 'universal': siempre hay que verificar compatibilidad de socket."
+    ],
+    "ejemplos": [
+      "Mostrar placas de gama baja y alta lado a lado y señalar diferencias evidentes.",
+      "Pasar una CR-2032 por los bancos para que vean cómo se extrae.",
+      "Encender la PC y que vean la pantalla de la BIOS arrancando."
+    ]
+  }
+}

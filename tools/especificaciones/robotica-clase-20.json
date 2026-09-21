@@ -1,0 +1,176 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 20,
+    "titulo": "Control remoto IR y relay",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a recibir los códigos de un control remoto infrarrojo y aprender a manejar cargas mayores (como bombas y luces) con un relé, combinando ambos en un mando a distancia doméstico.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 20 - Control remoto IR y relay",
+  "objetivos": [
+    "Conectar el receptor IR y leer comandos de un control remoto.",
+    "Identificar códigos de tecla con la librería IRremote.",
+    "Comprender cómo un relé conmuta carga eléctrica mayor.",
+    "Encender y apagar un dispositivo con el control remoto."
+  ],
+  "teoria": [
+    {
+      "titulo": "Receptor infrarrojo (IR)",
+      "emoji": "📡",
+      "imagen": {
+        "src": "img/ir-receptor.jpg",
+        "alt": "Receptor infrarrojo",
+        "caption": "El receptor IR capta la señal modulada del control remoto."
+      },
+      "parrafos": [
+        "Los controles remotos emiten luz infrarroja modulada: una secuencia de pulsos que el receptor traduce en un código. El receptor IR del kit está diseñado para captar esa señal y entregarla a la placa.",
+        "Con la librería IRremote, cada tecla de tu control aparece en el Monitor Serie como un código único. Apuntamos, presionamos y vemos qué número envió."
+      ],
+      "puntos": [
+        "IR: luz infrarroja invisible modulada.",
+        "Cada tecla manda un código distinto.",
+        "Receptor: pin OUT a un pin digital (ej. 11), VCC y GND.",
+        "Liberría IRremote: resultados visibles en Serial."
+      ]
+    },
+    {
+      "titulo": "Decodificando teclas",
+      "emoji": "🔢",
+      "parrafos": [
+        "Al presionar una tecla, el receptor entrega: el código (por ejemplo 0xFF30CF), una variante de 'repeat' (cuando se mantiene apretada) y la marca del control. Con ifs comparamos el código recibido contra los que anotamos.",
+        "El control remoto de LG que trae el kit es el más típico: sus códigos se ven iguales al decodificar. Anotá los códigos de las teclas que querés usar, como '1', 'ON' y 'OFF'."
+      ],
+      "puntos": [
+        "En decode(): el código llega en results.value.",
+        "0xFF30CF es un ejemplo típico de tecla LG.",
+        "REPEAT marca que estamos manteniendo la tecla.",
+        "if (results.value == CODIGO1) { ... } selecciona la acción."
+      ]
+    },
+    {
+      "titulo": "El relé",
+      "emoji": "🎚️",
+      "imagen": {
+        "src": "img/relay.jpg",
+        "alt": "Módulo de relé",
+        "caption": "El relé conmuta cargas mayores usando un pequeño electroimán."
+      },
+      "parrafos": [
+        "Un relé es un interruptor accionado por un electroimán: con una señal chica de la placa (5V) puede abrir o cerrar un circuito de mayor tensión o corriente, como una luz de 220V o una bomba de agua.",
+        "El módulo del kit ya incluye el transistor y los diodos de protección: se conecta simplemente el pin IN al Arduino, VCC y GND, y en la salida el dispositivo que querés conmutar."
+      ],
+      "puntos": [
+        "Electroimán interno mueve el contacto.",
+        "Aisla la placa de la carga mayor.",
+        "Entradas: IN (señal), VCC y GND.",
+        "CUIDADO: la salida puede tener 220V: nunca la toques con las manos húmedas."
+      ]
+    },
+    {
+      "titulo": "Mando remoto doméstico",
+      "emoji": "🏠",
+      "parrafos": [
+        "Combinando el receptor IR y el relé armás el sueño del control remoto: apuntás al receptor, la placa decodifica la tecla y activa o desactiva el relé que carga un artefacto.",
+        "El flujo entero: leer el IR, comparar el código, cambiar un estado (si estaba apagado, prenderlo, y al revés) y manejar el relé con digitalWrite."
+      ],
+      "puntos": [
+        "Recibí la tecla '1' y conmuta con un toggle.",
+        "toggle: estado = !estado; para cambiar de prendido a apagado.",
+        "digitalWrite(RELAY_PIN, estado) actúa sobre el relé.",
+        "Un LED (o un motor con la bomba) muestra el resultado sin riesgo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "IR y relé",
+      "consigna": "Respondé el quiz sobre el control remoto IR y el relé.",
+      "pasos": [
+        "Recordá cómo se llega al código de cada tecla.",
+        "Pensá qué hace el electroimán del relé.",
+        "Imaginá qué dispositivos podrías controlar."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué luz envía un control remoto?",
+            "opciones": ["Luz visible", "Infrarroja modulada", "Ultravioleta", "Láser"],
+            "correcta": "Infrarroja modulada"
+          },
+          {
+            "pregunta": "¿Qué librería decodifica las señales IR?",
+            "opciones": ["IRremote", "Servo", "DHT", "LedControl"],
+            "correcta": "IRremote"
+          },
+          {
+            "pregunta": "¿Qué información se ve en el Monitor Serie al apretar una tecla?",
+            "opciones": ["El código de la tecla", "El color", "La temperatura", "El voltaje"],
+            "correcta": "El código de la tecla"
+          },
+          {
+            "pregunta": "¿Qué activa físicamente el contacto en un relé?",
+            "opciones": ["Un resorte", "Un electroimán", "Un engranaje", "Un LED"],
+            "correcta": "Un electroimán"
+          },
+          {
+            "pregunta": "¿Para qué sirve el relé?",
+            "opciones": ["Para conmutar cargas mayores que los pines de la placa", "Para medir distancia", "Para leer tarjetas", "Para calentar la placa"],
+            "correcta": "Para conmutar cargas mayores que los pines de la placa"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Prendé y apagá con el control",
+      "consigna": "Decodificá tu control remoto y encendé a distancia un LED mediante el relé.",
+      "pasos": [
+        "Conectá el receptor IR: OUT al pin 11, VCC a 5V y GND a GND.",
+        "Conectá el módulo de relé: IN al pin 8, VCC a 5V y GND a GND. En la salida del relé, conectá un LED (en lugar de la carga de 220V, por seguridad) con su resistencia.",
+        "Instalá la librería IRremote (busca en el gestor de librerías).",
+        "Código base: #include &lt;IRremote.h&amp;gt; | int RECV_PIN = 11; | IRrecv irrecv(RECV_PIN); | decode_results results; | void setup() { Serial.begin(9600); irrecv.enableIRIn(); pinMode(8, OUTPUT); } | void loop() { if (irrecv.decode(&amp;results)) { Serial.println(results.value, HEX); irrecv.resume(); } }",
+        "Subí el sketch y apretá distintas teclas: anotá los códigos que aparecen.",
+        "Elegí tres teclas: '1' para prender, '0' para apagar y '2' para conmutar.",
+        "Completa el loop comparando results.value con tus códigos y usando digitalWrite(8, HIGH/LOW).",
+        "Apretá '2' varias veces: el LED va y viene. Ese mismo circuito con una lámpara de 220V sería tu control remoto doméstico.",
+        "Desafío: mantené la tecla apretada y mostrá la detección del repeat en el Serial."
+      ],
+      "entrega": "Captura del Serial con los códigos de las tres teclas + video del LED respondiendo al control."
+    }
+  ],
+  "entrega": "El docente revisará la captura de códigos y el funcionamiento del LED a distancia.",
+  "lectura": "El receptor IR decodifica en segundos el idioma invisible de tu control de LG, y el relé te permite pasar esa orden a cargas reales. Juntos son el corazón de cualquier mando a distancia doméstico: un clic en el sillón y la luz del patio enciende.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar un control remoto real y preguntar cómo 'habla' con el TV", "min": "10 min" },
+      { "titulo": "Receptor IR", "que": "Explicar la luz infrarroja modulada y decodificar en vivo", "min": "20 min" },
+      { "titulo": "Códigos en el Serial", "que": "Anotar teclas del control de LG con el proyector", "min": "15 min" },
+      { "titulo": "El relé", "que": "Explicar el electroimán, las conexiones y la seguridad 220V", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el encendido del LED con el control remoto", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Quiz y verificación cruzada de teclas entre parejas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Identificar todos los controles IR del aula: TV, aire, sonido: mismo principio.",
+      "Preguntar qué prenderían a distancia en su casa para motivar el relé."
+    ],
+    "aclarar": [
+      "El relé aísla la carga, pero la salida puede tener 220V: jamás tocar a mano.",
+      "No todos los controles repiten igual: el 'repeat' se ve en resultados.",
+      "Los códigos van en HEX en el Monitor Serie: anotalos igual que aparecen."
+    ],
+    "ejemplos": [
+      "Decodificar tres teclas y que los alumnos anoten los códigos de los compañeros.",
+      "Mostrar el 'repeat' manteniendo una tecla apretada.",
+      "Simular la carga con una bomba de agua de bajo voltaje y no con 220V."
+    ]
+  }
+}

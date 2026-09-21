@@ -34,7 +34,8 @@
         "Pago: anuncios en Google, Meta e Instagram que se muestran a cambio de dinero.",
         "Lo profesional combina ambos: la pauta acompaña al contenido orgánico.",
         "El pago no compra ventas, compra visibilidad: el cierre depende del anuncio y la oferta."
-      ]
+      ],
+      "imagen": { "src": "img/publicidad.jpg", "alt": "Publicidad digital en línea", "caption": "La pauta garantiza exposición en el momento justo" }
     },
     {
       "titulo": "Tipos de campaña y formatos de anuncio",
@@ -48,7 +49,8 @@
         "Video: anuncios que interrumpen o preceden a los videos en YouTube.",
         "Redes sociales: anuncios integrados al feed y a las historias de Meta.",
         "Shopping/Catálogo: productos con foto y precio directo del catálogo."
-      ]
+      ],
+      "imagen": { "src": "img/formatos.jpg", "alt": "Banners de publicidad en sitios web", "caption": "Cada campaña ofrece un formato de anuncio" }
     },
     {
       "titulo": "Objetivos de publicidad",
@@ -76,7 +78,8 @@
         "La campaña define objetivos, presupuesto y ubicación geográfica.",
         "El grupo de anuncios agrupa palabras afines con sus propios anuncios.",
         "Se paga por clic (CPC) o por mil visualizaciones (CPM), según el objetivo."
-      ]
+      ],
+      "imagen": { "src": "img/sem.jpg", "alt": "Marketing en buscadores con anuncios", "caption": "El SEM gira alrededor de las palabras clave" }
     }
   ],
   "ejercicios": [

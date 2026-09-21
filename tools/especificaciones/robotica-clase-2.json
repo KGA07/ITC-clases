@@ -1,0 +1,185 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 2,
+    "titulo": "Componentes del Kit e IDE Arduino",
+    "modulo": "Módulo 1 – Fundamentos de Arduino",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a recorrer cada componente del kit de desarrollo, vas a instalar y configurar el IDE de Arduino y vas a conocer TinkerCad para simular tus primeros circuitos sin riesgo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 2",
+  "objetivos": [
+    "Identificar los componentes del kit de desarrollo y su utilidad.",
+    "Instalar y configurar el Entorno de Desarrollo Integrado (IDE) de Arduino.",
+    "Reconocer las partes del IDE: editor, barra de herramientas y zona de mensajes.",
+    "Conocer la plataforma de simulación TinkerCad como espacio de prueba."
+  ],
+  "teoria": [
+    {
+      "titulo": "Componentes del kit de desarrollo",
+      "emoji": "📦",
+      "imagen": {
+        "src": "img/arduino-nano.jpg",
+        "alt": "Placa Arduino Nano",
+        "caption": "El Arduino Nano, compañero ideal de la protoboard por su tamaño compacto."
+      },
+      "parrafos": [
+        "El kit de desarrollo es tu caja de herramientas electrónica. Además de la placa Arduino, tiene componentes pasivos y activos que vas a combinar en cada proyecto.",
+        "Separar y reconocer cada componente por su forma y función es el primer paso para armar circuitos sin errores: a lo largo del curso vas a usar cada uno de estos elementos."
+      ],
+      "puntos": [
+        "Placa Arduino (Uno o Nano): el cerebro del proyecto.",
+        "Protoboard: tabla para armar circuitos sin soldar.",
+        "Cables de conexión (jumpers) y cables USB.",
+        "LEDs, resistencias y pulsadores: los básicos de todo circuito.",
+        "Sensores, displays y motores: se incorporan clase a clase."
+      ]
+    },
+    {
+      "titulo": "El IDE de Arduino",
+      "emoji": "💻",
+      "imagen": {
+        "src": "img/arduino-ide.jpg",
+        "alt": "Ventana del IDE de Arduino",
+        "caption": "El IDE de Arduino: editor central, botones de verificar y cargar, y consola de mensajes."
+      },
+      "parrafos": [
+        "El IDE (Entorno de Desarrollo Integrado) es el programa donde escribís, revisás y cargás el código a la placa. Se descarga gratis desde la web oficial de Arduino.",
+        "Su ventana tiene un editor de texto central, una barra de herramientas con los botones de Verificar y Cargar, y una zona inferior donde aparecen mensajes y errores."
+      ],
+      "puntos": [
+        "Editor: el área blanca donde se escribe el programa (sketch).",
+        "Botón Verificar (✓): compila el código y avisa si hay errores de sintaxis.",
+        "Botón Cargar (→): compila y envía el programa a la placa por USB.",
+        "Consola: muestra el progreso y los mensajes de error o éxito."
+      ]
+    },
+    {
+      "titulo": "Por qué usar un sketch",
+      "emoji": "📝",
+      "parrafos": [
+        "En Arduino, cada programa se llama sketch. Un sketch se guarda en una carpeta con el mismo nombre y tiene la extensión .ino. Mantener la carpeta y el archivo con el mismo nombre evita errores al abrir los proyectos."
+      ],
+      "puntos": [
+        "Guardá cada práctica con un nombre claro, por ejemplo: semaforo_clase9.",
+        "Un sketch puede tener varias pestañas: el programa principal y otras funciones.",
+        "El IDE exige que el archivo principal y su carpeta se llamen igual."
+      ]
+    },
+    {
+      "titulo": "TinkerCad: el simulador del curso",
+      "emoji": "🖱️",
+      "parrafos": [
+        "TinkerCad es una plataforma web gratuita de Autodesk que permite armar circuitos virtualmente: arrastrás la placa, los componentes y los cables, escribís el código y ves el resultado simulado. Es perfecta para experimentar antes de tocar el hardware real.",
+        "En cada clase vamos a diseñar el circuito en TinkerCad y después lo vamos a construir en la protoboard física."
+      ],
+      "puntos": [
+        "Entrá a Tinkercad.com con tu cuenta de correo de la institución.",
+        "En la sección Circuitos encontrás el espacio de diseño.",
+        "Simular no rompe nada: podés probar sin miedo a quemar componentes.",
+        "Compartí el circuito virtual por link cuando te lo pida el docente."
+      ]
+    },
+    {
+      "titulo": "Instalación del IDE paso a paso",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Descargá el IDE 2 desde la página oficial de Arduino, instalá el archivo siguiendo los pasos del asistente y dejalo en el escritorio. No hace falta configuración especial: el IDE se conecta solo a la placa cuando la enchufás por USB.",
+        "Si la placa no aparece en el IDE, revisá el cable USB (usá uno que transmita datos, no solo cargue) y probá otro puerto."
+      ],
+      "puntos": [
+        "Descargá desde arduino.cc el instalador para tu sistema operativo.",
+        "Aceptá la instalación completa con drivers de USB.",
+        "Conectá la placa y verificá que Windows la reconozca.",
+        "En Herramientas → Placa, seleccioná el modelo correcto (Uno o Nano)."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Conociendo el IDE",
+      "consigna": "Respondé el quiz para reconocer las partes del IDE y los componentes del kit.",
+      "pasos": [
+        "Abrí el IDE de Arduino en tu PC.",
+        "Señalá en la pantalla el editor, la barra de herramientas y la consola.",
+        "Completá las preguntas del interactivo."
+      ],
+      "entrega": "Captura de la ventana del IDE con las tres zonas señaladas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cómo se llama cada programa de Arduino?",
+            "opciones": ["Script", "Sketch", "Archivo", "Macro"],
+            "correcta": "Sketch"
+          },
+          {
+            "pregunta": "¿Qué hace el botón Verificar (✓)?",
+            "opciones": ["Envía el programa a la placa", "Compila el código y avisa si hay errores", "Borra el editor", "Conecta el USB"],
+            "correcta": "Compila el código y avisa si hay errores"
+          },
+          {
+            "pregunta": "¿En qué zona del IDE aparecen los mensajes de error?",
+            "opciones": ["En el editor", "En la consola inferior", "En el menú Archivo", "En la barra de título"],
+            "correcta": "En la consola inferior"
+          },
+          {
+            "pregunta": "¿Para qué usamos TinkerCad?",
+            "opciones": ["Para editar fotos", "Para simular circuitos antes de armarlos", "Para descargar música", "Para escribir documentos"],
+            "correcta": "Para simular circuitos antes de armarlos"
+          },
+          {
+            "pregunta": "¿Qué configuración debe coincidir con tu placa antes de cargar?",
+            "opciones": ["El idioma del sistema", "El modelo de placa en Herramientas → Placa", "El tamaño de la letra", "La hora de Windows"],
+            "correcta": "El modelo de placa en Herramientas → Placa"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Inventario del kit por parejas",
+      "consigna": "Hacé un inventario completo del kit de desarrollo que te corresponde y anotá cada elemento.",
+      "pasos": [
+        "Vacía el contenido del kit sobre la mesa y acomodalo en grupos: placas, resistencias, LEDs, cables, sensores.",
+        "Contá cuántas unidades hay de cada componente y registralo en una tabla.",
+        "Identificá el modelo de Arduino del kit y anotá su nombre.",
+        "Guardá todo en su lugar siguiendo el orden original.",
+        "Abrí el IDE y en Herramientas → Placa seleccioná el modelo que registraste."
+      ],
+      "entrega": "Tabla de inventario del kit en el cuaderno con la cantidad de cada componente."
+    }
+  ],
+  "entrega": "El docente revisará la captura del IDE y la tabla de inventario del kit.",
+  "lectura": "El kit de desarrollo y el IDE son tus dos grandes aliados. Conocer el nombre de cada componente y moverte con soltura en el IDE te prepara para armar el primer circuito programado.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar el kit completo y nombrar cada componente", "min": "10 min" },
+      { "titulo": "Componentes del kit", "que": "Recorrer componentes con su función y el inventario", "min": "20 min" },
+      { "titulo": "Instalación del IDE", "que": "Guiar descarga e instalación en cada equipo", "min": "20 min" },
+      { "titulo": "Partes del IDE", "que": "Recorrer editor, botones y consola en vivo", "min": "20 min" },
+      { "titulo": "TinkerCad", "que": "Crear cuentas y explorar la sección Circuitos", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Quiz interactivo y repaso de dudas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué aparato usaron por primera vez sin manual y cómo aprendieron: así se conectan con la idea de experimentar.",
+      "Mostrar un circuito armado en TinkerCad y preguntar qué componentes creen que tiene."
+    ],
+    "aclarar": [
+      "El cable USB debe transmitir datos; si la placa no aparece, ese es el primer sospechoso.",
+      "No todos los componentes del kit van en todas las clases: cada práctica usa los suyos.",
+      "El IDE 2 es diferente al IDE clásico pero los botones y la lógica son los mismos."
+    ],
+    "ejemplos": [
+      "Armar en vivo un circuito mínimo en TinkerCad con un LED y ver cómo se enciende en la simulación.",
+      "Instalar el IDE en el proyector mientras los alumnos replican.",
+      "Mostrar el mensaje de error típico por falta de punto y coma y cómo lo marca la consola."
+    ]
+  }
+}

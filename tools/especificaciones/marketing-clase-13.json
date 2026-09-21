@@ -34,7 +34,8 @@
         "Ideal para un negocio chico, un emprendimiento o una ficha de presentación profesional.",
         "Se edita en la computadora y se ve bien en el celular automáticamente.",
         "Perfecto como complemento de Google Mi Negocio: un lugar para mostrar toda la info."
-      ]
+      ],
+      "imagen": { "src": "img/sites.jpg", "alt": "Creador de sitios web por bloques", "caption": "Google Sites arma sitios sin escribir código" }
     },
     {
       "titulo": "Configuración y diseño del sitio",
@@ -48,7 +49,8 @@
         "Usar el panel Navegación para crear páginas: Inicio, Servicios, Contacto y Galería.",
         "Cambiar el color de fondo y la tipografía para que acompañen la marca.",
         "Configurar quién puede ver el sitio: público o solo algunas personas."
-      ]
+      ],
+      "imagen": { "src": "img/config.jpg", "alt": "Maqueta de diseño de un sitio web", "caption": "El tema y la navegación definen la identidad del sitio" }
     },
     {
       "titulo": "Secciones y recursos",
@@ -62,7 +64,8 @@
         "Insertá videos y presentaciones de Drive para mostrar tus servicios o promociones.",
         "Organizá las secciones por bloques con titulares claros y textos cortos.",
         "Agregá formularios de Google para que los clientes te dejen su consulta."
-      ]
+      ],
+      "imagen": { "src": "img/secciones.jpg", "alt": "Página web con bloques de contenido", "caption": "Las secciones se arman arrastrando bloques" }
     },
     {
       "titulo": "Publicar y mantener el sitio",

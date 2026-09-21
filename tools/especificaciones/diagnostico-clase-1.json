@@ -1,0 +1,172 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 1,
+    "titulo": "Funcionamiento de una PC",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC de escritorio destapada para reconocer componentes",
+    "bajada": "Arrancamos el curso entendiendo qué es una computadora: la diferencia entre hardware y software, qué componentes son esenciales y cuáles son periféricos, y cómo viajan los datos dentro de la máquina.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 1",
+  "objetivos": [
+    "Distinguir hardware de software con ejemplos reales.",
+    "Clasificar los componentes de una PC en esenciales y periféricos.",
+    "Clasificar periféricos de entrada, salida y entrada/salida.",
+    "Explicar la función de fuente, placa madre, CPU y RAM en el procesamiento de datos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Hardware y software",
+      "emoji": "⚙️",
+      "imagen": {
+        "src": "img/componentes-pc.jpg",
+        "alt": "Componentes internos de una computadora de escritorio",
+        "caption": "Los componentes internos son la parte física de la PC: el hardware."
+      },
+      "parrafos": [
+        "Una PC funciona con dos mundos que trabajan juntos: el hardware, que es todo lo que podés tocar (plaqueta, cables, disco, teclado), y el software, que son los programas e instrucciones que le dicen al hardware qué hacer. Sin software, el hardware es una caja sin vida; sin hardware, el software no tiene dónde ejecutarse."
+      ],
+      "puntos": [
+        "Hardware: componentes físicos, medibles y reemplazables.",
+        "Software: programas, sistema operativo y datos; es intangible.",
+        "El sistema operativo (Windows, Linux) es el software que organiza todo."
+      ]
+    },
+    {
+      "titulo": "Componentes esenciales vs. periféricos",
+      "emoji": "🧠",
+      "parrafos": [
+        "No todos los componentes tienen el mismo rol. Existen componentes esenciales, que son imprescindibles para que la PC procese datos, y periféricos, que conectan la PC con el mundo exterior."
+      ],
+      "puntos": [
+        "Esenciales: fuente de alimentación, placa madre, microprocesador (CPU) y memoria RAM.",
+        "Periféricos: teclado, mouse, monitor, impresora y pendrives.",
+        "La PC puede funcionar sin algunos periféricos, pero nunca sin sus componentes esenciales.",
+        "Los periféricos expanden lo que la PC puede hacer: entrada, salida o ambas."
+      ]
+    },
+    {
+      "titulo": "Clasificación de periféricos",
+      "emoji": "⌨️",
+      "imagen": {
+        "src": "img/perifericos.jpg",
+        "alt": "Periféricos de computadora: teclado, mouse e impresora",
+        "caption": "Teclado, mouse e impresora: periféricos de entrada y de salida."
+      },
+      "parrafos": [
+        "Para elegir bien el hardware es clave saber clasificar los periféricos, porque cada uno cumple una dirección de flujo de datos distinta."
+      ],
+      "puntos": [
+        "Entrada: mandan datos a la PC (teclado, mouse, escáner, micrófono).",
+        "Salida: muestran o entregan datos de la PC (monitor, impresora, parlantes).",
+        "Entrada/salida (mixtos): hacen las dos cosas (monitor táctil, pendrive, impresora multifunción)."
+      ]
+    },
+    {
+      "titulo": "Función de los componentes esenciales",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/procesador.jpg",
+        "alt": "Microprocesador sobre su zócalo",
+        "caption": "El microprocesador es el cerebro: procesa las instrucciones."
+      },
+      "parrafos": [
+        "Cada componente esencial cumple un rol en el procesamiento de datos. La fuente convierte la energía, la placa madre conecta todo, la CPU calcula y la RAM guarda lo que se está usando en el momento."
+      ],
+      "puntos": [
+        "Fuente de alimentación: transforma 220V alternos en voltajes internos (12V, 5V, 3,3V).",
+        "Placa madre: placa base que interconecta todos los componentes.",
+        "Microprocesador (CPU): interpreta y ejecuta las instrucciones de los programas.",
+        "Memoria RAM: almacenamiento temporal ultrarrápido de datos y programas en uso."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: hardware, software y periféricos",
+      "consigna": "Respondé las 5 preguntas del interactivo para afianzar los conceptos básicos del funcionamiento de una PC.",
+      "pasos": [
+        "Leé con atención cada pregunta.",
+        "Elegí la opción correcta.",
+        "Revisá las explicaciones del docente en caso de duda.",
+        "Tomá nota de los conceptos que te resultaron difíciles."
+      ],
+      "entrega": "Todas las respuestas correctas en el interactivo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es el hardware?",
+            "opciones": ["La parte física de la computadora", "Los programas instalados", "El sistema operativo", "Los archivos del usuario"],
+            "correcta": "La parte física de la computadora"
+          },
+          {
+            "pregunta": "¿Cuál de estos componentes es esencial para que la PC funcione?",
+            "opciones": ["La placa madre", "La impresora", "El escáner", "Los parlantes"],
+            "correcta": "La placa madre"
+          },
+          {
+            "pregunta": "El teclado es un periférico de...",
+            "opciones": ["Entrada", "Salida", "Almacenamiento", "Procesamiento"],
+            "correcta": "Entrada"
+          },
+          {
+            "pregunta": "¿Cuál es la función de la memoria RAM?",
+            "opciones": ["Guardar datos en forma temporal mientras se trabaja", "Almacenar archivos para siempre", "Convertir 220 V en voltajes internos", "Conectar la PC a internet"],
+            "correcta": "Guardar datos en forma temporal mientras se trabaja"
+          },
+          {
+            "pregunta": "Un pendrive es un periférico de...",
+            "opciones": ["Entrada/salida", "Solo entrada", "Solo salida", "Ninguna de las anteriores"],
+            "correcta": "Entrada/salida"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Reconocé tu PC",
+      "consigna": "Identificá los componentes de la PC del aula y clasificalos en esenciales y periféricos.",
+      "pasos": [
+        "Observá la PC de tu banco con ayuda del docente.",
+        "Anotá cada componente que reconozcas.",
+        "Clasificalo en esencial o periférico.",
+        "Si es periférico, indicá si es de entrada, salida o mixto.",
+        "Compartí tu lista con el compañero y comparen."
+      ],
+      "entrega": "Lista con al menos 8 componentes clasificados correctamente."
+    }
+  ],
+  "entrega": "El docente revisará la lista de componentes clasificados y el resultado del interactivo.",
+  "lectura": "La PC es un conjunto de hardware y software que trabajan en equipo para procesar datos. Distinguir componentes esenciales (fuente, placa madre, CPU, RAM) de periféricos (que pueden ser de entrada, salida o mixtos) es la base para entender, mantener y diagnosticar cualquier equipo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y presentación", "que": "Presentar el curso, el plan de trabajo y preguntar qué saben sobre computadoras", "min": "10 min" },
+      { "titulo": "Hardware y software", "que": "Explicar ambos conceptos con la PC desarmada a la vista y ejemplos del aula", "min": "15 min" },
+      { "titulo": "Esenciales vs periféricos", "que": "Clasificar componentes con ayuda de los alumnos en el pizarrón", "min": "20 min" },
+      { "titulo": "Clasificación de periféricos", "que": "Mostrar ejemplos físicos y plantear preguntas de entrada/salida/mixtos", "min": "20 min" },
+      { "titulo": "Función de los esenciales", "que": "Recorrer fuente, placa, CPU y RAM con imágenes y dónde están en la PC", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Resolución oral del interactivo y cierre de dudas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar: ¿qué hacen con su PC todos los días? Relacionar esas tareas con hardware y software.",
+      "Mostrar una PC abierta: que los alumnos señalen los componentes que ya conocen."
+    ],
+    "aclarar": [
+      "RAM se borra al apagar: no es un disco. Es el gran error conceptual a corregir.",
+      "Los periféricos mixtos confunden: insistir con ejemplos (pendrive, impresora multifunción).",
+      "La fuente NO entrega 220V hacia adentro: la transforma a voltajes bajos."
+    ],
+    "ejemplos": [
+      "Mostrar un programa (software) corriendo sobre la CPU (hardware) para que se vean juntos.",
+      "Dar objetos y pedir clasificación rápida: teclado, parlante, pendrive, mouse.",
+      "Encender la PC y explicar qué hace cada esencial durante el arranque."
+    ]
+  }
+}

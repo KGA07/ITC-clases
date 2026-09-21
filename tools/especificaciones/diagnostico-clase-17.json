@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 17,
+    "titulo": "Sistema operativo Linux",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Distribución Linux (Ubuntu/Mint) en pendrive o DVD, PCs del aula",
+    "bajada": "Linux es el gran sistema libre: se instala sin costo, corre en PCs viejas y usa software de código abierto. Vas a instalarlo, usarlo y entender por qué es distinto de Windows.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 17 - Linux",
+  "objetivos": [
+    "Instalar una distribución Linux básica.",
+    "Usar el escritorio y las aplicaciones esenciales de Linux.",
+    "Explicar qué es el software de código abierto.",
+    "Comparar Linux con Windows en uso diario."
+  ],
+  "teoria": [
+    {
+      "titulo": "Qué es Linux y sus distribuciones",
+      "emoji": "🐧",
+      "imagen": {
+        "src": "img/ubuntu.jpg",
+        "alt": "Escritorio de Linux Ubuntu",
+        "caption": "Ubuntu es una de las distribuciones Linux más amigables."
+      },
+      "parrafos": [
+        "Linux es un sistema operativo libre cuyo núcleo (kernel) es desarrollado por miles de personas. Las 'distribuciones' (o distros) lo empaquetan con escritorio y programas: Ubuntu, Linux Mint, Debian, Fedora."
+      ],
+      "puntos": [
+        "Software libre: podés usarlo, estudiarlo y compartirlo sin cargo.",
+        "Ubuntu: distro amigable para quienes vienen de Windows.",
+        "Linux Mint: muy parecido al escritorio clásico.",
+        "Existen cientos de distros para cada necesidad."
+      ]
+    },
+    {
+      "titulo": "Instalación",
+      "emoji": "💿",
+      "imagen": {
+        "src": "img/terminal.png",
+        "alt": "Terminal de Linux con comandos",
+        "caption": "La terminal es la herramienta poderosa del mundo Linux."
+      },
+      "parrafos": [
+        "Instalar Linux es similar a Windows: se arranca desde el pendrive, se elige el teclado y la partición, y en 20-30 minutos tenés el sistema listo."
+      ],
+      "puntos": [
+        "Descargar la ISO de la distro elegida.",
+        "Crear el pendrive booteable (Rufus o BalenaEtcher).",
+        "Elegir 'Instalar Linux' (o probarlo desde la memoria primero).",
+        "Seleccionar la partición o 'Borrar disco e instalar'."
+      ]
+    },
+    {
+      "titulo": "Uso básico del escritorio",
+      "emoji": "🖥️",
+      "parrafos": [
+        "El escritorio de Linux tiene su lógica: menú de aplicaciones, archivos, red y ajustes, con programas alternativos a los de Windows."
+      ],
+      "puntos": [
+        "Menú de aplicaciones: similar al Inicio de Windows.",
+        "LiberOffice: la suite ofimática libre.",
+        "Firefox y Chrome: los navegadores habituales.",
+        "Gestor de archivos: Nautilus/Dolphin, como el Explorador."
+      ]
+    },
+    {
+      "titulo": "Software de código abierto",
+      "emoji": "🔓",
+      "parrafos": [
+        "El código abierto (open source) significa que cualquiera puede ver, modificar y distribuir el código del programa. Eso da transparencia, seguridad y actualización comunitaria."
+      ],
+      "puntos": [
+        "No se paga licencia por usuario.",
+        "El código es legible y auditable por cualquiera.",
+        "Las actualizaciones llegan del proyecto y la comunidad.",
+        "Alternativas libres: LibreOffice, GIMP, VLC."
+      ]
+    },
+    {
+      "titulo": "Diferencias con Windows",
+      "emoji": "⚖️",
+      "parrafos": [
+        "Linux y Windows comparten la base lograda, pero cambian filosofía, costo, seguridad y formas de trabajo."
+      ],
+      "puntos": [
+        "Costo: Windows paga licencia; Linux es gratuito.",
+        "Software: Windows depende de instaladores; Linux usa repositorios.",
+        "Virus: Linux es menos atacado, pero no es invulnerable.",
+        "Comandos: la terminal de Linux es la herramienta central para el técnico."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: Linux",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre distribuciones, instalación y código abierto.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Probá el sistema en vivo si hay pendrive disponible."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es una distribución o distro de Linux?",
+            "opciones": ["Un empaquetado de Linux con escritorio y programas", "Un tipo de virus", "Un disco rígido externo", "Un driver de video"],
+            "correcta": "Un empaquetado de Linux con escritorio y programas"
+          },
+          {
+            "pregunta": "¿Cuál es una distribución amigable para principiantes?",
+            "opciones": ["Ubuntu", "MS-DOS", "Windows XP", "Mac OS 9"],
+            "correcta": "Ubuntu"
+          },
+          {
+            "pregunta": "Linux es un sistema de tipo...",
+            "opciones": ["Código abierto", "Propietario", "Pago por uso obligatorio", "Solo para servidores"],
+            "correcta": "Código abierto"
+          },
+          {
+            "pregunta": "La suite ofimática libre más usada en Linux es...",
+            "opciones": ["LibreOffice", "Office de pago exclusivo", "WordPad", "Bloc de notas"],
+            "correcta": "LibreOffice"
+          },
+          {
+            "pregunta": "¿Qué diferencia principal hay entre Linux y Windows?",
+            "opciones": ["Linux es gratuito y su código es abierto", "Linux no tiene escritorio", "Windows es código abierto", "Linux solo corre en Mac"],
+            "correcta": "Linux es gratuito y su código es abierto"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Caminata por el escritorio Linux",
+      "consigna": "Explorá el sistema Linux del aula (o la sesión en vivo) y reconocé sus partes.",
+      "pasos": [
+        "Abrí el menú de aplicaciones y listá las categorías.",
+        "Ejecutá LibreOffice Writer y creá un documento de prueba.",
+        "Abrí la terminal y ejecutá los comandos ls y date.",
+        "Buscá en 'Acerca de' la versión de la distro.",
+        "Anotá qué programas reconocés y cuáles no existían en Windows."
+      ],
+      "entrega": "Informe de la exploración con capturas del escritorio y la terminal."
+    }
+  ],
+  "entrega": "El docente revisará el informe de exploración y el interactivo.",
+  "lectura": "Linux es el sistema libre que recupera PCs viejas y ahorra licencias. Instalarlo, usar su escritorio y entender el código abierto te abre una puerta enorme: mantenimiento con costo cero y herramientas de recuperación que verás en las próximas clases.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar Windows y preguntar si conocen Linux", "min": "10 min" },
+      { "titulo": "Linux y distribuciones", "que": "Explicar el concepto y mostrar Ubuntu/Mint en vivo", "min": "15 min" },
+      { "titulo": "Instalación", "que": "Arrancar la instalación con el pendrive y llegar a la elección de partición", "min": "20 min" },
+      { "titulo": "Escritorio y aplicaciones", "que": "Recorrer menú, LibreOffice y gestión de archivos", "min": "20 min" },
+      { "titulo": "Código abierto y diferencias", "que": "Comparar licencias y repasar los comandos básicos", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez les ofrecieron instalar Linux para revivir una PC vieja.",
+      "Mostrar un programa que conocen (Firefox, VLC) corriendo en Linux."
+    ],
+    "aclarar": [
+      "Linux no es solo servidores: hoy es un escritorio completo y amigable.",
+      "No todo software de Windows corre en Linux: hay alternativas libres.",
+      "Linux es menos atacado por virus, pero no hay que dormirse con las contraseñas."
+    ],
+    "ejemplos": [
+      "Arrancar el pendrive en 'Probar Ubuntu' y usarlo sin instalar nada.",
+      "Abrir la terminal y ejecutar ls, cd y pwd como primer contacto.",
+      "Comparar LibreOffice y Word abriendo el mismo documento."
+    ]
+  }
+}

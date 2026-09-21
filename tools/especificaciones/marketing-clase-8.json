@@ -33,7 +33,8 @@
         "Alto tiempo de visualización: si la persona ve el video completo, el algoritmo lo difunde más.",
         "Aprovecha el scroll continuo: la persona queda atrapada en el próximo video.",
         "Reutilizables: un mismo video corto puede publicarse en varias cuentas."
-      ]
+      ],
+      "imagen": { "src": "img/why.jpg", "alt": "Producción de videos cortos", "caption": "El video corto entrega valor rápido y se premia con alcance" }
     },
     {
       "titulo": "Formatos y plataformas",
@@ -46,7 +47,8 @@
         "TikTok: vertical, hasta 10 minutos, se descubre por hashtags y tendencias.",
         "YouTube Shorts: vertical, hasta 60 segundos, conecta con tu canal largo.",
         "Facebook Reels: el mismo video vertical, distribuido también en páginas y grupos."
-      ]
+      ],
+      "imagen": { "src": "img/formatos.jpg", "alt": "Grabación de video con smartphone", "caption": "Cada plataforma pide su formato nativo" }
     },
     {
       "titulo": "La estructura: gancho, desarrollo y cierre",
@@ -58,7 +60,8 @@
         "Gancho: pregunta, dato fuerte, problema o promesa. Ejemplo: 'El error que está frenando tus ventas'.",
         "Desarrollo: una sola idea, con ritmo y recursos visuales que la sostienen.",
         "Cierre: llamado a la acción (seguirte, comentar, ir al perfil) o un remate sorpresa."
-      ]
+      ],
+      "imagen": { "src": "img/estructura.jpg", "alt": "Guion de video corto", "caption": "Gancho, desarrollo y cierre: el molde del video corto" }
     },
     {
       "titulo": "Tips de captación",

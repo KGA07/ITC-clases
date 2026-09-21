@@ -1,0 +1,175 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 10,
+    "titulo": "Pulsadores",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a leer el estado de un pulsador con digitalRead(), a tomar decisiones con la estructura if() y a usar los operadores aritméticos y de comparación para controlar LEDs.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 10 - Pulsadores",
+  "objetivos": [
+    "Conectar un pulsador a la placa leyendo su estado digital.",
+    "Usar digitalRead() para detectar si el botón está presionado.",
+    "Tomar decisiones con la estructura de control if().",
+    "Aplicar operadores de comparación y aritméticos en el control de LEDs."
+  ],
+  "teoria": [
+    {
+      "titulo": "El pulsador y sus patas",
+      "emoji": "🔘",
+      "imagen": {
+        "src": "img/pulsador.jpg",
+        "alt": "Pulsador o botón táctil",
+        "caption": "El pulsador conecta un circuito al presionarlo: es una entrada digital."
+      },
+      "parrafos": [
+        "El pulsador (o botón táctil) es un componente que cierra un circuito cuando lo presionás. Tiene cuatro patas conectadas de a pares por dentro: las dos de arriba son un mismo contacto y las dos de abajo el otro.",
+        "En la protoboard se inserta sobre el canal central, cruzando los dos bloques, para que cada par de patas quede en filas distintas y puedas cablear por separado."
+      ],
+      "puntos": [
+        "Las patas de un mismo lado están conectadas entre sí por dentro.",
+        "Cruzás el canal central para separar los dos contactos.",
+        "Al presionar, se conectan los dos lados del pulsador.",
+        "Es una entrada: le dice a la placa presionado o no presionado."
+      ]
+    },
+    {
+      "titulo": "digitalRead()",
+      "emoji": "🔍",
+      "imagen": {
+        "src": "img/pulsador-tact.jpg",
+        "alt": "Pulsador conectado a la protoboard",
+        "caption": "Un lado del pulsador a un pin, el otro a GND."
+      },
+      "parrafos": [
+        "digitalRead(pin) devuelve el estado digital de un pin: HIGH (5V) o LOW (0V). Con un pulsador, el circuito clásico usa una resistencia pull-down que mantiene el pin en LOW; al presionar, el voltaje sube a HIGH.",
+        "En el código, guardamos la lectura en una variable: int estado = digitalRead(pin); y después decidimos qué hacer según ese valor."
+      ],
+      "puntos": [
+        "digitalRead(2); lee el estado del pin 2.",
+        "Con pull-down: reposo = LOW, presionado = HIGH.",
+        "La resistencia pull-down (10 kΩ) evita lecturas flotantes.",
+        "Combinado con Serial, podés ver el estado en el monitor."
+      ]
+    },
+    {
+      "titulo": "La estructura if()",
+      "emoji": "🔀",
+      "parrafos": [
+        "if(condicion) { ... } permite ejecutar un bloque solo si la condición es verdadera. Es la forma de tomar decisiones en Arduino: si el botón está presionado, encendé el LED; si no, apagalo.",
+        "Podés sumar else para el caso contrario e incluso encadenar varias condiciones para controlar más luces."
+      ],
+      "puntos": [
+        "if (estado == HIGH) { digitalWrite(led, HIGH); }",
+        "else { digitalWrite(led, LOW); }",
+        "La condición va entre paréntesis y devuelve verdadero o falso.",
+        "El bloque entre llaves se ejecuta solo si se cumple."
+      ]
+    },
+    {
+      "titulo": "Operadores aritméticos y de comparación",
+      "emoji": "➕",
+      "parrafos": [
+        "Los operadores aritméticos (+ - * / %) sirven para calcular: por ejemplo, contar cuántas veces se presionó el botón con contador = contador + 1. Los operadores de comparación (== != < > <= >=) comparan valores y devuelven verdadero o falso.",
+        "Cuidado con la doble igual: el operador de comparación es == (dos signos de igual), mientras que = sirve para asignar un valor."
+      ],
+      "puntos": [
+        "comparación: == igual, != distinto, < menor, > mayor.",
+        "aritméticos: + suma, - resta, * multiplica, / divide, % resto.",
+        "= asigna; == compara. Son dos operadores muy distintos.",
+        "Un contador de pulsaciones usa aritmética y comparación juntas."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Pulsador y decisiones",
+      "consigna": "Resolvé el quiz sobre digitalRead, if() y operadores.",
+      "pasos": [
+        "Pensá qué devuelve digitalRead cuando presionás el botón.",
+        "Distinguí cuándo se usa == y cuándo =.",
+        "Simulá el flujo del if en tu cabeza antes de elegir."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función lee el estado del pin 2?",
+            "opciones": ["analogRead(2)", "digitalRead(2)", "digitalWrite(2)", "delay(2)"],
+            "correcta": "digitalRead(2)"
+          },
+          {
+            "pregunta": "Con un pulsador con pull-down, ¿qué valor tiene el pin en reposo?",
+            "opciones": ["HIGH", "LOW", "1023", "Float"],
+            "correcta": "LOW"
+          },
+          {
+            "pregunta": "¿Cuál es el operador de comparación de igualdad?",
+            "opciones": ["=", "==", "=>", "="],
+            "correcta": "=="
+          },
+          {
+            "pregunta": "¿Qué condición enciende el LED solo si el botón está presionado?",
+            "opciones": ["if (estado == HIGH)", "if (estado = HIGH)", "if (HIGH)", "if (estado > HIGH)"],
+            "correcta": "if (estado == HIGH)"
+          },
+          {
+            "pregunta": "¿Qué hace contador = contador + 1;?",
+            "opciones": ["Compara el contador", "Incrementa el contador en 1", "Borra el contador", "Lo multiplica por 2"],
+            "correcta": "Incrementa el contador en 1"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Control de LEDs con un botón",
+      "consigna": "Armá un circuito con un pulsador y dos LEDs, y programá la lógica con if().",
+      "pasos": [
+        "En TinkerCad armá: un LED rojo en el pin 8, un LED verde en el pin 9 y un pulsador conectado al pin 2 con resistencia pull-down de 10 kΩ a GND.",
+        "En setup(): pinMode(2, INPUT); pinMode(8, OUTPUT); pinMode(9, OUTPUT);",
+        "En loop(): int estado = digitalRead(2);",
+        "Agregá if (estado == HIGH) { digitalWrite(8, HIGH); digitalWrite(9, LOW); }",
+        "Usá else { digitalWrite(8, LOW); digitalWrite(9, HIGH); }",
+        "Probalo en la simulación: al mantener presionado se enciende el rojo, en reposo el verde.",
+        "Construí el circuito real y cargá el mismo código en tu placa.",
+        "Desafío: sumá un contador de pulsaciones y mostralo por el Monitor Serie."
+      ],
+      "entrega": "Captura de TinkerCad con el circuito y foto del circuito real con los dos LEDs alternando."
+    }
+  ],
+  "entrega": "El docente revisará las imágenes del circuito y el código del desafío con contador.",
+  "lectura": "El pulsador convierte a tu placa en un dispositivo interactivo: lee el mundo con digitalRead(), decide con if() y actúa con las salidas. Combinar ese ingreso con operadores te permite contar acciones y tomar decisiones complejas.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar qué aparatos funcionan con un botón y qué creen que pasa adentro", "min": "10 min" },
+      { "titulo": "El pulsador en la protoboard", "que": "Explicar las patas y el cruce del canal central", "min": "15 min" },
+      { "titulo": "digitalRead() y pull-down", "que": "Conectar el pulsador explicando la resistencia pull-down", "min": "20 min" },
+      { "titulo": "if() y operadores", "que": "Escribir la lógica del botón con else en el pizarrón", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el armado y el código por parejas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Quiz, desafío contador y repaso", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar if() con decidir cruzar la calle: si viene auto, frenás; si no, pasás.",
+      "Preguntar de qué manera podríamos contar cuántas veces se aprieta un botón: aparece el contador."
+    ],
+    "aclarar": [
+      "El signo = asignar y == comparar: es la confusión número uno de quien empieza.",
+      "Sin resistencia pull-down, el pin queda 'flotando' y las lecturas son aleatorias.",
+      "Al presionar hay un 'rebote' eléctrico del botón que puede contar de más: lo revisaremos con millis() más adelante."
+    ],
+    "ejemplos": [
+      "Mostrar el pin sin pull-down leyendo valores aleatorios en el monitor.",
+      "Escribir mal la condición con = en vez de == y mostrar el error de compilación.",
+      "Construir el clásico 'pulsá para prender, soltá para apagar' con el par de LEDs."
+    ]
+  }
+}

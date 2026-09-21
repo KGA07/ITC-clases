@@ -33,7 +33,8 @@
         "Acceso: canva.com, sin instalar nada. Todo se guarda solo en la nube.",
         "Plantillas por red y por objetivo: publicación, historia, flyer o portada.",
         "Exportá en el formato correcto: PNG para piezas, video para animaciones."
-      ]
+      ],
+      "imagen": { "src": "img/canva.jpg", "alt": "Espacio de trabajo de diseño gráfico", "caption": "Canva da diseños prolijos sin saber dibujar" }
     },
     {
       "titulo": "Plantillas y kit de marca",
@@ -45,7 +46,8 @@
         "Establecé 2 o 3 colores de marca y usalos siempre.",
         "Elegí 1 o 2 tipografías legibles y respetá su uso.",
         "Guardá el kit en Canva para que cada diseño nuevo salga con tu estilo."
-      ]
+      ],
+      "imagen": { "src": "img/kit.jpg", "alt": "Identidad visual con colores y tipografías", "caption": "El kit de marca mantiene la coherencia visual" }
     },
     {
       "titulo": "Tamaños correctos por red",
@@ -70,7 +72,8 @@
         "Usá contraste para separar lo importante de lo decorativo.",
         "Dejá espacios en blanco: la pieza respira y se lee mejor.",
         "Tipografía legible por encima de la 'linda': probala en el celular."
-      ]
+      ],
+      "imagen": { "src": "img/jerarquia.jpg", "alt": "Tipografía y diseño editorial", "caption": "La jerarquía visual ordena qué mira primero el ojo" }
     }
   ],
   "ejercicios": [

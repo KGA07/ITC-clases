@@ -1,0 +1,176 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 13,
+    "titulo": "Buzzer y potenciómetro",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a dar sonido a tus proyectos con el buzzer pasivo y activo usando tone() y noTone(), y vas a leer niveles variables con el potenciómetro usando analogRead() y map().",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 13 - Buzzer y potenciómetro",
+  "objetivos": [
+    "Diferenciar el buzzer pasivo del activo y su conexión.",
+    "Generar tonos con tone() y detenerlos con noTone().",
+    "Leer valores variables de un potenciómetro con analogRead().",
+    "Escalar valores con map() para controlar frecuencias o brillos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Buzzer pasivo y activo",
+      "emoji": "🔊",
+      "imagen": {
+        "src": "img/buzzer.jpg",
+        "alt": "Buzzer piezoeléctrico",
+        "caption": "El buzzer piezoeléctrico convierte señales eléctricas en sonido."
+      },
+      "parrafos": [
+        "El buzzer activo suena solo con conectarlo a la corriente: trae un oscilador interno que genera un tono fijo. El pasivo necesita que la placa genere la señal: por eso podés producir melodías con tone().",
+        "En este curso usamos principalmente el pasivo, porque nos permite controlar la frecuencia del sonido, es decir la nota que escuchás."
+      ],
+      "puntos": [
+        "Activo: suena al conectarlo, tono fijo, no programás la frecuencia.",
+        "Pasivo: necesita señal externa; se controla con tone().",
+        "El pasivo suele tener los polos marcados (+ y -).",
+        "Ambos se conectan a un pin digital de la placa."
+      ]
+    },
+    {
+      "titulo": "tone() y noTone()",
+      "emoji": "🎵",
+      "parrafos": [
+        "tone(pin, frecuencia) genera un sonido de la frecuencia indicada (en hercios) en un pin. Por ejemplo, tone(8, 440) suena la nota La. noTone(pin) detiene el sonido.",
+        "Podés combinar tone y delay para armar melodías: suena una nota, esperás, cambio de nota, y así sucesivamente. Las frecuencias de las notas musicales se pueden guardar en un array (lo vemos en la próxima clase)."
+      ],
+      "puntos": [
+        "tone(8, 440): suena La (440 Hz) en el pin 8.",
+        "tone(8, 523): suena Do (523 Hz).",
+        "noTone(8): silencia el pin 8.",
+        "Con delays entre notas compones una melodía."
+      ]
+    },
+    {
+      "titulo": "El potenciómetro",
+      "emoji": "🎚️",
+      "imagen": {
+        "src": "img/potenciometro.jpg",
+        "alt": "Potenciómetro",
+        "caption": "El potenciómetro es una resistencia variable: al girarlo cambia el valor analógico que lee la placa."
+      },
+      "parrafos": [
+        "El potenciómetro es una resistencia variable de tres patas: las dos exteriores se conectan a 5V y GND, y la del medio entrega un voltaje que cambia al girar la perilla.",
+        "Es una entrada analógica: la placa lee con analogRead() valores entre 0 y 1023 según la posición de la perilla. Se usa para volumen, brillo, velocidad y ajustes en general."
+      ],
+      "puntos": [
+        "Patas externas: 5V y GND.",
+        "Pata del medio: señal analógica al pin A0.",
+        "analogRead(A0) devuelve 0 a 1023.",
+        "No hace falta resistencia externa."
+      ]
+    },
+    {
+      "titulo": "map(): de 0-1023 a lo que necesites",
+      "emoji": "📐",
+      "parrafos": [
+        "Los 1024 valores del potenciómetro normalmente no sirven tal cual: para el brillo de un LED (0-255) o la nota de un buzzer conviene convertirlos. map(x, deMin, deMax, aMin, aMax) hace esa escala.",
+        "Por ejemplo: int brillo = map(valorPote, 0, 1023, 0, 255); convierte la lectura para usarla con analogWrite(). También podés mapear el potenciómetro a una frecuencia de 100 a 1000 Hz para un 'sirena regulable'."
+      ],
+      "puntos": [
+        "map(valor, 0, 1023, 0, 255): escala al rango PWM.",
+        "map(valor, 0, 1023, 100, 1000): escala a frecuencias.",
+        "El resultado es proporcional: 512 va al punto medio.",
+        "Excelente para ajustar todo tipo de parámetros en vivo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Sonido y ajustes",
+      "consigna": "Respondé el quiz sobre buzzer, tone(), potenciómetro y map().",
+      "pasos": [
+        "Pensá la diferencia entre buzzer activo y pasivo.",
+        "Recordá el rango de analogRead (0-1023).",
+        "Usá la proporción de map() para deducir la respuesta."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué buzzer necesita de la placa para generar el sonido?",
+            "opciones": ["El activo", "El pasivo", "Ninguno", "Los dos por igual"],
+            "correcta": "El pasivo"
+          },
+          {
+            "pregunta": "¿Qué función genera un tono de 440 Hz en el pin 8?",
+            "opciones": ["tone(440, 8)", "tone(8, 440)", "noTone(8)", "analogRead(8)"],
+            "correcta": "tone(8, 440)"
+          },
+          {
+            "pregunta": "¿Qué rango de valores devuelve analogRead()?",
+            "opciones": ["0 a 255", "0 a 1023", "0 a 1", "1 a 100"],
+            "correcta": "0 a 1023"
+          },
+          {
+            "pregunta": "¿Cómo convertís una lectura de 0-1023 en un valor de 0-255?",
+            "opciones": ["delay(valor)", "map(valor, 0, 1023, 0, 255)", "noTone(valor)", "Serial.print(valor)"],
+            "correcta": "map(valor, 0, 1023, 0, 255)"
+          },
+          {
+            "pregunta": "¿Qué función detiene el sonido del buzzer?",
+            "opciones": ["tone(pin, 0)", "noTone(pin)", "stopTone(pin)", "delay(0)"],
+            "correcta": "noTone(pin)"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Sirena regulada por potenciómetro",
+      "consigna": "Armá un circuito que produzca sonidos controlados por el potenciómetro.",
+      "pasos": [
+        "Conectá el buzzer pasivo al pin 8 y a GND.",
+        "Conectá el potenciómetro: patas externas a 5V y GND, la del medio al pin A0.",
+        "En setup(): pinMode(8, OUTPUT); Serial.begin(9600);",
+        "En loop(): int valor = analogRead(A0);",
+        "Escalá con map: int frecuencia = map(valor, 0, 1023, 100, 1000);",
+        "Emití: tone(8, frecuencia);",
+        "Mostrá por Serial: Serial.print(\"Pote: \"); Serial.print(valor); Serial.print(\" Frec: \"); Serial.println(frecuencia);",
+        "Girá la perilla y escuchá cómo cambia el tono mientras el monitor muestra los valores.",
+        "Desafío: que el tono suba y baje solo en un barrido con for() de 100 a 1000."
+      ],
+      "entrega": "Foto del circuito + captura del monitor mostrando los valores del potenciómetro."
+    }
+  ],
+  "entrega": "El docente revisará el circuito, la captura del monitor y el funcionamiento.",
+  "lectura": "El buzzer y el potenciómetro suman sonido y ajuste fino: con tone() tu placa canta, y con analogRead() + map() convertís giros de la perilla en frecuencias, brillos o velocidades exactas.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Reproducir una nota con el buzzer y preguntar cómo se controlará el tono", "min": "10 min" },
+      { "titulo": "Buzzer activo vs pasivo", "que": "Comparar ambos con los componentes en mano", "min": "15 min" },
+      { "titulo": "tone() y noTone()", "que": "Hacer sonar notas y una mini melodía en el proyector", "min": "20 min" },
+      { "titulo": "Potenciómetro y analogRead", "que": "Leer el potenciómetro en el monitor en vivo", "min": "20 min" },
+      { "titulo": "map()", "que": "Escalar valores para frecuencia y brillo con ejemplos", "min": "15 min" },
+      { "titulo": "Práctica y cierre", "que": "Guiar la sirena regulada y resolver el quiz", "min": "15 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo suenan las alarmas de las ambulancias (sube y baja) y cómo se haría eso con tone().",
+      "Comparar el potenciómetro con el control de volumen de un equipo de música."
+    ],
+    "aclarar": [
+      "El buzzer activo NO lee las frecuencias de tone(): sonará siempre igual; para melodías usá el pasivo.",
+      "analogRead no es lo mismo que analogWrite: el primero lee, el segundo escribe PWM.",
+      "map() no modifica la variable: hay que asignar su resultado, por ejemplo int f = map(...);"
+    ],
+    "ejemplos": [
+      "Armar la clásica melodía de inicio con tres notas y delays.",
+      "Ver en el monitor cómo cambia la frecuencia mientras giran la perilla.",
+      "Map a brillo: convertir el potenciómetro en un dimmer de LED con analogWrite."
+    ]
+  }
+}

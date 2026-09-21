@@ -1,0 +1,186 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 5,
+    "titulo": "Microprocesadores",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "CPU Intel y AMD sueltos, cooler, ficha de modelado y velocidades",
+    "bajada": "El microprocesador es el cerebro de la PC. Vas a entender cómo funciona, qué diferencia a Intel de AMD, qué son los núcleos, la caché y el Hyperthreading, y cómo leer el nombre de cada modelo.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 3",
+  "objetivos": [
+    "Explicar el funcionamiento básico del microprocesador.",
+    "Reconocer marcas, modelos y gamas de procesadores Intel y AMD.",
+    "Interpretar velocidad, cantidad de núcleos y memoria caché.",
+    "Definir Hyperthreading, Turbo Boost y GPU integrada."
+  ],
+  "teoria": [
+    {
+      "titulo": "Funcionamiento del microprocesador",
+      "emoji": "🧠",
+      "imagen": {
+        "src": "img/cpu-intel.jpg",
+        "alt": "Microprocesador Intel visto de cerca",
+        "caption": "El microprocesador ejecuta millones de instrucciones por segundo."
+      },
+      "parrafos": [
+        "El microprocesador (CPU) es el componente que ejecuta las instrucciones de los programas. Mide, compara, suma y decide: todo el software termina bajando a operaciones que la CPU resuelve a gran velocidad."
+      ],
+      "puntos": [
+        "Ejecuta las instrucciones del sistema operativo y los programas.",
+        "Trabaja con la RAM y la memoria caché para no esperar datos.",
+        "Su velocidad se mide en gigahercios (GHz).",
+        "Sin CPU funcional la PC no arranca (sin imagen, sin bip, nada)."
+      ]
+    },
+    {
+      "titulo": "Marcas y modelos: Intel y AMD",
+      "emoji": "🏆",
+      "imagen": {
+        "src": "img/cpu-amd.jpg",
+        "alt": "Procesador AMD",
+        "caption": "AMD y Intel son los dos grandes fabricantes de procesadores."
+      },
+      "parrafos": [
+        "Intel y AMD dominan el mercado. Cada marca tiene familias y generaciones, y saber leer el nombre del modelo te dice su nivel y antigüedad."
+      ],
+      "puntos": [
+        "Intel: Core i3, i5, i7, i9 (escala de gamas).",
+        "AMD: Ryzen 3, 5, 7, 9 y series Athlon.",
+        "El número de generación aparece en el modelo (i5-12400 → generación 12).",
+        "Sufijos: K (desbloqueado en Intel), G (con GPU integrada en AMD)."
+      ]
+    },
+    {
+      "titulo": "Velocidad y cantidad de núcleos",
+      "emoji": "⚡",
+      "parrafos": [
+        "Cuanto más rápido es un procesador y cuantos más núcleos tiene, más tareas puede resolver por segundo."
+      ],
+      "puntos": [
+        "Velocidad: se mide en GHz (miles de millones de ciclos por segundo).",
+        "Núcleo (core): unidad de procesamiento; hoy se usan varios en paralelo.",
+        "Modelos típicos: 4, 6, 8, 12 o más núcleos.",
+        "Más núcleos ayudan en tareas múltiples, video y renderizado."
+      ]
+    },
+    {
+      "titulo": "Memoria caché, Hyperthreading y Turbo",
+      "emoji": "🚀",
+      "parrafos": [
+        "Tres tecnologías aceleran el procesamiento sin aumentar tanto el consumo: guardar datos cerca de la CPU (caché), ejecutar más hilos por núcleo (Hyperthreading) y subir la velocidad temporalmente (Turbo)."
+      ],
+      "puntos": [
+        "Caché: memoria ultrarrápida interna (L1, L2, L3) para datos frecuentes.",
+        "Hyperthreading (Intel) / SMT (AMD): ejecuta 2 hilos por núcleo.",
+        "Turbo Boost / Precision Boost: suben la velocidad cuando hace falta.",
+        "Estas tecnologías conviven para mejorar el rendimiento real."
+      ]
+    },
+    {
+      "titulo": "GPU integrada y refrigeración",
+      "emoji": "🌡️",
+      "imagen": {
+        "src": "img/disipador.jpg",
+        "alt": "Cooler o disipador para procesador",
+        "caption": "El cooler mantiene al procesador dentro de su temperatura de trabajo."
+      },
+      "parrafos": [
+        "Muchos procesadores incluyen una GPU integrada (gráficos en la CPU), ideal para PCs de oficina. Y todos necesitan refrigeración: el calor que generan es enorme."
+      ],
+      "puntos": [
+        "GPU integrada: sirve para ofimática, internet y video sin tarjeta extra.",
+        "Si no hay gráficos integrados, la PC necesita tarjeta de video sí o sí.",
+        "El disipador con cooler evita que la CPU se sobrecaliente.",
+        "Aplicar pasta térmica entre CPU y disipador es obligatorio en el armado."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: microprocesadores",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre marcas, núcleos, caché y tecnologías.",
+      "pasos": [
+        "Leé la teoría sobre marcas y modelos.",
+        "Respondé el interactivo.",
+        "Comentá dudas con el docente."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué unidad mide la velocidad del procesador?",
+            "opciones": ["Gigahertz (GHz)", "Gigabytes (GB)", "Voltios (V)", "Watts (W)"],
+            "correcta": "Gigahertz (GHz)"
+          },
+          {
+            "pregunta": "¿Cuál es la gama más alta de Ryzen en AMD?",
+            "opciones": ["Ryzen 9", "Ryzen 3", "Ryzen 5", "Athlon"],
+            "correcta": "Ryzen 9"
+          },
+          {
+            "pregunta": "La memoria caché sirve para...",
+            "opciones": ["Guardar datos frecuentes muy cerca de la CPU", "Almacenar fotos a largo plazo", "Ampliar la RAM del sistema", "Conectar la PC a internet"],
+            "correcta": "Guardar datos frecuentes muy cerca de la CPU"
+          },
+          {
+            "pregunta": "Hyperthreading permite...",
+            "opciones": ["Ejecutar dos hilos por núcleo", "Duplicar el disco rígido", "Aumentar la memoria RAM", "Subir el voltaje de la fuente"],
+            "correcta": "Ejecutar dos hilos por núcleo"
+          },
+          {
+            "pregunta": "Si un procesador no tiene GPU integrada, la PC necesita...",
+            "opciones": ["Una tarjeta de video", "Más memoria RAM", "Un disco SSD", "Una mejor fuente"],
+            "correcta": "Una tarjeta de video"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Decodificá un procesador",
+      "consigna": "A partir de un modelo real de CPU, identifiquemos cada dato de su nombre.",
+      "pasos": [
+        "Anotá el modelo de procesador de la PC del aula (o uno de la ficha).",
+        "Identificá la marca y la familia.",
+        "Buscá la generación dentro del número de modelo.",
+        "Indicá la velocidad base en GHz y la cantidad de núcleos.",
+        "Determiná si tiene GPU integrada."
+      ],
+      "entrega": "Ficha del procesador con todos los datos decodificados."
+    }
+  ],
+  "entrega": "El docente revisará la ficha de decodificación y el interactivo.",
+  "lectura": "El microprocesador decide qué tan rápido corre cada programa. Saber leer un modelo de Intel o AMD, interpretar GHz y núcleos, y entender caché, Hyperthreading y Turbo te permite elegir la CPU correcta para cada PC y explicar por qué un equipo va lento o rápido.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar placa madre y conectar con la parte que aloja el cerebro", "min": "10 min" },
+      { "titulo": "Funcionamiento y marcas", "que": "Explicar qué hace la CPU y comparar Intel vs AMD con CPUs reales", "min": "15 min" },
+      { "titulo": "Velocidad y núcleos", "que": "Mostrar cómo leer GHz y núcleos en fichas técnicas", "min": "20 min" },
+      { "titulo": "Caché, Hyperthreading y Turbo", "que": "Explicar cada tecnología con ejemplos de uso diario", "min": "20 min" },
+      { "titulo": "Práctica de decodificación", "que": "Guiar la lectura de modelos reales de procesador", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral y preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cuánta RAM y qué procesador creen que tiene su PC y cómo podrían averiguarlo.",
+      "Comparar el tiempo que tarda una PC de 2 núcleos con una de 8 al abrir varios programas."
+    ],
+    "aclarar": [
+      "Más GHz NO siempre es mejor: importan núcleos, caché y generación.",
+      "Hyperthreading se ve como 'doble de hilos', pero no multiplica el rendimiento al 100%.",
+      "La GPU integrada usa parte de la RAM: no es gratis, pero alcanza para oficina."
+    ],
+    "ejemplos": [
+      "Mostrar en la caja de un i5 y un Ryzen 5 las diferencias visibles.",
+      "Ejecutar el Administrador de tareas para mostrar núcleos, hilos y temperatura.",
+      "Comparar una CPU con GPU integrada y una sin ella para explicar la tarjeta de video."
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 11,
+    "titulo": "Mapas de bits y PowerClip",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a meter fotos dentro de tus diseños con el PowerClip, convertir piezas vectoriales en mapas de bits y aplicar efectos fotográficos: 3D, trazos artísticos, desenfoques y filtros creativos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 10 Marco PowerClip",
+  "objetivos": [
+    "Enmarcar fotos e imágenes dentro de formas con la herramienta PowerClip.",
+    "Convertir objetos vectoriales en mapas de bits.",
+    "Cambiar el modo de color de una imagen.",
+    "Aplicar y ajustar efectos de mapa de bits: 3D, artísticos, desenfoque y creativos."
+  ],
+  "teoria": [
+    {
+      "titulo": "El PowerClip: imágenes dentro de formas",
+      "emoji": "🖼️",
+      "imagen": {
+        "src": "img/marco-foto.jpg",
+        "alt": "Foto enmarcada en una figura",
+        "caption": "PowerClip coloca una foto dentro de la forma vectorial que elijas como marco."
+      },
+      "parrafos": [
+        "El PowerClip es el portamarcos de CorelDRAW: elegís una forma (un círculo, un corazón, una silueta) como 'contenedor' y le insertás una imagen que queda recortada automáticamente por los bordes de la forma.",
+        "Se aplica con clic derecho sobre la imagen y 'PowerClip dentro de marco' (o Menú Objeto > PowerClip). Después podés editar el contenido: mover la foto dentro del marco manteniendo la forma intacta."
+      ],
+      "puntos": [
+        "Clic derecho sobre la imagen → PowerClip dentro de marco.",
+        "La imagen se recorta con el contorno de la forma contenedora.",
+        "Para mover la foto adentro del marco: editar contenido y arrastrar.",
+        "El PowerClip mantiene la forma editable y sin pixelarla."
+      ]
+    },
+    {
+      "titulo": "Convertir a mapa de bits y modo de color",
+      "emoji": "🔀",
+      "parrafos": [
+        "A veces necesitás que un dibujo vectorial se comporte como una foto: la conversión (Mapas de bits > Convertir a mapa de bits) transforma la pieza en píxeles con la resolución que elijas. Se usa para aplicar filtros o exportar a formatos de imagen.",
+        "El modo de color define cómo se guarda la imagen (CMYK para imprenta, RGB para pantalla, escala de grises para blanco y negro). Convertir el modo cambia también los límites de efectos disponibles."
+      ],
+      "puntos": [
+        "Convertir a mapa de bits rastreza la pieza a una cuadrícula de píxeles.",
+        "La resolución elegida define cuánto detalle conserva.",
+        "Modo de color CMYK vs RGB según destino (imprenta o pantalla).",
+        "Una vez convertida, la pieza ya no es vectorial: no escala sin pérdida."
+      ]
+    },
+    {
+      "titulo": "Efectos de mapa de bits",
+      "emoji": "🎛️",
+      "imagen": {
+        "src": "img/figura-powerclip.png",
+        "alt": "Figura de apoyo de PowerClip y efectos",
+        "caption": "Los efectos de mapa de bits transforman por completo el clima de una imagen."
+      },
+      "parrafos": [
+        "El menú Mapas de bits > Efectos agrupa decenas de filtros. El grupo 3D aporta imágenes con volumen y texturas; Trazos artísticos simula pintura de óleo, pastel o acuarela sobre la foto; Desenfocar genera suavizados difusos; y Creativos incluye efectos puntillistas, mosaicos y de relieve.",
+        "Cada efecto abre un cuadro con controles propios: la vista previa en vivo permite comparar antes y después de aceptar."
+      ],
+      "puntos": [
+        "Efectos 3D: volumen, relieve y texturas con luz.",
+        "Trazos artísticos: para fotografías con aspecto de pintura.",
+        "Desenfocar: suaviza y difumina zonas o toda la imagen.",
+        "Creativos: efectos puntillistas, mosaicos y aplicación decorativa."
+      ]
+    },
+    {
+      "titulo": "Flujo completo: de foto recortada a pieza final",
+      "emoji": "🧩",
+      "parrafos": [
+        "En una pieza publicitaria real se combinan todo esto: se enmarca una foto dentro de una forma (PowerClip), se convierte a mapa de bits si hace falta aplicar efectos y se define el modo de color según el destino de impresión.",
+        "Con el PowerClip en el centro, tus composiciones ganan recortes prolijos: siluetas de productos, retratos dentro de formas geométricas o fondos fotográficos enmarcados dentro de banners."
+      ],
+      "puntos": [
+        "PowerClip estructura la foto; los efectos le dan clima.",
+        "El modo de color se decide al final, según el destino.",
+        "El flujo se repite en tarjetas, folletos y afiches.",
+        "Guardá siempre el .cdr original: la conversión a mapa de bits fija los píxeles."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Retrato enmarcado con efectos",
+      "consigna": "Creá una tarjeta de presentación de una marca ficticia: una foto enmarcada con PowerClip dentro de un círculo, con un efecto artístico aplicado y modo de color correcto.",
+      "pasos": [
+        "Creá un documento A4 y dibujá un círculo grande en el centro.",
+        "Insertá una imagen (una foto de tu elección o la que tenga el docente).",
+        "Clic derecho sobre la imagen → PowerClip dentro de marco y elegí el círculo.",
+        "Editá el contenido para centrar la cara en el marco.",
+        "Convertí la pieza a mapa de bits con resolución de 200 dpi.",
+        "Aplicale un efecto del grupo Trazos artísticos (óleo o acuarela).",
+        "Sobre un fondo, escribí el nombre de la marca y guardá como powerclip-nombre.cdr."
+      ],
+      "entrega": "Exportá la tarjeta en PNG y describí qué efecto aplicaste y por qué modo de color elegiste.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es la función del PowerClip?",
+            "opciones": ["Insertar una imagen dentro de una forma recortándola", "Borrar fondos automáticamente", "Crear páginas nuevas", "Cambiar la tipografía"],
+            "correcta": "Insertar una imagen dentro de una forma recortándola"
+          },
+          {
+            "pregunta": "Convertir un objeto vectorial a mapa de bits:",
+            "opciones": ["Lo transforma en una cuadrícula de píxeles", "Lo vuelve editable nodo a nodo", "Le agrega sombras", "Lo imprime mejor"],
+            "correcta": "Lo transforma en una cuadrícula de píxeles"
+          },
+          {
+            "pregunta": "¿Qué modo de color elegís para una imagen que va a la imprenta?",
+            "opciones": ["CMYK", "RGB", "PNG", "Escala de grises casí siempre"],
+            "correcta": "CMYK"
+          },
+          {
+            "pregunta": "¿Qué grupo de efectos hace que una foto parezca un cuadro de óleo?",
+            "opciones": ["Trazos artísticos", "3D", "Desenfocar", "Creativos puntillistas"],
+            "correcta": "Trazos artísticos"
+          },
+          {
+            "pregunta": "Después de aplicar el PowerClip, ¿cómo movés la foto adentro del marco?",
+            "opciones": ["Editando el contenido del PowerClip", "Borrando el marco", "Con la herramienta Texto", "Con el zoom"],
+            "correcta": "Editando el contenido del PowerClip"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Misma foto, tres marcos",
+      "consigna": "Enmarcá la misma imagen dentro de tres formas distintas con PowerClip para ver cómo cambia la lectura del recorte.",
+      "pasos": [
+        "Dibujá un círculo, un rectángulo redondeado y un corazón.",
+        "Con la misma imagen (una foto que traigas o del material) hacé PowerClip dentro de cada forma.",
+        "Editá el contenido de cada marco para centrar la parte más interesante de la foto.",
+        "Colocá los tres marcos en fila con espacio entre ellos.",
+        "Exportá la comparación como tres-marcos-nombre.png."
+      ],
+      "entrega": "Entregá el PNG con los tres recortes y elegí cuál funciona mejor y por qué."
+    }
+  ],
+  "entrega": "Se evalúa la tarjeta con la foto recortada dentro del círculo, el efecto aplicado y la justificación del modo de color elegido.",
+  "lectura": "El PowerClip es una de las herramientas más queridas de CorelDRAW porque resuelve en un solo paso lo que en otros programas cuesta capas y máscaras: recortar una foto con la silueta de una forma. Sumarle el control de resolución y el modo de color te convierte en alguien que entiende cómo se prepara un archivo para print. Y los efectos de mapa de bits agregan la magia final.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar piezas con fotos recortadas dentro de formas (logos, tarjetas) y preguntar cómo se hicieron", "min": "10 min" },
+      { "titulo": "PowerClip", "que": "Enmarcar fotos dentro de círculos y corazones; editar el contenido", "min": "20 min" },
+      { "titulo": "Convertir a mapa de bits y modos", "que": "Comparar resolución, convertir piezas y cambiar de RGB a CMYK", "min": "20 min" },
+      { "titulo": "Efectos de mapa de bits", "que": "Recorrer 3D, trazos artísticos, desenfoque y creativos con vista previa", "min": "20 min" },
+      { "titulo": "Práctica guiada", "que": "Armar la tarjeta con PowerClip y efecto, con asistencia individual", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y corregir entregas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Buscar recortes fotográficos en revistas y logos que usan fotos dentro de formas.",
+      "Preguntar si alguna vez quisieron poner su foto en un círculo y no sabían cómo recortarla."
+    ],
+    "aclarar": [
+      "El PowerClip no borra la imagen original: solo la recorta visualmente.",
+      "Convertir a mapa de bits fija la resolución: después no se puede agrandar.",
+      "Los efectos de mapa de bits solo se aplican a imágenes, no a piezas vectoriales."
+    ],
+    "ejemplos": [
+      "Enmarcar la misma foto en tres formas distintas para mostrar flexibilidad.",
+      "Aplicar un desenfoque progresivo y mostrar el control del efecto.",
+      "Convertir un logo vectorial a mapa de bits y agrandarlo para evidenciar los píxeles."
+    ]
+  }
+}

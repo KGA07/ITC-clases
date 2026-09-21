@@ -1,0 +1,169 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 2,
+    "titulo": "Herramientas de dibujo",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a dibujar con las herramientas de formas: rectángulo, elipse, polígono, estrellas y formas básicas. Son la base de casi todo logo y pieza gráfica que vas a crear.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 2 Herramientas de Dibujo",
+  "objetivos": [
+    "Dibujar rectángulos, cuadrados, elipses y círculos usando las teclas modificadoras.",
+    "Crear polígonos y estrellas configurando la cantidad de lados y puntas.",
+    "Usar las formas básicas predefinidas y sus glifos de ajuste.",
+    "Modificar las propiedades de cada forma desde la barra de propiedades."
+  ],
+  "teoria": [
+    {
+      "titulo": "Rectángulo y elipse",
+      "emoji": "▭",
+      "imagen": {
+        "src": "img/formas-geometricas.jpg",
+        "alt": "Formas geométricas básicas",
+        "caption": "Rectángulos, elipses y otras figuras son la materia prima del diseño."
+      },
+      "parrafos": [
+        "La herramienta Rectángulo dibuja rectángulos arrastrando el mouse. Si mantenés presionada la tecla Ctrl mientras arrastrás, obtenés un cuadrado perfecto. Con Shift dibujás desde el centro hacia afuera.",
+        "La herramienta Elipse funciona igual: Ctrl te da un círculo perfecto. Estas dos herramientas son las más usadas en logotipos, botones y composiciones simples."
+      ],
+      "puntos": [
+        "Ctrl + arrastre: cuadrado o círculo perfecto.",
+        "Ctrl + Shift + arrastre: figura perfecta dibujada desde el centro.",
+        "Desde la barra de propiedades podés escribir medidas exactas de ancho y alto.",
+        "Las esquinas de un rectángulo tienen nodos de redondeo: arrastralos para hacer esquinas redondeadas sin herramientas extra."
+      ]
+    },
+    {
+      "titulo": "Polígonos y estrellas",
+      "emoji": "⭐",
+      "parrafos": [
+        "Con la herramienta Polígono elegís cuántos lados tiene la figura (de 3 en adelante) antes de dibujarla. Por defecto CorelDRAW crea un pentágono de 5 lados.",
+        "La herramienta Estrella dibuja estrellas con puntas definidas por el número de lados. La Estrella compleja agrega puntas intermedias para estrellas más decorativas, con más control sobre la punta."
+      ],
+      "puntos": [
+        "En la barra de propiedades escribís el número de lados del polígono o de puntas de la estrella.",
+        "Con el nodo interior de la estrella podés variar la forma sin redibujar.",
+        "La estrella compleja permite crear estrellas tipo engranaje con puntos de ajuste.",
+        "El triángulo se hace con un polígono de 3 lados: no existe herramienta triángulo separada."
+      ]
+    },
+    {
+      "titulo": "Formas básicas predefinidas",
+      "emoji": "🔷",
+      "imagen": {
+        "src": "img/figura-dibujo.jpeg",
+        "alt": "Figura de apoyo de las herramientas de dibujo",
+        "caption": "Las formas predefinidas incluyen flechas, diagramas, estrellas y banners."
+      },
+      "parrafos": [
+        "CorelDRAW trae bibliotecas de formas listas para usar: flechas, diagramas de flujo, llamadas, banners y marcos. Están agrupadas en la caja de herramientas dentro del grupo de formas básicas.",
+        "Cada forma predefinida tiene 'glifos': pequeños rombos de color que, al arrastrarlos, cambian la proporción de esa parte del dibujo (por ejemplo, el grosor de una flecha)."
+      ],
+      "puntos": [
+        "Abrís el grupo desde el triángulo de la herramienta Formas básicas.",
+        "Las formas vectoriales se redimensionan y recolorean igual que las demás.",
+        "Los glifos aparecen al seleccionar la forma y permiten ajustes finos.",
+        "Estas bibliotecas ahorran tiempo en diagramas, flechas de señalización y elementos decorativos."
+      ]
+    },
+    {
+      "titulo": "Herramientas complementarias: espiral, diagrama y papel cuadriculado",
+      "emoji": "🌀",
+      "parrafos": [
+        "La herramienta Espiral dibuja espirales simétricas o logarítmicas; la herramienta Diagrama permite dibujar polígonos con segmentos de líneas a mano alzada; y el Papel cuadriculado crea grillas de rectángulos conectados de una sola pieza.",
+        "Estas herramientas amplían lo que podés hacer sin dibujar nada a mano: grillas para maquetar y espirales para elementos decorativos."
+      ],
+      "puntos": [
+        "La espiral logarítmica crece de forma variable; la simétrica con pasos constantes.",
+        "El papel cuadriculado sirve para plotear grillas de maquetación.",
+        "El diagrama se dibuja clic a clic para marcar vértices y con doble clic se cierra la forma."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Composición con formas",
+      "consigna": "Creá una composición simple con un sol (círculo + triángulos), una casa (rectángulo + triángulo) y una estrella de 8 puntas, aplicando todo lo aprendido.",
+      "pasos": [
+        "Creá un documento nuevo A4 en orientación vertical.",
+        "Dibujá el sol: un círculo perfecto (Ctrl) amarillo con rayos de polígono de 3 lados rotados alrededor.",
+        "Dibujá la casa: un rectángulo color ladrillo y un techo con polígono de 3 lados.",
+        "Creá una estrella de 8 lados (herramienta Estrella) y ajustá las puntas con el nodo interior.",
+        "Acomodá los elementos sin que se salgan de la página y guardá como ejercicio-casa.cdr.",
+        "Exportá una copia en JPG de baja resolución para la entrega."
+      ],
+      "entrega": "Capturá o exportá la composición completa (JPG o PNG) y subila a la carpeta de entrega de la clase.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tecla mantenés para dibujar un CUADRADO perfecto?",
+            "opciones": ["Ctrl", "Shift", "Alt", "Supr"],
+            "correcta": "Ctrl"
+          },
+          {
+            "pregunta": "¿Con qué herramienta creás un triángulo?",
+            "opciones": ["Con el polígono de 3 lados", "Con la estrella compleja", "Con el papel cuadriculado", "Con la elipse"],
+            "correcta": "Con el polígono de 3 lados"
+          },
+          {
+            "pregunta": "¿Para qué sirven los glifos de las formas básicas?",
+            "opciones": ["Para cambiar la proporción de una parte de la forma", "Para cambiar el color del documento", "Para agregar páginas", "Para borrar nodos"],
+            "correcta": "Para cambiar la proporción de una parte de la forma"
+          },
+          {
+            "pregunta": "¿Qué diferencia tiene la estrella compleja?",
+            "opciones": ["Permite puntas intermedias y más control decorativo", "Solo se usa para logos", "No se puede cambiar de color", "Requiere CorelDRAW Pro"],
+            "correcta": "Permite puntas intermedias y más control decorativo"
+          },
+          {
+            "pregunta": "¿Qué crea la herramienta Papel cuadriculado?",
+            "opciones": ["Una grilla de rectángulos conectados", "Una sola línea recta", "Un círculo", "Un texto de párrafo"],
+            "correcta": "Una grilla de rectángulos conectados"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Figuras perfectas en línea",
+      "consigna": "Practicá las teclas modificadoras dibujando una fila de figuras perfectas: cuadrado, círculo y estrellas, todas alineadas con la misma altura.",
+      "pasos": [
+        "Dibujá un cuadrado perfecto manteniendo Ctrl mientras arrastrás.",
+        "Dibujá un círculo perfecto con la misma técnica desde la elipse.",
+        "Creá un pentágono con el polígono de 5 lados y una estrella de 8 puntas.",
+        "Seleccioná las cuatro figuras y desde la barra de propiedades poneles la misma altura a todas.",
+        "Alinealas horizontalmente (Organizar > Alinear) y exportá la fila en PNG."
+      ],
+      "entrega": "Entregá el PNG con la fila de figuras perfectas alineadas."
+    }
+  ],
+  "entrega": "Se evalúa la composición: que use círculo, cuadrado, triángulo y estrella, y que cada forma esté construida con la herramienta correcta.",
+  "lectura": "Las formas de CorelDRAW son 'vivas': tienen nodos y propiedades que se pueden editar después de dibujarlas, algo que no pasa en otros programas. Por eso un rectángulo no es solo un rectángulo: puede convertirse en un botón redondeado, en un marco o en el techo de una casa. Dominar Ctrl para figuras perfectas y la barra de propiedades para medidas exactas te ahorra muchísimo tiempo.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar el entorno de la clase 1 y presentar la caja de herramientas de dibujo", "min": "10 min" },
+      { "titulo": "Rectángulo y elipse", "que": "Dibujar con y sin Ctrl, con Shift, y medir desde la barra de propiedades", "min": "20 min" },
+      { "titulo": "Polígonos y estrellas", "que": "Configurar lados y puntas; probar estrella compleja con sus nodos", "min": "20 min" },
+      { "titulo": "Formas básicas y extras", "que": "Explorar bibliotecas, glifos, espiral, diagrama y papel cuadriculado", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Armar la composición sol-casa-estrella en cada PC", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Revisar composiciones y repasar con las preguntas del interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Mostrar logos famosos hechos con figuras básicas (un círculo, un triángulo) para que vean la potencia de lo simple.",
+      "Preguntar qué formas ven cuando miran un logo de marca que conozcan."
+    ],
+    "aclarar": [
+      "Ctrl hace figuras perfectas; Shift centra el dibujo; juntos hacen figura perfecta desde el centro.",
+      "El número de lados del polígono se elige antes de dibujar, pero se puede cambiar después por la barra de propiedades.",
+      "Los glifos solo aparecen en las formas predefinidas que tienen piezas variables."
+    ],
+    "ejemplos": [
+      "Dibujar la misma casa con rectángulo y polígono mientras los alumnos replican.",
+      "Crear una estrella de 5, 8 y 16 puntas al lado para comparar la barra de propiedades.",
+      "Armar una flecha de las formas básicas y ajustarla con su glifo en estudio."
+    ]
+  }
+}

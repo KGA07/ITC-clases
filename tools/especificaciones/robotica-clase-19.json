@@ -1,0 +1,176 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 19,
+    "titulo": "RFID RC522 y memoria EEPROM",
+    "modulo": "Módulo 3 – Componentes avanzados",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a programar un sistema de acceso por proximidad: leer tarjetas y llaveros con el módulo RFID RC522 y guardar datos para siempre en la memoria EEPROM con put() y get().",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 19 - RFID RC522 y EEPROM",
+  "objetivos": [
+    "Conectar el módulo RFID RC522 a la placa por SPI.",
+    "Leer el UID de una tarjeta o llavero RFID.",
+    "Almacenar y recuperar datos con la memoria EEPROM.",
+    "Armar un candado de acceso con tarjeta autorizada."
+  ],
+  "teoria": [
+    {
+      "titulo": "RFID y el módulo RC522",
+      "emoji": "🪙",
+      "imagen": {
+        "src": "img/rfid-rc522.jpg",
+        "alt": "Módulo RFID RC522",
+        "caption": "El RC522 lee tarjetas y llaveros por radiofrecuencia."
+      },
+      "parrafos": [
+        "RFID (Identificación por Radiofrecuencia) permite identificar objetos sin contacto: el lector (RC522) emite una señal de radio que activa la tarjeta o llavero, y este le devuelve su identificador único (UID).",
+        "El RC522 trabaja en la frecuencia de 13,56 MHz y se conecta por el bus SPI de la placa, usando pines dedicados además de la alimentación."
+      ],
+      "puntos": [
+        "Tarjeta y llavero contienen un chip y una antena.",
+        "El módulo lee el UID único de cada tag.",
+        "Sin contacto: la proximidad alcanza para leer.",
+        "Se comunica por SPI (MOSI, MISO, SCK y SS)."
+      ]
+    },
+    {
+      "titulo": "Conexión SPI del RC522",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/rfid-tarjeta.jpg",
+        "alt": "Tarjeta RFID",
+        "caption": "Cada tarjeta tiene un UID único que no se puede modificar."
+      },
+      "parrafos": [
+        "En Arduino Uno, el RC522 se conecta así: RST al pin 9, SS (SDA) al pin 10, MOSI al pin 11, MISO al pin 12, SCK al pin 13, además de 3.3V y GND. Muchos módulos del kit ya vienen con los pines listos.",
+        "Con la librería MFRC522 (desde el gestor), leer un UID se reduce a inicializar el objeto, detectar una tarjeta y leer sus bytes."
+      ],
+      "puntos": [
+        "RST → pin 9; SS → pin 10; MOSI → pin 11; MISO → pin 12; SCK → pin 13.",
+        "Alimentación: 3.3V (¡no 5V en todos los modelos!).",
+        "Librería MFRC522 desde el gestor de librerías.",
+        "rfid.PICC_ReadCardSerial() obtiene el UID."
+      ]
+    },
+    {
+      "titulo": "Memoria EEPROM",
+      "emoji": "💾",
+      "parrafos": [
+        "La EEPROM es una memoria interna de la placa que conserva los datos aunque se apague. Es perfecta para guardar un código de acceso, el nivel de una calibración o un contador que no se pierda.",
+        "Se accede con la librería estándar <EEPROM.h>. Las funciones put() y get() permiten guardar y recuperar valores completos (números, estructuras) sin manejar byte a byte."
+      ],
+      "puntos": [
+        "EEPROM: datos que sobreviven al apagado.",
+        "#include <EEPROM.h> la habilita.",
+        "EEPROM.put(direccion, valor): guarda un valor.",
+        "EEPROM.get(direccion, variable): lo recupera."
+      ]
+    },
+    {
+      "titulo": "El candado de acceso",
+      "emoji": "🔐",
+      "parrafos": [
+        "Con el UID de la tarjeta y la EEPROM armamos un sistema real: si el UID coincide con el guardado, el LED verde se enciende; si no, el rojo. Y con EEPROM guardamos 'el primero que pase' como dueño.",
+        "La secuencia típica: leer el UID, comparar con el guardado o asignar el nuevo, y encender el actuador correspondiente: un acceso de verdad con dos componentes del kit."
+      ],
+      "puntos": [
+        "Profundidad: UID tiene varios bytes: comparalos uno por uno.",
+        "Guardá el primer UID en EEPROM con put().",
+        "Con get(), traelo y compralo con el que lee el módulo.",
+        "LEDs verde (acceso) y rojo (denegado) completan el sistema."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "RFID y memoria",
+      "consigna": "Respondé el quiz sobre el módulo RFID y la EEPROM.",
+      "pasos": [
+        "Recordá qué identifica a cada tarjeta.",
+        "Pensá en qué se diferencia EEPROM del Serial.",
+        "Ubicá qué librerías se usan en esta clase."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué identifica de forma única a cada tarjeta RFID?",
+            "opciones": ["El color", "Su UID", "Su tamaño", "La forma"],
+            "correcta": "Su UID"
+          },
+          {
+            "pregunta": "¿Qué pines usa la comunicación SPI con el RC522?",
+            "opciones": ["A4 y A5", "MOSI, MISO, SCK y SS", "Solo GND y 5V", "0 y 1"],
+            "correcta": "MOSI, MISO, SCK y SS"
+          },
+          {
+            "pregunta": "¿Qué función guarda datos en la EEPROM?",
+            "opciones": ["EEPROM.put()", "Serial.print()", "digitalWrite()", "delay(1000)"],
+            "correcta": "EEPROM.put()"
+          },
+          {
+            "pregunta": "¿Qué función recupera datos de la EEPROM?",
+            "opciones": ["EEPROM.get()", "EEPROM.read()", "EEPROM.put()", "EEPROM.begin()"],
+            "correcta": "EEPROM.get()"
+          },
+          {
+            "pregunta": "¿Qué ventaja tiene la EEPROM frente al Monitor Serie?",
+            "opciones": ["Se ve en pantalla", "Conserva los datos aunque se apague la placa", "Es más rápida", "No usa pines"],
+            "correcta": "Conserva los datos aunque se apague la placa"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Acceso por tarjeta",
+      "consigna": "Armá un sistema de acceso que registre la primera tarjeta y después la valide.",
+      "pasos": [
+        "Conectá el RC522: RST al 9, SS al 10, MOSI al 11, MISO al 12, SCK al 13, 3.3V y GND.",
+        "Conectá un LED verde al pin 6 y uno rojo al pin 7 (con sus resistencias de 220 Ω).",
+        "Instalá la librería MFRC522 e inclui: #include <SPI.h> #include <MFRC522.h> #include <EEPROM.h>",
+        "Definí: const int RST_PIN = 9; const int SS_PIN = 10; y MFRC522 rfid(SS_PIN, RST_PIN);",
+        "En setup(): SPI.begin(); rfid.PCD_Init(); Serial.begin(9600); los dos LEDs como salida.",
+        "En loop(): si rfid.PICC_IsNewCardPresent() y PICC_ReadCardSerial(), mostrare el UID por Serial.",
+        "Comparalo contra el guardado con EEPROM.get() y encendé el LED correcto.",
+        "Si es la primera vez (tecla para asignar), guardá el UID leído con EEPROM.put() y avisá \"Tarjeta registrada\".",
+        "Después de registrar, acercá la tarjeta y la tuya de compañero: una abre, la otra no."
+      ],
+      "entrega": "Captura del Serial mostrando el UID registrado y el acceso concedido/denegado."
+    }
+  ],
+  "entrega": "El docente revisará la captura con el UID y la respuesta del sistema de acceso.",
+  "lectura": "RFID le da identidad a tus proyectos: cada tarjeta tiene un UID único que la placa reconoce sin contacto. Sumada a la EEPROM, esa identidad sobrevive al apagado, convirtiendo un LED en un sistema de acceso real que podés expandir a cerraduras y pagos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar el acceso con tarjeta de la institución y preguntar cómo funciona", "min": "10 min" },
+      { "titulo": "RFID y el RC522", "que": "Explicar el principio de radiofrecuencia y el UID", "min": "20 min" },
+      { "titulo": "Conexión SPI", "que": "Cablear el módulo y verificar el circuito", "min": "15 min" },
+      { "titulo": "EEPROM put() y get()", "que": "Explicar la memoria permanente con ejemplos", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el registro y la validación de tarjetas", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y prueba cruzada de tarjetas entre bancos", "min": "5 min" }
+    ],
+    "conecta": [
+      "Recorrer la llave electrónica del edificio: mismo principio, más escala.",
+      "Preguntar qué cosas se abren con tarjeta en su ciudad para conectarlas con RFID."
+    ],
+    "aclarar": [
+      "El módulo se conecta a 3.3V (no a 5V) en muchos modelos: revisá tu kit.",
+      "el UID no se puede cambiar: es de fábrica y único.",
+      "Cada tag tiene un UID en hexa: anotalos para identificarlos."
+    ],
+    "ejemplos": [
+      "Leer el UID del llavero y de la tarjeta y compararlos en el Serial.",
+      "Register la tarjeta de un alumno y que sea 'dueña' del acceso.",
+      "Mostrar EEPROM.put de un número y apagar la placa: al encender sigue ahí."
+    ]
+  }
+}

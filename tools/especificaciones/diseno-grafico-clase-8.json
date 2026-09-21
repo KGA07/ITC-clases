@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 8,
+    "titulo": "Rellenos y Relleno de Malla",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a pintar como un profesional: rellenos uniformes, degradados, de patrón, de textura y de mapa de bits, y la estrella de la clase: el Relleno de Malla que permite degradados con infinitas direcciones.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 8 Tipos de Relleno de Malla",
+  "objetivos": [
+    "Aplicar rellenos uniformes, degradados, de patrón y de textura.",
+    "Reconocer el relleno de mapa de bits dentro de una forma.",
+    "Crear y editar un Relleno de Malla con varios nodos de color.",
+    "Elegir el tipo de relleno según la pieza que se va a diseñar."
+  ],
+  "teoria": [
+    {
+      "titulo": "Rellenos uniformes y degradados",
+      "emoji": "🟥",
+      "imagen": {
+        "src": "img/degradado.jpg",
+        "alt": "Degradado de color",
+        "caption": "El degradado pasa de un color a otro de forma continua o con nodos intermedios."
+      },
+      "parrafos": [
+        "El relleno uniforme pinta toda la forma de un solo color, elegido desde la paleta de documento o el selector de color. Es el más simple y el más usado en piezas planas.",
+        "El relleno degradado pasa de un color a otro gradualmente. Podés elegir la dirección (lineal, radial, cónico, cuadrado), los colores de origen y destino, y agregar nodos intermedios con más colores en el camino."
+      ],
+      "puntos": [
+        "Relleno uniforme: un color plano para toda la forma.",
+        "Degradado lineal: la transición sigue una línea determinada.",
+        "Degradado radial: se expande desde un centro como un sol.",
+        "Los nodos intermedios permiten degradados de tres o más colores."
+      ]
+    },
+    {
+      "titulo": "Rellenos de patrón, textura y mapa de bits",
+      "emoji": "🧩",
+      "parrafos": [
+        "El relleno de patrón repite una imagen (ladrillos, estrellas, rombos) dentro de la forma, con control de tamaño y rotación de la repetición. El de textura genera fondos algorítmicos como piedra, agua o nubes, no fotos reales sino patrones procesados.",
+        "El relleno de mapa de bits coloca una imagen real (una foto, un dibujo) como contenido relleno de una forma vectorial: la forma se convierte en una ventana que muestra la imagen."
+      ],
+      "puntos": [
+        "Patrón: repetición de un motivo con escala y giro configurables.",
+        "Textura: fondos procesados que imitan materiales naturales.",
+        "Mapa de bits: una foto contenida dentro de una forma.",
+        "Texturas sutilizadas dan fondo sin distraer el contenido."
+      ]
+    },
+    {
+      "titulo": "El Relleno de Malla",
+      "emoji": "🕸️",
+      "imagen": {
+        "src": "img/figura-relleno.png",
+        "alt": "Figura de apoyo del Relleno de Malla",
+        "caption": "La malla divide la forma en celdas con nodos que arrastrás para distribuir el color."
+      },
+      "parrafos": [
+        "El Relleno de Malla (muy usado en CorelDRAW) divide una forma en una grilla de cuadrículas y te deja pintar cada intersección de un color distinto. El programa mezcla suavemente los colores entre nodos, logrando degradados con tantas direcciones como nodos haya.",
+        "Con la herramienta Malla creás la grilla con clic; después, con la herramienta Forma, hacés clic en cada nodo y le das su color desde la paleta. Arrastrando nodos y manijas movés los límites de cada zona de color."
+      ],
+      "puntos": [
+        "La malla convierte una forma plana en un degradado libre y tridimensional.",
+        "Cada nodo de la malla acepta un color propio.",
+        "Se edita con la herramienta Forma: tocar el nodo, elegir color, arrastrar.",
+        "Ideal para dar volumen a frutas, botones, letras y piezas con luz y sombra."
+      ]
+    },
+    {
+      "titulo": "Control del relleno desde la barra de propiedades",
+      "emoji": "🎛️",
+      "parrafos": [
+        "Cuando seleccionás una forma con relleno, la barra de propiedades muestra el botón de relleno interactivo con sus opciones. Ahí cambiás el tipo de relleno (uniforme, degradado, patrón, textura, malla) y ajustás colores y parámetros sin abrir ventanas.",
+        "También podés usar el balde interactivo desde la caja de herramientas para arrastrar y editar el degradado directamente sobre la forma, moviendo los nodos de color en pantalla."
+      ],
+      "puntos": [
+        "La barra de propiedades concentra todos los tipos de relleno.",
+        "El balde interactivo edita el degradado arrastrando sobre la forma.",
+        "Podés guardar un relleno complejo y copiarlo a otras formas.",
+        "Cada tipo de relleno tiene sus propios controles finos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Botón con luz y sombra con Malla",
+      "consigna": "Creá un botón redondeado y aplicale un Relleno de Malla para simular el brillo de un botón moderno; acompañalo de un fondo con degradado y de una forma con textura.",
+      "pasos": [
+        "Dibujá un rectángulo redondeado para el fondo y aplicale un degradado lineal azul.",
+        "Dibujá el botón: otro rectángulo redondeado más chico, en gris claro.",
+        "Seleccioná el botón y aplicá el Relleno de Malla (Menú Objeto o botón de malla).",
+        "Creá la grilla con clic y pintá los nodos: un nodo superior en blanco (brillo) y los inferiores en gris oscuro.",
+        "Arrastrá los nodos para que el brillo quede arriba a la izquierda, como una luz real.",
+        "Añadí una elipse con relleno de textura de fondo y guardá como malla-nombre.cdr."
+      ],
+      "entrega": "Exportá el PNG del botón con luz y sombra, y el detalle de la forma con textura.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué relleno pinta TODA la forma de un solo color?",
+            "opciones": ["Relleno uniforme", "Relleno de malla", "Relleno de textura", "Relleno de patrón"],
+            "correcta": "Relleno uniforme"
+          },
+          {
+            "pregunta": "¿Para qué sirve el Relleno de Malla?",
+            "opciones": ["Degradar colores moviendo nodos en cualquier dirección", "Repetir el mismo motivo", "Imprimir más rápido", "Poner una foto de la página"],
+            "correcta": "Degradar colores moviendo nodos en cualquier dirección"
+          },
+          {
+            "pregunta": "¿Qué relleno coloca una FOTO real dentro de una forma?",
+            "opciones": ["Relleno de mapa de bits", "Relleno uniforme", "Relleno de malla", "Relleno degradado"],
+            "correcta": "Relleno de mapa de bits"
+          },
+          {
+            "pregunta": "¿Qué herramienta edita los nodos de color del Relleno de Malla?",
+            "opciones": ["La herramienta Forma", "La herramienta Texto", "La herramienta Mano", "La herramienta Zoom"],
+            "correcta": "La herramienta Forma"
+          },
+          {
+            "pregunta": "Un degradado radial ¿cómo se expande?",
+            "opciones": ["Desde un centro hacia afuera", "En línea recta de arriba a abajo", "En diagonal", "Solo en esquinas"],
+            "correcta": "Desde un centro hacia afuera"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Banner con rellenos combinados",
+      "consigna": "Creá un banner horizontal de 800 x 300 px con fondo en degradado, un título en relleno plano y una forma con relleno de textura de fondo.",
+      "pasos": [
+        "Creá un documento de 800 x 300 px y pintá el fondo con un degradado lineal en dos tonos.",
+        "Escribí el título del banner con texto artístico y contraste con la paleta.",
+        "Dibujá una elipse chica y aplicale un relleno de patrón o textura de fondo.",
+        "Agregá un rectángulo con relleno uniforme que funcione como botón secundario.",
+        "Ordená los elementos con la técnica de la barra de propiedades y exportá como banner-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del banner con sus tres tipos de relleno identificados en una nota."
+    }
+  ],
+  "entrega": "Se evalúa el botón con luz y sombra (la malla debe tener al menos 4 nodos con colores distintos) y la pieza en general con sus tres tipos de relleno.",
+  "lectura": "El relleno es el color materializado: un degradado bien hecho puede convertir un simple botón en un objeto con volumen, y el Relleno de Malla es la herramienta estrella para crear esa sensación sin salir del dibujo vectorial. Combinar fondo en degradado, piezas con malla y detalles con texturas le da a cualquier afiche la textura visual que antes solo lograban los programas de píxeles.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar piezas con volumen (botones, frutas) y proponer descubrir cómo se pintaron", "min": "10 min" },
+      { "titulo": "Rellenos uniforme y degradado", "que": "Aplicar ambos y explorar tipos de degradado", "min": "15 min" },
+      { "titulo": "Patrón, textura y mapa de bits", "que": "Probar cada relleno sobre formas distintas y comparar", "min": "15 min" },
+      { "titulo": "Relleno de Malla", "que": "Crear una malla, pintar nodos y mover manijas con la herramienta Forma", "min": "25 min" },
+      { "titulo": "Práctica guiada", "que": "Armar el botón con luz y sombra paso a paso", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Comparar botones entre alumnos y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo creen que se dibuja el brillo de una manzana en un afiche: la malla lo explica.",
+      "Buscar logotipos con degradados famosos (ej. algunas marcas de streaming) y analizarlos."
+    ],
+    "aclarar": [
+      "El relleno de textura no son fotos: son fondos generados; no escanear fotos con ese botón.",
+      "La malla se pinta nodo por nodo: es lento al principio, pero el resultado no se logra con degradados comunes.",
+      "Guardar el degradado como favorito en barra de propiedades evita reconstruirlo."
+    ],
+    "ejemplos": [
+      "Hacer un degradado radial naranja en vivo para simular el brillo de un sol.",
+      "Pintar una elipse con malla roja y mostrar el volumen de fruta.",
+      "Comparar un botón plano y el mismo botón con malla lado a lado."
+    ]
+  }
+}

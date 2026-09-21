@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 9,
+    "titulo": "Discos rígidos",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Discos HDD, SSD SATA y M.2, cables de datos, PCs del aula",
+    "bajada": "El disco guarda tus datos para siempre. Vas a comparar HDD, SSD y M.2, entender las velocidades SATA y PCIe, y conocer la estructura lógica con particiones y formatos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 9 - Discos rigidos",
+  "objetivos": [
+    "Diferenciar discos HDD, SSD SATA y SSD M.2 NVMe.",
+    "Identificar las interfaces IDE, SATA I/II/III y PCIe.",
+    "Explicar MBR y GPT como estructuras de particionado.",
+    "Entender el concepto de partición y formato de disco."
+  ],
+  "teoria": [
+    {
+      "titulo": "HDD, SSD y M.2: tipos de disco",
+      "emoji": "💾",
+      "imagen": {
+        "src": "img/disco-hdd.jpg",
+        "alt": "Disco rígido HDD de 3,5 pulgadas",
+        "caption": "El HDD guarda datos en platos magnéticos que giran."
+      },
+      "parrafos": [
+        "Los discos evolucionaron de platos giratorios (HDD) a chips sin partes móviles (SSD). Cada tecnología tiene velocidad, durabilidad y precio distintos."
+      ],
+      "puntos": [
+        "HDD: platos magnéticos, barato por GB, partes móviles.",
+        "SSD SATA: chips flash, mucho más rápido y silencioso.",
+        "SSD M.2 NVMe: formato de tarjeta, la mayor velocidad.",
+        "El SSD es la mejora más notoria para una PC lenta."
+      ]
+    },
+    {
+      "titulo": "Interfaces: IDE, SATA y PCIe",
+      "emoji": "🔗",
+      "parrafos": [
+        "La interfaz es el camino de datos entre disco y placa madre. IDE quedó atrás, SATA marcó el estándar y PCIe (vía M.2) es hoy lo más veloz."
+      ],
+      "puntos": [
+        "IDE: cinta plana de 40 pines, hasta 133 MB/s.",
+        "SATA I/II/III: 1,5 / 3 / 6 Gb/s de velocidad teórica.",
+        "M.2 PCIe: 4 líneas PCIe, miles de MB por segundo.",
+        "La interfaz debe ser compatible con la placa madre."
+      ]
+    },
+    {
+      "titulo": "SSD NVMe en formato M.2",
+      "emoji": "🚀",
+      "imagen": {
+        "src": "img/ssd-nvme.jpg",
+        "alt": "Disco SSD M.2 NVMe en formato de tarjeta",
+        "caption": "El M.2 NVMe es un disco en formato de tarjeta sobre la placa."
+      },
+      "parrafos": [
+        "El M.2 es un formato de tarjeta que se enchufa directo en la placa madre, sin cables. Con protocolo NVMe alcanza velocidades muy superiores a las SATA."
+      ],
+      "puntos": [
+        "Se conecta en el slot M.2 de la placa.",
+        "Velocidades de lectura de 3.000 a 7.000 MB/s.",
+        "Disipador recomendado para los modelos más veloces.",
+        "Ideal como disco del sistema operativo."
+      ]
+    },
+    {
+      "titulo": "Estructura lógica: MBR y GPT",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Antes de usar un disco hay que crearle una estructura: MBR (clásico) o GPT (moderno). La elección depende de la BIOS/UEFI y de la capacidad del disco."
+      ],
+      "puntos": [
+        "MBR: soporta hasta 4 particiones primarias y discos hasta 2 TB.",
+        "GPT: más de 4 particiones y discos mayores a 2 TB.",
+        "UEFI usa GPT; BIOS clásica puede usar MBR.",
+        "Discos nuevos y sistemas modernos: GPT por defecto."
+      ]
+    },
+    {
+      "titulo": "Particiones y formato",
+      "emoji": "🧱",
+      "parrafos": [
+        "Un disco se divide en particiones (como cuartos de un ropero) y cada una se formatea con un sistema de archivos que organiza los datos."
+      ],
+      "puntos": [
+        "Partición: división lógica del disco (C:, D:...).",
+        "Formato: define el sistema de archivos (NTFS en Windows, ext4 en Linux).",
+        "NTFS: estándar de Windows, permite archivos grandes.",
+        "Formatear borra todo el contenido de la partición."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: discos rígidos",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre tipos de disco, interfaces y estructura lógica.",
+      "pasos": [
+        "Recorré la teoría y compará los discos físicos del aula.",
+        "Respondé el interactivo.",
+        "Consultá dudas."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuál es el tipo de disco más rápido?",
+            "opciones": ["SSD M.2 NVMe", "HDD", "DVD", "Disquete"],
+            "correcta": "SSD M.2 NVMe"
+          },
+          {
+            "pregunta": "La interfaz SATA III alcanza una velocidad teórica de...",
+            "opciones": ["6 Gb/s", "133 MB/s solo", "1 Gb/s", "300 Mb/s"],
+            "correcta": "6 Gb/s"
+          },
+          {
+            "pregunta": "¿Qué estructura de particionado soporta discos mayores a 2 TB?",
+            "opciones": ["GPT", "MBR", "FAT32", "IDE"],
+            "correcta": "GPT"
+          },
+          {
+            "pregunta": "El sistema de archivos estándar de Windows es...",
+            "opciones": ["NTFS", "ext4", "APFS", "FAT12"],
+            "correcta": "NTFS"
+          },
+          {
+            "pregunta": "¿Qué significa formatear una partición?",
+            "opciones": ["Crear un sistema de archivos y borrar su contenido", "Cambiar el disco por otro", "Aumentar la velocidad del CPU", "Instalar un antivirus"],
+            "correcta": "Crear un sistema de archivos y borrar su contenido"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Inventariá los discos del aula",
+      "consigna": "Identificá qué tipo de disco y qué capacidad tiene la PC asignada.",
+      "pasos": [
+        "Entrá al Administrador de discos de Windows (diskmgmt.msc).",
+        "Anotá el tipo de disco (HDD/SSD) y la capacidad.",
+        "Identificá qué letras de unidad y particiones existen.",
+        "Determiná si la partición es MBR o GPT.",
+        "Compará con un compañero de banco."
+      ],
+      "entrega": "Ficha del disco con tipo, capacidad y estructura."
+    }
+  ],
+  "entrega": "El docente revisará la ficha del disco y el interactivo.",
+  "lectura": "El disco guarda tus archivos y el sistema operativo. Saber diferenciar HDD, SSD SATA y M.2 NVMe, conocer las interfaces y dominar MBR/GPT, particiones y formatos te permite elegir almacenamiento, preparar discos y recuperar equipos de forma profesional.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar fuentes y conectar con el almacenamiento", "min": "10 min" },
+      { "titulo": "Tipos de disco", "que": "Comparar HDD, SSD y M.2 en físico con velocidades aproximadas", "min": "20 min" },
+      { "titulo": "Interfaces", "que": "Identificar IDE, SATA y slot M.2 en placas y discos reales", "min": "20 min" },
+      { "titulo": "MBR, GPT, particiones y formato", "que": "Explicar con el Administrador de discos en vivo", "min": "25 min" },
+      { "titulo": "Práctica de inventario", "que": "Guiar el reconocimiento del disco de cada PC", "min": "10 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si notaron que una PC nueva arranca más rápido: es el SSD.",
+      "Mostrar el cambio de velocidad entre una PC con HDD y una con SSD si hay dos equipos."
+    ],
+    "aclarar": [
+      "SATA es la interfaz; SSD es el tipo de disco. Un SSD puede ser SATA o NVMe.",
+      "MBR/GPT no es el formato de archivos: NTFS/ext4 son aparte.",
+      "Formatear la partición del sistema borra Windows: hay que respaldar antes."
+    ],
+    "ejemplos": [
+      "Abrir el Administrador de discos y mostrar una letra de unidad por partición.",
+      "Pesar y comparar un HDD de 3,5 pulgadas con un M.2 del tamaño de una estampilla.",
+      "Contar el número de particiones de un disco y explicar por qué hay varias."
+    ]
+  }
+}

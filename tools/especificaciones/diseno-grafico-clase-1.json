@@ -1,0 +1,167 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 1,
+    "titulo": "Entorno de trabajo en CorelDRAW",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a conocer la ventana de trabajo de CorelDRAW pieza por pieza: barras, caja de herramientas, paleta de colores y controles de página. Al final, vas a moverte por el programa con la misma soltura que en un documento de texto.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 1 Entorno de Corel",
+  "objetivos": [
+    "Identificar cada zona de la ventana de CorelDRAW y su función.",
+    "Usar la barra de menú, la barra estándar y la barra de propiedades.",
+    "Manejar la caja de herramientas y la paleta de colores.",
+    "Navegar entre páginas y usar reglas y barras de desplazamiento."
+  ],
+  "teoria": [
+    {
+      "titulo": "La ventana de CorelDRAW",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/corel-entorno.jpg",
+        "alt": "Ventana de trabajo de CorelDRAW",
+        "caption": "Así se ve la ventana de CorelDRAW cuando abrís un documento nuevo."
+      },
+      "parrafos": [
+        "CorelDRAW es un programa de diseño vectorial: dibujás formas con trazos (curvas) que se pueden agrandar y achicar infinitamente sin perder calidad. Todo el diseño publicitario que vas a producir en este curso arranca en esta ventana.",
+        "La ventana se divide en zonas claras: arriba las barras, a la izquierda la caja de herramientas, a la derecha la paleta de colores y en el centro la página donde trabajás."
+      ],
+      "puntos": [
+        "La página central representa tu 'lienzo': es la hoja que vas a imprimir o exportar.",
+        "Fuera de la página también podés trabajar, pero solo se publica lo que está sobre ella.",
+        "El cursor cambia de forma según la herramienta que tenés activa."
+      ]
+    },
+    {
+      "titulo": "Barra de menú y barra estándar",
+      "emoji": "📋",
+      "imagen": {
+        "src": "img/corel-logo.jpg",
+        "alt": "Identidad de la suite CorelDRAW",
+        "caption": "CorelDRAW es parte de una suite de diseño gráfico profesional."
+      },
+      "parrafos": [
+        "La barra de menú (Archivo, Edición, Ver, Organizar, Efectos, Mapas de bits, Texto, Tabla, Herramientas, Ventana, Ayuda) concentra todos los comandos del programa organizados por grupo temático.",
+        "Debajo está la barra estándar: un conjunto de accesos directos a las acciones más frecuentes como abrir, guardar, imprimir, deshacer o importar."
+      ],
+      "puntos": [
+        "El menú Archivo es donde vas a crear, abrir, guardar, importar y exportar.",
+        "El menú Efectos agrupa sombras, transparencias, envolturas y demás efectos interactivos.",
+        "La barra estándar cambia con los accesos más usados: guardá con frecuencia (Ctrl + S)."
+      ]
+    },
+    {
+      "titulo": "Barra de propiedades y caja de herramientas",
+      "emoji": "🧰",
+      "parrafos": [
+        "La barra de propiedades es 'inteligente': muestra los datos del objeto que tenés seleccionado. Si tocás un rectángulo, aparece su ancho, alto y posición; si escribís texto, aparecen la fuente y el tamaño.",
+        "La caja de herramientas, en el borde izquierdo, agrupa todas las herramientas de dibujo, edición y texto. Algunas tienen un triángulo flotante que esconden herramientas relacionadas."
+      ],
+      "puntos": [
+        "Selección con la herramienta más usada del panel: con la flecha elegís y movés objetos.",
+        "Las herramientas con una flechita al costado despliegan un submenú con variantes.",
+        "La barra de propiedades se actualiza sola: no hace falta buscarla, es el panel que mirás en cada paso."
+      ]
+    },
+    {
+      "titulo": "Paleta de colores, control de páginas e instrumentos de la ventana",
+      "emoji": "🎨",
+      "parrafos": [
+        "A la derecha tenés la paleta de colores por defecto (paleta CMYK para impresión). Hacés clic sobre un color para pintar el relleno de la forma seleccionada y clic derecho sobre el color para pintar el contorno.",
+        "Abajo a la izquierda está el control de páginas: te permite agregar, eliminar y pasar de página como en un libro. Las reglas (izquierda y arriba) miden en milímetros y las barras de desplazamiento te mueven por la zona de trabajo."
+      ],
+      "puntos": [
+        "Clic izquierdo = color de relleno; clic derecho = color de contorno.",
+        "En el control de páginas podés agregar páginas nuevas con el signo +.",
+        "Las reglas te sirven para medir y para arrastrar guías que ayudan a alinear elementos.",
+        "Zoom y Mano se encuentran en la barra de herramientas: Zoom acerca y aleja; Mano arrastra la vista sin mover el documento."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Reconocer el mapa de la ventana",
+      "consigna": "Abrí CorelDRAW, creá un documento nuevo y señalá con precisión en qué zona de la ventana está cada elemento que vimos en clase.",
+      "pasos": [
+        "Ejecutá CorelDRAW y creá un documento nuevo con la configuración por defecto.",
+        "Ubicá en la pantalla: barra de menú, barra estándar, barra de propiedades y caja de herramientas.",
+        "Buscá en la caja de herramientas la herramienta Rectángulo y dibujá una forma en la página.",
+        "Hacé clic sobre la forma y observá cómo cambia la barra de propiedades con sus medidas.",
+        "Pintá la forma: clic izquierdo sobre un color de la paleta y clic derecho sobre otro color para el contorno.",
+        "Agregá una segunda página usando el control de páginas y volvé a la primera."
+      ],
+      "entrega": "Capturá la pantalla (Win + Shift + S) con la ventana completa y señalizá con marcas cada zona identificada.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿En qué zona de la ventana están las herramientas de dibujo?",
+            "opciones": ["En la caja de herramientas, a la izquierda", "En la paleta de colores, a la derecha", "En el control de páginas, abajo", "En la regla superior"],
+            "correcta": "En la caja de herramientas, a la izquierda"
+          },
+          {
+            "pregunta": "¿Cómo pintás el RELLENO de un objeto seleccionado?",
+            "opciones": ["Clic izquierdo sobre un color de la paleta", "Clic derecho sobre un color de la paleta", "Doble clic sobre la regla", "Arrastrando la página"],
+            "correcta": "Clic izquierdo sobre un color de la paleta"
+          },
+          {
+            "pregunta": "¿Qué muestra la barra de propiedades cuando seleccionás un rectángulo?",
+            "opciones": ["El ancho, el alto y la posición", "El texto del documento", "Los colores de la paleta", "La lista de páginas"],
+            "correcta": "El ancho, el alto y la posición"
+          },
+          {
+            "pregunta": "¿Para qué sirve la herramienta Mano?",
+            "opciones": ["Para arrastrar la vista sin mover el documento", "Para borrar objetos", "Para pintar rellenos", "Para duplicar páginas"],
+            "correcta": "Para arrastrar la vista sin mover el documento"
+          },
+          {
+            "pregunta": "¿Dónde agregás una página nueva al documento?",
+            "opciones": ["En el control de páginas, abajo a la izquierda", "En la paleta de colores", "En la barra de propiedades", "En la caja de herramientas"],
+            "correcta": "En el control de páginas, abajo a la izquierda"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Mi primer documento guardado",
+      "consigna": "Creá un documento de práctica, dibujá dos formas, guardalo como .cdr y exportá una copia en PNG para entender el flujo completo de trabajo.",
+      "pasos": [
+        "Creá un documento nuevo A4 vertical con las opciones por defecto.",
+        "Dibujá un rectángulo y una elipse en el centro de la página.",
+        "Pintá cada forma con un color distinto (clic izquierdo) y con contorno (clic derecho).",
+        "Guardá el archivo con Archivo > Guardar como y nombrá mi-documento.cdr.",
+        "Exportá una copia en PNG con Archivo > Exportar y compará el peso con el .cdr."
+      ],
+      "entrega": "Subí el .cdr y el PNG exportado a la carpeta de entrega de la clase."
+    }
+  ],
+  "entrega": "Cada alumno entrega la captura de su ventana de CorelDRAW con las zonas señalizadas y explica oralmente la función de dos de ellas.",
+  "lectura": "El entorno de trabajo es la base de todo lo que sigue: si sabés dónde está cada herramienta y para qué sirve cada barra, las próximas clases se vuelven mucho más fluidas. No hace falta memorizar todo el primer día, pero conviene entender la lógica: arriba mando yo (menús), a la izquierda elijo el lápiz (herramientas) y a la derecha la pintura (colores).",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar el curso, el programa y preguntar quién vio CorelDRAW antes", "min": "10 min" },
+      { "titulo": "Ventana y barras", "que": "Recorrer en vivo cada zona de la ventana con un documento nuevo", "min": "20 min" },
+      { "titulo": "Caja de herramientas y paleta", "que": "Mostrar distribución de herramientas y probar relleno/contorno con clic izquierdo y derecho", "min": "20 min" },
+      { "titulo": "Páginas, reglas y vista", "que": "Agregar páginas, usar las reglas y arrastrar guías; probar Zoom y Mano", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Resolver el ejercicio de mapeo de la ventana paso a paso en cada PC", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo y resolver dudas", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué programas de diseño conocen (Canva, Paint, Word) y comparar: CorelDRAW es vectorial, no dibuja con puntos.",
+      "Mostrar un diseño impreso terminado (tarjeta, folleto) y comentar que se armó en esta ventana."
+    ],
+    "aclarar": [
+      "Clic izquierdo pinta el relleno y clic derecho el contorno: es la regla que más cuesta afianzar, repetirla varias veces.",
+      "Fuera de la página también se dibuja, pero no se imprime: explicar la zona imprimible.",
+      "La barra de propiedades cambia sola según el objeto; no hay que buscarla: hay que mirarla."
+    ],
+    "ejemplos": [
+      "Mostrar en proyector una captura anotada de la ventana con cada zona marcada.",
+      "Dibujar dos rectángulos, pintar uno con relleno y otro solo con contorno, comparando clic izquierdo vs derecho.",
+      "Hacer zoom hasta la microscopía y mostrar cómo la rejilla de puntos (píxeles) se nota cuando se acercan mucho; así se explica lo vectorial."
+    ]
+  }
+}

@@ -36,7 +36,8 @@
         "Ads Manager: herramienta específica para crear y medir campañas.",
         "Se conectan las cuentas de Facebook e Instagram para publicar en ambas.",
         "Medios de pago: tarjeta o saldo configurado en la cuenta publicitaria."
-      ]
+      ],
+      "imagen": { "src": "img/negocio.jpg", "alt": "Campaña publicitaria en Facebook", "caption": "Business Suite y Ads Manager gestionan la pauta de Meta" }
     },
     {
       "titulo": "La estructura en tres niveles",
@@ -50,7 +51,8 @@
         "Anuncio: el formato creativo, texto, foto o video, y el botón de acción.",
         "Se puede probar un mismo anuncio con dos audiencias distintas.",
         "La optimización elige dónde mostrar el anuncio dentro de lo que definiste."
-      ]
+      ],
+      "imagen": { "src": "img/estructura.jpg", "alt": "Estructura de campaña publicitaria en niveles", "caption": "Campaña, conjunto y anuncio: cada nivel tiene su función" }
     },
     {
       "titulo": "Segmentación de audiencia",
@@ -64,7 +66,8 @@
         "Intereses: hobbies, marcas y páginas relacionadas con tu rubro.",
         "Comportamientos: compras online, tipos de celular, temporada.",
         "Audiencias similares: Meta busca perfiles parecidos a tus mejores clientes."
-      ]
+      ],
+      "imagen": { "src": "img/audiencia.jpg", "alt": "Segmentación de audiencia objetivo", "caption": "El diferencial de Meta es llegar solo a quien le interesa" }
     },
     {
       "titulo": "Práctica inicial: el flujo de creación",

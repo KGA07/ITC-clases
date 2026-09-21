@@ -1,0 +1,174 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 8,
+    "titulo": "Monitor Serie",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a abrir la puerta de comunicación entre tu placa y la computadora: el Monitor Serie. Aprenderás a enviar información desde el Arduino con Serial.begin(), Serial.print() y Serial.println().",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 8 - Monitor Serie",
+  "objetivos": [
+    "Configurar la comunicación serial con Serial.begin().",
+    "Enviar información a la PC con Serial.print() y Serial.println().",
+    "Diferenciar print() de println() y manejar el salto de línea.",
+    "Interpretar los datos que llegan al Monitor Serie."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es el Monitor Serie?",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/serial-monitor.jpg",
+        "alt": "Monitor Serie de Arduino mostrando datos",
+        "caption": "El Monitor Serie muestra en pantalla lo que la placa envía por USB."
+      },
+      "parrafos": [
+        "El Monitor Serie es una ventana del IDE que muestra en la pantalla los datos que la placa envía por el cable USB. Es como la voz del Arduino: con él sabés qué está midiendo, pensando o haciendo.",
+        "Se abre con el ícono de la lupa (o Herramientas → Monitor Serie). La velocidad de comunicación debe coincidir con la que configuraste en el código."
+      ],
+      "puntos": [
+        "Abrís el Monitor en el IDE con el botón de la lupa.",
+        "La velocidad (baudios) del monitor debe coincidir con Serial.begin().",
+        "Es la forma más simple de depurar: ver qué está pasando.",
+        "Sirve para la comunicación placa ↔ PC en ambas direcciones."
+      ]
+    },
+    {
+      "titulo": "Serial.begin(): encender el canal",
+      "emoji": "📡",
+      "parrafos": [
+        "Antes de enviar cualquier dato, tenés que abrir el canal de comunicación en setup() con Serial.begin(velocidad). La velocidad más usada es 9600, y debe coincidir con la del monitor.",
+        "Una sola vez alcanza: al poner Serial.begin(9600) en setup(), el canal queda listo para todo el programa."
+      ],
+      "puntos": [
+        "Serial.begin(9600); se coloca en setup().",
+        "9600 = 9600 baudios (bits por segundo), el estándar de Arduino.",
+        "Si el monitor muestra basura, probablemente la velocidad no coincide.",
+        "Sin Serial.begin(), las funciones de envío no funcionan."
+      ]
+    },
+    {
+      "titulo": "print() vs println()",
+      "emoji": "🏷️",
+      "imagen": {
+        "src": "img/arduino-usb.jpg",
+        "alt": "Placa conectada por USB a la PC",
+        "caption": "La comunicación Serial viaja por el mismo cable USB de carga."
+      },
+      "parrafos": [
+        "Serial.print(valor) envía el texto sin salto de línea: el siguiente print continúa a su lado. Serial.println(valor) envía el texto y agrega un salto de línea al final, para que el próximo dato aparezca en el renglón siguiente.",
+        "Combinarlos permite armar mensajes prolijos como: \"Temperatura: \" con print y el valor con println."
+      ],
+      "puntos": [
+        "Serial.print(\"Hola\"); → escribe Hola y sigue en la misma línea.",
+        "Serial.println(\"Hola\"); → escribe Hola y salta de línea.",
+        "Se pueden encadenar: print para la etiqueta y println para el valor.",
+        "Los textos van entre comillas dobles; los números de variables sin ellas."
+      ]
+    },
+    {
+      "titulo": "Salida de información en el monitor",
+      "emoji": "📊",
+      "parrafos": [
+        "Podés enviar texto fijo, números, variables y combinaciones. Esto es clave para entender qué valores está leyendo un sensor o confirmar que una condición se cumple.",
+        "Una técnica muy usada en robótica es mostrar en el monitor el estado de un botón o el valor de un contador en tiempo real, para validar la lógica antes de conectar actuadores."
+      ],
+      "puntos": [
+        "Enviá texto entre comillas: Serial.println(\"Hola robotica\");",
+        "Enviá variables: Serial.println(contador);",
+        "Mezclá: Serial.print(\"Led: \"); Serial.println(estado);",
+        "El monitor muestra una línea nueva por cada println()."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "La voz de la placa",
+      "consigna": "Resolvé el quiz sobre las funciones del Monitor Serie.",
+      "pasos": [
+        "Recordá que println agrega salto de línea.",
+        "Pensá qué pasa si el monitor pide 9600 y el código inicia en 115200.",
+        "Ubicá dónde va Serial.begin() dentro del programa."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Dónde se coloca Serial.begin(9600);?",
+            "opciones": ["En loop()", "En setup()", "Fuera de todo", "No se escribe"],
+            "correcta": "En setup()"
+          },
+          {
+            "pregunta": "¿Cuál es la velocidad de comunicación estándar de Arduino?",
+            "opciones": ["1200", "9600", "300", "14400"],
+            "correcta": "9600"
+          },
+          {
+            "pregunta": "¿Qué diferencia hay entre print() y println()?",
+            "opciones": ["println agrega salto de línea al final", "print es más rápido", "println solo sirve para números", "No tienen diferencia"],
+            "correcta": "println agrega salto de línea al final"
+          },
+          {
+            "pregunta": "El Monitor Serie muestra basura o símbolos raros. ¿Cuál es la causa más probable?",
+            "opciones": ["La placa está apagada", "La velocidad del monitor no coincide con Serial.begin()", "El LED está quemado", "Falta una resistencia"],
+            "correcta": "La velocidad del monitor no coincide con Serial.begin()"
+          },
+          {
+            "pregunta": "¿Cómo se envían los textos en las funciones Serial?",
+            "opciones": ["Sin comillas", "Entre comillas dobles", "Entre corchetes", "Entre paréntesis dobles"],
+            "correcta": "Entre comillas dobles"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Saludando desde la placa",
+      "consigna": "Escribí un sketch que salude por el monitor y pruebe print() y println().",
+      "pasos": [
+        "Creá un sketch nuevo y en setup() configurá Serial.begin(9600);",
+        "En loop(), escribí Serial.println(\"Hola desde Arduino!\");",
+        "Agregá un contador: int contador = 0; (global arriba) y en loop() enviá \"Vuelta: \" con print y contador con println.",
+        "Incrementá el contador con contador = contador + 1;",
+        "Cargá el programa y abrí el Monitor Serie con la lupa.",
+        "Confirmá en el monitor que la velocidad marcada abajo sea 9600.",
+        "Probá cambiar den print a println el mensaje del contador y observá la diferencia."
+      ],
+      "entrega": "Captura del Monitor Serie mostrando el saludo y el contador incrementándose."
+    }
+  ],
+  "entrega": "El docente revisará la captura del Monitor Serie y las respuestas del quiz.",
+  "lectura": "El Monitor Serie es la ventana desde la cual tu Arduino conversa con la computadora. Con Serial.begin() abrís el canal y con print() y println() mandás mensajes, valores y estados que te permiten entender y depurar cada proyecto.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Preguntar cómo sabríamos en la PC qué mide la placa sin pantalla", "min": "10 min" },
+      { "titulo": "Qué es el Monitor Serie", "que": "Mostrar la ventana y su función en vivo", "min": "15 min" },
+      { "titulo": "Serial.begin()", "que": "Explicar velocidad y dónde se configura", "min": "15 min" },
+      { "titulo": "print() vs println()", "que": "Demostrar salto de línea con ejemplos en el proyector", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar el sketch del saludo con contador por parejas", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz y repaso de errores habituales", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar cómo se entera un deportista de su marca en una carrera: por carteles (pantallas). El monitor es el cartel del Arduino.",
+      "Mostrar el monitor leyendo un valor de temperatura en vivo si tienen un sensor a mano."
+    ],
+    "aclarar": [
+      "Los textos van entre comillas y los nombres de variables sin ellas: un error clásico es escribir Serial.println(contador) con comillas.",
+      "El monitor se abre a 9600 pero también funciona a otras velocidades si las dos puntas coinciden.",
+      "print y println funcionan igual para números y para texto."
+    ],
+    "ejemplos": [
+      "Enviar tres mensajes usando print y println para que los alumnos predigan el resultado en el monitor.",
+      "Mostrar el contador sumando de a uno: evento que le gusta a los chicos.",
+      "Romper a propósito la velocidad y mostrar la basura en pantalla para diagnosticar."
+    ]
+  }
+}

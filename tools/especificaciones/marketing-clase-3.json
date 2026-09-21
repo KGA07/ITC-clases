@@ -33,7 +33,8 @@
         "No le hablás a 'todo el mundo': le hablás a un segmento concreto.",
         "Criterios de segmentación: demográficos, geográficos, de intereses y de comportamiento.",
         "Ejemplo: 'mates sustentables' no vende a todos, le vende a quienes ya se preocupan por el planeta."
-      ]
+      ],
+      "imagen": { "src": "img/segmentacion.jpg", "alt": "Perfil de buyer persona con datos de cliente", "caption": "El buyer persona representa a tu cliente ideal" }
     },
     {
       "titulo": "El embudo de conversión",
@@ -45,7 +46,8 @@
         "Parte superior: generar visibilidad y captar atención.",
         "Parte media: construir confianza con contenidos de valor.",
         "Parte inferior: convertir con ofertas claras y pasos simples."
-      ]
+      ],
+      "imagen": { "src": "img/embudo.jpg", "alt": "Embudo de conversión de ventas", "caption": "El embudo va de la visibilidad a la conversión" }
     },
     {
       "titulo": "El viaje del cliente",
@@ -58,7 +60,8 @@
         "Consideración: compara opciones y estudia tus contenidos.",
         "Decisión: necesita confianza, testimonios y un llamado a la acción claro.",
         "Post-compra: fidelización, reseñas y recompra."
-      ]
+      ],
+      "imagen": { "src": "img/journey.jpg", "alt": "Recorrido del cliente por sus etapas", "caption": "El customer journey acompaña cada etapa de la decisión" }
     },
     {
       "titulo": "Herramientas para mapear el viaje",

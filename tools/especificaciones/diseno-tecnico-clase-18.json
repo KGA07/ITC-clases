@@ -1,0 +1,186 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 18,
+    "titulo": "Dibujo paramétrico y bloques dinámicos",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a darle inteligencia a los dibujos: restricciones geométricas y por cota para mantener formas, y bloques dinámicos con parámetros y acciones editables desde pinzamientos.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 18 - Dibujo paramétrico y bloques dinámicos",
+  "objetivos": [
+    "Aplicar restricciones geométricas y por cota a un dibujo.",
+    "Usar restricciones automáticas y deducidas.",
+    "Mostrar, ocultar, liberar y suprimir restricciones.",
+    "Crear bloques dinámicos con parámetros y acciones: lineal, rotación, simetría, visibilidad y consulta."
+  ],
+  "teoria": [
+    {
+      "titulo": "Restricciones geométricas y por cota",
+      "emoji": "🔗",
+      "imagen": {
+        "src": "img/restricciones.jpg",
+        "alt": "Restricciones de dibujo paramétrico",
+        "caption": "Las restricciones fijan relaciones: paralelo, perpendicular, tangente y medidas constantes."
+      },
+      "parrafos": [
+        "El dibujo paramétrico fija las relaciones de la geometría: restricciones geométricas (paralelo, perpendicular, horizontal, tangente, coincidente...) imponen cómo se relacionan los objetos; restricciones por cota fijan las medidas numéricas. Cuando editás el dibujo, las restricciones se mantienen."
+      ],
+      "puntos": [
+        "Geométricas: paralela, perpendicular, horizontal/línea, tangente, coincidencia.",
+        "Por cota: las medidas fijas (ej. un largo de 10 que no puede cambiar).",
+        "Los pinzamientos de objetos restringidos aparecen con el icono de candado o símbolo.",
+        "Es la base de los dibujos 'inteligentes' y de los bloques dinámicos."
+      ]
+    },
+    {
+      "titulo": "Restricciones automáticas y deducidas",
+      "emoji": "🤖",
+      "parrafos": [
+        "AutoCAD puede adivinar qué restricciones aplicar: con 'Automática' marca todas las relaciones de una selección; con la opción 'Deducir' aplica restricciones mientras dibujás, detectando por ejemplo si una línea sigue recta o es perpendicular."
+      ],
+      "puntos": [
+        "Restricciones automáticas: un solo clic para toda la selección.",
+        "Deducir restricciones: se aplican mientras dibujás.",
+        "Los iconos en pantalla muestran qué restricción se creó.",
+        "Es una ayuda para empezar parámetros sin conocer todo el detalle."
+      ]
+    },
+    {
+      "titulo": "Mostrar, liberar y suprimir restricciones",
+      "emoji": "🔄",
+      "parrafos": [
+        "Las restricciones se pueden mostrar u ocultar, liberar (dejar de fijar pero conservar) o suprimir. Esto permite dar aire al dibujo cuando hace falta editar sin que todo se mantenga firme."
+      ],
+      "puntos": [
+        "Mostrar/Ocultar: enciende o apaga los iconos.",
+        "Liberar: permite mover los objetos aunque la restricción siga allí.",
+        "Suprimir: elimina la restricción elegida.",
+        "Recomendación: mantener visibles al principio para ver qué se fijó."
+      ]
+    },
+    {
+      "titulo": "Bloques dinámicos: parámetros y acciones",
+      "emoji": "🎛️",
+      "imagenes": [
+        {
+          "src": "img/bloqdinamico.jpg",
+          "alt": "Bloque dinámico con pinzamientos",
+          "caption": "Los bloques dinámicos se ajustan desde pinzamientos y listas sin abrir el editor."
+        },
+        {
+          "src": "img/parametros.jpg",
+          "alt": "Parámetros de control",
+          "caption": "Parámetros de distancia, rotación y listas de consulta hacen al bloque flexible."
+        }
+      ],
+      "parrafos": [
+        "Un bloque dinámico responde a parámetros: un parámetro lineal con la acción de estirar permite alargarlo desde un pinzamiento; un parámetro de rotación lo gira; la simetría lo refleja y la visibilidad muestra u oculta partes.",
+        "La consulta ofrece listas desplegables para elegir estados del bloque. Todo se define en el Editor de bloques."
+      ],
+      "puntos": [
+        "Parámetro lineal + acción Estirar: modificar el largo al instante.",
+        "Parámetro rotación: girar el bloque desde su pinzamiento.",
+        "Simetría: reflejar la geometría dinámica.",
+        "Visibilidad y consulta: mostrar variantes o elegir opciones de lista."
+      ]
+    },
+    {
+      "titulo": "Propiedades de parámetros y acciones",
+      "emoji": "⚙️",
+      "parrafos": [
+        "Cada parámetro tiene propiedades configurables: el nombre que aparece, la descripción, el tipo de distancia (lista o incremento fijo) y si se muestra o no. Las acciones a su vez tienen multiplicador de distancia (para que el estiramiento sea una proporción) y desfase de ángulo."
+      ],
+      "puntos": [
+        "Nombre y descripción: para identificar el pinzamiento.",
+        "Tipo de distancia: lista fija o incremento (ej. de 10 en 10).",
+        "Mostrar: si el parámetro pinchazo aparece al seleccionar.",
+        "Multiplicador y desfase de ángulo: ajustan la acción al parámetro."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá paramétrico y dinámico",
+      "consigna": "Respondé el interactivo sobre restricciones, parámetros y acciones de bloques dinámicos.",
+      "pasos": [
+        "Aplicá una restricción automática a un rectángulo.",
+        "Explorá el Editor de bloques y sus paletas.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con el bloque en pantalla.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de restricción fija que una línea sea vertical?",
+            "opciones": ["Por cota", "Geométrica", "De texto", "De capa"],
+            "correcta": "Geométrica"
+          },
+          {
+            "pregunta": "¿Qué restricción fija el valor numérico de una medida?",
+            "opciones": ["Por cota", "Tangente", "Horizontal", "Coincidente"],
+            "correcta": "Por cota"
+          },
+          {
+            "pregunta": "¿Qué parámetro permite alargar un bloque desde su pinzamiento?",
+            "opciones": ["Rotación", "Lineal", "Simetría", "Visibilidad"],
+            "correcta": "Lineal"
+          },
+          {
+            "pregunta": "¿Qué acción refleja la geometría del bloque?",
+            "opciones": ["Estirar", "Simetría", "Rotación", "Escalar"],
+            "correcta": "Simetría"
+          },
+          {
+            "pregunta": "¿Qué permite la propiedad 'Tipo de distancia' de un parámetro?",
+            "opciones": ["Elegir entre lista fija o incremento", "Cambiar el color", "Borrar el bloque", "Cambiar la capa"],
+            "correcta": "Elegir entre lista fija o incremento"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Creá un bloque dinámico de mesa",
+      "consigna": "Convertí la mesa de tu clase 10 en un bloque dinámico con largo variable, rotación y consulta.",
+      "pasos": [
+        "Abrí tu archivo con el bloque MESA.",
+        "Editá el bloque en el Editor de bloques (BEDIT).",
+        "Agregá un parámetro LINEAL a lo largo de la mesa.",
+        "Agregá la acción ESTIRAR vinculada al parámetro lineal.",
+        "Sumá un parámetro de ROTACIÓN y la acción de rotación.",
+        "Agregá una consulta con opciones 120, 180 y 240.",
+        "Guardá el bloque y probá sus pinzamientos al insertarlo.",
+        "Guardá como clase18-mesadinamica.dwg."
+      ],
+      "entrega": "El docente revisa el bloque dinámico: debe estirarse, rotarse y consultar opciones de lista."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase18-mesadinamica.dwg con el bloque dinámico funcional.",
+  "lectura": "El dibujo paramétrico fija las relaciones de la geometría con restricciones geométricas y por cota, y los bloques dinámicos llevan esa idea a los elementos reutilizables: estiran, rotan, reflejan y muestran variantes desde simples pinzamientos. Es la diferencia entre dibujar objetos y dibujar herramientas inteligentes.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar la idea de geometría inteligente que mantiene sus relaciones", "min": "10 min" },
+      { "titulo": "Restricciones", "que": "Aplicar geométricas y por cota sobre figuras simples", "min": "25 min" },
+      { "titulo": "Automáticas y deducidas", "que": "Probar opciones automáticas y mostrar/ocultar iconos", "min": "10 min" },
+      { "titulo": "Bloques dinámicos", "que": "Crear parámetros lineal, rotación, simetría, visibilidad y consulta", "min": "30 min" },
+      { "titulo": "Propiedades", "que": "Configurar nombre, incrementos y multiplicadores de las acciones", "min": "10 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo final", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez tuvieron que dibujar 'lo mismo pero más largo': los bloques dinámicos lo resuelven con un pinzamiento."
+    ],
+    "aclarar": [
+      "Las restricciones por cota NO son cotas de anotación: fijan la geometría, no muestran medidas.",
+      "Sin parámetro no hay pinzamiento: primero el parámetro, después la acción.",
+      "El multiplicador de distancia permite que un estiramiento de 2 mueva 2 veces (o la mitad)."
+    ],
+    "ejemplos": [
+      "Restringir un rectángulo a ser paralelo y ver que no se torce al estirarlo.",
+      "Bloque dinámico de ventana con largo de lista fija (60, 90, 120, 150).",
+      "Un parámetro de visibilidad que muestre la mesa con o sin sillas."
+    ]
+  }
+}

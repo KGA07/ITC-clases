@@ -33,7 +33,8 @@
         "Busca atraer, convertir y fidelizar clientes a través de canales digitales.",
         "Hoy la mayor parte de la gente investiga en internet antes de comprar.",
         "Funciona para cualquier rubro: comercios, servicios, emprendimientos y marcas personales."
-      ]
+      ],
+      "imagen": { "src": "img/digital-marketing.jpg", "alt": "Estrategia de marketing digital en pantallas y dispositivos", "caption": "El marketing digital planifica, mide y mejora cada acción" }
     },
     {
       "titulo": "Tendencias 2025",
@@ -45,7 +46,8 @@
         "IA: se usa para generar textos, ideas y personalizar mensajes a escala.",
         "Automatización: los mensajes y las publicaciones se programan y se disparan según el comportamiento del usuario.",
         "Contenido personalizado: cada persona recibe mensajes pensados para su etapa y sus intereses."
-      ]
+      ],
+      "imagen": { "src": "img/tendencias-ia.jpg", "alt": "Concepto de inteligencia artificial", "caption": "La IA atraviesa las tendencias de marketing 2025" }
     },
     {
       "titulo": "SEO y SEM: la puerta de los buscadores",
@@ -57,7 +59,8 @@
         "SEO: optimizás contenido, estructura y autoridad para aparecer en los resultados orgánicos de Google.",
         "SEM: pagás por cada clic o impresión y podés aparecer casi al instante en la parte superior.",
         "Conviven: un buen plan usa SEO para el mediano plazo y SEM para resultados rápidos."
-      ]
+      ],
+      "imagen": { "src": "img/seo-sem.jpg", "alt": "Resultados de un buscador con anuncios y resultados orgánicos", "caption": "SEO y SEM conviven en la página de resultados" }
     },
     {
       "titulo": "Qué vas a aprender en el curso",

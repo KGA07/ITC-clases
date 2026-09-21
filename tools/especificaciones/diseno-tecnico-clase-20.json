@@ -1,0 +1,184 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 20,
+    "titulo": "Normas de dibujo técnico",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a conocer las normas que ordenan la comunicación técnica: tipos y anchos de línea, convenciones para vistas y cortes, formato y plegado de láminas, y reglas para las cotas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 20 - Normas de dibujo técnico",
+  "objetivos": [
+    "Identificar los tipos de línea para dibujo de construcciones y mecánico.",
+    "Aplicar los anchos de línea según el destino de la impresión.",
+    "Conocer las convenciones para vistas y cortes.",
+    "Aplicar el formato, el plegado de láminas y las convenciones para cotas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Tipos de línea",
+      "emoji": "➖",
+      "imagen": {
+        "src": "img/tiposlineas.jpg",
+        "alt": "Tipos de línea del dibujo técnico",
+        "caption": "Línea llena, oculta, de ejes y de centro: cada tipo comunica algo distinto."
+      },
+      "parrafos": [
+        "En el dibujo técnico cada línea significa algo: la continua gruesa marca el contorno visible; la continua fina se usa para cotas y sombreados; la de trazos cortos indica lo oculto; la de trazo y punto marca ejes y centros; y la continua ondulada corta las partes que no entran en la lámina.",
+        "Las normas de construcción y las de mecánica coinciden en los principios y difieren en detalles de aplicación."
+      ],
+      "puntos": [
+        "Continuo grueso: contornos y aristas visibles.",
+        "Continuo fino: cotas, líneas de referencia y sombreados.",
+        "Trazos: aristas ocultas.",
+        "Trazos largos y punto: ejes, líneas de centros y de simetría."
+      ]
+    },
+    {
+      "titulo": "Anchos de línea y su aplicación",
+      "emoji": "🖊️",
+      "imagen": {
+        "src": "img/grosor.jpg",
+        "alt": "Anchos de línea del plano",
+        "caption": "El grosor diferencia el protagonismo de cada línea al imprimir."
+      },
+      "parrafos": [
+        "Los anchos se eligen según la importancia: en arquitectura, muros con grosor 0.50, aberturas 0.30, mobiliario 0.18, cotas 0.18. En mecánica conviven el contorno grueso y los detalles finos.",
+        "En AutoCAD el ancho se asigna por capa o por objeto y se ve al imprimir (o con el botón Grosor de línea)."
+      ],
+      "puntos": [
+        "Los grosores se eligen del conjunto de normas (0.18, 0.25, 0.35, 0.50, 0.70 mm).",
+        "Un solo dibujo admite un máximo de 3 a 4 grosores para no confundir.",
+        "El contorno visible siempre es el más grueso.",
+        "Las capas del curso ya usan estos grosores."
+      ]
+    },
+    {
+      "titulo": "Convenciones para vistas y cortes",
+      "emoji": "📐",
+      "parrafos": [
+        "Las vistas de una pieza se colocan según el sistema ortogonal: la planta, el alzado y la vista lateral en su posición reglamentaria. Los cortes usan rayado con líneas finas paralelas para marcar las zonas seccionadas y se indican en la planta con la línea de corte y sus flechas."
+      ],
+      "puntos": [
+        "Cada vista se ubica en su posición: alzado al frente, planta abajo, laterales a los costados.",
+        "El rayado del corte diferencia material de vacío.",
+        "La línea de corte muestra la dirección de observación.",
+        "Las aristas ocultas se representan con trazos finos cuando aportan información."
+      ]
+    },
+    {
+      "titulo": "Formato y plegado de láminas",
+      "emoji": "📄",
+      "imagen": {
+        "src": "img/plegado.jpg",
+        "alt": "Plegado de láminas de planos",
+        "caption": "El formato de lámina se estandariza y el plegado permite archivar los planos sin dobleces perdidos."
+      },
+      "parrafos": [
+        "Las láminas se normalizan por formato (A4, A3, A2, A1 y A0 según ISO). Cada una lleva su marco, su carátula y los márgenes reglamentarios. El plegado se ejecuta hacia el tamaño de archivo (A4 o A3) dejando el rótulo visible por fuera."
+      ],
+      "puntos": [
+        "Formatos ISO: A0 → A1 → A2 → A3 → A4 (cada uno la mitad del anterior).",
+        "El marco encierra la zona de dibujo y la carátula se coloca en el esquina inferior derecha.",
+        "El plegado final deja el rótulo a la vista para identificar la lámina archivada.",
+        "La escala de dibujo se anota en la carátula junto a la lamina."
+      ]
+    },
+    {
+      "titulo": "Convenciones para cotas",
+      "emoji": "📏",
+      "parrafos": [
+        "Las cotas siguen reglas: se ubican fuera de la silueta, no se cruzan, llevan flecha y texto de medidas, y la línea de cota no repite medidas que ya están claras. En planta se acotan los ejes y las dimensiones generales; en mecánica, los diámetros, radios y cotas de referencia."
+      ],
+      "puntos": [
+        "Las cotas van sobre la capa de COTAS y con su estilo.",
+        "No debe repetirse una misma medida en dibujos que ya la muestran.",
+        "Las cotas de planta se ubican al exterior del dibujo.",
+        "Los diámetros y radios llevan su símbolo y unidad correcta."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá las normas",
+      "consigna": "Respondé el interactivo sobre tipos de línea, anchos, convenciones y formatos.",
+      "pasos": [
+        "Repasá la tabla de tipos de línea.",
+        "Compará grosores de muros y cotas en tus planos.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con la tabla de normas a la vista.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué tipo de línea representa aristas ocultas?",
+            "opciones": ["Continuo grueso", "Trazos", "Trazos largos y punto", "Continuo ondulado"],
+            "correcta": "Trazos"
+          },
+          {
+            "pregunta": "¿Cuál es el contorno visible?",
+            "opciones": ["El más fino", "El más grueso", "El del medio", "Uno punteado"],
+            "correcta": "El más grueso"
+          },
+          {
+            "pregunta": "¿Qué formato ISO es el más grande?",
+            "opciones": ["A4", "A3", "A2", "A0"],
+            "correcta": "A0"
+          },
+          {
+            "pregunta": "¿Cómo se diferencia el material seccionado en un corte?",
+            "opciones": ["Con color rojo", "Con rayado de líneas finas paralelas", "Con texto", "Con sombra degradada"],
+            "correcta": "Con rayado de líneas finas paralelas"
+          },
+          {
+            "pregunta": "¿Dónde se coloca la carátula de la lámina?",
+            "opciones": ["Comienzo superior izquierdo", "Esquina inferior derecha", "Al medio del dibujo", "Fuera del marco"],
+            "correcta": "Esquina inferior derecha"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Auditá tus planos contra normas",
+      "consigna": "Revisá tus planos anteriores y corregí las infracciones de normas que encuentres.",
+      "pasos": [
+        "Abrí tus planos de la planta (clase 12) y de la pieza (clase 14).",
+        "Verificá los grosores de línea de capas: muros gruesos, cotas finas.",
+        "Fijate que el tipo de línea de ejes sea de trazos largos y punto.",
+        "Revisá que las cotas no se crucen y estén fuera de la silueta.",
+        "Corroborá la presencia del marco y la carátula en el formato correspondiente.",
+        "Anotá un breve listado de 'correcciones' en un texto en el plano.",
+        "Guardá como clase20-auditoria.dwg."
+      ],
+      "entrega": "El docente revisa la auditoría: planos corregidos o listado de correcciones fundamentado."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase20-auditoria.dwg con las correcciones de normas justificadas.",
+  "lectura": "Las normas son el idioma común del dibujo técnico: cada línea, cada grosor y cada cota deben leerse igual en cualquier oficina. Conocer tipos de línea, anchos, convenciones de vistas y cortes, el formato y el plegado de láminas y las reglas de cotas vuelve a tus planos no solo lindos sino correctos y profesionales.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar las normas como el idioma común del dibujo técnico", "min": "10 min" },
+      { "titulo": "Tipos de línea", "que": "Recorrer la tabla de líneas y su aplicación construcción/mecánico", "min": "20 min" },
+      { "titulo": "Anchos", "que": "Asignar grosores a capas y comparar en pantalla/impresión", "min": "15 min" },
+      { "titulo": "Vistas y cortes", "que": "Verificar posición de vistas y rayado de cortes en ejemplos", "min": "15 min" },
+      { "titulo": "Formato y plegado", "que": "Explicar formatos ISO, marco, carátula y el plegado hacia A4/A3", "min": "15 min" },
+      { "titulo": "Práctica y cierre", "que": "Auditar los planos propios y repaso con interactivo", "min": "15 min" }
+    ],
+    "conecta": [
+      "Pedir que comparen dos planos cualquiera (uno ordenado y otro no) y digan qué convierte a uno en 'norma'."
+    ],
+    "aclarar": [
+      "El grosor de línea se asigna en CAD por capa; no alcanza con cambiar el color.",
+      "Línea continua ondulada = corte intermedio; trazo y punto = eje. Son fáciles de confundir.",
+      "La carátula debe quedar visible en el plegado A4: ese es el criterio del pliegue final."
+    ],
+    "ejemplos": [
+      "Un muro dibujado con grosor 0.50 y el mobiliario con 0.18 al imprimir.",
+      "La planta con sus ejes de trazos largos y punto sobre la capa de ejes.",
+      "Plegar una A1 en la clase: primero hacia la altura A4 y luego el ancho dejando el rótulo afuera."
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 8,
+    "titulo": "Fuentes de alimentación",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Fuente ATX real, conectores sueltos, etiquetas de potencia de distintas fuentes",
+    "bajada": "La fuente convierte el 220 V de la pared en la energía que cada componente necesita. Vas a aprender sus conectores, sus potencias y cómo elegir la fuente correcta para cada armado.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 8 - Fuentes de alimentacion",
+  "objetivos": [
+    "Explicar la función de la fuente de alimentación.",
+    "Identificar los conectores ATX estándar y sus voltajes.",
+    "Reconocer conectores extras de fuentes de media-alta gama.",
+    "Seleccionar la potencia en watts adecuada para un armado."
+  ],
+  "teoria": [
+    {
+      "titulo": "Funcionamiento de la fuente",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/fuente-atx.jpg",
+        "alt": "Fuente de alimentación ATX de escritorio",
+        "caption": "La fuente ATX transforma la corriente de red en voltajes internos."
+      },
+      "parrafos": [
+        "La fuente de alimentación toma la corriente alterna de 220 V de la red y la convierte en corriente continua de bajo voltaje. Distribuye energía a placa madre, discos, tarjetas y ventiladores."
+      ],
+      "puntos": [
+        "Entrada: 220 V alternos de la red eléctrica.",
+        "Salidas: +12 V, +5 V, +3,3 V en corriente continua.",
+        "Tiene un ventilador para evacuar el calor.",
+        "Una fuente mala o insuficiente causa reinicios, cuelgues y daños."
+      ]
+    },
+    {
+      "titulo": "Conectores ATX estándar",
+      "emoji": "🧶",
+      "imagen": {
+        "src": "img/conectores-fuente.jpg",
+        "alt": "Cables y conectores de una fuente ATX",
+        "caption": "Cada conector de la fuente alimenta una familia de dispositivos."
+      },
+      "parrafos": [
+        "Toda fuente trae un juego de cables fijos: el ATX para la placa, el CPU Power para el procesador, SATA para discos y Molex para dispositivos clásicos."
+      ],
+      "puntos": [
+        "ATX 20/24 pines: energía principal de la placa madre.",
+        "CPU Power 4/8 pines: energía del procesador.",
+        "SATA Power: discos y unidades modernas (15 pines).",
+        "Molex: discos y ventiladores antiguos (4 pines)."
+      ]
+    },
+    {
+      "titulo": "Conectores extra de media-alta gama",
+      "emoji": "⚡",
+      "parrafos": [
+        "Las fuentes más potentes agregan conectores para tarjetas de video exigentes y componentes de alto consumo."
+      ],
+      "puntos": [
+        "PCIe 6+2 pines: energía para tarjetas de video dedicadas.",
+        "Múltiples cables PCIe para varias tarjetas (SLI/CrossFire).",
+        "Conectores EPS de 8 pines duplicados para CPU de gama alta.",
+        "Cables modulares: se enchufan solo los que necesitás."
+      ]
+    },
+    {
+      "titulo": "Potencia en watts",
+      "emoji": "📊",
+      "parrafos": [
+        "La potencia de una fuente se mide en watts (W). El número correcto depende de la suma de consumos de todos los componentes, más un margen de seguridad."
+      ],
+      "puntos": [
+        "Oficina: 350-450 W alcanzan.",
+        "Gama media con gráfica dedicada: 500-650 W.",
+        "Gaming o workstation: 750 W o más.",
+        "Consejo: elegir fuente de marca reconocida, no solo por los watts."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: fuentes de alimentación",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre conectores, voltajes y potencia.",
+      "pasos": [
+        "Recorré la teoría y la fuente real del aula.",
+        "Respondé el interactivo.",
+        "Consultá dudas."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué hace la fuente de alimentación?",
+            "opciones": ["Convierte 220 V alternos en voltajes bajos continuos", "Guarda archivos del sistema", "Define la resolución de pantalla", "Conecta la PC a internet"],
+            "correcta": "Convierte 220 V alternos en voltajes bajos continuos"
+          },
+          {
+            "pregunta": "El conector ATX de 24 pines alimenta...",
+            "opciones": ["La placa madre", "El disco SATA", "La tarjeta de video", "Los parlantes"],
+            "correcta": "La placa madre"
+          },
+          {
+            "pregunta": "¿Qué conector usan los discos modernos para recibir energía?",
+            "opciones": ["SATA Power", "Molex", "CPU Power", "PCIe 6+2"],
+            "correcta": "SATA Power"
+          },
+          {
+            "pregunta": "La energía extra para una tarjeta de video se toma del conector...",
+            "opciones": ["PCIe 6+2 pines", "ATX 24 pines", "SATA Power", "FLOPPY"],
+            "correcta": "PCIe 6+2 pines"
+          },
+          {
+            "pregunta": "Para una PC gamer con tarjeta dedicada conviene una fuente de al menos...",
+            "opciones": ["750 W", "150 W", "120 W", "60 W"],
+            "correcta": "750 W"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Calculá la potencia de un armado",
+      "consigna": "Dado un listado de componentes, estimá la potencia mínima de fuente recomendada.",
+      "pasos": [
+        "Anotá los componentes: CPU, RAM, disco, tarjeta de video, etc.",
+        "Sumá un consumo estimado por tipo de equipo.",
+        "Agregá un margen de seguridad del 20-30%.",
+        "Proponé la potencia mínima y una fuente recomendada.",
+        "Justificá tu elección."
+      ],
+      "entrega": "Planilla con el cálculo de potencia justificado."
+    }
+  ],
+  "entrega": "El docente revisará el cálculo de potencia y el interactivo.",
+  "lectura": "La fuente es la encargada de dar energía a toda la PC: de su calidad y potencia depende la estabilidad del equipo. Conocer los conectores ATX, SATA, Molex y PCIe, y saber estimar los watts necesarios, evita reinicios, apagados y componentes quemados.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar consumo de tarjetas de video y conectar con la fuente", "min": "10 min" },
+      { "titulo": "Funcionamiento", "que": "Explicar la conversión de 220 V y mostrar la fuente real abierta (si es posible)", "min": "15 min" },
+      { "titulo": "Conectores estándar", "que": "Identificar cada cable de la fuente del aula", "min": "20 min" },
+      { "titulo": "Conectores extra", "que": "Mostrar PCIe 6+2 y fuentes modulares", "min": "15 min" },
+      { "titulo": "Cálculo de watts", "que": "Guiar el cálculo de potencia con componentes reales", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez una PC se les apagó sola: suele ser la fuente trabajando al límite.",
+      "Mostrar la etiqueta de potencia de la fuente del aula y leer los amperajes por línea."
+    ],
+    "aclarar": [
+      "Los watts de la fuente están en la etiqueta: no confiar en el tamaño del gabinete.",
+      "Una fuente de marca desconocida con '600 W' reales puede rendir como una de 300 W.",
+      "CPU Power y PCIe tienen pines que se ven iguales pero no se intercambian: revisar la forma."
+    ],
+    "ejemplos": [
+      "Comparar la etiqueta de una fuente genérica con una certificada.",
+      "Contar los conectores que tiene la fuente del aula y a qué van.",
+      "Simular un armado gamer y ver cómo sube el requisito de watts."
+    ]
+  }
+}

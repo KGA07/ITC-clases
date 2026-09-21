@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 11,
+    "titulo": "Ensamble de componentes",
+    "modulo": "Módulo 1 – Hardware",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Componentes completos para armar, destornillador, pasta térmica, pulsera antiestática",
+    "bajada": "Llegó el momento de armar: todos los componentes que viste hasta acá se unen en un gabinete. Vas a armar y desarmar una PC completa respetando el orden y el cuidado de cada pieza.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 11 - Ensamble de componentes",
+  "objetivos": [
+    "Preparar el gabinete y la placa madre para el ensamble.",
+    "Instalar procesador, RAM y cooler correctamente.",
+    "Conectar la fuente y los cables de la placa en el orden correcto.",
+    "Reconocer slots y conectores vistos durante el módulo y verificar el armado."
+  ],
+  "teoria": [
+    {
+      "titulo": "Antes de armar: preparación",
+      "emoji": "🧰",
+      "imagen": {
+        "src": "img/armado-pc.jpg",
+        "alt": "Bancada de trabajo para armar una PC",
+        "caption": "Trabajá en una mesa limpia y antiestática."
+      },
+      "parrafos": [
+        "Armar una PC no es difícil si respetás el orden y las precauciones: descarga tu estática, trabajá sobre una mesa limpia y reuní pines, tornillos y pasta térmica antes de empezar."
+      ],
+      "puntos": [
+        "Pulsera o descarga antiestática para no dañar componentes.",
+        "Mesada limpia, buena luz y destornillador imantado.",
+        "Pasta térmica nueva si no viene aplicada en el cooler.",
+        "Leer el manual de la placa madre antes de conectar."
+      ]
+    },
+    {
+      "titulo": "Instalación de CPU, RAM y cooler",
+      "emoji": "🧠",
+      "parrafos": [
+        "El orden clásico es: placa sobre la mesa, CPU en el socket, RAM en los slots y cooler arriba. Así trabajás cómodo antes de meter todo en el gabinete."
+      ],
+      "puntos": [
+        "CPU: abrir el socket, alinear la muesca y trabarla sin forzar.",
+        "RAM: presionar hasta el click de las trabas en los slots correctos.",
+        "Cooler: aplicar pasta térmica y fijar los cuatro tornillos en cruz.",
+        "Conectar el conector CPU_FAN al ventilador del cooler."
+      ]
+    },
+    {
+      "titulo": "Armado dentro del gabinete",
+      "emoji": "🔩",
+      "parrafos": [
+        "Con la placa armada, se instala en el gabinete sobre los separadores (standoffs) y se conectan fuente, discos y cables frontales."
+      ],
+      "puntos": [
+        "Fijar los standoffs según el tamaño de la placa (ATX/mATX).",
+        "Instalar la placa y atornillar sus tornillos.",
+        "Conectar ATX 24 pines y CPU Power desde la fuente.",
+        "Conectar discos con SATA data + SATA power."
+      ]
+    },
+    {
+      "titulo": "Cableado del panel frontal y verificación",
+      "emoji": "✅",
+      "imagen": {
+        "src": "img/montaje-placa.jpg",
+        "alt": "Detalle del montaje de la placa en el gabinete",
+        "caption": "Un buen cableado frontal evita fallas de encendido."
+      },
+      "parrafos": [
+        "El panel frontal (power, reset, LEDs, USB, audio) es el desafío del cableado fino. Al final, se verifica todo antes de encender por primera vez."
+      ],
+      "puntos": [
+        "Conectar F_PANEL según el diagrama del manual.",
+        "Enchufar USB y audio frontales en sus bloques.",
+        "Ordenar los cables para que el aire circule.",
+        "Pre-encender: revisar conectores y tirar el encendido una sola vez."
+      ]
+    },
+    {
+      "titulo": "POST y primeras pruebas",
+      "emoji": "🖥️",
+      "parrafos": [
+        "Con la PC armada, el POST (autoprueba de encendido) valida que todo esté conectado. Beeps o pantalla en negro te dicen qué falta corregir."
+      ],
+      "puntos": [
+        "Sin imagen: revisar RAM, video y cable del monitor.",
+        "Beeps largos: problema de RAM; cortos repetidos: video.",
+        "Si enciende: entrar al setup y verificar que detecte CPU, RAM y disco.",
+        "Primer uso: instalación del sistema operativo en el próximo módulo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: orden de ensamble",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre el orden y cuidado al armar una PC.",
+      "pasos": [
+        "Recorré la teoría de ensamble.",
+        "Respondé el interactivo.",
+        "Verificá las dudas en un armado real."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué precaución es básica antes de tocar los componentes?",
+            "opciones": ["Descargar la electricidad estática", "Cargar el celular", "Apagar la luz", "Desconectar el teclado"],
+            "correcta": "Descargar la electricidad estática"
+          },
+          {
+            "pregunta": "¿En qué orden se arma una PC típica?",
+            "opciones": ["Placa → CPU → RAM → cooler", "Cooler → RAM → CPU → placa", "Gabinete → fuente al final", "CPU sobre la mesa sin placa"],
+            "correcta": "Placa → CPU → RAM → cooler"
+          },
+          {
+            "pregunta": "La pasta térmica va entre...",
+            "opciones": ["El procesador y el disipador", "La RAM y el slot", "El disco y la placa", "La fuente y el gabinete"],
+            "correcta": "El procesador y el disipador"
+          },
+          {
+            "pregunta": "Mientras la placa va en el gabinete, los separadores se llaman...",
+            "opciones": ["Standoffs", "Pines de datos", "Jumper", "Clip de retención"],
+            "correcta": "Standoffs"
+          },
+          {
+            "pregunta": "Si al encender no hay imagen y hay beeps largos, el problema suele ser...",
+            "opciones": ["La memoria RAM", "El disco", "El mouse", "La cámara"],
+            "correcta": "La memoria RAM"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Armá y desarmá una PC",
+      "consigna": "Desarmá la PC asignada hasta la placa madre y volvé a armarla completa.",
+      "pasos": [
+        "Desconectá la PC de la corriente y abrí el gabinete.",
+        "Retirá en orden inverso: cables, fuente, discos y placa.",
+        "Con la placa afuera, retirá cooler, RAM y CPU.",
+        "Volvé a armar en el orden correcto con tu compañero.",
+        "Encendé y verificá que arranque y que el setup detecte los componentes."
+      ],
+      "entrega": "PC armada y encendiendo correctamente, con verificación en el setup."
+    }
+  ],
+  "entrega": "El docente evaluará el armado completo y el interactivo.",
+  "lectura": "El ensamble es la prueba final del módulo de hardware: reunir fuente, placa, CPU, RAM y discos en el gabinete respetando el orden y las precauciones. Quien sabe armar, sabe diagnosticar: el mismo orden de armado es la guía para revisar cuando algo falla.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar conectores y componentes del módulo completo", "min": "10 min" },
+      { "titulo": "Preparación y seguridad", "que": "Mostrar precauciones antiestáticas y el orden de trabajo", "min": "15 min" },
+      { "titulo": "Armado sobre la mesa", "que": "Guiar CPU, RAM y cooler en la placa madre", "min": "20 min" },
+      { "titulo": "Armado en el gabinete", "que": "Instalar placa, fuente, discos y cableado frontal", "min": "20 min" },
+      { "titulo": "Práctica completa", "que": "Desarmar y armar cada PC por duplas evaluando el proceso", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Verificación final de cada equipo y repaso oral", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguno ya armó o reparó una PC en casa y qué aprendió sobre la marcha.",
+      "Resumir todo el módulo: cada componente que vieron en clase ahora aparece en el gabinete."
+    ],
+    "aclarar": [
+      "No tocar los contactos dorados de la CPU ni del módulo RAM.",
+      "Más fuerza no es mejor: los componentes entran con presión leve y precisa.",
+      "El cooler del CPU debe quedar bien fijado: una PC sin cooler se quema en minutos al encender."
+    ],
+    "ejemplos": [
+      "Mostrar la pasta térmica y explicar cuánto aplicar (como un grano de arroz).",
+      "Hacer una prueba con la fuente sobre la mesa (paperclip test) antes del armado.",
+      "Encender la primera PC armada por duplas y celebrar el primer POST."
+    ]
+  }
+}

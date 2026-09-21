@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 22,
+    "titulo": "Máscaras, filtros, guías y diseño integral",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a cerrar el curso dominando las máscaras de capa, vectoriales y de recorte, la galería de filtros, las guías de composición y el armado de una pieza publicitaria integral.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 22 Mascaras y filtros",
+  "objetivos": [
+    "Crear y usar máscaras de capa, vectoriales y de recorte.",
+    "Aplicar filtros como licuar, desenfoque, estilizar, interpretar y ruido.",
+    "Trabajar con guías, guías inteligentes y composición de guías.",
+    "Integrar todo en una pieza publicitaria final."
+  ],
+  "teoria": [
+    {
+      "titulo": "Máscaras de capa y máscaras de recorte",
+      "emoji": "🎭",
+      "imagen": {
+        "src": "img/filtros.jpg",
+        "alt": "Aspectos de los filtros de Photoshop",
+        "caption": "Las máscaras ocultan píxeles sin borrarlos; los filtros transforman el aspecto."
+      },
+      "parrafos": [
+        "La máscara de capa es un velo que oculta u muestra partes de la capa sin borrarla: se pinta de negro para ocultar y de blanco para revelar. Un error de máscara se corrige pintando el color contrario: nunca se pierde la imagen original.",
+        "La máscara de recorte limita una capa a la forma de la capa de abajo: la de arriba 'entra' dentro del contorno de la inferior. Es la forma moderna de iluminar, colorear o texturizar solo un elemento (como el PowerClip en CorelDRAW)."
+      ],
+      "puntos": [
+        "Máscara de capa: negro oculta, blanco revela, gris medio transparente.",
+        "Las máscaras no destruyen: recuperás todo pintando de blanco.",
+        "Máscara de recorte: la capa de arriba se limita a la de abajo.",
+        "Las máscaras vectoriales usan una ruta para ocultar con bordes precisos."
+      ]
+    },
+    {
+      "titulo": "La galería de filtros",
+      "emoji": "🌀",
+      "imagen": {
+        "src": "img/desenfoque.jpg",
+        "alt": "Efecto de desenfoque",
+        "caption": "Desenfoques y filtros transforman el aspecto de la foto por completo."
+      },
+      "parrafos": [
+        "La galería de filtros reúne los filtros artísticos en un solo panel con previsualización. Los grupos principales: Licuar (retuerce píxeles como masa, ideal para retoques y efectos), desenfoque (gaussiano, radial, de superficie para suavizar) y estilizar (acentúa bordes y trazos).",
+        "Interpretar crea efectos de viñetas, nubes y fibra óptica; el ruido agrega grano o elimina imperfecciones. Los filtros se aplican a una capa o a una selección y muchos funcionan como filtros inteligentes (no destructivos) sobre objetos inteligentes."
+      ],
+      "puntos": [
+        "Licuar: deforma píxeles como masa con pinceles.",
+        "Desenfoque: gaussiano, radial y de superficie.",
+        "Estilizar: acentúa bordes y contornos.",
+        "Ruido: agrega o quita grano; interpretar crea nubes y texturas."
+      ]
+    },
+    {
+      "titulo": "Guías, guías inteligentes y composición",
+      "emoji": "📏",
+      "parrafos": [
+        "Las guías se arrastran desde las reglas (Ctrl + R si no se ven) y marcan líneas de alineación sobre el lienzo. Un clic sobre una guía permite moverla; arrastrándolas fuera del lienzo la eliminás.",
+        "Las guías inteligentes aparecen solas al alinear objetos entre sí, y la composición de guías (Vista > Nuevo diseño de guía) crea grillas de márgenes y columnas automáticas sobre la pieza: la maquetación en Photoshop."
+      ],
+      "puntos": [
+        "Ctrl + R muestra las reglas para arrastrar guías.",
+        "Las guías inteligentes ayudan a alinear sin pensar.",
+        "Nuevo diseño de guía crea márgenes y columnas de golpe.",
+        "Las guías se ocultan con Ctrl + ; y no se imprimen."
+      ]
+    },
+    {
+      "titulo": "El diseño integral: todas las piezas juntas",
+      "emoji": "🖼️",
+      "parrafos": [
+        "Una pieza publicitaria final integra todo: lienzo bien configurado, selecciones y capas ordenadas, objetos inteligentes, textos y formas, estilos de capa, ajustes de color, máscaras y filtros. El resultado se exporta en el formato correcto según el destino.",
+        "El orden de trabajo profesional: definir formato y guías primero, componer con capas y objetos inteligentes, ajustar color con capas de ajuste, pulir con máscaras y filtros, y exportar pensando en el destino final (imprenta o pantalla)."
+      ],
+      "puntos": [
+        "Formato y guías primero: la estructura decide todo.",
+        "Capas con nombres y grupos: el panel ordenado es la mitad del trabajo.",
+        "Ajustes no destructivos: podés rehacer sin perder el original.",
+        "Exportación coherente: PNG/JPG para digital, alta resolución y CMYK para print."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Afiche publicitario integral",
+      "consigna": "Creá un afiche publicitario completo para una marca ficticia integrando: guías, objeto inteligente, máscara de capa, máscara de recorte, un filtro y ajustes de color no destructivos.",
+      "pasos": [
+        "Creá un documento A4 vertical (210x297 mm) a 300 dpi.",
+        "Activá la regla (Ctrl + R) y creá una composición de guías con márgenes de 20 mm.",
+        "Colocá una foto como objeto inteligente ajustada al ancho del afiche.",
+        "Añadí el nombre de la marca con texto y estilo de capa (sombra y trazo).",
+        "Creá una máscara de capa sobre la foto y pintá de negro para desvanecer el borde superior suavemente.",
+        "Aplicá un filtro desenfoque de fondo sobre una copia, con el producto nítido encima, y una capa de ajuste de tono/saturación; exportá como afiche-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del afiche final y el PSD con capas organizadas, máscaras y ajustes activos.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "En una máscara de capa, ¿qué color OCULTA la zona pintada?",
+            "opciones": ["Negro", "Blanco", "Gris al 50%", "Rojo"],
+            "correcta": "Negro"
+          },
+          {
+            "pregunta": "La máscara de recorte limita la capa de arriba a:",
+            "opciones": ["La forma de la capa de abajo", "El tamaño del lienzo", "Los bordes de la pantalla", "El color de la otra capa"],
+            "correcta": "La forma de la capa de abajo"
+          },
+          {
+            "pregunta": "¿Qué filtro retuerce los píxeles a mano, como masa?",
+            "opciones": ["Licuar", "Desenfoque gaussiano", "Ruido", "Posterizar"],
+            "correcta": "Licuar"
+          },
+          {
+            "pregunta": "¿Cómo mostrás las reglas para arrastrar guías?",
+            "opciones": ["Ctrl + R", "Ctrl + S", "Ctrl + P", "Ctrl + W"],
+            "correcta": "Ctrl + R"
+          },
+          {
+            "pregunta": "Para alinear objetos sin esfuerzo aparecen guías automáticas llamadas:",
+            "opciones": ["Guías inteligentes", "Reglas de tercios", "Guías de sangrado", "Cuadrículas de píxeles"],
+            "correcta": "Guías inteligentes"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Micro-cartel integrador de cierre",
+      "consigna": "Armá un micro-cartel publicitario vertical con tu marca ficticia aplicando el proceso completo: guías, máscara, filtro y ajuste, y presentalo en clase.",
+      "pasos": [
+        "Creá un documento de 1080x1350 px (formato de historias de redes).",
+        "Agregá la composición de guías con márgenes de 60 px.",
+        "Colocá una foto como objeto inteligente a toda la altura.",
+        "Creá una máscara de capa para fundir la foto con el fondo en la parte inferior.",
+        "Sumá un texto con estilo, un ajuste de tono y un filtro de desenfoque en el fondo; exportá como cierre-nombre.png y presentalo."
+      ],
+      "entrega": "Entregá el PNG del micro-cartel y el PSD con capas, máscaras y ajustes ordenados."
+    }
+  ],
+  "entrega": "Se evalúa el afiche completo: estructura con guías, foto con máscara, texto con estilos, filtro aplicado con criterio y PSD bien organizado.",
+  "lectura": "Esta clase une todas las técnicas del módulo en una sola pieza. Las máscaras te permiten ocultar sin destruir, los filtros multiplican los climas visuales y las guías ordenan la maquetación como en CorelDRAW. El diseño integral es la profesión: un archivo limpio, una composición clara y una exportación pensada para su destino. Con esto ya tenés el kit completo del diseñador publicitario con Photoshop.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Muestra un afiche publicitario real y repasa qué herramientas lo componen", "min": "10 min" },
+      { "titulo": "Máscaras de capa y de recorte", "que": "Ocultar y revelar con pinceles, y acoplar ajustes con recorte", "min": "25 min" },
+      { "titulo": "Filtros", "que": "Recorrer licuar, desenfoques, estilizar, interpretar y ruido", "min": "20 min" },
+      { "titulo": "Guías y composición", "que": "Crear márgenes y columnas con diseño de guía", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Armar el afiche integral paso a paso con asistencia", "min": "20 min" },
+      { "titulo": "Cierre del curso", "que": "Presentar afiches, repasar con el interactivo y celebrar cierre del módulo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar el afiche final con las piezas de Corel: dos programas, un mismo criterio de diseño.",
+      "Preguntar qué pieza profesional les gustaría diseñar ahora que saben hacer todo el flujo."
+    ],
+    "aclarar": [
+      "Las máscaras de recorte y las de capa son complementarias, no lo mismo.",
+      "Los filtros destructivos modifican píxeles: usarlos sobre copias u objetos inteligentes.",
+      "Las guías no se imprimen ni se exportan: solo organizan el diseño."
+    ],
+    "ejemplos": [
+      "Recortar una foto a la silueta de una forma con máscara de recorte.",
+      "Aplicar licuar y mostrar cómo volver atrás con el historial.",
+      "Alinear títulos con guías inteligentes y mostrar el 'chasquido' de encaje."
+    ]
+  }
+}

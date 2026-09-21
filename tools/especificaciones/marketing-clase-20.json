@@ -35,7 +35,8 @@
         "Es medible al detalle: aperturas, clics, bajas y devoluciones.",
         "Creá esa base desde el día 1: cada correo recogido es un cliente potencial.",
         "Regla de oro: siempre con permiso (opt-in) para no caer en spam."
-      ]
+      ],
+      "imagen": { "src": "img/porque.jpg", "alt": "Newsletter de email marketing", "caption": "El email habla directo con gente que se suscribió" }
     },
     {
       "titulo": "Tipos de campañas de email",
@@ -44,12 +45,13 @@
         "No todas las campañas buscan vender. Un calendario de email equilibra informar, enamorar y vender sin cansar a la lista."
       ],
       "puntos": [
-        "Boletín periódico: novedades, contenido útil y enlaces al sitio.",
+"Boletín periódico: novedades, contenido útil y enlaces al sitio.",
         "Email promocional: descuentos, ofertas y lanzamientos de productos.",
         "Campaña de bienvenida: el primer mensaje que define la relación con el suscriptor.",
         "Carrito abandonado: recupera gente que dejó productos sin comprar.",
-        "Serie de automatización: secuencia de emails que se disparan sola por comportamiento."
-      ]
+        "Serie de automatización: secuencia de emails que se dispara sola por comportamiento."
+      ],
+      "imagen": { "src": "img/tipos.jpg", "alt": "Tipos de campañas de email", "caption": "No todas las campañas buscan vender" }
     },
     {
       "titulo": "Elegir y configurar la herramienta",
@@ -77,7 +79,8 @@
         "Etiquetar contactos según cómo llegaron: formulario, evento, compra.",
         "El doble opt-in (confirmación por correo) mantiene una base limpia.",
         "Depurar bajas y correos rebotados mantiene la salud de la base."
-      ]
+      ],
+      "imagen": { "src": "img/base.jpg", "alt": "Lista de contactos y suscriptores", "caption": "Una base segmentada hace llegar cada mensaje al público correcto" }
     }
   ],
   "ejercicios": [

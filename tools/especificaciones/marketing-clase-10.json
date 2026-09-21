@@ -33,7 +33,8 @@
         "Le pedís con contexto: negocio, público, objetivo y formato.",
         "Genera en segundos ideas que antes tomaban horas.",
         "Vale como borrador: siempre revisás, ajustás y mejorás."
-      ]
+      ],
+      "imagen": { "src": "img/chatgpt.jpg", "alt": "Asistente de inteligencia artificial tipo chatbot", "caption": "ChatGPT genera borradores listos para pulir" }
     },
     {
       "titulo": "Prompts efectivos: el arte de pedir",
@@ -45,7 +46,8 @@
         "Estructura base: 'Actuá como community manager de [rubro]', más contexto, público, tono y formato.",
         "Pedí variantes: 'generá 3 opciones de título' o '5 publicaciones' y elegí la mejor.",
         "Indicá límites claros: 'máximo 150 caracteres', 'con llamado a la acción al final'."
-      ]
+      ],
+      "imagen": { "src": "img/prompts.jpg", "alt": "Escritura en un teclado", "caption": "Un prompt específico produce mejores resultados" }
     },
     {
       "titulo": "Tono y voz de marca",
@@ -69,7 +71,8 @@
         "Describí con detalle: estilo, colores, composición y tipo de plano.",
         "Generá varias opciones y elegí la que mejor comunique.",
         "Revisión siempre: datos, ortografía, mensaje y coherencia con tu marca."
-      ]
+      ],
+      "imagen": { "src": "img/visual.jpg", "alt": "Arte digital generado con IA", "caption": "La IA propone piezas visuales; la persona decide" }
     }
   ],
   "ejercicios": [

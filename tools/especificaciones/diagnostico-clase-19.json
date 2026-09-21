@@ -1,0 +1,181 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 19,
+    "titulo": "Recuperación del sistema",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Pendrives Linux Live y herramientas, PCs del aula, respaldos de prueba",
+    "bajada": "¿PC que no arranca, archivos perdidos o cuentas bloqueadas? Hoy aprendés a recuperar equipos: Linux Live para acceder al disco, la consola de recuperación de Windows y el restablecimiento de contraseñas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 19 - Recuperacion",
+  "objetivos": [
+    "Arrancar un Linux Live para acceder a discos sin sistema.",
+    "Usar el CMD de recuperación de Windows (opciones de arranque).",
+    "Recuperar archivos desde un equipo que no inicia.",
+    "Restablecer la contraseña de Windows."
+  ],
+  "teoria": [
+    {
+      "titulo": "Linux Live para rescatar equipos",
+      "emoji": "✈️",
+      "imagen": {
+        "src": "img/linux-live.jpg",
+        "alt": "Pendrive Linux live para recuperación",
+        "caption": "Un pendrive Linux Live convierte al técnico en el dueño del equipo."
+      },
+      "parrafos": [
+        "Un Linux Live es el sistema 'de rescate': arranca desde el pendrive sin tocar el disco. Desde ahí podés ver todas las particiones aunque Windows no inicie y copiar archivos a otro dispositivo."
+      ],
+      "puntos": [
+        "Arranca sin instalar nada y ajeno al disco interno.",
+        "Ve particiones NTFS y ext4 sin problemas.",
+        "Ideal para respaldar archivos de un equipo 'muerto'.",
+        "Antes de cualquier reparación: copiar todo lo importante."
+      ]
+    },
+    {
+      "titulo": "CMD en el arranque de Windows",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/cmd.png",
+        "alt": "Consola de comandos de Windows",
+        "caption": "El CMD de recuperación permite reparar el arranque, no solo borrar archivos."
+      },
+      "parrafos": [
+        "Windows ofrece un entorno de recuperación (WinRE) que se abre al fallar el arranque o con una tecla especial. Desde ahí, 'Símbolo del sistema' muestra un CMD con herramientas de reparación."
+      ],
+      "puntos": [
+        "Acceso: opciones de recuperación de Windows.",
+        "Comandos útiles: bootrec /fixmbr, /fixboot, /rebuildbcd.",
+        "sfc /scannow verifica archivos del sistema.",
+        "El CMD solo permite reparar, no reemplaza al sistema arrancado."
+      ]
+    },
+    {
+      "titulo": "Acceso al disco y recuperación de archivos",
+      "emoji": "🗂️",
+      "parrafos": [
+        "Con el disco montado desde Linux Live o con programas de recuperación, podés rescatar fotos y documentos aunque Windows no quiera abrir."
+      ],
+      "puntos": [
+        "Montar la partición en Linux Live y navegar los archivos.",
+        "Copiar a un pendrive o disco externo sano.",
+        "Programas de recuperación para archivos borrados: recuva, testdisk, photorec.",
+        "No instalar software en el disco dañado."
+      ]
+    },
+    {
+      "titulo": "Restablecimiento de contraseña de Windows",
+      "emoji": "🔑",
+      "parrafos": [
+        "Cuando el usuario olvida su contraseña, el técnico puede restablecerla sin perder los archivos, con herramientas de recuperación o desde el CMD."
+      ],
+      "puntos": [
+        "En Windows 10/11 hay opciones de restablecimiento integradas.",
+        "Herramientas como Offline NT Password lo hacen desde un Live.",
+        "Nunca se 'descifra': se reemplaza la contraseña.",
+        "Después del restablecimiento, avisar al usuario de cambiar la clave."
+      ]
+    },
+    {
+      "titulo": "Secuencia de rescate paso a paso",
+      "emoji": "✅",
+      "parrafos": [
+        "La metodología del técnico: primero el respaldo, después la reparación. Nunca se trabaja sobre un disco sin haber rescatado lo valioso."
+      ],
+      "puntos": [
+        "1. Arrancar con Linux Live.",
+        "2. Montar el disco y respaldar archivos críticos.",
+        "3. Reparar el arranque o el sistema.",
+        "4. Restablecer contraseñas y devolver la PC."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: recuperación",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre Linux Live, CMD y contraseñas.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Aplicá los pasos en la práctica guiada."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Para qué sirve un sistema Linux Live?",
+            "opciones": ["Arrancar de un pendrive y acceder al disco sin tocar nada", "Reducir el consumo de energía", "Reemplazar a la BIOS", "Acelerar Windows"],
+            "correcta": "Arrancar de un pendrive y acceder al disco sin tocar nada"
+          },
+          {
+            "pregunta": "¿Qué comando repara el sector de arranque de Windows?",
+            "opciones": ["bootrec /fixmbr", "dir", "cls", "chkdsk /r"],
+            "correcta": "bootrec /fixmbr"
+          },
+          {
+            "pregunta": "El primer paso ante una PC que no arranca es...",
+            "opciones": ["Respaldar los archivos importantes", "Formatear el disco", "Apagar la PC para siempre", "Comprar componentes nuevos"],
+            "correcta": "Respaldar los archivos importantes"
+          },
+          {
+            "pregunta": "¿Cómo se recupera la contraseña de Windows?",
+            "opciones": ["Se restablece con herramientas de recuperación", "Se descifra con una fórmula milagrosa", "Se compra otra licencia", "Se borra Windows"],
+            "correcta": "Se restablece con herramientas de recuperación"
+          },
+          {
+            "pregunta": "Para recuperar archivos borrados conviene...",
+            "opciones": ["Tener el disco apagado hasta usar el recuperador", "Instalar el software en el mismo disco", "Volver a escribir archivos encima", "Formatear rápido"],
+            "correcta": "Tener el disco apagado hasta usar el recuperador"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Simulacro de rescate",
+      "consigna": "Simulá la recuperación completa de una PC que 'no arranca' usando las herramientas de clase.",
+      "pasos": [
+        "Arrancá el Linux Live y montá la partición de Windows.",
+        "Copiá los archivos de usuario a un pendrive de respaldo.",
+        "Probá desde el CMD de Windows los comandos de reparación.",
+        "Simulá la pérdida de contraseña y restablecela.",
+        "Documentá cada paso con capturas."
+      ],
+      "entrega": "Informe del rescate con capturas de cada herramienta usada."
+    }
+  ],
+  "entrega": "El docente revisará el informe de rescate y el interactivo.",
+  "lectura": "La recuperación es el arte de rescatar equipos 'muertos': un Linux Live da acceso al disco, el CMD repara el arranque y las herramientas adecuadas restablecen contraseñas. Regla de oro: respaldar antes de reparar, y nunca tocar un disco sin haber salvado los datos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar dual boot y presentar el peor escenario: la PC que no arranca", "min": "10 min" },
+      { "titulo": "Linux Live", "que": "Arrancar el pendrive Live y navegar las particiones en vivo", "min": "20 min" },
+      { "titulo": "CMD de recuperación", "que": "Abrir WinRE y ejecutar bootrec y sfc en una PC de prueba", "min": "20 min" },
+      { "titulo": "Recuperación de archivos", "que": "Copiar archivos y probar un recuperador de archivos", "min": "15 min" },
+      { "titulo": "Contraseñas", "que": "Restablecer una contraseña de prueba en duplas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez alguien perdió fotos y quiso recuperarlas. Usar ese caso.",
+      "Presentar la secuencia como 'bombero de PCs': primero apagar el fuego (respaldo), después reparar."
+    ],
+    "aclarar": [
+      "Linux Live no cura Windows: permite acceder y respaldar.",
+      "bootrec repara el arranque, no borra archivos.",
+      "Restablecer contraseña es legal cuando el equipo y la data son del cliente/usuario: remarcar la ética."
+    ],
+    "ejemplos": [
+      "Montar la partición NTFS desde Linux Live y mostrar los archivos de usuario.",
+      "Ejecutar bootrec en un equipo con arranque roto y reiniciar.",
+      "Recuperar un archivo de prueba borrado recién eliminado."
+    ]
+  }
+}

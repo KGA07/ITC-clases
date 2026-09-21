@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 16,
+    "titulo": "Selección en Photoshop: marcos, lazos y máscaras",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a aprender a seleccionar partes de una imagen con marcos, lazos, selección rápida y varita mágica; perfeccionar bordes, invertir la selección y transformarla libremente para componer.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 16 Seleccion",
+  "objetivos": [
+    "Seleccionar áreas con marcos rectangular y elíptico.",
+    "Usar el lazo, la selección rápida y la varita mágica.",
+    "Invertir y perfeccionar los bordes de una selección.",
+    "Aplicar transformación libre y deformar selecciones."
+  ],
+  "teoria": [
+    {
+      "titulo": "Marcos y herramientas geométricas",
+      "emoji": "🔳",
+      "imagen": {
+        "src": "img/figura-seleccion.png",
+        "alt": "Figura de apoyo de selección rectangular",
+        "caption": "El marco rectangular selecciona áreas con formas geométricas y pocos clics."
+      },
+      "parrafos": [
+        "La selección le dice a Photoshop qué píxeles vas a editar. El marco rectangular selecciona zonas rectas; el marco elíptico, zonas con curvas. Con Shift centrás en un cuadrado o círculo perfecto y con Alt dibujás desde el centro.",
+        "Seleccionar con marcos es rápido para recortes geométricos: botones, tarjetas, carteles. La selección se ve como 'hormigas marchando' (línea punteada animada)."
+      ],
+      "puntos": [
+        "Marco rectangular (M): áreas rectangulares exactas.",
+        "Marco elíptico (M con Shift y Alt): círculos perfectos y desde el centro.",
+        "Ctrl + D deselecciona; Ctrl + Shift + D la vuelve a traer.",
+        "Sumar y restar áreas con Shift y Alt mientras hacés clic."
+      ]
+    },
+    {
+      "titulo": "Lazo, selección rápida y varita mágica",
+      "emoji": "🪄",
+      "imagen": {
+        "src": "img/figura-seleccion2.png",
+        "alt": "Figura de apoyo de selecciones libres",
+        "caption": "Con la varita mágica un clic selecciona zonas de color similar."
+      },
+      "parrafos": [
+        "El lazo selecciona a mano alzada: dibujás el contorno siguiendo el borde. El lazo poligonal hace clics rectos y el magnético se 'pega' a los bordes contrastados de la imagen.",
+        "La selección rápida (W) pinta la zona que querés seleccionar: Photoshop detecta los bordes automáticamente. La varita mágica selecciona por color: un clic sobre un área de tono parecido la abarca toda, con tolerancia configurable."
+      ],
+      "puntos": [
+        "Lazo (L): selección libre a mano alzada.",
+        "Selección rápida (W): pintás y detecta bordes de forma automática.",
+        "Varita mágica (W): selecciona píxeles de color similar.",
+        "La tolerancia de la varita controla cuánto 'parecido' se toma."
+      ]
+    },
+    {
+      "titulo": "Perfeccionar bordes y descontaminar",
+      "emoji": "🩹",
+      "parrafos": [
+        "Las selecciones del pelo, los bordes difusos y los rincones con luz se ven 'cortados'. El comando Perfeccionar bordes (en Seleccionar y máscara) permite suavizar, contraer, desplumar y redescubrir detalles alrededor de los bordes seleccionados.",
+        "La descontaminación de colores recorta los halos del borde original —esa línea de color de fondo que rodea a la selección— dejando el recorte limpio para ponerlo sobre otro fondo."
+      ],
+      "puntos": [
+        "Suavizado y pluma: bordes menos 'serrucho'.",
+        "Contraer y descontaminar: elimina halos del color de fondo.",
+        "Perfecto para retratos con pelo: los bordes finos se recuperan.",
+        "La vista previa muestra el resultado sobre distintos fondos."
+      ]
+    },
+    {
+      "titulo": "Invertir selección y transformación libre",
+      "emoji": "🔄",
+      "parrafos": [
+        "Invertir la selección (Ctrl + Shift + I) cambia el área elegida por el resto de la imagen: si seleccionás el cielo, invertir selecciona todo lo demás. Es clave para borrar fondos.",
+        "Con la selección activa, Edición > Transformación libre (Ctrl + T) escala, rota, inclina y deforma el contenido seleccionado. El modo 'Deformar' arrastra una grilla con nodos para doblar la selección como quieras."
+      ],
+      "puntos": [
+        "Ctrl + Shift + I invierte la selección activa.",
+        "Ctrl + T: transformación libre con mangos.",
+        "El modo Deformar permite doblar la selección con una grilla.",
+        "Enter confirma la transformación; Esc la cancela."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Recortar un personaje y montarlo",
+      "consigna": "Seleccioná un objeto o persona de una foto, perfeccioná sus bordes y montalo sobre un fondo nuevo con transformación libre.",
+      "pasos": [
+        "Abrí una foto con un objeto definido (ej. una taza sobre un fondo simple).",
+        "Con la varita mágica seleccioná el fondo y presioná Ctrl + Shift + I para invertir la selección: te queda el objeto.",
+        "Alternativa: usá selección rápida y pintá el objeto, corrigiendo con Shift y Alt.",
+        "Abrí Seleccionar y máscara y perfeccioná los bordes: suavizado ligero y descontaminación.",
+        "Abrí una segunda foto con un fondo nuevo y pegá el objeto (Ctrl + V).",
+        "Con Ctrl + T escalá y rotá el objeto para que quede natural; confirmá con Enter y guardá como seleccion-nombre.psd."
+      ],
+      "entrega": "Exportá el montaje en PNG y comparalo con el primer recorte sin perfeccionar.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué atajo invierte la selección activa?",
+            "opciones": ["Ctrl + Shift + I", "Ctrl + D", "Alt + Supr", "Ctrl + T"],
+            "correcta": "Ctrl + Shift + I"
+          },
+          {
+            "pregunta": "¿Qué herramienta selecciona por COLOR con un clic?",
+            "opciones": ["Varita mágica", "Marco rectangular", "Lazo poligonal", "Recortar"],
+            "correcta": "Varita mágica"
+          },
+          {
+            "pregunta": "La selección rápida funciona:",
+            "opciones": ["Pintando y detectando bordes automáticamente", "Solo con fotos en blanco y negro", "Con marcos geométricos", "Rellenando toda la capa"],
+            "correcta": "Pintando y detectando bordes automáticamente"
+          },
+          {
+            "pregunta": "El comando para ablandar el borde 'serrucho' de una selección es:",
+            "opciones": ["Suavizado y pluma", "Deshacer", "Tamaño de imagen", "Guardar para web"],
+            "correcta": "Suavizado y pluma"
+          },
+          {
+            "pregunta": "¿Qué comando activa la transformación libre?",
+            "opciones": ["Ctrl + T", "Ctrl + D", "Ctrl + Q", "Ctrl + S"],
+            "correcta": "Ctrl + T"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Silueta con lazo poligonal",
+      "consigna": "Seleccioná un objeto de bordes rectos o casi rectos con el lazo poligonal y separalo de su fondo en una capa nueva.",
+      "pasos": [
+        "Abrí una foto con un objeto de contorno geométrico (ej. un edificio o un libro).",
+        "Con el lazo poligonal, marcá clic por clic el contorno del objeto.",
+        "Con la selección activa, copiá con Ctrl + C y pegá con Ctrl + V (se crea una capa nueva).",
+        "Ocultá la capa de fondo para verificar que el recorte quedó limpio.",
+        "Corregí los bordes con una máscara de capa pintada de negro si hace falta y exportá como silueta-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del objeto recortado sobre un fondo de color de tu elección."
+    }
+  ],
+  "entrega": "Se evalúa la limpieza del recorte (bordes sin halos) y la naturalidad del montaje sobre el fondo nuevo.",
+  "lectura": "La selección es el corazón de Photoshop: todo el retoque depende de poder aislar lo que querés tocar. Hay una herramienta para cada caso —geométrica, a mano alzada, por color o automática— y el paso final de perfeccionar bordes es lo que separa un recorte amateur de uno profesional. Con invertir y transformación libre ya estás listo para componer.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar una composición con un personaje recortado y preguntar cómo se logró", "min": "10 min" },
+      { "titulo": "Marcos y lazos", "que": "Practicar rectángulos, elipses, lazos y polígono", "min": "20 min" },
+      { "titulo": "Selección rápida y varita", "que": "Probar detección de bordes y tolerancia de color", "min": "20 min" },
+      { "titulo": "Perfeccionar bordes", "que": "Suavizar, contraer, descontaminar y ver el recorte", "min": "20 min" },
+      { "titulo": "Invertir y transformar", "que": "Aplicar Ctrl + Shift + I y Ctrl + T sobre el personaje", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repasar con el interactivo y corregir montajes", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez quisieron sacar el fondo de una foto de perfil: hoy empieza ese poder.",
+      "Comparar con el PowerClip de Corel: allá el marco era una forma; acá la selección es píxeles."
+    ],
+    "aclarar": [
+      "La tolerancia de la varita modifica cuánta área abarca: alta abarca más.",
+      "Perfeccionar bordes se trabaja con vista previa sobre fondo negro y blanco.",
+      "Una selección se pierde con Ctrl + D; usá Ctrl + Shift + D para recuperarla."
+    ],
+    "ejemplos": [
+      "Seleccionar el cielo de una foto y pintarlo de otro color con relleno.",
+      "Mostrar el pelo de un retrato antes y después de perfeccionar bordes.",
+      "Transformar una selección sin confirmar y ver cómo se deforma en vivo."
+    ]
+  }
+}

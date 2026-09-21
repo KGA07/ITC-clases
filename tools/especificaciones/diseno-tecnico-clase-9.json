@@ -1,0 +1,169 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 9,
+    "titulo": "Capas de una planta de vivienda",
+    "modulo": "Módulo 1 – Fundamentos de AutoCAD",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a aplicar capas a un caso real: una planta de vivienda. Crearás capas de muros, aberturas, cotas, mobiliario, sanitarios, electricidad, techos y parcela, y dibujarás los primeros muros.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 9 - Capas de planta de vivienda",
+  "objetivos": [
+    "Diseñar el esquema de capas completo de una planta de vivienda.",
+    "Crear cada capa temática con color, tipo y grosor de línea adecuados.",
+    "Dibujar los muros de la planta sobre su capa específica.",
+    "Activar y desactivar capas para ver el dibujo por temas."
+  ],
+  "teoria": [
+    {
+      "titulo": "El esquema de capas de una vivienda",
+      "emoji": "🏠",
+      "imagen": {
+        "src": "img/planta.jpg",
+        "alt": "Planta de vivienda con capas",
+        "caption": "En una planta de vivienda cada tema de dibujo vive en su propia capa."
+      },
+      "parrafos": [
+        "Una planta de vivienda no es un solo dibujo: reúne muros, aberturas, cotas, mobiliario, sanitarios, electricidad, techos y la parcela. Cada uno se dibuja en su capa para poder mostrarlo u ocultarlo por separado.",
+        "El criterio de capas se define antes de empezar y se respeta durante todo el proyecto."
+      ],
+      "puntos": [
+        "MUROS: rojo, grosor grueso (0.50 mm).",
+        "ABERTURAS: azul: puertas y ventanas.",
+        "COTAS: verde: todas las medidas.",
+        "MOBILIARIO, SANITARIOS, ELECTRICIDAD, TECHOS y PARCELA en colores propios."
+      ]
+    },
+    {
+      "titulo": "Creación de las capas temáticas",
+      "emoji": "🗂️",
+      "imagen": {
+        "src": "img/muros.jpg",
+        "alt": "Muros dibujados sobre su capa",
+        "caption": "Los muros se dibujan sobre la capa MUROS y con su grosor de línea."
+      },
+      "parrafos": [
+        "En el administrador de propiedades de capa se crean las capas con nombres claros y se definen sus propiedades. Un buen criterio: nombre en mayúsculas, color pensado para distinguir en pantalla y grosor pensado para la impresión."
+      ],
+      "puntos": [
+        "Crear las 8 capas temáticas en un solo paso.",
+        "Asignar color y tipo de línea a cada una.",
+        "Definir el grosor de línea según la importancia de cada tema.",
+        "Guardar un estado de capa (ej. 'TodoOn') para volver rápido."
+      ]
+    },
+    {
+      "titulo": "Algunos comandos para dibujar muros",
+      "emoji": "🧱",
+      "parrafos": [
+        "Para dibujar los muros conviene la polilínea cerrada con ancho o el comando específico de muro múltiple, y apoyarse en coordenadas y referencias de objetos. Se dibuja el eje y luego se le da el espesor del muro."
+      ],
+      "puntos": [
+        "Polilínea con ancho 0.20 para muros interiores de 20 cm.",
+        "Rectángulo para pilares y encuentros.",
+        "Orto y referencia a objetos para esquinas exactas.",
+        "Línea múltiple para muros de doble trazo interior-exterior."
+      ]
+    },
+    {
+      "titulo": "La parcela (terreno)",
+      "emoji": "📐",
+      "imagen": {
+        "src": "img/parcela.jpg",
+        "alt": "Parcela o terreno de la vivienda",
+        "caption": "La parcela se dibuja en su capa, rodeando el plano de la vivienda."
+      },
+      "parrafos": [
+        "La parcela delimita el terreno y se dibuja normalmente como contorno cerrado en su propia capa, con líneas de borde o con tramas de terreno. Es el marco donde se inserta la planta de la vivienda."
+      ],
+      "puntos": [
+        "Contorno cerrado con la medida real del lote.",
+        "Capa PARCELA con color de tierra o amarillo.",
+        "Puede llevar ejes de mensura y medidas de frente y fondo.",
+        "Con desfase o copia se generan retiros si los necesitás."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá el esquema de capas",
+      "consigna": "Respondé el interactivo sobre el esquema de capas de una vivienda.",
+      "pasos": [
+        "Repasá las 8 capas y sus colores.",
+        "Pensá qué se ocultaría al apagar cada capa.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con la tabla de capas a la vista.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿En qué capa se dibuja una puerta?",
+            "opciones": ["MUROS", "ABERTURAS", "COTAS", "TECHOS"],
+            "correcta": "ABERTURAS"
+          },
+          {
+            "pregunta": "¿Qué grosor conviene para la capa de MUROS?",
+            "opciones": ["0.05 mm", "0.25 mm", "0.50 mm", "Sin importar"],
+            "correcta": "0.50 mm"
+          },
+          {
+            "pregunta": "¿Qué se dibuja en la capa PARCELA?",
+            "opciones": ["Los muebles", "El terreno", "Los caños", "Las luces"],
+            "correcta": "El terreno"
+          },
+          {
+            "pregunta": "¿Por qué conviene guardar un estado de capa?",
+            "opciones": ["Para imprimir en color", "Para volver a la configuración de capas con un clic", "Para borrar capas", "Para convertir unidades"],
+            "correcta": "Para volver a la configuración de capas con un clic"
+          },
+          {
+            "pregunta": "¿Qué herramienta permite que los objetos que dibuja la capa MUROS estén automáticamente en esa capa?",
+            "opciones": ["Aislar", "Definir la capa como actual", "Fusionar capas", "Recorrer capas"],
+            "correcta": "Definir la capa como actual"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Base de la planta: muros y parcela",
+      "consigna": "Creá el esquema de capas y dibujá el arranque de la planta: muros de una vivienda simple y su parcela.",
+      "pasos": [
+        "Creá las capas MUROS, ABERTURAS, COTAS, MOBILIARIO, SANITARIOS, ELECTRICIDAD, TECHOS y PARCELA con sus colores.",
+        "Definí MUROS como actual.",
+        "Con polilínea de ancho 0.20 dibujá un rectángulo de 10 x 8 (muros exteriores de una habitación simple).",
+        "Agregá dos muros interiores de 5 unidades en forma de T.",
+        "Creá la capa PARCELA y dibujá el terreno de 14 x 10 alrededor de la planta.",
+        "Guardá como clase9-planta.dwg."
+      ],
+      "entrega": "El docente revisa el archivo: esquema de capas completo y muros dibujados sobre la capa correcta."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase9-planta.dwg con el esquema de capas completo y los muros iniciales.",
+  "lectura": "La planta de vivienda se construye por temas: cada sistema (muros, aberturas, cotas, mobiliario, sanitarios, electricidad, techos, parcela) vive en su capa. Definir ese esquema antes de dibujar y respetarlo es lo que permite mostrar y ocultar información a demanda y producir planos limpios y profesionales.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar el objetivo: dibujar una vivienda organizada por capas", "min": "10 min" },
+      { "titulo": "Esquema de capas", "que": "Definir las 8 capas temáticas con colores y grosores", "min": "20 min" },
+      { "titulo": "Creación de capas", "que": "Crear las capas en el administrador y guardar el estado", "min": "15 min" },
+      { "titulo": "Dibujo de muros", "que": "Dibujar los muros con polilínea de ancho sobre la capa actual", "min": "25 min" },
+      { "titulo": "Dibujo de parcela", "que": "Crear el terreno en su capa alrededor de la planta", "min": "10 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo sobre el esquema de capas", "min": "10 min" }
+    ],
+    "conecta": [
+      "Preguntar qué les gustaría que se vea y qué no en un plano impreso: la parcela casi nunca se imprime junto a la planta con mobiliario."
+    ],
+    "aclarar": [
+      "Que una capa esté 'actual' es distinto de que exista: se dibuja solo en la actual.",
+      "El grosor de línea de impresión se ve recién con el botón Grosor de línea activo.",
+      "Muros y aberturas deben estar en capas distintas aunque pertenezcan a la misma pared."
+    ],
+    "ejemplos": [
+      "Apagar ELECTRICIDAD para ver la planta sin los cableados.",
+      "Dibujar el muro exterior con polilínea de ancho 0.20 y comparar con un muro sin ancho.",
+      "Aislar la capa PARCELA para imprimir solo el terreno."
+    ]
+  }
+}

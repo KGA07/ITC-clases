@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 19,
+    "titulo": "Herramientas vectoriales y texto en Photoshop",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a dibujar con la pluma y las formas vectoriales dentro de Photoshop, manejar los puntos de ancla y tipografar con el panel de carácter y párrafo, incluso creando máscaras de texto.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 19 Herramientas vectoriales y texto",
+  "objetivos": [
+    "Dibujar trayectorias con la herramienta Pluma.",
+    "Agregar, eliminar y convertir puntos de ancla.",
+    "Crear formas básicas y personalizadas.",
+    "Insertar texto, ajustar carácter y párrafo, y usar máscara de texto."
+  ],
+  "teoria": [
+    {
+      "titulo": "La pluma y los puntos de ancla",
+      "emoji": "🖊️",
+      "imagen": {
+        "src": "img/pluma-bezier.jpg",
+        "alt": "Curva Bézier con puntos de ancla",
+        "caption": "Con la pluma creás curvas precisas: clics para puntos y arrastre para la curvatura."
+      },
+      "parrafos": [
+        "La pluma (P) es la herramienta más precisa de Photoshop para trazar: hacés clic para crear puntos de ancla y arrastrás para curvar los segmentos entre ellos, igual que en CorelDRAW con la Bézier.",
+        "Las trayectorias dibujadas se guardan en el panel de rutas y se convierten en selecciones, formas o rellenos. Dominar la pluma habilita los contornos profesionales: logos, siluetas y recortes perfectos."
+      ],
+      "puntos": [
+        "La pluma dibuja sobre el lienzo sin 'pintar' hasta que le des uso.",
+        "Clic crea puntos rectos; arrastre convierte en curvas con manijas.",
+        "Las rutas se guardan en el panel Rutas.",
+        "Una ruta cerrada se puede convertir en selección o en máscara."
+      ]
+    },
+    {
+      "titulo": "Puntos de ancla: añadir, eliminar y convertir",
+      "emoji": "🔗",
+      "parrafos": [
+        "Las herramientas de pluma suman y restan ancla: la pluma de añadir inserta puntos en un trazo, la de eliminar los quita y la de conversión cambia un punto de curva a esquina o al revés.",
+        "Con la selección directa (A) tocás un punto y lo movés o ajustás sus manijas. La distinción clave: selección de trayecto mueve toda la forma; selección directa edita un punto."
+      ],
+      "puntos": [
+        "Pluma de añadir: + puntos para más control.",
+        "Pluma de eliminar: quita anclas sobrantes.",
+        "Conversión de punto: esquina ↔ curva.",
+        "Selección directa: ajusta cada ancla individualmente."
+      ]
+    },
+    {
+      "titulo": "Formas básicas y personalizadas",
+      "emoji": "🔷",
+      "imagen": {
+        "src": "img/vectores.jpg",
+        "alt": "Ilustración con formas vectoriales",
+        "caption": "Las formas vectoriales se escalan sin perder definición."
+      },
+      "parrafos": [
+        "La herramienta Forma incluye rectángulos, elipses, polígonos, líneas y la forma personalizada con bibliotecas de símbolos. Elegís la forma y la dibujás como capa vectorial editable.",
+        "Las capas de forma conservan la calidad al escalar (a diferencia de la pintura de píxeles) y se pueden recolorar en un instante desde la capa. Son la forma rápida de crear botones, íconos y elementos de interfaz."
+      ],
+      "puntos": [
+        "Formas predefinidas: rectángulo, elipse, polígono y línea.",
+        "Forma personalizada: bibliotecas de símbolos y siluetas.",
+        "Las capas de forma son vectoriales: escalan sin pixelarse.",
+        "Perfectas para botones, íconos y interfaces."
+      ]
+    },
+    {
+      "titulo": "Texto: carácter, párrafo y máscara de texto",
+      "emoji": "🔤",
+      "parrafos": [
+        "La herramienta Texto (T) inserta texto horizontal o vertical. El panel Carácter define fuente, tamaño, interletrado y color; el panel Párrafo define alineación, sangrías y justificación.",
+        "La máscara de texto crea una selección con la forma de las letras: así podés rellenar el texto con una imagen, un degradado o una textura, convirtiendo la tipografía en parte de la composición visual."
+      ],
+      "puntos": [
+        "Panel Carácter: fuente, tamaño, interletrado y color.",
+        "Panel Párrafo: alineación, sangrías e interlineado.",
+        "Máscara de texto: selección con la forma de las letras.",
+        "Doble clic sobre el texto del lienzo te deja editarlo."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Marca vectorial con texto",
+      "consigna": "Dibujá un símbolo simple con la pluma, agregá tu nombre con texto, ajustá el carácter y el párrafo, y creá una versión con máscara de texto rellena con un degradado.",
+      "pasos": [
+        "Nuevo documento 1920x1080, fondo claro.",
+        "Con la pluma, dibujá un triángulo o una curva simple cerrada: 3 clics y cerrá con clic en el primero.",
+        "Usá la selección directa para ajustar las manijas del triángulo.",
+        "Con la herramienta Forma, agregá un botón o ícono de apoyo.",
+        "Escribí tu nombre con la herramienta Texto y desde el panel Carácter ajustá fuente y tamaño.",
+        "Creá una versión con máscara de texto: escribí una palabra, convertila en selección y rellenala con un degradado; guardá como vectorial-nombre.psd."
+      ],
+      "entrega": "Exportá en PNG las dos versiones (símbolo con nombre y palabra con máscara).",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué herramienta crea trayectorias vectoriales con puntos de ancla?",
+            "opciones": ["La pluma", "El pincel", "La esponja", "El tampón"],
+            "correcta": "La pluma"
+          },
+          {
+            "pregunta": "Para mover un SOLO punto de ancla de un trazo usás:",
+            "opciones": ["Selección directa", "Selección de trayecto", "El marco rectangular", "La mano"],
+            "correcta": "Selección directa"
+          },
+          {
+            "pregunta": "¿Qué panel controla la fuente y el interletrado del texto?",
+            "opciones": ["El panel Carácter", "El panel Historial", "El panel Propiedades de canal", "El panel Color"],
+            "correcta": "El panel Carácter"
+          },
+          {
+            "pregunta": "La máscara de texto genera:",
+            "opciones": ["Una selección con la forma de las letras", "Un pincel especial", "Una capa de ajuste de color", "Un filtro de desenfoque"],
+            "correcta": "Una selección con la forma de las letras"
+          },
+          {
+            "pregunta": "¿Qué ventaja tienen las capas de forma sobre las de píxeles?",
+            "opciones": ["Se escalan sin perdida de calidad", "No admiten color", "Son siempre transparentes", "No se pueden borrar"],
+            "correcta": "Se escalan sin perdida de calidad"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Etiqueta vectorial con pluma",
+      "consigna": "Creá una etiqueta o insignia simple con la pluma: un contorno cerrado a mano, un texto centrado y una forma de apoyo.",
+      "pasos": [
+        "Creá un documento 1920x1080 y con la pluma dibujá un escudo simple (5 o 6 puntos de ancla).",
+        "Cerrá el trazo haciendo clic en el primer punto.",
+        "Ajustá las curvas con la selección directa hasta que el escudo quede prolijo.",
+        "Agregá una forma como banda horizontal en el medio y escribí un texto corto sobre ella.",
+        "Rellená el escudo de un color sólido y exportá como insignia-nombre.png."
+      ],
+      "entrega": "Entregá el PNG de la insignia con el trazo de pluma prolijo."
+    }
+  ],
+  "entrega": "Se evalúa la limpieza del trazo con pluma, la tipografía coherente y el resultado de la máscara de texto.",
+  "lectura": "Photoshop no es solo píxeles: su motor vectorial (pluma y formas) convive con el retoque y es la puerta de entrada a los trazados profesionales. Con la pluma más los paneles de texto podés construir piezas editoriales completas dentro del programa. La máscara de texto, además, es un recurso publicitario clásico: letras que esconden fotos y degradados.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar tipografías rellenas de imagen y símbolos dibujados con pluma", "min": "10 min" },
+      { "titulo": "La pluma y los anclas", "que": "Dibujar una forma cerrada simple y ajustar manijas", "min": "25 min" },
+      { "titulo": "Formas y rutas", "que": "Probar formas predefinidas y personalizadas, convertir rutas en selecciones", "min": "20 min" },
+      { "titulo": "Texto y paneles", "que": "Insertar texto y ajustar carácter y párrafo", "min": "15 min" },
+      { "titulo": "Máscara de texto y práctico", "que": "Rellenar letras con degradado y completar la pieza", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Revisar entregas y repasar con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar la pluma de Photoshop con la Bézier de CorelDRAW: misma lógica.",
+      "Buscar afiches con letras rellenas de fotos: ese es el efecto de máscara de texto."
+    ],
+    "aclarar": [
+      "La pluma no pinta hasta que la ruta se rellena o se transforma en selección.",
+      "Añadir/eliminar anclas está en el grupo de la pluma, no en el menú.",
+      "El panel Carácter y Párrafo se abren desde Ventana > Carácter / Párrafo."
+    ],
+    "ejemplos": [
+      "Dibujar un corazón con pluma con dos curvas simétricas ante la clase.",
+      "Rellenar la palabra 'PHOTOSHOP' con un degradado usando máscara de texto.",
+      "Convertir una ruta en selección y luego en máscara de capa."
+    ]
+  }
+}

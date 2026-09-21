@@ -1,0 +1,169 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 8,
+    "titulo": "Capas y unidades",
+    "modulo": "Módulo 1 – Fundamentos de AutoCAD",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a configurar las unidades del dibujo y a organizar el trabajo por capas: crear, eliminar, definir propiedades y controlar la visibilidad de cada elemento.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 8 - Capas y unidades",
+  "objetivos": [
+    "Configurar unidades y escala de inserción con el comando UNIDADES.",
+    "Crear, eliminar y definir capas con su color, tipo y grosor de línea.",
+    "Manejar los estados de capa: activar, inutilizar y bloquear.",
+    "Usar las herramientas de capa para aislar, igualar y recorrer capas."
+  ],
+  "teoria": [
+    {
+      "titulo": "Configuración de unidades",
+      "emoji": "📏",
+      "imagen": {
+        "src": "img/unidades.jpg",
+        "alt": "Configuración de unidades de dibujo",
+        "caption": "En UNIDADES definís el sistema de medida y la escala de inserción del dibujo."
+      },
+      "parrafos": [
+        "El comando UNIDADES (UN) define con qué sistema trabajás: decimal (milímetros/milímetros), arquitectónicas, etc., y cuántos decimales se muestran. También fija la escala de inserción para que los bloques entren con el tamaño correcto."
+      ],
+      "puntos": [
+        "Sistema decimal: el más usado en el curso para medidas en milímetros o metros.",
+        "Precisión: cantidad de decimales que se muestran (0.00, 0.000...).",
+        "Escala de inserción: unidad base de los bloques (milímetros).",
+        "Se abre con UN o desde la cinta → formato → unidades."
+      ]
+    },
+    {
+      "titulo": "Administrador de propiedades de capa",
+      "emoji": "🗂️",
+      "imagen": {
+        "src": "img/capas.jpg",
+        "alt": "Paleta de capas con propiedades",
+        "caption": "El administrador de capas concentra la creación, propiedades y estados de todas las capas."
+      },
+      "parrafos": [
+        "Las capas son hojas transparentes superpuestas que organizan el dibujo por tema: muros, cotas, mobiliario, etc. Cada capa se define con un color, un tipo de línea y un grosor de línea, y los objetos de esa capa heredan esas propiedades.",
+        "Se gestionan desde el administrador de propiedades de capa (CAPA o el botón de la cinta)."
+      ],
+      "puntos": [
+        "Crear capas nuevas con nombre, color y tipo de línea.",
+        "Establecer una capa como actual: se indica con el botón 'Definir actual'.",
+        "Eliminar capas vacías que no se usan.",
+        "La capa 0 y las referencias no se eliminan."
+      ]
+    },
+    {
+      "titulo": "Estados y herramientas de capa",
+      "emoji": "🕹️",
+      "imagen": {
+        "src": "img/estados.jpg",
+        "alt": "Estados de visibilidad de capas",
+        "caption": "Podés apagar, congelar y bloquear capas sin borrar su contenido."
+      },
+      "parrafos": [
+        "Los estados controlan la visibilidad y protección de cada capa: desactivada se oculta, inutilizada se congela (oculta y no participa en operaciones), y bloqueada si bien se ve, no se puede editar."
+      ],
+      "puntos": [
+        "Activar/Desactivar: encender o apagar la visibilidad de la capa.",
+        "Inutilizar/Reutilizar: congelar el contenido durante las operaciones.",
+        "Bloquear/Desbloquear: proteger la capa de ediciones accidentales.",
+        "Herramientas: aislar/desaislar, bloquear, igualar y recorrer capas."
+      ]
+    },
+    {
+      "titulo": "Igualar y aislar capas",
+      "emoji": "🔗",
+      "parrafos": [
+        "AutoCAD ofrece herramientas rápidas de capa: IGUALARCAPA copia la capa de un objeto a otro; AISLARCAPA deja visibles solo los objetos vivos; y RECORRECAPAS navega por los objetos y los ubica por su capa. También se pueden fusionar capas en una sola."
+      ],
+      "puntos": [
+        "Igualar capa: cambiar de capa un objeto a la de otro ya dibujado.",
+        "Aislar: ocultar todo menos lo seleccionado (todo lo demás se desactiva).",
+        "Fusionar: volcar el contenido de varias capas en una.",
+        "Recorrer capas: seleccionar un objeto para conocer y activar su capa."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá capas y unidades",
+      "consigna": "Respondé el interactivo sobre unidades, administrador de capas y estados.",
+      "pasos": [
+        "Abrí el administrador de propiedades de capa y explorá sus opciones.",
+        "Repasá los estados de capa desde la teoría.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral con las respuestas del interactivo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué comando abre la configuración de unidades?",
+            "opciones": ["CAPA", "UNIDADES", "RECORTA", "ESTILO"],
+            "correcta": "UNIDADES"
+          },
+          {
+            "pregunta": "¿Qué estado mantiene visible pero protege la capa de edición?",
+            "opciones": ["Desactivar", "Inutilizar", "Bloquear", "Eliminar"],
+            "correcta": "Bloquear"
+          },
+          {
+            "pregunta": "¿Dónde se crean y se definen las capas?",
+            "opciones": ["En la línea de comandos", "En el administrador de propiedades de capa", "En Design Center", "En la impresora"],
+            "correcta": "En el administrador de propiedades de capa"
+          },
+          {
+            "pregunta": "¿Qué herramienta deja visibles solo los objetos seleccionados?",
+            "opciones": ["Fusionar", "Aislar", "Igualar", "Recorrer"],
+            "correcta": "Aislar"
+          },
+          {
+            "pregunta": "¿Qué capa NO se puede eliminar?",
+            "opciones": ["Muros", "Cotas", "0", "Mobiliario"],
+            "correcta": "0"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Creá la estructura de capas del curso",
+      "consigna": "Configurá las unidades y creá las capas base que vas a usar en todas las clases siguientes.",
+      "pasos": [
+        "Con UNIDADES, configurá sistema decimal, 2 decimales y escala de inserción en milímetros.",
+        "Creá las capas: MUROS (color rojo), ABERTURAS (azul), COTAS (verde), MOBILIARIO (magenta), PARCELA (amarillo).",
+        "Asignale un grosor de línea de 0.50 a MUROS y 0.25 al resto.",
+        "Establecé MUROS como capa actual.",
+        "Dibujá una línea en la capa MUROS y cambiá un objeto a la capa COTAS con la lista de capas.",
+        "Guardá como clase8-capas.dwg."
+      ],
+      "entrega": "El docente verifica la lista de capas y las propiedades asignadas en el archivo."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase8-capas.dwg con las 5 capas creadas y el repaso interactivo.",
+  "lectura": "Las unidades definen la lengua del dibujo (milímetros, metros, decimales) y las capas organizan su contenido para que nunca se mezcle lo que no corresponde. Crear capas con su color y grosor, y manejar estados como desactivar, congelar y bloquear, es lo que hace prolijo y 'profesional' a un archivo de AutoCAD.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar la idea de organizar el trabajo antes de dibujar", "min": "5 min" },
+      { "titulo": "Unidades", "que": "Configurar UNIDADES y explicar la escala de inserción", "min": "15 min" },
+      { "titulo": "Administrador de capas", "que": "Crear capas, definir color/tipo/grosor y eliminar", "min": "25 min" },
+      { "titulo": "Estados de capa", "que": "Activar, inutilizar y bloquear; herramientas de capa", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar la creación de la estructura de capas y el interactivo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso de cuándo conviene aislar o bloquear", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar las capas con las hojas de un informe: cada hoja tiene su tema y su color, pero todas forman el mismo documento."
+    ],
+    "aclarar": [
+      "Desactivar oculta la capa; inutilizar además la saca del cálculo. Bloquear no oculta.",
+      "La propiedad 'DeCapa' hereda el color de la capa; 'PorBloque' hereda del bloque.",
+      "Eliminar una capa con contenido da error a menos que la vacíes o la fusiones."
+    ],
+    "ejemplos": [
+      "Apagar la capa de mobiliario para imprimir solo el dibujo de muros.",
+      "Bloquear la parcela para no moverla por error mientras editás los muros.",
+      "Usar IGUALARCAPA para llevar una línea suelta a la capa correcta."
+    ]
+  }
+}

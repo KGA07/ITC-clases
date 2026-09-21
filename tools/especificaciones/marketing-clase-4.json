@@ -33,7 +33,8 @@
         "Cada red tiene una audiencia y un uso: elegí según tu buyer persona.",
         "El video corto domina la interacción en casi todas las plataformas.",
         "La autenticidad y la respuesta rápida valen tanto como el contenido."
-      ]
+      ],
+      "imagen": { "src": "img/panorama.jpg", "alt": "Iconos de las principales redes sociales", "caption": "Cada red tiene su audiencia y su uso" }
     },
     {
       "titulo": "Cómo funcionan los algoritmos actuales",
@@ -45,7 +46,8 @@
         "Instagram (Reels): prioriza el video corto, original y con retención.",
         "TikTok: algoritmo de descubrimiento muy fuerte, basado en el comportamiento de cada persona.",
         "Facebook: valora comunidades, grupos y contenido que genera conversación."
-      ]
+      ],
+      "imagen": { "src": "img/algoritmo.jpg", "alt": "Algoritmo y personalización de contenidos", "caption": "Los algoritmos muestran lo que estiman que te interesa" }
     },
     {
       "titulo": "Tipos de publicaciones",
@@ -58,7 +60,8 @@
         "Publicaciones de feed: identidad, contenido de valor y ventas.",
         "Historias: cercanía diaria, encuestas y promociones temporales.",
         "Carrouseles: educar con contenido en varias piezas."
-      ]
+      ],
+      "imagen": { "src": "img/formatos.jpg", "alt": "Tipos de publicaciones y creación de contenido", "caption": "Elegí el formato según el objetivo de la publicación" }
     },
     {
       "titulo": "Herramientas para gestionar redes",

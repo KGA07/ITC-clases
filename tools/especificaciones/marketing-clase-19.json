@@ -35,7 +35,8 @@
         "CTR: porcentaje de clics sobre visualizaciones; mide si el anuncio engancha.",
         "CPC y CPM: costo por clic y costo por mil visualizaciones.",
         "Conversiones y costo por resultado: la métrica que finalmente importa si vendés."
-      ]
+      ],
+      "imagen": { "src": "img/metricas.jpg", "alt": "Métricas de una campaña publicitaria", "caption": "Cada métrica responde una pregunta distinta" }
     },
     {
       "titulo": "Frecuencia y fatiga del anuncio",
@@ -49,7 +50,8 @@
         "Se combate cambiando el creativo, la audiencia o pausando el anuncio.",
         "El CTR en baja con frecuencia alta es la señal clásica de fatiga.",
         "Metas empuja el anuncio a otra gente o te advierte del desgaste."
-      ]
+      ],
+      "imagen": { "src": "img/fatiga.jpg", "alt": "Anuncio visto demasiadas veces", "caption": "La frecuencia alta baja el interés y sube el costo" }
     },
     {
       "titulo": "Optimización de presupuesto",
@@ -77,7 +79,8 @@
         "Es la campaña con mejor costo porque habla con gente que ya te conoce.",
         "Exclusión obligatoria: retargeting no es para quienes ya compraron.",
         "Combinar retargeting con una audiencia nueva y similar amplía resultados."
-      ]
+      ],
+      "imagen": { "src": "img/retargeting.jpg", "alt": "Retargeting hacia visitantes previos", "caption": "El retargeting recupera a quienes ya mostraron interés" }
     }
   ],
   "ejercicios": [

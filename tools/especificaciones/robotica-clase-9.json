@@ -1,0 +1,174 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 9,
+    "titulo": "Circuitos de LEDs múltiples – Semáforo",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a controlar varios LED a la vez armando un semáforo: simulación en TinkerCad, construcción en la protoboard y programación de los tiempos de cada luz.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 9 - Semáforo con LEDs",
+  "objetivos": [
+    "Controlar múltiples LEDs con diferentes pines digitales.",
+    "Programar la secuencia de un semáforo con delays.",
+    "Armar un circuito de LEDs múltiples en la protoboard.",
+    "Aplicar rutinas de encendido y apagado con digitalWrite() y delay()."
+  ],
+  "teoria": [
+    {
+      "titulo": "El semáforo como modelo",
+      "emoji": "🚦",
+      "imagen": {
+        "src": "img/semaforo.jpg",
+        "alt": "Semáforo de la calle",
+        "caption": "El semáforo real es una secuencia de tiempos: rojo, verde y amarillo."
+      },
+      "parrafos": [
+        "Un semáforo es el ejemplo perfecto para controlar varios actuadores con tiempos. La secuencia típica es: verde un tiempo, amarillo un tiempo corto, rojo un tiempo, y así sucesivamente en bucle.",
+        "En Arduino, esa secuencia se escribe en loop() con digitalWrite() para prender y apagar cada LED y delay() para marcar la duración de cada estado."
+      ],
+      "puntos": [
+        "digitalWrite(pin, HIGH): enciende el LED de ese pin.",
+        "digitalWrite(pin, LOW): apaga el LED.",
+        "delay(ms): mantiene el estado durante los milisegundos indicados.",
+        "El bucle loop() repite la secuencia sin parar: como un semáforo real."
+      ]
+    },
+    {
+      "titulo": "Simulación en TinkerCad",
+      "emoji": "🖱️",
+      "imagen": {
+        "src": "img/semaforo-led.jpg",
+        "alt": "LEDs de colores en la protoboard",
+        "caption": "Tres LEDs (rojo, amarillo y verde) replican el semáforo."
+      },
+      "parrafos": [
+        "Antes de cablear, armá el semáforo virtual en TinkerCad: tres LEDs con sus resistencias conectados a tres pines. Escribí el código y corré la simulación para ver la secuencia completa sin desarmar nada.",
+        "TinkerCad te deja probar también semáforos de dos vías y ajustar los tiempos hasta quedar satisfecho, y después reproducirlo igual en la placa real."
+      ],
+      "puntos": [
+        "Usá pines distintos para cada LED: por ejemplo 8, 9 y 10.",
+        "Cada LED con su resistencia de 220 Ω, cátodo a GND.",
+        "Probá los tiempos en el simulador y transferilos después.",
+        "Etiquetá cada LED (rojo, amarillo, verde) para no confundirte."
+      ]
+    },
+    {
+      "titulo": "Secuencia de tiempos",
+      "emoji": "⏱️",
+      "parrafos": [
+        "Una secuencia típica: verde 5 segundos, amarillo 2 segundos, rojo 5 segundos. Recorrala con delays en milisegundos (5000 y 2000). El único LED encendido en cada etapa es el que corresponde.",
+        "Un buen ejercicio: aumentar los tiempos con un solo cambio y observar cómo cambia todo el ciclo, como hicimos con las variables en la clase anterior."
+      ],
+      "puntos": [
+        "Verde: digitalWrite(ledVerde, HIGH); delay(5000); digitalWrite(ledVerde, LOW);",
+        "Amarillo: delay(2000).",
+        "Rojo: delay(5000).",
+        "Un ciclo completo dura 12 segundos."
+      ]
+    },
+    {
+      "titulo": "Construcción en la protoboard",
+      "emoji": "🔧",
+      "parrafos": [
+        "Sobre la protoboard, cada LED se coloca con sus patas en filas distintas y su resistencia en serie. Los tres cátodos se conectan a la barra GND común y cada ánodo sale por su pin hacia la placa.",
+        "Trabajá prolijo: cable rojo para la señal de cada LED y negro para GND. Así, si algo no funciona, detectás el problema en segundos."
+      ],
+      "puntos": [
+        "Barras laterales: 5V y GND compartidos.",
+        "Cada LED con su resistencia en serie desde su pin.",
+        "Cátodo de los tres LEDs al GND común.",
+        "Revisá polaridades antes de conectar la placa."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Secuencia de un semáforo",
+      "consigna": "Respondé el quiz sobre la lógica de los LEDs y las secuencias.",
+      "pasos": [
+        "Repasá qué hace digitalWrite y delay.",
+        "Pensá cuánto debe durar cada etapa.",
+        "Simulá mentalmente el orden de la secuencia."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué función enciende el LED del pin 9?",
+            "opciones": ["digitalWrite(9, HIGH)", "digitalWrite(HIGH, 9)", "digitalRead(9)", "delay(9)"],
+            "correcta": "digitalWrite(9, HIGH)"
+          },
+          {
+            "pregunta": "¿Cuánto dura delay(5000)?",
+            "opciones": ["5 milisegundos", "500 milisegundos", "5 segundos", "50 segundos"],
+            "correcta": "5 segundos"
+          },
+          {
+            "pregunta": "¿Qué hace digitalWrite(pin, LOW)?",
+            "opciones": ["Enciende el LED", "Apaga el LED", "Lee el pin", "Pausa el programa"],
+            "correcta": "Apaga el LED"
+          },
+          {
+            "pregunta": "¿Cuál es el orden de una secuencia de semáforo simple?",
+            "opciones": ["Rojo → amarillo → verde", "Verde → amarillo → rojo", "Amarillo → rojo → verde", "Todos juntos"],
+            "correcta": "Verde → amarillo → rojo"
+          },
+          {
+            "pregunta": "¿Por qué la secuencia se repite sola sin un while?",
+            "opciones": ["Porque loop() se repite en bucle infinito", "Porque delay lo fuerza", "Porque el LED es programable", "No se repite sola"],
+            "correcta": "Porque loop() se repite en bucle infinito"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Semáforo simulado y real",
+      "consigna": "Armá el semáforo completo en TinkerCad y luego construilo en la protoboard física.",
+      "pasos": [
+        "En TinkerCad, agregá una placa Uno, tres LEDs (rojo, amarillo, verde) y tres resistencias de 220 Ω.",
+        "Conectá cada resistencia al pin 8, 9 y 10 y cada cátodo a GND.",
+        "Escribí el sketch: en setup(), tres pins de salida; en loop(), la secuencia verde → amarillo → rojo con delays de 5000/2000/5000.",
+        "Corré la simulación y verificá que la secuencia y los tiempos sean correctos.",
+        "Construí el mismo circuito en la protoboard física conectándolo a tu placa.",
+        "Cargá el programa en la placa real y compará el comportamiento con la simulación.",
+        "Desafío: separá ambos vías (dos semáforos que alternan rojo/verde) si el tiempo alcanza."
+      ],
+      "entrega": "Captura del semáforo en TinkerCad + foto del semáforo real funcionando."
+    }
+  ],
+  "entrega": "El docente revisará la captura de la simulación y la foto del circuito real.",
+  "lectura": "El semáforo junta todo lo visto: pines de salida, digitalWrite, delay y la repetición natural de loop(). Dominar la secuencia de LEDs múltiples es la base para mover motores, manejar displays y controlar cualquier actuador con tiempos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Observar un semáforo real por la ventana y cronometrar sus tiempos", "min": "10 min" },
+      { "titulo": "Lógica del semáforo", "que": "Escribir la secuencia en pizarrón antes del código", "min": "20 min" },
+      { "titulo": "Simulación TinkerCad", "que": "Guiar el armado y el código del semáforo virtual", "min": "20 min" },
+      { "titulo": "Código y tiempos", "que": "Explicar delays y la repetición con loop()", "min": "15 min" },
+      { "titulo": "Construcción física", "que": "Transferir el circuito a la protoboard por parejas", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Quiz, desafío de dos vías y puesta en común", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si notaron alguna vez los tiempos distintos del semáforo: verde más largo, amarillo corto. Esa observación se traduce en delays.",
+      "Relacionar la secuencia del semáforo con una coreografía: cada luz tiene su momento."
+    ],
+    "aclarar": [
+      "Un LED por pin evita superar la corriente máxima de salida de la placa.",
+      "delay() detiene el programa completo: si hiciera falta adelantar otras tareas, convendría millis(), que veremos más adelante.",
+      "Fijar bien el orden de la secuencia evita el error de encender dos luces juntas."
+    ],
+    "ejemplos": [
+      "Escribir la secuencia primero con palabras y después traducirla a código.",
+      "Mostrar el efecto de invertir los delays: verde corto y amarillo largo (no es realista).",
+      "Agregar un LED peatonal (blanco o azul) como variante otoñal del proyecto."
+    ]
+  }
+}

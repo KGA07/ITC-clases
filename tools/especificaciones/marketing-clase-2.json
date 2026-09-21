@@ -33,7 +33,8 @@
         "El objetivo responde qué querés lograr; la estrategia, cómo lo vas a lograr.",
         "Un objetivo sin estrategia es un deseo; una estrategia sin objetivo no se puede medir.",
         "Ejemplo: objetivo 'más seguidores', estrategia 'publicaciones diarias de valor + colaboraciones'."
-      ]
+      ],
+      "imagen": { "src": "img/estrategia.jpg", "alt": "Planificación estratégica de marketing", "caption": "El objetivo es el punto; la estrategia, el camino" }
     },
     {
       "titulo": "La propuesta de valor",
@@ -45,7 +46,8 @@
         "Responde: qué problema resolvés, para quién y por qué sos mejor.",
         "Debe ser específica y memorable: evitá 'somos los mejores' y usá beneficios concretos.",
         "Se comunica en todos los canales: bio, slogan, publicidad y textos."
-      ]
+      ],
+      "imagen": { "src": "img/valor.jpg", "alt": "Propuesta de valor de un negocio", "caption": "La propuesta de valor explica por qué elegirte" }
     },
     {
       "titulo": "Branding digital y marca personal",
@@ -57,7 +59,8 @@
         "Elementos de identidad: nombre, colores, tipografía, tono de voz y personalidad.",
         "La coherencia genera confianza: el mismo estilo en todos los canales.",
         "Marca personal: tu experiencia y tus valores deben verse en tu perfil y en tus contenidos."
-      ]
+      ],
+      "imagen": { "src": "img/branding.jpg", "alt": "Identidad de marca y branding", "caption": "La coherencia de identidad genera confianza" }
     },
     {
       "titulo": "Objetivos SMART y mapa de canales",

@@ -35,7 +35,8 @@
         "Blanqueá el remitente: nombre y correo verificados para evitar spam.",
         "El editor por bloques permite armar texto, fotos y botones sin diseñar.",
         "Antes de enviar, revisá la vista previa en celular y computadora."
-      ]
+      ],
+      "imagen": { "src": "img/crear.jpg", "alt": "Creación de campaña de email marketing", "caption": "Toda campaña sigue el mismo flujo de creación" }
     },
     {
       "titulo": "El asunto: la primera batalla",
@@ -49,7 +50,8 @@
         "Curiosidad honesta: intriga, pero sin prometer mentiras.",
         "Personalizar con el nombre del suscriptor mejora la apertura.",
         "Probá dos asuntos con el test A/B de la misma herramienta."
-      ]
+      ],
+      "imagen": { "src": "img/asunto.jpg", "alt": "Bandeja de entrada con correos", "caption": "El asunto define si abren o borran tu email" }
     },
     {
       "titulo": "Contenido y llamado a la acción",
@@ -63,7 +65,8 @@
         "Foto o visual clara que acompañe el mensaje sin recargar el correo.",
         "CTA con verbo de acción: Conocé más, Reservá tu lugar, Comprá ahora.",
         "Un solo CTA principal y repetido: en el medio y al final del mensaje."
-      ]
+      ],
+      "imagen": { "src": "img/contenido.jpg", "alt": "Plantilla de email con llamado a la acción", "caption": "El CTA transforma el mensaje en resultado" }
     },
     {
       "titulo": "Envío y medición",

@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 16,
+    "titulo": "Actualización de sistema operativo",
+    "modulo": "Módulo 2 – Sistemas Operativos",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PCs con Windows 7/10, pendrives de respaldo, instaladores de drivers",
+    "bajada": "Actualizar un sistema significa instalar sobre la partición que ya tiene SO: hay que respaldar archivos de usuario, reinstalar drivers compatibles y hacer los pasos en orden para no perder nada.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 16 - Actualizacion de sistema operativo",
+  "objetivos": [
+    "Explicar la instalación sobre partición con sistema operativo.",
+    "Resguardar archivos de usuario antes de actualizar.",
+    "Reinstalar drivers compatibles después de actualizar.",
+    "Ejecutar una actualización de Windows ordenada y sin pérdida de datos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Instalación sobre partición con SO",
+      "emoji": "💿",
+      "imagen": {
+        "src": "img/actualizacion.jpg",
+        "alt": "Proceso de actualización de Windows",
+        "caption": "Actualizar Windows mantiene los archivos cuando se elige la opción correcta."
+      },
+      "parrafos": [
+        "Actualizar (upgrade) significa instalar un sistema nuevo sobre la partición que ya contiene uno anterior. Windows puede conservar tus archivos y programas si elegís 'Conservar archivos y aplicaciones'."
+      ],
+      "puntos": [
+        "Se elige la misma partición con el sistema actual.",
+        "Opción 'Conservar' mantiene archivos personales y aplicaciones.",
+        "La opción formatear borra todo: solo para instalarlo desde cero.",
+        "Verificar espacio libre suficiente antes de empezar."
+      ]
+    },
+    {
+      "titulo": "Restauración de archivos de usuario",
+      "emoji": "🗂️",
+      "imagen": {
+        "src": "img/restauracion.jpg",
+        "alt": "Herramienta de restauración y respaldo de Windows",
+        "caption": "Respaldo previo = tranquilidad durante la actualización."
+      },
+      "parrafos": [
+        "Antes de tocar cualquier sistema conviene respaldar: documentos, escritorio, descargas, fotos y correo. El pendrive o disco externo son tus mejores aliados."
+      ],
+      "puntos": [
+        "Copiar las carpetas de usuario a un pendrive o disco externo.",
+        "Usar el Historial de archivos de Windows si se configuró.",
+        "Exportar favoritos y contraseñas del navegador.",
+        "Verificar que el respaldo abra en otro equipo antes de actualizar."
+      ]
+    },
+    {
+      "titulo": "Reinstalación de drivers compatibles",
+      "emoji": "🧩",
+      "parrafos": [
+        "Después de actualizar, algunos drivers quedan viejos o genéricos. La regla es reinstalar los controladores del fabricante compatibles con el nuevo sistema."
+      ],
+      "puntos": [
+        "Revisar el Administrador de dispositivos después de actualizar.",
+        "Descargar drivers actualizados del sitio oficial.",
+        "Instalar primero el chipset y luego video, audio y red.",
+        "Un driver de 32 bits no sirve en un sistema de 64 bits."
+      ]
+    },
+    {
+      "titulo": "Pasos del upgrade sin errores",
+      "emoji": "✅",
+      "parrafos": [
+        "La secuencia completa asegura que nadie se quede sin fotos ni documentos en el cambio."
+      ],
+      "puntos": [
+        "1. Respaldar archivos de usuario.",
+        "2. Desconectar periféricos innecesarios.",
+        "3. Insertar el instalador y elegir 'Conservar archivos y aplicaciones'.",
+        "4. Al finalizar: actualizar drivers, activar y restaurar los respaldos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: actualización",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre upgrade, respaldos y drivers.",
+      "pasos": [
+        "Leé la teoría.",
+        "Respondé el interactivo.",
+        "Consultá dudas en la fase práctica."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué significa 'actualizar' un sistema operativo?",
+            "opciones": ["Instalar un sistema nuevo sobre la partición actual", "Borrar el disco por completo", "Comprar una PC nueva", "Cambiar la RAM"],
+            "correcta": "Instalar un sistema nuevo sobre la partición actual"
+          },
+          {
+            "pregunta": "Para no perder los documentos durante el upgrade...",
+            "opciones": ["Se respaldan antes en otro dispositivo", "Se formatea la partición", "Se apaga la PC", "Se instala al revés"],
+            "correcta": "Se respaldan antes en otro dispositivo"
+          },
+          {
+            "pregunta": "¿Qué opción del instalador conserva archivos y aplicaciones?",
+            "opciones": ["Conservar archivos y aplicaciones", "Solo quitar Windows", "Reset de fábrica", "Partición vacía sin instalar"],
+            "correcta": "Conservar archivos y aplicaciones"
+          },
+          {
+            "pregunta": "Después de actualizar, los drivers...",
+            "opciones": ["Conviene reinstalarlos del fabricante", "No importan nunca", "Se borran solos", "Solo se actualizan por internet a la fuerza"],
+            "correcta": "Conviene reinstalarlos del fabricante"
+          },
+          {
+            "pregunta": "¿Qué driver conviene instalar primero tras el upgrade?",
+            "opciones": ["El chipset", "El del monitor", "El del mouse", "El de la impresora"],
+            "correcta": "El chipset"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Actualización simulada",
+      "consigna": "Simulá una actualización de sistema en la PC del aula sin perder datos.",
+      "pasos": [
+        "Respaldá las carpetas de usuario del equipo en un pendrive.",
+        "Documentá qué programas y drivers tiene instalados.",
+        "Ejecutá el instalador hasta la pantalla de elección.",
+        "Elegí la opción 'Conservar archivos y aplicaciones'.",
+        "Si el equipo no permite el upgrade real, documentá los pasos y revertilo."
+      ],
+      "entrega": "Informe de la actualización con capturas y el respaldo verificado."
+    }
+  ],
+  "entrega": "El docente revisará el informe de actualización y el interactivo.",
+  "lectura": "Actualizar un sistema es delicado pero ordenado: elegir la instalación sobre la partición actual, respaldar archivos de usuario y reinstalar drivers compatibles. Estos pasos protegen los datos y evitan que el upgrade termine en una PC sin fotos, documentos ni audio.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar Windows 7 y 10 y plantear el caso de actualizar en vivo", "min": "10 min" },
+      { "titulo": "Instalación sobre partición", "que": "Explicar las opciones del instalador y mostrar la pantalla de elección", "min": "20 min" },
+      { "titulo": "Respaldo de archivos", "que": "Hacer el respaldo de usuario de una PC en vivo con pendrive", "min": "20 min" },
+      { "titulo": "Drivers tras el upgrade", "que": "Recorrer el Administrador de dispositivos post-instalación", "min": "15 min" },
+      { "titulo": "Práctica de simulación", "que": "Guiar el proceso de actualización en duplas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez 'formatearon' y perdieron algo que lamentaron. Servir de advertencia real.",
+      "Mostrar los archivos recuperados del respaldo en vivo después de la simulación."
+    ],
+    "aclarar": [
+      "'Conservar archivos' no es una garantía total: siempre respaldar igual.",
+      "Actualizar no es lo mismo que formatear: una conserva, la otra borra.",
+      "Los drivers viejos pueden seguir funcionando, pero hay que verificar compatibilidad."
+    ],
+    "ejemplos": [
+      "Mostrar una carpeta Documentos respaldada y su recuperación.",
+      "Comparar el Administrador de dispositivos antes y después de instalar el chipset.",
+      "Simular el error 'Espacio insuficiente' y resolverlo limpiando archivos temporales."
+    ]
+  }
+}

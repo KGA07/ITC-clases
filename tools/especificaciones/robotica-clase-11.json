@@ -1,0 +1,175 @@
+{
+  "curso": {
+    "id": "robotica-arduino",
+    "nombre": "Robótica con Arduino",
+    "emoji": "🤖",
+    "color": "#16a34a"
+  },
+  "clase": {
+    "numero": 11,
+    "titulo": "LED RGB y composición de color",
+    "modulo": "Módulo 2 – Programación y actuadores",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con Kit de Arduino por pareja",
+    "materiales": "Kit de desarrollo Arduino + protoboard + PC con IDE",
+    "bajada": "Vas a descubrir cómo se forman los colores con un LED RGB: composición de color, control de intensidad con analogWrite() y repetición de tonos con la estructura for().",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\7- Robotica Arduino\\@Clases\\Clase 11 - LED RGB y composición de color",
+  "objetivos": [
+    "Explicar la composición de color RGB a partir de rojo, verde y azul.",
+    "Controlar la intensidad de un canal con analogWrite().",
+    "Generar diferentes colores combinando los tres canales.",
+    "Usar la estructura de control for() para recorrer valores."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Cómo se forman los colores?",
+      "emoji": "🌈",
+      "imagen": {
+        "src": "img/rgb-composicion.jpg",
+        "alt": "Composición de color por suma de rojo, verde y azul",
+        "caption": "R + G + B sumados dan blanco; combinándolos de a partes se obtienen todos los colores."
+      },
+      "parrafos": [
+        "El modelo RGB forma los colores sumando luces de tres canales: rojo (Red), verde (Green) y azul (Blue). Con los tres al máximo obtenés blanco; sin ninguno, negro; y combinando intensidades intermedias generás millones de colores.",
+        "Este mismo principio usa la pantalla de tu celular y el LED RGB: cada pixel es un conjunto de tres focos diminutos de estos colores."
+      ],
+      "puntos": [
+        "RGB = Red, Green, Blue (rojo, verde, azul).",
+        "Cada canal varía su intensidad de 0 a 255.",
+        "255,0,0 = rojo puro; 0,255,0 = verde; 0,0,255 = azul.",
+        "255,255,255 = blanco; 0,0,0 = apagado."
+      ]
+    },
+    {
+      "titulo": "El LED RGB",
+      "emoji": "💡",
+      "imagen": {
+        "src": "img/rgb-led.jpg",
+        "alt": "LED RGB de cuatro patas",
+        "caption": "Un LED RGB tiene tres LEDs internos y un pin común."
+      },
+      "parrafos": [
+        "El LED RGB es un componente que contiene tres chips emisores (rojo, verde y azul) en una misma cápsula, con cuatro patas: tres ánodos de color y un cátodo común (o la versión de ánodo común).",
+        "En el modelo de cátodo común, la pata más larga es el cátodo y va a GND; cada una de las otras tres patas controla un color y se conecta a un pin de la placa con su resistencia."
+      ],
+      "puntos": [
+        "Cuatro patas: R, G, B y el común.",
+        "Cátodo común: la pata larga va a GND.",
+        "Cada canal necesita su resistencia limitadora (220 Ω).",
+        "Identificá cada pata con la datasheet o probando con 5V."
+      ]
+    },
+    {
+      "titulo": "analogWrite(): intensidad",
+      "emoji": "🎚️",
+      "parrafos": [
+        "digitalWrite() solo prende o apaga, pero analogWrite(pin, valor) permite graduar la intensidad en pines PWM (marcados con ~ en la placa). El valor va de 0 (apagado) a 255 (máximo).",
+        "La placa no entrega voltaje variable real: conmuta la señal muy rápido (PWM) y el ojo percibe un brillo intermedio. Así, variando cada canal del RGB creás los colores."
+      ],
+      "puntos": [
+        "analogWrite(pin, 255): canal al máximo.",
+        "analogWrite(pin, 0): canal apagado.",
+        "Solo funcionan en pines PWM (3, 5, 6, 9, 10 y 11).",
+        "PWM = conmutación rápida que simula una intensidad media."
+      ]
+    },
+    {
+      "titulo": "for(): recorrer valores",
+      "emoji": "🔁",
+      "parrafos": [
+        "La estructura for() repite un bloque un número conocido de veces. Por ejemplo, subir el rojo de 0 a 255 de a un paso es perfecto para un degradado.",
+        "Su formato es for (inicio; condición; incremento) { ... }. Por ejemplo: for (int valor = 0; valor <= 255; valor = valor + 5) { analogWrite(9, valor); delay(20); } recorre todos los tonos del canal."
+      ],
+      "puntos": [
+        "for (int i = 0; i <= 255; i = i + 1) { ... }",
+        "Tres partes: valor inicial, condición de corte e incremento.",
+        "Con delay dentro del for controlás la velocidad del degradado.",
+        "Anidando for para cada canal generás arcoíris automáticos."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Colores y canales",
+      "consigna": "Respondé el quiz sobre composición de color, analogWrite y for().",
+      "pasos": [
+        "Recordá que cada canal varía entre 0 y 255.",
+        "Pensá la combinación que produce cada color famoso.",
+        "Diferenciá cuándo usar digitalWrite y cuándo analogWrite."
+      ],
+      "entrega": "Respuestas en el cuaderno.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué combinación da blanco puro?",
+            "opciones": ["255,0,0", "255,255,255", "0,0,0", "128,0,255"],
+            "correcta": "255,255,255"
+          },
+          {
+            "pregunta": "¿Qué valores usa analogWrite()?",
+            "opciones": ["0 y 1", "0 a 1023", "0 a 255", "-255 a 255"],
+            "correcta": "0 a 255"
+          },
+          {
+            "pregunta": "¿En qué pines funciona analogWrite()?",
+            "opciones": ["En todos", "Solo en pines PWM (3, 5, 6, 9, 10, 11)", "Solo en pines analógicos A0-A5", "Solo en el pin 13"],
+            "correcta": "Solo en pines PWM (3, 5, 6, 9, 10, 11)"
+          },
+          {
+            "pregunta": "¿La combinación 255,0,0 produce?",
+            "opciones": ["Verde", "Rojo puro", "Azul", "Blanco"],
+            "correcta": "Rojo puro"
+          },
+          {
+            "pregunta": "¿Cuál es la sintaxis correcta de un for()?",
+            "opciones": ["for (int i = 0; i <= 255; i = i + 1) { }", "for i=0 to 255 { }", "loop (int i; 255; i++) { }", "for { int i; 255; }"],
+            "correcta": "for (int i = 0; i <= 255; i = i + 1) { }"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Semáforo de colores infinito",
+      "consigna": "Conectá un LED RGB y programá un barrido de colores usando analogWrite() y for().",
+      "pasos": [
+        "En TinkerCad, agregá un LED RGB de cátodo común y conectá su GND a la barra GND.",
+        "Conectá las patas R, G y B a los pines 9, 10 y 11 (PWM) cada una con su resistencia de 220 Ω.",
+        "En setup(): pinMode(9, OUTPUT); pinMode(10, OUTPUT); pinMode(11, OUTPUT);",
+        "En loop(): probá colores fijos con analogWrite — por ejemplo analogWrite(9,255); analogWrite(10,0); analogWrite(11,0);",
+        "Probalo en la simulación y confirmá que ves rojo puro.",
+        "Agregá un for() que suba el verde de 0 a 255 con delay(20) en cada paso.",
+        "Cargá el barrido completo en la placa real y observá el degradado.",
+        "Desafío: combiná dos canales en un mismo for para obtener tonos como amarillo y violeta."
+      ],
+      "entrega": "Captura de TinkerCad con el LED RGB + video o foto del barrido de colores en la placa real."
+    }
+  ],
+  "entrega": "El docente revisará la simulación y el barrido de colores del circuito real.",
+  "lectura": "Con el modelo RGB y analogWrite() tenés en tus manos todos los colores posibles. El LED RGB te enseña que tres canales graduados producen cualquier tonalidad, y que for() automatiza recorrer esas posibilidades con código elegante.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mirar la pantalla de un celular con lupa: manchas de rojo, verde y azul", "min": "10 min" },
+      { "titulo": "Composición RGB", "que": "Explicar el modelo aditivo con el diagrama y mezclas", "min": "20 min" },
+      { "titulo": "El LED RGB y pines PWM", "que": "Cablear el LED RGB identificando cada pata", "min": "20 min" },
+      { "titulo": "analogWrite() y for()", "que": "Escribir el barrido de colores en el proyector", "min": "20 min" },
+      { "titulo": "Práctica", "que": "Guiar colores fijos y degradados por parejas", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Quiz y muestra de los barridos más logrados", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar qué colores ves en un semáforo y si creen que el amarillo es un color primario: se sorprenden con RGB.",
+      "Relacionar la mezcla de luces con mezclar témperas: la diferencia es que la luz suma y la pintura resta."
+    ],
+    "aclarar": [
+      "El LED RGB NO se conecta directo a 5V sin resistencias en cada canal.",
+      "En la versión de ánodo común, el pin común va a 5V y los valores se invierten (0 = máximo).",
+      "analogWrite() en pines PWM no es una salida analógica real aunque se llame así."
+    ],
+    "ejemplos": [
+      "Mostrar colores famosos: 255,0,0 rojo; 0,255,0 verde; 0,0,255 azul; 255,255,0 amarillo.",
+      "Hacer un degradado de rojo a verde pasando por el naranja.",
+      "Anidar dos for para barrer el arcoíris completo por el pin 9 y 10."
+    ]
+  }
+}

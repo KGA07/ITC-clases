@@ -34,7 +34,8 @@
         "Cada palabra se escribe con un símbolo según su tipo.",
         "Del control depende cuánto desperdiciás en búsquedas que no te sirven.",
         "Se combina con las palabras negativas para afinar el resultado."
-      ]
+      ],
+      "imagen": { "src": "img/concordancia.jpg", "alt": "Palabras clave en un buscador", "caption": "La concordancia controla cuándo aparece tu anuncio" }
     },
     {
       "titulo": "Concordancia amplia, frase y exacta",
@@ -48,7 +49,8 @@
         "Exacta: entre corchetes [...]. Ej: [repuestos celular] → solo búsquedas con muy alta similitud.",
         "La amplia con intención (el sistema inteligente) sale por defecto y conviene vigilarla.",
         "Recomendado: empezar con frase y exacta para controlar el gasto, sumando negativas."
-      ]
+      ],
+      "imagen": { "src": "img/tipos.jpg", "alt": "Tipos de concordancia de palabras clave", "caption": "Amplia, frase y exacta: de lo flexible a lo estricto" }
     },
     {
       "titulo": "Recursos adicionales de anuncio",
@@ -62,7 +64,8 @@
         "Recurso de promoción: descuentos y fechas, con etiqueta de precio u oferta.",
         "Ubicación y reseñas: muestran dirección y calificaciones del perfil local.",
         "Los recursos se muestran según el espacio: agregá varios para que Google elija el mejor."
-      ]
+      ],
+      "imagen": { "src": "img/recursos.jpg", "alt": "Enlaces y recursos ampliados del anuncio", "caption": "Los recursos agrandan el anuncio con datos y atajos" }
     },
     {
       "titulo": "Combinar concordancias y recursos",

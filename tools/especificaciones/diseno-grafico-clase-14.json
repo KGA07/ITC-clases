@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 14,
+    "titulo": "Mapas de bits: resolución, tamaño y tipos de archivo",
+    "modulo": "Módulo 2 – Adobe Photoshop",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con Adobe Photoshop instalado",
+    "bajada": "Vas a entender de qué está hecha una imagen de píxeles, cómo se piensa la resolución y el tamaño para pantalla o impresión, y qué formato guardar: PSD, JPG, PNG o GIF.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\2 Modulo PSD\\Clase 14 Mapas de bits",
+  "objetivos": [
+    "Explicar qué es un mapa de bits y cómo se comporta al agrandarse.",
+    "Calcular la resolución necesaria según el destino: pantalla o impresión.",
+    "Elegir el formato de archivo correcto para cada uso.",
+    "Crear un documento nuevo con tamaño y resolución adecuados en Photoshop."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un mapa de bits?",
+      "emoji": "🧊",
+      "imagen": {
+        "src": "img/pixeles.jpg",
+        "alt": "Cuadrícula de píxeles",
+        "caption": "Una imagen digital está formada por una cuadrícula de píxeles: puntitos de color."
+      },
+      "parrafos": [
+        "Un mapa de bits (o imagen raster) está formado por una grilla de píxeles: cada píxel es un cuadradito con un color. Fotos y escaneos son mapas de bits. La cantidad de píxeles define cuánto detalle tiene la imagen.",
+        "Si agrandás un mapa de bits más allá de su tamaño original, los píxeles se estiran y la imagen se ve borrosa o 'crocante'. Por eso la resolución se decide al inicio, no después: no se puede crear detalle que no existe."
+      ],
+      "puntos": [
+        "Píxel: la unidad mínima de color de una imagen digital.",
+        "Cuanto más píxeles, más detalle y más peso de archivo.",
+        "Agrandar un mapa de bits de más pierde calidad.",
+        "Las fotos y los escaneos nacen como mapas de bits."
+      ]
+    },
+    {
+      "titulo": "Resolución y tamaño",
+      "emoji": "📏",
+      "parrafos": [
+        "La resolución indica cuántos píxeles hay por unidad de medida: se mide en dpi (puntos por pulgada) o ppi. Una imagen de 300 dpi tiene el detalle necesario para impresión; una de 72 dpi alcanza para pantalla.",
+        "El tamaño físico (los centímetros que ocupa en el papel) y la resolución se combinan: un mismo archivo puede imprimirse chico en alta calidad o grande en baja. En Photoshop, el diálogo 'Tamaño de imagen' muestra píxeles y centímetros a la vez."
+      ],
+      "puntos": [
+        "dpi/ppi: píxeles que entran en una pulgada.",
+        "Impresión profesional: 300 dpi como estándar.",
+        "Pantalla y web: 72 a 150 dpi alcanzan.",
+        "Cambiar la resolución reconfigura el tamaño físico de la imagen."
+      ]
+    },
+    {
+      "titulo": "Destino: pantalla o impresión",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/mapa-bits.jpg",
+        "alt": "Imagen en pantalla e impresa",
+        "caption": "El mismo diseño se prepara distinto según aterrice en una pantalla o en el papel."
+      },
+      "parrafos": [
+        "El destino define la configuración. Para pantalla: resoluciones de 72-150 dpi, modo RGB y formatos livianos. Para impresión: 300 dpi, modo CMYK (aunque Photoshop trabaja en RGB y convierte al final) y formatos de alta calidad para gráfica.",
+        "Una imagen para un cartel gigante no se 'agranda' después: se prepara con las dimensiones finales y la resolución correcta desde el documento nuevo."
+      ],
+      "puntos": [
+        "Pantalla: menos resolución, modo RGB, liviano.",
+        "Impresión: 300 dpi, modo CMYK, alta calidad.",
+        "Un cartel grande necesita píxeles suficientes en origen.",
+        "La regla: correcta planificación inicial, cero dolor después."
+      ]
+    },
+    {
+      "titulo": "Tipos de archivo: PSD, JPG, PNG y GIF",
+      "emoji": "🗃️",
+      "parrafos": [
+        "PSD es el formato nativo de Photoshop: guarda capas, máscaras y ajustes para seguir editando. JPG comprime fotos con pérdida: ideal para compartir y web, pero aplana todo. PNG mantiene calidad y permite transparencias: perfecto para logos y piezas sobre cualquier fondo.",
+        "GIF comprime con pocos colores (máx. 256) y permite animación simple: se usa para íconos y animaciones chicas. En resumen: PSD para editar, JPG para fotos livianas, PNG para calidad con transparencia y GIF para animación o gráficos planos."
+      ],
+      "puntos": [
+        "PSD: el archivo de trabajo con capas editable.",
+        "JPG: fotos comprimidas, no guarda transparencia.",
+        "PNG: calidad y transparencia, ideal para gráficos.",
+        "GIF: pocos colores y animación básica."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Preparar el lienzo según destino",
+      "consigna": "Creá dos documentos nuevos con la configuración correcta: uno de 10x15 cm a 300 dpi (impresión) y otro de 1920x1080 px a 150 dpi (pantalla). Verificá la diferencia en peso y aspecto.",
+      "pasos": [
+        "Archivo > Nuevo: creá un documento de 10 cm x 15 cm a 300 dpi, RGB.",
+        "Anotá cuántos píxeles quedaron a lo ancho (fijate en 'Dimensiones de imagen').",
+        "Archivo > Nuevo: creá otro de 1920 x 1080 píxeles a 150 dpi.",
+        "En el primero, pintá un rectángulo rojo; en el segundo, uno azul.",
+        "Guardá el primero como JPG de máxima calidad y el segundo como PNG.",
+        "Compará en el Explorador el peso de los dos archivos exportados (JPG y PNG) y anotá tus conclusiones."
+      ],
+      "entrega": "Capturás (Win + Shift + S) los diálogos de tamaño y la carpeta con los dos archivos exportados.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué resolución estándar se usa para imprimir?",
+            "opciones": ["300 dpi", "72 dpi", "10 dpi", "1000 dpi"],
+            "correcta": "300 dpi"
+          },
+          {
+            "pregunta": "¿Qué pasa si agrandás demasiado un mapa de bits?",
+            "opciones": ["Se ve borroso porque se estiran los píxeles", "Se convierte en vectorial automáticamente", "Baja el peso del archivo", "No cambia nada"],
+            "correcta": "Se ve borroso porque se estiran los píxeles"
+          },
+          {
+            "pregunta": "¿Qué formato guarda capas para seguir editando?",
+            "opciones": ["PSD", "JPG", "GIF", "PNG"],
+            "correcta": "PSD"
+          },
+          {
+            "pregunta": "¿Qué formato permite transparencia conservando calidad?",
+            "opciones": ["PNG", "JPG", "GIF de 2 colores", "BMP"],
+            "correcta": "PNG"
+          },
+          {
+            "pregunta": "Para un diseño destinado a la PANTALLA, la resolución alcanza con:",
+            "opciones": ["72 a 150 dpi", "3000 dpi", "Solo 1 dpi", "Sin resolución definida"],
+            "correcta": "72 a 150 dpi"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Tabla de formatos de archivo",
+      "consigna": "Armá una publicación o presentación breve que resuma cuándo usar PSD, JPG, PNG y GIF, con un ejemplo real de cada uno.",
+      "pasos": [
+        "Creá un documento nuevo de 1920x1080 a 300 dpi.",
+        "Dividilo en 4 cuadrantes, uno por formato de archivo.",
+        "En cada cuadrante escribí el nombre del formato y su uso principal.",
+        "Llená el cuadrante PNG con una forma que muestre transparencia y el JPG con una foto local.",
+        "Exportá la tabla como formatos-nombre.png."
+      ],
+      "entrega": "Entregá el PNG de la tabla con los 4 formatos representados."
+    }
+  ],
+  "entrega": "Se evalúan los diálogos de configuración correctos y la elección de formatos en los archivos entregados.",
+  "lectura": "Todo lo que veas en Photoshop es una cuadrícula de puntos. Comprender el mapa de bits explica por qué algunas imágenes salen borrosas al ampliar, por qué a la imprenta hay que entregarle 300 dpi y por qué un PNG se ve mejor que un JPG sobre un fondo manchado. La configuración inicial del documento es la decisión más importante de todo el proyecto.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Acercar una foto impresa bien y una mal para comparar, y preguntar por qué una se ve borrosa", "min": "10 min" },
+      { "titulo": "Mapa de bits y píxeles", "que": "Hacer zoom profundo sobre una foto para ver la cuadrícula de píxeles", "min": "15 min" },
+      { "titulo": "Resolución y tamaño", "que": "Crear documentos con distintas resoluciones y medir el resultado", "min": "20 min" },
+      { "titulo": "Pantalla vs impresión", "que": "Comparar configuraciones y pesos de archivo reales", "min": "20 min" },
+      { "titulo": "Formatos de archivo", "que": "Probar PSD, JPG, PNG y GIF y ver transparencias y pesos", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Resolver el interactivo y repasar la regla de los 300 dpi", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si alguna vez imprimieron una foto del celular y salió borrosa: ese es el concepto.",
+      "Comparar el peso de una selfie vs. un PNG de logo en un pendrive."
+    ],
+    "aclarar": [
+      "dpi y ppi se usan como sinónimos en la práctica diaria, aunque técnicamente difieren.",
+      "Un archivo de 72 dpi no 'es malo': es correcto para pantalla.",
+      "El JPG comprime con pérdida: cada guardado degrada un poco más."
+    ],
+    "ejemplos": [
+      "Agrandar una foto de 72 dpi hasta lo imposible para ver el 'serrucho' de píxeles.",
+      "Guardar un mismo archivo en JPG y PNG para comparar pesos.",
+      "Mostrar un logo PNG sobre fondo de color (transparencia) y sobre fondo blanco."
+    ]
+  }
+}

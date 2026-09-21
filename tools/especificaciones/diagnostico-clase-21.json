@@ -1,0 +1,168 @@
+{
+  "curso": {
+    "id": "diagnostico-mantenimiento",
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "emoji": "🖥️",
+    "color": "#0ea5e9"
+  },
+  "clase": {
+    "numero": 21,
+    "titulo": "Cableado de red",
+    "modulo": "Módulo 3 – Redes",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "Cables UTP, fichas RJ45, crimpadora, tester de cables, canaletas",
+    "bajada": "El cable UTP y las fichas RJ45 son la sangre de toda red alámbrica. Vas a aprender las normas 568A y 568B, armar cables rectos y cruzados, y comprobarlos con el tester.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases\\Clase 21 - Cableado de red",
+  "objetivos": [
+    "Reconocer un cable UTP, sus pares y categorías.",
+    "Explicar las normas 568A y 568B.",
+    "Armar cables rectos y cruzados con RJ45.",
+    "Testear los cables armados y detectar errores."
+  ],
+  "teoria": [
+    {
+      "titulo": "El cable UTP y el conector RJ45",
+      "emoji": "🔌",
+      "imagen": {
+        "src": "img/cable-rj45.jpg",
+        "alt": "Cable de red UTP con conector RJ45",
+        "caption": "El cable UTP termina en fichas RJ45 para conectar PCs y redes."
+      },
+      "parrafos": [
+        "El cable UTP tiene 8 hilos formando 4 pares trenzados (para reducir interferencias). Se termina con fichas RJ45 y se usa en redes LAN de hasta 100 metros."
+      ],
+      "puntos": [
+        "UTP: pares trenzados de colores (blanco/naranja, blanco/verde...).",
+        "RJ45: ficha plástica transparente de 8 posiciones.",
+        "Categorías: Cat5er, Cat6 para más velocidad.",
+        "Un cable armado mal da perdidas y lentitud."
+      ]
+    },
+    {
+      "titulo": "Normas 568A y 568B",
+      "emoji": "📏",
+      "parrafos": [
+        "Para que los 8 hilos queden bien conectados, se usan dos patrones estándar: la norma 568A y la 568B. La diferencia está en el orden de los pares verde y naranja."
+      ],
+      "puntos": [
+        "568B: par naranja + verde (el más usado, por ejemplo en Argentina).",
+        "568A: par verde + naranja.",
+        "El cable recto usa la misma norma en ambos extremos.",
+        "El cable cruzado usa 568A en un extremo y 568B en el otro."
+      ]
+    },
+    {
+      "titulo": "Cable recto y cable cruzado",
+      "emoji": "🔗",
+      "parrafos": [
+        "La elección entre recto y cruzado depende de qué equipos estés conectando."
+      ],
+      "puntos": [
+        "Cable recto: PC → switch/router (la mayoría de los casos).",
+        "Cable cruzado: PC → PC directo, o entre switchs antiguos.",
+        "Hoy los equipos modernos detectan y se adaptan solos (auto-MDIX).",
+        "Convención clásica: recto entre equipos distintos, cruzado entre iguales."
+      ]
+    },
+    {
+      "titulo": "Armado y testeo de cables",
+      "emoji": "🛠️",
+      "imagen": {
+        "src": "img/crimpadora.png",
+        "alt": "Ponchadora o crimpadora para fichas RJ45",
+        "caption": "La ponchadora fija la ficha RJ45 al cable UTP."
+      },
+      "parrafos": [
+        "Armar un cable es un proceso de precisión: pelar, ordenar los hilos por norma, cortarlos parejos, insertar y ponchar. Después, el tester confirma que cada pin esté bien."
+      ],
+      "puntos": [
+        "Pelar el cable 2 cm sin cortar los hilos.",
+        "Ordenar los 8 hilos según 568A o 568B.",
+        "Insertar los hilos hasta el fondo y ponchar la ficha.",
+        "Testear: las 8 posiciones deben encender en orden."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Cuestionario: cableado",
+      "consigna": "Respondé las 5 preguntas del interactivo sobre UTP, RJ45 y normas.",
+      "pasos": [
+        "Leé la teoría de cableado.",
+        "Respondé el interactivo.",
+        "Verificá los conceptos armando tu primer cable."
+      ],
+      "entrega": "Interactivo completo con respuestas correctas.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Cuántos hilos tiene un cable UTP?",
+            "opciones": ["8", "4", "6", "10"],
+            "correcta": "8"
+          },
+          {
+            "pregunta": "La norma más usada para armar cables rectos es...",
+            "opciones": ["568B", "568A", "USB", "HDMI"],
+            "correcta": "568B"
+          },
+          {
+            "pregunta": "Un cable recto sirve para conectar...",
+            "opciones": ["PC a switch", "PC a PC directo", "Router a router antiguo", "Monitor a placa"],
+            "correcta": "PC a switch"
+          },
+          {
+            "pregunta": "¿Qué diferencia al cable cruzado del recto?",
+            "opciones": ["Usa 568A en un extremo y 568B en el otro", "Tiene menos hilos", "Es más corto", "No necesita ficha"],
+            "correcta": "Usa 568A en un extremo y 568B en el otro"
+          },
+          {
+            "pregunta": "¿Con qué herramienta se poncha la ficha RJ45?",
+            "opciones": ["Con la ponchadora (crimpadora)", "Con un martillo", "Con la pinza de uñas", "Con el destornillador plano"],
+            "correcta": "Con la ponchadora (crimpadora)"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Armá dos cables y testealos",
+      "consigna": "Armá un cable recto y un cable cruzado, y verificá ambos con el tester.",
+      "pasos": [
+        "Medí y cortá 2 tramos de cable UTP de 1 metro cada uno.",
+        "Pelá y ordená los hilos: uno con 568B en ambos extremos.",
+        "El otro con 568A en un extremo y 568B en el otro.",
+        "Ponchá las 4 fichas RJ45.",
+        "Testeá ambos cables y anotá el resultado de cada pin."
+      ],
+      "entrega": "Cables recto y cruzado armados y verificados con el tester."
+    }
+  ],
+  "entrega": "El docente pruebe los cables con el tester y revisa el interactivo.",
+  "lectura": "El cableado UTP con fichas RJ45 sigue siendo la base de las redes alámbricas. Dominar las normas 568A/568B, saber cuándo usar cable recto o cruzado, y armarlo y probarlo con el tester te permite dejar redes cableadas y prolijas, listas para configurar.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura y repaso", "que": "Repasar hardware de red y presentar el cable como el medio físico", "min": "10 min" },
+      { "titulo": "Cable UTP y RJ45", "que": "Mostrar el cable por dentro y las partes de la ficha RJ45", "min": "15 min" },
+      { "titulo": "Normas 568A y 568B", "que": "Explicar el orden de pares y anotar la secuencia en el pizarrón", "min": "20 min" },
+      { "titulo": "Recto y cruzado", "que": "Mostrar para qué sirve cada uno y el auto-MDIX moderno", "min": "15 min" },
+      { "titulo": "Práctica de armado", "que": "Guiar el armado y testeado de los dos cables en duplas", "min": "25 min" },
+      { "titulo": "Cierre", "que": "Repaso oral con el interactivo y tabla de resultados", "min": "5 min" }
+    ],
+    "conecta": [
+      "Preguntar si vieron fichas RJ45 en cables de su casa y por qué a veces no andan.",
+      "Mostrar un cable armado 'al ojo' que al tester le falta un pin y la lentitud que genera."
+    ],
+    "aclarar": [
+      "El orden de colores debe ser estricto: un hilo corrido rompe el par.",
+      "La ficha transparente permite ver si los hilos llegaron al fondo.",
+      "Cable de más de 100 m pierde señal: medir bien los tendidos."
+    ],
+    "ejemplos": [
+      "Desarmar una ficha RJ45 de descarte para ver la disposición de los hilos.",
+      "Testear un cable armado a propósito mal para ver cómo falla el tester.",
+      "Pasar por los bancos fichas RJ45 de ambos tamaños (para cable redondo y plano)."
+    ]
+  }
+}

@@ -400,6 +400,7 @@ function corregir(){
 
 // ---------------------------------------------------------------- salida
 function sanitize(s) {
+  // eslint-disable-next-line no-control-regex
   return String(s).replace(/[<>:"/\\|?*\u0000-\u001f]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
@@ -437,7 +438,7 @@ function main() {
     return i >= 0 && argv[i + 1] ? argv[i + 1] : null;
   };
 
-  let specs = [];
+  let specs;
   if (flag('--spec')) {
     specs = [JSON.parse(fs.readFileSync(flag('--spec'), 'utf8'))];
   } else {
@@ -448,6 +449,7 @@ function main() {
     specs = fs
       .readdirSync(SPEC_DIR)
       .filter((f) => f.endsWith('.json'))
+      .filter((f) => !flag('--filtro') || f.startsWith(flag('--filtro')))
       .map((f) => JSON.parse(fs.readFileSync(path.join(SPEC_DIR, f), 'utf8')));
   }
 

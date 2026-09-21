@@ -1,0 +1,171 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 15,
+    "titulo": "Fachadas, vistas y cortes",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Vas a dibujar las fachadas, vistas y cortes de tu planta arquitectónica y de la pieza mecánica, y a usar el desfase en sus dos modos para proyectar medidas.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Dibujos por vista",
+  "objetivos": [
+    "Dibujar la fachada de una vivienda a partir de su planta.",
+    "Proyectar vistas y cortes desde la planta arquitectónica.",
+    "Realizar el corte de la pieza mecánica.",
+    "Usar el desfase múltiple y el desfase punto a atravesar."
+  ],
+  "teoria": [
+    {
+      "titulo": "Fachadas de la vivienda",
+      "emoji": "🏡",
+      "imagen": {
+        "src": "img/fachada.jpg",
+        "alt": "Fachada de vivienda",
+        "caption": "La fachada se dibuja proyectando hacia arriba las medidas horizontales de la planta."
+      },
+      "parrafos": [
+        "Una fachada es la vista exterior de la vivienda. Se dibuja proyectando verticalmente los muros y aberturas desde la planta: cada línea vertical de un muro o de una ventana en planta define dónde va en la fachada.",
+        "Las alturas se toman del diseño: nivel del piso, alfeizares de ventanas, altura de cierre, nivel de techos."
+      ],
+      "puntos": [
+        "Proyectar verticales desde la planta con ayuda de líneas guía.",
+        "Dibujar aberturas en elevación con su alto real.",
+        "Representar el terreno con la línea de corte de rasante.",
+        "Usar capas: FACHADA con sus cotas de nivel."
+      ]
+    },
+    {
+      "titulo": "Vistas arquitectónicas",
+      "emoji": "🪟",
+      "parrafos": [
+        "Las vistas muestran el volumen desde cada lado: frente, contrafrente y laterales. Sobre la planta se elige una dirección de observación y se proyectan todas las líneas de esa dirección."
+      ],
+      "puntos": [
+        "Definir la orientación de cada vista (frente, lateral...).",
+        "Proyectar desde la planta con el desfase y las referencias.",
+        "Agregar niveles y ejes verticales.",
+        "Mantener la coherencia con el corte: no pueden contradecirse."
+      ]
+    },
+    {
+      "titulo": "Cortes: planta y pieza mecánica",
+      "emoji": "🪚",
+      "imagen": {
+        "src": "img/vistacorte.jpg",
+        "alt": "Corte de una edificación",
+        "caption": "El corte secciona el volumen y muestra alturas, losas y encuentros en vertical."
+      },
+      "parrafos": [
+        "El corte es una sección vertical: se imagina que una sierra plana atraviesa el dibujo y se dibuja lo que se ve mirando la cara cortada. En arquitectura muestra losas, techos y alturas; en mecánica muestra los agujeros interiores de la pieza.",
+        "La línea de corte (con sus marcadores de flecha) indica en la planta dónde se secciona."
+      ],
+      "puntos": [
+        "Dibujar la línea de corte y su flecha direccional en la planta.",
+        "Proyectar las medidas verticales reales en el corte.",
+        "Sombrear con ANSI31 las zonas de corte.",
+        "El corte permite ver lo que la planta no muestra."
+      ]
+    },
+    {
+      "titulo": "El desfase: múltiple y punto a atravesar",
+      "emoji": "↔️",
+      "imagen": {
+        "src": "img/desfase.jpg",
+        "alt": "Líneas paralelas desplazadas con desfase",
+        "caption": "El desfase copia objetos a distancia constante, en uno o varios pasos."
+      },
+      "parrafos": [
+        "El desfase (DESFASE) crea copias paralelas a una distancia fija: es la herramienta central para proyectar paredes, tabiques y niveles. La opción 'Múltiple' repite el desfase varias veces con un solo comando; la opción 'Atraviesa' (punto a atravesar) elige la distancia haciendo clic en un punto por el que debe pasar la copia."
+      ],
+      "puntos": [
+        "Desfase simple: distancia + lado hacia dónde copiar.",
+        "Múltiple: repite la copia sin terminar el comando.",
+        "Atraviesa: la copia pasa por un punto que elegís con el clic.",
+        "Con desfase se arman muros dobles, ejes de niveles y retiros."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá fachadas, cortes y desfase",
+      "consigna": "Respondé el interactivo sobre proyección de fachadas, cortes y desfase.",
+      "pasos": [
+        "Repasá cómo se proyecta cada vista desde la planta.",
+        "Explorá las opciones del comando DESFASE.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con los dibujos de ejemplo.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Desde qué dibujo se proyecta la fachada?",
+            "opciones": ["Del corte", "De la planta", "Del sombreado", "De la tabla de aberturas"],
+            "correcta": "De la planta"
+          },
+          {
+            "pregunta": "¿Qué muestra el corte que la planta no muestra?",
+            "opciones": ["Los muros en largo", "Las alturas y el interior vertical", "El mobiliario", "Las cotas de área"],
+            "correcta": "Las alturas y el interior vertical"
+          },
+          {
+            "pregunta": "¿Qué opción del desfase permite elegir la distancia haciendo clic en un punto?",
+            "opciones": ["Múltiple", "Atraviesa", "Polar", "Base"],
+            "correcta": "Atraviesa"
+          },
+          {
+            "pregunta": "¿Qué opción del desfase repite la copia varias veces sin terminar el comando?",
+            "opciones": ["Múltiple", "Atraviesa", "Doble", "Serie"],
+            "correcta": "Múltiple"
+          },
+          {
+            "pregunta": "¿Qué patrón se usa para sombrear la zona de corte?",
+            "opciones": ["DOTS", "ANSI31", "EARTH", "STARS"],
+            "correcta": "ANSI31"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Fachada y corte de la vivienda",
+      "consigna": "Proyectá la fachada principal y un corte transversal de tu planta de la clase 11.",
+      "pasos": [
+        "Abrí tu planta clase11-planta2.dwg.",
+        "Con el desfase proyectá hacia arriba los muros y aberturas de la fachada principal.",
+        "Dibujá en elevación ventanas y puertas con su alfeizar y altura reales.",
+        "Marcá una línea de corte transversal sobre la planta con sus flechas.",
+        "Proyectá el corte con las alturas de piso, losas y techos.",
+        "Sombreado ANSI31 en las zonas de corte del corte.",
+        "Guardá como clase15-fachadacorte.dwg."
+      ],
+      "entrega": "El docente revisa la coherencia entre planta, fachada y corte del archivo."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase15-fachadacorte.dwg verificando la coherencia entre planta, fachada y corte.",
+  "lectura": "La planta es el plano; las fachadas, vistas y cortes son el volumen. Se proyectan a partir de la planta con desfases y referencias, y muestran alturas y espesores que el plano no cuenta. Dominar el desfase, en sus modos múltiple y punto a atravesar, es la base para proyectar velocidad y limpieza en estas vistas.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Repasar el concepto de proyección: planta = base de las vistas", "min": "10 min" },
+      { "titulo": "La fachada", "que": "Proyectar verticales desde la planta con líneas guía y alturas", "min": "25 min" },
+      { "titulo": "Vistas y cortes", "que": "Ubicar la línea de corte y proyectar el corte transversal", "min": "25 min" },
+      { "titulo": "Desfase", "que": "Practicar múltiple y punto a atravesar en muros y niveles", "min": "15 min" },
+      { "titulo": "Sombreado de corte", "que": "Aplicar ANSI31 en las zonas cortadas", "min": "5 min" },
+      { "titulo": "Cierre", "que": "Repaso e interactivo; revisión de coherencia entre vistas", "min": "10 min" }
+    ],
+    "conecta": [
+      "Comparar con los planos de obras: la planta, la fachada y el corte son la misma casa vista desde arriba, de frente y de costado."
+    ],
+    "aclarar": [
+      "Las verticales de la fachada SIEMPRE corresponden con líneas de la planta: son proyecciones, no dibujo libre.",
+      "La línea de corte se indica en la planta y su sentido define qué lado se ve.",
+      "El desfase 'Atraviesa' toma la distancia del punto que elegís: verificá la medida después con una cota."
+    ],
+    "ejemplos": [
+      "Desfase múltiple para dibujar los tres niveles de una losa exactamente paralelos.",
+      "Proyectar la ventana de 1,20 desde la planta hasta la fachada y completar su alto.",
+      "Un corte que atraviesa la puerta de entrada para mostrar su altura real."
+    ]
+  }
+}

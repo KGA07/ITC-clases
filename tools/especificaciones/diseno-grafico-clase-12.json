@@ -1,0 +1,170 @@
+{
+  "curso": { "id": "diseno-grafico", "nombre": "Diseño Gráfico Publicitario", "emoji": "🎨", "color": "#7c3aed" },
+  "clase": {
+    "numero": 12,
+    "titulo": "Logotipos, isotipos, imagotipos y el proceso de diseño",
+    "modulo": "Módulo 1 – CorelDRAW",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con CorelDRAW instalado",
+    "bajada": "Vas a aprender la diferencia entre logotipo, isotipo e imagotipo, y a manejar el briefing y el proceso de diseño para crear la identidad de una marca desde cero.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\3- Diseño Grafico\\@Clases\\1 Modulo Corel Draw\\Clase 9 Crear logos",
+  "objetivos": [
+    "Diferenciar logotipo, isotipo, imagotipo e isologo.",
+    "Armar un briefing claro de una marca nueva.",
+    "Recorrer el proceso de diseño: investigación, bocetos, vectorización y prueba.",
+    "Construir un logotipo vectorial con las herramientas de CorelDRAW."
+  ],
+  "teoria": [
+    {
+      "titulo": "Logotipo, isotipo, imagotipo",
+      "emoji": "🏷️",
+      "imagen": {
+        "src": "img/logotipos.jpg",
+        "alt": "Colección de logotipos",
+        "caption": "Los logotipos condensan la identidad de la marca en un solo recurso visual."
+      },
+      "parrafos": [
+        "La identidad visual de una marca se compone de piezas. El logotipo es la marca tipográfica: el nombre escrito con una tipografía propia que ya 'dice' la marca. El isotipo es el símbolo gráfico sin texto: el ícono que elegís para representarla.",
+        "El imagotipo combina el isotipo y el logotipo de forma integrada —se perciben como una unidad— mientras que el isologo los combina pero los deja funcionar por separado. Muchas marcas usan ambos: el símbolo solo y el símbolo con el nombre."
+      ],
+      "puntos": [
+        "Logotipo: el nombre con una tipografía exclusiva.",
+        "Isotipo: el símbolo o ícono sin palabras.",
+        "Imagotipo: isotipo más nombre integrados.",
+        "Los dos usos (símbolo solo / símbolo + nombre) amplían la versatilidad."
+      ]
+    },
+    {
+      "titulo": "El briefing: la brújula del proyecto",
+      "emoji": "🧭",
+      "imagen": {
+        "src": "img/diseno-logo.jpg",
+        "alt": "Proceso de diseño de un logo",
+        "caption": "Del briefing a los bocetos: el proceso de diseño tiene pasos ordenados."
+      },
+      "parrafos": [
+        "Ningún logo se dibuja a lo loco: primero se confecciona el briefing, el documento donde el cliente describe qué hace la marca, a quién se dirige, qué valores transmite y dónde se va a usar el diseño.",
+        "Un buen briefing tiene preguntas concretas: ¿Qué rubro? ¿Cuál es el público? ¿Qué adjetivos deben asociarse a la marca (confiable, divertida, moderna)? ¿Dónde se usará (tarjetas, redes, cartel)? Las respuestas condicionan color, forma y tipografía."
+      ],
+      "puntos": [
+        "El briefing define rubro, público y valores de la marca.",
+        "Las respuestas guían las decisiones de color y tipografía.",
+        "El briefing se completa junto al cliente antes de dibujar.",
+        "Un briefing flojo produce diseños genéricos y reprocesos."
+      ]
+    },
+    {
+      "titulo": "El proceso de diseño",
+      "emoji": "🪜",
+      "parrafos": [
+        "El proceso profesional es: 1) Investigar (ver la competencia, el rubro), 2) Bocetar en papel muchas opciones, 3) Elegir y vectorizar la más fuerte en CorelDRAW, 4) Probar en contextos reales (tarjeta, afiche, avatar) y 5) Ajustar detalles de proporción, espaciado y color.",
+        "El vectorizado convierte el boceto a curvas limpias: formas simples, esquinas justas y una tipografía certera. Menos elementos, más comunicación: los mejores logos se entienden a una sola mirada."
+      ],
+      "puntos": [
+        "Investigación: la competencia y el rubro marcan el terreno.",
+        "Bocetos en papel: cantidad antes que calidad en la primera etapa.",
+        "Vectorización: construir el logo con curvas y formas limpias.",
+        "Pruebas: el logo debe funcionar chico lo mismo que grande."
+      ]
+    },
+    {
+      "titulo": "Construirlo en CorelDRAW",
+      "emoji": "🛠️",
+      "parrafos": [
+        "Con el boceto elegido, en CorelDRAW trabajás los elementos: formas con rectángulos, elipses y curvas Bézier; texto con la tipografía justa; paleta acotada (dos o tres colores máximo desde tu paleta de documento).",
+        "El logo se agrupa (Ctrl + G) y se guarda además de vectorial, exportado en varios tamaños para las aplicaciones. La coherencia entre versiones hace que la marca se reconozca al instante."
+      ],
+      "puntos": [
+        "Curvas y formas simples: el poder está en la limpieza.",
+        "Paleta acotada: de dos a tres colores definidos por el briefing.",
+        "Grupo el logo completo para moverlo sin desarmarlo.",
+        "Probá el resultado en fondo claro y oscuro antes de entregar."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Identidad de una marca ficticia",
+      "consigna": "Completá un mini briefing y creá el logotipo/imago de una marca ficticia (ej. cafetería 'Raíz', estudio de baile, kiosco de diseño) usando formas y texto en CorelDRAW.",
+      "pasos": [
+        "Elegí o inventá una marca y escribí 4 respuestas de briefing: rubro, público, valores, usos.",
+        "Bocetá en papel dos o tres ideas simples (un símbolo y el nombre).",
+        "En CorelDRAW, construí el símbolo con formas básicas y Bézier.",
+        "Escribí el nombre con una tipografía acorde y ajustá su interletrado.",
+        "Coloreá con una paleta de 2 a 3 colores que combinen con el briefing.",
+        "Probá tu logo sobre un fondo claro y otro oscuro; exportá ambas versiones en PNG."
+      ],
+      "entrega": "Entregá las dos versiones del logo (fondo claro y oscuro) más el/la mini briefing escrito, todo en un ZIP o PDF.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué es el isotipo?",
+            "opciones": ["El símbolo gráfico sin texto", "El nombre con tipografía", "El documento del cliente", "El color de la marca"],
+            "correcta": "El símbolo gráfico sin texto"
+          },
+          {
+            "pregunta": "¿Qué documento define rubro, público y valores de la marca?",
+            "opciones": ["El briefing", "El contrato", "La factura", "El manual de marca"],
+            "correcta": "El briefing"
+          },
+          {
+            "pregunta": "¿En qué etapa del proceso se dibujan varias ideas en papel?",
+            "opciones": ["Bocetado", "Impresión", "Entrega", "Cotización"],
+            "correcta": "Bocetado"
+          },
+          {
+            "pregunta": "Un imagotipo integra:",
+            "opciones": ["El isotipo y el logotipo como una unidad", "Solo tipografía", "Solo un símbolo", "Tres tipografías distintas"],
+            "correcta": "El isotipo y el logotipo como una unidad"
+          },
+          {
+            "pregunta": "¿Para qué se prueban los logos sobre fondo claro y oscuro?",
+            "opciones": ["Para verificar que se lea en distintos usos", "Para hacer el archivo más pesado", "Para cambiar el briefing", "Para elegir la tipografía"],
+            "correcta": "Para verificar que se lea en distintos usos"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Rediseño de una marca simple",
+      "consigna": "Elegí una marca simple conocida y rediseñala con tus herramientas: mismo rubro, nueva propuesta de símbolo y tipografía, explicando por qué.",
+      "pasos": [
+        "Elegí una marca simple (un transporte, una verdulería, un club).",
+        "Escribí dos renglones de briefing: qué hace y a quién se dirige.",
+        "Bocetá en papel un nuevo símbolo simple.",
+        "Vectorizalo en CorelDRAW con formas básicas y curvas Bézier.",
+        "Armá la versión final con el nombre, probala sobre dos fondos y exportá como rediseno-nombre.png."
+      ],
+      "entrega": "Entregá el PNG del rediseño y una nota con el proceso aplicado."
+    }
+  ],
+  "entrega": "Se evalúa la coherencia entre el briefing y el diseño (color, forma y tipografía alineados), la limpieza de las curvas y la legibilidad en ambas versiones.",
+  "lectura": "Un logo no se dibuja, se piensa. El briefing ordena la conversación con el cliente, el bocetado libera la creatividad y la vectorización le da pulcritud. Los mejores diseños parecen simples porque se construyeron a base de decisiones: qué color, qué forma, qué letra, qué dejar afuera. Esta clase es de dónde salen las marcas que después se usan en tarjetas y folletos.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar logos famosos y clasificarlos entre logotipo, isotipo e imagotipo con la clase", "min": "10 min" },
+      { "titulo": "Conceptos de identidad", "que": "Definir logotipo, isotipo, imagotipo e isologo con ejemplos", "min": "20 min" },
+      { "titulo": "El briefing", "que": "Armar juntos un briefing de ejemplo y derivar decisiones de diseño", "min": "20 min" },
+      { "titulo": "Proceso de diseño", "que": "Recorrer investigación, bocetos, vectorización y pruebas", "min": "15 min" },
+      { "titulo": "Práctica guiada", "que": "Vectorizar el logo de cada alumno paso a paso y probarlo en fondos", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Presentar los logos y repasar conceptos con el interactivo", "min": "5 min" }
+    ],
+    "conecta": [
+      "Analizar el logo de una marca local y preguntar si es símbolo, texto o ambos.",
+      "Preguntar a qué le pondrían una marca hoy si fueran emprendedores: abre el ejercicio."
+    ],
+    "aclarar": [
+      "Logotipo ≠ isotipo: el primero es tipográfico, el segundo es icónico.",
+      "El briefing se escribe y se acuerda: no se hace en la cabeza.",
+      "Los logos con muchas curvas sueltas se ven amateur: simplificar."
+    ],
+    "ejemplos": [
+      "Descomponer un logo conocido en isotipo + logotipo en el proyector.",
+      "Vectorizar un boceto de corazón con Bézier en vivo.",
+      "Mostrar el mismo logo sobre fondo claro, oscuro y foto: cuál funciona."
+    ]
+  }
+}

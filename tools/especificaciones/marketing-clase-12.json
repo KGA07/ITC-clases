@@ -34,7 +34,8 @@
         "Alimenta el paquete local: el conjunto de negocios con mapa que aparece arriba en Google.",
         "Se vincula a una cuenta de Google (Gmail), la misma que usás para otras herramientas.",
         "Permite responder reseñas, publicar novedades y ver estadísticas de tus clientes."
-      ]
+      ],
+      "imagen": { "src": "img/mng.jpg", "alt": "Perfil de un negocio en Google", "caption": "Google Mi Negocio muestra tu empresa en Maps y en la búsqueda" }
     },
     {
       "titulo": "Alta y verificación de la empresa",
@@ -48,7 +49,8 @@
         "Elegí método de verificación: por código postal, por teléfono, por video o por llamada.",
         "La verificación puede tardar unos días; el perfil queda inactivo hasta completarla.",
         "Si atendés solo online, marcá Atender a clientes en otro lugar para no mostrar una dirección en el mapa."
-      ]
+      ],
+      "imagen": { "src": "img/alta.jpg", "alt": "Local de un negocio con fachada", "caption": "El alta define local o zona de servicio" }
     },
     {
       "titulo": "La ficha completa",
@@ -62,7 +64,8 @@
         "Descripción de 400 a 750 caracteres con los servicios y el diferencial del negocio.",
         "Fotos de portada, logo y del local: los perfiles con fotos reciben más visitas.",
         "Servicios con precios orientativos y atributos como Estacionamiento o Acceso para sillas de ruedas."
-      ]
+      ],
+      "imagen": { "src": "img/ficha.jpg", "alt": "Directorio de negocios con fichas y mapas", "caption": "Una ficha completa genera confianza antes de decidir" }
     },
     {
       "titulo": "Por qué importa el perfil local",
