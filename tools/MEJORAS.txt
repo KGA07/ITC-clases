@@ -1,0 +1,110 @@
+MEJORAS PENDIENTES - ITC CLASES
+=================================
+
+Estado: Fase 4 (correccion de imagenes) - Marketing Digital casi completo.
+Generado por el asistente. Ver tambien HISTORIAL.md del repo.
+
+----------------------------------------------------------------------------
+1) IMAGENES DE MARKETING DIGITAL SIN REEMPLAZO CON LICENCIA LIBRE
+----------------------------------------------------------------------------
+Estas 9 imagenes estan CONFIRMADAS como desacertadas por OCR (texto ajeno) o
+por el historial, pero NO se encontro una imagen con licencia libre (Wikimedia
+Commons / curso) que represente la interfaz de la herramienta propietaria que
+muestra el alt. Quedaron con la imagen original (backup de recambio NO aplicado).
+
+Requieren CAPTURA REAL de pantalla (con cuenta demo/sandbox) o reuso de capturas
+propias del curso. Ordenadas por clase:
+
+   [x] = pendiente
+   [x] sites.jpg        Clase 13 - Google Sites almacen en bloques
+                        Actual: barco finlandes de 1964 (65 anios desacertada).
+                        Alt requerido: "Creador de sitios web por bloques"
+                        Sugerencia: capturar Google Sites (sites.new) armando
+                        una pagina con 2-3 bloques. 1 captura.
+
+   [x] planificador.jpg Clase 16 - Google Ads: Planificador de palabras clave
+                        Actual: parque nacional NPS (4.47 estrellas).
+                        Alt requerido: "Herramienta de planificacion de
+                        palabras clave"
+                        Sugerencia: capturar Ads > Herramientas > Planificador
+                        con busqueda de ejemplo (ej: "curso excel").
+
+   [x] recursos.jpg     Clase 17 - Recursos adicionales del anuncio
+                        Actual: pagina "Vikiprdl" (Wikimedia irrelevante).
+                        Alt requerido: "Enlaces y recursos ampliados del anuncio"
+                        Sugerencia: capturar el panel de "Recursos" de una
+                        campana en Google Ads (vinc. de sitio, llamada, promo).
+
+   [x] audiencia.jpg    Clase 18 - Facebook/Instagram Ads
+                        Actual: estadisticas "training sessions" de Wikimedia.
+                        Alt requerido: "Segmentacion de audiencia objetivo"
+                        Sugerencia: capturar el panel "Audiencia" del
+                        administrador de anuncios de Meta con 3-4 segmentos.
+
+   [x] fatiga.jpg       Clase 19 - Facebook Ads 2
+                        Actual: tesis militar (Calhoun NPS, "Fatigue life").
+                        Alt requerido: "Anuncio visto demasiadas veces"
+                        Sugerencia: capturar el grafico de frecuencia/CTR de
+                        Meta Ads o armar un diagrama propio (frecuencia alta
+                        -> CTR en baja).
+
+   [x] metricas.jpg     Clase 19 - Facebook Ads 2
+                        Actual: slide "Wikimedia Foundation Growth".
+                        Alt requerido: "Metricas de una campana publicitaria"
+                        Sugerencia: capturar el panel de metricas del
+                        administrador (alcance, frecuencia, CTR, CPC, conv).
+
+   [x] retargeting.jpg  Clase 19 - Facebook Ads 2
+                        Actual: diapositiva Wikimedia sobre "retargeting to
+                        editors".
+                        Alt requerido: "Retargeting hacia visitantes previos"
+                        Sugerencia: capturar la seccion "Audiencias
+                        personalizadas" o el flujo visita->anuncio.
+
+   [x] eventos.jpg      Clase 22 - GA4 y metricas
+                        Actual: slide "Wikimedia metrics meeting".
+                        Alt requerido: "Eventos de analitica web"
+                        Sugerencia: capturar GA4 > Eventos (lista de eventos
+                        con conteos).
+
+   [x] ga4.jpg          Clase 22 - GA4 y metricas
+                        Actual: slide "Wikimedia movement metrics".
+                        Alt requerido: "Tablero de Google Analytics"
+                        Sugerencia: capturar GA4 > Informes > Descripcion
+                        general del negocio (panorama de usuarios/sesiones).
+
+----------------------------------------------------------------------------
+2) IMAGENES DE DISENO GRAFICO NO ENCONTRADAS (6)  -> RESUELTO (2 gem) / OK (4)
+----------------------------------------------------------------------------
+De las 6 sin captura de la herramienta en Wikimedia Commons, 2 fueron
+CONFIRMADAS como desacierto por OCR y REEMPLAZADAS el 22/09/2026 con figuras
+generadas programaticamente (System.Drawing) que coinciden con su alt:
+
+  - REEMPLAZADA  interseccion-circulos.jpg (C4 Copiar Orden y Dar Forma)
+      Actual previo: tabla fonetica IPA (ajena).  Ahora: diagrama Venn A/B/Interseccion.
+      Fuente: generado. Backup: interseccion-circulos.jpg.bak
+  - REEMPLAZADA  pluma-bezier.jpg (C19 Herramientas vectoriales y texto)
+      Actual previo: informe FHWA de puentes (ajeno).  Ahora: curva Bezier con
+      puntos de ancla P1/P4 y control P2/P3.  Backup: pluma-bezier.jpg.bak
+
+Las 4 restantes tienen OCR vacio + tamano plausible (probables figuras de apoyo
+validas de la herramienta, sin texto legible). Se documentan para verificacion
+visual futura (sin reemplazo, segun criterio acordado):
+   pincel-acuarela.jpg (C5 Diseminador, 183KB), figura-seleccion2.png (C16 Seleccion, 62KB),
+   marco-foto.jpg (C10 Marco PowerClip, 312KB), figura-estilos.png (C20 Estilos de capa, 222KB)
+
+----------------------------------------------------------------------------
+3) RECOMENDACIONES DE PROCESO / PIPELINE (retenidas)
+----------------------------------------------------------------------------
+- Cambiar el generador de HTML de clases para que USE la misma convencion de
+  nombres/carpetas que el capturador, evitando el gap especificaciones vs @Clases.
+- Centralizar el inventario de imagenes (nombre, MD5, OCR, SOURCE, licencia) en
+  un solo CSV/JSON versionable para auditorias futuras sin re-correr OCR full.
+- En las specs, para herramientas con login (Google Ads, GA4, Meta), estipular la
+  PANTALLA de referencia exacta a capturar (menu > seccion > filtros) para que
+  el resultado sea determinista y no dependa de la sesion del docente.
+- Considerar un repositorio de "capturas propias" con licencia local (carpeta
+  img-capturas/) para reutilizarlas si una captura fue hecha una sola vez.
+- No usar OCR como unico criterio final: fotos de hardware sin texto (ej: placa
+  madre, modulo DDR4) son validas aunque OCR devuelva vacio. Cruzar con tamano
+  en bytes (>30 KB) y el deck de origen cuando exista.

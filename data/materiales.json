@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-21T21:13:13.817Z",
+  "generado": "2026-09-22T14:09:20.836Z",
   "fuentes": {
     "local": "I:\\ITC",
     "drive": {
@@ -4007,7 +4007,7 @@
       "stats": {
         "clases": 27,
         "archivos": 203,
-        "tamanoMB": 890.4
+        "tamanoMB": 890
       },
       "modulos": [
         {
@@ -4025,7 +4025,7 @@
                   "nombre": "Clase 1 - Entorno de trabajo en CorelDRAW.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1362372,
+                  "size": 1185956,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 1 Entorno de Corel/Clase 1 - Entorno de trabajo en CorelDRAW.pdf",
                   "url": "",
                   "embebible": false,
@@ -4087,7 +4087,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 401503,
+                  "size": 224971,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 1 Entorno de Corel/img",
                   "archivos": 2,
                   "url": "",
@@ -4100,7 +4100,7 @@
                   "nombre": "Lectura Clase 1 - Entorno de trabajo en CorelDRAW.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1269452,
+                  "size": 1093036,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 1 Entorno de Corel/Lectura Clase 1 - Entorno de trabajo en CorelDRAW.pdf",
                   "url": "",
                   "embebible": false,
@@ -4119,7 +4119,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 6377299
+              "tamanoBytes": 5847935
             },
             {
               "id": "diseno-grafico-m1-c2-clase-10-marco-powerclip",
@@ -4241,7 +4241,7 @@
                   "nombre": "Clase 10 - Efectos interactivos sombra, silueta, mezcla, distorsión, envoltura, extrusión y transparencia.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1082718,
+                  "size": 1187582,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 11 Efectos creacion de Marca/Clase 10 - Efectos interactivos sombra, silueta, mezcla, distorsión, envoltura, extrusión y transparencia.pdf",
                   "url": "",
                   "embebible": false,
@@ -4261,7 +4261,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 299244,
+                  "size": 393800,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 11 Efectos creacion de Marca/img",
                   "archivos": 2,
                   "url": "",
@@ -4274,7 +4274,7 @@
                   "nombre": "Lectura Clase 10 - Efectos interactivos sombra, silueta, mezcla, distorsión, envoltura, extrusión y transparencia.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 989532,
+                  "size": 1095358,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 11 Efectos creacion de Marca/Lectura Clase 10 - Efectos interactivos sombra, silueta, mezcla, distorsión, envoltura, extrusión y transparencia.pdf",
                   "url": "",
                   "embebible": false,
@@ -4313,7 +4313,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 17210588
+              "tamanoBytes": 17515834
             },
             {
               "id": "diseno-grafico-m1-c4-clase-13-folleto-y-tarjetas",
@@ -4665,7 +4665,7 @@
                   "nombre": "Clase 5 - Edición de formas herramienta Forma, curvas y nodos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 925619,
+                  "size": 945868,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 3 Edición de Formas/Clase 5 - Edición de formas herramienta Forma, curvas y nodos.pdf",
                   "url": "",
                   "embebible": false,
@@ -4795,7 +4795,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 359146,
+                  "size": 391745,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 3 Edición de Formas/img",
                   "archivos": 2,
                   "url": "",
@@ -4808,7 +4808,7 @@
                   "nombre": "Lectura Clase 5 - Edición de formas herramienta Forma, curvas y nodos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 832954,
+                  "size": 852654,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 3 Edición de Formas/Lectura Clase 5 - Edición de formas herramienta Forma, curvas y nodos.pdf",
                   "url": "",
                   "embebible": false,
@@ -4827,7 +4827,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 8909428
+              "tamanoBytes": 8981976
             },
             {
               "id": "diseno-grafico-m1-c7-clase-3-seleccion-zoom-y-transformacion",
@@ -4899,7 +4899,7 @@
                   "nombre": "Clase 4 - Copiar, duplicar, ordenar y dar forma a objetos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1342039,
+                  "size": 1135216,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 4 Copiar Orden y Dar Forma/Clase 4 - Copiar, duplicar, ordenar y dar forma a objetos.pdf",
                   "url": "",
                   "embebible": false,
@@ -4919,9 +4919,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 340576,
+                  "size": 424228,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 4 Copiar Orden y Dar Forma/img",
-                  "archivos": 2,
+                  "archivos": 3,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -4932,7 +4932,7 @@
                   "nombre": "Lectura Clase 4 - Copiar, duplicar, ordenar y dar forma a objetos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1249707,
+                  "size": 1042842,
                   "ruta": "@Clases/1 Modulo Corel Draw/Clase 4 Copiar Orden y Dar Forma/Lectura Clase 4 - Copiar, duplicar, ordenar y dar forma a objetos.pdf",
                   "url": "",
                   "embebible": false,
@@ -4951,7 +4951,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3494338
+              "tamanoBytes": 3164302
             },
             {
               "id": "diseno-grafico-m1-c9-clase-4-texto",
@@ -5528,7 +5528,7 @@
                   "nombre": "Clase 15 - El entorno de Photoshop lienzo, imagen, recorte, guardado y exportación.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 3218057,
+                  "size": 3001551,
                   "ruta": "@Clases/2 Modulo PSD/Clase 15 Entorno de Photoshop/Clase 15 - El entorno de Photoshop lienzo, imagen, recorte, guardado y exportación.pdf",
                   "url": "",
                   "embebible": false,
@@ -5548,20 +5548,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1572331,
+                  "size": 1357867,
                   "ruta": "@Clases/2 Modulo PSD/Clase 15 Entorno de Photoshop/img",
                   "archivos": 2,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.5 MB)",
+                  "notas": "(1.3 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 15 - El entorno de Photoshop lienzo, imagen, recorte, guardado y exportación.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 3127532,
+                  "size": 2908664,
                   "ruta": "@Clases/2 Modulo PSD/Clase 15 Entorno de Photoshop/Lectura Clase 15 - El entorno de Photoshop lienzo, imagen, recorte, guardado y exportación.pdf",
                   "url": "",
                   "embebible": false,
@@ -5580,7 +5580,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 8479876
+              "tamanoBytes": 7830038
             },
             {
               "id": "diseno-grafico-m2-c3-clase-16-seleccion",
@@ -5652,7 +5652,7 @@
                   "nombre": "Clase 17 - Capas en Photoshop organización, grupos y objetos inteligentes.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1480396,
+                  "size": 1282428,
                   "ruta": "@Clases/2 Modulo PSD/Clase 17 Capas/Clase 17 - Capas en Photoshop organización, grupos y objetos inteligentes.pdf",
                   "url": "",
                   "embebible": false,
@@ -5672,7 +5672,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 462809,
+                  "size": 257778,
                   "ruta": "@Clases/2 Modulo PSD/Clase 17 Capas/img",
                   "archivos": 2,
                   "url": "",
@@ -5685,7 +5685,7 @@
                   "nombre": "Lectura Clase 17 - Capas en Photoshop organización, grupos y objetos inteligentes.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1387801,
+                  "size": 1189720,
                   "ruta": "@Clases/2 Modulo PSD/Clase 17 Capas/Lectura Clase 17 - Capas en Photoshop organización, grupos y objetos inteligentes.pdf",
                   "url": "",
                   "embebible": false,
@@ -5704,7 +5704,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3892319
+              "tamanoBytes": 3291239
             },
             {
               "id": "diseno-grafico-m2-c5-clase-18-herramientas-de-correccion",
@@ -5714,7 +5714,7 @@
                   "nombre": "Clase 18 - Herramientas de corrección de imagen.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1707490,
+                  "size": 1633820,
                   "ruta": "@Clases/2 Modulo PSD/Clase 18 Herramientas de correccion/Clase 18 - Herramientas de corrección de imagen.pdf",
                   "url": "",
                   "embebible": false,
@@ -5734,7 +5734,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 875408,
+                  "size": 801009,
                   "ruta": "@Clases/2 Modulo PSD/Clase 18 Herramientas de correccion/img",
                   "archivos": 2,
                   "url": "",
@@ -5747,7 +5747,7 @@
                   "nombre": "Lectura Clase 18 - Herramientas de corrección de imagen.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1616273,
+                  "size": 1542856,
                   "ruta": "@Clases/2 Modulo PSD/Clase 18 Herramientas de correccion/Lectura Clase 18 - Herramientas de corrección de imagen.pdf",
                   "url": "",
                   "embebible": false,
@@ -5766,7 +5766,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 4761223
+              "tamanoBytes": 4539737
             },
             {
               "id": "diseno-grafico-m2-c6-clase-19-herramientas-vectoriales-y-texto",
@@ -5776,7 +5776,7 @@
                   "nombre": "Clase 19 - Herramientas vectoriales y texto en Photoshop.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1103572,
+                  "size": 1012462,
                   "ruta": "@Clases/2 Modulo PSD/Clase 19 Herramientas vectoriales y texto/Clase 19 - Herramientas vectoriales y texto en Photoshop.pdf",
                   "url": "",
                   "embebible": false,
@@ -5796,9 +5796,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 253756,
+                  "size": 311049,
                   "ruta": "@Clases/2 Modulo PSD/Clase 19 Herramientas vectoriales y texto/img",
-                  "archivos": 2,
+                  "archivos": 3,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -5809,7 +5809,7 @@
                   "nombre": "Lectura Clase 19 - Herramientas vectoriales y texto en Photoshop.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1010988,
+                  "size": 919879,
                   "ruta": "@Clases/2 Modulo PSD/Clase 19 Herramientas vectoriales y texto/Lectura Clase 19 - Herramientas vectoriales y texto en Photoshop.pdf",
                   "url": "",
                   "embebible": false,
@@ -5828,7 +5828,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 2931020
+              "tamanoBytes": 2806094
             },
             {
               "id": "diseno-grafico-m2-c7-clase-20-estilos-de-capa-y-modos-de-fusion",
@@ -5900,7 +5900,7 @@
                   "nombre": "Clase 21 - Ajustes y capas de ajuste de color.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1142341,
+                  "size": 1631152,
                   "ruta": "@Clases/2 Modulo PSD/Clase 21 Ajustes y capas de ajuste/Clase 21 - Ajustes y capas de ajuste de color.pdf",
                   "url": "",
                   "embebible": false,
@@ -5920,7 +5920,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 268345,
+                  "size": 760503,
                   "ruta": "@Clases/2 Modulo PSD/Clase 21 Ajustes y capas de ajuste/img",
                   "archivos": 2,
                   "url": "",
@@ -5933,7 +5933,7 @@
                   "nombre": "Lectura Clase 21 - Ajustes y capas de ajuste de color.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1050580,
+                  "size": 1539966,
                   "ruta": "@Clases/2 Modulo PSD/Clase 21 Ajustes y capas de ajuste/Lectura Clase 21 - Ajustes y capas de ajuste de color.pdf",
                   "url": "",
                   "embebible": false,
@@ -5952,7 +5952,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3022251
+              "tamanoBytes": 4492606
             },
             {
               "id": "diseno-grafico-m2-c9-clase-22-mascaras-y-filtros",
@@ -5962,7 +5962,7 @@
                   "nombre": "Clase 22 - Máscaras, filtros, guías y diseño integral.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1266267,
+                  "size": 1335994,
                   "ruta": "@Clases/2 Modulo PSD/Clase 22 Mascaras y filtros/Clase 22 - Máscaras, filtros, guías y diseño integral.pdf",
                   "url": "",
                   "embebible": false,
@@ -5982,7 +5982,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 535306,
+                  "size": 604853,
                   "ruta": "@Clases/2 Modulo PSD/Clase 22 Mascaras y filtros/img",
                   "archivos": 2,
                   "url": "",
@@ -5995,7 +5995,7 @@
                   "nombre": "Lectura Clase 22 - Máscaras, filtros, guías y diseño integral.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1173690,
+                  "size": 1243403,
                   "ruta": "@Clases/2 Modulo PSD/Clase 22 Mascaras y filtros/Lectura Clase 22 - Máscaras, filtros, guías y diseño integral.pdf",
                   "url": "",
                   "embebible": false,
@@ -6014,7 +6014,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3536397
+              "tamanoBytes": 3745384
             }
           ]
         },
@@ -6428,7 +6428,7 @@
       "stats": {
         "clases": 27,
         "archivos": 110,
-        "tamanoMB": 109.3
+        "tamanoMB": 105.6
       },
       "modulos": [
         {
@@ -6588,7 +6588,7 @@
                   "nombre": "booleano.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 298616,
+                  "size": 176421,
                   "ruta": "@Clases/3D/img/booleano.jpg",
                   "url": "",
                   "embebible": false,
@@ -6598,7 +6598,7 @@
                   "nombre": "modelo3d.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 340968,
+                  "size": 78667,
                   "ruta": "@Clases/3D/img/modelo3d.jpg",
                   "url": "",
                   "embebible": false,
@@ -6615,7 +6615,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1178879
+              "tamanoBytes": 794383
             },
             {
               "id": "diseno-tecnico-m1-c3-practicas",
@@ -6750,7 +6750,7 @@
                   "nombre": "ayudas.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 935096,
+                  "size": 140611,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/img/ayudas.jpg",
                   "url": "",
                   "embebible": false,
@@ -6770,14 +6770,14 @@
                   "nombre": "interfaz.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 632227,
+                  "size": 98185,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/img/interfaz.jpg",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1635613
+              "tamanoBytes": 307086
             }
           ]
         },
@@ -6802,7 +6802,7 @@
                   "nombre": "designcenter.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 205429,
+                  "size": 152955,
                   "ruta": "@Clases/Clase 10 - Bloques/img/designcenter.jpg",
                   "url": "",
                   "embebible": false,
@@ -6819,7 +6819,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 440541
+              "tamanoBytes": 388067
             }
           ]
         },
@@ -6834,7 +6834,7 @@
                   "nombre": "aberturas.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 995728,
+                  "size": 132885,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/img/aberturas.jpg",
                   "url": "",
                   "embebible": false,
@@ -6861,7 +6861,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1522280
+              "tamanoBytes": 659437
             }
           ]
         },
@@ -6896,14 +6896,14 @@
                   "nombre": "estilos.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 6527,
+                  "size": 598850,
                   "ruta": "@Clases/Clase 12 - Cotas/img/estilos.jpg",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 546827
+              "tamanoBytes": 1139150
             }
           ]
         },
@@ -6950,7 +6950,7 @@
                   "nombre": "mecanica.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 210587,
+                  "size": 57650,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/img/mecanica.jpg",
                   "url": "",
                   "embebible": false,
@@ -6970,14 +6970,14 @@
                   "nombre": "tangencia.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 391150,
+                  "size": 137946,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/img/tangencia.jpg",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 836059
+              "tamanoBytes": 429918
             }
           ]
         },
@@ -6992,7 +6992,7 @@
                   "nombre": "grados.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 582809,
+                  "size": 405172,
                   "ruta": "@Clases/clase 15 mensura/img/grados.jpg",
                   "url": "",
                   "embebible": false,
@@ -7022,14 +7022,14 @@
                   "nombre": "superficie.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 172770,
+                  "size": 69485,
                   "ruta": "@Clases/clase 15 mensura/img/superficie.jpg",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1117915
+              "tamanoBytes": 836993
             }
           ]
         },
@@ -7138,7 +7138,7 @@
                   "nombre": "propiedades.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 142080,
+                  "size": 108285,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/img/propiedades.jpg",
                   "url": "",
                   "embebible": false,
@@ -7155,7 +7155,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 562601
+              "tamanoBytes": 528806
             }
           ]
         },
@@ -7170,7 +7170,7 @@
                   "nombre": "grosor.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 404054,
+                  "size": 146043,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/img/grosor.jpg",
                   "url": "",
                   "embebible": false,
@@ -7180,7 +7180,7 @@
                   "nombre": "plegado.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 82814,
+                  "size": 169519,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/img/plegado.jpg",
                   "url": "",
                   "embebible": false,
@@ -7197,7 +7197,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 574460
+              "tamanoBytes": 403154
             }
           ]
         },
@@ -7212,7 +7212,7 @@
                   "nombre": "layout.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 39060,
+                  "size": 103659,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/img/layout.jpg",
                   "url": "",
                   "embebible": false,
@@ -7222,7 +7222,7 @@
                   "nombre": "trazar.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 204791,
+                  "size": 102049,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/img/trazar.jpg",
                   "url": "",
                   "embebible": false,
@@ -7232,14 +7232,14 @@
                   "nombre": "ventanas.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 560383,
+                  "size": 286232,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/img/ventanas.jpg",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 804234
+              "tamanoBytes": 491940
             }
           ]
         },
@@ -7422,7 +7422,7 @@
                   "nombre": "capas.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 55548,
+                  "size": 269584,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/img/capas.jpg",
                   "url": "",
                   "embebible": false,
@@ -7432,7 +7432,7 @@
                   "nombre": "estados.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 325980,
+                  "size": 95311,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/img/estados.jpg",
                   "url": "",
                   "embebible": false,
@@ -7449,7 +7449,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 638450
+              "tamanoBytes": 621817
             }
           ]
         },
@@ -7506,7 +7506,7 @@
                   "nombre": "coordenadas.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 30356,
+                  "size": 70868,
                   "ruta": "@Clases/Coordenadas/img/coordenadas.jpg",
                   "url": "",
                   "embebible": false,
@@ -7533,7 +7533,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 356718
+              "tamanoBytes": 397230
             }
           ]
         },
@@ -7568,14 +7568,14 @@
                   "nombre": "vistacorte.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 129472,
+                  "size": 343238,
                   "ruta": "@Clases/Dibujos por vista/img/vistacorte.jpg",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 800147
+              "tamanoBytes": 1013913
             }
           ]
         },
@@ -7590,7 +7590,7 @@
                   "nombre": "isocirculo.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 830243,
+                  "size": 77864,
                   "ruta": "@Clases/Isométrico/img/isocirculo.jpg",
                   "url": "",
                   "embebible": false,
@@ -7600,7 +7600,7 @@
                   "nombre": "isometrico.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 179226,
+                  "size": 103196,
                   "ruta": "@Clases/Isométrico/img/isometrico.jpg",
                   "url": "",
                   "embebible": false,
@@ -7627,7 +7627,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1257604
+              "tamanoBytes": 429195
             }
           ]
         },
@@ -7857,7 +7857,7 @@
       "stats": {
         "clases": 31,
         "archivos": 224,
-        "tamanoMB": 760
+        "tamanoMB": 780.8
       },
       "modulos": [
         {
@@ -7871,7 +7871,7 @@
                   "nombre": "Clase 1 - Introducción al Marketing Digital.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1423516,
+                  "size": 1392644,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 1 - Introducción al marketing/Clase 1 - Introducción al Marketing Digital.pdf",
                   "url": "",
                   "embebible": false,
@@ -7931,13 +7931,13 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 719944,
+                  "size": 1093270,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 1 - Introducción al marketing/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(1.0 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
@@ -7990,7 +7990,7 @@
                   "nombre": "Lectura Clase 1 - Introducción al Marketing Digital.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1338510,
+                  "size": 1307626,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 1 - Introducción al marketing/Lectura Clase 1 - Introducción al Marketing Digital.pdf",
                   "url": "",
                   "embebible": false,
@@ -8041,7 +8041,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 167670752
+              "tamanoBytes": 167982322
             },
             {
               "id": "marketing-digital-m1-c2-clase-2-plan-de-marketing",
@@ -8160,7 +8160,7 @@
                   "nombre": "Clase 2 - Branding, Objetivos y Propuesta de Valor.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1307605,
+                  "size": 1424618,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/Clase 2 - Branding, Objetivos y Propuesta de Valor.pdf",
                   "url": "",
                   "embebible": false,
@@ -8214,9 +8214,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 591274,
+                  "size": 784214,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/img",
-                  "archivos": 3,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -8227,7 +8227,7 @@
                   "nombre": "Lectura Clase 2 - Branding, Objetivos y Propuesta de Valor.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1220543,
+                  "size": 1337575,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 3 - Branding/Lectura Clase 2 - Branding, Objetivos y Propuesta de Valor.pdf",
                   "url": "",
                   "embebible": false,
@@ -8308,7 +8308,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 87529337
+              "tamanoBytes": 87956322
             },
             {
               "id": "marketing-digital-m1-c4-clase-4-buyer-persona-y-buyer-journey",
@@ -8399,7 +8399,7 @@
                   "nombre": "Clase 3 - Buyer Persona y Customer Journey.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1415606,
+                  "size": 1692975,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4 - BUyer Persona y Buyer Journey/Clase 3 - Buyer Persona y Customer Journey.pdf",
                   "url": "",
                   "embebible": false,
@@ -8419,20 +8419,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 738870,
+                  "size": 1330280,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4 - BUyer Persona y Buyer Journey/img",
-                  "archivos": 3,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(1.3 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 3 - Buyer Persona y Customer Journey.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1329075,
+                  "size": 1606460,
                   "ruta": "@Clases/Modulo 1 - Fundamentos del Marketing Digital/Clase 4 - BUyer Persona y Buyer Journey/Lectura Clase 3 - Buyer Persona y Customer Journey.pdf",
                   "url": "",
                   "embebible": false,
@@ -8451,7 +8451,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 4045883
+              "tamanoBytes": 5192047
             }
           ]
         },
@@ -8520,7 +8520,7 @@
                   "nombre": "Clase 4 - Redes Sociales panorama y uso profesional.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1302911,
+                  "size": 1211995,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 5  redes sociales Intro/Clase 4 - Redes Sociales panorama y uso profesional.pdf",
                   "url": "",
                   "embebible": false,
@@ -8552,9 +8552,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 456729,
+                  "size": 730777,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 5  redes sociales Intro/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -8565,7 +8565,7 @@
                   "nombre": "Lectura Clase 4 - Redes Sociales panorama y uso profesional.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1213589,
+                  "size": 1125274,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 5  redes sociales Intro/Lectura Clase 4 - Redes Sociales panorama y uso profesional.pdf",
                   "url": "",
                   "embebible": false,
@@ -8594,7 +8594,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4672767
+              "tamanoBytes": 4767584
             },
             {
               "id": "marketing-digital-m2-c2-clase-6-perfiles-de-negocio-facebook-e-instagram",
@@ -8624,7 +8624,7 @@
                   "nombre": "Clase 5 - Instagram y Facebook para Negocios.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1155056,
+                  "size": 1370355,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 6 Perfiles de Negocio Facebook e Instagram/Clase 5 - Instagram y Facebook para Negocios.pdf",
                   "url": "",
                   "embebible": false,
@@ -8666,9 +8666,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 287034,
+                  "size": 618399,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 6 Perfiles de Negocio Facebook e Instagram/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -8679,7 +8679,7 @@
                   "nombre": "Lectura Clase 5 - Instagram y Facebook para Negocios.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1068209,
+                  "size": 1281394,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 6 Perfiles de Negocio Facebook e Instagram/Lectura Clase 5 - Instagram y Facebook para Negocios.pdf",
                   "url": "",
                   "embebible": false,
@@ -8732,7 +8732,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 7040532
+              "tamanoBytes": 7800381
             },
             {
               "id": "marketing-digital-m2-c3-clase-7-meta-business-suite",
@@ -8742,7 +8742,7 @@
                   "nombre": "Clase 6 - Meta Business Suite.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1570789,
+                  "size": 2085045,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 7 Meta Business Suite/Clase 6 - Meta Business Suite.pdf",
                   "url": "",
                   "embebible": false,
@@ -8774,20 +8774,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 622894,
+                  "size": 1760693,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 7 Meta Business Suite/img",
-                  "archivos": 3,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(1.7 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 6 - Meta Business Suite.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1480311,
+                  "size": 1994945,
                   "ruta": "@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 7 Meta Business Suite/Lectura Clase 6 - Meta Business Suite.pdf",
                   "url": "",
                   "embebible": false,
@@ -8848,7 +8848,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 12302510
+              "tamanoBytes": 14469199
             }
           ]
         },
@@ -8959,7 +8959,7 @@
                   "nombre": "Clase 11 - Utilización de IAs para contenidos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1497513,
+                  "size": 1185396,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 11 IA para creacion de COntenido/Clase 11 - Utilización de IAs para contenidos.pdf",
                   "url": "",
                   "embebible": false,
@@ -8979,9 +8979,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 581336,
+                  "size": 627960,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 11 IA para creacion de COntenido/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -8992,7 +8992,7 @@
                   "nombre": "Lectura Clase 11 - Utilización de IAs para contenidos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1410818,
+                  "size": 1099909,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 11 IA para creacion de COntenido/Lectura Clase 11 - Utilización de IAs para contenidos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9054,7 +9054,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 88636885
+              "tamanoBytes": 88060483
             },
             {
               "id": "marketing-digital-m3-c3-clase-8-videos-cortos",
@@ -9064,7 +9064,7 @@
                   "nombre": "Clase 8 - Videos Cortos formatos y estructura.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1385529,
+                  "size": 5173948,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 8 - Videos Cortos/Clase 8 - Videos Cortos formatos y estructura.pdf",
                   "url": "",
                   "embebible": false,
@@ -9084,20 +9084,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 458752,
+                  "size": 4468305,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 8 - Videos Cortos/img",
-                  "archivos": 3,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(4.3 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 8 - Videos Cortos formatos y estructura.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1300132,
+                  "size": 5088715,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 8 - Videos Cortos/Lectura Clase 8 - Videos Cortos formatos y estructura.pdf",
                   "url": "",
                   "embebible": false,
@@ -9116,7 +9116,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3706156
+              "tamanoBytes": 15292711
             },
             {
               "id": "marketing-digital-m3-c4-clase-8-creacion-de-contenido-ejemplos-videos-virales",
@@ -9158,7 +9158,7 @@
                   "nombre": "Clase 7 - Marketing de Contenidos y Storytelling.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1309958,
+                  "size": 1281017,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 8 Creacion de Contenido- ejemplos videos virales/Clase 7 - Marketing de Contenidos y Storytelling.pdf",
                   "url": "",
                   "embebible": false,
@@ -9178,9 +9178,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 462872,
+                  "size": 927080,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 8 Creacion de Contenido- ejemplos videos virales/img",
-                  "archivos": 3,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9204,7 +9204,7 @@
                   "nombre": "Lectura Clase 7 - Marketing de Contenidos y Storytelling.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1207382,
+                  "size": 1178728,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 8 Creacion de Contenido- ejemplos videos virales/Lectura Clase 7 - Marketing de Contenidos y Storytelling.pdf",
                   "url": "",
                   "embebible": false,
@@ -9223,7 +9223,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 15329492
+              "tamanoBytes": 15736105
             },
             {
               "id": "marketing-digital-m3-c5-clase-9-canva-diseno-de-contenido",
@@ -9233,7 +9233,7 @@
                   "nombre": "Clase 9 - Diseño gráfico para redes con Canva.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1847451,
+                  "size": 1357679,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 9 Canva Diseño de Contenido/Clase 9 - Diseño gráfico para redes con Canva.pdf",
                   "url": "",
                   "embebible": false,
@@ -9265,20 +9265,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1035564,
+                  "size": 1579574,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 9 Canva Diseño de Contenido/img",
-                  "archivos": 3,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(1.5 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 9 - Diseño gráfico para redes con Canva.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1761550,
+                  "size": 1272550,
                   "ruta": "@Clases/Modulo 3 - Diseño de Contenidos y Copywriting ,uso de la IA/Clase 9 Canva Diseño de Contenido/Lectura Clase 9 - Diseño gráfico para redes con Canva.pdf",
                   "url": "",
                   "embebible": false,
@@ -9297,7 +9297,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 5223595
+              "tamanoBytes": 4788833
             },
             {
               "id": "marketing-digital-m3-c6-clase-9-tipo-de-contenido-neuromarketing",
@@ -9375,7 +9375,7 @@
                   "nombre": "Clase 12 - Google Mi Negocio.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2420579,
+                  "size": 4536232,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 12 - Google Mi Negocio/Clase 12 - Google Mi Negocio.pdf",
                   "url": "",
                   "embebible": false,
@@ -9395,20 +9395,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1456251,
+                  "size": 5046351,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 12 - Google Mi Negocio/img",
-                  "archivos": 3,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.4 MB)",
+                  "notas": "(4.8 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 12 - Google Mi Negocio.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2331650,
+                  "size": 4451129,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 12 - Google Mi Negocio/Lectura Clase 12 - Google Mi Negocio.pdf",
                   "url": "",
                   "embebible": false,
@@ -9427,7 +9427,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 6770245
+              "tamanoBytes": 14595477
             },
             {
               "id": "marketing-digital-m4-c2-clase-12-derecho-de-autor-y-propiedad-intelectual",
@@ -9622,7 +9622,7 @@
                   "nombre": "Clase 14 - Fundamentos de Publicidad Digital.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1929711,
+                  "size": 1082750,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 13 Fundamentos del Marketing digital/Clase 14 - Fundamentos de Publicidad Digital.pdf",
                   "url": "",
                   "embebible": false,
@@ -9672,20 +9672,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1209460,
+                  "size": 1573365,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 13 Fundamentos del Marketing digital/img",
-                  "archivos": 3,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.2 MB)",
+                  "notas": "(1.5 MB)",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 14 - Fundamentos de Publicidad Digital.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1844333,
+                  "size": 1004490,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 13 Fundamentos del Marketing digital/Lectura Clase 14 - Fundamentos de Publicidad Digital.pdf",
                   "url": "",
                   "embebible": false,
@@ -9714,7 +9714,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 56059228
+              "tamanoBytes": 54736329
             },
             {
               "id": "marketing-digital-m4-c6-clase-15-sem-estructura-de-campanas",
@@ -9724,7 +9724,7 @@
                   "nombre": "Clase 15 - SEM estructura de campañas.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1496404,
+                  "size": 1232873,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 15 - SEM Estructura de Campañas/Clase 15 - SEM estructura de campañas.pdf",
                   "url": "",
                   "embebible": false,
@@ -9744,9 +9744,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 653138,
+                  "size": 763746,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 15 - SEM Estructura de Campañas/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9757,7 +9757,7 @@
                   "nombre": "Lectura Clase 15 - SEM estructura de campañas.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1410499,
+                  "size": 1146328,
                   "ruta": "@Clases/Modulo 4 - Directorios Locales , Publicidad y Campañas Pagas/Clase 15 - SEM Estructura de Campañas/Lectura Clase 15 - SEM estructura de campañas.pdf",
                   "url": "",
                   "embebible": false,
@@ -9776,7 +9776,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 4122944
+              "tamanoBytes": 3705850
             }
           ]
         },
@@ -9791,7 +9791,7 @@
                   "nombre": "Clase 16 - Google Ads planificador de palabras clave.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1546810,
+                  "size": 1570670,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 16 Google Ads/Clase 16 - Google Ads planificador de palabras clave.pdf",
                   "url": "",
                   "embebible": false,
@@ -9831,9 +9831,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 699989,
+                  "size": 803698,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 16 Google Ads/img",
-                  "archivos": 3,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9844,7 +9844,7 @@
                   "nombre": "Lectura Clase 16 - Google Ads planificador de palabras clave.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1457453,
+                  "size": 1484365,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 16 Google Ads/Lectura Clase 16 - Google Ads planificador de palabras clave.pdf",
                   "url": "",
                   "embebible": false,
@@ -9896,7 +9896,7 @@
                   "descripcion": "Carpeta con archivos"
                 }
               ],
-              "tamanoBytes": 11414447
+              "tamanoBytes": 11568928
             },
             {
               "id": "marketing-digital-m5-c2-clase-17-concordancia-de-palabras-clave",
@@ -9906,7 +9906,7 @@
                   "nombre": "Clase 17 - Concordancia de palabras clave y recursos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1528441,
+                  "size": 1123936,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 17 - Concordancia de Palabras Clave/Clase 17 - Concordancia de palabras clave y recursos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9926,9 +9926,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 717339,
+                  "size": 737022,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 17 - Concordancia de Palabras Clave/img",
-                  "archivos": 3,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9939,7 +9939,7 @@
                   "nombre": "Lectura Clase 17 - Concordancia de palabras clave y recursos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1442629,
+                  "size": 1034973,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 17 - Concordancia de Palabras Clave/Lectura Clase 17 - Concordancia de palabras clave y recursos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9958,7 +9958,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 4250930
+              "tamanoBytes": 3458452
             },
             {
               "id": "marketing-digital-m5-c3-clase-17-fundamentos-del-marketing-digital",
@@ -9995,7 +9995,7 @@
                   "nombre": "Clase 18 - Facebook Ads e Instagram Ads.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1200413,
+                  "size": 1524232,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 18 - Facebook Ads e Instagram Ads/Clase 18 - Facebook Ads e Instagram Ads.pdf",
                   "url": "",
                   "embebible": false,
@@ -10015,9 +10015,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 357933,
+                  "size": 951022,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 18 - Facebook Ads e Instagram Ads/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10028,7 +10028,7 @@
                   "nombre": "Lectura Clase 18 - Facebook Ads e Instagram Ads.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1114250,
+                  "size": 1438324,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 18 - Facebook Ads e Instagram Ads/Lectura Clase 18 - Facebook Ads e Instagram Ads.pdf",
                   "url": "",
                   "embebible": false,
@@ -10047,7 +10047,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3235345
+              "tamanoBytes": 4476327
             },
             {
               "id": "marketing-digital-m5-c5-clase-18-email-marketing",
@@ -10077,7 +10077,7 @@
                   "nombre": "Clase 20 - Email Marketing.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1158674,
+                  "size": 1127499,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 18 Email Marketing/Clase 20 - Email Marketing.pdf",
                   "url": "",
                   "embebible": false,
@@ -10097,9 +10097,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 342058,
+                  "size": 376568,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 18 Email Marketing/img",
-                  "archivos": 3,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10110,7 +10110,7 @@
                   "nombre": "Lectura Clase 20 - Email Marketing.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1080456,
+                  "size": 1049581,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 18 Email Marketing/Lectura Clase 20 - Email Marketing.pdf",
                   "url": "",
                   "embebible": false,
@@ -10129,7 +10129,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 3663904
+              "tamanoBytes": 3636364
             },
             {
               "id": "marketing-digital-m5-c6-clase-19-creacion-de-campana-email",
@@ -10139,7 +10139,7 @@
                   "nombre": "Clase 21 - Creación de Campaña de Email.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1532782,
+                  "size": 1094789,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 19 - Creación de Campaña Email/Clase 21 - Creación de Campaña de Email.pdf",
                   "url": "",
                   "embebible": false,
@@ -10159,9 +10159,9 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 716776,
+                  "size": 946572,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 19 - Creación de Campaña Email/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10172,7 +10172,7 @@
                   "nombre": "Lectura Clase 21 - Creación de Campaña de Email.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1446029,
+                  "size": 1005202,
                   "ruta": "@Clases/Modulo 5 - Automatización y Email Marketing/Clase 19 - Creación de Campaña Email/Lectura Clase 21 - Creación de Campaña de Email.pdf",
                   "url": "",
                   "embebible": false,
@@ -10191,7 +10191,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 4257982
+              "tamanoBytes": 3608958
             },
             {
               "id": "marketing-digital-m5-c7-clase-19-facebook-ads-2",
@@ -10547,8 +10547,8 @@
       "driveFolderId": null,
       "stats": {
         "clases": 29,
-        "archivos": 83,
-        "tamanoMB": 204.4
+        "archivos": 95,
+        "tamanoMB": 206.1
       },
       "modulos": [
         {
@@ -10788,8 +10788,18 @@
                   "nombre": "componentes-pc.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 622768,
+                  "size": 274706,
                   "ruta": "@Clases/Clase 1/img/componentes-pc.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "componentes-pc.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 622768,
+                  "ruta": "@Clases/Clase 1/img/componentes-pc.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
@@ -10808,14 +10818,24 @@
                   "nombre": "procesador.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 70497,
+                  "size": 82005,
                   "ruta": "@Clases/Clase 1/img/procesador.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "procesador.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 70497,
+                  "ruta": "@Clases/Clase 1/img/procesador.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 941874
+              "tamanoBytes": 1298585
             }
           ]
         },
@@ -10904,14 +10924,24 @@
                   "nombre": "windows7.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 144895,
+                  "size": 41585,
                   "ruta": "@Clases/Clase 12 - Windows 7/img/windows7.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "windows7.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 144895,
+                  "ruta": "@Clases/Clase 12 - Windows 7/img/windows7.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 432405
+              "tamanoBytes": 473990
             }
           ]
         },
@@ -10926,8 +10956,18 @@
                   "nombre": "admin-dispositivos.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 1082314,
+                  "size": 79726,
                   "ruta": "@Clases/Clase 13 - Drivers/img/admin-dispositivos.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "admin-dispositivos.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 1082314,
+                  "ruta": "@Clases/Clase 13 - Drivers/img/admin-dispositivos.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
@@ -10943,7 +10983,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1412957
+              "tamanoBytes": 1492683
             }
           ]
         },
@@ -10968,14 +11008,24 @@
                   "nombre": "regedit.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 48163,
+                  "size": 44994,
                   "ruta": "@Clases/Clase 14 - Programas utilitarios/img/regedit.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "regedit.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 48163,
+                  "ruta": "@Clases/Clase 14 - Programas utilitarios/img/regedit.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 691849
+              "tamanoBytes": 736843
             }
           ]
         },
@@ -10990,8 +11040,18 @@
                   "nombre": "win10-config.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 204506,
+                  "size": 97795,
                   "ruta": "@Clases/Clase 15 - Windows 10/img/win10-config.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "win10-config.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 204506,
+                  "ruta": "@Clases/Clase 15 - Windows 10/img/win10-config.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
@@ -11000,14 +11060,24 @@
                   "nombre": "windows10.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 144895,
+                  "size": 66491,
                   "ruta": "@Clases/Clase 15 - Windows 10/img/windows10.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "windows10.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 144895,
+                  "ruta": "@Clases/Clase 15 - Windows 10/img/windows10.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 349401
+              "tamanoBytes": 513687
             }
           ]
         },
@@ -11032,14 +11102,24 @@
                   "nombre": "restauracion.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 133338,
+                  "size": 64266,
                   "ruta": "@Clases/Clase 16 - Actualizacion de sistema operativo/img/restauracion.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "restauracion.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 133338,
+                  "ruta": "@Clases/Clase 16 - Actualizacion de sistema operativo/img/restauracion.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 285721
+              "tamanoBytes": 349987
             }
           ]
         },
@@ -11160,8 +11240,18 @@
                   "nombre": "panel-io.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 9976,
+                  "size": 122638,
                   "ruta": "@Clases/Clase 2 - Puertos externos/img/panel-io.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "panel-io.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 9976,
+                  "ruta": "@Clases/Clase 2 - Puertos externos/img/panel-io.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
@@ -11177,7 +11267,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 464272
+              "tamanoBytes": 586910
             }
           ]
         },
@@ -11308,8 +11398,18 @@
                   "nombre": "dhcp.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 105626,
+                  "size": 141125,
                   "ruta": "@Clases/Clase 22 - Configuracion de red y routers/img/dhcp.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "dhcp.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 105626,
+                  "ruta": "@Clases/Clase 22 - Configuracion de red y routers/img/dhcp.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
@@ -11325,7 +11425,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 695946
+              "tamanoBytes": 837071
             }
           ]
         },
@@ -11402,14 +11502,24 @@
                   "nombre": "slots-ram.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 622768,
+                  "size": 486354,
                   "ruta": "@Clases/Clase 4 - Placa madre II/img/slots-ram.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "slots-ram.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 622768,
+                  "ruta": "@Clases/Clase 4 - Placa madre II/img/slots-ram.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 1431613
+              "tamanoBytes": 1917967
             }
           ]
         },
@@ -11444,14 +11554,24 @@
                   "nombre": "modulo-ddr4.jpg",
                   "tipo": "Imagen",
                   "emoji": "🖼️",
-                  "size": 59909,
+                  "size": 253170,
                   "ruta": "@Clases/Clase 6 - Memorias RAM/img/modulo-ddr4.jpg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "modulo-ddr4.jpg.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 59909,
+                  "ruta": "@Clases/Clase 6 - Memorias RAM/img/modulo-ddr4.jpg.bak",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 475825
+              "tamanoBytes": 728995
             }
           ]
         },
