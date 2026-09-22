@@ -16,6 +16,13 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
+// Firma del autor que se inserta como pie de pagina en todo material generado.
+const FIRMA = '@gustavokempe';
+
+function footerHtml() {
+  return `<footer class="firma">Hecho con dedicacion · ${esc(FIRMA)}</footer>`;
+}
+
 const SPEC_DIR = path.join(__dirname, 'especificaciones');
 const CHROME =
   process.env.CHROME_PATH ||
@@ -194,6 +201,8 @@ function claseCss(c) {
     .fig-grid { display:flex; gap:14px; flex-wrap:wrap; margin:16px 0; }
     .fig-grid .fig-secc { flex:1 1 130px; min-width:120px; margin:0; }
     .fig-grid .secc-img { width:100%; max-width:none; }
+    footer.firma { margin-top:34px; padding-top:12px; border-top:1px solid #e2e8f8;
+                   text-align:center; font-size:12px; color:#7b86ac; page-break-inside:avoid; }
   `;
 }
 
@@ -249,6 +258,7 @@ function renderClaseHtml(c, { paraPdf }) {
     ${teoriaTxt}
     ${ejercicios.length ? `<h1><span class="mini">Manos a la obra 🙌</span>Actividad práctica</h1>${ejHtml}` : ''}
     ${entrega ? `<section class="ejercicio"><p class="consigna">Entrega</p><p>${esc(entrega)}</p></section>` : ''}
+    ${footerHtml()}
   </div>
 </body></html>`);
 }
@@ -283,6 +293,7 @@ function renderLecturaHtml(c) {
       <h2><span class="burb">🛠️</span>Cierre en vivo</h2>
       <p>${esc(enVivo)}</p>
     </section>` : ''}
+    ${footerHtml()}
   </div>
 </body></html>`);
 }
@@ -331,6 +342,7 @@ function renderGuiaHtml(c) {
 
     ${ejemplos.length ? `<section class="guia"><b>🧩 Ejemplos para mostrar</b>
       <ul>${ejemplos.map((p) => `<li>${esc(p)}</li>`).join('\n')}</ul></section>` : ''}
+    ${footerHtml()}
   </div>
 </body></html>`);
 }
@@ -370,6 +382,7 @@ function renderInteractivo(c) {
   .btn{margin-top:16px;background:${color};color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
   .btn:hover{filter:brightness(1.08)}
   .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
 </style></head>
 <body><div class="card">
   <h1>${esc(c.clase.titulo)}</h1>
@@ -378,6 +391,7 @@ function renderInteractivo(c) {
   ${preguntas}
   <button class="btn" onclick="corregir()">Corregir</button>
   <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
 </div>
 <script>
 function corregir(){

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 6 - Formularios con subformularios</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0f766e33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0f766e;background:#0f766e22;border:1px solid #0f766e55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0f766e18;border:1px solid #0f766e44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0f766e;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0f766e;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0f766e44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0f766e;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0f766e;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📊 Administración de PyMEs</div>
+      <div class="mod">Clase 6 · Módulo 2 – Access: Bases de Datos</div>
+      <h1>Formularios con subformularios</h1>
+      <p class="bajada">Vas a vincular un formulario principal con un subformulario para ver datos relacionados en una sola pantalla, como un cliente con todas sus facturas.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Crear un formulario con subformulario aplicando el asistente de formularios.</li>
+<li><span class="chk">✓</span>Editar un subformulario y ajustar su diseño y campos mostrados.</li>
+<li><span class="chk">✓</span>Agregar campos calculados dentro del subformulario.</li>
+<li><span class="chk">✓</span>Comprender el uso de subformularios en bases relacionales (cliente → facturas, producto → movimientos).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>📑 ¿Qué es un subformulario?</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Un subformulario es un formulario insertado dentro de otro formulario llamado principal. Ambos quedan vinculados por un campo común: al moverse entre clientes en el formulario principal, el subformulario muestra automáticamente solo las facturas de ese cliente.</li>
+<li> Esta estructura es la clave de las bases relacionales de una PyME: en una sola pantalla se consulta un cabecera (el cliente) y todos sus detalles (las facturas).</li>
+<li><b>·</b> Formulario principal: muestra los datos del registro cabecera (ej: datos del cliente).</li>
+<li><b>·</b> Subformulario: muestra los registros relacionados del detalle (ej: facturas de ese cliente).</li>
+<li><b>·</b> Vinculación automática: el asistente detecta la relación entre tablas y sincroniza ambos formularios.</li>
+<li><b>·</b> Campos de vínculo: los campos que conectan, normalmente la clave primaria y su correspondiente clave foránea.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🛠️ Creación del formulario con subformulario</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El método más cómodo es el Asistente de formularios: se elige primero la tabla principal (Clientes) y luego, en el mismo asistente, la tabla relacionada (Facturas). Access crea ambos formularios y el control de subformulario queda insertado automáticamente.</li>
+<li><b>·</b> Pestaña Crear → Asistente de formularios.</li>
+<li><b>·</b> En la lista de Tablas/Consultas, primero la tabla de cliente principal (ej: Clientes) y hasta allí pasar los campos.</li>
+<li><b>·</b> Volver a la lista, elegir la tabla de detalle (ej: Facturas) y agregar sus campos.</li>
+<li><b>·</b> Access pregunta cómo ver los datos: elegir «por Clientes» y la opción «Formularios con subformularios».</li>
+<li><b>·</b> Elegir el estilo y el asistente genera automáticamente el formulario y el control de subformulario.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>✏️ Edición del subformulario</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El subformulario se edita como cualquier formulario, pero en vista de Hoja de datos dentro del principal. Se puede cambiar su tamaño, reorganizar columnas, agregar totales y ajustar su ancho para que no queden columnas cortadas.</li>
+<li><b>·</b> El control «Subformulario/AInforme» dentro del formulario principal abre el subformulario como objeto propio en el Panel de navegación.</li>
+<li><b>·</b> En vista Diseño se puede cambiar el ancho del subformulario y de sus columnas.</li>
+<li><b>·</b> El subformulario suele mostrarse en vista Hoja de datos (columnas), la más compacta.</li>
+<li><b>·</b> Los cambios se guardan dentro del objeto del subformulario; el principal refleja los cambios automáticamente.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🧮 Campos calculados en subformularios</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Dentro del subformulario se pueden agregar campos calculados que operen sobre los registros del detalle: por ejemplo, el total de cada factura, o la suma de todos los montos de las facturas del cliente al pie del subformulario.</li>
+<li><b>·</b> En el Pie del subformulario se puede poner =Suma([MontoTotal]) para ver el total facturado al cliente.</li>
+<li><b>·</b> En cada fila (Detalle) se pueden calcular subtotales, por ejemplo el precio por cantidad: =[Precio]*[Cantidad].</li>
+<li><b>·</b> El subformulario se usa con tablas intermedias: Cliente → Factura (cabecera) y Factura → DetalleFactura (líneas).</li>
+<li><b>·</b> Los totales del subformulario se actualizan automáticamente a medida que se cargan nuevos registros relacionados.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Vincular clientes con sus facturas</div>
+        <p class="consigna">Creá un formulario principal de Clientes que muestre en un subformulario todas las facturas de cada cliente. Agregá cálculos y verificá la sincronización.</p>
+        <ol class="pasos"><li>Verificá que en la base existan las tablas Clientes (con CodigoCliente) y Facturas (con NroFactura, FechaFactura, MontoTotal y el campo CodigoCliente que la conecta).</li>
+<li>Abrí el Asistente de formularios (Crear → Asistente de formularios).</li>
+<li>Agregá los campos de Clientes: Nombre, Telefono y Email.</li>
+<li>Después, desde Tablas/Consultas, elegí Facturas y agregá NroFactura, FechaFactura y MontoTotal.</li>
+<li>En la pregunta «¿Cómo desea ver los datos?», elegí «por Clientes» y la opción «Formularios con subformularios».</li>
+<li>En la vista Diseño, agregá en el Pie del subformulario un cuadro de texto con =Suma([MontoTotal]) y mostralo como Total.</li>
+<li>Probá en vista Presentación: movete entre clientes y verificá que el subformulario muestre las facturas de cada cliente.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Guardá el archivo .accdb y compartí una captura del formulario en vista Presentación mostrando un cliente y sus facturas con el total calculado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el archivo .accdb con el formulario principal y el subformulario sincronizados y el total calculado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

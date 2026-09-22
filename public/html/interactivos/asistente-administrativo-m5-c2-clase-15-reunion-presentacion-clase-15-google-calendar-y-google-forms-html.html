@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 15 - Google Calendar y Google Forms</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0057ff33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0057ff;background:#0057ff22;border:1px solid #0057ff55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0057ff18;border:1px solid #0057ff44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0057ff;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0057ff;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0057ff44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0057ff;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0057ff;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">💼 Asistente Administrativo Digital con IA</div>
+      <div class="mod">Clase 15 · Módulo 5 – Gestión de la Información y Nube</div>
+      <h1>Google Calendar y Google Forms</h1>
+      <p class="bajada">Vas a gestionar reuniones con recordatorios y a diseñar formularios profesionales para encuestas.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Crear eventos en Google Calendar con fecha, hora, duración y recordatorios.</li>
+<li><span class="chk">✓</span>Invitar participantes a una reunión y administrar sus confirmaciones.</li>
+<li><span class="chk">✓</span>Diseñar formularios en Google Forms con distintos tipos de pregunta y obligatoriedad.</li>
+<li><span class="chk">✓</span>Ver y analizar las respuestas en Google Sheets y difundir el enlace del formulario.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>📅 Google Calendar: eventos y recordatorios</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Google Calendar es la agenda digital del asistente: cada reunión, trámite o entrega vive en un mismo lugar y puede avisarte solo. Se sincroniza con Gmail: los vuelos, reservas y mails con fechas pueden sumarse automáticamente.</li>
+<li> Al crear un evento definís título, fecha, hora, duración y si se repite (semanal, mensual). Siempre Sumá la ubicación o el enlace de la videollamada.</li>
+<li><b>·</b> Botón Crear → Evento: ingresá nombre claro, por ej. «Reunión con ClienteA - cierre de contrato».</li>
+<li><b>·</b> Recordatorio: configura 1 o 2 alarmas, por ej. «10 minutos antes» por mail y notificación.</li>
+<li><b>·</b> Eventos recurrentes: reuniones de equipo todos los lunes se repiten sin volver a crearlas.</li>
+<li><b>·</b> Vista de agenda del mes o semana: arrastrá un evento para cambiarle el día y la hora.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>👥 Invitar participantes y gestionar confirmaciones</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Invitás a las personas con su correo y Calendar las notifica automáticamente. Cada invitado responde «Sí», «Tal vez» o «No», y vos ves el estado en la pestaña de la invitación.</li>
+<li> También podés proponer alternar horas con «Encontrar un horario» para ubicar el hueco donde todos estén libres.</li>
+<li><b>·</b> Agregá invitados en el campo Agregar invitados; Calendar mostrará su disponibilidad.</li>
+<li><b>·</b> Hacé clic en Suficientes respuestas para ver quién confirmó.</li>
+<li><b>·</b> Si alguien no confirmó, enviá un recordatorio o escribile directo desde el evento.</li>
+<li><b>·</b> Videollamada: sumá la reunión de Meet con un clic y el enlace llega en la invitación.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📝 Google Forms: preguntas y tipos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Google Forms sirve para encuestas, registros de asistencia, inscripciones y pedidos internos. Cada formulario tiene preguntas con un tipo: opción múltiple, casillas de verificación, respuesta corta o párrafo, y listas desplegables.</li>
+<li> La clave de un buen formulario es la claridad: preguntas cortas, opciones bien redactadas y un objetivo definido.</li>
+<li><b>·</b> Opción múltiple: una sola respuesta (ej. nivel de satisfacción).</li>
+<li><b>·</b> Casillas: se pueden marcar varias (ej. qué temas te interesan).</li>
+<li><b>·</b> Escala lineal: valoraciones del 1 al 5 para medir satisfacción.</li>
+<li><b>·</b> Botón «Obligatoria»: fuerza una respuesta para no recibir datos incompletos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📊 Ver respuestas y enviar el formulario</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Las respuestas se guardan automáticamente. Podés ver un resumen con gráficos en la pestaña Respuestas, o mandarlas a una planilla de Google Sheets para analizarlas.</li>
+<li> Para difundir, el botón Enviar te da el enlace para copiar y pegar en WhatsApp, Gmail o Meet.</li>
+<li><b>·</b> Pestaña Respuestas → Resumen: gráficos de torta y barras generados al toque.</li>
+<li><b>·</b> «Crear hoja de cálculo» vuelca cada respuesta a una fila de Sheets para filtrar y calcular.</li>
+<li><b>·</b> Revisá la vista previa desde el punto de vista del usuario antes de difundir el enlace.</li>
+<li><b>·</b> Cerrá el formulario con «Aceptar respuestas» cuando termine el plazo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="6">
+    <header><h2>😊 Encuesta de satisfacción: caso real</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El asistente administrativo arma encuestas de satisfacción para clientes internos y externos: ¿cómo fue la atención? ¿cumplimos los plazos? Las respuestas sirven para mejorar y para presentar resultados a la gerencia.</li>
+<li> Una encuesta corta (5 a 8 preguntas) tiene más respuestas que una interminable.</li>
+<li><b>·</b> Empezá con una escala 1-5 de satisfacción general.</li>
+<li><b>·</b> Sumá una pregunta abierta: «¿Qué mejorarías?».</li>
+<li><b>·</b> Finalizá con opción múltiple de frecuencia de uso del servicio.</li>
+<li><b>·</b> Exportá el resumen a PDF o gráfico para adjuntarlo a un informe.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Agenda una reunión y armá la encuesta de satisfacción</div>
+        <p class="consigna">Creá un evento en Calendar invitando a un compañero, y diseñá una encuesta de satisfacción para enviar después de la reunión.</p>
+        <ol class="pasos"><li>Creá un evento llamado «Reunión de seguimiento de proyectos» mañana a las 11:00 con 45 minutos de duración.</li>
+<li>Activá un recordatorio 10 minutos antes y sumá la videollamada de Meet.</li>
+<li>Invitá a un/a compañero/a con su correo y enviá la invitación.</li>
+<li>Creá un Forms con: escala 1-5 de satisfacción general, una pregunta abierta de sugerencias y una de opción múltiple sobre el tema que más se quiera tratar.</li>
+<li>Marcá dos preguntas como obligatorias, copiá el enlace y compartilo con el docente.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Compartí con el docente el enlace del formulario y la captura del evento creado en Calendar.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el enlace del formulario, la obligatoriedad de las preguntas y el evento creado en Calendar.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 21 - Creación de Campaña de Email</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #e11d4833, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#e11d48;background:#e11d4822;border:1px solid #e11d4855;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#e11d4818;border:1px solid #e11d4844;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#e11d48;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#e11d48;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #e11d4844;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#e11d48;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#e11d48;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📣 Marketing Digital</div>
+      <div class="mod">Clase 21 · Módulo 6 – E-commerce y Marketplaces</div>
+      <h1>Creación de Campaña de Email</h1>
+      <p class="bajada">Vas a crear tu primera campaña de email completa: redactar el asunto, armar el contenido con un llamado a la acción claro, enviar el mensaje y medir aperturas y clics como un profesional.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Crear una campaña de email paso a paso en Mailchimp o Doppler.</li>
+<li><span class="chk">✓</span>Redactar asuntos atractivos y contenido orientado al lector.</li>
+<li><span class="chk">✓</span>Diseñar un llamado a la acción (CTA) claro y medible.</li>
+<li><span class="chk">✓</span>Enviar la campaña y leer las métricas de apertura y clics.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🧭 Crear una campaña paso a paso</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 5 - Automatización y Email Marketing/Clase 19 - Creación de Campaña Email/img/crear.jpg" alt=""></div><ul class="pts"><li> Toda campaña en Mailchimp o Doppler sigue el mismo flujo: elegir el tipo de campaña, la lista de destinatarios, el asunto, armar el contenido con el editor de bloques y programar o mandar el envío.</li>
+<li><b>·</b> Elegí el tipo: campaña regular, automatización o prueba A/B.</li>
+<li><b>·</b> Seleccioná la lista o segmento que va a recibir el mensaje.</li>
+<li><b>·</b> Blanqueá el remitente: nombre y correo verificados para evitar spam.</li>
+<li><b>·</b> El editor por bloques permite armar texto, fotos y botones sin diseñar.</li>
+<li><b>·</b> Antes de enviar, revisá la vista previa en celular y computadora.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>📩 El asunto: la primera batalla</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 5 - Automatización y Email Marketing/Clase 19 - Creación de Campaña Email/img/asunto.jpg" alt=""></div><ul class="pts"><li> La apertura se decide en la bandeja de entrada en una fracción de segundo. El asunto es el título que define si alguien abre tu email o lo borra.</li>
+<li><b>·</b> Menos de 50 caracteres: en el celular se corta y se pierde el mensaje.</li>
+<li><b>·</b> Beneficio claro y concreto: decile al lector qué gana con abrir.</li>
+<li><b>·</b> Curiosidad honesta: intriga, pero sin prometer mentiras.</li>
+<li><b>·</b> Personalizar con el nombre del suscriptor mejora la apertura.</li>
+<li><b>·</b> Probá dos asuntos con el test A/B de la misma herramienta.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>✍️ Contenido y llamado a la acción</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 5 - Automatización y Email Marketing/Clase 19 - Creación de Campaña Email/img/contenido.jpg" alt=""></div><ul class="pts"><li> El cuerpo del email debe ser corto, escaneable y orientado al lector, no a tu marca. El llamado a la acción es el botón que transforma el mensaje en resultado.</li>
+<li><b>·</b> Un solo mensaje central por email: mucho texto dispersa la atención.</li>
+<li><b>·</b> Párrafos cortos, negritas y espacios en blanco para leer rápido.</li>
+<li><b>·</b> Foto o visual clara que acompañe el mensaje sin recargar el correo.</li>
+<li><b>·</b> CTA con verbo de acción: Conocé más, Reservá tu lugar, Comprá ahora.</li>
+<li><b>·</b> Un solo CTA principal y repetido: en el medio y al final del mensaje.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📈 Envío y medición</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Después del envío la campaña no termina: empieza la lectura de resultados. Las métricas de apertura y clics te dicen si el asunto y el contenido funcionaron.</li>
+<li><b>·</b> Tasa de apertura: porcentaje de destinatarios que abrieron el email.</li>
+<li><b>·</b> Tasa de clics: porcentaje de destinatarios que tocaron un enlace.</li>
+<li><b>·</b> CTR del click: clics sobre aperturas, mide qué tan bueno es el contenido.</li>
+<li><b>·</b> Bajas: si aumenta, revisá frecuencia, asunto y segmentación.</li>
+<li><b>·</b> Referencia: aperturas de 20 a 30% y clics de 2 a 5% son puntos de partida sanos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Creá y enviá tu campaña de email de prueba</div>
+        <p class="consigna">Armá una campaña de email real en Mailchimp o Doppler para la base de la clase anterior, con asunto, contenido y CTA, y enviásela a tu propia dirección de pruebas para medir el resultado.</p>
+        <ol class="pasos"><li>En la herramienta elegida, creá una campaña regular y seleccioná la lista o segmento.</li>
+<li>Escribí dos asuntos candidatos y elegí el mejor con tu criterio.</li>
+<li>Armá el contenido: saludo personalizado, párrafo corto de valor y un botón de CTA.</li>
+<li>Agregá tu propio correo como destinatario de prueba y la lista de test.</li>
+<li>Revisá la vista previa en celular y enviá la campaña.</li>
+<li>Esperá unos minutos y leé el reporte: aperturas, clics y bajas.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Capturá el reporte de la campaña enviada con la tasa de apertura y de clics, junto al asunto elegido.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la campaña enviada y el reporte con sus tasas de apertura y clics.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 9 - Fórmulas y funciones simples</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0057ff33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0057ff;background:#0057ff22;border:1px solid #0057ff55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0057ff18;border:1px solid #0057ff44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0057ff;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0057ff;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0057ff44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0057ff;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0057ff;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">💼 Asistente Administrativo Digital con IA</div>
+      <div class="mod">Clase 9 · Módulo 3 – Planillas de Cálculo</div>
+      <h1>Fórmulas y funciones simples</h1>
+      <p class="bajada">Vas a hacer que la planilla calcule por vos: sumas, promedios y porcentajes, y vas a aprender el formato de celdas y a resolver los errores más comunes.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Referenciar celdas (A1, B2) y escribir fórmulas simples con el signo =.</li>
+<li><span class="chk">✓</span>Usar la función SUMA para sumar rangos de celdas.</li>
+<li><span class="chk">✓</span>Calcular promedios con PROMEDIO y aplicar porcentajes a descuentos.</li>
+<li><span class="chk">✓</span>Formatear celdas con números, moneda, porcentaje y fecha.</li>
+<li><span class="chk">✓</span>Identificar y resolver errores comunes como #REF!, #DIV/0! y ######.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🎯 Referencias de celdas y operadores básicos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cada celda tiene una dirección (A1, B2) y las fórmulas usan esas direcciones para leer los valores. Eso es lo que diferencia a una planilla de una tabla escrita a mano: si cambias un valor, el cálculo se actualiza solo.</li>
+<li><b>·</b> Toda fórmula empieza con el signo =: en una celda escribís = y después la cuenta.</li>
+<li><b>·</b> Operadores básicos: + (suma), - (resta), * (multiplicación) y / (división).</li>
+<li><b>·</b> Ejemplo: si en B2 hay 10 y en B3 hay 5, la celda con =B2+B3 muestra 15.</li>
+<li><b>·</b> La referencia es dinámica: si cambiás el valor de B2, el resultado de la fórmula cambia automáticamente sin tocarla.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>➕ SUMA y PROMEDIO</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Sumar celdas una por una funciona, pero para rangos largos existen las funciones SUMA y PROMEDIO: más cortas de escribir y mucho más difíciles de equivocar.</li>
+<li><b>·</b> SUMA: =SUMA(B2:B10) suma todos los valores desde la celda B2 hasta la B10.</li>
+<li><b>·</b> Un rango se escribe con dos puntos: B2:B10 significa «de B2 a B10».</li>
+<li><b>·</b> PROMEDIO: =PROMEDIO(B2:B10) calcula el promedio (suma dividida por la cantidad de valores).</li>
+<li><b>·</b> Consejo: usá siempre la función SUMA en vez de escribir =B2+B3+B4..., sobre todo en listas que van a crecer.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>💵 Porcentajes y formato de celdas</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Los porcentajes aparecen todo el tiempo en la oficina: descuentos, impuestos, aumentos. En la planilla se representan como números y se muestran con el formato Porcentaje.</li>
+<li><b>·</b> Descuento en el puesto: sueldo neto = bruto − (bruto × descuento). Si el bruto está en B2 y el descuento en C2, la fórmula es =B2-B2*C2.</li>
+<li><b>·</b> Formato Porcentaje: si escribís 0,1 en una celda y le aplicás formato Porcentaje, se muestra como 10%.</li>
+<li><b>·</b> Formato Moneda: muestra los montos prolijos ($1.500,00) sin que cambie el valor guardado.</li>
+<li><b>·</b> Formato Fecha y Número: cambian cómo se ve un dato sin modificar lo que realmente está en la celda.</li>
+<li><b>·</b> La regla de oro: el formato es solo apariencia; el valor y los cálculos siempre usan el número real.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>⚠️ Errores comunes</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cuando una celda muestra #REF!, #DIV/0! o ###### no es que se rompió la planilla: es la planilla avisándote que algo no cierra. Saber leer esos mensajes es parte del oficio.</li>
+<li><b>·</b> #REF!: la fórmula referencia celdas que ya no existen (probablemente borraste una fila o columna que usaba).</li>
+<li><b>·</b> #DIV/0!: intentaste dividir por cero o por una celda vacía en el divisor.</li>
+<li><b>·</b> ######: la columna es demasiado angosta para mostrar el número. Se arregla ensanchando la columna (arrastrá el borde de la letra).</li>
+<li><b>·</b> Consejo: cuando veas un error, hacé clic en la celda y mirá la barra de fórmulas: el mensaje que acompañe al símbolo suele decir exactamente qué está mal.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Calcular sueldos con descuentos</div>
+        <p class="consigna">Armá una planilla que calcule el sueldo neto de cada empleado: restá el descuento porcentual del sueldo bruto usando fórmulas y dale formato de moneda.</p>
+        <ol class="pasos"><li>Abrí una hoja de cálculo nueva y renombrá la hoja como «Sueldos».</li>
+<li>Cargá los encabezados en la fila 1: A1 «Nombre», B1 «Sueldo bruto», C1 «Descuento», D1 «Sueldo neto».</li>
+<li>Ingresá 4 empleados con sus sueldos brutos en números simples, sin el símbolo $.</li>
+<li>En la columna C cargá el descuento: escribí 17% en C2 usando el formato Porcentaje.</li>
+<li>En D2 escribí la fórmula =B2-B2*C2 (bruto menos el descuento) y presioná Enter.</li>
+<li>Arrastrá el cuadradito de D2 hacia abajo para copiar la fórmula a los otros empleados.</li>
+<li>Seleccioná las columnas B y D y aplicáles formato Moneda.</li>
+<li>Verificá que la columna C esté en formato Porcentaje para todos.</li>
+<li>Debajo de los empleados, escribí en A7 «Total de sueldos netos» y en D7 la fórmula =SUMA(D2:D5).</li>
+<li>Probá cambiar un sueldo bruto y mirá cómo el neto y el total se actualizan solos.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Subí la planilla (o una captura con la hoja visible) mostrando la columna de sueldo neto calculada con fórmulas y el formato de moneda aplicado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la planilla o captura con la columna «Sueldo neto» calculada con fórmulas, el total con SUMA y el formato de moneda aplicado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

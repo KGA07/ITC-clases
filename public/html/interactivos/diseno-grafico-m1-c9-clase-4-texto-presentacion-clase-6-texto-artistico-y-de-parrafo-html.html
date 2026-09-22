@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 6 - Texto artístico y de párrafo</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 6 · Módulo 1 – CorelDRAW</div>
+      <h1>Texto artístico y de párrafo</h1>
+      <p class="bajada">Vas a trabajar con texto artístico y de párrafo: inserción, edición, texto sobre trayecto y marcos adaptados a formas, más las propiedades tipográficas profesionales.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Diferenciar texto artístico de texto de párrafo y saber cuándo usar cada uno.</li>
+<li><span class="chk">✓</span>Insertar y editar texto adaptado a un trayecto.</li>
+<li><span class="chk">✓</span>Crear marcos de texto adaptados a una forma vectorial.</li>
+<li><span class="chk">✓</span>Ajustar propiedades tipográficas con el panel de propiedades del texto.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>✍️ Texto artístico y texto de párrafo</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 4 Texto/img/tipografia.jpg" alt=""></div><ul class="pts"><li> CorelDRAW distingue dos tipos de texto. El texto artístico se escribe directamente apuntando con la herramienta Texto y haciendo clic en la página: es ideal para títulos, pocas palabras con mucha personalidad. El texto de párrafo se crea arrastrando un marco y permite bloques de texto con renglones que fluyen.</li>
+<li> El texto artístico admite efectos tipográficos y deformaciones; el de párrafo es el indicado para folletos y textos largos porque maneja justificación, columnas y sangrías.</li>
+<li><b>·</b> Clic con la herramienta Texto = texto artístico.</li>
+<li><b>·</b> Arrastre con la herramienta Texto = marco de texto de párrafo.</li>
+<li><b>·</b> El texto artístico sirve para títulos y palabras sueltas.</li>
+<li><b>·</b> El texto de párrafo ordena bloques largos con formato fluido.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔠 Familias tipográficas y propiedades</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 4 Texto/img/tipos-letra.jpg" alt=""></div><ul class="pts"><li> La fuente (tipografía) define el diseño de las letras. Hay familias con serifas (remates), sans serif (sin remates) y display (decorativas). La elección de fuente comunica tanto como el color: una sans serif es moderna, una con serifas transmite tradición.</li>
+<li> Desde la barra de propiedades o el panel de propiedades del texto elegís fuente, tamaño, interletrado, interlineado, alineación y color. Con el texto seleccionado, escribís los valores exactos para un resultado profesional.</li>
+<li><b>·</b> Serif: remates en los trazos, lectura elegante y tradicional.</li>
+<li><b>·</b> Sans serif: limpia y moderna, la más usada en pantalla.</li>
+<li><b>·</b> El interletrado ajusta la distancia entre letras.</li>
+<li><b>·</b> El interlineado ajusta la distancia entre renglones.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>〰️ Texto adaptado a trayecto</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El texto adaptado a trayecto hace que las palabras sigan una línea curva o una forma. Dibujás una línea o círculo (la 'ruta'), escribís el texto y desde el menú Texto &gt; Adaptar texto a trayecto lo hacés montar sobre esa ruta.</li>
+<li> Una vez adaptado, movés la rutinha de desplazamiento para invertir el texto o cambiar su ubicación. El texto queda pegado a la forma, y ambas se pueden mover juntas.</li>
+<li><b>·</b> Texto + trayecto = palabras que siguen la curva dibujada.</li>
+<li><b>·</b> Se adapta desde el menú Texto &gt; Adaptar texto a trayecto.</li>
+<li><b>·</b> Arrastrando la marca de desplazamiento invertís el texto o lo separás.</li>
+<li><b>·</b> Ideal para sellos circulares, etiquetas y logotipos con texto curvo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📦 Marcos de texto adaptados a forma</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Además de seguir una línea, el texto puede vivir DENTRO de una forma: por ejemplo, dentro de una elipse o de un rótulo. Hacés clic derecho sobre la forma con la herramienta Texto y elegís 'Insertar texto interno' (o usás el comando de adaptar texto a marco).</li>
+<li> El marco se comporta como un contenedor: el texto fluye dentro y oculta lo que no entra, salvo que agrandes la forma o el tipo. Es la base de los rótulos y de los folletos con bloques sobre color.</li>
+<li><b>·</b> Cualquier forma vectorial puede convertirse en marco de texto.</li>
+<li><b>·</b> El texto interno se ajusta al contorno de la forma.</li>
+<li><b>·</b> Si el texto no entra, se desborda: podés reducir el tamaño o agrandar el marco.</li>
+<li><b>·</b> Combinado con párrafos, sirve para los bloques de un folleto.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Sello circular y bloque de folleto</div>
+        <p class="consigna">Creá un sello circular con texto artístico adaptado a un círculo y un bloque de texto de párrafo dentro de un rectángulo redondeado.</p>
+        <ol class="pasos"><li>Dibujá un círculo grande con la herramienta Elipse y sin relleno.</li>
+<li>Escribí tu nombre y el curso como texto artístico (ej. 'MARCA ITC • AÑO 2026').</li>
+<li>Aplicá Texto &gt; Adaptar texto a trayecto para que siga el círculo.</li>
+<li>Con la marca de desplazamiento, acomodá el texto arriba o abajo del círculo.</li>
+<li>Dibujá un rectángulo redondeado y convertilo en marco de texto escribiendo un párrafo de presentación.</li>
+<li>Ajustá fuente, tamaño, interletrado y color, y guardá como texto-nombre.cdr.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Exportá el sello circular y el bloque de texto en un solo PNG.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Cartel tipográfico de dos familias</div>
+        <p class="consigna">Combiná texto artístico y de párrafo en un mini cartel: un título impactante, un subtítulo y un bloque de presentación dentro de un marco.</p>
+        <ol class="pasos"><li>Creá un documento A4 y escribí un título con texto artístico de al menos 5 palabras.</li>
+<li>Elegí para el título una tipografía display o sans serif de gran tamaño.</li>
+<li>Agregá un subtítulo más chico en una familia contrastante.</li>
+<li>Creá un bloque de texto de párrafo con una presentación de 3 o 4 renglones.</li>
+<li>Ajustá interletrado e interlineado para que todo respire y exportá como cartel-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del cartel y anotá qué familias tipográficas usaste y por qué.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se entrega el PNG con el sello circular (texto sobre trayecto) y el bloque en marco, con tipografía y color elegidos coherentemente para una marca personal.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

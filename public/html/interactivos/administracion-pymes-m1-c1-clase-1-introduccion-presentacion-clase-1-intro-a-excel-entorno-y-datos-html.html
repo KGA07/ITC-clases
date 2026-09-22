@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 1 - Intro a Excel: entorno y datos</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0f766e33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0f766e;background:#0f766e22;border:1px solid #0f766e55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0f766e18;border:1px solid #0f766e44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0f766e;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0f766e;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0f766e44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0f766e;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0f766e;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📊 Administración de PyMEs</div>
+      <div class="mod">Clase 1 · Módulo 1 – Excel para Administración</div>
+      <h1>Intro a Excel: entorno y datos</h1>
+      <p class="bajada">Vas a conocer el entorno de Excel, cargar tus primeros datos y moverte por la hoja con soltura para arrancar con tu planilla de administración.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Reconocer el área de trabajo de Excel: celdas, hojas, cuadro de nombres, barra de fórmulas y barra de estado.</li>
+<li><span class="chk">✓</span>Usar la cinta de opciones, sus fichas y grupos, y personalizar la barra de acceso rápido.</li>
+<li><span class="chk">✓</span>Insertar, eliminar, renombrar y colorear hojas para ordenar la planilla.</li>
+<li><span class="chk">✓</span>Cargar textos, valores y cálculos, y aprovechar el autorrelleno del puntero del mouse.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🖥️ El área de trabajo de Excel</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Excel organiza la información en una cuadrícula de celdas formada por columnas (letras) y filas (números). Cada celda tiene una dirección única, por ejemplo A1, que se muestra en el cuadro de nombres.</li>
+<li><b>·</b> Encabezado de columnas (A, B, C...) y de filas (1, 2, 3...): identifican cada celda en la hoja.</li>
+<li><b>·</b> Cuadro de nombres: a la izquierda de la barra de fórmulas; te muestra qué celda está seleccionada o te permite ir directo a otra (escribís B15 y tocás Enter).</li>
+<li><b>·</b> Barra de fórmulas: donde ves y editás el contenido o la fórmula de la celda activa.</li>
+<li><b>·</b> Barra de desplazamiento y barra de estado: la primera te mueve por la hoja y la segunda muestra el estado, el modo de visualización y el zoom.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🧩 La cinta de opciones: fichas y grupos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La cinta de opciones es la franja superior con todas las herramientas de Excel. Está dividida en fichas (Inicio, Insertar, Datos...) y cada ficha agrupa herramientas por función.</li>
+<li><b>·</b> Ficha Inicio: portapapeles, fuente, alineación, número, estilos, celdas y modificar. La vas a usar todo el tiempo.</li>
+<li><b>·</b> Fichas principales para administración: Insertar (tablas, gráficos), Datos (filtros, validación), Fórmulas (biblioteca de funciones).</li>
+<li><b>·</b> Grupo: por ejemplo, en Inicio el grupo Fuente concentra tipo, tamaño, negrita, color y bordes.</li>
+<li><b>·</b> Barra de acceso rápido: arriba a la izquierda. Agregá ahí los comandos que usás seguido, como Guardar, Deshacer o Imprimir.</li>
+<li><b>·</b> Pestaña Archivo (antes Botón de Office): abre la vista donde guardás, abrís, imprimís y configurás el archivo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📑 Las hojas del libro</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Un archivo de Excel es un libro y cada libro contiene hojas (las etiquetas de abajo). Organizar las hojas con nombres claros es el primer hábito administrativo: facturas, stock, sueldos, gastos.</li>
+<li><b>·</b> Insertar hoja: clic en el signo + al lado de las etiquetas o Inicio → Insertar → Insertar hoja.</li>
+<li><b>·</b> Eliminar hoja: clic derecho sobre la etiqueta → Eliminar (ojo: se borra el contenido).</li>
+<li><b>·</b> Renombrar: doble clic en la etiqueta o clic derecho → Cambiar nombre.</li>
+<li><b>·</b> Cambiar color de etiqueta: clic derecho → Color de etiqueta; sirve para distinguir rápido tipo de hojas, por ejemplo rojo para pagos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>⌨️ Introducción de datos y autorrelleno</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> En cada celda podés cargar tres tipos de contenido: texto (nombres, conceptos), valores (números y fechas) y cálculos (fórmulas que empiezan con el signo =).</li>
+<li><b>·</b> Texto: se alinea a la izquierda por defecto; si es largo, se desborda a la celda vecina. Valor: se alinea a la derecha y puede operarse matemáticamente.</li>
+<li><b>·</b> Cálculo: todo empieza con =, por ejemplo =5+3 o =A1*10. Los resultados se actualizan si cambiás los datos.</li>
+<li><b>·</b> Puntero del mouse: una cruz blanca selecciona celdas; una cruz finita en la esquina inferior derecha es el controlador de relleno.</li>
+<li><b>·</b> Autorrelleno: arrastrando el controlador copiás valores y completás series: meses, días, números consecutivos (Enero, Febrero... se completan solos).</li>
+<li><b>·</b> Para seleccionar un rango amplio: mantené Shift y hacé clic, o arrastrá con la cruz blanca.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Tu primera lista de precios</div>
+        <p class="consigna">Creá una lista de precios inicial para el negocio cargando textos, valores y un primer cálculo, y organizá las hojas del libro como lo harías en la oficina.</p>
+        <ol class="pasos"><li>Renombrá la Hoja1 como «Lista de precios» y cambiale el color de etiqueta a verde.</li>
+<li>En A1 cargá el texto «Producto», en B1 «Precio unitario» y en C1 «Cantidad en stock».</li>
+<li>En A2:A6 cargá cinco productos de tu PyME (por ejemplo: Resma de papel, Lapicera, Cartucho de tinta, Café 1 kg, Escritorio).</li>
+<li>En B2:B6 cargá valores numéricos de precio y en C2:C6 las cantidades en stock.</li>
+<li>En D2 escribí la fórmula =B2*C2 y arrastrá el controlador de relleno hasta D6 para calcular el valor del stock de cada producto.</li>
+<li>Insertá una segunda hoja con el nombre «Gastos» y borrá cualquier hoja vacía que sobre.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Guardá el archivo como «ListaPrecios_clase1.xlsx» y mostrá la hoja lista con fórmulas y etiquetas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el archivo con la lista de precios cargada, la fórmula en D y las hojas ordenadas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 4 - Introducción a Word y Google Docs</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0057ff33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0057ff;background:#0057ff22;border:1px solid #0057ff55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0057ff18;border:1px solid #0057ff44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0057ff;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0057ff;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0057ff44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0057ff;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0057ff;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">💼 Asistente Administrativo Digital con IA</div>
+      <div class="mod">Clase 4 · Módulo 2 – Procesador de Textos</div>
+      <h1>Introducción a Word y Google Docs</h1>
+      <p class="bajada">Vas a descubrir el procesador de textos como tu herramienta principal de redacción: programas instalados vs online, cómo crear y guardar bien tus documentos y la estructura exacta de una nota administrativa.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Diferenciar Microsoft Word (instalado) de Google Docs (online) y elegir cuál usar según la tarea.</li>
+<li><span class="chk">✓</span>Crear un documento, guardarlo con Ctrl+G y nombrarlo de forma descriptiva desde el primer momento.</li>
+<li><span class="chk">✓</span>Redactar una nota administrativa completa con lugar y fecha, destinatario, cuerpo, despedida y firma.</li>
+<li><span class="chk">✓</span>Aplicar formato profesional básico: negrita para lo importante y texto justificado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>⚖️ Word instalado vs Google Docs online</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Microsoft Word es el procesador clásico que se instala en tu PC: potente, con herramientas avanzadas de diseño y archivos locales en formato .docx que funcionan sin internet. Google Docs vive en la nube: se abre desde docs.google.com con una cuenta de Gmail y se guarda solo en Google Drive.</li>
+<li> No es «uno mejor que otro»: es elegir la herramienta correcta para cada contexto. Un documento confidencial con formato complejo puede pedir Word; un borrador que se edita entre varios, Google Docs.</li>
+<li><b>·</b> Word: 100% offline, más herramientas de diseño avanzado y manejo de archivos .docx. Ideal para documentos complejos y con formato elaborado.</li>
+<li><b>·</b> Google Docs: gratuito con cuenta de Gmail, guardado automático en la nube y acceso desde cualquier dispositivo con internet. Diferencia clave: colaboración en tiempo real con varias personas a la vez.</li>
+<li><b>·</b> Google Docs funciona offline si activás el acceso sin conexión, y los cambios se sincronizan cuando volvés a conectarte.</li>
+<li><b>·</b> En la oficina real vas a convivir con ambos: sabé abrir, guardar y exportar en los dos.</li>
+<li><b>·</b> Los .docx se abren en Google Docs y los de Docs se pueden descargar como .docx: los dos mundos dialogan.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>📄 Crear y guardar documentos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El procesador de textos no sirve de nada si no sabés guardar bien. Un documento sin nombre o guardado cada vez menos es fuente de dolores de cabeza: archivos perdidos, versiones viejas y el eterno «no encuentro la última versión».</li>
+<li> El orden empieza antes de escribir: poné nombre al archivo, pensá la carpeta y guardá apenas creás el documento.</li>
+<li><b>·</b> Word: Archivo → Nuevo documento en blanco para empezar, o Ctrl+U con el cuadro de «Guardar como» abierto apenas arrancás.</li>
+<li><b>·</b> Ctrl+G guarda. En Word, «Guardar como» (F12) te deja elegir carpeta, nombre y formato la primera vez que guardás.</li>
+<li><b>·</b> Google Docs no tiene botón de guardado: guarda solo en Google Drive en cada cambio, al instante.</li>
+<li><b>·</b> Nombrá siempre antes de empezar: «Nota_Evento_Enero.docx» evita confusiones y pérdidas de tiempo buscando «documento sin título».</li>
+<li><b>·</b> Formato final para compartir: exportá a PDF cuando el documento ya esté cerrado, así nadie lo modifica sin autorización.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📝 La nota administrativa: estructura</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Una nota administrativa es una comunicación escrita breve de la institución hacia adentro o hacia un destinatario. Tené en cuenta que tiene una estructura fija que se repite en toda la carrera y en la oficina real.</li>
+<li> Si dominás la estructura, redactar cualquier nota te lleva minutos: solamente completás los campos.</li>
+<li><b>·</b> Lugar y fecha: se inicia con la ubicación y la fecha completa. Ejemplo: «Buenos Aires, 22 de enero de 2026».</li>
+<li><b>·</b> Destinatario: especificar claramente a quién va dirigida la comunicación: nombre y cargo si se conocen.</li>
+<li><b>·</b> Cuerpo del mensaje: redactalo breve, claro y cortés, en lenguaje profesional y sin rodeos. Motivo, día y hora exacta, y lugar específico.</li>
+<li><b>·</b> Despedida y firma: finalizá con una despedida formal seguida de tu nombre completo y el cargo institucional.</li>
+<li><b>·</b> Orden estricto: lo primero que se lee es el lugar y la fecha; el destinatario va arriba del cuerpo; la firma cierra el documento.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>✨ Formato profesional en dos claves</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El contenido importa, pero el aspecto grita antes que el contenido. Un documento alineado y con énfasis en lo importante se lee rápido y da confianza al lector.</li>
+<li> Dos herramientas alcanzan para darle aspecto ejecutivo a una nota: la negrita y la alineación justificada.</li>
+<li><b>·</b> Negrita: resaltá información clave como fechas, nombres o importes. Menos es más: dos o tres palabras, no párrafos enteros.</li>
+<li><b>·</b> Justificado: alinear el texto a ambos bordes para que el bloque luzca ordenado, con bordes rectos como los libros y diarios.</li>
+<li><b>·</b> Márgenes estándar (2,5 cm aprox.): no uses márgenes extremos a menos que la plantilla lo pida.</li>
+<li><b>·</b> Una sola fuente legible (Arial o Times New Roman) y el mismo tamaño en todo el documento: pruebá 11 o 12 puntos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Comunicado de evento</div>
+        <p class="consigna">Redactá la nota administrativa «CONVOCATORIA A REUNIÓN DE PERSONAL» aplicando toda la estructura y el formato vistos en clase, y exportala a PDF como lo harías en una oficina real.</p>
+        <ol class="pasos"><li>Creá un documento nuevo en Word o Google Docs y nombralo «Nota_Evento_TuNombre» antes de escribir.</li>
+<li>Título centrado y en negrita: «CONVOCATORIA A REUNIÓN DE PERSONAL».</li>
+<li>Colocá la fecha completa en la esquina superior derecha, alineada a la derecha.</li>
+<li>Escribí el destinatario (por ejemplo «A todo el personal administrativo») y el cuerpo: motivo de la reunión, día y hora exacta, y lugar específico donde se realiza.</li>
+<li>Aplicá negrita a la fecha, la hora y el lugar; alineá el cuerpo del texto justificado.</li>
+<li>Cerrá con despedida y firma: tu nombre completo y el cargo institucional.</li>
+<li>Guardá como .docx y exportá a PDF (Archivo → Exportar → Crear PDF) para distribución oficial.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Exportá el documento a PDF (o compartí el enlace si usaste Google Docs) mostrando el comunicado terminado con los 5 elementos de la estructura.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el PDF o el enlace compartido: estructura completa (lugar y fecha, destinatario, cuerpo, despedida y firma), título en negrita centrado, fecha a la derecha y cuerpo justificado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

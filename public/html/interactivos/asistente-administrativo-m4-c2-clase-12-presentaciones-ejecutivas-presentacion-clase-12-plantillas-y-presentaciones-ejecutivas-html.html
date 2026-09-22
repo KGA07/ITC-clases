@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 12 - Plantillas y presentaciones ejecutivas</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0057ff33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0057ff;background:#0057ff22;border:1px solid #0057ff55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0057ff18;border:1px solid #0057ff44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0057ff;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0057ff;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0057ff44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0057ff;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0057ff;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">💼 Asistente Administrativo Digital con IA</div>
+      <div class="mod">Clase 12 · Módulo 4 – Presentaciones Profesionales</div>
+      <h1>Plantillas y presentaciones ejecutivas</h1>
+      <p class="bajada">Vas a usar plantillas profesionales e insertar imágenes, gráficos y tablas para armar presentaciones de nivel ejecutivo.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Reconocer por qué una plantilla profesional ahorra tiempo y mejora el resultado.</li>
+<li><span class="chk">✓</span>Encontrar plantillas en Office, Themes y sitios online.</li>
+<li><span class="chk">✓</span>Adaptar una plantilla a la marca propia con colores y logos.</li>
+<li><span class="chk">✓</span>Insertar tablas y gráficos desde datos y mantener consistencia visual.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🏛️ ¿Por qué usar plantillas?</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La plantilla es el diseño hecho: colores, tipografías y estructura ya resueltos. Vos solo te concentrás en el contenido.</li>
+<li><b>·</b> Ahorro de tiempo: no arrancás de cero, la distribución ya está pensada.</li>
+<li><b>·</b> Estética profesional: los colores, fuentes y espacios combinan entre sí.</li>
+<li><b>·</b> Consistencia: todas las diapositivas comparten el mismo estilo automáticamente.</li>
+<li><b>·</b> Ventaja en el laburo: una presentación prolija transmite seriedad y confianza ante jefes y clientes.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔍 Dónde encontrar plantillas</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Tenés plantillas gratuitas sin salir del programa y miles más en internet. La clave es elegir la adecuada al mensaje.</li>
+<li><b>·</b> PowerPoint: Archivo → Nuevo y secciones de plantillas y temas de presentación.</li>
+<li><b>·</b> Google Slides: galería de plantillas al crear una presentación nueva.</li>
+<li><b>·</b> Office.com (themes): plantillas oficiales de Microsoft para descargar.</li>
+<li><b>·</b> Sitios online: templates de PowerPoint y Slides gratuitos en varios portales.</li>
+<li><b>·</b> Cuidado con la licencia: verificá que la plantilla sea de uso libre si la usás en una empresa.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🎯 Adaptar la plantilla a la marca</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Una plantilla genérica se vuelve tuya cuando le ponés los colores y el logo de tu empresa.</li>
+<li><b>·</b> Colores: desde Diseño → Variantes → Colores, o personalizá los colores del tema.</li>
+<li><b>·</b> Fuentes: Diseño → Variantes → Fuentes para elegir la tipografía corporativa.</li>
+<li><b>·</b> Logo: Insertar → Imágenes y lo ubicás en el mismo lugar de cada diapositiva.</li>
+<li><b>·</b> Para repetir el logo en todas, agregalo al diseño patrón (vista Patrón de diapositivas).</li>
+<li><b>·</b> Menos es más: una paleta de 2 o 3 colores de la marca basta para unificar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📉 Insertar tablas y gráficos desde datos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Las presentaciones ejecutivas viven de datos: tablas para comparar y gráficos para contar la historia visualmente.</li>
+<li><b>·</b> Tabla: Insertar → Tabla y elegí filas y columnas; usala con pocos valores clave.</li>
+<li><b>·</b> Gráfico en PowerPoint: Insertar → Gráfico y se abre una planilla para pegar tus datos.</li>
+<li><b>·</b> Desde Excel: copiá el gráfico (Ctrl + C) y pegalo en la diapositiva (Ctrl + V).</li>
+<li><b>·</b> En Slides: Insertar → Gráfico; el gráfico de Sheets queda vinculado a los datos.</li>
+<li><b>·</b> Regla: un gráfico por diapositiva, con título claro y sin tablas de 50 filas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="6">
+    <header><h2>🧩 Consistencia visual</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Lo que distingue una presentación amateur de una ejecutiva es la uniformidad: mismas fuentes, tamaños y alineaciones en todo.</li>
+<li><b>·</b> Una sola tipografía (dos como máximo: una para títulos y una para cuerpo).</li>
+<li><b>·</b> Mismos colores en todo el archivo, alineados a la marca.</li>
+<li><b>·</b> Alinear los elementos: usá las guías para que títulos e imágenes queden en el mismo lugar.</li>
+<li><b>·</b> Mismo tamaño y estilo para las imágenes en todas las diapositivas.</li>
+<li><b>·</b> Revisá la presentación completa en «Vista de clasificador» (PowerPoint) para notar desprolijidades.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Presentación de un informe de ventas</div>
+        <p class="consigna">Armá la presentación de un informe de ventas usando una plantilla profesional, con un gráfico y una tabla insertados desde datos reales.</p>
+        <ol class="pasos"><li>Elegí una plantilla profesional en PowerPoint o Slides (Archivo → Nuevo o galería de plantillas).</li>
+<li>Creá la estructura: título, resumen de ventas, desarrollo, gráfico del mes y cierre.</li>
+<li>Insertá una tabla con los valores clave de ventas (producto, unidades, importe).</li>
+<li>Creá un gráfico de barras desde esos mismos datos.</li>
+<li>Ajustá colores a una marca ficticia, agregales un logo y revisá la consistencia visual.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Guardá la presentación (PPTX o Slides compartido) y capturá la diapositiva con el gráfico y la tabla para el docente.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la presentación de ventas: plantilla aplicada, tablas y gráficos insertados desde datos, y consistencia visual.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

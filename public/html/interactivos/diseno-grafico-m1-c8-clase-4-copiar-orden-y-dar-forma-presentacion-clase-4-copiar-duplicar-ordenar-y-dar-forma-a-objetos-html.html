@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 4 - Copiar, duplicar, ordenar y dar forma a objetos</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 4 · Módulo 1 – CorelDRAW</div>
+      <h1>Copiar, duplicar, ordenar y dar forma a objetos</h1>
+      <p class="bajada">Vas a aprender a copiar y duplicar objetos, a manejar el orden de apilado y a crear formas nuevas combinando otras: recortar, soldar e intersección.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Copiar y duplicar objetos con atajos y arrastre.</li>
+<li><span class="chk">✓</span>Controlar el orden de los objetos superpuestos.</li>
+<li><span class="chk">✓</span>Soldar, recortar e intersectar formas para crear figuras nuevas.</li>
+<li><span class="chk">✓</span>Aplicar la combinación de formas en un objeto de diseño real.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>📑 Copiar y duplicar objetos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Copiar un objeto es duplicarlo con su color, tamaño y propiedades intactas. Los atajos son los clásicos: Ctrl + C para copiar y Ctrl + V para pegar. El objeto pegado aparece encima del original.</li>
+<li> El duplicado (Ctrl + D) va un paso más allá: CorelDRAW recuerda el desplazamiento que hiciste y repite ese 'paso' cada vez. Es perfecto para filas de botones, remeras, repeticiones decorativas o cualquier patrón.</li>
+<li><b>·</b> Ctrl + C / Ctrl + V: copiar y pegar un objeto.</li>
+<li><b>·</b> Ctrl + D: duplicar con el último desplazamiento aplicado.</li>
+<li><b>·</b> Arrastrar con clic derecho sobre la copia: duplica en el lugar exacto donde soltás.</li>
+<li><b>·</b> Con el duplicado podés crear series: filas, grillas y tramas en segundos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🪜 Orden de objetos</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 4 Copiar Orden y Dar Forma/img/figura-dar-forma.png" alt=""></div><ul class="pts"><li> Los objetos se apilan como hojas de papel: el último dibujado queda arriba. Si superponés un círculo sobre un cuadrado, el círculo tapa al cuadrado.</li>
+<li> Desde el menú Organizar (o clic derecho &gt; Orden) podés traer hacia adelante, llevar hacia atrás, adelantar o atrasar un paso. Orden correcto es la diferencia entre una composición prolija y un desastre visual.</li>
+<li><b>·</b> Cada objeto nuevo se dibuja por encima de los anteriores.</li>
+<li><b>·</b> Orden &gt; Traer al frente / Enviar al fondo: mueven un objeto a los extremos del apilado.</li>
+<li><b>·</b> Adelantar un paso o atrasar un paso: movimiento fino en la pila.</li>
+<li><b>·</b> El orden repetido (Ctrl + Tabulador) recorre la selección entre objetos apilados.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>✂️ Dar forma: soldar, recortar e intersección</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 4 Copiar Orden y Dar Forma/img/interseccion-circulos.jpg" alt=""></div><ul class="pts"><li> 'Dar forma' combina objetos para generar figuras nuevas. Está en el menú Objeto &gt; Forma o en la barra de propiedades cuando tenés dos o más objetos seleccionados.</li>
+<li> Soldar une los objetos en una sola forma continua; Recortar usa el objeto de arriba para 'cortar' la silueta del de abajo; Intersección deja solo la parte que se superpone. Cada uno produce un objeto único que se puede volver a colorear y transformar.</li>
+<li><b>·</b> Soldar: dos o más formas se fusionan en una sola pieza.</li>
+<li><b>·</b> Recortar: la forma superior es un molde que recorta la inferior.</li>
+<li><b>·</b> Intersección: queda única la zona común de los objetos.</li>
+<li><b>·</b> El resultado es una curva editable, ideal para crear elipses con picos, letras recortadas o siluetas nuevas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎛️ Operaciones desde la barra de propiedades</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cuando tenés dos o más objetos seleccionados, la barra de propiedades muestra los botones de dar forma en vivo. Allí también aparecen otras operaciones muy útiles, como la de recorte con técnica de muescas y la de separación de partes, que trabajan sobre objetos superpuestos.</li>
+<li> La clave es la selección y el orden: antes de pulsar el botón, pensá qué objeto es el 'molde' (el que recorta) y cuál es la 'pieza' (el que se recorta). Con la misma lógica resolvés agrupaciones: Ctrl + G une objetos para tratarlos como uno solo, y Ctrl + U los desagrupa.</li>
+<li><b>·</b> Los botones de dar forma viven en la barra de propiedades con objetos seleccionados.</li>
+<li><b>·</b> El orden de selección define qué objeto actúa como molde.</li>
+<li><b>·</b> Agrupar (Ctrl + G) trata varios objetos como uno; desagrupar (Ctrl + U) los libera.</li>
+<li><b>·</b> Las operaciones se pueden repetir: el resultado vuelve a ser una forma combinable.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Fila de botones y recorte de silueta</div>
+        <p class="consigna">Creá una fila de 5 botones idénticos con Ctrl + D y después armá una silueta de luna creciente con dos círculos recortados.</p>
+        <ol class="pasos"><li>Dibujá un rectángulo redondeado de 3 cm de ancho y pintalo de un color.</li>
+<li>Seleccionalo y hacé Ctrl + D: aparece una copia desplazada. Movela a la derecha (ej. 4 cm).</li>
+<li>Seguí haciendo Ctrl + D tres veces más: CorelDRAW repite el paso y te queda la fila uniforme.</li>
+<li>Dibujá un círculo grande y superponé otro círculo más chico arriba.</li>
+<li>Con ambos seleccionados, aplicá Recortar: quedó la luna creciente como una sola curva.</li>
+<li>Coloreá la luna en amarillo y guardá como dar-forma-nombre.cdr.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Exportá el archivo a PNG con la fila de botones y la luna creciente visibles.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Figura combinada con orden y forma</div>
+        <p class="consigna">Construí un símbolo de infinito apilando dos anillos y una flecha, usando orden de objetos y una soldadura final para convertirlo en una sola pieza.</p>
+        <ol class="pasos"><li>Dibujá dos elipses idénticas rotadas hacia adentro para simular un infinito.</li>
+<li>Superponelas y ajusta su orden para que se vean entrelazadas.</li>
+<li>Dibujá un triángulo pequeño como flecha debajo del símbolo.</li>
+<li>Seleccioná los tres objetos y aplicá Soldar para unirlos en una sola forma.</li>
+<li>Coloreá la pieza soldada y exportala como simbolo-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del símbolo soldado y el .cdr con los objetos originales.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se entrega el PNG con la fila de botones y la luna creciente; opcional el .cdr con las formas originales conservadas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

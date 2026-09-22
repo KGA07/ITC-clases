@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 6 - Meta Business Suite</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #e11d4833, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#e11d48;background:#e11d4822;border:1px solid #e11d4855;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#e11d4818;border:1px solid #e11d4844;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#e11d48;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#e11d48;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #e11d4844;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#e11d48;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#e11d48;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📣 Marketing Digital</div>
+      <div class="mod">Clase 6 · Módulo 2 – Redes Sociales y Gestión de Contenidos</div>
+      <h1>Meta Business Suite</h1>
+      <p class="bajada">Vas a centralizar Facebook, Instagram y WhatsApp en Meta Business Suite: programar contenidos, unificar mensajes, leer métricas y administrar anuncios desde un solo lugar.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Conectar las cuentas de Facebook, Instagram y WhatsApp en Meta Business Suite.</li>
+<li><span class="chk">✓</span>Crear y programar publicaciones desde el calendario de contenidos.</li>
+<li><span class="chk">✓</span>Usar la bandeja de entrada unificada para responder mensajes.</li>
+<li><span class="chk">✓</span>Leer insights y administrar anuncios y notificaciones desde la herramienta.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>💼 Qué es Meta Business Suite</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 7 Meta Business Suite/img/suite.jpg" alt=""></div><ul class="pts"><li> Meta Business Suite es la plataforma gratuita de Meta para gestionar Facebook, Instagram y WhatsApp desde un solo lugar. Reemplaza andar cambiando de app: ahí programás, contestás y medís.</li>
+<li><b>·</b> Acceso: business.facebook.com con tu cuenta de Facebook.</li>
+<li><b>·</b> Conectá tu perfil de Instagram y tu WhatsApp Business a la misma cuenta.</li>
+<li><b>·</b> Todo centralizado: publicaciones, mensajes, anuncios y estadísticas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🗓️ Calendario: creación y programación</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 7 Meta Business Suite/img/calendario.jpg" alt=""></div><ul class="pts"><li> El calendario te permite planificar la semana sin depender de la memoria: creás la publicación, elegís fecha y hora, y la plataforma la publica sola. Es la base de la constancia.</li>
+<li><b>·</b> Creá la publicación y elegí a qué cuentas va: Facebook, Instagram o ambas.</li>
+<li><b>·</b> Programá horarios según el momento en que tu audiencia está activa.</li>
+<li><b>·</b> Revisá los insights para ajustar el calendario de la semana siguiente.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📬 Bandeja unificada y respuestas</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Todos los mensajes de Facebook, Instagram y WhatsApp llegan a una sola bandeja. Responder rápido y con buen tono convierte consultas en ventas.</li>
+<li><b>·</b> Configurá respuestas automáticas para los horarios fuera de atención.</li>
+<li><b>·</b> Etiquetá conversaciones y seguí cuáles requieren un seguimiento.</li>
+<li><b>·</b> El tiempo de respuesta figura en tu perfil: la velocidad también suma.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>⚡ Insights, anuncios y automatización</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 2 - Redes Sociales y Gestión de Contenidos/Clase 7 Meta Business Suite/img/insights.jpg" alt=""></div><ul class="pts"><li> El panel de insights centraliza las métricas de tus perfiles, y desde la misma herramienta podés impulsar publicaciones existentes y crear anuncios simples. Las notificaciones automáticas te avisan de cada actividad sin revisar cada app.</li>
+<li><b>·</b> Insights: alcance, interacción y público por perfil, en un solo panel.</li>
+<li><b>·</b> 'Impulsar' una publicación la convierte en anuncio con presupuesto.</li>
+<li><b>·</b> Configurá notificaciones automáticas para mensajes y comentarios.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Planificá la semana en Business Suite</div>
+        <p class="consigna">Usando Meta Business Suite, diseñá un calendario de contenidos de 1 semana para tu negocio y programá al menos 3 publicaciones.</p>
+        <ol class="pasos"><li>Entrá a business.facebook.com e iniciá sesión con tu cuenta.</li>
+<li>Verificá que tu Página de Facebook y tu Instagram estén conectadas; si no, hacelo en Configuración.</li>
+<li>En 'Planificador', abrí el calendario de la semana y asigná un tema a cada día.</li>
+<li>Creá y programá 3 publicaciones con texto, elemento visual o video, y la fecha y hora elegidas.</li>
+<li>Activá las notificaciones de la bandeja unificada y verificá que las publicaciones aparezcan en el calendario.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Capturá la vista del calendario con las 3 publicaciones programadas y compartila con el docente.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el calendario programado y el uso correcto del planificador.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

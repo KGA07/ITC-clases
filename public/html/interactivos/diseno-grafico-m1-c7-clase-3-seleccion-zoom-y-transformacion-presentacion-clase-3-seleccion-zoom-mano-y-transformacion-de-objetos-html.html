@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 3 - Selección, Zoom, Mano y transformación de objetos</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 3 · Módulo 1 – CorelDRAW</div>
+      <h1>Selección, Zoom, Mano y transformación de objetos</h1>
+      <p class="bajada">Vas a aprender a seleccionar objetos, navegar con Zoom y Mano, y transformarlos: tamaño, giro, inclinación y colores de relleno y contorno. Todo lo que se edita, primero se selecciona.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Seleccionar objetos con clic, con clic prolongado y con arrastre de marco.</li>
+<li><span class="chk">✓</span>Usar Zoom y Mano para navegar documentos grandes.</li>
+<li><span class="chk">✓</span>Redimensionar, girar, inclinar y mover objetos con precisión.</li>
+<li><span class="chk">✓</span>Aplicar color de relleno y de contorno desde la paleta y el selector de color.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🖱️ La selección: tu herramienta principal</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 3 Seleccion Zoom y Transformacion/img/cursor-mouse.jpg" alt=""></div><ul class="pts"><li> Para editar cualquier cosa en CorelDRAW primero tenés que seleccionarla. Con la herramienta Selección (la flecha) podés hacer clic sobre un objeto para elegirlo o arrastrar un marco para seleccionar varios a la vez.</li>
+<li> Si mantenés presionada la tecla Shift mientras hacés clic, sumás o restás objetos a la selección. El objeto seleccionado muestra sus 'mangos': ocho cuadraditos en el borde que te permiten transformarlo.</li>
+<li><b>·</b> Clic sobre el objeto: lo seleccionás con sus mangos de control.</li>
+<li><b>·</b> Arrastre de marco: seleccionás todos los objetos que toca el rectángulo.</li>
+<li><b>·</b> Shift + clic: agregás o quitás objetos de la selección.</li>
+<li><b>·</b> Clic en un espacio vacío de la página: deseleccionás todo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔍 Zoom y Mano: tu navegación</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cuando un documento tiene elementos chicos o detalles finos, el Zoom te acerca y aleja sin cambiar nada del dibujo. La herramienta Mano arrastra la vista como si desplazaras un papel sobre el escritorio.</li>
+<li> El atajo más cómodo es la rueda del mouse: girar para acercar y alejar, y mantener la rueda presionada (o tocar la barra espaciadora) para arrastrar la vista con la Mano.</li>
+<li><b>·</b> Rueda del mouse: zoom hacia adentro (acercar) o hacia afuera (alejar).</li>
+<li><b>·</b> Doble clic en la herramienta Zoom restablece el 100%.</li>
+<li><b>·</b> La barra espaciadora activa temporalmente la Mano sin cambiar de herramienta.</li>
+<li><b>·</b> Zoom a la selección: encuadra justo el objeto que estás editando.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📐 Transformar: tamaño, giro e inclinación</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 3 Seleccion Zoom y Transformacion/img/transformar.jpg" alt=""></div><ul class="pts"><li> Al seleccionar un objeto, los mangos de las esquinas y los lados te permiten redimensionarlo. Arrastrá el mango de una esquina manteniendo Ctrl para conservar las proporciones.</li>
+<li> Un segundo clic sobre el objeto cambia los mangos por flechas de giro e inclinación: arrastrá las flechas curvas para girar y las rectas para inclinar (sesgar).</li>
+<li><b>·</b> Mangos de esquina: escalan en dos direcciones; Ctrl conserva proporciones.</li>
+<li><b>·</b> Segundo clic: modo girar/inclinar con flechas curvas y rectas.</li>
+<li><b>·</b> Desde la barra de propiedades podés escribir tamaño exacto y ángulo de rotación.</li>
+<li><b>·</b> El espejado horizontal o vertical se hace arrastrando un mango de lado hacia el lado opuesto.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎨 Color de relleno y contorno</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Con el objeto seleccionado, hacé clic izquierdo en la paleta para pintar el relleno y clic derecho para pintar el contorno (el borde). Si querés más precisión o colores personalizados, abrí el selector de color haciendo clic en las flechitas que están al final de la paleta.</li>
+<li> El grosor del contorno se define desde la barra de propiedades o desde el botón de contorno de la caja de herramientas: podés elegir desde un trazo finísimo hasta un contorno grueso.</li>
+<li><b>·</b> Clic izquierdo = relleno; clic derecho = contorno; clic derecho en la cruz = sin color.</li>
+<li><b>·</b> El selector de color permite mezclar tonos, transparencia y colores CMYK exactos.</li>
+<li><b>·</b> El grosor del contorno se mide en puntos (pt) y se elige en la barra de propiedades.</li>
+<li><b>·</b> Podés quitar el contorno para que una figura quede solo con relleno.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Transformador de formas</div>
+        <p class="consigna">Dibujá varias figuras y transformala a cada una de forma distinta: una escalada, una girada, una inclinada y una con contorno grueso, para ver cómo conviven todas las transformaciones.</p>
+        <ol class="pasos"><li>Dibujá un cuadrado, un círculo, un triángulo y un corazón (o estrella).</li>
+<li>Al cuadrado: escalalo al doble manteniendo Ctrl para que siga siendo cuadrado.</li>
+<li>Al círculo: hacé segundo clic y giralo 45 grados (no se nota, pero sí en un círculo con relleno a medias).</li>
+<li>Al triángulo: inclinalo arrastrando la flecha recta superior.</li>
+<li>Al corazón: pintale relleno rojo con clic izquierdo, contorno grueso y oscuro.</li>
+<li>Con la Mano y el Zoom, encuadrá bien los cuatro objetos y guardá el archivo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Exportá la composición en PNG de tamaño mediano y nombrala como seleccion-transformacion-nombre.png.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Galería de transformaciones</div>
+        <p class="consigna">Armá una grilla de cuatro casillas donde la misma figura base muestre cuatro transformaciones distintas: original, escalada, girada e inclinada.</p>
+        <ol class="pasos"><li>Dibujá un rectángulo rojo de 4 x 4 cm como figura base.</li>
+<li>Duplicado (Ctrl + D), escalalo al 50% manteniendo Ctrl.</li>
+<li>De otro duplicado, girado 25 grados con el segundo clic y la flecha curva.</li>
+<li>Al último duplicado inclinalo con la flecha recta superior.</li>
+<li>Separalos en fila, escribí debajo de cada uno su nombre de transformación y exportá en PNG.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG de la galería con los cuatro casos rotulados.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se revisa la captura o PNG final: debe haber una figura escalada, una girada, una inclinada y una con contorno grueso, todas correctamente construidas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

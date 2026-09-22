@@ -9,6 +9,8 @@
   "background_color": "#f4f7fb",
   "theme_color": "#0058FF",
   "lang": "es",
+  "author": "@gustavokempe",
+  "footer": "Hecho con dedicación · @gustavokempe",
   "icons": [
     {
       "src": "/img/icon.svg",

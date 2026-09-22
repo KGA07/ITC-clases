@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 9 - Medios artísticos: caligráfico, pincel y diseminador</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 9 · Módulo 1 – CorelDRAW</div>
+      <h1>Medios artísticos: caligráfico, pincel y diseminador</h1>
+      <p class="bajada">Vas a dibujar trazos con personalidad usando los medios artísticos de CorelDRAW: el trazo caligráfico, los pinceles y el diseminador de objetos que dispersa mini formas por el dibujo.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Dibujar trazos con el medio artístico caligráfico.</li>
+<li><span class="chk">✓</span>Pintar con los pinceles incluidos y cargar el tono del trazo.</li>
+<li><span class="chk">✓</span>Usar el diseminador para esparcir objetos pequeños en un área.</li>
+<li><span class="chk">✓</span>Editar y ajustar los parámetros de cada trazo artístico.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🖋️ El medio artístico caligráfico</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 5 Diseminador/img/pincel-acuarela.jpg" alt=""></div><ul class="pts"><li> La herramienta Medios artísticos incluye varios modos. El caligráfico simula una pluma de punta: el relleno del trazo va más grueso o más fino según la dirección en la que dibujás, como si escribieras con un marcador chato.</li>
+<li> En la barra de propiedades controlás el grosor del trazo y el ángulo de la punta. Con un ángulo de 45 grados y practicando el movimiento, lográs letras y firmas con estilo.</li>
+<li><b>·</b> El trazo caligráfico varía su grosor con la dirección del dibujo.</li>
+<li><b>·</b> El ángulo de la punta se ajusta desde la barra de propiedades.</li>
+<li><b>·</b> Sirve para firmas, títulos escritos a mano y tramados expresivos.</li>
+<li><b>·</b> El resultado es un trazo editable, con relleno y contorno propios.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🖌️ El pincel artístico</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El modo pincel aplica trazos con textura y forma de pincelada: CorelDRAW trae bibliotecas de pinceles (tinta, carbón, acuarela, sombreados) que convierten tu movimiento en una pincelada realista.</li>
+<li> Elegís el pincel de la lista, dibujás el trazo y podés reducir o aumentar la proporción para que la pincelada se vea robusta o fina. Después se puede recolorar todo el trazo con un clic en la paleta.</li>
+<li><b>·</b> Las bibliotecas de pinceles están en la barra de propiedades del medio artístico.</li>
+<li><b>·</b> La proporción controla qué tan grande se ve la pincelada.</li>
+<li><b>·</b> El trazo se recolorea como cualquier objeto.</li>
+<li><b>·</b> La mezcla de varios pinceles crea efectos de ilustración única.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>✨ El diseminador de objetos</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 5 Diseminador/img/figura-medios.png" alt=""></div><ul class="pts"><li> El diseminador es un 'espray' de objetos: elegís una pequeña forma de una lista (flores, estrellas, confeti) y, con un arrastre del mouse, el medio artístico va dispersando muchas copias de esa forma a lo largo del trazo.</li>
+<li> Desde la barra de propiedades elegís qué objeto esparcir, cuántas copias sueltan por zona y con qué variación de tamaño. Cuanto más lento movés el mouse, más denso queda el rocío.</li>
+<li><b>·</b> El diseminador repite una forma a lo largo del trazo dibujado.</li>
+<li><b>·</b> Podés cambiar el objeto diseminado desde la barra de propiedades.</li>
+<li><b>·</b> El rocío se puede redimensionar y mover como un objeto único.</li>
+<li><b>·</b> Listo para llenar fondos de festejo, marcos florales y tramas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎛️ Editar y combinar trazos artísticos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Los trazos artísticos no son un dibujo rígido: se pueden editar después. Con la herramienta Forma tocás los nodos del trazo y lo extendés, acortás o curvás sin perder el efecto del pincel o el rocío.</li>
+<li> La combinación es la verdadera potencia: un fondo con diseminador, un título caligráfico y un marco de pincel convierten un cartel simple en una ilustración. Se usa mucho en afiches de festivales, invitaciones y marcas artesanales.</li>
+<li><b>·</b> Los trazos se editan con la herramienta Forma como cualquier curva.</li>
+<li><b>·</b> Podés combinar caligráfico, pincel y diseminador en una misma pieza.</li>
+<li><b>·</b> Los trazos de medios artísticos son curvas vectoriales, escalables sin pérdida.</li>
+<li><b>·</b> El desempeño: fondos animados del diseminador se convierten a mapa de bits si pesan.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Afiche de festival con medios artísticos</div>
+        <p class="consigna">Creá un mini afiche de un festival (nombre ficticio) que combine los tres medios artísticos: título caligráfico, marco con pincel y fondo con diseminador.</p>
+        <ol class="pasos"><li>Creá un documento A4 vertical y pintá el fondo de un color suave.</li>
+<li>Con el medio caligráfico, escribí el nombre del festival (ej. 'FESTIVAL ITC 2026') con trazo grueso.</li>
+<li>Con el modo pincel, dibujá un marco alrededor de la página (ej. pincel de tinta).</li>
+<li>Con el diseminador, elegí una forma (estrellas o flores) y esparcila en las esquinas o el borde.</li>
+<li>Ajustá tamaños y proporciones desde la barra de propiedades hasta que la composición respire.</li>
+<li>Recoloreá los trazos (clic en paleta) para que combinen con la paleta de tu documento; guardá como festival-nombre.cdr.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Exportá el afiche en PNG y detallá qué medio artístico usaste en cada elemento.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Marco decorativo con diseminador</div>
+        <p class="consigna">Decorá los bordes de un documento A4 con un diseminador y un marco de pincel, respetando el aire central para el contenido.</p>
+        <ol class="pasos"><li>Creá un documento A4 con fondo de color suave.</li>
+<li>Con el modo pincel, dibujá un marco fino siguiendo los bordes de la página.</li>
+<li>Con el diseminador, elegí una forma chica (estrellas o flores) y rociá las esquinas.</li>
+<li>Ajustá la densidad del rocío desde la barra de propiedades (mas lento el trazo, más denso).</li>
+<li>Dejá libre el centro, escribí una palabra de prueba y exportá como marco-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del marco decorativo con el centro limpio para contenido.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se evalúa el afiche completo con los tres medios artísticos visibles y una paleta de colores coherente.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

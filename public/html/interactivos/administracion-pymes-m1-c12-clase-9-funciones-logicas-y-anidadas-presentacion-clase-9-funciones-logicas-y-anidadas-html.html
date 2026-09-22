@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 9 - Funciones lógicas y anidadas</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0f766e33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0f766e;background:#0f766e22;border:1px solid #0f766e55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0f766e18;border:1px solid #0f766e44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0f766e;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0f766e;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0f766e44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0f766e;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0f766e;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📊 Administración de PyMEs</div>
+      <div class="mod">Clase 9 · Módulo 1 – Excel para Administración</div>
+      <h1>Funciones lógicas y anidadas</h1>
+      <p class="bajada">Vas a enseñarle a Excel a DECIDIR: si se cumple una condición, un resultado; si no, otro. Con la función SI y sus versiones anidadas, tu planilla empieza a razonar, y CONCATENAR te arma textos automáticos.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Escribir la función SI con su prueba lógica y sus valores VERDADERO/FALSO.</li>
+<li><span class="chk">✓</span>Combinar condiciones con Y() y O() dentro del SI.</li>
+<li><span class="chk">✓</span>Anidar funciones SI para clasificar en más de dos categorías.</li>
+<li><span class="chk">✓</span>Armar textos automáticos con CONCATENAR y el símbolo &amp;.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🚦 La función SI: decisiones en la planilla</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La función SI evalúa una prueba lógica (una pregunta que se responde VERDADERO o FALSO) y devuelve un valor si es verdadero y otro si es falso. Es la forma más usada de darle criterio a la planilla.</li>
+<li><b>·</b> Estructura: =SI(prueba_lógica; valor_si_verdadero; valor_si_falso).</li>
+<li><b>·</b> Ejemplo: =SI(C2&gt;=100000;&quot;Venta importante&quot;;&quot;Venta normal&quot;) clasifica automáticamente.</li>
+<li><b>·</b> El valor si falso es opcional pero recomendado; sin él, una condición no cumplida devuelve FALSO.</li>
+<li><b>·</b> Pruebas lógicas se arman con comparadores: =, &gt;, &lt;, &gt;=, &lt;=, &lt;&gt; (distinto).</li>
+<li><b>·</b> La prueba puede ser un número (0 = FALSO), una referencia o el resultado de otra función.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🧪 Prueba lógica combinada: Y() y O()</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Una misma decisión suele depender de más de una condición: pagar comisión si el vendedor superó la meta Y cobró el mes. Ahí entran Y() que exige todas las condiciones, y O() que alcanza con una.</li>
+<li><b>·</b> =SI(Y(C2&gt;=100000;D2&gt;=50);&quot;Recompensa&quot;;&quot;Sin recompensa&quot;): las DOS condiciones.</li>
+<li><b>·</b> =SI(O(C2=&quot;A&quot;;C2=&quot;B&quot;);&quot;Prioritario&quot;;&quot;Normal&quot;): alcanza UNA de las dos.</li>
+<li><b>·</b> Las condiciones van entre paréntesis separadas por punto y coma.</li>
+<li><b>·</b> Regla mental: Y() es exigente (todas), O() es flexible (cualquiera).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🔁 Funciones lógicas anidadas: SI dentro de SI</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cuando hay más de dos resultados posibles (diferenciar tres, cuatro o cinco categorías), se anidan funciones: en el valor si falso se coloca otra función SI. Esto crea una estructura de decisiones en cascada.</li>
+<li><b>·</b> Ejemplo: =SI(C2&gt;=200000;&quot;VIP&quot;;SI(C2&gt;=100000;&quot;Importante&quot;;&quot;Normal&quot;)): primero el caso mayor y se va bajando.</li>
+<li><b>·</b> Ojo con la cantidad de paréntesis: se abren y cierran en orden; Excel pinta cada par con un color.</li>
+<li><b>·</b> Mejor práctica: ordenar las condiciones de mayor a menor para no pisar casos.</li>
+<li><b>·</b> Los textos entre comillas, los números sin comillas, y siempre separando con punto y coma.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🧵 CONCATENAR: textos que se arman solos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> CONCATENAR une el contenido de varias celdas en una sola: nombre y apellido, dirección, leyendas para impresiones. Se puede combinar con &amp; para agregar espacios y signos.</li>
+<li><b>·</b> =CONCATENAR(A2;&quot; &quot;;B2): une nombre (A) y apellido (B) dejando un espacio.</li>
+<li><b>·</b> Equivalente con &amp; : =A2&amp;&quot; &quot;&amp;B2. Ambos caminos sirven; el &amp; es más directo.</li>
+<li><b>·</b> Combinar texto y cálculo: =A2&amp;&quot; debe $&quot;&amp;TEXTO(C2;&quot;#.##0,00&quot;) arma el aviso de deuda.</li>
+<li><b>·</b> Con SI dentro: =SI(C2&gt;=100000;&quot;Pago completo&quot;;&quot;Debe saldo&quot;)&amp;&quot; - &quot;&amp;A2: junta decisión y dato.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Clasificación de clientes y etiquetas de pago</div>
+        <p class="consigna">Sobre una lista de clientes y su facturación, clasificá el nivel de cada uno con SI anidado, aplicá una condición con Y y generá etiquetas automáticas de estado de pago con CONCATENAR.</p>
+        <ol class="pasos"><li>Creá una hoja «Clientes» con encabezados: Nombre, Apellido, Facturación, Deuda, Estado.</li>
+<li>Cargá 8 clientes con montos de facturación y deuda variados.</li>
+<li>En Estado poné =SI(C2&gt;=200000;&quot;VIP&quot;;SI(C2&gt;=100000;&quot;Importante&quot;;&quot;Normal&quot;)) para clasificar.</li>
+<li>Agregá una columna «Recompensa» con =SI(Y(C2&gt;=100000;D2=0);&quot;Sin deuda - bono&quot;;&quot;A revisar&quot;) para premiar a los que facturan mucho y no deben.</li>
+<li>Agregá una columna «Etiqueta de pago» con =A2&amp;&quot; &quot;&amp;B2&amp;&quot; - &quot;&amp;SI(D2&gt;0;&quot;DEBE $ &quot;&amp;TEXTO(D2;&quot;#.##0,00&quot;);&quot;AL DIA&quot;) usando CONCATENAR o &amp;.</li>
+<li>Verificá que las etiquetas muestren nombre completo y estado de deuda en texto.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Guardá como «Clientes_clase9.xlsx» con SI anidado, la condición Y y las etiquetas concatenadas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la clasificación con SI anidado, la Y() combinada y las etiquetas concatenadas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

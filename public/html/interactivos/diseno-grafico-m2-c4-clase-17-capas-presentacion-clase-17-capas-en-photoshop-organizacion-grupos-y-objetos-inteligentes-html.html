@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 17 - Capas en Photoshop: organización, grupos y objetos inteligentes</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 17 · Módulo 2 – Adobe Photoshop</div>
+      <h1>Capas en Photoshop: organización, grupos y objetos inteligentes</h1>
+      <p class="bajada">Vas a entender las capas como el sistema nervioso de Photoshop: visualización, bloqueo, enlace, combinación, grupos, rasterizado y objetos inteligentes. Con capas ordenadas, cualquier diseño se edita sin romper nada.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Mostrar, ocultar, bloquear y enlazar capas.</li>
+<li><span class="chk">✓</span>Combinar capas y acoplar la imagen cuando corresponda.</li>
+<li><span class="chk">✓</span>Agrupar capas y rasterizar formas o textos.</li>
+<li><span class="chk">✓</span>Crear y editar objetos inteligentes en Photoshop.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🗂️ El panel de capas</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/2 Modulo PSD/Clase 17 Capas/img/capas.jpg" alt=""></div><ul class="pts"><li> Cada elemento de tu diseño vive en una capa: las capas se apilan como hojas y la de arriba se ve por encima. El panel de capas (a la derecha) muestra el apilado, con un ojo por capa para mostrarla u ocultarla.</li>
+<li> A la derecha de cada capa hay celdas de control: el candado de bloqueo protege la capa, y la celda del al lado permite pintar sin salirse (bloqueo de píxeles transparentes). La miniatura de la capa se usa para seleccionarla.</li>
+<li><b>·</b> Clic en el ojo: mostrar u ocultar la capa.</li>
+<li><b>·</b> Candado: bloquea la capa para no moverla ni editarla.</li>
+<li><b>·</b> La capa activa se resalta: todo lo que hagas afecta a esa capa.</li>
+<li><b>·</b> Doble clic sobre el nombre de la capa lo renombra.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔗 Enlazar, combinar y acoplar</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Enlazar dos capas las agrupa para moverse juntas: seleccionás ambas y clic en el ícono de eslabón del panel. Las enlazadas se desplazan, escalan y transforman a la vez pero siguen siendo capas independientes.</li>
+<li> Combinar (Ctrl + E) fusiona las capas seleccionadas en una sola: se usa cuando ya no las necesitás separar. Acoplar la imagen aplana TODAS las capas en un único fondo: el paso final antes de exportar una pieza terminada.</li>
+<li><b>·</b> Enlace: capas que se transforman juntas sin fusionarse.</li>
+<li><b>·</b> Combinar capas (Ctrl + E): unir seleccionadas en una.</li>
+<li><b>·</b> Acoplar imagen: aplana todas las capas del documento.</li>
+<li><b>·</b> Acoplá solo al final: acoplar temprano destruye la flexibilidad.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🗃️ Grupos y rasterizado</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/2 Modulo PSD/Clase 17 Capas/img/figura-capas.png" alt=""></div><ul class="pts"><li> Los grupos (carpetas) contienen varias capas: se crean con Ctrl + G y se abren y cierran como árbol de archivos. Agrupar un logo, un botón o los elementos de un afiche mantiene el panel limpio y permite mover todo el grupo de una vez.</li>
+<li> Rasterizar convierte una capa vectorial o de texto en píxeles. Se necesita para aplicar algunos efectos que solo funcionan sobre píxeles. Una vez rasterizada, la capa ya no conserva su naturaleza editable original.</li>
+<li><b>·</b> Ctrl + G agrupa las capas seleccionadas.</li>
+<li><b>·</b> El grupo se mueve y transforma como un bloque.</li>
+<li><b>·</b> Rasterizar texto o forma lo convierte en píxeles.</li>
+<li><b>·</b> Rasterizá solo cuando el efecto lo exija: no hay vuelta atrás.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>✨ Objetos inteligentes</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El objeto inteligente incrusta una imagen 'viva': podés escalarla, rotarla y hasta deformarla una y otra vez SIN perder calidad, porque Photoshop conserva el original dentro de la capa.</li>
+<li> Al hacer doble clic en un objeto inteligente, se abre su contenido en otra pestaña y ahí lo editás; al guardar, el objeto se actualiza en tu composición. Es el estándar para trabajar con fotos y reutilizar diseños sin degradarlos.</li>
+<li><b>·</b> El objeto inteligente protege la calidad al transformar.</li>
+<li><b>·</b> Doble clic lo abre aparte para editarlo.</li>
+<li><b>·</b> Se crea arrastrando una imagen al lienzo o con clic derecho &gt; Convertir en objeto inteligente.</li>
+<li><b>·</b> Ideal para logos, textos y fotos que vas a escalar muchas veces.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Composición ordenada con capas</div>
+        <p class="consigna">Armá una composición de 3 elementos sobre un fondo, organizada con grupos y con un objeto inteligente reescalado sin pérdida.</p>
+        <ol class="pasos"><li>Creá un documento 1920x1080 y fijá una capa de fondo con un color.</li>
+<li>Abrí o arrastrá una imagen (por ej. una foto tuya) al lienzo: Photoshop la crea como objeto inteligente.</li>
+<li>Escalala con Ctrl + T hasta el tamaño de un avatar y dejala en una esquina.</li>
+<li>Agregá un texto con tu nombre (capa de texto) y una forma de color (capa de forma).</li>
+<li>Seleccioná texto y forma y agrupalos con Ctrl + G; nombralo 'Identidad'.</li>
+<li>Ocultá, bloqueá y combiná capas para practicar; al final acoplá la imagen y exportá como capas-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Exportá el resultado final en PNG y comentá en qué momento usarías cada acción (ocultar, enlazar, acoplar).</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Muevo el grupo, no la capa</div>
+        <p class="consigna">Organizá una composición de 5 elementos en dos grupos y mové cada grupo completo para demostrar la ventaja del orden de capas.</p>
+        <ol class="pasos"><li>Creá un documento y dibujá 5 objetos simples (2 + 3).</li>
+<li>Nombrá cada capa con un nombre descriptivo (doble clic).</li>
+<li>Seleccioná las 2 primeras y agrupalas con Ctrl + G; hacé lo mismo con las 3 restantes.</li>
+<li>Con la herramienta Movimiento, mové cada grupo completo por el lienzo.</li>
+<li>Bloqueá uno de los grupos con el candado, intentá moverlo y comprobá que no se mueve; exportá como grupos-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG final y un screen del panel de capas mostrando los dos grupos.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se evalúa la composición final (fondo, avatar, texto y forma) y la comprensión de cuándo ocultar, enlazar, combinar y acoplar.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

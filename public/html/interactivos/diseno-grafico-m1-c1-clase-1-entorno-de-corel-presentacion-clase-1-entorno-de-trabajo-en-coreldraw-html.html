@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 1 - Entorno de trabajo en CorelDRAW</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 1 · Módulo 1 – CorelDRAW</div>
+      <h1>Entorno de trabajo en CorelDRAW</h1>
+      <p class="bajada">Vas a conocer la ventana de trabajo de CorelDRAW pieza por pieza: barras, caja de herramientas, paleta de colores y controles de página. Al final, vas a moverte por el programa con la misma soltura que en un documento de texto.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Identificar cada zona de la ventana de CorelDRAW y su función.</li>
+<li><span class="chk">✓</span>Usar la barra de menú, la barra estándar y la barra de propiedades.</li>
+<li><span class="chk">✓</span>Manejar la caja de herramientas y la paleta de colores.</li>
+<li><span class="chk">✓</span>Navegar entre páginas y usar reglas y barras de desplazamiento.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🖥️ La ventana de CorelDRAW</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 1 Entorno de Corel/img/corel-entorno.jpg" alt=""></div><ul class="pts"><li> CorelDRAW es un programa de diseño vectorial: dibujás formas con trazos (curvas) que se pueden agrandar y achicar infinitamente sin perder calidad. Todo el diseño publicitario que vas a producir en este curso arranca en esta ventana.</li>
+<li> La ventana se divide en zonas claras: arriba las barras, a la izquierda la caja de herramientas, a la derecha la paleta de colores y en el centro la página donde trabajás.</li>
+<li><b>·</b> La página central representa tu 'lienzo': es la hoja que vas a imprimir o exportar.</li>
+<li><b>·</b> Fuera de la página también podés trabajar, pero solo se publica lo que está sobre ella.</li>
+<li><b>·</b> El cursor cambia de forma según la herramienta que tenés activa.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>📋 Barra de menú y barra estándar</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 1 Entorno de Corel/img/corel-logo.jpg" alt=""></div><ul class="pts"><li> La barra de menú (Archivo, Edición, Ver, Organizar, Efectos, Mapas de bits, Texto, Tabla, Herramientas, Ventana, Ayuda) concentra todos los comandos del programa organizados por grupo temático.</li>
+<li> Debajo está la barra estándar: un conjunto de accesos directos a las acciones más frecuentes como abrir, guardar, imprimir, deshacer o importar.</li>
+<li><b>·</b> El menú Archivo es donde vas a crear, abrir, guardar, importar y exportar.</li>
+<li><b>·</b> El menú Efectos agrupa sombras, transparencias, envolturas y demás efectos interactivos.</li>
+<li><b>·</b> La barra estándar cambia con los accesos más usados: guardá con frecuencia (Ctrl + S).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🧰 Barra de propiedades y caja de herramientas</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La barra de propiedades es 'inteligente': muestra los datos del objeto que tenés seleccionado. Si tocás un rectángulo, aparece su ancho, alto y posición; si escribís texto, aparecen la fuente y el tamaño.</li>
+<li> La caja de herramientas, en el borde izquierdo, agrupa todas las herramientas de dibujo, edición y texto. Algunas tienen un triángulo flotante que esconden herramientas relacionadas.</li>
+<li><b>·</b> Selección con la herramienta más usada del panel: con la flecha elegís y movés objetos.</li>
+<li><b>·</b> Las herramientas con una flechita al costado despliegan un submenú con variantes.</li>
+<li><b>·</b> La barra de propiedades se actualiza sola: no hace falta buscarla, es el panel que mirás en cada paso.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎨 Paleta de colores, control de páginas e instrumentos de la ventana</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> A la derecha tenés la paleta de colores por defecto (paleta CMYK para impresión). Hacés clic sobre un color para pintar el relleno de la forma seleccionada y clic derecho sobre el color para pintar el contorno.</li>
+<li> Abajo a la izquierda está el control de páginas: te permite agregar, eliminar y pasar de página como en un libro. Las reglas (izquierda y arriba) miden en milímetros y las barras de desplazamiento te mueven por la zona de trabajo.</li>
+<li><b>·</b> Clic izquierdo = color de relleno; clic derecho = color de contorno.</li>
+<li><b>·</b> En el control de páginas podés agregar páginas nuevas con el signo +.</li>
+<li><b>·</b> Las reglas te sirven para medir y para arrastrar guías que ayudan a alinear elementos.</li>
+<li><b>·</b> Zoom y Mano se encuentran en la barra de herramientas: Zoom acerca y aleja; Mano arrastra la vista sin mover el documento.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Reconocer el mapa de la ventana</div>
+        <p class="consigna">Abrí CorelDRAW, creá un documento nuevo y señalá con precisión en qué zona de la ventana está cada elemento que vimos en clase.</p>
+        <ol class="pasos"><li>Ejecutá CorelDRAW y creá un documento nuevo con la configuración por defecto.</li>
+<li>Ubicá en la pantalla: barra de menú, barra estándar, barra de propiedades y caja de herramientas.</li>
+<li>Buscá en la caja de herramientas la herramienta Rectángulo y dibujá una forma en la página.</li>
+<li>Hacé clic sobre la forma y observá cómo cambia la barra de propiedades con sus medidas.</li>
+<li>Pintá la forma: clic izquierdo sobre un color de la paleta y clic derecho sobre otro color para el contorno.</li>
+<li>Agregá una segunda página usando el control de páginas y volvé a la primera.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Capturá la pantalla (Win + Shift + S) con la ventana completa y señalizá con marcas cada zona identificada.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Mi primer documento guardado</div>
+        <p class="consigna">Creá un documento de práctica, dibujá dos formas, guardalo como .cdr y exportá una copia en PNG para entender el flujo completo de trabajo.</p>
+        <ol class="pasos"><li>Creá un documento nuevo A4 vertical con las opciones por defecto.</li>
+<li>Dibujá un rectángulo y una elipse en el centro de la página.</li>
+<li>Pintá cada forma con un color distinto (clic izquierdo) y con contorno (clic derecho).</li>
+<li>Guardá el archivo con Archivo &gt; Guardar como y nombrá mi-documento.cdr.</li>
+<li>Exportá una copia en PNG con Archivo &gt; Exportar y compará el peso con el .cdr.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Subí el .cdr y el PNG exportado a la carpeta de entrega de la clase.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Cada alumno entrega la captura de su ventana de CorelDRAW con las zonas señalizadas y explica oralmente la función de dos de ellas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

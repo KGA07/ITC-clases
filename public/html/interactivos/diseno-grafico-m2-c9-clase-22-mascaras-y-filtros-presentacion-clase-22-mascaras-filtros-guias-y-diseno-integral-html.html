@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 22 - Máscaras, filtros, guías y diseño integral</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 22 · Módulo 2 – Adobe Photoshop</div>
+      <h1>Máscaras, filtros, guías y diseño integral</h1>
+      <p class="bajada">Vas a cerrar el curso dominando las máscaras de capa, vectoriales y de recorte, la galería de filtros, las guías de composición y el armado de una pieza publicitaria integral.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Crear y usar máscaras de capa, vectoriales y de recorte.</li>
+<li><span class="chk">✓</span>Aplicar filtros como licuar, desenfoque, estilizar, interpretar y ruido.</li>
+<li><span class="chk">✓</span>Trabajar con guías, guías inteligentes y composición de guías.</li>
+<li><span class="chk">✓</span>Integrar todo en una pieza publicitaria final.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🎭 Máscaras de capa y máscaras de recorte</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/2 Modulo PSD/Clase 22 Mascaras y filtros/img/filtros.jpg" alt=""></div><ul class="pts"><li> La máscara de capa es un velo que oculta u muestra partes de la capa sin borrarla: se pinta de negro para ocultar y de blanco para revelar. Un error de máscara se corrige pintando el color contrario: nunca se pierde la imagen original.</li>
+<li> La máscara de recorte limita una capa a la forma de la capa de abajo: la de arriba 'entra' dentro del contorno de la inferior. Es la forma moderna de iluminar, colorear o texturizar solo un elemento (como el PowerClip en CorelDRAW).</li>
+<li><b>·</b> Máscara de capa: negro oculta, blanco revela, gris medio transparente.</li>
+<li><b>·</b> Las máscaras no destruyen: recuperás todo pintando de blanco.</li>
+<li><b>·</b> Máscara de recorte: la capa de arriba se limita a la de abajo.</li>
+<li><b>·</b> Las máscaras vectoriales usan una ruta para ocultar con bordes precisos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🌀 La galería de filtros</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/2 Modulo PSD/Clase 22 Mascaras y filtros/img/desenfoque.jpg" alt=""></div><ul class="pts"><li> La galería de filtros reúne los filtros artísticos en un solo panel con previsualización. Los grupos principales: Licuar (retuerce píxeles como masa, ideal para retoques y efectos), desenfoque (gaussiano, radial, de superficie para suavizar) y estilizar (acentúa bordes y trazos).</li>
+<li> Interpretar crea efectos de viñetas, nubes y fibra óptica; el ruido agrega grano o elimina imperfecciones. Los filtros se aplican a una capa o a una selección y muchos funcionan como filtros inteligentes (no destructivos) sobre objetos inteligentes.</li>
+<li><b>·</b> Licuar: deforma píxeles como masa con pinceles.</li>
+<li><b>·</b> Desenfoque: gaussiano, radial y de superficie.</li>
+<li><b>·</b> Estilizar: acentúa bordes y contornos.</li>
+<li><b>·</b> Ruido: agrega o quita grano; interpretar crea nubes y texturas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📏 Guías, guías inteligentes y composición</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Las guías se arrastran desde las reglas (Ctrl + R si no se ven) y marcan líneas de alineación sobre el lienzo. Un clic sobre una guía permite moverla; arrastrándolas fuera del lienzo la eliminás.</li>
+<li> Las guías inteligentes aparecen solas al alinear objetos entre sí, y la composición de guías (Vista &gt; Nuevo diseño de guía) crea grillas de márgenes y columnas automáticas sobre la pieza: la maquetación en Photoshop.</li>
+<li><b>·</b> Ctrl + R muestra las reglas para arrastrar guías.</li>
+<li><b>·</b> Las guías inteligentes ayudan a alinear sin pensar.</li>
+<li><b>·</b> Nuevo diseño de guía crea márgenes y columnas de golpe.</li>
+<li><b>·</b> Las guías se ocultan con Ctrl + ; y no se imprimen.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🖼️ El diseño integral: todas las piezas juntas</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Una pieza publicitaria final integra todo: lienzo bien configurado, selecciones y capas ordenadas, objetos inteligentes, textos y formas, estilos de capa, ajustes de color, máscaras y filtros. El resultado se exporta en el formato correcto según el destino.</li>
+<li> El orden de trabajo profesional: definir formato y guías primero, componer con capas y objetos inteligentes, ajustar color con capas de ajuste, pulir con máscaras y filtros, y exportar pensando en el destino final (imprenta o pantalla).</li>
+<li><b>·</b> Formato y guías primero: la estructura decide todo.</li>
+<li><b>·</b> Capas con nombres y grupos: el panel ordenado es la mitad del trabajo.</li>
+<li><b>·</b> Ajustes no destructivos: podés rehacer sin perder el original.</li>
+<li><b>·</b> Exportación coherente: PNG/JPG para digital, alta resolución y CMYK para print.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Afiche publicitario integral</div>
+        <p class="consigna">Creá un afiche publicitario completo para una marca ficticia integrando: guías, objeto inteligente, máscara de capa, máscara de recorte, un filtro y ajustes de color no destructivos.</p>
+        <ol class="pasos"><li>Creá un documento A4 vertical (210x297 mm) a 300 dpi.</li>
+<li>Activá la regla (Ctrl + R) y creá una composición de guías con márgenes de 20 mm.</li>
+<li>Colocá una foto como objeto inteligente ajustada al ancho del afiche.</li>
+<li>Añadí el nombre de la marca con texto y estilo de capa (sombra y trazo).</li>
+<li>Creá una máscara de capa sobre la foto y pintá de negro para desvanecer el borde superior suavemente.</li>
+<li>Aplicá un filtro desenfoque de fondo sobre una copia, con el producto nítido encima, y una capa de ajuste de tono/saturación; exportá como afiche-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del afiche final y el PSD con capas organizadas, máscaras y ajustes activos.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Micro-cartel integrador de cierre</div>
+        <p class="consigna">Armá un micro-cartel publicitario vertical con tu marca ficticia aplicando el proceso completo: guías, máscara, filtro y ajuste, y presentalo en clase.</p>
+        <ol class="pasos"><li>Creá un documento de 1080x1350 px (formato de historias de redes).</li>
+<li>Agregá la composición de guías con márgenes de 60 px.</li>
+<li>Colocá una foto como objeto inteligente a toda la altura.</li>
+<li>Creá una máscara de capa para fundir la foto con el fondo en la parte inferior.</li>
+<li>Sumá un texto con estilo, un ajuste de tono y un filtro de desenfoque en el fondo; exportá como cierre-nombre.png y presentalo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del micro-cartel y el PSD con capas, máscaras y ajustes ordenados.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se evalúa el afiche completo: estructura con guías, foto con máscara, texto con estilos, filtro aplicado con criterio y PSD bien organizado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 13 - Maquetación y diagramación: tarjeta personal y folleto</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 13 · Módulo 1 – CorelDRAW</div>
+      <h1>Maquetación y diagramación: tarjeta personal y folleto</h1>
+      <p class="bajada">Vas a aplicar los principios de maquetación y diagramación —cuadrículas, proporciones y balance— diseñando dos piezas reales: tu tarjeta personal y un folleto de 3 caras.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Armar una cuadrícula de maquetación y respetar proporciones.</li>
+<li><span class="chk">✓</span>Lograr balance visual en una composición impresa.</li>
+<li><span class="chk">✓</span>Diseñar una tarjeta personal estándar de 8,5 x 5,5 cm.</li>
+<li><span class="chk">✓</span>Diagramar un folleto tríptico con frente, dorso y dos caras internas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>📐 Maquetación: cuadrículas y proporciones</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Maquetar es ordenar el contenido dentro de un formato. La cuadrícula divide la página en columnas y márgenes que guían la ubicación de textos e imágenes: todo queda alineado sin esfuerzo. Las proporciones clásicas (como la regla de tercios) hacen la composición equilibrada.</li>
+<li> Antes de dibujar, definís la cuadrícula: cuántas columnas, qué márgenes, qué zonas de aire. En CorelDRAW podés volcar la cuadrícula con guías desde las reglas y dibujar los rectángulos guía.</li>
+<li><b>·</b> La cuadrícula da orden: márgenes y columnas definidos antes de diseñar.</li>
+<li><b>·</b> La regla de tercios ubica los puntos de atención en intersecciones naturales.</li>
+<li><b>·</b> Los espacios en blanco ('aire') tienen el mismo trabajo que el contenido.</li>
+<li><b>·</b> Las guías desde la regla arrastran con precisión la estructura de la página.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>⚖️ Diagramación: jerarquía y balance</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/CLASE 13 - FOLLETO Y TARJETAS/img/folleto.jpg" alt=""></div><ul class="pts"><li> Diagramar es distribuir los contenidos dentro de esa cuadrícula con jerarquía: qué se lee primero, segundo y tercero. Un título grande, una imagen protagonista y un texto en bloque equilibran la vista.</li>
+<li> El balance puede ser simétrico (elementos espejados) o asimétrico (contrapesos visuales). Lo importante es que ningún sector del formato quede 'vacío' por descuido ni 'aplastado' por exceso.</li>
+<li><b>·</b> Jerarquía visual: tamaño, color y posición marcan el orden de lectura.</li>
+<li><b>·</b> Balance simétrico: espejo de elementos iguales.</li>
+<li><b>·</b> Balance asimétrico: pesos visuales diferentes que se compensan.</li>
+<li><b>·</b> Todo texto e imagen debe tener un lugar definido por la cuadrícula.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>💳 La tarjeta personal</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/CLASE 13 - FOLLETO Y TARJETAS/img/tarjeta-personal.jpg" alt=""></div><ul class="pts"><li> La tarjeta personal es identidad pura en 8,5 x 5,5 cm. Frente: logo, nombre y rol. Dorso: datos de contacto. Con una buena cuadrícula, el logo queda arriba a la izquierda, el nombre en el centro y los datos alineados con precisión.</li>
+<li> En CorelDRAW configurás el tamaño exacto (ancho 8,5 cm, alto 5,5 cm), trabajás con guías para los márgenes interiores y agregás texto de párrafo para los datos de contacto.</li>
+<li><b>·</b> Medidas estándar: 8,5 cm de ancho por 5,5 cm de alto.</li>
+<li><b>·</b> Márgenes interiores de 0,5 cm para que nada quede pegado al corte.</li>
+<li><b>·</b> Frente: logo + nombre + rol; dorso: datos de contacto.</li>
+<li><b>·</b> Tipografías: una para títulos y otra para datos, máximo dos familias.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📄 El folleto tríptico</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El folleto tríptico (bifoliado en 3) se imprime en una hoja A4 doblada en tres: el frente y dorso de la hoja tienen cada uno tres caras. Las medidas se calculan dividiendo el ancho del A4 en paneles (aprox. 10 cm cada uno).</li>
+<li> La cara exterior recibe el título y el contacto; las caras internas, el desarrollo en bloques de párrafo con imágenes enmarcadas. La cuadrícula de la clase 6 (texto en marcos) se combina con los recortes PowerClip para un resultado profesional.</li>
+<li><b>·</b> A4 doblado en tres: 3 paneles por cara (frente y dorso).</li>
+<li><b>·</b> Panel exterior: título, beneficio y datos de contacto.</li>
+<li><b>·</b> Paneles internos: el contenido en columnas con imágenes.</li>
+<li><b>·</b> La diagramación en columnas guía la lectura de izquierda a derecha.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Tarjeta más folleto de tu marca</div>
+        <p class="consigna">Diseñá tu tarjeta personal (8,5 x 5,5 cm) y una cara interna del folleto tríptico de tu marca ficcional, aplicando la cuadrícula y la jerarquía vistas.</p>
+        <ol class="pasos"><li>Creá dos documentos: uno A4 para la tarjeta (con 4 o 8 tarjetas repetidas) y uno A4 para el folleto.</li>
+<li>En la tarjeta: dibujá una tarjeta de 8,5 cm x 5,5 cm con guías de margen de 0,5 cm.</li>
+<li>Colocá el logo vectorial, tu nombre y tu rol; en el dorso, los datos de contacto con texto de párrafo.</li>
+<li>En el folleto: dividí el A4 en 3 paneles con guías verticales.</li>
+<li>Diagramá el panel central: título arriba, una foto enmarcada en el medio y dos columnas de párrafo.</li>
+<li>Ajustá la paleta (2-3 colores) y las tipografías; exportá ambos documentos en PNG y guardá como maqueta-nombre.cdr.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá las dos piezas exportadas (tarjeta frente/dorso y panel del folleto) con breves notas de cuadrícula.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Retícula de folleto en CorelDRAW</div>
+        <p class="consigna">Armá la estructura impresa de un folleto tríptico: la grilla de 3 paneles con márgenes y columnas, sin contenido, lista para diagramar.</p>
+        <ol class="pasos"><li>Creá un documento A4 horizontal y activá las reglas (Ver &gt; Reglas).</li>
+<li>Arrastrá guías verticales para dividir el ancho en 3 paneles de ~10 cm.</li>
+<li>Arrastrá guías de margen superior e inferior de 2 cm.</li>
+<li>Dentro de cada panel, agregá 2 columnas de texto con rectángulos guía transparentes.</li>
+<li>Duplicá la estructura en la segunda página para el dorso y exportá una página como reticula-nombre.png.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG de la retícula con las guías visibles.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se evalúan la tarjeta (medidas correctas, márgenes, jerarquía) y el panel del folleto (uso de cuadrícula, columnas y enmarcado de imágenes).</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

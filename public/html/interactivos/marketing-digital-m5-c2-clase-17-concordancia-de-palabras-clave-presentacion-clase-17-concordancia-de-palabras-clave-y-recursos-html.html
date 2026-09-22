@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 17 - Concordancia de palabras clave y recursos</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #e11d4833, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#e11d48;background:#e11d4822;border:1px solid #e11d4855;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#e11d4818;border:1px solid #e11d4844;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#e11d48;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#e11d48;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #e11d4844;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#e11d48;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#e11d48;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📣 Marketing Digital</div>
+      <div class="mod">Clase 17 · Módulo 4 – Directorios Locales, Publicidad y Campañas Pagas</div>
+      <h1>Concordancia de palabras clave y recursos</h1>
+      <p class="bajada">Vas a controlar con precisión cuándo aparece tu anuncio eligiendo el tipo de concordancia correcto y a potenciarlo con recursos de llamada, promoción y vínculos de sitio.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Diferenciar los tipos de concordancia: amplia, frase y exacta.</li>
+<li><span class="chk">✓</span>Elegir la concordancia adecuada según el control que querés tener.</li>
+<li><span class="chk">✓</span>Agregar recursos de anuncio como llamada, promoción y vínculos de sitio.</li>
+<li><span class="chk">✓</span>Combinar concordancias y recursos para mejorar el rendimiento de la campaña.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🎛️ Qué es la concordancia de palabras clave</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 5 - Automatización y Email Marketing/Clase 17 - Concordancia de Palabras Clave/img/concordancia.jpg" alt=""></div><ul class="pts"><li> La concordancia decide qué tan parecida tiene que ser la búsqueda de la persona para que aparezca tu anuncio. Es tu control de precisión: más amplio, más alcance; más exacto, más control del gasto.</li>
+<li><b>·</b> Es el primer filtro que decide si participás en la subasta.</li>
+<li><b>·</b> Cada palabra se escribe con un símbolo según su tipo.</li>
+<li><b>·</b> Del control depende cuánto desperdiciás en búsquedas que no te sirven.</li>
+<li><b>·</b> Se combina con las palabras negativas para afinar el resultado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔎 Concordancia amplia, frase y exacta</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 5 - Automatización y Email Marketing/Clase 17 - Concordancia de Palabras Clave/img/tipos.jpg" alt=""></div><ul class="pts"><li> Las tres concordancias van de lo más flexible a lo más estricto. La misma palabra puede disparar tu anuncio en miles de búsquedas o en casi una sola, según cómo la escribas.</li>
+<li><b>·</b> Amplia: sin símbolos. Ej: repuestos celular → también «repuestos iphone baratos».</li>
+<li><b>·</b> Frase: entre comillas «...». Ej: «repuestos celular» → frases que contienen esos términos en orden.</li>
+<li><b>·</b> Exacta: entre corchetes [...]. Ej: [repuestos celular] → solo búsquedas con muy alta similitud.</li>
+<li><b>·</b> La amplia con intención (el sistema inteligente) sale por defecto y conviene vigilarla.</li>
+<li><b>·</b> Recomendado: empezar con frase y exacta para controlar el gasto, sumando negativas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>➕ Recursos adicionales de anuncio</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 5 - Automatización y Email Marketing/Clase 17 - Concordancia de Palabras Clave/img/recursos.jpg" alt=""></div><ul class="pts"><li> Los recursos (extensiones) agrandan tu anuncio: agregan datos, atajos y promesas que no entran en el título. Hacen que tu anuncio ocupe más lugar y que la gente encuentre su atajo sin buscar más.</li>
+<li><b>·</b> Vínculos de sitio (sitelinks): enlaces directos a Inicio, Servicios, Promos.</li>
+<li><b>·</b> Recurso de llamada: un número que se marca directo desde el anuncio, ideal para celular.</li>
+<li><b>·</b> Recurso de promoción: descuentos y fechas, con etiqueta de precio u oferta.</li>
+<li><b>·</b> Ubicación y reseñas: muestran dirección y calificaciones del perfil local.</li>
+<li><b>·</b> Los recursos se muestran según el espacio: agregá varios para que Google elija el mejor.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>⚙️ Combinar concordancias y recursos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El SEM profesional no usa una sola concordancia: mezcla tipos y suma recursos para cubrir distintas intenciones. El objetivo es ampliar alcance donde conviene y controlar gasto donde no.</li>
+<li><b>·</b> Mismo grupo con palabras en frase y exacta para distintos niveles de intención.</li>
+<li><b>·</b> Una palabra exacta bien elegida puede costar menos y convertir mejor.</li>
+<li><b>·</b> Los recursos transforman un anuncio «chico» en una ficha informativa completa.</li>
+<li><b>·</b> Revisá el informe de recursos para saber cuáles se muestran y cuáles no.</li>
+<li><b>·</b> Optimizá en ciclos: datos → ajuste de concordancias → prueba de nuevos recursos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Afina tus palabras y potenciá tus anuncios</div>
+        <p class="consigna">Sobre la campaña de la clase 15, reescribí las palabras clave con el tipo de concordancia correcto y creá los recursos de anuncio para tu negocio de prueba.</p>
+        <ol class="pasos"><li>Tomá las 10 palabras de tu investigación de la clase 16.</li>
+<li>Elegí 4 en concordancia de frase y escribilas con sus comillas.</li>
+<li>Elegí 2 con intención de compra y escribilas en exacta con corchetes.</li>
+<li>Definí qué palabras negativas sumarías para proteger esas concordancias.</li>
+<li>Creá los recursos: 4 vínculos de sitio, 1 recurso de llamada y 1 de promoción.</li>
+<li>Justificá en el documento por qué elegiste cada concordancia y recurso.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el documento con las palabras clasificadas por concordancia y los recursos redactados, listos para cargar.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la clasificación de concordancias, las negativas propuestas y los recursos redactados.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

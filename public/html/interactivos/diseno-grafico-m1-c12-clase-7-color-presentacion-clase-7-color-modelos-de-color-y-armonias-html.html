@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 7 - Color, modelos de color y armonías</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #7c3aed33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#7c3aed;background:#7c3aed22;border:1px solid #7c3aed55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#7c3aed18;border:1px solid #7c3aed44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#7c3aed;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#7c3aed;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #7c3aed44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#7c3aed;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#7c3aed;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🎨 Diseño Gráfico Publicitario</div>
+      <div class="mod">Clase 7 · Módulo 1 – CorelDRAW</div>
+      <h1>Color, modelos de color y armonías</h1>
+      <p class="bajada">Vas a entender los modelos de color CMYK y RGB, la rueda de color y las armonías más usadas: monocromática, complementaria, tríadica y doble complementaria. Después vas a armar tu propia paleta de documento.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Explicar la diferencia entre los modelos de color CMYK y RGB.</li>
+<li><span class="chk">✓</span>Usar la rueda de color para construir una paleta.</li>
+<li><span class="chk">✓</span>Aplicar armonías monocromática, complementaria, tríadica y doble complementaria.</li>
+<li><span class="chk">✓</span>Crear y guardar una paleta de documento en CorelDRAW.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🌈 Teoría del color y la rueda cromática</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 7 Color/img/rueda-color.jpg" alt=""></div><ul class="pts"><li> La luz blanca se descompone en los colores que vemos. En la rueda cromática están los primarios (rojo, amarillo y azul), los secundarios (naranja, verde y violeta, producto de mezclar primarios) y los terciarios (mezclas intermedias).</li>
+<li> Con la rueda en mente, elegir colores que combinen deja de ser cuestión de gusto: se convierte en matemática visual. Frente a un color cualquiera, la rueda te dice cuál es su opuesto, sus vecinos y sus tríadas.</li>
+<li><b>·</b> Colores primarios: rojo, amarillo y azul.</li>
+<li><b>·</b> Colores secundarios: naranja, verde y violeta.</li>
+<li><b>·</b> Colores complementarios: opuestos en la rueda.</li>
+<li><b>·</b> La rueda organiza todas las armonías: con ella planificás la paleta.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🖨️ Modelos de color: CMYK y RGB</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 7 Color/img/cmyk.jpg" alt=""></div><ul class="pts"><li> RGB (Rojo, Verde, Azul) es el modelo de las pantallas: las pantallas emiten luz y suman estos tres componentes. Cuando un diseño se ve en el monitor, se está mirando en RGB.</li>
+<li> CMYK (Cian, Magenta, Amarillo y Negro) es el modelo de la imprenta: las tintas se mezclan sobre el papel y cuanto más color se suma, más oscuro es el resultado (sustractivo). Un diseño pensado para imprimir debe definirse y revisarse en CMYK.</li>
+<li><b>·</b> RGB suma luz: se usa para pantallas, web y redes.</li>
+<li><b>·</b> CMYK resta luz: se usa para imprimir en gráfica e imprenta.</li>
+<li><b>·</b> El negro CMYK (K) evita tintas cargadas y da negros profundos.</li>
+<li><b>·</b> Lo que ves en el monitor puede verse distinto impreso: siempre validá en CMYK.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🎭 Armonías de color</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/3- Diseño Grafico/@Clases/1 Modulo Corel Draw/Clase 7 Color/img/rgb.jpg" alt=""></div><ul class="pts"><li> Una armonía es un conjunto de colores que, juntos, producen una sensación agradable y coherente. La monocromática usa distintos tonos de un mismo color (claro, medio, oscuro); la complementaria enfrenta dos opuestos de la rueda, generando contraste fuerte.</li>
+<li> La tríadica toma tres colores equidistantes en la rueda (como los primarios), equilibrada y vibrante; la doble complementaria combina dos pares de complementarios, riqueza con más control. Elegida la armonía, la paleta queda definida.</li>
+<li><b>·</b> Monocromática: un solo color en distintas luminosidades.</li>
+<li><b>·</b> Complementaria: dos opuestos, máximo contraste.</li>
+<li><b>·</b> Tríadica: tres colores en triángulo sobre la rueda.</li>
+<li><b>·</b> Doble complementaria: dos pares enfrentados para paletas ricas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎨 Paletas de documento</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Una paleta de documento guarda SOLO los colores que usás en ese diseño. Se abre desde el menú Ventana &gt; Paletas de colores &gt; Paleta de documento, y con el selector de color agregás cada tono a la paleta.</li>
+<li> Trabajar siempre con la paleta de tu documento garantiza coherencia: nunca más un rojo 'se fue' distinto porque lo elegiste al azar. La paleta se guarda con el archivo y viaja con él.</li>
+<li> Armá la paleta ANTES de dibujar: elegí la armonía en papel o en la rueda, cargá los tonos y pintá solo desde ahí.</li>
+<li><b>·</b> Ventana &gt; Paletas de colores abre la paleta de documento.</li>
+<li><b>·</b> Los colores elegidos se agregan con un clic en 'agregar color'.</li>
+<li><b>·</b> La paleta de documento se guarda junto con el archivo .cdr.</li>
+<li><b>·</b> Pintar solo con la paleta evita colores sueltos incoherentes.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Mi primera paleta armada</div>
+        <p class="consigna">Elegí un color base y construí una paleta de documento con las cuatro armonías vistas, aplicando cada una a una pieza simple.</p>
+        <ol class="pasos"><li>Definí tu color base (ej. un azul) con el selector de color y anotá su código CMYK.</li>
+<li>Creá la armonía monocromática: tres tonos del mismo azul (claro, medio, oscuro).</li>
+<li>Armá la complementaria: tu azul y su opuesto naranja.</li>
+<li>Armá la tríadica: tu azul con el amarillo y el rojo de sus posiciones en la rueda.</li>
+<li>Combiná dos pares para la doble complementaria y cargá TODOS los tonos en la paleta de documento.</li>
+<li>Dibujá un pequeño cartel o tarjeta y coloreala exclusivamente con esa paleta; guardá como paleta-nombre.cdr.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del cartel colorado y una captura de la paleta de documento con los tonos visibles.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Análisis de color de una marca</div>
+        <p class="consigna">Elegí una marca conocida, identificá su paleta, clasificá su armonía en la rueda cromática y recreala en CorelDRAW con tu paleta de documento.</p>
+        <ol class="pasos"><li>Elegí una marca con colores claros (ej. un banco, una red social, un supermercado).</li>
+<li>Identificá sus 2 o 3 colores principales mirando su sitio o su perfil.</li>
+<li>Ubicalos en la rueda cromática y determiná qué armonía usan (complementaria, tríadica u otra).</li>
+<li>Creá una paleta de documento con esos tonos en CorelDRAW.</li>
+<li>Dibujá un rectángulo por cada color, etiquetalo con su función y exportá el análisis en PNG.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el PNG del análisis con la armonía identificada y la paleta recreada.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se evalúa el cartel (debe usar una sola paleta coherente) y la captura de la paleta que demuestra el armado por armonías.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

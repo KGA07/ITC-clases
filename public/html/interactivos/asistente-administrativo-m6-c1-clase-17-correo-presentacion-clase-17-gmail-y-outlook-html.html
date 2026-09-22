@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 17 - Gmail y Outlook</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0057ff33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0057ff;background:#0057ff22;border:1px solid #0057ff55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0057ff18;border:1px solid #0057ff44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0057ff;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0057ff;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0057ff44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0057ff;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0057ff;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">💼 Asistente Administrativo Digital con IA</div>
+      <div class="mod">Clase 17 · Módulo 6 – Comunicación Digital</div>
+      <h1>Gmail y Outlook</h1>
+      <p class="bajada">Vas a redactar correos formales y a organizar tu bandeja de entrada con etiquetas y filtros.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Redactar un correo formal con asunto claro, saludo, cuerpo y firma profesional.</li>
+<li><span class="chk">✓</span>Diferenciar responder, reenviar, CC y CCO y elegir cuál usar en cada caso.</li>
+<li><span class="chk">✓</span>Organizar la bandeja de entrada con etiquetas y filtros automáticos en Gmail.</li>
+<li><span class="chk">✓</span>Aplicar buenas prácticas: adjuntos, urgencias y tiempos de respuesta.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>✉️ Redactar un correo formal paso a paso</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El correo es la carta de presentación del asistente administrativo. Un mensaje formal tiene cuatro partes fijas: asunto claro, saludo, cuerpo ordenado y despedida con firma.</li>
+<li> La regla de oro: el asunto debe decir de qué se trata sin abrir el mail (ej. «Factura 2026-045 - Vencimiento 30/09»).</li>
+<li><b>·</b> Asunto: corto, específico y con contexto. Nada de «hola» ni «urgente» sin motivo.</li>
+<li><b>·</b> Saludo: «Estimado/a Sr./Sra. Apellido», solo nombre si ya hay trato cercano.</li>
+<li><b>·</b> Cuerpo: un párrafo de contexto, uno de acción o pedido, y uno de cierre amable.</li>
+<li><b>·</b> Firma: nombre y apellido, cargo, empresa, teléfono y mail. Lista para enviar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔁 Responder, reenviar, CC y CCO</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Saber qué botón usar es clave: responder va solo al remitente; responder a todos alcanza a todos los destinatarios; reenviar manda el mail original a otras personas.</li>
+<li> CC (con copia) deja visible a quién llegó la copia; CCO (con copia oculta) oculta la lista de destinatarios, ideal para envíos masivos o para proteger direcciones.</li>
+<li><b>·</b> Responder: para tratar el tema con quien te escribió. Responder a todos: cuando todo el hilo debe enterarse.</li>
+<li><b>·</b> Reenviar: para pasar un correo a alguien que no estaba incluido. Avisá con una línea arriba del reenvío.</li>
+<li><b>·</b> CC: todos ven quién está en copia. CCO: la copia no se ve; uso típico en comunicados a clientes.</li>
+<li><b>·</b> Ojo con responder a todos por error: revisá siempre la lista de destinatarios antes de enviar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🏷️ Organización: etiquetas y filtros en Gmail</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Gmail permite «etiquetas» (carpetas virtuales) para clasificar los mails, y «filtros» para que los mensajes se ordenen solos. El asistente administrativo configura que las facturas de proveedores lleguen a su etiqueta automáticamente.</li>
+<li> En Outlook el equivalente son las categorías y las reglas: el orden llega solo una vez establecido.</li>
+<li><b>·</b> Crear etiqueta: arrastrá un mail a Nueva etiqueta, o con su menú de tres puntos.</li>
+<li><b>·</b> Filtro: Configuración → Filtros y direcciones bloqueadas → Crear un filtro (por remitente, asunto o palabra).</li>
+<li><b>·</b> Después de filtrar podés decidir: aplicar etiqueta, marcar importante o omitir la bandeja de entrada.</li>
+<li><b>·</b> Un filtro bien armado: «proveedores@empresa.com» + etiqueta Facturas + marcar como leído.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📎 Buenas prácticas: adjuntos y urgencias</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Un adjunto mal nombrado o de más de 25 MB frustra a cualquier destinatario. Compartí archivos pesados por Drive (link) en vez de adjuntarlos.</li>
+<li> Las urgencias se comunican en el asunto y en la primera línea, no abusando de «URGENTE» en mayúsculas.</li>
+<li><b>·</b> Adjunto: nombrar el archivo antes de adjuntarlo (ej. «2026-09 CV - M. Pérez.pdf»).</li>
+<li><b>·</b> Más de 25 MB en Gmail: subilo a Drive y pegá el enlace en el cuerpo.</li>
+<li><b>·</b> Marcar prioridad: el ícono de flecha de prioridad alta existe en Gmail y en Outlook.</li>
+<li><b>·</b> Revisá ortografía y destinatarios antes de enviar: un mail mal enviado no se puede retirar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Correo formal + bandeja organizada</div>
+        <p class="consigna">Redactá un correo formal completo y después armá un filtro y una etiqueta para simular la bandeja de un asistente real.</p>
+        <ol class="pasos"><li>Redactá un mail formal: asunto «Solicitud de reunión - Proyecto de facturación», saludo, contexto, pedido de agenda y firma completa.</li>
+<li>Agregá en CCO una casilla de prueba y explicá por qué elegiste CCO y no CC.</li>
+<li>Creá la etiqueta «Facturas» en Gmail.</li>
+<li>Creá un filtro que etiquete y separe los mails de un remitente que vos elijas (tu propio mail de prueba).</li>
+<li>Escribí una línea al comienzo del ejercicio indicando en qué mail usarías responder, responder a todos y reenviar.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Enviá el correo formal al docente y adjuntá una captura de tu etiqueta y filtro creados.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el correo formal recibido y las capturas de etiqueta y filtro.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

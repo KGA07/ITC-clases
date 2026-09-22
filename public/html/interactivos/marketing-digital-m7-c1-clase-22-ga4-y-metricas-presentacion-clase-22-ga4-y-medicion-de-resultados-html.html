@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 22 - GA4 y medición de resultados</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #e11d4833, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#e11d48;background:#e11d4822;border:1px solid #e11d4855;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#e11d4818;border:1px solid #e11d4844;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#e11d48;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#e11d48;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #e11d4844;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#e11d48;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#e11d48;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📣 Marketing Digital</div>
+      <div class="mod">Clase 22 · Módulo 7 – Análisis de Resultados</div>
+      <h1>GA4 y medición de resultados</h1>
+      <p class="bajada">Vas a cerrar el curso midiendo de verdad: conocer Google Analytics 4, leer métricas claves e informes, crear eventos personalizados y armar el informe de KPIs que presentaría un profesional de marketing.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Identificar qué es GA4 y qué mide cada informe principal.</li>
+<li><span class="chk">✓</span>Leer métricas claves: usuarios, sesiones, engagement y conversiones.</li>
+<li><span class="chk">✓</span>Crear y configurar eventos personalizados en GA4.</li>
+<li><span class="chk">✓</span>Armar y presentar un informe de KPIs de redes y campañas pagas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🧮 Qué es Google Analytics 4</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 7 - Análisis de Resultados/Clase 22 - GA4 y Métricas/img/ga4.jpg" alt=""></div><ul class="pts"><li> GA4 es la versión actual de Google Analytics: mide qué pasa en tu sitio y en tu app con foco en eventos y en el comportamiento real de los usuarios. Reemplazó a Universal Analytics y se aprende con una lógica distinta.</li>
+<li><b>·</b> Se basa en eventos: toda acción (clic, scroll, compra) es un evento.</li>
+<li><b>·</b> Mide usuarios únicos reales, no solo navegadores como antes.</li>
+<li><b>·</b> Sigue a las personas entre dispositivos con Google Signals.</li>
+<li><b>·</b> La propiedad se crea en analytics.google.com y se conecta con un código.</li>
+<li><b>·</b> Tiene forma de vista de demostración para practicar sin tocar datos reales.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>📊 Métricas claves e informes</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 7 - Análisis de Resultados/Clase 22 - GA4 y Métricas/img/metricas.jpg" alt=""></div><ul class="pts"><li> GA4 organiza la información en informes de adquisición, participación y monetización. Para marketing lo esencial es aprender a leer usuarios, sesiones y el compromiso real con el contenido.</li>
+<li><b>·</b> Usuarios: personas que visitaron tu sitio en el período.</li>
+<li><b>·</b> Sesiones: visitas registradas, puede haber varias por usuario.</li>
+<li><b>·</b> Tasa de participación promedio: compromiso real con la página.</li>
+<li><b>·</b> Vistas a páginas: ayuda a saber qué contenido atrae más.</li>
+<li><b>·</b> En un primer momento: usuarios nuevos, de qué canal vienen y qué hacen.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🎯 Eventos personalizados</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/5- Marketing Digital/@Clases/Modulo 7 - Análisis de Resultados/Clase 22 - GA4 y Métricas/img/eventos.jpg" alt=""></div><ul class="pts"><li> Los eventos estándar no alcanzan para medir tu negocio específico. GA4 permite crear eventos a medida: clic en WhatsApp, envío de formulario, botón de compra, descarga de un pdf.</li>
+<li><b>·</b> Evento: una acción puntual (clic, envío) registrada con un nombre propio.</li>
+<li><b>·</b> Se crean desde la sección Administración con reglas de disparo.</li>
+<li><b>·</b> Parámetros: los datos extra del evento (valor, página, campaña).</li>
+<li><b>·</b> Los eventos clave se marcan como Conversiones para priorizarlos.</li>
+<li><b>·</b> Ejemplo: trackear click_en_whatsapp para ver cuántos contactos pide tu sitio.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📈 KPIs de redes y campañas: cómo medir y presentar</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El marketing digital se cierra cuando presentás resultados. Cada canal tiene sus KPIs y cada campaña exige un informe que no solo muestre números, sino que cuente la historia del negocio.</li>
+<li><b>·</b> Redes: alcance, seguidores, interacciones, tasa de interacción por publicación.</li>
+<li><b>·</b> Google Ads: clics, CTR, CPC, costo por conversión.</li>
+<li><b>·</b> Meta Ads: frecuencia, CTR, costo por resultado, retorno de inversión.</li>
+<li><b>·</b> Informe con comparativa: contra la semana anterior y contra el objetivo.</li>
+<li><b>·</b> Presentación: KPI, dato, análisis breve y próxima acción recomendada.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Armá el informe de KPIs del curso</div>
+        <p class="consigna">Usando los datos de ejemplo que te da el docente y la vista de demostración de GA4, armá un informe profesional de resultados con KPIs de redes y campañas para tu negocio de prueba.</p>
+        <ol class="pasos"><li>Entrá a la vista de demostración de GA4 y explorá los informes de adquisición y participación.</li>
+<li>Anotá 3 métricas de GA4: usuarios, sesiones y tasa de participación promedio.</li>
+<li>Sumales los KPIs de redes: alcance, interacciones y tasa de interacción.</li>
+<li>Agregá los KPIs de campañas: CTR, CPC y costo por conversión.</li>
+<li>Armá la tabla comparativa: resultado, objetivo y variación.</li>
+<li>Escribí un análisis de 2 frases por KPI y una recomendación de mejora para el próximo mes.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Entregá el informe en un documento con la tabla de KPIs, el análisis y las recomendaciones.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="7">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el informe final con la tabla de KPIs, los análisis y las recomendaciones de mejora.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 8</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=8;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

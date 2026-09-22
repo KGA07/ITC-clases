@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 20 - Uso de IA en tareas administrativas</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0057ff33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0057ff;background:#0057ff22;border:1px solid #0057ff55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0057ff18;border:1px solid #0057ff44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0057ff;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0057ff;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0057ff44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0057ff;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0057ff;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">💼 Asistente Administrativo Digital con IA</div>
+      <div class="mod">Clase 20 · Módulo 7 – Inteligencia Artificial en la Oficina</div>
+      <h1>Uso de IA en tareas administrativas</h1>
+      <p class="bajada">Vas a usar la IA generativa para redactar cartas, notas y resúmenes, y armar listas de tareas inteligentes.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Identificar tareas administrativas diarias que la IA generativa puede agilizar.</li>
+<li><span class="chk">✓</span>Escribir prompts claros para redactar cartas, notas y resúmenes profesionales.</li>
+<li><span class="chk">✓</span>Usar la IA para generar y priorizar listas de tareas.</li>
+<li><span class="chk">✓</span>Organizar la agenda semanal de un secretario con ayuda de IA y revisar el resultado con criterio humano.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🤖 IA generativa aplicada a la oficina</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La IA generativa (ChatGPT, Gemini, Copilot) crea textos, listas y borradores a partir de lo que le pedís. Para el asistente administrativo es un aliado para el primer borrador: carta, nota, minuta o resumen, que después se revisa y personaliza.</li>
+<li> La regla es siempre la misma: la IA propone, el asistente decide. El borrador ahorra horas, pero la revisión final es humana.</li>
+<li><b>·</b> Trabajos tipo: cartas formales, notas internas, resúmenes de reuniones, comunicados.</li>
+<li><b>·</b> Velocidad: un borrador en segundos que antes tomaba media hora.</li>
+<li><b>·</b> La IA no reemplaza tu criterio: errores de datos, nombres o contexto se corrigen en la revisión.</li>
+<li><b>·</b> Herramientas accesibles: ChatGPT, Gemini y Copilot se usan desde el navegador con cuenta gratuita.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>✍️ Redactar con buenos prompts</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El prompt (la instrucción) define la calidad del resultado. Cuanto más contexto le des a la IA —rol, destinatario, tono, extensión, datos clave— mejor será el texto.</li>
+<li> Una fórmula práctica: Rol + Tarea + Datos + Formato. Ej.: «Sos un asistente administrativo. Escribí una nota interna avisando un corte de luz mañana de 14 a 16 hs, tono formal, dos párrafos.»</li>
+<li><b>·</b> Rol: «Actuá como secretaria ejecutiva de una empresa de logística...»</li>
+<li><b>·</b> Contexto: destinatario, motivo y datos concretos (fechas, nombres, números).</li>
+<li><b>·</b> Formato: «en 2 párrafos», «con viñetas», «tono cordial pero formal».</li>
+<li><b>·</b> Iterar: si no quedó bien, seguí pidiendo «más corto», «más formal», «corregí el primer párrafo».</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>✅ Listas de tareas generadas y priorizadas</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La IA ordena el día: con tus pendientes en una frase, genera una lista de tareas, las agrupa por tipo y las ordena por importancia.</li>
+<li> Priorizar no es solo ordenar: es decidir qué avanza hoy y qué espera. Pedile a la IA que marque lo urgente y lo importante, y después ajustá con tu criterio.</li>
+<li><b>·</b> Prompt útil: «Estas son mis tareas del día: ... . Ordenalas por urgencia e importancia y agrupalas en administrativas, de seguimiento y personales.»</li>
+<li><b>·</b> Fijá plazos: pedile que asigne orden según fechas de vencimiento.</li>
+<li><b>·</b> Vos elegís el orden final: la IA no conoce tus clientes ni tus compromisos internos.</li>
+<li><b>·</b> Dejá registro: pegá la lista final en un documento de Drive o en un mail para el día.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🗓️ La agenda semanal de un secretario</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Un secretario gestiona la agenda del jefe: reuniones, llamadas, rendiciones y horas libres para imprevistos. Con IA podés armar una agenda modelo: bloques de tareas, tiempos de viaje y espacios de reserva.</li>
+<li> El resultado es una propuesta: después se carga en Google Calendar y se ajusta según la realidad de cada semana.</li>
+<li><b>·</b> Prompt: «Diseñame la agenda semanal de un secretario: lunes a viernes, con reuniones, correspondencia, archivo y 1 hora de margen por día.»</li>
+<li><b>·</b> Pedile horarios sensatos: mañana para trabajo profundo, tarde para trámites y llamadas.</li>
+<li><b>·</b> Sumá bloque de «imprevistos»: ninguna agenda real funciona sin margen.</li>
+<li><b>·</b> Cargá la versión final en Calendar con recordatorios: ahí se cumple la herramienta.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="6">
+    <header><h2>🧠 Límites y revisión humana</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La IA es veloz pero no infalible: puede inventar datos (alucinaciones), confundir nombres o usar frases que no suenan a tu organización. Nunca envíes un texto generado sin leerlo con ojo crítico.</li>
+<li> Confidencialidad también es un límite: no le pegues datos sensibles de clientes ni contraseñas a herramientas externas.</li>
+<li><b>·</b> Verificá siempre: fechas, nombres, montos y datos sensibles del texto generado.</li>
+<li><b>·</b> Compará con el contexto real: una nota que suena perfecta pero dice la fecha equivocada no sirve.</li>
+<li><b>·</b> No compartas información confidencial de personas o empresas en la IA.</li>
+<li><b>·</b> Revisión final: leé en voz alta o compará con la norma de tu oficina antes de enviar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Cartas y agenda con IA</div>
+        <p class="consigna">Usá la IA para redactar una nota formal y armar la agenda semanal de un secretario; después revisá ambos resultados como harías en una oficina real.</p>
+        <ol class="pasos"><li>Escribí pidiendo la nota con la fórmula Rol + Tarea + Datos + Formato: aviso formal de reunión bimestral de ventas el próximo viernes 10:00.</li>
+<li>Pedile una versión más corta y una más formal, y compará.</li>
+<li>Pedile «listá 8 tareas diarias de un asistente administrativo y priorizá: urgente vs importante».</li>
+<li>Pedile una agenda semanal lunes a viernes con 1 hora de margen por día.</li>
+<li>Revisá cada texto: encontrá al menos un dato o frase que tengas que corregir.</li>
+<li>Guardá la versión final como documento de Google nuevo, con tu nombre en el asunto.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Compartí con el docente el documento final con la nota, la lista priorizada y tu corrección explicada en un comentario.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el documento con la nota, la lista priorizada y la corrección comentada del alumno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>
