@@ -166,6 +166,34 @@ barcos de 1964, paper sobre gripe, documento del Congreso de EE.UU. sobre terror
    a mano y se anotaron con alt/caption.
 4. Sync opcional con Drive (`tools/run-sync.cmd`) y deploy de Vercel tras push.
 
+## FASE 6 — Revisión curso por curso (al 2026-09-23)
+
+Decisión del usuario: revisar los cursos **uno a la vez** (1 commit por programa),
+**omitiendo Asistente Administrativo con IA** (ya completo). Objetivo: capturas
+reales de los programas instalados (CorelDRAW, paquete Adobe, AutoCAD, LibreCAD,
+FreeCAD, Packet Tracer, Arduino IDE, herramientas de Windows; consolas web en modo
+demo/sandbox) para que materiales y presentaciones muestren la UI y ejercicios
+reales. Reglas internas de la fase: sobrescribir el MISMO `img/<archivo>` que
+referencia la spec, presentación HTML final ≤ 1 MB (para que el portal la embeba),
+OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-capturas`.
+
+### Avance
+
+- **Curso 1 — Administración de PyMEs: VERIFICADO (sin cambios).**
+  - Validación de fórmulas en los 21 materiales `Clase N.pdf` con PDFParse:
+    SI / SI anidado, Y/O, CONCATENAR y `&`, BUSCARV, SIFECHA/validaciones, y en
+    Access Suma/Promedio/Máximo/Mínimo, `=Suma([MontoTotal])`, SiInm/Nz/Fecha,
+    DBúsq, criterios de consultas — todas presentes y correctas.
+  - Único "faltante" reportado fue falso positivo (salto de línea natural dentro
+    de `=SiInm([Stock]\n<5;...)` en el PDF); verificado texto real.
+  - Scan de corrupción (U+FFFD / `=??`) en HTML/JSON generados: 0 coincidencias.
+  - Presentaciones renderizan bien: Clase 9 Excel (SI/Y/CONCATENAR) y Clase 10
+    (BUSCARV); `<` escapado correctamente como `&lt;`/`&gt;`.
+- **Próximo — Curso 2: Diseño Gráfico** (capturas CorelDRAW X8 → lote,
+  luego Adobe Photoshop → lote). Orden siguiente: Marketing (web demo) →
+  Diagnóstico (Windows/hardware/Packet Tracer, incl. C22 <1MB) → Diseño Técnico
+  (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) → PyMEs (cierre/reverificar).
+
 ## Cómo arrancar el proyecto (resumen)
 
 ```bash
