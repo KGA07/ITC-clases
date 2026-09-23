@@ -1,10 +1,11 @@
 param(
-  [Parameter(Mandatory=$true)][string]$Title,
+  [Parameter(Mandatory=$false)][string]$Title = "",
   [Parameter(Mandatory=$true)][string]$OutPath,
   [int]$DelaySec = 3,
   [string]$Exe = "",
   [int]$MaxWidth = 1600,
-  [int]$Quality = 85
+  [int]$Quality = 85,
+  [string]$ProcName = ""
 )
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Windows.Forms
@@ -28,13 +29,23 @@ if ($Exe) {
   Start-Sleep -Seconds $DelaySec
 }
 
-$proc = Get-Process | Where-Object { $_.MainWindowTitle -and $_.MainWindowTitle -like "*$Title*" } | Select-Object -First 1
-if (-not $proc) { Write-Error "No se encontro ventana con titulo: $Title" }
+$proc = $null
+if ($ProcName) {
+  $proc = Get-Process -Name $ProcName -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowHandle -ne 0 } | Select-Object -First 1
+} else {
+  $proc = Get-Process | Where-Object { $_.MainWindowTitle -and $_.MainWindowTitle -like "*$Title*" } | Select-Object -First 1
+}
+if (-not $proc) { Write-Error "No se encontro ventana (title='$Title' proc='$ProcName')" }
 
 [WinCap]::ShowWindow($proc.MainWindowHandle, 9) | Out-Null
 Start-Sleep -Milliseconds 400
 [WinCap]::SetForegroundWindow($proc.MainWindowHandle) | Out-Null
-Start-Sleep -Milliseconds 800
+Start-Sleep -Milliseconds 300
+# Traer al frente por encima de ventanas normales y luego devolver el z orden
+[WinCap]::SetWindowPos($proc.MainWindowHandle, [IntPtr](-1), 0, 0, 0, 0, 0x0001 -bor 0x0002 -bor 0x0040) | Out-Null
+Start-Sleep -Milliseconds 400
+[WinCap]::SetWindowPos($proc.MainWindowHandle, [IntPtr](-2), 0, 0, 0, 0, 0x0001 -bor 0x0002 -bor 0x0040) | Out-Null
+Start-Sleep -Milliseconds 500
 
 $rect = New-Object WinCap+RECT
 [WinCap]::GetWindowRect($proc.MainWindowHandle, [ref]$rect) | Out-Null

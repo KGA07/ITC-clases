@@ -215,10 +215,37 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
   - Pendiente dentro de DG: lote Adobe Photoshop (C15-C22, incl. `pixeles.jpg` C14
     y `photoshop-entorno.jpg`), y 4 imágenes nunca encontradas (`pincel-acuarela`
     C9, `marco-foto`… ver Fase 4) a verificar/reemplazar.
-- **Próximo — Curso 2 (Diseño Gráfico) continua: lote Adobe Photoshop** (COM
-  `Photoshop.Application` 25.0 OK). Orden siguiente: Marketing (web demo) →
-  Diagnóstico (Windows/hardware/Packet Tracer, incl. C22 <1MB) → Diseño Técnico
-  (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) → PyMEs (cierre/reverificar).
+- **Curso 2 — Diseño Gráfico: lote Adobe Photoshop capturado (hito).**
+  - `Photoshop.Application` 25.0.0 por COM: `.Open()`, `.Paste()` y
+    `$ps.DisplayDialogs` bloquean por diálogo nativo / `RPC_E_SERVERCALL_RETRYLATER`.
+    Resuelto con **`$ps.DoJavaScript(...)` (ExtendScript)** con
+    `app.displayDialogs = DialogModes.NO` (abre PNG sin prompt de perfil,
+    crea capas de texto/forma, `new SolidColor()`, `LayerKind.TEXT`; retorna string).
+  - Artes de los ejercicios (banner "ESTUDIO PIXEL 2026", "Retoque fotográfico",
+    "Filtros y desenfoque NITIDO→DESENFOQUE GAUSSIANO", mosaico de píxeles
+    400x300 ampliado a 1600%) renderizados con Edge headless y montados en
+    documentos reales de Photoshop abiertos por scripting (texto, capas de forma,
+    zoom de píxeles) antes de capturar.
+  - `tools/img-capture.ps1` v3: parámetro `-ProcName` (Photoshop no pone el
+    nombre de la app en el título de su ventana principal cuando hay un documento
+    abierto) y elevación de ventana al frente con `HWND_TOPMOST`/`HWND_NOTOPMOST`
+    (el IDE quedaba por encima y el OCR mostraba la terminal, no Photoshop).
+  - 5 imágenes reemplazadas por capturas reales de Photoshop 2024 (84-103 KB,
+    1230x648-1366x740, OCR de control verifica menús «Archivo, Edición, Imagen,
+    Capa, Texto, Selección», panel de capas, títulos y ejercicio): `pixeles.jpg`
+    (C14, antes 2 KB ≈ vacía), `photoshop-entorno.jpg` (C15, antes **1,27 MB** →
+    presentación C15 baja a 205 KB), `capas.jpg` (C17, antes 227 KB),
+    `retoque.jpg` (C18, antes 384 KB), `desenfoque.jpg` (C22, antes 312 KB).
+  - Regeneradas las 5 clases (PDF + HTML + Presentación HTML/PDF/PPTX).
+    Presentaciones finales: C14 164 KB, C15 205 KB, C17 182 KB, C18 676 KB,
+    C22 518 KB — todas ≤ 1 MB.
+  - QA al cierre: check-firma 612/612 OK, list-stale 0, tests 14/14 OK.
+  - Permanece como imagen conceptual de apoyo en PS: `mapa-bits`, `photoshop-logo`,
+    `pluma-bezier`, `vectores`, `histograma`, `niveles`, `figura-*`.
+- **Próximo — Curso 2 (Diseño Gráfico): verificación visual del usuario de los
+  lotes Corel v2 y Photoshop; luego Marketing (web demo) → Diagnóstico (incl. C22
+  <1MB) → Diseño Técnico (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) →
+  PyMEs (cierre/reverificar).**
 
 ## Cómo arrancar el proyecto (resumen)
 
