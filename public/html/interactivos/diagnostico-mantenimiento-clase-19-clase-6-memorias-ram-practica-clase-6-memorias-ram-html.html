@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 6 - Memorias RAM</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0ea5e9;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0ea5e9;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Memorias RAM</h1>
+  <p class="sub">Práctica Cuestionario: memoria RAM · Diagnóstico y Mantenimiento de PC</p>
+  <div class="consigna">Respondé las 5 preguntas del interactivo sobre RAM, DDR, capacidad y velocidad.</div>
+  
+    <div class="q" data-ok="Porque es una memoria volátil">
+      <p class="qt">1. ¿Por qué la RAM se borra al apagar la PC?</p>
+      <label class="opt"><input type="radio" name="q0" value="Porque es una memoria volátil"><span>Porque es una memoria volátil</span></label>
+<label class="opt"><input type="radio" name="q0" value="Porque es muy lenta"><span>Porque es muy lenta</span></label>
+<label class="opt"><input type="radio" name="q0" value="Porque la protege el antivirus"><span>Porque la protege el antivirus</span></label>
+<label class="opt"><input type="radio" name="q0" value="Porque está en el disco"><span>Porque está en el disco</span></label>
+    </div>
+
+    <div class="q" data-ok="Todas las anteriores">
+      <p class="qt">2. ¿Qué tecnologías de RAM NO son compatibles entre sí?</p>
+      <label class="opt"><input type="radio" name="q1" value="DDR3 y DDR4"><span>DDR3 y DDR4</span></label>
+<label class="opt"><input type="radio" name="q1" value="DDR4 y DDR5"><span>DDR4 y DDR5</span></label>
+<label class="opt"><input type="radio" name="q1" value="DDR y DDR2"><span>DDR y DDR2</span></label>
+<label class="opt"><input type="radio" name="q1" value="Todas las anteriores"><span>Todas las anteriores</span></label>
+    </div>
+
+    <div class="q" data-ok="Gigabytes (GB)">
+      <p class="qt">3. ¿Qué unidad indica la capacidad de un módulo RAM?</p>
+      <label class="opt"><input type="radio" name="q2" value="Gigabytes (GB)"><span>Gigabytes (GB)</span></label>
+<label class="opt"><input type="radio" name="q2" value="Gigahertz (GHz)"><span>Gigahertz (GHz)</span></label>
+<label class="opt"><input type="radio" name="q2" value="Watts (W)"><span>Watts (W)</span></label>
+<label class="opt"><input type="radio" name="q2" value="RPM"><span>RPM</span></label>
+    </div>
+
+    <div class="q" data-ok="2666 (la menor)">
+      <p class="qt">4. Si mezclás RAM de 2666 y 3200, la placa usará...</p>
+      <label class="opt"><input type="radio" name="q3" value="2666 (la menor)"><span>2666 (la menor)</span></label>
+<label class="opt"><input type="radio" name="q3" value="3200 (la mayor)"><span>3200 (la mayor)</span></label>
+<label class="opt"><input type="radio" name="q3" value="El promedio de ambas"><span>El promedio de ambas</span></label>
+<label class="opt"><input type="radio" name="q3" value="No funcionará nunca"><span>No funcionará nunca</span></label>
+    </div>
+
+    <div class="q" data-ok="Usar los slots alternados (A2+B2)">
+      <p class="qt">5. Para activar el modo doble canal conviene...</p>
+      <label class="opt"><input type="radio" name="q4" value="Usar los slots alternados (A2+B2)"><span>Usar los slots alternados (A2+B2)</span></label>
+<label class="opt"><input type="radio" name="q4" value="Colocar toda la RAM en un mismo slot"><span>Colocar toda la RAM en un mismo slot</span></label>
+<label class="opt"><input type="radio" name="q4" value="Usar un módulo gigante"><span>Usar un módulo gigante</span></label>
+<label class="opt"><input type="radio" name="q4" value="Insertar RAM de distinta generación"><span>Insertar RAM de distinta generación</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

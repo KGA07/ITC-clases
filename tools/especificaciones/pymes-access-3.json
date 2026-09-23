@@ -26,6 +26,11 @@
     {
       "titulo": "¿Qué son los formularios?",
       "emoji": "📝",
+      "imagen": {
+        "src": "img/access-formulario-personal.png",
+        "alt": "Formulario Datos del personal con navegación y registro real",
+        "caption": "El formulario muestra navegación por registros, panel lateral con lista de formularios e informe, y un registro real (Micaela Campos García)."
+      },
       "parrafos": [
         "Un formulario es una pantalla de entrada de datos que facilita la carga y consulta de registros sin necesidad de abrir la tabla directamente. En Access, los formularios se vinculan a una tabla o consulta como origen de datos.",
         "En una PyME, un formulario de clientes permite al personal cargar nuevos clientes sin equivocarse en los campos, ya que cada campo tiene validaciones y formato predeterminado."

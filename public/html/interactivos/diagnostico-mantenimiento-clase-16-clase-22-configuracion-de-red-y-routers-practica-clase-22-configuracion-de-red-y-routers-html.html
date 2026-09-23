@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 22 - Configuración de red y routers</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0ea5e9;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0ea5e9;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Configuración de red y routers</h1>
+  <p class="sub">Práctica Cuestionario: red y router · Diagnóstico y Mantenimiento de PC</p>
+  <div class="consigna">Respondé las 5 preguntas del interactivo sobre TCP/IP, DHCP y router.</div>
+  
+    <div class="q" data-ok="La identificación de un equipo dentro de la red">
+      <p class="qt">1. ¿Qué es la dirección IP?</p>
+      <label class="opt"><input type="radio" name="q0" value="La identificación de un equipo dentro de la red"><span>La identificación de un equipo dentro de la red</span></label>
+<label class="opt"><input type="radio" name="q0" value="El nombre del usuario"><span>El nombre del usuario</span></label>
+<label class="opt"><input type="radio" name="q0" value="La velocidad del disco"><span>La velocidad del disco</span></label>
+<label class="opt"><input type="radio" name="q0" value="El modelo del router"><span>El modelo del router</span></label>
+    </div>
+
+    <div class="q" data-ok="La v6 tiene direcciones mucho más largas">
+      <p class="qt">2. ¿Qué diferencia la IP v4 de la v6?</p>
+      <label class="opt"><input type="radio" name="q1" value="La v6 tiene direcciones mucho más largas"><span>La v6 tiene direcciones mucho más largas</span></label>
+<label class="opt"><input type="radio" name="q1" value="La v4 no funciona nunca"><span>La v4 no funciona nunca</span></label>
+<label class="opt"><input type="radio" name="q1" value="La v6 es de pago"><span>La v6 es de pago</span></label>
+<label class="opt"><input type="radio" name="q1" value="La v4 es para impresoras"><span>La v4 es para impresoras</span></label>
+    </div>
+
+    <div class="q" data-ok="IP, máscara, puerta de enlace y DNS">
+      <p class="qt">3. ¿Qué entrega el servidor DHCP automáticamente?</p>
+      <label class="opt"><input type="radio" name="q2" value="IP, máscara, puerta de enlace y DNS"><span>IP, máscara, puerta de enlace y DNS</span></label>
+<label class="opt"><input type="radio" name="q2" value="Programas instalados"><span>Programas instalados</span></label>
+<label class="opt"><input type="radio" name="q2" value="Archivos de usuario"><span>Archivos de usuario</span></label>
+<label class="opt"><input type="radio" name="q2" value="Contraseñas de WiFi"><span>Contraseñas de WiFi</span></label>
+    </div>
+
+    <div class="q" data-ok="ping">
+      <p class="qt">4. El comando que prueba la conectividad es...</p>
+      <label class="opt"><input type="radio" name="q3" value="ping"><span>ping</span></label>
+<label class="opt"><input type="radio" name="q3" value="format"><span>format</span></label>
+<label class="opt"><input type="radio" name="q3" value="copy"><span>copy</span></label>
+<label class="opt"><input type="radio" name="q3" value="dir"><span>dir</span></label>
+    </div>
+
+    <div class="q" data-ok="El nombre de la red WiFi">
+      <p class="qt">5. El SSID es...</p>
+      <label class="opt"><input type="radio" name="q4" value="El nombre de la red WiFi"><span>El nombre de la red WiFi</span></label>
+<label class="opt"><input type="radio" name="q4" value="El cifrado de la red"><span>El cifrado de la red</span></label>
+<label class="opt"><input type="radio" name="q4" value="Una dirección IP"><span>Una dirección IP</span></label>
+<label class="opt"><input type="radio" name="q4" value="El tipo de cable"><span>El tipo de cable</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

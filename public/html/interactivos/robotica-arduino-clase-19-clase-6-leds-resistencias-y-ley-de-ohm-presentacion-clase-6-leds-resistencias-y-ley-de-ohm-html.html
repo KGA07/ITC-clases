@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 6 - LEDs, resistencias y Ley de Ohm</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 6 · Módulo 1 – Fundamentos de Arduino</div>
+      <h1>LEDs, resistencias y Ley de Ohm</h1>
+      <p class="bajada">Vas a entender cómo funciona un LED, por qué siempre lo conectás con una resistencia y cómo calcularla usando la Ley de Ohm, armando LEDs en serie y en paralelo.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Explicar el funcionamiento de un LED y su polaridad.</li>
+<li><span class="chk">✓</span>Calcular la resistencia protectora de un LED usando la Ley de Ohm.</li>
+<li><span class="chk">✓</span>Leer el valor de una resistencia con el código de colores.</li>
+<li><span class="chk">✓</span>Diferenciar la conexión de LEDs en serie y en paralelo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>💡 El LED y su polaridad</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 6 - LEDs, resistencias y Ley de Ohm/img/led-resistencia.jpg" alt=""></div><ul class="pts"><li> Un LED (Light Emitting Diode) es un diodo que emite luz cuando la corriente circula en el sentido correcto. Es un componente polarizado: tiene una pata más larga (ánodo, positivo) y una más corta (cátodo, negativo).</li>
+<li> Si lo conectás al revés, no se enciende; y si lo conectás sin resistencia, puede quemarse porque la corriente que circula es demasiado alta.</li>
+<li><b>·</b> Pata larga → ánodo → se conecta hacia el positivo.</li>
+<li><b>·</b> Pata corta → cátodo → se conecta hacia GND (negativo).</li>
+<li><b>·</b> El LED necesita corriente limitada: por eso va con resistencia.</li>
+<li><b>·</b> LED integrado del Arduino: ya tiene su resistencia interna en la placa.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>⚡ La Ley de Ohm</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 6 - LEDs, resistencias y Ley de Ohm/img/resistor-codigo-color.jpg" alt=""></div><ul class="pts"><li> La Ley de Ohm relaciona tres magnitudes: tensión (V, en voltios), corriente (I, en amperios) y resistencia (R, en ohmios). La fórmula es V = I × R.</li>
+<li> Para calcular la resistencia que protege a un LED usamos: R = (V fuente − V LED) / I LED. Por ejemplo, para un LED que pide 2V y una corriente de 20mA (0,02 A), alimentado con 5V: R = (5 − 2) / 0,02 = 150 Ω. En la práctica usamos 220 Ω, un valor comercial cercano y seguro.</li>
+<li><b>·</b> V = I × R: tensión igual a corriente por resistencia.</li>
+<li><b>·</b> R = (Vfuente − Vled) / Iled para calcular la resistencia protectora.</li>
+<li><b>·</b> Resultado en ohmios (Ω).</li>
+<li><b>·</b> Siempre redondeá al valor comercial más cercano (220, 330, 470 Ω).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🔗 Serie y paralelo</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 6 - LEDs, resistencias y Ley de Ohm/img/led-paralelo.jpg" alt=""></div><ul class="pts"><li> En serie, los LEDs se encadenan uno detrás de otro y comparten la misma corriente: la tensión se reparte entre todos. En paralelo, cada LED recibe toda la tensión de la fuente y la corriente se divide entre las ramas.</li>
+<li> En los proyectos con Arduino, lo más común es el paralelo: cada LED se conecta a su propio pin y a GND a través de su resistencia, así se puede controlar cada uno por separado.</li>
+<li><b>·</b> Serie: misma corriente, tensión repartida. Un LED cortado apaga todos.</li>
+<li><b>·</b> Paralelo: misma tensión, corriente repartida. Cada LED funciona solo.</li>
+<li><b>·</b> Con la placa, cada LED en un pin distinto = control independiente.</li>
+<li><b>·</b> En paralelo, sumá el consumo total de corriente: la placa entrega como máximo unos 40mA por pin.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎨 Leer el código de colores</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Las resistencias del kit indican su valor con bandas de colores. Las tres primeras franjas dan el valor y la cuarta la tolerancia. Por ejemplo: rojo, rojo, marrón = 22 × 10 = 220 Ω.</li>
+<li> Tener la tabla de colores a mano (o la foto en el celular) te permite identificar de un vistazo las resistencias de 220 Ω, 330 Ω y 10 kΩ que vas a usar seguido.</li>
+<li><b>·</b> Negro 0, marrón 1, rojo 2, naranja 3, amarillo 4.</li>
+<li><b>·</b> Verde 5, azul 6, violeta 7, gris 8, blanco 9.</li>
+<li><b>·</b> Tercera banda = multiplicador (cantidad de ceros).</li>
+<li><b>·</b> 220 Ω = rojo, rojo, marrón. 10 kΩ = marrón, negro, naranja.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Ley de Ohm en acción</div>
+        <p class="consigna">Respondé el quiz aplicando la Ley de Ohm y el código de colores.</p>
+        <ol class="pasos"><li>Tené a mano la tabla de colores y la fórmula V = I × R.</li>
+<li>Aplicá la fórmula paso a paso con una calculadora.</li>
+<li>Convencé a tu compañero de cada respuesta antes de confirmarla.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Resoluciones escritas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Leds en serie y en paralelo</div>
+        <p class="consigna">Armá dos circuitos con la placa: tres LEDs en serie y tres LEDs en paralelo, y comparalos.</p>
+        <ol class="pasos"><li>En setup() configura tres pines digitales como salida: 8, 9 y 10.</li>
+<li>En loop(), encendé los tres LEDs con digitalWrite(pin, HIGH) y un delay entre cada conmutación.</li>
+<li>Circuito en paralelo: conectá cada LED con su resistencia de 220 Ω a su pin y el cátodo a GND.</li>
+<li>Probá y verificá que cada LED se controla de forma independiente.</li>
+<li>Circuito en serie: encadená tres LEDs seguidos con una sola resistencia en la rama común.</li>
+<li>Conectá la cadena serie a la placa y observá qué pasa cuando sacás un LED de la fila.</li>
+<li>Registrá en el cuaderno las diferencias de brillo y comportamiento entre ambos circuitos.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Fotos de los dos circuitos (serie y paralelo) con la explicación de sus diferencias.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará las fotos de los circuitos y las resoluciones de los cálculos.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

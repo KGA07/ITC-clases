@@ -97,44 +97,55 @@
         "Módem-router: todo en uno, el equipo típico hogareño.",
         "Este dispositivo es el que configuramos en las próximas clases."
       ]
+    },
+    {
+      "titulo": "Packet Tracer: el simulador de redes de Cisco",
+      "emoji": "🖥️",
+      "imagen": {
+        "src": "img/packettracer-workspace.png",
+        "alt": "Ventana principal de Cisco Packet Tracer",
+        "caption": "Cisco Packet Tracer: workspace lógico donde se arman y prueban redes sin hardware."
+      },
+      "parrafos": [
+        "Packet Tracer es el simulador de redes de Cisco: se arrastran equipos reales (PCs, switches, routers, puntos de acceso) a un lienzo lógico, se conectan con cables o WiFi y se prueban tal como en la vida real, sin comprar hardware."
+      ],
+      "puntos": [
+        "Workspace lógico (Logical): el lienzo donde se arma la topología arrastrando dispositivos.",
+        "Barra inferior de equipos: end devices, switches, routers, redes inalámbricas y más.",
+        "Cada equipo se configura tal cual: IP, DHCP o páginas web del equipo.",
+        "Se prueba la red encendiendo y enviando datos: simula el comportamiento real de la red."
+      ]
     }
   ],
   "ejercicios": [
     {
-      "titulo": "Cuestionario: redes",
-      "consigna": "Respondé las 5 preguntas del interactivo sobre utilidad, clasificación y hardware de red.",
+      "titulo": "Primer contacto con Packet Tracer",
+      "consigna": "Abrí Packet Tracer, recorré el workspace lógico, localizá los grupos de equipos en la barra inferior y dejá la ventana lista para armar una red.",
       "pasos": [
-        "Leé la teoría.",
-        "Respondé el interactivo.",
-        "Observá los equipos de red del aula."
+        "Abrí Packet Tracer desde el menú Inicio (Cisco Packet Tracer) y esperá a que cargue el workspace lógico.",
+        "Identificá la barra de menú (File, Edit, Options, View, Tools, Extensions, Window y Help).",
+        "Recorré la barra inferior de equipos: end devices, switches, routers, conexiones y redes inalámbricas.",
+        "Arrastrá una PC al lienzo y observá que queda seleccionada con su ícono.",
+        "Usá el cursor (Select) y probá mover la PC dentro del lienzo.",
+        "Cerrá Packet Tracer y repetí hasta ubicar los controles sin ayuda."
       ],
-      "entrega": "Interactivo completo con respuestas correctas.",
+      "entrega": "Demostración en vivo: identificás los grupos de la barra inferior y movés un equipo en el lienzo.",
       "interactivo": {
         "preguntas": [
           {
-            "pregunta": "¿Cuál es una utilidad de las redes?",
-            "opciones": ["Compartir archivos e internet", "Cambiar el sistema operativo", "Reparar la RAM", "Acelerar el procesador"],
-            "correcta": "Compartir archivos e internet"
+            "pregunta": "¿Qué es Packet Tracer?",
+            "opciones": ["Un antivirus de red", "El simulador de redes de Cisco", "Un router físico", "Un programa de facturación"],
+            "correcta": "El simulador de redes de Cisco"
           },
           {
-            "pregunta": "Una red que cubre un aula u oficina se clasifica como...",
-            "opciones": ["LAN", "WAN", "MAN", "SAT"],
-            "correcta": "LAN"
+            "pregunta": "En Packet Tracer, ¿dónde se arma la red?",
+            "opciones": ["En el workspace lógico (Logical)", "En el navegador web", "En un documento Word", "En la consola de Windows"],
+            "correcta": "En el workspace lógico (Logical)"
           },
           {
-            "pregunta": "El equipo que une varias PCs de una red local se llama...",
-            "opciones": ["Switch", "Módem", "Placa de sonido", "Fuente"],
-            "correcta": "Switch"
-          },
-          {
-            "pregunta": "Una conexión directa entre dos equipos con cable se llama...",
-            "opciones": ["Punto a punto", "Punto a multipunto", "WAN", "MAN"],
-            "correcta": "Punto a punto"
-          },
-          {
-            "pregunta": "¿Qué equipo convierte la señal del proveedor para tener internet?",
-            "opciones": ["El módem", "El disipador", "La placa de video", "El estabilizador"],
-            "correcta": "El módem"
+            "pregunta": "¿Qué se usa para conectar las PCs entre sí en el lienzo?",
+            "opciones": ["Cables y conexiones desde la barra inferior", "Un imán", "Pegamento", "No se pueden conectar"],
+            "correcta": "Cables y conexiones desde la barra inferior"
           }
         ]
       }

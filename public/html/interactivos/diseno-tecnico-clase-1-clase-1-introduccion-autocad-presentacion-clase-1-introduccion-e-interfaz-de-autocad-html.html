@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 1 - Introducción e interfaz de AutoCAD</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #f59e0b33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#f59e0b;background:#f59e0b22;border:1px solid #f59e0b55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#f59e0b18;border:1px solid #f59e0b44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#f59e0b;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#f59e0b;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #f59e0b44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#f59e0b;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#f59e0b;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📐 Diseño Técnico Industrial</div>
+      <div class="mod">Clase 1 · Módulo 1 – Fundamentos de AutoCAD</div>
+      <h1>Introducción e interfaz de AutoCAD</h1>
+      <p class="bajada">Vas a conocer la pantalla de AutoCAD: la cinta de opciones, la línea de comandos y las ayudas al dibujo. Además vas a aprender a manejar el mouse para encuadrar y hacer zoom sobre tu trabajo.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Reconocer las áreas principales de la interfaz: cinta de opciones, línea de comandos y área de dibujo.</li>
+<li><span class="chk">✓</span>Ingresar comandos por teclado y por cinta, y utilizar las opciones que ofrece cada comando.</li>
+<li><span class="chk">✓</span>Activar Orto (F8), Rastreo Polar (F10) y Referencia a Objetos (F3) y explicar para qué sirve cada uno.</li>
+<li><span class="chk">✓</span>Usar el scroll y el encuadre del mouse para acercar, alejar y desplazar la vista del dibujo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🖥️ La interfaz de AutoCAD</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 1 Introducción Autocad/img/interfaz.jpg" alt=""></div><ul class="pts"><li> AutoCAD es un programa de dibujo técnico asistido por computadora. Cuando lo abrís, ves un gran espacio oscuro donde vas a dibujar, rodeado de barras, menús y paneles que concentran todas las herramientas.</li>
+<li> No hace falta memorizar ninguna pantalla: la clave es entender dónde vive cada familia de herramientas para encontrarlas rápido cuando las necesites.</li>
+<li><b>·</b> Área de dibujo: la zona central en negro donde se dibuja y se ven los objetos.</li>
+<li><b>·</b> Cinta de opciones: la barra superior con pestañas y paneles (Dibujo, Modificar, Capas...).</li>
+<li><b>·</b> Línea de comandos: la franja en la parte inferior donde se escriben y responden los comandos.</li>
+<li><b>·</b> Barra de estado: a la vez abajo, donde se activan los modos de referencia y las ayudas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🧩 La cinta de opciones y los paneles</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 1 Introducción Autocad/img/ayudas.jpg" alt=""></div><ul class="pts"><li> La cinta de opciones reemplazó a los antiguos menús: está dividida en pestañas y cada pestaña contiene paneles con herramientas afines. Por ejemplo, la pestaña Inicio concentra las herramientas que se usan todos los días.</li>
+<li><b>·</b> Pestañas: Inicio, Insertar, Anotar, Capas, Paramétrico, Visualizar y más.</li>
+<li><b>·</b> Paneles: grupos temáticos como Dibujo, Modificar, Propiedades y Capas.</li>
+<li><b>·</b> Cada botón tiene una ayuda flotante si dejás el mouse apoyado un instante.</li>
+<li><b>·</b> Si perdés un panel, hacé clic derecho sobre la cinta y activá el que te falte.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>⌨️ La línea de comandos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La línea de comandos es el corazón de AutoCAD: por teclado escribís un comando (por ejemplo LINEA) y el programa te va guiando con preguntas, opciones y valores. Aunque todo tiene botones, el teclado es el camino más rápido y profesional.</li>
+<li><b>·</b> Se escribe el comando y se confirma con Enter o Espacio.</li>
+<li><b>·</b> Las opciones entre corchetes (por ejemplo [Deshacer]) se eligen escribiendo su letra.</li>
+<li><b>·</b> ESC cancela el comando en curso; reiniciar con Enter repite el último comando.</li>
+<li><b>·</b> El autocompletado sugiere comandos mientras escribís: se elige con flechas y Enter.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎯 Ayudas al dibujo y manejo de la vista</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 1 Introducción Autocad/img/encuadre.jpg" alt=""></div><ul class="pts"><li> Las ayudas al dibujo son modos que se activan para que AutoCAD haga el trabajo pesado por vos: mantener líneas rectas, señalar ángulos y detectar puntos exactos de la geometría existente.</li>
+<li> Por su parte, la vista se maneja principalmente con el mouse: el scroll acerca y aleja, y mantenerlo presionado (o la tecla de encuadre) desplaza la vista.</li>
+<li><b>·</b> Orto (F8): fuerza que las líneas salgan perfectamente horizontales o verticales.</li>
+<li><b>·</b> Rastreo Polar (F10): ofrece guías de ángulos (90°, 45°...) mientras dibujás.</li>
+<li><b>·</b> Referencia a Objetos (F3): detecta finales, centros e intersecciones de objetos existentes.</li>
+<li><b>·</b> Scroll hacia adelante = acercar; hacia atrás = alejar; mantener = encuadrar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Verificá que entendés la interfaz</div>
+        <p class="consigna">Respondé las preguntas del repaso interactivo sobre las partes de la pantalla y las ayudas al dibujo.</p>
+        <ol class="pasos"><li>Abrí AutoCAD y abrí un dibujo nuevo (plantilla acad).</li>
+<li>Recorré con el mouse cada pestaña de la cinta y mirá los paneles que contiene.</li>
+<li>Escribí LINEA en la línea de comandos y mirá cómo aparece la guía de opciones.</li>
+<li>Activá y desactivá Orto (F8), Rastreo Polar (F10) y Referencia a Objetos (F3) mirando su botón en la barra de estado.</li>
+<li>Probalo con encuadre y zoom usando el scroll, y respondé el interactivo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> El docente repasa tus respuestas del interactivo en la pizarra y despeja dudas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Dibujá tu primera línea con ayudas</div>
+        <p class="consigna">Dibujá una línea horizontal y otra vertical usando Orto, y practicá el encuadre y el zoom sobre ellas.</p>
+        <ol class="pasos"><li>Creá un dibujo nuevo (nuevo DWG).</li>
+<li>Activá Orto con F8.</li>
+<li>Con el comando LINEA (L + Enter), hacé clic en un punto, mové el mouse hacia la derecha y hacé clic para fijar la línea horizontal.</li>
+<li>Volvé a usar LINEA, ahora hacia arriba, para dibujar una vertical.</li>
+<li>Usá el scroll para acercar y alejar, y el encuadre para recorrer el área alrededor de tus dos líneas.</li>
+<li>Guardá el archivo como clase1-lineas.dwg.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Mostrale al docente el archivo con tus dos líneas y explicá qué hizo cada ayuda al dibujo.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisa el archivo clase1-lineas.dwg y el repaso interactivo para confirmar el manejo de la interfaz y las ayudas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 12 - Cotas y administrador de estilos</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #f59e0b33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#f59e0b;background:#f59e0b22;border:1px solid #f59e0b55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#f59e0b18;border:1px solid #f59e0b44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#f59e0b;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#f59e0b;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #f59e0b44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#f59e0b;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#f59e0b;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📐 Diseño Técnico Industrial</div>
+      <div class="mod">Clase 12 · Módulo 2 – Aplicaciones</div>
+      <h1>Cotas y administrador de estilos</h1>
+      <p class="bajada">Vas a acotar tus planos con todos los tipos de cota, usar la cota inteligente y rápida, armar cadenas de cotas en línea base y continua, y configurar estilos de cota profesionales.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Aplicar cotas lineal, alineada, de arco, de coordenada, radial, diametral y angular.</li>
+<li><span class="chk">✓</span>Usar la cota inteligente (ACOTAR) y la cota rápida.</li>
+<li><span class="chk">✓</span>Crear cadenas de cota de línea base y continua.</li>
+<li><span class="chk">✓</span>Configurar el administrador de estilos de cota.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>📏 Tipos de cota</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 12 - Cotas/img/cotas.jpg" alt=""></div><ul class="pts"><li> Cada tipo de cota sirve para una situación: la cota lineal mide distancias horizontales o verticales; la alineada acompaña la dirección real del objeto inclinado; la de longitud de arco mide curvas; y la de coordenada indica la posición X o Y de un punto.</li>
+<li><b>·</b> Linear: puntos de origen y de fin, y la posición de la línea de cota.</li>
+<li><b>·</b> Alineada: se acomoda a la pendiente de lo que mide.</li>
+<li><b>·</b> Longitud de arco: mide el largo del arco.</li>
+<li><b>·</b> Coordenada: cuelga un cartelito con la X o la Y del punto.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>⭕ Cotas radiales, diametrales y angulares</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 12 - Cotas/img/cotacircular.jpg" alt=""></div><ul class="pts"><li> Las cotas de radio y diámetro miden círculos y arcos; la marca de centro señala su centro con una crucecita. La cota angular mide el ángulo entre dos líneas o los grados de un arco.</li>
+<li><b>·</b> Radio: del centro a la curva, una sola flecha.</li>
+<li><b>·</b> Diámetro: cruza el círculo entero.</li>
+<li><b>·</b> Marca de centro: crucecita en el centro de círculos y arcos.</li>
+<li><b>·</b> Angular: entre dos líneas o sobre un arco de grados.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>⚡ Formas de aplicación: inteligente, rápida, base y continua</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La cota inteligente (ACOTAR) elige sola el tipo de cota según el objeto que toqués, sin tipear nada. La cota rápida acota varios objetos de una vez en cadena. Las cotas de línea base comparten un mismo origen y las continuas se enlazan una detrás de otra.</li>
+<li> Quedan todas sobre la capa de COTAS para poder ocultarlas si se necesita.</li>
+<li><b>·</b> ACOTAR: la cota automática inteligente.</li>
+<li><b>·</b> Cota rápida: selección múltiple y acotado en cadena.</li>
+<li><b>·</b> Línea base: varias cotas desde un mismo punto de referencia.</li>
+<li><b>·</b> Continua: cada cota parte del final de la anterior.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🗂️ Administrador de estilos de cota</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 12 - Cotas/img/estilos.jpg" alt=""></div><ul class="pts"><li> El administrador de estilos de cota (ESTILOACOT o DIMSTYLE) agrupa en estilos las opciones de las cotas: tamaño de flechas y texto, unidades, redondeo, posición de la línea de cota y la escala general. Cambiar el estilo actual actualiza todas las cotas del dibujo que lo usen.</li>
+<li><b>·</b> Crear un estilo nuevo y modificarlo.</li>
+<li><b>·</b> Definir tamaño de flechas, texto y precisión.</li>
+<li><b>·</b> Configurar la escala general de las cotas.</li>
+<li><b>·</b> Los estilos permiten pasar de cotas de milímetros a cotas de centímetros con un clic.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Repasá los tipos de cota</div>
+        <p class="consigna">Respondé el interactivo sobre tipos de cota, cota inteligente y estilos.</p>
+        <ol class="pasos"><li>Repasá cada tipo de cota de la teoría.</li>
+<li>Explorá el panel Anotar para ubicar las herramientas.</li>
+<li>Respondé las 5 preguntas del interactivo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Repaso oral de las respuestas con las cotas a la vista.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Acotá la planta de la clase 11</div>
+        <p class="consigna">Completá la planta con cotas externas, una cadena continua y la acotación de un círculo.</p>
+        <ol class="pasos"><li>Abrí tu planta clase11-planta2.dwg.</li>
+<li>Activá la capa COTAS como actual.</li>
+<li>Acotá el frente y el fondo de la vivienda con cota lineal.</li>
+<li>Acotá una ventana con cota lineal y un arco de puerta con cota angular.</li>
+<li>Agregá una cadena de cotas continuas en el frente de la planta.</li>
+<li>En el mobiliario circular (p. ej. el inodoro) agregá cotas de radio o diámetro.</li>
+<li>Guardá como clase12-cotas.dwg.</li></ol>
+        <p class="entrega"><b>Entrega:</b> El docente revisa el archivo con los tipos de cota aplicados sobre la planta.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se revisa el archivo clase12-cotas.dwg y el repaso interactivo de cotas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

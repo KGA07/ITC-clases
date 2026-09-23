@@ -53,6 +53,11 @@
     {
       "titulo": "Funciones condicionales: CONTAR.SI",
       "emoji": "🔍",
+      "imagen": {
+        "src": "img/excel-contar-si.png",
+        "alt": "Hoja CONTAR.SI de la planilla de práctica con la sintaxis de la función",
+        "caption": "La hoja de práctica explica la sintaxis =CONTAR.SI(rango; \"criterio\") sobre datos reales de empresas."
+      },
       "parrafos": [
         "CONTAR.SI cuenta cuántas celdas de un rango cumplen una condición: cuántas facturas son del tipo A, cuántos clientes son de Rosario, cuántas ventas superaron un importe."
       ],

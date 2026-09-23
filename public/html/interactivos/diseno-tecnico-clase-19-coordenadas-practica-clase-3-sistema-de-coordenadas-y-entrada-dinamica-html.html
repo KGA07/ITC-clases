@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 3 - Sistema de coordenadas y entrada dinámica</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#f59e0b;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#f59e0b;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Sistema de coordenadas y entrada dinámica</h1>
+  <p class="sub">Práctica Repasá los tipos de coordenadas · Diseño Técnico Industrial</p>
+  <div class="consigna">Resolvé el interactivo sobre coordenadas rectangulares, polares, absolutas y relativas.</div>
+  
+    <div class="q" data-ok="X,Y">
+      <p class="qt">1. ¿Cómo se escriben las coordenadas rectangulares?</p>
+      <label class="opt"><input type="radio" name="q0" value="10&lt;45"><span>10&lt;45</span></label>
+<label class="opt"><input type="radio" name="q0" value="X,Y"><span>X,Y</span></label>
+<label class="opt"><input type="radio" name="q0" value="@X,Y"><span>@X,Y</span></label>
+<label class="opt"><input type="radio" name="q0" value="D,A en grados"><span>D,A en grados</span></label>
+    </div>
+
+    <div class="q" data-ok="distancia<ángulo">
+      <p class="qt">2. ¿Qué formato usan las coordenadas polares?</p>
+      <label class="opt"><input type="radio" name="q1" value="X,Y"><span>X,Y</span></label>
+<label class="opt"><input type="radio" name="q1" value="distancia&lt;ángulo"><span>distancia&lt;ángulo</span></label>
+<label class="opt"><input type="radio" name="q1" value="@10,20"><span>@10,20</span></label>
+<label class="opt"><input type="radio" name="q1" value="ángulo&lt;distancia"><span>ángulo&lt;distancia</span></label>
+    </div>
+
+    <div class="q" data-ok="@">
+      <p class="qt">3. ¿Qué símbolo indica que la coordenada es relativa?</p>
+      <label class="opt"><input type="radio" name="q2" value="@"><span>@</span></label>
+<label class="opt"><input type="radio" name="q2" value="#"><span>#</span></label>
+<label class="opt"><input type="radio" name="q2" value="&lt;"><span>&lt;</span></label>
+<label class="opt"><input type="radio" name="q2" value="$"><span>$</span></label>
+    </div>
+
+    <div class="q" data-ok="Del origen (0,0)">
+      <p class="qt">4. ¿Desde dónde se miden las coordenadas absolutas?</p>
+      <label class="opt"><input type="radio" name="q3" value="Del último punto dibujado"><span>Del último punto dibujado</span></label>
+<label class="opt"><input type="radio" name="q3" value="Del origen (0,0)"><span>Del origen (0,0)</span></label>
+<label class="opt"><input type="radio" name="q3" value="Del centro de la pantalla"><span>Del centro de la pantalla</span></label>
+<label class="opt"><input type="radio" name="q3" value="De la esquina superior derecha"><span>De la esquina superior derecha</span></label>
+    </div>
+
+    <div class="q" data-ok="F12">
+      <p class="qt">5. ¿Qué tecla activa la entrada dinámica?</p>
+      <label class="opt"><input type="radio" name="q4" value="F8"><span>F8</span></label>
+<label class="opt"><input type="radio" name="q4" value="F10"><span>F10</span></label>
+<label class="opt"><input type="radio" name="q4" value="F11"><span>F11</span></label>
+<label class="opt"><input type="radio" name="q4" value="F12"><span>F12</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

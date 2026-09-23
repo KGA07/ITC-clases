@@ -53,6 +53,11 @@
     {
       "titulo": "Formato como tabla",
       "emoji": "📋",
+      "imagen": {
+        "src": "img/excel-tablas-datos.png",
+        "alt": "Registro de Capacitación con tabla estructurada y datos reales",
+        "caption": "La tabla convertida con Ctrl+T permite referenciar columnas por nombre y agregar filas automáticamente."
+      },
       "parrafos": [
         "Convertir un rango en Tabla (Ctrl + T) transforma tus datos en una estructura inteligente: se le pone nombre, se marcan los encabezados y cada columna se puede referenciar por nombre en las fórmulas."
       ],

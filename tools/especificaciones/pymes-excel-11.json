@@ -40,6 +40,11 @@
     {
       "titulo": "Impuestos: IVA, IIBB, Ganancias y Retenciones",
       "emoji": "💸",
+      "imagen": {
+        "src": "img/excel-liquidacion-impuestos.png",
+        "alt": "Liquidación mensual de IVA e IIBB con el débito y crédito fiscal",
+        "caption": "La posición mensual suma el IVA débito fiscal de ventas contra el crédito fiscal de compras para saber si queda saldo a favor o a pagar."
+      },
       "parrafos": [
         "El IVA (21% general) se calcula sobre el neto; el IIBB se paga según la jurisdicción; las retenciones de IIBB y Ganancias se descuentan sobre la facturación. Conocer dónde va cada uno evita sorpresas en la liquidación."
       ],

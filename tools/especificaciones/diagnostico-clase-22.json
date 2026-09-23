@@ -97,6 +97,31 @@
         "WLAN: WiFi: SSID, canal y cifrado (WPA2/WPA3).",
         "Avanzado: filtrado MAC, reserva de IP, puertos y control de acceso."
       ]
+    },
+    {
+      "titulo": "Simulá la red en Packet Tracer antes de armarla",
+      "emoji": "🧪",
+      "imagen": {
+        "src": "img/packettracer-red-hogarena.png",
+        "alt": "Red hogareña simulada en Packet Tracer",
+        "caption": "En el simulador de Cisco se arma y prueba la red completa sin tocar hardware."
+      },
+      "imagenes": [
+        {
+          "src": "img/packettracer-dhcp.png",
+          "alt": "Configuración de DHCP en Packet Tracer",
+          "caption": "Packet Tracer muestra los comandos de configuración reales, como la reserva de IP por DHCP."
+        }
+      ],
+      "parrafos": [
+        "Antes de tocar el router real, la red completa se puede armar en Packet Tracer: router, switch, puntos de acceso y PCs arrastrados al lienzo, conectados con cables o WiFi y probados con ping y páginas web."
+      ],
+      "puntos": [
+        "Se arma la topología real: router, AP y equipos en el lienzo.",
+        "El router simulado entrega DHCP a todos los equipos, igual que el real.",
+        "Se accede a páginas web del servidor simulado para probar la red.",
+        "Los comandos y paneles mostrados son los mismos que usa el router de verdad."
+      ]
     }
   ],
   "ejercicios": [

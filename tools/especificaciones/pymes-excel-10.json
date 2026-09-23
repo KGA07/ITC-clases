@@ -26,6 +26,11 @@
     {
       "titulo": "BUSCARV: búsqueda vertical",
       "emoji": "🔎",
+      "imagen": {
+        "src": "img/excel-buscarv.png",
+        "alt": "Hoja BUSCARV con la explicación de la sintaxis y sus argumentos",
+        "caption": "La hoja de práctica explica cada argumento de =BUSCARV: rango en columnas, número de columna y coincidencia exacta o aproximada."
+      },
       "parrafos": [
         "BUSCARV busca un valor en la PRIMERA columna de una tabla y devuelve un dato de otra columna de la misma fila. Es la función estrella para asignar precios, descripciones o datos de clientes desde una lista maestra."
       ],

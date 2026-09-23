@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 5 - Protoboard y simulación en TinkerCad</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 5 · Módulo 1 – Fundamentos de Arduino</div>
+      <h1>Protoboard y simulación en TinkerCad</h1>
+      <p class="bajada">Vas a entender cómo funciona la protoboard por dentro, vas a armar tu primer circuito en TinkerCad y a reproducirlo después en la mesa de trabajo real.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Explicar el funcionamiento interno de la protoboard y sus líneas conductoras.</li>
+<li><span class="chk">✓</span>Armar un circuito en TinkerCad siguiendo un esquema.</li>
+<li><span class="chk">✓</span>Transferir el circuito simulado a la protoboard física.</li>
+<li><span class="chk">✓</span>Verificar la continuidad de las conexiones antes de energizar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>📐 La protoboard por dentro</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 5 - Protoboard y simulación en TinkerCad/img/protoboard.jpg" alt=""></div><ul class="pts"><li> La protoboard es una tabla con orificios conectados entre sí por dentro mediante láminas metálicas. No todo agujero está conectado con todos: hay filas y columnas con conexiones específicas.</li>
+<li> Las líneas largas de los bordes son las barras de alimentación (generalmente marcadas en rojo para VCC y azul o negro para GND). El centro se divide en dos bloques, donde cada fila de 5 orificios está conectada de forma horizontal e interna.</li>
+<li><b>·</b> Barras laterales: conectan toda la línea, ideales para 5V y GND.</li>
+<li><b>·</b> Filas centrales: grupos de 5 agujeros conectados entre sí.</li>
+<li><b>·</b> El canal central separa los dos bloques: ahí encaja el chip o el Arduino.</li>
+<li><b>·</b> Nunca insertes componentes con los pines torcidos: se dañan.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🧪 Por qué simular antes</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> TinkerCad te deja armar el circuito exacto y probarlo sin riesgo: si conectás algo mal, la simulación te avisa, no se quema ningún componente. Además, podés probar cambios de código al toque.</li>
+<li> La metodología del curso es clara: primero diseño y simulación en TinkerCad, después construcción en la protoboard física. Así cada error se descubre en el entorno digital y la práctica física sale a la primera.</li>
+<li><b>·</b> El simulador detecta cortocircuitos y conexiones erradas.</li>
+<li><b>·</b> Podés cambiar resistencias y ver el efecto inmediato.</li>
+<li><b>·</b> Compartís el circuito por enlace para mostrar tu trabajo.</li>
+<li><b>·</b> Simular primero ahorra tiempo y componentes.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🔀 Circuitos en serie y en paralelo en la protoboard</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 5 - Protoboard y simulación en TinkerCad/img/protoboard-circuito.jpg" alt=""></div><ul class="pts"><li> En la protoboard, un componente se inserta con cada pata en una fila distinta, y las conexiones se hacen saltando con cables entre filas. El punto clave es entender que la fila une las patas hacia un mismo cable.</li>
+<li> Cuando conectás componentes encadenados uno detrás de otro, formás un circuito en serie; cuando los conectás en ramas paralelas sobre las mismas líneas de alimentación, es un circuito en paralelo. Los dos van a aparecer en las próximas clases.</li>
+<li><b>·</b> Cada fila de 5 agujeros es un mismo nudo eléctrico.</li>
+<li><b>·</b> Saltar entre filas requiere cables puente (jumpers).</li>
+<li><b>·</b> Serie: la misma corriente circula por todos los componentes.</li>
+<li><b>·</b> Paralelo: cada rama recibe la tensión completa de la fuente.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🧹 Orden al armar</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Un circuito prolijo se arma en etapas: primero la alimentación (5V y GND) por las barras laterales, después los componentes de mayor a menor y por último los cables de señal. Trabajar ordenado hace que los errores se encuentren en segundos.</li>
+<li><b>·</b> Conectá las barras de alimentación antes que nada.</li>
+<li><b>·</b> Colocá el LED o componente respetando la polaridad.</li>
+<li><b>·</b> Usá cables de colores: rojo para 5V, negro para GND, otros para señales.</li>
+<li><b>·</b> Revisá cada pata contra el esquema antes de encender.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Protoboard y TinkerCad</div>
+        <p class="consigna">Respondé el quiz sobre el funcionamiento de la protoboard y el uso del simulador.</p>
+        <ol class="pasos"><li>Observá la protoboard real mientras respondés.</li>
+<li>Acordate de los grupos de filas y las barras de alimentación.</li>
+<li>Pensá en qué hace TinkerCad antes de cada pregunta.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Respuestas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Mi primer circuito simulado y real</div>
+        <p class="consigna">Armá en TinkerCad un circuito con un LED y una resistencia, y reprodúcelo en la protoboard física.</p>
+        <ol class="pasos"><li>Ingresá a TinkerCad → Circuitos y creá un circuito nuevo.</li>
+<li>Arrastrá una placa Arduino Uno al área de trabajo.</li>
+<li>Agregá un LED y una resistencia de 220 Ω (ohmios).</li>
+<li>Conectá el ánodo del LED (pata larga) a la resistencia y esta al pin 13.</li>
+<li>Conectá el cátodo del LED (pata corta) a GND.</li>
+<li>Cargá el ejemplo Blink y corré la simulación: el LED debe parpadear.</li>
+<li>Ahora reproducí el mismo circuito en tu protoboard física y conectalo a tu placa.</li>
+<li>Compará el comportamiento real con el simulado y anotá si hubo diferencias.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Captura del circuito terminado en TinkerCad + foto del circuito real funcionando.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la captura de TinkerCad, la foto del circuito real y el quiz.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

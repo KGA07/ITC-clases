@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 5 - Microprocesadores</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0ea5e933, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0ea5e9;background:#0ea5e922;border:1px solid #0ea5e955;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0ea5e918;border:1px solid #0ea5e944;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0ea5e9;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0ea5e9;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0ea5e944;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0ea5e9;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0ea5e9;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🖥️ Diagnóstico y Mantenimiento de PC</div>
+      <div class="mod">Clase 5 · Módulo 1 – Hardware</div>
+      <h1>Microprocesadores</h1>
+      <p class="bajada">El microprocesador es el cerebro de la PC. Vas a entender cómo funciona, qué diferencia a Intel de AMD, qué son los núcleos, la caché y el Hyperthreading, y cómo leer el nombre de cada modelo.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Explicar el funcionamiento básico del microprocesador.</li>
+<li><span class="chk">✓</span>Reconocer marcas, modelos y gamas de procesadores Intel y AMD.</li>
+<li><span class="chk">✓</span>Interpretar velocidad, cantidad de núcleos y memoria caché.</li>
+<li><span class="chk">✓</span>Definir Hyperthreading, Turbo Boost y GPU integrada.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🧠 Funcionamiento del microprocesador</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/6- Diagnostico y Mantenimiento/@Clases/Clase 3/img/cpu-intel.jpg" alt=""></div><ul class="pts"><li> El microprocesador (CPU) es el componente que ejecuta las instrucciones de los programas. Mide, compara, suma y decide: todo el software termina bajando a operaciones que la CPU resuelve a gran velocidad.</li>
+<li><b>·</b> Ejecuta las instrucciones del sistema operativo y los programas.</li>
+<li><b>·</b> Trabaja con la RAM y la memoria caché para no esperar datos.</li>
+<li><b>·</b> Su velocidad se mide en gigahercios (GHz).</li>
+<li><b>·</b> Sin CPU funcional la PC no arranca (sin imagen, sin bip, nada).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🏆 Marcas y modelos: Intel y AMD</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/6- Diagnostico y Mantenimiento/@Clases/Clase 3/img/cpu-amd.jpg" alt=""></div><ul class="pts"><li> Intel y AMD dominan el mercado. Cada marca tiene familias y generaciones, y saber leer el nombre del modelo te dice su nivel y antigüedad.</li>
+<li><b>·</b> Intel: Core i3, i5, i7, i9 (escala de gamas).</li>
+<li><b>·</b> AMD: Ryzen 3, 5, 7, 9 y series Athlon.</li>
+<li><b>·</b> El número de generación aparece en el modelo (i5-12400 → generación 12).</li>
+<li><b>·</b> Sufijos: K (desbloqueado en Intel), G (con GPU integrada en AMD).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>⚡ Velocidad y cantidad de núcleos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cuanto más rápido es un procesador y cuantos más núcleos tiene, más tareas puede resolver por segundo.</li>
+<li><b>·</b> Velocidad: se mide en GHz (miles de millones de ciclos por segundo).</li>
+<li><b>·</b> Núcleo (core): unidad de procesamiento; hoy se usan varios en paralelo.</li>
+<li><b>·</b> Modelos típicos: 4, 6, 8, 12 o más núcleos.</li>
+<li><b>·</b> Más núcleos ayudan en tareas múltiples, video y renderizado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🚀 Memoria caché, Hyperthreading y Turbo</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Tres tecnologías aceleran el procesamiento sin aumentar tanto el consumo: guardar datos cerca de la CPU (caché), ejecutar más hilos por núcleo (Hyperthreading) y subir la velocidad temporalmente (Turbo).</li>
+<li><b>·</b> Caché: memoria ultrarrápida interna (L1, L2, L3) para datos frecuentes.</li>
+<li><b>·</b> Hyperthreading (Intel) / SMT (AMD): ejecuta 2 hilos por núcleo.</li>
+<li><b>·</b> Turbo Boost / Precision Boost: suben la velocidad cuando hace falta.</li>
+<li><b>·</b> Estas tecnologías conviven para mejorar el rendimiento real.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="6">
+    <header><h2>🌡️ GPU integrada y refrigeración</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/6- Diagnostico y Mantenimiento/@Clases/Clase 3/img/disipador.jpg" alt=""></div><ul class="pts"><li> Muchos procesadores incluyen una GPU integrada (gráficos en la CPU), ideal para PCs de oficina. Y todos necesitan refrigeración: el calor que generan es enorme.</li>
+<li><b>·</b> GPU integrada: sirve para ofimática, internet y video sin tarjeta extra.</li>
+<li><b>·</b> Si no hay gráficos integrados, la PC necesita tarjeta de video sí o sí.</li>
+<li><b>·</b> El disipador con cooler evita que la CPU se sobrecaliente.</li>
+<li><b>·</b> Aplicar pasta térmica entre CPU y disipador es obligatorio en el armado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Cuestionario: microprocesadores</div>
+        <p class="consigna">Respondé las 5 preguntas del interactivo sobre marcas, núcleos, caché y tecnologías.</p>
+        <ol class="pasos"><li>Leé la teoría sobre marcas y modelos.</li>
+<li>Respondé el interactivo.</li>
+<li>Comentá dudas con el docente.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Interactivo completo con respuestas correctas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="8">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Decodificá un procesador</div>
+        <p class="consigna">A partir de un modelo real de CPU, identifiquemos cada dato de su nombre.</p>
+        <ol class="pasos"><li>Anotá el modelo de procesador de la PC del aula (o uno de la ficha).</li>
+<li>Identificá la marca y la familia.</li>
+<li>Buscá la generación dentro del número de modelo.</li>
+<li>Indicá la velocidad base en GHz y la cantidad de núcleos.</li>
+<li>Determiná si tiene GPU integrada.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Ficha del procesador con todos los datos decodificados.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="9">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la ficha de decodificación y el interactivo.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 10</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=10;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

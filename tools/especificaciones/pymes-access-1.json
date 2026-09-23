@@ -54,6 +54,11 @@
     {
       "titulo": "El área de trabajo de Access",
       "emoji": "💻",
+      "imagen": {
+        "src": "img/access-entorno.png",
+        "alt": "Pantalla de inicio de Access con plantillas y bases recientes",
+        "caption": "La vista inicial muestra Nueva Base de datos en blanco, plantillas y las bases recientes (Clase 1, etc.)."
+      },
       "parrafos": [
         "Microsoft Access presenta un entorno organizado en pestañas que facilitan la creación y gestión de todos los objetos de la base de datos: tablas, consultas, formularios e informes."
       ],

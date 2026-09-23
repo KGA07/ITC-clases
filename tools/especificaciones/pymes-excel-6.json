@@ -26,6 +26,11 @@
     {
       "titulo": "Funciones de resumen: SUMA, MIN, MAX y PROMEDIO",
       "emoji": "∑",
+      "imagen": {
+        "src": "img/excel-funciones.png",
+        "alt": "Hoja Funciones de la planilla de práctica con SUMA, MAX y MIN",
+        "caption": "La planilla de práctica muestra cada función con su sintaxis: =SUMA(rango), =MAX(rango), =MIN(rango)."
+      },
       "parrafos": [
         "Estas funciones resumen rangos completos y son las más usadas en administración. Todas tienen la misma estructura: el nombre de la función y entre paréntesis el rango a procesar."
       ],

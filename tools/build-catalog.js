@@ -195,7 +195,7 @@ function sizeDir(dir) {
 // Se copian a public/html/interactivos/<slug>/ y se guarda su embedUrl.
 // Un HTML suelto se embeble solo si no tiene carpeta compañera (<nombre>_files)
 // de la que dependan sus recursos y si es liviano.
-const EMBED_MAX_HTML_BYTES = 400 * 1024;
+const EMBED_MAX_HTML_BYTES = 1024 * 1024;
 
 function embeberInteractivo(claseId, nombreCarpeta, dirAbs) {
   const size = sizeDir(dirAbs);
@@ -276,6 +276,13 @@ function archivosDeClase(claseId, dirAbs, relBaseAbs) {
   return { archivos, sum };
 }
 
+// Carpetas de recursos (solo imagenes/medios) que pertenecen a una clase
+// y no deben ser interpretadas como una clase/modulo hijas.
+const DIRS_RECURSOS = new Set(['img', 'images', 'image', 'imagen', 'imagenes', 'fotos', 'thumb', 'thumbs']);
+function esCarpetaRecursos(de) {
+  return de.isDirectory() && DIRS_RECURSOS.has(de.name.toLowerCase());
+}
+
 // ── Estructura modulos -> clases ─────────────────────────────────────────────
 function construirModulos(claseRoot, cursoId, relBaseAbs) {
   const modulos = [];
@@ -288,14 +295,14 @@ function construirModulos(claseRoot, cursoId, relBaseAbs) {
     let idxClase = 0;
     if (e.isDirectory()) {
       const sub = fs.readdirSync(full, { withFileTypes: true }).filter((x) => !ignorar(x.name));
-      const tieneSubDirs = sub.some((x) => x.isDirectory());
+      const tieneClasesHijas = sub.some((x) => x.isDirectory() && !esCarpetaRecursos(x));
 
-      if (tieneSubDirs) {
+      if (tieneClasesHijas) {
         // Nivel modulo: cada subcarpeta es una clase
         idxModulo += 1;
         const mod = { titulo: e.name, clases: [] };
         for (const ce of sub.sort((a, b) => a.name.localeCompare(b.name))) {
-          if (ce.isDirectory()) {
+          if (ce.isDirectory() && !esCarpetaRecursos(ce)) {
             idxClase += 1;
             const claseId = `${cursoId}-m${idxModulo}-c${idxClase}-${slugify(ce.name)}`;
             const { archivos, sum } = archivosDeClase(claseId, path.join(full, ce.name), relBaseAbs);
@@ -305,7 +312,8 @@ function construirModulos(claseRoot, cursoId, relBaseAbs) {
         }
         if (mod.clases.length > 0) modulos.push(mod);
       } else {
-        // Carpeta con solo archivos: clase suelta (p.ej. Ciberseguridad)
+        // Carpeta con solo archivos (y a lo sumo carpetas de recursos):
+        // clase suelta (p.ej. Ciberseguridad o clases planas "Clase N - ...")
         const cls = modulos.find((m) => m.titulo === 'Clases');
         const target = cls || { titulo: 'Clases', clases: [] };
         const idxSuelta = target.clases.length + 1;

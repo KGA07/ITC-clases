@@ -26,6 +26,11 @@
     {
       "titulo": "Qué es una Tabla Dinámica y cómo insertarla",
       "emoji": "🔁",
+      "imagen": {
+        "src": "img/excel-tabla-dinamica.png",
+        "alt": "Tabla Dinámica resumen de ventas por categoría y marca",
+        "caption": "La TD muestra categorías (Tv, sonido y video, Informática) y productos (Smart tv, Notebook, Impresora) con marcas y cantidades."
+      },
       "parrafos": [
         "Una Tabla Dinámica (TD) resume grandes volúmenes de datos en segundos: en vez de sumar fila por fila, vos decidís qué mirar (por cliente, por mes, por producto) y Excel arma el cuadro al instante. La magia está en la lista de campos."
       ],

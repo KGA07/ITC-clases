@@ -58,9 +58,16 @@ function imgsDeTeoria(c, t) {
   for (const it of list) {
     if (!it || !it.src) continue;
     const full = path.resolve(c.outputDir, it.src);
-    if (fs.existsSync(full)) out.push(full);
+    if (fs.existsSync(full)) {
+      const ext = String(it.src).split('.').pop().toLowerCase();
+      const mime = ext === 'jpg' ? 'image/jpeg' : ext === 'svg' ? 'image/svg+xml' : 'image/png';
+      out.push(full + '||' + mime);
+    }
   }
   return out;
+}
+function imgB64(full, mime) {
+  return `data:${mime};base64,${fs.readFileSync(full).toString('base64')}`;
 }
 
 // ---------------------------------------------------------------- slides HTML
@@ -91,7 +98,7 @@ function slidesHtml(c) {
     slides.push({
       cls: 'teoria',
       title: `${esc(t.emoji || '📘')} ${esc(t.titulo)}`,
-      media: imgs.length ? `<div class="media"><img src="${imgs[0].split('\\').join('/')}" alt=""></div>` : '',
+      media: imgs.length ? `<div class="media"><img src="${imgB64(...imgs[0].split('||'))}" alt=""></div>` : '',
       body: `<ul class="pts">${lines.map((l) => `<li>${l.bullet ? '<b>·</b>' : ''} ${esc(l.t)}</li>`).join('\n')}</ul>`
     });
   }
@@ -232,8 +239,9 @@ async function generarPptx(c, outPptx) {
     s.addText(`${t.emoji || '📘'} ${t.titulo}`, { x: 0.5, y: 0.4, w: 9, h: 0.6, fontSize: 20, bold: true, color: brand });
     const imgs = imgsDeTeoria(c, t);
     if (imgs.length) {
+      const imgPath = imgs[0].split('||')[0];
       s.addText(parr(lines.map((l) => (l.bullet ? '• ' : '') + l.t)), { x: 0.5, y: 1.15, w: 5.4, h: 3.7, fontSize: 14, color: '33395C', valign: 'top' });
-      s.addImage({ path: imgs[0], x: 6.2, y: 1.15, w: 3.3, h: 3.7, sizing: { type: 'contain', w: 3.3, h: 3.7 } });
+      s.addImage({ path: imgPath, x: 6.2, y: 1.15, w: 3.3, h: 3.7, sizing: { type: 'contain', w: 3.3, h: 3.7 } });
     } else {
       s.addText(parr(lines.map((l) => (l.bullet ? '• ' : '') + l.t)), { x: 0.5, y: 1.15, w: 9, h: 3.7, fontSize: 15, color: '33395C', valign: 'top' });
     }

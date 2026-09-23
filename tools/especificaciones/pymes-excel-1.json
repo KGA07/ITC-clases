@@ -26,6 +26,11 @@
     {
       "titulo": "El área de trabajo de Excel",
       "emoji": "🖥️",
+      "imagen": {
+        "src": "img/excel-entorno.png",
+        "alt": "Libro diario de Ingresos/Egresos en la primera hoja de práctica",
+        "caption": "La práctica muestra un libro diario con columnas Fecha, Tipo, Detalle y Subtotales."
+      },
       "parrafos": [
         "Excel organiza la información en una cuadrícula de celdas formada por columnas (letras) y filas (números). Cada celda tiene una dirección única, por ejemplo A1, que se muestra en el cuadro de nombres."
       ],

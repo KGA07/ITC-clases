@@ -39,6 +39,11 @@
     {
       "titulo": "Los gráficos básicos",
       "emoji": "📊",
+      "imagen": {
+        "src": "img/excel-datos-graficos.png",
+        "alt": "Hoja Balance Semestral con datos mensuales de Ingresos/Ganancia",
+        "caption": "Los datos mensuales de ingresos y ganancia por semestre son la base ideal para un gráfico de columnas o líneas."
+      },
       "parrafos": [
         "Los gráficos básicos de Excel cubren casi todo el trabajo administrativo: circular para partes del total, columnas/barras para comparar, y líneas para ver la evolución en el tiempo."
       ],

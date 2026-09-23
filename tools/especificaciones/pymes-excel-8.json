@@ -26,6 +26,11 @@
     {
       "titulo": "Las funciones de fecha: HOY, AHORA, DIA, MES, AÑO y FECHA",
       "emoji": "📅",
+      "imagen": {
+        "src": "img/excel-funciones-fecha.png",
+        "alt": "Hoja Funciones de Fechas con HOY, AHORA y DIA",
+        "caption": "La hoja de práctica muestra =HOY(), =AHORA() y =DIA() con el calendario de fechas válidas de Excel."
+      },
       "parrafos": [
         "Para Excel una fecha es un número con formato de fecha, y por eso se puede restar, sumar y comparar. Las funciones de fecha te dejan obtener la fecha actual o desarmar y armar fechas por partes."
       ],

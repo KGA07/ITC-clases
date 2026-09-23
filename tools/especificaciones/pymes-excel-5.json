@@ -26,6 +26,11 @@
     {
       "titulo": "Concepto de dashboard",
       "emoji": "🗂️",
+      "imagen": {
+        "src": "img/excel-base-dashboard.png",
+        "alt": "Base de datos de ventas con país, producto, canal y trimestre",
+        "caption": "La base de ventas con 301 registros (país, línea de producto, ingresos, trimestre) es el motor ideal para un dashboard con segmentaciones por país, canal y trimestre."
+      },
       "parrafos": [
         "Un dashboard es una pantalla que concentra los indicadores clave de un negocio: cuánto vendí, cuánto cobré, qué producto mueve más, cómo viene el mes. Se apoya en Tablas Dinámicas y gráficos conectados para que todo responda a los mismos filtros."
       ],

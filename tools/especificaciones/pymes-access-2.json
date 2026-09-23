@@ -53,6 +53,11 @@
     {
       "titulo": "Relaciones entre tablas",
       "emoji": "🔗",
+      "imagen": {
+        "src": "img/access-tablas-relaciones.png",
+        "alt": "Panel de navegación con las tablas Clientes, Facturas y Productos creadas",
+        "caption": "La base muestra las tres tablas relacionadas: Clientes (1) → Facturas (N) y Productos (1) → Facturas (N)."
+      },
       "parrafos": [
         "Las relaciones conectan tablas para que la información no esté aislada. En una PyME, un cliente puede tener muchas facturas, y cada factura pertenece a un solo cliente. Esa conexión se establece con un campo común (clave primaria / clave foránea)."
       ],

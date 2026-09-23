@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 7 - Modificación III: dividir, medir, partir, juntar y estirar</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #f59e0b33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#f59e0b;background:#f59e0b22;border:1px solid #f59e0b55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#f59e0b18;border:1px solid #f59e0b44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#f59e0b;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#f59e0b;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #f59e0b44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#f59e0b;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#f59e0b;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">📐 Diseño Técnico Industrial</div>
+      <div class="mod">Clase 7 · Módulo 1 – Fundamentos de AutoCAD</div>
+      <h1>Modificación III: dividir, medir, partir, juntar y estirar</h1>
+      <p class="bajada">Vas a completar la caja de herramientas de modificación: dividir y medir curvas, partir y juntar objetos, estirar partes dibujadas, descomponer entidades y alinear figuras.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Dividir y medir líneas colocando puntos en partes iguales o a intervalos.</li>
+<li><span class="chk">✓</span>Partir objetos en uno o varios puntos y volver a juntarlos.</li>
+<li><span class="chk">✓</span>Estirar una porción del dibujo sin romper el resto.</li>
+<li><span class="chk">✓</span>Descomponer y alinear objetos para reutilizar geometría.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🔢 Dividir y medir</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 7 - Funciones de modificación III/img/dividir.jpg" alt=""></div><ul class="pts"><li> DIVIDIR (DIVIDE) coloca puntos sobre un objeto dividiéndolo en un número de partes iguales; no lo corta, solo lo 'marca'. MEDIR (MEDIR) coloca puntos a intervalos de longitud fija desde un extremo.</li>
+<li><b>·</b> DIVIDIR: elige cantidad de partes iguales.</li>
+<li><b>·</b> MEDIR: elige el largo del segmento y el punto base.</li>
+<li><b>·</b> Los puntos de división son puntos visibles (ej. con estilo de punto notorio).</li>
+<li><b>·</b> Útiles para distribuir agujeros, lámparas o columnas en un recorrido.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>✂️ Partir y juntar</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 7 - Funciones de modificación III/img/partir.jpg" alt=""></div><ul class="pts"><li> PARTIR (PARTIR) corta un objeto en un punto o entre dos puntos, dejando dos objetos separados. La variante 'partir en un punto' divide sin borrar el tramo. JUNTAR (JUNTAR) hace el camino inverso: une líneas y curvas que comparten extremos en un solo objeto.</li>
+<li><b>·</b> PARTIR: selecciona el objeto y los puntos de corte.</li>
+<li><b>·</b> Opción 'en 1 punto' corta manteniendo ambas partes.</li>
+<li><b>·</b> JUNTAR: une segmentos consecutivos alineados o continuos.</li>
+<li><b>·</b> Muy útil en diagramas eléctricos y sanitarios para dividir tramos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🔄 Estirar</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/4- Diseño Tecnico/@Clases/Clase 7 - Funciones de modificación III/img/estirar.jpg" alt=""></div><ul class="pts"><li> ESTIRA (ESTIRAR) mueve los objetos que capturó una ventana de derecha a izquierda (selección de captura) y estira lo que conecta con el resto del dibujo. Es la herramienta perfecta para agrandar una habitación o alargar una pieza manteniendo sus relaciones.</li>
+<li><b>·</b> La ventana de selección debe ser de derecha a izquierda (captura).</li>
+<li><b>·</b> Los objetos totalmente dentro se mueven; los que la cruzan se estiran.</li>
+<li><b>·</b> El desplazamiento se indica con punto base y destino.</li>
+<li><b>·</b> Ideal para modificar medidas sin redibujar.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🧩 Descomponer y alinear</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> DESCOMPONER (DESC) separa en sus partes una entidad compuesta: una polilínea vuelve a ser líneas, un bloque vuelve a ser sus objetos originales. ALINEAR (ALINEAR) mueve y rota un objeto para que quede alineado con otro mediante pares de puntos.</li>
+<li><b>·</b> Descomponer: quita el comportamiento de un solo objeto.</li>
+<li><b>·</b> Se usa antes de modificar partes de un bloque o una polilínea.</li>
+<li><b>·</b> ALINEAR: tres pares de puntos como máximo, dos son suficientes.</li>
+<li><b>·</b> Con alineación se insertan muebles o piezas paralelas a una línea.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Repasá modificación III</div>
+        <p class="consigna">Respondé el interactivo sobre dividir, medir, partir, juntar, estirar, descomponer y alinear.</p>
+        <ol class="pasos"><li>Repasá cada herramienta del panel Modificar.</li>
+<li>Pensá un caso real de uso de cada una.</li>
+<li>Respondé las 5 preguntas del interactivo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Repaso oral con las preguntas resueltas en conjunto.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Distribuí y ajustá una pieza</div>
+        <p class="consigna">Practicá dividir, medir, partir, estirar, descomponer y alinear sobre una figura simple.</p>
+        <ol class="pasos"><li>Dibujá una línea de 10 unidades.</li>
+<li>Dividila en 5 partes iguales y ajustá el estilo de punto para ver las marcas.</li>
+<li>En otra línea, aplicá MEDIR con intervalo de 2 unidades.</li>
+<li>Partí una polilínea en un punto y luego juntá las partes.</li>
+<li>Dibujá un rectángulo y estiralo 4 unidades hacia la derecha.</li>
+<li>Descomponé un bloque (por ejemplo un cuadrado agrupado) y alinealo a una línea inclinada.</li>
+<li>Guardá como clase7-modificaciones.dwg.</li></ol>
+        <p class="entrega"><b>Entrega:</b> El docente revisa el archivo y confirma cada comando aplicado.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">Se revisa el archivo clase7-modificaciones.dwg y el repaso interactivo de modificación III.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

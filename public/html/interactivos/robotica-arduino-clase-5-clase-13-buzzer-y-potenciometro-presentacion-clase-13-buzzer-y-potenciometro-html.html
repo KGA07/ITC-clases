@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 13 - Buzzer y potenciómetro</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 13 · Módulo 2 – Programación y actuadores</div>
+      <h1>Buzzer y potenciómetro</h1>
+      <p class="bajada">Vas a dar sonido a tus proyectos con el buzzer pasivo y activo usando tone() y noTone(), y vas a leer niveles variables con el potenciómetro usando analogRead() y map().</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Diferenciar el buzzer pasivo del activo y su conexión.</li>
+<li><span class="chk">✓</span>Generar tonos con tone() y detenerlos con noTone().</li>
+<li><span class="chk">✓</span>Leer valores variables de un potenciómetro con analogRead().</li>
+<li><span class="chk">✓</span>Escalar valores con map() para controlar frecuencias o brillos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🔊 Buzzer pasivo y activo</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 13 - Buzzer y potenciómetro/img/buzzer.jpg" alt=""></div><ul class="pts"><li> El buzzer activo suena solo con conectarlo a la corriente: trae un oscilador interno que genera un tono fijo. El pasivo necesita que la placa genere la señal: por eso podés producir melodías con tone().</li>
+<li> En este curso usamos principalmente el pasivo, porque nos permite controlar la frecuencia del sonido, es decir la nota que escuchás.</li>
+<li><b>·</b> Activo: suena al conectarlo, tono fijo, no programás la frecuencia.</li>
+<li><b>·</b> Pasivo: necesita señal externa; se controla con tone().</li>
+<li><b>·</b> El pasivo suele tener los polos marcados (+ y -).</li>
+<li><b>·</b> Ambos se conectan a un pin digital de la placa.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🎵 tone() y noTone()</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> tone(pin, frecuencia) genera un sonido de la frecuencia indicada (en hercios) en un pin. Por ejemplo, tone(8, 440) suena la nota La. noTone(pin) detiene el sonido.</li>
+<li> Podés combinar tone y delay para armar melodías: suena una nota, esperás, cambio de nota, y así sucesivamente. Las frecuencias de las notas musicales se pueden guardar en un array (lo vemos en la próxima clase).</li>
+<li><b>·</b> tone(8, 440): suena La (440 Hz) en el pin 8.</li>
+<li><b>·</b> tone(8, 523): suena Do (523 Hz).</li>
+<li><b>·</b> noTone(8): silencia el pin 8.</li>
+<li><b>·</b> Con delays entre notas compones una melodía.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🎚️ El potenciómetro</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 13 - Buzzer y potenciómetro/img/potenciometro.jpg" alt=""></div><ul class="pts"><li> El potenciómetro es una resistencia variable de tres patas: las dos exteriores se conectan a 5V y GND, y la del medio entrega un voltaje que cambia al girar la perilla.</li>
+<li> Es una entrada analógica: la placa lee con analogRead() valores entre 0 y 1023 según la posición de la perilla. Se usa para volumen, brillo, velocidad y ajustes en general.</li>
+<li><b>·</b> Patas externas: 5V y GND.</li>
+<li><b>·</b> Pata del medio: señal analógica al pin A0.</li>
+<li><b>·</b> analogRead(A0) devuelve 0 a 1023.</li>
+<li><b>·</b> No hace falta resistencia externa.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>📐 map(): de 0-1023 a lo que necesites</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Los 1024 valores del potenciómetro normalmente no sirven tal cual: para el brillo de un LED (0-255) o la nota de un buzzer conviene convertirlos. map(x, deMin, deMax, aMin, aMax) hace esa escala.</li>
+<li> Por ejemplo: int brillo = map(valorPote, 0, 1023, 0, 255); convierte la lectura para usarla con analogWrite(). También podés mapear el potenciómetro a una frecuencia de 100 a 1000 Hz para un 'sirena regulable'.</li>
+<li><b>·</b> map(valor, 0, 1023, 0, 255): escala al rango PWM.</li>
+<li><b>·</b> map(valor, 0, 1023, 100, 1000): escala a frecuencias.</li>
+<li><b>·</b> El resultado es proporcional: 512 va al punto medio.</li>
+<li><b>·</b> Excelente para ajustar todo tipo de parámetros en vivo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Sonido y ajustes</div>
+        <p class="consigna">Respondé el quiz sobre buzzer, tone(), potenciómetro y map().</p>
+        <ol class="pasos"><li>Pensá la diferencia entre buzzer activo y pasivo.</li>
+<li>Recordá el rango de analogRead (0-1023).</li>
+<li>Usá la proporción de map() para deducir la respuesta.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Respuestas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Sirena regulada por potenciómetro</div>
+        <p class="consigna">Armá un circuito que produzca sonidos controlados por el potenciómetro.</p>
+        <ol class="pasos"><li>Conectá el buzzer pasivo al pin 8 y a GND.</li>
+<li>Conectá el potenciómetro: patas externas a 5V y GND, la del medio al pin A0.</li>
+<li>En setup(): pinMode(8, OUTPUT); Serial.begin(9600);</li>
+<li>En loop(): int valor = analogRead(A0);</li>
+<li>Escalá con map: int frecuencia = map(valor, 0, 1023, 100, 1000);</li>
+<li>Emití: tone(8, frecuencia);</li>
+<li>Mostrá por Serial: Serial.print(&quot;Pote: &quot;); Serial.print(valor); Serial.print(&quot; Frec: &quot;); Serial.println(frecuencia);</li>
+<li>Girá la perilla y escuchá cómo cambia el tono mientras el monitor muestra los valores.</li>
+<li>Desafío: que el tono suba y baje solo en un barrido con for() de 100 a 1000.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Foto del circuito + captura del monitor mostrando los valores del potenciómetro.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el circuito, la captura del monitor y el funcionamiento.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

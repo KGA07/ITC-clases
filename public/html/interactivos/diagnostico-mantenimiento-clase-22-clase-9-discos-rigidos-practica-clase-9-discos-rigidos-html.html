@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 9 - Discos rígidos</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0ea5e9;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0ea5e9;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Discos rígidos</h1>
+  <p class="sub">Práctica Cuestionario: discos rígidos · Diagnóstico y Mantenimiento de PC</p>
+  <div class="consigna">Respondé las 5 preguntas del interactivo sobre tipos de disco, interfaces y estructura lógica.</div>
+  
+    <div class="q" data-ok="SSD M.2 NVMe">
+      <p class="qt">1. ¿Cuál es el tipo de disco más rápido?</p>
+      <label class="opt"><input type="radio" name="q0" value="SSD M.2 NVMe"><span>SSD M.2 NVMe</span></label>
+<label class="opt"><input type="radio" name="q0" value="HDD"><span>HDD</span></label>
+<label class="opt"><input type="radio" name="q0" value="DVD"><span>DVD</span></label>
+<label class="opt"><input type="radio" name="q0" value="Disquete"><span>Disquete</span></label>
+    </div>
+
+    <div class="q" data-ok="6 Gb/s">
+      <p class="qt">2. La interfaz SATA III alcanza una velocidad teórica de...</p>
+      <label class="opt"><input type="radio" name="q1" value="6 Gb/s"><span>6 Gb/s</span></label>
+<label class="opt"><input type="radio" name="q1" value="133 MB/s solo"><span>133 MB/s solo</span></label>
+<label class="opt"><input type="radio" name="q1" value="1 Gb/s"><span>1 Gb/s</span></label>
+<label class="opt"><input type="radio" name="q1" value="300 Mb/s"><span>300 Mb/s</span></label>
+    </div>
+
+    <div class="q" data-ok="GPT">
+      <p class="qt">3. ¿Qué estructura de particionado soporta discos mayores a 2 TB?</p>
+      <label class="opt"><input type="radio" name="q2" value="GPT"><span>GPT</span></label>
+<label class="opt"><input type="radio" name="q2" value="MBR"><span>MBR</span></label>
+<label class="opt"><input type="radio" name="q2" value="FAT32"><span>FAT32</span></label>
+<label class="opt"><input type="radio" name="q2" value="IDE"><span>IDE</span></label>
+    </div>
+
+    <div class="q" data-ok="NTFS">
+      <p class="qt">4. El sistema de archivos estándar de Windows es...</p>
+      <label class="opt"><input type="radio" name="q3" value="NTFS"><span>NTFS</span></label>
+<label class="opt"><input type="radio" name="q3" value="ext4"><span>ext4</span></label>
+<label class="opt"><input type="radio" name="q3" value="APFS"><span>APFS</span></label>
+<label class="opt"><input type="radio" name="q3" value="FAT12"><span>FAT12</span></label>
+    </div>
+
+    <div class="q" data-ok="Crear un sistema de archivos y borrar su contenido">
+      <p class="qt">5. ¿Qué significa formatear una partición?</p>
+      <label class="opt"><input type="radio" name="q4" value="Crear un sistema de archivos y borrar su contenido"><span>Crear un sistema de archivos y borrar su contenido</span></label>
+<label class="opt"><input type="radio" name="q4" value="Cambiar el disco por otro"><span>Cambiar el disco por otro</span></label>
+<label class="opt"><input type="radio" name="q4" value="Aumentar la velocidad del CPU"><span>Aumentar la velocidad del CPU</span></label>
+<label class="opt"><input type="radio" name="q4" value="Instalar un antivirus"><span>Instalar un antivirus</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

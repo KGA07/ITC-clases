@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 15 - Motores PAP y servomotor</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 15 · Módulo 3 – Componentes avanzados</div>
+      <h1>Motores PAP y servomotor</h1>
+      <p class="bajada">Vas a darle movimiento a tus proyectos: controlar un motor paso a paso con su driver SBT0811 y posicionar un servomotor con precisión de grados.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Explicar el funcionamiento del motor paso a paso (PAP) y del servomotor.</li>
+<li><span class="chk">✓</span>Conectar el motor PAP a través del driver SBT0811.</li>
+<li><span class="chk">✓</span>Controlar un servomotor con la librería Servo.</li>
+<li><span class="chk">✓</span>Generar movimientos repetitivos programados (barridos y pasos).</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🔩 Motor paso a paso (PAP)</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 15 - Motores PAP y servomotor/img/motor-pap.jpg" alt=""></div><ul class="pts"><li> El motor paso a paso (PAP) gira en pasos discretos y controlables: cada pulso eléctrico lo avanza un ángulo fijo. Por eso sirve para posicionar objetos con exactitud, como en impresoras 3D y brazos robóticos.</li>
+<li> A diferencia de un motor común, el PAP no solo gira: 'sabe dónde está' sin necesidad de sensores, porque cada paso se cuenta desde el inicio.</li>
+<li><b>·</b> Gira en pasos: cada pulso = un pequeño avance angular.</li>
+<li><b>·</b> Posición precisa sin sensores de retroalimentación.</li>
+<li><b>·</b> Se usa en impresoras, cortadoras y brazos robóticos.</li>
+<li><b>·</b> Requiere un driver que entregue las fases de corriente.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔌 El driver SBT0811</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 15 - Motores PAP y servomotor/img/motor-driver.jpg" alt=""></div><ul class="pts"><li> La placa Arduino no puede mover el motor directo: necesita un driver (puente) que maneje las bobinas del motor paso a paso. El SBT0811 es el módulo que viene en tu kit y hace exactamente eso.</li>
+<li> Se conectan GND y VCC del driver a la placa, y las entradas de pulso y dirección a un par de pines digitales. Luego, las cuatro salidas van a las bobinas del motor.</li>
+<li><b>·</b> Driver: manda la secuencia de pulsos a las bobinas del motor.</li>
+<li><b>·</b> Entrada de pulso (step): cada pulso avanza un paso.</li>
+<li><b>·</b> Entrada de dirección (dir): sentido de giro.</li>
+<li><b>·</b> Verificá la alimentación del driver: algunos usan 5V, otros mayor tensión.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🎯 El servomotor</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 15 - Motores PAP y servomotor/img/servo.jpg" alt=""></div><ul class="pts"><li> El servomotor es un motor con engranajes y un sensor de posición interno: podés pedirle que gire a un ángulo determinado entre 0° y 180° y se queda ahí. Perfecto para ruedas direccionales, brazos y válvulas.</li>
+<li> Con la librería Servo es muy simple: creás un objeto servo, lo conectás a un pin y usás servo.write(angulo) para posicionarlo.</li>
+<li><b>·</b> Rango típico: 0° a 180°.</li>
+<li><b>·</b> Librería: #include &lt;Servo.h&gt;</li>
+<li><b>·</b> servo.attach(pin): asigna el servo a un pin.</li>
+<li><b>·</b> servo.write(90): lo posiciona en 90 grados.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🔄 Movimientos programados</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Con delays y la estructura for() podés generar barridos: mover el servo de 0° a 180° y volver. Para el motor paso a paso, cada pulso en su entrada 'step' avanza un paso; si querés dar una vuelta, enviás la cantidad de pasos que define el motor.</li>
+<li> La típica combinación 'cargar, avanzar, esperar' con estados claros es la base de cualquier mecanismo robótico controlado.</li>
+<li><b>·</b> for (int ang = 0; ang &lt;= 180; ang = ang + 5) { servo.write(ang); delay(15); }</li>
+<li><b>·</b> El servo vuelve: for invertido de 180 a 0.</li>
+<li><b>·</b> Pulso por paso: cada señal en step avanza un paso del PAP.</li>
+<li><b>·</b> Dos entradas (step/dir) controlan avance y sentido.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Motores y desplazamientos</div>
+        <p class="consigna">Respondé el quiz sobre motores PAP, driver y servomotores.</p>
+        <ol class="pasos"><li>Distinguí en qué se posiciona cada motor.</li>
+<li>Recordá qué hace cada entrada del driver.</li>
+<li>Pensá qué comando usa la librería Servo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Respuestas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Servo que saluda</div>
+        <p class="consigna">Conectá un servomotor y programá un barrido de ida y vuelta.</p>
+        <ol class="pasos"><li>Conectá el servomotor: rojo a 5V, negro a GND y la señal (naranja) al pin 9.</li>
+<li>Incluí la librería: #include &lt;Servo.h&gt;</li>
+<li>Declará el objeto global: Servo servo1;</li>
+<li>En setup(): servo1.attach(9);</li>
+<li>En loop(): un for() que suba el ángulo de 0 a 180 de a 5 con delay(20).</li>
+<li>Agregá otro for() que baje de 180 a 0. Probalo: el servo hace un barrido.</li>
+<li>Cambiá el delay a 5: el movimiento se hace más rápido.</li>
+<li>Desafío: si conseguís el módulo SBT0811 con el motor PAP, hacé girar el motor cierta cantidad de pasos y volver al inicio con la entrada 'step'.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Video corto del servo barriendo de 0° a 180° y volviendo.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el video del servo y la comprobación del circuito.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

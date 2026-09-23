@@ -1,7 +1,7 @@
 # HISTORIAL DEL PROYECTO — ITC Aula Virtual
 
 Este archivo guarda el historial completo del proyecto para retomarlo
-rápidamente si se pierde la sesión. Fecha de última actualización: 2026-09-21.
+rápidamente si se pierde la sesión. Fecha de última actualización: 2026-09-23.
 
 ---
 
@@ -126,34 +126,45 @@ barcos de 1964, paper sobre gripe, documento del Congreso de EE.UU. sobre terror
   (Wikimedia no tiene capturas de esas herramientas específicas).
 - **Diagnóstico y Marketing**: NO se corrigió aún (tarea pendiente para mañana).
 
-## Estado actual (PAUSA al 2026-09-21, Fase 4 a medio camino)
+## Estado actual (FASE 5 retomada al 2026-09-23)
 
-- Repo: commiteado y pusheado hasta `a9943e7` (Fase 3). Cero cambios pendientes en git
-  respecto a lo auditado; pero los reemplazos de imágenes de la Fase 4 aún NO están en git
-  (son archivos de `I:\ITC\...\@Clases\...\img\`, fuera del repo).
-- Catalogo del sitio: **10 capacitaciones, 1465 archivos, ~4602.7 MB**; 153 specs de clases.
-- **TAREA PENDIENTE AL REANUDAR** (continuación de corrección de imágenes):
-  1. **Diagnóstico**: reemplazar las inválidas/duplicadas — negras (dhcp.jpg C22), grises
-     (win10-config.jpg C15, restauracion.jpg C16, regedit.jpg C14, modulo-ddr4.jpg C6,
-     panel-io.jpg C2), duplicados MD5 (windows7==windows10; componentes-pc==slots-ram),
-     faltan capturas reales de instaladores/regedit/diskmgmt/ipconfig. Usar
-     `img-fetch.ps1` + `ocr-check.ps1`.
-  2. **Marketing**: reemplazar ~24 imágenes desacertadas (lista detallada en el analisis
-     de la Fase 4). Prioridad: `viral.jpg` (terrorismo), `sites.jpg` (barcos),
-     `seo-sem.jpg` (gripe), `planificador.jpg` (parque), `fatiga.jpg` (tesis militar),
-     `estructura.jpg` (C8 motor), slides de Wikimedia (suite/insights/ga4/eventos/negocio/
-     metricas). Keywords orientadas a marketing real (interfaces de Redes/Google/IA).
-  3. **Diseño Gráfico 6 no-encontradas**: evaluar si seguimos acá o las dejamos
-     (no hay capturas de esas herramientas en Wikimedia). Posibilidad: generarlas con
-     herramientas/libres o capturarlas directamente en el programa real en el aula.
-  4. **Regenerar los PDFs/guías/prácticas** de las clases cuyas imágenes cambiaron
-     (DG y DT): `node tools/generar-clases.js --filtro diseno-grafico-` y `--filtro
-     diseno-tecnico-` (los archivos embeben la imagen en base64, así que SIN regenerar
-     siguen con la imagen vieja).
-  5. **Crear `I:\ITC\ClasesITC\tools\MEJORAS.txt`**: txt detallado de mejoras (imágenes,
-     proceso de generación, pipeline, sitio/catálogo, didáctica, operación) que el
-     usuario pidió al final del análisis.
-  6. Commit/push + `npm run catalog` + sync opcional.
+> Los commits del 22/9 (`a2e653f` MEJORAS.txt + helpers, `013989b` firma en
+> materiales + presentaciones, catálogo 1738 archivos) ya estaban pusheados.
+> Al reanudar, el trabajo pendiente era: capturas de PyMEs (12 Excel + 3 Access)
+> y Packet Tracer en Diagnóstico 20/22, con `generar-presentaciones.js` en modo
+> base64. Resumen de la sesión de retome:
+
+### 2026-09-23 — Retome: capturas PyMEs + Packet Tracer + fix de catálogo
+- **Fix `pymes-excel-11.json`**: el emoji 💸 estaba corrupto como `"??"` (se veía
+  en los materiales) y la línea del título perdió la indentación.
+- **Regenerados** (PDF/Lectura/Guía/Práctica + Presentación HTML/PDF/PPTX):
+  Diagnóstico 20 y 22 (contenido Packet Tracer), PyMEs Excel 1-12 y PyMEs
+  Access 1-3 (nuevas capturas), y Diseño Técnico Clase 9 (quedaba sin firma).
+  Las presentaciones ahora con imágenes embebidas en base64.
+- **Verificación**: `check-firma.js` 612/612 con firma, `list-stale-specs.js` 0,
+  tests jest 14/14, JSON de las 153 specs válido.
+- **Bug de catálogo corregido** (`tools/build-catalog.js`): en los cursos con
+  layout plano `@Clases/Clase N - título/`, la subcarpeta `img/` hacía que la
+  clase se catalogara como "módulo" y solo se listaran las imágenes (58 clases
+  afectadas en Diagnóstico, Robótica y Diseño Técnico). Fix: las carpetas de
+  recursos (`img`, `images`, `fotos`, …) ya no se tratan como clase-hija, así
+  que cada clase plana lista sus materiales completos (PDF, práctica, presentación).
+- `EMBED_MAX_HTML_BYTES` 400 KB → 1 MB: las presentaciones con capturas en
+  base64 superaban el límite y se caían del portal (p.ej. Access Clase 3).
+- **Catálogo tras el fix**: 10 capacitaciones, **2150 archivos, ~5641 MB**.
+
+## Estado actual (puntos abiertos al 2026-09-23)
+
+1. La **presentación de Diagnóstico Clase 22** (>1 MB por las 2 capturas de
+   Packet Tracer) queda como archivo descargable en el sitio (no embebida).
+   Opción futura: comprimir `packettracer-red-hogarena.png` / `packettracer-dhcp.png`.
+2. **Lint**: 3 errores preexistentes en `tools/` (check-firma.js y
+   list-stale-specs.js `no-control-regex`, generar-presentaciones.js:199
+   `\d`). No bloquean el sitio pero conviene limpiarlos.
+3. QA opcional de specs de PyMEs/DG/DT con `ocr-check.ps1` (validar que las
+   capturas muestren UI real) — las nuevas de PyMEs y Diagnóstico se generaron
+   a mano y se anotaron con alt/caption.
+4. Sync opcional con Drive (`tools/run-sync.cmd`) y deploy de Vercel tras push.
 
 ## Cómo arrancar el proyecto (resumen)
 

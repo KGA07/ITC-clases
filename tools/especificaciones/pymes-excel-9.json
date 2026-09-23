@@ -53,6 +53,11 @@
     {
       "titulo": "Funciones lógicas anidadas: SI dentro de SI",
       "emoji": "🔁",
+      "imagen": {
+        "src": "img/excel-si-anidado.png",
+        "alt": "Hoja SI Anidado con la sintaxis de la función y el ejercicio de control de clima",
+        "caption": "La hoja de práctica arma el SI anidado =SI(Prueba1;V1;SI(Prueba2;V2;F)) sobre un control de clima."
+      },
       "parrafos": [
         "Cuando hay más de dos resultados posibles (diferenciar tres, cuatro o cinco categorías), se anidan funciones: en el valor si falso se coloca otra función SI. Esto crea una estructura de decisiones en cascada."
       ],

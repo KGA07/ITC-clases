@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 8 - Monitor Serie</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#16a34a;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#16a34a;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Monitor Serie</h1>
+  <p class="sub">Práctica La voz de la placa · Robótica con Arduino</p>
+  <div class="consigna">Resolvé el quiz sobre las funciones del Monitor Serie.</div>
+  
+    <div class="q" data-ok="En setup()">
+      <p class="qt">1. ¿Dónde se coloca Serial.begin(9600);?</p>
+      <label class="opt"><input type="radio" name="q0" value="En loop()"><span>En loop()</span></label>
+<label class="opt"><input type="radio" name="q0" value="En setup()"><span>En setup()</span></label>
+<label class="opt"><input type="radio" name="q0" value="Fuera de todo"><span>Fuera de todo</span></label>
+<label class="opt"><input type="radio" name="q0" value="No se escribe"><span>No se escribe</span></label>
+    </div>
+
+    <div class="q" data-ok="9600">
+      <p class="qt">2. ¿Cuál es la velocidad de comunicación estándar de Arduino?</p>
+      <label class="opt"><input type="radio" name="q1" value="1200"><span>1200</span></label>
+<label class="opt"><input type="radio" name="q1" value="9600"><span>9600</span></label>
+<label class="opt"><input type="radio" name="q1" value="300"><span>300</span></label>
+<label class="opt"><input type="radio" name="q1" value="14400"><span>14400</span></label>
+    </div>
+
+    <div class="q" data-ok="println agrega salto de línea al final">
+      <p class="qt">3. ¿Qué diferencia hay entre print() y println()?</p>
+      <label class="opt"><input type="radio" name="q2" value="println agrega salto de línea al final"><span>println agrega salto de línea al final</span></label>
+<label class="opt"><input type="radio" name="q2" value="print es más rápido"><span>print es más rápido</span></label>
+<label class="opt"><input type="radio" name="q2" value="println solo sirve para números"><span>println solo sirve para números</span></label>
+<label class="opt"><input type="radio" name="q2" value="No tienen diferencia"><span>No tienen diferencia</span></label>
+    </div>
+
+    <div class="q" data-ok="La velocidad del monitor no coincide con Serial.begin()">
+      <p class="qt">4. El Monitor Serie muestra basura o símbolos raros. ¿Cuál es la causa más probable?</p>
+      <label class="opt"><input type="radio" name="q3" value="La placa está apagada"><span>La placa está apagada</span></label>
+<label class="opt"><input type="radio" name="q3" value="La velocidad del monitor no coincide con Serial.begin()"><span>La velocidad del monitor no coincide con Serial.begin()</span></label>
+<label class="opt"><input type="radio" name="q3" value="El LED está quemado"><span>El LED está quemado</span></label>
+<label class="opt"><input type="radio" name="q3" value="Falta una resistencia"><span>Falta una resistencia</span></label>
+    </div>
+
+    <div class="q" data-ok="Entre comillas dobles">
+      <p class="qt">5. ¿Cómo se envían los textos en las funciones Serial?</p>
+      <label class="opt"><input type="radio" name="q4" value="Sin comillas"><span>Sin comillas</span></label>
+<label class="opt"><input type="radio" name="q4" value="Entre comillas dobles"><span>Entre comillas dobles</span></label>
+<label class="opt"><input type="radio" name="q4" value="Entre corchetes"><span>Entre corchetes</span></label>
+<label class="opt"><input type="radio" name="q4" value="Entre paréntesis dobles"><span>Entre paréntesis dobles</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

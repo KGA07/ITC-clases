@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 9 - Circuitos de LEDs múltiples – Semáforo</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 9 · Módulo 2 – Programación y actuadores</div>
+      <h1>Circuitos de LEDs múltiples – Semáforo</h1>
+      <p class="bajada">Vas a controlar varios LED a la vez armando un semáforo: simulación en TinkerCad, construcción en la protoboard y programación de los tiempos de cada luz.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Controlar múltiples LEDs con diferentes pines digitales.</li>
+<li><span class="chk">✓</span>Programar la secuencia de un semáforo con delays.</li>
+<li><span class="chk">✓</span>Armar un circuito de LEDs múltiples en la protoboard.</li>
+<li><span class="chk">✓</span>Aplicar rutinas de encendido y apagado con digitalWrite() y delay().</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🚦 El semáforo como modelo</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 9 - Semáforo con LEDs/img/semaforo.jpg" alt=""></div><ul class="pts"><li> Un semáforo es el ejemplo perfecto para controlar varios actuadores con tiempos. La secuencia típica es: verde un tiempo, amarillo un tiempo corto, rojo un tiempo, y así sucesivamente en bucle.</li>
+<li> En Arduino, esa secuencia se escribe en loop() con digitalWrite() para prender y apagar cada LED y delay() para marcar la duración de cada estado.</li>
+<li><b>·</b> digitalWrite(pin, HIGH): enciende el LED de ese pin.</li>
+<li><b>·</b> digitalWrite(pin, LOW): apaga el LED.</li>
+<li><b>·</b> delay(ms): mantiene el estado durante los milisegundos indicados.</li>
+<li><b>·</b> El bucle loop() repite la secuencia sin parar: como un semáforo real.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🖱️ Simulación en TinkerCad</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 9 - Semáforo con LEDs/img/semaforo-led.jpg" alt=""></div><ul class="pts"><li> Antes de cablear, armá el semáforo virtual en TinkerCad: tres LEDs con sus resistencias conectados a tres pines. Escribí el código y corré la simulación para ver la secuencia completa sin desarmar nada.</li>
+<li> TinkerCad te deja probar también semáforos de dos vías y ajustar los tiempos hasta quedar satisfecho, y después reproducirlo igual en la placa real.</li>
+<li><b>·</b> Usá pines distintos para cada LED: por ejemplo 8, 9 y 10.</li>
+<li><b>·</b> Cada LED con su resistencia de 220 Ω, cátodo a GND.</li>
+<li><b>·</b> Probá los tiempos en el simulador y transferilos después.</li>
+<li><b>·</b> Etiquetá cada LED (rojo, amarillo, verde) para no confundirte.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>⏱️ Secuencia de tiempos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Una secuencia típica: verde 5 segundos, amarillo 2 segundos, rojo 5 segundos. Recorrala con delays en milisegundos (5000 y 2000). El único LED encendido en cada etapa es el que corresponde.</li>
+<li> Un buen ejercicio: aumentar los tiempos con un solo cambio y observar cómo cambia todo el ciclo, como hicimos con las variables en la clase anterior.</li>
+<li><b>·</b> Verde: digitalWrite(ledVerde, HIGH); delay(5000); digitalWrite(ledVerde, LOW);</li>
+<li><b>·</b> Amarillo: delay(2000).</li>
+<li><b>·</b> Rojo: delay(5000).</li>
+<li><b>·</b> Un ciclo completo dura 12 segundos.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🔧 Construcción en la protoboard</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Sobre la protoboard, cada LED se coloca con sus patas en filas distintas y su resistencia en serie. Los tres cátodos se conectan a la barra GND común y cada ánodo sale por su pin hacia la placa.</li>
+<li> Trabajá prolijo: cable rojo para la señal de cada LED y negro para GND. Así, si algo no funciona, detectás el problema en segundos.</li>
+<li><b>·</b> Barras laterales: 5V y GND compartidos.</li>
+<li><b>·</b> Cada LED con su resistencia en serie desde su pin.</li>
+<li><b>·</b> Cátodo de los tres LEDs al GND común.</li>
+<li><b>·</b> Revisá polaridades antes de conectar la placa.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Secuencia de un semáforo</div>
+        <p class="consigna">Respondé el quiz sobre la lógica de los LEDs y las secuencias.</p>
+        <ol class="pasos"><li>Repasá qué hace digitalWrite y delay.</li>
+<li>Pensá cuánto debe durar cada etapa.</li>
+<li>Simulá mentalmente el orden de la secuencia.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Respuestas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Semáforo simulado y real</div>
+        <p class="consigna">Armá el semáforo completo en TinkerCad y luego construilo en la protoboard física.</p>
+        <ol class="pasos"><li>En TinkerCad, agregá una placa Uno, tres LEDs (rojo, amarillo, verde) y tres resistencias de 220 Ω.</li>
+<li>Conectá cada resistencia al pin 8, 9 y 10 y cada cátodo a GND.</li>
+<li>Escribí el sketch: en setup(), tres pins de salida; en loop(), la secuencia verde → amarillo → rojo con delays de 5000/2000/5000.</li>
+<li>Corré la simulación y verificá que la secuencia y los tiempos sean correctos.</li>
+<li>Construí el mismo circuito en la protoboard física conectándolo a tu placa.</li>
+<li>Cargá el programa en la placa real y compará el comportamiento con la simulación.</li>
+<li>Desafío: separá ambos vías (dos semáforos que alternan rojo/verde) si el tiempo alcanza.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Captura del semáforo en TinkerCad + foto del semáforo real funcionando.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará la captura de la simulación y la foto del circuito real.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

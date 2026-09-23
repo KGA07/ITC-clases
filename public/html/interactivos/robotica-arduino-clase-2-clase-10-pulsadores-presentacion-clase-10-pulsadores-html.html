@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 10 - Pulsadores</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 10 · Módulo 2 – Programación y actuadores</div>
+      <h1>Pulsadores</h1>
+      <p class="bajada">Vas a leer el estado de un pulsador con digitalRead(), a tomar decisiones con la estructura if() y a usar los operadores aritméticos y de comparación para controlar LEDs.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Conectar un pulsador a la placa leyendo su estado digital.</li>
+<li><span class="chk">✓</span>Usar digitalRead() para detectar si el botón está presionado.</li>
+<li><span class="chk">✓</span>Tomar decisiones con la estructura de control if().</li>
+<li><span class="chk">✓</span>Aplicar operadores de comparación y aritméticos en el control de LEDs.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🔘 El pulsador y sus patas</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 10 - Pulsadores/img/pulsador.jpg" alt=""></div><ul class="pts"><li> El pulsador (o botón táctil) es un componente que cierra un circuito cuando lo presionás. Tiene cuatro patas conectadas de a pares por dentro: las dos de arriba son un mismo contacto y las dos de abajo el otro.</li>
+<li> En la protoboard se inserta sobre el canal central, cruzando los dos bloques, para que cada par de patas quede en filas distintas y puedas cablear por separado.</li>
+<li><b>·</b> Las patas de un mismo lado están conectadas entre sí por dentro.</li>
+<li><b>·</b> Cruzás el canal central para separar los dos contactos.</li>
+<li><b>·</b> Al presionar, se conectan los dos lados del pulsador.</li>
+<li><b>·</b> Es una entrada: le dice a la placa presionado o no presionado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🔍 digitalRead()</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 10 - Pulsadores/img/pulsador-tact.jpg" alt=""></div><ul class="pts"><li> digitalRead(pin) devuelve el estado digital de un pin: HIGH (5V) o LOW (0V). Con un pulsador, el circuito clásico usa una resistencia pull-down que mantiene el pin en LOW; al presionar, el voltaje sube a HIGH.</li>
+<li> En el código, guardamos la lectura en una variable: int estado = digitalRead(pin); y después decidimos qué hacer según ese valor.</li>
+<li><b>·</b> digitalRead(2); lee el estado del pin 2.</li>
+<li><b>·</b> Con pull-down: reposo = LOW, presionado = HIGH.</li>
+<li><b>·</b> La resistencia pull-down (10 kΩ) evita lecturas flotantes.</li>
+<li><b>·</b> Combinado con Serial, podés ver el estado en el monitor.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🔀 La estructura if()</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> if(condicion) { ... } permite ejecutar un bloque solo si la condición es verdadera. Es la forma de tomar decisiones en Arduino: si el botón está presionado, encendé el LED; si no, apagalo.</li>
+<li> Podés sumar else para el caso contrario e incluso encadenar varias condiciones para controlar más luces.</li>
+<li><b>·</b> if (estado == HIGH) { digitalWrite(led, HIGH); }</li>
+<li><b>·</b> else { digitalWrite(led, LOW); }</li>
+<li><b>·</b> La condición va entre paréntesis y devuelve verdadero o falso.</li>
+<li><b>·</b> El bloque entre llaves se ejecuta solo si se cumple.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>➕ Operadores aritméticos y de comparación</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Los operadores aritméticos (+ - * / %) sirven para calcular: por ejemplo, contar cuántas veces se presionó el botón con contador = contador + 1. Los operadores de comparación (== != &lt; &gt; &lt;= &gt;=) comparan valores y devuelven verdadero o falso.</li>
+<li> Cuidado con la doble igual: el operador de comparación es == (dos signos de igual), mientras que = sirve para asignar un valor.</li>
+<li><b>·</b> comparación: == igual, != distinto, &lt; menor, &gt; mayor.</li>
+<li><b>·</b> aritméticos: + suma, - resta, * multiplica, / divide, % resto.</li>
+<li><b>·</b> = asigna; == compara. Son dos operadores muy distintos.</li>
+<li><b>·</b> Un contador de pulsaciones usa aritmética y comparación juntas.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Pulsador y decisiones</div>
+        <p class="consigna">Resolvé el quiz sobre digitalRead, if() y operadores.</p>
+        <ol class="pasos"><li>Pensá qué devuelve digitalRead cuando presionás el botón.</li>
+<li>Distinguí cuándo se usa == y cuándo =.</li>
+<li>Simulá el flujo del if en tu cabeza antes de elegir.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Respuestas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Control de LEDs con un botón</div>
+        <p class="consigna">Armá un circuito con un pulsador y dos LEDs, y programá la lógica con if().</p>
+        <ol class="pasos"><li>En TinkerCad armá: un LED rojo en el pin 8, un LED verde en el pin 9 y un pulsador conectado al pin 2 con resistencia pull-down de 10 kΩ a GND.</li>
+<li>En setup(): pinMode(2, INPUT); pinMode(8, OUTPUT); pinMode(9, OUTPUT);</li>
+<li>En loop(): int estado = digitalRead(2);</li>
+<li>Agregá if (estado == HIGH) { digitalWrite(8, HIGH); digitalWrite(9, LOW); }</li>
+<li>Usá else { digitalWrite(8, LOW); digitalWrite(9, HIGH); }</li>
+<li>Probalo en la simulación: al mantener presionado se enciende el rojo, en reposo el verde.</li>
+<li>Construí el circuito real y cargá el mismo código en tu placa.</li>
+<li>Desafío: sumá un contador de pulsaciones y mostralo por el Monitor Serie.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Captura de TinkerCad con el circuito y foto del circuito real con los dos LEDs alternando.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará las imágenes del circuito y el código del desafío con contador.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

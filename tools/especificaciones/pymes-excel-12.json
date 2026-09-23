@@ -66,6 +66,11 @@
     {
       "titulo": "Recibo de sueldo válido y planilla de liquidación",
       "emoji": "🧾",
+      "imagen": {
+        "src": "img/excel-recibo-sueldo.png",
+        "alt": "Recibo de haberes con los campos obligatorios del empleado",
+        "caption": "El recibo de haberes lleva los datos obligatorios: empresa, empleado, DNI, categoría, período y antigüedad."
+      },
       "parrafos": [
         "El recibo de sueldo es el documento que respalda el pago y debe contener elementos obligatorios: datos del empleador y del trabajador, período, categoría, la discriminación de haberes y descuentos, y el líquido. La planilla de liquidación genera cada recibo."
       ],

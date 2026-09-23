@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 19 - Recuperación del sistema</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #0ea5e933, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#0ea5e9;background:#0ea5e922;border:1px solid #0ea5e955;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#0ea5e918;border:1px solid #0ea5e944;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#0ea5e9;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#0ea5e9;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #0ea5e944;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#0ea5e9;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#0ea5e9;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🖥️ Diagnóstico y Mantenimiento de PC</div>
+      <div class="mod">Clase 19 · Módulo 2 – Sistemas Operativos</div>
+      <h1>Recuperación del sistema</h1>
+      <p class="bajada">¿PC que no arranca, archivos perdidos o cuentas bloqueadas? Hoy aprendés a recuperar equipos: Linux Live para acceder al disco, la consola de recuperación de Windows y el restablecimiento de contraseñas.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con PC individual</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Arrancar un Linux Live para acceder a discos sin sistema.</li>
+<li><span class="chk">✓</span>Usar el CMD de recuperación de Windows (opciones de arranque).</li>
+<li><span class="chk">✓</span>Recuperar archivos desde un equipo que no inicia.</li>
+<li><span class="chk">✓</span>Restablecer la contraseña de Windows.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>✈️ Linux Live para rescatar equipos</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/6- Diagnostico y Mantenimiento/@Clases/Clase 19 - Recuperacion/img/linux-live.jpg" alt=""></div><ul class="pts"><li> Un Linux Live es el sistema 'de rescate': arranca desde el pendrive sin tocar el disco. Desde ahí podés ver todas las particiones aunque Windows no inicie y copiar archivos a otro dispositivo.</li>
+<li><b>·</b> Arranca sin instalar nada y ajeno al disco interno.</li>
+<li><b>·</b> Ve particiones NTFS y ext4 sin problemas.</li>
+<li><b>·</b> Ideal para respaldar archivos de un equipo 'muerto'.</li>
+<li><b>·</b> Antes de cualquier reparación: copiar todo lo importante.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>🖥️ CMD en el arranque de Windows</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/6- Diagnostico y Mantenimiento/@Clases/Clase 19 - Recuperacion/img/cmd.png" alt=""></div><ul class="pts"><li> Windows ofrece un entorno de recuperación (WinRE) que se abre al fallar el arranque o con una tecla especial. Desde ahí, 'Símbolo del sistema' muestra un CMD con herramientas de reparación.</li>
+<li><b>·</b> Acceso: opciones de recuperación de Windows.</li>
+<li><b>·</b> Comandos útiles: bootrec /fixmbr, /fixboot, /rebuildbcd.</li>
+<li><b>·</b> sfc /scannow verifica archivos del sistema.</li>
+<li><b>·</b> El CMD solo permite reparar, no reemplaza al sistema arrancado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>🗂️ Acceso al disco y recuperación de archivos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Con el disco montado desde Linux Live o con programas de recuperación, podés rescatar fotos y documentos aunque Windows no quiera abrir.</li>
+<li><b>·</b> Montar la partición en Linux Live y navegar los archivos.</li>
+<li><b>·</b> Copiar a un pendrive o disco externo sano.</li>
+<li><b>·</b> Programas de recuperación para archivos borrados: recuva, testdisk, photorec.</li>
+<li><b>·</b> No instalar software en el disco dañado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🔑 Restablecimiento de contraseña de Windows</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Cuando el usuario olvida su contraseña, el técnico puede restablecerla sin perder los archivos, con herramientas de recuperación o desde el CMD.</li>
+<li><b>·</b> En Windows 10/11 hay opciones de restablecimiento integradas.</li>
+<li><b>·</b> Herramientas como Offline NT Password lo hacen desde un Live.</li>
+<li><b>·</b> Nunca se 'descifra': se reemplaza la contraseña.</li>
+<li><b>·</b> Después del restablecimiento, avisar al usuario de cambiar la clave.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="6">
+    <header><h2>✅ Secuencia de rescate paso a paso</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> La metodología del técnico: primero el respaldo, después la reparación. Nunca se trabaja sobre un disco sin haber rescatado lo valioso.</li>
+<li><b>·</b> 1. Arrancar con Linux Live.</li>
+<li><b>·</b> 2. Montar el disco y respaldar archivos críticos.</li>
+<li><b>·</b> 3. Reparar el arranque o el sistema.</li>
+<li><b>·</b> 4. Restablecer contraseñas y devolver la PC.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Cuestionario: recuperación</div>
+        <p class="consigna">Respondé las 5 preguntas del interactivo sobre Linux Live, CMD y contraseñas.</p>
+        <ol class="pasos"><li>Leé la teoría.</li>
+<li>Respondé el interactivo.</li>
+<li>Aplicá los pasos en la práctica guiada.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Interactivo completo con respuestas correctas.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="8">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Simulacro de rescate</div>
+        <p class="consigna">Simulá la recuperación completa de una PC que 'no arranca' usando las herramientas de clase.</p>
+        <ol class="pasos"><li>Arrancá el Linux Live y montá la partición de Windows.</li>
+<li>Copiá los archivos de usuario a un pendrive de respaldo.</li>
+<li>Probá desde el CMD de Windows los comandos de reparación.</li>
+<li>Simulá la pérdida de contraseña y restablecela.</li>
+<li>Documentá cada paso con capturas.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Informe del rescate con capturas de cada herramienta usada.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="9">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente revisará el informe de rescate y el interactivo.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 10</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=10;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

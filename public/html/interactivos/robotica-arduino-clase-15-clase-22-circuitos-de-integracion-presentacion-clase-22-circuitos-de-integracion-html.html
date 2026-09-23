@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación Clase 22 - Circuitos de integración</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#11142a;color:#eef1fb;}
+  .deck{width:100%;height:100%;}
+  .slide{display:none;position:relative;width:100vw;height:100vh;padding:5vh 7vw;
+         background:radial-gradient(1200px 600px at 20% -10%, #16a34a33, transparent 55%),linear-gradient(160deg,#171b3a 0%,#10142c 70%);}
+  .slide.activa{display:flex;flex-direction:column;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  header h2{font-size:clamp(20px,3.2vw,34px);color:#fff;margin:0 0 2vh}
+  .cuerpo{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  h1{font-size:clamp(30px,5.2vw,60px);line-height:1.06;color:#fff;margin:1.5vh 0;font-weight:800}
+  .badge{display:inline-block;font-size:13px;font-weight:700;color:#16a34a;background:#16a34a22;border:1px solid #16a34a55;border-radius:999px;padding:6px 14px;margin-bottom:12px}
+  .mod{font-size:15px;color:#9aa4c8;font-weight:600}
+  .bajada{font-size:clamp(15px,2vw,20px);color:#c6cdef;max-width:60ch;line-height:1.55;margin:2.5vh 0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:3vh}
+  .meta span{background:#16a34a18;border:1px solid #16a34a44;color:#dfe6ff;border-radius:999px;padding:7px 14px;font-size:13px}
+  .objs{list-style:none;margin:0;padding:0;font-size:clamp(15px,1.9vw,20px);line-height:1.6}
+  .objs li{display:flex;gap:12px;align-items:baseline;padding:7px 0;color:#dde3fb}
+  .objs .chk{color:#16a34a;font-weight:800}
+  .pts{list-style:none;margin:0;padding:0;font-size:clamp(14px,1.7vw,19px);line-height:1.55;color:#dde3fb}
+  .pts li{display:flex;gap:10px;padding:6px 0;align-items:baseline}
+  .pts b{color:#16a34a;flex:none}
+  .teoria .cuerpo{flex-direction:row;gap:3vw;align-items:center}
+  .teoria .pts{flex:1}
+  .media{flex:0 0 34%;text-align:center}
+  .media img{max-width:100%;max-height:62vh;border-radius:14px;border:1px solid #16a34a44;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+  .ej-titulo{font-size:clamp(17px,2.2vw,24px);font-weight:700;color:#16a34a;margin-bottom:1.2vh}
+  .consigna{font-size:clamp(14px,1.8vw,19px);color:#e6ebff;line-height:1.55;margin:0}
+  .pasos{font-size:clamp(13px,1.6vw,17px);color:#dde3fb;line-height:1.5;padding-left:20px;margin-top:1.5vh}
+  .pasos li{margin-bottom:5px}
+  .entrega{font-size:clamp(14px,1.8vw,18px);color:#c6cdef}
+  .firma{position:absolute;bottom:2.2vh;right:3vw;font-size:12px;color:#6d78a3}
+  .nav{position:fixed;bottom:2.2vh;left:0;right:0;display:flex;justify-content:center;gap:14px;z-index:5}
+  .nav button{background:#16a34a;border:0;color:#fff;font-size:16px;font-weight:700;border-radius:999px;padding:9px 18px;cursor:pointer;opacity:.92}
+  .nav button:hover{opacity:1}
+  .nav .ctr{color:#fff;font-size:13px;align-self:center;min-width:60px;text-align:center}
+  @media print{
+    @page{size:13.333in 7.5in;margin:0}
+    body{background:none}
+    .slide{display:flex !important;page-break-after:always;width:13.333in;height:7.5in;padding:4vh 5vw;}
+    .slide:not(.activa){display:flex !important}
+    .slide:last-of-type{page-break-after:auto}
+    .nav{display:none}
+    .firma{position:absolute;bottom:2vh;right:2vw}
+  }
+</style></head>
+<body>
+  <div class="deck">
+    <section class="slide portada" data-i="0">
+    
+    <div class="cuerpo">
+    <div class="slide-inner portada-inner">
+      <div class="badge">🤖 Robótica con Arduino</div>
+      <div class="mod">Clase 22 · Módulo 3 – Componentes avanzados</div>
+      <h1>Circuitos de integración</h1>
+      <p class="bajada">Es el cierre del curso: vas a integrar todo lo aprendido en un proyecto libre que combine sensores, actuadores y pantallas para resolver un problema real con tu propio robot.</p>
+      <div class="meta">
+        <span>⏱ 1h 30min</span>
+        <span>🎓 Presencial con Kit de Arduino por pareja</span>
+        <span>Año 2026</span>
+      </div>
+    </div></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide objetivos" data-i="1">
+    <header><h2>🎯 Objetivos de la clase</h2></header>
+    <div class="cuerpo">
+    <ul class="objs"><li><span class="chk">✓</span>Integrar sensores, actuadores y displays en un mismo circuito.</li>
+<li><span class="chk">✓</span>Diseñar el diagrama del proyecto en TinkerCad.</li>
+<li><span class="chk">✓</span>Planificar y programar por módulos una aplicación completa.</li>
+<li><span class="chk">✓</span>Documentar y presentar el proyecto robótico final.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="2">
+    <header><h2>🧩 Todos los componentes juntos</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 22 - Circuitos de integración/img/proyecto-arduino.jpg" alt=""></div><ul class="pts"><li> A lo largo del curso probaste cada componente por separado: LEDs, pulsadores, motores, sensores, displays y módulos. En un proyecto real, todo eso convive en la misma placa y en el mismo programa.</li>
+<li> La clave de la integración es el orden: planificá qué entrada (sensor) manda a qué salida (actuador/pantalla), y revisá los pines que ocupás para no chocar direcciones.</li>
+<li><b>·</b> Identificá entradas: sensores, pulsadores, joystick, RFIDs, IR.</li>
+<li><b>·</b> Identificá salidas: LEDs, motores, relays, displays, buzzer.</li>
+<li><b>·</b> Planificá el pinout de la placa antes de cablear.</li>
+<li><b>·</b> Un proyecto integra módulos que ya dominaste por separado.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="3">
+    <header><h2>📐 Del papel al prototipo</h2></header>
+    <div class="cuerpo"><div class="media"><img src="I:/ITC/7- Robotica Arduino/@Clases/Clase 22 - Circuitos de integración/img/robot-arduino.jpg" alt=""></div><ul class="pts"><li> Todo robot nace en el papel: se define el problema, las entradas que lo informan y las salidas que resuelven. Después se arma el diagrama lógico y recién ahí se conecta y programa.</li>
+<li> En TinkerCad modelamos el circuito sin quemar nada: conectar virtualmente y ver si las señales llegan antes de tocar la protoboard real.</li>
+<li><b>·</b> Problema → entradas → salidas → pinout → diagrama.</li>
+<li><b>·</b> TinkerCad: simulación previa sin riesgo.</li>
+<li><b>·</b> Etapa por etapa: cablear, probar, documentar, pasar a la siguiente.</li>
+<li><b>·</b> Anotá qué pin va a qué componente para no perderte.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="4">
+    <header><h2>📦 Programar por módulos</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> Un programa largo se escribe por partes: una función para leer sensores, otra para mostrar en pantalla, otra para manejar motores. Así, si algo falla, el error está aislado.</li>
+<li> Las variables globales que ya conocés (estados, tiempos con millis()) permiten que los módulos dialoguen sin bloquearse: el display actualiza mientras el motor sigue su secuencia.</li>
+<li><b>·</b> Funciones: una tarea por función.</li>
+<li><b>·</b> millis(): varios tiempos corriendo a la vez.</li>
+<li><b>·</b> Estados con variables globales compartidas.</li>
+<li><b>·</b> Probá cada módulo por separado antes de integrarlo.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide teoria" data-i="5">
+    <header><h2>🎓 Documentar y presentar</h2></header>
+    <div class="cuerpo"><ul class="pts"><li> El último paso del curso es documentar: qué problema resuelve, qué componentes usa, cómo está cableado (foto del montaje) y cómo funciona el programa comentado. Después se presenta a la clase.</li>
+<li> Una buena presentación es breve y en orden: el problema, el plan, el circuito, la demo en vivo y las lecciones aprendidas.</li>
+<li><b>·</b> Armá una carpeta: foto, esquema y sketch comentado.</li>
+<li><b>·</b> Prepará la demo: mostrá el proyecto en funcionamiento.</li>
+<li><b>·</b> Contá qué aprendiste y qué harías distinto.</li>
+<li><b>·</b> Terminala con un video corto para mostrar fuera de clase.</li></ul></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="6">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Proyecto integrador</div>
+        <p class="consigna">Respondé el quiz final sobre el curso y la integración.</p>
+        <ol class="pasos"><li>Repasá los sensores y actuadores del kit.</li>
+<li>Pensá qué entradas y salidas elegirías para tu robot.</li>
+<li>Recordá la metodología: papel, diagrama, circuito, código.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Respuestas en el cuaderno.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide ejercicio" data-i="7">
+    <header><h2>🙌 Actividad práctica</h2></header>
+    <div class="cuerpo">
+        <div class="ej-titulo">Mi robot final</div>
+        <p class="consigna">Diseñá y armá tu proyecto integrador en TinkerCad y en el kit real.</p>
+        <ol class="pasos"><li>Elegí un problema real: por ejemplo un semáforo inteligente, una estación meteorológica con LCD, o un robot que esquiva obstáculos.</li>
+<li>Armá el diagrama en TinkerCad con los componentes de tu kit y verificá que las conexiones funcionen en simulación.</li>
+<li>Definí el pinout de datos en el cuaderno antes de cablear.</li>
+<li>Conectá el prototipo real siguiendo el plano: alimentación primero, sensores después, actuadores al final.</li>
+<li>Escribí el programa por módulos: una función por tarea, usando millis() para los tiempos.</li>
+<li>Integrá cada parte de a una: primero el sensor, después la pantalla, después el actuador.</li>
+<li>Probá el circuito completo y corregí errores anotando lo que falló.</li>
+<li>Documentá: foto del montaje, esquema, sketch comentado y un video corto de la demostración.</li>
+<li>Presentá tu robot a la clase en 3 minutos: problema, plan, circuito y demo en vivo.</li></ol>
+        <p class="entrega"><b>Entrega:</b> Carpeta con foto del montaje, esquema, sketch comentado y video de la demostración.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+<section class="slide entrega" data-i="8">
+    <header><h2>📤 Entrega</h2></header>
+    <div class="cuerpo"><p class="consigna">El docente evaluará la carpeta del proyecto y la presentación en clase.</p></div>
+    <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+  </section>
+  </div>
+  <div class="nav">
+    <button onclick="pd(-1)">←</button>
+    <span class="ctr" id="ctr">1 / 9</span>
+    <button onclick="pd(1)">→</button>
+  </div>
+<script>
+let i=0,total=9;
+function show(){document.querySelectorAll('.slide').forEach((s,n)=>s.classList.toggle('activa',n===i));
+  document.getElementById('ctr').textContent=(i+1)+' / '+total;}
+function pd(d){i=(i+d+total)%total;show();}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')pd(1);if(e.key==='ArrowLeft')pd(-1);
+  if(e.key==='Home'){i=0;show();} if(e.key==='End'){i=total-1;show();}});
+const m=(location.hash||'').match(/^#(d+)$/); const q=new URLSearchParams(location.search).get('s');
+if(m){i=Math.min(+m[1]-1,total-1);} if(q){i=Math.min(+q-1,total-1);}
+show();
+</script>
+</body></html>

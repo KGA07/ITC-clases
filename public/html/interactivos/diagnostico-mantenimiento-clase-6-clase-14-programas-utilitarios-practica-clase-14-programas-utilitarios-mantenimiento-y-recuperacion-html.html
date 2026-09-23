@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 14 - Programas utilitarios, mantenimiento y recuperación</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#0ea5e9;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#0ea5e9;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Programas utilitarios, mantenimiento y recuperación</h1>
+  <p class="sub">Práctica Cuestionario: mantenimiento · Diagnóstico y Mantenimiento de PC</p>
+  <div class="consigna">Respondé las 5 preguntas del interactivo sobre particiones, limpieza, registro y recuperación.</div>
+  
+    <div class="q" data-ok="Crear y redimensionar particiones">
+      <p class="qt">1. ¿Para qué sirve el Administrador de discos?</p>
+      <label class="opt"><input type="radio" name="q0" value="Crear y redimensionar particiones"><span>Crear y redimensionar particiones</span></label>
+<label class="opt"><input type="radio" name="q0" value="Escanear virus"><span>Escanear virus</span></label>
+<label class="opt"><input type="radio" name="q0" value="Cambiar el nombre del usuario"><span>Cambiar el nombre del usuario</span></label>
+<label class="opt"><input type="radio" name="q0" value="Cargar drivers de video"><span>Cargar drivers de video</span></label>
+    </div>
+
+    <div class="q" data-ok="Limpieza de disco">
+      <p class="qt">2. ¿Qué herramienta de Windows borra archivos temporales?</p>
+      <label class="opt"><input type="radio" name="q1" value="Limpieza de disco"><span>Limpieza de disco</span></label>
+<label class="opt"><input type="radio" name="q1" value="Regedit"><span>Regedit</span></label>
+<label class="opt"><input type="radio" name="q1" value="CMD"><span>CMD</span></label>
+<label class="opt"><input type="radio" name="q1" value="TeamViewer"><span>TeamViewer</span></label>
+    </div>
+
+    <div class="q" data-ok="El Registro de Windows">
+      <p class="qt">3. Regedit es el editor de...</p>
+      <label class="opt"><input type="radio" name="q2" value="El Registro de Windows"><span>El Registro de Windows</span></label>
+<label class="opt"><input type="radio" name="q2" value="Las particiones"><span>Las particiones</span></label>
+<label class="opt"><input type="radio" name="q2" value="Los drivers"><span>Los drivers</span></label>
+<label class="opt"><input type="radio" name="q2" value="La BIOS"><span>La BIOS</span></label>
+    </div>
+
+    <div class="q" data-ok="Controlar programas que inician con Windows">
+      <p class="qt">4. MSCONFIG sirve para...</p>
+      <label class="opt"><input type="radio" name="q3" value="Controlar programas que inician con Windows"><span>Controlar programas que inician con Windows</span></label>
+<label class="opt"><input type="radio" name="q3" value="Formatear discos"><span>Formatear discos</span></label>
+<label class="opt"><input type="radio" name="q3" value="Editar fotos"><span>Editar fotos</span></label>
+<label class="opt"><input type="radio" name="q3" value="Cambiar la contraseña"><span>Cambiar la contraseña</span></label>
+    </div>
+
+    <div class="q" data-ok="Si no fue sobrescrito en el disco">
+      <p class="qt">5. ¿Cuándo se puede recuperar un archivo eliminado?</p>
+      <label class="opt"><input type="radio" name="q4" value="Si no fue sobrescrito en el disco"><span>Si no fue sobrescrito en el disco</span></label>
+<label class="opt"><input type="radio" name="q4" value="Solo si pagás por software"><span>Solo si pagás por software</span></label>
+<label class="opt"><input type="radio" name="q4" value="Nunca se puede"><span>Nunca se puede</span></label>
+<label class="opt"><input type="radio" name="q4" value="Solo en Linux"><span>Solo en Linux</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>

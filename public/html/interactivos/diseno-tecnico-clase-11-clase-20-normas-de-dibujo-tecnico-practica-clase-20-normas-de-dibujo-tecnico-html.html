@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica Clase 20 - Normas de dibujo técnico</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6fb;color:#16203a;padding:22px}
+  .card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e3e9f5;border-radius:14px;padding:22px 26px;box-shadow:0 2px 10px rgba(20,40,90,.06)}
+  h1{font-size:20px;color:#f59e0b;margin:0 0 4px} .sub{color:#5a6b8c;font-size:13px;margin:0 0 16px}
+  .consigna{background:#fff8f0;border:1px solid #f5e3c8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.55;margin-bottom:16px}
+  .q{border:1px solid #e6ebf6;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .qt{font-weight:600;margin:0 0 10px}
+  .opt{display:block;padding:9px 12px;border:1px solid #e6ebf6;border-radius:8px;margin-bottom:7px;cursor:pointer;font-size:14px;display:flex;gap:8px;align-items:center}
+  .opt:hover{background:#f6f9ff}
+  .opt input{margin:0}
+  .ok{background:#e8f7ee;border-color:#bfe6cd;color:#116b33}
+  .bad{background:#fdecec;border-color:#f3c9c9;color:#a82323}
+  .btn{margin-top:16px;background:#f59e0b;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{filter:brightness(1.08)}
+  .res{margin-top:14px;font-weight:600}
+  .firma{margin-top:26px;padding-top:12px;border-top:1px solid #e3e9f5;text-align:center;font-size:12px;color:#8a94b3}
+</style></head>
+<body><div class="card">
+  <h1>Normas de dibujo técnico</h1>
+  <p class="sub">Práctica Repasá las normas · Diseño Técnico Industrial</p>
+  <div class="consigna">Respondé el interactivo sobre tipos de línea, anchos, convenciones y formatos.</div>
+  
+    <div class="q" data-ok="Trazos">
+      <p class="qt">1. ¿Qué tipo de línea representa aristas ocultas?</p>
+      <label class="opt"><input type="radio" name="q0" value="Continuo grueso"><span>Continuo grueso</span></label>
+<label class="opt"><input type="radio" name="q0" value="Trazos"><span>Trazos</span></label>
+<label class="opt"><input type="radio" name="q0" value="Trazos largos y punto"><span>Trazos largos y punto</span></label>
+<label class="opt"><input type="radio" name="q0" value="Continuo ondulado"><span>Continuo ondulado</span></label>
+    </div>
+
+    <div class="q" data-ok="El más grueso">
+      <p class="qt">2. ¿Cuál es el contorno visible?</p>
+      <label class="opt"><input type="radio" name="q1" value="El más fino"><span>El más fino</span></label>
+<label class="opt"><input type="radio" name="q1" value="El más grueso"><span>El más grueso</span></label>
+<label class="opt"><input type="radio" name="q1" value="El del medio"><span>El del medio</span></label>
+<label class="opt"><input type="radio" name="q1" value="Uno punteado"><span>Uno punteado</span></label>
+    </div>
+
+    <div class="q" data-ok="A0">
+      <p class="qt">3. ¿Qué formato ISO es el más grande?</p>
+      <label class="opt"><input type="radio" name="q2" value="A4"><span>A4</span></label>
+<label class="opt"><input type="radio" name="q2" value="A3"><span>A3</span></label>
+<label class="opt"><input type="radio" name="q2" value="A2"><span>A2</span></label>
+<label class="opt"><input type="radio" name="q2" value="A0"><span>A0</span></label>
+    </div>
+
+    <div class="q" data-ok="Con rayado de líneas finas paralelas">
+      <p class="qt">4. ¿Cómo se diferencia el material seccionado en un corte?</p>
+      <label class="opt"><input type="radio" name="q3" value="Con color rojo"><span>Con color rojo</span></label>
+<label class="opt"><input type="radio" name="q3" value="Con rayado de líneas finas paralelas"><span>Con rayado de líneas finas paralelas</span></label>
+<label class="opt"><input type="radio" name="q3" value="Con texto"><span>Con texto</span></label>
+<label class="opt"><input type="radio" name="q3" value="Con sombra degradada"><span>Con sombra degradada</span></label>
+    </div>
+
+    <div class="q" data-ok="Esquina inferior derecha">
+      <p class="qt">5. ¿Dónde se coloca la carátula de la lámina?</p>
+      <label class="opt"><input type="radio" name="q4" value="Comienzo superior izquierdo"><span>Comienzo superior izquierdo</span></label>
+<label class="opt"><input type="radio" name="q4" value="Esquina inferior derecha"><span>Esquina inferior derecha</span></label>
+<label class="opt"><input type="radio" name="q4" value="Al medio del dibujo"><span>Al medio del dibujo</span></label>
+<label class="opt"><input type="radio" name="q4" value="Fuera del marco"><span>Fuera del marco</span></label>
+    </div>
+  <button class="btn" onclick="corregir()">Corregir</button>
+  <p class="res" id="res"></p>
+  <footer class="firma">Hecho con dedicación · @gustavokempe</footer>
+</div>
+<script>
+function corregir(){
+  let aciertos=0,total=document.querySelectorAll('.q').length;
+  document.querySelectorAll('.q').forEach(q=>{
+    const el=q.querySelector('input:checked');
+    q.querySelectorAll('.opt').forEach(o=>o.classList.remove('ok','bad'));
+    if(!el){return;}
+    const okSel=q.dataset.ok; let ok=false;
+    q.querySelectorAll('.opt').forEach(o=>{ if(o.querySelector('input').value===okSel){o.classList.add('ok');} });
+    el.closest('.opt').classList.add(el.value===q.dataset.ok?'ok':'bad');
+    if(el.value===q.dataset.ok) aciertos++;
+  });
+  const r=document.getElementById('res');
+  r.textContent='Aciertos: '+aciertos+'/'+total+(aciertos===total?' · ¡Perfecto! 🎉':aciertos>=Math.ceil(total/2)?' · ¡Buen trabajo!':' · Repasá la teoría y volvé a intentarlo');
+}
+</script>
+</body></html>
