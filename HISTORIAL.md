@@ -189,8 +189,26 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
   - Scan de corrupción (U+FFFD / `=??`) en HTML/JSON generados: 0 coincidencias.
   - Presentaciones renderizan bien: Clase 9 Excel (SI/Y/CONCATENAR) y Clase 10
     (BUSCARV); `<` escapado correctamente como `&lt;`/`&gt;`.
-- **Próximo — Curso 2: Diseño Gráfico** (capturas CorelDRAW X8 → lote,
-  luego Adobe Photoshop → lote). Orden siguiente: Marketing (web demo) →
+- **Curso 2 — Diseño Gráfico (avance): lote CorelDRAW capturado.**
+  - Pipeline automatizado validado y en uso: ejercicios en SVG → abiertos en el
+    editor real vía COM (`$app.OpenDocument(file)` → `Document.Activate()`, el
+    título de ventana cambia con el documento activo) → `tools/img-capture.ps1`
+    (v2, guarda JPG según extensión, `-MaxWidth`/`-Quality`) → OCR de control.
+  - Programa instalado: CorelDRAW Graphics Suite 2022 (COM `CorelDRAW.Application`
+    24.5.0.731). Ventana ampliada a 1366x720 (pantalla real del equipo, 1366x768).
+  - 10 imágenes reemplazadas por capturas reales del editor (≈113-123 KB c/u,
+    1366x720): `corel-entorno` (C1), `transformar` (C3), `interseccion-circulos`
+    (C4), `tipos-letra` (C6), `degradado` (C8), `sombra`/`resplandor` (C10),
+    `marco-foto` (C11), `diseno-logo` (C12), `tarjeta-personal` (C13).
+  - Regeneradas las 9 clases afectadas (PDF + HTML + Presentación HTML/PDF/PPTX).
+    Presentación C6 quedaba en 1,49 MB → `tipografia.jpg` reescalada a 1200px/70
+    (966 KB → 532 KB) → presentación final 902 KB (≤ 1 MB). Todas las demás ≤ 1 MB.
+  - QA al cierre: check-firma 612/612 OK, tests 14/14 OK.
+  - Pendiente dentro de DG: lote Adobe Photoshop (C15-C22, incl. `pixeles.jpg` C14
+    y `photoshop-entorno.jpg`), y 4 imágenes nunca encontradas (`pincel-acuarela`
+    C9, `marco-foto`… ver Fase 4) a verificar/reemplazar.
+- **Próximo — Curso 2 (Diseño Gráfico) continua: lote Adobe Photoshop** (COM
+  `Photoshop.Application` 25.0 OK). Orden siguiente: Marketing (web demo) →
   Diagnóstico (Windows/hardware/Packet Tracer, incl. C22 <1MB) → Diseño Técnico
   (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) → PyMEs (cierre/reverificar).
 
