@@ -69,6 +69,41 @@ const TARGETS = {
     'Modulo 7 - An\u00e1lisis de Resultados',
     'Clase 22 - GA4 y M\u00e9tricas',
     'img', 'eventos.jpg'
+  ),
+  'windows7.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 12 - Windows 7',
+    'img', 'windows7.jpg'
+  ),
+  'pendrive-booteable.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 12 - Windows 7',
+    'img', 'pendrive-booteable.jpg'
+  ),
+  'ubuntu.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 17 - Linux',
+    'img', 'ubuntu.jpg'
+  ),
+  'terminal.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 17 - Linux',
+    'img', 'terminal.png'
+  ),
+  'grub.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 18 - Instalacion dual',
+    'img', 'grub.jpg'
+  ),
+  'ubuntu-instalacion.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 18 - Instalacion dual',
+    'img', 'ubuntu-instalacion.png'
+  ),
+  'linux-live.html': path.join(
+    'I:\\ITC\\6- Diagnostico y Mantenimiento\\@Clases',
+    'Clase 19 - Recuperacion',
+    'img', 'linux-live.jpg'
   )
 };
 
@@ -81,16 +116,16 @@ function killChromeOfProfile(profileDir) {
   } catch (e) { /* noop */ }
 }
 
-function renderOne(mock, profileDir, outJpg, url) {
+function renderOne(mock, profileDir, outJpg, url, usePng) {
   const args = [
     '--headless=new', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
     '--user-data-dir=' + profileDir,
     '--screenshot=' + outJpg,
     '--window-size=1366,720',
-    '--screenshot-format=jpeg',
-    '--screenshot-quality=88',
-    url
+    usePng ? '--screenshot-format=png' : '--screenshot-format=jpeg'
   ];
+  if (!usePng) args.push('--screenshot-quality=88');
+  args.push(url);
   return new Promise((resolve) => {
     const child = spawn(CHROME, args, { detached: true, stdio: 'ignore' });
     child.unref();
@@ -99,15 +134,15 @@ function renderOne(mock, profileDir, outJpg, url) {
   });
 }
 
-async function renderWithRetry(mock, pick) {
+async function renderWithRetry(mock, pick, usePng) {
   const src = path.join(MOCK_DIR, mock);
   if (!fs.existsSync(src)) { console.log('SKIP (no mockup): ' + mock); return; }
-  const outJpg = path.join(TMP, mock.replace('.html', '.jpg' + '.try'));
+  const outJpg = path.join(TMP, mock.replace('.html', '.try' + (usePng ? '.png' : '.jpg')));
   const url = 'file:///' + src.replace(/\\/g, '/');
   for (let attempt = 1; attempt <= 3; attempt++) {
     const profileDir = path.join(TMP, 'prof-' + path.basename(mock, '.html') + '-a' + attempt);
     try { if (fs.existsSync(outJpg)) fs.unlinkSync(outJpg); } catch (e) {}
-    await renderOne(mock, profileDir, outJpg, url);
+    await renderOne(mock, profileDir, outJpg, url, usePng);
     // Esperar a que aparezca el archivo (Chrome puede tardar)
     let ok = false;
     for (let i = 0; i < 40; i++) {
@@ -124,10 +159,11 @@ async function renderWithRetry(mock, pick) {
 (async () => {
   fs.mkdirSync(TMP, { recursive: true });
   for (const [mock, dest] of Object.entries(TARGETS)) {
+    const usePng = String(dest).toLowerCase().endsWith('.png');
     await renderWithRetry(mock, (outJpg, written) => {
       fs.copyFileSync(outJpg, dest);
       console.log('OK  ' + mock.padEnd(18) + written.toLocaleString().padStart(9) + ' B  -> ' + dest.replace(/^.*?@Clases\\/, ''));
-    });
+    }, usePng);
   }
   console.log('DONE');
 })();

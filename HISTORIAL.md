@@ -261,12 +261,36 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
     Presentaciones finales: C13 500 KB, C16 451 KB, C17 453 KB, C18 882 KB,
     C19 380 KB, C22 301 KB — todas ≤ 1 MB.
   - QA al cierre: `list-stale-specs` 0, check-firma 612/612 OK, tests 14/14 OK.
-  - Nota: al copiar los JPG un comando PS1 con escapes `\u00` creó carpetas
-    espurias con nombre literal (`Campa\u00f1as Pagas`, etc.); fueron removidas y
-    los archivos re-copiados a las rutas reales con caracteres correctos.
-- **Próximo — Curso 4: Diagnóstico (incl. C22 <1MB, Packet Tracer en C20) →
-  Diseño Técnico (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) → PyMEs
-  (cierre/reverificar).**
+- Nota: al copiar los JPG un comando PS1 con escapes `\u00` creó carpetas
+     espurias con nombre literal (`Campa\u00f1as Pagas`, etc.); fueron removidas y
+     los archivos re-copiados a las rutas reales con caracteres correctos.
+- **Curso 4 — Diagnóstico y Mantenimiento de PC: 7 mockups + 2 capturas reales +
+  fotos de hardware reales (hito).**
+  - Conforme la decisión del usuario ("Mockups UI propios" + capturas reales):
+    7 mockups HTML nuevos renderizados con Chrome headless para pantallas no
+    capturables (Windows 7 sin VM, Linux/GRUB sin WSL, pendrive booteable):
+    `windows7.jpg`/`pendrive-booteable.jpg` (C12), `ubuntu.jpg`/`terminal.png`
+    (C17), `grub.jpg`/`ubuntu-instalacion.png` (C18), `linux-live.jpg` (C19).
+    `tools/render-mockups.js` ahora soporta PNG (`--screenshot-format=png` según
+    extensión destino) y se amplió TARGETS (9 Marketing + 7 Diagnóstico).
+  - Captura real `cmd.png` (C19, cmd.exe real con `systeminfo` → LENOVO,
+    Windows 11 Pro, Intel; 1129x635 64 KB) vía Windows Terminal (wt.exe, el
+    conhost no expone MainWindowHandle).
+  - Captura real `antivirus.jpg` (C13, «Seguridad de Windows» 816x641 49 KB;
+    el panel de escaneo no está disponible por gestión de la organización →
+    spec C13 ajustada a esa realidad).
+  - Fotos reales de hardware: `cpu-amd.jpg` (AMD Athlon CPU 1GHz, Wikimedia),
+    reemplazadas también `cpu-intel.jpg`/`disipador.jpg` reescaladas a 1000px
+    q78 (C5: 1.345 KB → 542 KB de imágenes).
+  - `router-config.png` (C22) comprimido PNG 590 KB → `router-config.jpg`
+    1000px q78 78 KB; spec C22 png→jpg (Edit, no PS1, para no corromper emojis).
+  - Regeneradas las 7 clases (C5/C12/C13/C17/C18/C19/C22): PDF + HTML +
+    Presentación HTML/PDF/PPTX. Presentaciones finales: C12 136 KB, C13 179 KB,
+    C17 435 KB, C18 430 KB, C19 126 KB, C22 422 KB (bajó de 1,09 MB), C5 717 KB
+    (bajó de 1,76 MB) — todas ≤ 1 MB.
+  - QA al cierre: `list-stale-specs` 0, check-firma 612/612 OK, tests 14/14 OK.
+- **Próximo — Curso 5: Diseño Técnico (reverificar 23 con AutoCAD) en revisión
+  de la Fase 6 → Robótica (Arduino IDE) → PyMEs (cierre/reverificar).**
 
 ## Cómo arrancar el proyecto (resumen)
 

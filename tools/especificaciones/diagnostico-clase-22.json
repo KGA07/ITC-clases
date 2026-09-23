@@ -71,7 +71,7 @@
       "titulo": "Configuración de red en el equipo",
       "emoji": "🖥️",
       "imagen": {
-        "src": "img/router-config.png",
+        "src": "img/router-config.jpg",
         "alt": "Panel de configuración de un router",
         "caption": "El panel del router muestra WAN, LAN, clientes y opciones de WiFi."
       },

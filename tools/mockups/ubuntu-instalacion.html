@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Ubuntu','Cantarell','Segoe UI',sans-serif;background:linear-gradient(120deg,#fff8ee,#fbe8f0 45%,#e9f0fb);overflow:hidden;color:#1c2b3a}
+.left{width:1366px;height:720px;display:flex;align-items:center;justify-content:center}
+.card{width:640px;background:#fff;border-radius:14px;box-shadow:0 22px 60px #0003;overflow:hidden}
+.card .hd{padding:18px 24px;border-bottom:1px solid #eee3c9;display:flex;align-items:center;gap:14px}
+.tag{font-size:13px;color:#3b4f63}
+.hd .title{font-size:19px;font-weight:700;color:#0d3a5f}
+.hd .tears{width:10px;height:10px;border-radius:50%;background:#e8c44a}
+.card table{width:100%;border-collapse:collapse;font-size:13.5px}
+.card th,.card td{padding:12px 18px;border-bottom:1px solid #eef1f6;text-align:left;font-size:13.5px}
+.card th{background:#f7f9fc;font-weight:600;color:#41566b}
+.card td.mono{font-family:'Ubuntu Mono','Consolas',monospace;font-size:13px}
+.card .status{display:inline-flex;align-items:center;gap:6px;color:#2f9e44;font-weight:600;font-size:12.5px}
+.card .status::before{content:'●'}
+.foot{padding:14px 24px;display:flex;justify-content:flex-end;gap:10px}
+.btn{background:#dfe6f0;border:none;padding:10px 18px;border-radius:6px;font:600 13px 'Ubuntu'}
+.btn.b{background:#0d6e3f;color:#fff}
+.hint{position:absolute;top:30px;right:36px;text-align:right;font-size:12.5px;color:#41566b}
+.hint b{color:#0d3a5f}
+</style></head><body>
+<div class="left">
+  <div class="hint"><b>Instalación de Ubuntu</b><br>Paso 4 · Tipo de instalación</div>
+  <div class="card">
+    <div class="hd">
+      <span style="font-size:30px">🗂</span>
+      <div>
+        <div class="title">Tipo de instalación</div>
+        <div class="tag">Este equipo tiene varios sistemas operativos instalados.</div>
+      </div>
+    </div>
+    <table>
+      <tr><th>Dispositivo</th><th>Tamaño</th><th>Tipo</th><th>Punto de montaje</th><th></th></tr>
+      <tr><td class="mono">/dev/sda1  · ntfs</td><td>120 GB</td><td>Windows 7</td><td>—</td><td></td></tr>
+      <tr style="background:#ecf7ff"><td class="mono">/dev/sda2  · ext4</td><td>80 GB</td><td>Ubuntu 24.04</td><td>/</td><td><span class="status">raíz</span></td></tr>
+      <tr><td class="mono">/dev/sda3  · linux-swap</td><td>8 GB</td><td>swap</td><td>swap</td><td></td></tr>
+      <tr><td class="mono">/dev/sda4  · ntfs</td><td>322 GB</td><td>Datos</td><td>—</td><td></td></tr>
+      <tr style="background:#e7f5ea"><td class="mono">/dev/sda5  · ext4</td><td>40 GB</td><td>Configurar manualmente</td><td>/datos</td><td><span class="status">sin usar</span></td></tr>
+    </table>
+    <div class="foot">
+      <button class="btn">＋ Borrar disco e instalar Ubuntu</button>
+      <button class="btn">? D</button>
+      <button class="btn b">Instalar ahora</button>
+    </div>
+  </div>
+</div>
+</body></html>

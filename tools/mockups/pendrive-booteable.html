@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Arial,sans-serif;background:#fff;overflow:hidden;color:#222}
+.ring{width:1366px;height:720px;background:linear-gradient(135deg,#f3f7fd 0%,#e4ecf8 55%,#dbe6f7 100%);display:flex;align-items:center;justify-content:center}
+.usb{width:560px;background:linear-gradient(180deg,#e8edf5,#cdd6e4);border:1px solid #aeb9cc;border-radius:26px;padding:0 22px;box-shadow:10px 12px 0 #c3cedd, 0 0 24px #fff8 inset;position:relative}
+.usb:before{content:'';position:absolute;top:-34px;left:142px;width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:34px solid #2f3;transform:rotate(180deg)}
+.usb .conn{position:absolute;top:-14px;left:96px;background:#2f3;height:42px;width:126px}
+.usb .conn:before{content:'';position:absolute;left:-52px;top:0;width:206px;height:6px;background:#d81f26}
+.usb .conn:after{content:'';position:absolute;left:-52px;top:24px;width:206px;height:6px;background:#f7c;}
+.usb .head{display:flex;align-items:center;gap:20px;padding:20px 4px 0}
+.led{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#7fffa0,#19c74a);box-shadow:0 0 10px #19c74a}
+.usb .cap{flex:1;font-weight:700;font-size:17px}
+.usb .vol{font-size:14px;color:#36508c;font-weight:700}
+.usb table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:13px}
+.usb th,.usb td{padding:12px 14px;border:1px solid #b6c2d6;background:#ffffffcc;text-align:left}
+.usb th{background:#dfe7f3;font-weight:600}
+.usb tr.done td{background:#eafff0}
+.modal{position:absolute;top:0;right:0;width:430px;height:720px;background:#f7f9fd;border-left:1px solid #c6d2e4;border:0;box-shadow:-6px 0 18px #0002;padding:22px}
+.modal h2{font-size:17px;color:#12396b;margin-bottom:4px}
+.modal .sub{font-size:12.5px;color:#52728f;margin-bottom:18px}
+.bar{height:16px;background:#d7e0ee;border-radius:8px;overflow:hidden;margin:8px 0 6px}
+.bar span{display:block;height:16px;width:82%;background:linear-gradient(90deg,#2f9e44,#6ac67f);border-radius:8px}
+.opt{display:flex;gap:10px;padding:10px 0;border-top:1px solid #dde6f2;font-size:13px}
+.opt b{width:150px}
+.btn{background:#1971c2;color:#fff;border:none;padding:10px 14px;border-radius:6px;font:600 13px 'Segoe UI'}
+</style></head><body>
+<div class="ring">
+  <div class="usb">
+    <div class="conn"></div>
+    <div class="head">
+      <div class="led"></div>
+      <div class="cap">PENDRIVE BOOTEABLE — Windows 7</div>
+      <div class="vol">USB 3.0 · 16 GB · NTFS</div>
+    </div>
+    <table>
+      <tr><td><b>Dispositivo</b></td><td>USB Kingston DataTraveler (F:) · 16 GB</td></tr>
+      <tr class="done"><td><b>Imagen ISO</b></td><td>windows7-sp1-64bits.iso · 3,4 GB</td></tr>
+      <tr class="done"><td><b>Esquema de partición</b></td><td>MBR · BIOS/UEFI-CSM</td></tr>
+      <tr class="done"><td><b>Sistema de archivos</b></td><td>NTFS · Tamaño de clúster por defecto</td></tr>
+    </table>
+  </div>
+</div>
+<div class="modal">
+  <h2>Crear unidad de arranque</h2>
+  <div class="sub">El pendrive quedará listo para instalar el sistema.</div>
+  <div style="display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid #dde6f2;border-bottom:1px solid #dde6f2">
+    <div style="font-size:34px">💿</div>
+    <div><b>Escribiendo datos</b><br><span style="font-size:12px">Extrayendo install.wim…</span></div>
+  </div>
+  <div class="bar"><span></span></div>
+  <div style="font-size:13px;text-align:right;margin-bottom:16px"><b>82%</b></div>
+  <div class="opt"><b>Estado</b><span style="color:#2f9e44"><b>● Listo para usar en cualquier equipo</b></span></div>
+  <div class="opt"><b>Arranque</b><span>F12 / Esc / F2 → seleccionar USB</span></div>
+  <div style="margin-top:20px"><button class="btn">Formatear e instalar</button></div>
+</div>
+</body></html>

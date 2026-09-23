@@ -1,7 +1,8 @@
 MEJORAS PENDIENTES - ITC CLASES
 =================================
 
-Estado: Fase 4 (correccion de imagenes) - Marketing Digital COMPLETADO 23/09/2026.
+Estado: Fase 6 (revision curso por curso) - Marketing Digital y Diagnostico de PC
+COMPLETADOS 23/09/2026.
 Generado por el asistente. Ver tambien HISTORIAL.md del repo.
 
 ----------------------------------------------------------------------------
@@ -47,9 +48,83 @@ Markup: [x] = pendiente, [OK] = reemplazada. Ordenadas por clase:
                          Reemplazada por: mockup GA4 > Eventos (page_view,
                          scroll, session_start con conteos) + flujo.
 
-   [OK] ga4.jpg          Clase 22 - GA4 y metricas
-                         Reemplazada por: mockup GA4 > Informes > Descripcion
-                         general (usuarios, sesiones, eventos clave).
+[OK] ga4.jpg          Clase 22 - GA4 y metricas
+                          Reemplazada por: mockup GA4 > Informes > Descripcion
+                          general (usuarios, sesiones, eventos clave).
+
+---------------------------------------------------------------------------
+4) DIAGNOSTICO Y MANTENIMIENTO DE PC - IMAGENES REEMPLAZADAS -> RESUELTO 23/09
+---------------------------------------------------------------------------
+Por la decision del usuario "Mockups UI propios" (cuando no hay login ni programa
+instalable) y capturas reales de los programas instalados. Regeneradas las 7
+clases: C5/C12/C13/C17/C18/C19/C22 (PDF + HTML + Presentacion HTML/PDF/PPTX).
+Markup: [x] = pendiente, [OK] = reemplazada. Ordenadas por clase:
+
+   [OK] cpu-amd.jpg      Clase 5 - Microprocesadores  (outputDir: Clase 3)
+                         Reemplazada por: foto real AMD Athlon CPU 1GHz
+                         (Wikimedia) 1000px q78, 84 KB. Backup en diagcap.
+
+   [OK] cpu-intel.jpg    Clase 5 - Microprocesadores
+                         Reescalada a 1000px q78 (866 KB -> 338 KB) para que la
+                         presentacion C5 pase de 1,76 MB a 717 KB.
+
+   [OK] disipador.jpg    Clase 5 - Microprocesadores
+                         Reescalada a 1000px q78 (264 KB -> 120 KB).
+
+   [OK] windows7.jpg     Clase 12 - Sistema operativo Windows 7
+                         Reemplazada por: mockup del escritorio Windows 7
+                         (sin VM de Win7 instalable). 47 KB, OCR "Panel de
+                         control".
+
+   [OK] pendrive-booteable.jpg  Clase 12 - Sistema operativo Windows 7
+                         Reemplazada por: mockup RUFUS "Crear unidad de
+                         arranque" (no se captura programa real: es pantalla
+                         de instalacion de Win7). 49 KB.
+
+   [OK] antivirus.jpg    Clase 13 - Drivers, programas basicos y seguridad
+                         Reemplazada por: captura REAL "Seguridad de Windows"
+                         (816x641 49 KB). El panel de escaneo no esta
+                         disponible (gestion de la organizacion); spec C13
+                         ajustada a la vista "Proteccion contra virus y
+                         amenazas".
+
+   [OK] ubuntu.jpg       Clase 17 - Sistema operativo Linux
+                         Reemplazada por: mockup escritorio Ubuntu 24.04
+                         (sin WSL instalado). 45 KB, OCR "Actividades" /
+                         "Firefox".
+
+   [OK] terminal.png     Clase 17 - Sistema operativo Linux
+                         Reemplazada por: mockup terminal de Ubuntu con
+                         comandos (ls, df -h, lscpu). 281 KB PNG.
+
+   [OK] grub.jpg         Clase 18 - Instalacion dual
+                         Reemplazada por: mockup GNU GRUB version 2.06
+                         (sin dual boot real). 43 KB, OCR "GNU GRUB".
+
+   [OK] ubuntu-instalacion.png  Clase 18 - Instalacion dual
+                         Reemplazada por: mockup instalador Ubuntu "Tipo de
+                         instalacion" (Instalar junto a/sustituir). 280 KB
+                         PNG.
+
+   [OK] linux-live.jpg   Clase 19 - Recuperacion del sistema
+                         Reemplazada por: mockup USB "Ubuntu Pendrive Linux
+                         Live". 24 KB.
+
+   [OK] cmd.png          Clase 19 - Recuperacion del sistema
+                         Reemplazada por: captura REAL cmd.exe con systeminfo
+                         (1129x635 64 KB) capturada via Windows Terminal
+                         (wt.exe; conhost no expone MainWindowHandle).
+                         OCR: LENOVO, Windows 11 Pro, Intel.
+
+   [OK] router-config.jpg  Clase 22 - Configuracion de red y routers
+                         El PNG (590 KB en 600x436) no comprimia reencodado
+                         (foto con ruido) -> convertido a JPG 1000px q78
+                         (78 KB). Spec C22 actualizada png->jpg (con Edit,
+                         no PS1, para no corromper emojis). Presentacion
+                         C22 baja de 1,09 MB a 422 KB.
+
+Nota de proceso (vuelve a pasar): NO usar Set-Content -Encoding UTF8 sobre
+specs con acentos/emojis (los corrompe a 'null'); usar la herramienta Edit.
 
 ----------------------------------------------------------------------------
 2) IMAGENES DE DISENO GRAFICO NO ENCONTRADAS (6)  -> RESUELTO (2 gem) / OK (4)

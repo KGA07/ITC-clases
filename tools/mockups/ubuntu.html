@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Ubuntu','Cantarell','Segoe UI',sans-serif;background:linear-gradient(150deg,#3d1157,#8a3fc0 45%,#b05bd4 80%,#c77fe0);overflow:hidden;color:#fff}
+.panel{position:absolute;top:10px;left:0;right:0;height:46px;background:#2b1e37e8;display:flex;align-items:center;gap:14px;padding:0 14px;font-size:13px}
+.panel .d{display:flex;align-items:center;gap:8px}
+.panel .d span{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#ffffff2e;border-radius:5px}
+.clock{position:absolute;right:16px;font-size:13px}
+.files{position:absolute;top:74px;left:200px;width:700px;height:400px;background:#2b222f;border-radius:12px;display:flex;flex-direction:column;box-shadow:0 18px 50px #0007;border:1px solid #0005}
+.sb{display:flex;height:38px;background:#3a3244;border-radius:12px 12px 0 0;align-items:center;padding:0 12px;gap:8px}
+.tab{background:#5a4a63;border-radius:6px 6px 0 0;padding:8px 16px;font-size:12.5px;display:flex;gap:8px;align-items:center}
+.nav{display:flex;gap:4px;align-items:center;font-size:12px;color:#cfc3d8;padding:8px 12px;border-bottom:1px solid #4a3c52}
+.bar{height:34px;background:#3a3244;display:flex;flex-direction:column;font-size:11px;padding:2px 12px;color:#b0a3bc}
+.bar>div{height:12px;border-radius:3px;background:#20202a;margin:2px 0}
+.card{flex:1;display:flex;font-size:12px}
+.side{width:90px;background:#241d2a;display:flex;flex-direction:column;padding-top:8px}
+.side div{padding:8px;color:#8d8296;font-size:11.5px}.side div.on{background:#4a3c52;color:#fff;border-left:2px solid #ffd166}
+.body{flex:1;position:relative;overflow:hidden}
+.greet{position:absolute;top:20px;left:24px;font-size:13px;color:#e3d8ec}
+.greet b{font-size:21px}
+.item{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;width:80px}
+.i1{top:110px;left:40px}.i2{top:110px;left:140px}.i3{top:110px;left:240px}.i4{top:110px;left:340px}
+.i5{top:232px;left:40px}.i6{top:232px;left:140px}.i7{top:232px;left:240px}
+.icon{width:44px;height:44px;border-radius:10px;background:#ffffff20;display:flex;align-items:center;justify-content:center;font-size:22px}
+.dock{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:#ffffff30;border-radius:26px;padding:8px 14px;display:flex;gap:12px}
+.dock .app{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;background:#ffffff3a}
+</style></head><body>
+<div class="panel">
+  <div class="d"><span>🟥</span>Actividades</div><div class="d"><span>🕐</span></div><div class="d"><span>🌐</span>Firefox</div><div class="d"><span>📁</span>Archivos</div><div class="d"><span>⚙️</span>Ajustes</div>
+  <div class="clock">mie 23 sep 14:10</div>
+</div>
+<div class="files">
+  <div class="sb"><div class="tab">📁 Inicio</div><div class="tab" style="background:#4a3c52">🗜 Instalación</div></div>
+  <div class="nav">⏪ ⏩ ↔️&nbsp;&nbsp;<b>Inicio</b> · Documentos · Descargas · Escritorio</div>
+  <div class="card">
+    <div class="side"><div class="on">🎯 Recientes</div><div>⭐ Favoritos</div><div>⭐ Documentos</div><div>⭐ Descargas</div><div>🖥️ Equipo</div><div>🗃️ Red</div></div>
+    <div class="body">
+      <div class="greet">Bienvenido a <b>Ubuntu 24.04</b> <span style="font-size:12px;color:#b59ac4">— LTS "Noble Numbat"</span><br><span style="font-size:11.5px;color:#a898b0">Cree con confianza · rendimiento · privacidad por defecto</span></div>
+      <div class="item i1"><div class="icon">📁</div>Documentos</div>
+      <div class="item i2"><div class="icon">⬇️</div>Descargas</div>
+      <div class="item i3"><div class="icon">🖼️</div>Imágenes</div>
+      <div class="item i4"><div class="icon">🎵</div>Música</div>
+      <div class="item i5"><div class="icon">🍱</div>Plantillas</div>
+      <div class="item i6"><div class="icon">📦</div>Público</div>
+      <div class="item i7"><div class="icon">🗑️</div>Papelera</div>
+    </div>
+  </div>
+</div>
+<div class="dock"><div class="app">🐧</div><div class="app">🌐</div><div class="app">📁</div><div class="app">⌨</div><div class="app">🛠</div></div>
+</body></html>

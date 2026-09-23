@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:linear-gradient(180deg,#2473c5,#1b5aa8 60%,#174986);overflow:hidden;position:relative}
+.wall{bottom:0;position:absolute;width:1366px;height:600px;background:radial-gradient(ellipse at 60% 10%,#4fa1e6a0 0%,transparent 60%),radial-gradient(ellipse at 20% 30%,#8fd8ff70,transparent 55%);border-top:70px solid #1d1d1d}
+.taskbar{position:absolute;bottom:0;width:1366px;height:44px;background:linear-gradient(#2c7bd9,#2058a0);border-top:1px solid #7fc3ff;display:flex;align-items:center;gap:6px;padding:0 8px;z-index:5}
+.start{width:58px;height:44px;background:radial-gradient(circle at 50% 45%,#3f9bff 0%,#1768d6 55%,#0b4fa8 100%);--o:orb;clip-path:polygon(20% 0,80% 0,100% 20%,100% 80%,80% 100%,20% 100%,0 80%,0 20%);box-shadow:0 0 8px #7fd0ff}
+.orb{position:absolute;inset:8px;background:radial-gradient(circle at 35% 30%,#9fe0ff 0%,#3f9bff 12%,#1172dd 60%,#0d5fc4 100%);clip-path:polygon(18% 2%,82% 2%,98% 18%,98% 82%,82% 98%,18% 98%,2% 82%,2% 18%);animation:spin 6s linear infinite}
+.key {
+  width:40px;height:16px;background:linear-gradient(#39f,#27e 50%,#19d);border-radius:3px;box-shadow:0 1px 2px #0008;position:absolute;
+  display:flex;align-items:center;justify-content:center;font:8px 'Segoe UI';color:#cfe8ff
+}
+.win{width:56px;height:26px;margin:0 10px;position:relative}
+.key.r1{top:4px;left:5px}.key.r2{top:4px;left:47px}.key.r3{top:4px;left:89px}.key.r4{top:4px;left:131px}
+.key.r5{top:4px;left:173px}.key.r6{top:4px;left:215px}.key.r7{top:4px;left:257px}.key.r8{top:4px;left:299px}.key.r9{top:4px;left:341px}
+.key.r10{top:4px;left:383px}.key.r11{top:4px;left:425px}.key.r12{top:4px;left:467px}
+.tray{margin-left:auto;display:flex;align-items:center;gap:6px;color:#eaf3ff;font:12px 'Segoe UI'}.tray b{font-weight:600}
+.win-side{position:absolute;top:60px;left:880px;width:470px;height:340px;background:linear-gradient(#f2f8ff,#cfdff4);border:1px solid #12396b;border-radius:10px 10px 0 0;box-shadow:0 0 18px #000a;padding:6px 10px;font:11px 'Segoe UI';color:#222}
+.win-side .m{display:flex;gap:12px;border-bottom:1px solid #b6cdf0;padding-bottom:5px;margin-bottom:8px}
+.win-side .m span{color:#1a4b8f;font-weight:600}
+.win-side .m span.o{text-decoration:underline}
+.tapps{display:grid;grid-template-columns:repeat(3,132px);gap:10px}
+.tlock{width:132px;height:132px;border:1px solid #cfe0f7;background:linear-gradient(180deg,#e9f2ff,#c3d8f2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font:12px 'Segoe UI';color:#17345c}
+.tlock .i{font-size:34px}
+.prow{display:flex;gap:10px;margin-top:14px;align-items:center}
+.prow .img{width:52px;height:40px;background:#dbe7fa;border:1px solid #c2d6f3;display:flex;align-items:center;justify-content:center;font-size:22px;color:#3a6bb6}
+.prow div{font-size:11.5px;color:#222}
+.blur{position:absolute;top:70px;left:30px;width:430px;height:250px;background:transparent}
+</style></head><body>
+<div class="wall"></div>
+<div style="position:absolute;top:8px;left:14px;color:#dff0ff;font-size:15px;font-family:'Segoe UI';text-shadow:0 1px 3px #000a">Panel de control</div>
+<div class="win-side">
+  <div class="m"><span class="o">Archivo</span><span>Edición</span><span>Ver</span><span>Herramientas</span><span>Ayuda</span></div>
+  <div style="font-size:13px;color:#17345c;margin-bottom:4px"><b>Panel de control</b> ▸ <b>Sistema y seguridad</b> ▸ <b>Sistema</b></div>
+  <div class="tapps">
+    <div class="tlock"><div class="i">🖥️</div>Administración<br>de equipos</div>
+    <div class="tlock"><div class="i">🛡️</div>Centro de<br>actividades</div>
+    <div class="tlock"><div class="i">⚙️</div>Opciones de<br>rendimiento</div>
+    <div class="tlock"><div class="i">💽</div>Administrador<br>de dispositivos</div>
+    <div class="tlock"><div class="i">🖨️</div>Dispositivos<br>e impresoras</div>
+    <div class="tlock"><div class="i">🔍</div>Herramientas<br>administrativas</div>
+  </div>
+  <div class="prow"><div class="img">💻</div><div><b>ITCPC</b><br>Procesador: AMD Phenom™ X4 · 3,20 GHz<br>Memoria: 8,00 GB (7,8 GB utilizables) · 64 bits</div></div>
+</div>
+<div class="taskbar">
+  <div class="start"><div class="orb"></div></div>
+  <div style="color:#eaf3ff;font-size:14px;padding-left:14px">Inicio</div>
+  <div style="display:flex;gap:6px;margin-left:18px">
+    <div style="width:44px;height:40px;background:#174986cc;border:1px solid #5da6f0cc;border-bottom:none;display:flex;align-items:center;justify-content:center;font-size:18px">🌐</div>
+    <div style="width:44px;height:40px;background:#1a54a0bb;border:1px solid #5da6f070;border-bottom:none;display:flex;align-items:center;justify-content:center;font-size:18px">📁</div>
+    <div style="width:44px;height:40px;background:#1a54a0bb;border:1px solid #5da6f070;border-bottom:none;display:flex;align-items:center;justify-content:center;font-size:18px">🎨</div>
+  </div>
+  <div class="tray">11:34 <b>22/09/2026</b></div>
+</div>
+</body></html>

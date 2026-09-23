@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'DejaVu Sans','Ubuntu Mono','Segoe UI',monospace;background:#05060b;overflow:hidden;color:#c9c9d4;font-size:17px}
+.console{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(#04050a,#0a0d1a);padding:22px 30px}
+h1{font:600 17px 'DejaVu Sans','Segoe UI',sans-serif;color:#eee;margin-bottom:4px}
+.sub{font-size:12.5px;color:#7d839e;margin-bottom:18px;font-family:'Segoe UI'}
+ul{list-style:none;margin-bottom:22px}
+li{padding:13px 18px;font-size:18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #1c2036}
+li.idx{color:#8a90ab}
+li .os{width:240px;display:inline-flex;align-items:center;gap:10px}
+li .badge{margin-left:auto;font-size:11.5px;color:#9aa0bd;border:1px solid #2a3050;border-radius:4px;padding:3px 10px}
+li.hover{background:#10162b;border-left:4px solid #ff7a26}
+li.hover .os{color:#ff7a26;font-weight:600}
+li.hover .badge{color:#ffb46e;border-color:#ff7a26}
+li span.dim{color:#6d7491}
+.tip{font-size:12.5px;color:#8a90ab;font-family:'Segoe UI'}
+.tip b{color:#ffb46e}
+</style></head><body>
+<div class="console">
+  <h1>GNU GRUB versión 2.06</h1>
+  <div class="sub">Seleccione el sistema para iniciar. Use las flechas ↑↓ y presione <b>Entrar</b> para seleccionar.</div>
+  <ul>
+    <li class="idx">1</li>
+    <li class="hover"><span class="os">🐧&nbsp;Ubuntu</span><span class="badge">por defecto · 22.04 LTS</span></li>
+    <li class="idx">2</li>
+    <li><span class="os">🪟&nbsp;Windows 7 (en /dev/sda1)</span><span class="badge">arranque dual</span></li>
+    <li class="idx">3</li>
+    <li><span class="os">🔧&nbsp;Opciones avanzadas para Ubuntu</span><span class="dim">(recuperación / live)</span></li>
+    <li class="idx">4</li>
+    <li><span class="os">🧪&nbsp;Memtest86+</span></li>
+    <li class="idx">5</li>
+    <li><span class="os">🖴&nbsp;HDD Regenerator</span></li>
+  </ul>
+  <div class="tip">Uso de teclas: <b>↑↓</b> mover · <b>Enter</b> elegir · <b>e</b> editar comandos · <b>c</b> consola</div>
+</div>
+</body></html>

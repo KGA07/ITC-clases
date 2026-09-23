@@ -85,11 +85,11 @@
       "emoji": "🦠",
       "imagen": {
         "src": "img/antivirus.jpg",
-        "alt": "Escaneo del sistema con antivirus",
-        "caption": "El antivirus detecta y neutraliza amenazas en tiempo real."
+        "alt": "Seguridad de Windows con estado de protección contra virus y amenazas",
+        "caption": "Seguridad de Windows (antivirus incluido) vigila amenazas en tiempo real."
       },
       "parrafos": [
-        "Un virus es un programa malicioso que daña o roba datos. El antivirus lo detecta y el usuario evita riesgos con buenas prácticas."
+        "Un virus es un programa malicioso que daña o roba datos. El antivirus lo detecta y el usuario evita riesgos con buenas prácticas. En Windows, la protección integrada se llama Seguridad de Windows: muestra el estado de protección y permite exámenes rápidos o completos."
       ],
       "puntos": [
         "Virus: se propagan pegados a programas, archivos o pendrives.",

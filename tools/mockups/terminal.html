@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Ubuntu','Cantarell','Segoe UI',sans-serif;background:linear-gradient(160deg,#4a1a5c,#7f2f9c 40%,#a04fc0);overflow:hidden;color:#fff}
+.win{position:absolute;top:36px;left:120px;right:120px;bottom:8px;background:transparent}
+.panel{position:absolute;top:8px;left:0;right:0;height:44px;background:#2b1e37e8;display:flex;align-items:center;gap:14px;padding:0 14px;font-size:13px}
+.panel span{opacity:.95}
+.panel .mt{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:2px}
+.panel .mt div{width:9px;height:9px;border-radius:50%;background:#eda02e}
+.panel .mt div:nth-child(2){background:#c96d47}
+.panel .mt div:nth-child(3){background:#5da06d}
+.panel .mt div:nth-child(4){background:#4f7bc0}
+.clock{position:absolute;right:16px;font-size:13px}
+.dock{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:#ffffff30;border-radius:26px;padding:8px 14px;display:flex;gap:12px}
+.dock .app{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;background:#ffffff3a;box-shadow:0 4px 10px #0003}
+.dock .app.on{background:#ffd166;color:#222}
+.term{position:absolute;top:74px;left:180px;width:820px;height:420px;background:#221b2b;border-radius:10px;display:flex;flex-direction:column;box-shadow:0 16px 44px #0007;border:1px solid #0005}
+.tbar{background:#3a3244;height:38px;border-radius:10px 10px 0 0;display:flex;align-items:center;gap:10px;padding:0 14px;font-size:12.5px}
+.ts{padding:14px 18px;font:15px/1.85 'Ubuntu Mono','Consolas',monospace;color:#e8e6ee}
+.ts .c{color:#55c951;font-weight:700}
+.ts .d{color:#8fa0b8}
+.ts .p{color:#ffd166}
+.ts .q{color:#9bc7f2}
+.ts .k{color:#d97bd0}
+</style></head><body>
+<div class="panel">
+  <span>🟥 Actividades</span><span>🕐</span><span>🌐 Firefox</span><span>🐧 Files</span>
+  <div class="mt"><div></div><div></div><div></div><div></div></div>
+  <div class="clock">mie 23 sep 14:05</div>
+</div>
+<div class="win">
+  <div class="term">
+    <div class="tbar">usuario@itc-pc: ~</div>
+    <div class="ts">
+      <div><span class="c">usuario@itc-pc</span>:<span class="c">~</span><span class="p">$</span> <span class="q">ls -l /home</span></div>
+      <div>total 8</div>
+      <div>drwxr-xr-x  5 usuario  usuario  4096 sep 20  14:30  <span class="d">Documentos</span></div>
+      <div>drwxr-xr-x  3 usuario  usuario  4096 sep 21  09:12  <span class="d">Descargas</span></div>
+      <div>drwxr-xr-x  2 usuario  usuario  4096 sep 22  18:02  <span class="d">Escritorio</span></div>
+      <div><span class="c">usuario@itc-pc</span>:<span class="c">~</span><span class="p">$</span> <span class="q">sudo apt-get update</span></div>
+      <div><span class="k">[sudo]</span> contraseña para usuario:</div>
+      <div>Obteniendo:1 http://archive.ubuntu.com noble-updates InRelease</div>
+      <div>Obteniendo:2 http://archive.ubuntu.com noble-security  InRelease</div>
+      <div>Leyendo lista de paquetes… Hecho</div>
+      <div><span class="c">usuario@itc-pc</span>:<span class="c">~</span><span class="p">$</span> <span class="q" style="background:#ffffff1d">▊</span></div>
+    </div>
+  </div>
+  <div class="dock">
+    <div class="app">🐧</div><div class="app">🌐</div><div class="app">📁</div><div class="app on">⌨</div><div class="app">🛠</div><div class="app">🎵</div>
+  </div>
+</div>
+</body></html>
