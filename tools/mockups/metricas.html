@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Roboto,Arial,sans-serif;color:#1c1e21;background:#f4f6fa;overflow:hidden}
+.top{height:50px;background:#fff;border-bottom:1px solid #e4e6eb;display:flex;align-items:center;padding:0 16px;gap:18px}
+.logo{font-size:16px;font-weight:600;color:#1877f2}.logo span{color:#1c1e21;font-weight:400}
+.right{margin-left:auto;display:flex;gap:16px;align-items:center;color:#65676b;font-size:13px}
+.menu{background:#1877f2;border-radius:4px 4px 0 0;margin-left:8px}
+.menu .t{padding:14px 16px;color:#fff;font-size:13px;font-weight:600}
+.wrap{display:flex}
+.left{width:168px;background:#fff;border-right:1px solid #e4e6eb;padding-top:12px}
+.li{font-size:13px;color:#050505;padding:11px 16px;border-radius:6px;margin:2px 8px}
+.li.on{background:#e7f3ff;color:#1877f2;font-weight:600}
+.content{flex:1;padding:20px 26px}
+.crumb{font-size:13px;color:#65676b;margin-bottom:14px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.hdr h1{font-size:19px;font-weight:700}
+.ghost{border:1px solid #ccd0d5;background:#fff;color:#050505;font-size:13px;padding:8px 14px;border-radius:6px}
+.gray{background:#e4e6eb;color:#050505;font-size:13px;padding:8px 14px;border-radius:6px;border:none}
+.card{background:#fff;border:1px solid #e4e6eb;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.ch{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid #e4e6eb}
+.ch b{font-size:14px}
+.cb{padding:15px 16px}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.kpi{background:#fff;border:1px solid #e4e6eb;border-radius:10px;padding:14px 12px}
+.kpi .lab{font-size:11.5px;color:#65676b}
+.kpi .val{font-size:20px;font-weight:700;margin-top:6px}
+.kpi .chg{font-size:11.5px;color:#31a24c;margin-top:4px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#f0f2f5;color:#65676b;font-weight:600;font-size:11.5px;text-align:left;padding:11px 13px;border-bottom:1px solid #e4e6eb}
+td{padding:12px 13px;border-bottom:1px solid #f0f2f5;color:#050505}
+tr:last-child td{border-bottom:none}
+.name b{display:block}.name span{color:#65676b;font-weight:400;font-size:12px}
+.hl td{background:#f5f9ff}
+.note{margin-top:12px;font-size:12px;color:#65676b}
+</style></head><body>
+<div class="top">
+  <div class="logo">Meta <span>Ads Manager</span></div>
+  <div style="font-size:12px;background:#e7f3ff;color:#1877f2;padding:5px 10px;border-radius:5px">Campaña: Curso Marketing Digital</div>
+  <div class="right"><span>⚙</span><span>?</span><span>👤</span></div>
+</div>
+<div class="menu"><div class="t">Crear anuncio ▾</div></div>
+<div class="wrap">
+  <div class="left">
+    <div class="li">Resumen</div>
+    <div class="li on">Campañas</div>
+    <div class="li">Conjuntos</div>
+    <div class="li">Anuncios</div>
+    <div class="li">Audiencias</div>
+    <div class="li">Informes</div>
+  </div>
+  <div class="content">
+    <div class="crumb">Campañas › <b style="color:#050505">Curso Marketing Digital (Tráfico)</b> › Resultados</div>
+    <div class="hdr">
+      <h1>Métricas de la campaña</h1>
+      <div style="display:flex;gap:10px">
+        <div class="ghost">Columnas: Rendimiento</div>
+        <div class="ghost">Últimos 30 días ▾</div>
+        <div class="gray">Exportar</div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="lab">Resultados</div><div class="val">1.284</div><div class="chg">▲ 18%</div></div>
+      <div class="kpi"><div class="lab">Alcance</div><div class="val">248.910</div><div class="chg">▲ 9%</div></div>
+      <div class="kpi"><div class="lab">Impresiones</div><div class="val">612.455</div><div class="chg">▲ 14%</div></div>
+      <div class="kpi"><div class="lab">CTR</div><div class="val">2,31%</div><div class="chg">▲ 0,4 pts</div></div>
+      <div class="kpi"><div class="lab">CPC</div><div class="val">$ 248,00</div><div class="chg" style="color:#65676b">—</div></div>
+      <div class="kpi"><div class="lab">Frecuencia</div><div class="val">2,5</div><div class="chg" style="color:#dc7000">⚠ vigilar</div></div>
+    </div>
+    <div class="card">
+      <div class="ch"><b>Rendimiento por conjunto de anuncios</b><span class="x">Últimos 30 días</span></div>
+      <table>
+        <tr><th>Conjunto</th><th>Estado</th><th>Resultados</th><th>Alcance</th><th>Impresiones</th><th>CTR</th><th>CPC</th><th>Costo/Resultado</th></tr>
+        <tr class="hl">
+          <td class="name" style="min-width:230px"><b>Curso Marketing — Búsqueda</b><span>Conjunto de anuncios</span></td>
+          <td><span style="background:#e7f3ff;color:#1877f2;padding:3px 9px;border-radius:11px;font-size:11.5px">Activo</span></td>
+          <td>642</td><td>98.410</td><td>241.700</td><td>3,02%</td><td>$ 216,00</td><td>$ 3.420,00</td>
+        </tr>
+        <tr>
+          <td class="name" style="min-width:230px"><b>Curso Marketing — Interés</b><span>Conjunto de anuncios</span></td>
+          <td><span style="background:#e7f3ff;color:#1877f2;padding:3px 9px;border-radius:11px;font-size:11.5px">Activo</span></td>
+          <td>412</td><td>102.300</td><td>255.100</td><td>2,10%</td><td>$ 279,00</td><td>$ 4.180,00</td>
+        </tr>
+        <tr>
+          <td class="name" style="min-width:230px"><b>Curso Marketing — Remarketing</b><span>Conjunto de anuncios</span></td>
+          <td><span style="background:#f0f2f5;color:#65676b;padding:3px 9px;border-radius:11px;font-size:11.5px">Pausado</span></td>
+          <td>230</td><td>48.200</td><td>115.655</td><td>1,94%</td><td>$ 202,00</td><td>$ 3.010,00</td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">Cada métrica responde una pregunta distinta: el alcance cuánta gente vio el anuncio, la frecuencia cuántas veces, el CTR si el mensaje engancha y el costo qué tan eficiente es el gasto.</div>
+  </div>
+</div>
+</body></html>

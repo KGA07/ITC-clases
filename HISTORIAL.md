@@ -242,10 +242,31 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
   - QA al cierre: check-firma 612/612 OK, list-stale 0, tests 14/14 OK.
   - Permanece como imagen conceptual de apoyo en PS: `mapa-bits`, `photoshop-logo`,
     `pluma-bezier`, `vectores`, `histograma`, `niveles`, `figura-*`.
-- **Próximo — Curso 2 (Diseño Gráfico): verificación visual del usuario de los
-  lotes Corel v2 y Photoshop; luego Marketing (web demo) → Diagnóstico (incl. C22
-  <1MB) → Diseño Técnico (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) →
-  PyMEs (cierre/reverificar).**
+- **Curso 3 — Marketing Digital: 9 mockups de consolas web (hito).**
+  - Conforme la decisión del usuario ("Mockups UI propios"), se reemplazaron con
+    **mocups HTML renderizados con Chrome headless** las 9 imágenes de consolas
+    web con login (Google Ads, Meta Ads, GA4, Google Sites) que seguían
+    desacertadas: `sites.jpg` (C13), `planificador.jpg` (C16), `recursos.jpg`
+    (C17), `audiencia.jpg` (C18), `metricas.jpg`/`fatiga.jpg`/`retargeting.jpg`
+    (C19) y `ga4.jpg`/`eventos.jpg` (C22).
+  - `tools/mockups/*.html`: mockups de alta fidelidad del UI (barra de Ads,
+    paneles Meta Ads Manager, planificador de palabras clave, audiencias,
+    frecuencia/CTR, retargeting, tablero/eventos de GA4, editor de Google Sites).
+  - `tools/render-mockups.js`: render HTML→JPG a 1366x720 con Chrome headless
+    (`--user-data-dir` único por captura, kill de procesos entre iteraciones).
+    9/9 JPG (70-88 KB) con OCR de control que verifica el texto real del UI
+    (Planificador de palabras clave, Campañas, Audiencias, Frecuencia, Eventos,
+    Google Analytics).
+  - Regeneradas las 6 clases (PDF + HTML + Presentación HTML/PDF/PPTX).
+    Presentaciones finales: C13 500 KB, C16 451 KB, C17 453 KB, C18 882 KB,
+    C19 380 KB, C22 301 KB — todas ≤ 1 MB.
+  - QA al cierre: `list-stale-specs` 0, check-firma 612/612 OK, tests 14/14 OK.
+  - Nota: al copiar los JPG un comando PS1 con escapes `\u00` creó carpetas
+    espurias con nombre literal (`Campa\u00f1as Pagas`, etc.); fueron removidas y
+    los archivos re-copiados a las rutas reales con caracteres correctos.
+- **Próximo — Curso 4: Diagnóstico (incl. C22 <1MB, Packet Tracer en C20) →
+  Diseño Técnico (reverificar 23 con AutoCAD) → Robótica (Arduino IDE) → PyMEs
+  (cierre/reverificar).**
 
 ## Cómo arrancar el proyecto (resumen)
 

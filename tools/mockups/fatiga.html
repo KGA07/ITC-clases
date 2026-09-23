@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Roboto,Arial,sans-serif;color:#1c1e21;background:#f4f6fa;overflow:hidden}
+.top{height:50px;background:#fff;border-bottom:1px solid #e4e6eb;display:flex;align-items:center;padding:0 16px;gap:18px}
+.logo{font-size:16px;font-weight:600;color:#1877f2}.logo span{color:#1c1e21;font-weight:400}
+.right{margin-left:auto;display:flex;gap:16px;align-items:center;color:#65676b;font-size:13px}
+.menu{background:#1877f2;border-radius:4px 4px 0 0;margin-left:8px}
+.menu .t{padding:14px 16px;color:#fff;font-size:13px;font-weight:600}
+.wrap{display:flex}
+.left{width:168px;background:#fff;border-right:1px solid #e4e6eb;padding-top:12px}
+.li{font-size:13px;color:#050505;padding:11px 16px;border-radius:6px;margin:2px 8px}
+.li.on{background:#e7f3ff;color:#1877f2;font-weight:600}
+.content{flex:1;padding:20px 26px}
+.crumb{font-size:13px;color:#65676b;margin-bottom:14px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.hdr h1{font-size:19px;font-weight:700}
+.ghost{border:1px solid #ccd0d5;background:#fff;color:#050505;font-size:13px;padding:8px 14px;border-radius:6px}
+.card{background:#fff;border:1px solid #e4e6eb;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.ch{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid #e4e6eb}
+.ch b{font-size:14px}
+.cb{padding:15px 16px}
+.grid{display:flex;gap:16px}
+.pane{flex:1}
+.chart{position:relative;height:230px;margin-top:10px}
+.axis{position:absolute;left:44px;right:20px;top:0;bottom:26px}
+.hline{position:absolute;left:0;right:0;border-top:1px solid #f0f2f5}
+.hlab{position:absolute;left:0;font-size:11px;color:#65676b;transform:translateY(-50%);right:100%}
+.freq,.ctr{position:absolute;left:0;right:0;top:0;bottom:0}
+.lin{position:absolute;height:3px;border-radius:2px}
+.freq .lin{background:#1877f2}
+.ctr .lin{background:#31a24c}
+.dot{position:absolute;width:9px;height:9px;border-radius:50%;border:2px solid #fff}
+.freq .dot{background:#1877f2}.ctr .dot{background:#31a24c}
+.xlab{display:flex;justify-content:space-between;padding-left:40px;padding-right:20px;font-size:11.5px;color:#65676b}
+.xlab b{color:#050505}
+.zone{position:absolute;left:60%;right:6%;top:0;bottom:30px;background:#fff3e0;border-left:2px dashed #dc7000;border-radius:4px}
+.zone .zt{position:absolute;top:12px;left:10px;font-size:12px;font-weight:600;color:#dc7000}
+.zone .zs{position:absolute;top:32px;left:10px;font-size:11px;color:#b06000;line-height:1.5}
+.legend{display:flex;gap:18px;margin-top:8px;font-size:12.5px;color:#65676b}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.legend .af i{background:#1877f2}
+.legend .ac i{background:#31a24c}
+.kpis{display:flex;gap:12px;margin-top:14px}
+.kpi{background:#fff;border:1px solid #e4e6eb;border-radius:10px;padding:12px 14px;flex:1}
+.kpi .lab{font-size:11.5px;color:#65676b}
+.kpi .val{font-size:18px;font-weight:700;margin-top:5px}
+.kpi .warn{font-size:11.5px;color:#dc7000;font-weight:600;margin-top:3px}
+.note{margin-top:12px;font-size:12px;color:#65676b}
+</style></head><body>
+<div class="top">
+  <div class="logo">Meta <span>Ads Manager</span></div>
+  <div style="font-size:12px;background:#e7f3ff;color:#1877f2;padding:5px 10px;border-radius:5px">Campaña: Curso Marketing Digital</div>
+  <div class="right"><span>⚙</span><span>?</span><span>👤</span></div>
+</div>
+<div class="menu"><div class="t">Crear anuncio ▾</div></div>
+<div class="wrap">
+  <div class="left">
+    <div class="li">Resumen</div>
+    <div class="li on">Campañas</div>
+    <div class="li">Conjuntos</div>
+    <div class="li">Anuncios</div>
+    <div class="li">Audiencias</div>
+    <div class="li">Informes</div>
+  </div>
+  <div class="content">
+    <div class="crumb">Informes › Frecuencia y CTR por semana</div>
+    <div class="hdr">
+      <h1>Frecuencia del anuncio vs. rendimiento</h1>
+      <div class="ghost">Últimos 8 períodos ▾</div>
+    </div>
+    <div class="grid">
+      <div class="pane">
+        <div class="card">
+          <div class="ch"><b>Frecuencia promedio vs. CTR</b></div>
+          <div class="cb">
+            <div class="chart">
+              <div class="zone"><span class="zt">⚠ Zona de agotamiento</span><span class="zs">Frecuencia &gt; 4<br>el interés baja<br>y el costo sube</span></div>
+              <div class="axis">
+                <div class="hline" style="top:0%"><span class="hlab">5</span></div>
+                <div class="hline" style="top:25%"><span class="hlab">4</span></div>
+                <div class="hline" style="top:50%"><span class="hlab">3</span></div>
+                <div class="hline" style="top:75%"><span class="hlab">2</span></div>
+                <div class="hline" style="top:100%"><span class="hlab">1</span></div>
+                <div class="freq">
+                  <div class="lin" style="left:4%;top:72%;width:13%"></div>
+                  <div class="lin" style="left:16%;top:63%;width:13%"></div>
+                  <div class="lin" style="left:28%;top:55%;width:13%"></div>
+                  <div class="lin" style="left:40%;top:46%;width:13%"></div>
+                  <div class="lin" style="left:52%;top:38%;width:13%"></div>
+                  <div class="lin" style="left:64%;top:30%;width:13%"></div>
+                  <div class="dot" style="left:2%;top:73%"></div><div class="dot" style="left:14%;top:64%"></div>
+                  <div class="dot" style="left:26%;top:56%"></div><div class="dot" style="left:38%;top:47%"></div>
+                  <div class="dot" style="left:50%;top:39%"></div><div class="dot" style="left:62%;top:31%"></div>
+                  <div class="dot" style="left:74%;top:23%"></div>
+                </div>
+                <div class="ctr">
+                  <div class="lin" style="left:4%;top:22%;width:13%;background:#31a24c"></div>
+                  <div class="lin" style="left:16%;top:26%;width:13%;background:#31a24c"></div>
+                  <div class="lin" style="left:28%;top:31%;width:13%;background:#31a24c"></div>
+                  <div class="lin" style="left:40%;top:37%;width:13%;background:#31a24c"></div>
+                  <div class="lin" style="left:52%;top:46%;width:13%;background:#31a24c"></div>
+                  <div class="lin" style="left:64%;top:55%;width:13%;background:#31a24c"></div>
+                  <div class="dot" style="left:2%;top:23%;border-color:#31a24c"></div><div class="dot" style="left:14%;top:27%;border-color:#31a24c"></div>
+                  <div class="dot" style="left:26%;top:32%;border-color:#31a24c"></div><div class="dot" style="left:38%;top:38%;border-color:#31a24c"></div>
+                  <div class="dot" style="left:50%;top:47%;border-color:#31a24c"></div><div class="dot" style="left:62%;top:56%;border-color:#31a24c"></div>
+                  <div class="dot" style="left:74%;top:64%;border-color:#31a24c"></div>
+                </div>
+              </div>
+            </div>
+            <div class="legend">
+              <span class="af"><i></i>Frecuencia (veces que se vio el anuncio) — sube semana a semana</span>
+              <span class="ac"><i></i>CTR — cae cuando la frecuencia es demasiado alta</span>
+            </div>
+            <div class="xlab"><span><b>Sem 1</b></span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span><b>Sem 7</b></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pane">
+        <div class="kpis">
+          <div class="kpi"><div class="lab">Frecuencia actual</div><div class="val">4,8</div><div class="warn">⚠ Sobre exposiciones</div></div>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <div class="ch"><b>Lectura de la métrica</b></div>
+          <div class="cb" style="font-size:13px;line-height:1.7;color:#3a3b3c">
+            Cuando la <b>frecuencia</b> es baja, cada persona ve el anuncio pocas veces: el interés se mantiene y el CTR se conserva.<br><br>
+            Si la <b>frecuencia sube</b> (la misma persona ve el anuncio en muchos momentos), el mensaje deja de sorprender: el CTR baja y el costo por resultado aumenta.<br><br>
+            <span style="background:#fff3e0;color:#dc7000;padding:2px 8px;border-radius:4px;font-weight:600">Acción sugerida</span>&nbsp;&nbsp;renovar la creatividad, ampliar la audiencia o pausar el anuncio cuando se supere el umbral.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">La frecuencia alta baja el interés y sube el costo: monitoreala junto con el CTR para detectar el agotamiento creativo.</div>
+  </div>
+</div>
+</body></html>

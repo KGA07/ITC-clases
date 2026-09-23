@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Roboto,Arial,sans-serif;color:#202124;background:#f8f9fa;overflow:hidden}
+.top{height:50px;background:#fff;border-bottom:1px solid #dadce0;display:flex;align-items:center;padding:0 16px;gap:20px}
+.logo{font-size:16px;color:#5f6368;display:flex;align-items:center;gap:8px}
+.logo b{color:#202124;font-weight:600}
+.nav{display:flex;gap:18px;font-size:13px;color:#5f6368;align-items:center;height:50px}
+.nav .n{height:50px;display:flex;align-items:center}.nav .n.on{color:#1a73e8;border-bottom:3px solid #1a73e8;font-weight:500}
+.right{margin-left:auto;display:flex;gap:12px;align-items:center;color:#5f6368;font-size:13px}
+.bell{position:relative}
+.wrap{display:flex}
+.left{width:208px;border-right:1px solid #dadce0;background:#fff;padding-top:14px}
+.sec{font-size:11px;color:#5f6368;text-transform:uppercase;padding:10px 16px 6px;letter-spacing:.5px;font-weight:500}
+.li{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:13px;color:#3c4043;margin:1px 6px;border-radius:6px}
+.li i{font-style:normal;width:16px;text-align:center;color:#5f6368}
+.li.on{background:#e8f0fe;color:#1a73e8;font-weight:600}
+.content{flex:1;padding:18px 24px}
+.crumb{font-size:13px;color:#5f6368;margin-bottom:12px}.crumb b{color:#202124}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.hdr h1{font-size:19px;font-weight:500}
+.white{border:1px solid #dadce0;background:#fff;color:#3c4043;font-size:13px;padding:8px 14px;border-radius:4px}
+.blue{background:#1a73e8;color:#fff;font-size:13px;padding:8px 16px;border-radius:4px;font-weight:500}
+.gridtop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.card{background:#fff;border:1px solid #dadce0;border-radius:10px;padding:15px 17px}
+.card .lab{font-size:12px;color:#5f6368;display:flex;justify-content:space-between}
+.card .val{font-size:24px;font-weight:500;margin-top:7px}
+.card .chg{font-size:12px;color:#188038;margin-top:5px;font-weight:500}
+.card .chg.down{color:#d93025}
+.card .sub{font-size:11px;color:#80868b;margin-top:3px}
+.big{background:#fff;border:1px solid #dadce0;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.bh{display:flex;align-items:center;justify-content:space-between;padding:13px 17px;border-bottom:1px solid #dadce0}
+.bh b{font-size:14px}
+.bc{padding:16px 17px}
+.chartrow{display:flex;gap:16px}
+.chart{flex:1.6;position:relative;height:200px}
+.cline{position:absolute;left:0;right:0;border-top:1px solid #f1f3f4}
+.areapath{position:absolute;left:4px;right:4px;height:140px;background:linear-gradient(180deg,rgba(66,133,244,.18),transparent);border-radius:6px;top:30px}
+.line{position:absolute;left:10px;right:10px;top:50px;height:3px;background:#1a73e8;border-radius:2px;box-shadow:0 0 8px rgba(26,115,232,.4)}
+.dots{position:absolute;left:10px;right:10px;top:46px;display:flex;justify-content:space-between}
+.dots i{width:7px;height:7px;border-radius:50%;background:#1a73e8;box-shadow:0 0 0 2px #fff}
+.side{flex:1;display:flex;flex-direction:column;gap:10px}
+.item{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-bottom:1px solid #f1f3f4}
+.item .n{color:#3c4043}.item .v{font-weight:600}
+.item .p{color:#1a73e8;font-size:12px}
+table{width:100%;border-collapse:collapse}
+th{background:#f1f3f4;font-size:12px;color:#5f6368;font-weight:500;text-align:left;padding:10px 13px;border-bottom:1px solid #dadce0}
+td{font-size:13px;color:#202124;padding:11px 13px;border-bottom:1px solid #f1f3f4}
+.note{margin-top:12px;font-size:12px;color:#5f6368}
+</style></head><body>
+<div class="top">
+  <div class="logo">Google <b>Analytics</b></div>
+  <div class="nav"><div class="n on">Informes</div><div class="n">Explorar</div><div class="n">Anuncios</div><div class="n">Configurar</div></div>
+  <div class="right"><span class="bell">🔔</span><span>?</span><span>👤</span></div>
+</div>
+<div class="wrap">
+  <div class="left">
+    <div class="sec">Informes</div>
+    <div class="li on"><i>◫</i>Informe de descripción general</div>
+    <div class="li"><i>▤</i>Adquisición</div>
+    <div class="li"><i>🔗</i>Participación</div>
+    <div class="li"><i>◪</i>Monetización</div>
+    <div class="li"><i>▦</i>Retención</div>
+    <div class="sec" style="margin-top:8px">Realidad</div>
+    <div class="li"><i>⚡</i>Tiempo real</div>
+    <div class="sec" style="margin-top:8px">Analizar</div>
+    <div class="li"><i>⌕</i>Exploraciones</div>
+    <div class="li"><i>📊</i>Informes de anuncios</div>
+  </div>
+  <div class="content">
+    <div class="crumb">Biblioteca › <b>Informe de descripción general</b> — Propiedad: itc-cursos.com</div>
+    <div class="hdr">
+      <div style="display:flex;gap:12px;align-items:center"><h1>Informe de descripción general</h1><span class="white">Últimos 30 días ▾</span></div>
+      <div class="blue">Abrir GA4</div>
+    </div>
+    <div class="gridtop">
+      <div class="card"><div class="lab">Usuarios <span>▾</span></div><div class="val">2.410</div><div class="chg">▲ 12,4%</div><div class="sub">respecto del período anterior</div></div>
+      <div class="card"><div class="lab">Nuevos usuarios <span>▾</span></div><div class="val">1.978</div><div class="chg">▲ 9,8%</div><div class="sub">respecto del período anterior</div></div>
+      <div class="card"><div class="lab">Sesiones <span>▾</span></div><div class="val">3.152</div><div class="chg">▲ 15,2%</div><div class="sub">usuarios nuevos y recurrentes</div></div>
+      <div class="card"><div class="lab">Interacción por sesión <span>▾</span></div><div class="val">1m 42s</div><div class="chg">▲ 4,1%</div><div class="sub">tiempo promedio de participación</div></div>
+    </div>
+    <div class="big">
+      <div class="bh"><b>Usuarios en los últimos 30 días</b><span class="white" style="padding:5px 12px">Diario ▾</span></div>
+      <div class="bc">
+        <div class="chartrow">
+          <div class="chart">
+            <div class="hline" style="top:0%"></div><div class="hline" style="top:25%"></div>
+            <div class="hline" style="top:50%"></div><div class="hline" style="top:75%"></div><div class="hline" style="top:100%"></div>
+            <div class="areapath"></div><div class="line"></div>
+            <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="side">
+            <div class="item"><span class="n">Búsqueda orgánica</span><span class="v">1.284</span><span class="p">53%</span></div>
+            <div class="item"><span class="n">Directo</span><span class="v">612</span><span class="p">25%</span></div>
+            <div class="item"><span class="n">Redes sociales</span><span class="v">347</span><span class="p">14%</span></div>
+            <div class="item"><span class="n">Referencia</span><span class="v">167</span><span class="p">7%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="big">
+      <div class="bh"><b>Usuarios por país</b><span class="white" style="padding:5px 12px">Ver todo ▾</span></div>
+      <table>
+        <tr><th>País</th><th>Usuarios</th><th>% del total</th><th>Participación</th></tr>
+        <tr><td>🇦🇷 Argentina</td><td>1.887</td><td>78,3%</td><td>1m 55s</td></tr>
+        <tr><td>🇺🇾 Uruguay</td><td>226</td><td>9,4%</td><td>1m 12s</td></tr>
+        <tr><td>🇨🇱 Chile</td><td>151</td><td>6,3%</td><td>1m 31s</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Roboto,Arial,sans-serif;color:#202124;background:#f8f9fa;overflow:hidden}
+.top{height:50px;background:#fff;border-bottom:1px solid #dadce0;display:flex;align-items:center;padding:0 16px;gap:20px}
+.logo{font-size:16px;color:#5f6368;display:flex;align-items:center;gap:8px}
+.logo b{color:#202124;font-weight:600}
+.nav{display:flex;gap:18px;font-size:13px;color:#5f6368;align-items:center;height:50px}
+.nav .n{height:50px;display:flex;align-items:center}.nav .n.on{color:#1a73e8;border-bottom:3px solid #1a73e8;font-weight:500}
+.right{margin-left:auto;display:flex;gap:12px;align-items:center;color:#5f6368;font-size:13px}
+.wrap{display:flex}
+.left{width:208px;border-right:1px solid #dadce0;background:#fff;padding-top:14px}
+.sec{font-size:11px;color:#5f6368;text-transform:uppercase;padding:10px 16px 6px;letter-spacing:.5px;font-weight:500}
+.li{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:13px;color:#3c4043;margin:1px 6px;border-radius:6px}
+.li i{font-style:normal;width:16px;text-align:center;color:#5f6368}
+.li.on{background:#e8f0fe;color:#1a73e8;font-weight:600}
+.content{flex:1;padding:18px 24px}
+.crumb{font-size:13px;color:#5f6368;margin-bottom:12px}.crumb b{color:#202124}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.hdr h1{font-size:19px;font-weight:500}
+.white{border:1px solid #dadce0;background:#fff;color:#3c4043;font-size:13px;padding:8px 14px;border-radius:4px}
+.blue{background:#1a73e8;color:#fff;font-size:13px;padding:8px 16px;border-radius:4px;font-weight:500}
+.big{background:#fff;border:1px solid #dadce0;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.bh{display:flex;align-items:center;justify-content:space-between;padding:13px 17px;border-bottom:1px solid #dadce0}
+.bh b{font-size:14px}
+.bh .pill{background:#e8f0fe;color:#1a73e8;font-size:12px;padding:5px 12px;border-radius:12px}
+.bc{padding:0}
+table{width:100%;border-collapse:collapse}
+th{background:#f8f9fa;font-size:12px;color:#5f6368;font-weight:500;text-align:left;padding:11px 17px;border-bottom:1px solid #dadce0}
+td{font-size:13px;color:#202124;padding:12px 17px;border-bottom:1px solid #f1f3f4}
+tr:last-child td{border-bottom:none}
+.ev{display:flex;align-items:center;gap:10px}
+.ev i{font-style:normal;color:#1a73e8;font-size:15px;background:#e8f0fe;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.switch{width:34px;height:19px;background:#1a73e8;border-radius:10px;position:relative;display:inline-block}
+.switch::after{content:'';position:absolute;top:2px;right:2px;width:15px;height:15px;background:#fff;border-radius:50%}
+.tag{background:#f1f3f4;color:#3c4043;font-size:11px;padding:3px 8px;border-radius:4px}
+.actions{display:flex;gap:10px;margin-top:14px}
+.action{flex:1;background:#fff;border:1px solid #dadce0;border-radius:10px;padding:13px 15px;display:flex;gap:12px;align-items:center}
+.action .num{font-size:12px;color:#5f6368}
+.action b{font-size:14px}
+.action .ic{width:36px;height:36px;border-radius:9px;background:#e8f0fe;color:#1a73e8;display:flex;align-items:center;justify-content:center;font-size:17px}
+.taphint{margin-top:12px;font-size:12px;color:#5f6368}
+</style></head><body>
+<div class="top">
+  <div class="logo">Google <b>Analytics</b></div>
+  <div class="nav"><div class="n">Informes</div><div class="n">Explorar</div><div class="n">Anuncios</div><div class="n on">Configurar</div></div>
+  <div class="right"><span>🔔</span><span>?</span><span>👤</span></div>
+</div>
+<div class="wrap">
+  <div class="left">
+    <div class="sec">Configurar</div>
+    <div class="li"><i>▤</i>Propiedad</div>
+    <div class="li"><i>⌕</i>Secuencia de datos</div>
+    <div class="li on"><i>◪</i>Eventos</div>
+    <div class="li"><i>◫</i>Conversiones</div>
+    <div class="li"><i>👥</i>Audiencias</div>
+    <div class="sec" style="margin-top:8px">Historias de datos</div>
+    <div class="li"><i>⚙</i>Administrador</div>
+  </div>
+  <div class="content">
+    <div class="crumb">Configurar › <b>Eventos</b> — Propiedad: itc-cursos.com</div>
+    <div class="hdr">
+      <div><h1>Eventos</h1><div style="font-size:12.5px;color:#5f6368;margin-top:3px">Cada interacción relevante de los usuarios se mide como un evento.</div></div>
+      <div style="display:flex;gap:10px"><div class="white">Exportar</div><div class="blue">＋ Crear evento</div></div>
+    </div>
+    <div class="big">
+      <div class="bh"><b>Eventos recopilados</b><span class="pill">Últimos 30 días</span></div>
+      <table>
+        <tr><th>Nombre del evento</th><th>Recuento</th><th>Usuarios</th><th>Participación</th><th style="width:14%">Estado</th></tr>
+        <tr>
+          <td><div class="ev"><i>⤴</i><b>page_view</b></div></td><td>14.882</td><td>2.410</td><td>6,2 páginas/sesión</td>
+          <td><span class="switch"></span></td>
+        </tr>
+        <tr>
+          <td><div class="ev"><i>▼</i><b>scroll</b></div></td><td>9.310</td><td>1.984</td><td>63% del contenido</td>
+          <td><span class="switch"></span></td>
+        </tr>
+        <tr>
+          <td><div class="ev"><i>🗎</i><b>form_submit</b></div></td><td>1.247</td><td>1.021</td><td>4 clics por envío</td>
+          <td><span class="switch"></span></td>
+        </tr>
+        <tr>
+          <td><div class="ev"><i>⚡</i><b>session_start</b></div></td><td>3.152</td><td>2.410</td><td>1 por usuario/día</td>
+          <td><span class="switch"></span></td>
+        </tr>
+        <tr>
+          <td><div class="ev"><i>🛒</i><b>add_to_cart</b> <span class="tag">A medida</span></div></td><td>482</td><td>391</td><td>convertido 2× +</td>
+          <td><span class="switch"></span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="actions">
+      <div class="action"><div class="ic">🎯</div><div><b>Eventos a medida</b><div class="num">Sumá tus propias mediciones: llegar al fondo, abrir un chat, cotizar.</div></div></div>
+      <div class="action"><div class="ic">⚙</div><div><b>Evento de conversión</b><div class="num">Marcá como conversión los eventos que equivalen a un objetivo del negocio.</div></div></div>
+    </div>
+    <div class="taphint">Los eventos de página, clic y envío de formulario son automáticos; los a medida se crean sin tocar código.</div>
+  </div>
+</div>
+</body></html>

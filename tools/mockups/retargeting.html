@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Roboto,Arial,sans-serif;color:#1c1e21;background:#f4f6fa;overflow:hidden}
+.top{height:50px;background:#fff;border-bottom:1px solid #e4e6eb;display:flex;align-items:center;padding:0 16px;gap:18px}
+.logo{font-size:16px;font-weight:600;color:#1877f2}.logo span{color:#1c1e21;font-weight:400}
+.right{margin-left:auto;display:flex;gap:16px;align-items:center;color:#65676b;font-size:13px}
+.menu{background:#1877f2;border-radius:4px 4px 0 0;margin-left:8px}
+.menu .t{padding:14px 16px;color:#fff;font-size:13px;font-weight:600}
+.wrap{display:flex}
+.left{width:168px;background:#fff;border-right:1px solid #e4e6eb;padding-top:12px}
+.li{font-size:13px;color:#050505;padding:11px 16px;border-radius:6px;margin:2px 8px}
+.li.on{background:#e7f3ff;color:#1877f2;font-weight:600}
+.content{flex:1;padding:20px 26px}
+.crumb{font-size:13px;color:#65676b;margin-bottom:14px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.hdr h1{font-size:19px;font-weight:700}
+.ghost{border:1px solid #ccd0d5;background:#fff;color:#050505;font-size:13px;padding:8px 14px;border-radius:6px}
+.blue{background:#1877f2;color:#fff;font-size:13px;padding:8px 16px;border-radius:6px;font-weight:600}
+.card{background:#fff;border:1px solid #e4e6eb;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.ch{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid #e4e6eb}
+.ch b{font-size:14px}
+.cb{padding:15px 16px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #f0f2f5}
+.row:last-child{border-bottom:none}
+.icon{width:34px;height:34px;border-radius:9px;background:#e7f3ff;color:#1877f2;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700}
+.name{flex:1;margin-left:12px}
+.name b{font-size:13.5px;display:block}
+.name span{font-size:12px;color:#65676b}
+.size{font-weight:700;font-size:14px}
+.src{background:#f0f2f5;color:#65676b;font-size:11.5px;padding:3px 9px;border-radius:11px}
+.state{background:#e7f3ff;color:#1877f2;font-size:11.5px;padding:3px 9px;border-radius:11px}
+.flow{display:flex;align-items:stretch;gap:8px;margin-top:6px}
+.node{flex:1;background:#eef6ff;border:1px solid #cfe4ff;border-radius:10px;padding:14px 12px;text-align:center}
+.node b{font-size:13px;color:#1877f2;display:block;margin-top:8px}
+.node span{font-size:11px;color:#65676b;display:block;line-height:1.45;margin-top:3px}
+.arrow{align-self:center;color:#1877f2;font-size:18px;font-weight:700}
+.icon2{font-size:22px}
+.note{margin-top:12px;font-size:12px;color:#65676b}
+</style></head><body>
+<div class="top">
+  <div class="logo">Meta <span>Ads Manager</span></div>
+  <div style="font-size:12px;background:#e7f3ff;color:#1877f2;padding:5px 10px;border-radius:5px">ITC Entrenamiento – Cuenta demo</div>
+  <div class="right"><span>⚙</span><span>?</span><span>👤</span></div>
+</div>
+<div class="menu"><div class="t">Crear anuncio ▾</div></div>
+<div class="wrap">
+  <div class="left">
+    <div class="li">Resumen</div>
+    <div class="li">Campañas</div>
+    <div class="li">Conjuntos</div>
+    <div class="li">Anuncios</div>
+    <div class="li on">Audiencias</div>
+    <div class="li">Informes</div>
+  </div>
+  <div class="content">
+    <div class="crumb">Cuenta de anuncios › Audiencias</div>
+    <div class="hdr">
+      <h1>Audiencias personalizadas</h1>
+      <div style="display:flex;gap:10px"><div class="ghost">＋ Crear una audiencia</div><div class="blue">＋ Audiencia similar</div></div>
+    </div>
+    <div class="card">
+      <div class="ch"><b>Origen: tráfico del sitio web (Pixel de Meta)</b></div>
+      <div class="cb">
+        <div class="flow">
+          <div class="node"><div class="icon2">🌐</div><b>Visitante del sitio</b><span>Entra a la web del curso desde una búsqueda o una red social</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><div class="icon2">🎯</div><b>Pixel registra la visita</b><span>Conteo de las personas que navegaron páginas clave</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><div class="icon2">📋</div><b>Audiencia personalizada</b><span>Segmento de personas que ya mostraron interés</span></div>
+          <div class="arrow">→</div>
+          <div class="node"><div class="icon2">📣</div><b>Anuncio de retargeting</b><span>Reaparece frente a esos visitantes y los acerca a la conversión</span></div>
+        </div>
+        <div style="margin-top:14px;background:#f0f8ff;border:1px solid #cfe4ff;border-radius:8px;padding:11px 13px;font-size:12.5px;color:#1877f2">
+          💡 El retargeting recupera a quienes ya mostraron interés: por eso convierte mejor y más barato que una audiencia fría.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <tr><th style="text-align:left;padding:11px 16px;background:#f0f2f5;color:#65676b;font-size:11.5px">Audiencia</th><th style="text-align:left;padding:11px 16px;background:#f0f2f5;color:#65676b;font-size:11.5px">Tamaño</th><th style="text-align:left;padding:11px 16px;background:#f0f2f5;color:#65676b;font-size:11.5px">Estado</th><th style="text-align:left;padding:11px 16px;background:#f0f2f5;color:#65676b;font-size:11.5px">Fuente</th></tr>
+        <tr style="border-bottom:1px solid #f0f2f5">
+          <td style="padding:11px 16px"><div style="display:flex;align-items:center"><div class="icon">🛒</div><div class="name" style="margin-left:12px"><b>Visitantes del sitio — 30 días</b><span>Personas que entraron a itc-cursos.com/marketing</span></div></div></td>
+          <td style="padding:11px 16px"><div class="size">38.210</div></td>
+          <td style="padding:11px 16px"><span class="state">Lista activa</span></td>
+          <td style="padding:11px 16px"><span class="src">Sitio web</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f2f5">
+          <td style="padding:11px 16px"><div style="display:flex;align-items:center"><div class="icon">💳</div><div class="name" style="margin-left:12px"><b>Compradores en el último año</b><span>Clientes que completaron la compra del curso</span></div></div></td>
+          <td style="padding:11px 16px"><div class="size">9.405</div></td>
+          <td style="padding:11px 16px"><span class="state">Lista activa</span></td>
+          <td style="padding:11px 16px"><span class="src">Actividad web</span></td>
+        </tr>
+        <tr>
+          <td style="padding:11px 16px"><div style="display:flex;align-items:center"><div class="icon">▶</div><div class="name" style="margin-left:12px"><b>Usuarios que vieron +50% del video</b><span>Interesados en la intro del curso de marketing</span></div></div></td>
+          <td style="padding:11px 16px"><div class="size">14.762</div></td>
+          <td style="padding:11px 16px"><span class="state">Lista activa</span></td>
+          <td style="padding:11px 16px"><span class="src">Video</span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="note">Crear audiencias personalizadas a partir de tu sitio, tu lista de clientes o tu video es la base del retargeting en Meta.</div>
+  </div>
+</div>
+</body></html>
