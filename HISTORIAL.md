@@ -200,6 +200,14 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
     1366x720): `corel-entorno` (C1), `transformar` (C3), `interseccion-circulos`
     (C4), `tipos-letra` (C6), `degradado` (C8), `sombra`/`resplandor` (C10),
     `marco-foto` (C11), `diseno-logo` (C12), `tarjeta-personal` (C13).
+  - Iteración v2 tras revisión del usuario ("figuras muy básicas"): ejercicios
+    rediseñados como piezas de diseño profesionales — cubierta "Entorno de
+    trabajo", afiche tipográfico (Georgia/Arial/Brush), identidad "VÓRTICE"
+    (positivo/negativo + grilla), tarjeta personal 90x50 mm frente/dorso,
+    Polaroid "La Cordillera" + recorte circular, cartel neón ITC, cubo isométrico
+    con sombra, degradado cielo→amanecer, estrella transformada (escala/rotación),
+    nube por unión de círculos. Ejercicios en SVG (páginas 1600x900) abiertos en
+    el editor real y capturados a 1366x720.
   - Regeneradas las 9 clases afectadas (PDF + HTML + Presentación HTML/PDF/PPTX).
     Presentación C6 quedaba en 1,49 MB → `tipografia.jpg` reescalada a 1200px/70
     (966 KB → 532 KB) → presentación final 902 KB (≤ 1 MB). Todas las demás ≤ 1 MB.
