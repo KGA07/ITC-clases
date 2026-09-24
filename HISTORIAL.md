@@ -1,7 +1,7 @@
 # HISTORIAL DEL PROYECTO — ITC Aula Virtual
 
 Este archivo guarda el historial completo del proyecto para retomarlo
-rápidamente si se pierde la sesión. Fecha de última actualización: 2026-09-23.
+rápidamente si se pierde la sesión. Fecha de última actualización: 2026-09-24.
 
 ---
 
@@ -350,8 +350,49 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
     23-25 figuran con 13 archivos c/u). Lint: 5 errores/11 warnings preexistentes
     en archivos sin tocar (check-firma, generar-presentaciones, list-stale,
     render-mockups).
-- **Próximo - Curso 5: Diseño Técnico FASE 6 completa → Robótica (Arduino IDE)
-  → PyMEs (cierre/reverificar).**
+- **Curso 3 — Robótica con Arduino: FASE 6 completa (22 clases con capturas
+  reales del Arduino IDE 2.3.10 + mockups propios).**
+  - El usuario no tiene Arduino instalado ni hardware → enfoque aprobado
+    «Instalar IDE + investigación»: Arduino IDE 2.3.10 portable + arduino-cli
+    v1.5.1 descargados a `...\Temp\opencode\arduino\` (fuera del repo), core
+    `arduino:avr@1.8.8` instalado (avr-gcc 7.3.0/avrdude 8.0.0).
+  - **5 sketches compilados OK con arduino-cli** (FQBN `arduino:avr:uno`):
+    conociendo_el_ide (Clase 2), blink_setup_loop (Clase 3), sintaxis_prolija
+    (7a), tipos_datos (7b), control_serial (Clase 12). Nota: la UI del IDE sin
+    placa muestra «Missing FQBN… select your Arduino board» → en capturas se
+    muestra el editor con el sketch, sin compilar.
+  - **Auditoría OCR de las 48 imágenes** (`tools/ocr-check.ps1`): se reemplazaron
+    7 dudosas por capturas reales del IDE 2.3.10 y mockups propios:
+    Clase2 `arduino-ide.jpg` (era IDE 2.0.0-rc9), Clase3 `arduino-sketch.jpg`
+    (OCR vacía), Clase7 `arduino-sintaxis.jpg` (editor «RubyTArduino») +
+    `arduino-codigo.jpg` (IDE 1.8.5 viejo), Clase12 `arduino-serial.jpg` +
+    `puerto-serial.jpg`, Clase16 `lcd-16x2.jpg` (watermark www.onlineTPS.com).
+    Se mantuvieron fotos reales (serial-monitor, arduino-usb, rfid-rc522…) y
+    diagramas verificados (rgb-composicion, protoboard-circuito, ic-74hc595).
+  - **Capturas IDE**: ventana 1366x768/720, título `<sketch> | Arduino IDE 2.3.10`,
+    `tools/img-capture.ps1 -ProcName 'Arduino IDE'`; 5 capturas OCR-validadas.
+  - **Mockups propios** (nuevos, `tools/mockups/`): `monitor-serial.html` →
+    monitor-serial.jpg (Monitor Serie con caja de envío y respuestas del
+    control_serial) y `lcd-i2c-circuito.html` → lcd-circuito.jpg (LCD 16x2
+    «Hola robótica! / SEMAFORO ACTIVO» + módulo I2C→UNO). Renderizados con
+    Chrome headless 1366x720 y OCR-validados. NOTA: no agregados aún al TARGETS
+    de render-mockups.js (se renderizan a mano).
+  - **Backups**: originales en `...\Temp\opencode\backup-robotica\`.
+  - **Specs 12 y 16**: alt/caption actualizados (arduino-serial ahora describe el
+    sketch de control por Serial; lcd-16x2 describe el módulo I2C). Resto de
+    captions ya era coherente con las capturas.
+  - **Optimización de peso**: fotos grandes de componentes re-comprimidas a
+    900px q78 (Clase1 arduino-uno/shields, Clase15 motor-*/servo, Clase18
+    fotoresistor/sensor-distancia/sensor-sonido) → presentaciones HTML pasan a
+    ≤ 972 KB (regla ≤ 1 MB OK, antes Clase18 ≈ 1.9 MB).
+  - Regeneradas **22/22 clases** (PDF, Lectura, Guía, Práctica HTML) y **22/22
+    presentaciones** (HTML/PDF/PPTX) con `--filtro robotica-clase-`. El catálogo
+    re-embeble las imágenes en base64 en los interactivos del portal (convención
+    Diagnóstico).
+  - QA final: `check-firma` 624/624, `list-stale-specs` 0, `npm run catalog` OK
+    (10 capacitaciones, 2295 archivos, ~5603 MB), `npm test` 14/14. Lint: 5
+    errores/11 warnings **preexistentes** (no tocados).
+- **Próximo - Curso 1: Administración de PyMEs (cierre/reverificar FASE 6).**
 
 ## Cómo arrancar el proyecto (resumen)
 

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Arial,sans-serif;background:#1e2733;overflow:hidden;color:#e8e8e8;font-size:14px}
+.ide{position:absolute;inset:0;display:flex;flex-direction:column;background:#ffffff}
+.topbar{height:38px;background:#fafafa;border-bottom:1px solid #d9d9d9;display:flex;align-items:center;gap:6px;padding:0 12px}
+.topbar .brand{display:flex;align-items:center;gap:8px;color:#00979d;font-weight:600;font-size:14px}
+.tabs{display:flex;align-items:center;margin-left:18px;color:#444;font-size:12.5px;gap:10px}
+.tabs .sk{background:#00979d;color:#fff;padding:2px 10px;border-radius:3px}
+.body{flex:1;display:flex;flex-direction:column;background:#ffffff}
+.code{flex:1;font-family:'Consolas','Courier New',monospace;font-size:14px;color:#1f2933;padding:18px 22px;line-height:1.75;white-space:pre;overflow:hidden}
+.code .cmt{color:#6a9955}
+.code .kw{color:#d16900}
+.code .num{color:#b5cea8}
+.serial{height:210px;background:#ffffff;border-top:1px solid #cccccc;display:flex;flex-direction:column;font-family:'Consolas','Courier New',monospace}
+.serial header{height:34px;background:#f2f2f2;border-bottom:1px solid #d9d9d9;display:flex;align-items:center;gap:8px;padding:0 10px;font-size:12px;color:#333}
+.serial header .badge{background:#e8e8e8;padding:1px 8px;border-radius:3px;color:#444}
+.serial header .puerto{margin-left:auto;color:#666;font-size:11.5px}
+.send{height:40px;display:flex;align-items:center;gap:8px;padding:4px 10px;border-bottom:1px solid #f0f0f0}
+.send input{flex:1;height:26px;border:1px solid #c8c8c8;border-radius:3px;padding:0 10px;font-size:12.5px;color:#333;background:#fff}
+.send .btn{background:#0064c8;color:#fff;padding:4px 16px;border-radius:3px;font-size:12.5px}
+.output{flex:1;padding:6px 12px;font-size:12.5px;color:#1f2933;line-height:1.9;overflow:hidden}
+.output .in{color:#7a7a7a}
+.footbar{height:24px;background:#fafafa;border-top:1px solid #d9d9d9;display:flex;align-items:center;padding:0 14px;font-size:11px;color:#666;gap:8px}
+.footbar .r{margin-left:auto;display:flex;gap:12px}
+</style></head><body>
+<div class="ide">
+  <div class="topbar">
+    <div class="brand">Arduino IDE 2.3.10</div>
+    <div class="tabs"><span class="sk">control_serial.ino</span></div>
+  </div>
+  <div class="body">
+    <div class="code"><span class="cmt">// Ingreso de datos por Serial: control de un LED por comandos</span>
+<span class="kw">const int</span> pinLED = <span class="num">9</span>;
+
+<span class="kw">void</span> setup() {
+  Serial.begin(<span class="num">9600</span>);
+  pinMode(pinLED, OUTPUT);
+  Serial.println(<span class="cmt">"Envia 0=apagar 1=prender 2=parpadear 0-255=brillo"</span>);
+}
+
+<span class="kw">void</span> loop() {
+  <span class="kw">if</span> (Serial.available() &gt; <span class="num">0</span>) {
+    <span class="kw">int</span> cmd = Serial.parseInt();</div>
+    <div class="serial">
+      <header>
+        <span class="badge">Serial Monitor</span>
+        <span class="badge">Serial Plotter</span>
+        <span class="puerto">COM4 (Arduino Uno) · 9600 baud</span>
+      </header>
+      <div class="send">
+        <input value="255" disabled>
+        <div class="btn">Enviar</div>
+      </div>
+      <div class="output">
+Envia 0=apagar 1=prender 2=parpadear 0-255=brillo<br>
+<span class="in">&gt; 0</span>  &nbsp;→ LED apagado<br>
+<span class="in">&gt; 1</span>  &nbsp;→ LED encendido<br>
+<span class="in">&gt; 2</span>  &nbsp;→ LED parpadeando (3 veces)<br>
+<span class="in">&gt; 128</span> → Brillo LED = 128
+      </div>
+    </div>
+  </div>
+  <div class="footbar">
+    <span>256 bytes (1%) de espacio de programa</span>
+    <span class="r"><span>Lin 11, Col 24</span><span>Arduino Uno</span></span>
+  </div>
+</div>
+</body></html>

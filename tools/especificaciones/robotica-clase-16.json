@@ -28,8 +28,8 @@
       "emoji": "🖥️",
       "imagen": {
         "src": "img/lcd-16x2.jpg",
-        "alt": "Display LCD 16x2",
-        "caption": "El LCD 16x2 muestra 16 caracteres en 2 líneas."
+        "alt": "Display LCD 16x2 con módulo I2C",
+        "caption": "El LCD 16x2 con su módulo I2C se conecta con solo 4 cables: SDA, SCL, VCC y GND."
       },
       "parrafos": [
         "El display LCD 16x2 tiene 16 columnas y 2 filas, por lo que muestra hasta 32 caracteres. Es ideal para mostrar lecturas de sensores, mensajes y estados sin depender del monitor de la PC.",

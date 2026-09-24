@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1366px;height:720px;font-family:'Segoe UI',Arial,sans-serif;background:#1e2733;overflow:hidden;color:#e8e8e8}
+.wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:34px;background:linear-gradient(#2a3441,#1e2733)}
+.uno{width:430px;height:440px;background:#1a9eaf;border-radius:10px;position:relative;box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.uno .chip{position:absolute;left:120px;top:130px;width:180px;height:120px;background:#1f1f1f;border:2px solid #000;border-radius:6px}
+.uno .chip span{position:absolute;left:70px;top:44px;color:#ddd;font-size:17px;font-weight:600;letter-spacing:.5px;white-space:nowrap}
+.uno .usb{position:absolute;left:150px;top:38px;width:100px;height:26px;background:#3a3a3a;border-radius:3px;text-align:center;color:#9fb;}
+.uno .etiqueta{position:absolute;bottom:14px;width:100%;text-align:center;color:#eafff5;font-size:19px;font-weight:600;letter-spacing:2px}
+.uno .pin-a{position:absolute;left:52px;top:330px;color:#083b44;font-size:13px;font-family:Consolas;line-height:1.95}
+.down{width:470px;display:flex;flex-direction:column;gap:26px}
+.lcd-panel{background:#1a1a1a;border-radius:10px;padding:20px;box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.amort{background:#11332c;border-radius:12px;padding:16px 22px}
+.screen{background:#bfe6ae;border-radius:6px;padding:18px 22px;font-family:Consolas,Courier;font-size:40px;color:#0b4a17;text-shadow:0 0 10px rgba(120,255,120,.55);line-height:1.55;letter-spacing:3px}
+.i2c{border-radius:10px;background:#40291d;padding:18px 20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.i2c .t{color:#e6c9a8;font-size:13px;margin-bottom:2px}
+.i2c .pins{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.i2c .pin{background:#fff;border-radius:4px;border-bottom:3px solid #b98a5a;text-align:center;padding:10px 0;color:#222;font-family:Consolas;font-size:13px}
+.cables{position:absolute;left:486px;top:60px;width:8px;height:330px;background:rgba(255,255,255,0)}
+.cable{width:7px;border-radius:4px;position:absolute}
+.c1{background:#e8b04b;top:120px;left:0}
+.c2{background:#d33b3b;top:180px;left:14px}
+.c3{background:#3580d8;top:230px;left:0}
+.c4{background:#e8b04b;top:280px;left:14px}
+.cap{position:absolute;left:0;top:390px;width:330px;color:#c9d4e0;font-size:13.5px;line-height:1.8}
+.cap b{color:#fff}
+</style></head><body>
+<div class="wrap">
+  <div style="position:relative;height:440px">
+    <div class="uno">
+      <div class="usb">USB</div>
+      <div class="chip"><span>Arduino</span></div>
+      <div class="pin-a">A4/SDA · A5/SCL · 5V · GND</div>
+      <div class="etiqueta">UNO · 3ATENEO</div>
+    </div>
+    <div class="cables">
+      <div class="cable c1"></div><div class="cable c2"></div>
+      <div class="cable c3"></div><div class="cable c4"></div>
+    </div>
+    <div class="cap"><b>Conexión I2C:</b><br>
+      SDA (dorsal) → A4<br>
+      SCL (dorado) → A5<br>
+      VCC → 5V &nbsp;·&nbsp; GND → GND</div>
+  </div>
+  <div class="down">
+    <div class="lcd-panel">
+      <div class="amort">
+        <div class="screen">Hola robótica!<br>SEMAFORO ACTIVO</div>
+      </div>
+    </div>
+    <div class="i2c">
+      <div class="t">Módulo I2C — 4 hilos reemplazan 16 cables</div>
+      <div class="pins">
+        <div class="pin">GND</div><div class="pin">VCC</div><div class="pin">SDA</div><div class="pin">SCL</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

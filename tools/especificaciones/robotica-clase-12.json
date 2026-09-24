@@ -28,8 +28,8 @@
       "emoji": "🔁",
       "imagen": {
         "src": "img/arduino-serial.jpg",
-        "alt": "Conexión USB entre placa y PC",
-        "caption": "El Monitor Serie permite tanto enviar como recibir datos por el mismo cable USB."
+        "alt": "Sketch de control por Serial abierto en el IDE",
+        "caption": "Con Serial.available() y Serial.parseInt() la placa lee los comandos que llegaron por USB."
       },
       "parrafos": [
         "En la clase anterior viste cómo la placa envía datos a la PC. Pero la comunicación te permite también lo contrario: vos escribís un dato en el cuadro superior del Monitor Serie y, al presionar Enviar, ese dato viaja hacia la placa.",

@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-24T18:56:49.663Z",
+  "generado": "2026-09-24T20:06:55.931Z",
   "fuentes": {
     "local": "I:\\ITC",
     "drive": {
@@ -18997,7 +18997,7 @@
       "stats": {
         "clases": 25,
         "archivos": 236,
-        "tamanoMB": 2272.9
+        "tamanoMB": 2268.7
       },
       "modulos": [
         {
@@ -19011,7 +19011,7 @@
                   "nombre": "Clase 1 - ¿Qué es Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1856238,
+                  "size": 1222973,
                   "ruta": "@Clases/Clase 1 Introducción que es Arduino/Clase 1 - ¿Qué es Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -19061,7 +19061,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 993213,
+                  "size": 360414,
                   "ruta": "@Clases/Clase 1 Introducción que es Arduino/img",
                   "archivos": 2,
                   "url": "",
@@ -19074,7 +19074,7 @@
                   "nombre": "Lectura Clase 1 - ¿Qué es Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1766329,
+                  "size": 1133060,
                   "ruta": "@Clases/Clase 1 Introducción que es Arduino/Lectura Clase 1 - ¿Qué es Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -19096,19 +19096,19 @@
                   "nombre": "Presentacion Clase 1 - ¿Qué es Arduino.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12750,
+                  "size": 493162,
                   "ruta": "@Clases/Clase 1 Introducción que es Arduino/Presentacion Clase 1 - ¿Qué es Arduino.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-1-clase-1-introduccion-que-es-arduino-presentacion-clase-1-que-es-arduino-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(482 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 1 - ¿Qué es Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1596494,
+                  "size": 963235,
                   "ruta": "@Clases/Clase 1 Introducción que es Arduino/Presentacion Clase 1 - ¿Qué es Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -19118,14 +19118,14 @@
                   "nombre": "Presentacion Clase 1 - ¿Qué es Arduino.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1114802,
+                  "size": 482003,
                   "ruta": "@Clases/Clase 1 Introducción que es Arduino/Presentacion Clase 1 - ¿Qué es Arduino.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 435531877
+              "tamanoBytes": 432846898
             },
             {
               "id": "robotica-arduino-clase-2-clase-10-pulsadores",
@@ -19190,12 +19190,12 @@
                   "nombre": "Presentacion Clase 10 - Pulsadores.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11786,
+                  "size": 573081,
                   "ruta": "@Clases/Clase 10 - Pulsadores/Presentacion Clase 10 - Pulsadores.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-2-clase-10-pulsadores-presentacion-clase-10-pulsadores-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(560 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -19219,7 +19219,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4329806
+              "tamanoBytes": 4891101
             },
             {
               "id": "robotica-arduino-clase-3-clase-11-led-rgb-y-composicion-de-color",
@@ -19284,12 +19284,12 @@
                   "nombre": "Presentacion Clase 11 - LED RGB y composición de color.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11853,
+                  "size": 308325,
                   "ruta": "@Clases/Clase 11 - LED RGB y composición de color/Presentacion Clase 11 - LED RGB y composición de color.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-3-clase-11-led-rgb-y-composicion-de-color-presentacion-clase-11-led-rgb-y-composicion-de-color-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(301 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -19313,7 +19313,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 3602200
+              "tamanoBytes": 3898672
             },
             {
               "id": "robotica-arduino-clase-4-clase-12-ingreso-de-datos-por-serial",
@@ -19323,7 +19323,7 @@
                   "nombre": "Clase 12 - Ingreso de datos por Serial.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1158203,
+                  "size": 779543,
                   "ruta": "@Clases/Clase 12 - Ingreso de datos por Serial/Clase 12 - Ingreso de datos por Serial.pdf",
                   "url": "",
                   "embebible": false,
@@ -19343,7 +19343,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 505630,
+                  "size": 134379,
                   "ruta": "@Clases/Clase 12 - Ingreso de datos por Serial/img",
                   "archivos": 2,
                   "url": "",
@@ -19356,7 +19356,7 @@
                   "nombre": "Lectura Clase 12 - Ingreso de datos por Serial.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1065967,
+                  "size": 687584,
                   "ruta": "@Clases/Clase 12 - Ingreso de datos por Serial/Lectura Clase 12 - Ingreso de datos por Serial.pdf",
                   "url": "",
                   "embebible": false,
@@ -19378,19 +19378,19 @@
                   "nombre": "Presentacion Clase 12 - Ingreso de datos por Serial.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11819,
+                  "size": 190846,
                   "ruta": "@Clases/Clase 12 - Ingreso de datos por Serial/Presentacion Clase 12 - Ingreso de datos por Serial.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-4-clase-12-ingreso-de-datos-por-serial-presentacion-clase-12-ingreso-de-datos-por-serial-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(186 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 12 - Ingreso de datos por Serial.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 887891,
+                  "size": 513560,
                   "ruta": "@Clases/Clase 12 - Ingreso de datos por Serial/Presentacion Clase 12 - Ingreso de datos por Serial.pdf",
                   "url": "",
                   "embebible": false,
@@ -19400,14 +19400,14 @@
                   "nombre": "Presentacion Clase 12 - Ingreso de datos por Serial.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 620587,
+                  "size": 249336,
                   "ruta": "@Clases/Clase 12 - Ingreso de datos por Serial/Presentacion Clase 12 - Ingreso de datos por Serial.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4813580
+              "tamanoBytes": 3118731
             },
             {
               "id": "robotica-arduino-clase-5-clase-13-buzzer-y-potenciometro",
@@ -19472,12 +19472,12 @@
                   "nombre": "Presentacion Clase 13 - Buzzer y potenciómetro.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11702,
+                  "size": 556617,
                   "ruta": "@Clases/Clase 13 - Buzzer y potenciómetro/Presentacion Clase 13 - Buzzer y potenciómetro.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-5-clase-13-buzzer-y-potenciometro-presentacion-clase-13-buzzer-y-potenciometro-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(544 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -19501,7 +19501,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4603480
+              "tamanoBytes": 5148395
             },
             {
               "id": "robotica-arduino-clase-6-clase-14-teclado-4x4-y-matrices",
@@ -19566,12 +19566,12 @@
                   "nombre": "Presentacion Clase 14 - Teclado 4x4 y matrices.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11996,
+                  "size": 995400,
                   "ruta": "@Clases/Clase 14 - Teclado 4x4 y matrices/Presentacion Clase 14 - Teclado 4x4 y matrices.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-6-clase-14-teclado-4x4-y-matrices-presentacion-clase-14-teclado-4x4-y-matrices-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(972 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -19595,7 +19595,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 6267008
+              "tamanoBytes": 7250412
             },
             {
               "id": "robotica-arduino-clase-7-clase-15-motores-pap-y-servomotor",
@@ -19605,7 +19605,7 @@
                   "nombre": "Clase 15 - Motores PAP y servomotor.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1704949,
+                  "size": 1052347,
                   "ruta": "@Clases/Clase 15 - Motores PAP y servomotor/Clase 15 - Motores PAP y servomotor.pdf",
                   "url": "",
                   "embebible": false,
@@ -19625,7 +19625,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 987342,
+                  "size": 335195,
                   "ruta": "@Clases/Clase 15 - Motores PAP y servomotor/img",
                   "archivos": 3,
                   "url": "",
@@ -19638,7 +19638,7 @@
                   "nombre": "Lectura Clase 15 - Motores PAP y servomotor.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1612917,
+                  "size": 959845,
                   "ruta": "@Clases/Clase 15 - Motores PAP y servomotor/Lectura Clase 15 - Motores PAP y servomotor.pdf",
                   "url": "",
                   "embebible": false,
@@ -19660,19 +19660,19 @@
                   "nombre": "Presentacion Clase 15 - Motores PAP y servomotor.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11726,
+                  "size": 458464,
                   "ruta": "@Clases/Clase 15 - Motores PAP y servomotor/Presentacion Clase 15 - Motores PAP y servomotor.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-7-clase-15-motores-pap-y-servomotor-presentacion-clase-15-motores-pap-y-servomotor-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(448 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 15 - Motores PAP y servomotor.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1435162,
+                  "size": 782552,
                   "ruta": "@Clases/Clase 15 - Motores PAP y servomotor/Presentacion Clase 15 - Motores PAP y servomotor.pdf",
                   "url": "",
                   "embebible": false,
@@ -19682,14 +19682,14 @@
                   "nombre": "Presentacion Clase 15 - Motores PAP y servomotor.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1102869,
+                  "size": 450722,
                   "ruta": "@Clases/Clase 15 - Motores PAP y servomotor/Presentacion Clase 15 - Motores PAP y servomotor.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 7418006
+              "tamanoBytes": 4602166
             },
             {
               "id": "robotica-arduino-clase-8-clase-16-display-lcd-con-modulo-i2c",
@@ -19699,7 +19699,7 @@
                   "nombre": "Clase 16 - Display LCD con módulo I2C.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1178864,
+                  "size": 1164479,
                   "ruta": "@Clases/Clase 16 - Display LCD con módulo I2C/Clase 16 - Display LCD con módulo I2C.pdf",
                   "url": "",
                   "embebible": false,
@@ -19719,7 +19719,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 187612,
+                  "size": 174183,
                   "ruta": "@Clases/Clase 16 - Display LCD con módulo I2C/img",
                   "archivos": 2,
                   "url": "",
@@ -19732,7 +19732,7 @@
                   "nombre": "Lectura Clase 16 - Display LCD con módulo I2C.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1085753,
+                  "size": 1072174,
                   "ruta": "@Clases/Clase 16 - Display LCD con módulo I2C/Lectura Clase 16 - Display LCD con módulo I2C.pdf",
                   "url": "",
                   "embebible": false,
@@ -19754,19 +19754,19 @@
                   "nombre": "Presentacion Clase 16 - Display LCD con módulo I2C.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12585,
+                  "size": 244700,
                   "ruta": "@Clases/Clase 16 - Display LCD con módulo I2C/Presentacion Clase 16 - Display LCD con módulo I2C.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-8-clase-16-display-lcd-con-modulo-i2c-presentacion-clase-16-display-lcd-con-modulo-i2c-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(239 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 16 - Display LCD con módulo I2C.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 916329,
+                  "size": 902397,
                   "ruta": "@Clases/Clase 16 - Display LCD con módulo I2C/Presentacion Clase 16 - Display LCD con módulo I2C.pdf",
                   "url": "",
                   "embebible": false,
@@ -19776,14 +19776,14 @@
                   "nombre": "Presentacion Clase 16 - Display LCD con módulo I2C.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 310980,
+                  "size": 297551,
                   "ruta": "@Clases/Clase 16 - Display LCD con módulo I2C/Presentacion Clase 16 - Display LCD con módulo I2C.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4255993
+              "tamanoBytes": 4419354
             },
             {
               "id": "robotica-arduino-clase-9-clase-17-sensor-dht-y-display-7-segmentos",
@@ -19848,12 +19848,12 @@
                   "nombre": "Presentacion Clase 17 - Sensor DHT y display 7 segmentos.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12683,
+                  "size": 689685,
                   "ruta": "@Clases/Clase 17 - Sensor DHT y display 7 segmentos/Presentacion Clase 17 - Sensor DHT y display 7 segmentos.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-9-clase-17-sensor-dht-y-display-7-segmentos-presentacion-clase-17-sensor-dht-y-display-7-segmentos-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(674 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -19877,7 +19877,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 6004547
+              "tamanoBytes": 6681549
             },
             {
               "id": "robotica-arduino-clase-10-clase-18-sensores-digitales",
@@ -19887,7 +19887,7 @@
                   "nombre": "Clase 18 - Sensores digitales.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2262008,
+                  "size": 1309895,
                   "ruta": "@Clases/Clase 18 - Sensores digitales/Clase 18 - Sensores digitales.pdf",
                   "url": "",
                   "embebible": false,
@@ -19907,20 +19907,20 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1457269,
+                  "size": 505017,
                   "ruta": "@Clases/Clase 18 - Sensores digitales/img",
                   "archivos": 3,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.4 MB)",
+                  "notas": "",
                   "descripcion": "Carpeta con archivos"
                 },
                 {
                   "nombre": "Lectura Clase 18 - Sensores digitales.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2168547,
+                  "size": 1216444,
                   "ruta": "@Clases/Clase 18 - Sensores digitales/Lectura Clase 18 - Sensores digitales.pdf",
                   "url": "",
                   "embebible": false,
@@ -19942,19 +19942,19 @@
                   "nombre": "Presentacion Clase 18 - Sensores digitales.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12745,
+                  "size": 685914,
                   "ruta": "@Clases/Clase 18 - Sensores digitales/Presentacion Clase 18 - Sensores digitales.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-10-clase-18-sensores-digitales-presentacion-clase-18-sensores-digitales-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(670 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 18 - Sensores digitales.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1977507,
+                  "size": 1024862,
                   "ruta": "@Clases/Clase 18 - Sensores digitales/Presentacion Clase 18 - Sensores digitales.pdf",
                   "url": "",
                   "embebible": false,
@@ -19964,14 +19964,14 @@
                   "nombre": "Presentacion Clase 18 - Sensores digitales.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1581450,
+                  "size": 629198,
                   "ruta": "@Clases/Clase 18 - Sensores digitales/Presentacion Clase 18 - Sensores digitales.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 10021846
+              "tamanoBytes": 5933650
             },
             {
               "id": "robotica-arduino-clase-11-clase-19-rfid-rc522-y-eeprom",
@@ -20036,12 +20036,12 @@
                   "nombre": "Presentacion Clase 19 - RFID RC522 y memoria EEPROM.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11859,
+                  "size": 433435,
                   "ruta": "@Clases/Clase 19 - RFID RC522 y EEPROM/Presentacion Clase 19 - RFID RC522 y memoria EEPROM.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-11-clase-19-rfid-rc522-y-eeprom-presentacion-clase-19-rfid-rc522-y-memoria-eeprom-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(423 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20065,7 +20065,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4361404
+              "tamanoBytes": 4782980
             },
             {
               "id": "robotica-arduino-clase-12-clase-2",
@@ -20075,7 +20075,7 @@
                   "nombre": "Clase 2 - Componentes del Kit e IDE Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1233105,
+                  "size": 1177023,
                   "ruta": "@Clases/Clase 2/Clase 2 - Componentes del Kit e IDE Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20115,7 +20115,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 315818,
+                  "size": 259721,
                   "ruta": "@Clases/Clase 2/img",
                   "archivos": 2,
                   "url": "",
@@ -20128,7 +20128,7 @@
                   "nombre": "Lectura Clase 2 - Componentes del Kit e IDE Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1143392,
+                  "size": 1087329,
                   "ruta": "@Clases/Clase 2/Lectura Clase 2 - Componentes del Kit e IDE Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20196,19 +20196,19 @@
                   "nombre": "Presentacion Clase 2 - Componentes del Kit e IDE Arduino.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12562,
+                  "size": 358779,
                   "ruta": "@Clases/Clase 2/Presentacion Clase 2 - Componentes del Kit e IDE Arduino.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-12-clase-2-presentacion-clase-2-componentes-del-kit-e-ide-arduino-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(350 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 2 - Componentes del Kit e IDE Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 980615,
+                  "size": 924467,
                   "ruta": "@Clases/Clase 2/Presentacion Clase 2 - Componentes del Kit e IDE Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20218,7 +20218,7 @@
                   "nombre": "Presentacion Clase 2 - Componentes del Kit e IDE Arduino.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 438068,
+                  "size": 381971,
                   "ruta": "@Clases/Clase 2/Presentacion Clase 2 - Componentes del Kit e IDE Arduino.pptx",
                   "url": "",
                   "embebible": false,
@@ -20247,7 +20247,7 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 }
               ],
-              "tamanoBytes": 8476442
+              "tamanoBytes": 8542172
             },
             {
               "id": "robotica-arduino-clase-13-clase-20-control-remoto-ir-y-relay",
@@ -20312,12 +20312,12 @@
                   "nombre": "Presentacion Clase 20 - Control remoto IR y relay.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12227,
+                  "size": 491653,
                   "ruta": "@Clases/Clase 20 - Control remoto IR y relay/Presentacion Clase 20 - Control remoto IR y relay.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-13-clase-20-control-remoto-ir-y-relay-presentacion-clase-20-control-remoto-ir-y-relay-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(480 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20341,7 +20341,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4378528
+              "tamanoBytes": 4857954
             },
             {
               "id": "robotica-arduino-clase-14-clase-21-modulo-rtc",
@@ -20406,12 +20406,12 @@
                   "nombre": "Presentacion Clase 21 - Módulo RTC (reloj en tiempo real).html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11886,
+                  "size": 293388,
                   "ruta": "@Clases/Clase 21 - Módulo RTC/Presentacion Clase 21 - Módulo RTC (reloj en tiempo real).html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-14-clase-21-modulo-rtc-presentacion-clase-21-modulo-rtc-reloj-en-tiempo-real-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(287 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20435,7 +20435,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4063639
+              "tamanoBytes": 4345141
             },
             {
               "id": "robotica-arduino-clase-15-clase-22-circuitos-de-integracion",
@@ -20500,12 +20500,12 @@
                   "nombre": "Presentacion Clase 22 - Circuitos de integración.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11967,
+                  "size": 767712,
                   "ruta": "@Clases/Clase 22 - Circuitos de integración/Presentacion Clase 22 - Circuitos de integración.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-15-clase-22-circuitos-de-integracion-presentacion-clase-22-circuitos-de-integracion-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(750 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20529,7 +20529,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5190105
+              "tamanoBytes": 5945850
             },
             {
               "id": "robotica-arduino-clase-16-clase-3-estructura-basica-de-un-programa-arduino",
@@ -20539,7 +20539,7 @@
                   "nombre": "Clase 3 - Estructura básica de un programa Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1030599,
+                  "size": 918468,
                   "ruta": "@Clases/Clase 3 - Estructura básica de un programa Arduino/Clase 3 - Estructura básica de un programa Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20559,7 +20559,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 266322,
+                  "size": 152872,
                   "ruta": "@Clases/Clase 3 - Estructura básica de un programa Arduino/img",
                   "archivos": 2,
                   "url": "",
@@ -20572,7 +20572,7 @@
                   "nombre": "Lectura Clase 3 - Estructura básica de un programa Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 939512,
+                  "size": 827791,
                   "ruta": "@Clases/Clase 3 - Estructura básica de un programa Arduino/Lectura Clase 3 - Estructura básica de un programa Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20594,19 +20594,19 @@
                   "nombre": "Presentacion Clase 3 - Estructura básica de un programa Arduino.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11408,
+                  "size": 215065,
                   "ruta": "@Clases/Clase 3 - Estructura básica de un programa Arduino/Presentacion Clase 3 - Estructura básica de un programa Arduino.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-16-clase-3-estructura-basica-de-un-programa-arduino-presentacion-clase-3-estructura-basica-de-un-programa-arduino-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(210 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 3 - Estructura básica de un programa Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 766418,
+                  "size": 653671,
                   "ruta": "@Clases/Clase 3 - Estructura básica de un programa Arduino/Presentacion Clase 3 - Estructura básica de un programa Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20616,14 +20616,14 @@
                   "nombre": "Presentacion Clase 3 - Estructura básica de un programa Arduino.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 379559,
+                  "size": 266109,
                   "ruta": "@Clases/Clase 3 - Estructura básica de un programa Arduino/Presentacion Clase 3 - Estructura básica de un programa Arduino.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 3956928
+              "tamanoBytes": 3597086
             },
             {
               "id": "robotica-arduino-clase-17-clase-4-pines-de-conexion-de-la-placa",
@@ -20688,12 +20688,12 @@
                   "nombre": "Presentacion Clase 4 - Pines de conexión de la placa.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11732,
+                  "size": 739856,
                   "ruta": "@Clases/Clase 4 - Pines de conexión de la placa/Presentacion Clase 4 - Pines de conexión de la placa.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-17-clase-4-pines-de-conexion-de-la-placa-presentacion-clase-4-pines-de-conexion-de-la-placa-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(723 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20717,7 +20717,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4926324
+              "tamanoBytes": 5654448
             },
             {
               "id": "robotica-arduino-clase-18-clase-5-protoboard-y-simulacion-en-tinkercad",
@@ -20782,12 +20782,12 @@
                   "nombre": "Presentacion Clase 5 - Protoboard y simulación en TinkerCad.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12046,
+                  "size": 408881,
                   "ruta": "@Clases/Clase 5 - Protoboard y simulación en TinkerCad/Presentacion Clase 5 - Protoboard y simulación en TinkerCad.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-18-clase-5-protoboard-y-simulacion-en-tinkercad-presentacion-clase-5-protoboard-y-simulacion-en-tinkercad-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(399 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20811,7 +20811,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 3861007
+              "tamanoBytes": 4257842
             },
             {
               "id": "robotica-arduino-clase-19-clase-6-leds-resistencias-y-ley-de-ohm",
@@ -20876,12 +20876,12 @@
                   "nombre": "Presentacion Clase 6 - LEDs, resistencias y Ley de Ohm.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12236,
+                  "size": 786494,
                   "ruta": "@Clases/Clase 6 - LEDs, resistencias y Ley de Ohm/Presentacion Clase 6 - LEDs, resistencias y Ley de Ohm.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-19-clase-6-leds-resistencias-y-ley-de-ohm-presentacion-clase-6-leds-resistencias-y-ley-de-ohm-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(768 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -20905,7 +20905,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5805682
+              "tamanoBytes": 6579940
             },
             {
               "id": "robotica-arduino-clase-20-clase-7-sintaxis-de-lenguaje-arduino",
@@ -20915,7 +20915,7 @@
                   "nombre": "Clase 7 - Sintaxis de lenguaje Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1057041,
+                  "size": 831367,
                   "ruta": "@Clases/Clase 7 - Sintaxis de lenguaje Arduino/Clase 7 - Sintaxis de lenguaje Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20935,7 +20935,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 351918,
+                  "size": 131504,
                   "ruta": "@Clases/Clase 7 - Sintaxis de lenguaje Arduino/img",
                   "archivos": 2,
                   "url": "",
@@ -20948,7 +20948,7 @@
                   "nombre": "Lectura Clase 7 - Sintaxis de lenguaje Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 965698,
+                  "size": 740096,
                   "ruta": "@Clases/Clase 7 - Sintaxis de lenguaje Arduino/Lectura Clase 7 - Sintaxis de lenguaje Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20970,19 +20970,19 @@
                   "nombre": "Presentacion Clase 7 - Sintaxis de lenguaje Arduino.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11989,
+                  "size": 187181,
                   "ruta": "@Clases/Clase 7 - Sintaxis de lenguaje Arduino/Presentacion Clase 7 - Sintaxis de lenguaje Arduino.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-20-clase-7-sintaxis-de-lenguaje-arduino-presentacion-clase-7-sintaxis-de-lenguaje-arduino-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(183 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 7 - Sintaxis de lenguaje Arduino.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 792537,
+                  "size": 568972,
                   "ruta": "@Clases/Clase 7 - Sintaxis de lenguaje Arduino/Presentacion Clase 7 - Sintaxis de lenguaje Arduino.pdf",
                   "url": "",
                   "embebible": false,
@@ -20992,14 +20992,14 @@
                   "nombre": "Presentacion Clase 7 - Sintaxis de lenguaje Arduino.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 467017,
+                  "size": 246603,
                   "ruta": "@Clases/Clase 7 - Sintaxis de lenguaje Arduino/Presentacion Clase 7 - Sintaxis de lenguaje Arduino.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4209000
+              "tamanoBytes": 3268523
             },
             {
               "id": "robotica-arduino-clase-21-clase-8-monitor-serie",
@@ -21064,12 +21064,12 @@
                   "nombre": "Presentacion Clase 8 - Monitor Serie.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11750,
+                  "size": 398889,
                   "ruta": "@Clases/Clase 8 - Monitor Serie/Presentacion Clase 8 - Monitor Serie.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-21-clase-8-monitor-serie-presentacion-clase-8-monitor-serie-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(390 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -21093,7 +21093,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4527021
+              "tamanoBytes": 4914160
             },
             {
               "id": "robotica-arduino-clase-22-clase-9-semaforo-con-leds",
@@ -21158,12 +21158,12 @@
                   "nombre": "Presentacion Clase 9 - Circuitos de LEDs múltiples – Semáforo.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11686,
+                  "size": 677460,
                   "ruta": "@Clases/Clase 9 - Semáforo con LEDs/Presentacion Clase 9 - Circuitos de LEDs múltiples – Semáforo.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/robotica-arduino-clase-22-clase-9-semaforo-con-leds-presentacion-clase-9-circuitos-de-leds-multiples-semaforo-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(662 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
@@ -21187,7 +21187,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5053889
+              "tamanoBytes": 5719663
             }
           ]
         },
