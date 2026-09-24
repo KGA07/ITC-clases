@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 18,
     "titulo": "Dibujo paramétrico y bloques dinámicos",
@@ -22,9 +27,9 @@
       "titulo": "Restricciones geométricas y por cota",
       "emoji": "🔗",
       "imagen": {
-        "src": "img/restricciones.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Restricciones de dibujo paramétrico",
-        "caption": "Las restricciones fijan relaciones: paralelo, perpendicular, tangente y medidas constantes."
+        "caption": "Figura 1 — Mesa dinámica base y copia con parámetro lineal"
       },
       "parrafos": [
         "El dibujo paramétrico fija las relaciones de la geometría: restricciones geométricas (paralelo, perpendicular, horizontal, tangente, coincidente...) imponen cómo se relacionan los objetos; restricciones por cota fijan las medidas numéricas. Cuando editás el dibujo, las restricciones se mantienen."
@@ -65,18 +70,6 @@
     {
       "titulo": "Bloques dinámicos: parámetros y acciones",
       "emoji": "🎛️",
-      "imagenes": [
-        {
-          "src": "img/bloqdinamico.jpg",
-          "alt": "Bloque dinámico con pinzamientos",
-          "caption": "Los bloques dinámicos se ajustan desde pinzamientos y listas sin abrir el editor."
-        },
-        {
-          "src": "img/parametros.jpg",
-          "alt": "Parámetros de control",
-          "caption": "Parámetros de distancia, rotación y listas de consulta hacen al bloque flexible."
-        }
-      ],
       "parrafos": [
         "Un bloque dinámico responde a parámetros: un parámetro lineal con la acción de estirar permite alargarlo desde un pinzamiento; un parámetro de rotación lo gira; la simetría lo refleja y la visibilidad muestra u oculta partes.",
         "La consulta ofrece listas desplegables para elegir estados del bloque. Todo se define en el Editor de bloques."
@@ -86,7 +79,12 @@
         "Parámetro rotación: girar el bloque desde su pinzamiento.",
         "Simetría: reflejar la geometría dinámica.",
         "Visibilidad y consulta: mostrar variantes o elegir opciones de lista."
-      ]
+      ],
+      "imagen": {
+        "src": "img/encuadre.jpg",
+        "alt": "Bloque dinámico con pinzamientos",
+        "caption": "Figura 2 — Detalle del parámetro lineal y sus acciones"
+      }
     },
     {
       "titulo": "Propiedades de parámetros y acciones",
@@ -116,27 +114,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué tipo de restricción fija que una línea sea vertical?",
-            "opciones": ["Por cota", "Geométrica", "De texto", "De capa"],
+            "opciones": [
+              "Por cota",
+              "Geométrica",
+              "De texto",
+              "De capa"
+            ],
             "correcta": "Geométrica"
           },
           {
             "pregunta": "¿Qué restricción fija el valor numérico de una medida?",
-            "opciones": ["Por cota", "Tangente", "Horizontal", "Coincidente"],
+            "opciones": [
+              "Por cota",
+              "Tangente",
+              "Horizontal",
+              "Coincidente"
+            ],
             "correcta": "Por cota"
           },
           {
             "pregunta": "¿Qué parámetro permite alargar un bloque desde su pinzamiento?",
-            "opciones": ["Rotación", "Lineal", "Simetría", "Visibilidad"],
+            "opciones": [
+              "Rotación",
+              "Lineal",
+              "Simetría",
+              "Visibilidad"
+            ],
             "correcta": "Lineal"
           },
           {
             "pregunta": "¿Qué acción refleja la geometría del bloque?",
-            "opciones": ["Estirar", "Simetría", "Rotación", "Escalar"],
+            "opciones": [
+              "Estirar",
+              "Simetría",
+              "Rotación",
+              "Escalar"
+            ],
             "correcta": "Simetría"
           },
           {
             "pregunta": "¿Qué permite la propiedad 'Tipo de distancia' de un parámetro?",
-            "opciones": ["Elegir entre lista fija o incremento", "Cambiar el color", "Borrar el bloque", "Cambiar la capa"],
+            "opciones": [
+              "Elegir entre lista fija o incremento",
+              "Cambiar el color",
+              "Borrar el bloque",
+              "Cambiar la capa"
+            ],
             "correcta": "Elegir entre lista fija o incremento"
           }
         ]
@@ -162,12 +185,36 @@
   "lectura": "El dibujo paramétrico fija las relaciones de la geometría con restricciones geométricas y por cota, y los bloques dinámicos llevan esa idea a los elementos reutilizables: estiran, rotan, reflejan y muestran variantes desde simples pinzamientos. Es la diferencia entre dibujar objetos y dibujar herramientas inteligentes.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Presentar la idea de geometría inteligente que mantiene sus relaciones", "min": "10 min" },
-      { "titulo": "Restricciones", "que": "Aplicar geométricas y por cota sobre figuras simples", "min": "25 min" },
-      { "titulo": "Automáticas y deducidas", "que": "Probar opciones automáticas y mostrar/ocultar iconos", "min": "10 min" },
-      { "titulo": "Bloques dinámicos", "que": "Crear parámetros lineal, rotación, simetría, visibilidad y consulta", "min": "30 min" },
-      { "titulo": "Propiedades", "que": "Configurar nombre, incrementos y multiplicadores de las acciones", "min": "10 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo final", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Presentar la idea de geometría inteligente que mantiene sus relaciones",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Restricciones",
+        "que": "Aplicar geométricas y por cota sobre figuras simples",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Automáticas y deducidas",
+        "que": "Probar opciones automáticas y mostrar/ocultar iconos",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Bloques dinámicos",
+        "que": "Crear parámetros lineal, rotación, simetría, visibilidad y consulta",
+        "min": "30 min"
+      },
+      {
+        "titulo": "Propiedades",
+        "que": "Configurar nombre, incrementos y multiplicadores de las acciones",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo final",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Preguntar si alguna vez tuvieron que dibujar 'lo mismo pero más largo': los bloques dinámicos lo resuelven con un pinzamiento."

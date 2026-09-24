@@ -1,0 +1,84 @@
+{
+  "numero": 6,
+  "titulo": "Modificación II: empalme, chaflán, matriz y simetría",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 6 - Funciones de modificación II",
+  "pdfTitulo": "PRÁCTICO N°6 — Modificación II: empalme, chaflán, matriz y simetría",
+  "pdfSubtitulo": "Figura: brida mecánica con empalmes, matriz polar de agujeros y simetría",
+  "archivo": {
+    "dwg": "ITC Practico Clase 6 - Brida mecánica.dwg",
+    "pdf": "Práctico Clase 6 - Modificación II empalme chaflán matriz simetría.pdf",
+    "txt": "Guía práctica - Clase 6 - Modificación II - empalme chaflán matriz simetría.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "Cotas", "c": "1" },
+    { "n": "Centro", "c": "2", "lt": "CENTER2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[0,0],[10,0],[10,10],[0,10],[0,0]], "capa": "Dibujo", "cerrado": true }
+    ],
+    "circulos": [
+      { "x": 5, "y": 5, "r": 1.5, "capa": "Dibujo" },
+      { "x": 5, "y": 5, "r": 3, "capa": "Centro", "lt": "CENTER2" },
+      { "x": 9.5, "y": 5, "r": 0.8, "capa": "Dibujo" },
+      { "x": 5, "y": 9.5, "r": 0.8, "capa": "Dibujo" },
+      { "x": 0.5, "y": 5, "r": 0.8, "capa": "Dibujo" },
+      { "x": 5, "y": 0.5, "r": 0.8, "capa": "Dibujo" }
+    ],
+    "lineas": [
+      { "x1": 4.5, "y1": 1.5, "x2": 5.5, "y2": 8.5, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 1.5, "y1": 4.5, "x2": 8.5, "y2": 5.5, "capa": "Centro", "lt": "CENTER2" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 10, "y2": 0, "lx": 5, "ly": -3 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 10, "lx": -3, "ly": 5 },
+      { "x1": 5, "y1": 5, "x2": 9.5, "y2": 5, "lx": 7.25, "ly": 7 }
+    ],
+    "encuadre": { "x1": -2, "y1": -2, "x2": 12, "y2": 12 }
+  },
+  "consigna": {
+    "x": 18, "y": 12, "ancho": 115, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 6: EMPALME, CHAFLÁN, MATRIZ Y SIMETRÍA",
+      "Consigna:",
+      "- Cuadrado 10x10 empalmado con radio 2.",
+      "- 4 círculos de radio 0.5 en las esquinas (matriz polar).",
+      "- Círculo central de radio 1.5 (agujero).",
+      "- Chaflán de 1 en las esquinas redondeadas.",
+      "- Reflejá por simetría el conjunto.",
+      "- Acotá lado 10 y distancia al agujero.",
+      "- Guardá como clase6-brida.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Brida mecánica con empalmes y agujeros en matriz polar" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de esquinas empalmadas y agujeros" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: BRIDA MECÁNICA con empalmes, matriz polar, chaflán y simetría",
+    "objetivo": "Aplicar las modificaciones II: empalme (radio), chaflán, matrices (polar) y simetría, modelando una brida mecánica.",
+    "pasos": [
+      { "titulo": "Dibujar el cuadrado", "detalle": ["1. RECTÁNGULO (0,0)-(10,10).", "2. Convertilo en polilínea para empalmar (DESC para unificar)."] },
+      { "titulo": "Empalmar las esquinas", "detalle": ["1. Comando EMPALME (F).", "2. Radio 2.", "3. Clic en cada lado de las 4 esquinas.", "4. Resultado: brida redondeada."] },
+      { "titulo": "Agujeros en matriz polar", "detalle": ["1. Dibujá un círculo de radio 0.5 en una esquina.", "2. Comando MATRIZ → polar, centro (5,5).", "3. 4 elementos a 360°.", "4. Círculo central radio 1.5."] },
+      { "titulo": "Chaflán", "detalle": ["1. Comando CHAFLÁN (CHA).", "2. Distancia 1.", "3. Aplicá en las esquinas de la brida."] },
+      { "titulo": "Simetría", "detalle": ["1. Comando SIMETRÍA (MI).", "2. Dibujá un eje de simetría si falta.", "3. Reflejá el conjunto."] },
+      { "titulo": "Acotar", "detalle": ["1. Capa COTAS: lado 10 y distancia del centro al agujero."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase6-brida.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Lado de la brida", "valor": "10 mm" },
+      { "label": "Radio de empalme", "valor": "2 mm" },
+      { "label": "Diámetro del agujero central", "valor": "Ø3 mm" },
+      { "label": "Diámetro de agujeros periféricos", "valor": "Ø1.6 mm" },
+      { "label": "Radio de la posición de agujeros", "valor": "4.5 mm" }
+    ],
+    "consejos": [
+      "El empalme con radio 0 une dos líneas formando vértice.",
+      "La matriz polar distribuye elementos alrededor de un centro.",
+      "La simetría requiere un eje de reflexión explícito."
+    ]
+  }
+}

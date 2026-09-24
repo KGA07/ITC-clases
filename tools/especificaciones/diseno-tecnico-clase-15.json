@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 15,
     "titulo": "Fachadas, vistas y cortes",
@@ -22,9 +27,9 @@
       "titulo": "Fachadas de la vivienda",
       "emoji": "🏡",
       "imagen": {
-        "src": "img/fachada.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Fachada de vivienda",
-        "caption": "La fachada se dibuja proyectando hacia arriba las medidas horizontales de la planta."
+        "caption": "Figura 1 — Fachada principal con ventanas, alfeizares y marquesina"
       },
       "parrafos": [
         "Una fachada es la vista exterior de la vivienda. Se dibuja proyectando verticalmente los muros y aberturas desde la planta: cada línea vertical de un muro o de una ventana en planta define dónde va en la fachada.",
@@ -54,9 +59,9 @@
       "titulo": "Cortes: planta y pieza mecánica",
       "emoji": "🪚",
       "imagen": {
-        "src": "img/vistacorte.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Corte de una edificación",
-        "caption": "El corte secciona el volumen y muestra alturas, losas y encuentros en vertical."
+        "caption": "Figura 2 — Detalle de ventana en elevación con alfeizar"
       },
       "parrafos": [
         "El corte es una sección vertical: se imagina que una sierra plana atraviesa el dibujo y se dibuja lo que se ve mirando la cara cortada. En arquitectura muestra losas, techos y alturas; en mecánica muestra los agujeros interiores de la pieza.",
@@ -72,11 +77,6 @@
     {
       "titulo": "El desfase: múltiple y punto a atravesar",
       "emoji": "↔️",
-      "imagen": {
-        "src": "img/desfase.jpg",
-        "alt": "Líneas paralelas desplazadas con desfase",
-        "caption": "El desfase copia objetos a distancia constante, en uno o varios pasos."
-      },
       "parrafos": [
         "El desfase (DESFASE) crea copias paralelas a una distancia fija: es la herramienta central para proyectar paredes, tabiques y niveles. La opción 'Múltiple' repite el desfase varias veces con un solo comando; la opción 'Atraviesa' (punto a atravesar) elige la distancia haciendo clic en un punto por el que debe pasar la copia."
       ],
@@ -102,27 +102,52 @@
         "preguntas": [
           {
             "pregunta": "¿Desde qué dibujo se proyecta la fachada?",
-            "opciones": ["Del corte", "De la planta", "Del sombreado", "De la tabla de aberturas"],
+            "opciones": [
+              "Del corte",
+              "De la planta",
+              "Del sombreado",
+              "De la tabla de aberturas"
+            ],
             "correcta": "De la planta"
           },
           {
             "pregunta": "¿Qué muestra el corte que la planta no muestra?",
-            "opciones": ["Los muros en largo", "Las alturas y el interior vertical", "El mobiliario", "Las cotas de área"],
+            "opciones": [
+              "Los muros en largo",
+              "Las alturas y el interior vertical",
+              "El mobiliario",
+              "Las cotas de área"
+            ],
             "correcta": "Las alturas y el interior vertical"
           },
           {
             "pregunta": "¿Qué opción del desfase permite elegir la distancia haciendo clic en un punto?",
-            "opciones": ["Múltiple", "Atraviesa", "Polar", "Base"],
+            "opciones": [
+              "Múltiple",
+              "Atraviesa",
+              "Polar",
+              "Base"
+            ],
             "correcta": "Atraviesa"
           },
           {
             "pregunta": "¿Qué opción del desfase repite la copia varias veces sin terminar el comando?",
-            "opciones": ["Múltiple", "Atraviesa", "Doble", "Serie"],
+            "opciones": [
+              "Múltiple",
+              "Atraviesa",
+              "Doble",
+              "Serie"
+            ],
             "correcta": "Múltiple"
           },
           {
             "pregunta": "¿Qué patrón se usa para sombrear la zona de corte?",
-            "opciones": ["DOTS", "ANSI31", "EARTH", "STARS"],
+            "opciones": [
+              "DOTS",
+              "ANSI31",
+              "EARTH",
+              "STARS"
+            ],
             "correcta": "ANSI31"
           }
         ]
@@ -147,12 +172,36 @@
   "lectura": "La planta es el plano; las fachadas, vistas y cortes son el volumen. Se proyectan a partir de la planta con desfases y referencias, y muestran alturas y espesores que el plano no cuenta. Dominar el desfase, en sus modos múltiple y punto a atravesar, es la base para proyectar velocidad y limpieza en estas vistas.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar el concepto de proyección: planta = base de las vistas", "min": "10 min" },
-      { "titulo": "La fachada", "que": "Proyectar verticales desde la planta con líneas guía y alturas", "min": "25 min" },
-      { "titulo": "Vistas y cortes", "que": "Ubicar la línea de corte y proyectar el corte transversal", "min": "25 min" },
-      { "titulo": "Desfase", "que": "Practicar múltiple y punto a atravesar en muros y niveles", "min": "15 min" },
-      { "titulo": "Sombreado de corte", "que": "Aplicar ANSI31 en las zonas cortadas", "min": "5 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo; revisión de coherencia entre vistas", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar el concepto de proyección: planta = base de las vistas",
+        "min": "10 min"
+      },
+      {
+        "titulo": "La fachada",
+        "que": "Proyectar verticales desde la planta con líneas guía y alturas",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Vistas y cortes",
+        "que": "Ubicar la línea de corte y proyectar el corte transversal",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Desfase",
+        "que": "Practicar múltiple y punto a atravesar en muros y niveles",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Sombreado de corte",
+        "que": "Aplicar ANSI31 en las zonas cortadas",
+        "min": "5 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo; revisión de coherencia entre vistas",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Comparar con los planos de obras: la planta, la fachada y el corte son la misma casa vista desde arriba, de frente y de costado."

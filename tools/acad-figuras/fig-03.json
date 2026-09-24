@@ -1,0 +1,77 @@
+{
+  "numero": 3,
+  "titulo": "Sistema de coordenadas y entrada dinámica",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Coordenadas",
+  "pdfTitulo": "PRÁCTICO N°3 — Sistema de coordenadas y entrada dinámica",
+  "pdfSubtitulo": "Figura: escalera de perfil dibujada con coordenadas relativas rectangulares y polares",
+  "archivo": {
+    "dwg": "ITC Practico Clase 3 - Escalera de perfil.dwg",
+    "pdf": "Práctico Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
+    "txt": "Guía práctica - Clase 3 - Sistema de coordenadas y entrada dinámica.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "Cotas", "c": "1" },
+    { "n": "Centro", "c": "2", "lt": "CENTER2" },
+    { "n": "Oculta", "c": "8", "lt": "HIDDEN2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[0,0],[2,0],[2,1.5],[4,1.5],[4,3],[6,3],[6,4.5],[8,4.5],[8,6.5],[12,6.5],[12,0],[0,0]], "capa": "Dibujo" }
+    ],
+    "lineas": [
+      { "x1": 0, "y1": -1, "x2": 13, "y2": -1, "capa": "Centro", "lt": "CENTER2" }
+    ],
+    "rectangulos": [
+      { "x1": 12, "y1": 0, "x2": 15, "y2": 7, "capa": "Dibujo" },
+      { "x1": 8, "y1": -1, "x2": 9.5, "y2": 0, "capa": "Dibujo" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 0, "lx": 6, "ly": -6 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 6.5, "lx": -3, "ly": 3.25 }
+    ],
+    "encuadre": { "x1": -4, "y1": -4, "x2": 18, "y2": 10 }
+  },
+  "consigna": {
+    "x": 20, "y": 8, "ancho": 110, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 3: COORDENADAS Y ENTRADA DINÁMICA",
+      "Consigna:",
+      "- Dibujá el contorno de la escalera con relativas rectangulares (@2,0 y @0,1.5).",
+      "- La diagonal del 4º peldaño usá relativa polar @4<30.",
+      "- Con Entrada Dinámica (F12) leés distancias y ángulos en vivo.",
+      "- Acotá el largo total 12 y el alto 6.5.",
+      "- Guardá como clase3-escalera.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Escalera de perfil dibujada con coordenadas relativas" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de peldaños y apoyos con sus cotas parciales" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: ESCALERA DE PERFIL — coordenadas relativas y entrada dinámica",
+    "objetivo": "Entender las coordenadas rectangulares y polares (absolutas y relativas) y la entrada dinámica (F12), dibujando una escalera de perfil paso a paso.",
+    "pasos": [
+      { "titulo": "Configurar unidades y entrada dinámica", "detalle": ["1. UNIDADES: formado Decimal, precisión 0.0.", "2. Activá Entrada Dinámica con F12.", "3. La escala es 1:1."] },
+      { "titulo": "Dibujar la escalera con relativas", "detalle": ["1. Comando LINEA desde 0,0.", "2. Para cada peldaño: @2,0 (huella) y @0,1.5 (contrahuella).", "3. Repetí: @2,0 → @0,1.5 → @2,0 → @0,1.5 → @2,0 → @0,1.5.", "4. Cuarta contrahuella diagonal con relativa polar: @4<30."] },
+      { "titulo": "Cerrar y completar", "detalle": ["1. Cerrá el contorno volviendo a 0,0.", "2. Rectángulo de apoyo en (8,-1)-(9.5,0).", "3. Contrapiso rectángulo (12,0)-(15,7)."] },
+      { "titulo": "Agregar eje de apoyo", "detalle": ["1. Capa CENTRO: línea de centros en y=-1 desde x=0 a 13.", "2. Verificá el tipo CENTER2 cargado."] },
+      { "titulo": "Acotar", "detalle": ["1. Capa COTAS: largo total 12, alto total 6.5.", "2. Las cotas quedan por fuera del perfil."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase3-escalera.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Largo total de la escalera", "valor": "12 m" },
+      { "label": "Alto total", "valor": "6.5 m" },
+      { "label": "Huella de cada peldaño", "valor": "2 m (@2,0)" },
+      { "label": "Contrahuella", "valor": "1.5 m (@0,1.5)" },
+      { "label": "Diagonal del 4º peldaño", "valor": "4 m a 30° (@4<30)" },
+      { "label": "Ancho contrahuella", "valor": "1.5 m" }
+    ],
+    "consejos": [
+      "Con F12 activo podés tipear la distancia sin escribir la @.",
+      "Las relativas SIEMPRE llevan @ al inicio.",
+      "Verificá el ángulo en Grados (sur a norte = 0)."
+    ]
+  }
+}

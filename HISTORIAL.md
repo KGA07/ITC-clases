@@ -289,8 +289,69 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
     C17 435 KB, C18 430 KB, C19 126 KB, C22 422 KB (bajó de 1,09 MB), C5 717 KB
     (bajó de 1,76 MB) — todas ≤ 1 MB.
   - QA al cierre: `list-stale-specs` 0, check-firma 612/612 OK, tests 14/14 OK.
-- **Próximo — Curso 5: Diseño Técnico (reverificar 23 con AutoCAD) en revisión
-  de la Fase 6 → Robótica (Arduino IDE) → PyMEs (cierre/reverificar).**
+- **Curso 5 — Diseño Técnico: dibujador AutoCAD real 22/22 clases (hito, al cierre
+  de sesión).**
+  - Opción elegida por el usuario: "DT con imágenes ya reales" (pipeline AutoCAD
+    primero). AutoCAD 2021 local "LMS Tech" por COM
+    (`Acad-NewDoc` real → dibujo → captures → DWG → PDF → guía TXT).
+  - **Runner genérico** `tools/acad-run-clase.ps1 -Fig <fig.json>` con DSL JSON
+    (`tools/acad-figuras/fig-01.json` … `fig-22.json`): capas, polilineas/
+    lineas/circulos/arcos/rectangulos, cotas, consigna MText en capa `Consigna`,
+    encuadre (zoom), capturas `img/interfaz.jpg` + `img/encuadre.jpg`,
+    guarda DWG, genera PDF práctico con **Chrome headless**
+    (`tools/acad-practico-pdf.js`, embebe las capturas) y guía TXT UTF-8.
+  - **Lecciones/fixes del pipeline**: `Documents.Add()` puede fallar con
+    `RPC_E_CALL_REJECTED` al arrancar → `Try-Com` en `Acad-NewDoc`; **no usar
+    `SendCommand`** para ZOOM/REGEN (cuelga) → API directa `App.ZoomExtents()`/
+    `ZoomWindow()` y `$doc.Regen(0)`; **Plot COM/EXPORTPDF descartados** (no
+    existen `SetNumberOfCopies`/`InitializePlot`; EXPORTPDF abre diálogo modal
+    que cuelga) → PDF por Chrome; PS 5.1 requiere `.ps1` con BOM UTF-8 y el JSON
+    de config del PDF debe escribirse sin BOM (`UTF8Encoding($false)`, si no
+    `JSON.parse` de Node falla); matar `acad` externamente antes de cada corrida;
+    runner ahora asegura capas `Dibujo`/`Cotas`; asignación de `Linetype` en
+    entidades protegida con try/catch (**HIDDEN2 no carga en esta build**, solo
+    CENTER2 desde acadiso.lin); **captura con timeout 60s + retry** (cuelgues
+    intermitentes del `CopyFromScreen`) e `img-capture.ps1` restaura la ventana
+    a 1366x768 ante 0x0.
+  - **Resultado 22/22 clases** (DWG 17-21 KB, PDF 280-352 KB, guía TXT 2-3.6 KB,
+    capturas reales 100-167 KB cada una). QA: todos los archivos presentes,
+    OCR de control confirma consigna visible en las capturas interfaz.
+- **Curso 5 — Diseño Técnico: clases 23-25 3D creadas y specs 1-22 con capturas
+  reales (hito, FASE 6 completa).**
+  - Clases nuevas: `Clase 23 - Figuras solidas 3D`, `Clase 24 - Materiales y
+    texturas 3D`, `Clase 25 - Render de una casa 3D` (fig-23/24/25.json, specs
+    diseno-tecnico-clase-23/24/25.json con teoría, interactivos y guía docente).
+  - **Runner extendido** `tools/acad-run-clase.ps1`: nueva sección `solidos`
+    (caja/cilindro/cono/esfera/toro/cuña), `booleanos` (union 0 / intersec 1 /
+    resta 2 sobre índices del `solidList`) y `vista` (VIEWDIR isométrico +
+    estilo). fig-23 estilo Conceptual, fig-24/25 Realistic.
+  - **Verificación estructural por COM**: los DWG guardan 6 sólidos con
+    volúmenes correctos (320 / 226.19 / 75.4 / 268.08 / 200 / 177.65) + MText
+    (Clase 23), 4 sólidos suma 1992.89 (24) y 1 sólido (casa unida) suma
+    10346.01 ≈ teórico 10450 menos solape chimenea/techo (25). VIEWDIR (-1,-1,1)
+    persistido en los 3 DWG. Lección clave: **enumerar ModelSpace con
+    `Item($i)` devuelve siempre el mismo objeto en PS** → usar `foreach`.
+  - **Estilo visual**: `SetVariable('VSCURRENT', ...)` **siempre falla** en esta
+    build → `Acad-Vista3D` usa `SendCommand("VSCURRENT <estilo> \n")` con mapa de
+    alias (Conceptual/Concepto, Realistic/Realista, Shaded/Sombreado); funciona
+    en documento nuevo (verificado: MD5 de captura distinto por estilo). No usar
+    SendCommand VSCURRENT sobre DWG reabierto (cuelga).
+  - **Specs 1-22 actualizadas a capturas reales**: decisión «2 capturas por
+    spec» — primer bloque de teoría con imagen → `img/interfaz.jpg`, segundo →
+    `img/encuadre.jpg`, imágenes temáticas de Fase 4 eliminadas en el resto
+    (sin quitar secciones). Alt/caption extraídos de los `pdfFiguras` de cada
+    fig. Script `reajuste-specs.js` (temp) normalizó también `imagenes` (array)
+    a `imagen` singular en clases 17/18.
+  - Regeneradas **25/25 clases** (materiales PDF/Lectura/Guía/Práctica + HTML) y
+    **25/25 presentaciones** (HTML/PDF/PPTX) con `--filtro diseno-tecnico`.
+    Presentaciones HTML 0.32-0.41 MB (regla ≤ 1 MB OK).
+  - QA final: `check-firma` 624/624, `list-stale-specs` 0, `npm test` 14/14,
+    `npm run catalog` OK (10 capacitaciones, 2295 archivos, ~5607 MB; las clases
+    23-25 figuran con 13 archivos c/u). Lint: 5 errores/11 warnings preexistentes
+    en archivos sin tocar (check-firma, generar-presentaciones, list-stale,
+    render-mockups).
+- **Próximo - Curso 5: Diseño Técnico FASE 6 completa → Robótica (Arduino IDE)
+  → PyMEs (cierre/reverificar).**
 
 ## Cómo arrancar el proyecto (resumen)
 

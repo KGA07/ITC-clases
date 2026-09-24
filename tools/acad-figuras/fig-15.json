@@ -1,0 +1,87 @@
+{
+  "numero": 15,
+  "titulo": "Fachadas, vistas y cortes",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Dibujos por vista",
+  "pdfTitulo": "PRÁCTICO N°15 — Fachadas, vistas y cortes",
+  "pdfSubtitulo": "Figura: fachada principal de la vivienda en elevación con alfeizar y marquesina",
+  "archivo": {
+    "dwg": "ITC Practico Clase 15 - Fachada principal.dwg",
+    "pdf": "Práctico Clase 15 - Fachadas vistas y cortes.pdf",
+    "txt": "Guía práctica - Clase 15 - Fachadas, vistas y cortes.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "ABERTURAS", "c": "1" },
+    { "n": "TECHOS", "c": "3" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "SOMBREADO", "c": "6" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 3, "capa": "Dibujo" },
+      { "x1": 0, "y1": 6, "x2": 12, "y2": 6.5, "capa": "TECHOS" }
+    ],
+    "polilineas": [
+      { "pts": [[0,0],[12,0],[12,6],[0,6],[0,0]], "capa": "ABERTURAS", "cerrado": false },
+      { "pts": [[2,0],[4,0],[4,2.4],[2,2.4],[2,0]], "capa": "Dibujo", "cerrado": true },
+      { "pts": [[8,0],[10,0],[10,1.8],[8,1.8],[8,0]], "capa": "Dibujo", "cerrado": true }
+    ],
+    "lineas": [
+      { "x1": 3, "y1": 2.4, "x2": 3, "y2": 3.6, "capa": "Dibujo" },
+      { "x1": 4, "y1": 2.4, "x2": 4, "y2": 3.6, "capa": "Dibujo" },
+      { "x1": 9, "y1": 1.8, "x2": 9, "y2": 3.3, "capa": "Dibujo" },
+      { "x1": 10, "y1": 1.8, "x2": 10, "y2": 3.3, "capa": "Dibujo" },
+      { "x1": 1, "y1": 0, "x2": 1, "y2": 6, "capa": "Dibujo" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 0, "lx": 6, "ly": -1.5 },
+      { "x1": 12.5, "y1": 0, "x2": 12.5, "y2": 6, "lx": 14, "ly": 3 }
+    ],
+    "encuadre": { "x1": -1, "y1": -1, "x2": 15, "y2": 8 }
+  },
+  "consigna": {
+    "x": 16, "y": 6, "ancho": 130, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 15: FACHADAS, VISTAS Y CORTES",
+      "Consigna:",
+      "- Proyectá la fachada principal desde la planta (muros y aberturas en elevación).",
+      "- Dibujá el alfeizar de las ventanas.",
+      "- Marquesina en TECHOS a cota 6.",
+      "- Marcá y proyectá un corte transversal con alturas de piso/losa/techo.",
+      "- Sombreado ANSI31 en el corte.",
+      "- Acotá frente 12 y altura de cornisa 6.",
+      "- Guardá como clase15-fachadacorte.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Fachada principal con ventanas, alfeizares y marquesina" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de ventana en elevación con alfeizar" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: FACHADA PRINCIPAL — proyección de vistas y cortes",
+    "objetivo": "Proyectar la fachada principal de una vivienda desde su planta, representando muros, aberturas y marquesina en elevación.",
+    "pasos": [
+      { "titulo": "Dibujar la línea de suelo y ejes", "detalle": ["1. Línea de implantación (0,0)-(12,0).", "2. Ejes verticales en los extremos."] },
+      { "titulo": "Volumen de fachada", "detalle": ["1. Rectángulo (0,0)-(12,6) cota 6 de cornisa.", "2. Muros laterales en vertical."] },
+      { "titulo": "Aberturas en elevación", "detalle": ["1. Ventana izquierda (2,0)-(4,2.4) con alfeizar a 1.4.", "2. Ventana derecha (8,0)-(10,1.8).", "3. Marcos verticales a cada lado de la ventana."] },
+      { "titulo": "Marquesina y techos", "detalle": ["1. TECHOS: franja (0,6)-(12,6.5)."] },
+      { "titulo": "Corte transversal", "detalle": ["1. Marcá el corte en la planta.", "2. Proyectá alturas: piso 0, dintel 3, losa 6, techo 6.5."] },
+      { "titulo": "Sombreado del corte", "detalle": ["1. SOMBREADO ANSI31 en la zona seccionada del corte."] },
+      { "titulo": "Acotar", "detalle": ["1. Frente 12 y altura de cornisa 6."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase15-fachadacorte.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Frente", "valor": "12 m" },
+      { "label": "Altura de cornisa", "valor": "6 m" },
+      { "label": "Altura de dintel", "valor": "3 m" },
+      { "label": "Alfeizar ventana", "valor": "1.4 m" }
+    ],
+    "consejos": [
+      "La fachada se proyecta a partir de la planta (misma proporción).",
+      "La vista frontal se llama fachada principal.",
+      "El corte muestra lo que se ve 'al cortar' con sombreado."
+    ]
+  }
+}

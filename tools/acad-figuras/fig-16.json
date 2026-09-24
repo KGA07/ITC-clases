@@ -1,0 +1,75 @@
+{
+  "numero": 16,
+  "titulo": "Plano de mensura: grados y superficie",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\clase 15 mensura",
+  "pdfTitulo": "PRÁCTICO N°16 — Plano de mensura: grados y superficie",
+  "pdfSubtitulo": "Figura: lote de 20×30 m con rumbo diagonal 10°30' y superficie en m²",
+  "archivo": {
+    "dwg": "ITC Practico Clase 16 - Plano de mensura.dwg",
+    "pdf": "Práctico Clase 16 - Plano de mensura grados y superficie.pdf",
+    "txt": "Guía práctica - Clase 16 - Plano de mensura - grados y superficie.txt"
+  },
+  "capas": [
+    { "n": "PARCELA", "c": "4" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "RONDA", "c": "1" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[0,0],[30,0],[30,20],[0,20],[0,0]], "capa": "PARCELA", "cerrado": true },
+      { "pts": [[0,0],[30,20],[30,20],[0,20],[0,0]], "capa": "RONDA", "cerrado": false }
+    ],
+    "lineas": [
+      { "x1": 30, "y1": 20, "x2": 38, "y2": 27, "capa": "RONDA" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 30, "y2": 0, "lx": 15, "ly": -4 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 20, "lx": -4, "ly": 10 }
+    ],
+    "encuadre": { "x1": -3, "y1": -3, "x2": 40, "y2": 29 }
+  },
+  "consigna": {
+    "x": 42, "y": 20, "ancho": 125, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 16: PLANO DE MENSU (GRADOS Y SUPERFICIE)",
+      "Consigna:",
+      "- Dibujá el polígono del lote: 30m de frente, 20m de fondo.",
+      "- La diagonal de la esquina tiene rumbo 10°30' (formato d).",
+      "- Calculá la superficie con Consultar → Área.",
+      "- Verificá con LISTA y la herramienta Contorno.",
+      "- Volcá la superficie en m² sobre el plano.",
+      "- Acotá frente 30 y fondo 20.",
+      "- Guardá como clase16-mensura.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Plano de mensura del lote con frente, fondo y rumbo diagonal" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del vértice con el rumbo 10°30'" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PLANO DE MENSURA — lote 20x30 con rumbo 10°30' y superficie en m²",
+    "objetivo": "Dibujar el polígono de un lote expresando ángulos en grados/minutos/segundos y calcular su superficie por tres métodos.",
+    "pasos": [
+      { "titulo": "Dibujar el lote", "detalle": ["1. RECTÁNGULO (0,0)-(30,20) en PARCELA.", "2. Frente 30m, fondo 20m."] },
+      { "titulo": "Rumbo diagonal", "detalle": ["1. Línea desde (0,0) con rumbo 10°30' (formato d).", "2. En el sistema de mensura el rumbo parte del norte.", "3. Capa RONDA, extremo en (30,20)."] },
+      { "titulo": "Área", "detalle": ["1. Consultar → Área (AA).", "2. Clic en los vértices del polígono.", "3. Anotá la superficie: 600 m²."] },
+      { "titulo": "LISTA y Contorno", "detalle": ["1. LISTA sobre la polilínea: muestra área en m².", "2. Herramienta Contorno para generar la figura cerrada."] },
+      { "titulo": "Volcar superficie", "detalle": ["1. Texto s/ el área calculada (600 m²)."] },
+      { "titulo": "Acotar", "detalle": ["1. Frente 30 y fondo 20 en COTAS."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase16-mensura.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Frente", "valor": "30 m" },
+      { "label": "Fondo", "valor": "20 m" },
+      { "label": "Rumbo diagonal", "valor": "10°30'" },
+      { "label": "Superficie", "valor": "600 m²" }
+    ],
+    "consejos": [
+      "Los grados se escriben con d (ej.: 10d30').",
+      "El formato de rumbos varia según el sistema de referencia.",
+      "Contorno crea la figura cerrada a partir de la trama."
+    ]
+  }
+}

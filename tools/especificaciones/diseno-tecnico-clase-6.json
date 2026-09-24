@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 6,
     "titulo": "Modificación II: empalme, chaflán, matriz y simetría",
@@ -22,9 +27,9 @@
       "titulo": "Empalme (redondeo)",
       "emoji": "🌀",
       "imagen": {
-        "src": "img/empalme.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Empalme y chaflán en esquinas",
-        "caption": "El empalme redondea la esquina; el chaflán la corta en bisel."
+        "caption": "Figura 1 — Brida mecánica con empalmes y agujeros en matriz polar"
       },
       "parrafos": [
         "El empalme (EMPALME o F) une dos objetos con un arco de radio definido. Con radio 0 termina por recortar o alargar las dos líneas hasta que se toquen, muy útil para limpiar esquinas.",
@@ -54,9 +59,9 @@
       "titulo": "Matrices: rectangular, polar y de camino",
       "emoji": "🔢",
       "imagen": {
-        "src": "img/matriz.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Patrón repetido en matriz",
-        "caption": "La matriz repite un objeto en filas, en círculo o siguiendo un camino."
+        "caption": "Figura 2 — Detalle de esquinas empalmadas y agujeros"
       },
       "parrafos": [
         "La matriz (MATRIZ o AR) multiplica objetos seleccionados siguiendo tres patrones: rectangular (filas y columnas), polar (alrededor de un centro en círculo) y camino (a lo largo de una curva)."
@@ -71,11 +76,6 @@
     {
       "titulo": "Simetría",
       "emoji": "🪞",
-      "imagen": {
-        "src": "img/simetria.jpg",
-        "alt": "Simetría de un objeto",
-        "caption": "La simetría crea el reflejo exacto de un objeto respecto de un eje."
-      },
       "parrafos": [
         "SIMETRIA (MI) crea una copia reflejada de los objetos seleccionados respecto de un eje que definís con dos puntos. Antes de terminar AutoCAD pregunta si querés borrar el original."
       ],
@@ -101,27 +101,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué comando redondea una esquina con un arco?",
-            "opciones": ["CHAFLAN", "EMPALME", "RECORTA", "MATRIZ"],
+            "opciones": [
+              "CHAFLAN",
+              "EMPALME",
+              "RECORTA",
+              "MATRIZ"
+            ],
             "correcta": "EMPALME"
           },
           {
             "pregunta": "¿Qué radio usa el empalme para unir dos líneas en un vértice limpio?",
-            "opciones": ["Radio 0", "Radio 50", "Radio 90", "No usa radio"],
+            "opciones": [
+              "Radio 0",
+              "Radio 50",
+              "Radio 90",
+              "No usa radio"
+            ],
             "correcta": "Radio 0"
           },
           {
             "pregunta": "¿Qué matriz repite objetos alrededor de un centro?",
-            "opciones": ["Rectangular", "Polar", "Camino", "Base"],
+            "opciones": [
+              "Rectangular",
+              "Polar",
+              "Camino",
+              "Base"
+            ],
             "correcta": "Polar"
           },
           {
             "pregunta": "¿Cuántos puntos definen el eje de simetría?",
-            "opciones": ["Uno", "Dos", "Tres", "Cuatro"],
+            "opciones": [
+              "Uno",
+              "Dos",
+              "Tres",
+              "Cuatro"
+            ],
             "correcta": "Dos"
           },
           {
             "pregunta": "¿Qué herramienta corta una esquina en bisel?",
-            "opciones": ["Empalme", "Chaflán", "Círculo", "Polilínea"],
+            "opciones": [
+              "Empalme",
+              "Chaflán",
+              "Círculo",
+              "Polilínea"
+            ],
             "correcta": "Chaflán"
           }
         ]
@@ -145,12 +170,36 @@
   "lectura": "Empalme y chaflán resuelven las esquinas de las piezas: la primera las redondea y la segunda las corta en bisel. Las matrices multiplican objetos siguiendo filas, círculos o caminos, y la simetría refleja mitades enteras de un dibujo. Dominarlas convierte un dibujo en diez sin repetir el trabajo.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar modificación I y presentar las nuevas cuatro herramientas", "min": "10 min" },
-      { "titulo": "Empalme", "que": "Ejemplificar radio fijo, radio 0 y la opción polilínea", "min": "15 min" },
-      { "titulo": "Chaflán", "que": "Mostrar distancias y el método por ángulo", "min": "15 min" },
-      { "titulo": "Matrices", "que": "Crear una rectangular, una polar y una de camino en vivo", "min": "25 min" },
-      { "titulo": "Simetría", "que": "Reflejar una mitad de figura y decidir borrar o mantener el original", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso de cuándo usar cada herramienta", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar modificación I y presentar las nuevas cuatro herramientas",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Empalme",
+        "que": "Ejemplificar radio fijo, radio 0 y la opción polilínea",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Chaflán",
+        "que": "Mostrar distancias y el método por ángulo",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Matrices",
+        "que": "Crear una rectangular, una polar y una de camino en vivo",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Simetría",
+        "que": "Reflejar una mitad de figura y decidir borrar o mantener el original",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso de cuándo usar cada herramienta",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Mostrar el patrón de una escalera circular o una rueda con agujeros: eso es una matriz polar."

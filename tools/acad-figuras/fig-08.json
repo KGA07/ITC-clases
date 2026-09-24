@@ -1,0 +1,81 @@
+{
+  "numero": 8,
+  "titulo": "Capas y unidades",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 8 - Capas y unidades",
+  "pdfTitulo": "PRÁCTICO N°8 — Capas y unidades",
+  "pdfSubtitulo": "Figura: esquema de capas base para un plano de arquitectura con unidades en mm",
+  "archivo": {
+    "dwg": "ITC Practico Clase 8 - Esquema de capas.dwg",
+    "pdf": "Práctico Clase 8 - Capas y unidades.pdf",
+    "txt": "Guía práctica - Clase 8 - Capas y unidades.txt"
+  },
+  "capas": [
+    { "n": "MUROS", "c": "7" },
+    { "n": "ABERTURAS", "c": "1" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "MOBILIARIO", "c": "3" },
+    { "n": "PARCELA", "c": "4" },
+    { "n": "Dibujo", "c": "7" },
+    { "n": "Centro", "c": "6", "lt": "CENTER2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 14, "y2": 10, "capa": "PARCELA" },
+      { "x1": 2, "y1": 2, "x2": 8, "y2": 6, "capa": "MUROS" }
+    ],
+    "lineas": [
+      { "x1": 8, "y1": 2, "x2": 12, "y2": 8, "capa": "MUROS" },
+      { "x1": 10, "y1": 2, "x2": 12, "y2": 6, "capa": "ABERTURAS" }
+    ],
+    "circulos": [
+      { "x": 10, "y": 8, "r": 1.5, "capa": "MOBILIARIO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 14, "y2": 0, "lx": 7, "ly": -3 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 10, "lx": -3, "ly": 5 }
+    ],
+    "encuadre": { "x1": -2, "y1": -2, "x2": 16, "y2": 12 }
+  },
+  "consigna": {
+    "x": 18, "y": 10, "ancho": 115, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 8: CAPAS Y UNIDADES",
+      "Consigna:",
+      "- Configurá UNIDADES de dibujo en milímetros (formato decimal).",
+      "- Creá las 5 capas base: MUROS, ABERTURAS, COTAS, MOBILIARIO, PARCELA.",
+      "- Asigná color y grosor a cada capa.",
+      "- Dibujá en MUROS la línea de un muro (la que ves a la derecha).",
+      "- Trazá la parcela en PARCELA.",
+      "- Acotá frente 14 y fondo 10 (en capa COTAS).",
+      "- Guardá como clase8-capas.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Esquema de capas base: parcela, muros, aberturas y mobiliario" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de capas con sus grosores y colores asignados" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: ESQUEMA DE CAPAS BASE — capas y unidades en mm",
+    "objetivo": "Configurar las unidades del dibujo y crear, nombrar y asignar propiedades a las capas base de un plano.",
+    "pasos": [
+      { "titulo": "Configurar unidades", "detalle": ["1. Comando UNIDADES.", "2. Formato Decimal, precisión 0,00; unidades de inserción Milímetros.", "3. La escala de trabajo de arquitectura es 1:100 en px→mm."] },
+      { "titulo": "Crear las 5 capas base", "detalle": ["1. Propiedades de capa.", "2. Creá: MUROS (blanco), ABERTURAS (rojo), COTAS (amarillo), MOBILIARIO (verde), PARCELA (cian).", "3. Asigná grosor 0.50 a MUROS y PARCELA."] },
+      { "titulo": "Dibujar muros", "detalle": ["1. Activá la capa MUROS.", "2. Rectángulo (2,2)-(8,6) + linea diagonal (8,2)-(12,8)."] },
+      { "titulo": "Aberturas y mobiliario", "detalle": ["1. Capa ABERTURAS: línea de abertura (10,2)-(12,6).", "2. Capa MOBILIARIO: círculo radio 1.5 en (10,8)."] },
+      { "titulo": "Parcela", "detalle": ["1. Capa PARCELA: rectángulo (0,0)-(14,10)."] },
+      { "titulo": "Acotar", "detalle": ["1. Capa COTAS: frente 14, fondo 10."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase8-capas.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Frente de la parcela", "valor": "14 m" },
+      { "label": "Fondo de la parcela", "valor": "10 m" },
+      { "label": "Muro máximo", "valor": "0.20 m" }
+    ],
+    "consejos": [
+      "Cambiar de capa es seleccionarla en la lista desplegable.",
+      "Bloqueá PARCELA para no modificarla sin querer.",
+      "El grosor se ve en pantalla con el botón Grosor de Línea."
+    ]
+  }
+}

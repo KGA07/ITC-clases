@@ -1,0 +1,72 @@
+{
+  "numero": 23,
+  "titulo": "Figuras sólidas en 3D",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 23 - Figuras solidas 3D",
+  "pdfTitulo": "PRÁCTICO N°23 — Figuras sólidas en 3D",
+  "pdfSubtitulo": "Figura: familia de primitivas sólidas (caja, cilindro, cono, esfera, cuña y toro)",
+  "archivo": {
+    "dwg": "ITC Practico Clase 23 - Figuras solidas 3D.dwg",
+    "pdf": "Práctico Clase 23 - Figuras solidas 3D.pdf",
+    "txt": "Guía práctica - Clase 23 - Figuras solidas 3D.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "solidos": [
+      { "tipo": "caja", "cx": 0, "cy": 0, "cz": 0, "l": 10, "w": 8, "h": 4, "capa": "Dibujo" },
+      { "tipo": "cilindro", "cx": 20, "cy": 4, "cz": 0, "r": 3, "h": 8, "capa": "Dibujo" },
+      { "tipo": "cono", "cx": 34, "cy": 4, "cz": 0, "r": 3, "h": 8, "capa": "Dibujo" },
+      { "tipo": "esfera", "cx": 48, "cy": 4, "cz": 4, "r": 4, "capa": "Dibujo" },
+      { "tipo": "cuña", "cx": 0, "cy": 20, "cz": 0, "l": 10, "w": 8, "h": 5, "capa": "Dibujo" },
+      { "tipo": "toro", "cx": 20, "cy": 24, "cz": 2, "rToro": 4, "rTubo": 1.5, "capa": "Dibujo" }
+    ],
+    "encuadre": { "x1": -4, "y1": -4, "x2": 30, "y2": 30 }
+  },
+  "vista": { "direccion": [-1, -1, 1], "estilo": "Conceptual" },
+  "consigna": {
+    "x": 52, "y": 24, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 23: FIGURAS SÓLIDAS EN 3D",
+      "Consigna:",
+      "- Recreá cada primitiva con los comandos de sólidos:",
+      "- PRISMA (BOX) en la base 10x8 y altura 4.",
+      "- CILINDRO radio 3 altura 8; CONO radio 3 altura 8.",
+      "- ESFERA radio 4 en (48,4).",
+      "- CUÑA 10x8 altura 5; TOROIDE mayor 4 menor 1.5.",
+      "- VISTA → SUDOESTE ISO y estilo Concepto.",
+      "- Guardá como clase23-solidos.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Familia de primitivas sólidas en vista SUDOESTE ISO" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle: caja, cilindro y cono en estilo Concepto" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: FIGURAS SÓLIDAS — las seis primitivas 3D básicas de AutoCAD",
+    "objetivo": "Crear las primitivas sólidas 3D (caja, cilindro, cono, esfera, cuña y toro) y visualizarlas en una vista isométrica.",
+    "pasos": [
+      { "titulo": "Capa y variables", "detalle": ["1. Capa Dibujo activa.", "2. Punto de vista SUDOESTE ISO (panel Vista)."] },
+      { "titulo": "Prisma (caja)", "detalle": ["1. Comando PRISMA (BOX).", "2. Base en (0,0) de 10x8 y altura 4."] },
+      { "titulo": "Cilindro y cono", "detalle": ["1. CILINDRO en (20,4) radio 3 altura 8.", "2. CONO en (34,4) radio 3 altura 8."] },
+      { "titulo": "Esfera", "detalle": ["1. ESFERA en (48,4) radio 4.", "2. La esfera flota desde el centro z=4."] },
+      { "titulo": "Cuña y toroide", "detalle": ["1. CUÑA en (0,20) 10x8 altura 5.", "2. TOROIDE en (20,24) mayor 4, menor 1.5."] },
+      { "titulo": "Visualización", "detalle": ["1. Estilo visual Concepto (panel Visualizar).", "2. Zoom extensión."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase23-solidos.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Base de la caja", "valor": "10 x 8" },
+      { "label": "Altura de la caja", "valor": "4" },
+      { "label": "Radio cilindro y cono", "valor": "3" },
+      { "label": "Radio de la esfera", "valor": "4" },
+      { "label": "Toroide: mayor / menor", "valor": "4 / 1.5" }
+    ],
+    "consejos": [
+      "Las primitivas se crean con un comando y dos datos como máximo.",
+      "La vista isométrica muestra el volumen completo.",
+      "Sobre estas figuras se modelan las piezas de las próximas clases."
+    ]
+  }
+}

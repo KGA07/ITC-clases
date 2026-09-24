@@ -1,0 +1,75 @@
+{
+  "numero": 5,
+  "titulo": "Modificación I: pinzamientos, desplazar, copiar y recortar",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 5 - Funciones de modificación I",
+  "pdfTitulo": "PRÁCTICO N°5 — Modificación I: pinzamientos, desplazar, copiar y recortar",
+  "pdfSubtitulo": "Figura: cruz perfecta obtenida recortando dos rectángulos",
+  "archivo": {
+    "dwg": "ITC Practico Clase 5 - Cruz perfecta.dwg",
+    "pdf": "Práctico Clase 5 - Modificación I pinzamientos desplazar copiar recortar.pdf",
+    "txt": "Guía práctica - Clase 5 - Modificación I - pinzamientos desplazar copiar recortar.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "Cotas", "c": "1" },
+    { "n": "Centro", "c": "2", "lt": "CENTER2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 20, "y2": 5, "capa": "Dibujo" }
+    ],
+    "polilineas": [
+      { "pts": [[6,-7],[6,12],[14,-7],[6,-7]], "capa": "Dibujo", "cerrado": false }
+    ],
+    "lineas": [
+      { "x1": 3, "y1": 2.5, "x2": 17, "y2": 2.5, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 10, "y1": -6, "x2": 10, "y2": 11, "capa": "Centro", "lt": "CENTER2" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 20, "y2": 0, "lx": 10, "ly": -12 },
+      { "x1": 6, "y1": -7, "x2": 14, "y2": -7, "lx": 10, "ly": -9 }
+    ],
+    "encuadre": { "x1": -2, "y1": -7, "x2": 22, "y2": 12 }
+  },
+  "consigna": {
+    "x": 30, "y": 10, "ancho": 115, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 5: PINZAMIENTOS, DESPLAZAR, COPIAR Y RECORTAR",
+      "Consigna:",
+      "- Trazá dos rectángulos cruzados (horizontal 20x5 y vertical de 8 de alto).",
+      "- Usá RECORTA para dejar la cruz perfecta.",
+      "- Alargá los extremos con ALARGA (Mayús).",
+      "- Desplazá el conjunto 5 unidades a la derecha.",
+      "- Copiá la cruz dos veces más.",
+      "- Acotá el largo 20 y el ancho 8.",
+      "- Guardá como clase5-cruz.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Cruz perfecta con sus herramientas de modificación" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del cruce: esquinas recortadas prolijamente" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: CRUZ PERFECTA obtenida con herramientas de modificación I",
+    "objetivo": "Aplicar pinzamientos (TAB), desplazar, copiar, recortar y alargar objetos para construir una cruz perfecta.",
+    "pasos": [
+      { "titulo": "Dibujar los dos rectángulos", "detalle": ["1. RECTÁNGULO horizontal: (0,0)-(20,5).", "2. RECTÁNGULO vertical: (6,-7)-(14,12).", "3. Se cruzan formando una letra T invertida."] },
+      { "titulo": "Recortar hasta la cruz perfecta", "detalle": ["1. Comando RECORTA (TR).", "2. Seleccioná la barra de corte (intersección).", "3. Clic en los extremos del horizontal que sobresalen.", "4. Resultado: una cruz limpia de 20x8."] },
+      { "titulo": "Alargar extremos", "detalle": ["1. Comando ALARGA (EX).", "2. Mantené Mayús para convertir en recorte.", "3. Alargá los extremos de la cruz a la medida deseada."] },
+      { "titulo": "Desplazar y copiar", "detalle": ["1. Desplaza (DESPLAZA o M): mover la cruz 5 a la derecha.", "2. Copia (COPIA o CO): crear dos copias adicionales."] },
+      { "titulo": "Acotar", "detalle": ["1. Capa COTAS: cota largo 20, cota ancho 8.", "2. Los ejes centrales en capa CENTRO."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase5-cruz.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Largo de la cruz", "valor": "20 mm" },
+      { "label": "Ancho de la cruz", "valor": "8 mm" },
+      { "label": "Grosor de las barras", "valor": "5 mm" }
+    ],
+    "consejos": [
+      "RECORTA corta tomando como filo el objeto seleccionado.",
+      "ALARGA con Mayús cambia a modo recortar.",
+      "Los pinzamientos (TAB) permiten estirar extremos con precisión."
+    ]
+  }
+}

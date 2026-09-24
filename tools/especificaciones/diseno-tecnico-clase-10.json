@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 10,
     "titulo": "Bloques, Design Center y escala",
@@ -22,9 +27,9 @@
       "titulo": "Creación de bloques",
       "emoji": "🧩",
       "imagen": {
-        "src": "img/bloque.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Bloques agrupados como un solo objeto",
-        "caption": "Un bloque agrupa varios objetos para insertarlos como una sola unidad reutilizable."
+        "caption": "Figura 1 — Mesa original, copia escalada 0.5 y rotada 90º"
       },
       "parrafos": [
         "Un bloque es un conjunto de objetos agrupados con un nombre y un punto base. Se crea con el comando BLOQUE (BLOQUE): se selecciona la geometría, se define el punto base y se le da nombre.",
@@ -41,9 +46,9 @@
       "titulo": "Inserción de bloques y Design Center",
       "emoji": "📦",
       "imagen": {
-        "src": "img/designcenter.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Biblioteca de bloques de Design Center",
-        "caption": "Design Center arrastra bloques de otros archivos a nuestro dibujo."
+        "caption": "Figura 2 — Detalle del bloque MESA con su punto de inserción"
       },
       "parrafos": [
         "La inserción (INSERT o I) coloca una copia del bloque eligiendo escala, rotación y punto de inserción. Design Center (DC) es la biblioteca que recorre archivos DWG del disco y permite arrastrar sus bloques directamente al dibujo."
@@ -58,11 +63,6 @@
     {
       "titulo": "Escala por factor y por referencia",
       "emoji": "📐",
-      "imagen": {
-        "src": "img/escala.jpg",
-        "alt": "Escala de un bloque al insertarlo",
-        "caption": "Con la escala definís el tamaño real con que entra cada bloque."
-      },
       "parrafos": [
         "Al insertar, AutoCAD pregunta el factor de escala (ej. 1, 0.5, 2). La escala por factor se calcula como: factor = medida deseada / medida actual. Por ejemplo, si un bloque mide 100 y debe medir 250, el factor es 2.5.",
         "La escala por referencia permite en cambio elegir directamente la medida que debe tener el bloque, y AutoCAD calcula el factor."
@@ -103,27 +103,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué comando crea un bloque?",
-            "opciones": ["INSERT", "BLOQUE", "DC", "ESCALA"],
+            "opciones": [
+              "INSERT",
+              "BLOQUE",
+              "DC",
+              "ESCALA"
+            ],
             "correcta": "BLOQUE"
           },
           {
             "pregunta": "¿Qué herramienta explora archivos DWG para insertar sus bloques?",
-            "opciones": ["Design Center", "La impresora", "El SCP", "Rastreo Polar"],
+            "opciones": [
+              "Design Center",
+              "La impresora",
+              "El SCP",
+              "Rastreo Polar"
+            ],
             "correcta": "Design Center"
           },
           {
             "pregunta": "El factor de escala se calcula como:",
-            "opciones": ["medida actual / medida deseada", "medida deseada / medida actual", "medida deseada × medida actual", "medida actual − medida deseada"],
+            "opciones": [
+              "medida actual / medida deseada",
+              "medida deseada / medida actual",
+              "medida deseada × medida actual",
+              "medida actual − medida deseada"
+            ],
             "correcta": "medida deseada / medida actual"
           },
           {
             "pregunta": "¿Qué opción de escala evita tener que calcular el factor?",
-            "opciones": ["Factor", "Referencia", "Base", "Polar"],
+            "opciones": [
+              "Factor",
+              "Referencia",
+              "Base",
+              "Polar"
+            ],
             "correcta": "Referencia"
           },
           {
             "pregunta": "¿Qué dibuja la línea múltiple?",
-            "opciones": ["Curvas elípticas", "Varias líneas paralelas en un solo comando", "Círculos concéntricos", "Solo texto"],
+            "opciones": [
+              "Curvas elípticas",
+              "Varias líneas paralelas en un solo comando",
+              "Círculos concéntricos",
+              "Solo texto"
+            ],
             "correcta": "Varias líneas paralelas en un solo comando"
           }
         ]
@@ -147,12 +172,36 @@
   "lectura": "Los bloques son la forma de reutilizar: puertas, ventanas, muebles y sanitarios se dibujan una vez y se insertan todas las veces que haga falta. Design Center trae bibliotecas enteras de bloques, y la escala por factor o por referencia garantiza que cada inserción entre con su medida real.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Presentar el concepto de reutilización: dibujar una vez, usar muchas", "min": "10 min" },
-      { "titulo": "Creación de bloques", "que": "Crear un bloque desde cero y explicar punto base y nombre", "min": "20 min" },
-      { "titulo": "Inserción y Design Center", "que": "Insertar con INSERT y arrastrar bloques desde Design Center", "min": "20 min" },
-      { "titulo": "Escala", "que": "Calcular factor y usar escala por referencia en vivo", "min": "20 min" },
-      { "titulo": "Línea múltiple", "que": "Dibujar un muro con LINEM con dos trazos paralelos", "min": "10 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo final", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Presentar el concepto de reutilización: dibujar una vez, usar muchas",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Creación de bloques",
+        "que": "Crear un bloque desde cero y explicar punto base y nombre",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Inserción y Design Center",
+        "que": "Insertar con INSERT y arrastrar bloques desde Design Center",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Escala",
+        "que": "Calcular factor y usar escala por referencia en vivo",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Línea múltiple",
+        "que": "Dibujar un muro con LINEM con dos trazos paralelos",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo final",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Preguntar cuántas veces dibujaron a mano la misma puerta en un plano: los bloques lo resuelven para siempre."

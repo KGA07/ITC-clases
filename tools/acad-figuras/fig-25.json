@@ -1,0 +1,80 @@
+{
+  "numero": 25,
+  "titulo": "Render de una casa 3D",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 25 - Render de una casa 3D",
+  "pdfTitulo": "PRÁCTICO N°25 — Render de una casa 3D",
+  "pdfSubtitulo": "Figura: casa modelada con sólidos (cuerpo, techo, chimenea, puerta y ventanas) lista para render",
+  "archivo": {
+    "dwg": "ITC Practico Clase 25 - Render de una casa 3D.dwg",
+    "pdf": "Práctico Clase 25 - Render de una casa 3D.pdf",
+    "txt": "Guía práctica - Clase 25 - Render de una casa 3D.txt"
+  },
+  "capas": [
+    { "n": "CERCO", "c": "3" },
+    { "n": "Dibujo", "c": "7" },
+    { "n": "PISOS", "c": "5" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "solidos": [
+      { "tipo": "caja", "cx": 0, "cy": 0, "cz": 0, "l": 30, "w": 22, "h": 12, "capa": "Dibujo" },
+      { "tipo": "cuña", "cx": 0, "cy": 0, "cz": 12, "l": 30, "w": 22, "h": 7, "capa": "Dibujo" },
+      { "tipo": "cilindro", "cx": 8, "cy": 4, "cz": 12, "r": 2, "h": 8, "capa": "Dibujo" },
+      { "tipo": "caja", "cx": 13, "cy": -1, "cz": 0, "l": 5, "w": 1.5, "h": 8, "capa": "Dibujo" },
+      { "tipo": "caja", "cx": 4, "cy": -1, "cz": 4, "l": 5, "w": 1.5, "h": 4, "capa": "Dibujo" },
+      { "tipo": "caja", "cx": 22, "cy": -1, "cz": 4, "l": 5, "w": 1.5, "h": 4, "capa": "Dibujo" }
+    ],
+    "booleanos": [
+      { "op": "union", "a": 0, "b": 1 },
+      { "op": "union", "a": 0, "b": 2 },
+      { "op": "union", "a": 0, "b": 3 },
+      { "op": "union", "a": 0, "b": 4 },
+      { "op": "union", "a": 0, "b": 5 }
+    ],
+    "encuadre": { "x1": -3, "y1": -3, "x2": 34, "y2": 26 }
+  },
+  "vista": { "direccion": [-1, -1, 1], "estilo": "Realistic" },
+  "consigna": {
+    "x": 38, "y": 24, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 25: RENDER DE UNA CASA 3D",
+      "Consigna:",
+      "- La casa ya está modelada con sólidos y unida.",
+      "- Asignale materiales a los muros y al techo.",
+      "- Agregá una luz (SOL/SUN) desde el sur-oeste.",
+      "- Ejecutá RENDER con presets Intermedio/Alto.",
+      "- Guardá la imagen render (guardar vista).",
+      "- Guardá como clase25-casa3d.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Casa modelada con sólidos en vista SUDOESTE ISO" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de la casa: techo a un agua, chimenea, puerta y ventanas" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: RENDER DE UNA CASA — modelado por sólidos y render fotorrealista",
+    "objetivo": "Modelar una casa con sólidos primitivos, unirlos con operaciones booleanas, aplicar materiales e iluminación y renderizar la escena.",
+    "pasos": [
+      { "titulo": "Cuerpo de la casa", "detalle": ["1. PRISMA (BOX) (0,0,0) de 30x22 y altura 12.", "2. Es el cuerpo o muros de la casa."] },
+      { "titulo": "Techo", "detalle": ["1. CUÑA sobre el cuerpo (z=12) de 30x22 altura 7.", "2. UNIÓN con el cuerpo."] },
+      { "titulo": "Chimenea", "detalle": ["1. CILINDRO en (8,4) radio 2 altura 8 sobre el techo.", "2. UNIÓN con el cuerpo."] },
+      { "titulo": "Puerta y ventanas", "detalle": ["1. PUERTA: caja (13,-1) de 5x1.5 altura 8.", "2. VENTANAS: cajas (4,-1) y (22,-1) de 5x1.5 altura 4.", "3. UNIÓN de cada una."] },
+      { "titulo": "Materiales", "detalle": ["1. Muros y techo → ladrillo y teja.", "2. Chimenea → hormigón; puerta → madera; ventanas → cristal."] },
+      { "titulo": "Iluminación y render", "detalle": ["1. SOL (SUNAng) con hora de la tarde.", "2. RENDER con preset Alto.", "3. Guardá la imagen render desde la ventana."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase25-casa3d.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Cuerpo", "valor": "30 x 22 x 12" },
+      { "label": "Techo (cuña)", "valor": "30 x 22 x 7" },
+      { "label": "Radio chimenea", "valor": "2" },
+      { "label": "Puerta", "valor": "5 x 1.5 x 8" },
+      { "label": "Ventanas", "valor": "5 x 1.5 x 4" }
+    ],
+    "consejos": [
+      "El render necesita materiales y al menos una luz.",
+      "Los presets de RENDER van de Bajo a Alto.",
+      "La imagen renderizada se guarda desde la ventana de render."
+    ]
+  }
+}

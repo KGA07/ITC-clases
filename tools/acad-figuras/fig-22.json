@@ -1,0 +1,73 @@
+{
+  "numero": 22,
+  "titulo": "Modelado 3D: extrusión y sólidos",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\3D",
+  "pdfTitulo": "PRÁCTICO N°22 — Modelado 3D: extrusión y sólidos",
+  "pdfSubtitulo": "Figura: perfil en L extruido a 10 de altura y cilindro a unir",
+  "archivo": {
+    "dwg": "ITC Practico Clase 22 - Modelo 3D.dwg",
+    "pdf": "Práctico Clase 22 - Modelado 3D extrusión y sólidos.pdf",
+    "txt": "Guía práctica - Clase 22 - Modelado 3D - extrusión y sólidos.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "COTAS", "c": "1" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[0,0],[12,0],[12,3],[3,3],[3,9],[0,9],[0,0]], "capa": "Dibujo", "cerrado": true }
+    ],
+    "circulos": [
+      { "x": 15, "y": 5, "r": 1.5, "capa": "Dibujo" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 0, "lx": 6, "ly": -3 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 9, "lx": -3, "ly": 4.5 }
+    ],
+    "encuadre": { "x1": -2, "y1": -2, "x2": 18, "y2": 12 }
+  },
+  "consigna": {
+    "x": 21, "y": 10, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 22: MODELADO 3D (EXTRUSIÓN Y SÓLIDOS)",
+      "Consigna:",
+      "- El perfil en L (base 12x9) está listo en el espacio modelo.",
+      "- Comando EXTRUIR (EXTRUDE) altura 10.",
+      "- Vista SUDOESTE ISO para ver el sólido.",
+      "- Círculo radio 1.5 → CILINDRO altura 10.",
+      "- UNIÓN del cilindro al soporte.",
+      "- SOMBREADO CONCEPTO para el resultado.",
+      "- Guardá como clase22-3d.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Perfil en L extruido a 10 de altura (vista 3D)" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Sólido compuesto: L + cilindro unidos por UNIÓN" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: MODELADO 3D — extrusión de un perfil en L y composición de sólidos",
+    "objetivo": "Convertir un perfil 2D en un sólido por extrusión, agregar un cilindro y combinar ambos con operaciones booleanas.",
+    "pasos": [
+      { "titulo": "Preparar el perfil 2D", "detalle": ["1. Perfil en L: (0,0)-(12,0)-(12,3)-(3,3)-(3,9)-(0,9)-cierre (polilínea).", "2. El círculo radio 1.5 en (15,5) es la base del cilindro."] },
+      { "titulo": "Extrusión", "detalle": ["1. Comando EXTRUIR (EXTRUDE).", "2. Seleccioná la polilínea y altura 10."] },
+      { "titulo": "Vista isométrica", "detalle": ["1. VISTA → SUDOESTE ISO (o comando VISTA 3D).", "2. Girá con ORBITA si es necesario."] },
+      { "titulo": "Cilindro", "detalle": ["1. Comando CILINDRO sobre el círculo base.", "2. Altura 10."] },
+      { "titulo": "Composición", "detalle": ["1. UNIÓN (UNION): combiná L + cilindro.", "2. (Opcional) DIFERENCIA para perforaciones."] },
+      { "titulo": "Visualización", "detalle": ["1. SOMBREADO → CONCEPTO.", "2. Guardá la vista."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase22-3d.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Base del perfil L", "valor": "12 mm" },
+      { "label": "Altura del perfil L", "valor": "9 mm" },
+      { "label": "Altura de extrusión", "valor": "10 mm" },
+      { "label": "Radio del cilindro", "valor": "1.5 mm" }
+    ],
+    "consejos": [
+      "La extrusión necesita una polilínea cerrada.",
+      "La vista 3D se define con SUDOESTE ISO.",
+      "Las operaciones booleanas modelan piezas reales."
+    ]
+  }
+}

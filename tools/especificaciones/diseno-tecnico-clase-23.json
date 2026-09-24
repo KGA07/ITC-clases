@@ -1,0 +1,150 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 23,
+    "titulo": "Figuras sólidas en 3D",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Empieza la etapa 3D del curso: vas a crear las primitivas sólidas (prisma, cilindro, cono, esfera, cuña y toroide) y ubicarlas en el espacio para construir cuerpos volumétricos reales.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 23 - Figuras solidas 3D",
+  "objetivos": [
+    "Crear las primitivas sólidas básicas: prisma (caja), cilindro, cono, esfera, cuña y toroide.",
+    "Ubicar cada sólido en coordenadas del espacio (X, Y, Z) con orientación correcta.",
+    "Visualizar los cuerpos en vista isométrica y cambiar el estilo visual para verlos rellenos."
+  ],
+  "teoria": [
+    {
+      "titulo": "Las primitivas sólidas",
+      "emoji": "🧊",
+      "imagen": {
+        "src": "img/interfaz.jpg",
+        "alt": "Primitivas sólidas en vista isométrica",
+        "caption": "Cada comando de sólido crea un cuerpo con un solo dibujo y sus datos: base y altura."
+      },
+      "parrafos": [
+        "Un sólido es un cuerpo con volumen, no una superficie. AutoCAD los crea con comandos propios: PRISMA (caja), CILINDRO, CONO, ESFERA, CUÑA y TOROIDE. Se elige el punto base y se escriben los datos (ancho, largo, altura o radio) y el cuerpo aparece ya cerrado.",
+        "La caja se apoya en el plano XY y crece en altura (Z); la esfera se define por centro y radio; el cilindro y el cono por centro de la base, radio y altura; la cuña es la mitad de un prisma cortado por su diagonal; y el toroide se define con dos radios: el mayor (a la barra de sección) y el menor (el tubo)."
+      ],
+      "puntos": [
+        "Cada primitiva se crea con un comando y dos o tres datos como máximo.",
+        "Todas nacen sobre el plano de trabajo del SCP vigente.",
+        "El estilo Conceptual muestra las caras rellenas y facilita leer el volumen.",
+        "Las seis primitivas son la materia prima de todas las piezas 3D siguientes."
+      ]
+    },
+    {
+      "titulo": "Ubicación en el espacio",
+      "emoji": "📍",
+      "parrafos": [
+        "Las coordenadas (X, Y, Z) ubican cada cuerpo: X y Y lo posicionan en el plano del suelo y Z lo eleva o lo apoya. Con la vista isométrica (por ejemplo SUDOESTE) se ve el volumen completo de todos los cuerpos a la vez.",
+        "Para apoyar una esfera sobre el suelo hay que elevarla desde su centro: el centro en Z = radio. Ese tipo de detalle es el que hace que una escena se vea bien armada."
+      ],
+      "puntos": [
+        "La caja y la cuña piden una esquina base; cilindro y cono piden el centro de la base.",
+        "La esfera se define por su centro: se eleva con Z para apoyarla.",
+        "Los cuerpos se separan en el plano para que no se superpongan al visualizarlos."
+      ]
+    },
+    {
+      "titulo": "Visualización isométrica",
+      "emoji": "🔍",
+      "imagen": {
+        "src": "img/encuadre.jpg",
+        "alt": "Detalle de sólidos en estilo Conceptual",
+        "caption": "La vista isométrica suma las tres direcciones: lenguajes de dibujo técnico (caja, cilindro, cono)."
+      },
+      "parrafos": [
+        "Las vistas isométricas son la forma estándar de presentar el 3D en el dibujo técnico: muestran ancho, profundidad y altura en una sola imagen. Desde el panel Vista se eligen Noreste, Noroeste, Sureste o Sudoeste según cómo se quiera leer la pieza.",
+        "El estilo visual (panel Visualizar) complementa la vista: Concepto muestra las caras iluminadas con color uniforme y es ideal para leer volúmenes. Después, la cámara se acerca con zoom a los cuerpos que se quieren detallar."
+      ],
+      "puntos": [
+        "SUDOESTE ISO muestra los cuerpos desde atrás-izquierda: estándar para piezas.",
+        "Estilo Concepto: caras rellenas con sombreado plano.",
+        "Zoom extensión encuadra toda la escena; luego se acerca al detalle."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá las primitivas",
+      "consigna": "Respondé el interactivo sobre las seis primitivas sólidas y sus datos de creación.",
+      "pasos": [
+        "Explorá cada primitiva en la vista isométrica de la figura.",
+        "Reconocé qué datos pide cada comando (base, radio, altura).",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con la figura 3D en pantalla.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué primitiva se define con dos radios: el mayor y el menor (tubo)?",
+            "opciones": ["Esfera", "Toroide", "Cono", "Cuña"],
+            "correcta": "Toroide"
+          },
+          {
+            "pregunta": "¿Sobre qué plano nacen todas las primitivas?",
+            "opciones": ["Plano XY del SCP vigente", "Plano XZ", "Plano YZ", "El del suelo siempre"],
+            "correcta": "Plano XY del SCP vigente"
+          },
+          {
+            "pregunta": "¿Cómo se apoya una esfera sobre el suelo?",
+            "opciones": ["Con la base en Z=0", "Elevando su centro en Z = radio", "No se puede", "Rotándola 90°"],
+            "correcta": "Elevando su centro en Z = radio"
+          },
+          {
+            "pregunta": "¿Qué vista muestra el volumen completo de una pieza?",
+            "opciones": ["Planta", "La isométrica", "El alzado", "El perfil"],
+            "correcta": "La isométrica"
+          },
+          {
+            "pregunta": "¿Qué estilo visual rellena las caras sin materiales?",
+            "opciones": ["Alámbrico 2D", "Concepto", "Oculto", "Rayos X"],
+            "correcta": "Concepto"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Tu set de primitivas",
+      "consigna": "Recreá las seis primitivas de la figura en un dibujo nuevo.",
+      "pasos": [
+        "Capa Dibujo activa y vista SUDOESTE ISO.",
+        "PRISMA: base 10x8 en (0,0), altura 4.",
+        "CILINDRO en (20,4) radio 3 altura 8; CONO en (34,4) radio 3 altura 8.",
+        "ESFERA en (48,4) radio 4 (elevada en Z).",
+        "CUÑA en (0,20) de 10x8 altura 5; TOROIDE en (20,24) mayor 4 menor 1.5.",
+        "Aplicá estilo Concepto, zoom extensión y guardá como clase23-solidos.dwg."
+      ],
+      "entrega": "El docente revisa los seis cuerpos en la vista isométrica con estilo Concepto."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase23-solidos.dwg con las seis primitivas y el estilo visual Concepto.",
+  "lectura": "Las primitivas sólidas abren el modelado 3D: prisma, cilindro, cono, esfera, cuña y toroide se crean con un comando y sus datos, apoyadas en el plano de trabajo del SCP. Ubicarlas con coordenadas X, Y, Z y mirarlas en vista isométrica con estilo Concepto permite leer el volumen de cualquier pieza antes de trabajarla.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar el salto al 3D con una pieza sólida terminada", "min": "10 min" },
+      { "titulo": "Primitivas", "que": "Crear caja, cilindro, cono, esfera, cuña y toroide en vivo", "min": "30 min" },
+      { "titulo": "Ubicación", "que": "Coordenadas X, Y, Z y apoyo de la esfera sobre el suelo", "min": "15 min" },
+      { "titulo": "Vistas y estilos", "que": "Vista isométrica SUDOESTE y estilo Concepto", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el set de las seis primitivas y el interactivo", "min": "15 min" },
+      { "titulo": "Cierre", "que": "Repaso oral del interactivo y del guardado", "min": "5 min" }
+    ],
+    "conecta": [
+      "Comparar la planta 2D de la clase 7 con el mismo prisma en 3D: el volumen apareció."
+    ],
+    "aclarar": [
+      "Las primitivas piden datos distintos: la esfera no tiene altura porque se define por radio.",
+      "La esfera elevada: en la vista planta se ve un círculo; en isométrica se ve que flota si falta el Z.",
+      "Estilo Concepto rellena; Alámbrico devuelve solo aristas."
+    ],
+    "ejemplos": [
+      "Un prisma y su planta: longitud, ancho y altura escritos como en el boceto.",
+      "Una esfera apoyada contra un cilindro para comparar sus grandes dimensiones.",
+      "Tres cuñas girando alrededor de un eje para ver el volumen aparecer en cada paso."
+    ]
+  }
+}

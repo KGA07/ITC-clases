@@ -1,0 +1,82 @@
+{
+  "numero": 21,
+  "titulo": "Presentaciones y trazadores",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 21 - Presentaciones y trazadores",
+  "pdfTitulo": "PRÁCTICO N°21 — Presentaciones y trazadores",
+  "pdfSubtitulo": "Figura: hoja A3 horizontal con viewport a escala 1:50 y rótulo",
+  "archivo": {
+    "dwg": "ITC Practico Clase 21 - Presentación A3.dwg",
+    "pdf": "Práctico Clase 21 - Presentaciones y trazadores.pdf",
+    "txt": "Guía práctica - Clase 21 - Presentaciones y trazadores.txt"
+  },
+  "capas": [
+    { "n": "MUROS", "c": "7" },
+    { "n": "ABERTURAS", "c": "1" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "ROTULO", "c": "3" },
+    { "n": "VIEWPORT", "c": "6" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 42, "y2": 29.7, "capa": "ROTULO" }
+    ],
+    "polilineas": [
+      { "pts": [[7,7],[35,7],[35,23],[7,23],[7,7]], "capa": "VIEWPORT", "cerrado": true },
+      { "pts": [[7,1.5],[35,1.5]], "capa": "ROTULO", "cerrado": false }
+    ],
+    "lineas": [
+      { "x1": 7, "y1": 4, "x2": 35, "y2": 4, "capa": "ROTULO" },
+      { "x1": 38, "y1": 1.5, "x2": 38, "y2": 4, "capa": "ROTULO" },
+      { "x1": 38, "y1": 1.5, "x2": 40, "y2": 1.5, "capa": "ROTULO" },
+      { "x1": 38, "y1": 4, "x2": 40, "y2": 4, "capa": "ROTULO" },
+      { "x1": 40, "y1": 1.5, "x2": 40, "y2": 4, "capa": "ROTULO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 42, "y2": 0, "lx": 21, "ly": -3 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 29.7, "lx": -3, "ly": 14.85 }
+    ],
+    "encuadre": { "x1": -2, "y1": -2, "x2": 44, "y2": 32 }
+  },
+  "consigna": {
+    "x": 46, "y": 22, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 21: PRESENTACIONES Y TRAZADORES",
+      "Consigna:",
+      "- Configuración de página: A3 horizontal.",
+      "- El marco y el rótulo son de la carátula (clase 19).",
+      "- En la presentación creá un Viewport rectangular.",
+      "- Fijá la escala del viewport en 1:50.",
+      "- Congelá las capas del marco en el viewport.",
+      "- Configurá el trazador PDF → Plot.",
+      "- Guardá como clase21-presentacion.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Hoja A3 horizontal con Viewport a escala 1:50 y rótulo" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del rótulo dentro de la hoja de la presentación" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PRESENTACIÓN A3 — configuración de página, viewports y trazadores",
+    "objetivo": "Armar una presentación (espacio papel): configurar página A3, crear un viewport con escala 1:50 y plotear a PDF.",
+    "pasos": [
+      { "titulo": "Configurar la página", "detalle": ["1. Pestaña Presentación (Disposición).", "2. Configurar página: A3 horizontal.", "3. Definí el plotter de salida (PDF)."] },
+      { "titulo": "Marco y rótulo", "detalle": ["1. Rectángulo exterior (0,0)-(42,29.7) en ROTULO.", "2. Rótulo con los datos (clase 19)."] },
+      { "titulo": "Viewport", "detalle": ["1. VPORTS → rectangular (7,7)-(35,23).", "2. Doble clic adentro para activar el modelo.", "3. Escala 1:50 en la barra de estado del viewport."] },
+      { "titulo": "Congelar capas", "detalle": ["1. Congelá las capas del marco (ROTULO) dentro del viewport.", "2. Dejá visibles solo MUROS/ABERTURAS/COTAS."] },
+      { "titulo": "Trazador y Plot", "detalle": ["1. Configurá el trazador (impresora PDF).", "2. Plot → área de la hoja, escala 1:1, centrado."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase21-presentacion.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Hoja A3 horizontal", "valor": "42.0 x 29.7 (a 1:10)" },
+      { "label": "Escala del viewport", "valor": "1:50" },
+      { "label": "Rótulo", "valor": "Carátula clase 19" }
+    ],
+    "consejos": [
+      "El viewport muestra el espacio modelo a una escala.",
+      "Refinar las capas por viewport controla la salida.",
+      "El trazador PDF se configura una sola vez por hoja."
+    ]
+  }
+}

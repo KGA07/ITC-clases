@@ -1,0 +1,91 @@
+{
+  "numero": 9,
+  "titulo": "Capas de una planta de vivienda",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 9 - Capas de planta de vivienda",
+  "pdfTitulo": "PRÁCTICO N°9 — Capas de una planta de vivienda",
+  "pdfSubtitulo": "Figura: planta de vivienda con muros de 0.20 y parcela 14×10",
+  "archivo": {
+    "dwg": "ITC Practico Clase 9 - Planta de vivienda.dwg",
+    "pdf": "Práctico Clase 9 - Capas de planta de vivienda.pdf",
+    "txt": "Guía práctica - Clase 9 - Capas de planta de vivienda.txt"
+  },
+  "capas": [
+    { "n": "MUROS", "c": "7" },
+    { "n": "ABERTURAS", "c": "1" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "MOBILIARIO", "c": "3" },
+    { "n": "SANITARIOS", "c": "5" },
+    { "n": "ELECTRICIDAD", "c": "6" },
+    { "n": "TECHOS", "c": "8" },
+    { "n": "PARCELA", "c": "4" },
+    { "n": "Centro", "c": "8", "lt": "CENTER2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 2, "y1": 2, "x2": 12, "y2": 9, "capa": "MUROS" },
+      { "x1": 4.6, "y1": 7, "x2": 9.5, "y2": 9, "capa": "ABERTURAS" },
+      { "x1": 2.6, "y1": 5, "x2": 5, "y2": 7, "capa": "SANITARIOS" }
+    ],
+    "polilineas": [
+      { "pts": [[0,0],[14,0],[14,10],[0,10],[0,0]], "capa": "PARCELA", "cerrado": true },
+      { "pts": [[3,9],[3,10],[7,10],[7,9],[3,9]], "capa": "MUROS", "cerrado": true }
+    ],
+    "lineas": [
+      { "x1": 2, "y1": 5.5, "x2": 6, "y2": 5.5, "capa": "MUROS" },
+      { "x1": 7, "y1": 2, "x2": 10, "y2": 2, "capa": "MUROS" },
+      { "x1": 9.5, "y1": 7, "x2": 9.5, "y2": 9, "capa": "ABERTURAS" },
+      { "x1": 6, "y1": 8, "x2": 8, "y2": 8, "capa": "ELECTRICIDAD" }
+    ],
+    "circulos": [
+      { "x": 3.6, "y": 6, "r": 0.4, "capa": "MOBILIARIO" },
+      { "x": 8, "y": 4, "r": 0.6, "capa": "MOBILIARIO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 14, "y2": 0, "lx": 7, "ly": -3 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 10, "lx": -3, "ly": 5 }
+    ],
+    "encuadre": { "x1": -1, "y1": -1, "x2": 15, "y2": 11 }
+  },
+  "consigna": {
+    "x": 20, "y": 2, "ancho": 130, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 9: CAPAS DE UNA PLANTA DE VIVIENDA",
+      "Consigna:",
+      "- Creá las 8 capas temáticas (MUROS, ABERTURAS, COTAS, MOBILIARIO, SANITARIOS, ELECTRICIDAD, TECHOS, PARCELA).",
+      "- Dibujá los muros exteriores con polilínea de ancho 0.20 (capa MUROS).",
+      "- Añadí los muros divisorios en T.",
+      "- Parlamento y sanitario con las capas respectivas.",
+      "- Trazá la parcela de 14x10.",
+      "- Acotá frente y fondo en capa COTAS.",
+      "- Guardá como clase9-planta.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Planta de vivienda con muros, aberturas y parcela" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de esquina de muro con su grosor 0.20" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PLANTA DE VIVIENDA — muros 0.20 en parcela 14x10",
+    "objetivo": "Organizar un plano de vivienda en 8 capas temáticas y dibujar los primeros muros en planta.",
+    "pasos": [
+      { "titulo": "Crear el esquema de 8 capas", "detalle": ["1. Propiedades de capa.", "2. Crea MUROS, ABERTURAS, COTAS, MOBILIARIO, SANITARIOS, ELECTRICIDAD, TECHOS y PARCELA.", "3. Asigná colores y grosores (MUROS 0.50, COTAS 0.25)."] },
+      { "titulo": "Dibujar muros exteriores", "detalle": ["1. Capa MUROS.", "2. Polilínea de ancho 0.20 recorriendo (2,2)→(12,2)→(12,9)→(2,9)→cierre.", "3. Muro en T interior: (2,5.5)-(6,5.5) y (7,2)-(10,2)."] },
+      { "titulo": "Dimensionar ambientes", "detalle": ["1. Aberturas: rectángulo (4.6,7)-(9.5,9) en ABERTURAS.", "2. Sanitario: rectángulo (2.6,5)-(5,7) en SANITARIOS.", "3. Electricidad: línea (6,8)-(8,8)."] },
+      { "titulo": "Mobiliario", "detalle": ["1. Círculos MOBILIARIO en (3.6,6) r0.4 y (8,4) r0.6."] },
+      { "titulo": "Parcela", "detalle": ["1. Capa PARCELA: rectángulo (0,0)-(14,10).", "2. Cota de frente 14 y fondo 10 en capa COTAS."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase9-planta.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Parcela frente", "valor": "14 m" },
+      { "label": "Parcela fondo", "valor": "10 m" },
+      { "label": "Espesor de muro", "valor": "0.20 m" },
+      { "label": "Abertura", "valor": "4.90 m" }
+    ],
+    "consejos": [
+      "Separá la información en capas para poder ocultarla al imprimir.",
+      "El muro se dibuja con su ancho real (0.20).",
+      "TECHOS queda desactivada hasta la clase de cubierta."
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "numero": 10,
+  "titulo": "Bloques, Design Center y escala",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 10 - Bloques",
+  "pdfTitulo": "PRÁCTICO N°10 — Bloques, Design Center y escala",
+  "pdfSubtitulo": "Figura: mesa convertida en bloque e insertada a distintas escalas y rotaciones",
+  "archivo": {
+    "dwg": "ITC Practico Clase 10 - Mesa en bloques.dwg",
+    "pdf": "Práctico Clase 10 - Bloques, Design Center y escala.pdf",
+    "txt": "Guía práctica - Clase 10 - Bloques, Design Center y escala.txt"
+  },
+  "capas": [
+    { "n": "MOBILIARIO", "c": "3" },
+    { "n": "MUROS", "c": "7" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 60, "y2": 120, "capa": "MOBILIARIO" },
+      { "x1": 80, "y1": 30, "x2": 110, "y2": 90, "capa": "MOBILIARIO" },
+      { "x1": 130, "y1": 0, "x2": 190, "y2": 120, "capa": "MOBILIARIO" }
+    ],
+    "circulos": [
+      { "x": 85, "y": 30, "r": 3, "capa": "MOBILIARIO" },
+      { "x": 110, "y": 90, "r": 3, "capa": "MOBILIARIO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 60, "y2": 0, "lx": 30, "ly": -5 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 120, "lx": -5, "ly": 60 }
+    ],
+    "encuadre": { "x1": -4, "y1": -4, "x2": 75, "y2": 128 }
+  },
+  "consigna": {
+    "x": 205, "y": 100, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 10: BLOQUES, DESIGN CENTER Y ESCALA",
+      "Consigna:",
+      "- Convertí el rectángulo de 60x120 en el bloque MESA.",
+      "- Insertá el bloque con escala 1 en (90,60).",
+      "- Insertá una copia con factor de escala 0.5 y rotación 90°.",
+      "- Escalá otra copia por referencia hasta 200 de largo.",
+      "- Acotá la mesa original 60 de largo.",
+      "- Guardá como clase10-mesa.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Mesa original, copia escalada 0.5 y rotada 90º" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del bloque MESA con su punto de inserción" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: MESA EN BLOQUES — creación, inserción y escalado de bloques",
+    "objetivo": "Crear un bloque a partir de un rectángulo, insertarlo con distintas escalas y rotaciones y usar la escala por referencia.",
+    "pasos": [
+      { "titulo": "Dibujar la mesa", "detalle": ["1. RECTÁNGULO (0,0)-(60,120) en MOBILIARIO.", "2. Es la mesa base (60 de largo, 120 de fondo)."] },
+      { "titulo": "Crear el bloque", "detalle": ["1. Comando BLOQUE (B).", "2. Nombre MESA, punto de inserción (0,0), seleccioná el rectángulo."] },
+      { "titulo": "Insertar", "detalle": ["1. Comando INSERT (I).", "2. Primer insert: escala 1 en (90,60)."] },
+      { "titulo": "Copias escaladas y rotadas", "detalle": ["1. Segundo insert: escala 0.5 y rotación 90° en (130,30).", "2. Tercer insert: escala por referencia hasta 200 de largo."] },
+      { "titulo": "Acotar", "detalle": ["1. Capa COTAS: cota de la mesa original (60).", "2. Cota del largo de la copia escalada por referencia (200)."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase10-mesa.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Largo de la mesa base", "valor": "60 cm" },
+      { "label": "Fondo de la mesa base", "valor": "120 cm" },
+      { "label": "Copia escalada 0.5", "valor": "30 x 60 cm" },
+      { "label": "Copia escalada por referencia", "valor": "200 cm" }
+    ],
+    "consejos": [
+      "El bloque se inserta como una sola entidad.",
+      "Design Center organiza los bloques de biblioteca (Ctrl+2).",
+      "La escala por referencia (opción R) mide contra un largo conocido."
+    ]
+  }
+}

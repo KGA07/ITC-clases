@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 5,
     "titulo": "Modificación I: pinzamientos, desplazar, copiar y recortar",
@@ -22,9 +27,9 @@
       "titulo": "Modificación con pinzamientos",
       "emoji": "🟦",
       "imagen": {
-        "src": "img/pinzamientos.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Pinzamientos para estirar objetos",
-        "caption": "Seleccioná un objeto y arrastrá sus pinzamientos para estirarlo al instante."
+        "caption": "Figura 1 — Cruz perfecta con sus herramientas de modificación"
       },
       "parrafos": [
         "Cuando seleccionás un objeto aparecen pequeños cuadros azules en sus puntos clave: los pinzamientos. Señalando uno se lo puede arrastrar para estirar, mover o alargar el objeto sin tipear ningún comando.",
@@ -41,9 +46,9 @@
       "titulo": "Desplazar",
       "emoji": "🔁",
       "imagen": {
-        "src": "img/modificar.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Herramientas de modificación",
-        "caption": "Desplazar y copiar mueven el objeto por un punto base y un punto de destino."
+        "caption": "Figura 2 — Detalle del cruce: esquinas recortadas prolijamente"
       },
       "parrafos": [
         "El comando DESPLAZA mueve uno o varios objetos seleccionados de un punto base a un punto de destino. Con el ratón elegís 'desde dónde' y 'hasta dónde' lo movés."
@@ -71,11 +76,6 @@
     {
       "titulo": "Recortar y alargar",
       "emoji": "✂️",
-      "imagen": {
-        "src": "img/recortar.jpg",
-        "alt": "Recorte y extensión de líneas",
-        "caption": "Recorta lo que sobra contra una arista de corte y alarga lo que falta hasta un límite."
-      },
       "parrafos": [
         "RECORTA elimina la parte de los objetos que pasa de una arista de corte; ALARGA hace lo contrario: lleva objetos hasta un borde límite. En versiones nuevas ambas son una sola herramienta con la tecla Mayús para alternar."
       ],
@@ -103,27 +103,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué tecla cambia de modo un pinzamiento?",
-            "opciones": ["F3", "TAB", "Enter", "F8"],
+            "opciones": [
+              "F3",
+              "TAB",
+              "Enter",
+              "F8"
+            ],
             "correcta": "TAB"
           },
           {
             "pregunta": "¿Qué comando mueve un objeto dejando el original en su lugar?",
-            "opciones": ["DESPLAZA", "COPIA", "RECORTA", "PASO"],
+            "opciones": [
+              "DESPLAZA",
+              "COPIA",
+              "RECORTA",
+              "PASO"
+            ],
             "correcta": "COPIA"
           },
           {
             "pregunta": "¿Qué hace el comando RECORTA?",
-            "opciones": ["Borra todo el dibujo", "Elimina lo que sobra pasando una arista de corte", "Copia un objeto", "Rota el objeto 90 grados"],
+            "opciones": [
+              "Borra todo el dibujo",
+              "Elimina lo que sobra pasando una arista de corte",
+              "Copia un objeto",
+              "Rota el objeto 90 grados"
+            ],
             "correcta": "Elimina lo que sobra pasando una arista de corte"
           },
           {
             "pregunta": "¿Qué hace Mayús durante un recorte?",
-            "opciones": ["Alarga en lugar de recortar", "Borra la arista de corte", "Activa Orto", "Cancela la operación"],
+            "opciones": [
+              "Alarga en lugar de recortar",
+              "Borra la arista de corte",
+              "Activa Orto",
+              "Cancela la operación"
+            ],
             "correcta": "Alarga en lugar de recortar"
           },
           {
             "pregunta": "¿Qué pedidos hace DESPLAZA?",
-            "opciones": ["Centro y diámetro", "Punto base y punto de destino", "Inicio y fin de arco", "Muro y techo"],
+            "opciones": [
+              "Centro y diámetro",
+              "Punto base y punto de destino",
+              "Inicio y fin de arco",
+              "Muro y techo"
+            ],
             "correcta": "Punto base y punto de destino"
           }
         ]
@@ -147,12 +172,36 @@
   "lectura": "Modificar, no redibujar, es la gran ventaja del CAD. Los pinzamientos permiten ajustar con el mouse, desplazar y copiar ubican objetos con exactitud, y recortar y alargar limpian los cruces de geometría. Estas cuatro herramientas resuelven la mayoría de los retoques de cualquier plano.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar herramientas de dibujo y presentar el panel Modificar", "min": "10 min" },
-      { "titulo": "Pinzamientos y TAB", "que": "Mostrar estiramiento y los modos con TAB sobre una línea", "min": "20 min" },
-      { "titulo": "Desplazar y copiar", "que": "Practicar punto base y destino; copias múltiples", "min": "20 min" },
-      { "titulo": "Recortar y alargar", "que": "Cortar cruces de línea y alargar hasta límites; Mayús para alternar", "min": "20 min" },
-      { "titulo": "Práctica", "que": "Guiar la cruz y el interactivo", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso de buenas prácticas de selección de aristas", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar herramientas de dibujo y presentar el panel Modificar",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Pinzamientos y TAB",
+        "que": "Mostrar estiramiento y los modos con TAB sobre una línea",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Desplazar y copiar",
+        "que": "Practicar punto base y destino; copias múltiples",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Recortar y alargar",
+        "que": "Cortar cruces de línea y alargar hasta límites; Mayús para alternar",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Práctica",
+        "que": "Guiar la cruz y el interactivo",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso de buenas prácticas de selección de aristas",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Preguntar qué hacen cuando una pared 'se pasa' en un plano a mano: la recortan. Recortar es lo mismo pero sin boli."

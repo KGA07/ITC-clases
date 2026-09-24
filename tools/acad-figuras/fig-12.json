@@ -1,0 +1,83 @@
+{
+  "numero": 12,
+  "titulo": "Cotas y administrador de estilos",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 12 - Cotas",
+  "pdfTitulo": "PRÁCTICO N°12 — Cotas y administrador de estilos",
+  "pdfSubtitulo": "Figura: planta acotada con estilos — lineal, alineada, cadena continua y radio",
+  "archivo": {
+    "dwg": "ITC Practico Clase 12 - Planta acotada.dwg",
+    "pdf": "Práctico Clase 12 - Cotas y administrador de estilos.pdf",
+    "txt": "Guía práctica - Clase 12 - Cotas y administrador de estilos.txt"
+  },
+  "capas": [
+    { "n": "MUROS", "c": "7" },
+    { "n": "ABERTURAS", "c": "1" },
+    { "n": "MOBILIARIO", "c": "3" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 9, "capa": "MUROS" }
+    ],
+    "lineas": [
+      { "x1": 2, "y1": 5, "x2": 3.4, "y2": 5, "capa": "MUROS" },
+      { "x1": 2, "y1": 5, "x2": 2.7, "y2": 5.7, "capa": "ABERTURAS" },
+      { "x1": 7, "y1": 5, "x2": 8.2, "y2": 5, "capa": "MUROS" },
+      { "x1": 7, "y1": 5, "x2": 7, "y2": 6.4, "capa": "ABERTURAS" }
+    ],
+    "circulos": [
+      { "x": 10.5, "y": 2.5, "r": 0.6, "capa": "MOBILIARIO" },
+      { "x": 3.5, "y": 2, "r": 0.4, "capa": "MOBILIARIO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 0, "lx": 6, "ly": -3 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 9, "lx": -3, "ly": 4.5 },
+      { "x1": 2, "y1": 5, "x2": 3.4, "y2": 5, "lx": 2.7, "ly": 6 },
+      { "x1": 7, "y1": 5, "x2": 8.2, "y2": 5, "lx": 7.6, "ly": 6 }
+    ],
+    "encuadre": { "x1": -1, "y1": -1, "x2": 14, "y2": 7 }
+  },
+  "consigna": {
+    "x": 15, "y": 8, "ancho": 130, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 12: COTAS Y ADMINISTRADOR DE ESTILOS",
+      "Consigna:",
+      "- Acotá el frente y el fondo con ACOTA-LINEAL.",
+      "- Cotá la ventana con una cadena continua.",
+      "- Cotá el mobiliario circular con radio.",
+      "- Creá un estilo de cota propio (2.5 mm) y aplicáselo a una.",
+      "- Perfil EXTERIOR en la silueta (fuera del muro).",
+      "- Guardá como clase12-cotas.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Planta acotada con lineal, cadena y radio" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de cotas con estilo personalizado" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PLANTA ACOTADA — todos los tipos de cota y estilos",
+    "objetivo": "Aplicar los tipos de cota (lineal, alineada, cadena continua, radio) y administrar estilos de cota.",
+    "pasos": [
+      { "titulo": "Dibujar el muro y aberturas", "detalle": ["1. Muro (0,0)-(12,9) en MUROS.", "2. Vano de puerta (2,0)-(3.4,0) en ABERTURAS.", "3. Vano de ventana (7,5)-(8.2,5)."] },
+      { "titulo": "Acotación lineal", "detalle": ["1. Capa COTAS.", "2. ACOTA-LINEAL frente (0,0)-(12,0) y fondo (0,0)-(0,9)."] },
+      { "titulo": "Cadena continua", "detalle": ["1. Cota del vano de puerta y siguiente tramo.", "2. Comando ACOTA-CONTINUA para encadenar."] },
+      { "titulo": "Radio y diámetro", "detalle": ["1. ACOTA-RADIO sobre el mobiliario circular (0.6).", "2. ACOTA-DIÁMETRO sobre la mesada."] },
+      { "titulo": "Estilos", "detalle": ["1. Administrador de estilos (DIMSTYLE).", "2. Nuevo estilo: texto 2.5, flecha 1.5.", "3. Aplicáselo a una cota para diferenciarla."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase12-cotas.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Frente", "valor": "12 m" },
+      { "label": "Fondo", "valor": "9 m" },
+      { "label": "Vano de puerta", "valor": "1.40 m" },
+      { "label": "Vano de ventana", "valor": "1.20 m" },
+      { "label": "Radio mobiliario", "valor": "0.60 m" }
+    ],
+    "consejos": [
+      "Las cotas van SIEMPRE fuera de la silueta del muro.",
+      "La cadena continua se apoya en la última cota lineal.",
+      "Cada estilo guarda texto, flechas y formato."
+    ]
+  }
+}

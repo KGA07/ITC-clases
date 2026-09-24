@@ -51,6 +51,16 @@ $rect = New-Object WinCap+RECT
 [WinCap]::GetWindowRect($proc.MainWindowHandle, [ref]$rect) | Out-Null
 $w = $rect.Right - $rect.Left
 $h = $rect.Bottom - $rect.Top
+if ($w -lt 100 -or $h -lt 50) {
+  # Ventana minimizada/oculta (0x0): restaurar a tamaño fijo y re-medir
+  [WinCap]::ShowWindow($proc.MainWindowHandle, 4) | Out-Null
+  Start-Sleep -Milliseconds 600
+  [WinCap]::MoveWindow($proc.MainWindowHandle, 60, 60, 1366, 768, $true) | Out-Null
+  Start-Sleep -Milliseconds 600
+  [WinCap]::GetWindowRect($proc.MainWindowHandle, [ref]$rect) | Out-Null
+  $w = $rect.Right - $rect.Left
+  $h = $rect.Bottom - $rect.Top
+}
 $maxW = [WinCap]::GetSystemMetrics(0); $maxH = [WinCap]::GetSystemMetrics(1)
 if ($w -gt $maxW -or $h -gt $maxH) {
   $w = [Math]::Min($w, $maxW); $h = [Math]::Min($h, $maxH)

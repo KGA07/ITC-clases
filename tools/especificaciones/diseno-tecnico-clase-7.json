@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 7,
     "titulo": "Modificación III: dividir, medir, partir, juntar y estirar",
@@ -22,9 +27,9 @@
       "titulo": "Dividir y medir",
       "emoji": "🔢",
       "imagen": {
-        "src": "img/dividir.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "División de una línea en partes iguales",
-        "caption": "Dividir marca el objeto en partes iguales; medir lo marca a intervalos fijos."
+        "caption": "Figura 1 — Viga dividida en partes iguales con puntos de medida"
       },
       "parrafos": [
         "DIVIDIR (DIVIDE) coloca puntos sobre un objeto dividiéndolo en un número de partes iguales; no lo corta, solo lo 'marca'. MEDIR (MEDIR) coloca puntos a intervalos de longitud fija desde un extremo."
@@ -40,9 +45,9 @@
       "titulo": "Partir y juntar",
       "emoji": "✂️",
       "imagen": {
-        "src": "img/partir.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Corte y unión de segmentos",
-        "caption": "Partir corta un objeto en puntos determinados; juntar vuelve a unir segmentos."
+        "caption": "Figura 2 — Detalle de la viga corta estirada y agujeros a intervalos"
       },
       "parrafos": [
         "PARTIR (PARTIR) corta un objeto en un punto o entre dos puntos, dejando dos objetos separados. La variante 'partir en un punto' divide sin borrar el tramo. JUNTAR (JUNTAR) hace el camino inverso: une líneas y curvas que comparten extremos en un solo objeto."
@@ -57,11 +62,6 @@
     {
       "titulo": "Estirar",
       "emoji": "🔄",
-      "imagen": {
-        "src": "img/estirar.jpg",
-        "alt": "Estiramiento de una parte del dibujo",
-        "caption": "Estirar mueve la parte seleccionada y deforma las conexiones con el resto."
-      },
       "parrafos": [
         "ESTIRA (ESTIRAR) mueve los objetos que capturó una ventana de derecha a izquierda (selección de captura) y estira lo que conecta con el resto del dibujo. Es la herramienta perfecta para agrandar una habitación o alargar una pieza manteniendo sus relaciones."
       ],
@@ -100,27 +100,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué comando marca un objeto en partes iguales?",
-            "opciones": ["MEDIR", "DIVIDIR", "PARTIR", "JUNTAR"],
+            "opciones": [
+              "MEDIR",
+              "DIVIDIR",
+              "PARTIR",
+              "JUNTAR"
+            ],
             "correcta": "DIVIDIR"
           },
           {
             "pregunta": "¿Qué comando corta un objeto en dos?",
-            "opciones": ["DIVIDIR", "MEDIR", "PARTIR", "Copiar"],
+            "opciones": [
+              "DIVIDIR",
+              "MEDIR",
+              "PARTIR",
+              "Copiar"
+            ],
             "correcta": "PARTIR"
           },
           {
             "pregunta": "¿Cómo debe ser la ventana de selección para estirar?",
-            "opciones": ["Izquierda a derecha", "Derecha a izquierda", "Circular", "No importa"],
+            "opciones": [
+              "Izquierda a derecha",
+              "Derecha a izquierda",
+              "Circular",
+              "No importa"
+            ],
             "correcta": "Derecha a izquierda"
           },
           {
             "pregunta": "¿Qué hace DESCOMPONER con una polilínea?",
-            "opciones": ["La borra", "La convierte en líneas separadas", "La estira", "La colorea"],
+            "opciones": [
+              "La borra",
+              "La convierte en líneas separadas",
+              "La estira",
+              "La colorea"
+            ],
             "correcta": "La convierte en líneas separadas"
           },
           {
             "pregunta": "¿Qué comando une segmentos consecutivos en un solo objeto?",
-            "opciones": ["JUNTAR", "PARTIR", "DIVIDIR", "ALINEAR"],
+            "opciones": [
+              "JUNTAR",
+              "PARTIR",
+              "DIVIDIR",
+              "ALINEAR"
+            ],
             "correcta": "JUNTAR"
           }
         ]
@@ -145,12 +170,36 @@
   "lectura": "Este conjunto de herramientas pone fin a las modificaciones: dividir y medir distribuyen puntos sobre recorridos, partir y juntar controlan tramos de la geometría, estirar adapta medidas sin redibujar, y descomponer y alinear preparan entidades para ser reutilizadas. Con esto ya tenés todo el panel de modificación disponible para los planos.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar modificación II y presentar el cierre del panel Modificar", "min": "10 min" },
-      { "titulo": "Dividir y medir", "que": "Mostrar DIVIDE y MEDIR con estilos de punto visibles", "min": "20 min" },
-      { "titulo": "Partir y juntar", "que": "Cortar en puntos y unir segmentos con JUNTAR", "min": "20 min" },
-      { "titulo": "Estirar", "que": "Explicar la ventana de captura y estirar una fachada", "min": "15 min" },
-      { "titulo": "Descomponer y alinear", "que": "Desarmar bloques y alinear objetos a líneas base", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso integrador de los tres módulos de modificación", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar modificación II y presentar el cierre del panel Modificar",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Dividir y medir",
+        "que": "Mostrar DIVIDE y MEDIR con estilos de punto visibles",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Partir y juntar",
+        "que": "Cortar en puntos y unir segmentos con JUNTAR",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Estirar",
+        "que": "Explicar la ventana de captura y estirar una fachada",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Descomponer y alinear",
+        "que": "Desarmar bloques y alinear objetos a líneas base",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso integrador de los tres módulos de modificación",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Preguntar por qué les convendría marcar agujeros a distancias iguales en un estante: dividir o medir lo resuelve al instante."

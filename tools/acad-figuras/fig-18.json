@@ -1,0 +1,76 @@
+{
+  "numero": 18,
+  "titulo": "Dibujo paramétrico y bloques dinámicos",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 18 - Dibujo paramétrico y bloques dinámicos",
+  "pdfTitulo": "PRÁCTICO N°18 — Dibujo paramétrico y bloques dinámicos",
+  "pdfSubtitulo": "Figura: mesa dinámica con parámetro lineal, rotación y consulta de medidas",
+  "archivo": {
+    "dwg": "ITC Practico Clase 18 - Mesa dinámica.dwg",
+    "pdf": "Práctico Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
+    "txt": "Guía práctica - Clase 18 - Dibujo paramétrico y bloques dinámicos.txt"
+  },
+  "capas": [
+    { "n": "MOBILIARIO", "c": "3" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 120, "y2": 60, "capa": "MOBILIARIO" },
+      { "x1": 140, "y1": 10, "x2": 200, "y2": 50, "capa": "MOBILIARIO" }
+    ],
+    "circulos": [
+      { "x": 6, "y": 6, "r": 2, "capa": "MOBILIARIO" },
+      { "x": 114, "y": 6, "r": 2, "capa": "MOBILIARIO" },
+      { "x": 6, "y": 54, "r": 2, "capa": "MOBILIARIO" },
+      { "x": 114, "y": 54, "r": 2, "capa": "MOBILIARIO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 120, "y2": 0, "lx": 60, "ly": -5 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 60, "lx": -5, "ly": 30 }
+    ],
+    "encuadre": { "x1": -3, "y1": -3, "x2": 125, "y2": 65 }
+  },
+  "consigna": {
+    "x": 215, "y": 40, "ancho": 115, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 18: DIBUJO PARAMÉTRICO Y BLOQUES DINÁMICOS",
+      "Consigna:",
+      "- Dibujá la mesa 120x60 y convertila en bloque.",
+      "- Agregá un parámetro lineal + acción estirar (largo).",
+      "- Agregá rotación al bloque.",
+      "- Definí una consulta con opciones 120/180/240.",
+      "- Insertá dos copias y jugá con los valores.",
+      "- Acotá las dos mesas.",
+      "- Guardá como clase18-mesadinamica.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Mesa dinámica base y copia con parámetro lineal" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del parámetro lineal y sus acciones" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: MESA DINÁMICA — parámetro lineal, rotación y consulta",
+    "objetivo": "Convertir el bloque MESA en un bloque dinámico con parámetro lineal+estirar, rotación y una consulta de medidas.",
+    "pasos": [
+      { "titulo": "Dibujar y definir el bloque", "detalle": ["1. Rectángulo (0,0)-(120,60) en MOBILIARIO.", "2. BLOQUE MESA con punto de inserción (0,0).", "3. Abrí el Editor de bloques (BE)."] },
+      { "titulo": "Parámetro lineal + acción", "detalle": ["1. Parámetro lineal entre (0,0) y (120,0).", "2. Acción ESTIRAR asociada.", "3. Permití estirar el largo de la mesa."] },
+      { "titulo": "Rotación", "detalle": ["1. Parámetro de rotación en el origen.", "2. Guardá los cambios del bloque."] },
+      { "titulo": "Consulta de medidas", "detalle": ["1. Parámetro de consulta listando 120/180/240.", "2. Máxima: 240 debe usarla la copia."] },
+      { "titulo": "Insertar copias", "detalle": ["1. INSERT la mesa dinámica.", "2. Cambiá el largo a 180 en una copia (200 de largo (140,10)-(200,50))."] },
+      { "titulo": "Acotar", "detalle": ["1. Acotá 120 y 60 de la base."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase18-mesadinamica.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Largo base", "valor": "120 cm" },
+      { "label": "Fondo base", "valor": "60 cm" },
+      { "label": "Copias consulta", "valor": "120 / 180 / 240 cm" }
+    ],
+    "consejos": [
+      "El parámetro lineal se estira con su acción ESTIRAR.",
+      "La consulta muestra una lista de valores al insertar.",
+      "La rotación dinámica gira el bloque sin rotar el SCP."
+    ]
+  }
+}

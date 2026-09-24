@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 8,
     "titulo": "Capas y unidades",
@@ -22,9 +27,9 @@
       "titulo": "Configuración de unidades",
       "emoji": "📏",
       "imagen": {
-        "src": "img/unidades.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Configuración de unidades de dibujo",
-        "caption": "En UNIDADES definís el sistema de medida y la escala de inserción del dibujo."
+        "caption": "Figura 1 — Esquema de capas base: parcela, muros, aberturas y mobiliario"
       },
       "parrafos": [
         "El comando UNIDADES (UN) define con qué sistema trabajás: decimal (milímetros/milímetros), arquitectónicas, etc., y cuántos decimales se muestran. También fija la escala de inserción para que los bloques entren con el tamaño correcto."
@@ -40,9 +45,9 @@
       "titulo": "Administrador de propiedades de capa",
       "emoji": "🗂️",
       "imagen": {
-        "src": "img/capas.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Paleta de capas con propiedades",
-        "caption": "El administrador de capas concentra la creación, propiedades y estados de todas las capas."
+        "caption": "Figura 2 — Detalle de capas con sus grosores y colores asignados"
       },
       "parrafos": [
         "Las capas son hojas transparentes superpuestas que organizan el dibujo por tema: muros, cotas, mobiliario, etc. Cada capa se define con un color, un tipo de línea y un grosor de línea, y los objetos de esa capa heredan esas propiedades.",
@@ -58,11 +63,6 @@
     {
       "titulo": "Estados y herramientas de capa",
       "emoji": "🕹️",
-      "imagen": {
-        "src": "img/estados.jpg",
-        "alt": "Estados de visibilidad de capas",
-        "caption": "Podés apagar, congelar y bloquear capas sin borrar su contenido."
-      },
       "parrafos": [
         "Los estados controlan la visibilidad y protección de cada capa: desactivada se oculta, inutilizada se congela (oculta y no participa en operaciones), y bloqueada si bien se ve, no se puede editar."
       ],
@@ -101,27 +101,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué comando abre la configuración de unidades?",
-            "opciones": ["CAPA", "UNIDADES", "RECORTA", "ESTILO"],
+            "opciones": [
+              "CAPA",
+              "UNIDADES",
+              "RECORTA",
+              "ESTILO"
+            ],
             "correcta": "UNIDADES"
           },
           {
             "pregunta": "¿Qué estado mantiene visible pero protege la capa de edición?",
-            "opciones": ["Desactivar", "Inutilizar", "Bloquear", "Eliminar"],
+            "opciones": [
+              "Desactivar",
+              "Inutilizar",
+              "Bloquear",
+              "Eliminar"
+            ],
             "correcta": "Bloquear"
           },
           {
             "pregunta": "¿Dónde se crean y se definen las capas?",
-            "opciones": ["En la línea de comandos", "En el administrador de propiedades de capa", "En Design Center", "En la impresora"],
+            "opciones": [
+              "En la línea de comandos",
+              "En el administrador de propiedades de capa",
+              "En Design Center",
+              "En la impresora"
+            ],
             "correcta": "En el administrador de propiedades de capa"
           },
           {
             "pregunta": "¿Qué herramienta deja visibles solo los objetos seleccionados?",
-            "opciones": ["Fusionar", "Aislar", "Igualar", "Recorrer"],
+            "opciones": [
+              "Fusionar",
+              "Aislar",
+              "Igualar",
+              "Recorrer"
+            ],
             "correcta": "Aislar"
           },
           {
             "pregunta": "¿Qué capa NO se puede eliminar?",
-            "opciones": ["Muros", "Cotas", "0", "Mobiliario"],
+            "opciones": [
+              "Muros",
+              "Cotas",
+              "0",
+              "Mobiliario"
+            ],
             "correcta": "0"
           }
         ]
@@ -145,12 +170,36 @@
   "lectura": "Las unidades definen la lengua del dibujo (milímetros, metros, decimales) y las capas organizan su contenido para que nunca se mezcle lo que no corresponde. Crear capas con su color y grosor, y manejar estados como desactivar, congelar y bloquear, es lo que hace prolijo y 'profesional' a un archivo de AutoCAD.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar la idea de organizar el trabajo antes de dibujar", "min": "5 min" },
-      { "titulo": "Unidades", "que": "Configurar UNIDADES y explicar la escala de inserción", "min": "15 min" },
-      { "titulo": "Administrador de capas", "que": "Crear capas, definir color/tipo/grosor y eliminar", "min": "25 min" },
-      { "titulo": "Estados de capa", "que": "Activar, inutilizar y bloquear; herramientas de capa", "min": "20 min" },
-      { "titulo": "Práctica", "que": "Guiar la creación de la estructura de capas y el interactivo", "min": "20 min" },
-      { "titulo": "Cierre", "que": "Repaso de cuándo conviene aislar o bloquear", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar la idea de organizar el trabajo antes de dibujar",
+        "min": "5 min"
+      },
+      {
+        "titulo": "Unidades",
+        "que": "Configurar UNIDADES y explicar la escala de inserción",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Administrador de capas",
+        "que": "Crear capas, definir color/tipo/grosor y eliminar",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Estados de capa",
+        "que": "Activar, inutilizar y bloquear; herramientas de capa",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Práctica",
+        "que": "Guiar la creación de la estructura de capas y el interactivo",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso de cuándo conviene aislar o bloquear",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Comparar las capas con las hojas de un informe: cada hoja tiene su tema y su color, pero todas forman el mismo documento."

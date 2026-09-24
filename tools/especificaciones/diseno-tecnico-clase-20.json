@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 20,
     "titulo": "Normas de dibujo técnico",
@@ -22,9 +27,9 @@
       "titulo": "Tipos de línea",
       "emoji": "➖",
       "imagen": {
-        "src": "img/tiposlineas.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Tipos de línea del dibujo técnico",
-        "caption": "Línea llena, oculta, de ejes y de centro: cada tipo comunica algo distinto."
+        "caption": "Figura 1 — Plano de auditoría con grosores y ejes según normas"
       },
       "parrafos": [
         "En el dibujo técnico cada línea significa algo: la continua gruesa marca el contorno visible; la continua fina se usa para cotas y sombreados; la de trazos cortos indica lo oculto; la de trazo y punto marca ejes y centros; y la continua ondulada corta las partes que no entran en la lámina.",
@@ -41,9 +46,9 @@
       "titulo": "Anchos de línea y su aplicación",
       "emoji": "🖊️",
       "imagen": {
-        "src": "img/grosor.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Anchos de línea del plano",
-        "caption": "El grosor diferencia el protagonismo de cada línea al imprimir."
+        "caption": "Figura 2 — Detalle de la acotación fuera de la silueta"
       },
       "parrafos": [
         "Los anchos se eligen según la importancia: en arquitectura, muros con grosor 0.50, aberturas 0.30, mobiliario 0.18, cotas 0.18. En mecánica conviven el contorno grueso y los detalles finos.",
@@ -72,11 +77,6 @@
     {
       "titulo": "Formato y plegado de láminas",
       "emoji": "📄",
-      "imagen": {
-        "src": "img/plegado.jpg",
-        "alt": "Plegado de láminas de planos",
-        "caption": "El formato de lámina se estandariza y el plegado permite archivar los planos sin dobleces perdidos."
-      },
       "parrafos": [
         "Las láminas se normalizan por formato (A4, A3, A2, A1 y A0 según ISO). Cada una lleva su marco, su carátula y los márgenes reglamentarios. El plegado se ejecuta hacia el tamaño de archivo (A4 o A3) dejando el rótulo visible por fuera."
       ],
@@ -115,27 +115,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué tipo de línea representa aristas ocultas?",
-            "opciones": ["Continuo grueso", "Trazos", "Trazos largos y punto", "Continuo ondulado"],
+            "opciones": [
+              "Continuo grueso",
+              "Trazos",
+              "Trazos largos y punto",
+              "Continuo ondulado"
+            ],
             "correcta": "Trazos"
           },
           {
             "pregunta": "¿Cuál es el contorno visible?",
-            "opciones": ["El más fino", "El más grueso", "El del medio", "Uno punteado"],
+            "opciones": [
+              "El más fino",
+              "El más grueso",
+              "El del medio",
+              "Uno punteado"
+            ],
             "correcta": "El más grueso"
           },
           {
             "pregunta": "¿Qué formato ISO es el más grande?",
-            "opciones": ["A4", "A3", "A2", "A0"],
+            "opciones": [
+              "A4",
+              "A3",
+              "A2",
+              "A0"
+            ],
             "correcta": "A0"
           },
           {
             "pregunta": "¿Cómo se diferencia el material seccionado en un corte?",
-            "opciones": ["Con color rojo", "Con rayado de líneas finas paralelas", "Con texto", "Con sombra degradada"],
+            "opciones": [
+              "Con color rojo",
+              "Con rayado de líneas finas paralelas",
+              "Con texto",
+              "Con sombra degradada"
+            ],
             "correcta": "Con rayado de líneas finas paralelas"
           },
           {
             "pregunta": "¿Dónde se coloca la carátula de la lámina?",
-            "opciones": ["Comienzo superior izquierdo", "Esquina inferior derecha", "Al medio del dibujo", "Fuera del marco"],
+            "opciones": [
+              "Comienzo superior izquierdo",
+              "Esquina inferior derecha",
+              "Al medio del dibujo",
+              "Fuera del marco"
+            ],
             "correcta": "Esquina inferior derecha"
           }
         ]
@@ -160,12 +185,36 @@
   "lectura": "Las normas son el idioma común del dibujo técnico: cada línea, cada grosor y cada cota deben leerse igual en cualquier oficina. Conocer tipos de línea, anchos, convenciones de vistas y cortes, el formato y el plegado de láminas y las reglas de cotas vuelve a tus planos no solo lindos sino correctos y profesionales.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Presentar las normas como el idioma común del dibujo técnico", "min": "10 min" },
-      { "titulo": "Tipos de línea", "que": "Recorrer la tabla de líneas y su aplicación construcción/mecánico", "min": "20 min" },
-      { "titulo": "Anchos", "que": "Asignar grosores a capas y comparar en pantalla/impresión", "min": "15 min" },
-      { "titulo": "Vistas y cortes", "que": "Verificar posición de vistas y rayado de cortes en ejemplos", "min": "15 min" },
-      { "titulo": "Formato y plegado", "que": "Explicar formatos ISO, marco, carátula y el plegado hacia A4/A3", "min": "15 min" },
-      { "titulo": "Práctica y cierre", "que": "Auditar los planos propios y repaso con interactivo", "min": "15 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Presentar las normas como el idioma común del dibujo técnico",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Tipos de línea",
+        "que": "Recorrer la tabla de líneas y su aplicación construcción/mecánico",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Anchos",
+        "que": "Asignar grosores a capas y comparar en pantalla/impresión",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Vistas y cortes",
+        "que": "Verificar posición de vistas y rayado de cortes en ejemplos",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Formato y plegado",
+        "que": "Explicar formatos ISO, marco, carátula y el plegado hacia A4/A3",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Práctica y cierre",
+        "que": "Auditar los planos propios y repaso con interactivo",
+        "min": "15 min"
+      }
     ],
     "conecta": [
       "Pedir que comparen dos planos cualquiera (uno ordenado y otro no) y digan qué convierte a uno en 'norma'."

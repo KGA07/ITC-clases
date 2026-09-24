@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 3,
     "titulo": "Sistema de coordenadas y entrada dinámica",
@@ -22,9 +27,9 @@
       "titulo": "Coordenadas rectangulares",
       "emoji": "🎯",
       "imagen": {
-        "src": "img/coordenadas.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Sistema de ejes X e Y",
-        "caption": "Cada punto se ubica con su distancia al eje X y al eje Y."
+        "caption": "Figura 1 — Escalera de perfil dibujada con coordenadas relativas"
       },
       "parrafos": [
         "Todo punto del dibujo se ubica según sus coordenadas: la distancia horizontal (X) y la vertical (Y) desde el origen (0,0). Se escriben separadas por coma: por ejemplo 5,3 indica 5 unidades a la derecha y 3 hacia arriba.",
@@ -41,9 +46,9 @@
       "titulo": "Coordenadas polares",
       "emoji": "🧭",
       "imagen": {
-        "src": "img/polares.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Coordenadas polares con distancia y ángulo",
-        "caption": "En polares lo importante es la distancia y el ángulo respecto de un origen."
+        "caption": "Figura 2 — Detalle de peldaños y apoyos con sus cotas parciales"
       },
       "parrafos": [
         "Las coordenadas polares ubican un punto por su distancia y su ángulo: se escriben distancia < ángulo, por ejemplo 10<45 significa 10 unidades en la dirección de 45°. Los ángulos se miden desde los 0° (dirección positiva de X) en sentido antihorario."
@@ -71,11 +76,6 @@
     {
       "titulo": "Entrada dinámica (F12)",
       "emoji": "⌨️",
-      "imagen": {
-        "src": "img/entrada.jpg",
-        "alt": "Entrada de datos con el teclado",
-        "caption": "La entrada dinámica permite escribir valores cerca del cursor, junto al dibujo."
-      },
       "parrafos": [
         "La entrada dinámica (F12) muestra las coordenadas dentro de recuadros que siguen al cursor: escribís el valor y presionas TAB para pasar al siguiente campo, sin sacar los ojos del dibujo. Es la forma más práctica de combinar coordenadas y trabajo visual."
       ],
@@ -102,27 +102,52 @@
         "preguntas": [
           {
             "pregunta": "¿Cómo se escriben las coordenadas rectangulares?",
-            "opciones": ["10<45", "X,Y", "@X,Y", "D,A en grados"],
+            "opciones": [
+              "10<45",
+              "X,Y",
+              "@X,Y",
+              "D,A en grados"
+            ],
             "correcta": "X,Y"
           },
           {
             "pregunta": "¿Qué formato usan las coordenadas polares?",
-            "opciones": ["X,Y", "distancia<ángulo", "@10,20", "ángulo<distancia"],
+            "opciones": [
+              "X,Y",
+              "distancia<ángulo",
+              "@10,20",
+              "ángulo<distancia"
+            ],
             "correcta": "distancia<ángulo"
           },
           {
             "pregunta": "¿Qué símbolo indica que la coordenada es relativa?",
-            "opciones": ["@", "#", "<", "$"],
+            "opciones": [
+              "@",
+              "#",
+              "<",
+              "$"
+            ],
             "correcta": "@"
           },
           {
             "pregunta": "¿Desde dónde se miden las coordenadas absolutas?",
-            "opciones": ["Del último punto dibujado", "Del origen (0,0)", "Del centro de la pantalla", "De la esquina superior derecha"],
+            "opciones": [
+              "Del último punto dibujado",
+              "Del origen (0,0)",
+              "Del centro de la pantalla",
+              "De la esquina superior derecha"
+            ],
             "correcta": "Del origen (0,0)"
           },
           {
             "pregunta": "¿Qué tecla activa la entrada dinámica?",
-            "opciones": ["F8", "F10", "F11", "F12"],
+            "opciones": [
+              "F8",
+              "F10",
+              "F11",
+              "F12"
+            ],
             "correcta": "F12"
           }
         ]
@@ -146,12 +171,36 @@
   "lectura": "Las coordenadas son el idioma de la precisión en AutoCAD. Las rectangulares ubican con X e Y, las polares con distancia y ángulo, y las relativas (@) se miden desde el último punto dibujado. La entrada dinámica hace que ese idioma se use casi sin darte cuenta, escribiendo medidas exactas al lado del cursor.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar líneas y referencias; introducir el concepto de puntos exactos", "min": "10 min" },
-      { "titulo": "Rectangulares y origen", "que": "Mostrar el 0,0, los ejes y cómo dibujar por coordenadas absolutas", "min": "15 min" },
-      { "titulo": "Polares y ángulos", "que": "Explicar distancia<ángulo con el icono SCP y ejemplos de 45° y 90°", "min": "20 min" },
-      { "titulo": "Relativas y @", "que": "Dibujar las mismas figuras con absolutas y con relativas lado a lado", "min": "20 min" },
-      { "titulo": "Práctica", "que": "Guiar la escalera con coordinate entry y el interactivo", "min": "20 min" },
-      { "titulo": "Cierre", "que": "Cuestionario rápido oral sobre formatos", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar líneas y referencias; introducir el concepto de puntos exactos",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Rectangulares y origen",
+        "que": "Mostrar el 0,0, los ejes y cómo dibujar por coordenadas absolutas",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Polares y ángulos",
+        "que": "Explicar distancia<ángulo con el icono SCP y ejemplos de 45° y 90°",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Relativas y @",
+        "que": "Dibujar las mismas figuras con absolutas y con relativas lado a lado",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Práctica",
+        "que": "Guiar la escalera con coordinate entry y el interactivo",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Cuestionario rápido oral sobre formatos",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Preguntar cómo anotarían la posición exacta de un punto en una hoja cuadriculada: fila y columna. Ese es el origen de las coordenadas."

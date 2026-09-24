@@ -1,0 +1,78 @@
+{
+  "numero": 19,
+  "titulo": "Texto, tablas y bloques con atributos",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 19 - Bloques con atributos",
+  "pdfTitulo": "PRÁCTICO N°19 — Texto, tablas y bloques con atributos",
+  "pdfSubtitulo": "Figura: carátula A4 con atributos PROYECTO, ALUMNO, DOCENTE, ESCALA y FECHA",
+  "archivo": {
+    "dwg": "ITC Practico Clase 19 - Carátula A4.dwg",
+    "pdf": "Práctico Clase 19 - Texto tablas y bloques con atributos.pdf",
+    "txt": "Guía práctica - Clase 19 - Texto, tablas y bloques con atributos.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "TEXTOS", "c": "3" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 30, "y2": 40, "capa": "Dibujo" },
+      { "x1": 1, "y1": 1, "x2": 29, "y2": 39, "capa": "Dibujo" }
+    ],
+    "lineas": [
+      { "x1": 1, "y1": 34, "x2": 29, "y2": 34, "capa": "Dibujo" },
+      { "x1": 1, "y1": 30, "x2": 29, "y2": 30, "capa": "Dibujo" },
+      { "x1": 1, "y1": 26, "x2": 29, "y2": 26, "capa": "Dibujo" },
+      { "x1": 1, "y1": 22, "x2": 29, "y2": 22, "capa": "Dibujo" },
+      { "x1": 1, "y1": 18, "x2": 29, "y2": 18, "capa": "Dibujo" },
+      { "x1": 1, "y1": 14, "x2": 29, "y2": 14, "capa": "Dibujo" },
+      { "x1": 1, "y1": 10, "x2": 29, "y2": 10, "capa": "Dibujo" },
+      { "x1": 12, "y1": 10, "x2": 12, "y2": 34, "capa": "Dibujo" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 30, "y2": 0, "lx": 15, "ly": -4 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 40, "lx": -4, "ly": 20 }
+    ],
+    "encuadre": { "x1": -3, "y1": -3, "x2": 33, "y2": 43 }
+  },
+  "consigna": {
+    "x": -6, "y": 44, "ancho": 130, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 19: BLOQUES CON ATRIBUTOS (CARÁTULA)",
+      "Consigna:",
+      "- Dibujá el marco A4 (exterior 30x40 a escala 1:2).",
+      "- Definí los atributos: PROYECTO, ALUMNO, DOCENTE, ESCALA y FECHA.",
+      "- Creá el bloque CARATULA con ATTDEF.",
+      "- Insertalo y completá los valores con doble clic.",
+      "- Acotá el marco 30 de largo.",
+      "- Guardá como clase19-caratula.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Carátula A4 con los 5 atributos definidos" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de la grilla de atributos de la carátula" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: CARÁTULA A4 — texto, tablas y bloques con atributos",
+    "objetivo": "Definir atributos con ATTDEF, insertar un bloque de carátula y completarlo con doble clic.",
+    "pasos": [
+      { "titulo": "Dibujar el marco A4", "detalle": ["1. Rectángulo exterior (0,0)-(30,40).", "2. Rectángulo interior (1,1)-(29,39).", "3. Tablas de atributos con líneas horizontales y vertical."] },
+      { "titulo": "Definir atributos", "detalle": ["1. Comando ATTDEF (AT).", "2. Tag PROYECTO, Prompt 'Nombre del proyecto', Valor por defecto.",
+"3. Repetí: ALUMNO, DOCENTE, ESCALA, FECHA."] },
+      { "titulo": "Crear el bloque", "detalle": ["1. Comando BLOQUE → nombre CARATULA.", "2. Seleccioná marco + textos + atributos.", "3. Punto base la esquina inferior."] },
+      { "titulo": "Insertar y completar", "detalle": ["1. INSERT CARATULA.", "2. Doble clic sobre el bloque.", "3. Cargá valores del proyecto."] },
+      { "titulo": "Acotar", "detalle": ["1. Cota 30 del marco."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase19-caratula.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Marco exterior", "valor": "30 x 40 (A4 a 1:2)" },
+      { "label": "Atributos", "valor": "PROYECTO, ALUMNO, DOCENTE, ESCALA, FECHA" }
+    ],
+    "consejos": [
+      "Los atributos con Tag y Prompt definen el bloque dinámico de texto.",
+      "Doble clic en el bloque abre el editor de atributos.",
+      "La carátula se reutiliza en todos los planos del proyecto."
+    ]
+  }
+}

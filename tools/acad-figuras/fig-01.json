@@ -1,0 +1,91 @@
+{
+  "numero": 1,
+  "titulo": "Introducción e interfaz de AutoCAD",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 1 Introducción Autocad",
+  "pdfTitulo": "PRÁCTICO N°1 — Introducción e interfaz de AutoCAD",
+  "pdfSubtitulo": "Figura: «Soporte en L» de taller mecánico (chapa de 10 mm, orificios Ø10) — Acotaciones en mm",
+  "archivo": {
+    "dwg": "ITC Practico Clase 1 - Soporte en L.dwg",
+    "pdf": "Práctico Clase 1 - Introducción e interfaz de AutoCAD.pdf",
+    "txt": "Guía práctica - Clase 1 - Introducción e interfaz de AutoCAD.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "Cotas", "c": "1" },
+    { "n": "Centro", "c": "2", "lt": "CENTER2" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[0,0],[100,0],[100,10],[10,10],[10,60],[0,60]] }
+    ],
+    "lineas": [
+      { "x1": 11, "y1": 5, "x2": 39, "y2": 5, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 25, "y1": -9, "x2": 25, "y2": 19, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 61, "y1": 5, "x2": 89, "y2": 5, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 75, "y1": -9, "x2": 75, "y2": 19, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 81, "y1": 25, "x2": 109, "y2": 25, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 95, "y1": 11, "x2": 95, "y2": 39, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 81, "y1": 45, "x2": 109, "y2": 45, "capa": "Centro", "lt": "CENTER2" },
+      { "x1": 95, "y1": 31, "x2": 95, "y2": 59, "capa": "Centro", "lt": "CENTER2" }
+    ],
+    "circulos": [
+      { "x": 25, "y": 5, "r": 5 },
+      { "x": 75, "y": 5, "r": 5 },
+      { "x": 95, "y": 25, "r": 5 },
+      { "x": 95, "y": 45, "r": 5 }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 100, "y2": 0, "lx": 50, "ly": -16 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 60, "lx": -16, "ly": 30 },
+      { "x1": 100, "y1": 0, "x2": 100, "y2": 10, "lx": 114, "ly": 5 },
+      { "x1": 25, "y1": 5, "x2": 75, "y2": 5, "lx": 50, "ly": 20 },
+      { "x1": 95, "y1": 25, "x2": 95, "y2": 45, "lx": 112, "ly": 45 }
+    ],
+    "encuadre": { "x1": 78, "y1": -2, "x2": 120, "y2": 20 }
+  },
+  "consigna": {
+    "x": 140, "y": 55, "ancho": 135, "alto": 4.0,
+    "lineas": [
+      "Abrí AutoCAD 2021 y activá el espacio MODELO (pestaña «Modelo»).",
+      "Dibujá el contorno en L con el comando LÍNEA: (0,0) → (100,0) → (100,10) → (10,10) → (10,60) → (0,60) → cierre.",
+      "Activá Referencia a Objetos (FORZOCEN) y marcá los centros de los 4 orificios en (25,5), (75,5), (95,25) y (95,45).",
+      "Dibujá los 4 círculos de Ø10 con el comando CÍRCULO (radio 5).",
+      "Aplicá la capa COTAS y acotá la base (100), la altura (60) y el espesor (10) con ACOTA-LINEAL.",
+      "Trazá los ejes de simetría de los orificios con línea de centros (CENTER).",
+      "Guardá el dibujo como «ITC Practico Clase 1 - Soporte en L.dwg»."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Soporte en L completo con acotaciones (vista MODELO)" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Encuadre del despiece: espesor 10 y orificios Ø10 con centro" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: SOPORTE EN L de taller mecánico (chapa 10 mm, orificios Ø10) — Acotaciones en milímetros",
+    "objetivo": "Aprender a moverse en la interfaz de AutoCAD 2021, dibujar la primera pieza de taller (un soporte en L) con LÍNEA y CÍRCULO, aplicar capas y acotar la pieza para dejarla lista como plano de fabricación.",
+    "pasos": [
+      { "titulo": "Iniciar AutoCAD", "detalle": ["1. Abrí AutoCAD 2021 desde el menú Inicio.", "2. Elegí la plantilla acadiso.dwt (métrico).", "3. Reconocé la cinta de opciones, el área de dibujo y la línea de comandos.", "4. Pestaña «Modelo» abajo a la izquierda, sobre «Presentación 1»."] },
+      { "titulo": "Configurar unidades y representación", "detalle": ["1. Comando UNIDADES (Enter).", "2. Formato Decimal, precisión 0.00, unidades de inserción Milímetros.", "3. La escala de trabajo es 1:1 en milímetros."] },
+      { "titulo": "Crear capas", "detalle": ["1. Inicio > Capas > Propiedades de capa.", "2. Creá DIBUJO (7/blanco), COTAS (1/rojo) y CENTRO (2/amarillo).", "3. Dejá activa la capa DIBUJO."] },
+      { "titulo": "Dibujar el contorno en L con LÍNEA", "detalle": ["1. Comando LÍNEA (L + Enter).", "2. Puntos: 0,0 → 100,0 → 100,10 → 10,10 → 10,60 → 0,60.", "3. Cerrá con C + Enter.", "4. Rueda del mouse para acercar/alejar; comando RE reemplaza la vista."] },
+      { "titulo": "Ubicar los centros de los orificios", "detalle": ["1. Activá Referencia a Objetos (F3): final, medio, centro, cuadrante.", "2. Centros: (25,5), (75,5), (95,25) y (95,45)."] },
+      { "titulo": "Dibujar los 4 orificios Ø10", "detalle": ["1. Comando CÍRCULO (C + Enter).", "2. Centro 25,5 → radio 5 (Ø10).", "3. Repetí en (75,5), (95,25) y (95,45)."] },
+      { "titulo": "Dibujar los ejes de simetría", "detalle": ["1. Cambiá a la capa CENTRO.", "2. Cargá el tipo de línea CENTER2 (Administrar > Tipo de línea).", "3. Cruces de centros con LÍNEA usando referencias a cuadrante.", "4. Volvé a la capa DIBUJO."] },
+      { "titulo": "Acotar la pieza", "detalle": ["1. Cambiá a la capa COTAS.", "2. DIMLINEAR: base (0,0)-(100,0)=100; altura (0,0)-(0,60)=60; espesor (0,10)-(10,10)=10.", "3. Opcional: ACOTA-DIÁMETRO sobre cada círculo Ø10."] },
+      { "titulo": "Guardar", "detalle": ["1. Ctrl+Mayús+S (Guardar como).", "2. Tipo: Dibujo de AutoCAD (*.dwg).", "3. Nombre: «ITC Practico Clase 1 - Soporte en L.dwg»."] }
+    ],
+    "cotas": [
+      { "label": "Base total del soporte", "valor": "100 mm" },
+      { "label": "Altura total del soporte", "valor": "60 mm" },
+      { "label": "Espesor de la chapa", "valor": "10 mm" },
+      { "label": "Diámetro de cada orificio", "valor": "Ø10 mm" },
+      { "label": "Ubicación de los orificios", "valor": "(25,5) (75,5) (95,25) (95,45)" },
+      { "label": "Material", "valor": "Chapa de acero, 10 mm" }
+    ],
+    "consejos": [
+      "Si un comando se cancela, presioná ESC y empezá de nuevo.",
+      "MODO ORTO (F8) te ayuda a trazar líneas rectas horizontales/verticales.",
+      "Guardá seguido: Ctrl+S.",
+      "Para ver el dibujo completo: comando ZOOM > Extensión."
+    ]
+  }
+}

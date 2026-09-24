@@ -1,0 +1,92 @@
+{
+  "numero": 11,
+  "titulo": "Puertas, ventanas y mobiliario en bloques",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 11 - Puertas, ventanas y mobiliario en bloques",
+  "pdfTitulo": "PRÁCTICO N°11 — Puertas, ventanas y mobiliario en bloques",
+  "pdfSubtitulo": "Figura: planta de vivienda con puerta 0.80, ventana 1.20 y mobiliario en bloques",
+  "archivo": {
+    "dwg": "ITC Practico Clase 11 - Planta con puertas y ventanas.dwg",
+    "pdf": "Práctico Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
+    "txt": "Guía práctica - Clase 11 - Puertas, ventanas y mobiliario en bloques.txt"
+  },
+  "capas": [
+    { "n": "MUROS", "c": "7" },
+    { "n": "ABERTURAS", "c": "1" },
+    { "n": "MOBILIARIO", "c": "3" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 9, "capa": "MUROS" },
+      { "x1": 5, "y1": 9, "x2": 5, "y2": 9.2, "capa": "MUROS" }
+    ],
+    "polilineas": [
+      { "pts": [[5,9],[5.8,9],[5.8,8.2],[5,8.2],[5,9]], "capa": "ABERTURAS", "cerrado": false }
+    ],
+    "lineas": [
+      { "x1": 2, "y1": 0, "x2": 3.2, "y2": 0, "capa": "MUROS" },
+      { "x1": 2, "y1": 0, "x2": 2.8, "y2": 0.8, "capa": "ABERTURAS" },
+      { "x1": 8, "y1": 0, "x2": 9.2, "y2": 0, "capa": "MUROS" },
+      { "x1": 8, "y1": 0, "x2": 8, "y2": -1.2, "capa": "ABERTURAS" },
+      { "x1": 12, "y1": 5, "x2": 13.4, "y2": 5, "capa": "MUROS" },
+      { "x1": 12, "y1": 5, "x2": 12.9, "y2": 5.9, "capa": "ABERTURAS" }
+    ],
+    "circulos": [
+      { "x": 3, "y": 2, "r": 0.5, "capa": "MOBILIARIO" },
+      { "x": 3, "y": 6.5, "r": 0.5, "capa": "MOBILIARIO" },
+      { "x": 10, "y": 3, "r": 0.7, "capa": "MOBILIARIO" },
+      { "x": 9.8, "y": 1.5, "r": 0.5, "capa": "MOBILIARIO" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 12, "y2": 0, "lx": 6, "ly": -4 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 9, "lx": -3, "ly": 4.5 },
+      { "x1": 2, "y1": 0, "x2": 3.2, "y2": 0, "lx": 2.6, "ly": -2 }
+    ],
+    "encuadre": { "x1": -1, "y1": -1, "x2": 14, "y2": 11 }
+  },
+  "consigna": {
+    "x": 15, "y": 1, "ancho": 130, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 11: PUERTAS, VENTANAS Y MOBILIARIO EN BLOQUES",
+      "Consigna:",
+      "- Dibujá la puerta de 0.80 (hoja + arco de barrido) en ABERTURAS.",
+      "- Dibujá la ventana de 1.20 (3 líneas paralelas) en ABERTURAS.",
+      "- Convertilas en bloques nombrados por medida.",
+      "- Insertalas calzadas en los muros.",
+      "- Agregá cama, mesa y mesada en MOBILIARIO.",
+      "- Acotá el frente 12 y la puerta 0.80.",
+      "- Guardá como clase11-planta2.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Planta con puerta, ventanas y mobiliario en bloques" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de puerta con hoja y arco de barrido 0.80" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PLANTA CON PUERTAS, VENTANAS Y MOBILIARIO EN BLOQUES",
+    "objetivo": "Dibujar puertas y ventanas en la capa ABERTURAS, convertirlas en bloques e insertar mobiliario en la planta de la clase 9.",
+    "pasos": [
+      { "titulo": "Dibujar la puerta 0.80", "detalle": ["1. Capa ABERTURAS.", "2. Hoja: línea del marco (2,0)-(3.2,0) y hoja (2,0)-(2.8,0.8).", "3. Arco de barrido: círculo radio 0.8 en (2,0) sector cuadrante."] },
+      { "titulo": "Dibujar la ventana 1.20", "detalle": ["1. Línea de 1.20 paralela a la cara interior del muro.", "2. Dos líneas internas a 1/3 del espesor.", "3. Ubicación en el muro frontal y lateral."] },
+      { "titulo": "Convertir en bloques", "detalle": ["1. BLOQUE PUERTA-0,80 con punto de inserción en el marco.", "2. BLOQUE VENTANA-1,20 en el eje del muro."] },
+      { "titulo": "Insertar en los muros", "detalle": ["1. INSERT calzado (fijando base en el vano).", "2. Rotación si corresponde (0° o 180°)."] },
+      { "titulo": "Mobiliario", "detalle": ["1. Cama y mesa en MOBILIARIO (círculos y rectángulos simples).", "2. Ajustá medidas por referencia."] },
+      { "titulo": "Acotar", "detalle": ["1. Frente 12, fondo 9 y vano de puerta 0.80."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase11-planta2.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Frente de la vivienda", "valor": "12 m" },
+      { "label": "Fondo de la vivienda", "valor": "9 m" },
+      { "label": "Vano de puerta", "valor": "0.80 m" },
+      { "label": "Vano de ventana", "valor": "1.20 m" },
+      { "label": "Espesor de muro", "valor": "0.20 m" }
+    ],
+    "consejos": [
+      "La puerta se dibuja según su radio de barrido = alto de hoja.",
+      "Las ventanas llevan línea de eje cuando son múltiples.",
+      "Los bloques se reutilizan por medida exacta."
+    ]
+  }
+}

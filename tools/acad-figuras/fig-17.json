@@ -1,0 +1,81 @@
+{
+  "numero": 17,
+  "titulo": "Dibujo isométrico",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Isométrico",
+  "pdfTitulo": "PRÁCTICO N°17 — Dibujo isométrico",
+  "pdfSubtitulo": "Figura: caja isométrica de tres caras con isocírculo convertido en agujero",
+  "archivo": {
+    "dwg": "ITC Practico Clase 17 - Caja isométrica.dwg",
+    "pdf": "Práctico Clase 17 - Dibujo isométrico.pdf",
+    "txt": "Guía práctica - Clase 17 - Dibujo isométrico.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "Oculta", "c": "8", "lt": "HIDDEN2" },
+    { "n": "CENTROS", "c": "2", "lt": "CENTER2" },
+    { "n": "COTAS", "c": "1" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[10,6],[32,6],[26,16],[10,16],[10,6],[10,6]], "capa": "Dibujo", "cerrado": false },
+      { "pts": [[10,6],[32,6],[38,16],[22,16],[16,6]], "capa": "Dibujo", "cerrado": false },
+      { "pts": [[38,16],[38,22],[22,22],[22,16]], "capa": "Dibujo", "cerrado": false },
+      { "pts": [[38,22],[26,27],[22,22]], "capa": "Dibujo", "cerrado": false }
+    ],
+    "circulos": [
+      { "x": 16, "y": 20, "r": 3, "capa": "Dibujo" }
+    ],
+    "lineas": [
+      { "x1": 12, "y1": 6, "x2": 12, "y2": 11, "capa": "Oculta", "lt": "HIDDEN2" },
+      { "x1": 16, "y1": 17, "x2": 16, "y2": 23, "capa": "CENTROS", "lt": "CENTER2" },
+      { "x1": 13, "y1": 20, "x2": 19, "y2": 20, "capa": "CENTROS", "lt": "CENTER2" }
+    ],
+    "cotas": [
+      { "x1": 10, "y1": 6, "x2": 32, "y2": 6, "lx": 21, "ly": -3 },
+      { "x1": 22, "y1": 16, "x2": 26, "y2": 27, "lx": 32, "ly": 20 }
+    ],
+    "encuadre": { "x1": 9, "y1": 4, "x2": 40, "y2": 29 }
+  },
+  "consigna": {
+    "x": 42, "y": 16, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 17: DIBUJO ISOMÉTRICO",
+      "Consigna:",
+      "- Activá DIBUJOISO (modo isométrico) en la barra de estado.",
+      "- Dibujá la caja en tres isoplanos (F5 alterna: superior, derecha, izquierda).",
+      "- Los ejes van a 30°, 90° y 150°.",
+      "- Dibujá un isocírculo radio 3 con ELIPSE y convertilo en agujero.",
+      "- Acotá la base y la altura oblicuamente.",
+      "- Guardá como clase17-isometrico.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Caja isométrica de tres caras con isocírculo" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del isocírculo en la cara superior" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: CAJA ISOMÉTRICA — tres caras, isocírculo y cota oblicua",
+    "objetivo": "Activar el dibujo isométrico, alternar isoplanos y dibujar una caja de tres caras con un isocírculo como agujero.",
+    "pasos": [
+      { "titulo": "Activar isométrico", "detalle": ["1. Botón DIBUJOISO en la barra de estado.", "2. Comando ISOPLANO o F5 para alternar caras."] },
+      { "titulo": "Dibujar la cara superior", "detalle": ["1. Isoplano superior: rectángulo a 30°.", "2. Vértices: (10,6)-(32,6)-(26,16)-(10,16)."] },
+      { "titulo": "Cara frontal derecha", "detalle": ["1. Isoplano derecha: verticales y laterales a 30°.", "2. Trazá las aristas hacia (38,16)."] },
+      { "titulo": "Cara lateral izquierda", "detalle": ["1. Isoplano izquierda: conectá la esquina superior."] },
+      { "titulo": "Isocírculo y agujero", "detalle": ["1. ELIPSE en isoplano superior, radio 3 en (16,20).", "2. Trazá como agujero pasante (línea de centro)."] },
+      { "titulo": "Acotar", "detalle": ["1. Cota base (alineada) en 3D.", "2. Cota de altura con ACOTA-OBLICUA si es necesario."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase17-isometrico.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Largo de la caja", "valor": "22 (eje 30°)" },
+      { "label": "Ancho de la caja", "valor": "16 (eje 150°)" },
+      { "label": "Alto", "valor": "10 (eje 90°)" },
+      { "label": "Radio del isocírculo", "valor": "3" }
+    ],
+    "consejos": [
+      "F5 alterna los tres isoplanos: superior, derecha e izquierda.",
+      "Los isocírculos se dibujan con ELIPSE en isoplano.",
+      "La cota oblicua se ajusta con ACOTA-OBLICUA."
+    ]
+  }
+}

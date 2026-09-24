@@ -1,0 +1,155 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 25,
+    "titulo": "Render de una casa 3D",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "Cierro el 3D y el curso: vas a modelar una casa completa con sólidos unidos por booleanas, asignarle materiales e iluminación y producir el render final fotorrealista.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 25 - Render de una casa 3D",
+  "objetivos": [
+    "Modelar una casa combinando primitivas sólidas con operaciones booleanas (unión).",
+    "Asignar materiales a muros, techo, chimenea, puerta y ventanas.",
+    "Configurar la iluminación solar y ejecutar el render para obtener la imagen final."
+  ],
+  "teoria": [
+    {
+      "titulo": "Modelado por sólidos",
+      "emoji": "🏠",
+      "imagen": {
+        "src": "img/encuadre.jpg",
+        "alt": "Casa modelada con sólidos y uniones",
+        "caption": "La casa nace de un prisma, una cuña de techo y cuerpos para puerta y ventanas, todo unido."
+      },
+      "parrafos": [
+        "Una casa se arma con las primitivas de la clase 23: un prisma de 30x22 y altura 12 es el cuerpo; una cuña sobre él forma el techo a un agua; un cilindro es la chimenea; y cajas finas proyetadas de la fachada hacen puerta y ventanas.",
+        "Cada cuerpo se crea en su posición y luego se combina con UNIÓN: <i>cuerpo + techo</i>, después + chimenea, y así hasta que la casa queda hecha de un único sólido. La unión suma los volúmenes aunque las piezas se toquen o se crucen."
+      ],
+      "puntos": [
+        "El prisma apoya en el suelo: base 30x22, altura 12.",
+        "La cuña de techo se apoya arriba: mismo largo y ancho, altura 7 hacia arriba.",
+        "La chimenea es un cilindro que nace sobre el techo y sobresale.",
+        "Puerta y ventanas son cajas finas adosadas a la fachada.",
+        "UNIÓN integra todo en un solo cuerpo sin costuras visibles."
+      ]
+    },
+    {
+      "titulo": "Materiales para la casa",
+      "emoji": "🎨",
+      "parrafos": [
+        "Con la casa modelada se pintan los materiales: los muros de ladrillo o revoque, el techo con tejas, la chimenea de hormigón, la puerta de madera y las ventanas de vidrio.",
+        "Los materiales se aplican con el panel Materiales como en la clase 24. Para tener caras distintas en el mismo cuerpo (como techo teja y muro ladrillo) se asigna el material a la cara por selección, sobre esa superficie."
+      ],
+      "puntos": [
+        "Ladrillo: textura de tabiques con juntas.",
+        "Tejas: textura de techo inclinado (respecta la pendiente de la cuña).",
+        "Madera: puerta con vetas y manos desde el marco.",
+        "Vidrio: ventanas translúcidas que dejan ver el interior."
+      ]
+    },
+    {
+      "titulo": "Luz y render final",
+      "emoji": "☀️",
+      "imagen": {
+        "src": "img/interfaz.jpg",
+        "alt": "Render de la casa en vista isométrica",
+        "caption": "Con materiales e iluminación solar, el render produce la imagen final de la casa."
+      },
+      "parrafos": [
+        "El render necesita luz: se agrega un SOL solar (comando SOL/SUNAng) indicando hora y lugar, y el sol proyecta sombras reales sobre la escena. Con la vista acomodada en isométrica, se ejecuta RENDER eligiendo un preset (Intermedio o Alto).",
+        "La ventana de render calcula la imagen con luz, materiales y sombras, y permite guardar el resultado como archivo de imagen. Ese render es la entrega final del 3D del curso."
+      ],
+      "puntos": [
+        "SOL (SUNAng) activa la iluminación solar con sombras.",
+        "La hora de la tarde da sombras largas y volumen a la casa.",
+        "Presets de render: Bajo, Medio, Intermedio, Alto.",
+        "La imagen renderizada se guarda desde la propia ventana de render."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá el cierre del curso",
+      "consigna": "Respondé el interactivo sobre modelado, materiales, iluminación y render.",
+      "pasos": [
+        "Mirá en la figura cómo quedaron unidas las piezas de la casa.",
+        "Repasá los pasos: modelado → booleanas → materiales → luz → render.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con el render de la casa en pantalla.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué operación booleana fusiona los sólidos de la casa?",
+            "opciones": ["Diferencia", "Unión", "Intersección", "Recortar"],
+            "correcta": "Unión"
+          },
+          {
+            "pregunta": "¿Qué primitiva forma el techo a un agua?",
+            "opciones": ["Una cuña", "Un cono", "Una esfera", "Un cilindro"],
+            "correcta": "Una cuña"
+          },
+          {
+            "pregunta": "¿Qué le aporta el SOL a la escena antes del render?",
+            "opciones": ["Más memoria", "Luz y sombras reales", "Mueve la casa", "Pinta los muros"],
+            "correcta": "Luz y sombras reales"
+          },
+          {
+            "pregunta": "¿Dónde se guarda la imagen del render?",
+            "opciones": ["En la ventana de render", "En la línea de comandos", "En el panel Capas", "No se puede guardar"],
+            "correcta": "En la ventana de render"
+          },
+          {
+            "pregunta": "¿Qué material conviene para las ventanas?",
+            "opciones": ["Ladrillo", "Vidrio translúcido", "Metal espejo", "Madera"],
+            "correcta": "Vidrio translúcido"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "El render de tu casa",
+      "consigna": "Modelá, materiales, iluminá y renderizá tu propia casa siguiendo la figura.",
+      "pasos": [
+        "Creá el prisma de 30x22 y altura 12 en (0,0).",
+        "Agregá la cuña de techo arriba (z=12) de 30x22 altura 7.",
+        "Sumá la chimenea (cilindro) sobre el techo, la puerta y las dos ventanas como cajas finas.",
+        "Uní todo con UNIÓN: cuerpo + techo, luego chimenea, puerta y ventanas.",
+        "Aplicá materiales: ladrillo a muros, tejas al techo, madera a la puerta, vidrio a las ventanas.",
+        "Activá el SOL (SUNAng) con hora de tarde y ejecutá RENDER con preset Alto.",
+        "Guardá la imagen renderizada y el dibujo como clase25-casa3d.dwg."
+      ],
+      "entrega": "Se entrega la imagen del render y el DWG de la casa. Es el cierre del curso de Dibujo Técnico."
+    }
+  ],
+  "entrega": "Se entrega la imagen K renderizada y el archivo clase25-casa3d.dwg. Cierre del curso.",
+  "lectura": "Con la casa se integra todo el 3D del curso: primitivas sólidas ubicadas en el espacio, combinadas con uniones booleanas hasta formar un solo cuerpo, materiales aplicados por cara (ladrillo, tejas, madera y vidrio) e iluminación solar. El render final con presets altos entrega la imagen fotorrealista. Del plano a la escena: eso es el dibujo técnico.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Presentar la casa terminada como objetivo y cierre del curso", "min": "10 min" },
+      { "titulo": "Modelado", "que": "Crear cuerpo, techo, chimenea, puerta y ventanas como sólidos", "min": "25 min" },
+      { "titulo": "Booleanas", "que": "Unir todos los cuerpos en un solo sólido", "min": "15 min" },
+      { "titulo": "Materiales", "que": "Aplicar ladrillo, tejas, madera y vidrio", "min": "15 min" },
+      { "titulo": "Luz y render", "que": "Activar el sol y renderizar con preset Alto", "min": "15 min" },
+      { "titulo": "Cierre del curso", "que": "Guardar la imagen final, repaso completo y despedida", "min": "10 min" }
+    ],
+    "conecta": [
+      "Cerrar el círculo del curso: el plano 2D de la clase 1 ahora es una escena 3D renderizada.",
+      "Comparar el render con el boceto original de la casa dibujado por los alumnos."
+    ],
+    "aclarar": [
+      "UNIÓN requiere seleccionar los sólidos: el orden no importa al unir.",
+      "La cuña sube desde z=12: revisar que apoye sobre el cuerpo, no dentro.",
+      "El render puede tardar: usar el preset del equipo y esperar sin tocar la ventana."
+    ],
+    "ejemplos": [
+      "Casa sin techo vs. con techo para ver la diferencia que hace la cuña.",
+      "Misma casa a la mañana y a la tarde: las sombras largas le dan volumen.",
+      "Vidrio transparente que deja ver la puerta de madera desde la ventana."
+    ]
+  }
+}

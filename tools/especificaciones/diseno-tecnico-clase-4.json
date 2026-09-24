@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 4,
     "titulo": "Herramientas de dibujo",
@@ -22,9 +27,9 @@
       "titulo": "La polilínea",
       "emoji": "➿",
       "imagen": {
-        "src": "img/polilinea.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Polilínea con segmentos continuos",
-        "caption": "La polilínea dibuja varios segmentos como un único objeto continuo."
+        "caption": "Figura 1 — Tablero técnico combinado con sus elementos"
       },
       "parrafos": [
         "La polilínea (POL) dibuja una secuencia de segmentos rectos y curvos que quedan unidos como un único objeto. A diferencia de varias líneas, una polilínea se puede seleccionar, mover y sopesar de una sola vez.",
@@ -41,9 +46,9 @@
       "titulo": "Rectángulo y polígono",
       "emoji": "▭",
       "imagen": {
-        "src": "img/poligono.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Formas geométricas regulares",
-        "caption": "El rectángulo y los polígonos regulares se crean con esquinas o con centro y radio."
+        "caption": "Figura 2 — Detalle del tablero: círculo, polígono y polilínea"
       },
       "parrafos": [
         "El rectángulo (RECTANG) se dibuja tomando dos esquinas opuestas o escribiendo las medidas de base y altura. El polígono (POLIGONO) crea figuras regulares de 3 a 1024 lados definiendo su centro y su radio."
@@ -58,11 +63,6 @@
     {
       "titulo": "Arco y círculo",
       "emoji": "⭕",
-      "imagen": {
-        "src": "img/arcocirculo.jpg",
-        "alt": "Arcos y círculos con sus centros",
-        "caption": "Los arcos y círculos se definen por centro, puntos o tangencias."
-      },
       "parrafos": [
         "El círculo (CIRCULO o C) admite muchos métodos de construcción: centro-radi, centro-diámetro, 3 puntos, 2 puntos o tangente-tangente-radio. El arco (ARCO) parte de un principio, un centro y un final, o del recorrido de tres puntos."
       ],
@@ -103,27 +103,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué herramienta crea un único objeto con varios segmentos unidos?",
-            "opciones": ["Linea", "Polilínea", "Rectángulo", "Arco"],
+            "opciones": [
+              "Linea",
+              "Polilínea",
+              "Rectángulo",
+              "Arco"
+            ],
             "correcta": "Polilínea"
           },
           {
             "pregunta": "¿Qué comando dibuja figuras regulares de 3 a 1024 lados?",
-            "opciones": ["CIRCULO", "POLIGONO", "RECTANG", "ELIPSE"],
+            "opciones": [
+              "CIRCULO",
+              "POLIGONO",
+              "RECTANG",
+              "ELIPSE"
+            ],
             "correcta": "POLIGONO"
           },
           {
             "pregunta": "¿Cuál es el método más común para crear un círculo?",
-            "opciones": ["Centro y radio", "Tangente-tangente", "3 puntos", "2 puntos"],
+            "opciones": [
+              "Centro y radio",
+              "Tangente-tangente",
+              "3 puntos",
+              "2 puntos"
+            ],
             "correcta": "Centro y radio"
           },
           {
             "pregunta": "¿Qué opción de la polilínea permite dibujar curvas?",
-            "opciones": ["Anchura", "Aquí", "Á", "Mitad"],
+            "opciones": [
+              "Anchura",
+              "Aquí",
+              "Á",
+              "Mitad"
+            ],
             "correcta": "Á"
           },
           {
             "pregunta": "¿Qué se define para crear un arco con el método de 3 puntos?",
-            "opciones": ["Centro, inicio y final", "Inicio, medio y final", "Dos radios", "Un diámetro y un radio"],
+            "opciones": [
+              "Centro, inicio y final",
+              "Inicio, medio y final",
+              "Dos radios",
+              "Un diámetro y un radio"
+            ],
             "correcta": "Inicio, medio y final"
           }
         ]
@@ -147,12 +172,36 @@
   "lectura": "Las herramientas de dibujo son la caja de lápices del curso: polilínea para contornos únicos, rectángulo y polígono para formas regulares, arco y círculo para lo curvo, y elipse para proyecciones. Elegir la herramienta correcta no solo acelera el trabajo sino que deja el dibujo más fácil de modificar después.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar coordenadas y presentar el panel Dibujo", "min": "10 min" },
-      { "titulo": "Polilínea", "que": "Diferenciar de la línea y mostrar ancho y arcos internos", "min": "20 min" },
-      { "titulo": "Rectángulo y polígono", "que": "Crear rectángulos por medidas y polígonos inscritos/circunscritos", "min": "15 min" },
-      { "titulo": "Arco y círculo", "que": "Mostrar métodos centro-radi, 3P, 2P y TTR; arcos de 3 puntos", "min": "20 min" },
-      { "titulo": "Práctica", "que": "Guiar la figura combinada y el interactivo", "min": "20 min" },
-      { "titulo": "Cierre", "que": "Repaso de cuándo usar cada herramienta", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar coordenadas y presentar el panel Dibujo",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Polilínea",
+        "que": "Diferenciar de la línea y mostrar ancho y arcos internos",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Rectángulo y polígono",
+        "que": "Crear rectángulos por medidas y polígonos inscritos/circunscritos",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Arco y círculo",
+        "que": "Mostrar métodos centro-radi, 3P, 2P y TTR; arcos de 3 puntos",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Práctica",
+        "que": "Guiar la figura combinada y el interactivo",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso de cuándo usar cada herramienta",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Preguntar cuál herramienta usarían para dibujar un muro largo con esquinas. La polilínea es la respuesta técnica."

@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 12,
     "titulo": "Cotas y administrador de estilos",
@@ -22,9 +27,9 @@
       "titulo": "Tipos de cota",
       "emoji": "📏",
       "imagen": {
-        "src": "img/cotas.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Cotas lineales y alineadas",
-        "caption": "La cota lineal mide horizontal/vertical; la alineada acompaña la dirección del objeto."
+        "caption": "Figura 1 — Planta acotada con lineal, cadena y radio"
       },
       "parrafos": [
         "Cada tipo de cota sirve para una situación: la cota lineal mide distancias horizontales o verticales; la alineada acompaña la dirección real del objeto inclinado; la de longitud de arco mide curvas; y la de coordenada indica la posición X o Y de un punto."
@@ -40,9 +45,9 @@
       "titulo": "Cotas radiales, diametrales y angulares",
       "emoji": "⭕",
       "imagen": {
-        "src": "img/cotacircular.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Cotas de radio y diámetro",
-        "caption": "Radio, diámetro y marcas de centro miden los círculos y las curvas."
+        "caption": "Figura 2 — Detalle de cotas con estilo personalizado"
       },
       "parrafos": [
         "Las cotas de radio y diámetro miden círculos y arcos; la marca de centro señala su centro con una crucecita. La cota angular mide el ángulo entre dos líneas o los grados de un arco."
@@ -71,11 +76,6 @@
     {
       "titulo": "Administrador de estilos de cota",
       "emoji": "🗂️",
-      "imagen": {
-        "src": "img/estilos.jpg",
-        "alt": "Estilos de cota en AutoCAD",
-        "caption": "El administrador de estilos define flechas, texto y unidades de todas las cotas."
-      },
       "parrafos": [
         "El administrador de estilos de cota (ESTILOACOT o DIMSTYLE) agrupa en estilos las opciones de las cotas: tamaño de flechas y texto, unidades, redondeo, posición de la línea de cota y la escala general. Cambiar el estilo actual actualiza todas las cotas del dibujo que lo usen."
       ],
@@ -101,27 +101,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué cota acompaña la dirección de un objeto inclinado?",
-            "opciones": ["Lineal", "Alineada", "Coordenada", "Base"],
+            "opciones": [
+              "Lineal",
+              "Alineada",
+              "Coordenada",
+              "Base"
+            ],
             "correcta": "Alineada"
           },
           {
             "pregunta": "¿Qué mide la cota angular?",
-            "opciones": ["El largo de un muro", "El ángulo entre dos líneas", "El espesor del texto", "El radio del círculo"],
+            "opciones": [
+              "El largo de un muro",
+              "El ángulo entre dos líneas",
+              "El espesor del texto",
+              "El radio del círculo"
+            ],
             "correcta": "El ángulo entre dos líneas"
           },
           {
             "pregunta": "¿Qué herramienta elige el tipo de cota automáticamente?",
-            "opciones": ["Cota inteligente (ACOTAR)", "Línea base", "Marca de centro", "Cota rápida"],
+            "opciones": [
+              "Cota inteligente (ACOTAR)",
+              "Línea base",
+              "Marca de centro",
+              "Cota rápida"
+            ],
             "correcta": "Cota inteligente (ACOTAR)"
           },
           {
             "pregunta": "¿Qué tipo de cota parte de un origen común para varias medidas?",
-            "opciones": ["Continua", "Línea base", "Angular", "Coordenada"],
+            "opciones": [
+              "Continua",
+              "Línea base",
+              "Angular",
+              "Coordenada"
+            ],
             "correcta": "Línea base"
           },
           {
             "pregunta": "¿Dónde se configuran flechas, texto y unidades de las cotas?",
-            "opciones": ["En Design Center", "En el administrador de estilos de cota", "En Propiedades", "En la capa 0"],
+            "opciones": [
+              "En Design Center",
+              "En el administrador de estilos de cota",
+              "En Propiedades",
+              "En la capa 0"
+            ],
             "correcta": "En el administrador de estilos de cota"
           }
         ]
@@ -146,12 +171,36 @@
   "lectura": "Las cotas convierten el dibujo en un documento técnico. Cada tipo de cota mide una situación distinta: lineal, alineada, de arco, de coordenada, radial, diametral y angular. Con la cota inteligente y la rápida se acota rápido, y el administrador de estilos disciplina el aspecto de todo el plano con un solo clic.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar la planta acotada manualmente y presentar las cotas de AutoCAD", "min": "10 min" },
-      { "titulo": "Tipos de cota", "que": "Acotar lineal, alineada, arco, coordenada, radial, diametral y angular", "min": "25 min" },
-      { "titulo": "Formas de aplicación", "que": "Cota inteligente, rápida, línea base y continua", "min": "20 min" },
-      { "titulo": "Estilos", "que": "Configurar un estilo con flechas, texto y unidades; escala general", "min": "15 min" },
-      { "titulo": "Práctica", "que": "Acotar la planta completa de cada alumno", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo final", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar la planta acotada manualmente y presentar las cotas de AutoCAD",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Tipos de cota",
+        "que": "Acotar lineal, alineada, arco, coordenada, radial, diametral y angular",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Formas de aplicación",
+        "que": "Cota inteligente, rápida, línea base y continua",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Estilos",
+        "que": "Configurar un estilo con flechas, texto y unidades; escala general",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Práctica",
+        "que": "Acotar la planta completa de cada alumno",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo final",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Preguntar cómo anotarían la medida de una puerta y el diámetro de un caño en un plano a mano; cada caso es un tipo de cota."

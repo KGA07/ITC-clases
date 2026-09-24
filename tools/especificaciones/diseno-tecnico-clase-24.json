@@ -1,0 +1,151 @@
+{
+  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "clase": {
+    "numero": 24,
+    "titulo": "Materiales y texturas en 3D",
+    "modulo": "Módulo 2 – Aplicaciones",
+    "duracion": "1h 30min",
+    "modalidad": "Presencial con PC individual",
+    "materiales": "PC con AutoCAD instalado",
+    "bajada": "A los volúmenes les toca la piel: vas a asignar materiales, ver cómo responde cada cara a la luz y usar el estilo Realista para que las piezas se vean como objetos terminados.",
+    "turno": "Año 2026"
+  },
+  "outputDir": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 24 - Materiales y texturas 3D",
+  "objetivos": [
+    "Asignar materiales a sólidos y a caras individuales desde el panel Materiales.",
+    "Diferenciar color, acabado y textura de un material.",
+    "Visualizar los sólidos con el estilo Realista para apreciar la respuesta a la luz."
+  ],
+  "teoria": [
+    {
+      "titulo": "¿Qué es un material?",
+      "emoji": "🎨",
+      "imagen": {
+        "src": "img/interfaz.jpg",
+        "alt": "Sólidos con materiales en vista Realista",
+        "caption": "Los materiales transforman sólidos grises en objetos con color, brillo y textura."
+      },
+      "parrafos": [
+        "Un material es una definición que le da a la superficie del sólido su aspecto final: color, reflejo (brillo), translucidez y textura. Se aplican con el panel Materiales: se abre el navegador, se elige una categoría (madera, metal, vidrio, piedra...) y se arrastra al sólido.",
+        "Sin material, un sólido se ve gris. Con material, la luz lo modela: los metales brillan y reflejan, la madera muestra vetas y el vidrio deja pasar la luz."
+      ],
+      "puntos": [
+        "Cada sólido puede recibir un material completo o un material por cara.",
+        "La biblioteca de materiales incluye maderas, metales, vidrios y cementos.",
+        "El material se copia con 'aplicar a selección' una vez elegido.",
+        "La textura es la imagen que recubre la superficie (vetas, ladrillos, tejas...)."
+      ]
+    },
+    {
+      "titulo": "Color, acabado y textura",
+      "emoji": "🧱",
+      "parrafos": [
+        "El color del material puede ser un color liso o venir de una textura (una imagen que se repite sobre la cara). El acabado define cómo se comporta la luz: mate difunde suavemente, espejo concentra el reflejo, translúcido deja pasar algo de luz.",
+        "En un material de madera, la textura aporta las vetas. En un material de ladrillo, la textura repite el patrón de los ladrillos y sus juntas. Cambiar solo el color no alcanza: la textura es lo que hace reconocible al material."
+      ],
+      "puntos": [
+        "Color liso: apto para plásticos y pinturas.",
+        "Textura: imagen que se proyecta y repite sobre la cara.",
+        "Acabado mate, satinado, brillante o espejo para la respuesta a la luz.",
+        "El navegador de materiales muestra el material sobre una caja de muestra."
+      ]
+    },
+    {
+      "titulo": "El estilo visual Realista",
+      "emoji": "✨",
+      "imagen": {
+        "src": "img/encuadre.jpg",
+        "alt": "Detalle de sólidos con materiales en estilo Realista",
+        "caption": "En el estilo Realista la luz y el color de cada material se ven en pantalla sin renderizar."
+      },
+      "parrafos": [
+        "El estilo Realista muestra las caras con su material aplicado y una iluminación por defecto, directamente en la vista: se puede mover la cámara y ver cómo cambia el reflejo sin esperar un render. Es la vista de trabajo ideal para verificar cómo quedaron los materiales.",
+        "Mientras el estilo Concepto usa colores planos por solidez, el Realista respeta material y luz. Se cambia desde el panel Visualizar, igual que Concepto."
+      ],
+      "puntos": [
+        "Realista: material + iluminación por defecto en la vista.",
+        "Concepto: colores planos sin material, rápido de leer.",
+        "La vista isométrica de trabajo permite girar y revisar las caras.",
+        "El render (clase siguiente) dará el resultado final con luces propias."
+      ]
+    }
+  ],
+  "ejercicios": [
+    {
+      "titulo": "Repasá los materiales",
+      "consigna": "Respondé el interactivo sobre materiales, texturas y estilos visuales.",
+      "pasos": [
+        "Observá en la figura cómo el estilo Realista cambia el aspecto de cada sólido.",
+        "Identificá cuál sería el color, el acabado y la textura de cada material.",
+        "Respondé las 5 preguntas del interactivo."
+      ],
+      "entrega": "Repaso oral de las respuestas con la figura 3D en pantalla.",
+      "interactivo": {
+        "preguntas": [
+          {
+            "pregunta": "¿Qué le agrega la textura a un material de madera?",
+            "opciones": ["Las vetas de la madera", "Solo un color más oscuro", "Nada", "El brillo del barniz"],
+            "correcta": "Las vetas de la madera"
+          },
+          {
+            "pregunta": "¿Qué estilo visual muestra los materiales aplicados?",
+            "opciones": ["Concepto", "Realista", "Alámbrico 2D", "Oculto"],
+            "correcta": "Realista"
+          },
+          {
+            "pregunta": "¿Dónde se eligen los materiales en AutoCAD?",
+            "opciones": ["En el panel Dibujo", "En el panel Materiales", "En el panel Capas", "En el panel Acotar"],
+            "correcta": "En el panel Materiales"
+          },
+          {
+            "pregunta": "¿Qué acabado concentra el reflejo?",
+            "opciones": ["Mate", "Espejo", "Translúcido", "Satinado"],
+            "correcta": "Espejo"
+          },
+          {
+            "pregunta": "¿Qué recubre la superficie con una imagen que se repite?",
+            "opciones": ["El color liso", "La textura", "El brillo", "La línea de comandos"],
+            "correcta": "La textura"
+          }
+        ]
+      }
+    },
+    {
+      "titulo": "Pintá el set de primitivas",
+      "consigna": "Asigná un material a cada sólido de tu dibujo clase23 y visualizalo en Realista.",
+      "pasos": [
+        "Abrí tu clase23-solidos.dwg con las seis primitivas.",
+        "Abrí el navegador de materiales y elegí categorías: una madera, un metal, un vidrio, una piedra.",
+        "Aplicá el metal al cilindro y al cono, la madera a la caja y a la cuña, el vidrio a la esfera y el oro al toroide.",
+        "Cambiá el estilo visual a Realista y girá la vista para ver los reflejos.",
+        "Guardá como clase24-materiales.dwg."
+      ],
+      "entrega": "El docente revisa la asignación de materiales visible en el estilo Realista."
+    }
+  ],
+  "entrega": "Se revisa el archivo clase24-materiales.dwg con los seis sólidos texturados en Realista.",
+  "lectura": "Los materiales convierten los sólidos grises en objetos terminados: con el panel Materiales se elige un material de la biblioteca y se ve cómo su color, acabado y textura responden a la luz. El estilo visual Realista muestra ese resultado en la propia vista de trabajo, sin renderizar, y es la base para el render fotorrealista.",
+  "guiaDocente": {
+    "plan": [
+      { "titulo": "Apertura", "que": "Mostrar el mismo sólido sin y con material para motivar el tema", "min": "10 min" },
+      { "titulo": "Materiales", "que": "Recorrer el panel Materiales y la biblioteca de categorías", "min": "20 min" },
+      { "titulo": "Color y textura", "que": "Diferenciar color liso, textura y acabados", "min": "15 min" },
+      { "titulo": "Realista", "que": "Cambiar el estilo visual y observar la luz en las caras", "min": "15 min" },
+      { "titulo": "Práctica", "que": "Guiar el pintado de las seis primitivas y el interactivo", "min": "20 min" },
+      { "titulo": "Cierre", "que": "Repaso oral y preparación del render de la próxima clase", "min": "10 min" }
+    ],
+    "conecta": [
+      "Repasar los sólidos de la clase 23: ahora se les suma la piel de los materiales."
+    ],
+    "aclarar": [
+      "Material no es lo mismo que capa: la capa organiza, el material pinta la superficie.",
+      "El estilo Concepto ignora los materiales: no es un error, es su modo de trabajo.",
+      "La textura necesita dimensión: el ladrillo se repite; ajustar la escala si está gigante."
+    ],
+    "ejemplos": [
+      "Un cilindro en aluminio cepillado y el mismo en plástico mate para comparar acabados.",
+      "Una pared con textura de ladrillo y otra con color liso, frente a la misma luz.",
+      "Vidrio translúcido apoyado sobre un cuerpo de madera para ver la transparencia."
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "numero": 20,
+  "titulo": "Normas de dibujo técnico",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 20 - Normas de dibujo técnico",
+  "pdfTitulo": "PRÁCTICO N°20 — Normas de dibujo técnico",
+  "pdfSubtitulo": "Figura: plano de auditoría con grosores, ejes y cotas según normas IRAM/ISO",
+  "archivo": {
+    "dwg": "ITC Practico Clase 20 - Auditoría de normas.dwg",
+    "pdf": "Práctico Clase 20 - Normas de dibujo técnico.pdf",
+    "txt": "Guía práctica - Clase 20 - Normas de dibujo técnico.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "EJES", "c": "2", "lt": "CENTER2" },
+    { "n": "OCULTAS", "c": "8", "lt": "HIDDEN2" },
+    { "n": "COTAS", "c": "1" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "polilineas": [
+      { "pts": [[0,0],[60,0],[60,40],[0,40],[0,0]], "capa": "Dibujo", "cerrado": true }
+    ],
+    "circulos": [
+      { "x": 30, "y": 20, "r": 6, "capa": "Dibujo" },
+      { "x": 30, "y": 20, "r": 9, "capa": "EJES", "lt": "CENTER2" },
+      { "x": 12, "y": 20, "r": 4, "capa": "Dibujo" }
+    ],
+    "lineas": [
+      { "x1": 30, "y1": 11, "x2": 30, "y2": 29, "capa": "EJES", "lt": "CENTER2" },
+      { "x1": 21, "y1": 20, "x2": 39, "y2": 20, "capa": "EJES", "lt": "CENTER2" },
+      { "x1": 12, "y1": 16, "x2": 12, "y2": 24, "capa": "OCULTAS", "lt": "HIDDEN2" },
+      { "x1": 0, "y1": 20, "x2": 60, "y2": 20.5, "capa": "OCULTAS", "lt": "HIDDEN2" }
+    ],
+    "cotas": [
+      { "x1": 0, "y1": 0, "x2": 60, "y2": 0, "lx": 30, "ly": -6 },
+      { "x1": 0, "y1": 0, "x2": 0, "y2": 40, "lx": -6, "ly": 20 },
+      { "x1": 30, "y1": 20, "x2": 12, "y2": 20, "lx": 21, "ly": 30 }
+    ],
+    "encuadre": { "x1": -3, "y1": -3, "x2": 64, "y2": 43 }
+  },
+  "consigna": {
+    "x": 66, "y": 30, "ancho": 110, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 20: NORMAS DE DIBUJO TÉCNICO",
+      "Consigna:",
+      "- Auditá el plano contra las reglas IRAM/ISO.",
+      "- Verificá los anchos de línea (contorno grueso, ejes finos).",
+      "- Comprobá que los ejes usen tipo de línea de centro.",
+      "- Las cotas van fuera de la silueta.",
+      "- Marco y carátula presentes.",
+      "- Anotá las correcciones encontradas.",
+      "- Guardá como clase20-auditoria.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Plano de auditoría con grosores y ejes según normas" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle de la acotación fuera de la silueta" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PLANO DE AUDITORÍA DE NORMAS — grosores, tipos de línea y acotación",
+    "objetivo": "Auditar un plano contra las normas de dibujo técnico: anchos de línea, ejes de centro, cotas fuera de la silueta y carátula.",
+    "pasos": [
+      { "titulo": "Dibujar el plano base", "detalle": ["1. Rectángulo (0,0)-(60,40) en Dibujo.", "2. Círculo central radio 6 con línea de centro r9."] },
+      { "titulo": "Verificar anchos de línea", "detalle": ["1. Contornos gruesos (0.70).", "2. Ejes finos (0.25).", "3. Comprobá en las ventanas de Propiedades."] },
+      { "titulo": "Tipos de línea", "detalle": ["1. EJES con CENTER2.", "2. OCULTAS con HIDDEN2."] },
+      { "titulo": "Cotas fuera de la silueta", "detalle": ["1. Cota 60 y 40 por fuera.", "2. Verificá el silueteo de la pieza."] },
+      { "titulo": "Marco y carátula", "detalle": ["1. Verificá marco y carátula en el plano final."] },
+      { "titulo": "Anotar correcciones", "detalle": ["1. Texto con las correcciones encontradas."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase20-auditoria.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Largo del plano", "valor": "60 mm" },
+      { "label": "Alto del plano", "valor": "40 mm" },
+      { "label": "Radio centro", "valor": "R6" },
+      { "label": "Radio de ejes", "valor": "R9" }
+    ],
+    "consejos": [
+      "Los anchos de línea diferencian contornos, ejes y ocultas.",
+      "Las cotas nunca cortan la silueta de la pieza.",
+      "La carátula sigue el formato de la clase 19."
+    ]
+  }
+}

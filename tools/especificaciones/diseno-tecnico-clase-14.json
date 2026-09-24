@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 14,
     "titulo": "Pieza mecánica: dibujo, cotas y sombreado",
@@ -22,9 +27,9 @@
       "titulo": "Círculos por tangente",
       "emoji": "⭕",
       "imagen": {
-        "src": "img/tangencia.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Círculos tangentes entre sí",
-        "caption": "Los círculos por tangencia se encajan entre líneas y otros círculos sin medir nada a mano."
+        "caption": "Figura 1 — Pieza mecánica con agujero central, TTR y despiece"
       },
       "parrafos": [
         "Muchas piezas mecánicas se construyen encajando círculos en líneas y en otros círculos. El método TTR (tangente-tangente-radio) crea un círculo que toca dos objetos con un radio dado; el método 3P encaja un círculo en tres puntos de tangencia.",
@@ -41,9 +46,9 @@
       "titulo": "Arcos y empalme en la pieza",
       "emoji": "🌀",
       "imagen": {
-        "src": "img/mecanica.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Pieza mecánica con arcos",
-        "caption": "El contorno de la pieza combina arcos, rectas y empalmes en las esquinas."
+        "caption": "Figura 2 — Corte con sombreado ANSI31 y cota de distancia"
       },
       "parrafos": [
         "El arco y el empalme definen las curvas de la pieza: los arcos por centro o por tres puntos dibujan las transiciones, y el empalme con un radio fijo redondea las esquinas donde terminaría una arista viva.",
@@ -59,11 +64,6 @@
     {
       "titulo": "Cotas angulares, de diámetro y de radio",
       "emoji": "📐",
-      "imagen": {
-        "src": "img/sombreado.jpg",
-        "alt": "Corte con sombreado de pieza",
-        "caption": "El sombreado marca las zonas seccionadas en el corte de la pieza."
-      },
       "parrafos": [
         "La pieza se completa con sus cotas: las angulares miden los ángulos de las pendientes, las de diámetro marcan los agujeros y ejes, y las de radio indican las curvas. Cada una lleva su símbolo correcto (Ø para diámetro, R para radio)."
       ],
@@ -104,27 +104,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué método crea un círculo que toca dos objetos con un radio dado?",
-            "opciones": ["2P", "3P", "TTR", "Centro-radi"],
+            "opciones": [
+              "2P",
+              "3P",
+              "TTR",
+              "Centro-radi"
+            ],
             "correcta": "TTR"
           },
           {
             "pregunta": "¿Qué referencia se activa para encajar círculos en líneas?",
-            "opciones": ["Tangente", "Perpendicular", "Centro", "Paralela"],
+            "opciones": [
+              "Tangente",
+              "Perpendicular",
+              "Centro",
+              "Paralela"
+            ],
             "correcta": "Tangente"
           },
           {
             "pregunta": "¿Qué cota se usa para medir un agujero?",
-            "opciones": ["Angular", "De diámetro", "Continua", "Coordenada"],
+            "opciones": [
+              "Angular",
+              "De diámetro",
+              "Continua",
+              "Coordenada"
+            ],
             "correcta": "De diámetro"
           },
           {
             "pregunta": "¿Qué símbolo identifica a una cota de radio?",
-            "opciones": ["Ø", "R", "°", "%"],
+            "opciones": [
+              "Ø",
+              "R",
+              "°",
+              "%"
+            ],
             "correcta": "R"
           },
           {
             "pregunta": "¿Qué patrón de sombreado representa un corte metálico?",
-            "opciones": ["ANSI31", "DOTS", "NET", "ZIGZAG"],
+            "opciones": [
+              "ANSI31",
+              "DOTS",
+              "NET",
+              "ZIGZAG"
+            ],
             "correcta": "ANSI31"
           }
         ]
@@ -149,12 +174,36 @@
   "lectura": "La pieza mecánica conecta todo lo aprendido: tangencias para encajar geometría, arcos y empalmes para las curvas, cotas angulares, de diámetro y de radio para la medida, y sombreado para marcar los cortes. El resultado es el primer dibujo industrial completo del curso.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Presentar el objetivo: la primera pieza mecánica completa", "min": "10 min" },
-      { "titulo": "Tangencias", "que": "Practicar TTR y 3P con la referencia tangente", "min": "20 min" },
-      { "titulo": "Arcos y empalmes", "que": "Dar forma al contorno con arcos y radios de empalme", "min": "20 min" },
-      { "titulo": "Cotas de la pieza", "que": "Acotar ángulos, diámetros y radios sobre la pieza", "min": "20 min" },
-      { "titulo": "Sombreado", "que": "Sombra del corte con ANSI31 y escala adecuada", "min": "10 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo; revisión individual de piezas", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Presentar el objetivo: la primera pieza mecánica completa",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Tangencias",
+        "que": "Practicar TTR y 3P con la referencia tangente",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Arcos y empalmes",
+        "que": "Dar forma al contorno con arcos y radios de empalme",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Cotas de la pieza",
+        "que": "Acotar ángulos, diámetros y radios sobre la pieza",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Sombreado",
+        "que": "Sombra del corte con ANSI31 y escala adecuada",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo; revisión individual de piezas",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Mostrar fotos de piezas mecánicas reales con sus radios y pedir señalar dónde iría un sombreado en su corte."

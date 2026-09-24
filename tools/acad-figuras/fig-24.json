@@ -1,0 +1,68 @@
+{
+  "numero": 24,
+  "titulo": "Materiales y texturas en 3D",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 24 - Materiales y texturas 3D",
+  "pdfTitulo": "PRÁCTICO N°24 — Materiales y texturas en 3D",
+  "pdfSubtitulo": "Figura: pieza de sólidos con capas de colores para aplicar texturas y materiales",
+  "archivo": {
+    "dwg": "ITC Practico Clase 24 - Materiales y texturas 3D.dwg",
+    "pdf": "Práctico Clase 24 - Materiales y texturas 3D.pdf",
+    "txt": "Guía práctica - Clase 24 - Materiales y texturas 3D.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "solidos": [
+      { "tipo": "caja", "cx": 0, "cy": 0, "cz": 0, "l": 14, "w": 12, "h": 6, "capa": "Dibujo" },
+      { "tipo": "cilindro", "cx": 24, "cy": 6, "cz": 0, "r": 4, "h": 9, "capa": "Dibujo" },
+      { "tipo": "cono", "cx": 42, "cy": 6, "cz": 0, "r": 4, "h": 9, "capa": "Dibujo" },
+      { "tipo": "esfera", "cx": 62, "cy": 6, "cz": 4.5, "r": 4.5, "capa": "Dibujo" }
+    ],
+    "encuadre": { "x1": -3, "y1": -3, "x2": 35, "y2": 20 }
+  },
+  "vista": { "direccion": [-1, -1, 1], "estilo": "Realistic" },
+  "consigna": {
+    "x": 76, "y": 18, "ancho": 120, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 24: MATERIALES Y TEXTURAS EN 3D",
+      "Consigna:",
+      "- La pieza ya tiene sus sólidos en el espacio modelo.",
+      "- Abrí el navegador de materiales (cinta Materiales).",
+      "- Asignale a cada sólido un material distinto:",
+      "- Caja → Aluminio pulido; Cilindro → Cristal;",
+      "- Cono → Bronce; Esfera → Plástico rojo.",
+      "- Luego asignale un papel tapiz (textura) a la caja.",
+      "- Estilo visual Realista para ver el resultado.",
+      "- Guardá como clase24-materiales.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Pieza con materiales aplicados en estilo Realista" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Detalle del cajón con textura y el cilindro de cristal" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: MATERIALES Y TEXTURAS — aplicar aspecto realista a los sólidos",
+    "objetivo": "Aplicar materiales del panel Materiales sobre cada sólido y agregar una textura para un resultado visual realista.",
+    "pasos": [
+      { "titulo": "Preparar los sólidos", "detalle": ["1. Capa Dibujo activa.", "2. Sólidos: caja 14x12x6, cilindro y cono radio 4 altura 9, esfera radio 4.5."] },
+      { "titulo": "Panel de materiales", "detalle": ["1. Cinta → pestaña Renderiza → panel Materiales.", "2. Abre el Navegador de materiales (Biblioteca)."] },
+      { "titulo": "Materiales a cada sólido", "detalle": ["1. Caja → Aluminio pulido.", "2. Cilindro → Cristal.", "3. Cono → Bronce.", "4. Esfera → Plástico rojo."] },
+      { "titulo": "Aplicar textura", "detalle": ["1. Seleccioná la caja.", "2. Material → creá un material nuevo y agregale una imagen (papel).", "3. Ajustá el escalado de textura con TEXTURA ESCALA."] },
+      { "titulo": "Visualización", "detalle": ["1. Estilo visual Realista.", "2. Vista SUDOESTE ISO."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase24-materiales.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Caja base", "valor": "14 x 12 x 6" },
+      { "label": "Radio cilindro y cono", "valor": "4" },
+      { "label": "Radio de la esfera", "valor": "4.5" }
+    ],
+    "consejos": [
+      "Los materiales viven en el navegador y se asignan por arrastre.",
+      "La textura es una imagen repetida sobre la cara del sólido.",
+      "El estilo Realista muestra el material aplicado al instante."
+    ]
+  }
+}

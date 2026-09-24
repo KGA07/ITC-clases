@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-23T18:10:13.326Z",
+  "generado": "2026-09-24T18:56:49.663Z",
   "fuentes": {
     "local": "I:\\ITC",
     "drive": {
@@ -8717,9 +8717,9 @@
       "temarioHtml": "<div class=\"temario\">\n<a id=\"bookmark=id.50xee21hhdon\"></a><a id=\"bookmark=id.54agndlxamq\"></a><p><strong>Diseño Técnico Industrial</strong></p><p><strong>Perfil de Alumno:</strong> Personas con uso frecuente de la PC. Con manejo fluido de teclado y mouse. Familiarizados con el manejo de carpetas y archivos. </p><p><strong>Temas desarrollados:</strong></p><p><strong>AUTOCAD:</strong></p><ul><li>Utilización de línea de comandos.</li><li>Herramientas de dibujo.</li><li>Herramientas de modificación.</li><li>Utilización de sistema de coordenadas</li><li>Manejo de capas y unidades.</li><li>Creación e inserción de bloques</li><li>Estilos y aplicación de cotas.</li><li>Inserción de textos y tablas de datos.</li><li>Trabajo con grados. Cálculo de superficie</li><li>Presentaciones gráficas.</li><li>Trazadores e impresión de planos.</li><li>Introducción al dibujo tridimensional.</li></ul><p><strong>APLICACIÓN PRÁCTICA DE LOS CONOCIMIENTOS</strong></p><ul><li><strong>AUTOCAD</strong>: Dibujo, edición, presentación e impresión de diferentes tipos de planos:<ul><li>Plantas de viviendas, edificios.</li><li>Piezas mecánicas.</li><li>Terrenos, mensuras, divisiones. </li></ul></li></ul><a id=\"bookmark=id.cdpc8dtbtbar\"></a><a id=\"bookmark=id.yfpkrpklh1p8\"></a><p><strong>AUTOCAD.</strong></p><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Interfaz. Cinta de Opciones. Línea de comandos. Ayudas al dibujo. </strong></p><ul><li>Interfaz. Cinta de opciones</li><li>Línea de Comandos. Introducción de comandos. Utilización de opciones </li><li>Línea</li><li>Ayudas al Dibujo:  <ul><li>Modo Orto (F8)</li><li>Rastreo Polar (F10)</li><li>Referencia a Objetos (F3)</li></ul></li><li>Utilización del scroll del mouse para manejar el tamaño de visualización y el encuadre del área de dibujo. </li><li>Selección y Eliminación de objetos.</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Dibujo</strong></p><ul><li>Ayudas al Dibujo:<ul><li>Rastreo de Referencia a Objetos (F11)</li><li>Entrada dinámica (F12)</li><li>Grosor de líneas</li></ul></li><li>Propiedades<ul><li>Color</li><li>Grosor y tipo de línea</li></ul></li><li>Polilínea.</li><li>Rectángulo.</li><li>Modificación de objetos mediante pinzamientos (TAB)</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><ul><li>Arco.</li><li>Círculo.</li><li>Elipse.</li><li>Polígono.</li><li>Desplazar</li><li>Copiar</li><li>Recortar / Alargar</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Coordenadas</strong></p><ul><li>Rectangulares</li><li>Polares</li><li>Absolutas</li><li>Relativas</li><li>Entrada dinámica</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Modificar</strong></p><ul><li>Empalme</li><li>Chaflán</li><li>Matriz<ul><li>Rectangular</li><li>Polar. </li><li>Camino</li></ul></li><li>Simetría</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Modificar II</strong></p><ul><li>Varios puntos</li><li>Dividir</li><li>Medir</li><li>Partir </li><li>Partir en 1 punto</li><li>Juntar</li><li>(Invertir)</li><li>Estirar</li><li>Descomponer</li><li>Alinear</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Gestión de capas. Unidades.</strong></p><ul><li>\tConfiguración de escala de inserción (UNIDADES)</li><li>Administrador de propiedades de capa.<ul><li>Creación y Eliminación de capas</li><li>Definición de Propiedades de capa</li><li>Color</li><li>Tipo de línea</li><li>Grosor de línea</li></ul></li><li>Estados de capa<ul><li>Activar/Desactivar capa</li><li>Inutilizar/Reutilizar capa</li><li>Bloquear/Desbloquear capa</li></ul></li><li>Herramientas de capa <ul><li>Desactivar /Activar</li><li>Aislar /Desaislar</li><li>Bloquear/Desbloquear</li><li>Establecer como Actual</li><li>Igualar capa</li><li>Recorrer capas</li><li>Fusionar</li></ul></li><li>Aislar Objetos</li><li>Creación de capas para planta de vivienda<ul><li>Muros</li><li>Aberturas</li><li>Cotas</li><li>Mobiliario</li><li>Sanitarios</li><li>Electricidad</li><li>Techos</li><li>Parcela (Terreno)</li></ul></li><li>Dibujo de los muros de planta y parcela</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Bloques</strong></p><ul><li>Creación de Bloques</li><li>Inserción de bloques</li><li>Utilización de Design Center</li><li>Herramienta Escala</li><li>Escala por factor. Cálculo de factor = medida deseada/medida actual</li><li>Escala por referencia.</li><li>Línea Múltiple</li><li>Dibujar las puertas y ventanas de la planta. Convertirlas en bloques e insertarlas en las aberturas con igual medida.</li><li>Utilizando Design Center insertar los bloques para el mobiliario y sanitarios de la planta. En los casos necesarios, aplicar escala a los bloques insertados.</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Cotas</strong></p><ul><li><strong>Utilización y aplicación de los diferentes tipos de cota</strong><ul><li>Cota lineal</li><li>Cota alineada</li><li>Cota de longitud de arco</li><li>Cota de coordenada</li><li>Cota de radio<strong> </strong></li><li>Marca de centro</li><li>Cota de Diámetro</li><li>Cota angular</li></ul></li><li><strong>Formas de aplicación de cotas</strong><ul><li>Cota Inteligente (ACOTAR)<ul><li>Capa de Cotas</li></ul></li><li>Cota rápida</li><li>Cota de línea base </li><li>Cota continua</li></ul></li><li><strong>Administrador de Estilos de cota</strong></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Textos – Tablas</strong></p><ul><li><strong>Inserción, modificación y configuración de texto</strong></li><li><strong>Administrador de estilos de tablas</strong><ul><li>Nuevos estilos de tablas</li><li>Modificar estilos</li></ul></li><li>Inserción de textos y tablas al plano</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Pieza Mecánica</strong></p><ul><li><strong>Dibujo de pieza mecánica</strong><ul><li>Círculos por tangente</li><li>Arcos </li><li>Empalme</li></ul></li><li><strong>Cotas angulares, Diámetro y Radio</strong></li><li><strong>Sombreado</strong></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Fachadas – Vistas – Cortes</strong></p><ul><li><strong>Dibujo de Fachadas, vistas y cortes</strong><ul><li>Planta arquitectónica</li><li>Pieza mecánica</li><li>Desfase  – Múltiple, Punto a Atravesar</li></ul></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Plano mensura</strong></p><ul><li><strong>Trabajo con Grados, minutos y segundos.</strong></li><li><strong>Cálculo de Superficie</strong><ul><li>Consultar Área y Lista (Menú Herr.)</li><li>Herramienta Contorno (Menú Dibujo)</li></ul></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Dibujo Isométrico</strong></p><ul><li><strong>Representación Isométrica</strong></li><li><strong>DIBUJOISO </strong><ul><li>Isoplanos</li></ul></li><li><strong>Elipse – Isocírculo</strong></li><li><strong>Cotas oblicuas</strong></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Dibujo Paramétrico – Bloques dinámicos</strong></p><ul><li><strong>Dibujo Paramétrico</strong><ul><li>Restricciones geométricas y por cota</li><li>Restricciones automáticas</li><li>Deducir restricciones</li><li>Mostrar/Ocultar Restricciones</li><li>Liberar/Mantener Restricciones</li><li>Suprimir restricciones</li></ul></li><li>Bloques dinámicos<ul><li>Parámetros y Acciones<ul><li>Lineal</li><li>Rotación</li><li>Alineación</li><li>Simetría</li><li>Visibilidad</li><li>Consulta</li></ul></li><li>Propiedades de parámetros<ul><li>Nombre</li><li>Descripción</li><li>Tipos de distancia<ul><li>Lista – Incremento</li></ul></li><li>Mostrar</li><li>Numero de pinzamientos</li></ul></li><li>Propiedades de acciones<ul><li>Multiplicador de distancia</li><li>Desfase de angulo</li></ul></li></ul></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Presentaciones gráficas</strong></p><ul><li>Configuración de Página</li><li>Ventanas</li><li>Cálculo de escala (zoom XP)</li><li>Realización de presentaciones de los planos dibujados</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Trazadores – Impresión</strong></p><ul><li>Administrador de Trazadores<ul><li>Agregar Impresora del sistema</li></ul></li><li>Vista previa y Trazado</li><li>Impresión de los planos realizados</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Bloques con atributos</strong></p><ul><li>Creación de Bloques con atributos</li><li>Inserción y modificación</li><li>Carátulas dinámicas para los planos</li><li>Inserción de Datos en los bloques dinámicos.</li></ul><p>  </p><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Normas de Dibujo Técnico</strong></p><ul><li><strong>Líneas</strong><ul><li>Líneas para dibujo de construcciones</li><li>Líneas para dibujo mecánico</li><li>Anchos de líneas</li><li>Aplicación</li></ul></li><li><strong>Convenciones para vistas y Cortes</strong></li><li><strong>Formato, elementos y plegado de laminas</strong></li><li><strong>Convenciones para Cotas</strong></li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>INTRODUCCIÓN 3D</strong></p><ul><li>Trabajo en un entorno tridimensional</li><li>Barras de Herramientas:</li><li>SCP:<ul><li>Ejes y Planos de trabajo</li><li>Funcionamiento de las herramientas 2D en el plano XY</li><li>Puntos de vistas planos e Isométricos</li><li>SCP Universal.</li></ul></li><li>Desplazamiento 3D.</li><li>Giro 3D.</li></ul><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Sólidos básicos</strong></p><ul><li>Polisólido (Anchura, Altura, Justificación)</li><li>Prisma Rectangular</li><li>Cuña</li><li>Cono (Cono truncado, Base por 2P, 3P, Ttr, elíptica)</li><li>Esfera (2P, 3P, Ttr)</li><li>Cilindro (Base por 2P, 3P, Ttr, elíptica)</li><li>Toroide (2P, 3P, Ttr)</li><li>Pirámide (Lados, Aristas)</li></ul><p><a id=\"_heading=h.t5cjei467fy4\"></a></p><p><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4XmP4//8/AwAI/AL+GwXmLwAAAABJRU5ErkJggg==\" /></p><p><strong>Sólidos Compuestos</strong></p><ul><li>Unión </li><li>Diferencia</li><li>Intersección</li></ul>\n</div>",
       "driveFolderId": null,
       "stats": {
-        "clases": 26,
-        "archivos": 243,
-        "tamanoMB": 220
+        "clases": 29,
+        "archivos": 388,
+        "tamanoMB": 217.5
       },
       "modulos": [
         {
@@ -8743,7 +8743,7 @@
                   "nombre": "Clase 1 - Introducción e interfaz de AutoCAD.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1219617,
+                  "size": 1142774,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/Clase 1 - Introducción e interfaz de AutoCAD.pdf",
                   "url": "",
                   "embebible": false,
@@ -8790,10 +8790,20 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 1 - Introducción e interfaz de AutoCAD.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 3654,
+                  "ruta": "@Clases/Clase 1 Introducción Autocad/Guía práctica - Clase 1 - Introducción e interfaz de AutoCAD.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 307086,
+                  "size": 420900,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/img",
                   "archivos": 3,
                   "url": "",
@@ -8803,10 +8813,50 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 1 - Soporte en L.bak",
+                  "tipo": "BAK",
+                  "emoji": "📁",
+                  "size": 19805,
+                  "ruta": "@Clases/Clase 1 Introducción Autocad/ITC Practico Clase 1 - Soporte en L.bak",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 1 - Soporte en L.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 19961,
+                  "ruta": "@Clases/Clase 1 Introducción Autocad/ITC Practico Clase 1 - Soporte en L.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 1 - Soporte en L.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 1 Introducción Autocad/ITC Practico Clase 1 - Soporte en L.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 1 - Soporte en L.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 1 Introducción Autocad/ITC Practico Clase 1 - Soporte en L.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 1 - Introducción e interfaz de AutoCAD.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1125470,
+                  "size": 1048380,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/Lectura Clase 1 - Introducción e interfaz de AutoCAD.pdf",
                   "url": "",
                   "embebible": false,
@@ -8825,22 +8875,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 1 - Introducción e interfaz de AutoCAD.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 307118,
+                  "ruta": "@Clases/Clase 1 Introducción Autocad/Práctico Clase 1 - Introducción e interfaz de AutoCAD.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 1 - Introducción e interfaz de AutoCAD.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12543,
+                  "size": 368311,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/Presentacion Clase 1 - Introducción e interfaz de AutoCAD.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-1-clase-1-introduccion-autocad-presentacion-clase-1-introduccion-e-interfaz-de-autocad-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(360 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 1 - Introducción e interfaz de AutoCAD.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 932277,
+                  "size": 871449,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/Presentacion Clase 1 - Introducción e interfaz de AutoCAD.pdf",
                   "url": "",
                   "embebible": false,
@@ -8850,14 +8910,14 @@
                   "nombre": "Presentacion Clase 1 - Introducción e interfaz de AutoCAD.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 422959,
+                  "size": 382101,
                   "ruta": "@Clases/Clase 1 Introducción Autocad/Presentacion Clase 1 - Introducción e interfaz de AutoCAD.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 6008601
+              "tamanoBytes": 6573369
             },
             {
               "id": "diseno-tecnico-clase-2-clase-10-bloques",
@@ -8867,7 +8927,7 @@
                   "nombre": "Clase 10 - Bloques, Design Center y escala.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1058714,
+                  "size": 895163,
                   "ruta": "@Clases/Clase 10 - Bloques/Clase 10 - Bloques, Design Center y escala.pdf",
                   "url": "",
                   "embebible": false,
@@ -8884,12 +8944,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 10 - Bloques, Design Center y escala.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2215,
+                  "ruta": "@Clases/Clase 10 - Bloques/Guía práctica - Clase 10 - Bloques, Design Center y escala.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 388067,
+                  "size": 641213,
                   "ruta": "@Clases/Clase 10 - Bloques/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -8897,10 +8967,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 10 - Mesa en bloques.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18173,
+                  "ruta": "@Clases/Clase 10 - Bloques/ITC Practico Clase 10 - Mesa en bloques.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 10 - Mesa en bloques.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 10 - Bloques/ITC Practico Clase 10 - Mesa en bloques.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 10 - Mesa en bloques.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 10 - Bloques/ITC Practico Clase 10 - Mesa en bloques.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 10 - Bloques, Design Center y escala.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 966659,
+                  "size": 802816,
                   "ruta": "@Clases/Clase 10 - Bloques/Lectura Clase 10 - Bloques, Design Center y escala.pdf",
                   "url": "",
                   "embebible": false,
@@ -8919,22 +9019,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 10 - Bloques, Design Center y escala.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 292851,
+                  "ruta": "@Clases/Clase 10 - Bloques/Práctico Clase 10 - Bloques, Design Center y escala.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 10 - Bloques, Design Center y escala.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11511,
+                  "size": 348838,
                   "ruta": "@Clases/Clase 10 - Bloques/Presentacion Clase 10 - Bloques, Design Center y escala.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-2-clase-10-bloques-presentacion-clase-10-bloques-design-center-y-escala-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(341 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 10 - Bloques, Design Center y escala.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 808302,
+                  "size": 658512,
                   "ruta": "@Clases/Clase 10 - Bloques/Presentacion Clase 10 - Bloques, Design Center y escala.pdf",
                   "url": "",
                   "embebible": false,
@@ -8944,14 +9054,14 @@
                   "nombre": "Presentacion Clase 10 - Bloques, Design Center y escala.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 502727,
+                  "size": 367040,
                   "ruta": "@Clases/Clase 10 - Bloques/Presentacion Clase 10 - Bloques, Design Center y escala.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4298597
+              "tamanoBytes": 4589705
             },
             {
               "id": "diseno-tecnico-clase-3-clase-11-puertas-ventanas-y-mobiliario-en-bloques",
@@ -8961,7 +9071,7 @@
                   "nombre": "Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1581522,
+                  "size": 1149053,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
                   "url": "",
                   "embebible": false,
@@ -8978,12 +9088,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 11 - Puertas, ventanas y mobiliario en bloques.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2457,
+                  "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Guía práctica - Clase 11 - Puertas, ventanas y mobiliario en bloques.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 659437,
+                  "size": 927203,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -8991,10 +9111,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 11 - Planta con puertas y ventanas.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 19130,
+                  "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/ITC Practico Clase 11 - Planta con puertas y ventanas.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 11 - Planta con puertas y ventanas.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/ITC Practico Clase 11 - Planta con puertas y ventanas.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 11 - Planta con puertas y ventanas.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/ITC Practico Clase 11 - Planta con puertas y ventanas.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1489758,
+                  "size": 1056257,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Lectura Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
                   "url": "",
                   "embebible": false,
@@ -9013,22 +9163,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 307992,
+                  "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Práctico Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 11 - Puertas, ventanas y mobiliario en bloques.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11754,
+                  "size": 368466,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Presentacion Clase 11 - Puertas, ventanas y mobiliario en bloques.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-3-clase-11-puertas-ventanas-y-mobiliario-en-bloques-presentacion-clase-11-puertas-ventanas-y-mobiliario-en-bloques-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(360 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1295575,
+                  "size": 882462,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Presentacion Clase 11 - Puertas, ventanas y mobiliario en bloques.pdf",
                   "url": "",
                   "embebible": false,
@@ -9038,14 +9198,14 @@
                   "nombre": "Presentacion Clase 11 - Puertas, ventanas y mobiliario en bloques.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 774516,
+                  "size": 382040,
                   "ruta": "@Clases/Clase 11 - Puertas, ventanas y mobiliario en bloques/Presentacion Clase 11 - Puertas, ventanas y mobiliario en bloques.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 6374672
+              "tamanoBytes": 5657437
             },
             {
               "id": "diseno-tecnico-clase-4-clase-12-cotas",
@@ -9055,7 +9215,7 @@
                   "nombre": "Clase 12 - Cotas y administrador de estilos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1923166,
+                  "size": 996284,
                   "ruta": "@Clases/Clase 12 - Cotas/Clase 12 - Cotas y administrador de estilos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9072,23 +9232,63 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 12 - Cotas y administrador de estilos.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2233,
+                  "ruta": "@Clases/Clase 12 - Cotas/Guía práctica - Clase 12 - Cotas y administrador de estilos.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1139150,
+                  "size": 1410242,
                   "ruta": "@Clases/Clase 12 - Cotas/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.1 MB)",
+                  "notas": "(1.3 MB)",
                   "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 12 - Planta acotada.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 19162,
+                  "ruta": "@Clases/Clase 12 - Cotas/ITC Practico Clase 12 - Planta acotada.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 12 - Planta acotada.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 12 - Cotas/ITC Practico Clase 12 - Planta acotada.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 12 - Planta acotada.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 12 - Cotas/ITC Practico Clase 12 - Planta acotada.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Lectura Clase 12 - Cotas y administrador de estilos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1832376,
+                  "size": 901980,
                   "ruta": "@Clases/Clase 12 - Cotas/Lectura Clase 12 - Cotas y administrador de estilos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9107,22 +9307,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 12 - Cotas y administrador de estilos.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 308852,
+                  "ruta": "@Clases/Clase 12 - Cotas/Práctico Clase 12 - Cotas y administrador de estilos.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 12 - Cotas y administrador de estilos.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11303,
+                  "size": 372564,
                   "ruta": "@Clases/Clase 12 - Cotas/Presentacion Clase 12 - Cotas y administrador de estilos.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-4-clase-12-cotas-presentacion-clase-12-cotas-y-administrador-de-estilos-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(364 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 12 - Cotas y administrador de estilos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1624100,
+                  "size": 727139,
                   "ruta": "@Clases/Clase 12 - Cotas/Presentacion Clase 12 - Cotas y administrador de estilos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9132,14 +9342,14 @@
                   "nombre": "Presentacion Clase 12 - Cotas y administrador de estilos.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1253346,
+                  "size": 384524,
                   "ruta": "@Clases/Clase 12 - Cotas/Presentacion Clase 12 - Cotas y administrador de estilos.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 8345054
+              "tamanoBytes": 5684860
             },
             {
               "id": "diseno-tecnico-clase-5-clase-13-textos-y-tablas",
@@ -9149,7 +9359,7 @@
                   "nombre": "Clase 13 - Textos y tablas.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1424274,
+                  "size": 1003314,
                   "ruta": "@Clases/Clase 13 - Textos y tablas/Clase 13 - Textos y tablas.pdf",
                   "url": "",
                   "embebible": false,
@@ -9166,12 +9376,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 13 - Textos y tablas.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2143,
+                  "ruta": "@Clases/Clase 13 - Textos y tablas/Guía práctica - Clase 13 - Textos y tablas.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 678182,
+                  "size": 955149,
                   "ruta": "@Clases/Clase 13 - Textos y tablas/img",
-                  "archivos": 2,
+                  "archivos": 4,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9179,10 +9399,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 13 - Plano con textos y tablas.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 17567,
+                  "ruta": "@Clases/Clase 13 - Textos y tablas/ITC Practico Clase 13 - Plano con textos y tablas.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 13 - Plano con textos y tablas.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 13 - Textos y tablas/ITC Practico Clase 13 - Plano con textos y tablas.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 13 - Plano con textos y tablas.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 13 - Textos y tablas/ITC Practico Clase 13 - Plano con textos y tablas.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 13 - Textos y tablas.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1332004,
+                  "size": 909594,
                   "ruta": "@Clases/Clase 13 - Textos y tablas/Lectura Clase 13 - Textos y tablas.pdf",
                   "url": "",
                   "embebible": false,
@@ -9201,22 +9451,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 13 - Textos y tablas.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 315910,
+                  "ruta": "@Clases/Clase 13 - Textos y tablas/Práctico Clase 13 - Textos y tablas.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 13 - Textos y tablas.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11159,
+                  "size": 380347,
                   "ruta": "@Clases/Clase 13 - Textos y tablas/Presentacion Clase 13 - Textos y tablas.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-5-clase-13-textos-y-tablas-presentacion-clase-13-textos-y-tablas-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(371 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 13 - Textos y tablas.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1137467,
+                  "size": 729327,
                   "ruta": "@Clases/Clase 13 - Textos y tablas/Presentacion Clase 13 - Textos y tablas.pdf",
                   "url": "",
                   "embebible": false,
@@ -9226,14 +9486,14 @@
                   "nombre": "Presentacion Clase 13 - Textos y tablas.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 791577,
+                  "size": 390366,
                   "ruta": "@Clases/Clase 13 - Textos y tablas/Presentacion Clase 13 - Textos y tablas.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5936339
+              "tamanoBytes": 5265660
             },
             {
               "id": "diseno-tecnico-clase-6-clase-14-pieza-mecanica",
@@ -9243,7 +9503,7 @@
                   "nombre": "Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1187321,
+                  "size": 899695,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pdf",
                   "url": "",
                   "embebible": false,
@@ -9260,12 +9520,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 14 - Pieza mecánica - dibujo cotas y sombreado.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2332,
+                  "ruta": "@Clases/Clase 14 - Pieza mecánica/Guía práctica - Clase 14 - Pieza mecánica - dibujo cotas y sombreado.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 429918,
+                  "size": 704379,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9273,10 +9543,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 14 - Pieza mecánica.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18719,
+                  "ruta": "@Clases/Clase 14 - Pieza mecánica/ITC Practico Clase 14 - Pieza mecánica.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 14 - Pieza mecánica.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 14 - Pieza mecánica/ITC Practico Clase 14 - Pieza mecánica.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 14 - Pieza mecánica.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 14 - Pieza mecánica/ITC Practico Clase 14 - Pieza mecánica.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1098390,
+                  "size": 805854,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/Lectura Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pdf",
                   "url": "",
                   "embebible": false,
@@ -9295,22 +9595,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 14 - Pieza mecánica dibujo cotas y sombreado.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 315243,
+                  "ruta": "@Clases/Clase 14 - Pieza mecánica/Práctico Clase 14 - Pieza mecánica dibujo cotas y sombreado.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 14 - Pieza mecánica dibujo, cotas y sombreado.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11555,
+                  "size": 377276,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/Presentacion Clase 14 - Pieza mecánica dibujo, cotas y sombreado.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-6-clase-14-pieza-mecanica-presentacion-clase-14-pieza-mecanica-dibujo-cotas-y-sombreado-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(368 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 922449,
+                  "size": 664303,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/Presentacion Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pdf",
                   "url": "",
                   "embebible": false,
@@ -9320,14 +9630,14 @@
                   "nombre": "Presentacion Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 545028,
+                  "size": 388795,
                   "ruta": "@Clases/Clase 14 - Pieza mecánica/Presentacion Clase 14 - Pieza mecánica dibujo, cotas y sombreado.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4756102
+              "tamanoBytes": 4738304
             },
             {
               "id": "diseno-tecnico-clase-7-clase-15-mensura",
@@ -9347,7 +9657,7 @@
                   "nombre": "Clase 16 - Plano de mensura grados y superficie.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1548939,
+                  "size": 928815,
                   "ruta": "@Clases/clase 15 mensura/Clase 16 - Plano de mensura grados y superficie.pdf",
                   "url": "",
                   "embebible": false,
@@ -9364,23 +9674,63 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 16 - Plano de mensura - grados y superficie.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2252,
+                  "ruta": "@Clases/clase 15 mensura/Guía práctica - Clase 16 - Plano de mensura - grados y superficie.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 836993,
+                  "size": 1110121,
                   "ruta": "@Clases/clase 15 mensura/img",
-                  "archivos": 4,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(1.1 MB)",
                   "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 16 - Plano de mensura.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18077,
+                  "ruta": "@Clases/clase 15 mensura/ITC Practico Clase 16 - Plano de mensura.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 16 - Plano de mensura.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/clase 15 mensura/ITC Practico Clase 16 - Plano de mensura.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 16 - Plano de mensura.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/clase 15 mensura/ITC Practico Clase 16 - Plano de mensura.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Lectura Clase 16 - Plano de mensura grados y superficie.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1462769,
+                  "size": 836474,
                   "ruta": "@Clases/clase 15 mensura/Lectura Clase 16 - Plano de mensura grados y superficie.pdf",
                   "url": "",
                   "embebible": false,
@@ -9419,22 +9769,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 16 - Plano de mensura grados y superficie.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 314300,
+                  "ruta": "@Clases/clase 15 mensura/Práctico Clase 16 - Plano de mensura grados y superficie.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 16 - Plano de mensura grados y superficie.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11712,
+                  "size": 375578,
                   "ruta": "@Clases/clase 15 mensura/Presentacion Clase 16 - Plano de mensura grados y superficie.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-7-clase-15-mensura-presentacion-clase-16-plano-de-mensura-grados-y-superficie-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(367 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 16 - Plano de mensura grados y superficie.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1283853,
+                  "size": 694296,
                   "ruta": "@Clases/clase 15 mensura/Presentacion Clase 16 - Plano de mensura grados y superficie.pdf",
                   "url": "",
                   "embebible": false,
@@ -9444,7 +9804,7 @@
                   "nombre": "Presentacion Clase 16 - Plano de mensura grados y superficie.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 952733,
+                  "size": 387344,
                   "ruta": "@Clases/clase 15 mensura/Presentacion Clase 16 - Plano de mensura grados y superficie.pptx",
                   "url": "",
                   "embebible": false,
@@ -9461,7 +9821,7 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 7575538
+              "tamanoBytes": 6146063
             },
             {
               "id": "diseno-tecnico-clase-8-clase-18-dibujo-parametrico-y-bloques-dinamicos",
@@ -9471,7 +9831,7 @@
                   "nombre": "Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1505409,
+                  "size": 1078580,
                   "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9488,12 +9848,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 18 - Dibujo paramétrico y bloques dinámicos.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2282,
+                  "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Guía práctica - Clase 18 - Dibujo paramétrico y bloques dinámicos.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 648560,
+                  "size": 897569,
                   "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9501,10 +9871,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 18 - Mesa dinámica.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18077,
+                  "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/ITC Practico Clase 18 - Mesa dinámica.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 18 - Mesa dinámica.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/ITC Practico Clase 18 - Mesa dinámica.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 18 - Mesa dinámica.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/ITC Practico Clase 18 - Mesa dinámica.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1411409,
+                  "size": 985452,
                   "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Lectura Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9523,22 +9923,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 289976,
+                  "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Práctico Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 18 - Dibujo paramétrico y bloques dinámicos.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12492,
+                  "size": 344341,
                   "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Presentacion Clase 18 - Dibujo paramétrico y bloques dinámicos.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-8-clase-18-dibujo-parametrico-y-bloques-dinamicos-presentacion-clase-18-dibujo-parametrico-y-bloques-dinamicos-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(336 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 811092,
+                  "size": 804014,
                   "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Presentacion Clase 18 - Dibujo paramétrico y bloques dinámicos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9548,14 +9958,14 @@
                   "nombre": "Presentacion Clase 18 - Dibujo paramétrico y bloques dinámicos.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 371110,
+                  "size": 371221,
                   "ruta": "@Clases/Clase 18 - Dibujo paramétrico y bloques dinámicos/Presentacion Clase 18 - Dibujo paramétrico y bloques dinámicos.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5322908
+              "tamanoBytes": 5354615
             },
             {
               "id": "diseno-tecnico-clase-9-clase-19-bloques-con-atributos",
@@ -9565,7 +9975,7 @@
                   "nombre": "Clase 19 - Texto, tablas y bloques con atributos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1874645,
+                  "size": 1018366,
                   "ruta": "@Clases/Clase 19 - Bloques con atributos/Clase 19 - Texto, tablas y bloques con atributos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9582,23 +9992,63 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 19 - Texto, tablas y bloques con atributos.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2166,
+                  "ruta": "@Clases/Clase 19 - Bloques con atributos/Guía práctica - Clase 19 - Texto, tablas y bloques con atributos.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1097158,
+                  "size": 1409497,
                   "ruta": "@Clases/Clase 19 - Bloques con atributos/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.0 MB)",
+                  "notas": "(1.3 MB)",
                   "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 19 - Carátula A4.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 20921,
+                  "ruta": "@Clases/Clase 19 - Bloques con atributos/ITC Practico Clase 19 - Carátula A4.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 19 - Carátula A4.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 19 - Bloques con atributos/ITC Practico Clase 19 - Carátula A4.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 19 - Carátula A4.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 19 - Bloques con atributos/ITC Practico Clase 19 - Carátula A4.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Lectura Clase 19 - Texto, tablas y bloques con atributos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1781161,
+                  "size": 925939,
                   "ruta": "@Clases/Clase 19 - Bloques con atributos/Lectura Clase 19 - Texto, tablas y bloques con atributos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9617,22 +10067,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 19 - Texto tablas y bloques con atributos.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 352065,
+                  "ruta": "@Clases/Clase 19 - Bloques con atributos/Práctico Clase 19 - Texto tablas y bloques con atributos.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 19 - Texto, tablas y bloques con atributos.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11517,
+                  "size": 427723,
                   "ruta": "@Clases/Clase 19 - Bloques con atributos/Presentacion Clase 19 - Texto, tablas y bloques con atributos.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-9-clase-19-bloques-con-atributos-presentacion-clase-19-texto-tablas-y-bloques-con-atributos-html.html",
-                  "notas": "(11 KB)",
+                  "notas": "(418 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 19 - Texto, tablas y bloques con atributos.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1561081,
+                  "size": 746791,
                   "ruta": "@Clases/Clase 19 - Bloques con atributos/Presentacion Clase 19 - Texto, tablas y bloques con atributos.pdf",
                   "url": "",
                   "embebible": false,
@@ -9642,14 +10102,14 @@
                   "nombre": "Presentacion Clase 19 - Texto, tablas y bloques con atributos.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1211800,
+                  "size": 426202,
                   "ruta": "@Clases/Clase 19 - Bloques con atributos/Presentacion Clase 19 - Texto, tablas y bloques con atributos.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 8100246
+              "tamanoBytes": 5892821
             },
             {
               "id": "diseno-tecnico-clase-10-clase-2-herramienta-de-dibujo",
@@ -9659,7 +10119,7 @@
                   "nombre": "Clase 2 - Selección, líneas y propiedades de objeto.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1297337,
+                  "size": 1025527,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Clase 2 - Selección, líneas y propiedades de objeto.pdf",
                   "url": "",
                   "embebible": false,
@@ -9706,12 +10166,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 2 - Selección, líneas y propiedades de objeto.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2972,
+                  "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Guía práctica - Clase 2 - Selección, líneas y propiedades de objeto.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 528806,
+                  "size": 830946,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9719,10 +10189,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 2 - Llave de boca fija.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 20054,
+                  "ruta": "@Clases/Clase 2 Herramienta de Dibujo/ITC Practico Clase 2 - Llave de boca fija.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 2 - Llave de boca fija.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 2 Herramienta de Dibujo/ITC Practico Clase 2 - Llave de boca fija.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 2 - Llave de boca fija.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 2 Herramienta de Dibujo/ITC Practico Clase 2 - Llave de boca fija.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 2 - Selección, líneas y propiedades de objeto.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1204552,
+                  "size": 933448,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Lectura Clase 2 - Selección, líneas y propiedades de objeto.pdf",
                   "url": "",
                   "embebible": false,
@@ -9751,22 +10251,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 2 - Selección, líneas y propiedades de objeto.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 342132,
+                  "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Práctico Clase 2 - Selección, líneas y propiedades de objeto.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 2 - Selección, líneas y propiedades de objeto.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12200,
+                  "size": 414816,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Presentacion Clase 2 - Selección, líneas y propiedades de objeto.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-10-clase-2-herramienta-de-dibujo-presentacion-clase-2-seleccion-lineas-y-propiedades-de-objeto-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(405 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 2 - Selección, líneas y propiedades de objeto.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1001855,
+                  "size": 753850,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Presentacion Clase 2 - Selección, líneas y propiedades de objeto.pdf",
                   "url": "",
                   "embebible": false,
@@ -9776,14 +10286,14 @@
                   "nombre": "Presentacion Clase 2 - Selección, líneas y propiedades de objeto.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 644366,
+                  "size": 416921,
                   "ruta": "@Clases/Clase 2 Herramienta de Dibujo/Presentacion Clase 2 - Selección, líneas y propiedades de objeto.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 9119879
+              "tamanoBytes": 9171696
             },
             {
               "id": "diseno-tecnico-clase-11-clase-20-normas-de-dibujo-tecnico",
@@ -9793,7 +10303,7 @@
                   "nombre": "Clase 20 - Normas de dibujo técnico.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1123000,
+                  "size": 965986,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Clase 20 - Normas de dibujo técnico.pdf",
                   "url": "",
                   "embebible": false,
@@ -9810,12 +10320,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 20 - Normas de dibujo técnico.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2181,
+                  "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Guía práctica - Clase 20 - Normas de dibujo técnico.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 403154,
+                  "size": 677054,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9823,10 +10343,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 20 - Auditoría de normas.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18687,
+                  "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/ITC Practico Clase 20 - Auditoría de normas.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 20 - Auditoría de normas.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/ITC Practico Clase 20 - Auditoría de normas.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 20 - Auditoría de normas.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/ITC Practico Clase 20 - Auditoría de normas.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 20 - Normas de dibujo técnico.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1031330,
+                  "size": 873217,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Lectura Clase 20 - Normas de dibujo técnico.pdf",
                   "url": "",
                   "embebible": false,
@@ -9845,22 +10395,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 20 - Normas de dibujo técnico.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 313385,
+                  "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Práctico Clase 20 - Normas de dibujo técnico.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 20 - Normas de dibujo técnico.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 12644,
+                  "size": 377589,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Presentacion Clase 20 - Normas de dibujo técnico.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-11-clase-20-normas-de-dibujo-tecnico-presentacion-clase-20-normas-de-dibujo-tecnico-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(369 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 20 - Normas de dibujo técnico.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 880096,
+                  "size": 734227,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Presentacion Clase 20 - Normas de dibujo técnico.pdf",
                   "url": "",
                   "embebible": false,
@@ -9870,14 +10430,14 @@
                   "nombre": "Presentacion Clase 20 - Normas de dibujo técnico.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 526156,
+                  "size": 396118,
                   "ruta": "@Clases/Clase 20 - Normas de dibujo técnico/Presentacion Clase 20 - Normas de dibujo técnico.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4538850
+              "tamanoBytes": 4921181
             },
             {
               "id": "diseno-tecnico-clase-12-clase-21-presentaciones-y-trazadores",
@@ -9887,7 +10447,7 @@
                   "nombre": "Clase 21 - Presentaciones gráficas, trazadores e impresión.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1423364,
+                  "size": 1174371,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Clase 21 - Presentaciones gráficas, trazadores e impresión.pdf",
                   "url": "",
                   "embebible": false,
@@ -9904,12 +10464,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 21 - Presentaciones y trazadores.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2251,
+                  "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Guía práctica - Clase 21 - Presentaciones y trazadores.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 491940,
+                  "size": 761590,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -9917,10 +10487,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 21 - Presentación A3.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18301,
+                  "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/ITC Practico Clase 21 - Presentación A3.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 21 - Presentación A3.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/ITC Practico Clase 21 - Presentación A3.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 21 - Presentación A3.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/ITC Practico Clase 21 - Presentación A3.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 21 - Presentaciones gráficas, trazadores e impresión.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1331849,
+                  "size": 1081767,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Lectura Clase 21 - Presentaciones gráficas, trazadores e impresión.pdf",
                   "url": "",
                   "embebible": false,
@@ -9939,22 +10539,32 @@
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
+                  "nombre": "Práctico Clase 21 - Presentaciones y trazadores.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 309127,
+                  "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Práctico Clase 21 - Presentaciones y trazadores.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Presentacion Clase 21 - Presentaciones gráficas, trazadores e impresión.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11862,
+                  "size": 371137,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Presentacion Clase 21 - Presentaciones gráficas, trazadores e impresión.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/diseno-tecnico-clase-12-clase-21-presentaciones-y-trazadores-presentacion-clase-21-presentaciones-graficas-trazadores-e-impresion-html.html",
-                  "notas": "(12 KB)",
+                  "notas": "(362 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 21 - Presentaciones gráficas, trazadores e impresión.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1139731,
+                  "size": 903367,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Presentacion Clase 21 - Presentaciones gráficas, trazadores e impresión.pdf",
                   "url": "",
                   "embebible": false,
@@ -9964,24 +10574,456 @@
                   "nombre": "Presentacion Clase 21 - Presentaciones gráficas, trazadores e impresión.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 607603,
+                  "size": 384531,
                   "ruta": "@Clases/Clase 21 - Presentaciones y trazadores/Presentacion Clase 21 - Presentaciones gráficas, trazadores e impresión.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5569196
+              "tamanoBytes": 5569556
             },
             {
-              "id": "diseno-tecnico-clase-13-clase-4-herramientas-de-dibujo",
+              "id": "diseno-tecnico-clase-13-clase-23-figuras-solidas-3d",
+              "titulo": "Clase 23 - Figuras solidas 3D",
+              "archivos": [
+                {
+                  "nombre": "Clase 23 - Figuras sólidas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 920021,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Clase 23 - Figuras sólidas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Guía docente - Clase 23 - Figuras sólidas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 556202,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Guía docente - Clase 23 - Figuras sólidas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Guía práctica - Clase 23 - Figuras solidas 3D.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2220,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Guía práctica - Clase 23 - Figuras solidas 3D.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "img/",
+                  "tipo": "Carpeta",
+                  "emoji": "🗂️",
+                  "size": 260331,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/img",
+                  "archivos": 2,
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": null,
+                  "notas": "",
+                  "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 23 - Figuras solidas 3D.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 24161,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/ITC Practico Clase 23 - Figuras solidas 3D.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 23 - Figuras solidas 3D.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 55,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/ITC Practico Clase 23 - Figuras solidas 3D.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 23 - Figuras solidas 3D.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 205,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/ITC Practico Clase 23 - Figuras solidas 3D.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Lectura Clase 23 - Figuras sólidas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 829508,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Lectura Clase 23 - Figuras sólidas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Practica Clase 23 - Figuras sólidas en 3D.html",
+                  "tipo": "Interactivo",
+                  "emoji": "🌐",
+                  "size": 5619,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Practica Clase 23 - Figuras sólidas en 3D.html",
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-13-clase-23-figuras-solidas-3d-practica-clase-23-figuras-solidas-en-3d-html.html",
+                  "notas": "(5 KB)",
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 23 - Figuras solidas 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 301137,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Práctico Clase 23 - Figuras solidas 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Presentacion Clase 23 - Figuras sólidas en 3D.html",
+                  "tipo": "Interactivo",
+                  "emoji": "🌐",
+                  "size": 358011,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Presentacion Clase 23 - Figuras sólidas en 3D.html",
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-13-clase-23-figuras-solidas-3d-presentacion-clase-23-figuras-solidas-en-3d-html.html",
+                  "notas": "(350 KB)",
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Presentacion Clase 23 - Figuras sólidas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 651591,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Presentacion Clase 23 - Figuras sólidas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Presentacion Clase 23 - Figuras sólidas en 3D.pptx",
+                  "tipo": "Presentacion",
+                  "emoji": "📽️",
+                  "size": 365960,
+                  "ruta": "@Clases/Clase 23 - Figuras solidas 3D/Presentacion Clase 23 - Figuras sólidas en 3D.pptx",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                }
+              ],
+              "tamanoBytes": 4275021
+            },
+            {
+              "id": "diseno-tecnico-clase-14-clase-24-materiales-y-texturas-3d",
+              "titulo": "Clase 24 - Materiales y texturas 3D",
+              "archivos": [
+                {
+                  "nombre": "Clase 24 - Materiales y texturas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 1144066,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Clase 24 - Materiales y texturas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Guía docente - Clase 24 - Materiales y texturas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 555491,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Guía docente - Clase 24 - Materiales y texturas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Guía práctica - Clase 24 - Materiales y texturas 3D.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2231,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Guía práctica - Clase 24 - Materiales y texturas 3D.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "img/",
+                  "tipo": "Carpeta",
+                  "emoji": "🗂️",
+                  "size": 241717,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/img",
+                  "archivos": 2,
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": null,
+                  "notas": "",
+                  "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 24 - Materiales y texturas 3D.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 22151,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/ITC Practico Clase 24 - Materiales y texturas 3D.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 24 - Materiales y texturas 3D.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 55,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/ITC Practico Clase 24 - Materiales y texturas 3D.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 24 - Materiales y texturas 3D.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 205,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/ITC Practico Clase 24 - Materiales y texturas 3D.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Lectura Clase 24 - Materiales y texturas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 1055496,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Lectura Clase 24 - Materiales y texturas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Practica Clase 24 - Materiales y texturas en 3D.html",
+                  "tipo": "Interactivo",
+                  "emoji": "🌐",
+                  "size": 5647,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Practica Clase 24 - Materiales y texturas en 3D.html",
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-14-clase-24-materiales-y-texturas-3d-practica-clase-24-materiales-y-texturas-en-3d-html.html",
+                  "notas": "(6 KB)",
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 24 - Materiales y texturas 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 282601,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Práctico Clase 24 - Materiales y texturas 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Presentacion Clase 24 - Materiales y texturas en 3D.html",
+                  "tipo": "Interactivo",
+                  "emoji": "🌐",
+                  "size": 333230,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Presentacion Clase 24 - Materiales y texturas en 3D.html",
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-14-clase-24-materiales-y-texturas-3d-presentacion-clase-24-materiales-y-texturas-en-3d-html.html",
+                  "notas": "(325 KB)",
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Presentacion Clase 24 - Materiales y texturas en 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 877420,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Presentacion Clase 24 - Materiales y texturas en 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Presentacion Clase 24 - Materiales y texturas en 3D.pptx",
+                  "tipo": "Presentacion",
+                  "emoji": "📽️",
+                  "size": 347609,
+                  "ruta": "@Clases/Clase 24 - Materiales y texturas 3D/Presentacion Clase 24 - Materiales y texturas en 3D.pptx",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                }
+              ],
+              "tamanoBytes": 4867919
+            },
+            {
+              "id": "diseno-tecnico-clase-15-clase-25-render-de-una-casa-3d",
+              "titulo": "Clase 25 - Render de una casa 3D",
+              "archivos": [
+                {
+                  "nombre": "Clase 25 - Render de una casa 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 1025189,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Clase 25 - Render de una casa 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Guía docente - Clase 25 - Render de una casa 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 555889,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Guía docente - Clase 25 - Render de una casa 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Guía práctica - Clase 25 - Render de una casa 3D.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2398,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Guía práctica - Clase 25 - Render de una casa 3D.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "img/",
+                  "tipo": "Carpeta",
+                  "emoji": "🗂️",
+                  "size": 266050,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/img",
+                  "archivos": 2,
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": null,
+                  "notas": "",
+                  "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 25 - Render de una casa 3D.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 25894,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/ITC Practico Clase 25 - Render de una casa 3D.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 25 - Render de una casa 3D.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 55,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/ITC Practico Clase 25 - Render de una casa 3D.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 25 - Render de una casa 3D.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 205,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/ITC Practico Clase 25 - Render de una casa 3D.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Lectura Clase 25 - Render de una casa 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 933047,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Lectura Clase 25 - Render de una casa 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Practica Clase 25 - Render de una casa 3D.html",
+                  "tipo": "Interactivo",
+                  "emoji": "🌐",
+                  "size": 5641,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Practica Clase 25 - Render de una casa 3D.html",
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-15-clase-25-render-de-una-casa-3d-practica-clase-25-render-de-una-casa-3d-html.html",
+                  "notas": "(6 KB)",
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 25 - Render de una casa 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 303343,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Práctico Clase 25 - Render de una casa 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Presentacion Clase 25 - Render de una casa 3D.html",
+                  "tipo": "Interactivo",
+                  "emoji": "🌐",
+                  "size": 365762,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Presentacion Clase 25 - Render de una casa 3D.html",
+                  "url": "",
+                  "embebible": true,
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-15-clase-25-render-de-una-casa-3d-presentacion-clase-25-render-de-una-casa-3d-html.html",
+                  "notas": "(357 KB)",
+                  "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Presentacion Clase 25 - Render de una casa 3D.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 758073,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Presentacion Clase 25 - Render de una casa 3D.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "Presentacion Clase 25 - Render de una casa 3D.pptx",
+                  "tipo": "Presentacion",
+                  "emoji": "📽️",
+                  "size": 372665,
+                  "ruta": "@Clases/Clase 25 - Render de una casa 3D/Presentacion Clase 25 - Render de una casa 3D.pptx",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                }
+              ],
+              "tamanoBytes": 4614211
+            },
+            {
+              "id": "diseno-tecnico-clase-16-clase-4-herramientas-de-dibujo",
               "titulo": "Clase 4 - Herramientas de dibujo",
               "archivos": [
                 {
                   "nombre": "Clase 4 - Herramientas de dibujo.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1188916,
+                  "size": 896709,
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Clase 4 - Herramientas de dibujo.pdf",
                   "url": "",
                   "embebible": false,
@@ -9998,12 +11040,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 4 - Herramientas de dibujo.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2473,
+                  "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Guía práctica - Clase 4 - Herramientas de dibujo.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 527978,
+                  "size": 773024,
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10011,10 +11063,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 4 - Tablero técnico combinado.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18683,
+                  "ruta": "@Clases/Clase 4 - Herramientas de dibujo/ITC Practico Clase 4 - Tablero técnico combinado.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 4 - Tablero técnico combinado.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 4 - Herramientas de dibujo/ITC Practico Clase 4 - Tablero técnico combinado.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 4 - Tablero técnico combinado.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 4 - Herramientas de dibujo/ITC Practico Clase 4 - Tablero técnico combinado.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 4 - Herramientas de dibujo.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1094416,
+                  "size": 805778,
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Lectura Clase 4 - Herramientas de dibujo.pdf",
                   "url": "",
                   "embebible": false,
@@ -10028,27 +11110,37 @@
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Practica Clase 4 - Herramientas de dibujo.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-13-clase-4-herramientas-de-dibujo-practica-clase-4-herramientas-de-dibujo-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-16-clase-4-herramientas-de-dibujo-practica-clase-4-herramientas-de-dibujo-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 4 - Herramientas de dibujo.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 284475,
+                  "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Práctico Clase 4 - Herramientas de dibujo.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 4 - Herramientas de dibujo.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11446,
+                  "size": 337927,
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Presentacion Clase 4 - Herramientas de dibujo.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-13-clase-4-herramientas-de-dibujo-presentacion-clase-4-herramientas-de-dibujo-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-16-clase-4-herramientas-de-dibujo-presentacion-clase-4-herramientas-de-dibujo-html.html",
+                  "notas": "(330 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 4 - Herramientas de dibujo.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 910946,
+                  "size": 633489,
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Presentacion Clase 4 - Herramientas de dibujo.pdf",
                   "url": "",
                   "embebible": false,
@@ -10058,24 +11150,24 @@
                   "nombre": "Presentacion Clase 4 - Herramientas de dibujo.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 642564,
+                  "size": 358848,
                   "ruta": "@Clases/Clase 4 - Herramientas de dibujo/Presentacion Clase 4 - Herramientas de dibujo.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4937507
+              "tamanoBytes": 4672914
             },
             {
-              "id": "diseno-tecnico-clase-14-clase-5-funciones-de-modificacion-i",
+              "id": "diseno-tecnico-clase-17-clase-5-funciones-de-modificacion-i",
               "titulo": "Clase 5 - Funciones de modificación I",
               "archivos": [
                 {
                   "nombre": "Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2666900,
+                  "size": 1082950,
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pdf",
                   "url": "",
                   "embebible": false,
@@ -10092,23 +11184,63 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 5 - Modificación I - pinzamientos desplazar copiar recortar.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2328,
+                  "ruta": "@Clases/Clase 5 - Funciones de modificación I/Guía práctica - Clase 5 - Modificación I - pinzamientos desplazar copiar recortar.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1769632,
+                  "size": 2031081,
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.7 MB)",
+                  "notas": "(1.9 MB)",
                   "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 5 - Cruz perfecta.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 19961,
+                  "ruta": "@Clases/Clase 5 - Funciones de modificación I/ITC Practico Clase 5 - Cruz perfecta.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 5 - Cruz perfecta.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 5 - Funciones de modificación I/ITC Practico Clase 5 - Cruz perfecta.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 5 - Cruz perfecta.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 5 - Funciones de modificación I/ITC Practico Clase 5 - Cruz perfecta.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Lectura Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2575115,
+                  "size": 989915,
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/Lectura Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pdf",
                   "url": "",
                   "embebible": false,
@@ -10122,27 +11254,37 @@
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/Practica Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-14-clase-5-funciones-de-modificacion-i-practica-clase-5-modificacion-i-pinzamientos-desplazar-copiar-y-recortar-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-17-clase-5-funciones-de-modificacion-i-practica-clase-5-modificacion-i-pinzamientos-desplazar-copiar-y-recortar-html.html",
                   "notas": "(6 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 5 - Modificación I pinzamientos desplazar copiar recortar.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 301795,
+                  "ruta": "@Clases/Clase 5 - Funciones de modificación I/Práctico Clase 5 - Modificación I pinzamientos desplazar copiar recortar.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11237,
+                  "size": 359567,
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/Presentacion Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-14-clase-5-funciones-de-modificacion-i-presentacion-clase-5-modificacion-i-pinzamientos-desplazar-copiar-y-recortar-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-17-clase-5-funciones-de-modificacion-i-presentacion-clase-5-modificacion-i-pinzamientos-desplazar-copiar-y-recortar-html.html",
+                  "notas": "(351 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2365991,
+                  "size": 814972,
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/Presentacion Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pdf",
                   "url": "",
                   "embebible": false,
@@ -10152,24 +11294,24 @@
                   "nombre": "Presentacion Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1884003,
+                  "size": 375029,
                   "ruta": "@Clases/Clase 5 - Funciones de modificación I/Presentacion Clase 5 - Modificación I pinzamientos, desplazar, copiar y recortar.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 11835542
+              "tamanoBytes": 6540529
             },
             {
-              "id": "diseno-tecnico-clase-15-clase-6-funciones-de-modificacion-ii",
+              "id": "diseno-tecnico-clase-18-clase-6-funciones-de-modificacion-ii",
               "titulo": "Clase 6 - Funciones de modificación II",
               "archivos": [
                 {
                   "nombre": "Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1101953,
+                  "size": 923289,
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pdf",
                   "url": "",
                   "embebible": false,
@@ -10186,12 +11328,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 6 - Modificación II - empalme chaflán matriz simetría.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2443,
+                  "ruta": "@Clases/Clase 6 - Funciones de modificación II/Guía práctica - Clase 6 - Modificación II - empalme chaflán matriz simetría.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 366095,
+                  "size": 639667,
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10199,10 +11351,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 6 - Brida mecánica.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18719,
+                  "ruta": "@Clases/Clase 6 - Funciones de modificación II/ITC Practico Clase 6 - Brida mecánica.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 6 - Brida mecánica.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 6 - Funciones de modificación II/ITC Practico Clase 6 - Brida mecánica.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 6 - Brida mecánica.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 6 - Funciones de modificación II/ITC Practico Clase 6 - Brida mecánica.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1008977,
+                  "size": 830420,
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/Lectura Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pdf",
                   "url": "",
                   "embebible": false,
@@ -10216,27 +11398,37 @@
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/Practica Clase 6 - Modificación II empalme, chaflán, matriz y simetría.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-15-clase-6-funciones-de-modificacion-ii-practica-clase-6-modificacion-ii-empalme-chaflan-matriz-y-simetria-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-18-clase-6-funciones-de-modificacion-ii-practica-clase-6-modificacion-ii-empalme-chaflan-matriz-y-simetria-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 6 - Modificación II empalme chaflán matriz simetría.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 314268,
+                  "ruta": "@Clases/Clase 6 - Funciones de modificación II/Práctico Clase 6 - Modificación II empalme chaflán matriz simetría.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 6 - Modificación II empalme, chaflán, matriz y simetría.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11107,
+                  "size": 375606,
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/Presentacion Clase 6 - Modificación II empalme, chaflán, matriz y simetría.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-15-clase-6-funciones-de-modificacion-ii-presentacion-clase-6-modificacion-ii-empalme-chaflan-matriz-y-simetria-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-18-clase-6-funciones-de-modificacion-ii-presentacion-clase-6-modificacion-ii-empalme-chaflan-matriz-y-simetria-html.html",
+                  "notas": "(367 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 845112,
+                  "size": 685095,
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/Presentacion Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pdf",
                   "url": "",
                   "embebible": false,
@@ -10246,24 +11438,24 @@
                   "nombre": "Presentacion Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 479906,
+                  "size": 386599,
                   "ruta": "@Clases/Clase 6 - Funciones de modificación II/Presentacion Clase 6 - Modificación II empalme, chaflán, matriz y simetría.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4375398
+              "tamanoBytes": 4738621
             },
             {
-              "id": "diseno-tecnico-clase-16-clase-7-funciones-de-modificacion-iii",
+              "id": "diseno-tecnico-clase-19-clase-7-funciones-de-modificacion-iii",
               "titulo": "Clase 7 - Funciones de modificación III",
               "archivos": [
                 {
                   "nombre": "Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 984841,
+                  "size": 979841,
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pdf",
                   "url": "",
                   "embebible": false,
@@ -10280,12 +11472,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 7 - Modificación III - dividir medir partir juntar estirar.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2482,
+                  "ruta": "@Clases/Clase 7 - Funciones de modificación III/Guía práctica - Clase 7 - Modificación III - dividir medir partir juntar estirar.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 220346,
+                  "size": 481245,
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10293,10 +11495,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 7 - Viga dividida y estirada.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18747,
+                  "ruta": "@Clases/Clase 7 - Funciones de modificación III/ITC Practico Clase 7 - Viga dividida y estirada.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 7 - Viga dividida y estirada.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 7 - Funciones de modificación III/ITC Practico Clase 7 - Viga dividida y estirada.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 7 - Viga dividida y estirada.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 7 - Funciones de modificación III/ITC Practico Clase 7 - Viga dividida y estirada.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 890971,
+                  "size": 885923,
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/Lectura Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pdf",
                   "url": "",
                   "embebible": false,
@@ -10310,27 +11542,37 @@
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/Practica Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-16-clase-7-funciones-de-modificacion-iii-practica-clase-7-modificacion-iii-dividir-medir-partir-juntar-y-estirar-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-19-clase-7-funciones-de-modificacion-iii-practica-clase-7-modificacion-iii-dividir-medir-partir-juntar-y-estirar-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 7 - Modificación III dividir medir partir juntar estirar.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 300437,
+                  "ruta": "@Clases/Clase 7 - Funciones de modificación III/Práctico Clase 7 - Modificación III dividir medir partir juntar estirar.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11417,
+                  "size": 359018,
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/Presentacion Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-16-clase-7-funciones-de-modificacion-iii-presentacion-clase-7-modificacion-iii-dividir-medir-partir-juntar-y-estirar-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-19-clase-7-funciones-de-modificacion-iii-presentacion-clase-7-modificacion-iii-dividir-medir-partir-juntar-y-estirar-html.html",
+                  "notas": "(351 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 710817,
+                  "size": 715352,
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/Presentacion Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pdf",
                   "url": "",
                   "embebible": false,
@@ -10340,24 +11582,24 @@
                   "nombre": "Presentacion Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 334471,
+                  "size": 374240,
                   "ruta": "@Clases/Clase 7 - Funciones de modificación III/Presentacion Clase 7 - Modificación III dividir, medir, partir, juntar y estirar.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 3715090
+              "tamanoBytes": 4679779
             },
             {
-              "id": "diseno-tecnico-clase-17-clase-8-capas-y-unidades",
+              "id": "diseno-tecnico-clase-20-clase-8-capas-y-unidades",
               "titulo": "Clase 8 - Capas y unidades",
               "archivos": [
                 {
                   "nombre": "Clase 8 - Capas y unidades.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1404104,
+                  "size": 1019016,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/Clase 8 - Capas y unidades.pdf",
                   "url": "",
                   "embebible": false,
@@ -10374,12 +11616,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 8 - Capas y unidades.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2248,
+                  "ruta": "@Clases/Clase 8 - Capas y unidades/Guía práctica - Clase 8 - Capas y unidades.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 621817,
+                  "size": 882148,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10387,10 +11639,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 8 - Esquema de capas.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18329,
+                  "ruta": "@Clases/Clase 8 - Capas y unidades/ITC Practico Clase 8 - Esquema de capas.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 8 - Esquema de capas.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 8 - Capas y unidades/ITC Practico Clase 8 - Esquema de capas.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 8 - Esquema de capas.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 8 - Capas y unidades/ITC Practico Clase 8 - Esquema de capas.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 8 - Capas y unidades.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1312211,
+                  "size": 925251,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/Lectura Clase 8 - Capas y unidades.pdf",
                   "url": "",
                   "embebible": false,
@@ -10404,27 +11686,37 @@
                   "ruta": "@Clases/Clase 8 - Capas y unidades/Practica Clase 8 - Capas y unidades.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-17-clase-8-capas-y-unidades-practica-clase-8-capas-y-unidades-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-20-clase-8-capas-y-unidades-practica-clase-8-capas-y-unidades-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 8 - Capas y unidades.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 299652,
+                  "ruta": "@Clases/Clase 8 - Capas y unidades/Práctico Clase 8 - Capas y unidades.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 8 - Capas y unidades.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11491,
+                  "size": 358378,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/Presentacion Clase 8 - Capas y unidades.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-17-clase-8-capas-y-unidades-presentacion-clase-8-capas-y-unidades-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-20-clase-8-capas-y-unidades-presentacion-clase-8-capas-y-unidades-html.html",
+                  "notas": "(350 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 8 - Capas y unidades.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1120271,
+                  "size": 745125,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/Presentacion Clase 8 - Capas y unidades.pdf",
                   "url": "",
                   "embebible": false,
@@ -10434,24 +11726,24 @@
                   "nombre": "Presentacion Clase 8 - Capas y unidades.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 735992,
+                  "size": 373736,
                   "ruta": "@Clases/Clase 8 - Capas y unidades/Presentacion Clase 8 - Capas y unidades.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 5766998
+              "tamanoBytes": 5185262
             },
             {
-              "id": "diseno-tecnico-clase-18-clase-9-capas-de-planta-de-vivienda",
+              "id": "diseno-tecnico-clase-21-clase-9-capas-de-planta-de-vivienda",
               "titulo": "Clase 9 - Capas de planta de vivienda",
               "archivos": [
                 {
                   "nombre": "Clase 9 - Capas de una planta de vivienda.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2259112,
+                  "size": 1087054,
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Clase 9 - Capas de una planta de vivienda.pdf",
                   "url": "",
                   "embebible": false,
@@ -10468,23 +11760,63 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 9 - Capas de planta de vivienda.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2318,
+                  "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Guía práctica - Clase 9 - Capas de planta de vivienda.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1411527,
+                  "size": 1681762,
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "(1.3 MB)",
+                  "notas": "(1.6 MB)",
                   "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 9 - Planta de vivienda.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 19039,
+                  "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/ITC Practico Clase 9 - Planta de vivienda.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 9 - Planta de vivienda.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/ITC Practico Clase 9 - Planta de vivienda.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 9 - Planta de vivienda.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/ITC Practico Clase 9 - Planta de vivienda.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Lectura Clase 9 - Capas de una planta de vivienda.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2168895,
+                  "size": 995797,
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Lectura Clase 9 - Capas de una planta de vivienda.pdf",
                   "url": "",
                   "embebible": false,
@@ -10498,27 +11830,37 @@
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Practica Clase 9 - Capas de una planta de vivienda.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-18-clase-9-capas-de-planta-de-vivienda-practica-clase-9-capas-de-una-planta-de-vivienda-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-21-clase-9-capas-de-planta-de-vivienda-practica-clase-9-capas-de-una-planta-de-vivienda-html.html",
                   "notas": "(6 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 9 - Capas de planta de vivienda.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 310400,
+                  "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Práctico Clase 9 - Capas de planta de vivienda.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 9 - Capas de una planta de vivienda.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11288,
+                  "size": 371348,
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Presentacion Clase 9 - Capas de una planta de vivienda.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-18-clase-9-capas-de-planta-de-vivienda-presentacion-clase-9-capas-de-una-planta-de-vivienda-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-21-clase-9-capas-de-planta-de-vivienda-presentacion-clase-9-capas-de-una-planta-de-vivienda-html.html",
+                  "notas": "(363 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 9 - Capas de una planta de vivienda.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 2009366,
+                  "size": 847975,
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Presentacion Clase 9 - Capas de una planta de vivienda.pdf",
                   "url": "",
                   "embebible": false,
@@ -10528,17 +11870,17 @@
                   "nombre": "Presentacion Clase 9 - Capas de una planta de vivienda.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1525499,
+                  "size": 383428,
                   "ruta": "@Clases/Clase 9 - Capas de planta de vivienda/Presentacion Clase 9 - Capas de una planta de vivienda.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 9946651
+              "tamanoBytes": 6260352
             },
             {
-              "id": "diseno-tecnico-clase-19-coordenadas",
+              "id": "diseno-tecnico-clase-22-coordenadas",
               "titulo": "Coordenadas",
               "archivos": [
                 {
@@ -10555,7 +11897,7 @@
                   "nombre": "Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1153467,
+                  "size": 974067,
                   "ruta": "@Clases/Coordenadas/Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
                   "url": "",
                   "embebible": false,
@@ -10592,12 +11934,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 3 - Sistema de coordenadas y entrada dinámica.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2569,
+                  "ruta": "@Clases/Coordenadas/Guía práctica - Clase 3 - Sistema de coordenadas y entrada dinámica.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 397230,
+                  "size": 641274,
                   "ruta": "@Clases/Coordenadas/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10605,10 +11957,40 @@
                   "descripcion": "Carpeta con archivos"
                 },
                 {
+                  "nombre": "ITC Practico Clase 3 - Escalera de perfil.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18591,
+                  "ruta": "@Clases/Coordenadas/ITC Practico Clase 3 - Escalera de perfil.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 3 - Escalera de perfil.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Coordenadas/ITC Practico Clase 3 - Escalera de perfil.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 3 - Escalera de perfil.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Coordenadas/ITC Practico Clase 3 - Escalera de perfil.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1071156,
+                  "size": 883328,
                   "ruta": "@Clases/Coordenadas/Lectura Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
                   "url": "",
                   "embebible": false,
@@ -10632,27 +12014,37 @@
                   "ruta": "@Clases/Coordenadas/Practica Clase 3 - Sistema de coordenadas y entrada dinámica.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-19-coordenadas-practica-clase-3-sistema-de-coordenadas-y-entrada-dinamica-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-22-coordenadas-practica-clase-3-sistema-de-coordenadas-y-entrada-dinamica-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 282593,
+                  "ruta": "@Clases/Coordenadas/Práctico Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 3 - Sistema de coordenadas y entrada dinámica.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11498,
+                  "size": 336709,
                   "ruta": "@Clases/Coordenadas/Presentacion Clase 3 - Sistema de coordenadas y entrada dinámica.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-19-coordenadas-presentacion-clase-3-sistema-de-coordenadas-y-entrada-dinamica-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-22-coordenadas-presentacion-clase-3-sistema-de-coordenadas-y-entrada-dinamica-html.html",
+                  "notas": "(329 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 878404,
+                  "size": 707325,
                   "ruta": "@Clases/Coordenadas/Presentacion Clase 3 - Sistema de coordenadas y entrada dinámica.pdf",
                   "url": "",
                   "embebible": false,
@@ -10662,7 +12054,7 @@
                   "nombre": "Presentacion Clase 3 - Sistema de coordenadas y entrada dinámica.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 511622,
+                  "size": 357676,
                   "ruta": "@Clases/Coordenadas/Presentacion Clase 3 - Sistema de coordenadas y entrada dinámica.pptx",
                   "url": "",
                   "embebible": false,
@@ -10689,10 +12081,10 @@
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4830227
+              "tamanoBytes": 5011249
             },
             {
-              "id": "diseno-tecnico-clase-20-dibujos-por-vista",
+              "id": "diseno-tecnico-clase-23-dibujos-por-vista",
               "titulo": "Dibujos por vista",
               "archivos": [
                 {
@@ -10769,7 +12161,7 @@
                   "nombre": "Clase 15 - Fachadas, vistas y cortes.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1932108,
+                  "size": 1137620,
                   "ruta": "@Clases/Dibujos por vista/Clase 15 - Fachadas, vistas y cortes.pdf",
                   "url": "",
                   "embebible": false,
@@ -10786,23 +12178,63 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 15 - Fachadas, vistas y cortes.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2319,
+                  "ruta": "@Clases/Dibujos por vista/Guía práctica - Clase 15 - Fachadas, vistas y cortes.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 1013913,
+                  "size": 1277841,
                   "ruta": "@Clases/Dibujos por vista/img",
-                  "archivos": 3,
+                  "archivos": 5,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
-                  "notas": "",
+                  "notas": "(1.2 MB)",
                   "descripcion": "Carpeta con archivos"
+                },
+                {
+                  "nombre": "ITC Practico Clase 15 - Fachada principal.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18806,
+                  "ruta": "@Clases/Dibujos por vista/ITC Practico Clase 15 - Fachada principal.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 15 - Fachada principal.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Dibujos por vista/ITC Practico Clase 15 - Fachada principal.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 15 - Fachada principal.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Dibujos por vista/ITC Practico Clase 15 - Fachada principal.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Lectura Clase 15 - Fachadas, vistas y cortes.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1840942,
+                  "size": 1046507,
                   "ruta": "@Clases/Dibujos por vista/Lectura Clase 15 - Fachadas, vistas y cortes.pdf",
                   "url": "",
                   "embebible": false,
@@ -10836,27 +12268,37 @@
                   "ruta": "@Clases/Dibujos por vista/Practica Clase 15 - Fachadas, vistas y cortes.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-20-dibujos-por-vista-practica-clase-15-fachadas-vistas-y-cortes-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-23-dibujos-por-vista-practica-clase-15-fachadas-vistas-y-cortes-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 15 - Fachadas vistas y cortes.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 303421,
+                  "ruta": "@Clases/Dibujos por vista/Práctico Clase 15 - Fachadas vistas y cortes.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 15 - Fachadas, vistas y cortes.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11434,
+                  "size": 363140,
                   "ruta": "@Clases/Dibujos por vista/Presentacion Clase 15 - Fachadas, vistas y cortes.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-20-dibujos-por-vista-presentacion-clase-15-fachadas-vistas-y-cortes-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-23-dibujos-por-vista-presentacion-clase-15-fachadas-vistas-y-cortes-html.html",
+                  "notas": "(355 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 15 - Fachadas, vistas y cortes.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1639460,
+                  "size": 868466,
                   "ruta": "@Clases/Dibujos por vista/Presentacion Clase 15 - Fachadas, vistas y cortes.pdf",
                   "url": "",
                   "embebible": false,
@@ -10866,24 +12308,24 @@
                   "nombre": "Presentacion Clase 15 - Fachadas, vistas y cortes.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 1128476,
+                  "size": 377726,
                   "ruta": "@Clases/Dibujos por vista/Presentacion Clase 15 - Fachadas, vistas y cortes.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 8845849
+              "tamanoBytes": 6675629
             },
             {
-              "id": "diseno-tecnico-clase-21-isometrico",
+              "id": "diseno-tecnico-clase-24-isometrico",
               "titulo": "Isométrico",
               "archivos": [
                 {
                   "nombre": "Clase 17 - Dibujo isométrico.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1193083,
+                  "size": 977680,
                   "ruta": "@Clases/Isométrico/Clase 17 - Dibujo isométrico.pdf",
                   "url": "",
                   "embebible": false,
@@ -10920,12 +12362,22 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "Guía práctica - Clase 17 - Dibujo isométrico.txt",
+                  "tipo": "Texto",
+                  "emoji": "📝",
+                  "size": 2286,
+                  "ruta": "@Clases/Isométrico/Guía práctica - Clase 17 - Dibujo isométrico.txt",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 429195,
+                  "size": 698998,
                   "ruta": "@Clases/Isométrico/img",
-                  "archivos": 4,
+                  "archivos": 6,
                   "url": "",
                   "embebible": true,
                   "embedUrl": null,
@@ -10953,10 +12405,40 @@
                   "descripcion": ""
                 },
                 {
+                  "nombre": "ITC Practico Clase 17 - Caja isométrica.dwg",
+                  "tipo": "Plano CAD",
+                  "emoji": "📐",
+                  "size": 18751,
+                  "ruta": "@Clases/Isométrico/ITC Practico Clase 17 - Caja isométrica.dwg",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 17 - Caja isométrica.dwl",
+                  "tipo": "DWL",
+                  "emoji": "📁",
+                  "size": 58,
+                  "ruta": "@Clases/Isométrico/ITC Practico Clase 17 - Caja isométrica.dwl",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
+                  "nombre": "ITC Practico Clase 17 - Caja isométrica.dwl2",
+                  "tipo": "DWL2",
+                  "emoji": "📁",
+                  "size": 209,
+                  "ruta": "@Clases/Isométrico/ITC Practico Clase 17 - Caja isométrica.dwl2",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
+                },
+                {
                   "nombre": "Lectura Clase 17 - Dibujo isométrico.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 1096608,
+                  "size": 884099,
                   "ruta": "@Clases/Isométrico/Lectura Clase 17 - Dibujo isométrico.pdf",
                   "url": "",
                   "embebible": false,
@@ -10980,27 +12462,37 @@
                   "ruta": "@Clases/Isométrico/Practica Clase 17 - Dibujo isométrico.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-21-isometrico-practica-clase-17-dibujo-isometrico-html.html",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-24-isometrico-practica-clase-17-dibujo-isometrico-html.html",
                   "notas": "(5 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
+                },
+                {
+                  "nombre": "Práctico Clase 17 - Dibujo isométrico.pdf",
+                  "tipo": "PDF",
+                  "emoji": "📕",
+                  "size": 308562,
+                  "ruta": "@Clases/Isométrico/Práctico Clase 17 - Dibujo isométrico.pdf",
+                  "url": "",
+                  "embebible": false,
+                  "descripcion": ""
                 },
                 {
                   "nombre": "Presentacion Clase 17 - Dibujo isométrico.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 11255,
+                  "size": 370806,
                   "ruta": "@Clases/Isométrico/Presentacion Clase 17 - Dibujo isométrico.html",
                   "url": "",
                   "embebible": true,
-                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-21-isometrico-presentacion-clase-17-dibujo-isometrico-html.html",
-                  "notas": "(11 KB)",
+                  "embedUrl": "/html/interactivos/diseno-tecnico-clase-24-isometrico-presentacion-clase-17-dibujo-isometrico-html.html",
+                  "notas": "(362 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 17 - Dibujo isométrico.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 776779,
+                  "size": 708277,
                   "ruta": "@Clases/Isométrico/Presentacion Clase 17 - Dibujo isométrico.pdf",
                   "url": "",
                   "embebible": false,
@@ -11010,17 +12502,17 @@
                   "nombre": "Presentacion Clase 17 - Dibujo isométrico.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 424890,
+                  "size": 383197,
                   "ruta": "@Clases/Isométrico/Presentacion Clase 17 - Dibujo isométrico.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 4932116
+              "tamanoBytes": 5353229
             },
             {
-              "id": "diseno-tecnico-clase-22-mucha-nieve",
+              "id": "diseno-tecnico-clase-25-mucha-nieve",
               "titulo": "Mucha nieve",
               "archivos": [
                 {
@@ -11087,7 +12579,7 @@
               "tamanoBytes": 843956
             },
             {
-              "id": "diseno-tecnico-clase-23-plano-1",
+              "id": "diseno-tecnico-clase-26-plano-1",
               "titulo": "Plano 1",
               "archivos": [
                 {

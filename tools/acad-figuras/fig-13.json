@@ -1,0 +1,72 @@
+{
+  "numero": 13,
+  "titulo": "Textos y tablas",
+  "carpeta": "I:\\ITC\\4- Diseño Tecnico\\@Clases\\Clase 13 - Textos y tablas",
+  "pdfTitulo": "PRÁCTICO N°13 — Textos y tablas",
+  "pdfSubtitulo": "Figura: plano con rótulos de ambientes, nota técnica y tabla de aberturas",
+  "archivo": {
+    "dwg": "ITC Practico Clase 13 - Plano con textos y tablas.dwg",
+    "pdf": "Práctico Clase 13 - Textos y tablas.pdf",
+    "txt": "Guía práctica - Clase 13 - Textos y tablas.txt"
+  },
+  "capas": [
+    { "n": "Dibujo", "c": "7" },
+    { "n": "COTAS", "c": "2" },
+    { "n": "TEXTOS", "c": "3" },
+    { "n": "Centro", "c": "8" },
+    { "n": "Consigna", "c": "7" }
+  ],
+  "dibujo": {
+    "rectangulos": [
+      { "x1": 0, "y1": 0, "x2": 8, "y2": 6, "capa": "Dibujo" },
+      { "x1": 12, "y1": 0, "x2": 20, "y2": 6, "capa": "Dibujo" }
+    ],
+    "lineas": [
+      { "x1": 0, "y1": -2, "x2": 20, "y2": -2, "capa": "COTAS" }
+    ],
+    "cotas": [
+      { "x1": 8, "y1": 0, "x2": 12, "y2": 0, "lx": 10, "ly": -3 }
+    ],
+    "encuadre": { "x1": -2, "y1": -2, "x2": 22, "y2": 8 }
+  },
+  "consigna": {
+    "x": -4, "y": 9, "ancho": 135, "alto": 3.6,
+    "lineas": [
+      "PRÁCTICO — CLASE 13: TEXTOS Y TABLAS",
+      "Consigna:",
+      "- Rotulá los ambientes con TEXTO (una línea): DORMITORIO, BAÑO, COCINA.",
+      "- Agregá una nota técnica de dos renglones con TEXTOM.",
+      "- Creá una tabla estilo con 4 columnas: Abertura, Ancho, Alto, Cantidad.",
+      "- Cargá la tabla con puerta 0.80 y ventana 1.20.",
+      "- Acotá el tabique central 4.",
+      "- Guardá como clase13-textos.dwg."
+    ]
+  },
+  "pdfFiguras": [
+    { "img": "img/interfaz.jpg", "caption": "Figura 1 — Plano con rótulos de ambientes y nota técnica" },
+    { "img": "img/encuadre.jpg", "caption": "Figura 2 — Tabla de aberturas (Abertura, Ancho, Alto, Cantidad)" }
+  ],
+  "guia": {
+    "subtitulo": "Figura: PLANO CON TEXTOS Y TABLAS — texto de una línea, texto múltiple y tablas",
+    "objetivo": "Usar texto de una línea y texto múltiple, y crear tablas con el administrador de estilos para listar aberturas.",
+    "pasos": [
+      { "titulo": "Dibujar los ambientes", "detalle": ["1. Rectángulo base (0,0)-(8,6).", "2. Tabique (8,0)-(12,6).", "3. Rectángulo (12,0)-(20,6)."] },
+      { "titulo": "Texto de una línea", "detalle": ["1. TEXTO (DT).", "2. DORMITORIO en (1,4.5); BAÑO en (9,4.5); COCINA en (13,4.5).", "3. Altura 0.3."] },
+      { "titulo": "Texto múltiple", "detalle": ["1. TEXTOM (MT).", "2. Nota técnica: 'Todas las medidas en metros. Muros 0.20.'"] },
+      { "titulo": "Crear la tabla", "detalle": ["1. Comando TABLA.", "2. Estilo nuevo: 4 columnas x 3 filas.", "3. Cabeceras: Abertura, Ancho, Alto, Cantidad."] },
+      { "titulo": "Cargar la tabla", "detalle": ["1. Fila: Puerta 0.80 2.10 1.", "2. Fila: Ventana 1.20 1.00 4."] },
+      { "titulo": "Acotar el tabique", "detalle": ["1. Cota lineal (8,0)-(12,0) = 4 en COTAS."] },
+      { "titulo": "Guardar", "detalle": ["1. Guardá como clase13-textos.dwg."] }
+    ],
+    "cotas": [
+      { "label": "Tabique central", "valor": "4 m" },
+      { "label": "Puerta", "valor": "0.80 x 2.10" },
+      { "label": "Ventana", "valor": "1.20 x 1.00" }
+    ],
+    "consejos": [
+      "TEXTOM justifica y formatea a escala.",
+      "Las tablas se editan con doble clic.",
+      "El estilo de texto define fuente y altura."
+    ]
+  }
+}

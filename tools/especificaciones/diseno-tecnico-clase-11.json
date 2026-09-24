@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 11,
     "titulo": "Puertas, ventanas y mobiliario en bloques",
@@ -22,9 +27,9 @@
       "titulo": "Puertas en planta",
       "emoji": "🚪",
       "imagen": {
-        "src": "img/aberturas.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Aberturas de puertas y ventanas en planta",
-        "caption": "Las aberturas se dibujan sobre la capa ABERTURAS y se insertan en los muros."
+        "caption": "Figura 1 — Planta con puerta, ventanas y mobiliario en bloques"
       },
       "parrafos": [
         "Una puerta en planta se dibuja con la hoja, la marca de apertura (línea de giro con el arco de barrido) y el espacio del muro interrumpido. Las medidas típicas van de 0.70 a 0.90 m para interiores y 0.90 a 1.00 m de abertura hacia el exterior.",
@@ -41,9 +46,9 @@
       "titulo": "Ventanas en planta",
       "emoji": "🪟",
       "imagen": {
-        "src": "img/mobiliario.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Mobiliario insertado en planta",
-        "caption": "El mobiliario y las aberturas entran por bloques y quedan en sus capas."
+        "caption": "Figura 2 — Detalle de puerta con hoja y arco de barrido 0.80"
       },
       "parrafos": [
         "Las ventanas se dibujan como un rectángulo que corta el muro, con el trazo doble del vidrio y la línea de antepecho. Se dibujan al revés que las puertas: a lo largo del muro."
@@ -72,11 +77,6 @@
     {
       "titulo": "Mobiliario y sanitarios con Design Center",
       "emoji": "🚿",
-      "imagen": {
-        "src": "img/sanitarios.jpg",
-        "alt": "Sanitarios de la planta",
-        "caption": "Inodoro, pileta y ducha entran desde la biblioteca de Design Center."
-      },
       "parrafos": [
         "Design Center abre la biblioteca de bloques del dibujo y de otros DWG: camas, mesas, sillas, inodoros, piletas y cocinas se arrastran directo a la planta. Los bloques de sanitarios y mobiliario se insertan sobre sus capas correspondientes.",
         "Muchas veces conviene escalarlos por referencia para que el bloque entre con la medida real del ambiente."
@@ -103,27 +103,52 @@
         "preguntas": [
           {
             "pregunta": "¿Sobre qué capa se dibujan las puertas y ventanas?",
-            "opciones": ["MUROS", "ABERTURAS", "COTAS", "TECHOS"],
+            "opciones": [
+              "MUROS",
+              "ABERTURAS",
+              "COTAS",
+              "TECHOS"
+            ],
             "correcta": "ABERTURAS"
           },
           {
             "pregunta": "¿Dónde conviene ubicar el punto base de la puerta?",
-            "opciones": ["En el medio", "En la bisagra", "En el cierre", "Afuera del muro"],
+            "opciones": [
+              "En el medio",
+              "En la bisagra",
+              "En el cierre",
+              "Afuera del muro"
+            ],
             "correcta": "En la bisagra"
           },
           {
             "pregunta": "¿Qué representa el arco de barrido de la puerta?",
-            "opciones": ["La medida", "De qué lado abre la puerta", "El espesor del muro", "La ventana"],
+            "opciones": [
+              "La medida",
+              "De qué lado abre la puerta",
+              "El espesor del muro",
+              "La ventana"
+            ],
             "correcta": "De qué lado abre la puerta"
           },
           {
             "pregunta": "¿Qué herramienta arrastra bloques desde otros DWG?",
-            "opciones": ["UNIDADES", "Design Center", "RECORTA", "SOMBRADO"],
+            "opciones": [
+              "UNIDADES",
+              "Design Center",
+              "RECORTA",
+              "SOMBRADO"
+            ],
             "correcta": "Design Center"
           },
           {
             "pregunta": "¿Qué conviene hacer si el bloque insertado no coincide con la abertura?",
-            "opciones": ["Borrarlo", "Escalarlo por referencia", "Pintarlo", "Descomponerlo y olvidarse"],
+            "opciones": [
+              "Borrarlo",
+              "Escalarlo por referencia",
+              "Pintarlo",
+              "Descomponerlo y olvidarse"
+            ],
             "correcta": "Escalarlo por referencia"
           }
         ]
@@ -148,12 +173,36 @@
   "lectura": "Las aberturas se dibujan una vez y se insertan con la medida justa de cada muro gracias a los bloques y la escala por referencia. Design Center completa la planta con el mobiliario y los sanitarios a partir de librerías. Con esto la planta ya tiene puertas, ventanas y equipamiento, listos para acotar.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Repasar la planta de la clase 9 y definir qué faltan: aberturas y muebles", "min": "10 min" },
-      { "titulo": "Puertas y ventanas", "que": "Dibujar una puerta y una ventana con su arco y vidrio en capa ABERTURAS", "min": "25 min" },
-      { "titulo": "Bloques de aberturas", "que": "Convertirlas en bloques con punto base en la bisagra y nombrarlas por medida", "min": "20 min" },
-      { "titulo": "Inserción en los muros", "que": "Insertar calzando en la abertura con referencias y escala por referencia", "min": "15 min" },
-      { "titulo": "Mobiliario y sanitarios", "que": "Insertar con Design Center y ajustar escala y capa", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo; revisión de la planta de cada alumno", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Repasar la planta de la clase 9 y definir qué faltan: aberturas y muebles",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Puertas y ventanas",
+        "que": "Dibujar una puerta y una ventana con su arco y vidrio en capa ABERTURAS",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Bloques de aberturas",
+        "que": "Convertirlas en bloques con punto base en la bisagra y nombrarlas por medida",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Inserción en los muros",
+        "que": "Insertar calzando en la abertura con referencias y escala por referencia",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Mobiliario y sanitarios",
+        "que": "Insertar con Design Center y ajustar escala y capa",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo; revisión de la planta de cada alumno",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Preguntar cuántas puertas tiene la casa de cada uno y si todas miden igual: por eso cada medida es un bloque."

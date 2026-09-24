@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 22,
     "titulo": "Introducción al 3D y sólidos",
@@ -22,9 +27,9 @@
       "titulo": "El entorno tridimensional",
       "emoji": "🌐",
       "imagen": {
-        "src": "img/modelo3d.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Modelo 3D básico",
-        "caption": "En 3D se trabaja con tres ejes (X, Y, Z) y puntos de vista isométricos."
+        "caption": "Figura 1 — Perfil en L extruido a 10 de altura (vista 3D)"
       },
       "parrafos": [
         "En el 3D de AutoCAD aparecen los tres ejes: X e Y en el suelo, Z hacia arriba. Las herramientas 2D siguen funcionando pero solo en el plano de trabajo actual (plano XY del SCP vigente).",
@@ -41,9 +46,9 @@
       "titulo": "El SCP: sistema de coordenadas personales",
       "emoji": "🧭",
       "imagen": {
-        "src": "img/solidos.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Sólidos básicos primitivos",
-        "caption": "El SCP se mueve y rota para dibujar sobre cualquier plano del espacio."
+        "caption": "Figura 2 — Sólido compuesto: L + cilindro unidos por UNIÓN"
       },
       "parrafos": [
         "El icono SCP marca el origen y la orientación de los ejes del plano de trabajo. Con SCP se puede desplazar y girar los ejes para dibujar en cualquier cara; SCP Universal vuelve todo al origen (0,0,0) original."
@@ -58,11 +63,6 @@
     {
       "titulo": "Sólidos básicos",
       "emoji": "🧱",
-      "imagen": {
-        "src": "img/booleano.jpg",
-        "alt": "Combinación de sólidos",
-        "caption": "Unión, diferencia e intersección combinan los sólidos básicos en piezas."
-      },
       "parrafos": [
         "Los sólidos básicos se crean con un dibujo de prisma, cuña, cono, esfera, cilindro, toroide o pirámide: se definen la base y la altura. El polisólido dibuja muros y perfiles como una polilínea con grosor y altura.",
         "Cada comando ofrece opciones de base 2P, 3P o Ttr y formas especiales como el cono truncado y la base elíptica."
@@ -103,27 +103,52 @@
         "preguntas": [
           {
             "pregunta": "¿Qué sistema vuelve el SCP al origen del modelo?",
-            "opciones": ["SCP Universal", "SCP Girar", "SCP Origen", "SCP Nuevo"],
+            "opciones": [
+              "SCP Universal",
+              "SCP Girar",
+              "SCP Origen",
+              "SCP Nuevo"
+            ],
             "correcta": "SCP Universal"
           },
           {
             "pregunta": "¿Qué sólido se dibuja como una polilínea con anchura y altura?",
-            "opciones": ["Prisma", "Polisólido", "Cuña", "Cono"],
+            "opciones": [
+              "Prisma",
+              "Polisólido",
+              "Cuña",
+              "Cono"
+            ],
             "correcta": "Polisólido"
           },
           {
             "pregunta": "¿Qué operación resta un sólido a otro (crea el agujero)?",
-            "opciones": ["Unión", "Diferencia", "Intersección", "Matriz"],
+            "opciones": [
+              "Unión",
+              "Diferencia",
+              "Intersección",
+              "Matriz"
+            ],
             "correcta": "Diferencia"
           },
           {
             "pregunta": "¿Qué conserva la intersección?",
-            "opciones": ["Todo", "El volumen común de los dos sólidos", "El más grande", "Nada"],
+            "opciones": [
+              "Todo",
+              "El volumen común de los dos sólidos",
+              "El más grande",
+              "Nada"
+            ],
             "correcta": "El volumen común de los dos sólidos"
           },
           {
             "pregunta": "¿En qué plano trabajan las herramientas 2D en 3D?",
-            "opciones": ["En el plano XZ", "En el plano XY del SCP vigente", "Siempre en el suelo", "En el plano YZ"],
+            "opciones": [
+              "En el plano XZ",
+              "En el plano XY del SCP vigente",
+              "Siempre en el suelo",
+              "En el plano YZ"
+            ],
             "correcta": "En el plano XY del SCP vigente"
           }
         ]
@@ -148,12 +173,36 @@
   "lectura": "El 3D cierra el curso: con el SCP se dibuja en cualquier plano del espacio, los sólidos básicos modelan prisma, cuña, cono, esfera, cilindro, toroide y pirámide, y las operaciones de unión, diferencia e intersección convierten esas formas en piezas reales. Desde aquí el dibujo técnico se modela y se presenta como objeto.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Mostrar una pieza 3D y motivar el cierre del curso", "min": "10 min" },
-      { "titulo": "Entorno 3D y vistas", "que": "Recorrer los ejes, puntos de vista planos e isométricos", "min": "15 min" },
-      { "titulo": "SCP", "que": "Desplazar, girar y volver con SCP Universal", "min": "20 min" },
-      { "titulo": "Sólidos básicos", "que": "Crear polisólido, prisma, cuña, cono, esfera, cilindro, toroide y pirámide", "min": "25 min" },
-      { "titulo": "Booleanas", "que": "Unión, diferencia e intersección sobre las primitivas", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo; cierre del curso y repaso general", "min": "5 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Mostrar una pieza 3D y motivar el cierre del curso",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Entorno 3D y vistas",
+        "que": "Recorrer los ejes, puntos de vista planos e isométricos",
+        "min": "15 min"
+      },
+      {
+        "titulo": "SCP",
+        "que": "Desplazar, girar y volver con SCP Universal",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Sólidos básicos",
+        "que": "Crear polisólido, prisma, cuña, cono, esfera, cilindro, toroide y pirámide",
+        "min": "25 min"
+      },
+      {
+        "titulo": "Booleanas",
+        "que": "Unión, diferencia e intersección sobre las primitivas",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo; cierre del curso y repaso general",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Comparar la pieza 2D de la clase 14 con la misma pieza modelada en 3D: el curso cierra el círculo."

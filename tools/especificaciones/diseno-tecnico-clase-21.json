@@ -1,5 +1,10 @@
 {
-  "curso": { "id": "diseno-tecnico", "nombre": "Diseño Técnico Industrial", "emoji": "📐", "color": "#f59e0b" },
+  "curso": {
+    "id": "diseno-tecnico",
+    "nombre": "Diseño Técnico Industrial",
+    "emoji": "📐",
+    "color": "#f59e0b"
+  },
   "clase": {
     "numero": 21,
     "titulo": "Presentaciones gráficas, trazadores e impresión",
@@ -22,9 +27,9 @@
       "titulo": "El espacio papel y la configuración de página",
       "emoji": "📄",
       "imagen": {
-        "src": "img/layout.jpg",
+        "src": "img/interfaz.jpg",
         "alt": "Presentación en el espacio papel",
-        "caption": "En el espacio papel se arma la lámina final: marco, ventanas y escala, listos para imprimir."
+        "caption": "Figura 1 — Hoja A3 horizontal con Viewport a escala 1:50 y rótulo"
       },
       "parrafos": [
         "AutoCAD tiene dos espacios: el modelo, donde se dibuja a escala real, y el papel, donde se arma la lámina que se imprime. En el espacio papel se configura la página (formato del papel, área de trazado y orientación).",
@@ -41,9 +46,9 @@
       "titulo": "Ventanas de visualización",
       "emoji": "🪟",
       "imagen": {
-        "src": "img/ventanas.jpg",
+        "src": "img/encuadre.jpg",
         "alt": "Ventanas de visualización en el papel",
-        "caption": "Cada ventana muestra una parte del modelo dentro de la lámina impresa."
+        "caption": "Figura 2 — Detalle del rótulo dentro de la hoja de la presentación"
       },
       "parrafos": [
         "En el espacio papel, la vista del dibujo se mete dentro de ventanas: marcos rectangulares (o con formas) que muestran una porción del modelo. Así la misma lámina puede mostrar planta, fachada y detalle a distintas escalas.",
@@ -73,11 +78,6 @@
     {
       "titulo": "Administrador de trazadores, vista previa y trazado",
       "emoji": "🖨️",
-      "imagen": {
-        "src": "img/trazar.jpg",
-        "alt": "Trazador o plotter de planos",
-        "caption": "El trazador imprime el plano a tamaño real sobre el papel de la lámina."
-      },
       "parrafos": [
         "El administrador de trazadores (PLOTTERS) lista la impresora del sistema y los trazadores configurados. Antes de imprimir se usa la vista previa para verificar escala, grosor y márgenes, y luego TRAZAR (CTRL+P) manda el plano.",
         "Un plano sale bien cuando la presentación, la ventana y la configuración de página están alineadas."
@@ -104,27 +104,52 @@
         "preguntas": [
           {
             "pregunta": "¿Dónde se dibuja a escala real?",
-            "opciones": ["En el espacio papel", "En el espacio modelo", "En la ventana de presentación", "En la impresora"],
+            "opciones": [
+              "En el espacio papel",
+              "En el espacio modelo",
+              "En la ventana de presentación",
+              "En la impresora"
+            ],
             "correcta": "En el espacio modelo"
           },
           {
             "pregunta": "¿Qué sufijo fija la escala de una ventana?",
-            "opciones": ["XP", "XD", "XG", "XM"],
+            "opciones": [
+              "XP",
+              "XD",
+              "XG",
+              "XM"
+            ],
             "correcta": "XP"
           },
           {
             "pregunta": "¿Qué escala usa zoom 1/50XP?",
-            "opciones": ["1:5", "1:50", "1:500", "1:5000"],
+            "opciones": [
+              "1:5",
+              "1:50",
+              "1:500",
+              "1:5000"
+            ],
             "correcta": "1:50"
           },
           {
             "pregunta": "¿Qué muestra la vista previa antes de imprimir?",
-            "opciones": ["El dibujo sin escalar", "Cómo quedará el plano impreso", "Solo el texto", "La lista de capas"],
+            "opciones": [
+              "El dibujo sin escalar",
+              "Cómo quedará el plano impreso",
+              "Solo el texto",
+              "La lista de capas"
+            ],
             "correcta": "Cómo quedará el plano impreso"
           },
           {
             "pregunta": "¿Qué lista el administrador de trazadores?",
-            "opciones": ["Las capas", "Las impresoras y trazadores", "Los textos", "Los bloques"],
+            "opciones": [
+              "Las capas",
+              "Las impresoras y trazadores",
+              "Los textos",
+              "Los bloques"
+            ],
             "correcta": "Las impresoras y trazadores"
           }
         ]
@@ -150,12 +175,36 @@
   "lectura": "La presentación es el último paso del plano profesional: en el espacio papel se configuran las páginas, las ventanas que muestran el modelo y la escala con zoom XP. El administrador de trazadores, la vista previa y el trazado llevan ese trabajo al papel con la calidad aceptada en obra y taller.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura", "que": "Comparar un plano impreso con el DWG y ubicar qué es 'modelo' y qué es 'papel'", "min": "10 min" },
-      { "titulo": "Espacio papel y página", "que": "Configurar la página A3 y explicar modelo vs presentación", "min": "15 min" },
-      { "titulo": "Ventanas", "que": "Crear y ajustar ventanas rectangulares sobre la lámina", "min": "20 min" },
-      { "titulo": "Zoom XP", "que": "Calcular y fijar escalas 1/50, 1/100 con XP y bloquear ventanas", "min": "20 min" },
-      { "titulo": "Trazado", "que": "Agregar impresora, vista previa y trazar a PDF", "min": "15 min" },
-      { "titulo": "Cierre", "que": "Repaso e interactivo; revisión de láminas", "min": "10 min" }
+      {
+        "titulo": "Apertura",
+        "que": "Comparar un plano impreso con el DWG y ubicar qué es 'modelo' y qué es 'papel'",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Espacio papel y página",
+        "que": "Configurar la página A3 y explicar modelo vs presentación",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Ventanas",
+        "que": "Crear y ajustar ventanas rectangulares sobre la lámina",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Zoom XP",
+        "que": "Calcular y fijar escalas 1/50, 1/100 con XP y bloquear ventanas",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Trazado",
+        "que": "Agregar impresora, vista previa y trazar a PDF",
+        "min": "15 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso e interactivo; revisión de láminas",
+        "min": "10 min"
+      }
     ],
     "conecta": [
       "Mostrar un plano real de obra o taller y hacer notar que se dibujó a escala real en modelo y se imprimió desde una presentación."
