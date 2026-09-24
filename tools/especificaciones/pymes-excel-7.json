@@ -48,7 +48,12 @@
         "Reglas superiores/inferiores: 10% superior, por encima del promedio: ideales para ver qué productos destacan.",
         "Concepto visual: formato condicional pone el formato NO el valor; es una vista que sigue los datos al cambiar.",
         "Barra de datos y Escalas de color: muestran magnitudes sin leer un solo número."
-      ]
+      ],
+      "imagen": {
+        "src": "img/excel-formato-condicional.png",
+        "alt": "Formato condicional aplicado sobre datos de la planilla",
+        "caption": "Las reglas de formato condicional pintan celdas automáticamente según el valor."
+      }
     },
     {
       "titulo": "Funciones condicionales: CONTAR.SI",
@@ -99,27 +104,52 @@
         "preguntas": [
           {
             "pregunta": "Estructura de CONTAR.SI:",
-            "opciones": ["(criterio; rango)", "(rango; criterio)", "(rango_suma; criterio; rango)", "(valor; señal)"],
+            "opciones": [
+              "(criterio; rango)",
+              "(rango; criterio)",
+              "(rango_suma; criterio; rango)",
+              "(valor; señal)"
+            ],
             "correcta": "(rango; criterio)"
           },
           {
             "pregunta": "¿Qué hace el formato condicional?",
-            "opciones": ["Cambia el valor de la celda", "Pinta celdas automáticamente según una regla", "Borra los datos del rango", "Suma el rango"],
+            "opciones": [
+              "Cambia el valor de la celda",
+              "Pinta celdas automáticamente según una regla",
+              "Borra los datos del rango",
+              "Suma el rango"
+            ],
             "correcta": "Pinta celdas automáticamente según una regla"
           },
           {
             "pregunta": "¿Qué función suma solo los valores que cumplen una condición?",
-            "opciones": ["SUMAR.SI", "SUMA", "CONTAR.BLANCO", "MAX"],
+            "opciones": [
+              "SUMAR.SI",
+              "SUMA",
+              "CONTAR.BLANCO",
+              "MAX"
+            ],
             "correcta": "SUMAR.SI"
           },
           {
             "pregunta": "¿Cuántos argumentos recibe SUMAR.SI?",
-            "opciones": ["Dos: rango y criterio", "Tres: rango_criterio, criterio y rango_suma", "Cuatro: rango, criterio, mín, máx", "Uno: solo el rango"],
+            "opciones": [
+              "Dos: rango y criterio",
+              "Tres: rango_criterio, criterio y rango_suma",
+              "Cuatro: rango, criterio, mín, máx",
+              "Uno: solo el rango"
+            ],
             "correcta": "Tres: rango_criterio, criterio y rango_suma"
           },
           {
             "pregunta": "¿Dónde vas a cambiar el formato de un número a Moneda?",
-            "opciones": ["Grupo Número de la ficha Inicio", "Ficha Datos", "Barra de estado", "Cuadro de nombres"],
+            "opciones": [
+              "Grupo Número de la ficha Inicio",
+              "Ficha Datos",
+              "Barra de estado",
+              "Cuadro de nombres"
+            ],
             "correcta": "Grupo Número de la ficha Inicio"
           }
         ]
@@ -130,12 +160,36 @@
   "lectura": "CONTAR.SI, SUMAR.SI y PROMEDIO.SI transforman preguntas administrativas en fórmulas: cuántos, cuánto sumo y cuál es el promedio solo de los que cumplen condiciones. El formato de celdas profesionaliza la vista y el formato condicional pinta alertas automáticamente. Juntas, estas herramientas convierten una planilla común en un cuadro de control que se explica solo.",
   "guiaDocente": {
     "plan": [
-      { "titulo": "Apertura y repaso", "que": "Repasar CONTAR y referencias; preguntar qué avisos visuales necesitan", "min": "10 min" },
-      { "titulo": "Formato de celdas", "que": "Recorrer Fuente, Alineación y Número con una planilla desprolija que se ordena", "min": "20 min" },
-      { "titulo": "Formato condicional", "que": "Crear reglas de resaltado y barras de datos en vivo", "min": "20 min" },
-      { "titulo": "CONTAR.SI", "que": "Contar por tipo y por criterio con ejemplos de facturación", "min": "15 min" },
-      { "titulo": "SUMAR.SI y PROMEDIO.SI", "que": "Total y promedio condicionales sobre el mismo cuadro de empleados", "min": "20 min" },
-      { "titulo": "Cierre", "que": "Repaso oral con las preguntas del interactivo", "min": "5 min" }
+      {
+        "titulo": "Apertura y repaso",
+        "que": "Repasar CONTAR y referencias; preguntar qué avisos visuales necesitan",
+        "min": "10 min"
+      },
+      {
+        "titulo": "Formato de celdas",
+        "que": "Recorrer Fuente, Alineación y Número con una planilla desprolija que se ordena",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Formato condicional",
+        "que": "Crear reglas de resaltado y barras de datos en vivo",
+        "min": "20 min"
+      },
+      {
+        "titulo": "CONTAR.SI",
+        "que": "Contar por tipo y por criterio con ejemplos de facturación",
+        "min": "15 min"
+      },
+      {
+        "titulo": "SUMAR.SI y PROMEDIO.SI",
+        "que": "Total y promedio condicionales sobre el mismo cuadro de empleados",
+        "min": "20 min"
+      },
+      {
+        "titulo": "Cierre",
+        "que": "Repaso oral con las preguntas del interactivo",
+        "min": "5 min"
+      }
     ],
     "conecta": [
       "Preguntar qué condiciones usan en el negocio (¿cuántos clientes sin comprar hace 3 meses?) y traducirlas a CONTAR.SI/SUMAR.SI.",

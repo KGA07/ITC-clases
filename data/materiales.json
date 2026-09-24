@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-24T20:06:55.931Z",
+  "generado": "2026-09-24T20:19:35.044Z",
   "fuentes": {
     "local": "I:\\ITC",
     "drive": {
@@ -2621,7 +2621,7 @@
       "stats": {
         "clases": 24,
         "archivos": 263,
-        "tamanoMB": 372.6
+        "tamanoMB": 373.7
       },
       "modulos": [
         {
@@ -3976,7 +3976,7 @@
                   "nombre": "Clase 7 - Formato de celdas y funciones condicionales.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 757325,
+                  "size": 954931,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Clase 7 - Formato de celdas y funciones condicionales.pdf",
                   "url": "",
                   "embebible": false,
@@ -4038,7 +4038,7 @@
                   "nombre": "img/",
                   "tipo": "Carpeta",
                   "emoji": "🗂️",
-                  "size": 122035,
+                  "size": 235132,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/img",
                   "archivos": 2,
                   "url": "",
@@ -4051,7 +4051,7 @@
                   "nombre": "Lectura Clase 7 - Formato de celdas y funciones condicionales.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 669559,
+                  "size": 866621,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Lectura Clase 7 - Formato de celdas y funciones condicionales.pdf",
                   "url": "",
                   "embebible": false,
@@ -4093,19 +4093,19 @@
                   "nombre": "Presentacion Clase 7 - Formato de celdas y funciones condicionales.html",
                   "tipo": "Interactivo",
                   "emoji": "🌐",
-                  "size": 93143,
+                  "size": 325365,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Presentacion Clase 7 - Formato de celdas y funciones condicionales.html",
                   "url": "",
                   "embebible": true,
                   "embedUrl": "/html/interactivos/administracion-pymes-m1-c10-clase-7-funciones-y-formatos-condicionales-presentacion-clase-7-formato-de-celdas-y-funciones-condicionales-html.html",
-                  "notas": "(91 KB)",
+                  "notas": "(318 KB)",
                   "descripcion": "Ejercicio interactivo para abrir en la pagina"
                 },
                 {
                   "nombre": "Presentacion Clase 7 - Formato de celdas y funciones condicionales.pdf",
                   "tipo": "PDF",
                   "emoji": "📕",
-                  "size": 463229,
+                  "size": 653186,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Presentacion Clase 7 - Formato de celdas y funciones condicionales.pdf",
                   "url": "",
                   "embebible": false,
@@ -4115,14 +4115,14 @@
                   "nombre": "Presentacion Clase 7 - Formato de celdas y funciones condicionales.pptx",
                   "tipo": "Presentacion",
                   "emoji": "📽️",
-                  "size": 166812,
+                  "size": 341758,
                   "ruta": "@Clases/Modulo 1 Excel/Clase 7 Funciones y Formatos condicionales/Presentacion Clase 7 - Formato de celdas y funciones condicionales.pptx",
                   "url": "",
                   "embebible": false,
                   "descripcion": ""
                 }
               ],
-              "tamanoBytes": 13437392
+              "tamanoBytes": 14542282
             },
             {
               "id": "administracion-pymes-m1-c11-clase-8-funciones-sifecha",

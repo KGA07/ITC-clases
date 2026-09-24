@@ -393,6 +393,25 @@ OCR de control + revisión visual, backups previos en `...\Temp\opencode\backup-
     (10 capacitaciones, 2295 archivos, ~5603 MB), `npm test` 14/14. Lint: 5
     errores/11 warnings **preexistentes** (no tocados).
 - **Próximo - Curso 1: Administración de PyMEs (cierre/reverificar FASE 6).**
+- **Curso 1 — Administración de PyMEs: FASE 6 cerrada (reverificación).**
+  - Fórmulas ya verificadas (2026-09-23). Reverificación FASE 6 del estándar:
+    15 imágenes referenciadas, 16 en disco; presentaciones 21/21 HTML ≤ 1 MB
+    (máx 446 KB); `check-firma` 624/624, `list-stale-specs` 0, tests 14/14.
+  - OCR de control de las 16 capturas: todas son UI real de Excel/Access
+    (cintas, datos y hojas de práctica visibles).
+  - **Problema detectado**: `excel-formato-condicional.png` era casi duplicada de
+    `excel-contar-si.png` (misma hoja CONTAR.SI, 3 bytes de diferencia MD5) pero
+    estaba sin anclar en la spec 7 y se llamaba "formato condicional".
+  - **Fix**: nueva captura real con Excel 16.0 por COM (libro con EMPRESA/VENTAS,
+    2 reglas xlCellValue: >70 verde y entre/45 azul) → `excel-formato-condicional.png`
+    1366x727, 170 KB, OCR validado. Anclada al bloque «Formato condicional» de
+    `pymes-excel-7.json` (imagen + alt/caption). Backup: `...\Temp\opencode\backup-pymes\`.
+  - Regenerados materiales y presentación de la clase 7 (318 KB HTML). Catálogo
+    regenerado (10 capacitaciones, 2295 archivos, ~5604 MB); interactivo de la
+    clase 7 re-embebido con la nueva captura.
+- **FASE 6 COMPLETA** (10 cursos). Pendientes opcionales anotados: gimnasia lint
+  (5 errores/11 warnings preexistentes en tools/), sync Drive (`run-sync.cmd`),
+  deploy Vercel ya activo por push.
 
 ## Cómo arrancar el proyecto (resumen)
 
