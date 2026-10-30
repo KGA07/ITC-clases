@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#0058FF"/><g fill="#fff"><path d="M146 88v208l40 0 0-208-40 0z"/><path d="M274 88l-64 208 40 0 20-72 68 0 20 72 42 0 L336 88 H274z M292 178 l28 0 -14 -52 0 0 z z z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0.5" x2="0.5" y2="1">
+      <stop offset="0" stop-color="#0057ff"/>
+      <stop offset="1" stop-color="#0656ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <!-- Marca ITC: capas isométricas (igual al logo del login) -->
+  <g>
+    <path d="M256 128 L412 208 L256 288 L100 208 Z" fill="#8fb5ff"/>
+    <path d="M256 216 L412 296 L256 376 L100 296 Z" fill="#3a7eff"/>
+    <path d="M256 304 L412 384 L256 464 L100 384 Z" fill="#ffffff"/>
+  </g>
+</svg>
