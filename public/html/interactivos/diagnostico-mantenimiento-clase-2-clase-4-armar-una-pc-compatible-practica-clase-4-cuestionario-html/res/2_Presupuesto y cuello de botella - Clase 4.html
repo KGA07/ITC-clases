@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Presupuesto y cuello de botella — Clase 4</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--amar:#FFD60A;--txt:#EAF2FF;--panel:rgba(11,16,48,.78);--borde:rgba(34,224,255,.28)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 700px at 8% 92%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:28px 18px 60px}
+.envoltorio{max-width:1080px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 22px;font-size:15px}
+h2{font-size:15px;letter-spacing:2px;color:var(--cian);margin:26px 0 10px;text-transform:uppercase}
+.tarjeta{background:var(--panel);border:1px solid var(--borde);border-radius:12px;padding:18px 20px}
+.fila{display:grid;grid-template-columns:200px 1fr;gap:14px;margin-bottom:12px;align-items:center}
+.fila label{font-size:14px;color:#C9D6EA}
+select,input[type=number]{width:100%;background:#0B1030;color:var(--txt);border:1px solid var(--borde);
+  border-radius:7px;padding:9px 10px;font-size:14px;font-family:inherit}
+select:focus,input:focus{outline:2px solid var(--cian);outline-offset:1px}
+input[type=number]{text-align:right}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:13px 26px;border-radius:7px;
+  font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.acciones{display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--cian);font-weight:600;padding:8px 6px;border-bottom:1px solid var(--borde);font-size:13px}
+td{padding:8px 6px;border-bottom:1px solid rgba(34,224,255,.12)}
+td.num,th.num{text-align:right}
+.total{font-size:18px;font-weight:700;color:var(--amar)}
+.res{display:none}
+.res.on{display:block}
+.medidor{height:26px;border-radius:6px;background:#0B1030;border:1px solid var(--borde);overflow:hidden;display:flex}
+.medidor span{display:block;height:100%}
+.medidor .cpu{background:linear-gradient(90deg,#FF2ED1,#B03BFF)}
+.medidor .gpu{background:linear-gradient(90deg,#22E0FF,#1F6FEB)}
+.leyenda{display:flex;gap:18px;font-size:13px;color:#A9B7C6;margin-top:8px;flex-wrap:wrap}
+.leyenda i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px}
+.veredicto{font-size:20px;font-weight:700;margin:14px 0 4px}
+.ok{color:#22E0FF}.medio{color:var(--amar)}.malo{color:var(--mag)}
+.aviso{border-left:3px solid var(--amar);padding:8px 12px;margin:8px 0;background:rgba(255,214,10,.07);font-size:14px}
+.aviso.grave{border-color:var(--mag);background:rgba(255,46,209,.08)}
+.dato{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(34,224,255,.12);font-size:14px}
+.dato b{color:var(--amar)}
+.chico{font-size:12px;color:#8FA3BC;margin-top:14px;line-height:1.5}
+a{color:var(--cian)}
+@media print{body{background:#fff;color:#111}.tarjeta{border-color:#ccc;background:#fff}select,input{color:#111;background:#fff}}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · CLASE 4</div>
+  <h1>Armá tu PC: presupuesto y cuello de botella</h1>
+  <p class="sub">Elegí las piezas, poné los precios que conseguís y mirá si el sistema queda parejo y si la fuente alcanza.</p>
+
+  <h2>1. Las piezas</h2>
+  <div class="tarjeta">
+    <div class="fila"><label for="cpu">Procesador</label><select id="cpu"></select></div>
+    <div class="fila"><label for="gpu">Placa de video</label><select id="gpu"></select></div>
+    <div class="fila"><label for="ram">Memoria RAM</label><select id="ram"></select></div>
+    <div class="fila"><label for="disco">Almacenamiento</label><select id="disco"></select></div>
+    <div class="fila"><label for="fuente">Fuente</label><select id="fuente"></select></div>
+    <div class="fila"><label for="uso">Uso principal</label>
+      <select id="uso">
+        <option value="oficina">Oficina y estudio</option>
+        <option value="diseno">Diseño y edición</option>
+        <option value="gaming" selected>Gaming 1080p</option>
+      </select></div>
+  </div>
+
+  <h2>2. El presupuesto</h2>
+  <div class="tarjeta">
+    <p class="sub" style="margin:0 0 14px">Poné el precio de cada pieza como te lo cotizaron. Si no tenés el dato, dejalo en 0.</p>
+    <table id="tabla">
+      <thead><tr><th>Pieza</th><th>Modelo</th><th class="num">Precio</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="acciones">
+      <label style="font-size:14px;color:#C9D6EA">Presupuesto máximo
+        <input type="number" id="tope" value="0" min="0" step="1000" style="width:140px;margin-left:8px"></label>
+    </div>
+    <div class="acciones" style="margin-top:16px;justify-content:space-between">
+      <span class="total" id="total">Total: $ 0</span>
+      <div><button type="button" class="sec" id="limpiar">Limpiar precios</button>
+      <button type="button" id="calcular">Calcular</button></div>
+    </div>
+  </div>
+
+  <div class="res" id="res">
+    <h2>3. Resultado</h2>
+    <div class="tarjeta">
+      <div class="veredicto" id="veredicto"></div>
+      <div class="leyenda" style="margin:0 0 6px">
+        <span><i style="background:#FF2ED1"></i>Procesador <b id="pct-cpu"></b></span>
+      </div>
+      <div class="medidor"><span class="cpu" id="barra-cpu"></span></div>
+      <div class="leyenda" style="margin:12px 0 6px">
+        <span><i style="background:#22E0FF"></i>Placa de video <b id="pct-gpu"></b></span>
+      </div>
+      <div class="medidor"><span class="gpu" id="barra-gpu"></span></div>
+      <div class="dato"><span>Índice del procesador</span><b id="idx-cpu"></b></div>
+      <div class="dato"><span>Índice de la placa de video</span><b id="idx-gpu"></b></div>
+      <div class="dato"><span>Consumo estimado (CPU + GPU + 60 W)</span><b id="cons"></b></div>
+      <div class="dato"><span>Fuente recomendada (con 30 % de margen)</span><b id="rec"></b></div>
+      <div class="dato"><span>Fuente elegida</span><b id="eleg"></b></div>
+      <div id="avisos"></div>
+    </div>
+  </div>
+
+  <p class="chico">
+    Los índices son <b>orientativos del curso</b>: sirven para comparar piezas entre sí, no son un benchmark ni un número de FPS.
+    Los consumos son los de fábrica (TDP) de cada modelo. Los precios los carga el alumno: la herramienta no cotiza.
+  </p>
+</div>
+
+<script>
+// índices orientativos: CPU y GPU escalados de 0 a 100 dentro de la misma familia de uso
+const CPUS = [
+  {n:"Core i3-12100 · 4 núcleos / 8 hilos", tdp:60, idx:55},
+  {n:"Core i5-12400F · 6 / 12", tdp:65, idx:75},
+  {n:"Core i5-13400 · 10 / 16", tdp:65, idx:80},
+  {n:"Core i5-13600K · 14 / 20", tdp:125, idx:95},
+  {n:"Ryzen 5 5600 · 6 / 12", tdp:65, idx:72},
+  {n:"Ryzen 5 5600G · 6 / 12 · video integrado", tdp:65, idx:70},
+  {n:"Ryzen 5 7600 · 6 / 12", tdp:65, idx:88},
+  {n:"Ryzen 7 5700X · 8 / 16", tdp:65, idx:85},
+  {n:"Ryzen 7 7800X3D · 8 / 16", tdp:120, idx:100}
+];
+const GPUS = [
+  {n:"Sin placa dedicada (video integrado)", tdp:0, idx:12},
+  {n:"GeForce GTX 1650 · 4 GB", tdp:75, idx:40},
+  {n:"Radeon RX 6600 · 8 GB", tdp:132, idx:60},
+  {n:"GeForce RTX 3060 · 12 GB", tdp:170, idx:65},
+  {n:"GeForce RTX 4060 · 8 GB", tdp:115, idx:70},
+  {n:"Radeon RX 7600 · 8 GB", tdp:165, idx:72},
+  {n:"GeForce RTX 4060 Ti · 8 GB", tdp:160, idx:80},
+  {n:"GeForce RTX 4070 · 12 GB", tdp:200, idx:90},
+  {n:"GeForce RTX 4070 Super · 12 GB", tdp:220, idx:95}
+];
+const RAMS = [
+  {n:"8 GB DDR4 (1 módulo)", gb:8, factor:0.80},
+  {n:"16 GB DDR4 (2 × 8, doble canal)", gb:16, factor:1.00},
+  {n:"32 GB DDR5 (2 × 16, doble canal)", gb:32, factor:1.00},
+  {n:"8 GB DDR4 (2 × 4, doble canal)", gb:8, factor:0.86}
+];
+const DISCOS = [
+  {n:"Disco mecánico (HDD)", factor:0.55, aviso:"Un HDD con Windows 10 u 11 es un cuello de botella por sí solo: el disco llega al 100 %."},
+  {n:"SSD SATA", factor:0.90, aviso:""},
+  {n:"SSD NVMe Gen3", factor:1.00, aviso:""},
+  {n:"SSD NVMe Gen4", factor:1.00, aviso:""}
+];
+const FUENTES = [400, 450, 500, 550, 600, 650, 750, 850];
+
+const $ = id => document.getElementById(id);
+const fmt = n => "$ " + n.toLocaleString("es-AR");
+
+function llenar(sel, arr){
+  arr.forEach((o,i)=>{ const op=document.createElement("option"); op.value=i; op.textContent=o.n; sel.appendChild(op); });
+}
+llenar($("cpu"), CPUS); llenar($("gpu"), GPUS); llenar($("ram"), RAMS); llenar($("disco"), DISCOS);
+FUENTES.forEach(w=>{ const op=document.createElement("option"); op.value=w; op.textContent=w+" W"; $("fuente").appendChild(op); });
+$("cpu").value = 1; $("gpu").value = 4; $("ram").value = 1; $("disco").value = 2; $("fuente").value = 500;
+
+const precios = {};
+function pintarTabla(){
+  const partes = [
+    ["Procesador", CPUS[$("cpu").value].n],
+    ["Placa de video", GPUS[$("gpu").value].n],
+    ["Memoria RAM", RAMS[$("ram").value].n],
+    ["Almacenamiento", DISCOS[$("disco").value].n],
+    ["Fuente", $("fuente").selectedOptions[0].textContent]
+  ];
+  const tb = $("tabla").querySelector("tbody");
+  tb.innerHTML = "";
+  partes.forEach((p,i)=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = "<td>"+p[0]+"</td><td>"+p[1]+"</td>"+
+      '<td class="num"><input type="number" min="0" step="1000" data-i="'+i+'" value="'+(precios[i]||0)+'" style="width:130px"></td>';
+    tb.appendChild(tr);
+  });
+  tb.querySelectorAll("input").forEach(inp=>{
+    inp.oninput = ()=>{ precios[inp.dataset.i] = Number(inp.value)||0; sumar(); };
+  });
+  sumar();
+}
+function sumar(){
+  const total = Object.values(precios).reduce((a,b)=>a+b,0);
+  $("total").textContent = "Total: " + fmt(total);
+  return total;
+}
+
+function calcular(){
+  const cpu = CPUS[$("cpu").value], gpu = GPUS[$("gpu").value];
+  const ram = RAMS[$("ram").value], disco = DISCOS[$("disco").value];
+  const fuente = Number($("fuente").value);
+  const uso = $("uso").value;
+
+  // cuello de botella: diferencia relativa entre CPU y GPU, corregida por RAM y disco
+  const idxCPU = cpu.idx * ram.factor * disco.factor;
+  const idxGPU = gpu.idx * ram.factor * disco.factor;
+  const bajo = Math.min(idxCPU, idxGPU), alto = Math.max(idxCPU, idxGPU);
+  let pct = alto > 0 ? Math.round((1 - bajo/alto) * 100) : 0;
+
+  const anchoCPU = Math.round(idxCPU), anchoGPU = Math.round(idxGPU);
+  $("barra-cpu").style.width = Math.min(100, anchoCPU) + "%";
+  $("barra-gpu").style.width = Math.min(100, anchoGPU) + "%";
+
+  $("pct-cpu").textContent = idxCPU.toFixed(0);
+  $("pct-gpu").textContent = idxGPU.toFixed(0);
+  $("idx-cpu").textContent = cpu.idx + " (con RAM y disco: " + idxCPU.toFixed(0) + ")";
+  $("idx-gpu").textContent = gpu.idx + (gpu.idx ? " (con RAM y disco: " + idxGPU.toFixed(0) + ")" : "");
+
+  let quien = "";
+  if (idxCPU < idxGPU) quien = "el procesador";
+  else if (idxGPU < idxCPU) quien = "la placa de video";
+  else quien = "ninguno: están parejos";
+
+  let clase, texto;
+  if (pct <= 10){ clase="ok"; texto="Sistema equilibrado"; }
+  else if (pct <= 20){ clase="medio"; texto="Cuello leve"; }
+  else if (pct <= 35){ clase="medio"; texto="Cuello notable"; }
+  else { clase="malo"; texto="Cuello grosero"; }
+  $("veredicto").className = "veredicto " + clase;
+  $("veredicto").textContent = texto + " · " + pct + " % de diferencia";
+
+  // watts
+  const consumo = cpu.tdp + gpu.tdp + 60;
+  const recomendada = Math.ceil(consumo * 1.3 / 50) * 50;
+  $("cons").textContent = consumo + " W";
+  $("rec").textContent = recomendada + " W";
+  $("eleg").textContent = fuente + " W";
+
+  // avisos
+  const av = $("avisos"); av.innerHTML = "";
+  const add = (txt, grave) => { const d=document.createElement("div"); d.className="aviso"+(grave?" grave":""); d.textContent=txt; av.appendChild(d); };
+
+  if (pct > 10 && pct <= 35) add("El cuello está en " + quien + ". Emparejá esa pieza antes que nada.");
+  if (pct > 35) add("El cuello está en " + quien + " y es grande: el otro componente queda esperando la mayor parte del tiempo.", true);
+  if (pct <= 10) add("Las piezas están parejas: no hay una que frene a la otra.");
+
+  if (fuente < recomendada) add("La fuente de " + fuente + " W no alcanza: se recomiendan " + recomendada + " W. Riesgo de reinicios y apagones.", true);
+  else if (fuente < recomendada * 1.1) add("La fuente alcanza justo. Si más adelante cambiás la placa de video, no va a alcanzar.");
+  else add("La fuente tiene margen suficiente para esa configuración.");
+
+  if (ram.gb <= 8 && (uso === "diseno" || gpu.idx >= 60))
+    add("Con 8 GB de RAM y ese uso vas a paginar: el disco va a trabajar al 100 %. Pasá a 16 GB.", true);
+  if (uso === "diseno" && ram.gb < 32)
+    add("Para diseño y edición conviene 32 GB, sobre todo con video.");
+  if (disco.factor < 1) add(disco.aviso, disco.factor < 0.7);
+
+  if (gpu.idx === 12 && (uso === "gaming")) add("Con video integrado no hay gaming real: el cuello es la GPU.", true);
+  if (uso === "oficina" && gpu.idx >= 60) add("Para oficina esa placa de video está de más: es plata que no se aprovecha.");
+  if (uso === "oficina" && cpu.idx >= 88) add("Para oficina ese procesador está de más: alcanza con uno de gama media.");
+
+  const tope = Number($("tope").value) || 0;
+  if (tope > 0){
+    const t = sumar();
+    if (t === 0) add("Cargá los precios para comparar con el presupuesto máximo.");
+    else if (t > tope) add("El presupuesto se pasa por " + fmt(t - tope) + " del máximo que pusiste.", true);
+    else add("El presupuesto entra en el máximo: quedan " + fmt(tope - t) + ".");
+  }
+
+  $("res").classList.add("on");
+  $("res").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+["cpu","gpu","ram","disco","fuente"].forEach(id => $(id).onchange = pintarTabla);
+$("calcular").onclick = calcular;
+$("limpiar").onclick = ()=>{ Object.keys(precios).forEach(k=>delete precios[k]); pintarTabla(); $("res").classList.remove("on"); };
+pintarTabla();
+</script>
+</body>
+</html>

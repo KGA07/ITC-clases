@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 7</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 07</div>
+  <h1>Tarjetas de video</h1>
+  <p class="sub">Diecisiete preguntas. <a href="res/1_Practica Clase 7 - Tarjetas de video.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>17 de 17 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿Qué es la VRAM?", o:["La RAM del sistema","La memoria propia de la placa de video","La caché del procesador","El disco del sistema"], c:1,
+  e:"Es memoria propia de la placa: guarda texturas y buffers. No se amplía y no le quita RAM al sistema."},
+ {q:"Con video integrado, ¿de dónde sale la memoria de video?", o:["De una memoria dedicada","De la RAM del sistema","Del disco","De la caché del procesador"], c:1,
+  e:"La integrada usa parte de la RAM del sistema, por eso el rendimiento depende de cuánta memoria haya."},
+ {q:"¿Cuánta VRAM conviene para 1080p en alto?", o:["2 GB","4 GB","8 GB","24 GB"], c:2,
+  e:"8 GB es el piso cómodo para 1080p en alto y edición sencilla. 4 GB quedan justas."},
+ {q:"Una placa de gama baja, ¿de dónde toma la energía?", o:["Solo del slot PCIe, hasta 75 W","De un conector 12VHPWR","De la fuente por Molex","Del procesador"], c:0,
+  e:"Hasta 75 W alcanza con el slot. Las de gama media y alta necesitan conectores PCIe propios."},
+ {q:"¿Qué conector usan las placas más nuevas?", o:["Molex","SATA","12VHPWR","EPS"], c:2,
+  e:"12VHPWR lleva más pines en menos espacio. Siempre sale de la fuente, no de un adaptador."},
+ {q:"La fuente queda justa bajo carga. ¿Qué pasa?", o:["Nada","La PC se apaga o se reinicia","La placa rinde más","Sube la temperatura del CPU"], c:1,
+  e:"Una fuente justa no se rompe: corta o reinicia. Por eso se calcula con 30 % de margen."},
+ {q:"¿En qué slot va la placa de video?", o:["DIMM","M.2","PCIe x16","SATA"], c:2,
+  e:"PCIe x16, el más largo y el más cercano al procesador. Tiene traba: se aprieta antes de sacar la placa."},
+ {q:"Una placa PCIe 4.0 en un slot PCIe 3.0, ¿funciona?", o:["No, no entra","Sí, algo más lenta","Sí, igual de rápida","Solo con adaptador"], c:1,
+  e:"El slot es compatible hacia atrás: funciona, con menos ancho de banda. En uso diario casi no se nota."}
+,
+ {q:"¿Qué muestra GPU-Z en la pestaña Sensors?", o:["El modelo de la placa madre","Temperatura, carga, consumo y frecuencias en vivo","Los archivos del disco","La versión de Windows"], c:1,
+  e:"Sensores en tiempo real: clocks, temperatura, carga, consumo y uso de VRAM."},
+ {q:"¿Cómo se limpia el disipador de una placa de video?", o:["Con agua","Aire comprimido en ráfagas cortas, frenando los ventiladores","Con aspiradora","Con alcohol en todo el disipador"], c:1,
+  e:"Aire en ráfagas cortas y el dedo frenando las aspas, para no hacer girar el ventilador de más."},
+ {q:"La pantalla parpadea y el controlador es de hace años. ¿Qué se hace primero?", o:["Cambiar la placa","Actualizar el controlador desde el fabricante","Cambiar la fuente","Reinstalar Windows"], c:1,
+  e:"Antes de dar la placa por muerta: controlador del fabricante, otro cable y otro monitor."}
+,
+ {q:"¿Hasta qué resolución y refresco llega HDMI 2.1?", o:["4K a 60 Hz","4K a 120 Hz","1080p a 60 Hz","8K a 120 Hz"], c:1,
+  e:"HDMI 2.0 llega a 4K 60 Hz; HDMI 2.1 sube a 4K 120 Hz y 8K 60 Hz, con cable Ultra High Speed."},
+ {q:"Conectás un monitor de 144 Hz por un HDMI viejo. ¿Qué pasa?", o:["Anda a 144 Hz igual","Puede quedar limitado a 60 Hz","No enciende","Se rompe el monitor"], c:1,
+  e:"El cable y la versión del puerto limitan: si no alcanza el ancho de banda, baja el refresco."},
+ {q:"¿Cuántas pantallas puede manejar una placa dedicada típica?", o:["Una","Dos","Hasta cuatro","Ocho"], c:2,
+  e:"La mayoría soporta hasta cuatro salidas simultáneas, según el modelo. El límite lo pone el ancho de banda."},
+ {q:"¿Cuál es una señal de que una placa estuvo minando?", o:["Tiene caja","BIOS modificada y ventiladores gastados","Es de color negro","Tiene dos ventiladores"], c:1,
+  e:"Se compara la BIOS con la del fabricante en GPU-Z y se revisan ventiladores. Varias unidades iguales sin caja también es señal."},
+ {q:"Aparecen artefactos y líneas en la pantalla. ¿A qué apunta?", o:["A la fuente","A la memoria de video o al núcleo","Al disco","Al teclado"], c:1,
+  e:"Se prueba con otro driver y con relojes más bajos. Si persiste en otro equipo, la placa está fallando."},
+ {q:"¿Qué hace el undervolt?", o:["Sube la frecuencia","Baja el voltaje manteniendo la frecuencia","Apaga los ventiladores","Aumenta la VRAM"], c:1,
+  e:"Baja temperatura y consumo sin perder rendimiento. En una PC de trabajo rinde más que el overclock."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

@@ -1,0 +1,174 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practica Clase 21 - Redes en Cisco Packet Tracer</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070A1A;color:#EAF2FF;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#0B1030,#1a1a4e);border-left:4px solid #FF2ED1;padding:20px 30px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;border-radius:8px;flex-wrap:wrap}
+.header h1{margin:0;font-size:28px;color:#fff;text-shadow:0 0 18px rgba(34,224,255,.35)}
+.header .marca{color:#22E0FF;font-size:12px;letter-spacing:2px}
+.ej{margin-bottom:40px;background:#0B1030;border-radius:12px;padding:25px;border:1px solid rgba(34,224,255,.15)}
+.ej h2{font-size:22px;color:#22E0FF;margin:0 0 12px}
+.cons{font-size:16px;line-height:1.5;color:#DCE8FA;margin:0 0 15px;font-weight:500}
+.pasos{font-size:14px;line-height:1.6;color:#C9D6EA;padding-left:25px}
+.pasos li{margin-bottom:6px}
+.entrega{margin-top:15px;background:rgba(34,224,255,.10);border-left:3px solid #22E0FF;padding:12px 15px;font-size:14px;border-radius:4px}
+.capture-block{margin:20px 0;background:#050814;border-radius:8px;overflow:hidden;border:1px solid rgba(255,46,209,.3)}
+.capture-img{width:100%;height:auto;display:block;border-bottom:2px solid #FF2ED1}
+.capture-info{padding:15px;background:rgba(11,16,48,.8)}
+.capture-info h4{color:#FF2ED1;font-size:16px;margin:0 0 8px}
+.capture-info p{color:#C9D6EA;font-size:13px;line-height:1.5;margin:0 0 10px}
+.glosario{margin-top:12px;background:rgba(34,224,255,.05);border-radius:6px;padding:10px;border:1px solid rgba(34,224,255,.15)}
+.glosario-titulo{color:#22E0FF;font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:1px}
+.glosario-table{width:100%;border-collapse:collapse;font-size:12px}
+.glosario-table th{background:rgba(255,46,209,.3);color:#fff;padding:4px 8px;text-align:left;font-size:11px}
+.glosario-table td{padding:4px 8px;border-bottom:1px solid rgba(34,224,255,.1);color:#C9D6EA}
+.glosario-table td.en{color:#FF2ED1;font-weight:600;font-family:monospace;font-size:11px}
+.glosario-table td.es{color:#DCE8FA}
+.nota{background:rgba(255,200,0,.1);border-left:3px solid #FFD700;padding:10px 15px;margin:0 0 15px;font-size:13px;color:#FFE082;border-radius:4px}
+.intro-section{margin-bottom:40px}
+.intro-section h2{font-size:22px;color:#FF2ED1;margin:0 0 15px}
+.footer{margin-top:40px;border-top:1px solid rgba(34,224,255,.2);padding-top:15px;font-size:12px;color:#8FA3BF;display:flex;justify-content:space-between;flex-wrap:wrap}
+@media (max-width:768px){.container{padding:10px}.header{flex-direction:column;text-align:center}.header h1{font-size:22px}.glosario-table{font-size:10px}}
+</style>
+</head><body>
+<div class="container">
+<div class="header">
+  <h1>PRACTICA 21 &mdash; Redes en Cisco Packet Tracer</h1>
+  <span class="marca">ITC &bull; 2026</span>
+</div>
+
+<section class="intro-section"><h2>Antes de empezar: la interfaz de Packet Tracer</h2><p class="nota">Packet Tracer es un programa en ingles. Abajo de cada captura hay un glosario que traduce los terminos principales al espanol.</p>
+<div class="capture-block">
+  <img src="res/1_pt-interfaz.png" alt="Interfaz principal de Packet Tracer" class="capture-img">
+  <div class="capture-info">
+    <h4>Interfaz principal de Packet Tracer</h4>
+    <p>Ventana principal de Cisco Packet Tracer. Arriba la barra de menus, en el centro el lienzo donde se arma la red, y abajo la barra de equipos para arrastrar dispositivos.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>File, Edit, Options, View, Tools...</td><td class='es'>Menus principales del programa</td></tr><tr><td class='en'>Realtime / Simulation</td><td class='es'>Modo tiempo real / Modo simulacion (ver paquetes paso a paso)</td></tr><tr><td class='en'>Physical / Logical</td><td class='es'>Vista fisica (cables reales) / Vista logica (topologia de red)</td></tr><tr><td class='en'>End Devices, Switches, Routers, Connections</td><td class='es'>Categorias de equipos: dispositivos finales, switches, routers, conexiones</td></tr><tr><td class='en'>New / Open / Save</td><td class='es'>Nuevo / Abrir / Guardar archivo</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="capture-block">
+  <img src="res/2_pt-simulation.png" alt="Modo simulacion" class="capture-img">
+  <div class="capture-info">
+    <h4>Modo simulacion</h4>
+    <p>En modo simulacion se pueden ver los paquetes de datos viajando por la red paso a paso. Sirve para detectar problemas de conectividad.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>Simulation</td><td class='es'>Modo simulacion (ver paquetes paso a paso)</td></tr><tr><td class='en'>Auto Capture / Play</td><td class='es'>Captura automatica / Reproducir</td></tr><tr><td class='en'>Event List</td><td class='es'>Lista de eventos (paquetes en transito)</td></tr><tr><td class='en'>PDU</td><td class='es'>Unidad de datos del protocolo (paquete)</td></tr><tr><td class='en'>Filter</td><td class='es'>Filtrar tipos de paquetes a mostrar</td></tr><tr><td class='en'>Reset Simulation</td><td class='es'>Reiniciar la simulacion</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="ej">
+<h2>1. Red LAN domestica</h2>
+<p class="cons">Arma una red de casa con 2 PCs, 1 switch y 1 router. Configura las IPs y prueba conectividad con ping.</p>
+<ol class="pasos"><li>Abri Packet Tracer y crea un nuevo archivo (File - New).</li><li>Arrastra 2 PCs al lienzo desde la barra de end devices.</li><li>Arrastra 1 switch 2960 y 1 router 1941 al lienzo.</li><li>Conecta PC1 y PC2 al switch con cable Copper Straight-Through.</li><li>Conecta el switch al router con cable Copper Straight-Through.</li><li>Haz clic en PC1, Desktop, IP Configuration. IP: 192.168.1.10, mascara: 255.255.255.0, gateway: 192.168.1.1.</li><li>Haz clic en PC2, Desktop, IP Configuration. IP: 192.168.1.11, mascara: 255.255.255.0, gateway: 192.168.1.1.</li><li>Haz clic en el router, CLI. Escribe: enable, configure terminal, interface FastEthernet0/0, ip address 192.168.1.1 255.255.255.0, no shutdown, end.</li><li>Prueba conectividad: en PC1, Desktop, Command Prompt, escribe ping 192.168.1.11 (a PC2) y ping 192.168.1.1 (al router).</li><li>Guarda: File, Save As, red-casa.pkt.</li></ol>
+
+<div class="capture-block">
+  <img src="res/3_pt-lan-dhcp.png" alt="Red LAN con DHCP configurado" class="capture-img">
+  <div class="capture-info">
+    <h4>Red LAN con DHCP configurado</h4>
+    <p>Red local donde las computadoras reciben su direccion IP automaticamente del servidor DHCP. Se ven los equipos conectados al switch.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>DHCP Server</td><td class='es'>Servidor que asigna IPs automaticamente</td></tr><tr><td class='en'>IP Address</td><td class='es'>Direccion IP del equipo</td></tr><tr><td class='en'>Subnet Mask</td><td class='es'>Mascara de subred (ej: 255.255.255.0)</td></tr><tr><td class='en'>Default Gateway</td><td class='es'>Puerta de enlace (IP del router)</td></tr><tr><td class='en'>FastEthernet0/0</td><td class='es'>Interfaz de red del router (puerto Ethernet)</td></tr><tr><td class='en'>Copper Straight-Through</td><td class='es'>Cable recto (PC a switch)</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="capture-block">
+  <img src="res/4_pt-device-config.png" alt="Configuracion de un dispositivo" class="capture-img">
+  <div class="capture-info">
+    <h4>Configuracion de un dispositivo</h4>
+    <p>Al hacer doble clic en un dispositivo se abre su panel de configuracion. Desde ahi se asignan IPs, se configura el router por linea de comandos, y se verifica la conectividad.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>Desktop</td><td class='es'>Escritorio del dispositivo (apps como IP Config, Command Prompt)</td></tr><tr><td class='en'>Config</td><td class='es'>Configuracion basica del dispositivo</td></tr><tr><td class='en'>CLI</td><td class='es'>Linea de comandos (para routers y switches)</td></tr><tr><td class='en'>Physical</td><td class='es'>Vista fisica del dispositivo (modulos, puertos)</td></tr><tr><td class='en'>IP Configuration</td><td class='es'>Configuracion de direccion IP</td></tr><tr><td class='en'>Command Prompt</td><td class='es'>Terminal de comandos (para hacer ping)</td></tr><tr><td class='en'>no shutdown</td><td class='es'>Comando para activar una interfaz de red</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p class="entrega"><b>Que se entrega:</b> Archivo red-casa.pkt con la LAN configurada y ping exitoso entre PCs.</p>
+</section><section class="ej">
+<h2>2. Red WiFi</h2>
+<p class="cons">Arma una red inalambrica con 1 access point y 2 laptops con WiFi. Configura SSID y seguridad WPA2.</p>
+<ol class="pasos"><li>Abri Packet Tracer y crea un nuevo archivo.</li><li>Arrastra 1 access point (AP-PT) al lienzo desde la barra de redes inalambricas.</li><li>Arrastra 2 laptops al lienzo. Verifica que tengan tarjeta WiFi (pestana Physical, agregar modulo WiFi).</li><li>Haz clic en el AP, Config, Port 1 (Wireless). Configura SSID: RedCasa, cifrado: WPA2-PSK, contrasena: clave123.</li><li>En cada laptop: Desktop, PC Wireless, Connect. Selecciona RedCasa e ingresa la contrasena.</li><li>Verifica que ambas laptops muestren Connected y tengan IP asignada (DHCP del AP).</li><li>Prueba ping entre las dos laptops.</li><li>Guarda: File, Save As, red-wifi.pkt.</li></ol>
+
+<div class="capture-block">
+  <img src="res/5_pt-wireless-ap.png" alt="Access Point WiFi configurado" class="capture-img">
+  <div class="capture-info">
+    <h4>Access Point WiFi configurado</h4>
+    <p>Access point configurado con nombre de red (SSID) y seguridad WPA2. Los dispositivos con WiFi se conectan a esta red ingresando la contrasena.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>SSID</td><td class='es'>Nombre de la red WiFi</td></tr><tr><td class='en'>WPA2-PSK</td><td class='es'>Tipo de seguridad (contrasena compartida)</td></tr><tr><td class='en'>Port 1 (Wireless)</td><td class='es'>Puerto inalambrico del access point</td></tr><tr><td class='en'>PC Wireless</td><td class='es'>Configuracion WiFi de la computadora</td></tr><tr><td class='en'>Connected</td><td class='es'>Conectado exitosamente</td></tr><tr><td class='en'>DHCP</td><td class='es'>Asignacion automatica de IP</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p class="entrega"><b>Que se entrega:</b> Archivo red-wifi.pkt con red WiFi configurada y dispositivos conectados.</p>
+</section><section class="ej">
+<h2>3. Red de servidores para supermercado</h2>
+<p class="cons">Arma una red de supermercado con servidor DNS/DHCP, 3 cajas (PCs) y un switch. Configura IPs y servicios.</p>
+<ol class="pasos"><li>Abri Packet Tracer y crea un nuevo archivo.</li><li>Arrastra 1 servidor, 1 switch 2960 y 3 PCs al lienzo.</li><li>Conecta todos los dispositivos al switch con cable Copper Straight-Through.</li><li>Configura el servidor: IP 192.168.10.1/24, activa servicios DNS y DHCP.</li><li>En DHCP: rango de IPs 192.168.10.100 a 192.168.10.200, gateway 192.168.10.1.</li><li>Configura las 3 PCs con IP automatica (DHCP) - deben recibir IP del servidor.</li><li>Prueba ping desde cada PC al servidor y entre PCs.</li><li>Prueba resolver un nombre: en Command Prompt de una PC, escribe ping www.mercado.local (si configuraste DNS).</li><li>Guarda: File, Save As, red-supermercado.pkt.</li></ol>
+
+<div class="capture-block">
+  <img src="res/6_pt-dns-server.png" alt="Servidor DNS configurado" class="capture-img">
+  <div class="capture-info">
+    <h4>Servidor DNS configurado</h4>
+    <p>Servidor DNS que traduce nombres de dominio a direcciones IP. Las computadoras de la red consultan este servidor para resolver nombres.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>DNS Service</td><td class='es'>Servicio DNS (traduce nombres a IPs)</td></tr><tr><td class='en'>DHCP Service</td><td class='es'>Servicio DHCP (asigna IPs automaticamente)</td></tr><tr><td class='en'>Resource Records</td><td class='es'>Registros DNS (A, CNAME, MX, etc.)</td></tr><tr><td class='en'>Name</td><td class='es'>Nombre de dominio (ej: www.ejemplo.com)</td></tr><tr><td class='en'>Address</td><td class='es'>Direccion IP asociada al nombre</td></tr><tr><td class='en'>ping www.ejemplo.com</td><td class='es'>Comando para probar resolucion DNS</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p class="entrega"><b>Que se entrega:</b> Archivo red-supermercado.pkt con servidor y cajas configurados.</p>
+</section><section class="ej">
+<h2>4. Red WAN entre provincias</h2>
+<p class="cons">Arma una red WAN con 2 routers conectados por un enlace serial, cada uno con su LAN local. Prueba conectividad entre sedes.</p>
+<ol class="pasos"><li>Abri Packet Tracer y crea un nuevo archivo.</li><li>Arrastra 2 routers 1941 y 2 switches 2960 y 4 PCs al lienzo.</li><li>Conecta 2 PCs a cada switch (LAN local de cada sede).</li><li>Conecta cada switch a su router con cable Copper Straight-Through.</li><li>Conecta los 2 routers con cable Serial DCE/DTE (el DCE va al router que proporciona clock).</li><li>Configura LAN sede 1: router FastEthernet0/0 = 192.168.1.1/24, PCs = 192.168.1.10 y .11.</li><li>Configura LAN sede 2: router FastEthernet0/0 = 192.168.2.1/24, PCs = 192.168.2.10 y .11.</li><li>Configura el enlace WAN: router1 Serial0/0/0 = 10.0.0.1/30, router2 Serial0/0/0 = 10.0.0.2/30.</li><li>En router1: ip route 192.168.2.0 255.255.255.0 10.0.0.2 (ruta estatica).</li><li>En router2: ip route 192.168.1.0 255.255.255.0 10.0.0.1 (ruta estatica).</li><li>Prueba: ping desde PC de sede 1 a PC de sede 2.</li><li>Guarda: File, Save As, red-wan.pkt.</li></ol>
+
+<div class="capture-block">
+  <img src="res/7_pt-wan-static.png" alt="Red WAN con rutas estaticas" class="capture-img">
+  <div class="capture-info">
+    <h4>Red WAN con rutas estaticas</h4>
+    <p>Dos routers conectados por un enlace serial (WAN). Cada router tiene su red local y rutas estaticas hacia la otra red, permitiendo comunicacion entre sedes.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura (ingles -&gt; espanol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingles</th><th>Significado en espanol</th></tr></thead>
+        <tbody><tr><td class='en'>Serial0/0/0</td><td class='es'>Interfaz serial del router (enlace WAN)</td></tr><tr><td class='en'>DCE / DTE</td><td class='es'>Tipos de cable serial (DCE provee clock)</td></tr><tr><td class='en'>ip route</td><td class='es'>Comando para agregar ruta estatica</td></tr><tr><td class='en'>no shutdown</td><td class='es'>Activar la interfaz</td></tr><tr><td class='en'>FastEthernet0/0</td><td class='es'>Interfaz LAN del router</td></tr><tr><td class='en'>ping</td><td class='es'>Comando para probar conectividad</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<p class="entrega"><b>Que se entrega:</b> Archivo red-wan.pkt con 2 sedes conectadas y ping exitoso.</p>
+</section>
+
+<div class="footer">
+  <span>Informatic Training Center &bull; Diagnostico y Mantenimiento</span>
+  <span>@gustavokempe</span>
+</div>
+</div>
+</body></html>

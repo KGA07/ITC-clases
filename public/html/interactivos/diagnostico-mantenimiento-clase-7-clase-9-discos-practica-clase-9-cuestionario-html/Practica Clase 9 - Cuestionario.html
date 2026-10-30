@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 9</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 09</div>
+  <h1>Discos rígidos, SSD y NVMe</h1>
+  <p class="sub">Veintiún preguntas. <a href="res/1_Practica Clase 9 - Discos rígidos, SSD y NVMe.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>21 de 21 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿En qué año apareció el primer disco magnético, el IBM RAMAC?", o:["1946","1956","1973","1980"], c:1,
+  e:"1956: 50 platos de 24 pulgadas y 5 MB en total. Un solo brazo para todos los platos."},
+ {q:"¿Qué parte del disco mueve los cabezales de una pista a otra?", o:["El motor del eje","El brazo actuador","El filtro","La PCB"], c:1,
+  e:"El brazo actuador mueve todos los cabezales a la vez. El motor hace girar los platos."},
+ {q:"¿Qué hace el cabezal al apagarse el disco?", o:["Se queda donde está","Se apoya en la zona de aparcamiento","Se desmonta","Se enfría"], c:1,
+  e:"Aterriza en una zona especial y despega al encender. Un golpe con el cabezal apoyado puede arruinar el plato."},
+ {q:"¿Qué velocidad de giro tiene un disco de escritorio común?", o:["5400 RPM","7200 RPM","10000 RPM","15000 RPM"], c:1,
+  e:"7200 RPM es lo común en escritorio; 5400 en portátiles y discos de archivo."},
+ {q:"¿El SSD tiene partes móviles?", o:["Sí, un motor chico","No: guarda en memoria flash","Solo el ventilador","Sí, pero más lentas"], c:1,
+  e:"No tiene partes móviles: por eso no hace ruido, no se desfragmenta y aguanta mejor los golpes."},
+ {q:"¿Qué hace TRIM?", o:["Borra archivos","Avisa al SSD que esos bloques ya no se usan","Aumenta la capacidad","Enfría el disco"], c:1,
+  e:"Le avisa al controlador para que libere bloques y no los reescriba al pedo."},
+ {q:"¿Qué significa M.2 2280?", o:["22 GB y 80 MB/s","22 mm de ancho por 80 mm de largo","2280 MB/s","22 pines y 80 contactos"], c:1,
+  e:"Es el tamaño físico del módulo. Otros comunes: 2242, 2260 y 22110."},
+ {q:"¿Qué velocidad tiene SATA III?", o:["1,5 Gb/s","3 Gb/s","6 Gb/s","16 Gb/s"], c:2,
+  e:"6 Gb/s, unos 600 MB/s reales. SATA I: 1,5 Gb/s; SATA II: 3 Gb/s."},
+ {q:"¿Cuál es el límite del esquema de particiones MBR?", o:["1 TB","2 TB","4 TB","No tiene límite"], c:1,
+  e:"MBR llega a 2 TB y 4 particiones primarias. GPT no tiene ese límite."},
+ {q:"¿Qué sistema de archivos no acepta archivos de más de 4 GB?", o:["NTFS","exFAT","FAT32","ReFS"], c:2,
+  e:"FAT32 es compatible con todo pero corta en 4 GB por archivo. Para eso está exFAT."},
+ {q:"¿Qué comando lista los discos con modelo, tamaño y estado?", o:["dir /s","wmic diskdrive get model,size,status","ipconfig","tasklist"], c:1,
+  e:"wmic diskdrive devuelve modelo, tamaño, estado e interfaz. diskpart list disk es la otra opción."},
+ {q:"¿Qué muestra CrystalDiskInfo?", o:["La temperatura del CPU","La salud del disco según el SMART","La velocidad de internet","La RAM libre"], c:1,
+  e:"Traduce el SMART: estado, horas de encendido, sectores reasignados y temperatura."}
+,
+ {q:"¿Qué es un cilindro en un disco rígido?", o:["Un sector con más capacidad","La misma pista en todos los platos","El eje del motor","Un bloque dañado"], c:1,
+  e:"La misma pista en todos los platos: se lee sin mover el brazo, por eso es más eficiente."},
+ {q:"¿Qué medidas tiene un módulo M.2 22110?", o:["22 GB y 110 MB/s","22 mm de ancho por 110 mm de largo","2,2 mm de alto por 110 de largo","22 pines y 110 contactos"], c:1,
+  e:"Los dos primeros dígitos son el ancho (22 mm) y el resto el largo (110 mm)."},
+ {q:"¿Qué es un disco SMR?", o:["Un disco con pistas superpuestas: más capacidad, escritura más lenta","Un disco de helio","Un disco de estado sólido","Un disco para servidores"], c:0,
+  e:"SMR superpone pistas como tejas. Entra más capacidad, pero escribir obliga a reescribir pistas vecinas."},
+ {q:"Un disco de 1 TB muestra 931 GB en Windows. ¿Por qué?", o:["Está fallado","El fabricante cuenta 1000 y el sistema 1024","Falta formatear","Tiene un virus"], c:1,
+  e:"Es la misma capacidad contada distinto: 1 TB decimal contra 1 TB binario. No falta espacio."},
+ {q:"¿Cuál es el tamaño de M.2 más común en placas de escritorio?", o:["2230","2242","2260","2280"], c:3,
+  e:"2280: 22 mm por 80 mm. Es el que entra en casi todas las placas."}
+,
+ {q:"¿Qué significa el atributo SMART 05 (sectores reasignados) en aumento?", o:["Que el disco está más rápido","Que la superficie ya tiene zonas marcadas como malas","Que falta memoria","Que el disco está lleno"], c:1,
+  e:"El disco reasigna sectores dañados. Si el número crece, la superficie se está agotando."},
+ {q:"¿Cuántos cables lleva un disco SATA?", o:["Uno","Dos: datos y energía","Tres","Ninguno"], c:1,
+  e:"Datos a la placa y energía a la fuente. El M.2 no lleva cables: se atornilla en el slot."},
+ {q:"¿Qué hay que hacer antes de desconectar un disco externo?", o:["Apagar el monitor","Quitar hardware de forma segura","Cerrar el explorador","Nada"], c:1,
+  e:"Sacarlo mientras escribe puede dejar el sistema de archivos roto."}
+,
+ {q:"En CrystalDiskMark, ¿qué prueba se parece más al uso diario?", o:["Secuencial 1M Q8T1","Secuencial 1M Q1T1","Aleatorio 4K Q32T1","Aleatorio 4K Q1T1"], c:3,
+  e:"El 4K Q1T1 mide pedidos chicos de a uno: es lo que pasa al abrir programas y arrancar Windows."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 14</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 14</div>
+  <h1>Programas utilitarios y características de Windows</h1>
+  <p class="sub">Diez preguntas. <a href="res/1_Practica Clase 14 - Programas utilitarios y características de Windows.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>10 de 10 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿Qué es un programa utilitario?", o:["Un programa para escribir documentos","Una herramienta chica que resuelve una tarea del sistema","Un driver de la placa madre","Un tipo de archivo comprimido"], c:1,
+  e:"No produce trabajo propio: comprime, limpia, desinstala, particiona o da soporte remoto."},
+ {q:"¿Qué hace un compresor con varios archivos?", o:["Los borra","Los junta en uno y elimina la redundancia","Los encripta siempre","Los cambia de formato"], c:1,
+  e:"En la clase, 101.214 bytes de texto quedaron en unos cientos de bytes por archivo."},
+ {q:"¿Qué formato de archivo comprimido abre Windows sin instalar nada?", o:["RAR","7z","ZIP","TAR.GZ"], c:2,
+  e:"ZIP es el formato universal; RAR necesita WinRAR y 7z necesita 7-Zip."},
+ {q:"KMS es el servicio de Microsoft para…", o:["Actualizar drivers","Activar licencias por volumen en empresas y escuelas","Limpiar el registro","Comprimir archivos"], c:1,
+  e:"Cada equipo renueva su licencia cada 180 días contra el servidor KMS de la organización. Los activadores no oficiales no son mantenimiento."},
+ {q:"Aparece el error de que falta msvcp140.dll. ¿Qué se instala?", o:["Un driver de video","El Redistributable de Visual C++","Un antivirus","El paquete de Office"], c:1,
+  e:"Son librerías del compilador de Microsoft. Se instala el redistribuible oficial, nunca un DLL bajado de un foro."},
+ {q:"¿Qué guarda el comando reg export?", o:["Todo el disco","Una rama del registro en un archivo .reg","Los drivers instalados","La lista de programas"], c:1,
+  e:"Se exporta la rama que se va a modificar y se puede restaurar con reg import o doble clic."},
+ {q:"¿Para qué sirve MSCONFIG?", o:["Para comprimir archivos","Para elegir qué se carga al iniciar Windows","Para crear particiones","Para recuperar archivos borrados"], c:1,
+  e:"Permite arrancar en modo normal, diagnóstico o selectivo, y sirve para encontrar qué programa causa el problema."},
+ {q:"Un archivo borrado y con la papelera vacía…", o:["Desapareció para siempre","Sigue en el disco hasta que se sobrescriba","Se movió al registro","Está en la nube"], c:1,
+  e:"El sistema solo marca el espacio como libre. Por eso hay que dejar de escribir en ese disco."},
+ {q:"¿Cuándo se desfragmenta un disco?", o:["Siempre, todos los días","Solo si es un HDD","Solo si es un SSD","Nunca"], c:1,
+  e:"En un SSD la optimización hace TRIM; desfragmentar gasta ciclos de escritura sin ganar velocidad."},
+ {q:"¿Qué NO se debe hacer con el Escritorio remoto de Windows?", o:["Usarlo en red local","Abrir el puerto 3389 a internet","Exigir contraseña al usuario","Usarlo para administrar el aula"], c:1,
+  e:"El 3389 abierto a internet es una de las puertas de entrada del ransomware. Se usa VPN o túnel."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

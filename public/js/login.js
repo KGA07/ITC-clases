@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isAuthed()) {
-    location.href = '/inicio';
+    location.href = '/gestor';
     return;
   }
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) throw new Error(data.error || 'No se pudo iniciar sesion.');
       setTokens(data.token, data.refreshToken);
       localStorage.setItem('itc_clases_nombre', data.nombre_completo || data.nombre);
-      location.href = '/inicio';
+      location.href = '/gestor';
     } catch (err) {
       errText.textContent = err.message;
       errBox.classList.add('show');

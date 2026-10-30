@@ -1,0 +1,122 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 8</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 08</div>
+  <h1>Fuentes de alimentación</h1>
+  <p class="sub">Doce preguntas. <a href="res/1_Practica Clase 8 - Fuentes de alimentación.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>12 de 12 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿Qué hace la fuente de alimentación?", o:["Convierte 220 V alterna en 12, 5 y 3,3 V continuos","Carga la batería","Enfría el procesador","Guarda los archivos"], c:0,
+  e:"Es conmutada: rectifica, conmuta a alta frecuencia y regula la salida en continua."},
+ {q:"¿Qué riel alimenta al procesador y a la placa de video?", o:["3,3 V","5 V","12 V","5 VSB"], c:2,
+  e:"El de 12 V. Por eso lo que importa de la etiqueta es su amperaje, no solo la potencia total."},
+ {q:"¿Cuántos pines tiene el conector ATX principal?", o:["20","24 (20+4)","8","4"], c:1,
+  e:"ATX de 24 pines, casi siempre como 20+4 para placas viejas."},
+ {q:"¿Cuánta potencia entrega un conector PCIe de 8 pines?", o:["75 W","150 W","300 W","600 W"], c:1,
+  e:"6 pines: 75 W. 8 pines: 150 W. El 12VHPWR llega a 600 W."},
+ {q:"¿Hasta cuánto entrega un conector 12VHPWR?", o:["150 W","300 W","600 W","1000 W"], c:2,
+  e:"16 pines, hasta 600 W. Es el que usan las placas más nuevas."},
+ {q:"¿En qué rango tiene que estar el riel de 12 V?", o:["10 a 14 V","11,4 a 12,6 V","12,0 exactos","9 a 12 V"], c:1,
+  e:"El estándar permite ±5 %: 11,4 a 12,6 V. Lo mismo para 5 V y 3,3 V."},
+ {q:"¿Se puede abrir una fuente para limpiarla?", o:["Sí, con cuidado","No: los capacitores guardan carga peligrosa","Solo si está desenchufada","Solo las certificadas"], c:1,
+  e:"No se abre. Se limpia por fuera con aire comprimido y se controla el ventilador."},
+ {q:"La PC se apaga al jugar y la fuente está justa. ¿Qué pasa?", o:["Es el disco","Las protecciones cortan por exceso de consumo","Es la RAM","Es el monitor"], c:1,
+  e:"Los picos de la placa disparan OCP/OPP. Se calcula con 30 % de margen y se cambia la fuente."}
+,
+ {q:"Sin tester de fuentes, ¿cómo se hace arrancar una fuente sola?", o:["Se enchufa y listo","Se puentea el cable verde (PS_ON) con un negro","Se aprieta el botón dos veces","Se desconecta el ventilador"], c:1,
+  e:"El verde es PS_ON y el negro es tierra. Puenteados, la fuente arranca sin la placa."}
+,
+ {q:"¿Qué mide la certificación 80 Plus?", o:["La potencia máxima","La eficiencia energética","El ruido del ventilador","La cantidad de conectores"], c:1,
+  e:"Cuánta energía de la red termina en la PC y cuánta se pierde como calor. No cambia la potencia entregada."},
+ {q:"¿Cuánta eficiencia pide 80 Plus Gold al 50 % de carga?", o:["80 %","85 %","87 %","90 %"], c:3,
+  e:"Gold: 87 % al 20 %, 90 % al 50 % y 87 % al 100 %. Bronze: 82/85/82."},
+ {q:"¿Se puede usar un adaptador Molex a PCIe para alimentar una placa de video?", o:["Sí, siempre","Sí, si tiene dos Molex","No: el cable no soporta la corriente","Solo en placas de gama baja"], c:2,
+  e:"Un adaptador cambia la forma del conector, no agrega potencia. Se calienta y puede quemarse."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

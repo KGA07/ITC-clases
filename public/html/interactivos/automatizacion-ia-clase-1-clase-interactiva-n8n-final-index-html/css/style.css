@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #FF6D5A;
+    --primary-hover: #E55C4A;
+    --secondary: #2C2C2C;
+    --background: #f4f5f7;
+    --surface: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --success: #10b981;
+    --border: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-header {
+    text-align: center;
+    background: var(--surface);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    border-top: 6px solid var(--primary);
+}
+
+.header-badge {
+    display: inline-block;
+    background: #ffe4e1;
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 0;
+    color: var(--secondary);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.card {
+    background-color: var(--surface);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.theory-card h2 {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.theory-card h3 {
+    color: var(--primary);
+    margin-top: 25px;
+    font-size: 1.2rem;
+}
+
+.theory-card ul {
+    padding-left: 20px;
+}
+
+.theory-card li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.activity-card h2 {
+    color: var(--secondary);
+}
+
+.step-box {
+    background: #f9fafb;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid var(--secondary);
+}
+
+.step-box h4 {
+    margin-top: 0;
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+.entregable-box {
+    border-left-color: var(--primary);
+    background: #fff5f3;
+}
+
+.input-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.text-input, .textarea-box, .file-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.text-input:focus, .textarea-box:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.textarea-box {
+    height: 100px;
+    resize: vertical;
+}
+
+.btn-step {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-step:hover {
+    background-color: #000;
+}
+
+.btn-step.done {
+    background-color: var(--success);
+    cursor: default;
+}
+
+.btn-send {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 15px;
+}
+
+.btn-send:hover {
+    background-color: var(--primary-hover);
+}

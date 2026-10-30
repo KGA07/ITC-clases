@@ -1,0 +1,1086 @@
+console.log('Debug: onenine-general.js loaded');
+
+// Update the initialization code
+function initializeColorPicker() {
+    console.log('Debug: Initializing color picker');
+    
+    const body = document.querySelector("body");
+    const colorModal = document.getElementById('colorModal');
+    const colorPickerButton = document.getElementById('colorPicker');
+    const modes = ["blue", "purple", "orange", "green", "random", "bw"];
+
+    // Get stored mode or default to random
+    let getMode = localStorage.getItem("mode") || 'random';
+    
+    // Validate the stored mode
+    if (modes.includes(getMode)) {
+        // Remove any existing mode classes first
+        modes.forEach(mode => body.classList.remove(mode));
+        
+        // Add the stored mode class
+        body.classList.add(getMode);
+        
+        // Update the radio button
+        const selectedInput = document.getElementById(getMode);
+        if (selectedInput) {
+            selectedInput.checked = true;
+            // Update the label
+            document.querySelectorAll("#color-toggle label").forEach((label) => {
+                label.classList.remove("checked");
+            });
+            document.querySelector(`label[for='${getMode}']`).classList.add("checked");
+        }
+        
+        // Update visual elements
+        updateAllGradients(getMode);
+        updateColorPickerButton(getMode);
+    }
+
+    // Use event delegation for color changes
+    document.body.addEventListener('change', function(event) {
+        if (event.target && event.target.matches("#color-toggle input[name='color']")) {
+            handleColorChange(event.target.value);
+        }
+    });
+}
+
+// Update the handleColorChange function to properly handle the bw class
+function handleColorChange(selectedMode) {
+    console.log("Selected mode: ", selectedMode);
+    const body = document.querySelector("body");
+    const modes = ["blue", "purple", "orange", "green", "random", "bw"];
+
+    // Remove all color classes
+    body.classList.remove(...modes);
+    console.log("Removed classes: ", body.classList);
+
+    // Add the new color class
+    body.classList.add(selectedMode);
+    console.log("Added class: ", selectedMode);
+
+    // Special handling for bw mode
+    if (selectedMode === 'bw') {
+        // Ensure the bw-specific styles are applied
+        document.querySelectorAll('.blog-archive-feed .row .col-4 a.card .blog-card-icon').forEach(icon => {
+            icon.style.backgroundImage = "url('../../assets/img/asterisk-color-bw.svg')";
+        });
+    }
+
+    // Remove "checked" class from all labels
+    document.querySelectorAll("#color-toggle label").forEach((label) => {
+        label.classList.remove("checked");
+    });
+
+    // Add "checked" class to the selected label
+    const selectedLabel = document.querySelector(`label[for='${selectedMode}']`);
+    if (selectedLabel) {
+        selectedLabel.classList.add("checked");
+    }
+
+    // Store the selected mode in localStorage
+    localStorage.setItem("mode", selectedMode);
+    console.log("Stored mode in localStorage: ", localStorage.getItem("mode"));
+
+    // Update all gradients
+    updateAllGradients(selectedMode);
+    updateColorPickerButton(selectedMode);
+
+    // Close the modal
+    const colorModal = document.getElementById('colorModal');
+    const modalInstance = bootstrap.Modal.getInstance(colorModal);
+    if (modalInstance) {
+        modalInstance.hide();
+    }
+}
+function getGradient(color) {
+    switch(color) {
+        case 'blue':
+            return 'linear-gradient(121deg, #AAF5FF 0.16%, #5FA9FF 50.16%, #0047FF 100.16%)';
+        case 'purple':
+            return 'linear-gradient(121deg, #D797FF 0.16%, #C0F 50.16%, #9500CA 100.16%)';
+        case 'orange':
+            return 'linear-gradient(121deg, #FF8956 0.16%, #FF4C00 50.16%, #FF7A00 100.16%)';
+        case 'green':
+            return 'linear-gradient(121deg, #1D976C 0.16%, #93F9B9 100.16%)';
+        case 'bw':
+            return 'linear-gradient(140deg, #000 0%, #333 50%, #666 100%)';
+        default: // random
+            return 'linear-gradient(75deg, #665BEA 9.47%, #AD27DC 45.29%, #E7854E 98.01%)';
+    }
+}
+
+function getCircleColors(color) {
+    switch(color) {
+        case 'blue': return ['#00E0FF', '#301EFF', '#AD00FF'];
+        case 'purple': return ['#6100FF', '#B200F0', '#FF00A8'];
+        case 'orange': return ['#FF0099', '#FF5C00', '#FFA800'];
+        case 'green': return ['#EBFF00', '#00D121', '#00FFF0'];
+        case 'bw': return ['#000000', '#333333', '#666666'];
+        default: // random
+            return ['#665BEA', '#AD27DC', '#E7854E'];
+    }
+}
+
+function updateAllGradients(color) {
+    console.log('Updating all gradients with color:', color);
+    updateTextGradients(color);
+    updateBackgroundCircles(color);
+    updateOtherGradients(color);
+}
+
+function updateTextGradients(color) {
+    const gradient = getGradient(color);
+    const gradientElements = document.querySelectorAll('.gradient-text');
+    gradientElements.forEach(element => {
+        element.style.backgroundImage = gradient;
+    });
+    console.log('Updated', gradientElements.length, 'text gradient elements');
+}
+
+function updateBackgroundCircles(color) {
+    const colors = getCircleColors(color);
+    const circles = ['.circle-primary', '.circle-secondary', '.circle-tertiary'];
+    circles.forEach((circleClass, index) => {
+        const circle = document.querySelector(circleClass);
+        if (circle) {
+            circle.style.backgroundColor = colors[index];
+        }
+    });
+    console.log('Updated background circles');
+}
+
+function updateOtherGradients(color) {
+    const gradient = getGradient(color);
+    const planSelector = document.getElementById("plan-type-selector");
+    const portfolioDetailSection = document.querySelector('.portfolio-detail-single');
+    
+    if (planSelector) {
+        planSelector.style.background = gradient;
+    }
+    
+    if (portfolioDetailSection) {
+        const portfolioGradient = `linear-gradient(135deg, #ffffff 0%, ${color === 'bw' ? 'rgba(102,102,102,0.2)' : 'rgba(102,91,234,0.2)'} 100%)`;
+        portfolioDetailSection.style.background = portfolioGradient;
+    }
+    
+    const otherGradientElements = document.querySelectorAll('.onenine-bg-gradient');
+    otherGradientElements.forEach(element => {
+        element.style.background = gradient;
+    });
+    console.log('Updated other gradient elements');
+}
+
+function updateColorPickerButton(color) {
+    const colorPickerButton = document.getElementById('colorPicker');
+    if (colorPickerButton) {
+        const gradient = getGradient(color);
+        colorPickerButton.style.background = gradient;
+        console.log('Updated color picker button gradient:', gradient);
+    } else {
+        console.error('Color picker button not found');
+    }
+}
+
+// Initialize color picker when DOM is fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeColorPicker);
+} else {
+    initializeColorPicker();
+}
+
+// Backup initialization in case DOMContentLoaded has already fired
+
+// window.addEventListener('load', initializeColorPicker);
+// /* Initiate On View */
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Function to update URL based on the currently viewed element with an ID
+//   function updateURL(element) {
+//     if (element && element.id) {
+//       // Update the URL with the element ID
+//       history.replaceState(null, null, `#${element.id}`);
+//     } else {
+//       // Clear the URL fragment
+//       history.replaceState(null, null, " ");
+//     }
+//   }
+
+//   // Function to handle the intersection observer callback
+//   function handleIntersection(entries) {
+//     let currentOnViewElement = null;
+
+//     entries.forEach((entry) => {
+//       if (
+//         entry.isIntersecting &&
+//         entry.target.classList.contains("listen-on-view")
+//       ) {
+//         // Remove 'on-view' class from all elements
+//         document.querySelectorAll(".on-view").forEach((el) => {
+//           el.classList.remove("on-view");
+//         });
+
+//         // Add 'on-view' class to the current element
+//         entry.target.classList.add("on-view");
+//         currentOnViewElement = entry.target;
+//       }
+//     });
+
+//     // Update the URL based on the current element with 'on-view' class
+//     if (currentOnViewElement) {
+//       updateURL(currentOnViewElement);
+//     }
+//   }
+
+//   // Set up the Intersection Observer
+//   let observer = new IntersectionObserver(handleIntersection, {
+//     threshold: 0.5, // Adjust this value based on when you want the element to be considered "in view"
+//   });
+
+//   // Observe all sections and divs with the class 'listen-on-view'
+//   document.querySelectorAll(".listen-on-view").forEach((element) => {
+//     observer.observe(element);
+//   });
+// });
+
+
+
+
+
+/* Initiate AOS */
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Initial AOS setup
+  AOS.init({
+    once: false,
+    useClassNames: true,
+    initClassName: false,
+    animatedClassName: "animated",
+  });
+
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.querySelector("body");
+  const toggles = document.querySelectorAll("#color-toggle input[name='color']");
+  const planSelector = document.getElementById("plan-type-selector");
+  const portfolioDetailSection = document.querySelector('.portfolio-detail-single');
+  const modes = ["blue", "purple", "orange", "green", "random", "bw"];
+
+  let getMode = localStorage.getItem("mode");
+  if (getMode && modes.includes(getMode)) {
+    body.classList.add(getMode);
+    document.getElementById(getMode).checked = true;
+    document.querySelector(`label[for='${getMode}']`).classList.add("checked");
+    updateGradients(getMode);
+  }
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("change", (event) => {
+      const selectedMode = event.target.value;
+      console.log("Selected mode: ", selectedMode);
+
+      // Remove all color classes
+      body.classList.remove(...modes);
+      console.log("Removed classes: ", body.classList);
+
+      // Add the new color class
+      body.classList.add(selectedMode);
+      console.log("Added class: ", selectedMode);
+
+      // Remove "checked" class from all labels
+      document.querySelectorAll("#color-toggle label").forEach((label) => {
+        label.classList.remove("checked");
+      });
+
+      // Add "checked" class to the selected label
+      document
+        .querySelector(`label[for='${selectedMode}']`)
+        .classList.add("checked");
+
+      // Store the selected mode in localStorage
+      localStorage.setItem("mode", selectedMode);
+      console.log(
+        "Stored mode in localStorage: ",
+        localStorage.getItem("mode")
+      );
+
+      // Update gradients
+      updateGradients(selectedMode);
+
+      // Close the modal
+      const modalElement = document.getElementById("colorModal");
+      const modalInstance = bootstrap.Modal.getInstance(modalElement);
+      modalInstance.hide();
+    });
+  });
+
+  function updateGradients(color) {
+    let planGradient, portfolioGradient;
+    switch(color) {
+      case 'blue':
+        planGradient = 'linear-gradient(140deg, #00E0FF 0%, #301EFF 50%, #AD00FF 100%)';
+        portfolioGradient = 'linear-gradient(135deg, #ffffff 0%, rgba(0,224,255,0.2) 100%)';
+        break;
+      case 'purple':
+        planGradient = 'linear-gradient(140deg, #6100FF 0%, #B200F0 50%, #FF00A8 100%)';
+        portfolioGradient = 'linear-gradient(135deg, #ffffff 0%, rgba(97,0,255,0.2) 100%)';
+        break;
+      case 'orange':
+        planGradient = 'linear-gradient(140deg, #FF0099 0%, #FF5C00 50%, #FFA800 100%)';
+        portfolioGradient = 'linear-gradient(135deg, #ffffff 0%, rgba(255,168,0,0.2) 100%)';
+        break;
+      case 'green':
+        planGradient = 'linear-gradient(140deg, #EBFF00 0%, #00D121 50%, #00FFF0 100%)';
+        portfolioGradient = 'linear-gradient(135deg, #ffffff 0%, rgba(0,209,33,0.2) 100%)';
+        break;
+      case 'bw':
+        planGradient = 'linear-gradient(140deg, #000 0%, #333 50%, #666 100%)';
+        portfolioGradient = 'linear-gradient(135deg, #ffffff 0%, rgba(102,102,102,0.2) 100%)';
+        break;
+      default: // random
+        planGradient = 'linear-gradient(140deg, #665BEA 0%, #AD27DC 50%, #E7854E 100%)';
+        portfolioGradient = 'linear-gradient(135deg, #ffffff 0%, rgba(102,91,234,0.2) 100%)';
+    }
+    planSelector.style.background = planGradient;
+    if (portfolioDetailSection) {
+      portfolioDetailSection.style.background = portfolioGradient;
+    }
+  }
+
+  // Remove the button if it exists
+  const applyColorButton = document.getElementById("btn_close_color_picker");
+  if (applyColorButton) {
+    applyColorButton.remove();
+  }
+
+  // Initial gradient update
+  updateGradients(getMode || 'random');
+});
+
+
+
+
+/* HEADER - CALENDLY*/
+  document.addEventListener("DOMContentLoaded", function () {
+    const config = JSON.stringify({ layout: "month_view" });
+
+    const startProjectButtons = document.querySelectorAll(".start-project");
+
+    startProjectButtons.forEach(function (button) {
+      button.setAttribute("data-cal-config", config);
+    });
+  });
+
+  (function (C, A, L) {
+    let p = function (a, ar) {
+      a.q.push(ar);
+    };
+    let d = C.document;
+    C.Cal =
+      C.Cal ||
+      function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () {
+            p(api, arguments);
+          };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", { origin: "https://cal.com" });
+
+  // Cal UI configuration
+  Cal("ui", {
+    theme: "light",
+    styles: {
+      branding: {
+        brandColor: "#000000",
+      },
+    },
+    hideEventTypeDetails: false,
+    layout: "month_view",
+  });
+
+
+
+
+
+/* HEADER MOBILE MENU */
+	jQuery(document).ready(function($) {
+	  const navToggler = $(".nav-toggler");
+	  const offcanvasNavbar = $("#offcanvas-navbar");
+	  const flyoutMenu = $(".flyout_menu");
+	  const body = $("body");
+
+	  function openMenu() {
+		navToggler.removeClass("not-opened").addClass("opened");
+		flyoutMenu.addClass("dragged_in active_menu");
+		body.addClass("flyout_opened");
+	  }
+
+	  function closeMenu() {
+		navToggler.removeClass("opened").addClass("not-opened");
+		flyoutMenu.removeClass("dragged_in");
+		setTimeout(function() {
+		  flyoutMenu.removeClass("active_menu");
+		}, 350);
+		setTimeout(function() {
+		  body.removeClass("flyout_opened");
+		}, 500);
+	  }
+
+	  navToggler.click(function() {
+		if ($(this).hasClass("not-opened")) {
+		  openMenu();
+		} else {
+		  closeMenu();
+		}
+	  });
+
+	  // Listen for the 'hidden.bs.offcanvas' event
+	  offcanvasNavbar.on('hidden.bs.offcanvas', function() {
+		closeMenu();
+	  });
+	});
+
+
+
+/* HOME: PICK A PLAN */
+  document.addEventListener("DOMContentLoaded", function () {
+    const plansPicker = document.querySelector("#plans-picker");
+    const dropdownButton = document.getElementById("plan-dropdown");
+    const dropdownItems = document.querySelectorAll(
+      ".dropdown-menu .dropdown-item"
+    );
+    const plans = document.querySelectorAll(".chosen-plan > div");
+
+    if (plansPicker) {
+      dropdownItems.forEach((item) => {
+        item.addEventListener("click", function (event) {
+          event.preventDefault();
+          const selectedPlan = this.getAttribute("data-plan");
+
+          dropdownButton.textContent = this.textContent;
+
+          plans.forEach((plan) => {
+            if (plan.getAttribute("data-id") === selectedPlan) {
+              plan.classList.remove("d-none");
+            } else {
+              plan.classList.add("d-none");
+            }
+          });
+        });
+      });
+    }
+  });
+
+
+
+
+/* HOME: PICK A PLAN: LIST */
+  document.addEventListener("DOMContentLoaded", function () {
+    const wrappers = document.querySelectorAll(".plan-options-wrapper");
+
+    console.log("Wrappers found:", wrappers);
+
+    wrappers.forEach((wrapper) => {
+
+      wrapper.addEventListener("click", function () {
+        
+        // Remove the "active" class from all other wrappers
+        wrappers.forEach((otherWrapper) => {
+          if (otherWrapper !== wrapper) {
+            otherWrapper.classList.remove("active");
+          }
+        });
+
+        wrapper.classList.add("active");
+      });
+    });
+  });
+
+
+
+
+
+
+
+
+
+/* PORTFOLIO: SWIPER */
+  document.addEventListener("DOMContentLoaded", function () {
+    let swiper = new Swiper(".swiper-container", {
+      loop: false,
+      breakpoints: {
+        // when window width is >= 750px
+        750: {
+          slidesPerView: 2,
+		  slidesPerGroup: 2,
+        },
+        // when window width is < 750px
+        0: {
+          slidesPerView: 1,
+		  slidesPerGroup: 1,
+        }
+      },
+      spaceBetween: 20,
+      //autoplay: {
+      //  delay: 5000,
+      //},
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+    const categoryLinks = document.querySelectorAll("#portfolio-categories a");
+    const portfolioCategories = document.querySelectorAll(
+      "#portfolio-swiper .portfolio-category"
+    );
+
+    // Function to handle category clicks
+    function handleCategoryClick(event) {
+      event.preventDefault();
+      const category = this.getAttribute("data-category");
+      console.log("Clicked category:", category);
+
+      // Remove active class from all category links
+      categoryLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      // Hide all categories and remove active class
+      portfolioCategories.forEach((categoryDiv) => {
+        categoryDiv.classList.remove("active");
+        categoryDiv.classList.add("d-none");
+      });
+
+      // Show the selected category and add active class to the clicked link
+      const selectedCategory = document.querySelector(
+        `#portfolio-swiper .portfolio-category[data-category="${category}"]`
+      );
+      console.log("Selected category element:", selectedCategory);
+
+      if (selectedCategory) {
+        selectedCategory.classList.add("active");
+        selectedCategory.classList.remove("d-none");
+        this.classList.add("active");
+
+        // Reinitialize Swiper after showing the selected category
+        swiper.update();
+      } else {
+        console.error("No element found for category:", category);
+      }
+    }
+
+    // Attach click event to all category links
+    categoryLinks.forEach((link) => {
+      link.addEventListener("click", handleCategoryClick);
+    });
+
+    // Show default category and add active class to the default link
+    const defaultCategory = document.querySelector(
+      "#portfolio-swiper .portfolio-wordpress"
+    );
+
+    if (defaultCategory) {
+      defaultCategory.classList.add("active");
+      defaultCategory.classList.remove("d-none");
+      // Find the default link and add the active class
+      const defaultLink = document.querySelector(
+        '#portfolio-categories a[data-category="wordpress"]'
+      );
+      if (defaultLink) {
+        defaultLink.classList.add("active");
+      }
+    } else {
+      //console.error("No default category element found");
+    }
+
+  });
+
+
+
+
+/* FAQ's */
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-item-question");
+
+      question.addEventListener("click", function () {
+
+        const isActive = item.classList.contains("active-item");
+
+        faqItems.forEach((i) => {
+          i.classList.remove("active-item");
+        });
+
+        if (!isActive) {
+          item.classList.add("active-item");
+        }
+      });
+    });
+  });
+
+
+
+
+/* WEBSITE LOADER */
+  jQuery(document).ready(function ($) {
+    $(window).on("load", function () {
+      $(".site-loader").addClass("hide");
+      $("body").removeClass("site-loader-active");
+    });
+  });
+
+
+
+
+/* WEBSITE DESIGN - PORTFOLIO */
+  jQuery(document).ready(function ($) {
+  let scrollPosition;
+
+  function adjustLayout() {
+    $(".portfolio_main_flex").css("width", "100%");
+    $(".portfolio_main_listing_listing, .portfolio-detail-single").css("width", "100%");
+  }
+
+  $(window).on("load", function () {
+    $(".site-loader").addClass("hide");
+    $("body").removeClass("site-loader-active");
+    adjustLayout();
+  });
+
+  /* WEBSITE DESIGN - PORTFOLIO */
+jQuery(document).ready(function ($) {
+  let scrollPosition;
+
+  function adjustLayout() {
+    $(".portfolio_main_flex").css("width", "100%");
+    $(".portfolio_main_listing_listing, .portfolio-detail-single").css("width", "100%");
+  }
+
+  $(window).on("load", function () {
+    $(".site-loader").addClass("hide");
+    $("body").removeClass("site-loader-active");
+    adjustLayout();
+  });
+
+  function loadPortfolioContent(postId) {
+    $.ajax({
+        url: `/wp-json/wp/v2/portfolio/${postId}`,
+        type: "GET",
+        beforeSend: function () {
+            console.log("Sending REST API request...");
+            $(".site_loader").addClass("active");
+        },
+    })
+    .done(function (res) {
+        console.log(res);
+
+        var newSiteLayoutUrl = "";
+        var newMobileLayoutUrl = "";
+
+        var fetchImageUrls = [
+            $.ajax({
+                url: `/wp-json/wp/v2/media/${res.acf.new_site_layout}`,
+                type: "GET",
+                success: function (mediaRes) {
+                    newSiteLayoutUrl = mediaRes.source_url;
+                },
+            }),
+            $.ajax({
+                url: `/wp-json/wp/v2/media/${res.acf.new_mobile_layout}`,
+                type: "GET",
+                success: function (mediaRes) {
+                    newMobileLayoutUrl = mediaRes.source_url;
+                },
+            }),
+        ];
+
+        $.when(...fetchImageUrls).then(function () {
+            const isSpanish = window.location.href.includes('/es/');
+            // Use Spanish or English description based on URL
+            const description = isSpanish ? (res.acf.portfolio_description_spanish || res.acf.portfolio_description) : res.acf.portfolio_description || '';
+            
+            var postContent = `
+            <div class="portfolio-detail-single-content">
+                <article id="post-${res.id}" class="single-portfolio">
+                    <header class="entry-header">
+                        <h1 class="entry-title">${res.title.rendered}</h1>
+                        <div class="portfolio-description">${description}</div>
+                    </header>
+                    <div class="entry-content">
+                        <div class="web_port_big_preview">
+                            <img src="${newSiteLayoutUrl}" title="" alt="">
+                        </div>
+                        <div class="web_port_small_preview">
+                            <img src="${newMobileLayoutUrl}" title="" alt="">
+                        </div>
+                        <div class="launch_live_site">
+                            <a href="${res.acf.live_site_link}" target="_blank" class="btn btn-animated py-2 px-4 fs-6 text-uppercase text-white bg-black rounded-0">
+                                <span>${isSpanish ? 'Ver sitio web en vivo' : 'View Live Website'}</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>`;
+
+            $("#portfolio-detail-single-wrapper").html(postContent);
+
+            setTimeout(function() {
+                $('#hero-gradient').addClass('hidden');
+                $('.portfolio_main_listing_listing').addClass('hidden');
+                scrollPosition = window.pageYOffset;
+                $('body').addClass('active-portfolio');
+				// console.log("Added class: active-portfolio", $('body').attr('class'));
+				
+                $('html, body').animate({
+                    scrollTop: $(".portfolio-detail-single").offset().top
+                }, 10);
+            }, 10);
+
+            document.title = res.title.rendered;
+            var url = res.link;
+            window.history.pushState({ postId: postId }, null, url);
+
+            $(".site_loader").removeClass("active");
+        });
+    })
+    .fail(function (err) {
+        console.log("REST API error:", err);
+        $(".site_loader").removeClass("active");
+    });
+}
+
+// Maintain the existing click handlers
+$(".portfolio-wrapper .portfolio-item").click(function () {
+    var postId = $(this).closest(".portfolio-item").data("id");
+    console.log("Post ID:", postId);
+    
+    loadPortfolioContent(postId);
+});
+
+$(document).on("click", "#back-to-projects", function (e) {
+    e.preventDefault();
+    
+    $('body').removeClass('active-portfolio').addClass('transitioning-out');
+    
+    setTimeout(function() {
+        $('#hero-gradient').removeClass('hidden');
+        $('.portfolio_main_listing_listing').removeClass('hidden');
+        
+        window.history.pushState({}, null, "/website-design/");
+
+        window.scrollTo(0, scrollPosition);
+
+        $('html, body').animate({
+            scrollTop: $("#portfolio").offset().top
+        }, 300);
+
+        setTimeout(function() {
+            $('body').removeClass('transitioning-out');
+        }, 300);
+    }, 300);
+});
+
+window.addEventListener("popstate", function (event) {
+    if (event.state && event.state.postId) {
+        loadPortfolioContent(event.state.postId);
+    } else {
+        $('body').removeClass('active-portfolio').addClass('transitioning-out');
+        
+        setTimeout(function() {
+            $('#hero-gradient').removeClass('hidden');
+            $('.portfolio_main_listing_listing').removeClass('hidden');
+
+            window.scrollTo(0, scrollPosition);
+
+            setTimeout(function() {
+                $('body').removeClass('transitioning-out');
+            }, 300);
+        }, 300);
+    }
+});
+
+  function resetMobileMenu() {
+    const navToggler = $(".nav-toggler");
+    const flyoutMenu = $(".flyout_menu");
+    const body = $("body");
+
+    navToggler.removeClass("opened").addClass("not-opened");
+    flyoutMenu.removeClass("dragged_in active_menu");
+    body.removeClass("flyout_opened");
+
+    initializeMobileMenu();
+  }
+
+  function initializeMobileMenu() {
+    const navToggler = $(".nav-toggler");
+    const offcanvasNavbar = $("#offcanvas-navbar");
+    const flyoutMenu = $(".flyout_menu");
+    const body = $("body");
+
+    navToggler.off("click").on("click", function() {
+      if ($(this).hasClass("not-opened")) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+
+    function openMenu() {
+      navToggler.removeClass("not-opened").addClass("opened");
+      flyoutMenu.addClass("dragged_in active_menu");
+      body.addClass("flyout_opened");
+    }
+
+    function closeMenu() {
+      navToggler.removeClass("opened").addClass("not-opened");
+      flyoutMenu.removeClass("dragged_in");
+      setTimeout(function() {
+        flyoutMenu.removeClass("active_menu");
+      }, 350);
+      setTimeout(function() {
+        body.removeClass("flyout_opened");
+      }, 500);
+    }
+
+    offcanvasNavbar.off("hidden.bs.offcanvas").on("hidden.bs.offcanvas", function() {
+      closeMenu();
+    });
+  }
+
+  initializeMobileMenu();
+
+  // Mouse Follower
+  function initializeCustomCursor() {
+    if (window.innerWidth > 1024) {
+      $(".portfolio-item, #portfolio-swiper .swiper-slide").mouseenter(function () {
+        $(".follower").addClass("hide_it");
+      }).mouseleave(function () {
+        $(".follower").removeClass("hide_it");
+      });
+
+      $(".portfolio-wrapper .portfolio_main_flex .portfolio_main_listing_listing .portfolio-item, #portfolio-swiper .swiper-slide")
+        .mouseenter(function () {
+          if ($(".follower").hasClass("hide_it")) {
+            $(".follower").removeClass("hide_it");
+          }
+          $(".follower").addClass("view_project");
+        })
+        .mouseleave(function () {
+          $(".follower").removeClass("view_project");
+        });
+
+      mouseX = window.innerWidth / 2;
+      mouseY = window.innerHeight / 2;
+
+      circle = {
+        el: $(".follower,.back_port_arrow"),
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+        w: 80,
+        h: 80,
+        update: function () {
+          var l = this.x - this.w / 1.3;
+          var t = this.y - this.h / 1.3;
+          this.el.css({
+            transform: "translate3d(" + l + "px," + t + "px, 0)"
+          });
+        }
+      };
+
+      $(window).mousemove(function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+      
+      function move() {
+        circle.x = lerp(circle.x, mouseX, 0.1);
+        circle.y = lerp(circle.y, mouseY, 0.1);
+        circle.update();
+      }
+
+      function lerp(start, end, amt) {
+        return (1 - amt) * start + amt * end;
+      }
+
+      setInterval(move, 1000 / 60);
+    } else {
+      $(".follower,.back_port_arrow").remove();
+    }
+  }
+
+  initializeCustomCursor();
+
+  $(window).resize(function() {
+    initializeCustomCursor();
+  });
+
+  var initialSlug = window.location.pathname.split("/").filter(Boolean).pop();
+  if (initialSlug && initialSlug !== "website-design") {
+    $.get(`/wp-json/wp/v2/portfolio?slug=${initialSlug}`, function (data) {
+      if (data.length) {
+        loadPortfolioContent(data[0].id);
+      }
+    });
+  }
+});
+
+  function resetMobileMenu() {
+    const navToggler = $(".nav-toggler");
+    const flyoutMenu = $(".flyout_menu");
+    const body = $("body");
+
+    navToggler.removeClass("opened").addClass("not-opened");
+    flyoutMenu.removeClass("dragged_in active_menu");
+    body.removeClass("flyout_opened");
+
+    initializeMobileMenu();
+  }
+
+  function initializeMobileMenu() {
+    const navToggler = $(".nav-toggler");
+    const offcanvasNavbar = $("#offcanvas-navbar");
+    const flyoutMenu = $(".flyout_menu");
+    const body = $("body");
+
+    navToggler.off("click").on("click", function() {
+      if ($(this).hasClass("not-opened")) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+
+    function openMenu() {
+      navToggler.removeClass("not-opened").addClass("opened");
+      flyoutMenu.addClass("dragged_in active_menu");
+      body.addClass("flyout_opened");
+    }
+
+    function closeMenu() {
+      navToggler.removeClass("opened").addClass("not-opened");
+      flyoutMenu.removeClass("dragged_in");
+      setTimeout(function() {
+        flyoutMenu.removeClass("active_menu");
+      }, 350);
+      setTimeout(function() {
+        body.removeClass("flyout_opened");
+      }, 500);
+    }
+
+    offcanvasNavbar.off("hidden.bs.offcanvas").on("hidden.bs.offcanvas", function() {
+      closeMenu();
+    });
+  }
+
+  initializeMobileMenu();
+
+  // Mouse Follower
+function initializeCustomCursor() {
+    if (window.innerWidth > 1024) { // Typically, 1024px and above is considered desktop
+      $(".portfolio-item").mouseenter(function () {
+        $(".follower").addClass("hide_it");
+      }).mouseleave(function () {
+        $(".follower").removeClass("hide_it");
+      });
+
+      $(".portfolio-wrapper .portfolio_main_flex .portfolio_main_listing_listing .portfolio-item")
+        .mouseenter(function () {
+          if ($(".follower").hasClass("hide_it")) {
+            $(".follower").removeClass("hide_it");
+          }
+          $(".follower").addClass("view_project");
+        })
+        .mouseleave(function () {
+          $(".follower").removeClass("view_project");
+        });
+
+      mouseX = window.innerWidth / 2;
+      mouseY = window.innerHeight / 2;
+
+      circle = {
+        el: $(".follower,.back_port_arrow"),
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+        w: 80,
+        h: 80,
+        update: function () {
+          var l = this.x - this.w / 1.3;
+          var t = this.y - this.h / 1.3;
+          this.el.css({
+            transform: "translate3d(" + l + "px," + t + "px, 0)"
+          });
+        }
+      };
+
+      $(window).mousemove(function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+      
+      function move() {
+        circle.x = lerp(circle.x, mouseX, 0.1);
+        circle.y = lerp(circle.y, mouseY, 0.1);
+        circle.update();
+      }
+
+      function lerp(start, end, amt) {
+        return (1 - amt) * start + amt * end;
+      }
+
+      // Start the animation loop only for desktop
+      setInterval(move, 1000 / 60);
+    } else {
+      // Remove custom cursor elements and clear interval for non-desktop devices
+      $(".follower,.back_port_arrow").remove();
+    }
+  }
+
+  // Initialize custom cursor
+  initializeCustomCursor();
+
+  // Reinitialize custom cursor on window resize
+  $(window).resize(function() {
+    initializeCustomCursor();
+  });
+
+  var initialSlug = window.location.pathname.split("/").filter(Boolean).pop();
+  if (initialSlug && initialSlug !== "website-design") {
+    
+    $.get(`/wp-json/wp/v2/portfolio?slug=${initialSlug}`, function (data) {
+      if (data.length) {
+        loadPortfolioContent(data[0].id);
+      }
+    });
+  }
+});

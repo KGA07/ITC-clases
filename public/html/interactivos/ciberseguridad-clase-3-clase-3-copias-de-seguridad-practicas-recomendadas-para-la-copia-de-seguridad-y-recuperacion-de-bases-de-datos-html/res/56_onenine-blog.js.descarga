@@ -1,0 +1,169 @@
+/* BLOG */
+jQuery(document).ready(function ($) {
+  if ($("body").hasClass("blog")) {
+    var currentPage = 1;
+
+    function loadPosts(order, page = 1) {
+      $.ajax({
+        url: `/wp-json/wp/v2/posts`,
+        type: "GET",
+        data: {
+          order: order,
+          orderby: "date",
+          per_page: 12,
+          page: page,
+        },
+        beforeSend: function () {
+          console.log("Sending REST API request...");
+          $(".loading").show();
+        },
+      })
+        .done(function (res, textStatus, xhr) {
+          console.log(res);
+          var postsContent = "";
+          res.forEach(function (post) {
+            console.log(all_cat);
+            if (post.categories.length > 0 && all_cat[post.categories[0]]) {
+              var categoryName = `<div class="post-sticky-tag"><span>#${all_cat[post.categories[0]]}</span></div>`;
+            }
+            postsContent += `
+            <div class="col-lg-4 col-md-12 col-sm-12 blog-col col-feed test-js">
+              <a class="card text-decoration-none" href="${post.link}" id="post-${post.id}">
+                <div class="blog-card-icon"></div> ${categoryName}
+                <h3 class="blog-post-title">${post.title.rendered}</h3>
+              </a>
+            </div>
+          `;
+          });
+
+          // Replace the content of #home-articles .row
+          $("#home-articles .row").html(postsContent);
+          $(".loading").hide();
+
+          // Update pagination
+          var totalPages = xhr.getResponseHeader("X-WP-TotalPages");
+          updatePagination(order, page, totalPages);
+
+          // Update URL
+          var url = new URL(window.location.href);
+          url.searchParams.set("order", order);
+          url.searchParams.set("page", page);
+          // window.history.pushState({ order: order, page: page }, "", url);
+
+          // Update active class for sort links
+          $(".sort-link").removeClass("active");
+          $(`.sort-link[data-order="${order}"]`).addClass("active");
+        })
+        .fail(function (err) {
+          console.log("REST API error:", err);
+          $(".loading").hide();
+        });
+    }
+
+    function updatePagination(order, currentPage, totalPages) {
+      var paginationContent = "";
+
+      for (var i = 1; i <= totalPages; i++) {
+        paginationContent += `
+          <a href="#" class="page-link ${
+            i === currentPage ? "active" : ""
+          }" data-order="${order}" data-page="${i}">${i}</a>
+        `;
+      }
+
+      $("#pagination").html(paginationContent);
+    }
+
+    $(document).on("click", ".sort-link", function (e) {
+      e.preventDefault();
+      var order = $(this).data("order");
+      currentPage = 1;
+      loadPosts(order, currentPage);
+    });
+
+    $(document).on("click", ".blog .page-link", function (e) {
+      e.preventDefault();
+      var order = $(this).data("order");
+      var page = $(this).data("page");
+      currentPage = page;
+      loadPosts(order, page);
+    });
+
+    // Handle back/forward navigation
+    window.addEventListener("popstate", function (event) {
+      if (event.state) {
+        loadPosts(event.state.order, event.state.page);
+      }
+    });
+
+    // Initial load
+    var urlParams = new URLSearchParams(window.location.search);
+    var initialOrder = urlParams.get("order") || "desc";
+    var initialPage = parseInt(urlParams.get("page")) || 1;
+    loadPosts(initialOrder, initialPage);
+
+    // Set active class for sort links on initial load
+    $(".sort-link").removeClass("active");
+    $(`.sort-link[data-order="${initialOrder}"]`).addClass("active");
+  }
+});
+
+/* POST CTA */
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Calculate the total number of elements inside #article-content
+  const articleContent = document.querySelector("#article-content");
+  if (!articleContent) {
+    return;
+  }
+
+  const elements = articleContent.querySelectorAll("p, h2, h3, ul");
+  const totalElements = elements.length;
+
+  if (totalElements === 0) {
+    return;
+  }
+
+  // 2. Clone the "post-cta" div and set attributes
+  const postCtaOriginal = document.querySelector(".post-cta");
+
+  if (!postCtaOriginal) {
+    return;
+  }
+
+  const postCtaCloneOne = postCtaOriginal.cloneNode(true);
+  const postCtaCloneTwo = postCtaOriginal.cloneNode(true);
+  const postCtaCloneThree = postCtaOriginal.cloneNode(true);
+
+  postCtaOriginal.setAttribute("data-post", "one");
+  postCtaCloneOne.setAttribute("data-post", "two");
+  postCtaCloneTwo.setAttribute("data-post", "three");
+
+  // 3. Calculate positions and insert the cloned divs
+  const firstInsertIndex = Math.floor(totalElements * 0.33);
+  const secondInsertIndex = Math.floor(totalElements * 0.66);
+  const thirdInsertIndex = Math.floor(totalElements * 0.99);
+
+  if (elements[firstInsertIndex]) {
+    elements[firstInsertIndex].after(postCtaOriginal);
+  } else {
+    articleContent.appendChild(postCtaOriginal);
+  }
+
+  if (elements[secondInsertIndex]) {
+    elements[secondInsertIndex].after(postCtaCloneOne);
+  } else {
+    articleContent.appendChild(postCtaCloneOne);
+  }
+
+  if (elements[thirdInsertIndex]) {
+    elements[thirdInsertIndex].after(postCtaCloneTwo);
+  } else {
+    articleContent.appendChild(postCtaCloneTwo);
+  }
+});
+
+jQuery(document).ready(function ($) {
+  $("body.search #content").prepend(
+    '<div id="go-back-blog"><a href="/blog"><span class="go-back-icon"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 10L21 10" stroke="black" stroke-linecap="square"></path><path d="M12.0002 1L21 9.9998L12.0002 18.9996" stroke="black" stroke-linecap="square"></path></svg></span><span class="go-back-txt">Back to Blog</span></a></div>'
+  );
+});

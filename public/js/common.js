@@ -136,7 +136,7 @@ function renderHeader(nombre = '') {
   if (!el) return;
   el.innerHTML =
     '<div class="topbar-inner">' +
-    '  <a class="brand" href="/inicio" aria-label="ITC Clases - inicio">' +
+    '  <a class="brand" href="/gestor" aria-label="ITC Clases - panel docente">' +
     '    <img src="/img/logo-itc.svg" alt="ITC">' +
     '    <img src="/img/logo-udemm.svg" alt="UdeMM">' +
     '    <div class="brand-divider" aria-hidden="true"></div>' +

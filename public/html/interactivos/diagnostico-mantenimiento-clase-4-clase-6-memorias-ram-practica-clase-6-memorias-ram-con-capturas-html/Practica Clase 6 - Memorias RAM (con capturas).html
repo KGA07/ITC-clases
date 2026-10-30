@@ -1,0 +1,151 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practica Clase 6 - Memorias RAM (con capturas)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070A1A;color:#EAF2FF;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#0B1030,#1a1a4e);border-left:4px solid #FF2ED1;padding:20px 30px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;border-radius:8px;flex-wrap:wrap}
+.header h1{margin:0;font-size:28px;color:#fff;text-shadow:0 0 18px rgba(34,224,255,.35)}
+.header .marca{color:#22E0FF;font-size:12px;letter-spacing:2px}
+.nota{background:rgba(255,200,0,.1);border-left:3px solid #FFD700;padding:10px 15px;margin:0 0 15px;font-size:13px;color:#FFE082;border-radius:4px}
+.capture-block{margin:20px 0;background:#050814;border-radius:8px;overflow:hidden;border:1px solid rgba(255,46,209,.3)}
+.capture-img{width:100%;height:auto;display:block;border-bottom:2px solid #FF2ED1}
+.capture-info{padding:15px;background:rgba(11,16,48,.8)}
+.capture-info h4{color:#FF2ED1;font-size:16px;margin:0 0 8px}
+.capture-info p{color:#C9D6EA;font-size:13px;line-height:1.5;margin:0 0 10px}
+.glosario{margin-top:12px;background:rgba(34,224,255,.05);border-radius:6px;padding:10px;border:1px solid rgba(34,224,255,.15)}
+.glosario-titulo{color:#22E0FF;font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:1px}
+.glosario-table{width:100%;border-collapse:collapse;font-size:12px}
+.glosario-table th{background:rgba(255,46,209,.3);color:#fff;padding:4px 8px;text-align:left;font-size:11px}
+.glosario-table td{padding:4px 8px;border-bottom:1px solid rgba(34,224,255,.1);color:#C9D6EA}
+.glosario-table td.en{color:#FF2ED1;font-weight:600;font-family:monospace;font-size:11px}
+.glosario-table td.es{color:#DCE8FA}
+.tabla-modulos{width:100%;border-collapse:collapse;font-size:12px;margin-top:12px}
+.tabla-modulos th{background:rgba(255,46,209,.3);color:#fff;padding:5px 8px;text-align:left}
+.tabla-modulos td{padding:5px 8px;border-bottom:1px solid rgba(34,224,255,.12);color:#DCE8FA}
+.entrega{margin-top:15px;background:rgba(34,224,255,.10);border-left:3px solid #22E0FF;padding:12px 15px;font-size:14px;border-radius:4px}
+.footer{margin-top:40px;border-top:1px solid rgba(34,224,255,.2);padding-top:15px;font-size:12px;color:#8FA3BF;display:flex;justify-content:space-between;flex-wrap:wrap}
+@media (max-width:768px){.container{padding:10px}.header h1{font-size:22px}}
+</style>
+</head><body>
+<div class="container">
+<div class="header">
+  <h1>PRACTICA 6 &mdash; Memorias RAM (con capturas)</h1>
+  <span class="marca">ITC &bull; 2026</span>
+</div>
+
+<p class="nota">Abajo esta la identificacion completa de los m&oacute;dulos de la PC del aula resuelta con capturas reales: CPU-Z (general y ficha SPD por m&oacute;dulo), msinfo32, y la prueba de memoria programada con <code>mdsched</code>. La revision f&iacute;sica de contactos y muesca se hace en el taller con los m&oacute;dulos en mano; los datos de etiqueta (capacidad, velocidad, CL) los entrega CPU-Z en pantalla.</p>
+
+<div class="capture-block">
+  <img src="res/1_c6-cpuz-memory.png" alt="CPU-Z pestana Memory: DDR3, 12 GB, Dual" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 1 - CPU-Z pestana <strong>Memory</strong>: que RAM tiene la PC</h4>
+    <p>Datos generales de los m&oacute;dulos instalados: <strong>Type: DDR3</strong>, <strong>Size: 12 GBytes</strong> (4 + 8), canal <strong>Channel # Dual</strong> y frecuencia real <strong>DRAM Frequency 798,4 MHz</strong> (&times;2 = DDR3-1600, es decir <strong>PC3-12800</strong>). Timings activos: <strong>CL 11</strong>, tRCD 11, tRP 11, tRAS 28 (el &uacute;ltimo perfil JEDEC, el m&aacute;s conservador, que es como arranca una mezcla de m&oacute;dulos).</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Type: DDR3 / Size: 12 GBytes</td><td class='es'>Generacion de RAM y total instalado (suman los dos modulos)</td></tr>
+          <tr><td class='en'>Channel # Dual</td><td class='es'>Los dos modulos trabajan en doble canal (dobla el ancho de banda)</td></tr>
+          <tr><td class='en'>DRAM Frequency 798,4 MHz</td><td class='es'>Frecuencia real del bus; x2 por DDR: 1600 Mt/s = PC3-12800</td></tr>
+          <tr><td class='en'>CAS# Latency (CL) 11.0</td><td class='es'>Latencia en ciclos: cuantos ciclos tarda en responder un pedido</td></tr>
+          <tr><td class='en'>FSB:DRAM 1:8</td><td class='es'>Relacion entre el reloj de la placa (reloj base 100 MHz en esta plataforma) y el de la RAM: 100 x 8 = 800 MHz</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/2_c6-cpuz-spd.png" alt="CPU-Z pestana SPD con el modulo Kingston de 4 GB" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 2 - CPU-Z pestana <strong>SPD</strong>: la etiqueta del m&oacute;dulo, leida por software</h4>
+    <p><strong>SPD</strong> (Serial Presence Detect) es el chip del m&oacute;dulo donde el fabricante grab&oacute; en f&aacute;brica toda su etiqueta. En <em>Memory Slot Selection: Slot #2</em> se ve el m&oacute;dulo <strong>Kingston 99U5584-005.A00LF</strong>: <strong>4 GBytes</strong>, <strong>DDR3 PC3-12800 (800 MHz)</strong>, fabricado <strong>semana 25/2015</strong>, voltaje <strong>1,50 V</strong>, un solo rango (Rank: Single), n&uacute;mero de serie 4323A539 y la tabla JEDEC con todas las lado alternativas (de CL6 a CL11 seg&uacute;n frecuencia).</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Module Manuf.: Kingston</td><td class='es'>Fabricante del modulo (es la marca de la etiqueta fisica)</td></tr>
+          <tr><td class='en'>Max Bandwidth: PC3-12800 (800 MHz)</td><td class='es'>Clasificacion comercial: DDR3-1600 (x2)</td></tr>
+          <tr><td class='en'>Week / Year: 25 / 15</td><td class='es'>Semana y ano de fabricacion grabado en el chip SPD</td></tr>
+          <tr><td class='en'>Ranks: Single</td><td class='es'>Cuatro rango de chips por lado (un modulo simple)</td></tr>
+          <tr><td class='en'>JEDEC #6: 11-11-11-28 @ 800 MHz</td><td class='es'>Timings de fabrica: mientras mas alto el perfil, mas lento pero mas compatible</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px"><strong>Los dos m&oacute;dulos del aula (del informe TXT de CPU-Z, bot&oacute;n Save Report):</strong></p>
+    <table class="tabla-modulos">
+      <thead><tr><th>DIMM</th><th>Fabricante</th><th>Capacidad</th><th>Tipo</th><th>Voltaje</th><th>Fabricaci&oacute;n</th><th>Part number</th></tr></thead>
+      <tbody>
+        <tr><td>#1</td><td>Kingston</td><td>4 GB</td><td>DDR3</td><td>1,50 V</td><td>Semana 25 / 2015</td><td>99U5584-005.A00LF</td></tr>
+        <tr><td>#2</td><td>Samsung</td><td>8 GB</td><td>DDR3L</td><td>1,35 V</td><td>Semana 15 / 2025</td><td>(no informa)</td></tr>
+      </tbody>
+    </table>
+    <p class="nota" style="margin-top:10px">Dato del taller: son <strong>240 contactos</strong> y <strong>una muesca</strong> descentrada (as&iacute; se distingue DDR3 de DDR2, que tiene la muesca en otra posici&oacute;n, y de DDR4 con muesca tambien distinta). DDR3L funge con 1,35 V o 1,50 V; por eso convive con el DDR3 en la misma placa.</p>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/3_c6-msinfo32.png" alt="msinfo32 resumen con memoria fisica instalada" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 3 - msinfo32: lo que el sistema reconoce</h4>
+    <p><strong>Resumen del sistema &gt; Memoria f&iacute;sica (RAM) instalada: 12,0 GB</strong> (el sistema declara 11,2 GB utilizables: el resto queda reservado por hardware, en este caso la placa de video integrada del APU). Coincide con CPU-Z: 4 + 8 = 12 GB. Si la placa reconociera menos, un m&oacute;dulo estar&iacute;a mal insertado o da&ntilde;ado.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>12,0 GB instalada / 11,2 GB usable</td><td class='es'>La del video integrado se queda reservada; diferencia normal en PCs con APU</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/4_c6-mdsched-opciones.png" alt="mdsched: opciones de programacion del diagnostico de memoria" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 4 - Win+R &gt; <code>mdsched</code>: programar la prueba de memoria</h4>
+    <p>Se ejecut&oacute; <code>mdsched</code> (Diagn&oacute;stico de memoria de Windows). Ofrece dos opciones: <strong>&laquo;Reiniciar ahora y comprobar&raquo;</strong> (el test corre en el pr&oacute;ximo arranque, antes de Windows) y <strong>&laquo;Comprobar la pr&oacute;xima vez que se inicie&raquo;</strong>. En el aula se elige el modo programado para no interrumpir la clase. La prueba est&aacute;ndar corre varios minutos; el resultado queda en el <strong>Visor de sucesos</strong> (fuente MemoryDiagnostics-Results) despu&eacute;s de arrancar Windows.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Reiniciar ahora (recomendado)</td><td class='es'>El test de memoria corre ANTES de cargar Windows (sin interferencias del SO)</td></tr>
+          <tr><td class='en'>Guardar el trabajo</td><td class='es'>Aviso: se va a reiniciar la PC</td></tr>
+          <tr><td class='en'>MemoryDiagnostics-Results</td><td class='es'>Fuente del Visor de sucesos con el resultado del test</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/5_c6-cpuz-cpu.png" alt="CPU-Z pestana CPU con la memoria en el selector Socket" class="capture-img">
+  <div class="capture-info">
+    <h4>Extra - CPU-Z: el controlador de memoria del procesador</h4>
+    <p>En la pesta&ntilde;a <strong>CPU</strong> se ve el A4-7300 con su controlador de memoria integrado (el que gestiona la RAM desde 2011 sin chip puente aparte). El selector <strong>Selection: Socket #1</strong> (abajo a la izquierda) es el mismo que cambia entre m&oacute;dulos en la pesta&ntilde;a SPD: funciona directo en pantalla con el mouse.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Cache L1 2x16KB / L2 4MB</td><td class='es'>Memorias internas del CPU; la RAM es un escalon mas lento</td></tr>
+          <tr><td class='en'>Selection: Socket #1</td><td class='es'>Selector de modulos que se usa en la pestana SPD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="entrega"><strong>Conclusi&oacute;n (qu&eacute; m&oacute;dulo conviene cambiar primero y por qu&eacute;):</strong><br>
+El <strong>Kingston de 4 GB (DIMM #1)</strong> es el primero a cambiar: es el m&aacute;s viejo (2015), aporta la cuarta parte de la memoria y trabaja con <strong>voltaje de la generaci&oacute;n anterior (1,50 V)</strong>. Es DDR3L el Samsung de 8 GB (2025) que trabaja con <strong>1,35 V</strong>: menos consumo y menos calor. Si se reemplaza el Kingston por otro m&oacute;dulo DDR3L de 8 GB, el equipo queda 16 GB en doble canal con voltaje uniforme. Hoy la mezcla funciona bien (CPU-Z informa <strong>Channel # Dual</strong> y los dos m&oacute;dulos a la misma velocidad, PC3-12800, con el perfil m&aacute;s compatible CL 11), pero los m&oacute;dulos de era distinta en doble canal casan siempre a la velocidad del m&aacute;s lento y con un perfil de timings comunes, y una mezcla de voltajes adelanta el desgaste del lado 1,35 V del Samsung si el motherboard no regula bien. Confirmar con la prueba de <code>mdsched</code> programada: sin errores de memoria, el cambio queda como mejora a futuro; con errores, se retira el m&oacute;dulo que los fondo.</div>
+
+<div class="footer"><span>Practica Clase 6 - Diagn&oacute;stico y Mantenimiento de PC - ITC</span><span>Actividad resuelta con capturas reales de las herramientas del curso</span></div>
+</div>
+</body></html>

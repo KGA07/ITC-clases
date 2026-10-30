@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://datosgcba.github.io/guia-datos/guia-metadatos/ -->
+<html lang="es" class="js-focus-visible js" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Recursos para la apertura de datos públicos del Gobierno de la Ciudad Autónoma de Buenos Aires.">
+      
+      
+        <meta name="author" content="Buenos Aires Data">
+      
+      
+        <link rel="canonical" href="https://datosgcba.github.io/guia-datos/guia-metadatos/">
+      
+      
+        <link rel="prev" href="https://datosgcba.github.io/guia-datos/guia-abiertos/">
+      
+      
+        <link rel="next" href="https://datosgcba.github.io/guia-datos/guia-interoperables/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="res/1_logo_ba.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Guía para el uso y la publicación de metadatos - Estrategia de Apertura de Datos</title>
+      
+    
+    
+      <link rel="stylesheet" href="res/2_main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="res/3_palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link rel="stylesheet" href="res/4_css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="res/5_css2">
+    
+      <link rel="stylesheet" href="res/6_css2(1)">
+    
+      <link rel="stylesheet" href="res/7_boxicons.min.css">
+    
+      <link rel="stylesheet" href="res/8_css2(2)">
+    
+      <link rel="stylesheet" href="res/9_styles.min.css">
+    
+      <link rel="stylesheet" href="res/10_obelisco-bridge.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><style>undefined</style><script src="./Guía para el uso y la publicación de metadatos - Estrategia de Apertura de Datos_files/default.php" extid="17" id="ghsinj"></script>
+    
+      
+
+    
+    
+  <script src="res/11_default(1).php" extid="17" id="ghsinj"></script><style>.downloadSVG-widget-download-svg-from-any-webpage__react-draggable.left-edge {
+    flex-direction: row;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 5px;
+}
+
+.downloadSVG-widget-download-svg-from-any-webpage__react-draggable.right-edge {
+    flex-direction: row-reverse;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    left: -74px;
+}
+
+.downloadSVG-widget-download-svg-from-any-webpage__cross-btn.left-edge {
+    left: 80%;
+}
+
+.downloadSVG-widget-download-svg-from-any-webpage__cross-btn.right-edge {
+    right: 80%;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9idWlsZC93aWRnZXQvY29tcG9uZW50cy9EcmFnZ2FibGVXaWRnZXQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksbUJBQW1CO0lBQ25CLHlCQUF5QjtJQUN6Qiw0QkFBNEI7SUFDNUIsU0FBUztBQUNiOztBQUVBO0lBQ0ksMkJBQTJCO0lBQzNCLDBCQUEwQjtJQUMxQiw2QkFBNkI7SUFDN0IsV0FBVztBQUNmOztBQUVBO0lBQ0ksU0FBUztBQUNiOztBQUVBO0lBQ0ksVUFBVTtBQUNkIiwic291cmNlc0NvbnRlbnQiOlsiLmRvd25sb2FkU1ZHLXdpZGdldC1kb3dubG9hZC1zdmctZnJvbS1hbnktd2VicGFnZV9fcmVhY3QtZHJhZ2dhYmxlLmxlZnQtZWRnZSB7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiAwO1xuICAgIGJvcmRlci1ib3R0b20tbGVmdC1yYWRpdXM6IDA7XG4gICAgbGVmdDogNXB4O1xufVxuXG4uZG93bmxvYWRTVkctd2lkZ2V0LWRvd25sb2FkLXN2Zy1mcm9tLWFueS13ZWJwYWdlX19yZWFjdC1kcmFnZ2FibGUucmlnaHQtZWRnZSB7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdy1yZXZlcnNlO1xuICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAwO1xuICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAwO1xuICAgIGxlZnQ6IC03NHB4O1xufVxuXG4uZG93bmxvYWRTVkctd2lkZ2V0LWRvd25sb2FkLXN2Zy1mcm9tLWFueS13ZWJwYWdlX19jcm9zcy1idG4ubGVmdC1lZGdlIHtcbiAgICBsZWZ0OiA4MCU7XG59XG5cbi5kb3dubG9hZFNWRy13aWRnZXQtZG93bmxvYWQtc3ZnLWZyb20tYW55LXdlYnBhZ2VfX2Nyb3NzLWJ0bi5yaWdodC1lZGdlIHtcbiAgICByaWdodDogODAlO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>/* roboto-cyrillic-ext-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/4777461b144e55145268.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/3503ec5cc6330e21f695.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/1431d1cef06ad04f5458.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/5b5f2f31962967dfc22c.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/35b9d6be04b95f0f0530.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/392a45a84c081c4b412d.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/db2632771401f61463fe.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/8ecd7085cfe9bc2c22ac.woff) format('woff');
+  unicode-range: U+0370-03FF;
+}
+
+/* roboto-vietnamese-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/32fc45a3d1e8ea11fabc.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/8472d69545c7409091b4.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/dc7dcec8e3f654e0ed63.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/182712ab85f1472cdb2f.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-300-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/c48fb6765a9fcb00b330.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/0515ab82dae6923cab85.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9AZm9udHNvdXJjZS9yb2JvdG8vMzAwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtQ0FBbUM7QUFDbkM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXVJO0VBQ3ZJLGlGQUFpRjtBQUNuRjs7QUFFQSwrQkFBK0I7QUFDL0I7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQStIO0VBQy9ILGdFQUFnRTtBQUNsRTs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQWlJO0VBQ2pJLDBCQUEwQjtBQUM1Qjs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXlIO0VBQ3pILDBCQUEwQjtBQUM1Qjs7QUFFQSxpQ0FBaUM7QUFDakM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQW1JO0VBQ25JLDJKQUEySjtBQUM3Sjs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQWlJO0VBQ2pJLHFJQUFxSTtBQUN2STs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQXlIO0VBQ3pILDhLQUE4SztBQUNoTCIsInNvdXJjZXNDb250ZW50IjpbIi8qIHJvYm90by1jeXJpbGxpYy1leHQtMzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLWV4dC0zMDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1jeXJpbGxpYy1leHQtMzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswNDYwLTA1MkYsVSsxQzgwLTFDODgsVSsyMEI0LFUrMkRFMC0yREZGLFUrQTY0MC1BNjlGLFUrRkUyRS1GRTJGO1xufVxuXG4vKiByb2JvdG8tY3lyaWxsaWMtMzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTMwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTMwMC1ub3JtYWwud29mZikgZm9ybWF0KCd3b2ZmJyk7XG4gIHVuaWNvZGUtcmFuZ2U6IFUrMDMwMSxVKzA0MDAtMDQ1RixVKzA0OTAtMDQ5MSxVKzA0QjAtMDRCMSxVKzIxMTY7XG59XG5cbi8qIHJvYm90by1ncmVlay1leHQtMzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWdyZWVrLWV4dC0zMDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1ncmVlay1leHQtMzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSsxRjAwLTFGRkY7XG59XG5cbi8qIHJvYm90by1ncmVlay0zMDAtbm9ybWFsICovXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtZGlzcGxheTogc3dhcDtcbiAgZm9udC13ZWlnaHQ6IDMwMDtcbiAgc3JjOiB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstMzAwLW5vcm1hbC53b2ZmMikgZm9ybWF0KCd3b2ZmMicpLCB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstMzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMzcwLTAzRkY7XG59XG5cbi8qIHJvYm90by12aWV0bmFtZXNlLTMwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogMzAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by12aWV0bmFtZXNlLTMwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLXZpZXRuYW1lc2UtMzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAyLTAxMDMsVSswMTEwLTAxMTEsVSswMTI4LTAxMjksVSswMTY4LTAxNjksVSswMUEwLTAxQTEsVSswMUFGLTAxQjAsVSswMzAwLTAzMDEsVSswMzAzLTAzMDQsVSswMzA4LTAzMDksVSswMzIzLFUrMDMyOSxVKzFFQTAtMUVGOSxVKzIwQUI7XG59XG5cbi8qIHJvYm90by1sYXRpbi1leHQtMzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWxhdGluLWV4dC0zMDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi1leHQtMzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAwLTAyQUYsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsxRTAwLTFFOUYsVSsxRUYyLTFFRkYsVSsyMDIwLFUrMjBBMC0yMEFCLFUrMjBBRC0yMENGLFUrMjExMyxVKzJDNjAtMkM3RixVK0E3MjAtQTdGRjtcbn1cblxuLyogcm9ib3RvLWxhdGluLTMwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogMzAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi0zMDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi0zMDAtbm9ybWFsLndvZmYpIGZvcm1hdCgnd29mZicpO1xuICB1bmljb2RlLXJhbmdlOiBVKzAwMDAtMDBGRixVKzAxMzEsVSswMTUyLTAxNTMsVSswMkJCLTAyQkMsVSswMkM2LFUrMDJEQSxVKzAyREMsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsyMDAwLTIwNkYsVSsyMDc0LFUrMjBBQyxVKzIxMjIsVSsyMTkxLFUrMjE5MyxVKzIyMTIsVSsyMjE1LFUrRkVGRixVK0ZGRkQ7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>/* roboto-cyrillic-ext-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/804378952da8a10faae2.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/af4d91666ea345601bea.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/71a33b6b50457b2c903a.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/c1d66054fe23e181d92c.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/169619821ea93019d1bb.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/f708607d2a7290fb8bfa.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/c35e4c3958e209d17b31.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/dfdff8fa12eac629d29f.woff) format('woff');
+  unicode-range: U+0370-03FF;
+}
+
+/* roboto-vietnamese-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/3230f9b040f3c630e0c3.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/e0e8ba725ebd107367a8.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/861b791f9de857a6e7bc.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/e757c42df6aaa3e11b62.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-400-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/b009a76ad6afe4ebd301.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/3f2b9a42f643e62a49b7.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9AZm9udHNvdXJjZS9yb2JvdG8vNDAwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtQ0FBbUM7QUFDbkM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXVJO0VBQ3ZJLGlGQUFpRjtBQUNuRjs7QUFFQSwrQkFBK0I7QUFDL0I7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQStIO0VBQy9ILGdFQUFnRTtBQUNsRTs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQWlJO0VBQ2pJLDBCQUEwQjtBQUM1Qjs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXlIO0VBQ3pILDBCQUEwQjtBQUM1Qjs7QUFFQSxpQ0FBaUM7QUFDakM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQW1JO0VBQ25JLDJKQUEySjtBQUM3Sjs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQWlJO0VBQ2pJLHFJQUFxSTtBQUN2STs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQXlIO0VBQ3pILDhLQUE4SztBQUNoTCIsInNvdXJjZXNDb250ZW50IjpbIi8qIHJvYm90by1jeXJpbGxpYy1leHQtNDAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLWV4dC00MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1jeXJpbGxpYy1leHQtNDAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswNDYwLTA1MkYsVSsxQzgwLTFDODgsVSsyMEI0LFUrMkRFMC0yREZGLFUrQTY0MC1BNjlGLFUrRkUyRS1GRTJGO1xufVxuXG4vKiByb2JvdG8tY3lyaWxsaWMtNDAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTQwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTQwMC1ub3JtYWwud29mZikgZm9ybWF0KCd3b2ZmJyk7XG4gIHVuaWNvZGUtcmFuZ2U6IFUrMDMwMSxVKzA0MDAtMDQ1RixVKzA0OTAtMDQ5MSxVKzA0QjAtMDRCMSxVKzIxMTY7XG59XG5cbi8qIHJvYm90by1ncmVlay1leHQtNDAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWdyZWVrLWV4dC00MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1ncmVlay1leHQtNDAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSsxRjAwLTFGRkY7XG59XG5cbi8qIHJvYm90by1ncmVlay00MDAtbm9ybWFsICovXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtZGlzcGxheTogc3dhcDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgc3JjOiB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstNDAwLW5vcm1hbC53b2ZmMikgZm9ybWF0KCd3b2ZmMicpLCB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstNDAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMzcwLTAzRkY7XG59XG5cbi8qIHJvYm90by12aWV0bmFtZXNlLTQwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogNDAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by12aWV0bmFtZXNlLTQwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLXZpZXRuYW1lc2UtNDAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAyLTAxMDMsVSswMTEwLTAxMTEsVSswMTI4LTAxMjksVSswMTY4LTAxNjksVSswMUEwLTAxQTEsVSswMUFGLTAxQjAsVSswMzAwLTAzMDEsVSswMzAzLTAzMDQsVSswMzA4LTAzMDksVSswMzIzLFUrMDMyOSxVKzFFQTAtMUVGOSxVKzIwQUI7XG59XG5cbi8qIHJvYm90by1sYXRpbi1leHQtNDAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA0MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWxhdGluLWV4dC00MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi1leHQtNDAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAwLTAyQUYsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsxRTAwLTFFOUYsVSsxRUYyLTFFRkYsVSsyMDIwLFUrMjBBMC0yMEFCLFUrMjBBRC0yMENGLFUrMjExMyxVKzJDNjAtMkM3RixVK0E3MjAtQTdGRjtcbn1cblxuLyogcm9ib3RvLWxhdGluLTQwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogNDAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi00MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi00MDAtbm9ybWFsLndvZmYpIGZvcm1hdCgnd29mZicpO1xuICB1bmljb2RlLXJhbmdlOiBVKzAwMDAtMDBGRixVKzAxMzEsVSswMTUyLTAxNTMsVSswMkJCLTAyQkMsVSswMkM2LFUrMDJEQSxVKzAyREMsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsyMDAwLTIwNkYsVSsyMDc0LFUrMjBBQyxVKzIxMjIsVSsyMTkxLFUrMjE5MyxVKzIyMTIsVSsyMjE1LFUrRkVGRixVK0ZGRkQ7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>/* roboto-cyrillic-ext-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/62ced72e5832f02c2796.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/268f264f58eba5c07c88.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/cad7d3d9cb265e334e58.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/965aebef74db72eaf236.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/6fb9cffb1d3e72bf9293.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/eaa367bbd0b333a7f80b.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/9ac81fefbe6c319ea40b.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/1a05a4887ccb810cb4dd.woff) format('woff');
+  unicode-range: U+0370-03FF;
+}
+
+/* roboto-vietnamese-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/d8642a3d1d4ef6179644.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/657896dad292ee9a0a0a.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/9165081d10e1ba601384.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/252057e589a0379208ed.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-500-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/f25d774ecfe0996f8eb5.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/1f075502d0094a398e21.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9AZm9udHNvdXJjZS9yb2JvdG8vNTAwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtQ0FBbUM7QUFDbkM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXVJO0VBQ3ZJLGlGQUFpRjtBQUNuRjs7QUFFQSwrQkFBK0I7QUFDL0I7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQStIO0VBQy9ILGdFQUFnRTtBQUNsRTs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQWlJO0VBQ2pJLDBCQUEwQjtBQUM1Qjs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXlIO0VBQ3pILDBCQUEwQjtBQUM1Qjs7QUFFQSxpQ0FBaUM7QUFDakM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQW1JO0VBQ25JLDJKQUEySjtBQUM3Sjs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQWlJO0VBQ2pJLHFJQUFxSTtBQUN2STs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQXlIO0VBQ3pILDhLQUE4SztBQUNoTCIsInNvdXJjZXNDb250ZW50IjpbIi8qIHJvYm90by1jeXJpbGxpYy1leHQtNTAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLWV4dC01MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1jeXJpbGxpYy1leHQtNTAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswNDYwLTA1MkYsVSsxQzgwLTFDODgsVSsyMEI0LFUrMkRFMC0yREZGLFUrQTY0MC1BNjlGLFUrRkUyRS1GRTJGO1xufVxuXG4vKiByb2JvdG8tY3lyaWxsaWMtNTAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTUwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTUwMC1ub3JtYWwud29mZikgZm9ybWF0KCd3b2ZmJyk7XG4gIHVuaWNvZGUtcmFuZ2U6IFUrMDMwMSxVKzA0MDAtMDQ1RixVKzA0OTAtMDQ5MSxVKzA0QjAtMDRCMSxVKzIxMTY7XG59XG5cbi8qIHJvYm90by1ncmVlay1leHQtNTAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWdyZWVrLWV4dC01MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1ncmVlay1leHQtNTAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSsxRjAwLTFGRkY7XG59XG5cbi8qIHJvYm90by1ncmVlay01MDAtbm9ybWFsICovXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtZGlzcGxheTogc3dhcDtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgc3JjOiB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstNTAwLW5vcm1hbC53b2ZmMikgZm9ybWF0KCd3b2ZmMicpLCB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstNTAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMzcwLTAzRkY7XG59XG5cbi8qIHJvYm90by12aWV0bmFtZXNlLTUwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogNTAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by12aWV0bmFtZXNlLTUwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLXZpZXRuYW1lc2UtNTAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAyLTAxMDMsVSswMTEwLTAxMTEsVSswMTI4LTAxMjksVSswMTY4LTAxNjksVSswMUEwLTAxQTEsVSswMUFGLTAxQjAsVSswMzAwLTAzMDEsVSswMzAzLTAzMDQsVSswMzA4LTAzMDksVSswMzIzLFUrMDMyOSxVKzFFQTAtMUVGOSxVKzIwQUI7XG59XG5cbi8qIHJvYm90by1sYXRpbi1leHQtNTAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWxhdGluLWV4dC01MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi1leHQtNTAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAwLTAyQUYsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsxRTAwLTFFOUYsVSsxRUYyLTFFRkYsVSsyMDIwLFUrMjBBMC0yMEFCLFUrMjBBRC0yMENGLFUrMjExMyxVKzJDNjAtMkM3RixVK0E3MjAtQTdGRjtcbn1cblxuLyogcm9ib3RvLWxhdGluLTUwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogNTAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi01MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi01MDAtbm9ybWFsLndvZmYpIGZvcm1hdCgnd29mZicpO1xuICB1bmljb2RlLXJhbmdlOiBVKzAwMDAtMDBGRixVKzAxMzEsVSswMTUyLTAxNTMsVSswMkJCLTAyQkMsVSswMkM2LFUrMDJEQSxVKzAyREMsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsyMDAwLTIwNkYsVSsyMDc0LFUrMjBBQyxVKzIxMjIsVSsyMTkxLFUrMjE5MyxVKzIyMTIsVSsyMjE1LFUrRkVGRixVK0ZGRkQ7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>/* roboto-cyrillic-ext-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/be4d02458ce53887dc37.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/198a421f279162d59143.woff) format('woff');
+  unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+}
+
+/* roboto-cyrillic-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/d010f1f324e111a22e53.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/f8a034d72aa6828199d4.woff) format('woff');
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+/* roboto-greek-ext-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bd9854c751441ccc1a70.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/249853776d22a271b2b5.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* roboto-greek-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/50e795c1345353b0e996.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/a84892c56152037b3552.woff) format('woff');
+  unicode-range: U+0370-03FF;
+}
+
+/* roboto-vietnamese-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/3425a701027d0699e369.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/4df79f684fcbca8386bd.woff) format('woff');
+  unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+}
+
+/* roboto-latin-ext-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/ed67ad54b1a8f5d21150.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/c1cc6d6fc851b3a2f79d.woff) format('woff');
+  unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* roboto-latin-700-normal */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/227c93190fe7f82de3f8.woff2) format('woff2'), url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/666d7a2f9db53cf52e2d.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9AZm9udHNvdXJjZS9yb2JvdG8vNzAwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtQ0FBbUM7QUFDbkM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXVJO0VBQ3ZJLGlGQUFpRjtBQUNuRjs7QUFFQSwrQkFBK0I7QUFDL0I7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQStIO0VBQy9ILGdFQUFnRTtBQUNsRTs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQWlJO0VBQ2pJLDBCQUEwQjtBQUM1Qjs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQXlIO0VBQ3pILDBCQUEwQjtBQUM1Qjs7QUFFQSxpQ0FBaUM7QUFDakM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsb0hBQW1JO0VBQ25JLDJKQUEySjtBQUM3Sjs7QUFFQSxnQ0FBZ0M7QUFDaEM7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQWlJO0VBQ2pJLHFJQUFxSTtBQUN2STs7QUFFQSw0QkFBNEI7QUFDNUI7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsc0hBQXlIO0VBQ3pILDhLQUE4SztBQUNoTCIsInNvdXJjZXNDb250ZW50IjpbIi8qIHJvYm90by1jeXJpbGxpYy1leHQtNzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLWV4dC03MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1jeXJpbGxpYy1leHQtNzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswNDYwLTA1MkYsVSsxQzgwLTFDODgsVSsyMEI0LFUrMkRFMC0yREZGLFUrQTY0MC1BNjlGLFUrRkUyRS1GRTJGO1xufVxuXG4vKiByb2JvdG8tY3lyaWxsaWMtNzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTcwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLWN5cmlsbGljLTcwMC1ub3JtYWwud29mZikgZm9ybWF0KCd3b2ZmJyk7XG4gIHVuaWNvZGUtcmFuZ2U6IFUrMDMwMSxVKzA0MDAtMDQ1RixVKzA0OTAtMDQ5MSxVKzA0QjAtMDRCMSxVKzIxMTY7XG59XG5cbi8qIHJvYm90by1ncmVlay1leHQtNzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWdyZWVrLWV4dC03MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1ncmVlay1leHQtNzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSsxRjAwLTFGRkY7XG59XG5cbi8qIHJvYm90by1ncmVlay03MDAtbm9ybWFsICovXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtZGlzcGxheTogc3dhcDtcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgc3JjOiB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstNzAwLW5vcm1hbC53b2ZmMikgZm9ybWF0KCd3b2ZmMicpLCB1cmwoLi9maWxlcy9yb2JvdG8tZ3JlZWstNzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMzcwLTAzRkY7XG59XG5cbi8qIHJvYm90by12aWV0bmFtZXNlLTcwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogNzAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by12aWV0bmFtZXNlLTcwMC1ub3JtYWwud29mZjIpIGZvcm1hdCgnd29mZjInKSwgdXJsKC4vZmlsZXMvcm9ib3RvLXZpZXRuYW1lc2UtNzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAyLTAxMDMsVSswMTEwLTAxMTEsVSswMTI4LTAxMjksVSswMTY4LTAxNjksVSswMUEwLTAxQTEsVSswMUFGLTAxQjAsVSswMzAwLTAzMDEsVSswMzAzLTAzMDQsVSswMzA4LTAzMDksVSswMzIzLFUrMDMyOSxVKzFFQTAtMUVGOSxVKzIwQUI7XG59XG5cbi8qIHJvYm90by1sYXRpbi1leHQtNzAwLW5vcm1hbCAqL1xuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiAnUm9ib3RvJztcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LWRpc3BsYXk6IHN3YXA7XG4gIGZvbnQtd2VpZ2h0OiA3MDA7XG4gIHNyYzogdXJsKC4vZmlsZXMvcm9ib3RvLWxhdGluLWV4dC03MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi1leHQtNzAwLW5vcm1hbC53b2ZmKSBmb3JtYXQoJ3dvZmYnKTtcbiAgdW5pY29kZS1yYW5nZTogVSswMTAwLTAyQUYsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsxRTAwLTFFOUYsVSsxRUYyLTFFRkYsVSsyMDIwLFUrMjBBMC0yMEFCLFUrMjBBRC0yMENGLFUrMjExMyxVKzJDNjAtMkM3RixVK0E3MjAtQTdGRjtcbn1cblxuLyogcm9ib3RvLWxhdGluLTcwMC1ub3JtYWwgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ1JvYm90byc7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC1kaXNwbGF5OiBzd2FwO1xuICBmb250LXdlaWdodDogNzAwO1xuICBzcmM6IHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi03MDAtbm9ybWFsLndvZmYyKSBmb3JtYXQoJ3dvZmYyJyksIHVybCguL2ZpbGVzL3JvYm90by1sYXRpbi03MDAtbm9ybWFsLndvZmYpIGZvcm1hdCgnd29mZicpO1xuICB1bmljb2RlLXJhbmdlOiBVKzAwMDAtMDBGRixVKzAxMzEsVSswMTUyLTAxNTMsVSswMkJCLTAyQkMsVSswMkM2LFUrMDJEQSxVKzAyREMsVSswMzA0LFUrMDMwOCxVKzAzMjksVSsyMDAwLTIwNkYsVSsyMDc0LFUrMjBBQyxVKzIxMjIsVSsyMTkxLFUrMjE5MyxVKzIyMTIsVSsyMjE1LFUrRkVGRixVK0ZGRkQ7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com/"><link rel="stylesheet" href="res/12_css2(3)"></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#guia-para-el-uso-y-la-publicacion-de-metadatos-del-gobierno-de-la-ciudad-autonoma-de-buenos-aires" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <header class="o-header navbar" role="banner">
+    <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#__main" class="skip-to-main-content-link">Saltar al contenido principal</a>
+
+    <div class="container header-container">
+        <a href="https://buenosaires.gob.ar/" class="navbar-brand">
+            <img class="d-none d-xl-block" src="res/1_logo_ba.svg" alt="Gobierno de la Ciudad de Buenos Aires">
+            <img class="d-xl-none" src="res/13_logo_ba_mobile.svg" alt="Gobierno de la Ciudad de Buenos Aires">
+        </a>
+
+        <p style="font-size: 1.5em; margin-bottom: 0;">Estrategia de Apertura de Datos</p>
+
+        <div class="md-search" data-md-component="search"></div>
+
+        <a href="https://github.com/datosgcba/guia-datos" class="btn btn-outline-secondary btn-github" style="margin-left:12px; white-space:nowrap;" target="_blank" rel="noopener">
+            Ver en GitHub
+        </a>
+    </div>
+
+    <div class="header-backdrop"></div>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://datosgcba.github.io/guia-datos/" title="Estrategia de Apertura de Datos" class="md-nav__button md-logo" aria-label="Estrategia de Apertura de Datos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Estrategia de Apertura de Datos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/datosgcba/guia-datos" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    datosgcba/guia-datos
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://datosgcba.github.io/guia-datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://datosgcba.github.io/guia-datos/politica-datos-abiertos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Política de Datos Abiertos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://datosgcba.github.io/guia-datos/guia-abiertos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para la publicación de datos en formatos abiertos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para el uso y la publicación de metadatos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para el uso y la publicación de metadatos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#que-son-los-metadatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué son los metadatos?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#como-se-publican-los-metadatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo se publican los metadatos?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#denominaciones-y-caracteristicas-del-catalogo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Denominaciones y características del catálogo de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Denominaciones y características del catálogo de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#estandar-usado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estándar usado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#campos-del-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos del perfil
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Campos del perfil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#catalogo-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catálogo (catalog)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#conjunto-de-datos-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conjunto de Datos (dataset)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#distribucion-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distribución (distribution)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#campo-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campo (field)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#tema-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tema (theme)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-i-taxonomia-tematica-global-de-la-apn-para-los-conjuntos-de-datostabla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo I - Taxonomía temática global de la APN para los conjuntos de datos(tabla)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-ii-pautas-para-la-seleccion-de-etiquetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo II - Pautas para la selección de etiquetas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-iii-especificacion-de-frecuencias-segun-iso-8601" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo III - Especificación de frecuencias (según ISO-8601)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-iv-ejemplo-de-datajson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo IV - Ejemplo de data.json
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-v-taxonomia-tematica-global-de-la-apn-para-los-datasets-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo V - Taxonomía temática global de la APN para los datasets (JSON)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-vi-ejemplo-de-metadatos-como-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo VI - Ejemplo de metadatos como texto
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://datosgcba.github.io/guia-datos/guia-interoperables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para la identificación y uso de entidades interoperables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://datosgcba.github.io/guia-datos/glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#que-son-los-metadatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué son los metadatos?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#como-se-publican-los-metadatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo se publican los metadatos?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#denominaciones-y-caracteristicas-del-catalogo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Denominaciones y características del catálogo de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Denominaciones y características del catálogo de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#estandar-usado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estándar usado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#campos-del-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos del perfil
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Campos del perfil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#catalogo-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catálogo (catalog)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#conjunto-de-datos-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conjunto de Datos (dataset)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#distribucion-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distribución (distribution)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#campo-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campo (field)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#tema-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tema (theme)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-i-taxonomia-tematica-global-de-la-apn-para-los-conjuntos-de-datostabla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo I - Taxonomía temática global de la APN para los conjuntos de datos(tabla)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-ii-pautas-para-la-seleccion-de-etiquetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo II - Pautas para la selección de etiquetas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-iii-especificacion-de-frecuencias-segun-iso-8601" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo III - Especificación de frecuencias (según ISO-8601)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-iv-ejemplo-de-datajson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo IV - Ejemplo de data.json
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-v-taxonomia-tematica-global-de-la-apn-para-los-datasets-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo V - Taxonomía temática global de la APN para los datasets (JSON)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-vi-ejemplo-de-metadatos-como-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexo VI - Ejemplo de metadatos como texto
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="guia-para-el-uso-y-la-publicacion-de-metadatos-del-gobierno-de-la-ciudad-autonoma-de-buenos-aires">Guía para el uso y la publicación de metadatos del Gobierno de la Ciudad Autónoma de Buenos Aires</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Esta es una <strong>guía de recomendaciones y buenas prácticas, para el uso y la publicación de metadatos</strong> que adopta el Gobierno de la Ciudad Autónoma de Buenos Aires. </p>
+<p>Las recomendaciones se basan en la guía del Gobierno Nacional, en estándares usados a nivel nacional e internacional y en la experiencia de trabajo del equipo de la Dirección General de Gobernanza de Datos de la Subsecretaria de Innovación Administrativa, dependiente de la Secretaría de Innovación y Transformación Digital (en adelante, TecBA) del Gobierno de la Ciudad Autónoma de Buenos Aires.  </p>
+<p>Esta es <strong>una guía colaborativa y en constante progreso</strong>. Valoramos, y alentamos, a organizaciones y ciudadanos a plantear ideas, sugerencias, y comentarios que ayuden a mejorar este documento.</p>
+<h2 id="que-son-los-metadatos">¿Qué son los metadatos?</h2>
+<p><strong>Los metadatos son los elementos descriptivos que dan contexto</strong> a un conjunto de datos, y acercan al usuario la información necesaria para entenderlos y usarlos.</p>
+<p>Un <strong>título</strong> y una breve <strong>descripción</strong> son los metadatos básicos que cualquier conjunto de datos a publicar debería tener. </p>
+<p>Otros elementos que ayudan al lector a hacer un buen uso de los datos, por ejemplo, pueden ser:</p>
+<ul>
+<li>
+<p><strong>Nombre, tipo de datos y descripción de los campos:</strong> ¿qué significa cada campo? ¿qué datos puedo encontrar en esa columna? ¿qué dicen y qué no dicen esos datos, cómo debo leerlos?</p>
+</li>
+<li>
+<p><strong>Palabras clave:</strong> clasifican a un conjunto de datos como perteneciente a un conjunto de tópicos.</p>
+</li>
+<li>
+<p><strong>Tema:</strong> clasifican a un conjunto de datos como perteneciente a un determinado tema, dentro de una jerarquía temática.</p>
+</li>
+<li>
+<p><strong>Fecha de publicación:</strong> ¿cuándo se publicó por primera vez este conjunto de datos?</p>
+</li>
+<li>
+<p><strong>Fecha de última modificación</strong>: ¿cuándo se actualizó por última vez este conjunto de datos?</p>
+</li>
+<li>
+<p><strong>Frecuencia de actualización:</strong> ¿cada cuánto tiempo se actualiza este conjunto de datos?</p>
+</li>
+<li>
+<p><strong>URL de descarga</strong>: ¿cómo dispongo de los datos, desde dónde puedo descargarlos?</p>
+</li>
+</ul>
+<p>Una lista curada de campos de metadatos, junto con las instrucciones de cómo deben utilizarse, define un <strong>perfil de metadatos</strong>.</p>
+<p>En esta guía describimos el <strong>perfil de metadatos recomendado para los catálogos del Gobierno de la Ciudad Autónoma de Buenos Aires</strong> y cómo publicarlo. De esta manera, todos los componentes de metadatos descriptos están presentes en todos los conjuntos de datos publicados en el portal BA Data.</p>
+<h2 id="como-se-publican-los-metadatos">¿Cómo se publican los metadatos?</h2>
+<p><strong>La publicación de los metadatos puede ser muy diversa</strong> en detalle, calidad y forma. <strong>Una publicación muy elemental es un documento de texto</strong> que ofrece una descripción del conjunto de datos y de cada uno de los recursos que lo componen. Es posible ver un ejemplo textual de los metadatos de un catálogo de datos en el <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-IV-ejemplo-de-data">Anexo VI</a> - Ejemplo de metadatos como texto.</p>
+<p>Sin embargo, <strong>las computadoras no pueden leer fácilmente documentos de texto</strong>. La organización sistemática de colecciones de conjuntos de datos (es decir, la creación de un catálogo de datos) exige un nivel de complejidad mayor para facilitar su descubrimiento, indexación, y reutilización por parte de scripts y aplicaciones de todo tipo.</p>
+<p>La potencial reutilización de los conjuntos de datos dependerá de la calidad de sus metadatos. Por lo tanto, la lectura e interpretación de los conjuntos de datos mejora cuando se adoptan y/o desarrollan estándares y vocabularios controlados.</p>
+<h2 id="denominaciones-y-caracteristicas-del-catalogo-de-datos">Denominaciones y características del catálogo de datos</h2>
+<p>A continuación, se detallan las características de los estándares y vocabularios controlados adoptados para catálogos de datos, datasets y distribuciones.</p>
+<p>Cada entidad del Gobierno de la Ciudad Autónoma de Buenos Aires tendrá publicados los metadatos de sus conjuntos de datos en un archivo data.json. Este archivo estará construido respetando los lineamientos establecidos en el Perfil de Metadatos tal como se lo describe más adelante en la sección <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/campos-del-perfil">Campos del perfil</a>, tal como se puede ver en el ejemplo del <a href="https://datosgcba.github.io/guia-datos/guia-metadatos/#anexo-IV-ejemplo-de-data">Anexo VI</a> - Ejemplo de data.json</p>
+<h3 id="estandar-usado">Estándar usado</h3>
+<p>El perfil de metadatos recomendado en esta guía es una adaptación realizada por el equipo de <strong>Datos Abiertos del Gobierno Nacional</strong> utilizando como base el estándar <a href="https://interoperable-europe.ec.europa.eu/collection/semic-support-centre/solution/dcat-application-profile-data-portals-europe">DCAT - AP</a>, usado por los países de la Unión Europea.</p>
+<p>“DCAT” es un vocabulario controlado definido por la W3C (World Wide Web Consortium, organismo internacional encargado de desarrollar los estándares técnicos para la Web), ampliamente usado a nivel global para la descripción de catálogos de datos.</p>
+<p>Según la W3C: "Mediante la utilización de DCAT para describir datasets en catálogos de datos, quienes publican aumentan la posibilidad de descubrimiento (discoverability) y permiten a aplicaciones informáticas consumir metadatos de manera simple desde múltiples catálogos. Además, permite la publicación descentralizada de catálogos y favorece la búsqueda federada de datasets a través de varios sitios”.</p>
+<p>El perfil de metadatos propuesto para la Administración Pública Nacional se compone de 3 clases principales (Catalog, Dataset y Distribution) y 2 auxiliares (Field y Theme) que se relacionan según el siguiente esquema:</p>
+<p><img alt="" src="res/14_der_perfil_metadatos.png"> </p>
+<p>A continuación, describimos los metadatos que el data.json debe contener, para cada una de estas clases.</p>
+<h3 id="campos-del-perfil">Campos del perfil</h3>
+<h4 id="catalogo-catalog">Catálogo (catalog)</h4>
+<p>El portal del Gobierno de la Ciudad Autónoma de Buenos Aires tendrá un catálogo con ciertos campos de perfil detallados más abajo.</p>
+<p>Ejemplos de metadatos de un <strong>catálogo</strong>:</p>
+<ul>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/data.md">Catálogo en texto</a></li>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/data.json">Catálogo en JSON</a></li>
+</ul>
+<p>Metadatos necesarios para describir el catálogo, que un data.json debe contener:</p>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Requerido</td>
+    <td>Descripción</td>
+    <td>Ejemplo</td>
+    <td>Variable (data.json)</td>
+    <td>Tipo (data.json)</td>
+
+  </tr>  
+  <tr>
+    <td>Nombre</td>
+    <td>Sí</td>
+    <td>Nombre dado al catálogo. Debe ser claro, breve y lo suficientemente abstracto como para abarcar la multiplicidad de datasets que contiene.</td>
+    <td>Buenos Aires Data</td>
+    <td>title</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Descripción</td>
+    <td>Sí</td>
+    <td>Descripción del contenido del catálogo.</td>
+    <td>Portal de Datos Abiertos del Gobierno de la Ciudad Autónoma de Buenos Aires</td>
+    <td>description</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Autor</td>
+    <td>Sí</td>
+    <td>Responsable de la publicación del catálogo.</td>
+    <td>Secretaría General y Relaciones Institucionales - Gobierno de la Ciudad Autónoma de Buenos Aires</td>
+    <td>publisher -&gt; name</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Correo electrónico del autor</td>
+    <td>Sí</td>
+    <td>Correo electrónico de contacto del responsable de la publicación del catálogo.</td>
+    <td><a href="mailto:gobiernoabierto@buenosaires.gob.ar">gobiernoabierto@buenosaires.gob.ar</a></td>
+    <td>publisher -&gt; mbox/td&gt;
+    </td><td>String</td>
+  </tr>
+    <tr>
+    <td>Datasets</td>
+    <td>Sí</td>
+    <td>Contiene una lista de los datasets que forman parte del catálogo.</td>
+    <td>[{...}, {...}]</td>
+    <td>dataset</td>
+    <td>Array</td>
+  </tr>
+    <tr>
+    <td>Fecha de creación o publicación</td>
+    <td>Recomendado</td>
+    <td>Fecha de última actualización/modificación del catálogo. Se escribe según el formato ISO-8601, tipeado como fecha simple o fecha con hora, con el mayor detalle posible que sea relevante para el dataset.</td>
+    <td>"2016-04-19T19:48:05.433640" para especificar fecha y hora
+        "2016-04-19" para especificar fecha únicamente
+        "2016-04-19T19:48:05.433640" para especificar fecha y hora
+        "2016-04-19" para especificar fecha únicamente
+    </td>
+    <td>modified</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Autor</td>
+    <td>Sí</td>
+    <td>Responsable de la publicación del catálogo.</td>
+    <td>Secretaría General y Relaciones Institucionales - Gobierno de la Ciudad Autónoma de Buenos Aires</td>
+    <td>publisher -&gt; name</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Versión del perfil de metadatos</td>
+    <td>Recomendado</td>
+    <td>Es la versión del perfil de metadatos de la red de nodos de datos abiertos de la administración pública nacional de Argentina, utilizada en el catálogo.
+    Se utiliza para que distintas aplicaciones reconozcan y validen los metadatos del catálogo, y las funcionalidades disponibles para distintos fines.
+    </td>
+    <td>1.1</td>
+    <td>version</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Idioma(s)</td>
+    <td>Recomendado</td>
+    <td>Lenguaje para la descripción de los metadatos de los datasets contenidos en el catálogo. Hay 2 estándares ISO que pueden ser utilizados para este campo:
+    (a) ISO 639-1 (2 letras)
+    (b) ISO 639-2/T (3 letras) es el más recomendado.
+    Puede definirse 1 o más lenguajes en una lista. <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">Link a los estándares ISO</a>
+    </td>
+    <td>["es"] para un lenguaje ISO 639-1
+        ["spa", "eng"] para dos lenguajes ISO 639-2
+    </td>
+    <td>language</td>
+    <td>Array</td> 
+  </tr>
+    <tr>
+    <td>Licencia</td>
+    <td>Recomendado</td>
+    <td>Indica la licencia bajo la cual todos los datasets y distribuciones del catálogo están disponibles mediante un enlace a la licencia o documento de la licencia seleccionada, o mediante el título textual de la licencia tal como aparece en la lista de <a href="http://opendefinition.org/licenses/">http://opendefinition.org/licenses/</a>. recomendamos usar la licencia "Open Database License (ODbL) v1.0". Un dataset o distribución que especifique una licencia diferente, sobreescribe a la licencia general del catálogo.</td>
+    <td><a href="http://opendatacommons.org/licenses/dbcl/1-0/">http://opendatacommons.org/licenses/dbcl/1-0/</a> si se utiliza un enlace
+    "Open Database License (ODbL) v1.0" si se consigna el nombre de la licencia a utilizar
+    </td>
+    <td>license</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Página web del catálogo</td>
+    <td>Recomendado</td>
+    <td>Dirección web de acceso a la página principal del catálogo. Enlace a la página principal del catálogo.</td>
+    <td><a href="http://data.buenosaires.gob.ar/">http://data.buenosaires.gob.ar</a></td>
+    <td>homepage</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Taxonomía temática global</td>
+    <td>Sí</td>
+    <td>Es el sistema de clasificación temática global del GCBA. Compone una lista de temas globales y está publicada en <a href="http://data.buenosaires.gob.ar/superThemeTaxonomy.json">http://data.buenosaires.gob.ar/superThemeTaxonomy.json</a>.</td>
+    <td><a href="http://data.buenosaires.gob.ar/superThemeTaxonomy.json">http://data.buenosaires.gob.ar/superThemeTaxonomy.json</a></td>
+    <td>superThemeTaxonomy</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Taxonomía temática específica</td>
+    <td>Recomendado</td>
+    <td>Es el sistema de clasificación temática específica, creado por la organización responsable del catálogo. Compone una lista de temas específicos a los datasets del catálogo. Si se clasifica algún dataset del catálogo como perteneciente a uno o más temas, este campo es obligatorio ya que se debe explicitar una taxonomía temática para poder usar sus temas.</td>
+    <td>[{...}, {...}]</td>
+    <td>themeTaxonomy</td>
+    <td>Array</td>
+  </tr>
+    <tr>
+    <td>Derechos sobre el catálogo</td>
+    <td>No</td>
+    <td>Información sobre derechos aplicables al catálogo en el caso que no se hayan especificado en la licencia. Los datasets y sus distribuciones heredan la información sobre derechos aplicables al catálogo, a menos que especifiquen unos derechos distintos.</td>
+    <td></td>
+    <td>rights</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Cobertura geográfica</td>
+    <td>No</td>
+    <td>El área geográfica cubierta por el catálogo. Puede tomar valores:
+        a) De comunas, barrios, fracciones censales o radios censales, según las recomendaciones de la Guía para la identificación y uso de entidades interoperables.
+        b) Un área de coordenadas representada por latitud/longitud en el orden: minima longitud, mínima latitud, máxima longitud, máxima latitud.
+        c) Un punto geográfico representado por latitud/longitud.
+        ) Si la referencia geográfico no está identificada en la Guía para la identificación y uso de entidades interoperables indicar la URIs según geonames.org; ej : http://sws.geonames.org/6255146
+    </td>
+    <td>"ARG" es el código para la República Argentina.
+        "06007" es el código de un departamento
+        [-58.111111, -35.111111, -57.111111, -33.111111] es un bounding box
+        [-58.111111, -35.111111] es un punto geográfico
+        "http://sws.geonames.org/6255146"
+    </td>
+    <td>spatial</td>
+    <td>String or Array</td>
+  </tr></tbody>
+  </table>
+
+<p>Dentro de los metadatos necesarios para describir el catálogo en un data.json , hay que poner atención a los dos campos que contienen una lista de objetos: <strong>dataset</strong> y <strong>themeTaxonomy</strong>.</p>
+<p>El <strong>primero</strong> contendrá una lista de objetos que describen (cada uno) los metadatos de los distintos datasets que componen el catálogo (en la próxima sección se describen los metadatos que debe contener cada uno de estos objetos).</p>
+<p>El <strong>segundo</strong> también contiene una lista de objetos que, juntos, definen una taxonomía temática para el catálogo. Cada uno de estos objetos contiene los metadatos que describen a cada uno de los temas de esta taxonomía. Más adelante se describen estos metadatos en la sección Tema.</p>
+<h4 id="conjunto-de-datos-dataset">Conjunto de Datos (dataset)</h4>
+<p>A continuación, describimos los metadatos que se deben completar para describir un dataset a la hora de su carga o actualización en el catálogo.</p>
+<p>Ejemplos de metadatos de un <strong>dataset</strong>:</p>
+<ul>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/dataset.md">Dataset en texto</a></li>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/dataset.json">Dataset en JSON</a></li>
+</ul>
+<p>Metadatos que el data.json debe contener, para describir a un dataset dentro de la lista contenida en el campo dataset del catálogo:</p>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Requerido</td>
+    <td>Descripción</td>
+    <td>Ejemplo</td>
+    <td>Variable (data.json)</td>
+    <td>Tipo (data.json)</td>
+  </tr>  
+  <tr>
+    <td>Identificador</td>
+    <td>Si</td>
+    <td>Identificador único del dataset, este identificador debe ser único para todo el catálogo.</td>
+    <td>Un identificador único para el dataset. La URI u otro identificador único en el contexto del catálogo, ejemplo:
+    "dataset-ejemplo-35782”
+    </td>
+    <td>identifier</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Título</td>
+    <td>Si</td>
+    <td>Nombre asignado al dataset tal como será publicado. Debe ser claro y lo suficientemente abstracto como para abarcar la multiplicidad de distribuciones que contiene. Se recomienda no exceder los 100 caracteres en la mayoría de los casos. En caso de que un título más largo se juzgue necesario o relevante, este no deberá exceder los 200 caracteres.</td>
+    <td>Acceso a la información pública</td>
+    <td>title</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Descripción</td>
+    <td>Sí</td>
+    <td>Descripción del contenido del dataset de un modo claro y conciso. Se recomienda no exceder los 500 caracteres en la mayoría de los casos. En caso de que una descripción más larga se juzgue necesaria o relevante, ésta no deberá exceder los 1500 caracteres.</td>
+    <td>Datos correspondientes a pedidos de acceso a la información pública solicitados al Gobierno de la Ciudad conforme a la Ley 104</td>
+    <td>description</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Autor</td>
+    <td>Sí</td>
+    <td>Responsable de la publicación del dataset. En el caso de organizaciones, detallar la estructura jerárquica separada por puntos, de manera jerárquicamente descendiente. Si la organización es parte del GCABA y se encuentra en el dataset <a href="https://data.buenosaires.gob.ar/dataset/organigrama">Organigrama</a>, deberá utilizarse la denominación allí documentada.</td>
+    <td>Ministerio de Gobierno. Subsecretaría de Reforma Política. Dirección General de Seguimiento de Organismos de Control y Acceso a la Información.</td>
+    <td>publisher -&gt; name</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Correo electrónico del autor</td>
+    <td>Recomendado</td>
+    <td>Correo electrónico de contacto del responsable de la publicación del dataset.</td>
+    <td><a href="mailto:dgsocai@buenosaires.gob.ar">dgsocai@buenosaires.gob.ar</a></td>
+    <td>publisher -&gt; mbox</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Área/Persona de contacto</td>
+    <td>Recomendado</td>
+    <td>Área/persona de contacto que puede brindar información relevante sobre el dataset.</td>
+    <td>Ministerio de Gobierno. Subsecretaría de Reforma Política. Dirección General de Seguimiento de Organismos de Control y Acceso a la Información.</td>
+    <td>contactPoint -&gt; fn</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Correo electrónico del área/persona de contacto</td>
+    <td>Recomendado</td>
+    <td>Correo electrónico del área/persona de contacto que puede brindar información relevante sobre el dataset.</td>
+    <td><a href="mailto:dgsocai@buenosaires.gob.ar">dgsocai@buenosaires.gob.ar</a></td>
+    <td>contactPoint -&gt; hasEmail</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Distribuciones</td>
+    <td>Sí</td>
+    <td>Lista de distribuciones que pertenecen al dataset y sus metadatos. Cada distribución se representa con un objeto ("{}") donde se describen los metadatos especificados para la clase "distribution" de este perfil de metadatos.</td>
+    <td>[{...}, {...}]</td>
+    <td>distribution</td>
+    <td>Array</td>
+  </tr>
+  <tr>
+    <td>Temática(s) globales</td>
+    <td>Sí</td>
+    <td>Temática/s o categoría/s globales a la/s que se refiere el dataset al ser publicado. Un dataset puede pertenecer a más de una categoría global, de manera que el tipo de valor de este campo es una lista de categorías. La/s categoría/s o temática/s globales deben adoptarse según el campo "Código (authority code)" del Anexo "Taxonomía temática para los datasets", que contiene una lista predefinida de temática/s globales.</td>
+    <td>["GOVE"]</td>
+    <td>superTheme</td>
+    <td>Array</td>
+  </tr>
+  <tr>
+    <td>Temática(s) específicas</td>
+    <td>Recomendado</td>
+    <td>Temática/s o categoría/s específica/s a la/s que se refiere el dataset al ser publicado. Un dataset puede pertenecer a más de una categoría específica, de manera que el tipo de valor de este campo es una lista de categorías. La taxonomía a utilizar debe ser creada por la autoridad responsable del Catálogo. Se deben usar los ids (ver campo "id" de la clase Theme) de los temas definidos en la taxonomía para componer la lista (no se deben usar las etiquetas ni las descripciones).</td>
+    <td>["Normas", "Transparencia"]</td>
+    <td>theme</td>
+    <td>Array</td>
+  </tr>
+  <tr>
+    <td>Fecha de publicación</td>
+    <td>Sí</td>
+    <td>Fecha de publicación del dataset. Según el formato ISO-8601, tipeado como fecha simple o fecha con hora, con el mayor detalle posible que sea relevante para el dataset.</td>
+    <td>"2016-04-14T19:48:05.433640" para especificar fecha y hora
+    "2016-04-14" para especificar fecha únicamente
+    </td>
+    <td>issued</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Fecha de última actualización/ modificación</td>
+    <td>Recomendado</td>
+    <td>Fecha de última actualización/modificación del dataset (ya sea de sus datos o de sus metadatos). Según el formato ISO-8601, tipeado como fecha simple o fecha con hora, con el mayor detalle posible que sea relevante para el dataset.</td>
+    <td>"2016-04-19T19:48:05.433640" para especificar fecha y hora
+    "2016-04-19" para especificar fecha únicamente
+    </td>
+    <td>modified</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Frecuencia de actualización</td>
+    <td>Sí</td>
+    <td>Frecuencia con la que se actualiza el dataset. Recomendamos especificar períodos normalizados con formato ISO-8601, agregando el campo “eventual” para datasets que se publican con una frecuencia eventual o no especificada. Anexo "Especificación de frecuencias según ISO-8601".</td>
+    <td>“R/P6M” para datasets que se actualizan anualmente</td>
+    <td>accrualPeriodicity</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Fuente primaria</td>
+    <td>No</td>
+    <td>Fuente original o primaria de los datos publicados en el dataset. Se utiliza cuando la entidad responsable de la publicación del dataset, no es la entidad que produce los datos.
+
+    Si la organización es parte del GCABA y se encuentra en el dataset <a href="https://data.buenosaires.gob.ar/dataset/organigrama">Organigrama</a>, deberá utilizarse la denominación allí documentada
+    </td>
+    <td>Ministerio de Gobierno. Subsecretaría de Reforma Política. Dirección General de Seguimiento de Organismos de Control y Acceso a la Información.</td>
+    <td>source</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Página de referencias</td>
+    <td>No</td>
+    <td>URL de una página web a través de la cual se puede acceder al dataset, sus recursos o información adicional sobre el mismo.</td>
+    <td><a href="https://data.buenosaires.gob.ar/dataset/acceso-a-la-informacion-publica">https://data.buenosaires.gob.ar/dataset/acceso-a-la-informacion-publica</a></td>
+    <td>landingPage</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Etiqueta(s)</td>
+    <td>Recomendado</td>
+    <td>Palabras que describen el título o el contenido del recurso. Es necesario que las etiquetas se encuentren correctamente escritas, en plural y respetando la existencia de tags anteriores. Etiquetas que colaboran en la búsqueda de los usuarios. Cuanto más amplia y uniforme sea la lista de tags mayor será su eficiencia. A tales fines se recomienda ver el Anexo “Pautas para la selección de etiquetas”.</td>
+    <td>["pedidos", "normas","transparencia"]</td>
+    <td>keyword</td>
+    <td>Array</td>
+  </tr>
+  <tr>
+    <td>Cobertura temporal</td>
+    <td>Recomendado</td>
+    <td>Período de tiempo cubierto por el dataset. El intervalo de tiempo está formado por una fecha de inicio y una de fin separadas por “/”, en formato ISO 8601, con el nivel de especificidad requerido por el dataset.</td>
+    <td>2013-01-01/2018-09-12</td>
+    <td>temporal</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Licencia</td>
+    <td>Recomendado</td>
+    <td>Indica la licencia bajo la cual el dataset y todas sus distribuciones están disponibles mediante un enlace a la licencia o documento de la licencia seleccionada, o mediante el título textual de la licencia tal como aparece en la lista de <a href="http://opendefinition.org/licenses/">http://opendefinition.org/licenses/</a>. Recomendamos usar la licencia "Open Database License (ODbL) v1.0". Un dataset hereda por default la licencia general del catálogo salvo que se especifique una licencia diferente en este campo. Las distribuciones del dataset heredan esta licencia salvo que especifiquen una diferente.</td>
+    <td><a href="http://opendatacommons.org/licenses/dbcl/1-0/">"http://opendatacommons.org/licenses/dbcl/1-0/"</a> si se utiliza un enlace
+    "Open Database License (ODbL) v1.0" si se consigna el nombre de la licencia a utilizar
+    </td>
+    <td>license</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Idioma(s)</td>
+    <td>No</td>
+    <td>Lenguaje para la descripción de los metadatos del dataset. Hay 2 estándares ISO que pueden ser utilizados para este campo:
+    (a) ISO 639-1 (2 letras)
+    (b) ISO 639-2/T (3 letras) es el más recomendado.
+    Puede definirse 1 o más lenguajes en una lista. Los lenguajes especificados para un dataset, sobreescriben a los del catálogo. Si este campo está vacío el dataset hereda los lenguajes del catálogo. <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">Link a los estándares ISO</a></td>
+    <td>["es"] para un lenguaje ISO 639-1
+    ["spa", ”eng"] para dos lenguajes ISO 639-2
+    </td>
+    <td>language</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Cobertura geográfica</td>
+    <td>No</td>
+    <td>Una región o lugar determinado al que el dataset haga referencia. Una región o un lugar determinado. Puede tomar valores:
+    a) De comunas, barrios, fracciones censales o radios censales, según las recomendaciones de la Guía para la identificación y uso de entidades interoperables.
+    b) Un área de coordenadas representada por latitud/longitud en el orden: mínima longitud, mínima latitud, máxima longitud, máxima latitud.
+    c) Un punto geográfico representado por latitud/longitud.
+    d) Si la referencia geográfico no está identificada en la Guía para la identificación y uso de entidades interoperables indicar la URIs según geonames.org; ej : http://sws.geonames.org/6255146"
+    </td>
+    <td>"ARG" es el código para la República Argentina.
+    "06007" es el código de un departamento
+    [-58.111111, -35.111111, -57.111111, -33.111111] es un bounding box
+    [-58.111111, -35.111111] es un punto geográfico
+    "http://sws.geonames.org/6255146"
+    </td>
+    <td>spatial</td>
+    <td>Array or String</td>
+  </tr>
+  
+  </tbody>
+  </table>
+
+<p>Es importante prestar atención al campo <strong>distribution</strong> que contiene una lista de objetos que describen los metadatos de cada una de las distribuciones del daset. En la próxima sección abordaremos estos metadatos.</p>
+<h4 id="distribucion-distribution">Distribución (distribution)</h4>
+<p>Estos son los metadatos que se deben completar al cargar o actualizar una distribución de un dataset en el catálogo para describirla.</p>
+<p>Ejemplos de metadatos de una <strong>distribución</strong>:</p>
+<p>*<a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/distribution.md"> Distribución en texto</a></p>
+<ul>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/distribution.json">Distribución en JSON</a></li>
+</ul>
+<p>Metadatos que el data.json debe contener, para describir a una distribución dentro de la lista contenida en el campo distribution de un dataset:</p>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Requerido</td>
+    <td>Descripción</td>
+    <td>Ejemplo</td>
+    <td>Variable (data.json)</td>
+    <td>Tipo (data.json)</td>
+  </tr>  
+  <tr>
+    <td>Identificador</td>
+    <td>Si</td>
+    <td>Identificador único de la distribución, este identificador debe ser único para la distribución dentro del catálogo completo.
+
+    Debe estar compuesto por letras mayúsculas o minúsculas de la "a" a la "z" sin caracteres especiales (sin tildes y sin la "ñ"), números, guiones bajos "_", guiones medios "-" y puntos ".".
+    </td>
+    <td>1.2</td>
+    <td>identifier</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Título</td>
+    <td>Sí</td>
+    <td>Nombre asignado a la distribución.</td>
+    <td>Acceso a la Información Pública</td>
+    <td>title</td>
+    <td>String</td>
+  </tr> 
+  <tr>
+    <td>Descripción</td>
+    <td>Recomendado</td>
+    <td>Breve descripción de la distribución. Recomendamos no escribir más de una línea. Toda información adicional puede ser incluida en la descripción del dataset.</td>
+    <td>Pedidos de acceso a la información pública solicitados durante los años 2013-2018. Tema, fecha, dependencia y estado de la solicitud.</td>
+    <td>description</td>
+    <td>String</td>
+  </tr>   
+  <tr>
+    <td>URL de descarga</td>
+    <td>Sí</td>
+    <td>URL que permite la descarga directa de la distribución del dataset, vincula directamente a un archivo descargable en un formato dado.</td>
+    <td><a href="https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-gobierno/acceso-informacion-publica/acceso_info_publica_historica.csv">https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-gobierno/acceso-informacion-publica/acceso_info_publica_historica.csv</a></td>
+    <td>downloadURL</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Tipo de distribución</td>
+    <td>Recomendado</td>
+    <td>Indica el tipo de recurso.
+
+    "Archivo de datos" (file): archivo físico de algún formato de datos que se puede descargar.
+    "API" (api): documentación en línea de un servicio web de datos.
+    "Código" (code): repositorio o archivo con scripts utilizados para la generación, transformación, limpieza o validación de los datos de todo o parte del dataset.
+    "Documentación" (documentation): documentación metodológica sobre los datos de todo o parte del dataset.
+    </td>
+    <td>file
+    api
+    code
+    documentation
+    </td>
+    <td>type</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>URL de acceso</td>
+    <td>Sí</td>
+    <td>URL que permite el acceso a la distribución del dataset. Puede ser una página, feed u otro tipo de recurso que dé acceso indirecto a las distribuciones. Si las distribuciones son solo accesibles a través de la página de referencia del dataset, debe completarse el valor de la URL de acceso a la distribución con el mismo valor de la página de referencia del dataset.</td>
+    <td><a href="https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-gobierno/acceso-informacion-publica/acceso_info_publica_historica.csv">https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-gobierno/acceso-informacion-publica/acceso_info_publica_historica.csv</a></td>
+    <td>accessURL</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Campos de la distribución</td>
+    <td>Recomendado</td>
+    <td>Lista de campos que contiene una distribución tabular (no aplica para aquellas distribuciones que no sean tablas) y sus metadatos. Cada campo se representa con un objeto ("{}") donde se describen los metadatos especificados para la clase "field" de este perfil de metadatos (como "nombre", "tipo" y "descripción").</td>
+    <td>[{...}, {...}]</td>
+    <td>field</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Fecha de publicación</td>
+    <td>Sí</td>
+    <td>Fecha de publicación de la distribución. Según el formato ISO-8601, tipeado como fecha simple o fecha con hora, con el mayor detalle posible que sea relevante para el dataset.</td>
+    <td>"2016-04-14T19:48:05.433640" para especificar fecha y hora
+    "2016-04-14" para especificar fecha únicamente
+    </td>
+    <td>issued</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Fecha de última actualización/modificación</td>
+    <td>Recomendado</td>
+    <td>Fecha de última actualización/modificación de la distribución. Según el formato ISO-8601, tipeado como fecha simple o fecha con hora, con el mayor detalle posible que sea relevante para el dataset.</td>
+    <td>"2016-04-19T19:48:05.433640" para especificar fecha y hora
+    "2016-04-19" para especificar fecha únicamente
+    </td>
+    <td>modified</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Formato del archivo</td>
+    <td>Recomendado</td>
+    <td>Indica el formato del archivo de la distribución. Si el tipo de la distribución está definido por <a href="http://www.iana.org/assignments/media-types/media-types.xml">IANA</a>, debe usarse esa definición. En caso contrario deberán ponerse los caracteres después del punto final del archivo, que determinan el formato (cuando no está definido por IANA).</td>
+    <td>"text/csv" definición de IANA "csv" caracteres finales después del punto</td>
+    <td>format</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Nombre del archivo</td>
+    <td>Recomendado</td>
+    <td>Nombre de la distribución bajo el cual se descarga un archivo que contiene los datos, incluyendo la extensión del formato.
+
+    Debe estar compuesto por letras minúsculas de la "a" a la "z" sin caracteres especiales (sin tildes y sin la "ñ"), números y guiones medios "-".
+    </td>
+    <td>acceso-a-la-informacion-publica.csv</td>
+    <td>fileName</td>
+    <td>String</td>
+  </tr>  
+  <tr>
+    <td>Licencia</td>
+    <td>Recomendado</td>
+    <td>Indica la licencia bajo la cual la distribución está disponible mediante un enlace a la licencia o documento de la licencia seleccionada, o mediante el título textual de la licencia tal como aparece en la lista de <a href="http://opendefinition.org/licenses/">http://opendefinition.org/licenses/</a>. Recomendamos usar la licencia "Open Database License (ODbL) v1.0". Una distribución hereda por default la licencia del dataset al que pertenece, salvo que se especifique una licencia diferente en este campo.</td>
+    <td><a href="http://opendatacommons.org/licenses/dbcl/1-0/">"http://opendatacommons.org/licenses/dbcl/1-0/</a> si se utiliza un enlace
+    "Open Database License (ODbL) v1.0" si se consigna el nombre de la licencia a utilizar
+    </td>
+    <td>license</td>
+    <td>String</td>
+  </tr> 
+  <tr>
+    <td>Tipo de archivo</td>
+    <td>No</td>
+    <td>Indica el tipo de archivo de la distribución, sólo si este está definido por <a href="http://www.iana.org/assignments/media-types/media-types.xml">IANA</a>. En caso contrario este campo permanece vacío.</td>
+    <td>"text/csv" definición de IANA "" cuando el formato no tiene definición en IANA</td>
+    <td>mediaType</td>
+    <td>String</td>
+  </tr> 
+  <tr>
+    <td>Tamaño</td>
+    <td>No</td>
+    <td>Tamaño de la distribución en bytes. El tamaño puede ser aproximado cuando no se conozca el tamaño exacto.</td>
+    <td>Ejemplo para un archivo de 5Kb aproximadamente: "5120”</td>
+    <td>byteSize</td>
+    <td>Integer</td>
+  </tr> 
+  <tr>
+    <td>Derechos sobre la distribución</td>
+    <td>No</td>
+    <td>Información sobre derechos aplicables a la distribución que no se hayan especificado en la licencia. Si se especifican, estos derechos sobreescriben a los del catálogo. En caso contrario, las distribuciones heredan los derechos especificados para el catálogo.</td>
+    <td> </td>
+    <td>rights</td>
+    <td>String</td>
+  </tr> 
+  </tbody>
+  </table>
+
+<p>Recomendamos poner atención al campo <strong>field</strong> que contiene una lista de objetos que describen los metadatos de cada uno de los campos de la distribución (en el <strong>caso de distribuciones tabulares, únicamente</strong>). En la próxima sección abordaremos estos metadatos.</p>
+<h4 id="campo-field">Campo (field)</h4>
+<p>Recomendamos enfáticamente que las distribuciones tabulares <strong>incluyan metadatos que ayuden a entender la información que contiene cada campo</strong>. Documentarlos adecuadamente facilita enormemente la correcta utilización de los datos por parte de los usuarios.</p>
+<p>En un portal Andino, estos metadatos se completan en el mismo formulario que se utiliza para cargar o actualizar una distribución.</p>
+<p>Ejemplos de metadatos de un <strong>campo</strong>:</p>
+<ul>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/field.json">Metadatos de un campo de una distribución tabular en JSON</a></li>
+</ul>
+<p>Estos son los metadatos que el data.json debe contener para describir a un campo de una distribución tabular dentro de la lista contenida en el campo de metadatos field de una distribución:</p>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Requerido</td>
+    <td>Descripción</td>
+    <td>Ejemplo</td>
+    <td>Variable (data.json)</td>
+    <td>Tipo (data.json)</td>
+  </tr>  
+  <tr>
+    <td>Nombre</td>
+    <td>Recomendado</td>
+    <td>El nombre del campo tal como se denomina en el encabezado de la distribución. Véase la "Guía para la publicación de datos en formatos abiertos del Gobierno de la Ciudad Autónoma de Buenos Aires" para una adecuada elección del nombre de un campo.
+
+    Se recomienda no exceder los 40 caracteres en la mayoría de los casos. En caso de que un título más largo se juzgue necesario o significativamente más claro, este no deberá exceder los 60 caracteres en ningún caso.
+
+    Debe estar compuesto por letras minúsculas de la "a" a la "z" sin caracteres especiales (sin tildes y sin la "ñ"), números y guiones bajos "_".
+    </td>
+    <td>Ejemplo para el octavo campo del recurso "Acceso a la Información Pública", valor para el nombre: " categoria_tema "</td>
+    <td>title</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Tipo</td>
+    <td>Recomendado</td>
+    <td>El tipo de dato contenido en el campo según la lista utilizada por la librería recline.js
+
+    Los tipos incluidos en esta lista son:
+
+    string (text): Valores de texto.
+
+    number (double, float, numeric): Números que puedan no ser enteros (incluyen decimales).
+
+    integer (int): Números que siempre son enteros.
+
+    date: Fecha simple expresada según el estándar ISO 8601 incluyendo únicamente año, mes y día (YYYY-MM-DD) como en "2016-02-01".
+
+    time: Tiempo expresado según el estándar ISO 8601 incluyendo únicamente horas, minutos y segundos (hh:mm:ss) como en "10:05:00".
+
+    date-time (datetime, timestamp): Fecha completa expresada según el estándar ISO 8601 incluyendo año, mes, día, horas, minutos y segundos (YYYY-MM-DDThh:mm:ssZ) como en "2016-02-01T10:05:00+03:00"
+
+    boolean (bool): Valores verdadero/falso.
+
+    binary: Representación de datos binarios base64.
+
+    geo_point: Ver estructura en <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html</a>.
+
+    geojson: ver en <a href="http://geojson.org/">http://geojson.org/</a>
+
+    array: Lista de valores.
+
+    object (json): Objeto de JSON.
+
+    any: Campo que puede contener valores de cualquier tipo.
+    </td>
+    <td>Ejemplo para el campo: " categoria_tema "del recurso "Acceso a la Información Pública", valor para tipo: "string"</td>
+    <td>type</td>
+    <td>String</td>
+    </tr>
+    <tr>
+    <td>Descripción</td>
+    <td>Recomendado</td>
+    <td>La descripción de la información que contiene el campo.</td>
+    <td>Ejemplo para el campo: " categoria_tema "del recurso "Acceso a la Información Pública"", valor para descripción: "Tema de la categoría según lo establecido por el Ministerio de Gobierno."</td>
+    <td>description</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Identificador</td>
+    <td>No</td>
+    <td>El código identificador del campo. Debe ser único para todo el catálogo. Se utiliza cuando el campo requiere un identificador para ser utilizado en un sistema o aplicación, como en el caso de una base de series de tiempo (donde el identificador ejerce el rol de "nomenclador" del campo y debe ser único para todo el sistema - más allá incluso del presente catálogo).
+
+    Debe estar compuesto por letras mayúsculas o minúsculas de la "a" a la "z" sin caracteres especiales (sin tildes y sin la "ñ"), números, guiones bajos "_", guiones medios "-" y puntos ".".
+    </td>
+    <td>1.1_OGP_D_1993_A_17</td>
+    <td>id</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Unidad de medida</td>
+    <td>No</td>
+    <td>La descripción de la unidad de medida en la que están expresados los valores del campo. Sólo se utiliza para campos de tipo numérico.</td>
+    <td>Millones de pesos a precios de 1993</td>
+    <td>units</td>
+    <td>String</td>
+  </tr>
+  </tbody>
+  </table>
+
+<p>Los primeros tres metadatos son útiles <strong>para describir las características de cualquier campo de una distribución tabular</strong>.</p>
+<p>Los últimos dos metadatos son opcionales porque sólo cobran sentido al <strong>describir las características de un campo, para casos específicos</strong>. Mientras que no todos los campos de una distribución tabular tienen "<strong>unidad de medida</strong>", la asingación de un "<strong>nomenclador</strong>" o "<strong>identificador</strong>" suele ser útil para la identificación unívoca de variables en otros sistemas o aplicaciones, pero no en la generalidad de los casos.</p>
+<h4 id="tema-theme">Tema (theme)</h4>
+<p>Cada catálogo de datos puede tener su propia taxonomía temática que permite clasificar a los datasets como pertenecientes a una o más categorías temáticas. Recomendamos que los temas tengan algunos metadatos que ayuden a un usuario a entenderlos mejor.</p>
+<p>Estos son metadatos que el responsable de cargar o actualizar la taxonomía temática de un catálogo debe completar para describir los temas de la misma.</p>
+<p>Ejemplos de metadatos de un <strong>tema</strong>:</p>
+<ul>
+<li><a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/theme.json">Metadatos de un tema en JSON</a></li>
+</ul>
+<p>Metadatos que el data.json debe contener, para describir a un tema de la taxonomía temática de un catálogo:</p>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>Requerido</td>
+    <td>Descripción</td>
+    <td>Ejemplo</td>
+    <td>Variable (data.json)</td>
+    <td>Tipo (data.json)</td>
+  </tr>  
+  <tr>
+    <td>Identificador</td>
+    <td>Recomendado</td>
+    <td>El identificador del tema.</td>
+    <td>AGRI</td>
+    <td>id</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Etiqueta</td>
+    <td>Recomendado</td>
+    <td>La etiqueta o título de un tema.</td>
+    <td>Gobierno</td>
+    <td>label</td>
+    <td>String</td>
+  </tr>
+    <tr>
+    <td>Descripción</td>
+    <td>Recomendado</td>
+    <td>Una breve y concisa descripción del tema.</td>
+    <td>Bajo este concepto se incluyen datasets que cubren dominios referidos al Gobierno o al Sector Público.</td>
+    <td>description</td>
+    <td>String</td>
+  </tr>
+  </tbody>
+  </table>
+
+<h2 id="anexo-i-taxonomia-tematica-global-de-la-apn-para-los-conjuntos-de-datostabla">Anexo I - Taxonomía temática global de la APN para los conjuntos de datos(tabla)</h2>
+<p>Siguiendo los lineamientos para la Administración Pública Nacional, se utilizará la taxonomía temática definida por la Unión Europea. Los campos de metadatos para definir la taxonomía son:</p>
+<ul>
+<li>
+<p><strong>themeTaxonomy</strong>: es un campo de metadatos del catálogo que define una lista de temas que se pueden usar para clasificar los datasets. Refiere al esquema completo de la taxonomía en sí, no a alguna de sus etiquetas en particular.</p>
+</li>
+<li>
+<p><strong>theme</strong>: es un campo de metadatos de un Dataset. Refiere a la/s etiqueta/s en particular bajos la/s cuales un dataset es clasificado temáticamente. Sólo pueden usarse etiquetas que estén definidas en la taxonomía temática de themeTaxonomy.</p>
+</li>
+</ul>
+<p>Además del uso de una taxonomía propia de cada catálogo de datos, <strong>recomendamos la clasificación de los conjuntos de datossegún la taxonomía del Portal Nacional de Datos del Gobierno Nacional</strong>. Esta es una súper taxonomía a la que cada catálogo hace referencia mediante los siguientes campos de metadatos:</p>
+<ul>
+<li>
+<p><strong>superThemeTaxonomy</strong>: es un campo de metadatos del catálogo que apunta a la URL donde el Portal Nacional de Datos documenta la taxonomía temática de la Administración Pública Nacional.</p>
+</li>
+<li>
+<p><strong>superTheme</strong>: es un campo de metadatos de un conjunto de datos. Refiere a la/s etiqueta/s en particular bajos la/s cuales un conjunto de datoses clasificado temáticamente, según la súper taxonomía que es la de la Administración Pública Nacional. Sólo pueden usarse etiquetas que estén definidas en la taxonomía temática de superThemeTaxonomy.</p>
+</li>
+</ul>
+<p><strong>La ventaja de usar una súper taxonomí</strong>a temática es que <strong>facilita la clasificación de datasets</strong> por parte de un usuario según un conjunto de categorías temáticas más generales, que son interoperables con las usadas por otros países del mundo.</p>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Código (authority code)</td>
+    <td>Etiqueta (label)</td>
+    <td>Descripción (description)</td>
+  </tr>  
+  <tr>
+    <td>AGRI</td>
+    <td>Agroganadería, pesca y forestación</td>
+    <td>Datos referidos a agroganadería, pesca y forestación. Por ejemplo: 'Lechería: precio pagado al productor' o 'Superficie forestada'.</td>
+  </tr>
+  <tr>
+    <td>ECON</td>
+    <td>Economía y finanzas</td>
+    <td>Datos referidos a economía y finanzas. Por ejemplo: 'Mapa de oportunidades comerciales'.</td>
+  </tr>
+  <tr>
+    <td>EDUC</td>
+    <td>Educación, cultura y deportes</td>
+    <td>Datos referidos a educación, cultura y deportes. Por ejemplo: 'Distritos Escolares'.</td>
+  </tr>
+  <tr>
+    <td>ENER</td>
+    <td>Energía</td>
+    <td>Datos referidos a energía. Por ejemplo: 'Transformadores PCB'.</td>
+  </tr>
+  <tr>
+    <td>ENVI</td>
+    <td>Medio ambiente</td>
+    <td>Datos referidos a medio ambiente. Por ejemplo: 'Arbolado público lineal'.</td>
+  </tr>
+  <tr>
+    <td>GOVE</td>
+    <td>Gobierno y sector público</td>
+    <td>Datos referidos a gobierno y sector público. Por ejemplo: 'Acceso a la información pública'.</td>
+  </tr>
+  <tr>
+    <td>HEAL</td>
+    <td>Salud</td>
+    <td>Datos referidos a salud. Por ejemplo: 'Áreas hospitalarias'.</td>
+  </tr>
+  <tr>
+    <td>INTR</td>
+    <td>Asuntos internacionales</td>
+    <td>Datos referidos a asuntos internacionales. Por ejemplo: 'Eventos de Turismo de reuniones y Eventos deportivos internacionales'.</td>
+  </tr>
+  <tr>
+    <td>JUST</td>
+    <td>Justicia, seguridad y legales</td>
+    <td>Datos referidos a justicia, seguridad y legales. Por ejemplo: 'Empresas de Seguridad Privada Habilitadas'.</td>
+  </tr>
+  <tr>
+    <td>REGI</td>
+    <td>Regiones y ciudades</td>
+    <td>Datos referidos a regiones y ciudades. Por ejemplo: 'Comunas'.</td>
+  </tr>
+  <tr>
+    <td>SOCI</td>
+    <td>Población y sociedad</td>
+    <td>Datos referidos a población y sociedad. Por ejemplo: 'Registro de Guías de Turismo'.</td>
+  </tr>
+  <tr>
+    <td>TECH</td>
+    <td>Ciencia y tecnología</td>
+    <td>Datos referidos a ciencia y tecnología. Por ejemplo: 'Recursos humanos en ciencia y tecnología'.</td>
+  </tr>
+  <tr>
+    <td>TRAN</td>
+    <td>Transporte</td>
+    <td>Datos referidos a transporte. Por ejemplo: 'Bicicletas públicas'.</td>
+  </tr>
+  </tbody>
+  </table>
+
+<h2 id="anexo-ii-pautas-para-la-seleccion-de-etiquetas">Anexo II - Pautas para la selección de etiquetas</h2>
+<p>Elegir buenas etiquetas hace más fácil la búsqueda de los conjuntos de datos para los usuarios. Cuanto más amplia y uniforme sea la lista de etiquetas, mayor será su efectividad.</p>
+<p>Estas son pautas para definir etiquetas aplicables a la propiedad keyword de la clase dataset:</p>
+<ul>
+<li>
+<p>Escribir correctamente y en plural.</p>
+</li>
+<li>
+<p>Usar mayúsculas sólo donde corresponda.</p>
+</li>
+<li>
+<p>Identificar palabras claves.</p>
+</li>
+<li>
+<p>Respetar la existencia de etiquetas anteriores.</p>
+</li>
+<li>
+<p>Agregar sinónimos y emplear lenguaje natural.</p>
+</li>
+<li>
+<p>Usar una sóla palabra. Si es muy necesario, usar más de una.</p>
+</li>
+<li>
+<p>Si la etiqueta tiene más de una palabra, debe estar separada por un espacio, ej: "declaraciones juradas".</p>
+</li>
+</ul>
+<p>Preguntas útiles a la hora de pensar las etiquetas:</p>
+<ul>
+<li>
+<p>¿Cuál es el tema?</p>
+</li>
+<li>
+<p>¿Qué aspectos serán de interés para los usuarios?</p>
+</li>
+<li>
+<p>¿De qué otro modo buscaría sobre esta información?</p>
+</li>
+<li>
+<p>¿De qué tipo de información se trata?</p>
+</li>
+<li>
+<p>¿Qué área la provee?</p>
+</li>
+</ul>
+<h2 id="anexo-iii-especificacion-de-frecuencias-segun-iso-8601">Anexo III - Especificación de frecuencias (según ISO-8601)</h2>
+<table id="left-align-col-2">
+  <tbody>
+  <tr>
+    <td>Frecuencia</td>
+    <td>Valor según ISO-8601</td>
+  </tr>  
+  <tr>
+    <td>Cada diez años</td>
+    <td>R/P10Y</td>
+  </tr>
+  <tr>
+    <td>Cada cuatro años</td>
+    <td>R/P4Y</td>
+  </tr>
+  <tr>
+    <td>Cada tres años</td>
+    <td>R/P3Y</td>
+  </tr>
+  <tr>
+    <td>Cada dos años</td>
+    <td>R/P2Y</td>
+  </tr>
+  <tr>
+    <td>Anualmente</td>
+    <td>R/P1Y</td>
+  </tr>
+  <tr>
+    <td>Cada medio año</td>
+    <td>R/P6M</td>
+  </tr>
+  <tr>
+    <td>Cuatrimestralmente</td>
+    <td>R/P4M</td>
+  </tr>
+  <tr>
+    <td>Trimestralmente</td>
+    <td>R/P3M</td>
+  </tr>
+  <tr>
+    <td>Bimestralmente</td>
+    <td>R/P2M</td>
+  </tr>
+  <tr>
+    <td>Mensualmente</td>
+    <td>R/P1M</td>
+  </tr>
+  <tr>
+    <td>Cada 15 días</td>
+    <td>R/P0.5M</td>
+  </tr>
+  <tr>
+    <td>Tres veces por mes</td>
+    <td>R/P0.33M</td>
+  </tr>
+  <tr>
+    <td>Semanalmente</td>
+    <td>R/P1W</td>
+  </tr>
+  <tr>
+    <td>Dos veces a la semana</td>
+    <td>R/P0.5W</td>
+  </tr>
+  <tr>
+    <td>Tres veces a la semana</td>
+    <td>R/P0.33W</td>
+  </tr>
+  <tr>
+    <td>Diariamente</td>
+    <td>R/P1D</td>
+  </tr>
+  <tr>
+    <td>Cada hora</td>
+    <td>R/PT1H</td>
+  </tr>
+  <tr>
+    <td>Continuamente actualizado</td>
+    <td>R/PT1S</td>
+  </tr>
+  <tr>
+    <td>Eventual</td>
+    <td>eventual</td>
+  </tr>
+
+  </tbody>
+  </table>
+
+<h2 id="anexo-iv-ejemplo-de-datajson">Anexo IV - Ejemplo de data.json</h2>
+<p>Este es un <a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/data.json">ejemplo de data.json</a>:</p>
+<p><code>{"recurso":{
+    "displayName":"Reporte Epidemiológico de Dengue",
+    "description":"Reporte semanal casos de Dengue en personas residentes de la CABA, construido a partir de los datos nominalizados disponibilizados por el Sistema Nacional de Vigilancia Epidemiológica de la Salud",
+    "attributesDescription": [
+        {"title": "año","description":"Año al que corresponde la semana epidemiológica"                     
+    , "type": "integer"},
+        {"title": "semana_epidemiologica","description":"Semana epidemiológica, comenzando los domingos"                        
+    , "type": "integer"},
+        {"title": "fecha_inicio_semana_epidemiologica","description":"Fecha en que comienza la semana epidemiológica"                           
+    , "type": "date"},
+        {"title": "grupo_etario","description":"Grupo etario, cada 10 años"                             
+    , "type": "string"},
+        {"title": "departamento_residencia","description":"Departamento/comuna de residencia"                               
+    , "type": "string"},
+        {"title": "n_notificaciones","description":"Número de notificaciones de casos de dengue sospechoso o confirmado por fecha de apertura en el Sistema Nacional de Vigilancia de la Salud (SNVS)"
+    , "type": "integer"},
+        {"title": "n_confirmados_probables_fis","description": "Número de casos confirmados o probables de dengue por fecha de consulta inicial"                                
+    , "type": "integer"},
+        {"title": "n_confirmados_por_laboratorio","description":"Número de casos confirmados con estudio de laboratorio por fecha de consulta inicial"                                          
+    , "type": "integer"},
+        {"title": "n_internados_fecha_internacion","description":"Número de casos de dengue confirmado o probable internados por fecha de internación"                                              
+    , "type": "integer"},
+        {"title": "n_internados_uti_fecha_internacion","description":"Número de casos de dengue confirmado o probable internados en terapía intensiva por fecha de ingreso en terapía intensiva"
+    , "type": "integer"},
+        {"title": "n_fallecidos_confirmados_por_laboratorio","description":"Número de casos de dengue confirmado por laboratorio fallecidos por fecha de fallecimiento"
+    , "type": "integer"}
+        ]
+    },
+  "organizacion":{
+    "name":"ministerio-de-salud"
+    }
+  }</code></p>
+<h2 id="anexo-v-taxonomia-tematica-global-de-la-apn-para-los-datasets-json">Anexo V - Taxonomía temática global de la APN para los datasets (JSON)</h2>
+<p>Esta es la <a href="https://raw.githubusercontent.com/datosgobar/paquete-apertura-datos/master/standards/metadata/superThemeTaxonomy.json">taxonomía temática global</a>:</p>
+<p><code>[
+    {
+        "id":"AGRI",
+        "label":"Agroganadería, pesca y forestación",
+        "description":"Datos referidos a agroganadería, pesca y forestación. Por ejemplo: 'Lechería: precio pagado al productor' o 'Superficie forestada'."
+    },
+    {
+        "id":"ECON",
+        "label":"Economía y finanzas",
+        "description":"Datos referidos a economía y finanzas. Por ejemplo: 'Deuda pública'."
+    },
+    {
+       ]</code></p>
+<h2 id="anexo-vi-ejemplo-de-metadatos-como-texto">Anexo VI - Ejemplo de metadatos como texto</h2>
+<p>Este es un <a href="https://github.com/datosgobar/paquete-apertura-datos/blob/master/examples/data.md">ejemplo en markdown</a>:</p>
+<p><strong>Catálogo: Buenos Aires Data</strong></p>
+<p>Portal de Datos Abiertos del Gobierno de la Ciudad Autónoma de Buenos Aires</p>
+<ul>
+<li>
+<p>Derechos sobre el catálogo: Derechos especificados en la licencia.</p>
+</li>
+<li>
+<p>Correo electrónico del autor:   ssso@buenosaires.gob.ar </p>
+</li>
+<li>
+<p>Autor: Dirección General Estadística Criminal y Mapa del Delito Subsecretaría de Investigación y Estadística Criminal Ministerio de Seguridad</p>
+</li>
+<li>
+<p>Licencia: Creative Commons License 4.0 ARG</p>
+</li>
+<li>
+<p>Idioma(s): español</p>
+</li>
+<li>
+<p>Fecha de creación o publicación: 2012-03-22T00:00:00.433640-03:00</p>
+</li>
+<li>
+<p>Taxonomía temática global: <a href="https://datos.gob.ar/superThemeTaxonomy.json">https://datos.gob.ar/superThemeTaxonomy.json</a></p>
+</li>
+<li>
+<p>Fecha de última actualización/modificación: 2016-04-19T19:48:05.433640-03:00</p>
+</li>
+<li>
+<p>Cobertura geográfica: CABA</p>
+</li>
+<li>
+<p>Página web del catálogo: https://data.buenosaires.gob.ar/dataset/delitos</p>
+</li>
+</ul>
+<p><strong>Taxonomía temática específica</strong></p>
+<ul>
+<li>
+<p>Delitos (delitos): Dataset sobre homicidios, hurtos (sin violencia), lesiones y robos (con violencia) que ocurrieron en el ámbito de la Ciudad de Buenos Aires. </p>
+</li>
+<li>
+<p>Pedidos (pedidos): Dataset sobre pedidos de acceso a la información pública.</p>
+</li>
+<li>
+<p>Barrios (barrios): Datasets sobre límites y ubicación geográfica de los barrios de la ciudad.</p>
+</li>
+</ul>
+<p><strong>Conjunto de datos: Acceso a la información pública</strong></p>
+<p>Datos correspondientes a pedidos de acceso a la información pública solicitados al Gobierno de la Ciudad conforme a la Ley 104</p>
+<p>• Correo electrónico del autor: <a href="mailto:dgsocai@buenosaires.gob.ar">dgsocai@buenosaires.gob.ar</a></p>
+<ul>
+<li>
+<p>Autor: Ministerio de Gobierno. Subsecretaría de Reforma Política. Dirección General de Seguimiento de Organismos de Control y Acceso a la Información.</p>
+</li>
+<li>
+<p>Página de referencias: <a href="https://data.buenosaires.gob.ar/dataset/acceso-informacion-publica">https://data.buenosaires.gob.ar/dataset/acceso-informacion-publica</a></p>
+</li>
+<li>
+<p>Temática(s) globales: GOVE</p>
+</li>
+<li>
+<p>Fecha de publicación: 2016-08-24T14:58:25.433640-03:00</p>
+</li>
+<li>
+<p>Cobertura temporal: 2013-01-01/2018-09-12</p>
+</li>
+<li>
+<p>Fecha de última actualización/ modificación: 2018-11-05T16:51:27.
+  433640-03:00</p>
+</li>
+<li>
+<p>Idioma(s): spa</p>
+</li>
+<li>
+<p>Temática(s) específicas: normas, transparencia</p>
+</li>
+<li>
+<p>Etiqueta(s): pedidos, normas, transparencia</p>
+</li>
+<li>
+<p>Frecuencia de actualización: R/P6M</p>
+</li>
+<li>
+<p>Cobertura geográfica: CABA</p>
+</li>
+<li>
+<p>Licencia: Creative Commons License 2.5 ARG</p>
+</li>
+<li>
+<p>Correo electrónico del área/persona de contacto: <a href="mailto:dgsocai@buenosaires.gob.ar">dgsocai@buenosaires.gob.ar</a></p>
+</li>
+<li>
+<p>Área/Persona de contacto: Ministerio de Gobierno. Subsecretaría de Reforma Política. Dirección General de Seguimiento de Organismos de Control y Acceso a la Información.</p>
+</li>
+<li>
+<p>Identificador: 99db6631-d1c9-470b-a73e-c62daa32c420</p>
+</li>
+</ul>
+<p>Distribución: Acceso a la información pública</p>
+<p>Pedidos de acceso a la información pública solicitados durante los años 2013-2018. Tema, fecha, dependencia y estado de la solicitud.</p>
+<ul>
+<li>
+<p>URL de acceso: <a href="https://data.buenosaires.gob.ar/dataset/acceso-informacion-publicas">https://data.buenosaires.gob.ar/dataset/acceso-informacion-publica</a></p>
+</li>
+<li>
+<p>Derechos sobre la distribución: Derechos especificados en la licencia.</p>
+</li>
+<li>
+<p>Licencia: Creative Commons License 4.0 ARG</p>
+</li>
+<li>
+<p>Tamaño: 5120</p>
+</li>
+<li>
+<p>Formato del archivo: CSV</p>
+</li>
+<li>
+<p>Tipo de archivo: text/csv</p>
+</li>
+<li>
+<p>Fecha de última actualización/ modificación: 2025-04-05T16:51:27.433640-03:00</p>
+</li>
+<li>
+<p>URL de descarga: <a href="https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-gobierno/acceso-informacion-publica/acceso_info_publica_historica.csv">https://cdn.buenosaires.gob.ar/datosabiertos/datasets/ministerio-de-gobierno/acceso-informacion-publica/acceso_info_publica_historica.csv</a></p>
+</li>
+<li>
+<p>Fecha de publicación: 2021-05-10T14:58:25.433640-03:00</p>
+</li>
+</ul>
+<p>Campos de la distribución</p>
+<ul>
+<li>
+<p>categoria_tema (string): Tema de la categoría según lo establecido por el Ministerio de Gobierno.</p>
+</li>
+<li>
+<p>dependencia (string): Nombre de la dependencia pública donde se realizó el pedido.</p>
+</li>
+<li>
+<p>fecha (date): Fecha del pedido de acceso a la información.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="main-footer">
+    <div class="container">
+        <section class="footer-legal-section">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-5 col-xl-4 footer-content-img">
+                    <img class="d-md-none" src="res/15_logo-footer-mobile.svg" alt="Logo GCBA" height="48">
+                    <img class="d-none d-md-inline" src="res/16_logo-footer.svg" alt="Logo GCBA" height="40">
+                    <img class="img-vamos-ba" src="res/17_logo-footer-ba.svg" alt="Vamos Buenos Aires">
+                </div>
+
+                <div class="col-12">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://boletinoficial.buenosaires.gob.ar/">Boletín
+                                oficial</a></li>
+                        <li class="list-inline-item"><a href="https://buenosaires.gob.ar/inicio/terminos-y-condiciones">Términos y
+                                condiciones</a></li>
+                        <li class="list-inline-item"><a href="https://buenosaires.gob.ar/inicio/privacidad">Política de
+                                privacidad</a></li>
+                        <li class="list-inline-item"><a href="https://buenosaires.gob.ar/gobierno/transparencia">Transparencia</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="footer-license-text">
+                Los contenidos de buenosaires.gob.ar están licenciados bajo Creative Commons Reconocimiento 2.5
+                Argentina License.
+            </div>
+        </section>
+    </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top|", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="res/18_bundle.79ae519e.min.js.descarga"></script>
+      
+        <script src="res/19_popper.min.js.descarga"></script>
+      
+        <script src="res/20_bootstrap.min.js.descarga"></script>
+      
+    
+  
+</body></html>

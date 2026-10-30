@@ -1,0 +1,27 @@
+jQuery(document).ready(function ($) {
+  // Add active class to the first filter option on page load
+  $("#sorting-options a").first().addClass("active");
+
+  $("#sorting-options a").on("click", function (e) {
+    e.preventDefault();
+
+    var order = $(this).data("order");
+
+    // Remove active class from all links and add it to the clicked link
+    $("#sorting-options a").removeClass("active");
+    $(this).addClass("active");
+
+    $.ajax({
+      url: ajax_params.ajax_url,
+      type: "post",
+      data: {
+        action: "filter_posts",
+        order: order,
+        nonce: ajax_params.nonce,
+      },
+      success: function (response) {
+        $("#all-blog-posts .row").html(response);
+      },
+    });
+  });
+});

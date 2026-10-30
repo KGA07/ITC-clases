@@ -207,7 +207,94 @@ function embeberInteractivo(claseId, nombreCarpeta, dirAbs) {
   const dest = path.join(EMBED_DIR, slug);
   fs.rmSync(dest, { recursive: true, force: true });
   fs.cpSync(dirAbs, dest, { recursive: true });
+  // Refs absolutas a la PC dejadas en el index: copio el recurso si existe fuera
+  // de la carpeta y reescribo la referencia (los internos ya van con el copiado).
+  const idxPath = path.join(dirAbs, 'index.html');
+  try {
+    const idxHtml = fs.readFileSync(idxPath, 'utf8');
+    const hallados = recursosLocalesDelHtml(idxHtml, dirAbs, path.dirname(dirAbs));
+    for (const [r, srcAbs] of hallados) {
+      let rel;
+      try { rel = path.relative(dirAbs, srcAbs); } catch { continue; }
+      if (!rel.startsWith('..')) hallados.delete(r); // internos: ya van con el copiado
+    }
+    const { html: idxOut, copias } = reescribirRefs(idxHtml, hallados);
+    if (copias.length) {
+      fs.writeFileSync(path.join(dest, 'index.html'), idxOut, 'utf8');
+      for (const pl of copias) fs.copyFileSync(pl.srcAbs, path.join(dest, pl.destRel));
+    }
+  } catch { /* sin index legible: queda como está */ }
   return { embebible: true, embedUrl: `/html/interactivos/${slug}/index.html`, notas: `(${fmtMB(size)})` };
+}
+
+// Búsqueda de rescate: si el path referenciado no existe, busca el MISMO nombre
+// de archivo dentro de la raíz indicada (profundidad acotada).
+const _files_RE = /_files$|\.files$/i;
+const quitarDiacriticos = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+function buscarDescendente(dir, nombre, depth) {
+  if (depth <= 0) return null;
+  let items;
+  try { items = fs.readdirSync(dir, { withFileTypes: true }); } catch { return null; }
+  const objetivo = quitarDiacriticos(nombre);
+  for (const it of items) {
+    if (it.isFile() && quitarDiacriticos(it.name).toLowerCase() === objetivo) return path.join(dir, it.name);
+  }
+  for (const it of items) {
+    if (it.isDirectory() && !/^(\.|_|~|__)/i.test(it.name) && !_files_RE.test(it.name) && it.name.toLowerCase() !== 'node_modules') {
+      const r = buscarDescendente(path.join(dir, it.name), nombre, depth - 1);
+      if (r) return r;
+    }
+  }
+  return null;
+}
+
+// Detecta referencias a archivos locales en un HTML y devuelve el mapa de
+// planes SIN reescribir nada: cada llamada decide qué planes aplicar antes de
+// reescribir (para no reescribir refs cuyo recurso no se copia).
+function recursosLocalesDelHtml(html, dirFuente, searchRoot) {
+  const planes = new Map(); // refOriginal -> srcAbs | 'sin destino'
+  let idx = 0;
+  const dests = new Map(); // srcAbs -> destRel
+  for (const x of html.matchAll(/(?:src|href)\s*=\s*(["'])([^"'#?]+)\1/g)) {
+    const r = x[2];
+    if (/^(https?:|data:|mailto:|\/\/|#|file:|\/|tel:|javascript:|sms:|\$\{)/i.test(r)) continue;
+    if (planes.has(r)) continue;
+    let p;
+    try {
+      p = /^[a-zA-Z]:[\/\\]/.test(r) ? decodeURIComponent(r) : path.join(dirFuente, decodeURIComponent(r));
+    } catch {
+      p = /^[a-zA-Z]:[\/\\]/.test(r) ? r : path.join(dirFuente, r);
+    }
+    let st = null;
+    try { st = fs.statSync(p); } catch { st = null; }
+    if ((!st || !st.isFile()) && searchRoot) {
+      // rescate: mismo nombre de archivo en otra subcarpeta de la raíz
+      const base = path.basename(p).toLowerCase();
+      const hallado = buscarDescendente(searchRoot, base, 3);
+      if (hallado) { p = hallado; try { st = fs.statSync(p); } catch { st = null; } }
+    }
+    if (!st || !st.isFile()) continue;
+    planes.set(r, p);
+    if (!dests.has(p)) dests.set(p, `res/${++idx}_${path.basename(p)}`);
+  }
+  return planes; // Map refOriginal -> srcAbs (solo resolvibles)
+}
+
+// Reemplaza las refs por su ruta res/ con UNA sola pasada (el ref corto no
+// puede tocar al ref largo que lo contiene) y devuelve el html final.
+function reescribirRefs(html, planes, indexBase) {
+  if (!planes.size) return { html, copias: [] };
+  const copias = [];
+  let idx = indexBase || 0;
+  const dests = new Map();
+  for (const p of planes.values()) {
+    if (!dests.has(p)) dests.set(p, `res/${++idx}_${path.basename(p)}`);
+  }
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp([...planes.keys()].map((r) => esc(r)).sort((a, b) => b.length - a.length).join('|'), 'g');
+  const salida = html.replace(re, (m) => dests.get(planes.get(m)) || m);
+  for (const p of planes.values()) copias.push({ srcAbs: p, destRel: dests.get(p) });
+  return { html: salida, copias };
 }
 
 function embeberHtmlSuelto(claseId, nombreArchivo, fileAbs) {
@@ -215,6 +302,43 @@ function embeberHtmlSuelto(claseId, nombreArchivo, fileAbs) {
   if (size > EMBED_MAX_HTML_BYTES) return null;
   const base = path.basename(nombreArchivo, path.extname(nombreArchivo));
   const dirPadre = path.dirname(fileAbs);
+
+  const slugBase = `${slugify(claseId)}-${slugify(nombreArchivo)}`;
+  // html + recursos: hermanas de carpetas estándar y todo archivo local referenciado.
+  const hermanas = ['css', 'js'].filter((d) => {
+    const p = path.join(dirPadre, d);
+    return fs.existsSync(p) && fs.statSync(p).isDirectory();
+  });
+  const originalHtml = fs.readFileSync(fileAbs, 'utf8');
+  const hallados = recursosLocalesDelHtml(originalHtml, dirPadre, path.dirname(dirPadre));
+  // Las refs que ya quedan cubiertas por las hermanas no se vuelven a copiar.
+  if (hermanas.length) {
+    for (const [r, srcAbs] of hallados) {
+      let rel;
+      try { rel = path.relative(dirPadre, srcAbs); } catch { continue; }
+      if (!rel.startsWith('..') && hermanas.includes(rel.split(path.sep)[0].toLowerCase())) hallados.delete(r);
+    }
+  }
+  const { html: htmlProcesado, copias } = reescribirRefs(originalHtml, hallados);
+
+  if (hermanas.length > 0 || copias.length > 0) {
+    const dest = path.join(EMBED_DIR, slugBase);
+    fs.rmSync(dest, { recursive: true, force: true });
+    fs.mkdirSync(dest, { recursive: true });
+    fs.writeFileSync(path.join(dest, nombreArchivo), htmlProcesado, 'utf8');
+    for (const d of hermanas) fs.cpSync(path.join(dirPadre, d), path.join(dest, d), { recursive: true });
+    for (const pl of copias) {
+      const destinoRes = path.join(dest, pl.destRel);
+      fs.mkdirSync(path.dirname(destinoRes), { recursive: true });
+      fs.copyFileSync(pl.srcAbs, destinoRes);
+    }
+    return {
+      embebible: true,
+      embedUrl: `/html/interactivos/${slugBase}/${nombreArchivo}`,
+      notas: `(${fmtKB(size)}${copias.length ? ` + ${copias.length} recursos` : ''})`
+    };
+  }
+
   const filesDir = path.join(dirPadre, `${base}_files`);
   const filesDirAlt = path.join(dirPadre, `${base}.files`);
   if (fs.existsSync(filesDir) || fs.existsSync(filesDirAlt)) return null; // depende de recursos
@@ -229,11 +353,44 @@ function fmtKB(bytes) {
   return `${(bytes / 1024).toFixed(0)} KB`;
 }
 
+// ── Orden natural de carpetas ────────────────────────────────────────────────
+// Compara "Clase 2" < "Clase 10" y "Modulo 2" < "Modulo 10" tratando cada
+// corrida de dígitos como número en vez de letra por letra.
+function compararNatural(a, b) {
+  const sA = String(a), sB = String(b);
+  const rA = /(\d+)|(\D+)/g, rB = /(\d+)|(\D+)/g;
+  let mA, mB, iA = 0, iB = 0;
+  while (true) {
+    mA = rA.exec(sA); mB = rB.exec(sB);
+    if (!mA && !mB) return 0;
+    if (!mA) return -1;
+    if (!mB) return 1;
+    if (mA[1] && mB[1]) {
+      const nA = Number(mA[1]), nB = Number(mB[1]);
+      if (nA !== nB) return nA - nB;
+      // empate numérico: "Clase 2" vs "Clase 2B" -> la con sufijo va después
+      const r = sA.localeCompare(sB, 'es', { sensitivity: 'base' });
+      if (r !== 0) return r;
+    } else if (mA[2] && mB[2]) {
+      const r = mA[2].localeCompare(mB[2], 'es', { sensitivity: 'base' });
+      if (r !== 0) return r;
+    } else if (mA[1]) {
+      return -1; // número antes que texto en la misma posición (Clase 1 vs ClaseA)
+    } else {
+      return 1;
+    }
+    iA = mA.index + mA[0].length; iB = mB.index + mB[0].length;
+    if (iA >= sA.length && iB >= sB.length) return 0;
+    if (iA >= sA.length) return -1;
+    if (iB >= sB.length) return 1;
+  }
+}
+
 // ── Recorrido de una clase ───────────────────────────────────────────────────
 function archivosDeClase(claseId, dirAbs, relBaseAbs) {
   const archivos = [];
   let sum = 0;
-  for (const e of fs.readdirSync(dirAbs, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+  for (const e of fs.readdirSync(dirAbs, { withFileTypes: true }).sort((a, b) => compararNatural(a.name, b.name))) {
     if (ignorar(e.name)) continue;
     const full = path.join(dirAbs, e.name);
     const ruta = path.relative(relBaseAbs, full).split(path.sep).join('/');
@@ -278,9 +435,12 @@ function archivosDeClase(claseId, dirAbs, relBaseAbs) {
 
 // Carpetas de recursos (solo imagenes/medios) que pertenecen a una clase
 // y no deben ser interpretadas como una clase/modulo hijas.
-const DIRS_RECURSOS = new Set(['img', 'images', 'image', 'imagen', 'imagenes', 'fotos', 'thumb', 'thumbs']);
+const DIRS_RECURSOS = new Set(['img', 'images', 'image', 'imagen', 'imagenes', 'fotos', 'thumb', 'thumbs', 'css', 'js', 'assets', 'fonts']);
 function esCarpetaRecursos(de) {
-  return de.isDirectory() && DIRS_RECURSOS.has(de.name.toLowerCase());
+  const n = de.name.toLowerCase();
+  if (DIRS_RECURSOS.has(n)) return true;
+  // Carpetas de recursos de páginas web guardadas (p.ej. "Manual de ... _files").
+  return de.isDirectory() && (n.endsWith('_files') || n.endsWith('.files'));
 }
 
 // ── Estructura modulos -> clases ─────────────────────────────────────────────
@@ -288,7 +448,7 @@ function construirModulos(claseRoot, cursoId, relBaseAbs) {
   const modulos = [];
   let idxModulo = 0;
 
-  for (const e of fs.readdirSync(claseRoot, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+  for (const e of fs.readdirSync(claseRoot, { withFileTypes: true }).sort((a, b) => compararNatural(a.name, b.name))) {
     if (ignorar(e.name)) continue;
     const full = path.join(claseRoot, e.name);
 
@@ -301,7 +461,7 @@ function construirModulos(claseRoot, cursoId, relBaseAbs) {
         // Nivel modulo: cada subcarpeta es una clase
         idxModulo += 1;
         const mod = { titulo: e.name, clases: [] };
-        for (const ce of sub.sort((a, b) => a.name.localeCompare(b.name))) {
+        for (const ce of sub.sort((a, b) => compararNatural(a.name, b.name))) {
           if (ce.isDirectory() && !esCarpetaRecursos(ce)) {
             idxClase += 1;
             const claseId = `${cursoId}-m${idxModulo}-c${idxClase}-${slugify(ce.name)}`;

@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 6</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 06</div>
+  <h1>Memorias RAM</h1>
+  <p class="sub">Quince preguntas. <a href="res/1_Practica Clase 6 - Memorias RAM.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>15 de 15 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"Al apagar la PC, ¿qué pasa con los datos que estaban en la RAM?", o:["Se guardan en el disco","Se borran: la RAM es volátil","Quedan en el SPD","Pasan a la caché"], c:1,
+  e:"La RAM es memoria de trabajo: se borra al apagar. Los archivos se guardan en el disco."},
+ {q:"¿Cuántos contactos tiene un módulo DIMM DDR4 de escritorio?", o:["184","240","260","288"], c:3,
+  e:"DDR4 y DDR5 usan 288 contactos. DDR3 usa 240 y DDR1, 184."},
+ {q:"¿Cuántos contactos tiene un DIMM DDR3?", o:["184","240","260","288"], c:1,
+  e:"DDR3 usa 240 contactos. La muesca está en otra posición que la de DDR4, por eso no entra."},
+ {q:"¿Qué voltaje nominal usa DDR5?", o:["1,5 V","1,35 V","1,2 V","1,1 V"], c:3,
+  e:"DDR3: 1,5 V (DDR3L 1,35 V). DDR4: 1,2 V. DDR5: 1,1 V en los chips."},
+ {q:"¿Qué guarda el chip SPD del módulo?", o:["Los archivos del usuario","La ficha del módulo: capacidad, velocidad y latencias","El sistema operativo","Los drivers"], c:1,
+  e:"El SPD es un EEPROM con la ficha del módulo. La BIOS lo lee al arrancar para configurarlo."},
+ {q:"Un módulo CL16 a 3200 MT/s: ¿cuánto tarda en entregar el dato?", o:["5 ns","10 ns","16 ns","32 ns"], c:1,
+  e:"2000 × CL / MT/s = 2000 × 16 / 3200 = 10 ns. CL30 a 6000 MT/s también da 10 ns."},
+ {q:"¿Qué mejora el doble canal?", o:["La latencia","El ancho de banda","La capacidad total","La temperatura"], c:1,
+  e:"Duplica el ancho de banda, no la latencia. Se arma con dos módulos iguales en los slots del mismo color."},
+ {q:"Comprás DDR5-6000 y no activás XMP/EXPO. ¿A qué velocidad corre?", o:["A 6000","A la velocidad estándar de la plataforma, por ejemplo 4800","No arranca","A 3200"], c:1,
+  e:"Sin el perfil activo, la memoria corre a la velocidad estándar. XMP es de Intel y EXPO de AMD."},
+ {q:"¿Qué es CAMM2?", o:["Un tipo de disco","Un módulo sin contactos dorados que se atornilla","Una marca de RAM","Un conector de video"], c:1,
+  e:"CAMM2 es el formato aprobado por JEDEC en diciembre de 2023: se apoya y se atornilla, con dos canales por módulo."},
+ {q:"¿Con qué herramienta de Windows se prueba la memoria?", o:["dxdiag","mdsched","msinfo32","CrystalDiskInfo"], c:1,
+  e:"Win + R y mdsched abre la Herramienta de diagnóstico de memoria; prueba al reiniciar."},
+ {q:"¿Qué pestaña de CPU-Z muestra cada módulo por separado, con su part number?", o:["CPU","Memory","SPD","Mainboard"], c:2,
+  e:"SPD muestra slot por slot: tipo, tamaño, fabricante, part number, ranks y los timings."},
+ {q:"¿Qué hace exactamente mdsched?", o:["Repara la memoria","Programa una prueba que corre al reiniciar","Libera RAM","Actualiza el SPD"], c:1,
+  e:"Programa la prueba y corre fuera de Windows, antes de cargar el sistema. No repara: informa."},
+ {q:"¿Con qué se limpian los contactos dorados de un módulo?", o:["Agua y jabón","Goma de borrar blanca","Alcohol con algodón en los chips","Lija fina"], c:1,
+  e:"Goma de borrar blanca, en un solo sentido. El alcohol isopropílico va solo en los contactos y se deja secar."},
+ {q:"En una placa de 4 slots, ¿dónde van dos módulos para trabajar en doble canal?", o:["A1 y A2","A2 y B2","A1 y B1","B1 y B2"], c:1,
+  e:"A2 y B2: el segundo y el cuarto. Son de canales distintos. El manual de la placa lo confirma."},
+ {q:"Mezclás un módulo de 3200 MT/s con otro de 2666. ¿A qué velocidad trabajan?", o:["Cada uno a la suya","A 3200","A 2666","No arranca"], c:2,
+  e:"El sistema corre todo a la velocidad del más lento, y también toma el CL más alto."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

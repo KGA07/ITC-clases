@@ -1,0 +1,249 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practica Clase 5 - Analisis de la PC con herramientas (con capturas)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070A1A;color:#EAF2FF;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#0B1030,#1a1a4e);border-left:4px solid #FF2ED1;padding:20px 30px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;border-radius:8px;flex-wrap:wrap}
+.header h1{margin:0;font-size:28px;color:#fff;text-shadow:0 0 18px rgba(34,224,255,.35)}
+.header .marca{color:#22E0FF;font-size:12px;letter-spacing:2px}
+.nota{background:rgba(255,200,0,.1);border-left:3px solid #FFD700;padding:10px 15px;margin:0 0 15px;font-size:13px;color:#FFE082;border-radius:4px}
+.capture-block{margin:20px 0;background:#050814;border-radius:8px;overflow:hidden;border:1px solid rgba(255,46,209,.3)}
+.capture-img{width:100%;height:auto;display:block;border-bottom:2px solid #FF2ED1}
+.capture-info{padding:15px;background:rgba(11,16,48,.8)}
+.capture-info h4{color:#FF2ED1;font-size:16px;margin:0 0 8px}
+.capture-info p{color:#C9D6EA;font-size:13px;line-height:1.5;margin:0 0 10px}
+.glosario{margin-top:12px;background:rgba(34,224,255,.05);border-radius:6px;padding:10px;border:1px solid rgba(34,224,255,.15)}
+.glosario-titulo{color:#22E0FF;font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:1px}
+.glosario-table{width:100%;border-collapse:collapse;font-size:12px}
+.glosario-table th{background:rgba(255,46,209,.3);color:#fff;padding:4px 8px;text-align:left;font-size:11px}
+.glosario-table td{padding:4px 8px;border-bottom:1px solid rgba(34,224,255,.1);color:#C9D6EA}
+.glosario-table td.en{color:#FF2ED1;font-weight:600;font-family:monospace;font-size:11px}
+.glosario-table td.es{color:#DCE8FA}
+.entrega{margin-top:15px;background:rgba(34,224,255,.10);border-left:3px solid #22E0FF;padding:12px 15px;font-size:14px;border-radius:4px}
+.footer{margin-top:40px;border-top:1px solid rgba(34,224,255,.2);padding-top:15px;font-size:12px;color:#8FA3BF;display:flex;justify-content:space-between;flex-wrap:wrap}
+@media (max-width:768px){.container{padding:10px}.header h1{font-size:22px}}
+</style>
+</head><body>
+<div class="container">
+<div class="header">
+  <h1>PRACTICA 5 &mdash; Analisis de la PC con herramientas (con capturas)</h1>
+  <span class="marca">ITC &bull; 2026</span>
+</div>
+
+<p class="nota">Abajo esta el analisis COMPLETO de la PC del aula resuelto con capturas reales de cada herramienta: dxdiag, msinfo32, Administrador de tareas, CPU-Z, HWMonitor, CrystalDiskInfo y el Explorador de archivos. Cada captura tiene arriba lo que se hizo y abajo los terminos tecnicos traducidos. Al final esta el informe de conclusion como ejemplo.</p>
+
+<div class="capture-block">
+  <img src="res/1_c5-dxdiag.png" alt="dxdiag mostrando procesador, memoria y DirectX" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 1 - dxdiag: procesador, memoria, SO y DirectX</h4>
+    <p>Se escribio <em>dxdiag</em> en el buscador de Windows y se abri&oacute; "Herramienta de diagnostico de DirectX", pesta&ntilde;a <strong>Sistema</strong>. Datos le&iacute;dos: procesador <strong>AMD A4-7300 APU with Radeon HD Graphics (2 CPUs), ~3,8 GHz</strong>, memoria <strong>12288 MB RAM</strong>, sistema <strong>Windows 10 Pro 64 bits</strong> y versi&oacute;n de <strong>DirectX 12</strong>. Todos los datos del paso 1 del informe, en una sola ventana.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Procesador: AMD A4-7300 APU (2 CPUs) ~3,8GHz</td><td class='es'>Microprocesador AMD de 2 n&uacute;cleos con placa gr&aacute;fica incorporada, a 3,8 GHz</td></tr>
+          <tr><td class='en'>Memoria: 12288 MB</td><td class='es'>12 GB de RAM disponibles</td></tr>
+          <tr><td class='en'>DirectX 12</td><td class='es'>Versi&oacute;n del conjunto de librer&iacute;as gr&aacute;ficas de Windows</td></tr>
+          <tr><td class='en'>Modelo del sistema: MS-7721</td><td class='es'>C&oacute;digo de la placa madre MSI (se confirma en el paso 2)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/2_c5-msinfo32.png" alt="msinfo32 resumen del sistema con placa y BIOS" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 2 - msinfo32: fabricante de placa, modelo y BIOS</h4>
+    <p><em>msinfo32</em> abre "Informaci&oacute;n del sistema" con el <strong>Resumen del sistema</strong>. Datos le&iacute;dos: <strong>Fabricante de la placa base: MSI</strong>, <strong>Producto: A68HM-E33 V2 (MS-7721)</strong>, versi&oacute;n 9.0, y <strong>BIOS: American Megatrends Inc. V8.5</strong> del 11/1/2018, modo UEFI. La memoria f&iacute;sica instalada declara 12,0 GB (11,2 GB utilizables; el resto queda reservado para hardware como la placa de video).</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Fabricante de la placa base: MSI</td><td class='es'>Qui&eacute;n hizo la placa madre</td></tr>
+          <tr><td class='en'>Producto de la placa base: A68HM-E33 V2</td><td class='es'>Modelo exacto (se busca online para actualizar BIOS)</td></tr>
+          <tr><td class='en'>BIOS American Megatrends V8.5</td><td class='es'>Fabricante y versi&oacute;n del firmware que arranca la PC</td></tr>
+          <tr><td class='en'>Modo de BIOS: UEFI</td><td class='es'>Arranque moderno (no Legacy)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/3_c5-msinfo32-discos.png" alt="msinfo32 componentes almacenamiento discos" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 3 - msinfo32: los discos instalados</h4>
+    <p>Dentro de <strong>Componentes &gt; Almacenamiento &gt; Discos</strong> se ven los discos f&iacute;sicos que reporta el sistema: un <strong>WDC WD5000 (500 GB, disco duro fijo, 1 partici&oacute;n)</strong> y un <strong>HIKSEMI (medio de disco externo)</strong>. El espacio libre por unidad ya no lo muestra msinfo32 moderno: eso sale del Administrador de tareas (paso 6) y del Explorador de archivos (paso 10).</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>WDC WD5000AAKX-00ERMA0</td><td class='es'>Disco duro mec&aacute;nico Western Digital de 500 GB</td></tr>
+          <tr><td class='en'>Tipo de medio: Disco duro fijo</td><td class='es'>Interno (no extra&iacute;ble)</td></tr>
+          <tr><td class='en'>Particiones: 1</td><td class='es'>Divisiones l&oacute;gicas del disco</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/4_c5-t-cpu.png" alt="Administrador de tareas pesta Rendimiento CPU" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 4 - Administrador de tareas: CPU con la PC en reposo</h4>
+    <p>Clic derecho en la barra + <strong>Administrador de tareas</strong> &gt; pesta&ntilde;a <strong>Rendimiento</strong>. Con la PC "sin hacer nada", el CPU marca <strong>31% de uso a 3,98 GHz</strong>. &iquest;Por qu&eacute; no est&aacute; al 0%? Mirando la lista de procesos se ve la raz&oacute;n: hay <strong>muchos procesos de Google Chrome abiertos</strong> consumiendo entre ellos varios puntos porcentuales, m&aacute;s Windows PowerShell (20%) corriendo el propio an&aacute;lisis. Lectura para el informe: el uso en reposo depende de qu&eacute; queda abierto, y al diagnosticar conviene cerrarlo todo.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Uso 31%, Velocidad 3,98 GHz</td><td class='es'>Porcentaje del CPU empleado y velocidad actual</td></tr>
+          <tr><td class='en'>Procesos: 198, Subprocesos: 1998</td><td class='es'>Cantidad total de procesos e hilos abiertos</td></tr>
+          <tr><td class='en'>N&uacute;cleos: 1, Procesadores l&oacute;gicos: 2</td><td class='es'>1 n&uacute;cleo f&iacute;sico y 2 l&oacute;gicos: cada uno puede atender una tarea a la vez</td></tr>
+          <tr><td class='en'>Tiempo activo 2:02:11:15</td><td class='es'>La PC lleva m&aacute;s de 2 d&iacute;as encendida</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/5_c5-t-memoria.png" alt="Administrador de tareas Rendimiento Memoria" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 5 - Administrador de tareas: memoria en reposo</h4>
+    <p>En el panel izquierdo se toca <strong>Memoria</strong>: <strong>4,6 GB en uso de 11,2 GB (41%)</strong>, con 6,6 GB disponibles y tipo de RAM <strong>12,0 GB DDR3</strong>. El 41% en reposo es un n&uacute;mero ALTO para una PC aparentemente quieta y confirma que los programas arrancados al inicio (y Chrome) se quedan con memoria: dato &uacute;til para la conclusi&oacute;n del informe.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>En uso (comprimido): 4,6 GB (87,6 MB)</td><td class='es'>RAM ocupada; lo comprimido se guard&oacute; apretado para liberar espacio</td></tr>
+          <tr><td class='en'>Disponible: 6,6 GB</td><td class='es'>Memoria libre para un programa nuevo</td></tr>
+          <tr><td class='en'>En cach&eacute;: 6,5 GB</td><td class='es'>Datos guardados por si vuelven a pedirse (se borran si hacen falta)</td></tr>
+          <tr><td class='en'>Ranuras usadas: 2 de...</td><td class='es'>Dos m&oacute;dulos de RAM f&iacute;sicamente insertados en la placa</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/6_c5-t-disco.png" alt="Administrador de tareas Rendimiento Disco 0" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 6 - Administrador de tareas: el disco en reposo</h4>
+    <p>En el panel izquierdo: <strong>Disco 0 (C:)</strong>. Es lo que le pasa al disco del sistema: <strong>1% de tiempo de actividad</strong>, respuesta media <strong>0,1 ms</strong> (muy buena) y <strong>capacidad con formato: 120 GB</strong> para el SSD <strong>ADATA SU650</strong>. Un tiempo de actividad alto constante con la PC en reposo ser&iacute;a s&iacute;ntoma de un proceso escribiendo de m&aacute;s; ac&aacute; est&aacute; al 1%.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Tiempo de actividad 1%</td><td class='es'>Porcentaje del tiempo con el disco ocupado atendiendo pedidos</td></tr>
+          <tr><td class='en'>Tiempo promedio de respuesta 0,1 ms</td><td class='es'>Cu&aacute;nto tarda el disco en contestar cada pedido</td></tr>
+          <tr><td class='en'>Capacidad con formato: 120 GB</td><td class='es'>GB utilizables (capacidad real menos estructura interna)</td></tr>
+          <tr><td class='en'>Velocidad de lectura/escritura</td><td class='es'>Los KB/s en el gr&aacute;fico; los picos son accesos cortos del sistema</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/7_c5-cpuz.png" alt="CPU-Z mostrando el procesador AMD A4-7300" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 7 - CPU-Z: el microprocesador al detalle</h4>
+    <p><strong>CPU-Z</strong> (pesta&ntilde;a <strong>CPU</strong>) agrega los datos que dxdiag muestra cortos: <strong>Name: AMD A4-7300</strong>, c&oacute;digo <strong>Richland</strong>, socket <strong>FM2 (904)</strong>, tecnolog&iacute;a 32 nm, TDP 65,1 W (el consumo m&aacute;ximo del chip), <strong>2 cores / 2 threads</strong>, velocidad <strong>3991 MHz</strong> y el multiplicador x40.0. Tambi&eacute;n se leen las instrucciones soportadas (MMX, SSE, SSE2-4A, AVX, AES) y el tama&ntilde;o de los caches L1/L2/L3.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura ( ingl&eacute;s -&gt; espa&ntilde;ol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingl&eacute;s</th><th>Significado en espa&ntilde;ol</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Core Speed 3991.91 MHz</td><td class='es'>Velocidad del n&uacute;cleo en tiempo real</td></tr>
+          <tr><td class='en'>Package: Socket FM2 (904)</td><td class='es'>Encaje f&iacute;sico en el que entra el micro a la placa</td></tr>
+          <tr><td class='en'>Core Voltage 1.384 V</td><td class='es'>Tensi&oacute;n con la que trabaja (menos = menos calor)</td></tr>
+          <tr><td class='en'>Cache L1/L2/L3</td><td class='es'>Memorias chicas y r&aacute;pidas dentro del propio micro</td></tr>
+          <tr><td class='en'>Technology 32 nm</td><td class='es'>Escala de fabricaci&oacute;n; m&aacute;s chico = mejor eficiencia</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/8_c5-hwmonitor.png" alt="HWMonitor con temperaturas del CPU" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 8 - HWMonitor: temperaturas de placa y procesador</h4>
+    <p><strong>HWMonitor</strong> lista los sensores. Dos bloques importantes: el de la placa (<strong>MSI A68HM-E33 V2</strong>) con sus temperaturas <strong>TMPIN0 40 &deg;C, TMPIN1 33 &deg;C, TMPIN2 30 &deg;C</strong>, y el del CPU <strong>AMD A4-7300</strong> con el sensor <strong>Package</strong>, que es el dato pedido para el informe: <strong>&laquo;temperatura m&aacute;xima del procesador&raquo;</strong>. Bien mirado: la columna <code>Max</code> guarda los picos hist&oacute;ricos (77-79,6 &deg;C desde que arranc&oacute; el programa), y el valor actual de <code>Value</code> est&aacute; tranquilo. Si el m&aacute;ximo pasara de 85 &deg;C sostenido, hay que revisar pasta t&eacute;rmica, disipador y ventilador (Fans PWM CPU: 61%).</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Glosario de la captura ( ingl&eacute;s -&gt; espa&ntilde;ol):</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino en ingl&eacute;s</th><th>Significado en espa&ntilde;ol</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Value / Min / Max</td><td class='es'>Valor actual / m&iacute;nimo registrado / m&aacute;ximo registrado del sensor</td></tr>
+          <tr><td class='en'>Temperatures / TMPIN0</td><td class='es'>Sensores de temperatura de la placa madre</td></tr>
+          <tr><td class='en'>Package</td><td class='es'>Sensor del bloque entero del CPU: el que se reporta</td></tr>
+          <tr><td class='en'>Cores</td><td class='es'>Temperatura por n&uacute;cleo del CPU</td></tr>
+          <tr><td class='en'>Fans PWM: CPU 61%</td><td class='es'>Velocidad del ventilador del CPU en porcentaje</td></tr>
+          <tr><td class='en'>Physical Memory Load 40,0%</td><td class='es'>Uso de RAM reportado por el sensor</td></tr>
+          <tr><td class='en'>Logging OFF (F5 to start)</td><td class='es'>Grabaci&oacute;n de log apagada (F5 la prende)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/9_c5-crystaldiskinfo.png" alt="CrystalDiskInfo con el estado de salud del disco SSD" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 9 - CrystalDiskInfo: el estado de salud del disco</h4>
+    <p><strong>CrystalDiskInfo</strong> es el coraz&oacute;n de la pr&aacute;ctica: se toca la ficha <strong>C:</strong> y se lee el veredicto: <strong>Estado de salud: Bueno - 95%</strong>, con temperatura <strong>33 &deg;C</strong>. El disco evaluado es el <strong>ADATA SU650 de 120 GB</strong> (interfaz <strong>SATA/600</strong>, estandar ATA8-ACS, caracter&iacute;sticas <strong>S.M.A.R.T, NCQ, TRIM, GPL</strong>), con <strong>9038 horas encendido</strong> y 3455 encendidos. La tabla SMART de abajo (Tasa de errores de lectura, N&ordm; de sectores reasignados, N&ordm; de encendidos, N&ordm; de borrados...) tiene columnas <em>Actual / Peor / Umbral</em>: mientras <strong>Actual &gt;= Umbral</strong>, no hay alarma. A la izquierda se ven los otros discos conectados (D:, E:, F:, I:), cada uno con su ficha.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Estado de salud: Bueno 95%</td><td class='es'>Veredicto general del SMART: el disco est&aacute; bueno</td></tr>
+          <tr><td class='en'>Temperatura: 33 &deg;C</td><td class='es'>Temperatura actual del disco (ideal &lt; 40 &deg;C)</td></tr>
+          <tr><td class='en'>S.M.A.R.T | NCQ | TRIM</td><td class='es'>Autodiagn&oacute;stico + cola de comandos + borrado ordenado (SSD)</td></tr>
+          <tr><td class='en'>Actual / Peor / Umbral</td><td class='es'>Valor actual, hist&oacute;rico m&iacute;nimo y l&iacute;mite de cada atributo</td></tr>
+          <tr><td class='en'>N&ordm; de sectores reasignados</td><td class='es'>Si sube, el disco est&aacute; reemplazando celdas rotas: hay que seguirlo</td></tr>
+          <tr><td class='en'>Horas encendido: 9038</td><td class='es'>Tiempo total encendido del disco (1 a&ntilde;o continuo repartido)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="res/10_c5-espacio-libre.png" alt="Este equipo con el espacio libre de cada unidad" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 10 - Explorador "Este equipo": el espacio libre de cada unidad</h4>
+    <p>Como msinfo32 ya no reporta espacio libre, la forma r&aacute;pida es abrir <strong>Este equipo</strong>: cada unidad tiene su barra de uso. Lectura de los datos: <strong>Disco local (C:) = 25,0 GB disponibles de 111 GB</strong> (queda 22% libre: poco), <strong>D: = 384 GB de 465 GB</strong>, m&aacute;s un pendrive (E:) y dos discos externos (F:, I:). Este es el n&uacute;mero concreto para la conclusi&oacute;n sobre limpieza.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>25,0 GB disponibles de 111 GB</td><td class='es'>Libre en C: frente a su capacidad formateada (22%)</td></tr>
+          <tr><td class='en'>Disco local (C:) / (D:)</td><td class='es'>Particiones del disco f&iacute;sico: sistema y datos</td></tr>
+          <tr><td class='en'>BOOTGT (E:) / GTV14 (F:) / DATOS KEMPE (I:)</td><td class='es'>Unidades extra&iacute;bles conectadas al momento del an&aacute;lisis</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="entrega"><strong>Informe de conclusi&oacute;n (as&iacute; quedar&iacute;a leyendo todo lo de arriba):</strong><br>
+<b>Qu&eacute; est&aacute; bien:</b> el disco SSD del sistema est&aacute; al <strong>95% de salud y 33 &deg;C</strong> (CrystalDiskInfo), sin atributos SMART en alarma; temperaturas de placa entre 30 y 40 &deg;C con el CPU tranquilo (HWMonitor); RAM de 12 GB DDR3 con <strong>6,6 GB libres</strong>; el disco del sistema contesta en <strong>0,1 ms</strong> y queda al 1% de actividad (Administrador de tareas).<br>
+<b>Qu&eacute; conviene cambiar:</b> en C: solo quedan <strong>25 GB libres de 111 GB (22%)</strong>: liberar espacio (instaladores viejos, papelera, copias). El uso de CPU en "reposo" (31-38%) se explica por Chrome abierto (muchos procesos) y PowerShell: al diagnosticar, cerrar todo. El disco mec&aacute;nico D: (WDC 500 GB) sirve para datos pero es lento para correr programas: migrar el software pesado al SSD. El procesador A4-7300 (2013, 2 n&uacute;cleos, 32 nm) no da para tareas pesadas: es limitaci&oacute;n de hardware, no de software.<br>
+<b>Qu&eacute; no se pudo verificar:</b> la temperatura m&aacute;xima SOSTENIDA del CPU bajo carga (solo est&aacute; el hist&oacute;rico del sensor desde que arranc&oacute; HWMonitor); el SMART de D:, E:, F: e I: (solo se abri&oacute; la ficha de C:); y la red: Ethernet marca 0 Kbps porque el cable no estaba conectado al momento del an&aacute;lisis.</div>
+
+<div class="footer"><span>Practica Clase 5 - Diagn&oacute;stico y Mantenimiento de PC - ITC</span><span>Actividad resuelta con capturas reales de las herramientas del curso</span></div>
+</div>
+</body></html>
