@@ -603,22 +603,25 @@ async function cambiarClaveAlumno(a) {
   document.getElementById('modalAlumno').classList.remove('hidden');
 }
 
-/* ── permisos material por material ── */
-let permisosAlumno = null;
+/* ── permisos material por material (alumnos Y docentes) ── */
+let permisosPersona = null; // alumno o docente
+let permisosTipo = 'alumno'; // 'alumno' | 'docente'
 let permisosSet = new Set();
 let permisosCursoData = null;
 let permisosCursosLista = []; // [{id,nombre,emoji}]
 let permisosCursoSelId = '';
 
-async function abrirPermisos(a) {
-  permisosAlumno = a;
-  permisosSet = new Set(a.permisos || []);
-  document.getElementById('modalPermisosTitulo').textContent = `Materiales de ${a.nombre_completo}`;
+async function abrirPermisos(persona, tipo = 'alumno') {
+  permisosPersona = persona;
+  permisosTipo = tipo;
+  permisosSet = new Set(persona.permisos || []);
+  document.getElementById('modalPermisosTitulo').textContent =
+    `Materiales de ${persona.nombre_completo}${tipo === 'docente' ? ' (docente)' : ''}`;
   document.getElementById('permisosClases').innerHTML = '<div class="loading"><span class="spinner"></span> Cargando material del curso…</div>';
   document.getElementById('modalPermisos').classList.remove('hidden');
 
-  // cursos del alumno (compatible con un solo curso)
-  const ids = Array.isArray(a.cursos) && a.cursos.length ? a.cursos : (a.curso ? [a.curso] : []);
+  // cursos de la persona (compatible con un solo curso)
+  const ids = Array.isArray(persona.cursos) && persona.cursos.length ? persona.cursos : (persona.curso ? [persona.curso] : []);
   permisosCursosLista = ids
     .map((id) => {
       const c = (catalogo.capacitaciones || []).find((x) => x.id === id);
@@ -649,7 +652,7 @@ function permsSelDefault() {
 }
 
 async function cargarPermisosCurso() {
-  if (!permisosCursoSelId) throw new Error('El alumno no tiene cursos asignados.');
+  if (!permisosCursoSelId) throw new Error('Esta persona no tiene cursos asignados.');
   const res = await apiFetch(`/curso/${encodeURIComponent(permisosCursoSelId)}`);
   if (!res.ok) throw new Error('No se pudo cargar el curso.');
   permisosCursoData = await res.json();
@@ -660,10 +663,10 @@ function renderPermisos() {
   const caja = document.getElementById('permisosClases');
   caja.innerHTML = '';
   if (!permisosCursoData || !permisosCursoData.modulos) return;
+  let total = 0;
   permisosCursoData.modulos.forEach((m) => {
     const modulo = document.createElement('div');
     modulo.className = 'g-perm-modulo';
-    let total = 0;
     const cuerpo = document.createElement('div');
     (m.clases || []).forEach((cl) => {
       if (!(cl.archivos || []).length) return;
@@ -700,7 +703,8 @@ function renderPermisos() {
 
 async function guardarPermisos() {
   try {
-    const res = await apiFetch(`/alumnos/${encodeURIComponent(permisosAlumno.id)}`, {
+    const base = permisosTipo === 'docente' ? '/docentes/' : '/alumnos/';
+    const res = await apiFetch(`${base}${encodeURIComponent(permisosPersona.id)}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ permisos: [...permisosSet] })
@@ -713,7 +717,8 @@ async function guardarPermisos() {
 
 function habilitarTodo() {
   if (!permisosCursoData) return;
-  if (!confirm('¿Habilitar TODOS los materiales del curso para este alumno?')) return;
+  const quien = permisosPersona ? permisosPersona.nombre_completo : 'esta persona';
+  if (!confirm(`¿Habilitar TODOS los materiales del curso para ${quien}?`)) return;
   for (const m of permisosCursoData.modulos || []) {
     for (const cl of m.clases || []) {
       for (const f of cl.archivos || []) permisosSet.add(f.fid);
@@ -738,6 +743,7 @@ function habilitarTodo() {
     document.getElementById('modalPermisosCerrar').addEventListener('click', () => {
       document.getElementById('modalPermisos').classList.add('hidden');
       refrescarAlumnos();
+      if (typeof refrescarDocentes === 'function') refrescarDocentes();
     });
     document.getElementById('btnPermisosTodos').addEventListener('click', habilitarTodo);
   }
@@ -816,6 +822,12 @@ function renderDocentes() {
     btnPanel.textContent = '🛠️ Su panel';
     btnPanel.title = 'Vista previa del panel del docente';
     btnPanel.addEventListener('click', () => abrirPanelDocente(d));
+    const btnMat = document.createElement('button');
+    btnMat.type = 'button';
+    btnMat.className = 'btn btn-ghost btn-sm';
+    btnMat.textContent = `📚 Materiales (${(d.permisos || []).length})`;
+    btnMat.title = 'Elegir qué materiales puede ver el docente';
+    btnMat.addEventListener('click', () => abrirPermisos(d, 'docente'));
     const btnPass = document.createElement('button');
     btnPass.type = 'button';
     btnPass.className = 'btn btn-ghost btn-sm';
@@ -828,6 +840,7 @@ function renderDocentes() {
     btnDel.title = 'Borrar docente';
     btnDel.addEventListener('click', () => borrarDocente(d));
     acciones.appendChild(btnPanel);
+    acciones.appendChild(btnMat);
     acciones.appendChild(btnPass);
     acciones.appendChild(btnDel);
     div.appendChild(acciones);

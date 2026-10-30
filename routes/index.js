@@ -42,6 +42,7 @@ router.post('/docentes/:id/impersonar', apiLimiter, auth, adminAuth, docentesCtr
 
 // ── Aula del profesor: habilitación de clases + asistencia ─────────────────
 router.get('/prof/panel', apiLimiter, auth, profAuth, aulaCtrl.panel);
+router.get('/prof/clase/:id', apiLimiter, auth, profAuth, aulaCtrl.claseDocente);
 router.put('/prof/habilitacion', apiLimiter, auth, profAuth, aulaCtrl.habilitar);
 router.put('/prof/asistencia', apiLimiter, auth, profAuth, aulaCtrl.asistencia);
 

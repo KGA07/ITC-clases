@@ -32,6 +32,7 @@ function vistaDocente(u) {
     horario: u.horario || '',
     curso: u.curso || '',
     cursos: Array.isArray(u.cursos) ? u.cursos.filter(Boolean) : (u.curso ? [u.curso] : []),
+    permisos: u.permisos || [],
     creado: u.creado || ''
   };
 }
@@ -53,7 +54,7 @@ async function listar(req, res) {
 }
 
 async function crear(req, res) {
-  const { nombre, nombre_completo, email = '', dni = '', telefono = '', dia = '', horario = '', curso = '', cursos, password = '' } = req.body || {};
+  const { nombre, nombre_completo, email = '', dni = '', telefono = '', dia = '', horario = '', curso = '', cursos, password = '', permisos } = req.body || {};
   if (!nombre || !nombre_completo) {
     return res.status(400).json({ error: 'Faltan usuario o nombre completo.' });
   }
@@ -77,6 +78,7 @@ async function crear(req, res) {
     horario: String(horario).trim(),
     curso: cursosArr[0] || '',
     cursos: cursosArr,
+    permisos: Array.isArray(permisos) ? permisos.map(String) : [],
     creado: new Date().toISOString()
   };
   data.users.push(docente);
@@ -90,7 +92,7 @@ async function actualizar(req, res) {
   const docente = docenteDe(data, req.params.id);
   if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
 
-  const { nombre, nombre_completo, email, dni, telefono, dia, horario, curso, cursos, password } = req.body || {};
+  const { nombre, nombre_completo, email, dni, telefono, dia, horario, curso, cursos, password, permisos } = req.body || {};
   if (nombre && String(nombre).trim().toLowerCase() !== String(docente.nombre).toLowerCase()) {
     const nuevo = String(nombre).trim();
     if (await nombreOcupado(data, nuevo, docente.id)) {
@@ -110,6 +112,7 @@ async function actualizar(req, res) {
     docente.curso = arr[0] || '';
   }
   if (password) docente.password = bcrypt.hashSync(String(password), 10);
+  if (Array.isArray(permisos)) docente.permisos = permisos.map(String);
 
   await db.saveData();
   res.json({ docente: vistaDocente(docente) });

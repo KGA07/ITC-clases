@@ -131,4 +131,27 @@ async function asistencia(req, res) {
   res.json({ ok: true });
 }
 
-module.exports = { panel, habilitar, asistencia };
+// ── Ver una clase desde el panel del docente ────────────────────────────────
+// Devuelve la clase con SOLO los archivos que el admin le habilitó al docente
+// (docente.permisos, mismo mecanismo que los alumnos). Así puede ver/presentar
+// el HTML de la clase y de práctica desde su panel.
+async function claseDocente(req, res) {
+  const data = await db.loadData();
+  const docente = data.users.find((u) => String(u.id) === String(req.user.id));
+  const mis = docente ? (Array.isArray(docente.cursos) && docente.cursos.length ? docente.cursos.filter(Boolean) : (docente.curso ? [docente.curso] : [])) : [];
+  if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
+
+  const c = getCatalog();
+  const clase = c.claseIndex.get(req.params.id);
+  if (!clase) return res.status(404).json({ error: 'Clase no encontrada.' });
+  if (!mis.includes(clase.cursoId)) {
+    return res.status(403).json({ error: 'La clase no pertenece a tus cursos.' });
+  }
+
+  const set = new Set(docente.permisos || []);
+  const archivos = (clase.archivos || []).filter((f) => set.has(f.fid));
+  const curso = c.cursoIndex.get(clase.cursoId);
+  res.json({ curso: curso ? curso.nombre : '', modulo: clase.modulo, clase: { ...clase, archivos }, habilitada: !!(data.habilitaciones || {})[`${clase.cursoId}::${clase.id}`] });
+}
+
+module.exports = { panel, habilitar, asistencia, claseDocente };

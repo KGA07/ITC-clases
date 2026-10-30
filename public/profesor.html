@@ -92,6 +92,29 @@
     </div>
   </main>
 
+  <!-- ══ Ver / presentar la clase: materiales habilitados ══ -->
+  <div class="p-modal hidden" id="pMateriales" role="dialog" aria-modal="true">
+    <div class="p-modal-caja">
+      <div class="p-modal-head">
+        <b id="pMaterialesTitulo">Clase</b>
+        <button type="button" class="btn btn-ghost btn-sm" id="pMaterialesCerrar">Cerrar ✕</button>
+      </div>
+      <div id="pMaterialesLista" class="p-materiales"></div>
+    </div>
+  </div>
+
+  <!-- ══ Pantalla completa para proyectar ══ -->
+  <div class="p-pantalla hidden" id="pPantalla" role="dialog" aria-modal="true">
+    <div class="p-pantalla-head">
+      <b id="pPantallaTitulo">Clase</b>
+      <div style="display:flex;gap:8px">
+        <button type="button" class="btn btn-ghost btn-sm" id="pPantallaNueva">↗ Nueva pestaña</button>
+        <button type="button" class="btn btn-primary btn-sm" id="pPantallaCerrar">✕ Cerrar pantalla</button>
+      </div>
+    </div>
+    <iframe id="pPantallaFrame" title="Clase en pantalla completa"></iframe>
+  </div>
+
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="/js/profesor.js"></script>
 </body>

@@ -125,7 +125,10 @@ function renderClases() {
         `<div class="p-num">${String(n).padStart(2, '0')}</div>` +
         `<div class="p-clase-info"><b>${esc(cl.titulo)}${hab ? ' <span class="p-chip-ok">✔</span>' : ''}</b>` +
         `<small>${cl.count} material(es)${hab ? ' · habilitada el ' + fechaCorta(hab) : ' · sin habilitar'}</small></div>` +
-        `<div class="p-acciones-fila"><button type="button" class="btn btn-sm ${hab ? 'btn-deshab' : 'btn-primary'}" data-hab="${esc(cl.id)}">` +
+        `<div class="p-acciones-fila">` +
+        `<button type="button" class="btn btn-sm btn-ghost" data-ver="${esc(cl.id)}" title="Ver los materiales de esta clase">📚 Ver</button>` +
+        `<button type="button" class="btn btn-sm btn-ghost" data-pres="${esc(cl.id)}" title="Proyectar la presentación a pantalla completa">▶ Presentar</button>` +
+        `<button type="button" class="btn btn-sm ${hab ? 'btn-deshab' : 'btn-primary'}" data-hab="${esc(cl.id)}">` +
         `${hab ? '🔒 Deshabilitar' : '🔓 Habilitar'}</button></div>`;
       grid.appendChild(card);
     }
@@ -136,6 +139,97 @@ function renderClases() {
     const hab = (estado.habilitaciones || {})[b.dataset.hab];
     toggleHabilitacion(b.dataset.hab, !hab);
   }));
+  caja.querySelectorAll('[data-ver]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.ver, false)));
+  caja.querySelectorAll('[data-pres]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.pres, true)));
+}
+
+// ── Ver / presentar una clase ──────────────────────────────────────────────
+/* Abre el detalle de la clase con los materiales que el administrador
+   habilitó para este docente. Con presentar=true lanza directo a pantalla
+   completa el HTML de la clase (el primer material embebible). */
+async function abrirClase(claseId, presentar = false) {
+  try {
+    const res = await apiFetch(`/prof/clase/${encodeURIComponent(claseId)}`);
+    if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || 'No se pudo cargar la clase.');
+    const d = await res.json();
+    const archivos = d.clase.archivos || [];
+
+    if (presentar) {
+      // preferencia: la presentación de la clase; si no, cualquier html que no sea práctica; si no, el primero
+      const orden = (f) => (/presentac/i.test(f.nombre) ? 0 : (/practica/i.test(f.nombre) ? 2 : 1));
+      const embebibles = archivos.filter((f) => f.embebible && f.embedUrl).sort((a, b) => orden(a) - orden(b));
+      const primera = embebibles[0];
+      if (primera) return abrirPantalla(primera.embedUrl, `${d.clase.titulo} — ${primera.nombre}`);
+      toast('Esta clase no tiene presentación para proyectar. Abrí 📚 Ver para ver el material.');
+    }
+
+    document.getElementById('pMaterialesTitulo').textContent = `${d.curso ? d.curso + ' · ' : ''}${d.modulo || ''} — ${d.clase.titulo}`;
+    const lista = document.getElementById('pMaterialesLista');
+    lista.innerHTML = '';
+    if (!archivos.length) {
+      lista.innerHTML = '<p class="p-sin-mats">El administrador todavía no habilitó materiales de esta clase para vos. Pedile que los marque en el gestor (📚 Materiales).</p>';
+    } else {
+      for (const f of archivos) {
+        const fila = document.createElement('div');
+        fila.className = 'p-mat-fila';
+        fila.innerHTML =
+          `<span class="p-mat-emoji" aria-hidden="true">${f.emoji || '📄'}</span>` +
+          `<span class="p-mat-nombre">${esc(f.nombre)}<small>${esc(f.tipo || '')}${f.size ? ' · ' + fmtSize(f.size) : ''}</small></span>`;
+        const acciones = document.createElement('span');
+        acciones.className = 'p-mat-acciones';
+
+        if (f.embebible && f.embedUrl) {
+          const bt = document.createElement('button');
+          bt.type = 'button';
+          bt.className = 'btn btn-primary btn-sm';
+          bt.textContent = '▶ Presentar';
+          bt.title = 'Proyectar a pantalla completa';
+          bt.addEventListener('click', () => abrirPantalla(f.embedUrl, f.nombre));
+          acciones.appendChild(bt);
+        }
+
+        const driveId = (`${f.url || ''}`.match(/[?&]id=([A-Za-z0-9_-]+)/) || [])[1] || '';
+        const bv = document.createElement('button');
+        bv.type = 'button';
+        bv.className = 'btn btn-ghost btn-sm';
+        if (driveId) {
+          bv.textContent = '👁 Ver';
+          bv.title = 'Abrir en el visor (pestaña nueva)';
+          bv.addEventListener('click', () => window.open(`/visor?t=${encodeURIComponent(f.nombre)}&drive=${driveId}`, '_blank', 'noopener'));
+          acciones.appendChild(bv);
+        } else if (f.url) {
+          bv.textContent = '🔗 Abrir';
+          bv.title = 'Abrir en pestaña nueva';
+          bv.addEventListener('click', () => window.open(f.url, '_blank', 'noopener'));
+          acciones.appendChild(bv);
+        } else if (f.embedUrl) {
+          bv.textContent = '👁 Ver';
+          bv.addEventListener('click', () => window.open(f.embedUrl, '_blank', 'noopener'));
+          acciones.appendChild(bv);
+        }
+
+        fila.appendChild(acciones);
+        lista.appendChild(fila);
+      }
+    }
+    document.getElementById('pMateriales').classList.remove('hidden');
+  } catch (e) {
+    toast(e.message);
+  }
+}
+
+/* pantalla completa para proyectar */
+function abrirPantalla(url, nombre) {
+  document.getElementById('pPantallaTitulo').textContent = nombre || 'Clase';
+  document.getElementById('pPantallaFrame').src = url;
+  document.getElementById('pPantallaNueva').onclick = () => window.open(url, '_blank', 'noopener');
+  document.getElementById('pPantalla').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function cerrarPantalla() {
+  document.getElementById('pPantallaFrame').src = 'about:blank';
+  document.getElementById('pPantalla').classList.add('hidden');
+  document.body.style.overflow = '';
 }
 
 async function toggleHabilitacion(claseId, habilitada) {
@@ -234,6 +328,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (l2) l2.addEventListener('click', salir);
   const cerrarPreview = document.getElementById('pPreviewCerrar');
   if (cerrarPreview) cerrarPreview.addEventListener('click', salir);
+
+  // modales de ver/presentar clase
+  document.getElementById('pMaterialesCerrar').addEventListener('click', () => document.getElementById('pMateriales').classList.add('hidden'));
+  document.getElementById('pPantallaCerrar').addEventListener('click', cerrarPantalla);
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (!document.getElementById('pPantalla').classList.contains('hidden')) { cerrarPantalla(); return; }
+    if (!document.getElementById('pMateriales').classList.contains('hidden')) document.getElementById('pMateriales').classList.add('hidden');
+  });
 
   document.getElementById('pClaseAsis').addEventListener('change', renderAsistencia);
   const selCurso = document.getElementById('pCursoSel');
