@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 29</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 29</div>
+  <h1>Gestión de incidentes</h1>
+  <p class="sub">Diez preguntas. <a href="Practica Clase 29 - Gestión de incidentes.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>10 de 10 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿Cuál es la diferencia entre evento e incidente de ciberseguridad?", o:["El evento siempre genera daños; el incidente no","El evento es una acción observable que puede comprometer la seguridad; el incidente ya afecta la disponibilidad, integridad o confidencialidad","El incidente es más leve que el evento","No hay diferencia entre ambos"], c:1,
+  e:"El evento es la señal observable (la mayoría inocua); el incidente es el evento que ya dañó una de las tres propiedades de un activo."},
+ {q:"¿Qué norma establece el ciclo de vida de la gestión de incidentes en cinco fases?", o:["ISO/IEC 27001","ISO/IEC 27035","NIST CSF","PCI-DSS"], c:1,
+  e:"La ISO/IEC 27035 define el ciclo de vida de la gestión de incidentes en cinco fases, desde planificar hasta aprender lecciones."},
+ {q:"¿Cuáles son las cinco funciones del marco de ciberseguridad NIST?", o:["Identificar, proteger, detectar, responder y recuperar","Planificar, notificar, responder, informar y aprender","Proteger, clasificar, informar, evaluar y contener","Preparar, evaluar, mitigar, erradicar y cerrar"], c:0,
+  e:"El NIST CSF ordena la ciberseguridad en esas cinco funciones, que van desde identificar activos hasta recuperar el servicio."},
+ {q:"¿Cuál de estos es un ejemplo de acceso no autorizado?", o:["Un antivirus que da un aviso","Entrar a un sistema para robar datos sin permiso","Un correo de phishing recibido pero sin abrir","Una impresora sin papel"], c:1,
+  e:"Acceder a un sistema sin permiso para apoderarse de datos es un acceso no autorizado; un aviso o un correo sin abrir son solo eventos."},
+ {q:"¿Qué etapa del ciclo incluye la contención, erradicación y recuperación?", o:["Detectar y reportar","Evaluar y decidir","Responder","Lecciones aprendidas"], c:2,
+  e:"La fase de responder es la que contiene, erradica y recupera el servicio mientras dura el incidente."},
+ {q:"¿Cuáles son las tres partes principales de un plan de respuesta a incidentes?", o:["Preparación, respuesta y recuperación","Prevención, monitoreo y análisis","Clasificación, notificación y seguimiento","Planificación, comunicación y documentación"], c:0,
+  e:"El plan se resume en preparar (antes), responder (durante) y recuperarse (después)."},
+ {q:"¿Por qué se prueban periódicamente las copias de seguridad?", o:["Para verificar la capacidad del antivirus","Para asegurarse de que podrán usarse en la recuperación tras un incidente","Para cumplir con auditorías externas únicamente","Para liberar espacio en los sistemas"], c:1,
+  e:"La prueba periódica garantiza que, llegado el incidente, la restauración funcione de verdad."},
+ {q:"¿Quién es el responsable de validar y clasificar un incidente?", o:["El usuario que lo reporta","El proveedor de internet","El equipo designado de respuesta a incidentes","Nadie: se resuelve solo"], c:2,
+  e:"El equipo (o persona) designado es quien marca si un evento es incidente y decide cómo seguir; por eso el plan lo nombra de antemano."},
+ {q:"¿Cuál de estas acciones pertenece a la fase de lecciones aprendidas?", o:["Reiniciar los servidores sin registro","Documentar el incidente y actualizar los procedimientos","Buscar culpables para sancionarlos","Dejar de registrar para ahorrar tiempo"], c:1,
+  e:"El ciclo cierra documentando lo que pasó y actualizando los procedimientos, para no repetir el mismo incidente."},
+ {q:"¿Por qué se dice que cada incidente es una oportunidad de mejora?", o:["Porque permite identificar culpables","Porque ayuda a fortalecer las políticas y los controles para el futuro","Porque los incidentes solo ocurren una vez","Porque no generan un impacto real"], c:1,
+  e:"Cada incidente muestra dónde fallaron los controles: corregirlo fortalece la seguridad siguiente."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

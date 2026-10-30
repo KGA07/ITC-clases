@@ -1,0 +1,121 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 10</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 10</div>
+  <h1>Chipset y encendido</h1>
+  <p class="sub">Doce preguntas. <a href="Practica Clase 10 - Chipset y encendido.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>12 de 12 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿Qué hace el chipset?", o:["Calcula los gráficos","Conecta el procesador con discos, USB, red y slots","Guarda los archivos","Alimenta la placa"], c:1,
+  e:"Reparte el tráfico entre el procesador y los periféricos, y define cuántos puertos tiene la placa."},
+ {q:"¿Qué es el POST?", o:["El menú de la BIOS","La revisión que hace la placa antes de arrancar","Un tipo de memoria","El apagado forzado"], c:1,
+  e:"Power-On Self-Test: revisa procesador, memoria, video y dispositivos. Si falla, se detiene y avisa."},
+ {q:"¿Qué chipset Intel permite overclock de procesador?", o:["H610","B760","Z790","Todos"], c:2,
+  e:"Solo la serie Z. La B permite overclock de memoria y la H no permite ninguno."},
+ {q:"¿Qué diferencia hay entre BIOS y UEFI?", o:["Ninguna","UEFI es gráfico, usa GPT y permite más de 2 TB","BIOS es más nuevo","UEFI no tiene setup"], c:1,
+  e:"UEFI reemplaza al BIOS clásico: arranque más rápido, GPT, Secure Boot y discos de más de 2 TB."},
+ {q:"¿Qué hace el botón de encendido?", o:["Corta la corriente","Manda una señal al chipset","Reinicia la fuente","Apaga el disco"], c:1,
+  e:"Cierra el circuito de POWER SW y el chipset manda PS_ON a la fuente. No corta la corriente por sí mismo."},
+ {q:"¿Qué indica un pitido largo y tres cortos en muchas placas AMI?", o:["Falta memoria","Falla de video","Disco lleno","Todo bien"], c:1,
+  e:"Es un ejemplo clásico de falla de video, pero cada fabricante de BIOS usa sus códigos: hay que ver el manual."},
+ {q:"La PC enciende pero no da imagen. ¿Qué se revisa primero?", o:["El disco","El monitor, el cable y dónde está conectado el video","La RAM","El teclado"], c:1,
+  e:"Se descarta de afuera hacia adentro: monitor, cable y salida de video antes de tocar la placa."},
+ {q:"¿Qué hace el clear CMOS?", o:["Borra los archivos","Devuelve la BIOS a la configuración de fábrica","Formatea el disco","Actualiza Windows"], c:1,
+  e:"Borra la configuración guardada en el CMOS, no los datos del disco."},
+ {q:"La placa es una MSI A68HM-E33 V2 con BIOS AMI. ¿Qué se obtiene con wmic baseboard?", o:["El disco","Fabricante, modelo y versión de la placa","La RAM","La fuente"], c:1,
+  e:"wmic baseboard get manufacturer,product,version devuelve los datos de la placa; con wmic bios se ve la BIOS."}
+,
+ {q:"¿Cómo sabés si Windows arrancó en UEFI o en heredado?", o:["Mirando el color del escritorio","Con msinfo32, campo Modo de BIOS","Con el Administrador de tareas","No se puede saber"], c:1,
+  e:"msinfo32 lo informa en Modo de BIOS, y el estilo del disco lo confirma: GPT para UEFI, MBR para heredado."},
+ {q:"La hora se atrasa en cada encendido. ¿Qué se cambia?", o:["La fuente","La pila CR2032","El disco","La memoria"], c:1,
+  e:"La pila de 3 V mantiene el CMOS. Agotada, la configuración se pierde en cada corte."},
+ {q:"¿Qué borra el clear CMOS?", o:["Los archivos del disco","La configuración de la BIOS, no los datos","Windows","Los drivers"], c:1,
+  e:"Vuelve la BIOS a fábrica. Después hay que configurar hora, orden de arranque y perfil de memoria."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

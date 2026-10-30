@@ -1,0 +1,200 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practica Clase 14 - Programas utilitarios (con capturas)</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070A1A;color:#EAF2FF;font-family:'Segoe UI',Arial,sans-serif;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.header{background:linear-gradient(135deg,#0B1030,#1a1a4e);border-left:4px solid #FF2ED1;padding:20px 30px;margin-bottom:30px;display:flex;justify-content:space-between;align-items:center;border-radius:8px;flex-wrap:wrap}
+.header h1{margin:0;font-size:28px;color:#fff;text-shadow:0 0 18px rgba(34,224,255,.35)}
+.header .marca{color:#22E0FF;font-size:12px;letter-spacing:2px}
+.nota{background:rgba(255,200,0,.1);border-left:3px solid #FFD700;padding:10px 15px;margin:0 0 15px;font-size:13px;color:#FFE082;border-radius:4px}
+.capture-block{margin:20px 0;background:#050814;border-radius:8px;overflow:hidden;border:1px solid rgba(255,46,209,.3)}
+.capture-img{width:100%;height:auto;display:block;border-bottom:2px solid #FF2ED1}
+.capture-info{padding:15px;background:rgba(11,16,48,.8)}
+.capture-info h4{color:#FF2ED1;font-size:16px;margin:0 0 8px}
+.capture-info p{color:#C9D6EA;font-size:13px;line-height:1.5;margin:0 0 10px}
+.glosario{margin-top:12px;background:rgba(34,224,255,.05);border-radius:6px;padding:10px;border:1px solid rgba(34,224,255,.15)}
+.glosario-titulo{color:#22E0FF;font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:1px}
+.glosario-table{width:100%;border-collapse:collapse;font-size:12px}
+.glosario-table th{background:rgba(255,46,209,.3);color:#fff;padding:4px 8px;text-align:left;font-size:11px}
+.glosario-table td{padding:4px 8px;border-bottom:1px solid rgba(34,224,255,.1);color:#C9D6EA}
+.glosario-table td.en{color:#FF2ED1;font-weight:600;font-family:monospace;font-size:11px}
+.glosario-table td.es{color:#DCE8FA}
+.entrega{margin-top:15px;background:rgba(34,224,255,.10);border-left:3px solid #22E0FF;padding:12px 15px;font-size:14px;border-radius:4px}
+.footer{margin-top:40px;border-top:1px solid rgba(34,224,255,.2);padding-top:15px;font-size:12px;color:#8FA3BF;display:flex;justify-content:space-between;flex-wrap:wrap}
+@media (max-width:768px){.container{padding:10px}.header h1{font-size:22px}}
+</style>
+</head><body>
+<div class="container">
+<div class="header">
+  <h1>PRACTICA 14 &mdash; Programas utilitarios (con capturas)</h1>
+  <span class="marca">ITC &bull; 2026</span>
+</div>
+
+<p class="nota">Practica resuelta con capturas reales de la PC del aula: compresion con 7-Zip (tamano antes y despues + CRC), desinstalacion con BCU, restos en disco y en registro, export de registro con fecha, VLC reproduciendo un WebM, el Liberador de espacio (cleanmgr) y MSCONFIG. Cada captura tiene arriba lo que se hizo y abajo los terminos tecnicos traducidos.</p>
+
+<div class="capture-block">
+  <img src="img/c14-7zip-lista.png" alt="7-Zip lista de archivos y CRC" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 1 - 7-Zip: comprimir y verificar con CRC</h4>
+    <p>Se seleccionaron 8 archivos (programa.txt, captura1/2/3.png, notas.txt, datos.csv, informe.pdf, readme.md) y se comprimieron en <em>practica14.zip</em> con el formato ZIP y el metodo Deflate. El gestor muestra la lista de los 8 archivos comprimidos con su tamano original (41095 bytes) y el tamano comprimido (1209 bytes): reduccion de 321,1 KB a 11 KiB, es decir un 97% menos. Tambien se ejecuto "Probar archivo" para verificar la integridad: el CRC de cada entrada coincidio, por lo que el archivo esta sano.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Deflate</td><td class='es'>Algoritmo de compresion sin perdida usado por ZIP</td></tr>
+          <tr><td class='en'>CRC</td><td class='es'>Codigo de redundancia ciclica: huella digital para comprobar que el archivo no se corrompio</td></tr>
+          <tr><td class='en'>41095 -&gt; 1209 bytes</td><td class='es'>Tamano original vs. tamano comprimido (reduccion del 97%)</td></tr>
+          <tr><td class='en'>Probar archivo</td><td class='es'>Accion que recalcula el CRC de cada entrada y avisa si alguna no coincide</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-bcu-ventana.png" alt="BCUninstaller ventana principal y busqueda" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 2 - BCU: desinstalar y revisar restos</h4>
+    <p>Se abrio <em>Bulk Crap Uninstaller</em> y se filtro por "Programa de prueba ITC" (el instalador ficticio que se habia creado para la practica). BCU lista la entrada con su desinstalador y permite ejecutarlo. A diferencia del desinstalador de Windows, BCU luego escanea el disco y el registro en busca de restos. No se uso para desinstalar nada real: solo se probo con el programa ficticio de la practica.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>Bulk Crap Uninstaller (BCU)</td><td class='es'>Desinstalador masivo y gratuito que detecta restos en disco y registro</td></tr>
+          <tr><td class='en'>Uninstall string</td><td class='es'>Comando que el programa dejo en el registro para desinstalarse</td></tr>
+          <tr><td class='en'>Restos</td><td class='es'>Archivos o claves de registro que quedan despues de un desinstalador incompleto</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-explorer-restos.png" alt="Explorer mostrando la carpeta con uninstall.cmd solo" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 3 - Restos en disco: la carpeta queda con solo el desinstalador</h4>
+    <p>Tras ejecutar <em>uninstall.cmd</em> del programa ficticio, el archivo programa.txt se borra, pero la carpeta <strong>C:\Program Files (x86)\ProgramaDePruebaITC\</strong> queda con un unico archivo: <strong>uninstall.cmd</strong>. Esa es la evidencia de un desinstalador incompleto: el propio desinstalador se queda atras. La limpieza final se hace a mano (borrar la carpeta).</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>C:\Program Files (x86)\ProgramaDePruebaITC\</td><td class='es'>Carpeta donde el programa ficticio se instalo</td></tr>
+          <tr><td class='en'>uninstall.cmd</td><td class='es'>Script de desinstalacion que borro programa.txt pero se quedo a si mismo</td></tr>
+          <tr><td class='en'>Limpieza manual</td><td class='es'>Borrar a mano la carpeta restante cuando el desinstalador no lo hace</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-notepad-restos.png" alt="Bloc de notas con el .reg exportado de la clave huerfana" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 4 - Restos en el registro: la clave huerfana</h4>
+    <p>Se exporto la clave <strong>HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ProgramaDePruebaITC</strong> a un archivo .reg y se abrio en el Bloc de notas. La clave sigue existiendo con DisplayName, DisplayVersion, Publisher, InstallLocation y UninstallString, aunque el programa ya no esta instalado. Es un resto de registro: hay que borrarla a mano o con BCU.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>HKLM\SOFTWARE\WOW6432Node\...\Uninstall\ProgramaDePruebaITC</td><td class='es'>Clave de registro donde Windows anota los programas instalados (vista de 32 bits)</td></tr>
+          <tr><td class='en'>DisplayName / UninstallString</td><td class='es'>Nombre visible y comando de desinstalacion que Windows usa en "Agregar o quitar programas"</td></tr>
+          <tr><td class='en'>Clave huerfana</td><td class='es'>Entrada de registro que apunta a un programa que ya no existe</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-reg-export.png" alt="cmd exportando clave de registro con fecha en el nombre" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 5 - Exportar una clave de registro con fecha en el nombre</h4>
+    <p>Se abrio una consola y se ejecuto <em>reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" "Run_2026-10-29.reg"</em>. El archivo se genero con la fecha del dia en el nombre (Run_2026-10-29.reg, 1218 bytes) dentro de la carpeta respaldo-registro. Poner la fecha en el nombre evita sobrescribir respaldos anteriores.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>reg export</td><td class='es'>Comando que copia una clave de registro completa a un archivo .reg</td></tr>
+          <tr><td class='en'>HKCU\...\Run</td><td class='es'>Clave donde Windows anota los programas que arrancan con la sesion</td></tr>
+          <tr><td class='en'>Run_2026-10-29.reg</td><td class='es'>Nombre del respaldo con la fecha del dia, para no pisar respaldos viejos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-vlc-webm.png" alt="VLC reproduciendo un WebM" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 6 - VLC: reproductor de audio y video</h4>
+    <p>Se abrio <em>VLC media player</em> y se cargo el archivo <strong>video_prueba.webm</strong> (un WebM real de 2,95 MB). VLC reprodujo el video sin instalar codecs adicionales: el formato WebM es abierto y VLC lo soporta de fabrica. Se eligio VLC porque Windows Media Player quedo sin configurar en esta PC y no arranco.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>VLC media player</td><td class='es'>Reproductor libre y gratuito que soporta casi todos los formatos</td></tr>
+          <tr><td class='en'>WebM</td><td class='es'>Formato de video abierto basado en Matroska, sin licencias</td></tr>
+          <tr><td class='en'>Codec</td><td class='es'>Programa que codifica o decodifica audio/video; VLC trae los suyos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-cleanmgr.png" alt="Liberador de espacio en disco" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 7 - Liberador de espacio en disco (cleanmgr)</h4>
+    <p>Se ejecuto <em>cleanmgr</em> para la unidad C:. La ventana muestra las categorias que se pueden limpiar con su espacio recuperable: archivos temporales de Internet, archivos temporales del sistema, papelera de reciclaje, miniaturas, etc. Se marcan las categorias y se acepta para liberar espacio. No se toca nada de los datos del usuario.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>cleanmgr</td><td class='es'>Herramienta de Windows para liberar espacio en disco</td></tr>
+          <tr><td class='en'>Archivos temporales</td><td class='es'>Archivos que los programas dejan mientras trabajan y luego no borran</td></tr>
+          <tr><td class='en'>Papelera de reciclaje</td><td class='es'>Donde van los archivos borrados hasta que se vacia</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="capture-block">
+  <img src="img/c14-msconfig.png" alt="MSCONFIG pestana General" class="capture-img">
+  <div class="capture-info">
+    <h4>Paso 8 - MSCONFIG: configuracion del sistema (sin cambios)</h4>
+    <p>Se abrio <em>msconfig</em> (Configuracion del sistema) y se dejo en la pesta&ntilde;a <strong>General</strong> con la opcion <strong>Inicio normal</strong> (cargar todos los controladores y servicios). Sirve para diagnosticar problemas de arranque: se puede pasar a "Inicio selectivo" para desactivar servicios y ver si el problema desaparece. <strong>No se modifico nada</strong>.</p>
+    <div class="glosario">
+      <p class="glosario-titulo">Datos clave de la captura:</p>
+      <table class="glosario-table">
+        <thead><tr><th>Termino</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td class='en'>msconfig</td><td class='es'>Herramienta de Windows para configurar el arranque y los servicios</td></tr>
+          <tr><td class='en'>Inicio normal</td><td class='es'>Arranque completo con todos los controladores y servicios</td></tr>
+          <tr><td class='en'>Inicio selectivo</td><td class='es'>Arranque parcial para probar si un servicio causa el problema</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="entrega">
+  <strong>Entrega:</strong> archivo ZIP de la practica con las 8 capturas nombradas (c14-7zip-lista, c14-bcu-ventana, c14-explorer-restos, c14-notepad-restos, c14-reg-export, c14-vlc-webm, c14-cleanmgr, c14-msconfig) + un informe corto (5 lineas) que diga que desinstalo, que restos quedaron y como los limpio.
+</div>
+
+<div class="footer">
+  <span>ITC &bull; Diseno Grafico &bull; 2026</span>
+  <span>Practica 14 - Programas utilitarios (con capturas)</span>
+</div>
+</div>
+</body></html>

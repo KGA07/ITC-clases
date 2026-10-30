@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuestionario — Clase 28</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);
+     color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:32px 18px}
+.envoltorio{max-width:820px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:34px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 24px;font-size:15px}
+.pregunta{background:rgba(11,16,48,.75);border:1px solid rgba(34,224,255,.25);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.pregunta h2{font-size:16px;margin:0 0 10px;color:#fff}
+.opcion{display:flex;gap:10px;align-items:center;padding:8px 11px;border-radius:6px;cursor:pointer;margin-bottom:5px;border:1px solid transparent}
+.opcion:hover{background:rgba(34,224,255,.08)}
+.opcion input{accent-color:var(--mag);width:16px;height:16px}
+.opcion.bien{border-color:#22E0FF;background:rgba(34,224,255,.14)}
+.opcion.mal{border-color:#FF2ED1;background:rgba(255,46,209,.14)}
+.explica{display:none;margin-top:8px;font-size:13px;color:#C9D6EA;border-left:3px solid var(--cian);padding-left:10px}
+.explica.visible{display:block}
+.barra{position:sticky;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(7,10,26,.95);padding:14px 0}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 22px rgba(255,46,209,.4)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+.puntaje{font-size:15px;color:var(--cian);font-weight:700}
+a{color:var(--cian)}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+.feliz{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:51;pointer-events:none}
+.feliz.on{display:flex}
+.feliz .caja{background:rgba(7,10,26,.9);border:2px solid var(--cian);border-radius:16px;padding:26px 44px;text-align:center;box-shadow:0 0 60px rgba(34,224,255,.55)}
+.feliz h2{margin:0;font-size:40px;text-shadow:0 0 30px var(--mag)}
+.feliz p{margin:6px 0 0;color:var(--cian)}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · PRÁCTICA 28</div>
+  <h1>Copias de seguridad y borrado seguro</h1>
+  <p class="sub">Diez preguntas. <a href="Practica Clase 28 - Copias de seguridad y borrado seguro.pdf">Ver la práctica en PDF</a></p>
+  <form id="cuestionario"></form>
+  <div class="barra">
+    <span class="puntaje" id="puntaje"></span>
+    <div><button type="button" class="sec" id="reiniciar">Reiniciar</button>
+    <button type="button" id="corregir">Corregir</button></div>
+  </div>
+</div>
+<canvas id="confeti"></canvas>
+<div class="feliz" id="feliz"><div class="caja"><h2>¡FELICITACIONES!</h2><p>10 de 10 correctas</p></div></div>
+<script>
+const preguntas = [
+ {q:"¿Qué es una copia de seguridad?", o:["Duplicar la información de un soporte a otro para poder recuperarla","Cambiar los archivos de carpeta","Comprimir documentos para ahorrar espacio","Un antivirus actualizado al día"], c:0,
+  e:"Es duplicar la información a otro soporte con el fin de poder restaurarla si algo falla."},
+ {q:"¿Para qué organizaciones son fundamentales las copias de seguridad?", o:["Solo para las grandes empresas","Solo para las que manejan gran cantidad de datos","Para cualquier organización, independientemente del volumen de información","Solo para las que ya sufrieron un incidente"], c:2,
+  e:"Toda organización necesita respaldo: el evento que lo exige puede llegar igual, aunque el negocio sea chico."},
+ {q:"¿Cada cuánto tiempo se debe hacer la copia de seguridad?", o:["Una vez al año alcanza","Según cuánta información se acepte perder entre copia y copia","Solo cuando falla el equipo","Cada cinco minutos, siempre"], c:1,
+  e:"La frecuencia la define cuánto se está dispuesto a perder: si se copia cada semana, se puede perder esa semana de trabajo."},
+ {q:"¿Cuáles son los tipos de copia más habituales?", o:["Espejo o RAID 1, completas, diferenciales e incrementales","Completas, medias y graduales","Solo existe la copia completa","Diarias, semanales y mensuales"], c:0,
+  e:"Los cuatro tipos clásicos son espejo/RAID 1, completa, diferencial e incremental."},
+ {q:"¿Qué guarda una copia diferencial?", o:["Lo nuevo desde la última copia completa","Todo el disco, siempre","Lo nuevo desde la última copia de cualquier tipo","Solo los archivos borrados"], c:0,
+  e:"La diferencial acumula lo cambiado desde la última COMPLETA; al restaurar, alcanzan la completa y la última diferencial."},
+ {q:"¿Qué guarda una copia incremental?", o:["Todo el sistema","Lo nuevo desde la última copia, de cualquier tipo","Solo las configuraciones","Nada: es una copia vacía"], c:1,
+  e:"La incremental parte de la última copia anterior (completa, diferencial o incremental): es la más rápida de hacer y la más delicada de restaurar."},
+ {q:"¿Qué significa la estrategia 3-2-1?", o:["3 copias, en 2 soportes distintos y 1 fuera de la organización","3 antivirus, 2 firewalls y 1 router","Copiar 3 veces al día durante 2 semanas","3 equipos, 2 discos y 1 impresora"], c:0,
+  e:"La regla es 3-2-1: tres copias del dato, en dos medios distintos, con una fuera de las instalaciones."},
+ {q:"¿Por qué una copia solo local puede no ser suficiente?", o:["Porque el disco es demasiado lento","Porque un robo, un ransomware o un incendio se lleva las copias junto con los originales","Porque Windows no la soporta","Porque ocupa demasiado espacio en disco"], c:1,
+  e:"Si el peligro afecta al local (fuego, robo, cifrado por ransomware), el único respaldo que queda es el que está en otro lado: por eso el 1 de 3-2-1."},
+ {q:"¿Cómo se borra de forma segura un disco que se va a reutilizar?", o:["Borrando los archivos a la papelera","Formateándolo en modo rápido","Sobrescribiendo su contenido varias veces","Dejándolo desconectado un día"], c:2,
+  e:"Papelera y formato rápido no borran: los datos se recuperan. La sobrescritura repetida es el método para un disco que sigue en uso."},
+ {q:"¿Por qué hay que probar la restauración de las copias?", o:["Para verificar al antivirus","Para asegurarse de que la copia se pueda usar en una recuperación real tras un incidente","Para liberar espacio en el disco","Para renovar la licencia del software"], c:1,
+  e:"Una copia que nunca se restauró puede fallar justo cuando más se necesita: por eso se prueba con restauraciones de prueba."}
+];
+const cont = document.getElementById('cuestionario');
+preguntas.forEach((p,i)=>{
+  const d=document.createElement('div'); d.className='pregunta';
+  d.innerHTML='<h2>'+(i+1)+'. '+p.q+'</h2>'+p.o.map((o,k)=>'<label class="opcion" data-k="'+k+'"><input type="radio" name="p'+i+'" value="'+k+'">'+o+'</label>').join('')+'<div class="explica" id="e'+i+'">'+p.e+'</div>';
+  cont.appendChild(d);
+});
+function corregir(){
+  let bien=0;
+  preguntas.forEach((p,i)=>{
+    const sel=document.querySelector('input[name="p'+i+'"]:checked');
+    const labels=document.querySelectorAll('.pregunta')[i].querySelectorAll('.opcion');
+    labels.forEach(l=>l.classList.remove('bien','mal'));
+    if(!sel) return;
+    const k=Number(sel.value);
+    if(k===p.c){bien++;labels[k].classList.add('bien');} else {labels[k].classList.add('mal');labels[p.c].classList.add('bien');}
+    document.getElementById('e'+i).classList.add('visible');
+  });
+  document.getElementById('puntaje').textContent=bien+' de '+preguntas.length+' correctas';
+  if(bien===preguntas.length) festejar(); else ocultar();
+}
+function ocultar(){document.getElementById('feliz').classList.remove('on');animando=false;}
+let animando=false;
+function festejar(){
+  document.getElementById('feliz').classList.add('on');
+  const cv=document.getElementById('confeti'), ctx=cv.getContext('2d');
+  cv.width=innerWidth; cv.height=innerHeight;
+  const col=['#FF2ED1','#22E0FF','#FFFFFF','#FFD60A','#B03BFF'], pz=[];
+  for(let i=0;i<220;i++) pz.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.6,w:6+Math.random()*7,h:10+Math.random()*12,vx:(Math.random()-.5)*2.2,vy:2+Math.random()*3.5,a:Math.random()*Math.PI,va:(Math.random()-.5)*.22,c:col[Math.floor(Math.random()*col.length)]});
+  animando=true; const fin=Date.now()+5200;
+  (function paso(){
+    if(!animando) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pz.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;p.vy+=0.02;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();if(p.y>cv.height+20&&Date.now()<fin){p.y=-20;p.vy=2+Math.random()*3;}});
+    if(Date.now()<fin) requestAnimationFrame(paso); else {ctx.clearRect(0,0,cv.width,cv.height);animando=false;}
+  })();
+}
+document.getElementById('corregir').onclick=corregir;
+document.getElementById('reiniciar').onclick=()=>{document.getElementById('cuestionario').reset();document.querySelectorAll('.opcion').forEach(l=>l.classList.remove('bien','mal'));document.querySelectorAll('.explica').forEach(e=>e.classList.remove('visible'));document.getElementById('puntaje').textContent='';ocultar();};
+</script>
+</body>
+</html>
+

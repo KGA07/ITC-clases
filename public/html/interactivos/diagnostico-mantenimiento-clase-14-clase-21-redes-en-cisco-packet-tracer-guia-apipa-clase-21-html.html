@@ -1,0 +1,29 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8">
+<title>Guia APIPA - Clase 21</title>
+<style>
+body{margin:0;background:#070A1A;color:#EAF2FF;font-family:'Segoe UI',Arial,sans-serif;padding:20px}
+.container{max-width:900px;margin:0 auto}
+h1{color:#FF2ED1;font-size:24px;margin:0 0 10px}
+p{color:#C9D6EA;font-size:14px;line-height:1.6}
+ol{color:#C9D6EA;font-size:14px;line-height:1.8;padding-left:25px}
+ol li{margin-bottom:8px}
+.nota{background:rgba(255,200,0,.1);border-left:3px solid #FFD700;padding:10px 15px;margin:15px 0;font-size:13px;color:#FFE082;border-radius:4px}
+</style>
+</head><body>
+<div class="container">
+<h1>Guia: Direccion APIPA en modo simulacion</h1>
+<p>Esta guia explica paso a paso como se comporta la direccion APIPA (Automatic Private IP Addressing) cuando falla el servidor DHCP, usando el modo simulacion de Packet Tracer.</p>
+
+<div class="nota">
+<strong>Nota:</strong> Packet Tracer es un programa en ingles. Los terminos en ingles (Simulation mode, DHCP, ARP, etc.) se mantienen en ingles porque son los nombres reales de los comandos y modos del programa.
+</div>
+
+<h2>Pasos en modo simulacion</h2>
+<ol>
+<li>Cambiar al modo de simulacion (Simulation mode).</li><li>Realizar una solicitud DHCP desde PC0.</li><li>La solicitud DHCP falla y PC0 obtiene una direccion APIPA: 169.254.213.152. (Resultado de combinar 169.254.0.0 con los dos ultimos bytes de la direccion MAC del puerto).</li><li>PC0 envia un mensaje ARP gratuito (Gratuitous ARP) para verificar si existe una direccion duplicada.</li><li>Desde PC1, realizar una solicitud DHCP; se espera que PC1 obtenga tambien la direccion 169.254.213.152. (Dado que los dos ultimos bytes de la direccion MAC del puerto son los mismos que en PC0).</li><li>PC1 envia un mensaje ARP gratuito y recibe una respuesta.</li><li>PC1 obtiene entonces una nueva direccion APIPA: 169.254.213.153.</li><li>PC1 envia otro mensaje ARP gratuito; al no recibir respuesta, conserva dicha direccion.</li>
+</ol>
+
+<p style="margin-top:20px;font-size:12px;color:#8FA3BF;">Informatic Training Center - Diagnostico y Mantenimiento - @gustavokempe</p>
+</div>
+</body></html>

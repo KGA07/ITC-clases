@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionario de creacion de marca &middot; Practica 13</title>
+<style id="estilos">
+:root{
+  --verde:#408267; --verde-claro:#EAF2EE;
+  --naranja:#E8491F; --hueso:#F7F5F0; --linea:#D8D4CC;
+  --tinta:#22201D; --gris:#6E6A63;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--hueso); color:var(--tinta);
+  font:16px/1.55 "Segoe UI",Roboto,Arial,sans-serif;
+}
+.cinta{background:var(--verde);color:#fff;padding:26px 0 22px}
+.cinta .adentro{max-width:940px;margin:0 auto;padding:0 28px}
+.cinta h1{margin:0 0 4px;font-size:27px;letter-spacing:-.4px}
+.cinta p{margin:0;opacity:.92;font-size:14.5px}
+.laminado{max-width:940px;margin:0 auto;padding:0 28px}
+.barra{
+  position:sticky;top:0;z-index:9;background:var(--verde-claro);
+  border-bottom:1px solid var(--linea);padding:12px 0;margin-bottom:26px;
+}
+.barra .adentro{max-width:940px;margin:0 auto;padding:0 28px;
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.barra .avance{flex:1;min-width:170px}
+.barra .barra-fondo{height:7px;background:#fff;border:1px solid var(--linea);border-radius:4px;overflow:hidden}
+.barra .barra-vida{height:100%;width:0;background:var(--naranja);transition:width .25s}
+.barra .texto{font-size:12.5px;color:var(--gris);margin-top:5px}
+button{font:inherit;cursor:pointer;border:1px solid var(--verde);background:#fff;
+  color:var(--verde);padding:8px 15px;border-radius:5px;font-weight:600;font-size:14px}
+button:hover{background:var(--verde);color:#fff}
+button.primario{background:var(--naranja);border-color:var(--naranja);color:#fff}
+button.primario:hover{filter:brightness(.93);background:var(--naranja);color:#fff}
+button.chico{padding:5px 10px;font-size:12.5px;font-weight:500}
+
+.bloque{background:#fff;border:1px solid var(--linea);border-radius:8px;
+  padding:24px 26px;margin-bottom:20px}
+.bloque > h2{margin:0 0 4px;font-size:19px;color:var(--verde)}
+.bloque .intro{margin:0 0 20px;color:var(--gris);font-size:14px;font-style:italic}
+.grupo{border-top:1px solid var(--linea);padding-top:16px;margin-top:16px}
+.grupo:first-of-type{border-top:0;padding-top:0;margin-top:0}
+
+pregunta{margin-bottom:19px;display:block}
+.rotulo{font-weight:600;font-size:14.5px;display:block;margin-bottom:6px}
+.rotulo .n{display:inline-block;min-width:20px;color:var(--naranja);font-weight:700}
+.nota{font-size:12.5px;color:var(--gris);margin-top:5px;font-style:italic}
+input[type=text],textarea,select{
+  width:100%;font:inherit;font-size:15px;padding:9px 11px;
+  border:1px solid var(--linea);border-radius:5px;background:#FDFDFC;color:var(--tinta)}
+input[type=text]:focus,textarea:focus,select:focus{
+  outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(64,130,103,.13)}
+textarea{min-height:78px;resize:vertical}
+.opciones{display:flex;gap:9px;flex-wrap:wrap}
+.opciones label{display:flex;align-items:center;gap:6px;padding:7px 13px;
+  border:1px solid var(--linea);border-radius:20px;cursor:pointer;font-size:14px;background:#fff}
+.opciones label:hover{border-color:var(--verde);background:var(--verde-claro)}
+.opciones input{accent-color:var(--naranja);margin:0}
+
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tres .campo{display:flex;flex-direction:column;gap:4px}
+.tres label{font-size:11.5px;color:var(--gris);font-weight:600;letter-spacing:.3px}
+
+footer{max-width:940px;margin:0 auto;padding:24px 28px 60px;color:var(--gris);font-size:13px}
+footer a{color:var(--verde)}
+@media print{
+  .barra,.cinta{display:none}
+  body{background:#fff}
+  .bloque{break-inside:avoid;page-break-inside:avoid;border:0;padding:0 0 14px}
+  input,textarea,select{border:0;border-bottom:1px solid #ccc;background:transparent}
+  input[type=text],textarea{color:#000}
+  .pregunta{break-inside:avoid}
+}
+@media (max-width:640px){.tres{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cinta"><div class="adentro">
+<h1>Cuestionario de creaci&oacute;n de marca</h1>
+<p>Pr&aacute;ctica 13 &middot; Efectos y creaci&oacute;n de marca &middot; M&oacute;dulo 1: CorelDRAW</p>
+</div></div>
+<div class="barra"><div class="adentro">
+<button id="btn-descargar" class="primario">Descargar el documento</button>
+<button id="btn-imprimir">Imprimir o guardar como PDF</button>
+<label class="chico" style="display:inline-block"><input type="file" id="btn-cargar" accept=".html,.htm" hidden><button type="button" class="chico" onclick="document.getElementById('btn-cargar').click()">Cargar un archivo</button></label>
+<button id="btn-borrar">Borrar todo</button>
+<div class="avance"><div class="barra-fondo"><div class="barra-vida" id="barra-vida"></div></div>
+<div class="texto" id="avance-txt">&nbsp;</div></div>
+</div></div>
+<div class="laminado">
+<div class="bloque">
+<h2>Como se usa</h2>
+<p class="intro">Este es el cuestionario del proceso de creaci&oacute;n de marca, del cliente a la marca entregada.</p>
+<p class="nota">Las respuestas se guardan solas en este navegador. Si cerr&aacute;s la p&aacute;gina, al volver est&aacute;n todas. No se manda nada a ning&uacute;n servidor.</p>
+<p class="nota">Las bloques 1 a 6 son las preguntas del cliente: las del <b>briefing_Modelo.pdf</b> del docente. Los bloques 7 a 12 son del lado de la marca, que se contestan con la marca ya dibujada y que el material del curso no cubre.</p>
+</div>
+<section class="bloque" data-bloque="empresa">
+<h2>1. Informacion general</h2>
+<p class="intro">Las mismas preguntas del cuestionario del docente, para tener la base escrita antes de pensar en la marca.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>1.</span>Nombre de la empresa</span>
+<input type='text' data-preg='e1' placeholder='YUMA Indumentaria S.A.S.'>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>2.</span>Web</span>
+<input type='text' data-preg='e2' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>3.</span>Facebook e Instagram</span>
+<input type='text' data-preg='e3' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>4.</span>Youtube</span>
+<input type='text' data-preg='e4' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>5.</span>Persona de contacto</span>
+<input type='text' data-preg='e5' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>6.</span>Telefono de contacto</span>
+<input type='text' data-preg='e6' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>7.</span>E-mail de contacto</span>
+<input type='text' data-preg='e7' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>8.</span>Horario disponible</span>
+<input type='text' data-preg='e8' placeholder=''>
+
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="proyecto">
+<h2>2. Tipo de proyecto</h2>
+<p class="intro">Que se esta haciendo y para cuando.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>9.</span>Tipo de proyecto a realizar / numero de presupuesto</span>
+<input type='text' data-preg='p1' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>10.</span>Tiempo de ejecucion del proyecto</span>
+<input type='text' data-preg='p2' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>11.</span>Cuales son los objetivos concretos que se pretenden conseguir con este proyecto?</span>
+<textarea data-preg='p3' placeholder=''></textarea>
+
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="filosofia">
+<h2>3. Empresa y filosofia</h2>
+<p class="intro">De donde viene, adonde va, y que quiere que se le recuerde.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>12.</span>Cual es la historia de esta empresa?</span>
+<textarea data-preg='f1' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>13.</span>Que trayectoria ha tenido, cual es su situacion actual y que desea para el futuro?</span>
+<textarea data-preg='f2' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>14.</span>Por que decides montar este tipo de negocio?</span>
+<textarea data-preg='f3' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>15.</span>Que valores destacarias de tu empresa o producto?</span>
+<textarea data-preg='f4' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>16.</span>Describe tus productos o servicios</span>
+<textarea data-preg='f5' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>17.</span>Define en una unica frase el valor diferencial de tu empresa</span>
+<textarea data-preg='f6' placeholder=''></textarea>
+<div class='nota'>Esta es LA frase. Si no sale, vuelve al briefing: falta informacion. Es la que sostiene todas las decisiones despues.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>18.</span>Te gustaria ver algum tagline reflejado en la marca?</span>
+<input type='text' data-preg='f7' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>19.</span>Necesitamos imagenes de sus productos, servicios y de su empresa. Cuales tenes?</span>
+<textarea data-preg='f8' placeholder=''></textarea>
+
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="publico">
+<h2>4. Publico objetivo</h2>
+<p class="intro">A quien le habla la marca.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>20.</span>Cual es el publico objetivo de esta empresa o producto?</span>
+<textarea data-preg='u1' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>21.</span>Cual es el rango de edad optimo de tu publico objetivo?</span>
+<input type='text' data-preg='u2' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>22.</span>Que valores te gustaria que ellos destacaran de tu empresa?</span>
+<textarea data-preg='u3' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>23.</span>Por que tu publico objetivo compraria tu producto o servicio?</span>
+<textarea data-preg='u4' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>24.</span>Crees que tu publico objetivo tiene gostos mas clasicos o mas modernos?</span>
+<div class='opciones'><label><input type='radio' name='u5' data-preg='u5' value='1'> Mas clasicos</label><label><input type='radio' name='u5' data-preg='u5' value='1'> Intermedio</label><label><input type='radio' name='u5' data-preg='u5' value='1'> Mas modernos</label></div>
+
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="competencia">
+<h2>5. Competencia y sector</h2>
+<p class="intro">Contra quien compite. Las tres marcas que seellularon en la clase son de referencia.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>25.</span>Quienes son sus principales competidores?</span>
+<textarea data-preg='c1' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>26.</span>Cuales son sus ventajas respecto a la competencia?</span>
+<textarea data-preg='c2' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>27.</span>Cuales son sus desventajas respecto a la competencia?</span>
+<textarea data-preg='c3' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>28.</span>Existe algun competidor que admire? Cual es y por que?</span>
+<textarea data-preg='c4' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>29.</span>Describe el sector en el que opera la empresa</span>
+<textarea data-preg='c5' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>30.</span>De las tres marcas que investigaste: que color usan y de que tipologia son?</span>
+<textarea data-preg='c6' placeholder=''></textarea>
+<div class='nota'>La consigna pide tres. Con el sector streetwear de la clase sirven: 47 Street, Adidas, Puma, Umbro, Topper, Kappa y Diadora.</div>
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="estrategia">
+<h2>6. Estrategias anteriores y futuras</h2>
+<p class="intro">Que se hizo antes, y que viene despues.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>31.</span>Has tenido alguna mala experiencia con tu imagen actual?</span>
+<textarea data-preg='s1' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>32.</span>Tienes material corporativo que nosotros podamos ver?</span>
+<textarea data-preg='s2' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>33.</span>Por que has decidido cambiar o renovar tu imagen de marca?</span>
+<textarea data-preg='s3' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>34.</span>Tienes planes de expansion o desarrollo de nuevos productos en un corto plazo? Cuales?</span>
+<textarea data-preg='s4' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>35.</span>Te gustaria mantener algun elemento de tu marca actual?</span>
+<textarea data-preg='s5' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>36.</span>Existe algun elemento grafico que nunca debamos incluir en tu marca?</span>
+<textarea data-preg='s6' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>37.</span>Existe alguna fecha limite para este proyecto?</span>
+<input type='text' data-preg='s7' placeholder=''>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>38.</span>Aplicaciones corporativas a disenar</span>
+<textarea data-preg='s8' placeholder=''></textarea>
+<div class='nota'>Papeleria, tarjeta, carpeta, banner, remera, buzo, packaging. Lo que se escriba aca es lo que hay que entregar.</div>
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="tipologia">
+<h2>7. La tipologia de la marca</h2>
+<p class="intro">ACA EMPIEZA EL LADO DE LA MARCA, que el cuestionario del docente no cubre. Se contesta con la marca ya dibujada, no antes.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>39.</span>De que tipologia es la marca?</span>
+<div class='opciones'><label><input type='radio' name='t1' data-preg='t1' value='1'> Logotipo - solo tipografia</label><label><input type='radio' name='t1' data-preg='t1' value='1'> Isotipo - solo el simbolo</label><label><input type='radio' name='t1' data-preg='t1' value='1'> Imagotipo - las dos piezas, juntas pero separables</label><label><input type='radio' name='t1' data-preg='t1' value='1'> Isologo - las dos piezas, inseparables</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>40.</span>Como lo demuestra? Pruebalo con la prueba de separar las piezas</span>
+<textarea data-preg='t2' placeholder=''></textarea>
+<div class='nota'>Separar las piezas con la mano y ver si la marca sigue en pie. Un logotipo se puede reducir a una inicial y sigue andando. Un isologo no.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>41.</span>Prueba del tapon: si tapo el nombre con la mano, queda algo que diga algo?</span>
+<div class='opciones'><label><input type='radio' name='t3' data-preg='t3' value='1'> Si, el simbolo funciona solo</label><label><input type='radio' name='t3' data-preg='t3' value='1'> Queda poco</label><label><input type='radio' name='t3' data-preg='t3' value='1'> No, queda nada</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>42.</span>Por que esa tipologia y no otra?</span>
+<textarea data-preg='t4' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>43.</span>De los seis bocetos, cual elegiste y por que?</span>
+<textarea data-preg='t5' placeholder=''></textarea>
+
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="construccion">
+<h2>8. La construccion de la forma</h2>
+<p class="intro">Como esta hecha la marca, para que otro la pueda usar igual.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>44.</span>Que herramientas usaste para construirla?</span>
+<input type='text' data-preg='k1' placeholder='Rectangulo, elipse, poligono, Bezier'>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>45.</span>El texto de la marca quedo convertido a curvas?</span>
+<div class='opciones'><label><input type='radio' name='k2' data-preg='k2' value='1'> Si, con Ctrl+Q</label><label><input type='radio' name='k2' data-preg='k2' value='1'> No, quedo como texto</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>46.</span>Cuantos nodos tiene la forma, y por que sobran?</span>
+<textarea data-preg='k3' placeholder=''></textarea>
+<div class='nota'>Un nodo que no cambia la curva se borra. La consigna pide limpiarlas hasta que no sobre ninguno.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>47.</span>La marca esta construida sobre la cuadricula?</span>
+<div class='opciones'><label><input type='radio' name='k4' data-preg='k4' value='1'> Si, con medidas</label><label><input type='radio' name='k4' data-preg='k4' value='1'> No, a ojo</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>48.</span>Cual es el ancho minimo de la marca y por que ese?</span>
+<textarea data-preg='k5' placeholder=''></textarea>
+<div class='nota'>La prueba de los 16 pixeles es la que mas enseña de la clase. Si a ese tamano no se reconoce, el problema es la forma.</div>
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="color">
+<h2>9. El color</h2>
+<p class="intro">Un dominante y dos de apoyo. Cada uno con sus TRES valores, porque no alcanza con uno solo.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>49.</span>Color dominante - nombre, CMYK, RGB, HEX</span>
+<div class='tres'><div class='campo'><label>CMYK</label><input type='text' data-preg='o1_c' placeholder='C0 M0 Y0 K0'></div><div class='campo'><label>RGB</label><input type='text' data-preg='o1_r' placeholder='R0 G0 B0'></div><div class='campo'><label>HEX</label><input type='text' data-preg='o1_h' placeholder='#000000'></div></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>50.</span>Color de apoyo 1 - nombre, CMYK, RGB, HEX</span>
+<div class='tres'><div class='campo'><label>CMYK</label><input type='text' data-preg='o2_c' placeholder='C0 M0 Y0 K0'></div><div class='campo'><label>RGB</label><input type='text' data-preg='o2_r' placeholder='R0 G0 B0'></div><div class='campo'><label>HEX</label><input type='text' data-preg='o2_h' placeholder='#000000'></div></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>51.</span>Color de apoyo 2 - nombre, CMYK, RGB, HEX</span>
+<div class='tres'><div class='campo'><label>CMYK</label><input type='text' data-preg='o3_c' placeholder='C0 M0 Y0 K0'></div><div class='campo'><label>RGB</label><input type='text' data-preg='o3_r' placeholder='R0 G0 B0'></div><div class='campo'><label>HEX</label><input type='text' data-preg='o3_h' placeholder='#000000'></div></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>52.</span>Por que ese color y no otro? De donde sale?</span>
+<textarea data-preg='o4' placeholder=''></textarea>
+<div class='nota'>La clase dice: el color se elige del sector, no de una paleta de colores bonitos.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>53.</span>Si la marca tuviera que ir en un solo color, cual seria?</span>
+<input type='text' data-preg='o5' placeholder=''>
+<div class='nota'>Impresion a una tinta, sello, bordado. Si no hay dominante definido, no hay nada que reducir.</div>
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="grilla">
+<h2>10. Grilla, area de proteccion y usos</h2>
+<p class="intro">Lo que define cuando la marca esta bien usada y cuando no.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>54.</span>Area de proteccion: cuanto mide y como se mide</span>
+<textarea data-preg='g1' placeholder=''></textarea>
+<div class='nota'>El manual que dio el docente la define como 1x, el alto de una letra.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>55.</span>Que NO se puede hacer con la marca</span>
+<textarea data-preg='g2' placeholder=''></textarea>
+<div class='nota'>Estirar, rotar, cambiar los colores, agregar algo adentro del area de proteccion. Escribi las cinco que mas se ven.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>56.</span>Sobre que fondos se permite cada version</span>
+<textarea data-preg='g3' placeholder=''></textarea>
+<div class='nota'>Blanco, color propio, negro, oscuro saturado, fotografico claro, fotografico oscuro.</div>
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="efectos">
+<h2>11. Los dos efectos</h2>
+<p class="intro">Sombra proyectada y resplandor. Se preguntan con sus parametros.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>57.</span>Sombra proyectada - distancia, angulo, opacidad</span>
+<textarea data-preg='e11' placeholder=''></textarea>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>58.</span>En que soporte conviene la sombra y en cual no?</span>
+<textarea data-preg='e12' placeholder=''></textarea>
+<div class='nota'>Donde la marca esta apoyada en algo. NO en fondo oscuro: ahi no se ve.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>59.</span>Resplandor - halos, opacidad, borde exterior, difuminar</span>
+<textarea data-preg='e13' placeholder=''></textarea>
+<div class='nota'>En el material de la clase: halos 10 y opacidad 49%.</div>
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>60.</span>En que soporte conviene el resplandor y en cual no?</span>
+<textarea data-preg='e14' placeholder=''></textarea>
+<div class='nota'>Donde la marca tiene que brillar. NO sobre blanco: ahi no hay nada que separar.</div>
+</pregunta>
+</div>
+</section>
+<section class="bloque" data-bloque="pruebas">
+<h2>12. Las cuatro pruebas</h2>
+<p class="intro">La misma marca en cuatro fondos. Si algo se cae, el problema es la forma.</p>
+<div class="grupo">
+<pregunta>
+<span class='rotulo'><span class='n'>61.</span>Sobre blanco: se ve?</span>
+<div class='opciones'><label><input type='radio' name='r1' data-preg='r1' value='1'> Si</label><label><input type='radio' name='r1' data-preg='r1' value='1'> No</label><label><input type='radio' name='r1' data-preg='r1' value='1'> A duras penas</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>62.</span>Sobre su propio color: se ve?</span>
+<div class='opciones'><label><input type='radio' name='r2' data-preg='r2' value='1'> Si</label><label><input type='radio' name='r2' data-preg='r2' value='1'> No</label><label><input type='radio' name='r2' data-preg='r2' value='1'> A duras penas</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>63.</span>Sobre negro: se ve?</span>
+<div class='opciones'><label><input type='radio' name='r3' data-preg='r3' value='1'> Si</label><label><input type='radio' name='r3' data-preg='r3' value='1'> No</label><label><input type='radio' name='r3' data-preg='r3' value='1'> A duras penas</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>64.</span>Sobre oscuro saturado: se ve?</span>
+<div class='opciones'><label><input type='radio' name='r4' data-preg='r4' value='1'> Si</label><label><input type='radio' name='r4' data-preg='r4' value='1'> No</label><label><input type='radio' name='r4' data-preg='r4' value='1'> A duras penas</label></div>
+
+</pregunta>
+<pregunta>
+<span class='rotulo'><span class='n'>65.</span>Que se rompio en la cuarta prueba, y que cambiaste de la forma?</span>
+<textarea data-preg='r5' placeholder=''></textarea>
+
+</pregunta>
+</div>
+</section>
+</div>
+<footer>
+65 preguntas en 12 bloques. Los bloques 1 a 6 son el briefing del cliente; los bloques 7 a 12, la parte de la marca: tipolog&iacute;a, construcci&oacute;n, color, grilla, efectos y las cuatro pruebas.<br>
+Fuente de la empresa: <b>briefing_Modelo.pdf</b> del docente. Estructura del manual: <b>MANUAL USO MARCA - ITC.pdf</b>. Par&aacute;metros de los efectos: el material de la clase.<br>
+Nada sale de este navegador.
+</footer>
+<script type="application/json" id="datos-preguntas">{"bloques": [{"id": "empresa", "titulo": "1. Informacion general", "intro": "Las mismas preguntas del cuestionario del docente, para tener la base escrita antes de pensar en la marca.", "preguntas": [{"id": "e1", "q": "Nombre de la empresa", "t": "texto", "ej": "YUMA Indumentaria S.A.S."}, {"id": "e2", "q": "Web", "t": "texto"}, {"id": "e3", "q": "Facebook e Instagram", "t": "texto"}, {"id": "e4", "q": "Youtube", "t": "texto"}, {"id": "e5", "q": "Persona de contacto", "t": "texto"}, {"id": "e6", "q": "Telefono de contacto", "t": "texto"}, {"id": "e7", "q": "E-mail de contacto", "t": "texto"}, {"id": "e8", "q": "Horario disponible", "t": "texto"}]}, {"id": "proyecto", "titulo": "2. Tipo de proyecto", "intro": "Que se esta haciendo y para cuando.", "preguntas": [{"id": "p1", "q": "Tipo de proyecto a realizar / numero de presupuesto", "t": "texto"}, {"id": "p2", "q": "Tiempo de ejecucion del proyecto", "t": "texto"}, {"id": "p3", "q": "Cuales son los objetivos concretos que se pretenden conseguir con este proyecto?", "t": "largo"}]}, {"id": "filosofia", "titulo": "3. Empresa y filosofia", "intro": "De donde viene, adonde va, y que quiere que se le recuerde.", "preguntas": [{"id": "f1", "q": "Cual es la historia de esta empresa?", "t": "largo"}, {"id": "f2", "q": "Que trayectoria ha tenido, cual es su situacion actual y que desea para el futuro?", "t": "largo"}, {"id": "f3", "q": "Por que decides montar este tipo de negocio?", "t": "largo"}, {"id": "f4", "q": "Que valores destacarias de tu empresa o producto?", "t": "largo"}, {"id": "f5", "q": "Describe tus productos o servicios", "t": "largo"}, {"id": "f6", "q": "Define en una unica frase el valor diferencial de tu empresa", "t": "largo", "nota": "Esta es LA frase. Si no sale, vuelve al briefing: falta informacion. Es la que sostiene todas las decisiones despues."}, {"id": "f7", "q": "Te gustaria ver algum tagline reflejado en la marca?", "t": "texto"}, {"id": "f8", "q": "Necesitamos imagenes de sus productos, servicios y de su empresa. Cuales tenes?", "t": "largo"}]}, {"id": "publico", "titulo": "4. Publico objetivo", "intro": "A quien le habla la marca.", "preguntas": [{"id": "u1", "q": "Cual es el publico objetivo de esta empresa o producto?", "t": "largo"}, {"id": "u2", "q": "Cual es el rango de edad optimo de tu publico objetivo?", "t": "texto"}, {"id": "u3", "q": "Que valores te gustaria que ellos destacaran de tu empresa?", "t": "largo"}, {"id": "u4", "q": "Por que tu publico objetivo compraria tu producto o servicio?", "t": "largo"}, {"id": "u5", "q": "Crees que tu publico objetivo tiene gostos mas clasicos o mas modernos?", "t": "opciones", "op": ["Mas clasicos", "Intermedio", "Mas modernos"]}]}, {"id": "competencia", "titulo": "5. Competencia y sector", "intro": "Contra quien compite. Las tres marcas que seellularon en la clase son de referencia.", "preguntas": [{"id": "c1", "q": "Quienes son sus principales competidores?", "t": "largo"}, {"id": "c2", "q": "Cuales son sus ventajas respecto a la competencia?", "t": "largo"}, {"id": "c3", "q": "Cuales son sus desventajas respecto a la competencia?", "t": "largo"}, {"id": "c4", "q": "Existe algun competidor que admire? Cual es y por que?", "t": "largo"}, {"id": "c5", "q": "Describe el sector en el que opera la empresa", "t": "largo"}, {"id": "c6", "q": "De las tres marcas que investigaste: que color usan y de que tipologia son?", "t": "largo", "nota": "La consigna pide tres. Con el sector streetwear de la clase sirven: 47 Street, Adidas, Puma, Umbro, Topper, Kappa y Diadora."}]}, {"id": "estrategia", "titulo": "6. Estrategias anteriores y futuras", "intro": "Que se hizo antes, y que viene despues.", "preguntas": [{"id": "s1", "q": "Has tenido alguna mala experiencia con tu imagen actual?", "t": "largo"}, {"id": "s2", "q": "Tienes material corporativo que nosotros podamos ver?", "t": "largo"}, {"id": "s3", "q": "Por que has decidido cambiar o renovar tu imagen de marca?", "t": "largo"}, {"id": "s4", "q": "Tienes planes de expansion o desarrollo de nuevos productos en un corto plazo? Cuales?", "t": "largo"}, {"id": "s5", "q": "Te gustaria mantener algun elemento de tu marca actual?", "t": "largo"}, {"id": "s6", "q": "Existe algun elemento grafico que nunca debamos incluir en tu marca?", "t": "largo"}, {"id": "s7", "q": "Existe alguna fecha limite para este proyecto?", "t": "texto"}, {"id": "s8", "q": "Aplicaciones corporativas a disenar", "t": "largo", "nota": "Papeleria, tarjeta, carpeta, banner, remera, buzo, packaging. Lo que se escriba aca es lo que hay que entregar."}]}, {"id": "tipologia", "titulo": "7. La tipologia de la marca", "intro": "ACA EMPIEZA EL LADO DE LA MARCA, que el cuestionario del docente no cubre. Se contesta con la marca ya dibujada, no antes.", "preguntas": [{"id": "t1", "q": "De que tipologia es la marca?", "t": "opciones", "op": ["Logotipo - solo tipografia", "Isotipo - solo el simbolo", "Imagotipo - las dos piezas, juntas pero separables", "Isologo - las dos piezas, inseparables"]}, {"id": "t2", "q": "Como lo demuestra? Pruebalo con la prueba de separar las piezas", "t": "largo", "nota": "Separar las piezas con la mano y ver si la marca sigue en pie. Un logotipo se puede reducir a una inicial y sigue andando. Un isologo no."}, {"id": "t3", "q": "Prueba del tapon: si tapo el nombre con la mano, queda algo que diga algo?", "t": "opciones", "op": ["Si, el simbolo funciona solo", "Queda poco", "No, queda nada"]}, {"id": "t4", "q": "Por que esa tipologia y no otra?", "t": "largo"}, {"id": "t5", "q": "De los seis bocetos, cual elegiste y por que?", "t": "largo"}]}, {"id": "construccion", "titulo": "8. La construccion de la forma", "intro": "Como esta hecha la marca, para que otro la pueda usar igual.", "preguntas": [{"id": "k1", "q": "Que herramientas usaste para construirla?", "t": "texto", "ej": "Rectangulo, elipse, poligono, Bezier"}, {"id": "k2", "q": "El texto de la marca quedo convertido a curvas?", "t": "opciones", "op": ["Si, con Ctrl+Q", "No, quedo como texto"]}, {"id": "k3", "q": "Cuantos nodos tiene la forma, y por que sobran?", "t": "largo", "nota": "Un nodo que no cambia la curva se borra. La consigna pide limpiarlas hasta que no sobre ninguno."}, {"id": "k4", "q": "La marca esta construida sobre la cuadricula?", "t": "opciones", "op": ["Si, con medidas", "No, a ojo"]}, {"id": "k5", "q": "Cual es el ancho minimo de la marca y por que ese?", "t": "largo", "nota": "La prueba de los 16 pixeles es la que mas enseña de la clase. Si a ese tamano no se reconoce, el problema es la forma."}]}, {"id": "color", "titulo": "9. El color", "intro": "Un dominante y dos de apoyo. Cada uno con sus TRES valores, porque no alcanza con uno solo.", "preguntas": [{"id": "o1", "q": "Color dominante - nombre, CMYK, RGB, HEX", "t": "numeros"}, {"id": "o2", "q": "Color de apoyo 1 - nombre, CMYK, RGB, HEX", "t": "numeros"}, {"id": "o3", "q": "Color de apoyo 2 - nombre, CMYK, RGB, HEX", "t": "numeros"}, {"id": "o4", "q": "Por que ese color y no otro? De donde sale?", "t": "largo", "nota": "La clase dice: el color se elige del sector, no de una paleta de colores bonitos."}, {"id": "o5", "q": "Si la marca tuviera que ir en un solo color, cual seria?", "t": "texto", "nota": "Impresion a una tinta, sello, bordado. Si no hay dominante definido, no hay nada que reducir."}]}, {"id": "grilla", "titulo": "10. Grilla, area de proteccion y usos", "intro": "Lo que define cuando la marca esta bien usada y cuando no.", "preguntas": [{"id": "g1", "q": "Area de proteccion: cuanto mide y como se mide", "t": "largo", "nota": "El manual que dio el docente la define como 1x, el alto de una letra."}, {"id": "g2", "q": "Que NO se puede hacer con la marca", "t": "largo", "nota": "Estirar, rotar, cambiar los colores, agregar algo adentro del area de proteccion. Escribi las cinco que mas se ven."}, {"id": "g3", "q": "Sobre que fondos se permite cada version", "t": "largo", "nota": "Blanco, color propio, negro, oscuro saturado, fotografico claro, fotografico oscuro."}]}, {"id": "efectos", "titulo": "11. Los dos efectos", "intro": "Sombra proyectada y resplandor. Se preguntan con sus parametros.", "preguntas": [{"id": "e11", "q": "Sombra proyectada - distancia, angulo, opacidad", "t": "largo"}, {"id": "e12", "q": "En que soporte conviene la sombra y en cual no?", "t": "largo", "nota": "Donde la marca esta apoyada en algo. NO en fondo oscuro: ahi no se ve."}, {"id": "e13", "q": "Resplandor - halos, opacidad, borde exterior, difuminar", "t": "largo", "nota": "En el material de la clase: halos 10 y opacidad 49%."}, {"id": "e14", "q": "En que soporte conviene el resplandor y en cual no?", "t": "largo", "nota": "Donde la marca tiene que brillar. NO sobre blanco: ahi no hay nada que separar."}]}, {"id": "pruebas", "titulo": "12. Las cuatro pruebas", "intro": "La misma marca en cuatro fondos. Si algo se cae, el problema es la forma.", "preguntas": [{"id": "r1", "q": "Sobre blanco: se ve?", "t": "opciones", "op": ["Si", "No", "A duras penas"]}, {"id": "r2", "q": "Sobre su propio color: se ve?", "t": "opciones", "op": ["Si", "No", "A duras penas"]}, {"id": "r3", "q": "Sobre negro: se ve?", "t": "opciones", "op": ["Si", "No", "A duras penas"]}, {"id": "r4", "q": "Sobre oscuro saturado: se ve?", "t": "opciones", "op": ["Si", "No", "A duras penas"]}, {"id": "r5", "q": "Que se rompio en la cuarta prueba, y que cambiaste de la forma?", "t": "largo"}]}]}</script>
+<script>
+var CLAVE = "practica13-cuestionario";
+var datos = JSON.parse(document.getElementById("datos-preguntas").textContent);
+
+function cargar(){ try { return JSON.parse(localStorage.getItem(CLAVE) || "{}"); } catch(e){ return {}; } }
+function guardar(){ }
+function persistir(){
+  var d = {};
+  document.querySelectorAll("[data-preg]").forEach(function(el){
+    var id = el.getAttribute("data-preg");
+    var v;
+    if (el.type === "radio" || el.type === "checkbox") { if (el.checked) v = "1"; }
+    else if (el.tagName === "SELECT") v = el.value;
+    else v = el.value;
+    if (v) d[id] = v;
+  });
+  localStorage.setItem(CLAVE, JSON.stringify(d));
+  progreso(d);
+  return d;
+}
+
+function progreso(d){
+  var total = document.querySelectorAll("[data-preg]").length;
+  // los campos de radio de una misma pregunta cuentan como uno
+  var vistos = {}, n = 0;
+  document.querySelectorAll("[data-preg]").forEach(function(el){
+    var id = el.getAttribute("data-preg");
+    if (vistos[id]) return;
+    vistos[id] = 1;
+    var marcado = (el.type === "radio") ? (document.querySelector('input[name="'+id+'"]:checked') ? 1 : 0) : (el.value ? 1 : 0);
+    n += marcado;
+  });
+  var tot = Object.keys(vistos).length;
+  var pct = tot ? Math.round(100 * n / tot) : 0;
+  document.getElementById("barra-vida").style.width = pct + "%";
+  document.getElementById("avance-txt").textContent =
+    pct + "%  ·  " + n + " de " + tot + " preguntas contestadas";
+}
+
+function rellenar(d){
+  document.querySelectorAll("[data-preg]").forEach(function(el){
+    var id = el.getAttribute("data-preg");
+    if (!(id in d)) return;
+    if (el.type === "radio") { el.checked = (d[id] === "1"); }
+    else el.value = d[id];
+  });
+  progreso(d);
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  rellenar(cargar());
+
+  document.addEventListener("input", function(ev){
+    if (ev.target.hasAttribute && ev.target.hasAttribute("data-preg")) persistir();
+  });
+  document.addEventListener("change", function(ev){
+    if (ev.target.hasAttribute && ev.target.hasAttribute("data-preg")) persistir();
+  });
+
+  document.getElementById("btn-descargar").addEventListener("click", function(){ descargar(); });
+  document.getElementById("btn-imprimir").addEventListener("click", function(){ window.print(); });
+  document.getElementById("btn-borrar").addEventListener("click", function(){
+    if (!confirm("Se borran TODAS las respuestas guardadas en este navegador. No se puede deshacer.\n\nSeguis?")) return;
+    localStorage.removeItem(CLAVE);
+    document.querySelectorAll("[data-preg]").forEach(function(el){
+      if (el.type === "radio") el.checked = false; else el.value = "";
+    });
+    progreso({});
+  });
+  document.getElementById("btn-cargar").addEventListener("change", function(ev){
+    var f = ev.target.files[0]; if (!f) return;
+    var lector = new FileReader();
+    lector.onload = function(e){
+      var txt = e.target.result;
+      var m = txt.match(/<pregunta\s+data-id="([\s\S]*?)"[^>]*>([\s\S]*?)<\/pregunta>/g);
+      if (!m) { alert("Ese archivo no parece un cuestionario descargado."); return; }
+      var doc = new DOMParser().parseFromString(txt, "text/html");
+      var d = {};
+      doc.querySelectorAll("[data-id]").forEach(function(el){
+        var id = el.getAttribute("data-id");
+        var v = el.getAttribute("data-valor") || "";
+        if (v) d[id] = v;
+      });
+      if (!Object.keys(d).length) { alert("No se encontraron respuestas en ese archivo."); return; }
+      localStorage.setItem(CLAVE, JSON.stringify(d));
+      rellenar(d);
+      alert("Se cargaron " + Object.keys(d).length + " respuestas.");
+    };
+    lector.readAsText(f);
+    ev.target.value = "";
+  });
+});
+
+// ---- el documento que baja ---------------------------------------------------
+function descargar(){
+  var d = persistir();
+  var hoy = new Date();
+  var fecha = hoy.getFullYear() + "-" +
+              String(hoy.getMonth() + 1).padStart(2, "0") + "-" +
+              String(hoy.getDate()).padStart(2, "0");
+
+  var partes = [];
+  // la cabecera del documento con el nombre del alumno
+  var alumno = (d["e1"] || "");
+  var empresa = alumno;
+  var contacto = d["e5"] || "";
+
+    var cuerpo = "";
+  document.querySelectorAll(".bloque[data-bloque]").forEach(function(bl){
+    var idBloque = bl.getAttribute("data-bloque");
+    var info = datos.bloques.filter(function(b){ return b.id === idBloque; })[0];
+    if (!info) return;
+    var contadas = 0;
+    bl.querySelectorAll("[data-preg]").forEach(function(el){
+      var id = el.getAttribute("data-preg");
+      if (el.type === "radio" && el.tagName === "INPUT") {
+        if (el === document.querySelector('input[name="'+id+'"]:checked')) contadas++;
+        return;
+      }
+      if (el.value) contadas++;
+    });
+    // NO se vuelve a escribir el <h2> ni el <p class='intro'>: el innerHTML del
+    // bloque YA los trae. Agregarlos aca duplicaba el titulo de cada seccion en
+    // el documento descargado, que se veia como:
+    //     5. Informacion general
+    //     1. Informacion geral
+    cuerpo += "<section class='bloque' data-bloque='" + idBloque + "'>";
+    cuerpo += "<p class='nota' style='text-align:right;margin:0 0 14px'><b>" +
+              contadas + " de " + info.preguntas.length + "</b> contestadas.</p>";
+    cuerpo += bl.innerHTML;
+    cuerpo += "</section>";
+  });
+
+  var doc = "<!DOCTYPE html>\n<html lang='es'>\n<head>\n<meta charset='utf-8'>\n"
+    + "<title>Cuestionario de creacion de marca - Practica 13</title>\n"
+    + "<style>" + document.getElementById("estilos").textContent + "</style>\n"
+    + "</head>\n<body>\n"
+    + "<div class='cinta'><div class='adentro'>"
+    + "<h1>Cuestionario de creacion de marca</h1>"
+    + "<p>Practica 13 &middot; Efectos y creacion de marca &middot; Modulo 1: CorelDRAW</p>"
+    + "</div></div>\n"
+    + "<div class='laminado'>\n"
+    + "<div class='bloque'><h2>Datos de la entrega</h2><p class='intro'>Los que se llenan antes.</p>"
+    + "<pregunta data-id='ALUMNO' data-valor='" + esc(contacto) + "'>"
+    + "<span class='rotulo'><span class='n'>.</span>Empresa o proyecto</span>"
+    + "<input type='text' data-id='ALUMNO' value='" + esc(empresa) + "'></pregunta>"
+    + "<pregunta data-id='FECHA' data-valor='" + fecha + "'>"
+    + "<span class='rotulo'><span class='n'>.</span>Fecha</span>"
+    + "<input type='text' data-id='FECHA' value='" + fecha + "'></pregunta>"
+    + "</div>\n"
+    + cuerpo + "\n</div>\n"
+    + "<footer>Generado el " + fecha + " con el cuestionario de la Practica 13. "
+    + "Todo queda en este navegador: no se envia nada a ningun servidor.</footer>\n"
+    + "</body>\n</html>\n";
+
+  var nombre = "Cuestionario-marca-" + (empresa ? empresa.replace(/[^A-Za-z0-9]+/g, "-").slice(0, 28) : "sin-nombre") + "-" + fecha + ".html";
+  var blob = new Blob([doc], {type: "text/html;charset=utf-8"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url; a.download = nombre;
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 400);
+
+  var pend = document.querySelectorAll(".bloque [data-preg]").length;
+  alert("Documento descargado: " + nombre + "\n\n"
+    + "Se guardaron " + Object.keys(d).length + " respuestas.\n"
+    + "Para entregarlo en PDF: abrilo y elegi Archivo > Guardar como > PDF.\n"
+    + "Las preguntas que quedaron en blanco se ven como tales, y eso tambien cuenta.");
+}
+
+function esc(s){
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+</script>
+</body>
+</html>

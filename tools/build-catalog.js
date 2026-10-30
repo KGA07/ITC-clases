@@ -107,7 +107,7 @@ const IGNORAR = new Set([
   'EvaluacionITC',
   'CLASES ITC ARMADO ANTIGRAVITY'
 ]);
-const IGNORAR_PREFIJO = ['~$', '.~'];
+const IGNORAR_PREFIJO = ['~$', '.~', '_', '.'];
 
 // Carpetas de días de la semana y @Practicas se incluyen solo si tienen contenido.
 

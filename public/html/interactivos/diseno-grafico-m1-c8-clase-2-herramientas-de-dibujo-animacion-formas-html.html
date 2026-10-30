@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Animación  de formas básicas</title>
+<style>
+  body{margin:0;background:transparent;display:grid;place-items:center;min-height:100vh}
+  .stage{width:540px;height:360px;border-radius:18px;background:linear-gradient(135deg,#0f172a,#1e293b);
+         display:flex;align-items:center;justify-content:center;position:relative}
+  svg{width:420px;height:300px}
+  .rect{fill:none;stroke:#60a5fa;stroke-width:3;animation:dash 4s linear infinite}
+  .ellipse{fill:none;stroke:#34d399;stroke-width:3;animation:pulse 3s ease-in-out infinite}
+  .poly{fill:none;stroke:#fbbf24;stroke-width:3;animation:spin 6s linear infinite}
+  .star{fill:none;stroke:#f472b6;stroke-width:3;animation:twinkle 2s ease-in-out infinite}
+  @keyframes dash{to{stroke-dashoffset:88}}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
+</head>
+<body>
+<div class="stage">
+<svg viewBox="0 0 400 300">
+  <rect class="rect" x="40" y="40" width="120" height="80" stroke-dasharray="200" stroke-dashoffset="88"/>
+  <ellipse class="ellipse" cx="280" cy="80" rx="50" ry="40"/>
+  <polygon class="poly" points="90,240 150,160 210,240" stroke-dasharray="150" stroke-dashoffset="30"/>
+  <polygon class="star" points="280,200 295,230 325,230 302,250 312,280 280,262 248,280 258,250 235,230 265,230" stroke-dasharray="150" stroke-dashoffset="15"/>
+</svg>
+</div>
+</body>
+</html>

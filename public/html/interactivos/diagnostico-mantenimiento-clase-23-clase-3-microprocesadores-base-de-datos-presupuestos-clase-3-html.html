@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Base de datos — Presupuestos · Clase 3 Microprocesadores</title>
+<style>
+:root{--mag:#FF2ED1;--cian:#22E0FF;--txt:#EAF2FF;--fondo:#070A1A;--card:#0B1030;--borde:rgba(34,224,255,.25);--ok:#22E0FF;--mal:#FF2ED1;--muted:#A9B7C6}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1100px 600px at 10% 90%,#3A0B4A 0%,#0B1030 45%,#070A1A 100%);color:var(--txt);font-family:'Segoe UI',Arial,sans-serif;padding:24px 16px}
+.envoltorio{max-width:1180px;margin:0 auto}
+.kicker{color:var(--cian);letter-spacing:4px;font-size:12px}
+h1{font-size:30px;margin:6px 0 4px;text-shadow:0 0 28px rgba(34,224,255,.4)}
+.sub{color:#A9B7C6;margin:0 0 20px;font-size:14px}
+.card{background:rgba(11,16,48,.78);border:1px solid var(--borde);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+.card h2{font-size:17px;margin:0 0 12px;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+label{display:block;font-size:13px;color:#C9D6EA;margin-bottom:4px}
+input,select,textarea{width:100%;background:rgba(7,10,26,.9);border:1px solid rgba(34,224,255,.3);color:var(--txt);padding:9px 11px;border-radius:6px;font-size:14px;font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cian);box-shadow:0 0 0 2px rgba(34,224,255,.15)}
+textarea{resize:vertical;min-height:70px}
+button{background:linear-gradient(90deg,var(--mag),#B03BFF);color:#fff;border:0;padding:10px 18px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 0 18px rgba(255,46,209,.35)}
+button.sec{background:rgba(34,224,255,.12);color:var(--cian);border:1px solid rgba(34,224,255,.5);box-shadow:none}
+button.danger{background:rgba(255,46,209,.18);color:#FF8AE6;border:1px solid rgba(255,46,209,.5);box-shadow:none}
+button.ghost{background:transparent;color:var(--cian);border:1px solid rgba(34,224,255,.35);box-shadow:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.spacer{flex:1}
+.tabla{width:100%;border-collapse:collapse;font-size:13px}
+.tabla th,.tabla td{padding:8px 10px;border-bottom:1px solid rgba(34,224,255,.12);text-align:left;vertical-align:top}
+.tabla th{color:var(--cian);font-weight:700;position:sticky;top:0;background:rgba(11,16,48,.95)}
+.tabla tr:hover td{background:rgba(34,224,255,.05)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700}
+.badge.ok{background:rgba(34,224,255,.15);color:var(--cian)}
+.badge.warn{background:rgba(255,46,209,.15);color:#FF8AE6}
+.items-tabla{width:100%;border-collapse:collapse;margin-top:8px}
+.items-tabla th,.items-tabla td{padding:6px 8px;border-bottom:1px solid rgba(34,224,255,.12)}
+.items-tabla input,.items-tabla select{padding:6px 8px;font-size:13px}
+.totalbox{display:flex;justify-content:flex-end;gap:12px;align-items:center;margin-top:10px;font-size:15px;font-weight:700;color:var(--cian)}
+.rubrica{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:8px}
+.rubrica .crit{background:rgba(7,10,26,.7);border:1px solid rgba(34,224,255,.2);border-radius:8px;padding:10px}
+.rubrica .crit b{display:block;color:var(--cian);font-size:12px;margin-bottom:6px}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .caja{background:rgba(7,10,26,.7);border:1px solid rgba(34,224,255,.2);border-radius:8px;padding:14px;text-align:center}
+.stat .caja .n{font-size:26px;font-weight:800;color:var(--cian)}
+.stat .caja .l{font-size:12px;color:#A9B7C6;margin-top:4px}
+.filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.filtros input,.filtros select{max-width:260px}
+.empty{color:#A9B7C6;text-align:center;padding:24px;font-style:italic}
+.toast{position:fixed;bottom:20px;right:20px;background:rgba(11,16,48,.95);border:1px solid var(--cian);color:var(--txt);padding:12px 18px;border-radius:8px;box-shadow:0 0 24px rgba(34,224,255,.35);display:none;z-index:99}
+.toast.on{display:block}
+@media (max-width:720px){.tabla{font-size:12px}.tabla th,.tabla td{padding:6px}}
+</style>
+</head>
+<body>
+<div class="envoltorio">
+  <div class="kicker">DIAGNÓSTICO Y MANTENIMIENTO · CLASE 03 · BASE DE DATOS</div>
+  <h1>Presupuestos de alumnos</h1>
+  <p class="sub">Registrá cada alumno, su presupuesto personalizado (componentes y precios) y la puntuación. Los datos se guardan en este navegador (localStorage). Exportá un respaldo JSON/CSV al terminar.</p>
+
+  <!-- FORMULARIO -->
+  <div class="card" id="formCard">
+    <h2 id="formTitulo">Nuevo presupuesto</h2>
+    <input type="hidden" id="editId">
+    <div class="grid">
+      <div><label>Alumno *</label><input id="alumno" placeholder="Apellido y nombre"></div>
+      <div><label>Grupo / Comisión</label><input id="grupo" placeholder="Ej: Turno noche"></div>
+      <div><label>Fecha</label><input id="fecha" type="date"></div>
+      <div><label>Moneda</label>
+        <select id="moneda"><option value="ARS">ARS $</option><option value="USD">USD US$</option></select>
+      </div>
+    </div>
+
+    <h3 style="margin:14px 0 6px;font-size:14px;color:var(--cian)">Componentes del presupuesto</h3>
+    <table class="items-tabla" id="itemsTabla">
+      <thead><tr><th>Componente</th><th>Modelo / Descripción</th><th>Precio</th><th></th></tr></thead>
+      <tbody id="itemsBody"></tbody>
+    </table>
+    <div class="row" style="margin-top:8px">
+      <button type="button" class="sec" id="addItem">+ Agregar componente</button>
+      <div class="spacer"></div>
+      <div class="totalbox">Total: <span id="total">0</span></div>
+    </div>
+
+    <h3 style="margin:16px 0 6px;font-size:14px;color:var(--cian)">Puntuación</h3>
+    <div class="rubrica">
+      <div class="crit"><b>Compatibilidad (0-25)</b><input id="rComp" type="number" min="0" max="25" value="0"></div>
+      <div class="crit"><b>Precio / rendimiento (0-25)</b><input id="rPrecio" type="number" min="0" max="25" value="0"></div>
+      <div class="crit"><b>Justificación (0-25)</b><input id="rJust" type="number" min="0" max="25" value="0"></div>
+      <div class="crit"><b>Presentación (0-25)</b><input id="rPres" type="number" min="0" max="25" value="0"></div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <div style="max-width:160px"><label>Puntaje final (0-100)</label><input id="puntaje" type="number" min="0" max="100" value="0"></div>
+      <div class="spacer"></div>
+      <span style="color:#A9B7C6;font-size:13px">La rúbrica suma al puntaje final si lo sincronizás.</span>
+      <button type="button" class="ghost" id="syncRubrica">Sincronizar rúbrica → puntaje</button>
+    </div>
+    <div style="margin-top:10px"><label>Observaciones del docente</label><textarea id="obs" placeholder="Comentarios, errores detectados, recomendaciones..."></textarea></div>
+
+    <div class="row" style="margin-top:16px">
+      <button type="button" id="guardar">Guardar presupuesto</button>
+      <button type="button" class="sec" id="limpiar">Limpiar formulario</button>
+    </div>
+  </div>
+
+  <!-- ESTADÍSTICAS -->
+  <div class="card">
+    <h2>Resumen</h2>
+    <div class="stat" id="stats"></div>
+  </div>
+
+  <!-- FILTROS + LISTADO -->
+  <div class="card">
+    <h2>Registros guardados</h2>
+    <div class="filtros">
+      <input id="buscar" placeholder="Buscar por alumno, grupo o componente...">
+      <select id="filtroGrupo"><option value="">Todos los grupos</option></select>
+      <select id="orden">
+        <option value="fecha_desc">Más recientes</option>
+        <option value="fecha_asc">Más antiguos</option>
+        <option value="puntaje_desc">Mayor puntaje</option>
+        <option value="puntaje_asc">Menor puntaje</option>
+        <option value="alumno">Alumno A-Z</option>
+      </select>
+      <button type="button" class="sec" id="exportJson">Exportar JSON</button>
+      <button type="button" class="sec" id="exportCsv">Exportar CSV</button>
+      <label class="ghost" style="cursor:pointer;padding:10px 14px;border:1px solid rgba(34,224,255,.35);border-radius:6px;color:var(--cian);font-weight:700;font-size:14px">
+        Importar JSON <input type="file" id="importFile" accept="application/json" style="display:none">
+      </label>
+      <button type="button" class="danger" id="borrarTodo">Borrar todo</button>
+    </div>
+    <div id="listado"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY='itc_c3_presupuestos_v1';
+const COMPONENTES=['CPU / Procesador','Motherboard / Placa madre','Memoria RAM','Almacenamiento (SSD/HDD)','Placa de video (GPU)','Fuente de alimentación','Gabinete','Cooler / Refrigeración','Monitor','Teclado / Mouse','Otros'];
+
+let registros=[];
+
+function uid(){ try{return crypto.randomUUID();}catch(e){return 'id_'+Date.now()+'_'+Math.random().toString(36).slice(2);} }
+function money(n,mon){ const s=mon==='USD'?'US$':'$'; return s+' '+Number(n||0).toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); setTimeout(()=>t.classList.remove('on'),2600); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function load(){ try{ registros=JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(e){ registros=[]; } }
+function save(){ localStorage.setItem(KEY,JSON.stringify(registros)); }
+
+function addItem(comp='',modelo='',precio=''){
+  const tr=document.createElement('tr');
+  tr.innerHTML=`
+    <td><select class="comp">${COMPONENTES.map(c=>`<option ${c===comp?'selected':''}>${esc(c)}</option>`).join('')}</select></td>
+    <td><input class="modelo" value="${esc(modelo)}" placeholder="Ej: Ryzen 5 5600G"></td>
+    <td><input class="precio" type="number" min="0" step="0.01" value="${esc(precio)}"></td>
+    <td><button type="button" class="danger" style="padding:4px 8px;font-size:12px" onclick="this.closest('tr').remove();calcTotal()">✕</button></td>`;
+  document.getElementById('itemsBody').appendChild(tr);
+  tr.querySelectorAll('input,select').forEach(el=>el.addEventListener('input',calcTotal));
+}
+function calcTotal(){
+  let t=0;
+  document.querySelectorAll('#itemsBody tr').forEach(tr=>{
+    t += Number(tr.querySelector('.precio').value||0);
+  });
+  document.getElementById('total').textContent = money(t, document.getElementById('moneda').value);
+}
+function collectItems(){
+  const out=[];
+  document.querySelectorAll('#itemsBody tr').forEach(tr=>{
+    out.push({componente:tr.querySelector('.comp').value, modelo:tr.querySelector('.modelo').value.trim(), precio:Number(tr.querySelector('.precio').value||0)});
+  });
+  return out.filter(i=>i.modelo||i.precio>0);
+}
+function rubricaSum(){ return Number(document.getElementById('rComp').value||0)+Number(document.getElementById('rPrecio').value||0)+Number(document.getElementById('rJust').value||0)+Number(document.getElementById('rPres').value||0); }
+
+function limpiarForm(){
+  document.getElementById('editId').value='';
+  document.getElementById('alumno').value='';
+  document.getElementById('grupo').value='';
+  document.getElementById('fecha').value=new Date().toISOString().slice(0,10);
+  document.getElementById('moneda').value='ARS';
+  document.getElementById('itemsBody').innerHTML='';
+  document.getElementById('puntaje').value=0;
+  document.getElementById('rComp').value=0;document.getElementById('rPrecio').value=0;
+  document.getElementById('rJust').value=0;document.getElementById('rPres').value=0;
+  document.getElementById('obs').value='';
+  document.getElementById('formTitulo').textContent='Nuevo presupuesto';
+  addItem(); calcTotal();
+}
+function guardar(){
+  const alumno=document.getElementById('alumno').value.trim();
+  if(!alumno){ toast('Falta el nombre del alumno'); return; }
+  const items=collectItems();
+  if(items.length===0){ toast('Agregá al menos un componente'); return; }
+  const rec={
+    id: document.getElementById('editId').value || uid(),
+    alumno, grupo:document.getElementById('grupo').value.trim(),
+    fecha:document.getElementById('fecha').value,
+    moneda:document.getElementById('moneda').value,
+    items,
+    rubrica:{compatibilidad:Number(document.getElementById('rComp').value||0),precioRendimiento:Number(document.getElementById('rPrecio').value||0),justificacion:Number(document.getElementById('rJust').value||0),presentacion:Number(document.getElementById('rPres').value||0)},
+    puntaje:Number(document.getElementById('puntaje').value||0),
+    observaciones:document.getElementById('obs').value.trim(),
+    actualizado:Date.now()
+  };
+  const idx=registros.findIndex(r=>r.id===rec.id);
+  if(idx>=0){ rec.creado=registros[idx].creado; registros[idx]=rec; toast('Presupuesto actualizado'); }
+  else { rec.creado=Date.now(); registros.unshift(rec); toast('Presupuesto guardado'); }
+  save(); renderListado(); renderStats(); renderGrupos(); limpiarForm();
+}
+function editar(id){
+  const r=registros.find(x=>x.id===id); if(!r) return;
+  document.getElementById('editId').value=r.id;
+  document.getElementById('alumno').value=r.alumno;
+  document.getElementById('grupo').value=r.grupo||'';
+  document.getElementById('fecha').value=r.fecha||'';
+  document.getElementById('moneda').value=r.moneda||'ARS';
+  document.getElementById('itemsBody').innerHTML='';
+  (r.items||[]).forEach(i=>addItem(i.componente,i.modelo,i.precio));
+  if(!r.items||r.items.length===0) addItem();
+  document.getElementById('rComp').value=r.rubrica?.compatibilidad||0;
+  document.getElementById('rPrecio').value=r.rubrica?.precioRendimiento||0;
+  document.getElementById('rJust').value=r.rubrica?.justificacion||0;
+  document.getElementById('rPres').value=r.rubrica?.presentacion||0;
+  document.getElementById('puntaje').value=r.puntaje||0;
+  document.getElementById('obs').value=r.observaciones||'';
+  document.getElementById('formTitulo').textContent='Editando: '+r.alumno;
+  calcTotal();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function eliminar(id){
+  if(!confirm('¿Eliminar este presupuesto?')) return;
+  registros=registros.filter(r=>r.id!==id); save(); renderListado(); renderStats(); renderGrupos(); toast('Eliminado');
+}
+function borrarTodo(){
+  if(registros.length===0) return;
+  if(!confirm('¿Borrar TODOS los '+registros.length+' presupuestos? Esta acción no se puede deshacer (exportá antes).')) return;
+  registros=[]; save(); renderListado(); renderStats(); renderGrupos(); toast('Todo borrado');
+}
+
+function gruposUnicos(){ return [...new Set(registros.map(r=>r.grupo).filter(Boolean))].sort(); }
+function renderGrupos(){
+  const sel=document.getElementById('filtroGrupo');
+  const cur=sel.value;
+  sel.innerHTML='<option value="">Todos los grupos</option>'+gruposUnicos().map(g=>`<option ${g===cur?'selected':''}>${esc(g)}</option>`).join('');
+}
+function totalPresupuesto(r){ return (r.items||[]).reduce((a,i)=>a+Number(i.precio||0),0); }
+function ordenar(lista){
+  const modo=document.getElementById('orden').value;
+  const c=[...lista];
+  switch(modo){
+    case 'fecha_asc': c.sort((a,b)=>(a.fecha||'').localeCompare(b.fecha||'')); break;
+    case 'fecha_desc': c.sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||'')); break;
+    case 'puntaje_asc': c.sort((a,b)=>(a.puntaje||0)-(b.puntaje||0)); break;
+    case 'puntaje_desc': c.sort((a,b)=>(b.puntaje||0)-(a.puntaje||0)); break;
+    case 'alumno': c.sort((a,b)=>(a.alumno||'').localeCompare(b.alumno||'','es')); break;
+  }
+  return c;
+}
+function renderListado(){
+  const q=document.getElementById('buscar').value.trim().toLowerCase();
+  const g=document.getElementById('filtroGrupo').value;
+  let lista=registros.filter(r=>{
+    if(g && r.grupo!==g) return false;
+    if(!q) return true;
+    const hay=(r.alumno+' '+r.grupo+' '+(r.items||[]).map(i=>i.componente+' '+i.modelo).join(' ')+' '+r.observaciones).toLowerCase();
+    return hay.includes(q);
+  });
+  lista=ordenar(lista);
+  const cont=document.getElementById('listado');
+  if(lista.length===0){ cont.innerHTML='<div class="empty">No hay presupuestos que coincidan.</div>'; return; }
+  let html='<div style="overflow:auto"><table class="tabla"><thead><tr><th>Alumno</th><th>Grupo</th><th>Fecha</th><th>Componentes</th><th>Total</th><th>Puntaje</th><th>Acciones</th></tr></thead><tbody>';
+  lista.forEach(r=>{
+    const badge = r.puntaje>=80?'ok':(r.puntaje>=50?'warn':'warn');
+    html+=`<tr>
+      <td><b>${esc(r.alumno)}</b></td>
+      <td>${esc(r.grupo||'—')}</td>
+      <td>${esc(r.fecha||'—')}</td>
+      <td>${(r.items||[]).length} items<br><span style="color:#A9B7C6;font-size:12px">${esc((r.items||[]).map(i=>i.componente).join(', '))}</span></td>
+      <td>${money(totalPresupuesto(r),r.moneda)}</td>
+      <td><span class="badge ${badge}">${r.puntaje}/100</span></td>
+      <td>
+        <button type="button" class="sec" style="padding:4px 8px;font-size:12px" onclick="verDetalle('${r.id}')">Ver</button>
+        <button type="button" class="sec" style="padding:4px 8px;font-size:12px" onclick="editar('${r.id}')">Editar</button>
+        <button type="button" class="danger" style="padding:4px 8px;font-size:12px" onclick="eliminar('${r.id}')">✕</button>
+      </td>
+    </tr>`;
+  });
+  html+='</tbody></table></div>';
+  cont.innerHTML=html;
+}
+function verDetalle(id){
+  const r=registros.find(x=>x.id===id); if(!r) return;
+  const items=(r.items||[]).map(i=>`<tr><td>${esc(i.componente)}</td><td>${esc(i.modelo)}</td><td>${money(i.precio,r.moneda)}</td></tr>`).join('');
+  const rub=r.rubrica||{};
+  const html=`<div class="card" style="margin-top:12px;border-color:var(--mag)">
+    <h2>Detalle — ${esc(r.alumno)} <span style="color:#A9B7C6;font-size:13px;font-weight:400">${esc(r.grupo||'')}</span></h2>
+    <table class="items-tabla"><thead><tr><th>Componente</th><th>Modelo</th><th>Precio</th></tr></thead><tbody>${items}</tbody></table>
+    <div class="totalbox">Total: ${money(totalPresupuesto(r),r.moneda)}</div>
+    <div style="margin-top:10px"><b style="color:var(--cian)">Rúbrica:</b> Compatibilidad ${rub.compatibilidad||0}/25 · Precio-rendimiento ${rub.precioRendimiento||0}/25 · Justificación ${rub.justificacion||0}/25 · Presentación ${rub.presentacion||0}/25</div>
+    <div style="margin-top:6px"><b style="color:var(--cian)">Puntaje final:</b> ${r.puntaje}/100</div>
+    ${r.observaciones?`<div style="margin-top:8px;border-left:3px solid var(--cian);padding-left:10px;color:#C9D6EA">${esc(r.observaciones)}</div>`:''}
+    <div class="row" style="margin-top:12px"><button type="button" class="sec" onclick="this.closest('.card').remove()">Cerrar</button></div>
+  </div>`;
+  const tmp=document.createElement('div'); tmp.innerHTML=html;
+  // remove previous detail cards
+  document.querySelectorAll('#listado .card[style*="mag"]').forEach(x=>x.remove());
+  document.getElementById('listado').appendChild(tmp.firstElementChild);
+}
+
+function renderStats(){
+  const n=registros.length;
+  const avg=n? (registros.reduce((a,r)=>a+(r.puntaje||0),0)/n).toFixed(1):'0';
+  const mejor=n? Math.max(...registros.map(r=>r.puntaje||0)):'0';
+  const totalItems=registros.reduce((a,r)=>a+(r.items||[]).length,0);
+  document.getElementById('stats').innerHTML=`
+    <div class="caja"><div class="n">${n}</div><div class="l">Presupuestos guardados</div></div>
+    <div class="caja"><div class="n">${avg}</div><div class="l">Puntaje promedio</div></div>
+    <div class="caja"><div class="n">${mejor}</div><div class="l">Mejor puntaje</div></div>
+    <div class="caja"><div class="n">${totalItems}</div><div class="l">Componentes registrados</div></div>`;
+}
+function exportJson(){
+  if(registros.length===0){ toast('No hay datos para exportar'); return; }
+  const blob=new Blob([JSON.stringify(registros,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='presupuestos-clase3-'+new Date().toISOString().slice(0,10)+'.json'; a.click(); URL.revokeObjectURL(a.href);
+  toast('JSON exportado');
+}
+function exportCsv(){
+  if(registros.length===0){ toast('No hay datos para exportar'); return; }
+  const rows=[['Alumno','Grupo','Fecha','Moneda','Componentes (n)','Total','Puntaje','Observaciones']];
+  registros.forEach(r=>{
+    rows.push([r.alumno,r.grupo||'',r.fecha||'',r.moneda,totalPresupuesto(r),r.puntaje||0,(r.observaciones||'').replace(/\n/g,' ')]);
+  });
+  // add items detail in a second sheet-like block? Keep simple: one row per presupuesto.
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='presupuestos-clase3-'+new Date().toISOString().slice(0,10)+'.csv'; a.click(); URL.revokeObjectURL(a.href);
+  toast('CSV exportado');
+}
+function importJson(file){
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      if(!Array.isArray(data)) throw new Error('Formato inválido');
+      // merge by id
+      let added=0,upd=0;
+      data.forEach(r=>{
+        if(!r.id) r.id=uid();
+        const idx=registros.findIndex(x=>x.id===r.id);
+        if(idx>=0){ registros[idx]=r; upd++; } else { registros.unshift(r); added++; }
+      });
+      save(); renderListado(); renderStats(); renderGrupos();
+      toast(`Importado: ${added} nuevos, ${upd} actualizados`);
+    }catch(err){ toast('Error al importar: '+err.message); }
+  };
+  reader.readAsText(file);
+}
+
+// events
+document.getElementById('addItem').onclick=()=>{addItem();calcTotal();};
+document.getElementById('guardar').onclick=guardar;
+document.getElementById('limpiar').onclick=limpiarForm;
+document.getElementById('moneda').onchange=calcTotal;
+document.getElementById('syncRubrica').onclick=()=>{ document.getElementById('puntaje').value=rubricaSum(); toast('Puntaje = '+rubricaSum()); };
+document.getElementById('buscar').oninput=renderListado;
+document.getElementById('filtroGrupo').onchange=renderListado;
+document.getElementById('orden').onchange=renderListado;
+document.getElementById('exportJson').onclick=exportJson;
+document.getElementById('exportCsv').onclick=exportCsv;
+document.getElementById('borrarTodo').onclick=borrarTodo;
+document.getElementById('importFile').onchange=e=>{ if(e.target.files[0]) importJson(e.target.files[0]); e.target.value=''; };
+
+// init
+load();
+renderGrupos();
+renderStats();
+renderListado();
+limpiarForm();
+</script>
+</body>
+</html>

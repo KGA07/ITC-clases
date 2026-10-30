@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 15 versiones - App web con Google Apps Script y Gemini</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --azul: #0b4f9e;
+    --azul-oscuro: #073a75;
+    --borde: #c9d4e2;
+    --fondo: #eef2f7;
+    --texto: #1b2733;
+    --tenue: #5a6b7d;
+    --verde: #106b3a;
+    --ambar: #8a5a00;
+    --rojo: #a3271f;
+  }
+
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    padding: 24px 16px 64px;
+  }
+
+  .contenedor { max-width: 1080px; margin: 0 auto; }
+
+  /* ---------- encabezado ---------- */
+  header {
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-top: 6px solid var(--azul);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  header h1 { color: var(--azul); font-size: 1.9rem; line-height: 1.25; margin-bottom: 6px; }
+  header .sub { color: var(--tenue); font-size: 1rem; }
+
+  /* ---------- panel del alumno ---------- */
+  .selector {
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-left: 6px solid var(--azul);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+  .selector h2 { color: var(--azul); font-size: 1.2rem; margin-bottom: 14px; }
+  .campo { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+  .campo label { display: block; font-weight: 600; margin-bottom: 6px; }
+  select, button {
+    font: inherit;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 2px solid var(--borde);
+  }
+  select { min-width: 260px; background: #fff; color: var(--texto); }
+  button {
+    background: var(--azul);
+    color: #fff;
+    border-color: var(--azul);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: #093f7d; }
+  button.secundario { background: #fff; color: var(--azul); }
+  button.secundario:hover { background: #f0f5fb; }
+
+  /* foco visible: requisito de accesibilidad */
+  select:focus-visible, button:focus-visible, a:focus-visible {
+    outline: 3px solid #b8570a;
+    outline-offset: 2px;
+  }
+
+  /* ---------- version del alumno ---------- */
+  .version { display: none; }
+  .version.visible { display: block; }
+
+  .encabezado-version {
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .insignia {
+    display: inline-block;
+    background: var(--azul);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .encabezado-version h2 { font-size: 1.5rem; color: var(--texto); margin-bottom: 6px; }
+  .encabezado-version p { color: var(--tenue); }
+
+  .bloque {
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .bloque h3 {
+    color: var(--azul);
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e4ebf3;
+  }
+  .bloque ol, .bloque ul { padding-left: 22px; }
+  .bloque li { margin-bottom: 8px; }
+
+  .nombre-archivo {
+    display: inline-block;
+    background: #e3f6ec;
+    color: var(--verde);
+    font-weight: 700;
+    font-size: .9rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: Consolas, "Courier New", monospace;
+  }
+
+  .prompt {
+    position: relative;
+    background: #1b2733;
+    color: #e6edf3;
+    padding: 18px;
+    border-radius: 8px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: .88rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .aviso {
+    background: #fdf6e3;
+    border-left: 5px solid #d9a441;
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .aviso strong { color: var(--ambar); }
+
+  .lista-versiones h2 { color: var(--azul); font-size: 1.2rem; margin-bottom: 14px; }
+  .grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+  .tarjeta {
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+  .tarjeta:hover, .tarjeta[aria-current="true"] { border-color: var(--azul); box-shadow: 0 0 0 2px var(--azul); }
+  .tarjeta .n { display: block; font-weight: 700; color: var(--azul); font-size: .82rem; margin-bottom: 4px; }
+  .tarjeta .t { display: block; font-weight: 600; margin-bottom: 4px; }
+  .tarjeta .a { display: block; font-size: .78rem; color: var(--tenue); font-family: Consolas, monospace; }
+
+  footer { text-align: center; color: var(--tenue); font-size: .9rem; margin-top: 36px; }
+  .volver { margin-bottom: 18px; }
+
+  .sr-solo {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.5rem; }
+    select { min-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header>
+  <h1>Ejercicio: tu aplicación web con Google Apps Script y Gemini</h1>
+  <p class="sub">Asistente Administrativo Digital con IA &middot; Clase 12 &middot; Hay 15 versiones, una por alumno</p>
+</header>
+
+<div class="aviso">
+  <strong>Antes de empezar:</strong> no hay dos consignas iguales. Buscá tu número de alumno, cargalo arriba
+  y seguí únicamente las indicaciones de tu versión. Tu planilla es el archivo <code>.xlsx</code> que se indica
+  en cada caso.
+</div>
+
+<section class="selector" aria-labelledby="titulo-selector">
+  <h2 id="titulo-selector">Elegí tu versión</h2>
+  <div class="campo">
+    <div>
+      <label for="alumno">Número de alumno</label>
+      <select id="alumno">
+        <option value="">— Elegí tu número —</option>
+      </select>
+    </div>
+    <button type="button" id="btn-cargar">Ver mi consigna</button>
+  </div>
+</section>
+
+<main id="contenido-version" aria-live="polite"></main>
+
+<section class="bloque lista-versiones" aria-labelledby="titulo-todas">
+  <h2 id="titulo-todas">Las 15 versiones</h2>
+  <p style="color:var(--tenue);margin-bottom:16px;">Grilla de referencia para el docente. Al elegir una tarjeta se abre arriba.</p>
+  <div class="grilla" id="grilla"></div>
+</section>
+
+<footer>
+  <p>ITC Argentina &middot; Asistente Administrativo Digital con IA &middot; 2026</p>
+</footer>
+
+</div>
+
+<script>
+'use strict';
+
+// Los 15 casos. Fuente de verdad: el archivo actividades_apps_script.html de la
+// clase de Apps Script y las planillas de la carpeta Casos/.
+var CASOS = [
+  {
+    n: 1, negocio: 'Sistema para Repuestos de Motos', cliente: 'Ruta Sur',
+    problema: 'El dueño necesita saber qué repuestos reponer urgente y cuánto vendió en el día.',
+    archivo: 'Caso_01_Repuestos_Motos.xlsx',
+    logica: [
+      'Copiar a una pestaña llamada "Bajo Stock" todas las filas donde la cantidad vendida del día supere 3 unidades.',
+      'Calcular el total recaudado del día y mostrarlo en un recuadro de la pantalla principal.'
+    ],
+    tablas: 'PRODUCTO (A), CANTIDAD_STOCK (B), VENDIDA_HOY (C), PRECIO_UNITARIO (D), VENDIDA_HOY (E)',
+    color: 'Si VENDIDA_HOY supera 3, la fila se pinta de color naranja en la lista.'
+  },
+  {
+    n: 2, negocio: 'Agencia de Diseño y Community', cliente: 'la agencia',
+    problema: 'Tenés el registro de todos los clientes y de las horas que le dedicaste a cada proyecto.',
+    archivo: 'Caso_02_Agencia_Diseno.xlsx',
+    logica: [
+      'Filtrar todos los proyectos que están en estado "En Proceso".',
+      'Mostrarlos en una sección aparte de la pantalla, ordenada por horas trabajadas de mayor a menor.',
+      'Un botón que borre los proyectos marcados como terminados.'
+    ],
+    tablas: 'CLIENTE (A), PROYECTO (B), ESTADO (C), HORAS (D), FECHA_ENTREGA (E)',
+    color: 'Cada proyecto con estado "En Proceso" se muestra en azul; "Entregado", en verde.'
+  },
+  {
+    n: 3, negocio: 'Gestión de Rotisería', cliente: 'la rotisería',
+    problema: 'El local explota los fines de semana y se pierde el control de los envíos a domicilio.',
+    archivo: 'Caso_03_Rotiseria.xlsx',
+    logica: [
+      'Separar en una sección "Para Enviar" todos los pedidos cuyo tipo de entrega dice "Delivery".',
+      'Marcar en rojo el pedido cuando el monto supera los 20.000 pesos.'
+    ],
+    tablas: 'PEDIDO (A), CLIENTE (B), TELEFONO (C), CONTENIDO (D), MONTO (E), ENTREGA (F)',
+    color: 'Los pedidos de delivery van a una lista con título propio; los de monto alto, en rojo.'
+  },
+  {
+    n: 4, negocio: 'Control de Pet Shop y Veterinaria', cliente: 'la veterinaria',
+    problema: 'Hay que avisarle a los dueños cuándo le toca la vacuna antirrábica a sus mascotas.',
+    archivo: 'Caso_04_Pet_Shop.xlsx',
+    logica: [
+      'Leer la columna de próxima vacuna de cada mascota.',
+      'Si la fecha ya pasó, marcar el registro como "LLAMAR" y ponerlo en una lista de avisos.',
+      'Un botón que genera el reporte de avisos del día.'
+    ],
+    tablas: 'MASCOTA (A), DUENO (B), TELEFONO (C), ESPECIE (D), PROXIMA_VACUNA (E), ULTIMA_VACUNA (F)',
+    color: 'Vencido en rojo, próxima en menos de 15 días en amarillo, y en verde cuando está al día.'
+  },
+  {
+    n: 5, negocio: 'Inventario de Hardware y PC', cliente: 'el local',
+    problema: 'Los precios de los componentes importados varían con el dólar.',
+    archivo: 'Caso_05_Hardware_PC.xlsx',
+    logica: [
+      'Leer el valor del dólar que el usuario escribe en un campo de la pantalla.',
+      'Multiplicar la columna de precio en dólares por ese valor y mostrar el resultado en pesos, sin borrar el dato original.',
+      'Ordenar la lista de productos de mayor a menor precio en pesos.'
+    ],
+    tablas: 'PRODUCTO (A), COMPATIBLE (B), STOCK (C), PRECIO_USD (D), CATEGORIA (E)',
+    color: 'El campo del dólar tiene que quedar highlighted arriba de la lista; el resto de la tabla se recalcula al escribirlo.'
+  },
+  {
+    n: 6, negocio: 'Local de Indumentaria Deportiva', cliente: 'la indumentaria',
+    problema: 'Necesitan saber rápido qué camisetas de fútbol se están quedando sin stock.',
+    archivo: 'Caso_06_Indumentaria_Deportiva.xlsx',
+    logica: [
+      'Un campo de búsqueda donde el usuario escribe un equipo, por ejemplo "Boca Jrs".',
+      'La aplicación busca todas las ventas de ese equipo y las trae a la pantalla como un resumen.',
+      'Un botón para limpiar la búsqueda y volver a la lista completa.'
+    ],
+    tablas: 'FECHA (A), EQUIPO (B), PRENDA (C), TALLE (D), CANTIDAD (E), PRECIO (F)',
+    color: 'Los resultados de la búsqueda se muestran en una tabla aparte, con un botón para volver atrás.'
+  },
+  {
+    n: 7, negocio: 'Taquilla y Candybar de Cine', cliente: 'el cine',
+    problema: 'El gerente necesita saber cuánta plata entró por entradas y cuánta por candybar, película por película.',
+    archivo: 'Caso_07_Cine_Taquilla.xlsx',
+    logica: [
+      'Sumar por separado la recaudación de tickets y la de candybar.',
+      'Mostrar ambas sumas y también el total, con el porcentaje que aporta cada una.'
+    ],
+    tablas: 'PELICULA (A), FECHA (B), ENTRADAS (C), PRECIO_ENTRADA (D), CANDYBAR (E), TICKETS (F)',
+    color: 'Cada película se muestra con sus dos montos: entradas en azul y candybar en verde.'
+  },
+  {
+    n: 8, negocio: 'Cobranzas de Distribuidora Mayorista', cliente: 'la distribuidora',
+    problema: 'Hay supermercados que arrastran deuda de mercadería de un mes a otro.',
+    archivo: 'Caso_08_Distribuidora.xlsx',
+    logica: [
+      'Identificar los clientes cuya deuda anterior es mayor que cero.',
+      'Calcular cuánto deben en total: deuda anterior más factura actual.',
+      'Mostrarlos ordenados de mayor a menor deuda, con un botón para marcar la deuda como cobrada.'
+    ],
+    tablas: 'CLIENTE (A), CUIT (B), FACTURA_ACTUAL (C), DEUDA_ANTERIOR (D), FECHA_VTO (E), PAGO (F)',
+    color: 'Los deudores se listan en una tabla aparte, con el total adeudado destacado.'
+  },
+  {
+    n: 9, negocio: 'Actualización de precios en Ferretería', cliente: 'la ferretería',
+    problema: 'La inflación hace imposible actualizar a mano los precios de miles de artículos.',
+    archivo: 'Caso_09_Ferreteria.xlsx',
+    logica: [
+      'Pedir al usuario un porcentaje de aumento en un campo de la pantalla.',
+      'Aplicar ese porcentaje a la columna de costo de proveedor de todos los productos de un rubro que el usuario elija.',
+      'Mostrar el nuevo precio sin perder el costo anterior.'
+    ],
+    tablas: 'ARTICULO (A), RUBRO (B), CODIGO (C), COSTO_PROVEEDOR (D), STOCK (E), VENTA (F)',
+    color: 'El selector de rubro y el campo de porcentaje van arriba; la tabla muestra costo nuevo y costo viejo.'
+  },
+  {
+    n: 10, negocio: 'Control de Vencimientos en Farmacia', cliente: 'la farmacia',
+    problema: 'Vender medicamentos vencidos es grave: hay que sacarlos de la góndola a tiempo.',
+    archivo: 'Caso_10_Farmacia.xlsx',
+    logica: [
+      'Revisar la fecha de vencimiento de todos los lotes.',
+      'Si un lote vence dentro de los próximos 60 días, ponerlo en una lista "Por Vencer".',
+      'Un botón que da de baja los lotes ya vencidos y los mueve a una pestaña de histórico.'
+    ],
+    tablas: 'LOTE (A), MEDICAMENTO (B), PRESENTACION (C), STOCK (D), VENCIMIENTO (E), RECETA (F)',
+    color: 'Fondo naranja para lo que vence antes de los 60 días y fondo rojo para lo ya vencido.'
+  },
+  {
+    n: 11, negocio: 'Control de Accesos en Gimnasio', cliente: 'el gimnasio',
+    problema: 'Pasa mucha gente y no se sabe quién pagó la cuota mensual.',
+    archivo: 'Caso_11_Gimnasio.xlsx',
+    logica: [
+      'Buscar en la columna de estado de pago a los socios con estado "Deuda Mayor".',
+      'Mostrar solo a los deudores cuando el recepcionista activa el filtro.',
+      'Un botón para registrar el pago y sacarlo de la lista de deudores.'
+    ],
+    tablas: 'SOCIO (A), DNI (B), TELEFONO (C), PLAN (D), ESTADO_PAGO (E), ULTIMO_PAGO (F)',
+    color: 'Con el filtro activado la lista muestra únicamente a los deudores; el resto queda oculto.'
+  },
+  {
+    n: 12, negocio: 'Liquidación de Comisiones en Agencia de Viajes', cliente: 'la agencia de viajes',
+    problema: 'Venden pasajes a todo el país y necesitan liquidar las comisiones de cada vendedor.',
+    archivo: 'Caso_12_Viajes.xlsx',
+    logica: [
+      'Recorrer todas las ventas y sumar la comisión de agencia de los pasajes cuyo destino sea "Esquina" o "Rio Gallegos".',
+      'Mostrar ese total en un recuadro arriba de la pantalla.',
+      'Desglosar el total por vendedor.'
+    ],
+    tablas: 'PASAJE (A), VENDEDOR (B), DESTINO (C), FECHA (D), PASAJEROS (E), COMISION_AGENCIA (F)',
+    color: 'El recuadro del total va arriba, y debajo el desglose por vendedor en una tabla.'
+  },
+  {
+    n: 13, negocio: 'Logística de Corralón de Materiales', cliente: 'el corralón',
+    problema: 'Tienen que organizar los camiones para enviar cemento y ladrillos.',
+    archivo: 'Caso_13_Corralon.xlsx',
+    logica: [
+      'Identificar todas las filas donde dice que se requiere flete.',
+      'Pasarlas a una hoja de ruta y ordenarlas de mayor a menor según el costo de materiales.',
+      'Mostrar el costo total del viaje en la pantalla.'
+    ],
+    tablas: 'PEDIDO (A), CLIENTE (B), MATERIAL (C), CANTIDAD (D), PESO_TON (E), REQUIERE_FLETE (F), COSTO (G)',
+    color: 'La hoja de ruta se muestra como una tabla ordenada, con el total del viaje destacado.'
+  },
+  {
+    n: 14, negocio: 'Stock de Concesionaria de Autos', cliente: 'la concesionaria',
+    problema: 'Tienen autos y motos de diferentes años y estados de preparación.',
+    archivo: 'Caso_14_Concesionaria.xlsx',
+    logica: [
+      'Un botón que genere un reporte con cuántos vehículos están "En Taller" y cuántos están "Para Venta".',
+      'Escribir ese resumen arriba de la pantalla principal.',
+      'Un campo de búsqueda por modelo o patente.'
+    ],
+    tablas: 'PATENTE (A), MARCA (B), MODELO (C), ANIO (D), ESTADO (E), PRECIO (F)',
+    color: 'El resumen va en dos tarjetas grandes arriba: una para En Taller y otra para Para Venta.'
+  },
+  {
+    n: 15, negocio: 'Pedidos de Librería Escolar', cliente: 'la librería',
+    problema: 'Se viene el inicio de clases y hay que armar mochilas sin quedarse sin stock.',
+    archivo: 'Caso_15_Libreria.xlsx',
+    logica: [
+      'Comparar el stock físico contra el stock mínimo, fila por fila.',
+      'Si el stock físico es menor al mínimo, marcar el artículo con la palabra "COMPRAR".',
+      'Mostrar una lista solo con los artículos a reponer, ordenada por urgencia.'
+    ],
+    tablas: 'ARTICULO (A), RUBRO (B), STOCK_FISICO (C), STOCK_MINIMO (D), PRECIO (E), PROVEEDOR (F)',
+    color: 'A reponer se pinta de amarillo; crítico, en rojo. El botón de búsqueda filtra por artículo.'
+  }
+];
+
+var DRIVE = 'https://drive.google.com/drive/folders/1bhb12GjpYFGr_qOso_mNYkzpddHJJOKw?usp=sharing';
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function lista(items, tag) {
+  var html = '<' + tag + '>';
+  for (var i = 0; i < items.length; i++) html += '<li>' + items[i] + '</li>';
+  return html + '</' + tag + '>';
+}
+
+function promptDe(c) {
+  return 'Soy asistente administrativo y necesito una aplicación web para mi planilla de Google Sheets.\n' +
+    '\n' +
+    'Mi planilla se llama BD_ de mi caso y tiene una pestaña "Datos" con estas columnas:\n' +
+    c.tablas + '\n' +
+    '\n' +
+    'La aplicación tiene que cumplir esta lógica:\n' +
+    c.logica.map(function (l, i) { return (i + 1) + '. ' + l; }).join('\n') +
+    '\n' +
+    'Detalle de presentación: ' + c.color + '\n' +
+    '\n' +
+    'Necesito que me entregues DOS archivos, en este orden:\n' +
+    '\n' +
+    'Archivo 1 — Code.gs (lógica del servidor):\n' +
+    'Debe leer la hoja con getDataRange().getValues(), aplicar la lógica indicada y devolver\n' +
+    'los datos en formato JSON. Incluí una función doGet(e) para que la aplicación sea desplegable.\n' +
+    '\n' +
+    'Archivo 2 — index.html (interfaz):\n' +
+    'Debe mostrar los datos que le devuelve Code.gs usando google.script.run, con el listado\n' +
+    'y los colores indicados arriba.\n' +
+    '\n' +
+    'Usá JavaScript ES5, sin librerías externas y sin frameworks. Mostrá cada archivo completo,\n' +
+    'con su nombre de archivo arriba, sin parciales ni fragmentos.';
+}
+
+function renderCaso(c) {
+  var tareas = lista(c.logica, 'ol');
+  return '' +
+    '<article class="version visible" aria-labelledby="titulo-v' + c.n + '">' +
+      '<div class="encabezado-version">' +
+        '<span class="insignia">Alumno ' + (c.n < 10 ? '0' + c.n : c.n) + '</span>' +
+        '<h2 id="titulo-v' + c.n + '">' + esc(c.negocio) + '</h2>' +
+        '<p>' + esc(c.problema) + '</p>' +
+      '</div>' +
+
+      '<div class="bloque">' +
+        '<h3>Tu planilla</h3>' +
+        '<p style="margin-bottom:10px;">Descargá tu archivo, subilo a Google Sheets y abrilo con tu cuenta:</p>' +
+        '<p style="margin-bottom:14px;"><a href="' + DRIVE + '" target="_blank" rel="noopener">📁 Carpeta con los 15 casos en Google Drive</a></p>' +
+        '<p>Tu archivo: <span class="nombre-archivo">' + esc(c.archivo) + '</span></p>' +
+      '</div>' +
+
+      '<div class="bloque">' +
+        '<h3>Qué tiene que hacer tu aplicación</h3>' + tareas +
+        '<p style="margin-top:14px;color:var(--tenue);">' + esc(c.color) + '</p>' +
+      '</div>' +
+
+      '<div class="bloque">' +
+        '<h3>Tu prompt para Gemini</h3>' +
+        '<p style="margin-bottom:12px;color:var(--tenue);">Copiá todo el bloque, pegalo en Gemini y seguí las instrucciones que te dé.</p>' +
+        '<div class="prompt">' + esc(promptDe(c)) + '</div>' +
+      '</div>' +
+
+      '<div class="bloque">' +
+        '<h3>Pasos para entregar</h3>' +
+        '<ol>' +
+          '<li>Subí tu archivo .xlsx a Google Sheets y abrilo.</li>' +
+          '<li>Entrá por <strong>Extensiones → Apps Script</strong>.</li>' +
+          '<li>Creá el archivo <strong>index.html</strong> desde el botón <strong>+</strong> al lado de Archivos.</li>' +
+          '<li>Pegá el <strong>.gs</strong> que te dio Gemini en <strong>Code.gs</strong> y el <strong>.html</strong> en <strong>index.html</strong>.</li>' +
+          '<li>Guardá el proyecto y probá la aplicación desde la vista previa.</li>' +
+          '<li>Si sale un error en rojo, copialo completo y pegalo en Gemini con la pregunta de cómo solucionarlo.</li>' +
+          '<li>Implementá como <strong>Aplicación web</strong> (ejecutar como: yo, acceso: cualquiera) y copiá la URL.</li>' +
+        '</ol>' +
+        '<p style="margin-top:14px;"><strong>Entrega:</strong> la URL de tu aplicación funcionando y una captura de la pantalla con datos cargados.</p>' +
+      '</div>' +
+    '</article>';
+}
+
+var contenido = document.getElementById('contenido-version');
+var grilla = document.getElementById('grilla');
+var select = document.getElementById('alumno');
+
+// selector
+for (var i = 0; i < CASOS.length; i++) {
+  var o = document.createElement('option');
+  o.value = String(CASOS[i].n);
+  o.textContent = 'Alumno ' + (CASOS[i].n < 10 ? '0' + CASOS[i].n : CASOS[i].n) + ' — ' + CASOS[i].negocio;
+  select.appendChild(o);
+}
+
+// grilla
+for (var j = 0; j < CASOS.length; j++) {
+  (function (c) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tarjeta';
+    b.setAttribute('aria-current', 'false');
+    b.innerHTML =
+      '<span class="n">Alumno ' + (c.n < 10 ? '0' + c.n : c.n) + '</span>' +
+      '<span class="t">' + esc(c.negocio) + '</span>' +
+      '<span class="a">' + esc(c.archivo) + '</span>';
+    b.addEventListener('click', function () {
+      select.value = String(c.n);
+      mostrar(c.n);
+      contenido.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    grilla.appendChild(b);
+  })(CASOS[j]);
+}
+
+function mostrar(n) {
+  var c = null;
+  for (var k = 0; k < CASOS.length; k++) if (CASOS[k].n === n) c = CASOS[k];
+  if (!c) return;
+
+  contenido.innerHTML = renderCaso(c);
+
+  var tarjetas = grilla.querySelectorAll('.tarjeta');
+  for (var t = 0; t < tarjetas.length; t++) {
+    tarjetas[t].setAttribute('aria-current', t === n - 1 ? 'true' : 'false');
+  }
+  var h = contenido.querySelector('h2');
+  if (h) h.setAttribute('tabindex', '-1'), h.focus();
+}
+
+document.getElementById('btn-cargar').addEventListener('click', function () {
+  var n = parseInt(select.value, 10);
+  if (!n) {
+    select.focus();
+    return;
+  }
+  mostrar(n);
+});
+
+contenido.innerHTML =
+  '<div class="bloque"><h3>Todavía no elegiste tu versión</h3>' +
+  '<p>Elegí tu número de alumno arriba y presioná <strong>Ver mi consigna</strong>. ' +
+  'Cada alumno tiene un caso y una consigna distintos.</p></div>';
+</script>
+</body>
+</html>

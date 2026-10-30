@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const TEMARIOS_DIR = process.env.TEMARIOS_DIR || 'I:\\ITC\\CLASES ITC ARMADO ANTIGRAVITY';
+const TEMARIOS_DIR = process.env.TEMARIOS_DIR || 'I:\\ITC\\ClasesITC\\CLASES ITC ARMADO ANTIGRAVITY';
 const OUT = path.join(__dirname, '..', 'data', 'temarios.json');
 
 // Archivo de temario por id de capacitacion (coincide con tools/build-catalog.js)

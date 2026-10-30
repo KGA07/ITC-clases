@@ -21,6 +21,12 @@ const arg = (flag, def) => {
 };
 const rootDest = arg('--root', 'itc:Aula');
 const out = arg('--out', path.join(__dirname, '..', 'data', 'materiales.json'));
+// Mapa opcional curso.id -> carpeta raíz de Drive (si el nombre en Drive difiere
+// de curso.fuente, ej. "1 Secretariado Ejecutivo con IA" vs "1- Asistente...").
+const mapFile = arg('--map', null);
+const rowsFile = arg('--rows-file', null);
+let MAP = {};
+if (mapFile) MAP = JSON.parse(fs.readFileSync(mapFile, 'utf8'));
 
 function leerStdin() {
   return new Promise((resolve, reject) => {
@@ -38,7 +44,9 @@ function driveUrl(entry) {
 }
 
 async function main() {
-  const raw = await leerStdin();
+  const raw = rowsFile
+    ? fs.readFileSync(rowsFile, 'utf8').replace(/^\uFEFF/, '')
+    : await leerStdin();
   const rows = JSON.parse(raw || '[]');
 
   // Quita el prefijo del destino (ej. "Aula/")
@@ -54,7 +62,8 @@ async function main() {
   let faltantes = 0;
 
   const vincular = (curso, archivo) => {
-    const full = `${curso.fuente}/${archivo.ruta}`.replace(/\/+/g, '/').replace(/^\/+/, '');
+    const top = MAP[curso.id] || curso.fuente;
+    const full = `${top}/${archivo.ruta}`.replace(/\/+/g, '/').replace(/^\/+/, '');
     const hit = byPath.get(full) || byPath.get(full.replace(/\/+$/, '')) || byPath.get(`${full}/`);
     if (hit) {
       archivo.url = driveUrl(hit);

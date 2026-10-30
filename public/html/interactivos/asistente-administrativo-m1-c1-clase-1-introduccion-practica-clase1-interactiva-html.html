@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica: Organización del Escritorio</title>
+    <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0000f2;
+            color: #f2f2f2;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(242, 242, 242, 0.2);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Sección de contenido */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #a0d8ff;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(242, 242, 242, 0.2);
+        }
+
+        /* Introducción */
+        .introduction {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* Pasos prácticos */
+        .step {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+
+        .step-number {
+            font-weight: bold;
+            color: #a0d8ff;
+            margin-bottom: 5px;
+        }
+
+        /* Placeholders (SVG simulando escritorio) */
+        .desktop-placeholder {
+            text-align: center;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .desktop-svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Ejercicio interactivo */
+        .exercise-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 10px;
+            border: 2px solid rgba(242, 242, 242, 0.3);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #f2f2f2;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #a0d8ff;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .feedback.valid {
+            background-color: rgba(0, 255, 0, 0.1);
+            border: 1px solid #a0d8ff;
+            display: block;
+        }
+
+        .feedback.invalid {
+            background-color: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff6b6b;
+            display: block;
+        }
+
+        /* Botones */
+        button {
+            background-color: #a0d8ff;
+            color: #0000f2;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0000f2;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .desktop-svg {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Organización del Escritorio</h1>
+            <p>Práctica interactiva para aprender a organizar tus archivos</p>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Introducción</h2>
+            <div class="introduction">
+                <p>Organizar tu escritorio digital es clave para trabajar de manera eficiente. En esta práctica, aprenderás a:</p>
+                <ul>
+                    <li>Crear carpetas principales para diferentes tipos de archivos.</li>
+                    <li>Organizar subcarpetas para mantener todo ordenado.</li>
+                    <li>Guardar archivos de manera sistemática.</li>
+                </ul>
+                <p>Sigue los pasos a continuación y luego aplica lo aprendido en tu propio ejercicio.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Pasos Prácticos</h2>
+
+            <div class="step">
+                <div class="step-number">1. Abrir el escritorio y crear una carpeta</div>
+                <p>En tu escritorio, haz clic derecho y selecciona "Nueva carpeta". Dale un nombre descriptivo como "Trabajo" o "Documentos".</p>
+                <div class="desktop-placeholder">
+                    <svg class="desktop-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="180" fill="#333" rx="5"/>
+                        <rect x="20" y="20" width="150" height="100" fill="#444" rx="3"/>
+                        <text x="100" y="60" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat">Carpeta</text>
+                        <text x="100" y="80" text-anchor="middle" fill="#a0a0a0" font-family="Montserrat" font-size="12">Nueva carpeta</text>
+                        <circle cx="300" cy="50" r="10" fill="#f2f2f2"/>
+                        <text x="300" y="50" text-anchor="middle" fill="#000" font-family="Montserrat" font-size="10">Icono</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2. Crear subcarpetas para documentos</div>
+                <p>Dentro de la carpeta principal, crea subcarpetas como "Proyectos", "Facturas" o "Notas". Esto te ayudará a mantener todo organizado.</p>
+                <div class="desktop-placeholder">
+                    <svg class="desktop-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="180" fill="#333" rx="5"/>
+                        <rect x="20" y="20" width="150" height="100" fill="#444" rx="3"/>
+                        <text x="100" y="60" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat">Trabajo</text>
+                        <rect x="50" y="120" width="120" height="50" fill="#555" rx="2"/>
+                        <text x="110" y="150" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat" font-size="12">Proyectos</text>
+                        <rect x="200" y="120" width="120" height="50" fill="#555" rx="2"/>
+                        <text x="260" y="150" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat" font-size="12">Facturas</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3. Guardar un archivo de prueba</div>
+                <p>Crea un archivo de texto (puede ser un documento Word o PDF) y guárdalo dentro de la subcarpeta "Proyectos". Nómbralo con una descripción clara, como "Proyecto_X_Descripción".</p>
+                <div class="desktop-placeholder">
+                    <svg class="desktop-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="180" fill="#333" rx="5"/>
+                        <rect x="20" y="20" width="150" height="100" fill="#444" rx="3"/>
+                        <text x="100" y="60" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat">Trabajo</text>
+                        <rect x="50" y="120" width="120" height="50" fill="#555" rx="2"/>
+                        <text x="110" y="150" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat" font-size="12">Proyectos</text>
+                        <rect x="180" y="120" width="100" height="30" fill="#666" rx="2" style="margin-left: 20px;"/>
+                        <text x="230" y="140" text-anchor="middle" fill="#f2f2f2" font-family="Montserrat" font-size="12">Documento.txt</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Ejercicio Interactivo</h2>
+            <div class="exercise-container">
+                <p>Describe el proceso que seguirías para organizar los archivos de un nuevo proyecto en tu escritorio. Incluye:</p>
+                <ul>
+                    <li>Nombre de la carpeta principal.</li>
+                    <li>Subcarpetas que crearías.</li>
+                    <li>Ejemplo de cómo nombrarías un archivo.</li>
+                </ul>
+                <textarea id="userDescription" placeholder="Escribe aquí tu descripción..."></textarea>
+                <div id="feedback" class="feedback"></div>
+                <button id="checkButton">Verificar</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Validación básica para el ejercicio
+        document.getElementById('checkButton').addEventListener('click', function() {
+            const description = document.getElementById('userDescription').value.trim();
+            const feedbackElement = document.getElementById('feedback');
+
+            // Limpiar feedback anterior
+            feedbackElement.className = 'feedback';
+            feedbackElement.style.display = 'none';
+
+            // Validar que el texto no esté vacío
+            if (description === '') {
+                feedbackElement.textContent = 'Por favor, describe tu proceso.';
+                feedbackElement.className = 'feedback invalid';
+                feedbackElement.style.display = 'block';
+                return;
+            }
+
+            // Validar que contenga elementos clave (simplificado)
+            const requiredElements = ['carpeta', 'subcarpeta', 'archivo', 'nombre'];
+            let hasRequiredElements = requiredElements.some(elemento => description.toLowerCase().includes(elemento));
+
+            if (hasRequiredElements) {
+                feedbackElement.textContent = '¡Excelente descripción! Has incluido los elementos clave.';
+                feedbackElement.className = 'feedback valid';
+                feedbackElement.style.display = 'block';
+                // Cambiar borde del textarea a verde
+                document.getElementById('userDescription').style.borderColor = '#a0d8ff';
+            } else {
+                feedbackElement.textContent = 'Tu descripción podría ser más completa. Incluye detalles como nombres de carpetas o archivos.';
+                feedbackElement.className = 'feedback invalid';
+                feedbackElement.style.display = 'block';
+                // Cambiar borde del textarea a rojo
+                document.getElementById('userDescription').style.borderColor = '#ff6b6b';
+            }
+        });
+
+        // Validar al salir del textarea
+        document.getElementById('userDescription').addEventListener('blur', function() {
+            const description = this.value.trim();
+            if (description !== '') {
+                this.style.borderColor = '#a0d8ff';
+            }
+        });
+    </script>
+</body>
+</html>
