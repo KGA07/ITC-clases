@@ -55,6 +55,18 @@ async function loadData() {
         if (!memoryDB.asistencia || typeof memoryDB.asistencia !== 'object') { memoryDB.asistencia = {}; cambio = true; }
         for (const u of memoryDB.users || []) {
           if (u.nombre === config.profesorUser && u.tipo !== 'admin') { u.tipo = 'admin'; cambio = true; }
+          // migración multi-curso: docentes pasan de curso (string) a cursos (array)
+          if (u.tipo !== 'admin' && !Array.isArray(u.cursos)) { u.cursos = u.curso ? [u.curso] : []; cambio = true; }
+          if (u.tipo !== 'admin' && Array.isArray(u.cursos)) {
+            if (!u.curso && u.cursos.length) { u.curso = u.cursos[0]; cambio = true; }
+            if (u.curso && !u.cursos.includes(u.curso)) { u.cursos.unshift(u.curso); cambio = true; }
+          }
+        }
+        // migración multi-curso: alumnos pasan de curso (string) a cursos (array)
+        for (const a of memoryDB.alumnos || []) {
+          if (!Array.isArray(a.cursos)) { a.cursos = a.curso ? [a.curso] : []; cambio = true; }
+          if (!a.curso && a.cursos.length) { a.curso = a.cursos[0]; cambio = true; }
+          if (a.curso && !a.cursos.includes(a.curso)) { a.cursos.unshift(a.curso); cambio = true; }
         }
         if (cambio) await store.save(memoryDB);
       } else {

@@ -11,6 +11,14 @@ function passwordGenerada() {
   return `ITC${s(abc, 2)}${s(dig, 3)}`;
 }
 
+// lista de cursos desde body: acepta cursos (array) o curso (string único)
+function normalizarCursos(body) {
+  let arr = [];
+  if (Array.isArray(body && body.cursos)) arr = body.cursos.map(String).filter(Boolean);
+  else if (body && body.curso !== undefined && body.curso !== '') arr = [String(body.curso)];
+  return [...new Set(arr)];
+}
+
 function vistaDocente(u) {
   return {
     id: u.id,
@@ -22,6 +30,7 @@ function vistaDocente(u) {
     dia: u.dia || '',
     horario: u.horario || '',
     curso: u.curso || '',
+    cursos: Array.isArray(u.cursos) ? u.cursos.filter(Boolean) : (u.curso ? [u.curso] : []),
     creado: u.creado || ''
   };
 }
@@ -43,7 +52,7 @@ async function listar(req, res) {
 }
 
 async function crear(req, res) {
-  const { nombre, nombre_completo, email = '', dni = '', telefono = '', dia = '', horario = '', curso = '', password = '' } = req.body || {};
+  const { nombre, nombre_completo, email = '', dni = '', telefono = '', dia = '', horario = '', curso = '', cursos, password = '' } = req.body || {};
   if (!nombre || !nombre_completo) {
     return res.status(400).json({ error: 'Faltan usuario o nombre completo.' });
   }
@@ -53,6 +62,7 @@ async function crear(req, res) {
     return res.status(409).json({ error: `El usuario "${limpio}" ya existe.` });
   }
   const clave = password || passwordGenerada();
+  const cursosArr = normalizarCursos({ cursos, curso });
   const docente = {
     id: db.getNextId(data.users),
     nombre: limpio,
@@ -64,7 +74,8 @@ async function crear(req, res) {
     telefono: String(telefono).trim(),
     dia: String(dia).trim(),
     horario: String(horario).trim(),
-    curso: String(curso),
+    curso: cursosArr[0] || '',
+    cursos: cursosArr,
     creado: new Date().toISOString()
   };
   data.users.push(docente);
@@ -78,7 +89,7 @@ async function actualizar(req, res) {
   const docente = docenteDe(data, req.params.id);
   if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
 
-  const { nombre, nombre_completo, email, dni, telefono, dia, horario, curso, password } = req.body || {};
+  const { nombre, nombre_completo, email, dni, telefono, dia, horario, curso, cursos, password } = req.body || {};
   if (nombre && String(nombre).trim().toLowerCase() !== String(docente.nombre).toLowerCase()) {
     const nuevo = String(nombre).trim();
     if (await nombreOcupado(data, nuevo, docente.id)) {
@@ -92,7 +103,11 @@ async function actualizar(req, res) {
   if (telefono !== undefined) docente.telefono = String(telefono).trim();
   if (dia !== undefined) docente.dia = String(dia).trim();
   if (horario !== undefined) docente.horario = String(horario).trim();
-  if (curso !== undefined) docente.curso = String(curso);
+  if (cursos !== undefined || curso !== undefined) {
+    const arr = normalizarCursos({ cursos, curso: cursos === undefined ? docente.curso : curso });
+    docente.cursos = arr;
+    docente.curso = arr[0] || '';
+  }
   if (password) docente.password = bcrypt.hashSync(String(password), 10);
 
   await db.saveData();

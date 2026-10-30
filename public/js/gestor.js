@@ -457,6 +457,15 @@ function nombreCurso(id) {
   return c ? c.nombre : id || '—';
 }
 
+/* etiqueta de cursos de una persona (alumno/docente) */
+function etiquetaCursos(p) {
+  const lista = Array.isArray(p.cursos) && p.cursos.length ? p.cursos : (p.curso ? [p.curso] : []);
+  if (!lista.length) return '— sin curso asignado —';
+  if (lista.length === 1) return nombreCurso(lista[0]);
+  if (lista.length === 2) return lista.map(nombreCurso).join(' · ');
+  return nombreCurso(lista[0]) + ` +${lista.length - 1} más`;
+}
+
 function renderAlumnos() {
   const caja = document.getElementById('listaAlumnos');
   caja.innerHTML = '';
@@ -466,7 +475,7 @@ function renderAlumnos() {
     div.className = 'g-alumno';
     div.innerHTML =
       `<div class="g-alumno-head"><b>${esc(a.nombre_completo)}</b><span class="user-chip">${esc(a.usuario)}</span></div>` +
-      `<div class="g-alumno-meta">${nombreCurso(a.curso)}${a.horario ? ' · ' + esc(a.horario) : ''}${a.email ? '<br><small>' + esc(a.email) + '</small>' : ''}</div>` +
+      `<div class="g-alumno-meta">${esc(etiquetaCursos(a))}${a.horario ? ' · ' + esc(a.horario) : ''}${a.email ? '<br><small>' + esc(a.email) + '</small>' : ''}</div>` +
       `<div class="g-alumno-stats">${(a.permisos || []).length} materiales habilitados</div>`;
     const acciones = document.createElement('div');
     acciones.className = 'g-alumno-acciones';
@@ -494,15 +503,28 @@ function renderAlumnos() {
   });
 }
 
-function cursosAlSelect() {
-  const sel = document.getElementById('alumnoCurso');
-  sel.innerHTML = '<option value="">— sin curso asignado —</option>';
+function cursosAlSelect() { // reemplazado por checks multi-curso
+  llenarCursosChecks('alumnoCursosChk');
+}
+
+/* selector multi-curso: chips con checkbox, uno por capacitación */
+function llenarCursosChecks(id) {
+  const caja = document.getElementById(id);
+  if (!caja) return;
+  caja.innerHTML = '';
   (catalogo.capacitaciones || []).forEach((c) => {
-    const o = document.createElement('option');
-    o.value = c.id;
-    o.textContent = `${c.emoji} ${c.nombre}`;
-    sel.appendChild(o);
+    const lab = document.createElement('label');
+    lab.className = 'alta-curso-opt';
+    lab.innerHTML =
+      `<input type="checkbox" value="${esc(c.id)}"><span>${esc(c.emoji || '')} ${esc(c.nombre)}</span>`;
+    caja.appendChild(lab);
   });
+}
+
+/* leer los cursos marcados en la lista de checks */
+function leerCursosChecks(id) {
+  const caja = document.getElementById(id);
+  return caja ? [...caja.querySelectorAll('input:checked')].map((i) => i.value) : [];
 }
 
 function abrirModalAlumno() {
@@ -531,7 +553,7 @@ async function guardarAlumno(e) {
     telefono: document.getElementById('alumnoTelefono').value.trim(),
     dia: document.getElementById('alumnoDia').value.trim(),
     horario: document.getElementById('alumnoHorario').value.trim(),
-    curso: document.getElementById('alumnoCurso').value,
+    cursos: leerCursosChecks('alumnoCursosChk'),
     password: document.getElementById('alumnoPass').value.trim()
   };
   if (!body.nombre_completo || !body.usuario) return toast('Falta nombre o usuario.');
@@ -585,6 +607,8 @@ async function cambiarClaveAlumno(a) {
 let permisosAlumno = null;
 let permisosSet = new Set();
 let permisosCursoData = null;
+let permisosCursosLista = []; // [{id,nombre,emoji}]
+let permisosCursoSelId = '';
 
 async function abrirPermisos(a) {
   permisosAlumno = a;
@@ -592,15 +616,44 @@ async function abrirPermisos(a) {
   document.getElementById('modalPermisosTitulo').textContent = `Materiales de ${a.nombre_completo}`;
   document.getElementById('permisosClases').innerHTML = '<div class="loading"><span class="spinner"></span> Cargando material del curso…</div>';
   document.getElementById('modalPermisos').classList.remove('hidden');
-  try {
-    const res = await apiFetch(`/curso/${encodeURIComponent(a.curso)}`);
-    if (!res.ok) throw new Error('No se pudo cargar el curso.');
-    permisosCursoData = await res.json();
-    renderPermisos();
-  } catch (e) {
+
+  // cursos del alumno (compatible con un solo curso)
+  const ids = Array.isArray(a.cursos) && a.cursos.length ? a.cursos : (a.curso ? [a.curso] : []);
+  permisosCursosLista = ids
+    .map((id) => {
+      const c = (catalogo.capacitaciones || []).find((x) => x.id === id);
+      return c ? { id, nombre: c.nombre, emoji: c.emoji || '' } : null;
+    })
+    .filter(Boolean);
+  const sel = document.getElementById('permisosCursoSel');
+  if (permisosCursosLista.length > 1) {
+    sel.classList.remove('hidden');
+    sel.onchange = () => { permisosCursoSelId = sel.value; cargarPermisosCurso().catch((e) => toast(e.message)); };
+    sel.innerHTML = permisosCursosLista
+      .map((c) => `<option value="${esc(c.id)}" ${c.id === (permisosCursoSelId || permsSelDefault()) ? 'selected' : ''}>${esc(c.emoji)} ${esc(c.nombre)}</option>`)
+      .join('');
+    permisosCursoSelId = sel.value;
+  } else {
+    sel.classList.add('hidden');
+    sel.innerHTML = '';
+    permisosCursoSelId = permisosCursosLista.length ? permisosCursosLista[0].id : '';
+  }
+  await cargarPermisosCurso().catch((e) => {
     toast(e.message);
     document.getElementById('permisosClases').innerHTML = `<p class="g-vacio">${esc(e.message)}</p>`;
-  }
+  });
+}
+
+function permsSelDefault() {
+  return permisosCursosLista.length ? permisosCursosLista[0].id : '';
+}
+
+async function cargarPermisosCurso() {
+  if (!permisosCursoSelId) throw new Error('El alumno no tiene cursos asignados.');
+  const res = await apiFetch(`/curso/${encodeURIComponent(permisosCursoSelId)}`);
+  if (!res.ok) throw new Error('No se pudo cargar el curso.');
+  permisosCursoData = await res.json();
+  renderPermisos();
 }
 
 function renderPermisos() {
@@ -740,7 +793,7 @@ function renderDocentes() {
     div.className = 'g-alumno';
     div.innerHTML =
       `<div class="g-alumno-head"><b>${esc(d.nombre_completo)}</b><span class="user-chip">${esc(d.usuario)}</span></div>` +
-      `<div class="g-alumno-meta">📚 ${nombreCurso(d.curso)}${d.horario ? ' · ' + esc(d.dia || '') + ' ' + esc(d.horario) : ''}${d.email ? '<br><small>' + esc(d.email) + '</small>' : ''}</div>`;
+      `<div class="g-alumno-meta">📚 ${esc(etiquetaCursos(d))}${d.horario ? ' · ' + esc(d.dia || '') + ' ' + esc(d.horario) : ''}${d.email ? '<br><small>' + esc(d.email) + '</small>' : ''}</div>`;
     const acciones = document.createElement('div');
     acciones.className = 'g-alumno-acciones';
     const btnPanel = document.createElement('button');
@@ -769,14 +822,7 @@ function renderDocentes() {
 }
 
 function abrirModalDocente() {
-  const sel = document.getElementById('docenteCurso');
-  sel.innerHTML = '<option value="">— sin curso asignado —</option>';
-  (catalogo.capacitaciones || []).forEach((c) => {
-    const o = document.createElement('option');
-    o.value = c.id;
-    o.textContent = `${c.emoji} ${c.nombre}`;
-    sel.appendChild(o);
-  });
+  llenarCursosChecks('docenteCursosChk');
   document.getElementById('formDocente').reset();
   document.getElementById('modalDocenteTitulo').textContent = 'Nuevo docente';
   document.getElementById('credencialesDocenteBox').classList.add('hidden');
@@ -795,7 +841,7 @@ async function guardarDocente(e) {
     telefono: document.getElementById('docenteTelefono').value.trim(),
     dia: document.getElementById('docenteDia').value.trim(),
     horario: document.getElementById('docenteHorario').value.trim(),
-    curso: document.getElementById('docenteCurso').value,
+    cursos: leerCursosChecks('docenteCursosChk'),
     password: document.getElementById('docentePass').value.trim()
   };
   if (!body.nombre_completo || !body.nombre) return toast('Falta nombre o usuario.');

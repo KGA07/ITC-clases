@@ -30,10 +30,24 @@ async function panel(req, res) {
   if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
 
   const c = getCatalog();
-  const curso = docente.curso ? c.cursoIndex.get(docente.curso) : null;
-  const alumnos = docente.curso
+  // cursos del docente (compatible con registros viejos de un solo curso)
+  const mis = Array.isArray(docente.cursos) && docente.cursos.length
+    ? docente.cursos.filter(Boolean)
+    : (docente.curso ? [docente.curso] : []);
+  // curso activo: por query (?curso=) o el primero asignado
+  const pedido = String(req.query.curso || docente.curso || mis[0] || '');
+  const activo = mis.includes(pedido) ? pedido : (mis[0] || '');
+  const infoCursos = mis
+    .map((id) => {
+      const cu = c.cursoIndex.get(id);
+      return cu ? { id: cu.id, nombre: cu.nombre, emoji: cu.emoji, color: cu.color } : null;
+    })
+    .filter(Boolean);
+
+  const curso = activo ? c.cursoIndex.get(activo) : null;
+  const alumnos = activo
     ? data.alumnos
-        .filter((a) => a.curso === docente.curso)
+        .filter((a) => (Array.isArray(a.cursos) && a.cursos.length ? a.cursos.includes(activo) : a.curso === activo))
         .map((a) => ({
           id: a.id,
           usuario: a.usuario,
@@ -46,16 +60,16 @@ async function panel(req, res) {
         }))
     : [];
 
-  // habilitaciones solo de su curso: { [claseId]: fecha }
+  // habilitaciones solo del curso activo: { [claseId]: fecha }
   const habilitaciones = {};
   for (const [k, v] of Object.entries(data.habilitaciones || {})) {
-    if (k.startsWith(`${docente.curso}::`)) habilitaciones[k.split('::')[1]] = v.fecha || '';
+    if (k.startsWith(`${activo}::`)) habilitaciones[k.split('::')[1]] = v.fecha || '';
   }
 
-  // asistencia de las clases de su curso: { [claseId]: { [alumnoId]: {estado, fecha} } }
+  // asistencia de las clases del curso activo: { [claseId]: { [alumnoId]: {estado, fecha} } }
   const asistencia = {};
   for (const [claseId, marcas] of Object.entries(data.asistencia || {})) {
-    if (!c.claseIndex.get(claseId) || c.claseIndex.get(claseId).cursoId !== docente.curso) continue;
+    if (!c.claseIndex.get(claseId) || c.claseIndex.get(claseId).cursoId !== activo) continue;
     const limpio = {};
     for (const [alumnoId, m] of Object.entries(marcas)) {
       if (alumnos.some((a) => String(a.id) === String(alumnoId))) limpio[alumnoId] = { estado: m.estado, fecha: m.fecha };
@@ -64,9 +78,10 @@ async function panel(req, res) {
   }
 
   res.json({
-    docente: { id: docente.id, nombre_completo: docente.nombre_completo, curso: docente.curso || '', horario: docente.horario || '' },
+    docente: { id: docente.id, nombre_completo: docente.nombre_completo, curso: activo, cursos: mis, horario: docente.horario || '' },
     nombreCurso: curso ? curso.nombre : '',
     curso: curso ? vistaCursoLiviana(curso) : null,
+    cursosAsignados: infoCursos,
     alumnos,
     habilitaciones,
     asistencia
@@ -76,14 +91,15 @@ async function panel(req, res) {
 async function habilitar(req, res) {
   const data = await db.loadData();
   const docente = data.users.find((u) => String(u.id) === String(req.user.id));
-  if (!docente || !docente.curso) return res.status(400).json({ error: 'Docente sin curso asignado.' });
+  const mis = docente ? (Array.isArray(docente.cursos) && docente.cursos.length ? docente.cursos.filter(Boolean) : (docente.curso ? [docente.curso] : [])) : [];
+  if (!docente || !mis.length) return res.status(400).json({ error: 'Docente sin curso asignado.' });
   const { claseId, habilitada } = req.body || {};
   const c = getCatalog();
   const clase = c.claseIndex.get(String(claseId || ''));
-  if (!clase || clase.cursoId !== docente.curso) {
-    return res.status(400).json({ error: 'La clase no pertenece a tu curso.' });
+  if (!clase || !mis.includes(clase.cursoId)) {
+    return res.status(400).json({ error: 'La clase no pertenece a tus cursos.' });
   }
-  const key = `${docente.curso}::${clase.id}`;
+  const key = `${clase.cursoId}::${clase.id}`;
   if (habilitada) {
     data.habilitaciones[key] = { fecha: new Date().toISOString().slice(0, 10), por: String(docente.id) };
   } else {
@@ -96,13 +112,15 @@ async function habilitar(req, res) {
 async function asistencia(req, res) {
   const data = await db.loadData();
   const docente = data.users.find((u) => String(u.id) === String(req.user.id));
-  if (!docente || !docente.curso) return res.status(400).json({ error: 'Docente sin curso asignado.' });
+  const mis = docente ? (Array.isArray(docente.cursos) && docente.cursos.length ? docente.cursos.filter(Boolean) : (docente.curso ? [docente.curso] : [])) : [];
+  if (!docente || !mis.length) return res.status(400).json({ error: 'Docente sin curso asignado.' });
   const { claseId, alumnoId, estado } = req.body || {};
   const c = getCatalog();
   const clase = c.claseIndex.get(String(claseId || ''));
   const alumno = data.alumnos.find((a) => String(a.id) === String(alumnoId));
-  if (!clase || clase.cursoId !== docente.curso) return res.status(400).json({ error: 'La clase no pertenece a tu curso.' });
-  if (!alumno || alumno.curso !== docente.curso) return res.status(400).json({ error: 'El alumno no es de tu curso.' });
+  if (!clase || !mis.includes(clase.cursoId)) return res.status(400).json({ error: 'La clase no pertenece a tus cursos.' });
+  const cursosAlumno = Array.isArray(alumno && alumno.cursos) && alumno.cursos.length ? alumno.cursos : (alumno ? [alumno.curso] : []);
+  if (!alumno || !cursosAlumno.includes(clase.cursoId)) return res.status(400).json({ error: 'El alumno no es de tu curso.' });
   if (!['presente', 'ausente', 'sin-marcar'].includes(estado)) return res.status(400).json({ error: 'Estado inválido.' });
 
   data.asistencia[clase.id] = data.asistencia[clase.id] || {};

@@ -26,9 +26,9 @@ function clasesEnOrden() {
 }
 
 // ── carga ──────────────────────────────────────────────────────────────────
-async function cargar() {
+async function cargar(cursoId = '') {
   try {
-    const res = await apiFetch('/prof/panel');
+    const res = await apiFetch('/prof/panel' + (cursoId ? `?curso=${encodeURIComponent(cursoId)}` : ''));
     if (res.status === 401) return logout();
     if (!res.ok) throw new Error('No se pudo cargar el panel.');
     estado = await res.json();
@@ -42,6 +42,20 @@ async function cargar() {
     document.getElementById('pDocenteNombre').textContent = estado.docente.nombre_completo || '';
     document.getElementById('pCursoLateral').textContent = `${estado.curso.emoji || ''} ${estado.nombreCurso}`;
     document.getElementById('pTituloCurso').textContent = `${estado.curso.emoji || ''} ${estado.nombreCurso}`;
+
+    // selector de curso si el docente tiene varios
+    const selCurso = document.getElementById('pCursoSel');
+    const varios = (estado.cursosAsignados || []).length > 1;
+    if (selCurso && varios) {
+      selCurso.classList.remove('hidden');
+      const valor = estado.docente.curso;
+      selCurso.innerHTML = (estado.cursosAsignados || [])
+        .map((c) => `<option value="${esc(c.id)}" ${c.id === valor ? 'selected' : ''}>${esc(c.emoji || '')} ${esc(c.nombre)}</option>`)
+        .join('');
+    } else if (selCurso) {
+      selCurso.classList.add('hidden');
+    }
+
     document.getElementById('pSubGeneral').textContent = `${clasesEnOrden().length} clases · ${estado.alumnos.length} alumnos`;
     renderGeneral();
     renderAlumnos();
@@ -213,5 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (l2) l2.addEventListener('click', salir);
 
   document.getElementById('pClaseAsis').addEventListener('change', renderAsistencia);
+  const selCurso = document.getElementById('pCursoSel');
+  if (selCurso) selCurso.addEventListener('change', () => cargar(selCurso.value));
   cargar();
 });

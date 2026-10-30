@@ -90,6 +90,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('alumnoSaludo').textContent = `Hola, ${d.nombre_completo || 'alumno'} 👋`;
     document.getElementById('loading').classList.add('hidden');
 
+    // cursos del alumno (array) con compat de un solo curso
+    const listaCursos = Array.isArray(d.cursos) && d.cursos.length
+      ? d.cursos
+      : (d.curso ? [d.curso] : []);
+
     if (d.sinMateriales) {
       document.getElementById('alumnoCursoNombre').textContent = 'Tu profesor todavía no habilitó materiales para vos.';
       const e = document.getElementById('empty');
@@ -97,31 +102,45 @@ document.addEventListener('DOMContentLoaded', async () => {
       e.textContent = 'Cuando el profesor los habilite, van a aparecer acá.';
       return;
     }
-    if (!d.curso) {
-      document.getElementById('alumnoCursoNombre').textContent = 'Sin curso asignado todavía.';
+    if (!listaCursos.length) {
+      document.getElementById('alumnoCursoNombre').textContent = 'Sin cursos asignados todavía.';
       const e = document.getElementById('empty');
       e.classList.remove('hidden');
-      e.textContent = 'Consultá con el profesor para que te asigne tu curso.';
+      e.textContent = 'Consultá con el administrador para que te asigne un curso.';
       return;
     }
 
-    document.getElementById('alumnoCursoNombre').textContent = `${d.curso.emoji || ''} ${d.curso.nombre}`;
-    document.title = `Mi Aula — ${d.curso.nombre}`;
+    if (listaCursos.length === 1) {
+      document.getElementById('alumnoCursoNombre').textContent = `${listaCursos[0].emoji || ''} ${listaCursos[0].nombre}`;
+      document.title = `Mi Aula — ${listaCursos[0].nombre}`;
+    } else {
+      document.getElementById('alumnoCursoNombre').textContent = `${listaCursos.length} capacitaciones · ${listaCursos.map((c) => c.emoji || '').join(' ')}`;
+      document.title = `Mi Aula — ${listaCursos.length} capacitaciones`;
+    }
 
     const caja = document.getElementById('listaMaterial');
     caja.innerHTML = '';
     let hayAlgo = false;
-    for (const mod of d.curso.modulos || []) {
-      const tituloMod = document.createElement('div');
-      tituloMod.className = 'alumno-modulo';
-      tituloMod.textContent = mod.titulo;
-      caja.appendChild(tituloMod);
-      for (const cl of mod.clases || []) {
-        const resCl = await apiFetch(`/alumno/clase/${encodeURIComponent(cl.id)}`);
-        if (!resCl.ok) continue;
-        const dc = await resCl.json();
-        const nodo = renderClase(dc.clase);
-        if (nodo) { caja.appendChild(nodo); hayAlgo = true; }
+    for (const cur of listaCursos) {
+      // con más de un curso, un título por cada uno
+      if (listaCursos.length > 1) {
+        const t = document.createElement('h2');
+        t.className = 'alumno-curso-titulo';
+        t.textContent = `${cur.emoji || ''} ${cur.nombre}`;
+        caja.appendChild(t);
+      }
+      for (const mod of cur.modulos || []) {
+        const tituloMod = document.createElement('div');
+        tituloMod.className = 'alumno-modulo';
+        tituloMod.textContent = mod.titulo;
+        caja.appendChild(tituloMod);
+        for (const cl of mod.clases || []) {
+          const resCl = await apiFetch(`/alumno/clase/${encodeURIComponent(cl.id)}`);
+          if (!resCl.ok) continue;
+          const dc = await resCl.json();
+          const nodo = renderClase(dc.clase);
+          if (nodo) { caja.appendChild(nodo); hayAlgo = true; }
+        }
       }
     }
     if (!hayAlgo) {

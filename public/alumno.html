@@ -35,6 +35,12 @@
     .alumno-clase > summary::after { content: '▸'; margin-left: auto; transition: transform .15s; color: var(--text-soft); }
     .alumno-clase[open] > summary::after { transform: rotate(90deg); }
     .alumno-modulo { font-size: .72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-soft); font-weight: 800; padding: 16px 18px 6px; }
+    .alumno-curso-titulo {
+      margin: 26px 0 2px; font-size: 1.15rem; font-weight: 800;
+      display: flex; align-items: center; gap: 6px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--border);
+    }
+    .alumno-curso-titulo:first-child { margin-top: 6px; }
     .alumno-archivo {
       display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-top: 1px solid var(--border);
     }

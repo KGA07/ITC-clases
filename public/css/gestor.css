@@ -224,11 +224,14 @@
   margin-bottom: 6px; letter-spacing: 0.02em;
 }
 .alta-campo label i { color: var(--primary); font-style: normal; }
-.alta-campo input, .alta-campo select {
+.alta-campo input:not([type='checkbox']), .alta-campo select {
   width: 100%; height: 44px; padding: 0 13px; font: inherit; font-size: 14.5px;
   color: var(--text); background: var(--surface);
   border: 1.5px solid var(--border); border-radius: 10px;
   transition: border-color 0.15s, box-shadow 0.15s;
+}
+.alta-campo input[type='checkbox'] {
+  width: 15px; height: 15px; flex-shrink: 0; accent-color: var(--primary); cursor: pointer; margin: 0;
 }
 .alta-campo input[readonly] { background: var(--surface-2); cursor: default; }
 .alta-campo input:focus, .alta-campo select:focus {
@@ -271,6 +274,33 @@
 .modal-alta:has(.alta-form[style*='none']) .alta-foot { display: none; }
 .modal-alta:has(.alta-form[style*='none']) .alta-icono { background: rgba(22, 163, 74, 0.12); }
 @media (max-width: 560px) { .alta-form { grid-template-columns: 1fr; } }
+
+/* selector multi-curso (alumno / docente) */
+.alta-campo .alta-lado { font-weight: 600; color: #9aa8bd; margin-left: 6px; }
+.alta-cursos {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 10px; max-height: 190px; overflow: auto; background: var(--surface);
+}
+.alta-curso-opt {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 12px; border: 1.5px solid var(--border); border-radius: 999px;
+  font-size: 13.5px; font-weight: 700; color: var(--text);
+  cursor: pointer; user-select: none; background: var(--surface);
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.alta-curso-opt:hover { border-color: var(--primary); }
+.alta-curso-opt:has(input:checked) { background: var(--primary-soft); border-color: var(--primary); color: var(--primary-dark); }
+[data-theme='dark'] .alta-curso-opt:has(input:checked) { color: var(--text); }
+.alta-curso-opt input { accent-color: var(--primary); margin: 0; cursor: pointer; }
+
+/* selector de curso en el modal de permisos */
+#permisosCursoSel {
+  max-width: 200px; height: 34px; font: inherit; font-size: 13px; font-weight: 700;
+  color: var(--text); background: var(--surface);
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+}
+#permisosCursoSel.hidden { display: none; }
 
 /* responsive */
 @media (max-width: 1100px) {

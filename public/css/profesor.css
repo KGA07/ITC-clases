@@ -9,6 +9,14 @@
 .p-side-marca { display: flex; align-items: center; gap: 10px; padding: 0 18px; }
 .p-side-marca img { height: 38px; }
 .p-side-marca span { font-weight: 800; font-size: .85rem; color: #0b2c5f; }
+/* selector de curso activo (docentes con más de un curso) */
+.p-curso-sel {
+  margin: 0 18px; padding: 8px 10px; font: inherit; font-size: .82rem; font-weight: 700;
+  color: #26415f; background: #eef4fd; border: 1.5px solid var(--border); border-radius: 9px;
+  cursor: pointer;
+}
+.p-curso-sel:focus { outline: none; border-color: var(--primary); }
+.p-curso-sel.hidden { display: none; }
 .p-nav { display: flex; flex-direction: column; gap: 2px; padding: 0 10px; }
 .p-nav-item {
   text-align: left; padding: 11px 14px; border-radius: 10px; border: 0; background: transparent;

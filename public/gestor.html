@@ -166,9 +166,9 @@
               <option value="21:30">21:30</option>
               <option value="22:00">22:00</option>
             </select></div>
-          <div class="alta-campo">
-            <label for="alumnoCurso">Curso</label>
-            <select id="alumnoCurso"></select></div>
+          <div class="alta-campo alta-full">
+            <label for="alumnoCursosChk">Cursos <span class="alta-lado">podés marcar varios</span></label>
+            <div class="alta-cursos" id="alumnoCursosChk"></div></div>
           <div class="alta-campo">
             <label for="alumnoUsuario">Usuario <i>*</i></label>
             <input type="text" id="alumnoUsuario" required placeholder="juan.perez" autocomplete="off"></div>
@@ -194,7 +194,8 @@
       <div class="modal" style="max-width:720px">
         <div class="modal-head">
           <b id="modalPermisosTitulo">Materiales habilitados</b>
-          <div style="display:flex;gap:8px">
+          <div style="display:flex;gap:8px;align-items:center">
+            <select id="permisosCursoSel" class="hidden" aria-label="Curso"></select>
             <button type="button" class="btn btn-ghost btn-sm" id="btnPermisosTodos">Habilitar todo el curso</button>
             <button type="button" class="btn btn-primary btn-sm" id="modalPermisosCerrar">Listo ✕</button>
           </div>
@@ -284,9 +285,9 @@
               <option value="21:30">21:30</option>
               <option value="22:00">22:00</option>
             </select></div>
-          <div class="alta-campo">
-            <label for="docenteCurso">Curso a cargo</label>
-            <select id="docenteCurso"></select></div>
+          <div class="alta-campo alta-full">
+            <label for="docenteCursosChk">Cursos a cargo <span class="alta-lado">podés asignar varios</span></label>
+            <div class="alta-cursos" id="docenteCursosChk"></div></div>
           <div class="alta-campo">
             <label for="docenteUsuario">Usuario <i>*</i></label>
             <input type="text" id="docenteUsuario" required placeholder="maria.gomez" autocomplete="off"></div>
