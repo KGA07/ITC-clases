@@ -128,6 +128,12 @@ body.en-preview .p-side { height: calc(100vh - 46px); }
 .btn-aus.sel { background: #dc2626; color: #fff; border-color: #dc2626; outline-color: rgba(220,38,38,.25); }
 
 .p-modulo-titulo { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-soft); font-weight: 800; margin: 20px 0 8px; }
+.p-curso-titulo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.15rem; font-weight: 800; margin: 26px 0 6px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--border); color: var(--text);
+}
+.p-curso-titulo .emoji { font-size: 1.25rem; }
 
 @media (max-width: 760px) {
   .prof-body { flex-direction: column; }

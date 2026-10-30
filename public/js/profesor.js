@@ -21,7 +21,8 @@ function clasePorId(id) {
 }
 function clasesEnOrden() {
   const out = [];
-  for (const m of (estado.curso || {}).modulos || []) for (const cl of m.clases || []) out.push(cl);
+  const lista = (estado.cursosDetalle && estado.cursosDetalle.length) ? estado.cursosDetalle : [{ curso: estado.curso }];
+  for (const c of lista) for (const m of (c.curso || {}).modulos || []) for (const cl of m.clases || []) out.push(cl);
   return out;
 }
 
@@ -93,8 +94,73 @@ function cardClase(cl, n) {
   return card;
 }
 
-/* Todas las clases del curso, agrupadas por módulo y desplegadas (sin
-   flechitas ni plegar): la lista completa se ve directo en el bloque. */
+/* Panel General: muestra TODOS los cursos del docente, cada uno con sus
+   clases (con Habilitar/Ver/Presentar), siempre desplegadas. */
+function pintarPanelGeneral(caja) {
+  caja.innerHTML = '';
+  const lista = (estado.cursosDetalle && estado.cursosDetalle.length)
+    ? estado.cursosDetalle
+    : (estado.curso ? [{ id: estado.curso.id, nombre: estado.nombreCurso, emoji: estado.curso.emoji, color: estado.curso.color, curso: estado.curso }] : []);
+  let total = 0;
+  for (const c of lista) {
+    const header = document.createElement('div');
+    header.className = 'p-curso-titulo';
+    header.innerHTML = `<span class="emoji" aria-hidden="true">${esc(c.emoji || '')}</span><span>${esc(c.nombre)}</span>`;
+    caja.appendChild(header);
+    let n = 0;
+    for (const mod of (c.curso || {}).modulos || []) {
+      const t = document.createElement('div');
+      t.className = 'p-modulo-titulo';
+      t.textContent = mod.titulo;
+      caja.appendChild(t);
+      const grid = document.createElement('div');
+      grid.className = 'p-clase-grid';
+      for (const cl of mod.clases || []) {
+        n++;
+        total++;
+        grid.appendChild(cardClase(cl, n));
+      }
+      caja.appendChild(grid);
+    }
+    if (!n) {
+      const p = document.createElement('p');
+      p.className = 'sub';
+      p.textContent = 'Este curso no tiene clases en el catálogo.';
+      caja.appendChild(p);
+    }
+  }
+  if (!lista.length) caja.innerHTML = '<p class="sub">Sin cursos asignados todavía.</p>';
+  caja.querySelectorAll('[data-hab]').forEach((b) => b.addEventListener('click', () => {
+    const hab = (estado.habilitaciones || {})[b.dataset.hab];
+    toggleHabilitacion(b.dataset.hab, !hab);
+  }));
+  caja.querySelectorAll('[data-ver]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.ver, false)));
+  caja.querySelectorAll('[data-pres]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.pres, true)));
+}
+
+function renderGeneral() {
+  const total = clasesEnOrden().length;
+  const hab = clasesHabilitadasCount();
+  document.getElementById('pStats').innerHTML =
+    `<div class="p-stat"><b>${estado.alumnos.length}</b><span>alumnos activos</span></div>` +
+    `<div class="p-stat"><b>${hab}</b><span>clases habilitadas</span></div>` +
+    `<div class="p-stat"><b>${Math.max(total - hab, 0)}</b><span>clases por habilitar</span></div>`;
+  pintarPanelGeneral(document.getElementById('pRapidas'));
+}
+
+// ── Mis Alumnos ────────────────────────────────────────────────────────────
+function renderAlumnos() {
+  const caja = document.getElementById('pListaAlumnos');
+  document.getElementById('pSubAlumnos').textContent = `${estado.alumnos.length} alumnos del curso · entrada con usuario y contraseña en itc-clases.vercel.app`;
+  caja.innerHTML = estado.alumnos.length
+    ? estado.alumnos.map((a) =>
+      `<div class="p-alumno"><span class="p-avatar">${esc(initials(a.nombre_completo))}</span>` +
+      `<div><b>${esc(a.nombre_completo)}</b><small>${esc(a.usuario)}${a.horario ? ' · ' + esc(a.horario) : ''}<br>${esc(a.email || '')}${a.telefono ? ' · ' + esc(a.telefono) : ''}</small></div></div>`).join('')
+    : '<p class="sub">Todavía no hay alumnos cargados en tu curso. El administrador los carga desde el gestor.</p>';
+}
+
+// ── Gestión de Clases ──────────────────────────────────────────────────────
+/* Gestión de Clases: un solo curso (el activo), con sus clases. */
 function pintarClases(caja) {
   caja.innerHTML = '';
   let n = 0;
@@ -120,29 +186,6 @@ function pintarClases(caja) {
   caja.querySelectorAll('[data-pres]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.pres, true)));
 }
 
-function renderGeneral() {
-  const total = clasesEnOrden().length;
-  const hab = clasesHabilitadasCount();
-  document.getElementById('pStats').innerHTML =
-    `<div class="p-stat"><b>${estado.alumnos.length}</b><span>alumnos activos</span></div>` +
-    `<div class="p-stat"><b>${hab}</b><span>clases habilitadas</span></div>` +
-    `<div class="p-stat"><b>${Math.max(total - hab, 0)}</b><span>clases por habilitar</span></div>`;
-  // Panel General: la lista completa de clases, siempre desplegada
-  pintarClases(document.getElementById('pRapidas'));
-}
-
-// ── Mis Alumnos ────────────────────────────────────────────────────────────
-function renderAlumnos() {
-  const caja = document.getElementById('pListaAlumnos');
-  document.getElementById('pSubAlumnos').textContent = `${estado.alumnos.length} alumnos del curso · entrada con usuario y contraseña en itc-clases.vercel.app`;
-  caja.innerHTML = estado.alumnos.length
-    ? estado.alumnos.map((a) =>
-      `<div class="p-alumno"><span class="p-avatar">${esc(initials(a.nombre_completo))}</span>` +
-      `<div><b>${esc(a.nombre_completo)}</b><small>${esc(a.usuario)}${a.horario ? ' · ' + esc(a.horario) : ''}<br>${esc(a.email || '')}${a.telefono ? ' · ' + esc(a.telefono) : ''}</small></div></div>`).join('')
-    : '<p class="sub">Todavía no hay alumnos cargados en tu curso. El administrador los carga desde el gestor.</p>';
-}
-
-// ── Gestión de Clases ──────────────────────────────────────────────────────
 function renderClases() {
   pintarClases(document.getElementById('pClasesModulos'));
 }

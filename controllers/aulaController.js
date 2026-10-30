@@ -60,10 +60,14 @@ async function panel(req, res) {
         }))
     : [];
 
-  // habilitaciones solo del curso activo: { [claseId]: fecha }
+  // habilitaciones de TODOS los cursos del docente (clave = claseId, que es
+  // globalmente único): así el Panel General puede mostrar el estado correcto
+  // de cada curso, no solo del activo.
   const habilitaciones = {};
   for (const [k, v] of Object.entries(data.habilitaciones || {})) {
-    if (k.startsWith(`${activo}::`)) habilitaciones[k.split('::')[1]] = v.fecha || '';
+    const claseId = k.split('::')[1];
+    const cl = c.claseIndex.get(claseId);
+    if (cl && mis.includes(cl.cursoId)) habilitaciones[claseId] = v.fecha || '';
   }
 
   // asistencia de las clases del curso activo: { [claseId]: { [alumnoId]: {estado, fecha} } }
@@ -82,6 +86,13 @@ async function panel(req, res) {
     nombreCurso: curso ? curso.nombre : '',
     curso: curso ? vistaCursoLiviana(curso) : null,
     cursosAsignados: infoCursos,
+    // todos los cursos del docente con sus clases (para el Panel General)
+    cursosDetalle: mis
+      .map((id) => {
+        const cu = c.cursoIndex.get(id);
+        return cu ? { id: cu.id, nombre: cu.nombre, emoji: cu.emoji, color: cu.color, curso: vistaCursoLiviana(cu) } : null;
+      })
+      .filter(Boolean),
     alumnos,
     habilitaciones,
     asistencia
