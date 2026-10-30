@@ -75,22 +75,60 @@ async function cargar(cursoId = '') {
 function clasesHabilitadasCount() {
   return Object.keys(estado.habilitaciones || {}).length;
 }
+
+/* Una tarjeta de clase (compartida por Panel General y Gestión de Clases) */
+function cardClase(cl, n) {
+  const hab = (estado.habilitaciones || {})[cl.id];
+  const card = document.createElement('div');
+  card.className = 'p-card p-clase';
+  card.innerHTML =
+    `<div class="p-num">${String(n).padStart(2, '0')}</div>` +
+    `<div class="p-clase-info"><b>${esc(cl.titulo)}${hab ? ' <span class="p-chip-ok">✔</span>' : ''}</b>` +
+    `<small>${cl.count} material(es)${hab ? ' · habilitada el ' + fechaCorta(hab) : ' · sin habilitar'}</small></div>` +
+    `<div class="p-acciones-fila">` +
+    `<button type="button" class="btn btn-sm btn-ghost" data-ver="${esc(cl.id)}" title="Ver los materiales de esta clase">📚 Ver</button>` +
+    `<button type="button" class="btn btn-sm btn-ghost" data-pres="${esc(cl.id)}" title="Proyectar la presentación a pantalla completa">▶ Presentar</button>` +
+    `<button type="button" class="btn btn-sm ${hab ? 'btn-deshab' : 'btn-primary'}" data-hab="${esc(cl.id)}">` +
+    `${hab ? '🔒 Deshabilitar' : '🔓 Habilitar'}</button></div>`;
+  return card;
+}
+
+/* Todas las clases del curso, agrupadas por módulo y desplegadas (sin
+   flechitas ni plegar): la lista completa se ve directo en el bloque. */
+function pintarClases(caja) {
+  caja.innerHTML = '';
+  let n = 0;
+  for (const mod of (estado.curso || {}).modulos || []) {
+    const t = document.createElement('div');
+    t.className = 'p-modulo-titulo';
+    t.textContent = mod.titulo;
+    caja.appendChild(t);
+    const grid = document.createElement('div');
+    grid.className = 'p-clase-grid';
+    for (const cl of mod.clases || []) {
+      n++;
+      grid.appendChild(cardClase(cl, n));
+    }
+    caja.appendChild(grid);
+  }
+  if (!n) caja.innerHTML = '<p class="sub">Este curso no tiene clases en el catálogo.</p>';
+  caja.querySelectorAll('[data-hab]').forEach((b) => b.addEventListener('click', () => {
+    const hab = (estado.habilitaciones || {})[b.dataset.hab];
+    toggleHabilitacion(b.dataset.hab, !hab);
+  }));
+  caja.querySelectorAll('[data-ver]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.ver, false)));
+  caja.querySelectorAll('[data-pres]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.pres, true)));
+}
+
 function renderGeneral() {
   const total = clasesEnOrden().length;
   const hab = clasesHabilitadasCount();
-  const proximas = clasesEnOrden().filter((cl) => !(estado.habilitaciones || {})[cl.id]).slice(0, 3);
   document.getElementById('pStats').innerHTML =
     `<div class="p-stat"><b>${estado.alumnos.length}</b><span>alumnos activos</span></div>` +
     `<div class="p-stat"><b>${hab}</b><span>clases habilitadas</span></div>` +
     `<div class="p-stat"><b>${Math.max(total - hab, 0)}</b><span>clases por habilitar</span></div>`;
-  const rap = document.getElementById('pRapidas');
-  rap.innerHTML = proximas.length
-    ? proximas.map((cl, i) =>
-      `<div class="p-card p-clase"><div class="p-num">${i + 1}</div>` +
-      `<div class="p-clase-info"><b>${esc(cl.titulo)}</b><small>sin habilitar todavía</small></div>` +
-      `<button type="button" class="btn btn-primary btn-sm" data-hab="${esc(cl.id)}">Habilitar</button></div>`).join('')
-    : '<p class="sub">Todo habilitado. 👍</p>';
-  rap.querySelectorAll('[data-hab]').forEach((b) => b.addEventListener('click', () => toggleHabilitacion(b.dataset.hab, true)));
+  // Panel General: la lista completa de clases, siempre desplegada
+  pintarClases(document.getElementById('pRapidas'));
 }
 
 // ── Mis Alumnos ────────────────────────────────────────────────────────────
@@ -106,41 +144,7 @@ function renderAlumnos() {
 
 // ── Gestión de Clases ──────────────────────────────────────────────────────
 function renderClases() {
-  const caja = document.getElementById('pClasesModulos');
-  caja.innerHTML = '';
-  let n = 0;
-  for (const mod of (estado.curso || {}).modulos || []) {
-    const t = document.createElement('div');
-    t.className = 'p-modulo-titulo';
-    t.textContent = mod.titulo;
-    caja.appendChild(t);
-    const grid = document.createElement('div');
-    grid.className = 'p-clase-grid';
-    for (const cl of mod.clases || []) {
-      n++;
-      const hab = (estado.habilitaciones || {})[cl.id];
-      const card = document.createElement('div');
-      card.className = 'p-card p-clase';
-      card.innerHTML =
-        `<div class="p-num">${String(n).padStart(2, '0')}</div>` +
-        `<div class="p-clase-info"><b>${esc(cl.titulo)}${hab ? ' <span class="p-chip-ok">✔</span>' : ''}</b>` +
-        `<small>${cl.count} material(es)${hab ? ' · habilitada el ' + fechaCorta(hab) : ' · sin habilitar'}</small></div>` +
-        `<div class="p-acciones-fila">` +
-        `<button type="button" class="btn btn-sm btn-ghost" data-ver="${esc(cl.id)}" title="Ver los materiales de esta clase">📚 Ver</button>` +
-        `<button type="button" class="btn btn-sm btn-ghost" data-pres="${esc(cl.id)}" title="Proyectar la presentación a pantalla completa">▶ Presentar</button>` +
-        `<button type="button" class="btn btn-sm ${hab ? 'btn-deshab' : 'btn-primary'}" data-hab="${esc(cl.id)}">` +
-        `${hab ? '🔒 Deshabilitar' : '🔓 Habilitar'}</button></div>`;
-      grid.appendChild(card);
-    }
-    caja.appendChild(grid);
-  }
-  if (!n) caja.innerHTML = '<p class="sub">Este curso no tiene clases en el catálogo.</p>';
-  caja.querySelectorAll('[data-hab]').forEach((b) => b.addEventListener('click', () => {
-    const hab = (estado.habilitaciones || {})[b.dataset.hab];
-    toggleHabilitacion(b.dataset.hab, !hab);
-  }));
-  caja.querySelectorAll('[data-ver]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.ver, false)));
-  caja.querySelectorAll('[data-pres]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.pres, true)));
+  pintarClases(document.getElementById('pClasesModulos'));
 }
 
 // ── Ver / presentar una clase ──────────────────────────────────────────────
