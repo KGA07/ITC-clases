@@ -46,7 +46,9 @@ const pages = {
   '/inicio': 'index.html',
   '/curso': 'curso.html',
   '/clase': 'clase.html',
-  '/gestor': 'gestor.html'
+  '/gestor': 'gestor.html',
+  '/alumno': 'alumno.html',
+  '/visor': 'visor.html'
 };
 Object.entries(pages).forEach(([route, file]) => {
   app.get(route, (req, res) => res.sendFile(path.join(publicDir, file)));

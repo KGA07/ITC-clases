@@ -30,6 +30,14 @@ function accionesArchivo(f) {
   }
 
   if (f.url) {
+    const idDrive = (`${f.url}`.match(/[?&]id=([A-Za-z0-9_-]+)/) || [])[1] || '';
+    if (f.tipo === 'PDF' && idDrive) {
+      const ver = document.createElement('a');
+      ver.className = 'btn btn-primary btn-sm';
+      ver.href = `/visor?t=${encodeURIComponent(f.nombre)}&drive=${idDrive}`;
+      ver.textContent = '👁 Ver';
+      wrap.appendChild(ver);
+    }
     const a = document.createElement('a');
     a.className = 'btn btn-ghost btn-sm';
     a.href = f.url;
@@ -65,6 +73,7 @@ function renderArchivo(f) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   if (!requireAuth(localStorage.getItem('itc_clases_nombre'))) return;
+  if (localStorage.getItem('itc_clases_tipo') === 'alumno') return (location.href = '/alumno');
   const id = new URLSearchParams(location.search).get('id');
   if (!id) {
     location.href = '/inicio';
@@ -111,6 +120,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   document.getElementById('modalClose').addEventListener('click', cerrarModal);
+  // boton "abrir en pestania": es un <button>, el href no navega; por JS
+  document.getElementById('modalOpen').addEventListener('click', () => {
+    if (modalFrame.src) window.open(modalFrame.src, '_blank', 'noopener');
+  });
   document.getElementById('modalFrame').addEventListener('load', () => {
     const openBtn = document.getElementById('modalOpen');
     openBtn.href = modalFrame.src;

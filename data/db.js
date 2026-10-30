@@ -32,6 +32,7 @@ function seedData() {
 
   return {
     users,
+    alumnos: [],
     refreshTokens: [],
     nextUserId: 3
   };
@@ -44,6 +45,8 @@ async function loadData() {
       const loaded = await store.load();
       if (loaded) {
         memoryDB = loaded;
+        // migración: bases creadas antes del módulo de alumnos
+        if (!Array.isArray(memoryDB.alumnos)) memoryDB.alumnos = [];
       } else {
         memoryDB = seedData();
         await store.save(memoryDB);

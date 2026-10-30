@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor - ITC Aula Virtual</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .visor { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+    .visor-head {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding: 10px 16px; border-bottom: 1px solid var(--border, #e5e7eb);
+      background: var(--card-bg, #fff);
+    }
+    .visor-head b { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .visor-cuerpo { flex: 1 1 auto; min-height: 0; background: #fff; }
+    .visor-cuerpo iframe { width: 100%; height: 100%; border: 0; display: block; }
+  </style>
+</head>
+<body>
+  <div class="visor">
+    <div class="visor-head">
+      <button type="button" class="btn btn-ghost btn-sm" id="visorVolver">← Volver</button>
+      <b id="visorTitulo">Material</b>
+      <a class="btn btn-ghost btn-sm hidden" id="visorNueva" target="_blank" rel="noopener">↗ Nueva pestaña</a>
+      <a class="btn btn-ghost btn-sm hidden" id="visorDescargar" download>⬇ Descargar</a>
+    </div>
+    <div class="visor-cuerpo">
+      <iframe id="visorFrame" title="Material" sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups"></iframe>
+    </div>
+  </div>
+  <script src="/js/visor.js"></script>
+</body>
+</html>

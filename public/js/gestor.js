@@ -11,6 +11,7 @@ const RUTA_CLASE = 'itc_gestor_ruta';
 /* ── arranque ─────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', async () => {
   if (!requireAuth(localStorage.getItem('itc_clases_nombre'))) return;
+  if (localStorage.getItem('itc_clases_tipo') === 'alumno') return (location.href = '/alumno');
   agregarLinkInicio();
   wireModos();
 
@@ -55,16 +56,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 function wireModos() {
   const tC = document.getElementById('tabClase');
   const tG = document.getElementById('tabContenido');
+  document.getElementById('tabAlumnos').addEventListener('click', () => cambiarModo('alumnos'));
   tC.addEventListener('click', () => cambiarModo('clase'));
   tG.addEventListener('click', () => cambiarModo('contenido'));
 }
 function cambiarModo(m) {
   const esClase = m === 'clase';
+  const esAlumnos = m === 'alumnos';
   document.getElementById('tabClase').classList.toggle('activo', esClase);
-  document.getElementById('tabContenido').classList.toggle('activo', !esClase);
+  document.getElementById('tabContenido').classList.toggle('activo', !esClase && !esAlumnos);
+  document.getElementById('tabAlumnos').classList.toggle('activo', esAlumnos);
   document.getElementById('panelClase').classList.toggle('hidden', !esClase);
-  document.getElementById('panelContenido').classList.toggle('hidden', esClase);
-  if (!esClase) refrescarEstado();
+  document.getElementById('panelContenido').classList.toggle('hidden', esClase || esAlumnos);
+  document.getElementById('panelAlumnos').classList.toggle('hidden', !esAlumnos);
+  if (esClase) { /* nada extra */ }
+  if (!esClase && !esAlumnos) refrescarEstado();
+  if (esAlumnos) refrescarAlumnos();
 }
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !document.getElementById('pantalla').classList.contains('hidden')) cerrarPantalla();
@@ -170,8 +177,12 @@ function pintarDetalle(data) {
   const caja = document.getElementById('detalleClase');
   caja.classList.remove('hidden');
 
-  const inter = cl.archivos.filter((f) => f.embebible && f.embedUrl);
-  const otras = cl.archivos.filter((f) => !(f.embebible && f.embedUrl));
+  const esDrive = (f) => /^https:\/\/drive\.google\.com\//.test(f.url || '');
+  const esPdfDrive = (f) => f.tipo === 'PDF' && f.url && esDrive(f);
+  const abreEnLinea = (f) => (f.embebible && f.embedUrl) || esPdfDrive(f);
+
+  const inter = cl.archivos.filter(abreEnLinea);
+  const otras = cl.archivos.filter((f) => !abreEnLinea(f));
 
   caja.innerHTML =
     `<div class="g-detalle-head">
@@ -180,42 +191,84 @@ function pintarDetalle(data) {
         <span>${esc(cl.modulo || '')}</span>
       </nav>
       <h2>${esc(cl.titulo)}</h2>
-      <p class="sub">${cl.archivos.length} materiales · ${inter.length} interactivos a pantalla · curso ${esc(data.curso)}</p>
+      <p class="sub">${cl.archivos.length} materiales · ${inter.length} para ver en pantalla · curso ${esc(data.curso)}</p>
     </div>` +
     (inter.length ? `<div class="g-seccion-titulo">🖥️ Para proyectar en clase</div><div class="g-materiales" id="gMats"></div>` : '') +
     (otras.length ? `<div class="g-seccion-titulo">📎 Todo el material de la clase</div><div class="g-materiales" id="gMatOtras"></div>` : '') +
     (!inter.length && !otras.length ? `<div class="g-vacio">Clase sin materiales cargados.</div>` : '');
 
-  const mapaC = (cont, x, archivo) => {
-    const b = document.createElement(x);
-    b.type = x === 'button' ? 'button' : undefined;
-    b.className = 'g-material' + (archivo.embebible && archivo.embedUrl ? ' inter' : '');
-    let destino = null;
-    if (archivo.embebible && archivo.embedUrl) destino = archivo.embedUrl;
-    else if (archivo.url) destino = archivo.url;
-    const inter2 = archivo.embebible && archivo.embedUrl;
+  const visorDe = (archivo) => {
+    const driveId = (`${archivo.url || ''}`.match(/[?&]id=([A-Za-z0-9_-]+)/) || [])[1] || '';
+    return `/visor?t=${encodeURIComponent(archivo.nombre)}${driveId ? `&drive=${driveId}` : `&src=${encodeURIComponent(archivo.embedUrl)}`}`;
+  };
+
+  // Interactivos: botón que abre a pantalla completa (modal del gestor).
+  // PDF de Drive: carta con dos acciones — ver con visor + descargar.
+  const ficha = (archivo) => {
+    if (archivo.embebible && archivo.embedUrl) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'g-material inter';
+      b.innerHTML =
+        `<span class="g-mat-emoji" aria-hidden="true">${archivo.emoji || '🌐'}</span>` +
+        `<span class="g-mat-titulo">${esc(archivo.nombre)}</span>` +
+        `<span class="g-mat-meta">${archivo.tipo}${archivo.size ? ' · ' + fmtSize(archivo.size) : ''} · en pantalla</span>`;
+      b.addEventListener('click', () => abrirPantalla(archivo.embedUrl, archivo.nombre));
+      return b;
+    }
+
+    const driveId = (`${archivo.url || ''}`.match(/[?&]id=([A-Za-z0-9_-]+)/) || [])[1] || '';
+    if (esPdfDrive(archivo) && driveId) {
+      const div = document.createElement('div');
+      div.className = 'g-material inter g-pdf';
+      div.innerHTML =
+        `<span class="g-mat-emoji" aria-hidden="true">${archivo.emoji || '📕'}</span>` +
+        `<span class="g-mat-titulo">${esc(archivo.nombre)}</span>` +
+        `<span class="g-mat-meta">${archivo.tipo}${archivo.size ? ' · ' + fmtSize(archivo.size) : ''} · visualizador + descarga</span>`;
+      const btns = document.createElement('span');
+      btns.className = 'g-pdf-botones';
+      const ver = document.createElement('button');
+      ver.type = 'button';
+      ver.className = 'btn btn-primary btn-sm';
+      ver.textContent = '👁 Ver';
+      ver.addEventListener('click', () => window.open(visorDe(archivo), '_blank', 'noopener'));
+      const bajar = document.createElement('a');
+      bajar.className = 'btn btn-ghost btn-sm';
+      bajar.href = archivo.url;
+      bajar.target = '_blank';
+      bajar.rel = 'noopener noreferrer';
+      bajar.textContent = '⬇ Descarga';
+      btns.appendChild(ver);
+      btns.appendChild(bajar);
+      div.appendChild(btns);
+      return div;
+    }
+
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'g-material';
     b.innerHTML =
       `<span class="g-mat-emoji" aria-hidden="true">${archivo.emoji || '📄'}</span>` +
       `<span class="g-mat-titulo">${esc(archivo.nombre)}</span>` +
-      `<span class="g-mat-meta">${archivo.tipo}${archivo.size ? ' · ' + fmtSize(archivo.size) : ''}${inter2 ? '' : destino ? ' · ⬇️ Descarga' : ' · sin enlace'}</span>`;
-    if (destino) {
-      if (inter2) b.addEventListener('click', () => abrirPantalla(destino, archivo.nombre));
-      else b.addEventListener('click', () => window.open(destino, '_blank', 'noopener'));
+      `<span class="g-mat-meta">${archivo.tipo}${archivo.size ? ' · ' + fmtSize(archivo.size) : ''}${archivo.url ? '' : ' · sin enlace'}</span>`;
+    if (archivo.url) {
+      b.addEventListener('click', () => window.open(archivo.url, '_blank', 'noopener'));
     }
     return b;
   };
 
   const contI = document.getElementById('gMats');
-  if (contI) inter.forEach((f) => contI.appendChild(mapaC('button', 'button', f)));
+  if (contI) inter.forEach((f) => contI.appendChild(ficha(f)));
   const contO = document.getElementById('gMatOtras');
-  if (contO) otras.forEach((f) => contO.appendChild(mapaC('button', 'button', f)));
+  if (contO) otras.forEach((f) => contO.appendChild(ficha(f)));
 }
 
 /* pantalla completa del interactivo */
 function abrirPantalla(url, nombre) {
   document.getElementById('pantallaTitulo').textContent = nombre || 'Interactivo';
   document.getElementById('pantallaFrame').src = url;
-  document.getElementById('pantallaNueva').href = url;
+  // boton "nueva pestaña": es un <button>, el href no navega; abrimos por JS
+  document.getElementById('pantallaNueva').onclick = () => window.open(url, '_blank', 'noopener');
   document.getElementById('pantalla').classList.remove('hidden');
 }
 function cerrarPantalla() {
@@ -376,4 +429,254 @@ async function buscarGlobal(q) {
   document.getElementById('btnRefreshEstado').addEventListener('click', refrescarEstado);
   document.getElementById('btnAccionCatalogo').addEventListener('click', () => correrAccion('catalogo'));
   document.getElementById('btnAccionDrive').addEventListener('click', () => correrAccion('drive'));
+})();
+
+/* ── MODO ALUMNOS ────────────────────────────────────────── */
+let alumnosLista = [];
+
+async function refrescarAlumnos() {
+  try {
+    const res = await apiFetch('/alumnos');
+    if (res.status === 401) return logout();
+    if (!res.ok) throw new Error('No se pudo cargar la lista de alumnos.');
+    const d = await res.json();
+    alumnosLista = d.alumnos || [];
+    document.getElementById('loadingAlumnos').classList.add('hidden');
+    renderAlumnos();
+  } catch (e) {
+    toast(e.message);
+    document.getElementById('loadingAlumnos').classList.add('hidden');
+  }
+}
+
+function nombreCurso(id) {
+  const c = (catalogo.capacitaciones || []).find((x) => x.id === id);
+  return c ? c.nombre : id || '—';
+}
+
+function renderAlumnos() {
+  const caja = document.getElementById('listaAlumnos');
+  caja.innerHTML = '';
+  document.getElementById('vacioAlumnos').classList.toggle('hidden', alumnosLista.length > 0);
+  alumnosLista.forEach((a) => {
+    const div = document.createElement('div');
+    div.className = 'g-alumno';
+    div.innerHTML =
+      `<div class="g-alumno-head"><b>${esc(a.nombre_completo)}</b><span class="user-chip">${esc(a.usuario)}</span></div>` +
+      `<div class="g-alumno-meta">${nombreCurso(a.curso)}${a.horario ? ' · ' + esc(a.horario) : ''}${a.email ? '<br><small>' + esc(a.email) + '</small>' : ''}</div>` +
+      `<div class="g-alumno-stats">${(a.permisos || []).length} materiales habilitados</div>`;
+    const acciones = document.createElement('div');
+    acciones.className = 'g-alumno-acciones';
+    const btnMat = document.createElement('button');
+    btnMat.type = 'button';
+    btnMat.className = 'btn btn-primary btn-sm';
+    btnMat.textContent = '📚 Materiales';
+    btnMat.addEventListener('click', () => abrirPermisos(a));
+    const btnPass = document.createElement('button');
+    btnPass.type = 'button';
+    btnPass.className = 'btn btn-ghost btn-sm';
+    btnPass.textContent = '🔑 Nueva clave';
+    btnPass.addEventListener('click', () => cambiarClaveAlumno(a));
+    const btnDel = document.createElement('button');
+    btnDel.type = 'button';
+    btnDel.className = 'btn btn-ghost btn-sm';
+    btnDel.textContent = '🗑️';
+    btnDel.title = 'Borrar alumno';
+    btnDel.addEventListener('click', () => borrarAlumno(a));
+    acciones.appendChild(btnMat);
+    acciones.appendChild(btnPass);
+    acciones.appendChild(btnDel);
+    div.appendChild(acciones);
+    caja.appendChild(div);
+  });
+}
+
+function cursosAlSelect() {
+  const sel = document.getElementById('alumnoCurso');
+  sel.innerHTML = '<option value="">— sin curso asignado —</option>';
+  (catalogo.capacitaciones || []).forEach((c) => {
+    const o = document.createElement('option');
+    o.value = c.id;
+    o.textContent = `${c.emoji} ${c.nombre}`;
+    sel.appendChild(o);
+  });
+}
+
+function abrirModalAlumno() {
+  cursosAlSelect();
+  document.getElementById('alumnoId').value = '';
+  document.getElementById('formAlumno').reset();
+  document.getElementById('modalAlumnoTitulo').textContent = 'Nuevo alumno';
+  document.getElementById('btnGuardarAlumno').textContent = 'Guardar alumno';
+  document.getElementById('credencialesBox').classList.add('hidden');
+  document.getElementById('alumnoAvisoPass').style.display = '';
+  document.getElementById('modalAlumno').classList.remove('hidden');
+}
+
+function cerrarModalAlumno() {
+  document.getElementById('modalAlumno').classList.add('hidden');
+  refrescarAlumnos();
+}
+
+async function guardarAlumno(e) {
+  e.preventDefault();
+  const body = {
+    nombre_completo: document.getElementById('alumnoNombre').value.trim(),
+    usuario: document.getElementById('alumnoUsuario').value.trim(),
+    email: document.getElementById('alumnoEmail').value.trim(),
+    curso: document.getElementById('alumnoCurso').value,
+    horario: document.getElementById('alumnoHorario').value.trim()
+  };
+  if (!body.nombre_completo || !body.usuario) return toast('Falta nombre o usuario.');
+  try {
+    const res = await apiFetch('/alumnos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    const d = await res.json();
+    if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+    mostrarCredenciales(d.alumno, d.password);
+    document.getElementById('formAlumno').style.display = 'none';
+  } catch (err) {
+    toast(err.message);
+  }
+}
+
+function mostrarCredenciales(alumno, password) {
+  document.getElementById('modalAlumnoTitulo').textContent = '✅ Alumno creado';
+  document.getElementById('alumnoAvisoPass').style.display = 'none';
+  const box = document.getElementById('credencialesBox');
+  box.classList.remove('hidden');
+  box.innerHTML =
+    `<p>Compartí con <b>${esc(alumno.nombre_completo)}</b> sus datos para entrar al aula:</p>` +
+    `<div class="g-cred-fila">Usuario <code id="credUser">${esc(alumno.usuario)}</code> <button type="button" class="btn btn-ghost btn-sm" data-copy="${esc(alumno.usuario)}">copiar</button></div>` +
+    `<div class="g-cred-fila">Contraseña <code id="credPass">${esc(password)}</code> <button type="button" class="btn btn-ghost btn-sm" data-copy="${esc(password)}">copiar</button></div>` +
+    `<p class="sub">Entrada: <code>itc-clases.vercel.app</code></p>` +
+    `<p class="sub">Después habilitale qué ver con “📚 Materiales”.</p>`;
+  box.querySelectorAll('[data-copy]').forEach((b) => {
+    b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.copy); toast('✓ Copiado'); } catch { toast('No se pudo copiar'); }
+    });
+  });
+}
+
+async function borrarAlumno(a) {
+  if (!confirm(`¿Borrar el alumno ${a.nombre_completo}? Perderá el acceso.`)) return;
+  const res = await apiFetch(`/alumnos/${encodeURIComponent(a.id)}`, { method: 'DELETE' });
+  if (!res.ok) return toast((await res.json().catch(() => ({}))).error || 'No se pudo borrar.');
+  toast('Alumno borrado');
+  refrescarAlumnos();
+}
+
+async function cambiarClaveAlumno(a) {
+  if (!confirm(`¿Generar una contraseña nueva para ${a.nombre_completo}?`)) return;
+  const res = await apiFetch(`/alumnos/${encodeURIComponent(a.id)}/password`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+  const d = await res.json();
+  if (!res.ok) return toast(d.error || 'No se pudo cambiar la clave.');
+  mostrarCredenciales(a, d.password);
+  document.getElementById('formAlumno').style.display = 'none';
+  document.getElementById('modalAlumno').classList.remove('hidden');
+}
+
+/* ── permisos material por material ── */
+let permisosAlumno = null;
+let permisosSet = new Set();
+let permisosCursoData = null;
+
+async function abrirPermisos(a) {
+  permisosAlumno = a;
+  permisosSet = new Set(a.permisos || []);
+  document.getElementById('modalPermisosTitulo').textContent = `Materiales de ${a.nombre_completo}`;
+  document.getElementById('permisosClases').innerHTML = '<div class="loading"><span class="spinner"></span> Cargando material del curso…</div>';
+  document.getElementById('modalPermisos').classList.remove('hidden');
+  try {
+    const res = await apiFetch(`/curso/${encodeURIComponent(a.curso)}`);
+    if (!res.ok) throw new Error('No se pudo cargar el curso.');
+    permisosCursoData = await res.json();
+    renderPermisos();
+  } catch (e) {
+    toast(e.message);
+    document.getElementById('permisosClases').innerHTML = `<p class="g-vacio">${esc(e.message)}</p>`;
+  }
+}
+
+function renderPermisos() {
+  const caja = document.getElementById('permisosClases');
+  caja.innerHTML = '';
+  if (!permisosCursoData || !permisosCursoData.modulos) return;
+  permisosCursoData.modulos.forEach((m) => {
+    const modulo = document.createElement('div');
+    modulo.className = 'g-perm-modulo';
+    let total = 0;
+    const cuerpo = document.createElement('div');
+    (m.clases || []).forEach((cl) => {
+      if (!(cl.archivos || []).length) return;
+      const claseDiv = document.createElement('details');
+      claseDiv.className = 'g-perm-clase';
+      const habilitadas = cl.archivos.filter((f) => permisosSet.has(f.fid)).length;
+      claseDiv.innerHTML =
+        `<summary><b>${esc(cl.titulo)}</b><small>${habilitadas}/${cl.archivos.length} habilitados</small></summary>`;
+      const lista = document.createElement('div');
+      cl.archivos.forEach((f) => {
+        total++;
+        const fila = document.createElement('label');
+        fila.className = 'g-perm-archivo';
+        fila.innerHTML =
+          `<input type="checkbox" data-fid="${esc(f.fid)}" ${permisosSet.has(f.fid) ? 'checked' : ''}>` +
+          `<span>${f.emoji || '📄'} ${esc(f.nombre)}</span><small>${esc(f.tipo || '')}</small>`;
+        fila.querySelector('input').addEventListener('change', (ev) => {
+          if (ev.target.checked) permisosSet.add(f.fid);
+          else permisosSet.delete(f.fid);
+          guardarPermisos();
+          renderPermisos();
+        });
+        lista.appendChild(fila);
+      });
+      claseDiv.appendChild(lista);
+      cuerpo.appendChild(claseDiv);
+    });
+    modulo.innerHTML = `<div class="g-modulo-titulo">${esc(m.titulo)}</div>`;
+    modulo.appendChild(cuerpo);
+    caja.appendChild(modulo);
+  });
+  if (!total) caja.innerHTML = '<p class="g-vacio">Este curso no tiene materiales.</p>';
+}
+
+async function guardarPermisos() {
+  try {
+    const res = await apiFetch(`/alumnos/${encodeURIComponent(permisosAlumno.id)}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ permisos: [...permisosSet] })
+    });
+    if (!res.ok) throw new Error('No se pudo guardar.');
+  } catch (e) {
+    toast(e.message);
+  }
+}
+
+function habilitarTodo() {
+  if (!permisosCursoData) return;
+  if (!confirm('¿Habilitar TODOS los materiales del curso para este alumno?')) return;
+  for (const m of permisosCursoData.modulos || []) {
+    for (const cl of m.clases || []) {
+      for (const f of cl.archivos || []) permisosSet.add(f.fid);
+    }
+  }
+  guardarPermisos().then(() => {
+    renderPermisos();
+    toast('✓ Todos los materiales habilitados');
+  });
+}
+
+(function wireAlumnos() {
+  const btnNuevo = document.getElementById('btnNuevoAlumno');
+  if (btnNuevo) {
+    btnNuevo.addEventListener('click', abrirModalAlumno);
+    document.getElementById('btnRefreshAlumnos').addEventListener('click', refrescarAlumnos);
+    document.getElementById('modalAlumnoCerrar').addEventListener('click', cerrarModalAlumno);
+    document.getElementById('formAlumno').addEventListener('submit', guardarAlumno);
+    document.getElementById('modalPermisosCerrar').addEventListener('click', () => {
+      document.getElementById('modalPermisos').classList.add('hidden');
+      refrescarAlumnos();
+    });
+    document.getElementById('btnPermisosTodos').addEventListener('click', habilitarTodo);
+  }
 })();

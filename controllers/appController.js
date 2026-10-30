@@ -11,10 +11,17 @@ const uuidv4 = crypto.randomUUID;
 async function login(req, res) {
   const { nombre, password } = req.body;
   const data = await db.loadData();
-  const user = data.users.find((u) => u.nombre === nombre && (u.tipo === 'profesor' || u.tipo === 'admin'));
-  if (!user || !bcrypt.compareSync(password, user.password)) {
+  const docente = data.users.find((u) => u.nombre === nombre && (u.tipo === 'profesor' || u.tipo === 'admin'));
+  const alumno = data.alumnos.find((a) => a.usuario === nombre);
+  const user = docente
+    ? { ...docente, _hash: docente.password }
+    : alumno
+      ? { id: alumno.id, nombre: alumno.usuario, tipo: 'alumno', nombre_completo: alumno.nombre_completo, _hash: alumno.password }
+      : null;
+  if (!user || !bcrypt.compareSync(password, user._hash)) {
     return res.status(401).json({ error: 'Credenciales incorrectas.' });
   }
+  delete user._hash;
 
   const accessToken = signAccess(user);
   const tokenId = uuidv4();
@@ -50,7 +57,13 @@ async function refresh(req, res) {
     return res.status(401).json({ error: 'Refresh token invalido.' });
   }
 
-  const user = data.users.find((u) => u.id === payload.id);
+  const esAlumno = String(payload.id || '').startsWith('a');
+  const alumno = esAlumno ? data.alumnos.find((a) => String(a.id) === String(payload.id)) : null;
+  const user = esAlumno
+    ? (alumno
+      ? { id: alumno.id, nombre: alumno.usuario, tipo: 'alumno', nombre_completo: alumno.nombre_completo }
+      : null)
+    : data.users.find((u) => u.id === payload.id);
   if (!user) return res.status(401).json({ error: 'Usuario inexistente.' });
 
   // Rotación: invalidar el refresh usado y emitir uno nuevo
@@ -61,7 +74,8 @@ async function refresh(req, res) {
 
   res.json({
     token: signAccess(user),
-    refreshToken: signRefresh(user, newTokenId)
+    refreshToken: signRefresh(user, newTokenId),
+    tipo: user.tipo
   });
 }
 

@@ -207,6 +207,7 @@ function embeberInteractivo(claseId, nombreCarpeta, dirAbs) {
   const dest = path.join(EMBED_DIR, slug);
   fs.rmSync(dest, { recursive: true, force: true });
   fs.cpSync(dirAbs, dest, { recursive: true });
+  asegurarViewportEnDir(dest);
   // Refs absolutas a la PC dejadas en el index: copio el recurso si existe fuera
   // de la carpeta y reescribo la referencia (los internos ya van con el copiado).
   const idxPath = path.join(dirAbs, 'index.html');
@@ -246,6 +247,29 @@ function buscarDescendente(dir, nombre, depth) {
     }
   }
   return null;
+}
+
+// Garantiza que un HTML embebido tenga meta viewport: sin él el interactivo no
+// escala en pantallas chica (celular/proyector de poca resolucion).
+const VIEWPORT_RE = /<meta[^>]+name=["']viewport["'][^>]*>/i;
+function asegurarViewport(html) {
+  if (VIEWPORT_RE.test(html)) return html;
+  const meta = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+  if (/<head[^>]*>/i.test(html)) return html.replace(/<head[^>]*>/i, (m) => `${m}\n  ${meta}`);
+  return `${meta}\n${html}`;
+}
+
+// Aplica asegurarViewport a todos los .html de una carpeta (recursivo, chico).
+function asegurarViewportEnDir(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) asegurarViewportEnDir(full);
+    else if (e.name.toLowerCase().endsWith('.html')) {
+      try {
+        fs.writeFileSync(full, asegurarViewport(fs.readFileSync(full, 'utf8')), 'utf8');
+      } catch { /* si falla un html, sigue */ }
+    }
+  }
 }
 
 // Detecta referencias a archivos locales en un HTML y devuelve el mapa de
@@ -325,7 +349,7 @@ function embeberHtmlSuelto(claseId, nombreArchivo, fileAbs) {
     const dest = path.join(EMBED_DIR, slugBase);
     fs.rmSync(dest, { recursive: true, force: true });
     fs.mkdirSync(dest, { recursive: true });
-    fs.writeFileSync(path.join(dest, nombreArchivo), htmlProcesado, 'utf8');
+    fs.writeFileSync(path.join(dest, nombreArchivo), asegurarViewport(htmlProcesado), 'utf8');
     for (const d of hermanas) fs.cpSync(path.join(dirPadre, d), path.join(dest, d), { recursive: true });
     for (const pl of copias) {
       const destinoRes = path.join(dest, pl.destRel);
@@ -345,7 +369,7 @@ function embeberHtmlSuelto(claseId, nombreArchivo, fileAbs) {
 
   const slug = `${slugify(claseId)}-${slugify(nombreArchivo)}`;
   const dest = path.join(EMBED_DIR, `${slug}.html`);
-  fs.copyFileSync(fileAbs, dest);
+  fs.writeFileSync(dest, asegurarViewport(fs.readFileSync(fileAbs, 'utf8')), 'utf8');
   return { embebible: true, embedUrl: `/html/interactivos/${slug}.html`, notas: `(${fmtKB(size)})` };
 }
 
@@ -401,6 +425,7 @@ function archivosDeClase(claseId, dirAbs, relBaseAbs) {
       const size = sizeDir(full);
       sum += size;
       archivos.push({
+        fid: `${claseId}::${slugify(e.name)}`,
         nombre: e.name + '/',
         tipo: 'Carpeta',
         emoji: interactivo.embedUrl ? '🌐' : '🗂️',
@@ -418,6 +443,7 @@ function archivosDeClase(claseId, dirAbs, relBaseAbs) {
       const isHtml = e.name.toLowerCase().endsWith('.html');
       const interactive = isHtml ? embeberHtmlSuelto(claseId, e.name, full) : null;
       archivos.push({
+        fid: `${claseId}::${slugify(e.name)}`,
         nombre: e.name,
         tipo: t.tipo,
         emoji: t.emoji,
@@ -587,6 +613,7 @@ function construirHerramientas(root) {
     const st = fs.statSync(full);
     const t = tipoPara(f);
     archivos.push({
+      fid: `herramientas-docentes::${slugify(f)}`,
       nombre: f,
       tipo: t.tipo,
       emoji: t.emoji,

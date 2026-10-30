@@ -25,6 +25,7 @@
       <div class="gb-modos" role="tablist">
         <button type="button" id="tabClase" class="gb-modo activo" role="tab">🖥️ Modo Clase</button>
         <button type="button" id="tabContenido" class="gb-modo" role="tab">🗂️ Modo Contenido</button>
+        <button type="button" id="tabAlumnos" class="gb-modo" role="tab">👥 Alumnos</button>
       </div>
       <button type="button" id="btnContinuar" class="btn btn-primary btn-sm hidden">⏵ Continuar: …</button>
       <div class="gb-buscar">
@@ -80,6 +81,71 @@
       <div id="tablaEstado"></div>
       <div id="accionLog" class="g-log hidden"></div>
     </section>
+
+    <!-- ═══ MODO ALUMNOS ═══ -->
+    <section id="panelAlumnos" class="hidden">
+      <div class="g-contenido-head">
+        <div>
+          <h2>Mis alumnos</h2>
+          <p class="sub">Cargá alumnos y elegí material por material lo que puede ver cada uno.</p>
+        </div>
+        <div class="g-acciones">
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshAlumnos">🔄 Refrescar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnNuevoAlumno">➕ Nuevo alumno</button>
+        </div>
+      </div>
+      <div class="g-aviso">
+        Los alumnos entran a <code>itc-clases.vercel.app</code> con su usuario y contraseña y llegan a
+        <b>su aula personal</b>, donde solo aparecen los materiales que le habilitaste.
+      </div>
+      <div class="loading" id="loadingAlumnos"><span class="spinner"></span> Cargando alumnos…</div>
+      <div class="g-alumnos-grid" id="listaAlumnos"></div>
+      <p class="g-alumnos-vacio hidden" id="vacioAlumnos">Todavía no hay alumnos cargados. Usá “➕ Nuevo alumno”.</p>
+    </section>
+
+    <!-- Modal: alta / ficha de alumno -->
+    <div class="modal-overlay hidden" id="modalAlumno" role="dialog" aria-modal="true">
+      <div class="modal" style="max-width:520px">
+        <div class="modal-head">
+          <b id="modalAlumnoTitulo">Nuevo alumno</b>
+          <button type="button" class="btn btn-primary btn-sm" id="modalAlumnoCerrar">Cerrar ✕</button>
+        </div>
+        <form id="formAlumno" style="padding:16px 20px 20px">
+          <input type="hidden" id="alumnoId">
+          <div class="form-group"><label>Nombre completo</label>
+            <input type="text" id="alumnoNombre" required placeholder="Ej: Julio Acosta"></div>
+          <div class="form-fila">
+            <div class="form-group"><label>Usuario</label>
+              <input type="text" id="alumnoUsuario" required placeholder="Ej: julio.acosta"></div>
+            <div class="form-group"><label>Email</label>
+              <input type="email" id="alumnoEmail" placeholder="Opcional"></div>
+          </div>
+          <div class="form-fila">
+            <div class="form-group"><label>Curso</label><select id="alumnoCurso"></select></div>
+            <div class="form-group"><label>Horario</label>
+              <input type="text" id="alumnoHorario" placeholder="Ej: Lunes 19:30"></div>
+          </div>
+          <p class="sub" id="alumnoAvisoPass" style="margin:4px 0 10px">Se genera una contraseña automática; la vas a ver al guardar (mostrala y borrala del chat si te la copian).</p>
+          <button type="submit" class="btn btn-primary" id="btnGuardarAlumno">Guardar alumno</button>
+        </form>
+        <div id="credencialesBox" class="g-credenciales hidden"></div>
+      </div>
+    </div>
+
+    <!-- Modal: permisos material por material -->
+    <div class="modal-overlay hidden" id="modalPermisos" role="dialog" aria-modal="true">
+      <div class="modal" style="max-width:720px">
+        <div class="modal-head">
+          <b id="modalPermisosTitulo">Materiales habilitados</b>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="btn btn-ghost btn-sm" id="btnPermisosTodos">Habilitar todo el curso</button>
+            <button type="button" class="btn btn-primary btn-sm" id="modalPermisosCerrar">Listo ✕</button>
+          </div>
+        </div>
+        <p class="sub" style="padding:8px 20px 0">Marcá lo que este alumno puede ver. El resto queda oculto para él.</p>
+        <div id="permisosClases" class="g-permisos-lista" style="padding:12px 20px 20px"></div>
+      </div>
+    </div>
 
     <!-- Overlay: interactivo a pantalla completa -->
     <div class="modal-overlay hidden" id="pantalla" role="dialog" aria-modal="true" aria-label="Interactivo en pantalla">

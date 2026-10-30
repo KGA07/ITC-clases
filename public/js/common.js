@@ -77,6 +77,7 @@ async function logout() {
     /* noop */
   }
   clearTokens();
+  localStorage.removeItem('itc_clases_tipo');
   location.href = '/';
 }
 
@@ -132,11 +133,12 @@ function toast(msg) {
 
 // ── Barra superior compartida ───────────────────────────────────────────────
 function renderHeader(nombre = '') {
+  const esAlumno = localStorage.getItem('itc_clases_tipo') === 'alumno';
   const el = document.getElementById('topbar');
   if (!el) return;
   el.innerHTML =
     '<div class="topbar-inner">' +
-    '  <a class="brand" href="/gestor" aria-label="ITC Clases - panel docente">' +
+    `  <a class="brand" href="${esAlumno ? '/alumno' : '/gestor'}" aria-label="ITC Clases - aula virtual">` +
     '    <img src="/img/logo-itc.svg" alt="ITC">' +
     '    <img src="/img/logo-udemm.svg" alt="UdeMM">' +
     '    <div class="brand-divider" aria-hidden="true"></div>' +

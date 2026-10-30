@@ -2,7 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isAuthed()) {
-    location.href = '/gestor';
+    // cada usuario a su portada
+    location.href = localStorage.getItem('itc_clases_tipo') === 'alumno' ? '/alumno' : '/gestor';
     return;
   }
 
@@ -27,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) throw new Error(data.error || 'No se pudo iniciar sesion.');
       setTokens(data.token, data.refreshToken);
       localStorage.setItem('itc_clases_nombre', data.nombre_completo || data.nombre);
-      location.href = '/gestor';
+      localStorage.setItem('itc_clases_tipo', data.tipo || 'profesor');
+      // docentes van al panel; alumnos a su aula personal
+      location.href = data.tipo === 'alumno' ? '/alumno' : '/gestor';
     } catch (err) {
       errText.textContent = err.message;
       errBox.classList.add('show');

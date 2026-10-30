@@ -35,6 +35,7 @@ function renderModulo(mod) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   if (!requireAuth(localStorage.getItem('itc_clases_nombre'))) return;
+  if (localStorage.getItem('itc_clases_tipo') === 'alumno') return (location.href = '/alumno');
   const id = new URLSearchParams(location.search).get('id');
   if (!id) {
     location.href = '/inicio';
