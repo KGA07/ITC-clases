@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0058FF">
-    <link rel="icon" type="image/png" href="/img/icon-48.png">
+  <link rel="icon" type="image/png" href="/img/icon-48.png">
   <link rel="icon" type="image/png" href="/img/icon-256.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/styles.css">
@@ -24,59 +24,59 @@
       <span id="pCursoLateral">Mi curso</span>
     </div>
     <nav class="p-nav" aria-label="Secciones del panel">
-      <button type="button" class="p-nav-item activo" data-sec="general">ðŸ  Panel General</button>
-      <button type="button" class="p-nav-item" data-sec="alumnos">ðŸ§‘â€ðŸŽ“ Mis Alumnos</button>
-      <button type="button" class="p-nav-item" data-sec="clases">ðŸ“– GestiÃ³n de Clases</button>
-      <button type="button" class="p-nav-item" data-sec="asistencia">ðŸ“‹ Asistencia</button>
+      <button type="button" class="p-nav-item activo" data-sec="general">🏠 Panel General</button>
+      <button type="button" class="p-nav-item" data-sec="alumnos">🧑‍🎓 Mis Alumnos</button>
+      <button type="button" class="p-nav-item" data-sec="clases">📖 Gestión de Clases</button>
+      <button type="button" class="p-nav-item" data-sec="asistencia">📋 Asistencia</button>
     </nav>
     <div class="p-side-pie">
-      <b id="pDocenteNombre">â€¦</b>
-      <button type="button" class="btn btn-ghost btn-sm" id="pLogout">Salir âœ•</button>
+      <b id="pDocenteNombre">…</b>
+      <button type="button" class="btn btn-ghost btn-sm" id="pLogout">Salir ✕</button>
     </div>
   </aside>
 
   <main class="p-main" id="pMain">
-    <div class="loading" id="pLoading"><span class="spinner"></span> Cargando tu panelâ€¦</div>
+    <div class="loading" id="pLoading"><span class="spinner"></span> Cargando tu panel…</div>
     <div id="pSinCurso" class="p-vacio hidden">
       <h1>Sin curso asignado</h1>
-      <p class="sub">El administrador tiene que asignarte el curso desde el gestor (pestaÃ±a ðŸ§‘â€ðŸ« Docentes â†’ editÃ¡ tu usuario).</p>
+      <p class="sub">El administrador tiene que asignarte el curso desde el gestor (pestaña 🧑‍🏫 Docentes → editá tu usuario).</p>
       <button type="button" class="btn btn-ghost btn-sm" id="pLogout2">Salir</button>
     </div>
 
     <div id="pContenido" class="hidden">
-      <!-- â•â•â•â• PANEL GENERAL â•â•â•â• -->
+      <!-- ════ PANEL GENERAL ════ -->
       <section data-panel="general">
         <h1 id="pTituloCurso" class="p-h1">Curso</h1>
         <p class="sub" id="pSubGeneral">Panel del curso</p>
         <div class="p-stats" id="pStats"></div>
-        <div class="g-seccion-titulo">âš¡ Acciones rÃ¡pidas</div>
+        <div class="g-seccion-titulo">⚡ Acciones rápidas</div>
         <div class="p-acciones-rapidas" id="pRapidas"></div>
       </section>
 
-      <!-- â•â•â•â• MIS ALUMNOS â•â•â•â• -->
+      <!-- ════ MIS ALUMNOS ════ -->
       <section data-panel="alumnos" class="hidden">
         <h1 class="p-h1">Mis Alumnos</h1>
         <p class="sub" id="pSubAlumnos">Alumnos del curso</p>
         <div class="p-alumnos-grid" id="pListaAlumnos"></div>
       </section>
 
-      <!-- â•â•â•â• GESTIÃ“N DE CLASES â•â•â•â• -->
+      <!-- ════ GESTIÓN DE CLASES ════ -->
       <section data-panel="clases" class="hidden">
-        <h1 class="p-h1">GestiÃ³n de Clases</h1>
-        <p class="sub">HabilitÃ¡ las clases semana a semana para tus alumnos. Lo que no habilitÃ¡s, no lo ven.</p>
+        <h1 class="p-h1">Gestión de Clases</h1>
+        <p class="sub">Habilitá las clases semana a semana para tus alumnos. Lo que no habilitás, no lo ven.</p>
         <div id="pClasesModulos"></div>
       </section>
 
-      <!-- â•â•â•â• ASISTENCIA â•â•â•â• -->
+      <!-- ════ ASISTENCIA ════ -->
       <section data-panel="asistencia" class="hidden">
         <h1 class="p-h1">Asistencia</h1>
-        <p class="sub">RegistrÃ¡ asistencia por clase. Un alumno <b>Ausente</b> no ve esa clase en el aula.</p>
+        <p class="sub">Registrá asistencia por clase. Un alumno <b>Ausente</b> no ve esa clase en el aula.</p>
         <div class="p-card">
           <div class="p-card-head">
-            <label for="pClaseAsis"><b>SeleccionÃ¡ una clase:</b></label>
+            <label for="pClaseAsis"><b>Seleccioná una clase:</b></label>
             <div style="display:flex;gap:10px;align-items:center;margin-left:auto">
-              <span style="color:#16a34a;font-weight:700" id="pCountP">âœ” 0 presentes</span>
-              <span style="color:#dc2626;font-weight:700" id="pCountA">âœ– 0 ausentes</span>
+              <span style="color:#16a34a;font-weight:700" id="pCountP">✔ 0 presentes</span>
+              <span style="color:#dc2626;font-weight:700" id="pCountA">✖ 0 ausentes</span>
             </div>
           </div>
           <select id="pClaseAsis"></select>
