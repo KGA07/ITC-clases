@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     catalogo = await res.json();
 
     filtrarCursosGestor();
+
+    // contador real de clases para el placeholder del buscador
+    let clasesTotal = 0;
+    for (const curso of (catalogo.cursosGestor || [])) {
+      for (const mo of curso.modulos || []) clasesTotal += (mo.clases || []).length;
+    }
+    const buscadorEl = document.getElementById('buscador');
+    if (clasesTotal) buscadorEl.placeholder = `Buscar en ${clasesTotal} clases…`;
     renderCursos();
     cargarBuscar();
     recuperarRuta();
