@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Aula - ITC Aula Virtual</title>
-  <meta name="description" content="Materiales de la capacitación">
+  <meta name="description" content="Materiales de la capacitaciÃ³n">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0058FF">
-  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" href="/img/icon-48.png">
+  <link rel="icon" type="image/png" href="/img/icon-256.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,7 +32,7 @@
       font-weight: 800; list-style: none;
     }
     .alumno-clase > summary::-webkit-details-marker { display: none; }
-    .alumno-clase > summary::after { content: '▸'; margin-left: auto; transition: transform .15s; color: var(--text-soft); }
+    .alumno-clase > summary::after { content: 'â–¸'; margin-left: auto; transition: transform .15s; color: var(--text-soft); }
     .alumno-clase[open] > summary::after { transform: rotate(90deg); }
     .alumno-modulo { font-size: .72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-soft); font-weight: 800; padding: 16px 18px 6px; }
     .alumno-archivo {
@@ -49,10 +51,10 @@
   <main class="container alumno-main" id="main">
     <section class="alumno-hero">
       <h1 id="alumnoSaludo">Mi aula</h1>
-      <p id="alumnoCursoNombre">Cargando tu material…</p>
+      <p id="alumnoCursoNombre">Cargando tu materialâ€¦</p>
     </section>
 
-    <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargando…</div>
+    <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargandoâ€¦</div>
     <div class="empty hidden" id="empty"></div>
     <div id="listaMaterial"></div>
   </main>
@@ -62,8 +64,8 @@
     <div class="modal">
       <div class="modal-head">
         <b id="modalTitle">Material</b>
-        <button type="button" class="btn btn-ghost btn-sm" id="modalOpen">↗ Nueva pestaña</button>
-        <button type="button" class="btn btn-primary btn-sm" id="modalClose">Cerrar ✕</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="modalOpen">â†— Nueva pestaÃ±a</button>
+        <button type="button" class="btn btn-primary btn-sm" id="modalClose">Cerrar âœ•</button>
       </div>
       <div class="modal-body">
         <iframe id="modalFrame" title="Material" sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups"></iframe>
@@ -72,7 +74,7 @@
   </div>
 
   <div class="toast" role="status" aria-live="polite"></div>
-  <footer class="site-firma">Hecho con dedicación · @gustavokempe</footer>
+  <footer class="site-firma">Hecho con dedicaciÃ³n Â· @gustavokempe</footer>
   <script src="/js/alumno.js"></script>
 </body>
 </html>

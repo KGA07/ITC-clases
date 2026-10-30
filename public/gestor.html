@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,9 @@
   <meta name="description" content="Gestor docente de clases: dar clase y gestionar contenido del aula">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0058FF">
-  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" href="/img/icon-48.png">
+  <link rel="icon" type="image/png" href="/img/icon-256.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/gestor.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,88 +22,88 @@
   <header class="topbar" id="topbar"></header>
 
   <main id="main">
-    <!-- Barra del gestor: modos + continuar + búsqueda -->
+    <!-- Barra del gestor: modos + continuar + bÃºsqueda -->
     <div class="gestor-barra">
       <div class="gb-modos" role="tablist">
-        <button type="button" id="tabClase" class="gb-modo activo" role="tab">🖥️ Modo Clase</button>
-        <button type="button" id="tabContenido" class="gb-modo" role="tab">🗂️ Modo Contenido</button>
-        <button type="button" id="tabAlumnos" class="gb-modo" role="tab">👥 Alumnos</button>
-        <button type="button" id="tabDocentes" class="gb-modo" role="tab">🧑‍🏫 Docentes</button>
+        <button type="button" id="tabClase" class="gb-modo activo" role="tab">ðŸ–¥ï¸ Modo Clase</button>
+        <button type="button" id="tabContenido" class="gb-modo" role="tab">ðŸ—‚ï¸ Modo Contenido</button>
+        <button type="button" id="tabAlumnos" class="gb-modo" role="tab">ðŸ‘¥ Alumnos</button>
+        <button type="button" id="tabDocentes" class="gb-modo" role="tab">ðŸ§‘â€ðŸ« Docentes</button>
       </div>
-      <button type="button" id="btnContinuar" class="btn btn-primary btn-sm hidden">⏵ Continuar: …</button>
+      <button type="button" id="btnContinuar" class="btn btn-primary btn-sm hidden">âµ Continuar: â€¦</button>
       <div class="gb-buscar">
-        <input type="search" id="buscador" placeholder="Buscar en 219 clases…" aria-label="Buscar clase" autocomplete="off">
+        <input type="search" id="buscador" placeholder="Buscar en 219 clasesâ€¦" aria-label="Buscar clase" autocomplete="off">
         <div id="busquedas" class="gb-resultados hidden"></div>
       </div>
     </div>
 
-    <!-- ═══ MODO CLASE ═══ -->
+    <!-- â•â•â• MODO CLASE â•â•â• -->
     <section id="panelClase" class="gestor-grid">
       <!-- columna 1: cursos -->
       <aside class="g-col" id="colCursos">
         <h2 class="g-col-titulo">Capacitaciones</h2>
-        <div class="loading" id="loadingCursos"><span class="spinner"></span> Cargando…</div>
+        <div class="loading" id="loadingCursos"><span class="spinner"></span> Cargandoâ€¦</div>
         <div id="listaCursos"></div>
       </aside>
-      <!-- columna 2: módulos y clases -->
+      <!-- columna 2: mÃ³dulos y clases -->
       <aside class="g-col" id="colClases">
         <h2 class="g-col-titulo" id="tituloClases">Clases</h2>
-        <div id="listaModulos"><div class="g-vacio">Elegí una capacitación a la izquierda.</div></div>
+        <div id="listaModulos"><div class="g-vacio">ElegÃ­ una capacitaciÃ³n a la izquierda.</div></div>
       </aside>
       <!-- columna 3: clase -->
       <section class="g-col g-amplia" id="colDetalle">
         <div id="detalleVacio" class="g-vacio grande">
-          <p>🎓 Elegí una clase y la traigo acá:</p>
+          <p>ðŸŽ“ ElegÃ­ una clase y la traigo acÃ¡:</p>
           <ul class="g-ayuda">
             <li><b>Interactivos</b> a pantalla completa para proyectar</li>
             <li><b>Puntos de descarga</b> directos a Drive</li>
-            <li>Se <b>guarda por dónde vas</b> para el día siguiente</li>
+            <li>Se <b>guarda por dÃ³nde vas</b> para el dÃ­a siguiente</li>
           </ul>
         </div>
         <div id="detalleClase" class="hidden"></div>
       </section>
     </section>
 
-    <!-- ═══ MODO CONTENIDO ═══ -->
+    <!-- â•â•â• MODO CONTENIDO â•â•â• -->
     <section id="panelContenido" class="hidden">
       <div class="g-contenido-head">
         <div>
           <h2>Estado del contenido</h2>
-          <p class="sub" id="estadoGenerado">Catálogo: …</p>
+          <p class="sub" id="estadoGenerado">CatÃ¡logo: â€¦</p>
         </div>
         <div class="g-acciones">
-          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshEstado">🔄 Refrescar</button>
-          <button type="button" class="btn btn-primary btn-sm" id="btnAccionCatalogo">⚙️ Regenerar catálogo</button>
-          <button type="button" class="btn btn-primary btn-sm" id="btnAccionDrive">☁️ Re-enlazar Drive</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshEstado">ðŸ”„ Refrescar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnAccionCatalogo">âš™ï¸ Regenerar catÃ¡logo</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnAccionDrive">â˜ï¸ Re-enlazar Drive</button>
         </div>
       </div>
       <div id="gestorLocalAviso" class="g-aviso hidden">
-        Las acciones de regeneración funcionan solo en la PC del docente (<code>node server.js</code>). En producción el contenido se gestiona por GitHub + rclone local.
+        Las acciones de regeneraciÃ³n funcionan solo en la PC del docente (<code>node server.js</code>). En producciÃ³n el contenido se gestiona por GitHub + rclone local.
       </div>
-      <div class="loading" id="loadingEstado"><span class="spinner"></span> Cargando estado…</div>
+      <div class="loading" id="loadingEstado"><span class="spinner"></span> Cargando estadoâ€¦</div>
       <div id="tablaEstado"></div>
       <div id="accionLog" class="g-log hidden"></div>
     </section>
 
-    <!-- ═══ MODO ALUMNOS ═══ -->
+    <!-- â•â•â• MODO ALUMNOS â•â•â• -->
     <section id="panelAlumnos" class="hidden">
       <div class="g-contenido-head">
         <div>
           <h2>Mis alumnos</h2>
-          <p class="sub">Cargá alumnos y elegí material por material lo que puede ver cada uno.</p>
+          <p class="sub">CargÃ¡ alumnos y elegÃ­ material por material lo que puede ver cada uno.</p>
         </div>
         <div class="g-acciones">
-          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshAlumnos">🔄 Refrescar</button>
-          <button type="button" class="btn btn-primary btn-sm" id="btnNuevoAlumno">➕ Nuevo alumno</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshAlumnos">ðŸ”„ Refrescar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnNuevoAlumno">âž• Nuevo alumno</button>
         </div>
       </div>
       <div class="g-aviso">
-        Los alumnos entran a <code>itc-clases.vercel.app</code> con su usuario y contraseña y llegan a
+        Los alumnos entran a <code>itc-clases.vercel.app</code> con su usuario y contraseÃ±a y llegan a
         <b>su aula personal</b>, donde solo aparecen los materiales que le habilitaste.
       </div>
-      <div class="loading" id="loadingAlumnos"><span class="spinner"></span> Cargando alumnos…</div>
+      <div class="loading" id="loadingAlumnos"><span class="spinner"></span> Cargando alumnosâ€¦</div>
       <div class="g-alumnos-grid" id="listaAlumnos"></div>
-      <p class="g-alumnos-vacio hidden" id="vacioAlumnos">Todavía no hay alumnos cargados. Usá “➕ Nuevo alumno”.</p>
+      <p class="g-alumnos-vacio hidden" id="vacioAlumnos">TodavÃ­a no hay alumnos cargados. UsÃ¡ â€œâž• Nuevo alumnoâ€.</p>
     </section>
 
     <!-- Modal: alta / ficha de alumno -->
@@ -109,12 +111,12 @@
       <div class="modal" style="max-width:520px">
         <div class="modal-head">
           <b id="modalAlumnoTitulo">Nuevo alumno</b>
-          <button type="button" class="btn btn-primary btn-sm" id="modalAlumnoCerrar">Cerrar ✕</button>
+          <button type="button" class="btn btn-primary btn-sm" id="modalAlumnoCerrar">Cerrar âœ•</button>
         </div>
         <form id="formAlumno" style="padding:16px 20px 20px">
           <input type="hidden" id="alumnoId">
           <div class="form-group"><label>Nombre completo *</label>
-            <input type="text" id="alumnoNombre" required placeholder="Ej: Juan Pérez"></div>
+            <input type="text" id="alumnoNombre" required placeholder="Ej: Juan PÃ©rez"></div>
           <div class="form-fila">
             <div class="form-group"><label>Email</label>
               <input type="email" id="alumnoEmail" placeholder="Ej: juan@email.com"></div>
@@ -122,9 +124,9 @@
               <input type="text" id="alumnoDni" placeholder="Ej: 28.123.456"></div>
           </div>
           <div class="form-fila">
-            <div class="form-group"><label>Teléfono</label>
+            <div class="form-group"><label>TelÃ©fono</label>
               <input type="text" id="alumnoTelefono" placeholder="Ej: 3492 123456"></div>
-            <div class="form-group"><label>Día</label>
+            <div class="form-group"><label>DÃ­a</label>
               <input type="text" id="alumnoDia" placeholder="Ej: Lunes"></div>
           </div>
           <div class="form-fila">
@@ -135,14 +137,14 @@
           <div class="form-fila">
             <div class="form-group"><label>Usuario *</label>
               <input type="text" id="alumnoUsuario" required placeholder="Ej: juan.perez"></div>
-            <div class="form-group"><label>Contraseña temporal</label>
+            <div class="form-group"><label>ContraseÃ±a temporal</label>
               <div style="display:flex;gap:6px">
                 <input type="text" id="alumnoPass" readonly placeholder="Generada">
-                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassAlumno">🎲 Generar</button>
+                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassAlumno">ðŸŽ² Generar</button>
               </div>
             </div>
           </div>
-          <p class="sub" style="margin:4px 0 10px">Anotale la contraseña para entregársela al alumno.</p>
+          <p class="sub" style="margin:4px 0 10px">Anotale la contraseÃ±a para entregÃ¡rsela al alumno.</p>
           <button type="submit" class="btn btn-primary" id="btnGuardarAlumno">Crear alumno</button>
         </form>
         <div id="credencialesBox" class="g-credenciales hidden"></div>
@@ -156,15 +158,15 @@
           <b id="modalPermisosTitulo">Materiales habilitados</b>
           <div style="display:flex;gap:8px">
             <button type="button" class="btn btn-ghost btn-sm" id="btnPermisosTodos">Habilitar todo el curso</button>
-            <button type="button" class="btn btn-primary btn-sm" id="modalPermisosCerrar">Listo ✕</button>
+            <button type="button" class="btn btn-primary btn-sm" id="modalPermisosCerrar">Listo âœ•</button>
           </div>
         </div>
-        <p class="sub" style="padding:8px 20px 0">Marcá lo que este alumno puede ver. El resto queda oculto para él.</p>
+        <p class="sub" style="padding:8px 20px 0">MarcÃ¡ lo que este alumno puede ver. El resto queda oculto para Ã©l.</p>
         <div id="permisosClases" class="g-permisos-lista" style="padding:12px 20px 20px"></div>
       </div>
     </div>
 
-    <!-- ═══ MODO DOCENTES ═══ -->
+    <!-- â•â•â• MODO DOCENTES â•â•â• -->
     <section id="panelDocentes" class="hidden">
       <div class="g-contenido-head">
         <div>
@@ -172,17 +174,17 @@
           <p class="sub">Cada docente administra un curso: habilita clases semana a semana y toma asistencia. Ausente = no ve esa clase.</p>
         </div>
         <div class="g-acciones">
-          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshDocentes">🔄 Refrescar</button>
-          <button type="button" class="btn btn-primary btn-sm" id="btnNuevoDocente">➕ Nuevo docente</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshDocentes">ðŸ”„ Refrescar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnNuevoDocente">âž• Nuevo docente</button>
         </div>
       </div>
       <div class="g-aviso">
-        Los docentes entran a <code>itc-clases.vercel.app</code> con su usuario y contraseña y llegan a
-        <b>su panel</b> (Panel General · Mis Alumnos · Gestión de Clases · Asistencia) solo con el curso que le asignás acá.
+        Los docentes entran a <code>itc-clases.vercel.app</code> con su usuario y contraseÃ±a y llegan a
+        <b>su panel</b> (Panel General Â· Mis Alumnos Â· GestiÃ³n de Clases Â· Asistencia) solo con el curso que le asignÃ¡s acÃ¡.
       </div>
-      <div class="loading" id="loadingDocentes"><span class="spinner"></span> Cargando docentes…</div>
+      <div class="loading" id="loadingDocentes"><span class="spinner"></span> Cargando docentesâ€¦</div>
       <div class="g-alumnos-grid" id="listaDocentes"></div>
-      <p class="g-alumnos-vacio hidden" id="vacioDocentes">Todavía no hay docentes cargados. Usá “➕ Nuevo docente”.</p>
+      <p class="g-alumnos-vacio hidden" id="vacioDocentes">TodavÃ­a no hay docentes cargados. UsÃ¡ â€œâž• Nuevo docenteâ€.</p>
     </section>
 
     <!-- Modal: alta de docente -->
@@ -190,11 +192,11 @@
       <div class="modal" style="max-width:520px">
         <div class="modal-head">
           <b id="modalDocenteTitulo">Nuevo docente</b>
-          <button type="button" class="btn btn-primary btn-sm" id="modalDocenteCerrar">Cerrar ✕</button>
+          <button type="button" class="btn btn-primary btn-sm" id="modalDocenteCerrar">Cerrar âœ•</button>
         </div>
         <form id="formDocente" style="padding:16px 20px 20px">
           <div class="form-group"><label>Nombre completo *</label>
-            <input type="text" id="docenteNombre" required placeholder="Ej: María Gómez"></div>
+            <input type="text" id="docenteNombre" required placeholder="Ej: MarÃ­a GÃ³mez"></div>
           <div class="form-fila">
             <div class="form-group"><label>Email</label>
               <input type="email" id="docenteEmail" placeholder="Ej: maria@email.com"></div>
@@ -202,9 +204,9 @@
               <input type="text" id="docenteDni" placeholder="Ej: 27.654.321"></div>
           </div>
           <div class="form-fila">
-            <div class="form-group"><label>Teléfono</label>
+            <div class="form-group"><label>TelÃ©fono</label>
               <input type="text" id="docenteTelefono" placeholder="Ej: 3492 765432"></div>
-            <div class="form-group"><label>Día</label>
+            <div class="form-group"><label>DÃ­a</label>
               <input type="text" id="docenteDia" placeholder="Ej: Martes"></div>
           </div>
           <div class="form-fila">
@@ -215,10 +217,10 @@
           <div class="form-fila">
             <div class="form-group"><label>Usuario *</label>
               <input type="text" id="docenteUsuario" required placeholder="Ej: maria.gomez"></div>
-            <div class="form-group"><label>Contraseña temporal</label>
+            <div class="form-group"><label>ContraseÃ±a temporal</label>
               <div style="display:flex;gap:6px">
                 <input type="text" id="docentePass" readonly placeholder="Generada">
-                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassDocente">🎲 Generar</button>
+                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassDocente">ðŸŽ² Generar</button>
               </div>
             </div>
           </div>
@@ -234,8 +236,8 @@
       <div class="modal g-modal-full">
         <div class="modal-head">
           <b id="pantallaTitulo">Interactivo</b>
-          <button type="button" class="btn btn-ghost btn-sm" id="pantallaNueva">↗ Nueva pestaña</button>
-          <button type="button" class="btn btn-primary btn-sm" id="pantallaCerrar">Salir ✕</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="pantallaNueva">â†— Nueva pestaÃ±a</button>
+          <button type="button" class="btn btn-primary btn-sm" id="pantallaCerrar">Salir âœ•</button>
         </div>
         <div class="modal-body">
           <iframe id="pantallaFrame" title="Interactivo" sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups"></iframe>
@@ -245,7 +247,7 @@
   </main>
 
   <div class="toast" role="status" aria-live="polite"></div>
-  <footer class="site-firma">Hecho con dedicación · @gustavokempe</footer>
+  <footer class="site-firma">Hecho con dedicaciÃ³n Â· @gustavokempe</footer>
   <script src="/js/gestor.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE = 'itc-clases-v8';
+const CACHE = 'itc-clases-v9';
 const ASSETS = [
   '/',
   '/inicio',
@@ -19,7 +19,9 @@ const ASSETS = [
   '/js/visor.js',
   '/img/logo-itc.svg',
   '/img/logo-udemm.svg',
-  '/img/icon.svg',
+  '/img/icon-48.png',
+  '/img/icon-256.png',
+  '/img/apple-touch-icon.png',
   '/manifest.json'
 ];
 
