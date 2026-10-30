@@ -1,0 +1,169 @@
+/* Panel Docente (gestor) — reutiliza variables de styles.css Abase */
+
+/* ── barra de modos ─────────────────────────────────────── */
+.gestor-barra {
+  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+  padding: 14px 22px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 64px; z-index: 40;
+}
+.gb-modos { display: flex; gap: 8px; }
+.gb-modo {
+  border: 1px solid var(--border); background: var(--surface-2);
+  color: var(--text-soft); padding: 8px 18px; border-radius: 999px;
+  font-weight: 700; font-size: 0.92rem; transition: all .15s;
+}
+.gb-modo.activo {
+  background: var(--primary); border-color: var(--primary); color: #fff;
+}
+.gb-buscar { position: relative; margin-left: auto; min-width: 260px; max-width: 380px; flex: 1; }
+.gb-buscar input {
+  width: 100%; padding: 9px 14px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+  font-family: inherit; font-size: 0.95rem;
+}
+.gb-buscar input:focus { outline: 2px solid var(--primary-soft); border-color: var(--primary); }
+.gb-resultados {
+  position: absolute; top: 46px; right: 0; left: 0; z-index: 60;
+  max-height: 60vh; overflow-y: auto;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px;
+}
+.gb-res-item {
+  display: flex; gap: 10px; align-items: center;
+  padding: 9px 12px; border-radius: var(--radius-sm); cursor: pointer;
+}
+.gb-res-item:hover { background: var(--primary-soft); }
+.gb-res-item small { display: block; color: var(--text-soft); }
+.gb-res-item b { font-size: 0.95rem; }
+
+/* ── rejilla de 3 columnas (modo clase) ─────────────────── */
+.gestor-grid {
+  display: grid; grid-template-columns: 250px 320px 1fr;
+  gap: 0; min-height: calc(100vh - 170px);
+}
+.g-col {
+  padding: 18px 16px; overflow-y: auto;
+  border-right: 1px solid var(--border); background: var(--bg);
+}
+.g-col-titulo {
+  font-size: 0.78rem; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--text-soft); margin-bottom: 12px; font-weight: 800;
+}
+.g-amplia { background: var(--surface); border-right: 0; padding: 24px; }
+
+/* tarjetas de curso */
+.g-curso {
+  display: flex; gap: 10px; align-items: center;
+  width: 100%; text-align: left;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 12px; margin-bottom: 8px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.g-curso:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+.g-curso.sel { border-color: var(--primary); background: var(--primary-soft); }
+.g-curso .g-emoji { font-size: 1.35rem; }
+.g-curso .g-nombre { font-weight: 700; font-size: 0.9rem; line-height: 1.25; }
+.g-curso .g-sub { font-size: 0.75rem; color: var(--text-soft); }
+
+/* módulos y clases */
+.g-modulo { margin-bottom: 10px; }
+.g-modulo-titulo {
+  font-size: 0.8rem; font-weight: 800; color: var(--text-soft);
+  margin: 12px 0 6px; line-height: 1.3;
+}
+.g-clase {
+  display: flex; gap: 8px; align-items: center;
+  width: 100%; text-align: left;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 8px 10px; margin-bottom: 5px;
+  font-size: 0.88rem; transition: border-color .15s;
+}
+.g-clase:hover { border-color: var(--primary); }
+.g-clase.sel { border-color: var(--primary); background: var(--primary-soft); font-weight: 700; }
+.g-clase .mark { margin-left: auto; font-size: 0.75rem; background: var(--primary-soft); color: var(--primary-dark); border-radius: 999px; padding: 2px 8px; font-weight: 800; }
+
+/* detalle de clase */
+.g-detalle-head h2 { font-size: 1.5rem; margin: 4px 0; }
+.g-detalle-head .sub { color: var(--text-soft); margin-bottom: 16px; }
+.g-vacio { color: var(--text-soft); font-size: 0.95rem; padding: 14px; }
+.g-vacio.grande { padding: 80px 20px; font-size: 1.05rem; text-align: center; }
+.g-vacio.grande p { font-size: 1.4rem; font-weight: 800; color: var(--text); margin-bottom: 18px; }
+.g-ayuda { list-style: none; margin-top: 10px; }
+.g-ayuda li { margin: 8px 0; color: var(--text-soft); }
+
+/* materiales */
+.g-materiales {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 10px; margin-top: 10px;
+}
+.g-material {
+  display: flex; flex-direction: column; gap: 6px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px;
+  text-align: left; transition: border-color .15s, transform .1s;
+  min-height: 86px;
+}
+.g-material:hover { border-color: var(--primary); transform: translateY(-2px); }
+.g-material.inter .g-mat-titulo::after { content: " · interactivo"; color: var(--primary); font-size: 0.72rem; font-weight: 800; }
+.g-mat-emoji { font-size: 1.5rem; }
+.g-mat-titulo { font-weight: 700; font-size: 0.85rem; line-height: 1.3; }
+.g-mat-meta { font-size: 0.72rem; color: var(--text-soft); }
+.g-seccion-titulo {
+  font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--text-soft); font-weight: 800; margin-top: 20px;
+}
+
+/* ── modo contenido ─────────────────────────────────────── */
+.g-contenido-head {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  padding: 22px 26px 8px; gap: 12px;
+}
+.g-contenido-head h2 { font-size: 1.4rem; }
+.g-acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.g-aviso {
+  margin: 10px 26px; padding: 12px 16px;
+  background: rgba(217, 119, 6, .12); border: 1px solid rgba(217, 119, 6, .4);
+  border-radius: var(--radius-sm); color: var(--text); font-size: 0.9rem;
+}
+#tablaEstado { padding: 14px 26px 30px; }
+.g-tabla-curso { margin-bottom: 14px; }
+.g-barra {
+  position: relative; height: 10px; background: var(--surface-2);
+  border-radius: 999px; overflow: hidden; flex: 1; margin: 0 12px;
+}
+.g-barra > span { position: absolute; inset: 0; border-radius: 999px; transition: width .4s; }
+.g-fila-curso {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px 16px;
+}
+.g-fila-curso .g-emoji { font-size: 1.3rem; }
+.g-fila-curso .g-nombre { font-weight: 700; min-width: 250px; }
+.g-pct { font-weight: 800; font-size: 0.95rem; }
+.g-sub2 { color: var(--text-soft); font-size: 0.78rem; }
+.g-faltantes {
+  margin: 6px 0 0; padding: 10px 14px; border-top: 1px dashed var(--border);
+  font-size: 0.82rem; color: var(--text-soft); list-style: none;
+}
+.g-faltantes-sub { list-style: none; padding-left: 10px; margin-top: 4px; }
+.g-faltantes-sub li { margin: 3px 0; }
+.g-log {
+  margin: 8px 26px 30px; padding: 14px;
+  background: #0d1420; color: #cfe3ff; border-radius: var(--radius-sm);
+  font-family: Consolas, monospace; font-size: 0.82rem;
+  max-height: 300px; overflow-y: auto; white-space: pre-wrap;
+}
+
+/* modal a pantalla estirada */
+.g-modal-full { width: min(1400px, 94vw); height: 90vh; display: flex; flex-direction: column; }
+.g-modal-full .modal-body { flex: 1; padding: 0; }
+.g-modal-full iframe { width: 100%; height: 100%; border: 0; }
+
+/* responsive */
+@media (max-width: 1100px) {
+  .gestor-grid { grid-template-columns: 1fr; }
+  .g-col { border-right: 0; border-bottom: 1px solid var(--border); max-height: none; }
+  .gb-buscar { min-width: 100%; order: 3; }
+}

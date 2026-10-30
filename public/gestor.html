@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Docente - ITC Aula Virtual</title>
+  <meta name="description" content="Gestor docente de clases: dar clase y gestionar contenido del aula">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0058FF">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/gestor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/config.js"></script>
+  <script src="/js/common.js"></script>
+</head>
+<body class="modo-gestor">
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+  <header class="topbar" id="topbar"></header>
+
+  <main id="main">
+    <!-- Barra del gestor: modos + continuar + búsqueda -->
+    <div class="gestor-barra">
+      <div class="gb-modos" role="tablist">
+        <button type="button" id="tabClase" class="gb-modo activo" role="tab">🖥️ Modo Clase</button>
+        <button type="button" id="tabContenido" class="gb-modo" role="tab">🗂️ Modo Contenido</button>
+      </div>
+      <button type="button" id="btnContinuar" class="btn btn-primary btn-sm hidden">⏵ Continuar: …</button>
+      <div class="gb-buscar">
+        <input type="search" id="buscador" placeholder="Buscar en 219 clases…" aria-label="Buscar clase" autocomplete="off">
+        <div id="busquedas" class="gb-resultados hidden"></div>
+      </div>
+    </div>
+
+    <!-- ═══ MODO CLASE ═══ -->
+    <section id="panelClase" class="gestor-grid">
+      <!-- columna 1: cursos -->
+      <aside class="g-col" id="colCursos">
+        <h2 class="g-col-titulo">Capacitaciones</h2>
+        <div class="loading" id="loadingCursos"><span class="spinner"></span> Cargando…</div>
+        <div id="listaCursos"></div>
+      </aside>
+      <!-- columna 2: módulos y clases -->
+      <aside class="g-col" id="colClases">
+        <h2 class="g-col-titulo" id="tituloClases">Clases</h2>
+        <div id="listaModulos"><div class="g-vacio">Elegí una capacitación a la izquierda.</div></div>
+      </aside>
+      <!-- columna 3: clase -->
+      <section class="g-col g-amplia" id="colDetalle">
+        <div id="detalleVacio" class="g-vacio grande">
+          <p>🎓 Elegí una clase y la traigo acá:</p>
+          <ul class="g-ayuda">
+            <li><b>Interactivos</b> a pantalla completa para proyectar</li>
+            <li><b>Puntos de descarga</b> directos a Drive</li>
+            <li>Se <b>guarda por dónde vas</b> para el día siguiente</li>
+          </ul>
+        </div>
+        <div id="detalleClase" class="hidden"></div>
+      </section>
+    </section>
+
+    <!-- ═══ MODO CONTENIDO ═══ -->
+    <section id="panelContenido" class="hidden">
+      <div class="g-contenido-head">
+        <div>
+          <h2>Estado del contenido</h2>
+          <p class="sub" id="estadoGenerado">Catálogo: …</p>
+        </div>
+        <div class="g-acciones">
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshEstado">🔄 Refrescar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnAccionCatalogo">⚙️ Regenerar catálogo</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnAccionDrive">☁️ Re-enlazar Drive</button>
+        </div>
+      </div>
+      <div id="gestorLocalAviso" class="g-aviso hidden">
+        Las acciones de regeneración funcionan solo en la PC del docente (<code>node server.js</code>). En producción el contenido se gestiona por GitHub + rclone local.
+      </div>
+      <div class="loading" id="loadingEstado"><span class="spinner"></span> Cargando estado…</div>
+      <div id="tablaEstado"></div>
+      <div id="accionLog" class="g-log hidden"></div>
+    </section>
+
+    <!-- Overlay: interactivo a pantalla completa -->
+    <div class="modal-overlay hidden" id="pantalla" role="dialog" aria-modal="true" aria-label="Interactivo en pantalla">
+      <div class="modal g-modal-full">
+        <div class="modal-head">
+          <b id="pantallaTitulo">Interactivo</b>
+          <button type="button" class="btn btn-ghost btn-sm" id="pantallaNueva">↗ Nueva pestaña</button>
+          <button type="button" class="btn btn-primary btn-sm" id="pantallaCerrar">Salir ✕</button>
+        </div>
+        <div class="modal-body">
+          <iframe id="pantallaFrame" title="Interactivo" sandbox="allow-scripts allow-same-origin allow-forms allow-downloads allow-popups"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <footer class="site-firma">Hecho con dedicación · @gustavokempe</footer>
+  <script src="/js/gestor.js"></script>
+</body>
+</html>

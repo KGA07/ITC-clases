@@ -62,6 +62,13 @@ function getClase(id) {
   return c.claseIndex.get(id) || null;
 }
 
+// Invalida el cache en memoria (usado por el gestor tras regenerar el catalogo).
+function reload() {
+  catalog = null;
+  catalogError = null;
+  return true;
+}
+
 function buscar(q) {
   const c = loadCatalog();
   if (!c) return [];
@@ -84,4 +91,4 @@ function buscar(q) {
   return resultados.slice(0, 50);
 }
 
-module.exports = { getCatalog, getCurso, getClase, buscar, CATALOG_FILE };
+module.exports = { getCatalog, getCurso, getClase, buscar, reload, CATALOG_FILE };

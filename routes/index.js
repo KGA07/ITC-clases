@@ -6,6 +6,7 @@ const catalogCtrl = require('../controllers/catalogController');
 const { auth, profAuth } = require('../middleware/auth');
 const { apiLimiter, authLimiter } = require('../middleware/rateLimit');
 const { loginRateLimiter } = require('../middleware/security');
+const gestorCtrl = require('../controllers/gestorController');
 
 const router = Router();
 
@@ -19,5 +20,10 @@ router.get('/catalogo', apiLimiter, auth, profAuth, catalogCtrl.readCatalog);
 router.get('/curso/:id', apiLimiter, auth, profAuth, catalogCtrl.readCurso);
 router.get('/clase/:id', apiLimiter, auth, profAuth, catalogCtrl.readClase);
 router.get('/buscar', apiLimiter, auth, profAuth, catalogCtrl.search);
+
+// Gestor docente (estado + acciones locales de regeneración)
+router.get('/gestor', apiLimiter, auth, profAuth, gestorCtrl.estado);
+router.get('/gestor/accion', apiLimiter, auth, profAuth, gestorCtrl.estadoAccion);
+router.post('/gestor/accion', apiLimiter, auth, profAuth, gestorCtrl.accion);
 
 module.exports = router;

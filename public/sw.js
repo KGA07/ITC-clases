@@ -1,12 +1,14 @@
 'use strict';
 
-const CACHE = 'itc-clases-v2';
+const CACHE = 'itc-clases-v3';
 const ASSETS = [
   '/',
   '/inicio',
   '/config.js',
   '/css/styles.css',
   '/js/common.js',
+  '/js/gestor.js',
+  '/css/gestor.css',
   '/img/logo-itc.svg',
   '/img/logo-udemm.svg',
   '/img/icon.svg',
