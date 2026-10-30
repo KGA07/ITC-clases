@@ -3,11 +3,13 @@ const express = require('express');
 const { Router } = express;
 const appCtrl = require('../controllers/appController');
 const catalogCtrl = require('../controllers/catalogController');
-const { auth, profAuth } = require('../middleware/auth');
+const { auth, profAuth, adminAuth } = require('../middleware/auth');
 const { apiLimiter, authLimiter } = require('../middleware/rateLimit');
 const { loginRateLimiter } = require('../middleware/security');
 const gestorCtrl = require('../controllers/gestorController');
 const alumnosCtrl = require('../controllers/alumnoController');
+const docentesCtrl = require('../controllers/docenteController');
+const aulaCtrl = require('../controllers/aulaController');
 
 const router = Router();
 
@@ -28,6 +30,18 @@ router.post('/alumnos', apiLimiter, auth, profAuth, alumnosCtrl.crear);
 router.put('/alumnos/:id', apiLimiter, auth, profAuth, alumnosCtrl.actualizar);
 router.delete('/alumnos/:id', apiLimiter, auth, profAuth, alumnosCtrl.borrar);
 router.post('/alumnos/:id/password', apiLimiter, auth, profAuth, alumnosCtrl.cambiarPassword);
+
+// ── Docentes: ABM solo para administrador ──────────────────────────────────
+router.get('/docentes', apiLimiter, auth, adminAuth, docentesCtrl.listar);
+router.post('/docentes', apiLimiter, auth, adminAuth, docentesCtrl.crear);
+router.put('/docentes/:id', apiLimiter, auth, adminAuth, docentesCtrl.actualizar);
+router.delete('/docentes/:id', apiLimiter, auth, adminAuth, docentesCtrl.borrar);
+router.post('/docentes/:id/password', apiLimiter, auth, adminAuth, docentesCtrl.cambiarPassword);
+
+// ── Aula del profesor: habilitación de clases + asistencia ─────────────────
+router.get('/prof/panel', apiLimiter, auth, profAuth, aulaCtrl.panel);
+router.put('/prof/habilitacion', apiLimiter, auth, profAuth, aulaCtrl.habilitar);
+router.put('/prof/asistencia', apiLimiter, auth, profAuth, aulaCtrl.asistencia);
 
 function alumnoAuth(req, res, next) {
   if (!req.user || req.user.tipo !== 'alumno') return res.status(403).json({ error: 'Solo alumnos' });

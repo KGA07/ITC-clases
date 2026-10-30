@@ -47,6 +47,7 @@ const pages = {
   '/curso': 'curso.html',
   '/clase': 'clase.html',
   '/gestor': 'gestor.html',
+  '/profesor': 'profesor.html',
   '/alumno': 'alumno.html',
   '/visor': 'visor.html'
 };

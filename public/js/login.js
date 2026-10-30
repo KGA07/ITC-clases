@@ -3,7 +3,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   if (isAuthed()) {
     // cada usuario a su portada
-    location.href = localStorage.getItem('itc_clases_tipo') === 'alumno' ? '/alumno' : '/gestor';
+    const t0 = localStorage.getItem('itc_clases_tipo');
+    location.href = t0 === 'alumno' ? '/alumno' : t0 === 'profesor' ? '/profesor' : '/gestor';
     return;
   }
 
@@ -29,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTokens(data.token, data.refreshToken);
       localStorage.setItem('itc_clases_nombre', data.nombre_completo || data.nombre);
       localStorage.setItem('itc_clases_tipo', data.tipo || 'profesor');
-      // docentes van al panel; alumnos a su aula personal
-      location.href = data.tipo === 'alumno' ? '/alumno' : '/gestor';
+      // cada rol a su portada: alumno → aula, docente → su panel, admin → gestor
+      location.href = data.tipo === 'alumno' ? '/alumno' : data.tipo === 'profesor' ? '/profesor' : '/gestor';
     } catch (err) {
       errText.textContent = err.message;
       errBox.classList.add('show');

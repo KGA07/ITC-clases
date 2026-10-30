@@ -1,0 +1,124 @@
+'use strict';
+const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
+const db = require('../data/db');
+
+// ── Utilidades ──────────────────────────────────────────────────────────────
+function passwordGenerada() {
+  const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+  const dig = '23456789';
+  const s = (arr, n) => Array.from({ length: n }, () => arr[crypto.randomInt(arr.length)]).join('');
+  return `ITC${s(abc, 2)}${s(dig, 3)}`;
+}
+
+function vistaDocente(u) {
+  return {
+    id: u.id,
+    usuario: u.nombre,
+    nombre_completo: u.nombre_completo || '',
+    email: u.email || '',
+    dni: u.dni || '',
+    telefono: u.telefono || '',
+    dia: u.dia || '',
+    horario: u.horario || '',
+    curso: u.curso || '',
+    creado: u.creado || ''
+  };
+}
+
+function docenteDe(data, id) {
+  return data.users.find((u) => String(u.id) === String(id) && u.tipo === 'profesor');
+}
+
+async function nombreOcupado(data, nombre, exceptoId) {
+  const n = String(nombre).toLowerCase();
+  return data.users.some((u) => String(u.nombre).toLowerCase() === n && String(u.id) !== String(exceptoId)) ||
+    data.alumnos.some((a) => a.usuario.toLowerCase() === n);
+}
+
+// ── ABM de docentes (solo administrador) ────────────────────────────────────
+async function listar(req, res) {
+  const data = await db.loadData();
+  res.json({ docentes: data.users.filter((u) => u.tipo === 'profesor').map(vistaDocente) });
+}
+
+async function crear(req, res) {
+  const { nombre, nombre_completo, email = '', dni = '', telefono = '', dia = '', horario = '', curso = '', password = '' } = req.body || {};
+  if (!nombre || !nombre_completo) {
+    return res.status(400).json({ error: 'Faltan usuario o nombre completo.' });
+  }
+  const data = await db.loadData();
+  const limpio = String(nombre).trim();
+  if (await nombreOcupado(data, limpio)) {
+    return res.status(409).json({ error: `El usuario "${limpio}" ya existe.` });
+  }
+  const clave = password || passwordGenerada();
+  const docente = {
+    id: db.getNextId(data.users),
+    nombre: limpio,
+    password: bcrypt.hashSync(clave, 10),
+    tipo: 'profesor',
+    nombre_completo: String(nombre_completo).trim(),
+    email: String(email).trim(),
+    dni: String(dni).trim(),
+    telefono: String(telefono).trim(),
+    dia: String(dia).trim(),
+    horario: String(horario).trim(),
+    curso: String(curso),
+    creado: new Date().toISOString()
+  };
+  data.users.push(docente);
+  if (docente.id >= (data.nextUserId || 3)) data.nextUserId = docente.id + 1;
+  await db.saveData();
+  res.status(201).json({ docente: vistaDocente(docente), password: clave });
+}
+
+async function actualizar(req, res) {
+  const data = await db.loadData();
+  const docente = docenteDe(data, req.params.id);
+  if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
+
+  const { nombre, nombre_completo, email, dni, telefono, dia, horario, curso, password } = req.body || {};
+  if (nombre && String(nombre).trim().toLowerCase() !== String(docente.nombre).toLowerCase()) {
+    const nuevo = String(nombre).trim();
+    if (await nombreOcupado(data, nuevo, docente.id)) {
+      return res.status(409).json({ error: `El usuario "${nuevo}" ya existe.` });
+    }
+    docente.nombre = nuevo;
+  }
+  if (nombre_completo !== undefined) docente.nombre_completo = String(nombre_completo).trim();
+  if (email !== undefined) docente.email = String(email).trim();
+  if (dni !== undefined) docente.dni = String(dni).trim();
+  if (telefono !== undefined) docente.telefono = String(telefono).trim();
+  if (dia !== undefined) docente.dia = String(dia).trim();
+  if (horario !== undefined) docente.horario = String(horario).trim();
+  if (curso !== undefined) docente.curso = String(curso);
+  if (password) docente.password = bcrypt.hashSync(String(password), 10);
+
+  await db.saveData();
+  res.json({ docente: vistaDocente(docente) });
+}
+
+async function borrar(req, res) {
+  const data = await db.loadData();
+  const docente = docenteDe(data, req.params.id);
+  if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
+  if (String(docente.id) === String(req.user.id)) {
+    return res.status(400).json({ error: 'No podés borrar tu propio usuario.' });
+  }
+  data.users = data.users.filter((u) => u !== docente);
+  await db.saveData();
+  res.json({ ok: true });
+}
+
+async function cambiarPassword(req, res) {
+  const data = await db.loadData();
+  const docente = docenteDe(data, req.params.id);
+  if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
+  const clave = req.body && req.body.password ? String(req.body.password) : passwordGenerada();
+  docente.password = bcrypt.hashSync(clave, 10);
+  await db.saveData();
+  res.json({ ok: true, password: clave });
+}
+
+module.exports = { listar, crear, actualizar, borrar, cambiarPassword, vistaDocente, passwordGenerada };

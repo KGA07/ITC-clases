@@ -1,0 +1,70 @@
+/* ── Panel del Profesor (sidebar + secciones) ─────────────── */
+.prof-body { display: flex; min-height: 100vh; background: #f4f7fb; }
+
+.p-side {
+  width: 250px; flex-shrink: 0; background: #fff; border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 18px; padding: 18px 0 16px;
+  position: sticky; top: 0; height: 100vh;
+}
+.p-side-marca { display: flex; align-items: center; gap: 10px; padding: 0 18px; }
+.p-side-marca img { height: 38px; }
+.p-side-marca span { font-weight: 800; font-size: .85rem; color: #0b2c5f; }
+.p-nav { display: flex; flex-direction: column; gap: 2px; padding: 0 10px; }
+.p-nav-item {
+  text-align: left; padding: 11px 14px; border-radius: 10px; border: 0; background: transparent;
+  font: inherit; font-weight: 700; font-size: .92rem; color: #26415f; cursor: pointer;
+}
+.p-nav-item:hover { background: #eef4fd; }
+.p-nav-item.activo { background: var(--primary); color: #fff; }
+.p-side-pie { margin-top: auto; padding: 12px 18px 0; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
+
+.p-main { flex: 1 1 auto; min-width: 0; padding: 30px 34px 50px; }
+.p-h1 { font-size: 1.7rem; font-weight: 800; margin-bottom: 4px; }
+.p-vacio { max-width: 520px; }
+
+.p-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 18px 0; }
+.p-stat { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+.p-stat b { display: block; font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+.p-stat span { font-size: .8rem; color: var(--text-soft); font-weight: 700; }
+
+.p-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+.p-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.p-card select { width: min(320px, 100%); padding: 9px 10px; border: 1px solid var(--border); border-radius: 10px; font: inherit; }
+
+.p-alumnos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; margin-top: 14px; }
+.p-alumno { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: flex-start; }
+.p-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.p-alumno b { display: block; font-size: .92rem; }
+.p-alumno small { color: var(--text-soft); display: block; line-height: 1.5; }
+
+.p-clase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 8px; }
+.p-clase { display: flex; gap: 12px; align-items: center; }
+.p-num { width: 44px; height: 44px; border-radius: 12px; background: var(--primary); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .95rem; }
+.p-clase-info { flex: 1 1 auto; min-width: 0; }
+.p-clase-info b { font-size: .92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+.p-clase-info small { color: var(--text-soft); }
+.p-chip-ok { color: #16a34a; }
+.p-acciones-fila { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+.btn-deshab { background: #dc2626; border-color: #dc2626; color: #fff; }
+.btn-deshab:hover { background: #b91c1c; }
+
+.p-asist-fila { display: flex; align-items: center; gap: 12px; background: #f7feff; border: 1px solid #bfe9d4; border-radius: 12px; padding: 10px 14px; margin-bottom: 10px; }
+.p-asist-fila.sin-marca { background: #fff; border-color: var(--border); }
+.p-asist-fila.ausente { background: #fff6f6; border-color: #f3c6c6; }
+.p-asist-nombre { flex: 1 1 auto; min-width: 0; }
+.p-asist-nombre b { font-size: .95rem; display: block; }
+.p-asist-nombre small { color: var(--text-soft); }
+.btn-pres { background: #16a34a; border-color: #16a34a; color: #fff; }
+.btn-aus { background: #fff; color: #dc2626; border: 1px solid #f3c6c6; }
+.btn-pres.sel, .btn-aus.sel { outline: 3px solid rgba(22,163,74,.25); }
+.btn-aus.sel { background: #dc2626; color: #fff; border-color: #dc2626; outline-color: rgba(220,38,38,.25); }
+
+.p-modulo-titulo { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-soft); font-weight: 800; margin: 20px 0 8px; }
+
+@media (max-width: 760px) {
+  .prof-body { flex-direction: column; }
+  .p-side { width: 100%; height: auto; position: static; flex-direction: row; align-items: center; flex-wrap: wrap; padding: 10px; gap: 8px; }
+  .p-nav { flex-direction: row; flex-wrap: wrap; padding: 0; }
+  .p-main { padding: 20px 16px 40px; }
+}

@@ -133,12 +133,13 @@ function toast(msg) {
 
 // ── Barra superior compartida ───────────────────────────────────────────────
 function renderHeader(nombre = '') {
-  const esAlumno = localStorage.getItem('itc_clases_tipo') === 'alumno';
+  const t = localStorage.getItem('itc_clases_tipo');
+  const portada = t === 'alumno' ? '/alumno' : t === 'profesor' ? '/profesor' : '/gestor';
   const el = document.getElementById('topbar');
   if (!el) return;
   el.innerHTML =
     '<div class="topbar-inner">' +
-    `  <a class="brand" href="${esAlumno ? '/alumno' : '/gestor'}" aria-label="ITC Clases - aula virtual">` +
+    `  <a class="brand" href="${portada}" aria-label="ITC Clases - aula virtual">` +
     '    <img src="/img/logo-itc.svg" alt="ITC">' +
     '    <img src="/img/logo-udemm.svg" alt="UdeMM">' +
     '    <div class="brand-divider" aria-hidden="true"></div>' +

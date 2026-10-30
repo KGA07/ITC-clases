@@ -1,19 +1,22 @@
 'use strict';
 
-const CACHE = 'itc-clases-v7';
+const CACHE = 'itc-clases-v8';
 const ASSETS = [
   '/',
   '/inicio',
   '/gestor',
+  '/profesor',
   '/alumno',
   '/visor',
   '/config.js',
   '/css/styles.css',
+  '/css/gestor.css',
+  '/css/profesor.css',
   '/js/common.js',
   '/js/gestor.js',
+  '/js/profesor.js',
   '/js/alumno.js',
   '/js/visor.js',
-  '/css/gestor.css',
   '/img/logo-itc.svg',
   '/img/logo-udemm.svg',
   '/img/icon.svg',
@@ -39,7 +42,7 @@ self.addEventListener('fetch', (e) => {
   if (url.pathname.startsWith('/api/')) return;
 
   // Las páginas y los interactivos van con red primero (fallback a cache).
-  const isPage = url.pathname === '/' || ['/inicio', '/curso', '/clase', '/gestor', '/alumno', '/visor'].includes(url.pathname) ||
+  const isPage = url.pathname === '/' || ['/inicio', '/curso', '/clase', '/gestor', '/profesor', '/alumno', '/visor'].includes(url.pathname) ||
     url.pathname.startsWith('/html/interactivos/');
 
   if (isPage) {

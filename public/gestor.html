@@ -26,6 +26,7 @@
         <button type="button" id="tabClase" class="gb-modo activo" role="tab">🖥️ Modo Clase</button>
         <button type="button" id="tabContenido" class="gb-modo" role="tab">🗂️ Modo Contenido</button>
         <button type="button" id="tabAlumnos" class="gb-modo" role="tab">👥 Alumnos</button>
+        <button type="button" id="tabDocentes" class="gb-modo" role="tab">🧑‍🏫 Docentes</button>
       </div>
       <button type="button" id="btnContinuar" class="btn btn-primary btn-sm hidden">⏵ Continuar: …</button>
       <div class="gb-buscar">
@@ -112,21 +113,37 @@
         </div>
         <form id="formAlumno" style="padding:16px 20px 20px">
           <input type="hidden" id="alumnoId">
-          <div class="form-group"><label>Nombre completo</label>
-            <input type="text" id="alumnoNombre" required placeholder="Ej: Julio Acosta"></div>
+          <div class="form-group"><label>Nombre completo *</label>
+            <input type="text" id="alumnoNombre" required placeholder="Ej: Juan Pérez"></div>
           <div class="form-fila">
-            <div class="form-group"><label>Usuario</label>
-              <input type="text" id="alumnoUsuario" required placeholder="Ej: julio.acosta"></div>
             <div class="form-group"><label>Email</label>
-              <input type="email" id="alumnoEmail" placeholder="Opcional"></div>
+              <input type="email" id="alumnoEmail" placeholder="Ej: juan@email.com"></div>
+            <div class="form-group"><label>DNI</label>
+              <input type="text" id="alumnoDni" placeholder="Ej: 28.123.456"></div>
           </div>
           <div class="form-fila">
-            <div class="form-group"><label>Curso</label><select id="alumnoCurso"></select></div>
-            <div class="form-group"><label>Horario</label>
-              <input type="text" id="alumnoHorario" placeholder="Ej: Lunes 19:30"></div>
+            <div class="form-group"><label>Teléfono</label>
+              <input type="text" id="alumnoTelefono" placeholder="Ej: 3492 123456"></div>
+            <div class="form-group"><label>Día</label>
+              <input type="text" id="alumnoDia" placeholder="Ej: Lunes"></div>
           </div>
-          <p class="sub" id="alumnoAvisoPass" style="margin:4px 0 10px">Se genera una contraseña automática; la vas a ver al guardar (mostrala y borrala del chat si te la copian).</p>
-          <button type="submit" class="btn btn-primary" id="btnGuardarAlumno">Guardar alumno</button>
+          <div class="form-fila">
+            <div class="form-group"><label>Horario</label>
+              <input type="text" id="alumnoHorario" placeholder="Ej: 19:30"></div>
+            <div class="form-group"><label>Curso</label><select id="alumnoCurso"></select></div>
+          </div>
+          <div class="form-fila">
+            <div class="form-group"><label>Usuario *</label>
+              <input type="text" id="alumnoUsuario" required placeholder="Ej: juan.perez"></div>
+            <div class="form-group"><label>Contraseña temporal</label>
+              <div style="display:flex;gap:6px">
+                <input type="text" id="alumnoPass" readonly placeholder="Generada">
+                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassAlumno">🎲 Generar</button>
+              </div>
+            </div>
+          </div>
+          <p class="sub" style="margin:4px 0 10px">Anotale la contraseña para entregársela al alumno.</p>
+          <button type="submit" class="btn btn-primary" id="btnGuardarAlumno">Crear alumno</button>
         </form>
         <div id="credencialesBox" class="g-credenciales hidden"></div>
       </div>
@@ -144,6 +161,71 @@
         </div>
         <p class="sub" style="padding:8px 20px 0">Marcá lo que este alumno puede ver. El resto queda oculto para él.</p>
         <div id="permisosClases" class="g-permisos-lista" style="padding:12px 20px 20px"></div>
+      </div>
+    </div>
+
+    <!-- ═══ MODO DOCENTES ═══ -->
+    <section id="panelDocentes" class="hidden">
+      <div class="g-contenido-head">
+        <div>
+          <h2>Docentes</h2>
+          <p class="sub">Cada docente administra un curso: habilita clases semana a semana y toma asistencia. Ausente = no ve esa clase.</p>
+        </div>
+        <div class="g-acciones">
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRefreshDocentes">🔄 Refrescar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnNuevoDocente">➕ Nuevo docente</button>
+        </div>
+      </div>
+      <div class="g-aviso">
+        Los docentes entran a <code>itc-clases.vercel.app</code> con su usuario y contraseña y llegan a
+        <b>su panel</b> (Panel General · Mis Alumnos · Gestión de Clases · Asistencia) solo con el curso que le asignás acá.
+      </div>
+      <div class="loading" id="loadingDocentes"><span class="spinner"></span> Cargando docentes…</div>
+      <div class="g-alumnos-grid" id="listaDocentes"></div>
+      <p class="g-alumnos-vacio hidden" id="vacioDocentes">Todavía no hay docentes cargados. Usá “➕ Nuevo docente”.</p>
+    </section>
+
+    <!-- Modal: alta de docente -->
+    <div class="modal-overlay hidden" id="modalDocente" role="dialog" aria-modal="true">
+      <div class="modal" style="max-width:520px">
+        <div class="modal-head">
+          <b id="modalDocenteTitulo">Nuevo docente</b>
+          <button type="button" class="btn btn-primary btn-sm" id="modalDocenteCerrar">Cerrar ✕</button>
+        </div>
+        <form id="formDocente" style="padding:16px 20px 20px">
+          <div class="form-group"><label>Nombre completo *</label>
+            <input type="text" id="docenteNombre" required placeholder="Ej: María Gómez"></div>
+          <div class="form-fila">
+            <div class="form-group"><label>Email</label>
+              <input type="email" id="docenteEmail" placeholder="Ej: maria@email.com"></div>
+            <div class="form-group"><label>DNI</label>
+              <input type="text" id="docenteDni" placeholder="Ej: 27.654.321"></div>
+          </div>
+          <div class="form-fila">
+            <div class="form-group"><label>Teléfono</label>
+              <input type="text" id="docenteTelefono" placeholder="Ej: 3492 765432"></div>
+            <div class="form-group"><label>Día</label>
+              <input type="text" id="docenteDia" placeholder="Ej: Martes"></div>
+          </div>
+          <div class="form-fila">
+            <div class="form-group"><label>Horario</label>
+              <input type="text" id="docenteHorario" placeholder="Ej: 19:30"></div>
+            <div class="form-group"><label>Curso a cargo</label><select id="docenteCurso"></select></div>
+          </div>
+          <div class="form-fila">
+            <div class="form-group"><label>Usuario *</label>
+              <input type="text" id="docenteUsuario" required placeholder="Ej: maria.gomez"></div>
+            <div class="form-group"><label>Contraseña temporal</label>
+              <div style="display:flex;gap:6px">
+                <input type="text" id="docentePass" readonly placeholder="Generada">
+                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassDocente">🎲 Generar</button>
+              </div>
+            </div>
+          </div>
+          <p class="sub" style="margin:4px 0 10px">El docente organiza su curso y toma asistencia; no puede tocar usuarios ni el otro contenido.</p>
+          <button type="submit" class="btn btn-primary" id="btnGuardarDocente">Crear docente</button>
+        </form>
+        <div id="credencialesDocenteBox" class="g-credenciales hidden"></div>
       </div>
     </div>
 

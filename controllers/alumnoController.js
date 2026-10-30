@@ -19,6 +19,9 @@ function vistaPublica(alumno) {
     usuario: alumno.usuario,
     nombre_completo: alumno.nombre_completo,
     email: alumno.email || '',
+    dni: alumno.dni || '',
+    telefono: alumno.telefono || '',
+    dia: alumno.dia || '',
     curso: alumno.curso || '',
     horario: alumno.horario || '',
     permisos: alumno.permisos || [],
@@ -28,6 +31,27 @@ function vistaPublica(alumno) {
 
 function alumnoDe(data, id) {
   return data.alumnos.find((a) => String(a.id) === String(id));
+}
+
+// Reglas de visibilidad de una clase para el alumno:
+//   1) habilitada por el docente en Gestión de Clases (habilitaciones)
+//   2) sin marca de AUSENTE en la asistencia de esa clase
+//   3) con al menos un material permitido material por material
+function contextoSesion(data, req) {
+  const alumno = data.alumnos.find((a) => String(a.id) === String(req.user.id));
+  if (!alumno) return null;
+  const hab = data.habilitaciones || {};
+  const asis = data.asistencia || {};
+  return {
+    alumno,
+    set: new Set(alumno.permisos || []),
+    claseVisible(cl) {
+      if (!hab[`${alumno.curso}::${cl.id}`]) return false;
+      const marca = asis[cl.id] && asis[cl.id][alumno.id];
+      if (marca && marca.estado === 'ausente') return false;
+      return (cl.archivos || []).some((f) => this.set.has(f.fid));
+    }
+  };
 }
 
 // Curso desde el catálogo (vista liviana, misma forma que readCatalog)
@@ -56,12 +80,11 @@ const idDrive = (url) => (String(url || '').match(/[?&]id=([A-Za-z0-9_-]+)/) || 
 // ── Docente: ABM de alumnos ─────────────────────────────────────────────────
 async function listar(req, res) {
   const data = await db.loadData();
-  const detalle = req.query.detalle === '1';
-  res.json({ alumnos: data.alumnos.map(detalle ? vistaPublica : (a) => ({ ...vistaPublica(a), nMateriales: (a.permisos || []).length })) });
+  res.json({ alumnos: data.alumnos.map((a) => ({ ...vistaPublica(a), nMateriales: (a.permisos || []).length })) });
 }
 
 async function crear(req, res) {
-  const { nombre_completo, usuario, email = '', curso = '', horario = '', password = '' } = req.body || {};
+  const { nombre_completo, usuario, email = '', dni = '', telefono = '', dia = '', curso = '', horario = '', password = '', permisos } = req.body || {};
   if (!nombre_completo || !usuario) {
     return res.status(400).json({ error: 'Faltan nombre completo o usuario.' });
   }
@@ -73,19 +96,19 @@ async function crear(req, res) {
   }
   const clave = password || passwordGenerada();
   const alumno = {
-    id: db.getNextId(data.alumnos.filter((a) => typeof a.id === 'number')),
+    id: db.nextAlumnoId(data.alumnos),
     usuario: limpio,
     password: bcrypt.hashSync(clave, 10),
     nombre_completo: String(nombre_completo).trim(),
     email: String(email).trim(),
+    dni: String(dni).trim(),
+    telefono: String(telefono).trim(),
+    dia: String(dia).trim(),
     curso: String(curso),
     horario: String(horario).trim(),
-    permisos: [],
+    permisos: Array.isArray(permisos) ? permisos.map(String) : [],
     creado: new Date().toISOString()
   };
-  // El id de alumno podría chocar con el de users al loguear por JWT id;
-  // usamos un espacio de ids separado por prefijo para evitar colisiones.
-  alumno.id = `a${alumno.id}`;
   data.alumnos.push(alumno);
   await db.saveData();
   res.status(201).json({ alumno: vistaPublica(alumno), password: clave });
@@ -96,8 +119,8 @@ async function actualizar(req, res) {
   const alumno = alumnoDe(data, req.params.id);
   if (!alumno) return res.status(404).json({ error: 'Alumno no encontrado.' });
 
-  const { nombre_completo, email, curso, horario, usuario, password, permisos } = req.body || {};
-  if (usuario && String(usuario).trim() !== String(alumno.usuario).toLowerCase()) {
+  const { nombre_completo, email, dni, telefono, dia, curso, horario, usuario, password, permisos } = req.body || {};
+  if (usuario && String(usuario).trim().toLowerCase() !== String(alumno.usuario).toLowerCase()) {
     const nuevo = String(usuario).trim();
     if (data.alumnos.some((a) => a.id !== alumno.id && a.usuario.toLowerCase() === nuevo.toLowerCase()) ||
         data.users.some((u) => String(u.nombre).toLowerCase() === nuevo.toLowerCase())) {
@@ -107,6 +130,9 @@ async function actualizar(req, res) {
   }
   if (nombre_completo !== undefined) alumno.nombre_completo = String(nombre_completo).trim();
   if (email !== undefined) alumno.email = String(email).trim();
+  if (dni !== undefined) alumno.dni = String(dni).trim();
+  if (telefono !== undefined) alumno.telefono = String(telefono).trim();
+  if (dia !== undefined) alumno.dia = String(dia).trim();
   if (curso !== undefined) alumno.curso = String(curso);
   if (horario !== undefined) alumno.horario = String(horario).trim();
   if (Array.isArray(permisos)) alumno.permisos = permisos.map(String);
@@ -136,34 +162,31 @@ async function cambiarPassword(req, res) {
 }
 
 // ── Alumno: su material ─────────────────────────────────────────────────────
-function permisosDe(req, data) {
-  const a = data.alumnos.find((x) => String(x.id) === String(req.user.id));
-  return a ? { alumno: a, set: new Set(a.permisos || []) } : null;
-}
-
 async function catalogoAlumno(req, res) {
   const data = await db.loadData();
-  const ctx = permisosDe(req, data);
+  const ctx = contextoSesion(data, req);
   if (!ctx) return res.status(404).json({ error: 'Alumno sin datos.' });
   const c = getCatalog();
   const curso = ctx.alumno.curso ? c.cursoIndex.get(ctx.alumno.curso) : null;
-  const visiblePorClase = (cl) => (cl.archivos || []).some((f) => ctx.set.has(f.fid));
   res.json({
     nombre_completo: ctx.alumno.nombre_completo,
-    curso: curso && curso.modulos ? vistaCurso(curso, visiblePorClase) : null,
+    curso: curso && curso.modulos ? vistaCurso(curso, (cl) => ctx.claseVisible(cl)) : null,
     sinMateriales: ctx.set.size === 0
   });
 }
 
 async function claseAlumno(req, res) {
   const data = await db.loadData();
-  const ctx = permisosDe(req, data);
+  const ctx = contextoSesion(data, req);
   if (!ctx) return res.status(404).json({ error: 'Alumno sin datos.' });
   const c = getCatalog();
   const clase = c.claseIndex.get(req.params.id);
   if (!clase) return res.status(404).json({ error: 'Clase no encontrada.' });
   if (ctx.alumno.curso && clase.cursoId !== ctx.alumno.curso) {
     return res.status(403).json({ error: 'Esta clase no pertenece a tu curso.' });
+  }
+  if (!ctx.claseVisible(clase)) {
+    return res.status(403).json({ error: 'Esta clase todavía no está habilitada para vos.' });
   }
   const archivos = (clase.archivos || []).filter((f) => ctx.set.has(f.fid));
   const curso = c.cursoIndex.get(clase.cursoId);
