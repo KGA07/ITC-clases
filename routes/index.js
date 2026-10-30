@@ -37,6 +37,8 @@ router.post('/docentes', apiLimiter, auth, adminAuth, docentesCtrl.crear);
 router.put('/docentes/:id', apiLimiter, auth, adminAuth, docentesCtrl.actualizar);
 router.delete('/docentes/:id', apiLimiter, auth, adminAuth, docentesCtrl.borrar);
 router.post('/docentes/:id/password', apiLimiter, auth, adminAuth, docentesCtrl.cambiarPassword);
+// vista previa del panel del docente (solo admin): token temporal por URL
+router.post('/docentes/:id/impersonar', apiLimiter, auth, adminAuth, docentesCtrl.impersonar);
 
 // ── Aula del profesor: habilitación de clases + asistencia ─────────────────
 router.get('/prof/panel', apiLimiter, auth, profAuth, aulaCtrl.panel);

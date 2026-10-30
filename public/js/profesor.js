@@ -36,10 +36,14 @@ async function cargar(cursoId = '') {
     if (!estado.curso) {
       document.getElementById('pSinCurso').classList.remove('hidden');
       document.getElementById('pDocenteNombre').textContent = estado.docente.nombre_completo || '';
+      const pN0 = document.getElementById('pPreviewNombre');
+      if (pN0) pN0.textContent = estado.docente.nombre_completo || '';
       return;
     }
     document.getElementById('pContenido').classList.remove('hidden');
     document.getElementById('pDocenteNombre').textContent = estado.docente.nombre_completo || '';
+    const pN = document.getElementById('pPreviewNombre');
+    if (pN) pN.textContent = estado.docente.nombre_completo || '';
     document.getElementById('pCursoLateral').textContent = `${estado.curso.emoji || ''} ${estado.nombreCurso}`;
     document.getElementById('pTituloCurso').textContent = `${estado.curso.emoji || ''} ${estado.nombreCurso}`;
 
@@ -210,10 +214,13 @@ function renderAsistencia() {
 
 // ── nav + boot ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  if (!requireAuth('')) return;
-  const tipo = localStorage.getItem('itc_clases_tipo');
-  if (tipo === 'alumno') return (location.href = '/alumno');
-  if (tipo !== 'profesor') return (location.href = '/gestor');
+  // vista previa: el admin abrió /profesor#pi=<token>. El token va a memoria,
+  // se limpia el hash de la URL y la sesión del admin no se toca.
+  const pi = (location.hash.match(/[#&]pi=([^&]+)/) || [])[1];
+  if (pi) {
+    setPreviewToken(decodeURIComponent(pi));
+    history.replaceState(null, '', location.pathname + location.search);
+  }
 
   document.querySelectorAll('.p-nav-item').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('.p-nav-item').forEach((x) => x.classList.remove('activo'));
@@ -225,9 +232,28 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('pLogout').addEventListener('click', salir);
   const l2 = document.getElementById('pLogout2');
   if (l2) l2.addEventListener('click', salir);
+  const cerrarPreview = document.getElementById('pPreviewCerrar');
+  if (cerrarPreview) cerrarPreview.addEventListener('click', salir);
 
   document.getElementById('pClaseAsis').addEventListener('change', renderAsistencia);
   const selCurso = document.getElementById('pCursoSel');
   if (selCurso) selCurso.addEventListener('change', () => cargar(selCurso.value));
+
+  if (esVistaPrevia()) {
+    // banner arriba + header sin nombre (el docente aparece en el banner)
+    const banner = document.getElementById('pBannerPreview');
+    if (banner) {
+      banner.classList.remove('hidden');
+      document.body.classList.add('en-preview');
+    }
+    renderHeader('');
+    cargar();
+    return;
+  }
+
+  if (!requireAuth('')) return;
+  const tipo = localStorage.getItem('itc_clases_tipo');
+  if (tipo === 'alumno') return (location.href = '/alumno');
+  if (tipo !== 'profesor') return (location.href = '/gestor');
   cargar();
 });

@@ -1,6 +1,7 @@
 /* exported
   API, EVALUACIONES_URL, TOKEN_KEY,
   getToken, getRefresh, setTokens, clearTokens, isAuthed,
+  setPreviewToken, esVistaPrevia,
   apiFetch, postLogin, tryRefresh, logout,
   applyPreferences, toggleTheme, fmtSize, esc, toast, renderHeader, requireAuth
 */
@@ -13,7 +14,8 @@ const REFRESH_KEY = 'itc_clases_refresh';
 const EVALUACIONES_URL = (window.ITC_CONFIG && window.ITC_CONFIG.evaluacionesUrl) || '/';
 
 function getToken() {
-  return localStorage.getItem(TOKEN_KEY);
+  // vista previa: el token temporal del docente se usa en lugar del del admin
+  return _previewToken || localStorage.getItem(TOKEN_KEY);
 }
 function getRefresh() {
   return localStorage.getItem(REFRESH_KEY);
@@ -30,13 +32,29 @@ function isAuthed() {
   return !!getToken();
 }
 
+// ── Vista previa del panel (admin mirando como docente) ────────────────────
+// El token de vista preva vive SOLO en memoria: no toca el localStorage,
+// así la sesión del admin en su pestaña queda intacta.
+let _previewToken = '';
+
+function setPreviewToken(token) {
+  _previewToken = token ? String(token) : '';
+}
+
+function esVistaPrevia() {
+  return !!_previewToken;
+}
+
 // Llamada a la API con reintento automático por refresh token.
 async function apiFetch(path, options = {}) {
   const opts = { ...options };
-  opts.headers = { ...(opts.headers || {}), Authorization: `Bearer ${getToken()}` };
+  const token = getToken();
+  opts.headers = { ...(opts.headers || {}), Authorization: `Bearer ${token}` };
   let res = await fetch(`${API}${path}`, opts);
 
-  if (res.status === 401 && getRefresh()) {
+  // en vista previa NO hay refresh: el token temporal caduca solo y,
+  // si refrescara, pisaría el token del admin con su sesión verdadera.
+  if (res.status === 401 && getRefresh() && !esVistaPrevia()) {
     const ok = await tryRefresh();
     if (ok) {
       opts.headers.Authorization = `Bearer ${getToken()}`;
@@ -71,6 +89,14 @@ async function tryRefresh() {
 }
 
 async function logout() {
+  // vista previa: cerrar la pestaña (o volver al login) sin tocar los tokens
+  // guardados, que siguen siendo los del admin en esta pestaña.
+  if (esVistaPrevia()) {
+    setPreviewToken('');
+    window.close();
+    location.href = '/';
+    return;
+  }
   try {
     await postLogin('/logout', { refreshToken: getRefresh() });
   } catch {

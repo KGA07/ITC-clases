@@ -2,6 +2,7 @@
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const db = require('../data/db');
+const { signAccess } = require('../middleware/auth');
 
 // ── Utilidades ──────────────────────────────────────────────────────────────
 function passwordGenerada() {
@@ -136,4 +137,21 @@ async function cambiarPassword(req, res) {
   res.json({ ok: true, password: clave });
 }
 
-module.exports = { listar, crear, actualizar, borrar, cambiarPassword, vistaDocente, passwordGenerada };
+// ── Vista previa del panel (solo admin): token temporal como el docente ─────
+// No cambia la sesión del admin: devuelve un access token de profesora corto
+// para abrir el panel en otra pestaña con los permisos reales de ese docente.
+async function impersonar(req, res) {
+  const data = await db.loadData();
+  const docente = docenteDe(data, req.params.id);
+  if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
+  // signAccess firma la sesión (id, nombre, tipo, nombre_completo) con el mismo
+  // JWT secret, así el middleware auth no puede distinguir ni necesita saberlo.
+  const token = signAccess({ id: docente.id, nombre: docente.nombre, tipo: docente.tipo, nombre_completo: docente.nombre_completo });
+  res.json({
+    token,
+    url: `/profesor#pi=${encodeURIComponent(token)}`,
+    docente: vistaDocente(docente)
+  });
+}
+
+module.exports = { listar, crear, actualizar, borrar, cambiarPassword, impersonar, vistaDocente, passwordGenerada };

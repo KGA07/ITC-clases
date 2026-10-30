@@ -1,3 +1,21 @@
+/* ── Banner de vista previa (admin mirando el panel del docente) ── */
+.p-preview {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 16px;
+  background: #14213d; color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  font-size: .9rem;
+}
+.p-preview.hidden { display: none; }
+.p-preview-icon { font-size: 1.1rem; }
+.p-preview-texto { flex: 1; min-width: 0; }
+.p-preview-texto b { color: #ffd166; }
+.p-preview .btn-primary { width: auto; }
+.p-preview .btn { flex-shrink: 0; width: auto; }
+body.en-preview { padding-top: 46px; }
+body.en-preview .p-side { height: calc(100vh - 46px); }
+
 /* ── Panel del Profesor (sidebar + secciones) ─────────────── */
 .prof-body { display: flex; min-height: 100vh; background: #f4f7fb; }
 

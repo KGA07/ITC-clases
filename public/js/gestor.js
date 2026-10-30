@@ -784,6 +784,20 @@ async function refrescarDocentes() {
   }
 }
 
+/* vista previa del panel del docente: pide un token temporal al backend y abre
+   /profesor con los permisos reales de ese docente, sin cerrar la sesión acá */
+async function abrirPanelDocente(d) {
+  try {
+    const res = await apiFetch(`/docentes/${encodeURIComponent(d.id)}/impersonar`, { method: 'POST' });
+    const info = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(info.error || 'No se pudo abrir la vista previa.');
+    // sin noopener: la preview necesita window.opener para poder cerrarse
+    window.open(info.url, '_blank');
+  } catch (e) {
+    toast(e.message);
+  }
+}
+
 function renderDocentes() {
   const caja = document.getElementById('listaDocentes');
   caja.innerHTML = '';
@@ -800,8 +814,8 @@ function renderDocentes() {
     btnPanel.type = 'button';
     btnPanel.className = 'btn btn-ghost btn-sm';
     btnPanel.textContent = '🛠️ Su panel';
-    btnPanel.title = 'El docente entra con su usuario a /profesor';
-    btnPanel.addEventListener('click', () => window.open('/profesor', '_blank', 'noopener'));
+    btnPanel.title = 'Vista previa del panel del docente';
+    btnPanel.addEventListener('click', () => abrirPanelDocente(d));
     const btnPass = document.createElement('button');
     btnPass.type = 'button';
     btnPass.className = 'btn btn-ghost btn-sm';
