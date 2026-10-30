@@ -74,8 +74,10 @@ function contextoSesion(data, req) {
   };
 }
 
-// Curso desde el catálogo (vista liviana, misma forma que readCatalog)
-function vistaCurso(curso, visiblePorClase) {
+// Curso desde el catálogo (vista liviana, misma forma que readCatalog).
+// Con conArchivos=true (aula del alumno): además devuelve los archivos
+// permitidos de cada clase filtrados por permisos, para 1 solo fetch.
+function vistaCurso(curso, visiblePorClase, conArchivos, setArchivos) {
   return {
     id: curso.id,
     orden: curso.orden,
@@ -89,7 +91,11 @@ function vistaCurso(curso, visiblePorClase) {
         titulo: m.titulo,
         clases: (m.clases || [])
           .filter((cl) => (visiblePorClase ? visiblePorClase(cl) : true))
-          .map((cl) => ({ id: cl.id, titulo: cl.titulo, count: (cl.archivos || []).length }))
+          .map((cl) => {
+            const base = { id: cl.id, titulo: cl.titulo, count: (cl.archivos || []).length };
+            if (conArchivos) base.archivos = (cl.archivos || []).filter((f) => !setArchivos || setArchivos.has(f.fid));
+            return base;
+          })
       }))
       .filter((m) => m.clases.length > 0)
   };
@@ -193,11 +199,21 @@ async function catalogoAlumno(req, res) {
   const ctx = contextoSesion(data, req);
   if (!ctx) return res.status(404).json({ error: 'Alumno sin datos.' });
   const c = getCatalog();
-  // un bloque por cada curso asignado, con las clases visibles de ese curso
+  // un bloque por cada curso asignado, con las clases visibles de ese curso.
+  // En la misma respuesta van los archivos permitidos de cada clase: así el
+  // aula carga con 1 solo pedido (antes era 1 pedido por clase).
   const cursos = [];
   for (const id of ctx.cursos) {
     const cur = c.cursoIndex.get(id);
-    if (cur && cur.modulos) cursos.push(vistaCurso(cur, (cl) => ctx.claseVisible(cl)));
+    if (cur && cur.modulos) {
+      const vista = vistaCurso(cur, (cl) => ctx.claseVisible(cl), true, ctx.set);
+      // resumen para la barra de progreso
+      let clases = 0, materiales = 0;
+      for (const m of vista.modulos) for (const cl of m.clases) { clases++; materiales += (cl.archivos || []).length; }
+      vista.totalClases = clases;
+      vista.totalMateriales = materiales;
+      cursos.push(vista);
+    }
   }
   res.json({
     nombre_completo: ctx.alumno.nombre_completo,

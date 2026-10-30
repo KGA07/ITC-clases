@@ -163,6 +163,9 @@ function renderHeader(nombre = '') {
   const portada = t === 'alumno' ? '/alumno' : t === 'profesor' ? '/profesor' : '/gestor';
   const el = document.getElementById('topbar');
   if (!el) return;
+  // El botón Evaluaciones solo aparece con una URL real configurada
+  // (si queda en placeholder "/" se esconde en vez de llevar a la home).
+  const evalPlaceholder = !EVALUACIONES_URL || EVALUACIONES_URL === '/';
   el.innerHTML =
     '<div class="topbar-inner">' +
     `  <a class="brand" href="${portada}" aria-label="ITC Clases - aula virtual">` +
@@ -172,7 +175,7 @@ function renderHeader(nombre = '') {
     '    <span class="brand-title"><span>ITC Aula Virtual</span><small>Clases y materiales</small></span>' +
     '  </a>' +
     '  <div class="topbar-right">' +
-    `    <a class="link-eval" href="${esc(EVALUACIONES_URL)}" target="_blank" rel="noopener">📝 Evaluaciones</a>` +
+    (evalPlaceholder ? '' : `    <a class="link-eval" href="${esc(EVALUACIONES_URL)}" target="_blank" rel="noopener">📝 Evaluaciones</a>`) +
     (nombre ? `    <span class="user-chip"><span class="dot" aria-hidden="true"></span>${esc(nombre)}</span>` : '') +
     '    <button class="icon-btn" id="themeToggle" type="button" title="Cambiar tema">🌓</button>' +
     '  </div>' +

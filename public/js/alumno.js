@@ -1,9 +1,21 @@
 'use strict';
 // Aula del alumno: solo muestra el curso asignado y los materiales
 // habilitados material por material por el docente.
+// 1 solo pedido (el bulk de /alumno/catalogo trae las clases CON sus
+// archivos permitidos) + barra de progreso + búsqueda local + marcas "vista".
 
 const modal = document.getElementById('modal');
 const modalFrame = document.getElementById('modalFrame');
+
+// clases marcadas como vistas (por alumno, en este navegador)
+const VISTOS_KEY = 'itc_alumno_vistas';
+const leidos = new Set(JSON.parse(localStorage.getItem(VISTOS_KEY) || '[]'));
+
+function guardarVistos() {
+  localStorage.setItem(VISTOS_KEY, JSON.stringify([...leidos]));
+}
+
+let _cursos = []; // catálogo bulk recibido (objeto completo)
 
 function abrirModal(url, nombre) {
   document.getElementById('modalTitle').textContent = nombre;
@@ -55,11 +67,35 @@ function accionesArchivo(f) {
   return wrap;
 }
 
+/* marca de clase vista */
+function btnVisto(claseId) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'btn-visto' + (leidos.has(claseId) ? ' ok' : '');
+  b.title = 'Marcar/desmarcar como clase vista';
+  b.setAttribute('aria-pressed', leidos.has(claseId) ? 'true' : 'false');
+  b.textContent = leidos.has(claseId) ? '✓' : '○';
+  b.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (leidos.has(claseId)) leidos.delete(claseId);
+    else leidos.add(claseId);
+    guardarVistos();
+    render();
+  });
+  return b;
+}
+
+/* una clase con sus archivos */
 function renderClase(cl) {
   if (!(cl.archivos || []).length) return null;
   const det = document.createElement('details');
-  det.className = 'alumno-clase';
-  det.innerHTML = `<summary>📘 ${esc(cl.titulo)}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></summary>`;
+  det.className = 'alumno-clase' + (leidos.has(cl.id) ? ' vista' : '');
+  det.dataset.nombre = `${cl.titulo} ${cl.archivos.map((f) => f.nombre).join(' ')}`.toLowerCase();
+  const sum = document.createElement('summary');
+  sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></span>`;
+  sum.appendChild(btnVisto(cl.id));
+  det.appendChild(sum);
   (cl.archivos || []).forEach((f) => {
     const fila = document.createElement('div');
     fila.className = 'alumno-archivo';
@@ -70,6 +106,93 @@ function renderClase(cl) {
     det.appendChild(fila);
   });
   return det;
+}
+
+/* barra de progreso de un curso */
+function renderProgreso(cur) {
+  const total = cur.totalClases || 0;
+  if (total > 0 && leidos.size >= 0) {
+    let vistas = 0;
+    for (const m of cur.modulos || []) for (const cl of (m.clases || [])) if (leidos.has(cl.id)) vistas++;
+    const porc = total ? Math.round((vistas / total) * 100) : 0;
+    const box = document.createElement('div');
+    box.className = 'alumno-progreso';
+    box.innerHTML =
+      `<div class="p-info"><b>${vistas} de ${total} clase${total === 1 ? '' : 's'} vista${vistas === 1 ? '' : 's'}</b>` +
+      `<small>${total} clase${total === 1 ? '' : 's'} habilitada${total === 1 ? '' : 's'} · ${cur.totalMateriales || 0} materiales</small></div>` +
+      `<div class="p-barra"><span style="width:${porc}%"></span></div>`;
+    return box;
+  }
+  return null;
+}
+
+/* un curso completo (conProgreso=false durante una búsqueda filtrada) */
+function renderCurso(cur, conProgreso = true) {
+  const bloque = document.createElement('section');
+  bloque.className = 'alumno-curso-bloque';
+  bloque.dataset.nombre = cur.nombre.toLowerCase();
+
+  // título si hay más de un curso
+  if (_cursos.length > 1) {
+    const t = document.createElement('h2');
+    t.className = 'alumno-curso-titulo';
+    t.textContent = `${cur.emoji || ''} ${cur.nombre}`;
+    bloque.appendChild(t);
+  }
+
+  const prog = conProgreso ? renderProgreso(cur) : null;
+  if (prog) bloque.appendChild(prog);
+
+  for (const mod of cur.modulos || []) {
+    const tituloMod = document.createElement('div');
+    tituloMod.className = 'alumno-modulo';
+    tituloMod.textContent = mod.titulo;
+    bloque.appendChild(tituloMod);
+    let n = 0;
+    for (const cl of mod.clases || []) {
+      const nodo = renderClase(cl);
+      if (nodo) { bloque.appendChild(nodo); n++; }
+    }
+    if (!n) tituloMod.remove();
+  }
+  return bloque;
+}
+
+/* render completo con filtro de búsqueda */
+function render(filtro = '') {
+  const filtroTxt = String(filtro || '').trim().toLowerCase();
+  const caja = document.getElementById('listaMaterial');
+  caja.innerHTML = '';
+  let hayAlgo = false;
+
+  for (const cur of _cursos) {
+    if (!filtroTxt) {
+      caja.appendChild(renderCurso(cur, true));
+      hayAlgo = true;
+      continue;
+    }
+    // con búsqueda: mostrar solo clases cuyo título o material coincida
+    const filtrado = { ...cur };
+    filtrado.modulos = (cur.modulos || [])
+      .map((m) => ({
+        titulo: m.titulo,
+        clases: (m.clases || []).filter((cl) =>
+          cl.titulo.toLowerCase().includes(filtroTxt) ||
+          (cl.archivos || []).some((f) => (f.nombre || '').toLowerCase().includes(filtroTxt)))
+      }))
+      .filter((m) => m.clases.length > 0);
+    if (!filtrado.modulos.length) continue;
+    caja.appendChild(renderCurso(filtrado, false));
+    hayAlgo = true;
+  }
+
+  const aviso = document.getElementById('sinResultados');
+  if (filtroTxt && !hayAlgo) {
+    aviso.classList.remove('hidden');
+    aviso.textContent = `Sin resultados para "${filtroTxt}". Probá con otra palabra.`;
+  } else {
+    aviso.classList.add('hidden');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -86,14 +209,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (res.status === 401) return logout();
     if (!res.ok) throw new Error('No se pudo cargar tu material.');
     const d = await res.json();
+    _cursos = d.cursos || [];
 
     document.getElementById('alumnoSaludo').textContent = `Hola, ${d.nombre_completo || 'alumno'} 👋`;
     document.getElementById('loading').classList.add('hidden');
-
-    // cursos del alumno (array) con compat de un solo curso
-    const listaCursos = Array.isArray(d.cursos) && d.cursos.length
-      ? d.cursos
-      : (d.curso ? [d.curso] : []);
 
     if (d.sinMateriales) {
       document.getElementById('alumnoCursoNombre').textContent = 'Tu profesor todavía no habilitó materiales para vos.';
@@ -102,7 +221,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       e.textContent = 'Cuando el profesor los habilite, van a aparecer acá.';
       return;
     }
-    if (!listaCursos.length) {
+    if (!_cursos.length) {
       document.getElementById('alumnoCursoNombre').textContent = 'Sin cursos asignados todavía.';
       const e = document.getElementById('empty');
       e.classList.remove('hidden');
@@ -110,44 +229,27 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    if (listaCursos.length === 1) {
-      document.getElementById('alumnoCursoNombre').textContent = `${listaCursos[0].emoji || ''} ${listaCursos[0].nombre}`;
-      document.title = `Mi Aula — ${listaCursos[0].nombre}`;
+    if (_cursos.length === 1) {
+      document.getElementById('alumnoCursoNombre').textContent = `${_cursos[0].emoji || ''} ${_cursos[0].nombre}`;
+      document.title = `Mi Aula — ${_cursos[0].nombre}`;
     } else {
-      document.getElementById('alumnoCursoNombre').textContent = `${listaCursos.length} capacitaciones · ${listaCursos.map((c) => c.emoji || '').join(' ')}`;
-      document.title = `Mi Aula — ${listaCursos.length} capacitaciones`;
+      document.getElementById('alumnoCursoNombre').textContent = `${_cursos.length} capacitaciones · ${_cursos.map((c) => c.emoji || '').join(' ')}`;
+      document.title = `Mi Aula — ${_cursos.length} capacitaciones`;
     }
 
-    const caja = document.getElementById('listaMaterial');
-    caja.innerHTML = '';
-    let hayAlgo = false;
-    for (const cur of listaCursos) {
-      // con más de un curso, un título por cada uno
-      if (listaCursos.length > 1) {
-        const t = document.createElement('h2');
-        t.className = 'alumno-curso-titulo';
-        t.textContent = `${cur.emoji || ''} ${cur.nombre}`;
-        caja.appendChild(t);
-      }
-      for (const mod of cur.modulos || []) {
-        const tituloMod = document.createElement('div');
-        tituloMod.className = 'alumno-modulo';
-        tituloMod.textContent = mod.titulo;
-        caja.appendChild(tituloMod);
-        for (const cl of mod.clases || []) {
-          const resCl = await apiFetch(`/alumno/clase/${encodeURIComponent(cl.id)}`);
-          if (!resCl.ok) continue;
-          const dc = await resCl.json();
-          const nodo = renderClase(dc.clase);
-          if (nodo) { caja.appendChild(nodo); hayAlgo = true; }
-        }
-      }
-    }
-    if (!hayAlgo) {
-      const e = document.getElementById('empty');
-      e.classList.remove('hidden');
-      e.textContent = 'Todavía no hay materiales habilitados para vos.';
-    }
+    render();
+
+    // búsqueda local (client-side, sin pedidos nuevos)
+    document.getElementById('cajaBuscar').classList.remove('hidden');
+    const input = document.getElementById('alumnoBuscar');
+    let timer = null;
+    input.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => render(input.value), 200);
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { input.value = ''; render(''); }
+    });
   } catch (err) {
     toast(err.message);
     document.getElementById('loading').classList.add('hidden');

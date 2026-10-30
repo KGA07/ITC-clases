@@ -48,6 +48,37 @@
     .alumno-archivo .info b { display: block; font-size: .9rem; }
     .alumno-archivo .info small { color: var(--text-soft); font-size: .75rem; }
     .alumno-archivo .acciones { display: flex; gap: 8px; flex-shrink: 0; }
+    .alumno-buscar {
+      display: flex; gap: 10px; margin: 0 0 16px;
+    }
+    .alumno-buscar input {
+      flex: 1; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      background: var(--surface); color: var(--text); font: inherit; font-size: .9rem;
+    }
+    .alumno-buscar input:focus { outline: 2px solid var(--primary); outline-offset: 0; border-color: transparent; }
+    .alumno-curso-bloque { margin-bottom: 28px; }
+    .alumno-progreso {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 12px 18px; margin: 10px 0 16px;
+    }
+    .alumno-progreso .p-info b { display: block; font-size: .88rem; }
+    .alumno-progreso .p-info small { color: var(--text-soft); font-size: .75rem; }
+    .alumno-progreso .p-barra {
+      flex: 1; min-width: 120px; height: 8px; border-radius: 99px; background: var(--border); overflow: hidden;
+    }
+    .alumno-progreso .p-barra span {
+      display: block; height: 100%; border-radius: 99px; background: var(--primary);
+      transition: width .3s;
+    }
+    .btn-visto {
+      border: 1px solid var(--border); background: var(--surface); color: var(--text-soft);
+      width: 26px; height: 26px; border-radius: 50%; cursor: pointer; flex-shrink: 0;
+      font-size: .8rem; font-weight: 800; line-height: 1;
+    }
+    .btn-visto.ok { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .btn-visto:hover { outline: 2px solid var(--primary); outline-offset: 1px; }
+    .alumno-clase.vista > summary .sum-txt { text-decoration: line-through; color: var(--text-soft); }
   </style>
 </head>
 <body>
@@ -62,6 +93,10 @@
 
     <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargando…</div>
     <div class="empty hidden" id="empty"></div>
+    <div class="alumno-buscar hidden" id="cajaBuscar">
+      <input type="search" id="alumnoBuscar" placeholder="🔎 Buscar en tu aula… (clase o material)" aria-label="Buscar en tu aula">
+    </div>
+    <div class="empty hidden" id="sinResultados"></div>
     <div id="listaMaterial"></div>
   </main>
 

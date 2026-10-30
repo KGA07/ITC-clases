@@ -28,8 +28,26 @@ function loadCatalog() {
         for (const clase of mod.clases) {
           clase.cursoId = curso.id;
           clase.modulo = mod.titulo;
+          // Material "ciego": archivos sin url ni embedUrl todavía no se
+          // sincronizaron a Drive → no se sirven (decisión del docente 30/10/26).
+          // Se filtra en la carga, así sobrevive a regeneraciones del catálogo.
+          if ((clase.archivos || []).length) {
+            clase.archivos = clase.archivos.filter((f) => f.url || f.embedUrl);
+            clase.count = clase.archivos.length; // mantener el count consistente
+          }
           catalog.claseIndex.set(clase.id, clase);
         }
+      }
+      // Recalcular stats del curso con el material filtrado (para que las
+      // tarjetas de la home y los contadores no cuenten archivos invisibles).
+      let archivos = 0, tamano = 0;
+      for (const mod of curso.modulos) for (const cl of mod.clases) {
+        for (const f of cl.archivos || []) { archivos++; tamano += f.size || 0; }
+      }
+      if (curso.stats) {
+        curso.stats.clases = curso.modulos.reduce((n, m) => n + m.clases.length, 0);
+        curso.stats.archivos = archivos;
+        curso.stats.tamanoMB = tamano / 1048576;
       }
     }
     return catalog;
