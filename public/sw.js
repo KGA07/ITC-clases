@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE = 'itc-clases-v10';
+const CACHE = 'itc-clases-v11';
 const ASSETS = [
   '/',
   '/inicio',
