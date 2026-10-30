@@ -844,3 +844,37 @@ async function cambiarClaveDocente(d) {
     });
   }
 })();
+
+/* ── modales de alta: extras (cancelar + usuario sugerido) ── */
+function sugerirUsuario(t) {
+  const partes = String(t || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').split(/\s+/).filter(Boolean);
+  if (!partes.length) return '';
+  return partes.length > 1 ? `${partes[0]}.${partes[partes.length - 1]}` : partes[0];
+}
+
+(function wireAltaExtras() {
+  [
+    { nombre: 'alumnoNombre', usuario: 'alumnoUsuario' },
+    { nombre: 'docenteNombre', usuario: 'docenteUsuario' }
+  ].forEach((p) => {
+    const inNombre = document.getElementById(p.nombre);
+    const inUsuario = document.getElementById(p.usuario);
+    if (!inNombre || !inUsuario || !inNombre.form) return;
+    let tocado = false;
+    inUsuario.addEventListener('input', () => { tocado = true; });
+    inNombre.addEventListener('input', () => {
+      if (!tocado) inUsuario.value = sugerirUsuario(inNombre.value);
+    });
+    inNombre.form.addEventListener('reset', () => {
+      tocado = false;
+      inUsuario.value = '';
+    });
+  });
+  const ca = document.getElementById('modalAlumnoCancelar');
+  if (ca) ca.addEventListener('click', cerrarModalAlumno);
+  const cd = document.getElementById('modalDocenteCancelar');
+  if (cd) cd.addEventListener('click', () => {
+    document.getElementById('modalDocente').classList.add('hidden');
+    refrescarDocentes();
+  });
+})();

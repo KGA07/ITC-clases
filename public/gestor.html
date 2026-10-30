@@ -108,45 +108,83 @@
 
     <!-- Modal: alta / ficha de alumno -->
     <div class="modal-overlay hidden" id="modalAlumno" role="dialog" aria-modal="true">
-      <div class="modal" style="max-width:520px">
-        <div class="modal-head">
-          <b id="modalAlumnoTitulo">Nuevo alumno</b>
-          <button type="button" class="btn btn-primary btn-sm" id="modalAlumnoCerrar">Cerrar ✕</button>
+      <div class="modal modal-alta">
+        <button type="button" class="alta-x" id="modalAlumnoCerrar" aria-label="Cerrar">✕</button>
+        <div class="alta-head">
+          <div class="alta-icono">🎓</div>
+          <div>
+            <b id="modalAlumnoTitulo">Nuevo alumno</b>
+            <small>Cargá sus datos y asignale una contraseña temporal.</small>
+          </div>
         </div>
-        <form id="formAlumno" style="padding:16px 20px 20px">
+        <form id="formAlumno" class="alta-form">
           <input type="hidden" id="alumnoId">
-          <div class="form-group"><label>Nombre completo *</label>
-            <input type="text" id="alumnoNombre" required placeholder="Ej: Juan Pérez"></div>
-          <div class="form-fila">
-            <div class="form-group"><label>Email</label>
-              <input type="email" id="alumnoEmail" placeholder="Ej: juan@email.com"></div>
-            <div class="form-group"><label>DNI</label>
-              <input type="text" id="alumnoDni" placeholder="Ej: 28.123.456"></div>
-          </div>
-          <div class="form-fila">
-            <div class="form-group"><label>Teléfono</label>
-              <input type="text" id="alumnoTelefono" placeholder="Ej: 3492 123456"></div>
-            <div class="form-group"><label>Día</label>
-              <input type="text" id="alumnoDia" placeholder="Ej: Lunes"></div>
-          </div>
-          <div class="form-fila">
-            <div class="form-group"><label>Horario</label>
-              <input type="text" id="alumnoHorario" placeholder="Ej: 19:30"></div>
-            <div class="form-group"><label>Curso</label><select id="alumnoCurso"></select></div>
-          </div>
-          <div class="form-fila">
-            <div class="form-group"><label>Usuario *</label>
-              <input type="text" id="alumnoUsuario" required placeholder="Ej: juan.perez"></div>
-            <div class="form-group"><label>Contraseña temporal</label>
-              <div style="display:flex;gap:6px">
-                <input type="text" id="alumnoPass" readonly placeholder="Generada">
-                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassAlumno">🎲 Generar</button>
-              </div>
+          <div class="alta-campo alta-full">
+            <label for="alumnoNombre">Nombre completo <i>*</i></label>
+            <input type="text" id="alumnoNombre" required placeholder="Juan Pérez" autocomplete="off"></div>
+          <div class="alta-campo">
+            <label for="alumnoEmail">Email</label>
+            <input type="email" id="alumnoEmail" placeholder="juan@email.com"></div>
+          <div class="alta-campo">
+            <label for="alumnoDni">DNI</label>
+            <input type="text" id="alumnoDni" placeholder="28.123.456"></div>
+          <div class="alta-campo">
+            <label for="alumnoTelefono">Teléfono</label>
+            <input type="text" id="alumnoTelefono" placeholder="3492 123456"></div>
+          <div class="alta-campo">
+            <label for="alumnoDia">Día de clase</label>
+            <select id="alumnoDia">
+              <option value="" selected>Día</option>
+              <option value="Lunes">Lunes</option>
+              <option value="Martes">Martes</option>
+              <option value="Miércoles">Miércoles</option>
+              <option value="Jueves">Jueves</option>
+              <option value="Viernes">Viernes</option>
+              <option value="Sábado">Sábado</option>
+            </select></div>
+          <div class="alta-campo">
+            <label for="alumnoHorario">Horario</label>
+            <select id="alumnoHorario">
+              <option value="" selected>Hora</option>
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+            </select></div>
+          <div class="alta-campo">
+            <label for="alumnoCurso">Curso</label>
+            <select id="alumnoCurso"></select></div>
+          <div class="alta-campo">
+            <label for="alumnoUsuario">Usuario <i>*</i></label>
+            <input type="text" id="alumnoUsuario" required placeholder="juan.perez" autocomplete="off"></div>
+          <div class="alta-campo">
+            <label for="alumnoPass">Contraseña temporal</label>
+            <div class="alta-pass">
+              <input type="text" id="alumnoPass" readonly placeholder="Generada">
+              <button type="button" class="alta-generar" id="btnGenPassAlumno">🎲 Generar</button>
             </div>
           </div>
-          <p class="sub" style="margin:4px 0 10px">Anotale la contraseña para entregársela al alumno.</p>
-          <button type="submit" class="btn btn-primary" id="btnGuardarAlumno">Crear alumno</button>
+          <p class="alta-nota">Anotala para entregársela al alumno: entra con esos datos a <b>itc-clases.vercel.app</b>.</p>
         </form>
+        <div class="alta-foot">
+          <button type="button" class="btn-alta-sec" id="modalAlumnoCancelar">Cancelar</button>
+          <button type="submit" class="btn-alta-principal" form="formAlumno" id="btnGuardarAlumno">Crear alumno</button>
+        </div>
         <div id="credencialesBox" class="g-credenciales hidden"></div>
       </div>
     </div>
@@ -189,44 +227,82 @@
 
     <!-- Modal: alta de docente -->
     <div class="modal-overlay hidden" id="modalDocente" role="dialog" aria-modal="true">
-      <div class="modal" style="max-width:520px">
-        <div class="modal-head">
-          <b id="modalDocenteTitulo">Nuevo docente</b>
-          <button type="button" class="btn btn-primary btn-sm" id="modalDocenteCerrar">Cerrar ✕</button>
+      <div class="modal modal-alta">
+        <button type="button" class="alta-x" id="modalDocenteCerrar" aria-label="Cerrar">✕</button>
+        <div class="alta-head">
+          <div class="alta-icono">🧑‍🏫</div>
+          <div>
+            <b id="modalDocenteTitulo">Nuevo docente</b>
+            <small>Le vas a asignar un curso: lo habilita y toma asistencia.</small>
+          </div>
         </div>
-        <form id="formDocente" style="padding:16px 20px 20px">
-          <div class="form-group"><label>Nombre completo *</label>
-            <input type="text" id="docenteNombre" required placeholder="Ej: María Gómez"></div>
-          <div class="form-fila">
-            <div class="form-group"><label>Email</label>
-              <input type="email" id="docenteEmail" placeholder="Ej: maria@email.com"></div>
-            <div class="form-group"><label>DNI</label>
-              <input type="text" id="docenteDni" placeholder="Ej: 27.654.321"></div>
-          </div>
-          <div class="form-fila">
-            <div class="form-group"><label>Teléfono</label>
-              <input type="text" id="docenteTelefono" placeholder="Ej: 3492 765432"></div>
-            <div class="form-group"><label>Día</label>
-              <input type="text" id="docenteDia" placeholder="Ej: Martes"></div>
-          </div>
-          <div class="form-fila">
-            <div class="form-group"><label>Horario</label>
-              <input type="text" id="docenteHorario" placeholder="Ej: 19:30"></div>
-            <div class="form-group"><label>Curso a cargo</label><select id="docenteCurso"></select></div>
-          </div>
-          <div class="form-fila">
-            <div class="form-group"><label>Usuario *</label>
-              <input type="text" id="docenteUsuario" required placeholder="Ej: maria.gomez"></div>
-            <div class="form-group"><label>Contraseña temporal</label>
-              <div style="display:flex;gap:6px">
-                <input type="text" id="docentePass" readonly placeholder="Generada">
-                <button type="button" class="btn btn-ghost btn-sm" id="btnGenPassDocente">🎲 Generar</button>
-              </div>
+        <form id="formDocente" class="alta-form">
+          <div class="alta-campo alta-full">
+            <label for="docenteNombre">Nombre completo <i>*</i></label>
+            <input type="text" id="docenteNombre" required placeholder="María Gómez" autocomplete="off"></div>
+          <div class="alta-campo">
+            <label for="docenteEmail">Email</label>
+            <input type="email" id="docenteEmail" placeholder="maria@email.com"></div>
+          <div class="alta-campo">
+            <label for="docenteDni">DNI</label>
+            <input type="text" id="docenteDni" placeholder="27.654.321"></div>
+          <div class="alta-campo">
+            <label for="docenteTelefono">Teléfono</label>
+            <input type="text" id="docenteTelefono" placeholder="3492 765432"></div>
+          <div class="alta-campo">
+            <label for="docenteDia">Día de clase</label>
+            <select id="docenteDia">
+              <option value="" selected>Día</option>
+              <option value="Lunes">Lunes</option>
+              <option value="Martes">Martes</option>
+              <option value="Miércoles">Miércoles</option>
+              <option value="Jueves">Jueves</option>
+              <option value="Viernes">Viernes</option>
+              <option value="Sábado">Sábado</option>
+            </select></div>
+          <div class="alta-campo">
+            <label for="docenteHorario">Horario</label>
+            <select id="docenteHorario">
+              <option value="" selected>Hora</option>
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+            </select></div>
+          <div class="alta-campo">
+            <label for="docenteCurso">Curso a cargo</label>
+            <select id="docenteCurso"></select></div>
+          <div class="alta-campo">
+            <label for="docenteUsuario">Usuario <i>*</i></label>
+            <input type="text" id="docenteUsuario" required placeholder="maria.gomez" autocomplete="off"></div>
+          <div class="alta-campo">
+            <label for="docentePass">Contraseña temporal</label>
+            <div class="alta-pass">
+              <input type="text" id="docentePass" readonly placeholder="Generada">
+              <button type="button" class="alta-generar" id="btnGenPassDocente">🎲 Generar</button>
             </div>
           </div>
-          <p class="sub" style="margin:4px 0 10px">El docente organiza su curso y toma asistencia; no puede tocar usuarios ni el otro contenido.</p>
-          <button type="submit" class="btn btn-primary" id="btnGuardarDocente">Crear docente</button>
+          <p class="alta-nota">El docente organiza su curso y toma asistencia; no puede tocar usuarios ni el otro contenido.</p>
         </form>
+        <div class="alta-foot">
+          <button type="button" class="btn-alta-sec" id="modalDocenteCancelar">Cancelar</button>
+          <button type="submit" class="btn-alta-principal" form="formDocente" id="btnGuardarDocente">Crear docente</button>
+        </div>
         <div id="credencialesDocenteBox" class="g-credenciales hidden"></div>
       </div>
     </div>
