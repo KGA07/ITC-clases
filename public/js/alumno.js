@@ -15,7 +15,8 @@ function guardarVistos() {
   localStorage.setItem(VISTOS_KEY, JSON.stringify([...leidos]));
 }
 
-let _cursos = []; // catálogo bulk recibido (objeto completo)
+let _cursos = [];
+let _sel = null; // curso abierto (null = grilla de cursos) // catálogo bulk recibido (objeto completo)
 
 function abrirModal(url, nombre) {
   document.getElementById('modalTitle').textContent = nombre;
@@ -166,9 +167,11 @@ function render(filtro = '') {
   const filtroTxt = String(filtro || '').trim().toLowerCase();
   const caja = document.getElementById('listaMaterial');
   caja.innerHTML = '';
+  const aviso = document.getElementById('sinResultados');
+  if (!_sel) { aviso.classList.add('hidden'); return; }
   let hayAlgo = false;
 
-  for (const cur of _cursos) {
+  for (const cur of [_sel]) {
     if (!filtroTxt) {
       caja.appendChild(renderCurso(cur, true));
       hayAlgo = true;
@@ -189,7 +192,6 @@ function render(filtro = '') {
     hayAlgo = true;
   }
 
-  const aviso = document.getElementById('sinResultados');
   if (filtroTxt && !hayAlgo) {
     aviso.classList.remove('hidden');
     aviso.textContent = `Sin resultados para "${filtroTxt}". Probá con otra palabra.`;
@@ -234,26 +236,107 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    if (_cursos.length === 1) {
-      document.getElementById('alumnoCursoNombre').textContent = `${_cursos[0].emoji || ''} ${_cursos[0].nombre}`;
-      document.title = `Mi Aula — ${_cursos[0].nombre}`;
-    } else {
-      document.getElementById('alumnoCursoNombre').textContent = `${_cursos.length} capacitaciones · ${_cursos.map((c) => c.emoji || '').join(' ')}`;
-      document.title = `Mi Aula — ${_cursos.length} capacitaciones`;
+    /* ── Grilla de tarjetas por curso (estilo panel de docentes) ── */
+    const cajaGrilla = document.getElementById('grillaCursos');
+    const cajaVolver = document.getElementById('cajaVolver');
+    const heroNombre = document.getElementById('alumnoCursoNombre');
+
+    function vistasDe(cur) {
+      let n = 0;
+      for (const m of cur.modulos || []) for (const cl of (m.clases || [])) if (leidos.has(cl.id)) n++;
+      return n;
     }
 
-    render();
+    function renderGrilla() {
+      cajaGrilla.innerHTML = '';
+      document.getElementById('main').classList.add('grid-vista');
+      const grid = document.createElement('div');
+      grid.className = 'alumno-cursos-grid';
+      for (const cur of _cursos) {
+        const nClases = cur.totalClases || 0;
+        const v = vistasDe(cur);
+        const card = document.createElement('div');
+        card.className = 'alumno-curso-card';
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Entrar a ' + cur.nombre);
+        card.innerHTML =
+          `<img class="alumno-curso-thumb" alt="${esc(cur.nombre)}" loading="lazy">` +
+          `<div class="alumno-curso-body">` +
+          `  <b>${esc(cur.emoji || '')} ${esc(cur.nombre)}</b>` +
+          `  <small>${nClases} clase${nClases === 1 ? '' : 's'} · ${cur.totalMateriales || 0} materiales · ${v} vista${v === 1 ? '' : 's'}</small>` +
+          `  <div class="alumno-curso-foot"><span class="btn btn-primary btn-sm">Entrar →</span></div>` +
+          `</div>`;
+        const img = card.querySelector('img');
+        let intentoImg = 0;
+        img.addEventListener('error', () => {
+          intentoImg++;
+          if (intentoImg === 1) img.src = '/img/cursos/' + cur.id + '.svg';
+          else img.style.display = 'none';
+        });
+        img.src = '/img/cursos/' + cur.id + '.png';
+        card.addEventListener('click', () => entrarCurso(cur));
+        card.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); entrarCurso(cur); }
+        });
+        grid.appendChild(card);
+      }
+      cajaGrilla.appendChild(grid);
+    }
 
-    // Deep-link por clase: /alumno#clase=<id> abre esa clase y hace scroll
+    function entrarCurso(cur) {
+      _sel = cur;
+      cajaGrilla.classList.add('hidden');
+      document.getElementById('main').classList.remove('grid-vista');
+      document.getElementById('listaMaterial').innerHTML = '';
+      if (_cursos.length > 1) cajaVolver.classList.remove('hidden');
+      document.getElementById('cajaBuscar').classList.remove('hidden');
+      heroNombre.textContent = `${cur.emoji || ''} ${cur.nombre}`;
+      document.title = `Mi Aula — ${cur.nombre}`;
+      render();
+      window.scrollTo({ top: 0 });
+    }
+
+    function volverGrilla() {
+      _sel = null;
+      document.getElementById('alumnoBuscar').value = '';
+      render();
+      cajaGrilla.classList.remove('hidden');
+      cajaVolver.classList.add('hidden');
+      document.getElementById('cajaBuscar').classList.add('hidden');
+      document.getElementById('main').classList.add('grid-vista');
+      heroNombre.textContent = `${_cursos.length} capacitaciones`;
+      document.title = `Mi Aula — ${_cursos.length} capacitaciones`;
+      renderGrilla();
+      window.scrollTo({ top: 0 });
+    }
+
+    document.getElementById('btnVolverCursos').addEventListener('click', volverGrilla);
+
+    /* vista inicial: 1 curso entra directo; varios muestran la grilla de tarjetas */
+    if (_cursos.length === 1) {
+      document.title = `Mi Aula — ${_cursos[0].nombre}`;
+      entrarCurso(_cursos[0]);
+    } else {
+      heroNombre.textContent = `${_cursos.length} capacitaciones`;
+      document.title = `Mi Aula — ${_cursos.length} capacitaciones`;
+      renderGrilla();
+    }
+
+    // Deep-link por clase: /alumno#clase=<id> abre ese curso y hace scroll a la clase
     const hashClase = (location.hash.match(/#clase=([^&]+)/) || [])[1];
     if (hashClase) {
-      const det = document.getElementById('clase-' + decodeURIComponent(hashClase));
+      const idObjetivo = decodeURIComponent(hashClase);
+      if (!_sel) {
+        const cont = _cursos.find((c) => (c.modulos || []).some((m) => (m.clases || []).some((x) => x.id === idObjetivo)));
+        if (cont) entrarCurso(cont);
+      }
+      const det = document.getElementById('clase-' + idObjetivo);
       if (det) {
         det.open = true;
         setTimeout(() => det.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       }
     }
-    document.getElementById('cajaBuscar').classList.remove('hidden');
     const input = document.getElementById('alumnoBuscar');
     let timer = null;
     input.addEventListener('input', () => {
@@ -289,8 +372,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function pintarIndice() {
       indicePanel.innerHTML = '<div class="indice-titulo">📑 Índice del curso</div>';
-      for (const cur of _cursos) {
-        if (_cursos.length > 1) {
+      const listaVista = _sel ? [_sel] : _cursos;
+      for (const cur of listaVista) {
+        if (listaVista.length > 1) {
           const h = document.createElement('div');
           h.className = 'indice-curso';
           h.textContent = `${cur.emoji || ''} ${cur.nombre}`;
@@ -309,6 +393,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             a.textContent = cl.titulo;
             a.addEventListener('click', (e) => {
               e.preventDefault();
+              if (!_sel) {
+                const cont = _cursos.find((c) => (c.modulos || []).some((m) => (m.clases || []).some((x) => x.id === cl.id)));
+                if (cont) entrarCurso(cont);
+              }
               const det = document.getElementById('clase-' + cl.id);
               if (det) { det.open = true; det.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
             });
