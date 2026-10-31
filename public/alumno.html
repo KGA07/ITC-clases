@@ -47,6 +47,7 @@
     .alumno-archivo .info { flex: 1 1 auto; min-width: 0; }
     .alumno-archivo .info b { display: block; font-size: .9rem; }
     .alumno-archivo .info small { color: var(--text-soft); font-size: .75rem; }
+    .alumno-archivo .info .f-desc { display: block; color: var(--text-soft); font-size: .78rem; margin-top: 2px; font-style: italic; }
     .alumno-archivo .acciones { display: flex; gap: 8px; flex-shrink: 0; }
     .alumno-buscar {
       display: flex; gap: 10px; margin: 0 0 16px;
@@ -56,6 +57,16 @@
       background: var(--surface); color: var(--text); font: inherit; font-size: .9rem;
     }
     .alumno-buscar input:focus { outline: 2px solid var(--primary); outline-offset: 0; border-color: transparent; }
+    .alumno-toolbar {
+      display: flex; align-items: center; gap: 10px; margin: 0 0 16px; flex-wrap: wrap;
+    }
+    .alumno-toolbar .alumno-buscar { flex: 1; margin: 0; min-width: 200px; }
+    .btn-toggle-todo {
+      padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+      background: var(--surface); color: var(--text); font: inherit; font-size: .85rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn-toggle-todo:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
     .alumno-curso-bloque { margin-bottom: 28px; }
     .alumno-progreso {
       display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
@@ -93,8 +104,9 @@
 
     <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargando…</div>
     <div class="empty hidden" id="empty"></div>
-    <div class="alumno-buscar hidden" id="cajaBuscar">
-      <input type="search" id="alumnoBuscar" placeholder="🔎 Buscar en tu aula… (clase o material)" aria-label="Buscar en tu aula">
+    <div class="alumno-toolbar hidden" id="cajaBuscar">
+      <div class="alumno-buscar"><input type="search" id="alumnoBuscar" placeholder="🔎 Buscar en tu aula… (clase o material)" aria-label="Buscar en tu aula"></div>
+      <button type="button" class="btn-toggle-todo" id="btnExpandirTodo" title="Abrir o cerrar todas las clases">Expandir todo ▾</button>
     </div>
     <div class="empty hidden" id="sinResultados"></div>
     <div id="listaMaterial"></div>

@@ -101,7 +101,9 @@ function renderClase(cl) {
     fila.className = 'alumno-archivo';
     fila.innerHTML =
       `<span class="f-emoji" aria-hidden="true">${f.emoji || '📄'}</span>` +
-      `<span class="info"><b>${esc(f.nombre)}</b><small>${esc(f.tipo || '')}${f.size ? ' · ' + fmtSize(f.size) : ''}</small></span>`;
+      `<span class="info"><b>${esc(f.nombre)}</b><small>${esc(f.tipo || '')}${f.size ? ' · ' + fmtSize(f.size) : ''}</small>` +
+      (f.descripcion ? `<small class="f-desc">${esc(f.descripcion)}</small>` : '') +
+      `</span>`;
     fila.appendChild(accionesArchivo(f));
     det.appendChild(fila);
   });
@@ -193,6 +195,8 @@ function render(filtro = '') {
   } else {
     aviso.classList.add('hidden');
   }
+  const bt = document.getElementById('btnExpandirTodo');
+  if (bt) bt.textContent = 'Expandir todo ▾';
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -249,6 +253,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') { input.value = ''; render(''); }
+    });
+
+    // Expandir / contraer todas las clases (estilo Moodle)
+    const btnTodo = document.getElementById('btnExpandirTodo');
+    btnTodo.addEventListener('click', () => {
+      const detalles = document.querySelectorAll('#listaMaterial details.alumno-clase');
+      const algunoCerrado = [...detalles].some((d) => !d.open);
+      detalles.forEach((d) => { d.open = algunoCerrado; });
+      btnTodo.textContent = algunoCerrado ? 'Contraer todo ▴' : 'Expandir todo ▾';
     });
   } catch (err) {
     toast(err.message);
