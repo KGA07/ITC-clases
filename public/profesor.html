@@ -63,7 +63,7 @@
       <section data-panel="alumnos" class="hidden">
         <h1 class="p-h1">Mis Alumnos</h1>
         <p class="sub" id="pSubAlumnos">Alumnos del curso</p>
-        <div class="p-alumnos-grid" id="pListaAlumnos"></div>
+        <div class="p-alumnos-grid" id="pListaAlumnos"></div>\r\n        <div class="p-alumnos-toolbar">\r\n          <button type="button" class="btn btn-primary btn-sm" id="pBtnNuevoAlumno">➕ Nuevo alumno</button>\r\n          <button type="button" class="btn btn-ghost btn-sm" id="pBtnRefreshAlumnos">↻ Actualizar</button>\r\n        </div>
       </section>
 
       <!-- ════ GESTIÓN DE CLASES ════ -->
@@ -115,6 +115,32 @@
     <iframe id="pPantallaFrame" title="Clase en pantalla completa"></iframe>
   </div>
 
+  <!-- modal alumno (profesor) -->
+  <div class="p-modal hidden" id="pModalAlumno" role="dialog" aria-modal="true">
+    <div class="p-modal-caja" style="max-width:520px">
+      <div class="p-modal-head">
+        <b id="pModalAlumnoTitulo">Nuevo alumno</b>
+        <button type="button" class="btn btn-ghost btn-sm" id="pModalAlumnoCerrar">Cerrar ✕</button>
+      </div>
+      <form id="pFormAlumno" class="alta-form" style="padding:12px 0">
+        <input type="hidden" id="pAlumnoId">
+        <div class="alta-campo alta-full"><label for="pAlumnoNombre">Nombre completo <i>*</i></label><input type="text" id="pAlumnoNombre" required placeholder="María Gómez" autocomplete="off"></div>
+        <div class="alta-campo"><label for="pAlumnoUsuario">Usuario <i>*</i></label><input type="text" id="pAlumnoUsuario" required placeholder="maria.gomez" autocomplete="off"></div>
+        <div class="alta-campo"><label for="pAlumnoEmail">Email</label><input type="email" id="pAlumnoEmail" placeholder="maria@email.com"></div>
+        <div class="alta-campo"><label for="pAlumnoDni">DNI</label><input type="text" id="pAlumnoDni" placeholder="27.654.321"></div>
+        <div class="alta-campo"><label for="pAlumnoTelefono">Teléfono</label><input type="text" id="pAlumnoTelefono" placeholder="+54 ..."></div>
+        <div class="alta-campo"><label for="pAlumnoDia">Día</label><input type="text" id="pAlumnoDia" placeholder="Lunes"></div>
+        <div class="alta-campo"><label for="pAlumnoHorario">Horario</label><input type="text" id="pAlumnoHorario" placeholder="18:00-22:00"></div>
+        <div class="alta-campo alta-full"><label>Cursos <i>*</i></label><div id="pAlumnoCursosChk" class="alta-cursos-chk"></div></div>
+        <div class="alta-campo alta-full"><label for="pAlumnoPass">Contraseña</label><div style="display:flex;gap:6px"><input type="text" id="pAlumnoPass" style="flex:1" autocomplete="off"><button type="button" class="btn btn-ghost btn-sm" id="pBtnGenPassAlumno">↻</button></div></div>
+        <div class="alta-acciones alta-full">
+          <button type="button" class="btn btn-ghost" id="pModalAlumnoCancelar">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="pBtnGuardarAlumno">Guardar</button>
+        </div>
+      </form>
+      <div id="pCredencialesBox" class="hidden" style="padding:12px 0"></div>
+    </div>
+  </div>
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="/js/profesor.js"></script>
 </body>

@@ -45,8 +45,24 @@ function normalizarCursos(body) {
   return [...new Set(arr)];
 }
 
+// cursos permitidos para el usuario actual: null = admin (todo); array = profesor
 function alumnoDe(data, id) {
   return data.alumnos.find((a) => String(a.id) === String(id));
+}
+
+function cursosPermitidos(data, req) {
+  if (!req.user || req.user.tipo === 'admin') return null;
+  const u = data.users.find((x) => String(x.id) === String(req.user.id) && x.tipo === 'profesor');
+  if (!u) return [];
+  const arr = Array.isArray(u.cursos) && u.cursos.length ? u.cursos : (u.curso ? [u.curso] : []);
+  return arr;
+}
+
+function alumnoEnAlcance(data, req, alumno) {
+  const perm = cursosPermitidos(data, req);
+  if (perm === null) return true;
+  const cursosAl = cursosDe(alumno);
+  return cursosAl.some((c) => perm.includes(c));
 }
 
 // Reglas de visibilidad de una clase para el alumno:
@@ -106,7 +122,12 @@ const idDrive = (url) => (String(url || '').match(/[?&]id=([A-Za-z0-9_-]+)/) || 
 // ── Docente: ABM de alumnos ─────────────────────────────────────────────────
 async function listar(req, res) {
   const data = await db.loadData();
-  res.json({ alumnos: data.alumnos.map((a) => ({ ...vistaPublica(a), nMateriales: (a.permisos || []).length })) });
+  let alumnos = data.alumnos;
+  const perm = cursosPermitidos(data, req);
+  if (perm !== null) {
+    alumnos = alumnos.filter((a) => cursosDe(a).some((c) => perm.includes(c)));
+  }
+  res.json({ alumnos: alumnos.map((a) => ({ ...vistaPublica(a), nMateriales: (a.permisos || []).length })) });
 }
 
 async function crear(req, res) {
@@ -115,13 +136,20 @@ async function crear(req, res) {
     return res.status(400).json({ error: 'Faltan nombre completo o usuario.' });
   }
   const data = await db.loadData();
+  const perm = cursosPermitidos(data, req);
   const limpio = String(usuario).trim();
   if (data.alumnos.some((a) => a.usuario.toLowerCase() === limpio.toLowerCase()) ||
       data.users.some((u) => String(u.nombre).toLowerCase() === limpio.toLowerCase())) {
     return res.status(409).json({ error: `El usuario "${limpio}" ya existe.` });
   }
+  let cursosArr = normalizarCursos({ cursos, curso });
+  if (perm !== null) {
+    cursosArr = cursosArr.filter((c) => perm.includes(c));
+    if (!cursosArr.length) {
+      return res.status(403).json({ error: 'No podés asignar cursos que no te corresponden.' });
+    }
+  }
   const clave = password || passwordGenerada();
-  const cursosArr = normalizarCursos({ cursos, curso });
   const alumno = {
     id: db.nextAlumnoId(data.alumnos),
     usuario: limpio,
@@ -146,6 +174,10 @@ async function actualizar(req, res) {
   const data = await db.loadData();
   const alumno = alumnoDe(data, req.params.id);
   if (!alumno) return res.status(404).json({ error: 'Alumno no encontrado.' });
+  const perm = cursosPermitidos(data, req);
+  if (perm !== null && !alumnoEnAlcance(data, req, alumno)) {
+    return res.status(403).json({ error: 'Ese alumno no está en tus cursos.' });
+  }
 
   const { nombre_completo, email, dni, telefono, dia, curso, cursos, horario, usuario, password, permisos } = req.body || {};
   if (usuario && String(usuario).trim().toLowerCase() !== String(alumno.usuario).toLowerCase()) {
@@ -162,7 +194,11 @@ async function actualizar(req, res) {
   if (telefono !== undefined) alumno.telefono = String(telefono).trim();
   if (dia !== undefined) alumno.dia = String(dia).trim();
   if (cursos !== undefined || curso !== undefined) {
-    const arr = normalizarCursos({ cursos, curso: cursos === undefined ? alumno.curso : curso });
+    let arr = normalizarCursos({ cursos, curso: cursos === undefined ? alumno.curso : curso });
+    if (perm !== null) {
+      arr = arr.filter((c) => perm.includes(c));
+      if (!arr.length) return res.status(403).json({ error: 'No podés asignar cursos que no te corresponden.' });
+    }
     alumno.cursos = arr;
     alumno.curso = arr[0] || '';
   }
@@ -176,6 +212,13 @@ async function actualizar(req, res) {
 
 async function borrar(req, res) {
   const data = await db.loadData();
+  const alumno = alumnoDe(data, req.params.id);
+  if (alumno) {
+    const perm = cursosPermitidos(data, req);
+    if (perm !== null && !alumnoEnAlcance(data, req, alumno)) {
+      return res.status(403).json({ error: 'Ese alumno no está en tus cursos.' });
+    }
+  }
   const antes = data.alumnos.length;
   data.alumnos = data.alumnos.filter((a) => String(a.id) !== String(req.params.id));
   if (data.alumnos.length === antes) return res.status(404).json({ error: 'Alumno no encontrado.' });

@@ -479,6 +479,12 @@ function renderAlumnos() {
       `<div class="g-alumno-stats">${(a.permisos || []).length} materiales habilitados</div>`;
     const acciones = document.createElement('div');
     acciones.className = 'g-alumno-acciones';
+    const btnEdit = document.createElement('button');
+    btnEdit.type = 'button';
+    btnEdit.className = 'btn btn-ghost btn-sm';
+    btnEdit.textContent = '✏️';
+    btnEdit.title = 'Editar alumno';
+    btnEdit.addEventListener('click', () => abrirModalAlumno(a));
     const btnMat = document.createElement('button');
     btnMat.type = 'button';
     btnMat.className = 'btn btn-primary btn-sm';
@@ -495,6 +501,7 @@ function renderAlumnos() {
     btnDel.textContent = '🗑️';
     btnDel.title = 'Borrar alumno';
     btnDel.addEventListener('click', () => borrarAlumno(a));
+    acciones.appendChild(btnEdit);
     acciones.appendChild(btnMat);
     acciones.appendChild(btnPass);
     acciones.appendChild(btnDel);
@@ -527,14 +534,30 @@ function leerCursosChecks(id) {
   return caja ? [...caja.querySelectorAll('input:checked')].map((i) => i.value) : [];
 }
 
-function abrirModalAlumno() {
+function abrirModalAlumno(alumno = null) {
   cursosAlSelect();
-  document.getElementById('alumnoId').value = '';
-  document.getElementById('formAlumno').reset();
-  document.getElementById('modalAlumnoTitulo').textContent = 'Nuevo alumno';
+  const form = document.getElementById('formAlumno');
+  form.reset();
   document.getElementById('credencialesBox').classList.add('hidden');
-  document.getElementById('formAlumno').style.display = '';
-  document.getElementById('alumnoPass').value = passwordCorta();
+  form.style.display = '';
+  if (alumno) {
+    document.getElementById('alumnoId').value = alumno.id;
+    document.getElementById('modalAlumnoTitulo').textContent = 'Editar alumno';
+    document.getElementById('alumnoNombre').value = alumno.nombre_completo || '';
+    document.getElementById('alumnoUsuario').value = alumno.usuario || '';
+    document.getElementById('alumnoEmail').value = alumno.email || '';
+    document.getElementById('alumnoDni').value = alumno.dni || '';
+    document.getElementById('alumnoTelefono').value = alumno.telefono || '';
+    document.getElementById('alumnoDia').value = alumno.dia || '';
+    document.getElementById('alumnoHorario').value = alumno.horario || '';
+    const ids = Array.isArray(alumno.cursos) && alumno.cursos.length ? alumno.cursos : (alumno.curso ? [alumno.curso] : []);
+    document.querySelectorAll('#alumnoCursosChk input').forEach((inp) => { inp.checked = ids.includes(inp.value); });
+    document.getElementById('alumnoPass').value = '';
+  } else {
+    document.getElementById('alumnoId').value = '';
+    document.getElementById('modalAlumnoTitulo').textContent = 'Nuevo alumno';
+    document.getElementById('alumnoPass').value = passwordCorta();
+  }
   document.getElementById('modalAlumno').classList.remove('hidden');
 }
 
@@ -545,6 +568,7 @@ function cerrarModalAlumno() {
 
 async function guardarAlumno(e) {
   e.preventDefault();
+  const id = document.getElementById('alumnoId').value;
   const body = {
     nombre_completo: document.getElementById('alumnoNombre').value.trim(),
     usuario: document.getElementById('alumnoUsuario').value.trim(),
@@ -558,11 +582,20 @@ async function guardarAlumno(e) {
   };
   if (!body.nombre_completo || !body.usuario) return toast('Falta nombre o usuario.');
   try {
-    const res = await apiFetch('/alumnos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-    const d = await res.json();
-    if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
-    mostrarCredenciales(d.alumno, d.password);
-    document.getElementById('formAlumno').style.display = 'none';
+    let res;
+    if (id) {
+      res = await apiFetch(`/alumnos/${encodeURIComponent(id)}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+      toast('✓ Alumno actualizado');
+      cerrarModalAlumno();
+    } else {
+      res = await apiFetch('/alumnos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+      mostrarCredenciales(d.alumno, d.password);
+      document.getElementById('formAlumno').style.display = 'none';
+    }
   } catch (err) {
     toast(err.message);
   }
@@ -816,6 +849,12 @@ function renderDocentes() {
       `<div class="g-alumno-meta">📚 ${esc(etiquetaCursos(d))}${d.horario ? ' · ' + esc(d.dia || '') + ' ' + esc(d.horario) : ''}${d.email ? '<br><small>' + esc(d.email) + '</small>' : ''}</div>`;
     const acciones = document.createElement('div');
     acciones.className = 'g-alumno-acciones';
+    const btnEditD = document.createElement('button');
+    btnEditD.type = 'button';
+    btnEditD.className = 'btn btn-ghost btn-sm';
+    btnEditD.textContent = '✏️';
+    btnEditD.title = 'Editar docente';
+    btnEditD.addEventListener('click', () => abrirModalDocente(d));
     const btnPanel = document.createElement('button');
     btnPanel.type = 'button';
     btnPanel.className = 'btn btn-ghost btn-sm';
@@ -839,8 +878,8 @@ function renderDocentes() {
     btnDel.textContent = '🗑️';
     btnDel.title = 'Borrar docente';
     btnDel.addEventListener('click', () => borrarDocente(d));
+    acciones.appendChild(btnEditD);
     acciones.appendChild(btnPanel);
-    acciones.appendChild(btnMat);
     acciones.appendChild(btnPass);
     acciones.appendChild(btnDel);
     div.appendChild(acciones);
@@ -848,18 +887,36 @@ function renderDocentes() {
   });
 }
 
-function abrirModalDocente() {
+function abrirModalDocente(docente = null) {
   llenarCursosChecks('docenteCursosChk');
-  document.getElementById('formDocente').reset();
-  document.getElementById('modalDocenteTitulo').textContent = 'Nuevo docente';
+  const form = document.getElementById('formDocente');
+  form.reset();
   document.getElementById('credencialesDocenteBox').classList.add('hidden');
-  document.getElementById('formDocente').style.display = '';
-  document.getElementById('docentePass').value = passwordCorta();
+  form.style.display = '';
+  if (docente) {
+    document.getElementById('docenteId').value = docente.id;
+    document.getElementById('modalDocenteTitulo').textContent = 'Editar docente';
+    document.getElementById('docenteUsuario').value = docente.usuario || '';
+    document.getElementById('docenteNombre').value = docente.nombre_completo || '';
+    document.getElementById('docenteEmail').value = docente.email || '';
+    document.getElementById('docenteDni').value = docente.dni || '';
+    document.getElementById('docenteTelefono').value = docente.telefono || '';
+    document.getElementById('docenteDia').value = docente.dia || '';
+    document.getElementById('docenteHorario').value = docente.horario || '';
+    const ids = Array.isArray(docente.cursos) && docente.cursos.length ? docente.cursos : (docente.curso ? [docente.curso] : []);
+    document.querySelectorAll('#docenteCursosChk input').forEach((inp) => { inp.checked = ids.includes(inp.value); });
+    document.getElementById('docentePass').value = '';
+  } else {
+    document.getElementById('docenteId').value = '';
+    document.getElementById('modalDocenteTitulo').textContent = 'Nuevo docente';
+    document.getElementById('docentePass').value = passwordCorta();
+  }
   document.getElementById('modalDocente').classList.remove('hidden');
 }
 
 async function guardarDocente(e) {
   e.preventDefault();
+  const id = document.getElementById('docenteId').value;
   const body = {
     nombre: document.getElementById('docenteUsuario').value.trim(),
     nombre_completo: document.getElementById('docenteNombre').value.trim(),
@@ -873,11 +930,21 @@ async function guardarDocente(e) {
   };
   if (!body.nombre_completo || !body.nombre) return toast('Falta nombre o usuario.');
   try {
-    const res = await apiFetch('/docentes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-    const d = await res.json();
-    if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
-    compartirCredenciales('credencialesDocenteBox', '✅ Docente creado', d.docente.nombre_completo, d.docente.usuario, d.password, 'su panel: /profesor');
-    document.getElementById('formDocente').style.display = 'none';
+    let res;
+    if (id) {
+      res = await apiFetch(`/docentes/${encodeURIComponent(id)}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+      toast('✓ Docente actualizado');
+      document.getElementById('modalDocente').classList.add('hidden');
+      refrescarDocentes();
+    } else {
+      res = await apiFetch('/docentes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+      compartirCredenciales('credencialesDocenteBox', '✅ Docente creado', d.docente.nombre_completo, d.docente.usuario, d.password, 'su panel: /profesor');
+      document.getElementById('formDocente').style.display = 'none';
+    }
   } catch (err) {
     toast(err.message);
   }

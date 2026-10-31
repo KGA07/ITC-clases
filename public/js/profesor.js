@@ -143,12 +143,45 @@ function renderGeneral() {
 // ── Mis Alumnos ────────────────────────────────────────────────────────────
 function renderAlumnos() {
   const caja = document.getElementById('pListaAlumnos');
-  document.getElementById('pSubAlumnos').textContent = `${estado.alumnos.length} alumnos del curso · entrada con usuario y contraseña en itc-clases.vercel.app`;
-  caja.innerHTML = estado.alumnos.length
-    ? estado.alumnos.map((a) =>
-      `<div class="p-alumno"><span class="p-avatar">${esc(initials(a.nombre_completo))}</span>` +
-      `<div><b>${esc(a.nombre_completo)}</b><small>${esc(a.usuario)}${a.horario ? ' · ' + esc(a.horario) : ''}<br>${esc(a.email || '')}${a.telefono ? ' · ' + esc(a.telefono) : ''}</small></div></div>`).join('')
-    : '<p class="sub">Todavía no hay alumnos cargados en tu curso. El administrador los carga desde el gestor.</p>';
+  document.getElementById('pSubAlumnos').textContent = `${estado.alumnos.length} alumnos de tus cursos · entrada con usuario y contraseña en itc-clases.vercel.app`;
+  caja.innerHTML = '';
+  if (!estado.alumnos.length) {
+    caja.innerHTML = '<p class="sub">Todavía no hay alumnos cargados. Usá “➕ Nuevo alumno”.</p>';
+    return;
+  }
+  estado.alumnos.forEach((a) => {
+    const div = document.createElement('div');
+    div.className = 'p-alumno';
+    div.innerHTML =
+      `<span class="p-avatar">${esc(initials(a.nombre_completo))}</span>` +
+      `<div class="p-alumno-info"><b>${esc(a.nombre_completo)}</b><small>${esc(a.usuario)}${a.horario ? ' · ' + esc(a.horario) : ''}${a.email ? '<br>' + esc(a.email) : ''}</small><small>${(a.permisos || []).length} materiales · ${esc(etiquetaCursosProf(a))}</small></div>`;
+    const acciones = document.createElement('div');
+    acciones.className = 'p-alumno-acciones';
+    const btnEdit = document.createElement('button');
+    btnEdit.type = 'button'; btnEdit.className = 'btn btn-ghost btn-sm'; btnEdit.textContent = '✏️'; btnEdit.title = 'Editar alumno';
+    btnEdit.addEventListener('click', () => abrirModalAlumnoProf(a));
+    const btnPass = document.createElement('button');
+    btnPass.type = 'button'; btnPass.className = 'btn btn-ghost btn-sm'; btnPass.textContent = '🔑'; btnPass.title = 'Nueva contraseña';
+    btnPass.addEventListener('click', () => cambiarClaveAlumnoProf(a));
+    const btnDel = document.createElement('button');
+    btnDel.type = 'button'; btnDel.className = 'btn btn-ghost btn-sm'; btnDel.textContent = '🗑️'; btnDel.title = 'Borrar alumno';
+    btnDel.addEventListener('click', () => borrarAlumnoProf(a));
+    acciones.appendChild(btnEdit);
+    acciones.appendChild(btnPass);
+    acciones.appendChild(btnDel);
+    div.appendChild(acciones);
+    caja.appendChild(div);
+  });
+}
+
+function etiquetaCursosProf(p) {
+  const lista = Array.isArray(p.cursos) && p.cursos.length ? p.cursos : (p.curso ? [p.curso] : []);
+  if (!lista.length) return 'sin curso';
+  const nombres = lista.map((id) => {
+    const c = (estado.cursosAsignados || []).find((x) => x.id === id);
+    return c ? c.nombre : id;
+  });
+  return nombres.length === 1 ? nombres[0] : nombres[0] + ` +${nombres.length - 1}`;
 }
 
 // ── Gestión de Clases ──────────────────────────────────────────────────────
@@ -345,6 +378,161 @@ function renderAsistencia() {
   }));
 }
 
+// ── Alumnos del profesor: ABM ───────────────────────────────────────────────
+function cursosDelProfesor() {
+  return (estado && estado.cursosAsignados) ? estado.cursosAsignados : [];
+}
+
+function llenarCursosProfChecks() {
+  const caja = document.getElementById('pAlumnoCursosChk');
+  if (!caja) return;
+  caja.innerHTML = '';
+  cursosDelProfesor().forEach((c) => {
+    const lab = document.createElement('label');
+    lab.className = 'alta-curso-opt';
+    lab.innerHTML = `<input type="checkbox" value="${esc(c.id)}"><span>${esc(c.emoji || '')} ${esc(c.nombre)}</span>`;
+    caja.appendChild(lab);
+  });
+}
+
+function leerCursosProfChecks() {
+  const caja = document.getElementById('pAlumnoCursosChk');
+  return caja ? [...caja.querySelectorAll('input:checked')].map((i) => i.value) : [];
+}
+
+function sugerirUsuarioProf(t) {
+  const partes = String(t || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').split(/\s+/).filter(Boolean);
+  if (!partes.length) return '';
+  return partes.length > 1 ? `${partes[0]}.${partes[partes.length - 1]}` : partes[0];
+}
+
+function abrirModalAlumnoProf(alumno = null) {
+  llenarCursosProfChecks();
+  const form = document.getElementById('pFormAlumno');
+  form.reset();
+  document.getElementById('pCredencialesBox').classList.add('hidden');
+  form.style.display = '';
+  if (alumno) {
+    document.getElementById('pAlumnoId').value = alumno.id;
+    document.getElementById('pModalAlumnoTitulo').textContent = 'Editar alumno';
+    document.getElementById('pAlumnoNombre').value = alumno.nombre_completo || '';
+    document.getElementById('pAlumnoUsuario').value = alumno.usuario || '';
+    document.getElementById('pAlumnoEmail').value = alumno.email || '';
+    document.getElementById('pAlumnoDni').value = alumno.dni || '';
+    document.getElementById('pAlumnoTelefono').value = alumno.telefono || '';
+    document.getElementById('pAlumnoDia').value = alumno.dia || '';
+    document.getElementById('pAlumnoHorario').value = alumno.horario || '';
+    const ids = Array.isArray(alumno.cursos) && alumno.cursos.length ? alumno.cursos : (alumno.curso ? [alumno.curso] : []);
+    document.querySelectorAll('#pAlumnoCursosChk input').forEach((inp) => { inp.checked = ids.includes(inp.value); });
+    document.getElementById('pAlumnoPass').value = '';
+  } else {
+    document.getElementById('pAlumnoId').value = '';
+    document.getElementById('pModalAlumnoTitulo').textContent = 'Nuevo alumno';
+    document.getElementById('pAlumnoPass').value = passwordCortaProf();
+    // auto-marcar todos los cursos del profesor
+    document.querySelectorAll('#pAlumnoCursosChk input').forEach((inp) => { inp.checked = true; });
+  }
+  document.getElementById('pModalAlumno').classList.remove('hidden');
+}
+
+function cerrarModalAlumnoProf() {
+  document.getElementById('pModalAlumno').classList.add('hidden');
+  cargar(); // refrescar estado (alumnos)
+}
+
+async function fidsDeCursos(ids) {
+  const out = [];
+  for (const id of ids) {
+    try {
+      const res = await apiFetch(`/curso/${encodeURIComponent(id)}`);
+      if (!res.ok) continue;
+      const d = await res.json();
+      for (const m of d.modulos || []) for (const cl of m.clases || []) for (const f of cl.archivos || []) if (f.fid && !out.includes(f.fid)) out.push(f.fid);
+    } catch { /* silencioso */ }
+  }
+  return out;
+}
+
+async function guardarAlumnoProf(e) {
+  e.preventDefault();
+  const id = document.getElementById('pAlumnoId').value;
+  const cursos = leerCursosProfChecks();
+  if (!cursos.length) { toast('Elegí al menos un curso.'); return; }
+  const body = {
+    nombre_completo: document.getElementById('pAlumnoNombre').value.trim(),
+    usuario: document.getElementById('pAlumnoUsuario').value.trim(),
+    email: document.getElementById('pAlumnoEmail').value.trim(),
+    dni: document.getElementById('pAlumnoDni').value.trim(),
+    telefono: document.getElementById('pAlumnoTelefono').value.trim(),
+    dia: document.getElementById('pAlumnoDia').value.trim(),
+    horario: document.getElementById('pAlumnoHorario').value.trim(),
+    cursos,
+    password: document.getElementById('pAlumnoPass').value.trim()
+  };
+  if (!body.nombre_completo || !body.usuario) { toast('Falta nombre o usuario.'); return; }
+  try {
+    // auto-habilitar todos los materiales de los cursos seleccionados
+    const fids = await fidsDeCursos(cursos);
+    body.permisos = fids;
+    let res;
+    if (id) {
+      res = await apiFetch(`/alumnos/${encodeURIComponent(id)}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+      toast('✓ Alumno actualizado');
+      cerrarModalAlumnoProf();
+    } else {
+      res = await apiFetch('/alumnos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const d = await res.json();
+      if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
+      const box = document.getElementById('pCredencialesBox');
+      box.classList.remove('hidden');
+      box.innerHTML =
+        `<p>Compartí con <b>${esc(d.alumno.nombre_completo)}</b> sus datos para entrar al aula:</p>` +
+        `<div class="g-cred-fila">Usuario <code>${esc(d.alumno.usuario)}</code></div>` +
+        `<div class="g-cred-fila">Contraseña <code>${esc(d.password)}</code></div>` +
+        `<p class="sub">Entrada: <code>itc-clases.vercel.app</code></p>`;
+      form.style.display = 'none';
+      toast('✓ Alumno creado');
+    }
+  } catch (err) {
+    toast(err.message);
+  }
+}
+
+async function borrarAlumnoProf(a) {
+  if (!confirm(`¿Borrar el alumno ${a.nombre_completo}? Perderá el acceso.`)) return;
+  const res = await apiFetch(`/alumnos/${encodeURIComponent(a.id)}`, { method: 'DELETE' });
+  if (!res.ok) return toast((await res.json().catch(() => ({}))).error || 'No se pudo borrar.');
+  toast('Alumno borrado');
+  cargar();
+}
+
+async function cambiarClaveAlumnoProf(a) {
+  if (!confirm(`¿Generar una contraseña nueva para ${a.nombre_completo}?`)) return;
+  const res = await apiFetch(`/alumnos/${encodeURIComponent(a.id)}/password`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+  const d = await res.json();
+  if (!res.ok) return toast(d.error || 'No se pudo cambiar la clave.');
+  const box = document.getElementById('pCredencialesBox');
+  document.getElementById('pModalAlumno').classList.remove('hidden');
+  document.getElementById('pFormAlumno').style.display = 'none';
+  box.classList.remove('hidden');
+  box.innerHTML =
+    `<p>🔑 Nueva clave para <b>${esc(a.nombre_completo)}</b>:</p>` +
+    `<div class="g-cred-fila">Usuario <code>${esc(a.usuario)}</code></div>` +
+    `<div class="g-cred-fila">Contraseña <code>${esc(d.password)}</code></div>`;
+  toast('✓ Clave actualizada');
+}
+
+function passwordCortaProf() {
+  const abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+  const dig = '23456789';
+  const s = (arr, n) => Array.from({ length: n }, () => arr[Math.floor(Math.random() * arr.length)]).join('');
+  return `ITC${s(abc, 2)}${s(dig, 3)}`;
+}
+
+// ── fin alumnos profesor ─────────────────────────────────────────────────────
+
 // ── nav + boot ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   // vista previa: el admin abrió /profesor#pi=<token>. El token va a memoria,
@@ -380,6 +568,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('pClaseAsis').addEventListener('change', renderAsistencia);
   const selCurso = document.getElementById('pCursoSel');
   if (selCurso) selCurso.addEventListener('change', () => cargar(selCurso.value));
+
+  // alumnos: wiring
+  const btnNuevoAl = document.getElementById('pBtnNuevoAlumno');
+  if (btnNuevoAl) {
+    btnNuevoAl.addEventListener('click', () => abrirModalAlumnoProf());
+    document.getElementById('pBtnRefreshAlumnos').addEventListener('click', () => cargar());
+    document.getElementById('pModalAlumnoCerrar').addEventListener('click', () => document.getElementById('pModalAlumno').classList.add('hidden'));
+    document.getElementById('pModalAlumnoCancelar').addEventListener('click', () => document.getElementById('pModalAlumno').classList.add('hidden'));
+    document.getElementById('pFormAlumno').addEventListener('submit', guardarAlumnoProf);
+    document.getElementById('pBtnGenPassAlumno').addEventListener('click', () => {
+      document.getElementById('pAlumnoPass').value = passwordCortaProf();
+    });
+    // auto-sugerir usuario
+    const inNombre = document.getElementById('pAlumnoNombre');
+    const inUsuario = document.getElementById('pAlumnoUsuario');
+    let tocado = false;
+    inUsuario.addEventListener('input', () => { tocado = true; });
+    inNombre.addEventListener('input', () => { if (!tocado) inUsuario.value = sugerirUsuarioProf(inNombre.value); });
+  }
 
   if (esVistaPrevia()) {
     // banner arriba + header sin nombre (el docente aparece en el banner)
