@@ -6,6 +6,39 @@ const { getStore } = require('./storage');
 let memoryDB = null;
 let initPromise = null;
 const store = getStore();
+const esPostgres = store.name === 'postgres';
+
+// Migraciones idempotentes que se aplican a documentos antiguos.
+function migrar(memoryDoc) {
+  let cambio = false;
+  if (!memoryDoc) return cambio;
+  if (!Array.isArray(memoryDoc.alumnos)) { memoryDoc.alumnos = []; cambio = true; }
+  if (!memoryDoc.habilitaciones || typeof memoryDoc.habilitaciones !== 'object') { memoryDoc.habilitaciones = {}; cambio = true; }
+  if (!memoryDoc.asistencia || typeof memoryDoc.asistencia !== 'object') { memoryDoc.asistencia = {}; cambio = true; }
+  for (const u of memoryDoc.users || []) {
+    if (u.nombre === config.profesorUser && u.tipo !== 'admin') { u.tipo = 'admin'; cambio = true; }
+    // migracion multi-curso: docentes pasan de curso (string) a cursos (array)
+    if (u.tipo !== 'admin' && !Array.isArray(u.cursos)) { u.cursos = u.curso ? [u.curso] : []; cambio = true; }
+    if (u.tipo !== 'admin' && Array.isArray(u.cursos)) {
+      if (!u.curso && u.cursos.length) { u.curso = u.cursos[0]; cambio = true; }
+      if (u.curso && !u.cursos.includes(u.curso)) { u.cursos.unshift(u.curso); cambio = true; }
+    }
+  }
+  // migracion multi-curso: alumnos pasan de curso (string) a cursos (array)
+  for (const a of memoryDoc.alumnos || []) {
+    if (!Array.isArray(a.cursos)) { a.cursos = a.curso ? [a.curso] : []; cambio = true; }
+    if (!a.curso && a.cursos.length) { a.curso = a.cursos[0]; cambio = true; }
+    if (a.curso && !a.cursos.includes(a.curso)) { a.cursos.unshift(a.curso); cambio = true; }
+  }
+  return cambio;
+}
+
+// Sembrar cuando el store esta vacio.
+async function asegurarSeed() {
+  if (memoryDB) return;
+  memoryDB = seedData();
+  await store.save(memoryDB);
+}
 
 // ── Datos iniciales ──────────────────────────────────────────────────────────
 function seedData() {
@@ -41,37 +74,34 @@ function seedData() {
 }
 
 async function loadData() {
+  if (esPostgres) {
+    // Produccion serverless: SIEMPRE leer del store. Cada instancia de lambda
+    // tiene su propia memoria; congelar el documento al arrancar hace que dos
+    // instancias vean datos distintos (alumnos "que desaparecen", ids
+    // duplicados y 404 "Alumno no encontrado."). Leyendo fresco en cada pedido
+    // (y actualizando memoryDB para que saveData persista el mismo objeto) las
+    // instancias quedan consistentes.
+    const loaded = await store.load();
+    if (loaded) {
+      memoryDB = loaded;
+      const cambio = migrar(memoryDB);
+      if (cambio) await store.save(memoryDB);
+    } else {
+      await asegurarSeed();
+    }
+    return memoryDB;
+  }
+  // Archivo local (dev/demo, un solo proceso): memo de por vida del proceso.
   if (memoryDB) return memoryDB;
   if (!initPromise) {
     initPromise = (async () => {
       const loaded = await store.load();
-        if (loaded) {
+      if (loaded) {
         memoryDB = loaded;
-        // migración: bases creadas antes del módulo de alumnos
-        if (!Array.isArray(memoryDB.alumnos)) memoryDB.alumnos = [];
-        // migración: módulo aula (habilitaciones + asistencia) y GKempe como admin
-        let cambio = false;
-        if (!memoryDB.habilitaciones || typeof memoryDB.habilitaciones !== 'object') { memoryDB.habilitaciones = {}; cambio = true; }
-        if (!memoryDB.asistencia || typeof memoryDB.asistencia !== 'object') { memoryDB.asistencia = {}; cambio = true; }
-        for (const u of memoryDB.users || []) {
-          if (u.nombre === config.profesorUser && u.tipo !== 'admin') { u.tipo = 'admin'; cambio = true; }
-          // migración multi-curso: docentes pasan de curso (string) a cursos (array)
-          if (u.tipo !== 'admin' && !Array.isArray(u.cursos)) { u.cursos = u.curso ? [u.curso] : []; cambio = true; }
-          if (u.tipo !== 'admin' && Array.isArray(u.cursos)) {
-            if (!u.curso && u.cursos.length) { u.curso = u.cursos[0]; cambio = true; }
-            if (u.curso && !u.cursos.includes(u.curso)) { u.cursos.unshift(u.curso); cambio = true; }
-          }
-        }
-        // migración multi-curso: alumnos pasan de curso (string) a cursos (array)
-        for (const a of memoryDB.alumnos || []) {
-          if (!Array.isArray(a.cursos)) { a.cursos = a.curso ? [a.curso] : []; cambio = true; }
-          if (!a.curso && a.cursos.length) { a.curso = a.cursos[0]; cambio = true; }
-          if (a.curso && !a.cursos.includes(a.curso)) { a.cursos.unshift(a.curso); cambio = true; }
-        }
+        const cambio = migrar(memoryDB);
         if (cambio) await store.save(memoryDB);
       } else {
-        memoryDB = seedData();
-        await store.save(memoryDB);
+        await asegurarSeed();
       }
     })();
   }
