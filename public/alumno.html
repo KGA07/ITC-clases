@@ -79,6 +79,32 @@
     .alumno-curso-body small { color: var(--text-soft); font-size: .78rem; }
     .alumno-curso-foot { margin-top: auto; padding-top: 8px; }
     .alumno-curso-foot .btn { pointer-events: none; }
+    /* —— Programa de estudios (presentación de materias) —— */
+    .plan-curso {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 16px 18px; margin: 2px 0 16px;
+    }
+    .plan-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+    .plan-head b { display: block; font-size: 1rem; }
+    .plan-head small { display: block; color: var(--text-soft); font-size: .78rem; }
+    .plan-quien { font-size: .85rem; color: var(--text-soft); line-height: 1.45; margin: 0 0 10px; }
+    .plan-quien b { color: var(--text); }
+    .plan-modulos summary {
+      cursor: pointer; font-weight: 800; font-size: .85rem; padding: 8px 0 4px; list-style: none;
+      border-top: 1px solid var(--border);
+    }
+    .plan-modulos summary::-webkit-details-marker { display: none; }
+    .plan-modulos summary::after { content: '▾'; color: var(--text-soft); margin-left: 6px; }
+    .plan-modulos[open] summary::after { content: '▴'; }
+    .plan-modulos-body { margin-top: 10px; }
+    .plan-modulo {
+      border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2);
+      padding: 10px 14px 12px; margin-bottom: 10px;
+    }
+    .plan-modulo h4 { margin: 0 0 6px; font-size: .85rem; }
+    .plan-modulo h4 small { color: var(--primary); font-weight: 800; font-size: .8rem; margin-left: 4px; }
+    .plan-modulo ol { margin: 0; padding-left: 22px; font-size: .82rem; line-height: 1.55; color: var(--text-soft); }
+    .plan-modulo ol li b { color: var(--text); }
     .alumno-buscar {
       display: flex; gap: 10px; margin: 0 0 16px;
     }
@@ -142,6 +168,7 @@
       <button type="button" class="btn-volver" id="btnVolverCursos">← Volver a mis cursos</button>
     </div>
     <div id="grillaCursos"></div>
+    <div id="cajaPrograma" class="hidden"></div>
     <div class="empty hidden" id="sinResultados"></div>
     <div id="listaMaterial"></div>
   </main>

@@ -1,0 +1,94 @@
+{
+  "_nota": "Programas de estudio tomados de la web oficial del ITC (https://www.itcarg.com). El PDF es el oficial de la página de cada capacitación, alojado localmente en /planes/. La clave debe coincidir con el id del curso en el catálogo.",
+  "diseno-grafico": {
+    "nombre": "Diseño Gráfico Publicitario",
+    "paraQuien": "Es la capacitación ideal para aquellas personas que poseen una gran imaginación, un gusto por lo estético y les gusta innovar en diversos aspectos. Los diseñadores gráficos deben ser creativos: deben ser capaces de comunicar sus ideas por escrito, visual y verbalmente.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "Corel Draw", "clases": ["Entorno de Trabajo. Dibujo y Transformación de Objetos. Relleno y contorno.", "Copiar y Duplicar Objetos. Orden de Objeto. Dar Forma.", "Edición de formas.", "Texto. Rellenos."] },
+      { "titulo": "Módulo 2", "software": "Corel Draw", "clases": ["Relleno de Malla. Medios Artísticos.", "Efectos.", "Transparencia. Mapas de bits.", "Modelos de Color. Teoría de Color. Armonía de Color."] },
+      { "titulo": "Módulo 3", "software": "Corel Draw", "clases": ["Logotipo – Isotipo – Imagotipo. Briefing. Proceso de diseño.", "Diseño de Imagen y Aplicaciones.", "Maquetación. Diagramación.", "Diseño de Tarjeta personal y Folleto."] },
+      { "titulo": "Módulo 4", "software": "Adobe Photoshop", "clases": ["Mapas de bits. Entorno de Photoshop. Tamaño de Lienzo. Tamaño de Imagen. Recorte, guardado y exportación.", "Selección. Máscara. Transformación Libre. Deformar.", "Pincel. Borrador – Borrador Mágico. Fondos. Capas. Objetos Inteligentes.", "Herramientas de corrección de imagen."] },
+      { "titulo": "Módulo 5", "software": "Adobe Photoshop", "clases": ["Herramientas Vectoriales. Texto.", "Estilos de Capas. Modos de Fusión.", "Ajustes. Capas de Relleno. Capas de Ajuste.", "Máscaras (de capa, vectoriales, de recorte, de fusión).", "Filtros.", "Guías - Diseño Integral."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Dise%C3%B1o%20gr%C3%A1fico%20publicitario%20ITC%20Presencial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/copia-de-dise%C3%B1o-gr%C3%A1fico-publicitario"
+  },
+  "marketing-digital": {
+    "nombre": "Marketing Digital y Publicidad",
+    "paraQuien": "Está diseñado para toda persona que quiera y necesite aprender a crear estrategias de marketing digital para implementar en su trabajo y/o emprendimiento. Además, para profesionales que quieran complementar su formación, como, por ejemplo, quienes se dedican a la programación, ingeniería, diseño, comunicación, sociología, psicología, periodismo, análisis y publicidad, entre otros sectores.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "", "clases": ["Introducción al Marketing Digital. Primeros pasos para el éxito en línea.", "Sitios Web. Estrategia en línea.", "Buscadores. SEM – Marketing en Buscadores.", "Google Ads I. Estructura. Alta de Cuenta."] },
+      { "titulo": "Módulo 2", "software": "Google Ads", "clases": ["Google Ads II. Campañas y Anuncios.", "Google Ads III. Planificador de Palabras. Previsiones.", "Google Ads IV. Extensiones de anuncios.", "Google Ads V. Concordancia de palabras claves. Palabras clave negativas. Análisis de rendimiento de campaña."] },
+      { "titulo": "Módulo 3", "software": "", "clases": ["Directorios Locales. Google Mi Negocio I.", "Google Mi Negocio II.", "Publicidad en Redes Sociales.", "Página de Negocio en Facebook I y II."] },
+      { "titulo": "Módulo 4", "software": "", "clases": ["Diseño de Contenido. Canva.", "Facebook Ads I.", "Facebook Ads II.", "Email Marketing I."] },
+      { "titulo": "Módulo 5", "software": "", "clases": ["Email Marketing II.", "Campañas Red Display. Publicidad en Video.", "E-commerce. Tienda en Facebook.", "Google Analytics. Retargeting."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Marketing%20Digital%20ITC%20Presencial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/copia-de-marketing-digital-y-publicidad"
+  },
+  "administracion-pymes": {
+    "nombre": "Administración de Pymes",
+    "paraQuien": "La capacitación está destinada a aquellas personas que quieren insertarse en el mundo empresarial o mejorar sus habilidades. Deberás considerarte una persona resolutiva, dinámica, organizada, ordenada, responsable y con capacidad de adaptación.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "Microsoft Excel", "clases": ["Entorno de Excel. Introducción de datos. Punteros. Concepto básico de cálculos. Fórmulas y funciones.", "Tipos de Cálculos. Cálculos básicos. Tablas.", "Tablas Dinámicas.", "Gráficos."] },
+      { "titulo": "Módulo 2", "software": "Microsoft Excel", "clases": ["Conexiones de Filtro entre TD. Gráficos Dinámicos. DashBoards.", "Funciones Matemáticas. Modos de referencias.", "Formato de celda. Funciones condicionales.", "Funciones de fecha. Validación de datos."] },
+      { "titulo": "Módulo 3", "software": "Microsoft Excel", "clases": ["Funciones lógicas. Funciones lógicas anidadas.", "Funciones de búsquedas. Función CONCATENAR. Inmovilizar paneles.", "Facturas. Impuestos. Balance.", "Liquidación de Sueldos. Recibo de Sueldo. Planilla de liquidación."] },
+      { "titulo": "Módulo 4", "software": "Microsoft Access", "clases": ["Entorno de Access. Diseño de base de datos.", "Tablas y Relaciones.", "Formularios.", "Consultas. Informes."] },
+      { "titulo": "Módulo 5", "software": "Microsoft Access", "clases": ["Tipos de Relaciones. Tablas Intermedias. Importación desde Excel.", "Cálculos y Funciones en Formularios. Cálculos y Funciones en Consultas.", "Formularios con subformularios. Macros. Función Dbúsq.", "Consultas de Actualización, Eliminación. Campos calculados en consultas.", "Informes.", "Finalización de base de datos."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Administraci%C3%B3n%20de%20Pymes%20ITC%20Presencial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/administraci%C3%B3n-de-pymes-2"
+  },
+  "asistente-administrativo": {
+    "nombre": "Asistente Administrativo Digital (Secretariado Ejecutivo)",
+    "paraQuien": "La capacitación está destinada a estudiantes y personas que se desarrollan en las áreas de Relaciones Públicas, Recursos Humanos, Marketing, Comercialización, cumpliendo tareas de asistentes personales o secretarias. Está pensada y desarrollada para el público que quiera desarrollar esta herramienta como salida laboral, actuales secretarias que quieran optimizar sus conocimientos, o quienes estén interesados en desarrollarse en la asistencia de directivos de empresas o instituciones.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "Windows 10", "clases": ["Computadoras. Hardware y Software. Diferentes Arquitecturas. Software de una computadora.", "Componentes. Programas, Archivos, Carpetas, Carpetas de Sistema.", "Accesorios y Aplicaciones de Windows 10.", "Instalación y desinstalación de Programas. Mantenimiento del Sistema."] },
+      { "titulo": "Módulo 2", "software": "Microsoft Word", "clases": ["Cuentas de Usuario. Familia y Otros Usuarios. Control Parental.", "Entorno de Word. Fuente y Párrafo.", "Diseño de página. Insertar.", "Tabulaciones. Tablas."] },
+      { "titulo": "Módulo 3", "software": "Microsoft PowerPoint", "clases": ["Encabezado y pie de página. Saltos de página, columna y sección. Configuración de impresión y vista preliminar.", "Combinación de correspondencia.", "Diseño. Temas. Insertar I.", "Insertar II. Transiciones. Presentación con diapositivas."] },
+      { "titulo": "Módulo 4", "software": "Microsoft Excel", "clases": ["Animaciones.", "Área de trabajo. Introducción y modificación de datos. Formato de celda.", "Fórmulas. Tablas.", "Tablas."] },
+      { "titulo": "Módulo 5", "software": "Internet", "clases": ["Funciones. Impresión.", "Navegadores y búsqueda.", "Correo electrónico. Redes sociales.", "Comunicación. Almacenamiento online.", "Descarga de archivos (diferentes gestores).", "Compra-venta online (Mercadolibre/Mercadopago)."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Secretariado%20Ejecutivo%20ITC%20Presencial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/copy-of-secretariado-ejecutivo"
+  },
+  "diagnostico-mantenimiento": {
+    "nombre": "Diagnóstico y Mantenimiento de PC",
+    "paraQuien": "La capacitación está destinada a todas aquellas personas que deseen adquirir un conocimiento técnico del funcionamiento interno y/o el diagnóstico certero de las fallas de una PC, y a todas aquellas personas que deseen aprender acerca de estas tecnologías para aplicarlas a un emprendimiento o soluciones personales.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "Hardware", "clases": ["Funcionamiento de una PC. Clasificación de periféricos. Componentes esenciales en el procesamiento de datos.", "Puertos Externos. Placa Madre.", "Microprocesadores.", "Memorias RAM. Tarjetas de Video."] },
+      { "titulo": "Módulo 2", "software": "Hardware", "clases": ["Fuentes de alimentación.", "Discos Rígidos.", "Chipset y Encendido.", "Ensamble de componentes."] },
+      { "titulo": "Módulo 3", "software": "Software", "clases": ["Sistema Operativo Windows 7. Instalación y configuración. Arquitectura de software. Archivos ISO – Pendrives booteables.", "Drivers. Instalación de programas básicos. Virus y antivirus.", "Programas utilitarios, de mantenimiento y recuperación de datos.", "Sistema Operativo Windows 10. Instalación y Configuración."] },
+      { "titulo": "Módulo 4", "software": "Software", "clases": ["Actualización de Sistema Operativo. Restauración de archivos de Usuario. Reinstalación de drivers.", "Sistema Operativo Linux. Sistemas de código abierto.", "Instalación Dual. Windows-Linux.", "Recuperación de archivos. Reparación de inicio."] },
+      { "titulo": "Módulo 5", "software": "Redes", "clases": ["Tipos de Redes. Conexiones punto a punto. Hardware de Red.", "Cableado de red. Norma 568A y 568B. Armado y testeo de cables.", "Protocolos TCP/IP.", "Configuración de Red en Equipo.", "Configuración de Router Básica (WAN-LAN-WLAN).", "Configuración de Router Avanzada (IP por MAC - MAC Router - Puertos - Control de Acceso - Bloqueo)."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Diagn%C3%B3stico%20y%20Mantenimiento%20de%20PC%20ITC%20Presencial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/diagnostico-y-mantenimiento-de-pc"
+  },
+  "diseno-tecnico": {
+    "nombre": "Diseño Técnico Industrial",
+    "paraQuien": "Destinada para aquellas personas que quieren insertarse o estar vinculadas en el diseño técnico, desde estudiantes de escuelas técnicas, hasta ingenieros, arquitectos o maestros mayores de obras, es decir, personas que se dediquen a dibujar a un buen nivel y puedan crear todo tipo de planimetría.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "AutoCAD", "clases": ["Interfaz. Cinta de Opciones. Línea de comandos. Ayudas al dibujo I.", "Ayudas al Dibujo II. Propiedades. Modificación de objetos mediante pinzamientos.", "Herramientas de Dibujo I.", "Coordenadas."] },
+      { "titulo": "Módulo 2", "software": "AutoCAD", "clases": ["Herramientas Modificar I.", "Herramientas Modificar II.", "Escala de inserción. Administrador de propiedades de capa. Estados de capa.", "Bloques."] },
+      { "titulo": "Módulo 3", "software": "AutoCAD", "clases": ["Cotas.", "Inserción, modificación y configuración de texto. Administrador de estilos de tabla.", "Dibujo de pieza mecánica. Cotas angulares, Diámetro y Radio. Sombreado.", "Dibujo de Fachadas, vistas y cortes."] },
+      { "titulo": "Módulo 4", "software": "AutoCAD", "clases": ["Mensuras. Trabajo con Grados, minutos y segundos. Cálculo de Superficie.", "Representación Isométrica. Elipse – Isocírculo. Cotas oblicuas.", "Dibujo Paramétrico. Bloques dinámicos.", "Presentaciones gráficas. Cálculo de escala."] },
+      { "titulo": "Módulo 5", "software": "AutoCAD 3D", "clases": ["Administrador de Trazadores. Vista previa y Trazado. Impresión de los planos.", "Bloques con atributos. Carátulas dinámicas.", "Normas de Dibujo.", "Introducción al dibujo Tridimensional.", "Sólidos básicos (Polisólido - Prisma Rectangular - Cuña - Cono - Esfera - Cilindro - Toroide - Pirámide).", "Sólidos Compuestos (Unión - Diferencia - Intersección)."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Dise%C3%B1o%20tecnico%20industrial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/dise%C3%B1o-t%C3%A9cnico-industrial"
+  },
+  "robotica-arduino": {
+    "nombre": "Robótica con Arduino",
+    "paraQuien": "Los estudiantes de la capacitación de Robótica con Arduino deben contar con un perfil creativo, curiosos por saber cómo están construidos los aparatos e interesados por entender los principios de su funcionamiento.",
+    "modulos": [
+      { "titulo": "Módulo 1", "software": "Arduino IDE + TinkerCad", "clases": ["¿Qué es Arduino?. Modelos de Placas. Características. Shields y sensores. Aplicaciones de Arduino.", "Componentes del Kit de Desarrollo. IDE Arduino. Software de simulación. TinkerCad. Estructura básica de programa Arduino. Setup. Loop. Carga de programa en Placa Arduino.", "Pines de conexión de la Placa. Entradas y Salidas. Analógicas y Digitales. Funcionamiento de la Protoboard. Simulación de circuito en TinkerCad. Resistencias. Ley de Ohm.", "Sintaxis del lenguaje Arduino. Variables y Constantes. Ámbito. Tipos de Datos. Declaración e inicialización. Monitor Serie. Serial.begin(), Serial.print(), Serial.println()."] },
+      { "titulo": "Módulo 2", "software": "Arduino IDE + TinkerCad", "clases": ["Circuito de leds múltiples. Simulación en TinkerCad. Construcción en Protoboard. Salida de Información en Monitor Serie.", "Control de leds mediante pulsadores. digitalRead(). Estructura de control if(). Operadores aritméticos y de comparación.", "Led RGB. Composición de Color RGB. analogWrite(). Estructura de control for(). Ingreso de datos por Serial. Serial.read(), Serial.parseInt().", "Buzzer Pasivo, Activo. tone(), noTone(). Potenciómetro. analogRead(), map(). Función millis()."] },
+      { "titulo": "Módulo 3", "software": "Arduino IDE", "clases": ["Teclado 4 x 4. Librerías. Instalación mediante gestor. String, char. Matrices. strcmp(), isDigit(), atoi().", "Driver Motor Paso a Paso ULN2003AN. Motor Paso a Paso. Servomotor.", "Display LCD. Módulo I2C. Instalación manual de librería. Funciones LiquidCrystal_I2C: setBacklight, begin, clear, setCursor, print. Sensor de Temperatura – Humedad. Librería DHT.", "Módulo IC 74HC595. Display de 7 segmentos 1 dígito."] },
+      { "titulo": "Módulo 4", "software": "Arduino IDE", "clases": ["Display de 7 segmentos 4 dígitos. Operador módulo (%). Matriz de Leds. Estructura de control while().", "Sensor de Sonido. Fotoresistores.", "Sensor de Llama. Sensor de Distancia. pulseIn().", "Sensor de inclinación. Sensor de agua."] },
+      { "titulo": "Módulo 5", "software": "Arduino IDE", "clases": ["Módulo Joystick.", "Módulo RFID RC522. Llavero, Tarjeta. Memoria EEPROM. put(), get().", "Control Remoto. Receptor IR. Librería IRremote.", "Módulo Relay. Módulo RTC Reloj Digital. Librería RTClib."] }
+    ],
+    "pdf": "https://irp.cdn-website.com/eb191fc7/files/uploaded/Rob%C3%B3tica%20con%20Arduino%20ITC%20Presencial.pdf",
+    "fuente": "https://www.itcarg.com/capacitaciones/rob%C3%B3tica-con-arduino"
+  }
+}

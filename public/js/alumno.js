@@ -217,6 +217,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error('No se pudo cargar tu material.');
     const d = await res.json();
     _cursos = d.cursos || [];
+    // programas de estudios oficiales (estaticos, de itcarg.com)
+    let _planes = {};
+    try { const rp = await fetch('/data/planes.json'); if (rp.ok) _planes = await rp.json(); } catch (e) {}
 
     document.getElementById('alumnoSaludo').textContent = `Hola, ${d.nombre_completo || 'alumno'} 👋`;
     document.getElementById('loading').classList.add('hidden');
@@ -284,6 +287,35 @@ document.addEventListener('DOMContentLoaded', async () => {
       cajaGrilla.appendChild(grid);
     }
 
+    /* ——— Programa de estudios (presentación como en la página oficial) ——— */
+    function renderPrograma(cur) {
+      const caja = document.getElementById('cajaPrograma');
+      const plan = (_planes || {})[cur.id];
+      caja.innerHTML = '';
+      if (!plan || !Array.isArray(plan.modulos) || !plan.modulos.length) { caja.classList.add('hidden'); return; }
+      caja.classList.remove('hidden');
+      const totalCls = plan.modulos.reduce((n, m) => n + ((m.clases || []).length), 0);
+      const sect = document.createElement('section');
+      sect.className = 'plan-curso';
+      sect.innerHTML =
+        `<div class="plan-head"><div><b>📋 Programa de estudios</b>` +
+        `<small>${esc(plan.nombre || cur.nombre)} · ${plan.modulos.length} módulos · ${totalCls} clases</small></div>` +
+        `<a class="btn btn-primary btn-sm" href="${esc(plan.pdf || '')}" target="_blank" rel="noopener noreferrer">⬇ Descargar plan de estudios (PDF)</a></div>`;
+      if (plan.paraQuien) sect.innerHTML += `<p class="plan-quien"><b>¿Para quién es?</b> ${esc(plan.paraQuien)}</p>`;
+      let n = 1;
+      let detalles = '<details class="plan-modulos"><summary>Ver las clases por módulo</summary><div class="plan-modulos-body">';
+      for (const m of plan.modulos) {
+        const items = (m.clases || []).map((c) => `<li><b>Clase ${n++}:</b> ${esc(c)}</li>`).join('');
+        detalles +=
+          `<div class="plan-modulo">` +
+          `<h4>${esc(m.titulo || '')}${m.software ? ` <small>${esc(m.software)}</small>` : ''}</h4>` +
+          `<ol>${items}</ol></div>`;
+      }
+      detalles += '</div></details>';
+      sect.innerHTML += detalles;
+      caja.appendChild(sect);
+    }
+
     function entrarCurso(cur) {
       _sel = cur;
       cajaGrilla.classList.add('hidden');
@@ -294,6 +326,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       heroNombre.textContent = `${cur.emoji || ''} ${cur.nombre}`;
       document.title = `Mi Aula — ${cur.nombre}`;
       render();
+      renderPrograma(cur);
       window.scrollTo({ top: 0 });
     }
 
@@ -303,6 +336,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       render();
       cajaGrilla.classList.remove('hidden');
       cajaVolver.classList.add('hidden');
+      document.getElementById('cajaPrograma').classList.add('hidden');
       document.getElementById('cajaBuscar').classList.add('hidden');
       document.getElementById('main').classList.add('grid-vista');
       heroNombre.textContent = `${_cursos.length} capacitaciones`;
