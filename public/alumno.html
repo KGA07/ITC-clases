@@ -161,6 +161,36 @@
     }
     .btn-visto.ok .v-icon { background: #25b266; border-color: #25b266; color: #fff; }
     .alumno-clase.vista > summary { background: linear-gradient(90deg, rgba(37, 178, 102, .07), transparent 55%); }
+    /* —— Índice lateral (cajón Moodle) —— */
+    .indice-toggle { display: none; }
+    .indice-panel {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 290px; max-width: 85vw;
+      background: var(--surface); border-right: 1px solid var(--border);
+      box-shadow: 6px 0 28px rgba(0, 0, 0, .18);
+      padding: 18px 16px 30px; overflow-y: auto; z-index: 70;
+    }
+    .indice-panel.hidden { display: none; }
+    .indice-titulo {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      font-weight: 800; font-size: .9rem; margin-bottom: 10px; padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+    .btn-indice-cerrar {
+      border: none; background: transparent; color: var(--text-soft); cursor: pointer;
+      font-size: 1rem; line-height: 1; padding: 2px 6px; border-radius: 6px;
+    }
+    .btn-indice-cerrar:hover { color: var(--primary); background: var(--surface-2); }
+    .indice-curso { margin-top: 12px; font-weight: 800; font-size: .85rem; padding: 6px 8px 2px; }
+    .indice-modulo {
+      margin-top: 10px; padding: 0 8px;
+      font-size: .7rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--text-soft); font-weight: 800;
+    }
+    .indice-clase {
+      display: block; padding: 7px 10px; border-radius: 8px; margin: 1px 0;
+      color: var(--text); text-decoration: none; font-size: .85rem;
+    }
+    .indice-clase:hover { background: var(--surface-2); color: var(--primary); }
     .alumno-clase.vista > summary .sum-txt { text-decoration: line-through; color: var(--text-soft); }
   </style>
 </head>

@@ -15,8 +15,8 @@ function guardarVistos() {
   localStorage.setItem(VISTOS_KEY, JSON.stringify([...leidos]));
 }
 
-let _cursos = [];
-let _sel = null; // curso abierto (null = grilla de cursos) // catálogo bulk recibido (objeto completo)
+let _cursos = []; // catálogo bulk recibido (objeto completo)
+let _sel = null; // curso abierto (null = grilla de cursos)
 
 function abrirModal(url, nombre) {
   document.getElementById('modalTitle').textContent = nombre;
@@ -74,8 +74,8 @@ function btnVisto(claseId) {
   b.type = 'button';
   b.className = 'btn-visto' + (leidos.has(claseId) ? ' ok' : '');
   b.title = 'Marcar/desmarcar como clase vista';
-    b.setAttribute('aria-pressed', leidos.has(cl.id) ? 'true' : 'false');
-  b.innerHTML = leidos.has(cl.id)
+  b.setAttribute('aria-pressed', leidos.has(claseId) ? 'true' : 'false');
+  b.innerHTML = leidos.has(claseId)
     ? '<span class="v-icon">✔</span><span class="v-txt">Vista</span>'
     : '<span class="v-icon"></span><span class="v-txt">Marcar vista</span>';
   b.addEventListener('click', (e) => {
@@ -404,10 +404,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const indicePanel = document.createElement('aside');
     indicePanel.id = 'indicePanel';
     indicePanel.className = 'indice-panel hidden';
-    document.getElementById('listaMaterial').parentNode.insertBefore(indicePanel, document.getElementById('listaMaterial'));
+    document.body.appendChild(indicePanel);
 
     function pintarIndice() {
-      indicePanel.innerHTML = '<div class="indice-titulo">📑 Índice del curso</div>';
+      indicePanel.innerHTML =
+        '<div class="indice-titulo"><span>📑 Índice del curso</span>' +
+        '<button type="button" class="btn-indice-cerrar" id="btnIndiceCerrar" aria-label="Cerrar índice">✕</button></div>';
+      document.getElementById('btnIndiceCerrar').addEventListener('click', () => indicePanel.classList.add('hidden'));
       const listaVista = _sel ? [_sel] : _cursos;
       for (const cur of listaVista) {
         if (listaVista.length > 1) {
@@ -444,6 +447,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     btnIndice.addEventListener('click', () => {
       indicePanel.classList.toggle('hidden');
       if (!indicePanel.classList.contains('hidden')) pintarIndice();
+    });
+    indicePanel.addEventListener('click', (e) => {
+      if (e.target === indicePanel) indicePanel.classList.add('hidden');
     });
     pintarIndice();
   } catch (err) {
