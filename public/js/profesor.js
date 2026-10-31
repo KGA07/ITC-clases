@@ -94,48 +94,37 @@ function cardClase(cl, n) {
   return card;
 }
 
-/* Panel General: muestra TODOS los cursos del docente, cada uno con sus
-   clases (con Habilitar/Ver/Presentar), siempre desplegadas. */
-function pintarPanelGeneral(caja) {
+/* Panel General: muestra SOLO los cursos del docente (resumen + botón para
+   gestionar sus clases en la sección "Gestión de Clases"). No despliega la
+   lista completa de clases acá. */
+function pintarCursosPanel(caja) {
   caja.innerHTML = '';
   const lista = (estado.cursosDetalle && estado.cursosDetalle.length)
     ? estado.cursosDetalle
     : (estado.curso ? [{ id: estado.curso.id, nombre: estado.nombreCurso, emoji: estado.curso.emoji, color: estado.curso.color, curso: estado.curso }] : []);
-  let total = 0;
+  if (!lista.length) { caja.innerHTML = '<p class="sub">Sin cursos asignados todavía.</p>'; return; }
+  const grid = document.createElement('div');
+  grid.className = 'p-cursos-grid';
   for (const c of lista) {
-    const header = document.createElement('div');
-    header.className = 'p-curso-titulo';
-    header.innerHTML = `<span class="emoji" aria-hidden="true">${esc(c.emoji || '')}</span><span>${esc(c.nombre)}</span>`;
-    caja.appendChild(header);
-    let n = 0;
-    for (const mod of (c.curso || {}).modulos || []) {
-      const t = document.createElement('div');
-      t.className = 'p-modulo-titulo';
-      t.textContent = mod.titulo;
-      caja.appendChild(t);
-      const grid = document.createElement('div');
-      grid.className = 'p-clase-grid';
-      for (const cl of mod.clases || []) {
-        n++;
-        total++;
-        grid.appendChild(cardClase(cl, n));
-      }
-      caja.appendChild(grid);
-    }
-    if (!n) {
-      const p = document.createElement('p');
-      p.className = 'sub';
-      p.textContent = 'Este curso no tiene clases en el catálogo.';
-      caja.appendChild(p);
-    }
+    const clasesCurso = (c.curso && c.curso.modulos) ? c.curso.modulos.reduce((n, m) => n + (m.clases || []).length, 0) : 0;
+    const habCurso = Object.keys(estado.habilitaciones || {}).filter((id) => {
+      return (c.curso && c.curso.modulos) && c.curso.modulos.some((m) => (m.clases || []).some((cl) => cl.id === id));
+    }).length;
+    const card = document.createElement('div');
+    card.className = 'p-card p-curso-card';
+    card.innerHTML =
+      `<div class="p-curso-emoji" aria-hidden="true">${esc(c.emoji || '')}</div>` +
+      `<div class="p-curso-info"><b>${esc(c.nombre)}</b><small>${clasesCurso} clase${clasesCurso === 1 ? '' : 's'} · ${habCurso} habilitada${habCurso === 1 ? '' : 's'}</small></div>` +
+      `<button type="button" class="btn btn-primary btn-sm" data-curso="${esc(c.id)}">📖 Gestionar clases</button>`;
+    grid.appendChild(card);
   }
-  if (!lista.length) caja.innerHTML = '<p class="sub">Sin cursos asignados todavía.</p>';
-  caja.querySelectorAll('[data-hab]').forEach((b) => b.addEventListener('click', () => {
-    const hab = (estado.habilitaciones || {})[b.dataset.hab];
-    toggleHabilitacion(b.dataset.hab, !hab);
+  caja.appendChild(grid);
+  caja.querySelectorAll('[data-curso]').forEach((b) => b.addEventListener('click', () => {
+    const sel = document.getElementById('pCursoSel');
+    if (sel) { sel.value = b.dataset.curso; sel.dispatchEvent(new Event('change')); }
+    const nav = document.querySelector('[data-sec=clases]');
+    if (nav) nav.click();
   }));
-  caja.querySelectorAll('[data-ver]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.ver, false)));
-  caja.querySelectorAll('[data-pres]').forEach((b) => b.addEventListener('click', () => abrirClase(b.dataset.pres, true)));
 }
 
 function renderGeneral() {
@@ -145,7 +134,7 @@ function renderGeneral() {
     `<div class="p-stat"><b>${estado.alumnos.length}</b><span>alumnos activos</span></div>` +
     `<div class="p-stat"><b>${hab}</b><span>clases habilitadas</span></div>` +
     `<div class="p-stat"><b>${Math.max(total - hab, 0)}</b><span>clases por habilitar</span></div>`;
-  pintarPanelGeneral(document.getElementById('pRapidas'));
+  pintarCursosPanel(document.getElementById('pRapidas'));
 }
 
 // ── Mis Alumnos ────────────────────────────────────────────────────────────
