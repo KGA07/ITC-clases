@@ -272,6 +272,56 @@ document.addEventListener('DOMContentLoaded', async () => {
       detalles.forEach((d) => { d.open = algunoCerrado; });
       btnTodo.textContent = algunoCerrado ? 'Contraer todo ▴' : 'Expandir todo ▾';
     });
+
+    // Índice lateral (estilo Moodle): cajón con módulos y clases
+    const btnIndice = document.createElement('button');
+    btnIndice.type = 'button';
+    btnIndice.className = 'btn-toggle-todo';
+    btnIndice.id = 'btnIndice';
+    btnIndice.title = 'Mostrar/ocultar índice del curso';
+    btnIndice.textContent = '📑 Índice';
+    document.getElementById('cajaBuscar').appendChild(btnIndice);
+
+    const indicePanel = document.createElement('aside');
+    indicePanel.id = 'indicePanel';
+    indicePanel.className = 'indice-panel hidden';
+    document.getElementById('listaMaterial').parentNode.insertBefore(indicePanel, document.getElementById('listaMaterial'));
+
+    function pintarIndice() {
+      indicePanel.innerHTML = '<div class="indice-titulo">📑 Índice del curso</div>';
+      for (const cur of _cursos) {
+        if (_cursos.length > 1) {
+          const h = document.createElement('div');
+          h.className = 'indice-curso';
+          h.textContent = `${cur.emoji || ''} ${cur.nombre}`;
+          indicePanel.appendChild(h);
+        }
+        for (const mod of cur.modulos || []) {
+          const mt = document.createElement('div');
+          mt.className = 'indice-modulo';
+          mt.textContent = mod.titulo;
+          indicePanel.appendChild(mt);
+          for (const cl of mod.clases || []) {
+            if (!(cl.archivos || []).length) continue;
+            const a = document.createElement('a');
+            a.className = 'indice-clase';
+            a.href = '#clase-' + cl.id;
+            a.textContent = cl.titulo;
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              const det = document.getElementById('clase-' + cl.id);
+              if (det) { det.open = true; det.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+            });
+            indicePanel.appendChild(a);
+          }
+        }
+      }
+    }
+    btnIndice.addEventListener('click', () => {
+      indicePanel.classList.toggle('hidden');
+      if (!indicePanel.classList.contains('hidden')) pintarIndice();
+    });
+    pintarIndice();
   } catch (err) {
     toast(err.message);
     document.getElementById('loading').classList.add('hidden');
