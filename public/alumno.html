@@ -139,12 +139,28 @@
       transition: width .3s;
     }
     .btn-visto {
-      border: 1px solid var(--border); background: var(--surface); color: var(--text-soft);
-      width: 26px; height: 26px; border-radius: 50%; cursor: pointer; flex-shrink: 0;
-      font-size: .8rem; font-weight: 800; line-height: 1;
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 1px solid var(--border); background: var(--surface-2); color: var(--text-soft);
+      padding: 4px 12px 4px 5px; border-radius: 999px; cursor: pointer; flex-shrink: 0;
+      font: inherit; font-size: .72rem; font-weight: 800; line-height: 1;
+      transition: border-color .15s, background .15s, color .15s;
     }
-    .btn-visto.ok { background: var(--primary); border-color: var(--primary); color: #fff; }
-    .btn-visto:hover { outline: 2px solid var(--primary); outline-offset: 1px; }
+    .btn-visto .v-icon {
+      width: 17px; height: 17px; border: 1.5px solid var(--border); border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: .62rem; background: var(--surface); color: var(--text-soft);
+      transition: background .15s, border-color .15s;
+    }
+    .btn-visto .v-txt { white-space: nowrap; }
+    .btn-visto:hover { border-color: var(--primary); color: var(--primary); outline: none; }
+    .btn-visto:hover .v-icon { border-color: var(--primary); }
+    .btn-visto:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+    .btn-visto.ok {
+      border-color: #25b266; color: #15803d;
+      background: linear-gradient(90deg, rgba(37, 178, 102, .12), rgba(37, 178, 102, .05));
+    }
+    .btn-visto.ok .v-icon { background: #25b266; border-color: #25b266; color: #fff; }
+    .alumno-clase.vista > summary { background: linear-gradient(90deg, rgba(37, 178, 102, .07), transparent 55%); }
     .alumno-clase.vista > summary .sum-txt { text-decoration: line-through; color: var(--text-soft); }
   </style>
 </head>

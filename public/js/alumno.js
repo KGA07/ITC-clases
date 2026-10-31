@@ -74,8 +74,10 @@ function btnVisto(claseId) {
   b.type = 'button';
   b.className = 'btn-visto' + (leidos.has(claseId) ? ' ok' : '');
   b.title = 'Marcar/desmarcar como clase vista';
-  b.setAttribute('aria-pressed', leidos.has(claseId) ? 'true' : 'false');
-  b.textContent = leidos.has(claseId) ? '✓' : '○';
+    b.setAttribute('aria-pressed', leidos.has(cl.id) ? 'true' : 'false');
+  b.innerHTML = leidos.has(cl.id)
+    ? '<span class="v-icon">✔</span><span class="v-txt">Vista</span>'
+    : '<span class="v-icon"></span><span class="v-txt">Marcar vista</span>';
   b.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
