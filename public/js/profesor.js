@@ -113,9 +113,12 @@ function pintarCursosPanel(caja) {
     const card = document.createElement('div');
     card.className = 'p-card p-curso-card';
     card.innerHTML =
-      `<div class="p-curso-emoji" aria-hidden="true">${esc(c.emoji || '')}</div>` +
-      `<div class="p-curso-info"><b>${esc(c.nombre)}</b><small>${clasesCurso} clase${clasesCurso === 1 ? '' : 's'} · ${habCurso} habilitada${habCurso === 1 ? '' : 's'}</small></div>` +
-      `<button type="button" class="btn btn-primary btn-sm" data-curso="${esc(c.id)}">📖 Gestionar clases</button>`;
+      `<img class="p-curso-thumb" src="/img/cursos/${esc(c.id)}.svg" alt="${esc(c.nombre)}" loading="lazy">` +
+      `<div class="p-curso-body">` +
+      `  <div class="p-curso-emoji" aria-hidden="true">${esc(c.emoji || '')}</div>` +
+      `  <div class="p-curso-info"><b>${esc(c.nombre)}</b><small>${clasesCurso} clase${clasesCurso === 1 ? '' : 's'} · ${habCurso} habilitada${habCurso === 1 ? '' : 's'}</small></div>` +
+      `  <button type="button" class="btn btn-primary btn-sm" data-curso="${esc(c.id)}">📖 Gestionar clases</button>` +
+      `</div>`;
     grid.appendChild(card);
   }
   caja.appendChild(grid);

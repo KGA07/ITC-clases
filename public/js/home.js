@@ -45,15 +45,17 @@ function renderGrid() {
     card.tabIndex = 0;
     card.setAttribute('role', 'link');
     card.innerHTML =
+      `<img class="thumb" src="/img/cursos/${esc(c.id)}.svg" alt="${esc(c.nombre)}" loading="lazy">` +
       `<span class="band" style="background:${esc(c.color)}"></span>` +
       `<span class="badge-tipo">${esc(tipoLabel(c.tipo))}</span>` +
-      `<span class="emoji" aria-hidden="true">${c.emoji}</span>` +
-      `<span class="nombre">${esc(c.nombre)}</span>` +
-      `<span class="stats">` +
-      `  <span>📚 ${c.stats.clases} clases</span>` +
-      `  <span>📎 ${c.stats.archivos} archivos</span>` +
-      `  <span>💾 ${(c.stats.tamanoMB || 0).toFixed(0)} MB</span>` +
-      `</span>`;
+      `<div class="body">` +
+      `  <span class="nombre">${esc(c.nombre)}</span>` +
+      `  <span class="stats">` +
+      `    <span>📚 ${c.stats.clases} clases</span>` +
+      `    <span>📎 ${c.stats.archivos} archivos</span>` +
+      `    <span>💾 ${(c.stats.tamanoMB || 0).toFixed(0)} MB</span>` +
+      `  </span>` +
+      `</div>`;
     const ir = () => (location.href = `/curso?id=${encodeURIComponent(c.id)}`);
     card.addEventListener('click', ir);
     card.addEventListener('keydown', (e) => {

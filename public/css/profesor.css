@@ -135,8 +135,10 @@ body.en-preview .p-side { height: calc(100vh - 46px); }
 }
 .p-curso-titulo .emoji { font-size: 1.25rem; }
 .p-cursos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 8px; }
-.p-curso-card { display: flex; align-items: center; gap: 12px; padding: 14px 16px; }
-.p-curso-emoji { font-size: 1.6rem; flex-shrink: 0; }
+.p-curso-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.p-curso-thumb { width: 100%; height: 120px; object-fit: cover; display: block; }
+.p-curso-body { padding: 12px 14px 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.p-curso-emoji { font-size: 1.4rem; flex-shrink: 0; }
 .p-curso-info { flex: 1; min-width: 0; }
 .p-curso-info b { display: block; font-size: .95rem; }
 .p-curso-info small { color: var(--text-soft); font-size: .78rem; }

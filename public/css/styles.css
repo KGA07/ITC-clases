@@ -189,11 +189,13 @@ h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; }
 .card-curso {
   position: relative; display: flex; flex-direction: column;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 20px 18px; cursor: pointer; overflow: hidden; transition: transform 0.15s, box-shadow 0.15s;
+  overflow: hidden; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
 }
 .card-curso:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.card-curso .band { position: absolute; top: 0; left: 0; right: 0; height: 5px; }
-.card-curso .emoji { font-size: 32px; margin-bottom: 10px; }
+.card-curso .thumb { width: 100%; height: 128px; object-fit: cover; display: block; }
+.card-curso .band { position: absolute; top: 124px; left: 0; right: 0; height: 4px; z-index: 2; }
+.card-curso .badge-tipo { position: absolute; top: 8px; right: 8px; z-index: 3; }
+.card-curso .body { padding: 14px 18px 18px; display: flex; flex-direction: column; flex: 1; }
 .card-curso .nombre { font-weight: 800; font-size: 16px; line-height: 1.3; margin-bottom: 8px; }
 .card-curso .stats { display: flex; gap: 12px; color: var(--text-soft); font-size: 12.5px; font-weight: 600; margin-top: auto; }
 .card-curso .stats span { display: inline-flex; align-items: center; gap: 4px; }

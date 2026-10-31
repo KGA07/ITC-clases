@@ -3,9 +3,7 @@
 > Modo análisis. Nada de esto se implementa sin OK del docente.
 > Estado del sistema al 30/10/2026: commit `5d9c3a5` (sw v16). 10 cursos, 216 clases, ~2610 archivos.
 >
-> **Progreso:** Fase 1 ✓ implementada y verificada (commit `c440bf2`, sw v17): bulk 1 fetch,
-> barra de progreso con marca "vista", búsqueda local, Evaluaciones con URL real
-> (evaluacion-itc.vercel.app), material ciego oculto. Fases 2 en adelante pendientes.
+> **Progreso:** Fase 1 ✓ (commit `c440bf2`, sw v17); Panel General iterado (commits `7c0a9e9`, `8de6161`, `edd4f10`, sw v18-v20); Aula alumno Moodle-style (commit `d9f0c47`, sw v21); Miniaturas de cursos con SVG placeholder (commit pendiente, sw v22). Fase 2 en adelante pendientes.
 
 ---
 
