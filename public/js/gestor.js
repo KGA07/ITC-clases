@@ -595,6 +595,7 @@ async function guardarAlumno(e) {
       if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
       mostrarCredenciales(d.alumno, d.password);
       document.getElementById('formAlumno').style.display = 'none';
+      refrescarAlumnos();
     }
   } catch (err) {
     toast(err.message);
@@ -613,7 +614,7 @@ function mostrarCredenciales(alumno, password) {
     `<p class="sub">Después habilitale qué ver con “📚 Materiales”.</p>`;
   box.querySelectorAll('[data-copy]').forEach((b) => {
     b.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(b.dataset.copy); toast('✓ Copiado'); } catch { toast('No se pudo copiar'); }
+      try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(b.dataset.copy); } else { throw new Error('no-clipboard'); } toast('✓ Copiado'); } catch { try { const ta = document.createElement('textarea'); ta.value = b.dataset.copy; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('✓ Copiado'); } catch { toast('No se pudo copiar: seleccioná el texto a mano.'); } }
     });
   });
 }
@@ -800,7 +801,7 @@ function compartirCredenciales(boxId, titulo, nombre, usuario, password, destino
     `<p class="sub">Entrada: <code>itc-clases.vercel.app</code> · ${esc(destino)}</p>`;
   box.querySelectorAll('[data-copy]').forEach((b) => {
     b.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(b.dataset.copy); toast('✓ Copiado'); } catch { toast('No se pudo copiar'); }
+      try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(b.dataset.copy); } else { throw new Error('no-clipboard'); } toast('✓ Copiado'); } catch { try { const ta = document.createElement('textarea'); ta.value = b.dataset.copy; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('✓ Copiado'); } catch { toast('No se pudo copiar: seleccioná el texto a mano.'); } }
     });
   });
 }
