@@ -91,6 +91,7 @@ function renderClase(cl) {
   if (!(cl.archivos || []).length) return null;
   const det = document.createElement('details');
   det.className = 'alumno-clase' + (leidos.has(cl.id) ? ' vista' : '');
+  det.id = 'clase-' + cl.id;
   det.dataset.nombre = `${cl.titulo} ${cl.archivos.map((f) => f.nombre).join(' ')}`.toLowerCase();
   const sum = document.createElement('summary');
   sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></span>`;
@@ -243,7 +244,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     render();
 
-    // búsqueda local (client-side, sin pedidos nuevos)
+    // Deep-link por clase: /alumno#clase=<id> abre esa clase y hace scroll
+    const hashClase = (location.hash.match(/#clase=([^&]+)/) || [])[1];
+    if (hashClase) {
+      const det = document.getElementById('clase-' + decodeURIComponent(hashClase));
+      if (det) {
+        det.open = true;
+        setTimeout(() => det.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+      }
+    }
     document.getElementById('cajaBuscar').classList.remove('hidden');
     const input = document.getElementById('alumnoBuscar');
     let timer = null;

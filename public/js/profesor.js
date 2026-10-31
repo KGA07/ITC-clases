@@ -136,7 +136,8 @@ function renderGeneral() {
   document.getElementById('pStats').innerHTML =
     `<div class="p-stat"><b>${estado.alumnos.length}</b><span>alumnos activos</span></div>` +
     `<div class="p-stat"><b>${hab}</b><span>clases habilitadas</span></div>` +
-    `<div class="p-stat"><b>${Math.max(total - hab, 0)}</b><span>clases por habilitar</span></div>`;
+    `<div class="p-stat"><b>${Math.max(total - hab, 0)}</b><span>clases por habilitar</span></div>` +
+    `<div class="p-stat"><b>${(estado.docente && Array.isArray(estado.docente.permisos)) ? estado.docente.permisos.length : 0}</b><span>materiales habilitados para vos</span></div>`;
   pintarCursosPanel(document.getElementById('pRapidas'));
 }
 
