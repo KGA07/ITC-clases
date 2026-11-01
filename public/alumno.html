@@ -23,6 +23,19 @@
     }
     .alumno-hero h1 { font-size: 1.5rem; margin-bottom: 6px; }
     .alumno-hero p { opacity: .85; font-size: .9rem; margin: 0; }
+    .alumno-hero-extra { margin-top: 8px; font-size: .85rem; opacity: .95; display: flex; gap: 6px 16px; flex-wrap: wrap; }
+    .alumno-hero-extra.hidden { display: none; }
+    .continuar-card {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--primary), #2563eb); color: #fff;
+      border-radius: var(--radius); padding: 14px 18px; margin: 2px 0 16px;
+    }
+    .continuar-card b { display: block; font-size: .98rem; }
+    .continuar-card small { display: block; opacity: .85; font-size: .78rem; margin-top: 2px; }
+    .continuar-card .continuar-acciones { flex-shrink: 0; }
+    .continuar-card .btn-continuar { background: #fff; color: var(--primary); border-color: #fff; font-weight: 800; }
+    .continuar-card.completo { background: linear-gradient(135deg, #1d9e5f, #25b266); }
+    .continuar-card.completo .btn-continuar { background: #fff; color: #15803d; }
     .alumno-clase {
       background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
       margin-bottom: 12px; overflow: hidden;
@@ -202,6 +215,7 @@
     <section class="alumno-hero">
       <h1 id="alumnoSaludo">Mi aula</h1>
       <p id="alumnoCursoNombre">Cargando tu material…</p>
+      <div id="alumnoHeroExtra" class="alumno-hero-extra hidden"></div>
     </section>
 
     <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span> Cargando…</div>
@@ -215,6 +229,7 @@
     </div>
     <div id="grillaCursos"></div>
     <div id="cajaPrograma" class="hidden"></div>
+    <div id="cajaContinuar" class="hidden"></div>
     <div class="empty hidden" id="sinResultados"></div>
     <div id="listaMaterial"></div>
   </main>

@@ -258,8 +258,13 @@ async function catalogoAlumno(req, res) {
       cursos.push(vista);
     }
   }
+  // ficha de cursada del alumno: dia/horario guardados + docente del curso
+  const docentes = data.users.filter((u) => u.tipo === 'profesor' && (Array.isArray(u.cursos) ? u.cursos.some((id) => ctx.cursos.includes(id)) : ctx.cursos.includes(u.curso)));
   res.json({
     nombre_completo: ctx.alumno.nombre_completo,
+    dia: ctx.alumno.dia || '',
+    horario: ctx.alumno.horario || '',
+    docente: docentes.length ? { nombre: docentes[0].nombre_completo } : null,
     cursos,
     // compat: si tiene un solo curso, exponerlo como curso único también
     curso: cursos.length === 1 ? cursos[0] : null,

@@ -87,6 +87,7 @@ function btnVisto(claseId) {
     // persistir en la base (si falla la red, queda el respaldo local)
     apiFetch('/alumno/progreso', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ claseId, visto: leidos.has(claseId) }) }).catch(() => {});
     render();
+    renderContinuar(_sel);
   });
   return b;
 }
@@ -206,6 +207,41 @@ function render(filtro = '') {
   if (bt) bt.textContent = 'Expandir todo ▾';
 }
 
+/* tarjeta "segui por": primera clase sin marcar del curso abierto */
+function renderContinuar(cur) {
+  const caja = document.getElementById('cajaContinuar');
+  if (!caja) return;
+  if (!cur || !Array.isArray(cur.modulos)) { caja.classList.add('hidden'); return; }
+  const clases = [];
+  for (const m of cur.modulos || []) for (const cl of (m.clases || [])) if ((cl.archivos || []).length) clases.push(cl);
+  caja.innerHTML = '';
+  if (!clases.length) { caja.classList.add('hidden'); return; }
+  const idx = clases.findIndex((cl) => !leidos.has(cl.id));
+  const card = document.createElement('div');
+  if (idx === -1) {
+    card.className = 'continuar-card completo';
+    card.innerHTML =
+      `<div><b>🎉 ¡Terminaste las ${clases.length} clases del curso!</b>` +
+      `<small>Podés pedirle a tu profesor el certificado de aprobación.</small></div>` +
+      `<div class="continuar-acciones"><button type="button" class="btn btn-sm btn-continuar" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Volver arriba</button></div>`;
+    caja.classList.remove('hidden');
+    caja.appendChild(card);
+    return;
+  }
+  const cl = clases[idx];
+  card.className = 'continuar-card';
+  card.innerHTML =
+    `<div><b>▶ Seguí por: ${esc(cl.titulo)}</b>` +
+    `<small>Clase ${idx + 1} de ${clases.length} · te quedan ${clases.length - idx - 1}</small></div>` +
+    `<div class="continuar-acciones"><button type="button" class="btn btn-sm btn-continuar">Ir a la clase →</button></div>`;
+  card.querySelector('.btn-continuar').addEventListener('click', () => {
+    const det = document.getElementById('clase-' + cl.id);
+    if (det) { det.open = true; det.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  });
+  caja.classList.remove('hidden');
+  caja.appendChild(card);
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   if (!requireAuth(localStorage.getItem('itc_clases_nombre'))) return;
 
@@ -224,6 +260,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     // programas de estudios oficiales (estaticos, de itcarg.com)
     let _planes = {};
     try { const rp = await fetch('/data/planes.json'); if (rp.ok) _planes = await rp.json(); } catch (e) {}
+    // ficha de cursada del alumno (dia/horario/docente)
+    const _ficha = { dia: d.dia || '', horario: d.horario || '', docente: d.docente || null };
+
+    function actualizarHero(cur) {
+      const extra = document.getElementById('alumnoHeroExtra');
+      if (!extra) return;
+      const partes = [];
+      const fh = [_ficha.dia, _ficha.horario].filter(Boolean);
+      if (fh.length) partes.push('📅 Tu clase: ' + esc(fh.join(' ')));
+      if (_ficha.docente && _ficha.docente.nombre) partes.push('👨‍🏫 Profesor: ' + esc(_ficha.docente.nombre));
+      if (partes.length) {
+        extra.classList.remove('hidden');
+        extra.innerHTML = partes.map((p) => `<span>${p}</span>`).join('');
+      } else {
+        extra.classList.add('hidden');
+      }
+    }
+
     // progreso persistido en el servidor (ademas del respaldo local):
     // unir marcas de ambos lados; las locales que faltan en el server se suben
     try {
@@ -345,6 +399,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       document.title = `Mi Aula — ${cur.nombre}`;
       render();
       renderPrograma(cur);
+      renderContinuar(cur);
+      actualizarHero(cur);
       window.scrollTo({ top: 0 });
     }
 
@@ -355,6 +411,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       cajaGrilla.classList.remove('hidden');
       cajaVolver.classList.add('hidden');
       document.getElementById('cajaPrograma').classList.add('hidden');
+      document.getElementById('cajaContinuar').classList.add('hidden');
+      const he = document.getElementById('alumnoHeroExtra');
+      if (he) { he.innerHTML = ''; he.classList.add('hidden'); }
       document.getElementById('cajaBuscar').classList.add('hidden');
       document.getElementById('main').classList.add('grid-vista');
       heroNombre.textContent = `${_cursos.length} capacitaciones`;
