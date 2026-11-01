@@ -285,6 +285,40 @@ async function claseAlumno(req, res) {
   res.json({ curso: curso ? curso.nombre : '', modulo: clase.modulo, clase: { ...clase, archivos } });
 }
 
+
+// ——— Progreso del alumno: clases marcadas como vistas ———
+// Persistido en data.vistas (mapa alumnoId -> claseId -> fecha de la marca)
+// para que el docente pueda ver el avance y que el alumno no lo pierda
+// al cambiar de dispositivo (antes vivia solo en localStorage).
+async function progresoVer(req, res) {
+  const data = await db.loadData();
+  const ctx = contextoSesion(data, req);
+  if (!ctx) return res.status(404).json({ error: 'Alumno sin datos.' });
+  const mias = (data.vistas || {})[String(ctx.alumno.id)] || {};
+  res.json({ vistas: mias });
+}
+
+async function progresoMarcar(req, res) {
+  const data = await db.loadData();
+  const ctx = contextoSesion(data, req);
+  if (!ctx) return res.status(404).json({ error: 'Alumno sin datos.' });
+  const { claseId, visto } = req.body || {};
+  const c = getCatalog();
+  const clase = c.claseIndex.get(String(claseId || ''));
+  if (!clase || !ctx.cursos.includes(clase.cursoId)) {
+    return res.status(400).json({ error: 'La clase no pertenece a tus cursos.' });
+  }
+  const keyAl = String(ctx.alumno.id);
+  data.vistas[keyAl] = data.vistas[keyAl] || {};
+  if (visto === false) {
+    delete data.vistas[keyAl][clase.id];
+  } else {
+    data.vistas[keyAl][clase.id] = new Date().toISOString();
+  }
+  await db.saveData();
+  res.json({ ok: true, claseId: clase.id, vista: data.vistas[keyAl][clase.id] || null });
+}
+
 module.exports = {
   listar,
   crear,
@@ -292,6 +326,8 @@ module.exports = {
   borrar,
   cambiarPassword,
   catalogoAlumno,
+  progresoVer,
+  progresoMarcar,
   claseAlumno,
   vistaPublica,
   passwordGenerada

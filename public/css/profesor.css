@@ -105,6 +105,10 @@ body.en-preview .p-side { height: calc(100vh - 46px); }
 .p-alumnos-toolbar { display: flex; gap: 8px; margin-top: 12px; }
 .p-alumno-info { flex: 1; min-width: 0; }
 .p-alumno-acciones { display: flex; gap: 6px; flex-shrink: 0; }
+.p-progreso-mini { margin-top: 4px; width: 100%; }
+.p-progreso-mini small { color: var(--text-soft); font-size: .72rem; font-weight: 700; margin-right: 8px; }
+.p-progreso-mini .pm-barra { height: 5px; border-radius: 99px; background: var(--border); margin-top: 5px; overflow: hidden; max-width: 240px; }
+.p-progreso-mini .pm-barra span { display: block; height: 100%; border-radius: 99px; background: var(--primary); }
 
 .p-clase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 8px; }
 .p-clase { display: flex; gap: 12px; align-items: center; }

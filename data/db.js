@@ -15,6 +15,7 @@ function migrar(memoryDoc) {
   if (!Array.isArray(memoryDoc.alumnos)) { memoryDoc.alumnos = []; cambio = true; }
   if (!memoryDoc.habilitaciones || typeof memoryDoc.habilitaciones !== 'object') { memoryDoc.habilitaciones = {}; cambio = true; }
   if (!memoryDoc.asistencia || typeof memoryDoc.asistencia !== 'object') { memoryDoc.asistencia = {}; cambio = true; }
+  if (!memoryDoc.vistas || typeof memoryDoc.vistas !== 'object') { memoryDoc.vistas = {}; cambio = true; }
   for (const u of memoryDoc.users || []) {
     if (u.nombre === config.profesorUser && u.tipo !== 'admin') { u.tipo = 'admin'; cambio = true; }
     // migracion multi-curso: docentes pasan de curso (string) a cursos (array)

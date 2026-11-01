@@ -10,12 +10,12 @@ beforeEach(async () => {
 });
 
 describe('Autenticacion', () => {
-  test('login correcto devuelve tokens y tipo profesor', async () => {
+  test('login correcto devuelve tokens y tipo admin (GKempe migra a admin)', async () => {
     const res = await request(app).post('/api/login').send({ nombre: 'GKempe', password: '1234' });
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty('token');
     expect(res.body).toHaveProperty('refreshToken');
-    expect(res.body.tipo).toBe('profesor');
+    expect(res.body.tipo).toBe('admin');
   });
 
   test('login con password incorrecta responde 401', async () => {

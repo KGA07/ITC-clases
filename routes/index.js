@@ -52,6 +52,9 @@ function alumnoAuth(req, res, next) {
 }
 router.get('/alumno/catalogo', apiLimiter, auth, alumnoAuth, alumnosCtrl.catalogoAlumno);
 router.get('/alumno/clase/:id', apiLimiter, auth, alumnoAuth, alumnosCtrl.claseAlumno);
+// Progreso del alumno: clases marcadas como vistas (persistido en la base)
+router.get('/alumno/progreso', apiLimiter, auth, alumnoAuth, alumnosCtrl.progresoVer);
+router.put('/alumno/progreso', apiLimiter, auth, alumnoAuth, alumnosCtrl.progresoMarcar);
 
 // Gestor docente (estado + acciones locales de regeneración)
 router.get('/gestor', apiLimiter, auth, profAuth, gestorCtrl.estado);

@@ -81,6 +81,26 @@ async function panel(req, res) {
     asistencia[claseId] = limpio;
   }
 
+  // Progreso: clases vistas por los alumnos del curso activo (marcas que el
+  // alumno hace en el aula). El total es sobre las clases habilitadas.
+  const clasesHabilitadas = new Set(
+    Object.keys(data.habilitaciones || {})
+      .filter((k) => k.startsWith(activo + '::'))
+      .map((k) => k.split('::')[1])
+  );
+  const progreso = {};
+  for (const a of alumnos) {
+    const vistos = (data.vistas || {})[String(a.id)] || {};
+    let n = 0, ultima = '';
+    for (const [cid, f] of Object.entries(vistos)) {
+      if (!clasesHabilitadas.has(cid)) continue;
+      if (curso && !curso.modulos.some((mm) => (mm.clases || []).some((cc) => cc.id === cid))) continue;
+      n++;
+      if (f > ultima) ultima = String(f || '');
+    }
+    progreso[a.id] = { vistas: n, total: clasesHabilitadas.size, ultima: ultima.slice(0, 10) };
+  }
+
   res.json({
     docente: { id: docente.id, nombre_completo: docente.nombre_completo, curso: activo, cursos: mis, horario: docente.horario || '' },
     nombreCurso: curso ? curso.nombre : '',
@@ -94,6 +114,7 @@ async function panel(req, res) {
       })
       .filter(Boolean),
     alumnos,
+    progreso,
     habilitaciones,
     asistencia
   });

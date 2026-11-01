@@ -171,6 +171,18 @@ function renderAlumnos() {
     acciones.appendChild(btnPass);
     acciones.appendChild(btnDel);
     div.appendChild(acciones);
+    // progreso del alumno en este curso (vistas marcadas en el aula)
+    const pro = (estado.progreso || {})[String(a.id)];
+    if (pro) {
+      const pct = pro.total ? Math.round((pro.vistas / pro.total) * 100) : 0;
+      const info = div.querySelector('.p-alumno-info');
+      const pb = document.createElement('div');
+      pb.className = 'p-progreso-mini';
+      pb.innerHTML =
+        `<small>📚 <b>${pro.vistas}/${pro.total}</b> clases vistas${pro.ultima ? ' · última ' + esc(pro.ultima) : ''}</small>` +
+        `<div class="pm-barra"><span style="width:${pct}%"></span></div>`;
+      if (info) info.appendChild(pb);
+    }
     caja.appendChild(div);
   });
 }

@@ -84,6 +84,8 @@ function btnVisto(claseId) {
     if (leidos.has(claseId)) leidos.delete(claseId);
     else leidos.add(claseId);
     guardarVistos();
+    // persistir en la base (si falla la red, queda el respaldo local)
+    apiFetch('/alumno/progreso', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ claseId, visto: leidos.has(claseId) }) }).catch(() => {});
     render();
   });
   return b;
@@ -222,6 +224,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     // programas de estudios oficiales (estaticos, de itcarg.com)
     let _planes = {};
     try { const rp = await fetch('/data/planes.json'); if (rp.ok) _planes = await rp.json(); } catch (e) {}
+    // progreso persistido en el servidor (ademas del respaldo local):
+    // unir marcas de ambos lados; las locales que faltan en el server se suben
+    try {
+      const pv = await apiFetch('/alumno/progreso');
+      if (pv.ok) {
+        const vistasSrv = (await pv.json()).vistas || {};
+        const subir = [];
+        for (const id of leidos) if (!vistasSrv[id]) subir.push(id);
+        for (const id of Object.keys(vistasSrv)) leidos.add(id);
+        for (const id of subir) {
+          try { await apiFetch('/alumno/progreso', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ claseId: id, visto: true }) }); } catch (e) {}
+        }
+      }
+    } catch (e) {}
 
     document.getElementById('alumnoSaludo').textContent = `Hola, ${d.nombre_completo || 'alumno'} 👋`;
     document.getElementById('loading').classList.add('hidden');
