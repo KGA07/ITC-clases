@@ -733,6 +733,13 @@ function renderPermisos() {
     caja.appendChild(modulo);
   });
   if (!total) caja.innerHTML = '<p class="g-vacio">Este curso no tiene materiales.</p>';
+  // el boton de todo el curso es contextual: habilitar si falta algo,
+  // deshabilitar si ya esta todo permitido
+  let totalHab = 0;
+  for (const m of permisosCursoData.modulos || []) {
+    for (const cl of m.clases || []) for (const f of cl.archivos || []) if (permisosSet.has(f.fid)) totalHab++;
+  }
+  actualizarBotonCurso(total, totalHab);
 }
 
 async function guardarPermisos() {
@@ -749,19 +756,50 @@ async function guardarPermisos() {
   }
 }
 
-function habilitarTodo() {
-  if (!permisosCursoData) return;
-  const quien = permisosPersona ? permisosPersona.nombre_completo : 'esta persona';
-  if (!confirm(`¿Habilitar TODOS los materiales del curso para ${quien}?`)) return;
-  for (const m of permisosCursoData.modulos || []) {
-    for (const cl of m.clases || []) {
-      for (const f of cl.archivos || []) permisosSet.add(f.fid);
-    }
+/* el boton "todo el curso" es contextual: si falta algo por habilitar,
+   habilita todo; si el alumno ya puede ver todo, dice Deshabilitar todo */
+function actualizarBotonCurso(total, totalHab) {
+  const b = document.getElementById('btnPermisosTodos');
+  if (!b) return;
+  if (!total) { b.textContent = 'Habilitar todo el curso'; b.dataset.modo = 'habilitar'; b.title = ''; return; }
+  if (totalHab >= total) {
+    b.textContent = 'Deshabilitar todo el contenido';
+    b.dataset.modo = 'deshabilitar';
+    b.title = 'Ya puede ver todo el curso: al tocar, le saca el acceso a todo';
+  } else {
+    b.textContent = 'Habilitar todo el curso';
+    b.dataset.modo = 'habilitar';
+    b.title = totalHab ? 'Ya puede ver ' + totalHab + ' de ' + total + ' materiales' : '';
   }
-  guardarPermisos().then(() => {
+}
+
+async function habilitarTodo() {
+  if (!permisosCursoData) return;
+  const b = document.getElementById('btnPermisosTodos');
+  const modo = b ? (b.dataset.modo || 'habilitar') : 'habilitar';
+  const quien = permisosPersona ? permisosPersona.nombre_completo : 'esta persona';
+  const accion = (modos) => {
+    for (const m of permisosCursoData.modulos || []) {
+      for (const cl of m.clases || []) {
+        for (const f of cl.archivos || []) {
+          if (modos) permisosSet.add(f.fid); else permisosSet.delete(f.fid);
+        }
+      }
+    }
+  };
+  if (modo === 'deshabilitar') {
+    if (!confirm('DESHABILITAR TODO el contenido de este curso para ' + quien + '? Va a perder el acceso hasta que lo vuelvas a habilitar.')) return;
+    accion(false);
+    await guardarPermisos();
     renderPermisos();
-    toast('✓ Todos los materiales habilitados');
-  });
+    toast('Todo el contenido deshabilitado');
+  } else {
+    if (!confirm('Habilitar TODOS los materiales del curso para ' + quien + '?')) return;
+    accion(true);
+    await guardarPermisos();
+    renderPermisos();
+    toast('Todos los materiales habilitados');
+  }
 }
 
 (function wireAlumnos() {
