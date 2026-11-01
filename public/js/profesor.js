@@ -507,9 +507,13 @@ async function guardarAlumnoProf(e) {
         `<p>Compartí con <b>${esc(d.alumno.nombre_completo)}</b> sus datos para entrar al aula:</p>` +
         `<div class="g-cred-fila">Usuario <code>${esc(d.alumno.usuario)}</code></div>` +
         `<div class="g-cred-fila">Contraseña <code>${esc(d.password)}</code></div>` +
-        `<p class="sub">Entrada: <code>itc-clases.vercel.app</code></p>`;
+        `<p class="sub">Entrada: <code>itc-clases.vercel.app</code></p>` +
+        `<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;flex-wrap:wrap"><button type="button" class="btn btn-primary btn-sm" id="pBtnOtroAlumno">➕ Registrar otro</button><button type="button" class="btn btn-ghost btn-sm" id="pBtnCredListo">Listo ✕</button></div>`;
       form.style.display = 'none';
       toast('✓ Alumno creado');
+      document.getElementById('pBtnOtroAlumno').addEventListener('click', () => abrirModalAlumnoProf());
+      document.getElementById('pBtnCredListo').addEventListener('click', cerrarModalAlumnoProf);
+      cargar(); // la lista se refresca en vivo, sin cerrar ni recargar
     }
   } catch (err) {
     toast(err.message);
@@ -536,7 +540,9 @@ async function cambiarClaveAlumnoProf(a) {
   box.innerHTML =
     `<p>🔑 Nueva clave para <b>${esc(a.nombre_completo)}</b>:</p>` +
     `<div class="g-cred-fila">Usuario <code>${esc(a.usuario)}</code></div>` +
-    `<div class="g-cred-fila">Contraseña <code>${esc(d.password)}</code></div>`;
+    `<div class="g-cred-fila">Contraseña <code>${esc(d.password)}</code></div>` +
+    `<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button type="button" class="btn btn-ghost btn-sm" id="pBtnCredListo">Listo ✕</button></div>`;
+  document.getElementById('pBtnCredListo').addEventListener('click', cerrarModalAlumnoProf);
   toast('✓ Clave actualizada');
 }
 
@@ -590,8 +596,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnNuevoAl) {
     btnNuevoAl.addEventListener('click', () => abrirModalAlumnoProf());
     document.getElementById('pBtnRefreshAlumnos').addEventListener('click', () => cargar());
-    document.getElementById('pModalAlumnoCerrar').addEventListener('click', () => document.getElementById('pModalAlumno').classList.add('hidden'));
-    document.getElementById('pModalAlumnoCancelar').addEventListener('click', () => document.getElementById('pModalAlumno').classList.add('hidden'));
+    document.getElementById('pModalAlumnoCerrar').addEventListener('click', cerrarModalAlumnoProf);
+    document.getElementById('pModalAlumnoCancelar').addEventListener('click', cerrarModalAlumnoProf);
     document.getElementById('pFormAlumno').addEventListener('submit', guardarAlumnoProf);
     document.getElementById('pBtnGenPassAlumno').addEventListener('click', () => {
       document.getElementById('pAlumnoPass').value = passwordCortaProf();

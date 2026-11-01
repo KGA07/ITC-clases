@@ -611,7 +611,10 @@ function mostrarCredenciales(alumno, password) {
     `<div class="g-cred-fila">Usuario <code id="credUser">${esc(alumno.usuario)}</code> <button type="button" class="btn btn-ghost btn-sm" data-copy="${esc(alumno.usuario)}">copiar</button></div>` +
     `<div class="g-cred-fila">Contraseña <code id="credPass">${esc(password)}</code> <button type="button" class="btn btn-ghost btn-sm" data-copy="${esc(password)}">copiar</button></div>` +
     `<p class="sub">Entrada: <code>itc-clases.vercel.app</code></p>` +
-    `<p class="sub">Después habilitale qué ver con “📚 Materiales”.</p>`;
+    `<p class="sub">Después habilitale qué ver con “📚 Materiales”.</p>` +
+    `<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;flex-wrap:wrap"><button type="button" class="btn btn-primary btn-sm" id="btnOtroAlumno">➕ Registrar otro</button><button type="button" class="btn btn-ghost btn-sm" id="btnCredListo">Listo ✕</button></div>`;
+  document.getElementById('btnOtroAlumno').addEventListener('click', () => { document.getElementById('credencialesBox').classList.add('hidden'); abrirModalAlumno(); });
+  document.getElementById('btnCredListo').addEventListener('click', cerrarModalAlumno);
   box.querySelectorAll('[data-copy]').forEach((b) => {
     b.addEventListener('click', async () => {
       try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(b.dataset.copy); } else { throw new Error('no-clipboard'); } toast('✓ Copiado'); } catch { try { const ta = document.createElement('textarea'); ta.value = b.dataset.copy; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('✓ Copiado'); } catch { toast('No se pudo copiar: seleccioná el texto a mano.'); } }
