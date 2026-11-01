@@ -254,6 +254,12 @@ async function cambiarPassword(req, res) {
   const data = await db.loadData();
   const alumno = alumnoDe(data, req.params.id);
   if (!alumno) return res.status(404).json({ error: 'Alumno no encontrado.' });
+  // alcance: un docente solo puede restablecer claves de SUS cursos (el
+  // admin pasa porque cursosPermitidos devuelve null para él)
+  const perm = cursosPermitidos(data, req);
+  if (perm !== null && !alumnoEnAlcance(data, req, alumno)) {
+    return res.status(403).json({ error: 'Ese alumno no está en tus cursos.' });
+  }
   const clave = req.body && req.body.password ? String(req.body.password) : passwordGenerada();
   alumno.password = bcrypt.hashSync(clave, 10);
   await db.saveData();

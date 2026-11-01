@@ -101,6 +101,39 @@ describe('Catalogo de materiales', () => {
   });
 });
 
+describe('Seguridad de alcance', () => {
+  test('docente de otro curso no puede restablecer la clave de un alumno ajeno', async () => {
+    const admin = await request(app).post('/api/login').send({ nombre: 'admin', password: 'admin123' });
+    const TA = admin.body.token;
+
+    // docente del curso diseno-grafico + alumno del curso asistente-administrativo
+    const docente = await request(app).post('/api/docentes')
+      .set('Authorization', `Bearer ${TA}`)
+      .send({ nombre: 'prof.ajeno', nombre_completo: 'Docente Ajeno', password: 'Clave123', cursos: ['diseno-grafico'], permisos: [] });
+    expect(docente.status).toBe(201);
+
+    const alumno = await request(app).post('/api/alumnos')
+      .set('Authorization', `Bearer ${TA}`)
+      .send({ nombre_completo: 'Alumno Ajeno', usuario: 'alumno.ajeno', password: 'Alumno123', cursos: ['asistente-administrativo'], permisos: [] });
+    expect(alumno.status).toBe(201);
+
+    // el docente ajeno intenta restablecer la clave del alumno
+    const login = await request(app).post('/api/login').send({ nombre: 'prof.ajeno', password: 'Clave123' });
+    const res = await request(app)
+      .post(`/api/alumnos/${alumno.body.alumno.id}/password`)
+      .set('Authorization', `Bearer ${login.body.token}`)
+      .send({ password: 'Nueva123' });
+    expect(res.status).toBe(403);
+
+    // el admin sí puede
+    const ok = await request(app)
+      .post(`/api/alumnos/${alumno.body.alumno.id}/password`)
+      .set('Authorization', `Bearer ${TA}`)
+      .send({ password: 'Nueva456' });
+    expect(ok.status).toBe(200);
+  });
+});
+
 describe('Paginado estatico', () => {
   test('GET / sirve el login', async () => {
     const res = await request(app).get('/');

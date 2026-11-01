@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           if (intentoImg === 1) img.src = '/img/cursos/' + cur.id + '.svg';
           else img.style.display = 'none';
         });
-        img.src = '/img/cursos/' + cur.id + '.png';
+        img.src = '/img/cursos/' + cur.id + '.webp';
         card.addEventListener('click', () => entrarCurso(cur));
         card.addEventListener('keydown', (ev) => {
           if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); entrarCurso(cur); }

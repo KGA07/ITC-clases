@@ -45,7 +45,7 @@ function renderGrid() {
     card.tabIndex = 0;
     card.setAttribute('role', 'link');
     card.innerHTML =
-      `<img class="thumb" src="/img/cursos/${esc(c.id)}.svg" alt="${esc(c.nombre)}" loading="lazy">` +
+      `<img class="thumb" src="/img/cursos/${esc(c.id)}.webp" alt="${esc(c.nombre)}" loading="lazy" onerror="this.onerror=null;this.src='/img/cursos/${esc(c.id)}.svg'">` +
       `<span class="band" style="background:${esc(c.color)}"></span>` +
       `<span class="badge-tipo">${esc(tipoLabel(c.tipo))}</span>` +
       `<div class="body">` +
