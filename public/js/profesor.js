@@ -144,7 +144,7 @@ function renderGeneral() {
 // ── Mis Alumnos ────────────────────────────────────────────────────────────
 function renderAlumnos() {
   const caja = document.getElementById('pListaAlumnos');
-  document.getElementById('pSubAlumnos').textContent = `${estado.alumnos.length} alumnos de tus cursos · entrada con usuario y contraseña en itc-clases.vercel.app`;
+  document.getElementById('pSubAlumnos').textContent = `${estado.alumnos.length} ${estado.alumnos.length === 1 ? 'alumno' : 'alumnos'} de tus cursos · entrada con usuario y contraseña en itc-clases.vercel.app`;
   caja.innerHTML = '';
   if (!estado.alumnos.length) {
     caja.innerHTML = '<p class="sub">Todavía no hay alumnos cargados. Usá “➕ Nuevo alumno”.</p>';
@@ -155,7 +155,7 @@ function renderAlumnos() {
     div.className = 'p-alumno';
     div.innerHTML =
       `<span class="p-avatar">${esc(initials(a.nombre_completo))}</span>` +
-      `<div class="p-alumno-info"><b>${esc(a.nombre_completo)}</b><small>${esc(a.usuario)}${a.horario ? ' · ' + esc(a.horario) : ''}${a.email ? '<br>' + esc(a.email) : ''}</small><small>${(a.permisos || []).length} materiales · ${esc(etiquetaCursosProf(a))}</small></div>`;
+      `<div class="p-alumno-info"><b>${esc(a.nombre_completo)}</b><small>${esc(a.usuario)}${a.horario ? ' · ' + esc(a.horario) : ''}${a.email ? '<br>' + esc(a.email) : ''}</small><small>${(a.permisos || []).length} ${(a.permisos || []).length === 1 ? 'material' : 'materiales'} · ${esc(etiquetaCursosProf(a))}</small></div>`;
     const acciones = document.createElement('div');
     acciones.className = 'p-alumno-acciones';
     const btnEdit = document.createElement('button');
