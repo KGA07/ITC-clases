@@ -202,6 +202,18 @@
       background: linear-gradient(90deg, rgba(37, 178, 102, .12), rgba(37, 178, 102, .05));
     }
     .btn-visto.ok .v-icon { background: #25b266; border-color: #25b266; color: #fff; }
+    /* —— botón de duda por WhatsApp (mismo lenguaje que "vista") —— */
+    .btn-duda {
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text-soft);
+      padding: 4px 12px 4px 7px; border-radius: 999px; cursor: pointer; flex-shrink: 0;
+      font: inherit; font-size: .72rem; font-weight: 800; line-height: 1;
+      transition: border-color .15s, color .15s;
+    }
+    .btn-duda .w-icon { font-size: .8rem; line-height: 1; }
+    .btn-duda .v-txt { white-space: nowrap; }
+    .btn-duda:hover { border-color: #25d366; color: #128c7e; outline: none; }
+    .btn-duda:focus-visible { outline: 2px solid #25d366; outline-offset: 1px; }
     .alumno-clase.vista > summary { background: linear-gradient(90deg, rgba(37, 178, 102, .07), transparent 55%); }
     /* —— Índice lateral (cajón Moodle) —— */
     .indice-toggle { display: none; }

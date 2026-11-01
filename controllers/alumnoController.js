@@ -295,7 +295,7 @@ async function catalogoAlumno(req, res) {
     nombre_completo: ctx.alumno.nombre_completo,
     dia: ctx.alumno.dia || '',
     horario: ctx.alumno.horario || '',
-    docente: docentes.length ? { nombre: docentes[0].nombre_completo } : null,
+    docente: docentes.length ? { nombre: docentes[0].nombre_completo, telefono: docentes[0].telefono || '' } : null,
     cursos,
     // compat: si tiene un solo curso, exponerlo como curso único también
     curso: cursos.length === 1 ? cursos[0] : null,

@@ -18,6 +18,7 @@ function guardarVistos() {
 let _cursos = []; // catálogo bulk recibido (objeto completo)
 let _sel = null; // curso abierto (null = grilla de cursos)
 let _clasesOrden = []; // ids de las clases visibles en orden de lectura (flechas prev/next)
+const _dudaCtx = { nombre: '', docente: null, curso: '' }; // para el boton de dudas por WhatsApp
 
 function abrirModal(url, nombre) {
   document.getElementById('modalTitle').textContent = nombre;
@@ -132,6 +133,28 @@ function renderClaseBloqueada(cl) {
   return fila;
 }
 
+/* botón de duda por clase: abre WhatsApp con el mensaje prellenado */
+function btnDuda(cl) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'btn-duda';
+  b.title = 'Consultar una duda sobre esta clase por WhatsApp';
+  b.innerHTML = '<span class="w-icon">\uD83D\uDCAC</span><span class="v-txt">Consultar</span>';
+  b.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const doc = _dudaCtx.docente || {};
+    const texto = `Hola ${doc.nombre || 'profesor'}, soy ${_dudaCtx.nombre || 'un alumno'}` +
+      `. \u00bfMe ayud\u00e1s con una duda de la clase "${cl.titulo}" del curso ${_dudaCtx.curso || ''}?`;
+    let fono = String(doc.telefono || '').replace(/\D/g, '');
+    if (fono.startsWith('0')) fono = '54' + fono.slice(1); // '011 ...' -> '5411...'
+    // con numero del docente abre su chat directo; sin numero, WhatsApp deja elegir contacto
+    const base = fono ? 'https://wa.me/' + fono : 'https://wa.me/';
+    window.open(base + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  });
+  return b;
+}
+
 /* una clase con sus archivos */
 function renderClase(cl) {
   if (!(cl.archivos || []).length) return null;
@@ -144,6 +167,7 @@ function renderClase(cl) {
   const nueva = esNueva(cl) ? ' <span class="badge-nuevo">NUEVA</span>' : '';
   sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}${nueva}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></span>`;
   sum.appendChild(btnVisto(cl.id));
+  sum.appendChild(btnDuda(cl));
   det.appendChild(sum);
   (cl.archivos || []).forEach((f) => {
     const fila = document.createElement('div');
@@ -307,6 +331,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     try { const rp = await fetch('/data/planes.json'); if (rp.ok) _planes = await rp.json(); } catch (e) {}
     // ficha de cursada del alumno (dia/horario/docente)
     const _ficha = { dia: d.dia || '', horario: d.horario || '', docente: d.docente || null };
+    _dudaCtx.nombre = d.nombre_completo || '';
+    _dudaCtx.docente = d.docente || null;
 
     function actualizarHero(cur) {
       const extra = document.getElementById('alumnoHeroExtra');
@@ -435,6 +461,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function entrarCurso(cur) {
       _sel = cur;
+      _dudaCtx.curso = cur.nombre;
       cajaGrilla.classList.add('hidden');
       document.getElementById('main').classList.remove('grid-vista');
       document.getElementById('listaMaterial').innerHTML = '';
