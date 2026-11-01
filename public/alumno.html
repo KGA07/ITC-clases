@@ -214,6 +214,39 @@
     .btn-duda .v-txt { white-space: nowrap; }
     .btn-duda:hover { border-color: #25d366; color: #128c7e; outline: none; }
     .btn-duda:focus-visible { outline: 2px solid #25d366; outline-offset: 1px; }
+    /* —— certificado al 100% —— */
+    .cert-overlay {
+      position: fixed; inset: 0; z-index: 220; overflow: auto;
+      background: rgba(15, 23, 42, .55);
+      display: flex; align-items: flex-start; justify-content: center; padding: 30px 16px;
+    }
+    .cert-overlay.hidden { display: none; }
+    .cert-hoja { background: #fff; border-radius: 12px; max-width: 740px; width: 100%; box-shadow: 0 24px 70px rgba(0,0,0,.35); }
+    .cert-cuerpo {
+      margin: 14px 14px 6px; border: 4px double var(--primary); border-radius: 12px;
+      padding: 28px 34px; text-align: center;
+    }
+    .cert-marca b { font-size: 1.45rem; letter-spacing: 2px; vertical-align: middle; }
+    .cert-marca small { display: block; font-size: .72rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-soft); margin-top: 2px; }
+    .cert-titulo { letter-spacing: 2px; font-weight: 800; color: var(--primary); font-size: .95rem; margin: 16px 0 4px; }
+    .cert-texto { color: var(--text-soft); font-size: .88rem; margin: 4px 0; }
+    .cert-nombre { font-size: 1.75rem; margin: 10px 0 6px; border-bottom: 2px solid var(--border); display: inline-block; padding: 0 18px 8px; }
+    .cert-curso { color: var(--primary); font-size: 1.2rem; margin: 6px 0 10px; }
+    .cert-datos { color: var(--text-soft); font-size: .84rem; margin: 2px 0 0; }
+    .cert-firma {
+      display: flex; justify-content: space-between; gap: 12px;
+      margin-top: 24px; padding: 0 14px; color: var(--text-soft); font-size: .8rem; flex-wrap: wrap;
+    }
+    .cert-nota { font-size: .68rem; color: var(--text-soft); margin-top: 14px; opacity: .85; }
+    .cert-acciones { display: flex; gap: 10px; justify-content: center; padding: 10px 0 16px; flex-wrap: wrap; }
+    @media print {
+      body.cert-activo > *:not(#certificadoOverlay) { display: none !important; }
+      body.cert-activo { overflow: visible !important; }
+      body.cert-activo #certificadoOverlay { position: static; background: none; padding: 0; display: block !important; }
+      body.cert-activo .cert-hoja { box-shadow: none; max-width: 100%; border-radius: 0; }
+      body.cert-activo .cert-acciones { display: none !important; }
+      body.cert-activo .cert-cuerpo { margin: 0; }
+    }
     .alumno-clase.vista > summary { background: linear-gradient(90deg, rgba(37, 178, 102, .07), transparent 55%); }
     /* —— Índice lateral (cajón Moodle) —— */
     .indice-toggle { display: none; }

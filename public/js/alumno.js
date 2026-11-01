@@ -276,6 +276,55 @@ function render(filtro = '') {
   if (bt) bt.textContent = 'Expandir todo ▾';
 }
 
+/* certificado al 100%: vista imprimible cuando el alumno ve todas las
+   clases habilitadas del curso (se arma en el navegador, sin backend) */
+let _certCaja = null;
+
+function cerrarCertificado() {
+  if (_certCaja) _certCaja.classList.add('hidden');
+  document.body.style.overflow = '';
+  document.body.classList.remove('cert-activo');
+}
+
+function abrirCertificado(cur) {
+  if (!_certCaja) {
+    _certCaja = document.createElement('div');
+    _certCaja.id = 'certificadoOverlay';
+    _certCaja.className = 'cert-overlay hidden';
+    document.body.appendChild(_certCaja);
+  }
+  let vistas = 0;
+  for (const m of cur.modulos || []) for (const cl of (m.clases || [])) if (leidos.has(cl.id)) vistas++;
+  const hoy = new Date().toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+  const doc = _dudaCtx.docente || {};
+  _certCaja.innerHTML =
+    '<div class="cert-hoja">' +
+    '<div class="cert-cuerpo">' +
+    '<div class="cert-marca">🎓 <b>ITC</b><small>Capacitaciones</small></div>' +
+    '<p class="cert-titulo">CERTIFICADO DE FINALIZACIÓN</p>' +
+    '<p class="cert-texto">Se certifica que</p>' +
+    '<h2 class="cert-nombre">' + esc(_dudaCtx.nombre || 'El alumno') + '</h2>' +
+    '<p class="cert-texto">completó la totalidad de las clases habilitadas del curso</p>' +
+    '<h3 class="cert-curso">' + esc((cur.emoji || '') + ' ' + cur.nombre) + '</h3>' +
+    '<p class="cert-datos">' + vistas + ' clase' + (vistas === 1 ? '' : 's') + ' vista' + (vistas === 1 ? '' : 's') + ' · finalizado el ' + esc(hoy) + '</p>' +
+    '<div class="cert-firma"><span>Docente: ' + esc(doc.nombre || '—') + (doc.nombre ? '' : ' (sin docente asignado)') + '</span><span>Fecha: ' + esc(hoy) + '</span></div>' +
+    '<p class="cert-nota">Certificado generado por el Aula Virtual de ITC. El registro de clases vistas se guarda en la plataforma.</p>' +
+    '</div>' +
+    '<div class="cert-acciones">' +
+    '<button type="button" class="btn btn-primary btn-sm" id="btnCertImprimir">🖨 Imprimir / Guardar PDF</button>' +
+    '<button type="button" class="btn btn-ghost btn-sm" id="btnCertCerrar">✕ Cerrar</button>' +
+    '</div>' +
+    '</div>';
+  _certCaja.querySelector('#btnCertImprimir').addEventListener('click', () => {
+    document.body.classList.add('cert-activo');
+    window.print();
+    setTimeout(() => document.body.classList.remove('cert-activo'), 300);
+  });
+  _certCaja.querySelector('#btnCertCerrar').addEventListener('click', cerrarCertificado);
+  document.body.classList.add('cert-activo');
+  _certCaja.classList.remove('hidden');
+}
+
 /* tarjeta "segui por": primera clase sin marcar del curso abierto */
 function renderContinuar(cur) {
   const caja = document.getElementById('cajaContinuar');
@@ -292,9 +341,11 @@ function renderContinuar(cur) {
     card.innerHTML =
       `<div><b>🎉 ¡Terminaste las ${clases.length} clases del curso!</b>` +
       `<small>Podés pedirle a tu profesor el certificado de aprobación.</small></div>` +
-      `<div class="continuar-acciones"><button type="button" class="btn btn-sm btn-continuar" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Volver arriba</button></div>`;
+      `<div class="continuar-acciones"><button type="button" class="btn btn-sm btn-continuar" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Volver arriba</button><button type="button" class="btn btn-sm btn-continuar" id="btnCertAbrir">🎓 Ver mi certificado</button></div>`;
     caja.classList.remove('hidden');
     caja.appendChild(card);
+    const bcert = card.querySelector('#btnCertAbrir');
+    if (bcert) bcert.addEventListener('click', () => abrirCertificado(cur));
     return;
   }
   const cl = clases[idx];
