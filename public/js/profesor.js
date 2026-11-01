@@ -171,8 +171,11 @@ function renderAlumnos() {
     acciones.appendChild(btnPass);
     acciones.appendChild(btnDel);
     div.appendChild(acciones);
-    // progreso del alumno en este curso (vistas marcadas en el aula)
-    const pro = (estado.progreso || {})[String(a.id)];
+    // progreso del alumno en el curso activo (vistas marcadas en el aula).
+    // si el alumno no cursa este curso (ej: creado por el admin sin cursos,
+    // se muestra "sin curso") la barra no corresponde y no se muestra
+    const enCursoActivo = Array.isArray(a.cursos) ? a.cursos.includes(estado.docente.curso) : a.curso === estado.docente.curso;
+    const pro = enCursoActivo ? (estado.progreso || {})[String(a.id)] : null;
     if (pro) {
       const pct = pro.total ? Math.round((pro.vistas / pro.total) * 100) : 0;
       const info = div.querySelector('.p-alumno-info');
