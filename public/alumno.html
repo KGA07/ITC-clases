@@ -36,6 +36,35 @@
     .continuar-card .btn-continuar { background: #fff; color: var(--primary); border-color: #fff; font-weight: 800; }
     .continuar-card.completo { background: linear-gradient(135deg, #1d9e5f, #25b266); }
     .continuar-card.completo .btn-continuar { background: #fff; color: #15803d; }
+    /* ——— clase bloqueada: fila cerrada con candado y motivo ——— */
+    .alumno-clase-bloqueada {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 18px; margin: 2px 0;
+      border-left: 2px solid var(--border);
+      background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .alumno-clase-bloqueada .b-icon { font-size: .95rem; opacity: .8; flex-shrink: 0; }
+    .alumno-clase-bloqueada b { display: block; font-size: .87rem; color: var(--text-soft); }
+    .alumno-clase-bloqueada small { display: block; font-size: .76rem; color: var(--text-soft); margin-top: 2px; }
+    /* ——— badge NUEVA en clases recien habilitadas ——— */
+    .badge-nuevo {
+      display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px;
+      background: #ff7043; color: #fff; font-size: .6rem; font-weight: 800;
+      letter-spacing: .5px; vertical-align: middle;
+    }
+    /* ——— flechas prev/next al pie de cada clase ——— */
+    .clase-nav {
+      display: flex; justify-content: space-between; gap: 8px;
+      padding: 8px 18px; border-top: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+    .clase-nav button {
+      border: 1px solid var(--border); background: var(--surface);
+      border-radius: 999px; padding: 5px 14px; font: inherit; font-size: .78rem; font-weight: 700;
+      color: var(--text); cursor: pointer;
+    }
+    .clase-nav button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+    .clase-nav button:disabled { opacity: .35; cursor: default; }
     .alumno-clase {
       background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
       margin-bottom: 12px; overflow: hidden;

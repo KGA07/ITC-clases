@@ -17,6 +17,7 @@ function guardarVistos() {
 
 let _cursos = []; // catálogo bulk recibido (objeto completo)
 let _sel = null; // curso abierto (null = grilla de cursos)
+let _clasesOrden = []; // ids de las clases visibles en orden de lectura (flechas prev/next)
 
 function abrirModal(url, nombre) {
   document.getElementById('modalTitle').textContent = nombre;
@@ -92,15 +93,56 @@ function btnVisto(claseId) {
   return b;
 }
 
+/* la clase se acaba de habilitar (badge NUEVA, 7 dias) */
+function esNueva(cl) {
+  if (!cl.fh) return false;
+  const t = Date.parse(String(cl.fh));
+  return !isNaN(t) && Date.now() - t <= 7 * 24 * 60 * 60 * 1000;
+}
+
+/* flechas prev/next: navega entre las clases habilitadas del curso */
+function navClase(claseId) {
+  const nav = document.createElement('div');
+  nav.className = 'clase-nav';
+  const i = _clasesOrden.indexOf(claseId);
+  const prev = i > 0 ? _clasesOrden[i - 1] : null;
+  const next = i > -1 && i < _clasesOrden.length - 1 ? _clasesOrden[i + 1] : null;
+  nav.innerHTML =
+    '<button type="button" class="cn-prev"' + (prev ? '' : ' disabled') + '>\u2190 Anterior</button>' +
+    '<button type="button" class="cn-next"' + (next ? '' : ' disabled') + '>Siguiente \u2192</button>';
+  if (prev || next) {
+    const irA = (id) => {
+      const det = document.getElementById('clase-' + id);
+      if (det) { det.open = true; det.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    };
+    nav.querySelector('.cn-prev').addEventListener('click', () => irA(prev));
+    nav.querySelector('.cn-next').addEventListener('click', () => irA(next));
+  }
+  return nav;
+}
+
+/* clase bloqueada: fila gris con candado y el motivo (no se puede abrir) */
+function renderClaseBloqueada(cl) {
+  const fila = document.createElement('div');
+  fila.className = 'alumno-clase-bloqueada';
+  fila.innerHTML =
+    '<span class="b-icon" aria-hidden="true">\ud83d\udd12</span>' +
+    '<span class="info"><b>' + esc(cl.titulo) + '</b>' +
+    '<small>' + esc(cl.motivo || 'Todav\u00eda no disponible.') + '</small></span>';
+  return fila;
+}
+
 /* una clase con sus archivos */
 function renderClase(cl) {
   if (!(cl.archivos || []).length) return null;
+  _clasesOrden.push(cl.id);
   const det = document.createElement('details');
   det.className = 'alumno-clase' + (leidos.has(cl.id) ? ' vista' : '');
   det.id = 'clase-' + cl.id;
   det.dataset.nombre = `${cl.titulo} ${cl.archivos.map((f) => f.nombre).join(' ')}`.toLowerCase();
   const sum = document.createElement('summary');
-  sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></span>`;
+  const nueva = esNueva(cl) ? ' <span class="badge-nuevo">NUEVA</span>' : '';
+  sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}${nueva}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></span>`;
   sum.appendChild(btnVisto(cl.id));
   det.appendChild(sum);
   (cl.archivos || []).forEach((f) => {
@@ -114,6 +156,7 @@ function renderClase(cl) {
     fila.appendChild(accionesArchivo(f));
     det.appendChild(fila);
   });
+  det.appendChild(navClase(cl.id));
   return det;
 }
 
@@ -128,7 +171,7 @@ function renderProgreso(cur) {
     box.className = 'alumno-progreso';
     box.innerHTML =
       `<div class="p-info"><b>${vistas} de ${total} clase${total === 1 ? '' : 's'} vista${vistas === 1 ? '' : 's'}</b>` +
-      `<small>${total} clase${total === 1 ? '' : 's'} habilitada${total === 1 ? '' : 's'} · ${cur.totalMateriales || 0} materiales</small></div>` +
+      `<small>${total} clase${total === 1 ? '' : 's'} habilitada${total === 1 ? '' : 's'} · ${cur.totalMateriales || 0} materiales${cur.totalBloqueadas ? ' · + ' + cur.totalBloqueadas + ' por habilitar' : ''}</small></div>` +
       `<div class="p-barra"><span style="width:${porc}%"></span></div>`;
     return box;
   }
@@ -159,6 +202,7 @@ function renderCurso(cur, conProgreso = true) {
     bloque.appendChild(tituloMod);
     let n = 0;
     for (const cl of mod.clases || []) {
+      if (cl.bloqueada) { bloque.appendChild(renderClaseBloqueada(cl)); continue; }
       const nodo = renderClase(cl);
       if (nodo) { bloque.appendChild(nodo); n++; }
     }
@@ -172,6 +216,7 @@ function render(filtro = '') {
   const filtroTxt = String(filtro || '').trim().toLowerCase();
   const caja = document.getElementById('listaMaterial');
   caja.innerHTML = '';
+  _clasesOrden = [];
   const aviso = document.getElementById('sinResultados');
   if (!_sel) { aviso.classList.add('hidden'); return; }
   let hayAlgo = false;
@@ -339,7 +384,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           `<img class="alumno-curso-thumb" alt="${esc(cur.nombre)}" loading="lazy">` +
           `<div class="alumno-curso-body">` +
           `  <b>${esc(cur.emoji || '')} ${esc(cur.nombre)}</b>` +
-          `  <small>${nClases} clase${nClases === 1 ? '' : 's'} · ${cur.totalMateriales || 0} materiales · ${v} vista${v === 1 ? '' : 's'}</small>` +
+          `  <small>${nClases} clase${nClases === 1 ? '' : 's'} · ${cur.totalMateriales || 0} materiales · ${v} vista${v === 1 ? '' : 's'}${cur.totalBloqueadas ? ' · +' + cur.totalBloqueadas + ' por habilitar' : ''}</small>` +
           `  <div class="alumno-curso-foot"><span class="btn btn-primary btn-sm">Entrar →</span></div>` +
           `</div>`;
         const img = card.querySelector('img');
@@ -447,6 +492,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         det.open = true;
         setTimeout(() => det.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
       }
+      else toast('🔒 Esa clase todavía no está habilitada para vos.');
     }
     const input = document.getElementById('alumnoBuscar');
     let timer = null;

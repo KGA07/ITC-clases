@@ -86,6 +86,20 @@ function contextoSesion(data, req) {
       const marca = asis[cl.id] && asis[cl.id][alumno.id];
       if (marca && marca.estado === 'ausente') return false;
       return (cl.archivos || []).some((f) => this.set.has(f.fid));
+    },
+    // fecha en que el docente habilito la clase ("" si no esta habilitada)
+    fhClase(cl) {
+      const h = hab[`${cl.cursoId}::${cl.id}`];
+      return (h && h.fecha) || '';
+    },
+    // razon por la que una clase esta bloqueada para el alumno ("" = visible)
+    motivoClase(cl) {
+      if (!cursos.includes(cl.cursoId)) return '';
+      if (!hab[`${cl.cursoId}::${cl.id}`]) return 'El profesor todavía no habilitó esta clase.';
+      const marca = asis[cl.id] && asis[cl.id][alumno.id];
+      if (marca && marca.estado === 'ausente') return 'Quedaste ausente el día de esta clase. Consultá con tu docente para recuperarla.';
+      if (!(cl.archivos || []).some((f) => this.set.has(f.fid))) return 'Tu profesor todavía no te habilitó el material de esta clase.';
+      return '';
     }
   };
 }
@@ -93,7 +107,9 @@ function contextoSesion(data, req) {
 // Curso desde el catálogo (vista liviana, misma forma que readCatalog).
 // Con conArchivos=true (aula del alumno): además devuelve los archivos
 // permitidos de cada clase filtrados por permisos, para 1 solo fetch.
-function vistaCurso(curso, visiblePorClase, conArchivos, setArchivos) {
+function vistaCurso(curso, visiblePorClase, conArchivos, setArchivos, opts) {
+  const detalleClase = opts && opts.detalleClase;
+  const conBloqueadas = !!(opts && opts.conBloqueadas);
   return {
     id: curso.id,
     orden: curso.orden,
@@ -105,13 +121,21 @@ function vistaCurso(curso, visiblePorClase, conArchivos, setArchivos) {
     modulos: (curso.modulos || [])
       .map((m) => ({
         titulo: m.titulo,
-        clases: (m.clases || [])
-          .filter((cl) => (visiblePorClase ? visiblePorClase(cl) : true))
-          .map((cl) => {
-            const base = { id: cl.id, titulo: cl.titulo, count: (cl.archivos || []).length };
-            if (conArchivos) base.archivos = (cl.archivos || []).filter((f) => !setArchivos || setArchivos.has(f.fid));
-            return base;
-          })
+        clases: (m.clases || []).flatMap((cl) => {
+          const visible = visiblePorClase ? visiblePorClase(cl) : true;
+          if (!visible) {
+            // clase que el alumno todavia no puede abrir: va listada cerrada
+            // con el motivo (solo el aula la pide, con conBloqueadas=true)
+            if (!conBloqueadas) return [];
+            const det = detalleClase ? detalleClase(cl) : {};
+            return [{ id: cl.id, titulo: cl.titulo, count: 0, bloqueada: true, motivo: det.motivo || '' }];
+          }
+          const det = detalleClase ? detalleClase(cl) : {};
+          const base = { id: cl.id, titulo: cl.titulo, count: (cl.archivos || []).length };
+          if (det.fh) base.fh = det.fh;
+          if (conArchivos) base.archivos = (cl.archivos || []).filter((f) => !setArchivos || setArchivos.has(f.fid));
+          return base;
+        })
       }))
       .filter((m) => m.clases.length > 0)
   };
@@ -249,12 +273,19 @@ async function catalogoAlumno(req, res) {
   for (const id of ctx.cursos) {
     const cur = c.cursoIndex.get(id);
     if (cur && cur.modulos) {
-      const vista = vistaCurso(cur, (cl) => ctx.claseVisible(cl), true, ctx.set);
-      // resumen para la barra de progreso
-      let clases = 0, materiales = 0;
-      for (const m of vista.modulos) for (const cl of m.clases) { clases++; materiales += (cl.archivos || []).length; }
+      const vista = vistaCurso(cur, (cl) => ctx.claseVisible(cl), true, ctx.set, {
+        conBloqueadas: true,
+        detalleClase: (cl) => ({ fh: ctx.fhClase(cl), motivo: ctx.motivoClase(cl) })
+      });
+      // resumen para la barra de progreso (solo clases habilitadas)
+      let clases = 0, materiales = 0, bloqueadas = 0;
+      for (const m of vista.modulos) for (const cl of m.clases) {
+        if (cl.bloqueada) { bloqueadas++; continue; }
+        clases++; materiales += (cl.archivos || []).length;
+      }
       vista.totalClases = clases;
       vista.totalMateriales = materiales;
+      vista.totalBloqueadas = bloqueadas;
       cursos.push(vista);
     }
   }
@@ -283,7 +314,8 @@ async function claseAlumno(req, res) {
     return res.status(403).json({ error: 'Esta clase no pertenece a tu curso.' });
   }
   if (!ctx.claseVisible(clase)) {
-    return res.status(403).json({ error: 'Esta clase todavía no está habilitada para vos.' });
+    const motivo = ctx.motivoClase(clase) || 'Esta clase todavía no está habilitada para vos.';
+    return res.status(403).json({ error: motivo });
   }
   const archivos = (clase.archivos || []).filter((f) => ctx.set.has(f.fid));
   const curso = c.cursoIndex.get(clase.cursoId);
