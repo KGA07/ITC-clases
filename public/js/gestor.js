@@ -922,6 +922,7 @@ function renderDocentes() {
     btnDel.addEventListener('click', () => borrarDocente(d));
     acciones.appendChild(btnEditD);
     acciones.appendChild(btnPanel);
+    acciones.appendChild(btnMat); // faltaba este: el boton se creaba pero nunca se dibujaba
     acciones.appendChild(btnPass);
     acciones.appendChild(btnDel);
     div.appendChild(acciones);
