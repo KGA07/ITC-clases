@@ -442,3 +442,11 @@ Ver `ARRANQUE.txt` (en esta misma carpeta) para el prompt completo de inicio.
 - El mismo patrón estaba en btnNuevoAlumno (abrirModalAlumno) → PUT /alumnos/undefined → "Alumno no encontrado."; se corrigieron los dos con arrow () => abrirModal...(). El resto del repo ya usaba flechas (revisado con grep de addEventListener + referencia directa).
 - Verificado end-to-end en el Chrome con espía: modal "Nuevo docente", docenteId vacío, POST /api/docentes → 201, credenciales y lista refresca en vivo; base ordenada (borrado u:7 prueba y u:900 debug.admin; queda maxi.duarte id 6 real, password ITCPV562).
 - sw v42; CI verde (bab247b). La entrada anterior (race del doc-completo) seguía siendo un riesgo real y quedó arreglada aparte.
+
+## 2026-11-02 (hoja 3) — El boton "Materiales" del docente nunca se dibujaba (reporte del docente)
+
+- El docente no encontraba donde habilitar materiales al profesor (el profe veia "El administrador todavia no habilito materiales de esta clase").
+- Verificado contra prod con el CDP: la tarjeta de docente tenia SOLO 4 botones (editar / Su panel / Nueva clave / borrar). El codigo creaba btnMat "Materiales" con su listener pero NUNCA hacia acciones.appendChild(btnMat) (fallo presente desde que se introdujo el boton). Commit 4deb1f2 agrega el append.
+- Probado end-to-end con CDP: boton aparece, modal Materiales abre (selector de curso + "Habilitar todo el curso" + checkboxes por material), habilitado asistente-administrativo completo (227 fids), tarjeta pasa a "Materiales (227)", y GET /prof/clase/asistente-administrativo-m1-c1 devuelve 200 con 14 archivos para maxi.duarte (via impersonar). Nota: el confirm() nativo bloquea el handler en CDP; se auto-acepta con window.confirm=()=>true.
+- sw v44 (commit c7b464e): js y css ahora van RED-PRIMERO en el SW (antes cache-primero). La primera carga tras un deploy ya no puede seguir ejecutando JS viejo con opciones faltantes: en esta tarde v42 activaba e instalaba cache nueva pero la pagina ya corria con el JS anterior; hacian falta DOS recargas.
+- Estado db tras las pruebas: users GKempe(1), admin(2), maxi.duarte id 10 (recreado por el docente con su propio password, permisos=227); alumnos 4; debug.admin de diagnostico borrado.
