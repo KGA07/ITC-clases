@@ -428,3 +428,9 @@ npm run catalog  # regenera temarios + catalogo
 Credenciales por defecto: Profesor `GKempe` / `1234`, Admin `admin` / `admin123`.
 
 Ver `ARRANQUE.txt` (en esta misma carpeta) para el prompt completo de inicio.
+## 2026-11-02 — Persistencia por entidad (fix definitivo del docente/alumno fantasma)
+
+- Sintoma: al crear un docente, a los segundos el panel avisaba "Docente no encontrado." y el docente no figuraba en la lista (y podían "perderse" alumnos).
+- Causa raiz: cada guardar persistia el DOCUMENTO COMPLETO en Postgres. Dos pedidos concurrentes (ej: un alumno marcando vista mientras se creaba el docente) que partian de lecturas distintas se pisaban mutuamente: el ultimo en escribir borraba entidades creadas por el otro. Evidencia en la db de prod: nextUserId=5 con solo 2 users (dos altas perdidas).
+- Solucion (commit 2cab339): escrituras POR ENTIDAD en Postgres (una fila kv por docente/alumno/habilitacion/asistencia/progreso de alumno + fila de tokens), ids atomicos con secuencia SQL (seq:users / seq:alumnos), migracion one-shot idempotente con backup del formato viejo en la fila "doc:backup-2026-11-02", y el modo archivo (db.json, dev/tests) mantiene el comportamiento previo. Suite 15/15; migracion de prod corrida y verificada (u:2, a:4, hb:6, as:3, idempotente); CI verde; sw v41.
+- El docente recarga los docentes perdidos (incluido maxi.duarte) a mano una vez desplegado.
