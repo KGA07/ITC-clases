@@ -808,7 +808,7 @@ async function habilitarTodo() {
 (function wireAlumnos() {
   const btnNuevo = document.getElementById('btnNuevoAlumno');
   if (btnNuevo) {
-    btnNuevo.addEventListener('click', abrirModalAlumno);
+    btnNuevo.addEventListener('click', () => abrirModalAlumno());
     document.getElementById('btnRefreshAlumnos').addEventListener('click', refrescarAlumnos);
     document.getElementById('modalAlumnoCerrar').addEventListener('click', cerrarModalAlumno);
     document.getElementById('formAlumno').addEventListener('submit', guardarAlumno);
@@ -1015,7 +1015,7 @@ async function cambiarClaveDocente(d) {
 (function wireDocentes() {
   const btn = document.getElementById('btnNuevoDocente');
   if (btn) {
-    btn.addEventListener('click', abrirModalDocente);
+    btn.addEventListener('click', () => abrirModalDocente());
     document.getElementById('btnRefreshDocentes').addEventListener('click', refrescarDocentes);
     document.getElementById('modalDocenteCerrar').addEventListener('click', () => {
       document.getElementById('modalDocente').classList.add('hidden');
