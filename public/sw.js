@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE = 'itc-clases-v43';
+const CACHE = 'itc-clases-v44';
 const ASSETS = [
   '/',
   '/inicio',
@@ -43,11 +43,16 @@ self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
   if (url.pathname.startsWith('/api/')) return;
 
-  // Las páginas y los interactivos van con red primero (fallback a cache).
+  // js y css van RED-PRIMERO: si hay version nueva la toma enseguida;
+  // el cache solo salva cuando no hay red (offline). Evita quedarse con
+  // un JS viejo despues de un deploy.
+  const esCodigo = /\.js$/.test(url.pathname) || /\.css$/.test(url.pathname) || url.pathname === '/config.js';
+
+  // Las páginas, los interactivos y el codigo van con red primero (fallback a cache).
   const isPage = url.pathname === '/' || ['/inicio', '/curso', '/clase', '/gestor', '/profesor', '/alumno', '/visor'].includes(url.pathname) ||
     url.pathname.startsWith('/html/interactivos/');
 
-  if (isPage) {
+  if (isPage || esCodigo) {
     e.respondWith(
       fetch(e.request)
         .then((res) => {
