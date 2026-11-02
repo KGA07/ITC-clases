@@ -175,8 +175,8 @@ async function crear(req, res) {
   }
   const clave = password || passwordGenerada();
   const alumno = {
-    id: db.nextAlumnoId(data.alumnos),
     usuario: limpio,
+    password: bcrypt.hashSync(clave, 10),
     password: bcrypt.hashSync(clave, 10),
     nombre_completo: String(nombre_completo).trim(),
     email: String(email).trim(),
@@ -189,8 +189,7 @@ async function crear(req, res) {
     permisos: Array.isArray(permisos) ? permisos.map(String) : [],
     creado: new Date().toISOString()
   };
-  data.alumnos.push(alumno);
-  await db.saveData();
+  await db.addAlumno(alumno); // id atómico + persiste solo ESTA fila
   res.status(201).json({ alumno: vistaPublica(alumno), password: clave });
 }
 
@@ -230,23 +229,19 @@ async function actualizar(req, res) {
   if (Array.isArray(permisos)) alumno.permisos = permisos.map(String);
   if (password) alumno.password = bcrypt.hashSync(String(password), 10);
 
-  await db.saveData();
+  await db.saveAlumno(alumno); // persiste solo el alumno tocado
   res.json({ alumno: vistaPublica(alumno) });
 }
 
 async function borrar(req, res) {
   const data = await db.loadData();
   const alumno = alumnoDe(data, req.params.id);
-  if (alumno) {
-    const perm = cursosPermitidos(data, req);
-    if (perm !== null && !alumnoEnAlcance(data, req, alumno)) {
-      return res.status(403).json({ error: 'Ese alumno no está en tus cursos.' });
-    }
+  if (!alumno) return res.status(404).json({ error: 'Alumno no encontrado.' });
+  const perm = cursosPermitidos(data, req);
+  if (perm !== null && !alumnoEnAlcance(data, req, alumno)) {
+    return res.status(403).json({ error: 'Ese alumno no está en tus cursos.' });
   }
-  const antes = data.alumnos.length;
-  data.alumnos = data.alumnos.filter((a) => String(a.id) !== String(req.params.id));
-  if (data.alumnos.length === antes) return res.status(404).json({ error: 'Alumno no encontrado.' });
-  await db.saveData();
+  await db.deleteAlumno(alumno.id); // solo borra la fila de ESE alumno
   res.json({ ok: true });
 }
 
@@ -262,7 +257,7 @@ async function cambiarPassword(req, res) {
   }
   const clave = req.body && req.body.password ? String(req.body.password) : passwordGenerada();
   alumno.password = bcrypt.hashSync(clave, 10);
-  await db.saveData();
+  await db.saveAlumno(alumno);
   res.json({ ok: true, password: clave });
 }
 
@@ -352,14 +347,15 @@ async function progresoMarcar(req, res) {
     return res.status(400).json({ error: 'La clase no pertenece a tus cursos.' });
   }
   const keyAl = String(ctx.alumno.id);
-  data.vistas[keyAl] = data.vistas[keyAl] || {};
+  const mapa = data.vistas[keyAl] || {};
   if (visto === false) {
-    delete data.vistas[keyAl][clase.id];
+    delete mapa[clase.id];
   } else {
-    data.vistas[keyAl][clase.id] = new Date().toISOString();
+    mapa[clase.id] = new Date().toISOString();
   }
-  await db.saveData();
-  res.json({ ok: true, claseId: clase.id, vista: data.vistas[keyAl][clase.id] || null });
+  data.vistas[keyAl] = mapa;
+  await db.setVistasMap(keyAl, mapa); // persiste solo el progreso de ESTE alumno
+  res.json({ ok: true, claseId: clase.id, vista: mapa[clase.id] || null });
 }
 
 module.exports = {

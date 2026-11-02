@@ -132,13 +132,9 @@ async function habilitar(req, res) {
     return res.status(400).json({ error: 'La clase no pertenece a tus cursos.' });
   }
   const key = `${clase.cursoId}::${clase.id}`;
-  if (habilitada) {
-    data.habilitaciones[key] = { fecha: new Date().toISOString().slice(0, 10), por: String(docente.id) };
-  } else {
-    delete data.habilitaciones[key];
-  }
-  await db.saveData();
-  res.json({ ok: true, habilitada: !!habilitada, fecha: habilitada ? data.habilitaciones[key].fecha : null });
+  const valor = habilitada ? { fecha: new Date().toISOString().slice(0, 10), por: String(docente.id) } : null;
+  await db.setHabilitacion(key, valor); // persiste solo la habilitación de ESE clase
+  res.json({ ok: true, habilitada: !!habilitada, fecha: valor ? valor.fecha : null });
 }
 
 async function asistencia(req, res) {
@@ -155,11 +151,9 @@ async function asistencia(req, res) {
   if (!alumno || !cursosAlumno.includes(clase.cursoId)) return res.status(400).json({ error: 'El alumno no es de tu curso.' });
   if (!['presente', 'ausente', 'sin-marcar'].includes(estado)) return res.status(400).json({ error: 'Estado inválido.' });
 
-  data.asistencia[clase.id] = data.asistencia[clase.id] || {};
-  if (estado === 'sin-marcar') delete data.asistencia[clase.id][alumno.id];
-  else data.asistencia[clase.id][alumno.id] = { estado, fecha: new Date().toISOString().slice(0, 10) };
+  const estadoFinal = estado === 'sin-marcar' ? null : { estado, fecha: new Date().toISOString().slice(0, 10) };
+  await db.setAsistencia(clase.id, alumno.id, estadoFinal); // persiste solo esa marca
 
-  await db.saveData();
   res.json({ ok: true });
 }
 

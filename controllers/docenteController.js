@@ -65,8 +65,10 @@ async function crear(req, res) {
   }
   const clave = password || passwordGenerada();
   const cursosArr = normalizarCursos({ cursos, curso });
+  // ids atómicos y guardado POR ENTIDAD: en serverless un guardado ya no
+  // puede patear usuarios que otra lambda creó ( Historicamente "Docente no
+  // encontrado." provenía de la copia completa que se pisaba entre pedidos).
   const docente = {
-    id: db.getNextId(data.users),
     nombre: limpio,
     password: bcrypt.hashSync(clave, 10),
     tipo: 'profesor',
@@ -81,9 +83,7 @@ async function crear(req, res) {
     permisos: Array.isArray(permisos) ? permisos.map(String) : [],
     creado: new Date().toISOString()
   };
-  data.users.push(docente);
-  if (docente.id >= (data.nextUserId || 3)) data.nextUserId = docente.id + 1;
-  await db.saveData();
+  await db.addUser(docente); // asigna id atomico y persiste solo ESTA fila
   res.status(201).json({ docente: vistaDocente(docente), password: clave });
 }
 
@@ -114,7 +114,7 @@ async function actualizar(req, res) {
   if (password) docente.password = bcrypt.hashSync(String(password), 10);
   if (Array.isArray(permisos)) docente.permisos = permisos.map(String);
 
-  await db.saveData();
+  await db.saveUser(docente); // persiste solo el docente tocado
   res.json({ docente: vistaDocente(docente) });
 }
 
@@ -125,8 +125,7 @@ async function borrar(req, res) {
   if (String(docente.id) === String(req.user.id)) {
     return res.status(400).json({ error: 'No podés borrar tu propio usuario.' });
   }
-  data.users = data.users.filter((u) => u !== docente);
-  await db.saveData();
+  await db.deleteUser(docente.id); // solo borra la fila de ESE docente
   res.json({ ok: true });
 }
 
@@ -136,7 +135,7 @@ async function cambiarPassword(req, res) {
   if (!docente) return res.status(404).json({ error: 'Docente no encontrado.' });
   const clave = req.body && req.body.password ? String(req.body.password) : passwordGenerada();
   docente.password = bcrypt.hashSync(clave, 10);
-  await db.saveData();
+  await db.saveUser(docente);
   res.json({ ok: true, password: clave });
 }
 

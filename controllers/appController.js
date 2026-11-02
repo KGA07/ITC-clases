@@ -27,11 +27,10 @@ async function login(req, res) {
   const tokenId = uuidv4();
   const refreshToken = signRefresh(user, tokenId);
 
-  data[REFRESH_TOKEN_KEY] = data[REFRESH_TOKEN_KEY] || [];
-  data[REFRESH_TOKEN_KEY] = data[REFRESH_TOKEN_KEY].filter((t) => t.userId !== user.id).slice(-4);
-  data[REFRESH_TOKEN_KEY].push({ userId: user.id, tokenId });
+  const nuevos = (data[REFRESH_TOKEN_KEY] || []).filter((t) => t.userId !== user.id).slice(-4);
+  nuevos.push({ userId: user.id, tokenId });
 
-  await db.saveData();
+  await db.saveTokens(nuevos); // persiste solo la fila de tokens
 
   res.json({
     token: accessToken,
@@ -67,10 +66,10 @@ async function refresh(req, res) {
   if (!user) return res.status(401).json({ error: 'Usuario inexistente.' });
 
   // Rotación: invalidar el refresh usado y emitir uno nuevo
-  data[REFRESH_TOKEN_KEY] = rts.filter((t) => t.tokenId !== payload.tokenId);
   const newTokenId = uuidv4();
-  data[REFRESH_TOKEN_KEY].push({ userId: user.id, tokenId: newTokenId });
-  await db.saveData();
+  const nuevos = rts.filter((t) => t.tokenId !== payload.tokenId);
+  nuevos.push({ userId: user.id, tokenId: newTokenId });
+  await db.saveTokens(nuevos); // persiste solo la fila de tokens
 
   res.json({
     token: signAccess(user),
@@ -86,8 +85,8 @@ async function logout(req, res) {
     const payload = verifyRefresh(refreshToken);
     if (payload) {
       const data = await db.loadData();
-      data[REFRESH_TOKEN_KEY] = (data[REFRESH_TOKEN_KEY] || []).filter((t) => t.tokenId !== payload.tokenId);
-      await db.saveData();
+      const restantes = (data[REFRESH_TOKEN_KEY] || []).filter((t) => t.tokenId !== payload.tokenId);
+      await db.saveTokens(restantes); // persiste solo la fila de tokens
     }
   }
   res.json({ ok: true });

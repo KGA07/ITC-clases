@@ -986,6 +986,7 @@ async function guardarDocente(e) {
       if (!res.ok) throw new Error(d.error || 'No se pudo guardar.');
       compartirCredenciales('credencialesDocenteBox', '✅ Docente creado', d.docente.nombre_completo, d.docente.usuario, d.password, 'su panel: /profesor');
       document.getElementById('formDocente').style.display = 'none';
+      refrescarDocentes(); // la lista se refresca en vivo, sin cerrar ni recargar
     }
   } catch (err) {
     toast(err.message);
