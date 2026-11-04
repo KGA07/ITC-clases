@@ -334,6 +334,55 @@ async function loadTokens() {
   return (await store.getRow('tokens')) || [];
 }
 
+// ── Practicas del docente ──────────────────────────────────────────────────
+// p:<claseId|id> = metadata liviana; pd:<id> = { d: base64 } del archivo.
+// Igual que el resto de las entidades: un guardar toca SOLO sus propias filas.
+async function proximaPracticaId() {
+  if (esPostgres) return String(await store.nextNumber('seq:practicas', 1));
+  let max = 0;
+  for (const r of await store.listRows('pd:')) {
+    const x = /^pd:(\d+)$/.exec(r.k);
+    if (x) max = Math.max(max, parseInt(x[1], 10));
+  }
+  return String(max + 1);
+}
+
+async function addPractica(claseId, meta, dataB64) {
+  const id = await proximaPracticaId();
+  await store.setRow('p:' + claseId + '|' + id, Object.assign({}, meta, { id: String(id), claseId }));
+  await store.setRow('pd:' + id, { d: String(dataB64 || '') });
+  return String(id);
+}
+
+async function listPracticas() {
+  const filas = [];
+  for (const r of await store.listRows('p:')) {
+    const k = r.k.slice(2);
+    const i = k.indexOf('|');
+    filas.push(Object.assign({ claseId: i >= 0 ? k.slice(0, i) : k }, r.value || {}));
+  }
+  return filas;
+}
+
+async function getPractica(id) {
+  for (const p of await listPracticas()) {
+    if (String(p.id) === String(id)) return p;
+  }
+  return null;
+}
+
+async function getPracticaData(id) {
+  const fila = await store.getRow('pd:' + String(id));
+  return (fila && fila.d) || '';
+}
+
+async function removePractica(id) {
+  await store.removeRow('pd:' + String(id));
+  for (const r of await store.listRows('p:')) {
+    if (String((r.value && r.value.id) || '') === String(id)) await store.removeRow(r.k);
+  }
+}
+
 async function saveTokens(list) {
   await store.setRow('tokens', list || []);
   if (!esPostgres && memoryDB) memoryDB.refreshTokens = list || [];
@@ -376,6 +425,11 @@ module.exports = {
   setVistasMap,
   loadTokens,
   saveTokens,
+  addPractica,
+  listPracticas,
+  getPractica,
+  getPracticaData,
+  removePractica,
   seedData,
   getStorageInfo
 };

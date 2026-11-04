@@ -37,7 +37,13 @@ function signRefresh(user, tokenId) {
 
 // Middleware que exige token de acceso válido
 function auth(req, res, next) {
-  const token = req.headers.authorization && req.headers.authorization.replace('Bearer ', '');
+  // Los archivos (practicas del docente, materiales del visor) se abren en
+  // iframe o pestaña nueva, y ahí no se puede mandar Authorization: el token
+  // viaja en el query (?t= valido, mismo secreto, misma expiracion).
+  const token =
+    (req.headers.authorization && req.headers.authorization.replace('Bearer ', '')) ||
+    (typeof req.query.t === 'string' ? req.query.t : '') ||
+    '';
   if (!token) return res.status(401).json({ error: 'Token requerido' });
   const payload = verifyAccess(token);
   if (!payload) return res.status(401).json({ error: 'Token invalido o expirado' });

@@ -66,6 +66,8 @@ async function cargar(cursoId = '') {
     renderAlumnos();
     renderClases();
     renderAsistenciaSelect();
+    llenarSelectPracticas();
+    cargarPracticas();
   } catch (e) {
     toast(e.message);
     document.getElementById('pLoading').classList.add('hidden');
@@ -555,6 +557,120 @@ function passwordCortaProf() {
 
 // ── fin alumnos profesor ─────────────────────────────────────────────────────
 
+// ── Mis Prácticas: archivos que el docente sube para una clase ─────────────
+let practicasMias = [];
+
+function llenarSelectPracticas() {
+  const sel = document.getElementById('pPractClase');
+  if (!sel) return;
+  const clases = clasesEnOrden();
+  sel.innerHTML = clases.map((cl) => `<option value="${esc(cl.id)}">${esc(cl.titulo)}</option>`).join('');
+}
+
+async function cargarPracticas() {
+  try {
+    const res = await apiFetch('/prof/practicas');
+    if (res.status === 401) return logout();
+    if (!res.ok) return;
+    const d = await res.json();
+    practicasMias = d.practicas || [];
+    renderPracticas();
+  } catch { /* silencioso: la lista no es critica */ }
+}
+
+function renderPracticas() {
+  const sub = document.getElementById('pSubPracticas');
+  const caja = document.getElementById('pListaPracticas');
+  if (!caja) return;
+  sub.textContent = `${practicasMias.length} práctica${practicasMias.length === 1 ? '' : 's'} subida${practicasMias.length === 1 ? '' : 's'} de tu curso. Los alumnos las ven dentro de la clase, junto a los materiales.`;
+  caja.innerHTML = '';
+  if (!practicasMias.length) {
+    caja.innerHTML = '<p class="sub">Todavía no subiste prácticas. Elegí una clase arriba, traé un archivo y dale a Subir.</p>';
+    return;
+  }
+  // título de cada clase según el catálogo activo
+  const titulos = {};
+  for (const cl of clasesEnOrden()) titulos[cl.id] = cl.titulo;
+  practicasMias.forEach((p) => {
+    const fila = document.createElement('div');
+    fila.className = 'p-mat-fila';
+    fila.innerHTML =
+      `<span class="p-mat-emoji" aria-hidden="true">🧩</span>` +
+      `<span class="p-mat-nombre">${esc(p.nombre)}` +
+      `<small>${esc(titulos[p.claseId] || p.claseId || '--')}${p.size ? ' · ' + fmtSize(p.size) : ''}${p.creado ? ' · ' + fechaCorta(String(p.creado).slice(0, 10)) : ''}</small></span>`;
+    const acciones = document.createElement('span');
+    acciones.className = 'p-mat-acciones';
+    // mismo endpoint que el alumno usa; el token va en la URL porque la
+    // pestaña nueva no puede mandar Authorization
+    const url = `/api/practicas/${encodeURIComponent(p.id)}/file?t=${encodeURIComponent(getToken())}`;
+    const ver = document.createElement('button');
+    ver.type = 'button';
+    ver.className = 'btn btn-ghost btn-sm';
+    ver.textContent = '👁 Ver';
+    ver.title = 'Abrir la práctica (pestaña nueva)';
+    ver.addEventListener('click', () => window.open(url, '_blank', 'noopener'));
+    const bajo = document.createElement('a');
+    bajo.className = 'btn btn-ghost btn-sm';
+    bajo.textContent = '⬇ Descargar';
+    bajo.href = url + '&dl=1';
+    const borrar = document.createElement('button');
+    borrar.type = 'button';
+    borrar.className = 'btn btn-ghost btn-sm';
+    borrar.textContent = '🗑️';
+    borrar.title = 'Borrar práctica';
+    borrar.addEventListener('click', () => borrarPractica(p));
+    acciones.appendChild(ver);
+    acciones.appendChild(bajo);
+    acciones.appendChild(borrar);
+    fila.appendChild(acciones);
+    caja.appendChild(fila);
+  });
+}
+
+async function subirPractica() {
+  const sel = document.getElementById('pPractClase');
+  const fileInput = document.getElementById('pPractFile');
+  if (!sel || !sel.value) { toast('Elegí una clase.'); return; }
+  const file = fileInput.files && fileInput.files[0];
+  if (!file) { toast('Elegí el archivo de la práctica.'); return; }
+  if (file.size > 6 * 1024 * 1024) { toast('El archivo supera los 6 MB.'); return; }
+  const btn = document.getElementById('pBtnSubirPractica');
+  btn.disabled = true;
+  try {
+    // el archivo viaja en base64 dentro del JSON (mismo formulario, sin multipart)
+    const b64 = await new Promise((ok, fail) => {
+      const r = new FileReader();
+      r.onload = () => ok(String(r.result).split(',')[1]);
+      r.onerror = () => fail(new Error('No se pudo leer el archivo.'));
+      r.readAsDataURL(file);
+    });
+    const res = await apiFetch('/prof/practicas', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ claseId: sel.value, nombre: file.name, mime: file.type, data: b64 })
+    });
+    const d = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(d.error || 'No se pudo subir la práctica.');
+    toast('✓ Práctica subida: los alumnos la ven en la clase');
+    fileInput.value = '';
+    cargarPracticas();
+  } catch (e) {
+    toast(e.message);
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function borrarPractica(p) {
+  if (!confirm(`¿Borrar la práctica "${p.nombre}"?`)) return;
+  const res = await apiFetch(`/prof/practicas/${encodeURIComponent(p.id)}`, { method: 'DELETE' });
+  if (!res.ok) return toast((await res.json().catch(() => ({}))).error || 'No se pudo borrar.');
+  toast('Práctica borrada');
+  cargarPracticas();
+}
+
+// ── fin prácticas ────────────────────────────────────────────────────────────
+
 // ── nav + boot ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   // vista previa: el admin abrió /profesor#pi=<token>. El token va a memoria,
@@ -590,6 +706,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('pClaseAsis').addEventListener('change', renderAsistencia);
   const selCurso = document.getElementById('pCursoSel');
   if (selCurso) selCurso.addEventListener('change', () => cargar(selCurso.value));
+
+  // prácticas: wiring
+  const btnSubPract = document.getElementById('pBtnSubirPractica');
+  if (btnSubPract) btnSubPract.addEventListener('click', subirPractica);
+  document.querySelectorAll('.p-nav-item').forEach((b) => {
+    // al entrar a la sección refrescamos la lista (queda al día)
+    if (b.dataset.sec === 'practicas') b.addEventListener('click', () => { llenarSelectPracticas(); cargarPracticas(); });
+  });
 
   // alumnos: wiring
   const btnNuevoAl = document.getElementById('pBtnNuevoAlumno');

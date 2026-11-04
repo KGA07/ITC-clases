@@ -155,6 +155,51 @@ function btnDuda(cl) {
   return b;
 }
 
+/* acciones de una practica subida por el docente (fila extra de la clase) */
+function accionesPractica(p) {
+  const wrap = document.createElement('div');
+  wrap.className = 'acciones';
+  const ext = (String(p.nombre || '').match(/\.[a-z0-9]+$/i) || [''])[0].toLowerCase();
+  const alNavegador = ['.html', '.htm', '.pdf', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.txt'].includes(ext);
+  // el token viaja en el query: una pestaña nueva no puede mandar Authorization
+  const url = `/api/practicas/${encodeURIComponent(p.id)}/file?t=${encodeURIComponent(getToken())}`;
+  if (alNavegador) {
+    const ver = document.createElement('a');
+    ver.className = 'btn btn-primary btn-sm';
+    ver.textContent = '👁 Ver';
+    ver.title = 'Abrir la practica';
+    ver.href = url;
+    ver.target = '_blank';
+    ver.rel = 'noopener noreferrer';
+    wrap.appendChild(ver);
+  }
+  const bajo = document.createElement('a');
+  bajo.className = 'btn btn-ghost btn-sm';
+  bajo.textContent = '⬇ Descargar';
+  bajo.href = url + '&dl=1';
+  wrap.appendChild(bajo);
+  return wrap;
+}
+
+/* practicas del docente de una clase (listadas despues de los archivos) */
+function renderPracticasDeClase(det, cl) {
+  const prac = cl.practicas || [];
+  if (!prac.length) return;
+  const tituloFila = document.createElement('div');
+  tituloFila.className = 'alumno-archivo';
+  tituloFila.innerHTML = '<small style="font-weight:800;color:var(--text-soft);letter-spacing:.4px">🧩 PR&Aacute;CTICAS DEL DOCENTE</small>';
+  det.appendChild(tituloFila);
+  prac.forEach((p) => {
+    const fila = document.createElement('div');
+    fila.className = 'alumno-archivo';
+    fila.innerHTML =
+      `<span class="f-emoji" aria-hidden="true">🧩</span>` +
+      `<span class="info"><b>${esc(p.nombre)}</b><small>Practica del docente${p.size ? ' · ' + fmtSize(p.size) : ''}${p.subidoPorNombre ? ' · ' + esc(p.subidoPorNombre) : ''}</small></span>`;
+    fila.appendChild(accionesPractica(p));
+    det.appendChild(fila);
+  });
+}
+
 /* una clase con sus archivos */
 function renderClase(cl) {
   if (!(cl.archivos || []).length) return null;
@@ -162,10 +207,12 @@ function renderClase(cl) {
   const det = document.createElement('details');
   det.className = 'alumno-clase' + (leidos.has(cl.id) ? ' vista' : '');
   det.id = 'clase-' + cl.id;
-  det.dataset.nombre = `${cl.titulo} ${cl.archivos.map((f) => f.nombre).join(' ')}`.toLowerCase();
+  const nPrac = (cl.practicas || []).length;
+  det.dataset.nombre = `${cl.titulo} ${cl.archivos.map((f) => f.nombre).join(' ')}` +
+    ` ${(cl.practicas || []).map((p) => p.nombre).join(' ')}`.toLowerCase();
   const sum = document.createElement('summary');
   const nueva = esNueva(cl) ? ' <span class="badge-nuevo">NUEVA</span>' : '';
-  sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}${nueva}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales</small></span>`;
+  sum.innerHTML = `<span class="sum-txt">📘 ${esc(cl.titulo)}${nueva}<small style="font-weight:600;color:var(--text-soft)"> · ${cl.archivos.length} materiales${nPrac ? ` · ${nPrac} práctica${nPrac === 1 ? '' : 's'}` : ''}</small></span>`;
   sum.appendChild(btnVisto(cl.id));
   sum.appendChild(btnDuda(cl));
   det.appendChild(sum);
@@ -180,6 +227,7 @@ function renderClase(cl) {
     fila.appendChild(accionesArchivo(f));
     det.appendChild(fila);
   });
+  renderPracticasDeClase(det, cl);
   det.appendChild(navClase(cl.id));
   return det;
 }
@@ -258,7 +306,8 @@ function render(filtro = '') {
         titulo: m.titulo,
         clases: (m.clases || []).filter((cl) =>
           cl.titulo.toLowerCase().includes(filtroTxt) ||
-          (cl.archivos || []).some((f) => (f.nombre || '').toLowerCase().includes(filtroTxt)))
+          (cl.archivos || []).some((f) => (f.nombre || '').toLowerCase().includes(filtroTxt)) ||
+          (cl.practicas || []).some((p) => (p.nombre || '').toLowerCase().includes(filtroTxt)))
       }))
       .filter((m) => m.clases.length > 0);
     if (!filtrado.modulos.length) continue;

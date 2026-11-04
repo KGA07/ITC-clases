@@ -34,6 +34,7 @@
       <button type="button" class="p-nav-item" data-sec="alumnos">🧑‍🎓 Mis Alumnos</button>
       <button type="button" class="p-nav-item" data-sec="clases">📖 Gestión de Clases</button>
       <button type="button" class="p-nav-item" data-sec="asistencia">📋 Asistencia</button>
+      <button type="button" class="p-nav-item" data-sec="practicas">🧩 Mis Prácticas</button>
     </nav>
     <div class="p-side-pie">
       <b id="pDocenteNombre">…</b>
@@ -92,6 +93,22 @@
           <select id="pClaseAsis"></select>
         </div>
         <div id="pListaAsistencia"></div>
+      </section>
+
+      <!-- ════ MIS PRÁCTICAS ════ -->
+      <section data-panel="practicas" class="hidden">
+        <h1 class="p-h1">Mis Prácticas</h1>
+        <p class="sub" id="pSubPracticas">Subí prácticas y ejercicios de una clase de tu curso. Los alumnos las ven dentro de la clase, junto a los materiales.</p>
+        <div class="p-card">
+          <div class="p-card-head"><b>⬆ Subir una práctica</b></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:end;padding:12px 0">
+            <select id="pPractClase" aria-label="Clase de la práctica"></select>
+            <input type="file" id="pPractFile" aria-label="Archivo de la práctica" style="min-width:230px">
+            <button type="button" class="btn btn-primary btn-sm" id="pBtnSubirPractica">Subir</button>
+          </div>
+          <small class="sub" style="display:block;padding:0 12px 10px">Hasta 6 MB por archivo (HTML, PDF, imágenes, ofimática…). Se ve en el aula cuando la clase está habilitada.</small>
+        </div>
+        <div id="pListaPracticas"></div>
       </section>
     </div>
   </main>

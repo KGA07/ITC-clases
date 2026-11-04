@@ -10,6 +10,7 @@ const gestorCtrl = require('../controllers/gestorController');
 const alumnosCtrl = require('../controllers/alumnoController');
 const docentesCtrl = require('../controllers/docenteController');
 const aulaCtrl = require('../controllers/aulaController');
+const practicasCtrl = require('../controllers/practicasController');
 
 const router = Router();
 
@@ -45,6 +46,14 @@ router.get('/prof/panel', apiLimiter, auth, profAuth, aulaCtrl.panel);
 router.get('/prof/clase/:id', apiLimiter, auth, profAuth, aulaCtrl.claseDocente);
 router.put('/prof/habilitacion', apiLimiter, auth, profAuth, aulaCtrl.habilitar);
 router.put('/prof/asistencia', apiLimiter, auth, profAuth, aulaCtrl.asistencia);
+
+// ── Practicas del docente: subo/listo/borro en MIS clases ──────────────────
+// El archivo baja por la ruta abierta a docente y alumno (dual-auth adentro):
+// GET /api/practicas/:id/file — con ?dl=1 fuerza la descarga (attachment).
+router.post('/prof/practicas', apiLimiter, auth, profAuth, practicasCtrl.subir);
+router.get('/prof/practicas', apiLimiter, auth, profAuth, practicasCtrl.listar);
+router.delete('/prof/practicas/:id', apiLimiter, auth, profAuth, practicasCtrl.borrar);
+router.get('/practicas/:id/file', apiLimiter, auth, practicasCtrl.archivo);
 
 function alumnoAuth(req, res, next) {
   if (!req.user || req.user.tipo !== 'alumno') return res.status(403).json({ error: 'Solo alumnos' });

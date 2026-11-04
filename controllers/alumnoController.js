@@ -143,6 +143,26 @@ function vistaCurso(curso, visiblePorClase, conArchivos, setArchivos, opts) {
 
 const idDrive = (url) => (String(url || '').match(/[?&]id=([A-Za-z0-9_-]+)/) || [])[1] || '';
 
+// Practicas subidas por los docentes, armar mapa claseId -> [{id, nombre, ...}].
+// Solo practicas cuya clase sigue existiendo en el catalogo.
+async function practicasPorClase() {
+  // una sola lectura de filas p: para todo el pedido
+  const mapa = {};
+  for (const p of await db.listPracticas()) {
+    if (!getCatalog().claseIndex.get(String(p.claseId))) continue;
+    const fila = {
+      id: p.id,
+      nombre: p.nombre,
+      mime: p.mime || null,
+      size: p.size || 0,
+      creado: p.creado || '',
+      subidoPorNombre: p.subidoPorNombre || ''
+    };
+    (mapa[String(p.claseId)] = mapa[String(p.claseId)] || []).push(fila);
+  }
+  return mapa;
+}
+
 // ── Docente: ABM de alumnos ─────────────────────────────────────────────────
 async function listar(req, res) {
   const data = await db.loadData();
@@ -267,6 +287,8 @@ async function catalogoAlumno(req, res) {
   const ctx = contextoSesion(data, req);
   if (!ctx) return res.status(404).json({ error: 'Alumno sin datos.' });
   const c = getCatalog();
+  // practicas subidas por los docentes (de todas sus clases, para el mapa)
+  const practicas = await practicasPorClase();
   // un bloque por cada curso asignado, con las clases visibles de ese curso.
   // En la misma respuesta van los archivos permitidos de cada clase: así el
   // aula carga con 1 solo pedido (antes era 1 pedido por clase).
@@ -283,6 +305,8 @@ async function catalogoAlumno(req, res) {
       for (const m of vista.modulos) for (const cl of m.clases) {
         if (cl.bloqueada) { bloqueadas++; continue; }
         clases++; materiales += (cl.archivos || []).length;
+        // practicas del docente visibles en esta clase (metadata liviana)
+        cl.practicas = practicas[String(cl.id)] || [];
       }
       vista.totalClases = clases;
       vista.totalMateriales = materiales;
@@ -319,8 +343,9 @@ async function claseAlumno(req, res) {
     return res.status(403).json({ error: motivo });
   }
   const archivos = (clase.archivos || []).filter((f) => ctx.set.has(f.fid));
+  const practicasDeLaClase = (await practicasPorClase())[String(clase.id)] || [];
   const curso = c.cursoIndex.get(clase.cursoId);
-  res.json({ curso: curso ? curso.nombre : '', modulo: clase.modulo, clase: { ...clase, archivos } });
+  res.json({ curso: curso ? curso.nombre : '', modulo: clase.modulo, clase: { ...clase, archivos, practicas: practicasDeLaClase } });
 }
 
 

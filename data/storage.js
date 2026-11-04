@@ -76,6 +76,14 @@ const jsonStore = {
       const max = prefs.filter(Boolean).reduce((m, x) => Math.max(m, parseInt(x[1], 10)), 0);
       return Math.max(max + 1, Math.floor(start));
     }
+    if (seqKey === 'seq:practicas') {
+      let max = 0;
+      for (const k of Object.keys(doc.practicas || {})) {
+        const x = /^pd:(\d+)$/.exec(k);
+        if (x) max = Math.max(max, parseInt(x[1], 10));
+      }
+      return Math.max(max + 1, Math.floor(start));
+    }
     return Math.floor(start);
   }
 };
@@ -93,6 +101,9 @@ function filaDesdeDoc(doc, k) {
       const [claseId, alumnoId] = entidadRaw.split('|');
       return ((doc.asistencia || {})[claseId] || {})[alumnoId];
     }
+    // practicas del docente: claves p:<claseId|id> y pd:<id> en doc.practicas
+    case k.startsWith('p:') || k.startsWith('pd:'):
+      return (doc.practicas || {})[k];
     default: return undefined;
   }
 }
@@ -127,9 +138,16 @@ function filaADoc(doc, k, value) {
   if (k.startsWith('as:')) {
     doc.asistencia = doc.asistencia || {};
     const [claseId, alumnoId] = entidadRaw.split('|');
+    doc.asistencia[claseId] = doc.asistencia || {};
     doc.asistencia[claseId] = doc.asistencia[claseId] || {};
     if (value === undefined) delete doc.asistencia[claseId][alumnoId];
     else doc.asistencia[claseId][alumnoId] = value;
+    return;
+  }
+  if (k.startsWith('p:') || k.startsWith('pd:')) {
+    doc.practicas = doc.practicas || {};
+    if (value === undefined) delete doc.practicas[k];
+    else doc.practicas[k] = value;
     return;
   }
 }
@@ -143,12 +161,13 @@ function filasDSDeDoc(doc) {
   for (const [claseId, alumnosMap] of Object.entries(doc.asistencia || {})) {
     for (const [alumnoId, v] of Object.entries(alumnosMap || {})) out.push({ k: 'as:' + claseId + '|' + alumnoId, value: v });
   }
+  for (const [k, v] of Object.entries(doc.practicas || {})) out.push({ k, value: v });
   if (doc.refreshTokens) out.push({ k: 'tokens', value: doc.refreshTokens });
   return out;
 }
 
 function seedDocVacio() {
-  return { users: [], alumnos: [], habilitaciones: {}, asistencia: {}, vistas: {}, refreshTokens: [] };
+  return { users: [], alumnos: [], habilitaciones: {}, asistencia: {}, vistas: {}, practicas: {}, refreshTokens: [] };
 }
 
 // ── Almacén en Postgres (producción / Vercel) ────────────────────────────────
